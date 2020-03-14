@@ -193,6 +193,9 @@ public class AddonRecipes {
 		//Paintings
         FCRecipes.RemoveVanillaRecipe(new ItemStack(Item.painting, 1), new Object[] {"###", "#X#", "###", '#', Item.stick, 'X', Block.cloth});
         FCRecipes.AddRecipe(new ItemStack(Item.painting, 1), new Object[] {"###", "#X#", "###", '#', Item.stick, 'X', FCBetterThanWolves.fcItemWool});
+        
+        //Workbench
+        FCRecipes.AddRecipe(new ItemStack(AddonDefs.workbench), new Object[] {"XX","XX", 'X', Block.planks});
 	}
 	
 	private void addMortarRecipes() {

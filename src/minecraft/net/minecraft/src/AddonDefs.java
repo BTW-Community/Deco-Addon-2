@@ -36,6 +36,7 @@ public class AddonDefs {
 		id_andesiteCobbleLoose=3103,
 		id_dioriteCobbleLoose=3104,
 		id_strippedLog=3200,
+		id_workbench=3210,
 		
 		id_flag_start=4000;
 	
@@ -79,6 +80,7 @@ public class AddonDefs {
 	public static Block hayBale;
 	public static BlockPane paperWall, fenceSteel;
 	public static Block lanternPaper, lanternSteel, chandelier;
+	public static Block workbench;
 	public static Item bottleHempOil;
 	
 	//Tools
@@ -247,6 +249,10 @@ public class AddonDefs {
 		AddonManager.Register(paperWall, "Paper Wall");
 		AddonManager.Register(fenceSteel, "Wrought Iron Bars");
 		AddonManager.Name(bottleHempOil, "Hemp Oil");
+		
+		//Workbench
+		workbench = new AddonBlockWorkbench(id_workbench);
+		AddonManager.Register(workbench, "Workbench");
 	}
 	
 	private void addToolDefs() {
