@@ -177,7 +177,7 @@ public class AddonRecipes {
 	
 	private void addDecoRecipes() {
 		AddonManager.MakeStorage(FCBetterThanWolves.fcItemIngotDiamond, AddonDefs.blockDiamondium);
-		AddonManager.MakeStorage(Item.wheat, AddonDefs.hayBale);
+		AddonManager.MakeStorage(FCBetterThanWolves.fcItemWheat, AddonDefs.hayBale);
 		
 		//Lanterns
 		FCRecipes.AddRecipe(new ItemStack(AddonDefs.paperWall, 4), new Object[] { "ppp", "pwp", "ppp", 'p', Item.paper, 'w', new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, 32767) });
