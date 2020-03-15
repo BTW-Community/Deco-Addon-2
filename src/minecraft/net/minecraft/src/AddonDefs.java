@@ -224,7 +224,6 @@ public class AddonDefs {
 		
 		//Trapdoors
 		AddonManager.SetVanillaBlockFinal("trapdoor", Block.trapdoor, new AddonBlockTrapDoor(AddonManager.ReplaceBlockID(Block.trapdoor)));
-		//AddonManager.SetVanillaBlockFinal("trapdoor", Block.trapdoor, new FCBlockTrapDoor(AddonManager.ReplaceBlockID(Block.trapdoor)));
 		
 		trapdoorSpruce = (BlockTrapDoor) new AddonBlockTrapDoor(id_trapdoorSpruce).setUnlocalizedName("ginger_trapdoorSpruce");
 		trapdoorBirch = (BlockTrapDoor) new AddonBlockTrapDoor(id_trapdoorBirch).setUnlocalizedName("ginger_trapdoorBirch");
@@ -238,6 +237,7 @@ public class AddonDefs {
 		AddonManager.Register(trapdoorJungle, "Jungle Trap Door");
 		AddonManager.Register(trapdoorBlood, "Blood Wood Trap Door");
 		
+		//Doors
 	}
 	
 	private void addDecoDefs() {
