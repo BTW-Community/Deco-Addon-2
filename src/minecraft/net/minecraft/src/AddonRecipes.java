@@ -13,6 +13,7 @@ public class AddonRecipes {
 		addGlassRecipes();
 		addWhiteStoneRecipes();
 		addFlowerRecipes();
+		addWoodRecipes();
 		addDecoRecipes();
 		addMortarRecipes();
 		addToolRecipes();
@@ -175,6 +176,15 @@ public class AddonRecipes {
 		FCRecipes.AddShapelessRecipe(new ItemStack(Item.dyePowder, 4, 13), new Object[] {new ItemStack(Item.dyePowder, 1, 4), new ItemStack(Item.dyePowder, 1, 1), new ItemStack(Item.dyePowder, 1, 1), new ItemStack(Item.dyePowder, 1, 31)});
 	}
 	
+	private void addWoodRecipes() {
+		//Trapdoors
+        FCRecipes.RemoveVanillaRecipe(new ItemStack(Block.trapdoor, 1), new Object[] {"WW#", "WW#", '#', Item.stick, 'W', Block.planks});
+        FCRecipes.RemoveVanillaRecipe(new ItemStack(Block.trapdoor, 2), new Object[] {"WW#", "WW#", '#', Item.stick, 'W', new ItemStack(FCBetterThanWolves.fcBlockWoodSidingItemStubID, 1, 32767)});
+        
+        FCRecipes.AddRecipe(new ItemStack(Block.trapdoor, 1), new Object[] {"WW#", "WW#", '#', Item.stick, 'W', new ItemStack(Block.planks, 1, 0)});
+        FCRecipes.AddRecipe(new ItemStack(Block.trapdoor, 2), new Object[] {"WW#", "WW#", '#', Item.stick, 'W', new ItemStack(FCBetterThanWolves.fcBlockWoodSidingItemStubID, 1, 0)});
+	}
+	
 	private void addDecoRecipes() {
 		AddonManager.MakeStorage(FCBetterThanWolves.fcItemIngotDiamond, AddonDefs.blockDiamondium);
 		AddonManager.MakeStorage(FCBetterThanWolves.fcItemWheat, AddonDefs.hayBale);
@@ -196,6 +206,9 @@ public class AddonRecipes {
         
         //Workbench
         FCRecipes.AddRecipe(new ItemStack(AddonDefs.workbench), new Object[] {"XX","XX", 'X', Block.planks});
+        
+        //Wicker
+        FCRecipes.AddAnvilRecipe(new ItemStack(FCBetterThanWolves.fcItemWickerPiece, 2), new Object[] {"X X ", " X X", "X X ", " X X", 'X', Item.reed});
 	}
 	
 	private void addMortarRecipes() {

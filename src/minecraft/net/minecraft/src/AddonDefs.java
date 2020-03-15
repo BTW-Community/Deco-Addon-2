@@ -26,6 +26,7 @@ public class AddonDefs {
 		id_spruceWoodChair=3037,
 		id_birchWoodChair=3038,
 		id_jungleWoodChair=3039,
+		id_bloodWoodChair=3040,
 		id_terracotta=3044,
 		id_stainedTerracotta=3045,
 		id_unfiredTerracotta=3046,
@@ -37,6 +38,14 @@ public class AddonDefs {
 		id_dioriteCobbleLoose=3104,
 		id_strippedLog=3200,
 		id_workbench=3210,
+		id_trapdoorSpruce=3220,
+		id_trapdoorBirch=3221,
+		id_trapdoorJungle=3222,
+		id_trapdoorBlood=3223,
+		id_doorSpruce=3224,
+		id_doorBirch=3225,
+		id_doorJungle=3226,
+		id_doorBlood=3227,
 		
 		id_flag_start=4000;
 	
@@ -53,7 +62,7 @@ public class AddonDefs {
 	public static Block[] stainedTerracottaSidingAndCorner, stainedTerracottaMouldingAndDecorative,stainedTerracottaStairs;
 	
 	//Chairs
-	public static Block birchWoodChair, spruceWoodChair, jungleWoodChair, oakWoodChair;
+	public static Block birchWoodChair, spruceWoodChair, jungleWoodChair, oakWoodChair, bloodWoodChair;
 	
 	//Glass
 	public static Block glassStained, glassPaneStained;
@@ -74,6 +83,7 @@ public class AddonDefs {
 	
 	//Wood
 	public static Block strippedLog;
+	public static BlockTrapDoor trapdoorSpruce, trapdoorBirch, trapdoorJungle, trapdoorBlood; 
 	
 	//Deco
 	public static Block blockDiamondium;
@@ -148,6 +158,7 @@ public class AddonDefs {
 		birchWoodChair = new AddonBlockChairWood(id_spruceWoodChair, "birch", "Birch");
 		spruceWoodChair = new AddonBlockChairWood(id_birchWoodChair, "spruce", "Spruce");
 		jungleWoodChair = new AddonBlockChairWood(id_jungleWoodChair, "jungle", "Jungle");
+		jungleWoodChair = new AddonBlockChairWood(id_bloodWoodChair, "blood", "Blood Wood");
 	}
 	
 	private void addGlassDefs() {
@@ -209,6 +220,23 @@ public class AddonDefs {
 	}
 	
 	private void addWoodDefs() {
+		//Stripped Logs
+		
+		//Trapdoors
+		AddonManager.SetVanillaBlockFinal("trapdoor", Block.trapdoor, new AddonBlockTrapDoor(AddonManager.ReplaceBlockID(Block.trapdoor)));
+		//AddonManager.SetVanillaBlockFinal("trapdoor", Block.trapdoor, new FCBlockTrapDoor(AddonManager.ReplaceBlockID(Block.trapdoor)));
+		
+		trapdoorSpruce = (BlockTrapDoor) new AddonBlockTrapDoor(id_trapdoorSpruce).setUnlocalizedName("ginger_trapdoorSpruce");
+		trapdoorBirch = (BlockTrapDoor) new AddonBlockTrapDoor(id_trapdoorBirch).setUnlocalizedName("ginger_trapdoorBirch");
+		trapdoorJungle = (BlockTrapDoor) new AddonBlockTrapDoor(id_trapdoorJungle).setUnlocalizedName("ginger_trapdoorJungle");
+		trapdoorBlood = (BlockTrapDoor) new AddonBlockTrapDoor(id_trapdoorBlood).setUnlocalizedName("ginger_trapdoorBlood");
+		
+		AddonManager.Name(Block.trapdoor, "Oak Trap Door");
+		
+		AddonManager.Register(trapdoorSpruce, "Spruce Trap Door");
+		AddonManager.Register(trapdoorBirch, "Birch Trap Door");
+		AddonManager.Register(trapdoorJungle, "Jungle Trap Door");
+		AddonManager.Register(trapdoorBlood, "Blood Wood Trap Door");
 		
 	}
 	

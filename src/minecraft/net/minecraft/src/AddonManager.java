@@ -7,6 +7,8 @@ import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -100,11 +102,45 @@ public class AddonManager extends FCAddOn
 		Name(tag + ".pedestal" + ".name", name + " Pedestal");
 		Name(tag + ".table" + ".name", name + " Table");
 	}
+	//Use to replace BTW blocks (not final)
 	public static int ReplaceBlockID(Block block)
 	{
 		Block.blocksList[block.blockID] = null;
 		return block.blockID;
 	}
+	//Does really hacky stuff using reflection to replace vanilla blocks (final)
+	public static void SetVanillaBlockFinal(String name, Block oldBlock, Block newBlock) {
+		try {
+			Field block = (AddonDefs.terracotta.getClass().getDeclaredField(name));
+			block.setAccessible(true);
+			
+			Field modifiersField = Field.class.getDeclaredField( "modifiers" );
+            modifiersField.setAccessible( true );
+            modifiersField.setInt( block, block.getModifiers() & ~Modifier.FINAL );
+			
+			//Block.blocksList[oldBlock.blockID] = null;
+			block.set(newBlock, newBlock);
+			block.setAccessible(false);
+		} catch (NoSuchFieldException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SecurityException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalArgumentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public static int ReplaceItemID(Item item) {
+		Item.itemsList[item.itemID] = null; 
+		return item.itemID;
+	}
+	
 	public static void MakeStorage(Item subItem, Block container)
 	{
 		FCRecipes.AddRecipe(new ItemStack(container), new Object[]{"XXX","XXX","XXX",'X',subItem});
