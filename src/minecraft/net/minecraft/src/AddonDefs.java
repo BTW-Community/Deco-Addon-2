@@ -54,6 +54,10 @@ public class AddonDefs {
 		id_fertilizer = 30003,
 		id_bottleHempOil = 30007,
 		id_glassStainedItem = 30008,
+		id_itemDoorSpruce = 30020,
+		id_itemDoorBirch = 30021,
+		id_itemDoorJungle = 30022,
+		id_itemDoorBlood = 30023,
 		id_chiselDiamond = 30050;
 	
 	//Clay
@@ -83,7 +87,9 @@ public class AddonDefs {
 	
 	//Wood
 	public static Block strippedLog;
-	public static BlockTrapDoor trapdoorSpruce, trapdoorBirch, trapdoorJungle, trapdoorBlood; 
+	public static BlockTrapDoor trapdoorSpruce, trapdoorBirch, trapdoorJungle, trapdoorBlood;
+	public static BlockDoor doorSpruce, doorBirch, doorJungle, doorBlood;
+	public static FCItemDoor itemDoorSpruce, itemDoorBirch, itemDoorJungle, itemDoorBlood;
 	
 	//Deco
 	public static Block blockDiamondium;
@@ -223,14 +229,14 @@ public class AddonDefs {
 		//Stripped Logs
 		
 		//Trapdoors
+		//Forces oak trap doors to inherit texture rotations
 		AddonManager.SetVanillaBlockFinal("trapdoor", Block.trapdoor, new AddonBlockTrapDoor(AddonManager.ReplaceBlockID(Block.trapdoor)));
+		AddonManager.Name(Block.trapdoor, "Oak Trap Door");
 		
 		trapdoorSpruce = (BlockTrapDoor) new AddonBlockTrapDoor(id_trapdoorSpruce).setUnlocalizedName("ginger_trapdoorSpruce");
 		trapdoorBirch = (BlockTrapDoor) new AddonBlockTrapDoor(id_trapdoorBirch).setUnlocalizedName("ginger_trapdoorBirch");
 		trapdoorJungle = (BlockTrapDoor) new AddonBlockTrapDoor(id_trapdoorJungle).setUnlocalizedName("ginger_trapdoorJungle");
 		trapdoorBlood = (BlockTrapDoor) new AddonBlockTrapDoor(id_trapdoorBlood).setUnlocalizedName("ginger_trapdoorBlood");
-		
-		AddonManager.Name(Block.trapdoor, "Oak Trap Door");
 		
 		AddonManager.Register(trapdoorSpruce, "Spruce Trap Door");
 		AddonManager.Register(trapdoorBirch, "Birch Trap Door");
@@ -238,6 +244,17 @@ public class AddonDefs {
 		AddonManager.Register(trapdoorBlood, "Blood Wood Trap Door");
 		
 		//Doors
+		AddonManager.Name(Block.doorWood, "Oak Door");
+		
+		doorSpruce = new AddonBlockDoorWood(id_doorSpruce, new String[] {"ginger_doorSpruce_lower", "ginger_doorSpruce_upper"}, "Spruce Door");
+		doorBirch = new AddonBlockDoorWood(id_doorBirch, new String[] {"ginger_doorBirch_lower", "ginger_doorBirch_upper"}, "Birch Door");
+		doorJungle = new AddonBlockDoorWood(id_doorJungle, new String[] {"ginger_doorJungle_lower", "ginger_doorJungle_upper"}, "Jungle Door");
+		doorBlood = new AddonBlockDoorWood(id_doorBlood, new String[] {"ginger_doorBlood_lower", "ginger_doorBlood_upper"}, "Blood Wood Door");
+		
+		itemDoorSpruce = new AddonItemDoor(id_itemDoorSpruce, "ginger_doorSpruceItem", "Spruce Door", doorSpruce);
+		itemDoorBirch = new AddonItemDoor(id_itemDoorBirch, "ginger_doorBirchItem", "Birch Door", doorBirch);
+		itemDoorJungle = new AddonItemDoor(id_itemDoorJungle, "ginger_doorJungleItem", "Jungle Door", doorJungle);
+		itemDoorBlood = new AddonItemDoor(id_itemDoorBlood, "ginger_doorBloodItem", "Blood Wood Door", doorBlood);
 	}
 	
 	private void addDecoDefs() {
