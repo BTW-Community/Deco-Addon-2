@@ -3,10 +3,9 @@ package net.minecraft.src;
 public class AddonBlockDoorWood extends FCBlockDoorWood {
 	private String[] doorIconNames;
 	
-	protected AddonBlockDoorWood(int ID, String[] textures, String name) {
+	protected AddonBlockDoorWood(int ID, String[] textures) {
 		super(ID);
 		doorIconNames = textures;
-		AddonManager.Register(this, name);
 	}
 	
 	//CLIENT ONLY

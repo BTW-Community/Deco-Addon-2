@@ -12,6 +12,7 @@ public class AddonBlockWhiteStoneBrick extends Block {
 		this.SetPicksEffectiveOn(true);
 		setUnlocalizedName("whiteStoneBrick");
 		setCreativeTab(CreativeTabs.tabBlock);
+        this.setTickRandomly(true);
 		AddonManager.Register(this, new String[] { "regular", "mossy", "cracked", "chiseled" }, new String[] { "White Stone Bricks", "Mossy White Stone Bricks", "Cracked White Stone Bricks", "Chiseled White Stone" });
 	}
 	

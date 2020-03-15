@@ -31,11 +31,16 @@ public class AddonDefs {
 		id_stainedTerracotta=3045,
 		id_unfiredTerracotta=3046,
 		id_clay_sub_start=3049,
+		id_glazedTerracottaStart=3084,
 		id_stoneType=3100,
 		id_stoneTypeCobble=3101,
 		id_graniteCobbleLoose=3102,
 		id_andesiteCobbleLoose=3103,
 		id_dioriteCobbleLoose=3104,
+		id_stoneTypeStoneBrick=3105,
+		id_graniteStoneBrickLoose=3106,
+		id_andesiteStoneBrickLoose=3107,
+		id_dioriteStoneBrickLoose=3108,
 		id_strippedLog=3200,
 		id_workbench=3210,
 		id_trapdoorSpruce=3220,
@@ -46,6 +51,12 @@ public class AddonDefs {
 		id_doorBirch=3225,
 		id_doorJungle=3226,
 		id_doorBlood=3227,
+		id_gateSpruce=3228,
+		id_gateBirch=3229,
+		id_gateJungle=3230,
+		id_gateBlood=3231,
+		id_coarseDirt=3300,
+		id_coarseDirtSlab=3301,
 		
 		id_flag_start=4000;
 	
@@ -84,12 +95,15 @@ public class AddonDefs {
 	public static Block stoneTypes;
 	public static Block stoneTypesCobble;
 	public static Block graniteCobbleLoose, andesiteCobbleLoose, dioriteCobbleLoose;
+	public static Block stoneTypesStoneBrick;
+	public static Block graniteStoneBrickLoose, andesiteStoneBrickLoose, dioriteStoneBrickLoose;
 	
 	//Wood
 	public static Block strippedLog;
 	public static BlockTrapDoor trapdoorSpruce, trapdoorBirch, trapdoorJungle, trapdoorBlood;
 	public static BlockDoor doorSpruce, doorBirch, doorJungle, doorBlood;
 	public static FCItemDoor itemDoorSpruce, itemDoorBirch, itemDoorJungle, itemDoorBlood;
+	public static BlockFenceGate gateSpruce, gateBirch, gateJungle, gateBlood;
 	
 	//Deco
 	public static Block blockDiamondium;
@@ -98,6 +112,8 @@ public class AddonDefs {
 	public static Block lanternPaper, lanternSteel, chandelier;
 	public static Block workbench;
 	public static Item bottleHempOil;
+	public static Block coarseDirt;
+	public static Block coarseDirtSlab;
 	
 	//Tools
 	public static AddonItemChiselDiamond chiselDiamond;
@@ -223,13 +239,28 @@ public class AddonDefs {
 		graniteCobbleLoose = new AddonBlockCobbleLooseGranite(id_graniteCobbleLoose);
 		andesiteCobbleLoose = new AddonBlockCobbleLooseAndesite(id_andesiteCobbleLoose);
 		dioriteCobbleLoose = new AddonBlockCobbleLooseDiorite(id_dioriteCobbleLoose);
+		stoneTypesStoneBrick = new AddonBlockStoneBrick(id_stoneTypeStoneBrick);
+		graniteStoneBrickLoose = new AddonBlockStoneBrickLooseGranite(id_graniteStoneBrickLoose);
+		andesiteStoneBrickLoose = new AddonBlockStoneBrickLooseAndesite(id_andesiteStoneBrickLoose);
+		dioriteStoneBrickLoose = new AddonBlockStoneBrickLooseDiorite(id_dioriteStoneBrickLoose);
 	}
 	
 	private void addWoodDefs() {
+		//Logs
+		//BlockLog addonLog = new AddonBlockLogReplace(AddonManager.ReplaceBlockID(Block.wood));
+		//AddonManager.SetVanillaBlockFinal("wood", Block.wood, addonLog);
+		
+		AddonManager.Name(new ItemStack(Block.wood, 1, 0), "Oak Log");
+		AddonManager.Name(new ItemStack(Block.wood, 1, 1), "Spruce Log");
+		AddonManager.Name(new ItemStack(Block.wood, 1, 2), "Birch Log");
+		AddonManager.Name(new ItemStack(Block.wood, 1, 3), "Jungle Log");
+		
+		AddonManager.Name(FCBetterThanWolves.fcBloodWood, "Blood Wood Log");
+		
 		//Stripped Logs
 		
 		//Trapdoors
-		//Forces oak trap doors to inherit texture rotations
+		//Forces oak trap doors to inherit texture rotations and eventually better placement
 		AddonManager.SetVanillaBlockFinal("trapdoor", Block.trapdoor, new AddonBlockTrapDoor(AddonManager.ReplaceBlockID(Block.trapdoor)));
 		AddonManager.Name(Block.trapdoor, "Oak Trap Door");
 		
@@ -246,15 +277,33 @@ public class AddonDefs {
 		//Doors
 		AddonManager.Name(Block.doorWood, "Oak Door");
 		
-		doorSpruce = new AddonBlockDoorWood(id_doorSpruce, new String[] {"ginger_doorSpruce_lower", "ginger_doorSpruce_upper"}, "Spruce Door");
-		doorBirch = new AddonBlockDoorWood(id_doorBirch, new String[] {"ginger_doorBirch_lower", "ginger_doorBirch_upper"}, "Birch Door");
-		doorJungle = new AddonBlockDoorWood(id_doorJungle, new String[] {"ginger_doorJungle_lower", "ginger_doorJungle_upper"}, "Jungle Door");
-		doorBlood = new AddonBlockDoorWood(id_doorBlood, new String[] {"ginger_doorBlood_lower", "ginger_doorBlood_upper"}, "Blood Wood Door");
+		doorSpruce = new AddonBlockDoorWood(id_doorSpruce, new String[] {"ginger_doorSpruce_lower", "ginger_doorSpruce_upper"});
+		doorBirch = new AddonBlockDoorWood(id_doorBirch, new String[] {"ginger_doorBirch_lower", "ginger_doorBirch_upper"});
+		doorJungle = new AddonBlockDoorWood(id_doorJungle, new String[] {"ginger_doorJungle_lower", "ginger_doorJungle_upper"});
+		doorBlood = new AddonBlockDoorWood(id_doorBlood, new String[] {"ginger_doorBlood_lower", "ginger_doorBlood_upper"});
+		
+		AddonManager.Register(doorSpruce, "Spruce Door");
+		AddonManager.Register(doorBirch, "Birch Door");
+		AddonManager.Register(doorJungle, "Jungle Door");
+		AddonManager.Register(doorBlood, "Blood Wood Door");
 		
 		itemDoorSpruce = new AddonItemDoor(id_itemDoorSpruce, "ginger_doorSpruceItem", "Spruce Door", doorSpruce);
 		itemDoorBirch = new AddonItemDoor(id_itemDoorBirch, "ginger_doorBirchItem", "Birch Door", doorBirch);
 		itemDoorJungle = new AddonItemDoor(id_itemDoorJungle, "ginger_doorJungleItem", "Jungle Door", doorJungle);
 		itemDoorBlood = new AddonItemDoor(id_itemDoorBlood, "ginger_doorBloodItem", "Blood Wood Door", doorBlood);
+		
+		//Fence gates
+		AddonManager.Name(Block.fenceGate, "Oak Fence Gate");
+		
+		gateSpruce = (BlockFenceGate) new AddonBlockFenceGate(id_gateSpruce, "ginger_gateSpruce");
+		gateBirch = (BlockFenceGate) new AddonBlockFenceGate(id_gateBirch, "ginger_gateBirch");
+		gateJungle = (BlockFenceGate) new AddonBlockFenceGate(id_gateJungle, "ginger_gateJungle");
+		gateBlood = (BlockFenceGate) new AddonBlockFenceGate(id_gateBlood, "ginger_gateBlood");
+
+		AddonManager.Register(gateSpruce, "Spruce Fence Gate");
+		AddonManager.Register(gateBirch, "Birch Fence Gate");
+		AddonManager.Register(gateJungle, "Jungle Fence Gate");
+		AddonManager.Register(gateBlood, "Blood Wood Fence Gate");
 	}
 	
 	private void addDecoDefs() {
@@ -263,17 +312,10 @@ public class AddonDefs {
 		Block.blockDiamond.setUnlocalizedName("ginger_solid_diamond");
 
 		AddonManager.Register(blockDiamondium, "Block of Diamondium");
-
-		AddonManager.Name(Block.blockDiamond, "Block of Diamond");
-		AddonManager.Name(FCBetterThanWolves.fcItemIngotDiamond, "Diamondium Ingot");
-		AddonManager.Name(Item.pickaxeDiamond, "Diamondium Pickaxe");
-		AddonManager.Name(Item.axeDiamond, "Diamondium Axe");
-		AddonManager.Name(Item.shovelDiamond, "Diamondium Spade");
-		AddonManager.Name(Item.hoeDiamond, "Diamondium Hoe");
-		AddonManager.Name(Item.swordDiamond, "Diamondium Sword");
 		
 		//Haybale
 		hayBale = new AddonBlockHayBale(id_hayBale);
+		FCBetterThanWolves.fcItemWheat = new AddonItemWheat(AddonManager.ReplaceItemID(FCBetterThanWolves.fcItemWheat));
 		
 		//Walls
 		FCBetterThanWolves.fcBlockStoneBrickSidingAndCorner = new AddonBlockSidingAndCornerDecorativeWall(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockStoneBrickSidingAndCorner),  Material.rock, "fcBlockDecorativeStoneBrick", 1.5F, 10.0F, Block.soundStoneFootstep, "fcStoneBrickSiding", "Stone Brick");
@@ -298,10 +340,24 @@ public class AddonDefs {
 		//Workbench
 		workbench = new AddonBlockWorkbench(id_workbench);
 		AddonManager.Register(workbench, "Workbench");
+		
+		//Coarse Dirt
+		coarseDirt = new AddonBlockDirtCoarse(id_coarseDirt);
+		AddonManager.Register(coarseDirt, "Coarse Dirt");
+		coarseDirtSlab = new AddonBlockDirtCoarseSlab(id_coarseDirtSlab);
+		AddonManager.Register(coarseDirtSlab, "Coarse Dirt Slab");
 	}
 	
 	private void addToolDefs() {
 		chiselDiamond = new AddonItemChiselDiamond(id_chiselDiamond);
-		AddonManager.Name(chiselDiamond, "Diamond Chisel");
+		AddonManager.Name(chiselDiamond, "Diamondium Chisel");
+		
+		AddonManager.Name(Block.blockDiamond, "Block of Diamond");
+		AddonManager.Name(FCBetterThanWolves.fcItemIngotDiamond, "Diamondium Ingot");
+		AddonManager.Name(Item.pickaxeDiamond, "Diamondium Pickaxe");
+		AddonManager.Name(Item.axeDiamond, "Diamondium Axe");
+		AddonManager.Name(Item.shovelDiamond, "Diamondium Spade");
+		AddonManager.Name(Item.hoeDiamond, "Diamondium Hoe");
+		AddonManager.Name(Item.swordDiamond, "Diamondium Sword");
 	}
 }
