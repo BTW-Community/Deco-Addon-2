@@ -58,9 +58,11 @@ public class AddonDefs {
 		id_gateBirch=3229,
 		id_gateJungle=3230,
 		id_gateBlood=3231,
+		id_planksPainted=3232,
 		id_coarseDirt=3300,
 		id_coarseDirtSlab=3301,
 		id_podzol=3302,
+		id_podzolSlab=3303,
 		
 		id_flag_start=4000;
 	
@@ -110,6 +112,7 @@ public class AddonDefs {
 	public static BlockDoor doorSpruce, doorBirch, doorJungle, doorBlood;
 	public static FCItemDoor itemDoorSpruce, itemDoorBirch, itemDoorJungle, itemDoorBlood;
 	public static BlockFenceGate gateSpruce, gateBirch, gateJungle, gateBlood;
+	public static Block planksPainted;
 	
 	//Deco
 	public static Block blockDiamondium;
@@ -121,6 +124,7 @@ public class AddonDefs {
 	public static Block coarseDirt;
 	public static Block coarseDirtSlab;
 	public static Block podzol;
+	public static Block podzolSlab;
 	
 	//Tools
 	public static AddonItemChiselDiamond chiselDiamond;
@@ -329,6 +333,9 @@ public class AddonDefs {
 		AddonManager.Register(gateBirch, "Birch Fence Gate");
 		AddonManager.Register(gateJungle, "Jungle Fence Gate");
 		AddonManager.Register(gateBlood, "Blood Wood Fence Gate");
+		
+		//Painted planks
+		planksPainted = (new AddonBlockPlanksPainted(id_planksPainted, "ginger_planksPainted", "Painted Planks")).setHardness(2.0F).setResistance(10.0F).setStepSound(Block.soundStoneFootstep).setCreativeTab(CreativeTabs.tabBlock);
 	}
 	
 	private void addDecoDefs() {
@@ -369,7 +376,7 @@ public class AddonDefs {
 		//Coarse Dirt
 		coarseDirt = new AddonBlockDirtCoarse(id_coarseDirt);
 		AddonManager.Register(coarseDirt, "Coarse Dirt");
-		coarseDirtSlab = new AddonBlockDirtCoarseSlab(id_coarseDirtSlab);
+		coarseDirtSlab = new AddonBlockDirtSlab(id_coarseDirtSlab).setUnlocalizedName("ginger_coarseDirt");;
 		AddonManager.Register(coarseDirtSlab, "Coarse Dirt Slab");
 		
 		//Podzol
@@ -377,7 +384,7 @@ public class AddonDefs {
 		AddonManager.Register(podzol, "Podzol");
 		//Ran into weird issue where dirt got renamed, so this fixes that
 		AddonManager.Register(Block.dirt, "Dirt");
-		//FCBetterThanWolves.fcBlockDirtSlab = new AddonBlockDirtSlab(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockDirtSlab));
+		//podzolSlab = new AddonBlockDirtSlab(id_podzolSlab));
 	}
 	
 	private void addToolDefs() {

@@ -236,6 +236,16 @@ public class AddonRecipes {
         FCRecipes.AddRecipe(new ItemStack(AddonDefs.gateJungle, 1), new Object[] {"#X#", '#', new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, 3), 'X', new ItemStack(FCBetterThanWolves.fcBlockWoodSidingItemStubID, 1, 3)});
         FCRecipes.AddRecipe(new ItemStack(AddonDefs.gateBlood, 1), new Object[] {"#W#", "#W#", '#', Item.stick, 'W', new ItemStack(Block.planks, 1, 4)});
         FCRecipes.AddRecipe(new ItemStack(AddonDefs.gateBlood, 1), new Object[] {"#X#", '#', new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, 4), 'X', new ItemStack(FCBetterThanWolves.fcBlockWoodSidingItemStubID, 1, 4)});
+        
+        //Painted Planks
+
+		for (int Index = 0; Index < 32; Index++)
+		{
+			FCRecipes.AddStokedCauldronRecipe(new ItemStack(AddonDefs.planksPainted,1,Index % 16),
+				new ItemStack[]{new ItemStack(Item.dyePowder,1,Index),new ItemStack(Block.planks, 1, 32767)});
+			//FCRecipes.AddRecipe(new ItemStack(stainedGlassPane, 16, Index), new Object[] { "GGG", "GGG", 'G', new ItemStack(stainedGlass, 1, Index) });
+			//FCRecipes.AddStokedCrucibleRecipe(new ItemStack(stainedGlass, 3, Index), new ItemStack[] { new ItemStack(stainedGlassPane, 8, Index) });
+		}
 	}
 	
 	private void addDecoRecipes() {
