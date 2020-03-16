@@ -41,6 +41,7 @@ public class AddonDefs {
 		id_graniteStoneBrickLoose=3106,
 		id_andesiteStoneBrickLoose=3107,
 		id_dioriteStoneBrickLoose=3108,
+		id_stoneTypeSmooth=3109,
 		id_glazedTerracottaStart=3134,
 		//end 3149
 		id_strippedLog=3200,
@@ -101,6 +102,7 @@ public class AddonDefs {
 	public static Block graniteCobbleLoose, andesiteCobbleLoose, dioriteCobbleLoose;
 	public static Block stoneTypesStoneBrick;
 	public static Block graniteStoneBrickLoose, andesiteStoneBrickLoose, dioriteStoneBrickLoose;
+	public static Block stoneTypesSmooth;
 	
 	//Wood
 	public static Block strippedLog;
@@ -265,6 +267,7 @@ public class AddonDefs {
 		graniteStoneBrickLoose = new AddonBlockStoneBrickLooseGranite(id_graniteStoneBrickLoose);
 		andesiteStoneBrickLoose = new AddonBlockStoneBrickLooseAndesite(id_andesiteStoneBrickLoose);
 		dioriteStoneBrickLoose = new AddonBlockStoneBrickLooseDiorite(id_dioriteStoneBrickLoose);
+		stoneTypesSmooth = new AddonBlockStoneSmooth(id_stoneTypeSmooth);
 	}
 	
 	private void addWoodDefs() {

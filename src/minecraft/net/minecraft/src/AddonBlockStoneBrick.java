@@ -11,7 +11,7 @@ public class AddonBlockStoneBrick extends Block {
 		this.setUnlocalizedName("addonStone");
 		this.setCreativeTab(CreativeTabs.tabBlock);
 
-		AddonManager.Register(this, new String[] {"granitBrick", "andesiteBrick", "dioriteBrick"}, new String[] {"Granite Brick", "Andesite Brick", "Diorite Brick"});
+		AddonManager.Register(this, new String[] {"graniteBrick", "andesiteBrick", "dioriteBrick"}, new String[] {"Granite Brick", "Andesite Brick", "Diorite Brick"});
 	}
 
 	public int damageDropped(int Meta)
