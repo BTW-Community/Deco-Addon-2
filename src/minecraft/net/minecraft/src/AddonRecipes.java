@@ -157,8 +157,8 @@ public class AddonRecipes {
 		//Cooking with dyes
 		for (int Index = 0; Index < 16; Index++)
 		{
-			FCRecipes.AddShapelessRecipe(new ItemStack(Block.cloth,1,BlockCloth.getDyeFromBlock(Index)),
-				new Object[]{new ItemStack(Item.dyePowder,1,Index+16),new ItemStack(Item.itemsList[Block.cloth.blockID], 1,0)});
+			FCRecipes.AddStokedCauldronRecipe(new ItemStack(Block.cloth,1,BlockCloth.getDyeFromBlock(Index)),
+				new ItemStack[]{new ItemStack(Item.dyePowder,1,Index+16),new ItemStack(Item.itemsList[Block.cloth.blockID], 1,0)});
 			//FCRecipes.AddRecipe(new ItemStack(stainedGlassPane, 16, Index), new Object[] { "GGG", "GGG", 'G', new ItemStack(stainedGlass, 1, Index) });
 			//FCRecipes.AddStokedCrucibleRecipe(new ItemStack(stainedGlass, 3, Index), new ItemStack[] { new ItemStack(stainedGlassPane, 8, Index) });
 		}
@@ -242,7 +242,7 @@ public class AddonRecipes {
 		for (int Index = 0; Index < 32; Index++)
 		{
 			FCRecipes.AddStokedCauldronRecipe(new ItemStack(AddonDefs.planksPainted,1,Index % 16),
-				new ItemStack[]{new ItemStack(Item.dyePowder,1,Index),new ItemStack(Block.planks, 1, 32767)});
+				new ItemStack[]{new ItemStack(Item.dyePowder,1,Index),new ItemStack(Block.planks)});
 			//FCRecipes.AddRecipe(new ItemStack(stainedGlassPane, 16, Index), new Object[] { "GGG", "GGG", 'G', new ItemStack(stainedGlass, 1, Index) });
 			//FCRecipes.AddStokedCrucibleRecipe(new ItemStack(stainedGlass, 3, Index), new ItemStack[] { new ItemStack(stainedGlassPane, 8, Index) });
 		}

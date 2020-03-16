@@ -59,6 +59,7 @@ public class AddonDefs {
 		id_gateJungle=3230,
 		id_gateBlood=3231,
 		id_planksPainted=3232,
+		id_pergola=3240,
 		id_coarseDirt=3300,
 		id_coarseDirtSlab=3301,
 		id_podzol=3302,
@@ -113,6 +114,7 @@ public class AddonDefs {
 	public static FCItemDoor itemDoorSpruce, itemDoorBirch, itemDoorJungle, itemDoorBlood;
 	public static BlockFenceGate gateSpruce, gateBirch, gateJungle, gateBlood;
 	public static Block planksPainted;
+	public static Block pergola;
 	
 	//Deco
 	public static Block blockDiamondium;
@@ -336,6 +338,10 @@ public class AddonDefs {
 		
 		//Painted planks
 		planksPainted = (new AddonBlockPlanksPainted(id_planksPainted, "ginger_planksPainted", "Painted Planks")).setHardness(2.0F).setResistance(10.0F).setStepSound(Block.soundStoneFootstep).setCreativeTab(CreativeTabs.tabBlock);
+	
+		//Pergola
+		pergola = new AddonBlockPergola(id_pergola);
+		AddonManager.Register(pergola, "Pergola");
 	}
 	
 	private void addDecoDefs() {
@@ -383,7 +389,7 @@ public class AddonDefs {
 		podzol = new AddonBlockPodzol(id_podzol);
 		AddonManager.Register(podzol, "Podzol");
 		//Ran into weird issue where dirt got renamed, so this fixes that
-		AddonManager.Register(Block.dirt, "Dirt");
+		AddonManager.Name(Block.dirt, "Dirt");
 		//podzolSlab = new AddonBlockDirtSlab(id_podzolSlab));
 	}
 	
