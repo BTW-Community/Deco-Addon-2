@@ -31,7 +31,6 @@ public class AddonDefs {
 		id_stainedTerracotta=3045,
 		id_unfiredTerracotta=3046,
 		id_clay_sub_start=3049,
-		id_glazedTerracottaStart=3084,
 		id_stoneType=3100,
 		id_stoneTypeCobble=3101,
 		id_graniteCobbleLoose=3102,
@@ -41,6 +40,7 @@ public class AddonDefs {
 		id_graniteStoneBrickLoose=3106,
 		id_andesiteStoneBrickLoose=3107,
 		id_dioriteStoneBrickLoose=3108,
+		id_glazedTerracottaStart=3134,
 		id_strippedLog=3200,
 		id_workbench=3210,
 		id_trapdoorSpruce=3220,
@@ -75,6 +75,7 @@ public class AddonDefs {
 	public static Block terracotta, stainedTerracotta, unfiredTerracotta;
 	public static Block terracottaSidingAndCorner, terracottaMouldingAndDecorative, terracottaStairs;
 	public static Block[] stainedTerracottaSidingAndCorner, stainedTerracottaMouldingAndDecorative,stainedTerracottaStairs;
+	public static Block[] glazedTerracotta;
 	
 	//Chairs
 	public static Block birchWoodChair, spruceWoodChair, jungleWoodChair, oakWoodChair, bloodWoodChair;
@@ -141,7 +142,7 @@ public class AddonDefs {
 		AddonManager.Register(terracotta, "Terracotta");
         AddonManager.Register(unfiredTerracotta, "Unfired Terracotta");
 
-
+        //Sub blocks
 		int start = id_clay_sub_start,
 				end = start+51,
 				id = start,
@@ -172,6 +173,23 @@ public class AddonDefs {
 			AddonManager.NameSubBlocks_Wall(stainedTerracottaSidingAndCorner[i], stainedTerracottaMouldingAndDecorative[i], AddonBlockTerracottaStained.names[i]+" "+main);
 
 			i++;//i is metadata from original 16 color set
+		}
+		
+		//Glazed Terracotta
+		start = id_glazedTerracottaStart;
+		end = start+16;
+		id = start;
+		i = 0;
+		
+		glazedTerracotta = new Block[16];
+		String[] tags = new String[] { "black", "red", "green", "brown", "blue", "purple", "cyan", "lightGrey", "grey", "pink", "lime", "yellow", "lightBlue", "magenta", "orange", "white" };
+		String[] names = new String[] { "Black", "Red", "Green", "Brown", "Blue", "Purple", "Cyan", "Light Grey", "Grey", "Pink", "Lime", "Yellow", "Light Blue", "Magenta", "Orange", "White" };
+		
+		while(i < 16)
+		{
+			glazedTerracotta[i] = new AddonBlockTerracottaGlazed(start + i, i, "ginger_glazedTerracotta_" + i, names + " Glazed Terracotta", Material.rock).setHardness(2.0F).setResistance(10.0F).setStepSound(Block.soundStoneFootstep).setCreativeTab(CreativeTabs.tabBlock);
+			AddonManager.Register(glazedTerracotta[i], names[i] + " Glazed Terracotta");
+			i++;
 		}
 	}
 	
