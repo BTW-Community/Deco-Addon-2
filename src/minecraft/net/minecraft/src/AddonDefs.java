@@ -31,6 +31,7 @@ public class AddonDefs {
 		id_stainedTerracotta=3045,
 		id_unfiredTerracotta=3046,
 		id_clay_sub_start=3049,
+		//end 3099
 		id_stoneType=3100,
 		id_stoneTypeCobble=3101,
 		id_graniteCobbleLoose=3102,
@@ -41,6 +42,7 @@ public class AddonDefs {
 		id_andesiteStoneBrickLoose=3107,
 		id_dioriteStoneBrickLoose=3108,
 		id_glazedTerracottaStart=3134,
+		//end 3149
 		id_strippedLog=3200,
 		id_workbench=3210,
 		id_trapdoorSpruce=3220,
@@ -57,6 +59,7 @@ public class AddonDefs {
 		id_gateBlood=3231,
 		id_coarseDirt=3300,
 		id_coarseDirtSlab=3301,
+		id_podzol=3302,
 		
 		id_flag_start=4000;
 	
@@ -115,6 +118,7 @@ public class AddonDefs {
 	public static Item bottleHempOil;
 	public static Block coarseDirt;
 	public static Block coarseDirtSlab;
+	public static Block podzol;
 	
 	//Tools
 	public static AddonItemChiselDiamond chiselDiamond;
@@ -364,6 +368,13 @@ public class AddonDefs {
 		AddonManager.Register(coarseDirt, "Coarse Dirt");
 		coarseDirtSlab = new AddonBlockDirtCoarseSlab(id_coarseDirtSlab);
 		AddonManager.Register(coarseDirtSlab, "Coarse Dirt Slab");
+		
+		//Podzol
+		podzol = new AddonBlockPodzol(id_podzol);
+		AddonManager.Register(podzol, "Podzol");
+		//Ran into weird issue where dirt got renamed, so this fixes that
+		AddonManager.Register(Block.dirt, "Dirt");
+		//FCBetterThanWolves.fcBlockDirtSlab = new AddonBlockDirtSlab(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockDirtSlab));
 	}
 	
 	private void addToolDefs() {
