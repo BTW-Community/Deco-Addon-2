@@ -30,8 +30,7 @@ public class AddonManager extends FCAddOn
 
 	@Override
 	public void PreInitialize() {
-		checkObfuscation();
-		System.out.println("[INFO] Obfuscation status: " + isObfuscated);
+		AddonUtilsObfuscationMap.initialize();
 	}
 	
 	@Override
@@ -44,15 +43,6 @@ public class AddonManager extends FCAddOn
 		
 		addonDefs.addDefinitions();
 		addonRecipes.addAllAddonRecipes();
-	}
-	
-	private void checkObfuscation() {
-		try {
-			Class.forName("net.minecraft.src.Block");
-			isObfuscated = false;
-		} catch (ClassNotFoundException e) {
-			isObfuscated = true;
-		}
 	}
 	
 	public boolean getObfuscation() {
@@ -153,8 +143,13 @@ public class AddonManager extends FCAddOn
 			block.set(newBlock, newBlock);
 			block.setAccessible(false);
 		} catch (NoSuchFieldException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			if (isObfuscated) {
+				e.printStackTrace();
+			}
+			else {
+				isObfuscated = true;
+				SetVanillaBlockFinal(blockName, oldBlock, newBlock);
+			}
 		} catch (SecurityException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
