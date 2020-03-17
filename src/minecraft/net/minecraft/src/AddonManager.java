@@ -25,7 +25,16 @@ public class AddonManager extends FCAddOn
 	private static ArrayList<String> Names = new ArrayList<String>();
 	private static ArrayList<Object> NameTargets = new ArrayList<Object>();
 	private static ArrayList<String> loadedAddons = new ArrayList<String>();
+	
+	private static boolean isObfuscated = false;
 
+	@Override
+	public void PreInitialize() {
+		checkObfuscation();
+		System.out.println("[INFO] Obfuscation status: " + isObfuscated);
+	}
+	
+	@Override
 	public void Initialize()
 	{
 		System.out.println("[INFO] AddonManager: Initialize");
@@ -35,6 +44,19 @@ public class AddonManager extends FCAddOn
 		
 		addonDefs.addDefinitions();
 		addonRecipes.addAllAddonRecipes();
+	}
+	
+	private void checkObfuscation() {
+		try {
+			Class.forName("net.minecraft.src.Block");
+			isObfuscated = false;
+		} catch (ClassNotFoundException e) {
+			isObfuscated = true;
+		}
+	}
+	
+	public boolean getObfuscation() {
+		return isObfuscated;
 	}
 	
 	private static boolean Create_HasCall=false;
@@ -111,8 +133,15 @@ public class AddonManager extends FCAddOn
 	}
 	
 	//Does really hacky stuff using reflection to replace final references to vanilla blocks
-	public static void SetVanillaBlockFinal(String name, Block oldBlock, Block newBlock) {
+	public static void SetVanillaBlockFinal(String blockName, Block oldBlock, Block newBlock) {
 		try {
+			String name;
+			
+			if (isObfuscated)
+				name = AddonUtilsObfuscationMap.getBlockLookup(blockName);
+			else
+				name = blockName;
+			
 			Field block = (AddonDefs.terracotta.getClass().getDeclaredField(name));
 			block.setAccessible(true);
 			
