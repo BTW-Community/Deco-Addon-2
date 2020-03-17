@@ -74,16 +74,6 @@ public class AddonBlockPergola extends Block {
         //this.SetFacing(var1, var2, var3, var4, var8);
         
         //swapSideIcons = var8 > 1;
-        
-        if (var8 == 0 || var8 == 2)
-        {
-        	var1.setBlockMetadataWithNotify(var2, var3, var4, 0, 2);
-        }
-
-        if (var8 == 1 || var8 == 3)
-        {
-        	var1.setBlockMetadataWithNotify(var2, var3, var4, 2, 2);
-        }
     }
 
     public int GetFacing(int var1)
@@ -109,7 +99,7 @@ public class AddonBlockPergola extends Block {
     	else if (side == 1) {
     		return icon_top;
     	}
-    	else if (side == 2 || side == 3) {
+    	else if (((side == 2 || side == 3) && metadata <=3) || ((side == 4 || side == 5) && metadata >= 4)) {
     		return swapSideIcons ? icon_sides_1 : icon_sides_0;
     	}
     	else {
