@@ -25,7 +25,15 @@ public class AddonManager extends FCAddOn
 	private static ArrayList<String> Names = new ArrayList<String>();
 	private static ArrayList<Object> NameTargets = new ArrayList<Object>();
 	private static ArrayList<String> loadedAddons = new ArrayList<String>();
+	
+	private static boolean isObfuscated = false;
 
+	@Override
+	public void PreInitialize() {
+		AddonUtilsObfuscationMap.initialize();
+	}
+	
+	@Override
 	public void Initialize()
 	{
 		System.out.println("[INFO] AddonManager: Initialize");
@@ -35,6 +43,10 @@ public class AddonManager extends FCAddOn
 		
 		addonDefs.addDefinitions();
 		addonRecipes.addAllAddonRecipes();
+	}
+	
+	public boolean getObfuscation() {
+		return isObfuscated;
 	}
 	
 	private static boolean Create_HasCall=false;
@@ -111,8 +123,15 @@ public class AddonManager extends FCAddOn
 	}
 	
 	//Does really hacky stuff using reflection to replace final references to vanilla blocks
-	public static void SetVanillaBlockFinal(String name, Block oldBlock, Block newBlock) {
+	public static void SetVanillaBlockFinal(String blockName, Block oldBlock, Block newBlock) {
 		try {
+			String name;
+			
+			if (isObfuscated)
+				name = AddonUtilsObfuscationMap.getBlockLookup(blockName);
+			else
+				name = blockName;
+			
 			Field block = (AddonDefs.terracotta.getClass().getDeclaredField(name));
 			block.setAccessible(true);
 			
@@ -124,16 +143,18 @@ public class AddonManager extends FCAddOn
 			block.set(newBlock, newBlock);
 			block.setAccessible(false);
 		} catch (NoSuchFieldException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			if (isObfuscated) {
+				e.printStackTrace();
+			}
+			else {
+				isObfuscated = true;
+				SetVanillaBlockFinal(blockName, oldBlock, newBlock);
+			}
 		} catch (SecurityException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IllegalArgumentException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IllegalAccessException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
