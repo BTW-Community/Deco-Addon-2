@@ -4,7 +4,7 @@ public class AddonItemChiselDiamond extends FCItemChisel {
 	protected AddonItemChiselDiamond(int var1)
 	{
 		super(var1, EnumToolMaterial.EMERALD, 500);
-		this.efficiencyOnProperMaterial /= 4.0F;
+		//this.efficiencyOnProperMaterial /= 1.5F;
 		this.SetFilterableProperties(4);
 		this.setUnlocalizedName("ginger_chiselDiamond");
 	}

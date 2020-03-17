@@ -29,7 +29,7 @@ public class AddonItemDye extends FCItemDye
 			{
 				int var5 = var1.getBlockId(var2, var3, var4);
 				int var6 = var1.getBlockMetadata(var2, var3, var4);
-				return var5 == Block.tilledField.blockID || var5 == FCBetterThanWolves.fcPlanter.blockID && var6 == 1 || var5 == Block.grass.blockID;
+				return var5 == Block.tilledField.blockID || var5 == FCBetterThanWolves.fcPlanter.blockID && var6 == 1 || var5 == Block.grass.blockID || var5 == FCBetterThanWolves.fcBlockPlanterSoil.blockID || var5 == FCBetterThanWolves.fcBlockFarmland.blockID;
 			}
 			private boolean ApplyCocoaBeans(ItemStack var1, EntityPlayer var2, World var3, int var4, int var5, int var6, int var7, float var8, float var9, float var10)
 			{
@@ -77,6 +77,13 @@ public class AddonItemDye extends FCItemDye
 							return false;
 						if (!var3.isRemote) this.GrowTallGrassAndFlowers(var3, var4, var5, var6);
 					}
+					else if (var11 == FCBetterThanWolves.fcBlockPlanterSoil.blockID) {
+						FCBetterThanWolves.fcBlockPlanterSoil.AttemptToApplyFertilizerTo(var3, var4, var5, var6);
+					}
+					else if (var11 == FCBetterThanWolves.fcBlockFarmland.blockID) {
+						FCBetterThanWolves.fcBlockFarmland.AttemptToApplyFertilizerTo(var3, var4, var5, var6);
+					}
+					
 					--var1.stackSize;
 					return true;
 				}
