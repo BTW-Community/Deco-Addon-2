@@ -7,6 +7,7 @@ public class AddonBlockPergola extends Block {
     
 	protected AddonBlockPergola(int ID) {
 		super(ID, Material.wood);
+        this.setStepSound(soundWoodFootstep);
 		this.setCreativeTab(CreativeTabs.tabDecorations);
 		this.InitBlockBounds(this.GetBlockBoundsFromPool());
 	}

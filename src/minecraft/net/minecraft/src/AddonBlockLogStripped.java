@@ -6,7 +6,7 @@ public class AddonBlockLogStripped extends FCBlockLog {
 		super(ID);
 		AddonManager.Register(this, new String[] {"strippedOak", "strippedSpruce", "strippedBirch", "strippedJungle"}, new String[] {"Stripped Oak Log", "Stripped Spruce Log", "Stripped Birch Log", "Stripped Jungle Log"});
 	}
-	/*
+	
 	@Override
 	public boolean GetIsStump(IBlockAccess access, int x, int y, int z) {
 		return false;
@@ -40,7 +40,7 @@ public class AddonBlockLogStripped extends FCBlockLog {
         var2.setBlockAndMetadataWithNotify(var3, var4, var5, FCBetterThanWolves.fcBlockLogDamaged.blockID, var10);
 
         return true;
-    }*/
+    }
 
 	//CLIENT ONLY
 	public static final String[] topTextureTypes = {"ginger_strippedOakTop", "ginger_strippedSpruceTop", "ginger_strippedBirchTop", "ginger_strippedJungleTop"};

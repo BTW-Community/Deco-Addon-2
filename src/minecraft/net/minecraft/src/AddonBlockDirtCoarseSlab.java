@@ -1,8 +1,8 @@
 package net.minecraft.src;
 
-public class AddonBlockDirtSlab extends FCBlockSlabAttached {
+public class AddonBlockDirtCoarseSlab extends FCBlockSlabAttached {
 
-	protected AddonBlockDirtSlab(int ID) {
+	protected AddonBlockDirtCoarseSlab(int ID) {
         super(ID, Material.ground);
         this.setHardness(0.5F);
         this.SetShovelsEffectiveOn();
