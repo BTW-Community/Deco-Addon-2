@@ -18,6 +18,7 @@ public class AddonRecipes {
 		addDecoRecipes();
 		addMortarRecipes();
 		addToolRecipes();
+		addCustomRecipeClasses();
 	}
 	
 	private void addClayRecipes() {
@@ -192,6 +193,12 @@ public class AddonRecipes {
 	}
 	
 	private void addWoodRecipes() {
+		//Stripped Logs
+		for (int i = 0; i < 4; i++) {
+			FCRecipes.AddShapelessRecipe(new ItemStack(AddonDefs.strippedLog, 1, i), new Object[] {new ItemStack(FCBetterThanWolves.fcItemChiselIron, 1, 32767), new ItemStack(Block.wood, 1, i)});
+			FCRecipes.AddShapelessRecipe(new ItemStack(AddonDefs.strippedLog, 1, i), new Object[] {new ItemStack(AddonDefs.chiselDiamond, 1, 32767), new ItemStack(Block.wood, 1, i)});
+		}
+		
 		//Trapdoors
         FCRecipes.RemoveVanillaRecipe(new ItemStack(Block.trapdoor, 1), new Object[] {"WW#", "WW#", '#', Item.stick, 'W', Block.planks});
         FCRecipes.RemoveVanillaRecipe(new ItemStack(Block.trapdoor, 2), new Object[] {"WW#", "WW#", '#', Item.stick, 'W', new ItemStack(FCBetterThanWolves.fcBlockWoodSidingItemStubID, 1, 32767)});
@@ -238,7 +245,6 @@ public class AddonRecipes {
         FCRecipes.AddRecipe(new ItemStack(AddonDefs.gateBlood, 1), new Object[] {"#X#", '#', new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, 4), 'X', new ItemStack(FCBetterThanWolves.fcBlockWoodSidingItemStubID, 1, 4)});
         
         //Painted Planks
-
 		for (int Index = 0; Index < 32; Index++)
 		{
 			FCRecipes.AddStokedCauldronRecipe(new ItemStack(AddonDefs.planksPainted,1,Index % 16),
@@ -246,6 +252,9 @@ public class AddonRecipes {
 			//FCRecipes.AddRecipe(new ItemStack(stainedGlassPane, 16, Index), new Object[] { "GGG", "GGG", 'G', new ItemStack(stainedGlass, 1, Index) });
 			//FCRecipes.AddStokedCrucibleRecipe(new ItemStack(stainedGlass, 3, Index), new ItemStack[] { new ItemStack(stainedGlassPane, 8, Index) });
 		}
+		
+		//Pergola
+		FCRecipes.AddRecipe(new ItemStack(AddonDefs.pergola), new Object[] {" X ", "X X", " X ", 'X', new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, 32767)});
 	}
 	
 	private void addDecoRecipes() {
@@ -353,5 +362,9 @@ public class AddonRecipes {
 		FCRecipes.AddShapelessRecipe(new ItemStack(FCBetterThanWolves.fcItemStone, 2), new Object[] {new ItemStack(AddonDefs.chiselDiamond, 1, 32767), new ItemStack(FCBetterThanWolves.fcItemStoneBrick)});
         FCRecipes.AddShapelessRecipeWithSecondaryOutputIndicator(new ItemStack(FCBetterThanWolves.fcItemStoneBrick, 4), new Object[] {new ItemStack(AddonDefs.chiselDiamond, 1, 32767), new ItemStack(Block.stone)});
         FCRecipes.AddStokedCrucibleRecipe(new ItemStack(FCBetterThanWolves.fcItemIngotDiamond, 1), new ItemStack[] {new ItemStack(AddonDefs.chiselDiamond, 1, 32767)});
+	}
+	
+	private void addCustomRecipeClasses() {
+        CraftingManager.getInstance().getRecipeList().add(new AddonRecipesLogChopping());
 	}
 }

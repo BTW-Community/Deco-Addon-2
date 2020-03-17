@@ -289,6 +289,7 @@ public class AddonDefs {
 		AddonManager.Name(FCBetterThanWolves.fcBloodWood, "Blood Wood Log");
 		
 		//Stripped Logs
+		strippedLog = new AddonBlockLogStripped(id_strippedLog);
 		
 		//Trapdoors
 		//Forces oak trap doors to inherit texture rotations and eventually better placement
@@ -404,5 +405,8 @@ public class AddonDefs {
 		AddonManager.Name(Item.shovelDiamond, "Diamondium Spade");
 		AddonManager.Name(Item.hoeDiamond, "Diamondium Hoe");
 		AddonManager.Name(Item.swordDiamond, "Diamondium Sword");
+		
+		//Allows custom saw recipes
+		FCBetterThanWolves.fcSaw = new AddonBlockSaw((FCBlockSaw) FCBetterThanWolves.fcSaw, AddonManager.ReplaceBlockID(FCBetterThanWolves.fcSaw));
 	}
 }

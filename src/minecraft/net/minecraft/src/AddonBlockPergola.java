@@ -100,10 +100,10 @@ public class AddonBlockPergola extends Block {
     		return icon_top;
     	}
     	else if (((side == 2 || side == 3) && metadata <=3) || ((side == 4 || side == 5) && metadata >= 4)) {
-    		return swapSideIcons ? icon_sides_1 : icon_sides_0;
+    		return icon_sides_0;
     	}
     	else {
-    		return swapSideIcons ? icon_sides_0 : icon_sides_1;
+    		return icon_sides_1;
     	}
     }
     
