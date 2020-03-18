@@ -25,7 +25,17 @@ public class AddonManager extends FCAddOn
 	private static ArrayList<String> Names = new ArrayList<String>();
 	private static ArrayList<Object> NameTargets = new ArrayList<Object>();
 	private static ArrayList<String> loadedAddons = new ArrayList<String>();
+	
+	private static boolean isObfuscated = false;
 
+	@Override
+	public void PreInitialize() {
+		AddonUtilsObfuscationMap.initialize();
+		//AddonUtilsObfuscationMap.listAllBlockFields();
+		//AddonUtilsObfuscationMap.listAllItemFields();
+	}
+	
+	@Override
 	public void Initialize()
 	{
 		System.out.println("[INFO] AddonManager: Initialize");
@@ -35,6 +45,10 @@ public class AddonManager extends FCAddOn
 		
 		addonDefs.addDefinitions();
 		addonRecipes.addAllAddonRecipes();
+	}
+	
+	public boolean getObfuscation() {
+		return isObfuscated;
 	}
 	
 	private static boolean Create_HasCall=false;
@@ -111,8 +125,15 @@ public class AddonManager extends FCAddOn
 	}
 	
 	//Does really hacky stuff using reflection to replace final references to vanilla blocks
-	public static void SetVanillaBlockFinal(String name, Block oldBlock, Block newBlock) {
+	public static void SetVanillaBlockFinal(String blockName, Block oldBlock, Block newBlock) {
 		try {
+			String name;
+			
+			if (isObfuscated)
+				name = AddonUtilsObfuscationMap.getBlockLookup(blockName);
+			else
+				name = blockName;
+			
 			Field block = (AddonDefs.terracotta.getClass().getDeclaredField(name));
 			block.setAccessible(true);
 			
@@ -124,16 +145,18 @@ public class AddonManager extends FCAddOn
 			block.set(newBlock, newBlock);
 			block.setAccessible(false);
 		} catch (NoSuchFieldException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			if (isObfuscated) {
+				e.printStackTrace();
+			}
+			else {
+				isObfuscated = true;
+				SetVanillaBlockFinal(blockName, oldBlock, newBlock);
+			}
 		} catch (SecurityException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IllegalArgumentException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IllegalAccessException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -211,117 +234,6 @@ public class AddonManager extends FCAddOn
 	{
 		Item.itemsList[target.blockID] = new AddonItemMultiBlock(target, names, preTitle, titles, "");
 	}
-
-	private static Map<String, Object> GetConfigInfo(String addonName)
-	{
-		File configFile = new File(new File("."),addonName+"Config.txt");
-		Map<String,Object>results = new HashMap<String,Object>();
-		try
-		{
-			BufferedReader reader=new BufferedReader(new FileReader(configFile));
-			String line="";
-			while((line=reader.readLine())!=null)
-			{
-				String[]splitLine=line.split("=");
-				for (int i=0;i<splitLine.length;++i)
-				splitLine[i]=splitLine[i].trim();
-				results.put(splitLine[0],(splitLine[1]=="1"||splitLine[1]=="0")?splitLine[1]=="1":splitLine[1]);
-			}
-			reader.close();
-		}
-		catch(Exception x)
-		{
-			x.printStackTrace();
-		}
-		return results;
-	}
-	private static void WriteToConfigFile(String addonName, Map<String, Object> contents)
-	{
-		File configFile = new File(new File("."),addonName+"Config.txt");
-		PrintWriter writer;
-		try
-		{
-			writer = new PrintWriter(configFile);
-		}
-		catch (Exception e)
-		{
-			e.printStackTrace();
-			return;
-		}
-		for(String currentKey:contents.keySet())
-		{
-			Object value=contents.get(currentKey);
-			writer.println(currentKey+"="+((value instanceof Boolean)?((Boolean)value==true?"1":"0"):value.toString()));
-		}
-		writer.close();
-	}
-	public static Map<String, Object> GetConfigInfo(String addonName, Map<String, Object> defaultConfig)
-	{
-		File configFile = new File(new File("."),addonName+"Config.txt");
-		if(!configFile.exists())
-		{
-			WriteToConfigFile(addonName, defaultConfig);
-			return defaultConfig;
-		}
-		Map<String,Object>currentConfig=GetConfigInfo(addonName),newConfig=defaultConfig;
-		boolean NeedsRewrite = false;
-		for(String currentKey:defaultConfig.keySet())
-		{
-			if(currentConfig.containsKey(currentKey))
-			newConfig.put(currentKey, currentConfig.get(currentKey));
-			else
-			NeedsRewrite=true;
-		}
-		if(NeedsRewrite)
-		WriteToConfigFile(addonName, currentConfig);
-		return newConfig;
-	}
-	public static boolean require(String name)
-	{
-		//The original way I wrote this method was stupid and did not make sense.
-		return isAddonLoaded(name);
-	}
-	public static boolean isAddonLoaded(String name)
-	{
-		return loadedAddons.contains(name);
-	}
-	public static boolean loadAddon(String name)
-	{
-		try
-		{
-			Class.forName("Addon_"+name).newInstance();
-			System.out.println("[INFO] Loaded addon: " + name);
-			loadedAddons.add(name);
-			return true;
-		}
-		catch (ClassNotFoundException ex1)
-		{
-			try
-			{
-				Class.forName(AddonManager.class.getPackage().getName()+".Addon_"+name).newInstance();
-				System.out.println("[INFO] Loaded addon: " + name);
-				loadedAddons.add(name);
-				return true;
-			}
-			catch (ClassNotFoundException ex2)
-			{
-				System.out.println("[INFO] Addon not found: " + name);
-			}
-			catch (Exception ex3)
-			{
-				System.out.println("[WARN] Problem loading addon: " + name);
-				if(DEBUG_ADDON_LOAD) ex3.printStackTrace();
-			}
-			return false;
-		}
-		catch (Exception ex4)
-		{
-			System.out.println("[WARN] Problem loading addon: " + name);
-			if(DEBUG_ADDON_LOAD) ex4.printStackTrace();
-			return false;
-		}
-	}
-
 
 	public static void serverCustomPacketReceived(MinecraftServer ms, EntityPlayerMP epmp, Packet250CustomPayload packet) {
 		try {

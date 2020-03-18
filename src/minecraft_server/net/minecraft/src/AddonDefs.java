@@ -278,10 +278,10 @@ public class AddonDefs {
 	
 	private void addWoodDefs() {
 		//Logs
-		//BlockLog addonLog = new AddonBlockLogReplace(AddonManager.ReplaceBlockID(Block.wood));
-		//AddonManager.SetVanillaBlockFinal("wood", Block.wood, addonLog);
+		BlockLog addonLog = new AddonBlockLogReplace(AddonManager.ReplaceBlockID(Block.wood));
+		AddonManager.SetVanillaBlockFinal("wood", Block.wood, addonLog);
 		
-		//Item.itemsList[Block.wood.blockID] = new ItemMultiTextureTile(Block.wood.blockID - 256, Block.wood, new String[] {"oakLog", "spruceLog", "brichLog", "jungleLog"});
+		Item.itemsList[Block.wood.blockID] = new ItemMultiTextureTile(Block.wood.blockID - 256, Block.wood, new String[] {"oakLog", "spruceLog", "brichLog", "jungleLog"});
 		
 		AddonManager.Name(new ItemStack(Block.wood, 1, 0), "Oak Log");
 		AddonManager.Name(new ItemStack(Block.wood, 1, 1), "Spruce Log");
