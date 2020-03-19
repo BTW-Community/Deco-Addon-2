@@ -163,8 +163,8 @@ public class AddonManager extends FCAddOn
 	
 	//Used to replace item ids
 	public static int ReplaceItemID(Item item) {
-		Item.itemsList[item.itemID] = null; 
-		return item.itemID;
+		Item.itemsList[item.itemID - 256] = null; 
+		return item.itemID - 256;
 	}
 	
 	//Does really hacky stuff using reflection to replace final references to vanilla blocks
