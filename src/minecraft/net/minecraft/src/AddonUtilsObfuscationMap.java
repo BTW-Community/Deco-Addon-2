@@ -21,17 +21,4 @@ public class AddonUtilsObfuscationMap {
 	public static String getItemLookup(String itemName) {
 		return itemMap.get(itemName);
 	}
-	
-	public static void listAllBlockFields() {
-		Block block = new Block(4095, Material.rock);
-		Field[] fields = block.getClass().getDeclaredFields();
-		
-		for (Field f : fields) {
-			System.out.println(f);
-		}
-	}
-	
-	public static void listAllItemFields() {
-		
-	}
 }

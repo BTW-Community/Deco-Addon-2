@@ -67,9 +67,6 @@ public class AddonBlockPortal extends FCBlockPortal {
 		
 		int xDiff = xDistPos - xDistNeg + 1;
 		int zDiff = zDistPos - zDistNeg + 1;
-
-		System.out.println("Xdiff: " + xDiff + ", XVals: " + xDistNeg + ", " + xDistPos);
-		System.out.println("Zdiff: " + zDiff + ", ZVals: " + zDistNeg + ", " + zDistPos);
 		
 		//If obsidian is too far or too close (or doesn't exist) in both x and z, stop attempt
 		if ((xDiff < 4 && zDiff < 4) || (xDiff > maxPortalWidth && zDiff > maxPortalWidth) || (xDiff > maxPortalWidth && zDiff < 4) || (zDiff > maxPortalWidth && xDiff < 4))
@@ -83,13 +80,11 @@ public class AddonBlockPortal extends FCBlockPortal {
 			zDistPos = 0;
 			zDistNeg = 0;
 			isX = 1;
-			System.out.println("Using X");
 		}
 		else if (zDistPos != 0 && zDistNeg != 0) {
 			xDistPos = 0;
 			xDistNeg = 0;
 			isZ = 1;
-			System.out.println("Using Z");
 		}
 		
 		int yDist = 0;
