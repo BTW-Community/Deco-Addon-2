@@ -394,6 +394,10 @@ public class AddonDefs {
 		//Ran into weird issue where dirt got renamed, so this fixes that
 		AddonManager.Name(Block.dirt, "Dirt");
 		//podzolSlab = new AddonBlockDirtSlab(id_podzolSlab));
+		
+		//Nether portal
+		BlockPortal addonPortal = (BlockPortal) new AddonBlockPortal(AddonManager.ReplaceBlockID(Block.portal));
+		AddonManager.SetVanillaBlockFinal("portal", Block.portal, addonPortal);
 	}
 	
 	private void addToolDefs() {
