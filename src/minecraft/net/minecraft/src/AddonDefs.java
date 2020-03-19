@@ -408,9 +408,13 @@ public class AddonDefs {
 		AddonManager.Name(FCBetterThanWolves.fcItemIngotDiamond, "Diamondium Ingot");
 		AddonManager.Name(Item.pickaxeDiamond, "Diamondium Pickaxe");
 		AddonManager.Name(Item.axeDiamond, "Diamondium Axe");
-		AddonManager.Name(Item.shovelDiamond, "Diamondium Spade");
+		AddonManager.Name(Item.shovelDiamond, "Diamondium Shovel");
 		AddonManager.Name(Item.hoeDiamond, "Diamondium Hoe");
 		AddonManager.Name(Item.swordDiamond, "Diamondium Sword");
+		AddonManager.Name(Item.helmetDiamond, "Diamondium Helmet");
+		AddonManager.Name(Item.plateDiamond, "Diamondium Chestplate");
+		AddonManager.Name(Item.legsDiamond, "Diamondium Leggings");
+		AddonManager.Name(Item.bootsDiamond,  "Diamondium Boots");
 		
 		//Allows custom saw recipes
 		FCBetterThanWolves.fcSaw = new AddonBlockSaw((FCBlockSaw) FCBetterThanWolves.fcSaw, AddonManager.ReplaceBlockID(FCBetterThanWolves.fcSaw));

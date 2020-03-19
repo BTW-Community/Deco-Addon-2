@@ -8,8 +8,37 @@ public class AddonBlockPortal extends FCBlockPortal {
 		super(id);
 	}
 
-	public void onNeighborBlockChange(World par1World, int par2, int par3, int par4, int par5) {
-		
+	public void onNeighborBlockChange(World world, int x, int y, int z, int neighborID) {
+		//Check direction of the portal
+        byte isX = 0;
+        byte isZ = 1;
+
+        if (world.getBlockId(x - 1, y, z) == this.blockID || world.getBlockId(x + 1, y, z) == this.blockID)
+        {
+            isX = 1;
+            isZ = 0;
+        }
+        
+        int a = 0;
+        int b = 0;
+        int c = 0;
+        int d = 0;
+        
+        while (world.getBlockId(x, y - a, z) == this.blockID)
+        	a++;
+        
+        while (world.getBlockId(x, y + b, z) == this.blockID)
+        	b++;
+        
+        while (world.getBlockId(x - isX*c, y, z - isZ*c) == this.blockID)
+        	c++;
+        
+        while (world.getBlockId(x + isX*d,  y, z + isZ*d) == this.blockID)
+        	d++;
+        
+        if (world.getBlockId(x, y - a, z) != Block.obsidian.blockID || world.getBlockId(x, y + b, z) != Block.obsidian.blockID || world.getBlockId(x - isX*c, y, z - isZ*c) != Block.obsidian.blockID || world.getBlockId(x + isX*d,  y, z + isZ*d) != Block.obsidian.blockID) {
+        	world.setBlockToAir(x, y, z);
+        }
 	}
 	
 	@Override
@@ -38,6 +67,9 @@ public class AddonBlockPortal extends FCBlockPortal {
 		
 		int xDiff = xDistPos - xDistNeg + 1;
 		int zDiff = zDistPos - zDistNeg + 1;
+
+		System.out.println("Xdiff: " + xDiff + ", XVals: " + xDistNeg + ", " + xDistPos);
+		System.out.println("Zdiff: " + zDiff + ", ZVals: " + zDistNeg + ", " + zDistPos);
 		
 		//If obsidian is too far or too close (or doesn't exist) in both x and z, stop attempt
 		if ((xDiff < 4 && zDiff < 4) || (xDiff > maxPortalWidth && zDiff > maxPortalWidth) || (xDiff > maxPortalWidth && zDiff < 4) || (zDiff > maxPortalWidth && xDiff < 4))
@@ -46,16 +78,18 @@ public class AddonBlockPortal extends FCBlockPortal {
 		int isX = 0;
 		int isZ = 0;
 		
-		//Finds which direction has the smallest portal horizontally, favoring x if they are the same
-		if (xDiff >= zDiff) {
+		//Finds the direction with a calid portal, favoring x
+		if (xDistPos != 0 && xDistNeg != 0) {
 			zDistPos = 0;
 			zDistNeg = 0;
 			isX = 1;
+			System.out.println("Using X");
 		}
-		else if (zDiff > xDiff) {
+		else if (zDistPos != 0 && zDistNeg != 0) {
 			xDistPos = 0;
 			xDistNeg = 0;
 			isZ = 1;
+			System.out.println("Using Z");
 		}
 		
 		int yDist = 0;
@@ -78,7 +112,7 @@ public class AddonBlockPortal extends FCBlockPortal {
 		for (int i = lowerBound; i <= upperBound; i++) {
 			for (int j = -1; j < yDist; j++) {
 				int id = world.getBlockId(x + isX * i, y + j, z + isZ * i);
-				System.out.println(id == 0 ? "air" : Block.blocksList[id].getUnlocalizedName());
+				
 				//Ignores corners
 				if ((i != lowerBound && i != upperBound) || (j != -1 && j != yDist - 1)) {
 					
