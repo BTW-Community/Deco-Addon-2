@@ -64,6 +64,7 @@ public class AddonDefs {
 		id_coarseDirtSlab=3301,
 		id_podzol=3302,
 		id_podzolSlab=3303,
+		id_decorativeLeaves=3304,
 		
 		id_flag_start=4000;
 	
@@ -127,6 +128,7 @@ public class AddonDefs {
 	public static Block coarseDirtSlab;
 	public static Block podzol;
 	public static Block podzolSlab;
+	public static BlockLeaves decorativeLeaves;
 	
 	//Tools
 	public static AddonItemChiselDiamond chiselDiamond;
@@ -281,7 +283,7 @@ public class AddonDefs {
 		BlockLog addonLog = new AddonBlockLogReplace(AddonManager.ReplaceBlockID(Block.wood));
 		AddonManager.SetVanillaBlockFinal("wood", Block.wood, addonLog);
 		
-		Item.itemsList[Block.wood.blockID] = new ItemMultiTextureTile(Block.wood.blockID - 256, Block.wood, new String[] {"oakLog", "spruceLog", "brichLog", "jungleLog"});
+		Item.itemsList[Block.wood.blockID] = new AddonItemBlockLog(Block.wood.blockID - 256, Block.wood, new String[] {"oakLog", "spruceLog", "brichLog", "jungleLog"});
 		
 		AddonManager.Name(new ItemStack(Block.wood, 1, 0), "Oak Log");
 		AddonManager.Name(new ItemStack(Block.wood, 1, 1), "Spruce Log");
@@ -292,6 +294,7 @@ public class AddonDefs {
 		
 		//Stripped Logs
 		strippedLog = new AddonBlockLogStripped(id_strippedLog);
+		Item.itemsList[AddonDefs.strippedLog.blockID] = new AddonItemBlockLogStripped(AddonDefs.strippedLog.blockID - 256, AddonDefs.strippedLog, new String[] {"oakLogStripped", "spruceLogStripped", "brichLogStripped", "jungleLogStripped"});
 		
 		//Trapdoors
 		//Forces oak trap doors to inherit texture rotations and eventually better placement
@@ -338,6 +341,10 @@ public class AddonDefs {
 		AddonManager.Register(gateBirch, "Birch Fence Gate");
 		AddonManager.Register(gateJungle, "Jungle Fence Gate");
 		AddonManager.Register(gateBlood, "Blood Wood Fence Gate");
+		
+		//Fences
+		Block fence = new AddonBlockFenceWood(AddonManager.ReplaceBlockID(Block.fence));
+		AddonManager.SetVanillaBlockFinal("fence", Block.fence, fence);
 		
 		//Painted planks
 		planksPainted = (new AddonBlockPlanksPainted(id_planksPainted, "ginger_planksPainted", "Painted Planks")).setHardness(2.0F).setResistance(10.0F).setStepSound(Block.soundStoneFootstep).setCreativeTab(CreativeTabs.tabBlock);
@@ -398,6 +405,10 @@ public class AddonDefs {
 		//Nether portal
 		BlockPortal addonPortal = (BlockPortal) new AddonBlockPortal(AddonManager.ReplaceBlockID(Block.portal));
 		AddonManager.SetVanillaBlockFinal("portal", Block.portal, addonPortal);
+		
+		//Decorative leaves
+		decorativeLeaves = new FCBlockLeaves(id_decorativeLeaves);
+		AddonManager.Register(decorativeLeaves, new String[] {"oakLeavesDeco", "spruceLeavesDeco", "birchLeavesDeco", "jungleLeavesDeco"}, new String[] {"Decorative Oak Leaves", "Decorative Spruce Leaves", "Decorative Birch Leaves", "Decorative Jungle Leaves"});
 	}
 	
 	private void addToolDefs() {

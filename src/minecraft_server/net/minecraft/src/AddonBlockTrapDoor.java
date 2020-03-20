@@ -39,9 +39,10 @@ public class AddonBlockTrapDoor extends FCBlockTrapDoor {
 
 		if (side != 1 && side != 0 && hitY > 0.5F)
 		{
-			var10 |= 8;
+			var10 += 8;
 		}
-		else {
+		
+		if (side == 1){
 			flagBetterPlaceRule = true;
 			betterPlaceRuleIsLower = (side == 1 ? true : false);
 		}
