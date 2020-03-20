@@ -11,6 +11,8 @@ public class AddonUtilsObfuscationMap {
 	public static void initialize() {
 		blockMap.put("wood", "N");
 		blockMap.put("trapdoor", "bo");
+		blockMap.put("portal", "bi");
+		blockMap.put("fence", "bd");
 	}
 	
 	public static String getBlockLookup(String blockName) {
@@ -19,18 +21,5 @@ public class AddonUtilsObfuscationMap {
 	
 	public static String getItemLookup(String itemName) {
 		return itemMap.get(itemName);
-	}
-	
-	public static void listAllBlockFields() {
-		Block block = new Block(4095, Material.rock);
-		Field[] fields = block.getClass().getDeclaredFields();
-		
-		for (Field f : fields) {
-			System.out.println(f);
-		}
-	}
-	
-	public static void listAllItemFields() {
-		
 	}
 }

@@ -29,8 +29,13 @@ public class AddonItemChiselDiamond extends FCItemChisel {
 
 	public boolean IsDamagedInCrafting()
 	{
-		return true;
+		return false;
 	}
+
+    public boolean IsConsumedInCrafting()
+    {
+        return false;
+    }
 
 	public void OnUsedInCrafting(EntityPlayer var1, ItemStack var2)
 	{

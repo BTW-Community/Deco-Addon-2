@@ -195,8 +195,8 @@ public class AddonRecipes {
 	private void addWoodRecipes() {
 		//Stripped Logs
 		for (int i = 0; i < 4; i++) {
-			FCRecipes.AddShapelessRecipe(new ItemStack(AddonDefs.strippedLog, 1, i), new Object[] {new ItemStack(FCBetterThanWolves.fcItemChiselIron, 1, 32767), new ItemStack(Block.wood, 1, i)});
-			FCRecipes.AddShapelessRecipe(new ItemStack(AddonDefs.strippedLog, 1, i), new Object[] {new ItemStack(AddonDefs.chiselDiamond, 1, 32767), new ItemStack(Block.wood, 1, i)});
+			FCRecipes.AddShapelessRecipeWithSecondaryOutputIndicator(new ItemStack(AddonDefs.strippedLog, 1, i), new Object[] {new ItemStack(FCBetterThanWolves.fcItemChiselIron, 1, 32767), new ItemStack(Block.wood, 1, i)});
+			FCRecipes.AddShapelessRecipeWithSecondaryOutputIndicator(new ItemStack(AddonDefs.strippedLog, 1, i), new Object[] {new ItemStack(AddonDefs.chiselDiamond, 1, 32767), new ItemStack(Block.wood, 1, i)});
 		}
 		
 		//Trapdoors
@@ -283,7 +283,7 @@ public class AddonRecipes {
         FCRecipes.AddAnvilRecipe(new ItemStack(FCBetterThanWolves.fcItemWickerPiece, 2), new Object[] {"X X ", " X X", "X X ", " X X", 'X', Item.reed});
         
         //Coarse Dirt
-        FCRecipes.AddShapelessRecipe(new ItemStack(AddonDefs.coarseDirt, 2), new ItemStack[] {new ItemStack(Block.dirt), new ItemStack(Block.gravel)});
+        FCRecipes.AddShapelessRecipe(new ItemStack(AddonDefs.coarseDirt, 1), new ItemStack[] {new ItemStack(Block.dirt), new ItemStack(Block.gravel)});
         FCRecipes.AddRecipe(new ItemStack(AddonDefs.coarseDirt), new Object[] {"X", "X", 'X', AddonDefs.coarseDirtSlab});
         FCRecipes.AddRecipe(new ItemStack(AddonDefs.coarseDirtSlab, 4), new Object[] {"XX", 'X', AddonDefs.coarseDirt});
         

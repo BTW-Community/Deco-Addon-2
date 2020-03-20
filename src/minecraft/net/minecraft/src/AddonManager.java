@@ -18,7 +18,6 @@ import net.minecraft.server.MinecraftServer;
 
 public class AddonManager extends FCAddOn
 {
-	public static final boolean DEBUG_ADDON_LOAD = false;
 	public static AddonDefs addonDefs;
 	public static AddonRecipes addonRecipes;
 
