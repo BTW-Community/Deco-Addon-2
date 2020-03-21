@@ -83,6 +83,11 @@ public class AddonBlockTrapDoor extends FCBlockTrapDoor {
 		}
 	}
 
+    public boolean IsBlockClimbable(World var1, int var2, int var3, int var4)
+    {
+        return var1.getBlockId(var2, var3 - 1, var4) == FCBetterThanWolves.fcBlockLadder.blockID || var1.getBlockId(var2, var3 - 1, var4) == FCBetterThanWolves.fcBlockLadderOnFire.blockID;
+    }
+
 	//CLIENT ONLY
 	public void registerIcons(IconRegister var1)
 	{

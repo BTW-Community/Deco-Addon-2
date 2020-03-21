@@ -60,6 +60,8 @@ public class AddonDefs {
 		id_gateBlood=3231,
 		id_planksPainted=3232,
 		id_pergola=3240,
+		id_paintedPlanksSubStart=3249,
+		//end 3299
 		id_coarseDirt=3300,
 		id_coarseDirtSlab=3301,
 		id_podzol=3302,
@@ -295,6 +297,10 @@ public class AddonDefs {
 		//Stripped Logs
 		strippedLog = new AddonBlockLogStripped(id_strippedLog);
 		Item.itemsList[AddonDefs.strippedLog.blockID] = new AddonItemBlockLogStripped(AddonDefs.strippedLog.blockID - 256, AddonDefs.strippedLog, new String[] {"oakLogStripped", "spruceLogStripped", "brichLogStripped", "jungleLogStripped"});
+		
+		//Ladders (used for block bounds change)
+		FCBetterThanWolves.fcBlockLadder = new AddonBlockLadder(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockLadder));
+		FCBetterThanWolves.fcBlockLadderOnFire = new AddonBlockLadderOnFire(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockLadderOnFire));
 		
 		//Trapdoors
 		//Forces oak trap doors to inherit texture rotations and eventually better placement

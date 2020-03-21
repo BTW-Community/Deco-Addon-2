@@ -1,5 +1,7 @@
 package net.minecraft.src;
 
+import java.util.Random;
+
 public class AddonBlockDoorWood extends FCBlockDoorWood {
 	private String[] doorIconNames;
 	
@@ -7,6 +9,37 @@ public class AddonBlockDoorWood extends FCBlockDoorWood {
 		super(ID);
 		doorIconNames = textures;
 	}
+	
+	@Override
+    public int idDropped(int par1, Random par2Random, int par3) {
+		switch (this.blockID) {
+		case AddonDefs.id_doorSpruce:
+			return AddonDefs.itemDoorSpruce.itemID;
+		case AddonDefs.id_doorBirch:
+			return AddonDefs.itemDoorBirch.itemID;
+		case AddonDefs.id_doorJungle:
+			return AddonDefs.itemDoorJungle.itemID;
+		case AddonDefs.id_doorBlood:
+			return AddonDefs.itemDoorBlood.itemID;
+		default:
+			return AddonDefs.itemDoorSpruce.itemID;
+		}
+	}
+	
+    public int idPicked(World par1World, int par2, int par3, int par4) {
+		switch (this.blockID) {
+		case AddonDefs.id_doorSpruce:
+			return AddonDefs.itemDoorSpruce.itemID;
+		case AddonDefs.id_doorBirch:
+			return AddonDefs.itemDoorBirch.itemID;
+		case AddonDefs.id_doorJungle:
+			return AddonDefs.itemDoorJungle.itemID;
+		case AddonDefs.id_doorBlood:
+			return AddonDefs.itemDoorBlood.itemID;
+		default:
+			return AddonDefs.itemDoorSpruce.itemID;
+		}
+    }
 	
 	//CLIENT ONLY
 	/** Used for pointing at icon names. */
