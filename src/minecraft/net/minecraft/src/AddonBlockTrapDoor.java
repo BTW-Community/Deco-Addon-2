@@ -41,7 +41,7 @@ public class AddonBlockTrapDoor extends FCBlockTrapDoor {
 		{
 			var10 += 8;
 		}
-		
+
 		if (side == 1){
 			flagBetterPlaceRule = true;
 			betterPlaceRuleIsLower = (side == 1 ? true : false);
@@ -78,15 +78,15 @@ public class AddonBlockTrapDoor extends FCBlockTrapDoor {
 			{
 				world.setBlockMetadataWithNotify(x, y, z, metadataMod + 2, 2);
 			}
-			
+
 			flagBetterPlaceRule = false;
 		}
 	}
 
-    public boolean IsBlockClimbable(World var1, int var2, int var3, int var4)
-    {
-        return var1.getBlockId(var2, var3 - 1, var4) == FCBetterThanWolves.fcBlockLadder.blockID || var1.getBlockId(var2, var3 - 1, var4) == FCBetterThanWolves.fcBlockLadderOnFire.blockID;
-    }
+	public boolean IsBlockClimbable(World var1, int var2, int var3, int var4)
+	{
+		return var1.getBlockId(var2, var3 - 1, var4) == FCBetterThanWolves.fcBlockLadder.blockID || var1.getBlockId(var2, var3 - 1, var4) == FCBetterThanWolves.fcBlockLadderOnFire.blockID;
+	}
 
 	//CLIENT ONLY
 	public void registerIcons(IconRegister var1)
@@ -106,53 +106,56 @@ public class AddonBlockTrapDoor extends FCBlockTrapDoor {
 		//2 north
 		//3 south
 
-		switch(r.blockAccess.getBlockMetadata(X, Y, Z)) {
-		case 0:
-		case 8:
-			r.SetUvRotateTop(3);
-			r.SetUvRotateBottom(3);
-			break;
-		case 1:
-		case 9:
-			r.SetUvRotateTop(0);
-			r.SetUvRotateBottom(0);
-			break;
-		case 2:
-		case 10:
-			r.SetUvRotateTop(1);
-			r.SetUvRotateBottom(1);
-			break;
-		case 3:
-		case 11:
-			r.SetUvRotateTop(2);
-			r.SetUvRotateBottom(2);
-			break;
-		case 4:
-		case 5:
-			r.SetUvRotateEast(3);
-			r.SetUvRotateWest(3);
-			r.SetUvRotateNorth(1);
-			r.SetUvRotateSouth(1);
-			r.SetUvRotateTop(1);
-			r.SetUvRotateBottom(1);
-			break;
-		case 6:
-		case 7:
-			r.SetUvRotateEast(1);
-			r.SetUvRotateWest(1);
-			r.SetUvRotateNorth(3);
-			r.SetUvRotateSouth(3);
-			r.SetUvRotateTop(1);
-			r.SetUvRotateBottom(1);
-			break;
-		case 14:
-		case 15:
-			r.SetUvRotateTop(1);
-			r.SetUvRotateBottom(1);
-			break;
-		default:
-			break;
+		if (r.blockAccess.getBlockId(X, Y, Z) != blockClay.trapdoor.blockID) {
+			switch(r.blockAccess.getBlockMetadata(X, Y, Z)) {
+			case 0:
+			case 8:
+				r.SetUvRotateTop(3);
+				r.SetUvRotateBottom(3);
+				break;
+			case 1:
+			case 9:
+				r.SetUvRotateTop(0);
+				r.SetUvRotateBottom(0);
+				break;
+			case 2:
+			case 10:
+				r.SetUvRotateTop(1);
+				r.SetUvRotateBottom(1);
+				break;
+			case 3:
+			case 11:
+				r.SetUvRotateTop(2);
+				r.SetUvRotateBottom(2);
+				break;
+			case 4:
+			case 5:
+				r.SetUvRotateEast(3);
+				r.SetUvRotateWest(3);
+				r.SetUvRotateNorth(1);
+				r.SetUvRotateSouth(1);
+				r.SetUvRotateTop(1);
+				r.SetUvRotateBottom(1);
+				break;
+			case 6:
+			case 7:
+				r.SetUvRotateEast(1);
+				r.SetUvRotateWest(1);
+				r.SetUvRotateNorth(3);
+				r.SetUvRotateSouth(3);
+				r.SetUvRotateTop(1);
+				r.SetUvRotateBottom(1);
+				break;
+			case 14:
+			case 15:
+				r.SetUvRotateTop(1);
+				r.SetUvRotateBottom(1);
+				break;
+			default:
+				break;
+			}
 		}
+
 		r.renderStandardBlock(this, X, Y, Z);
 		r.ClearUvRotation();
 		return true;

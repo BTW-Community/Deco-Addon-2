@@ -15,6 +15,7 @@ public class AddonRecipes {
 		addFlowerRecipes();
 		addStoneRecipes();
 		addWoodRecipes();
+		addPaintedPlanksRecipes();
 		addDecoRecipes();
 		addMortarRecipes();
 		addToolRecipes();
@@ -25,7 +26,7 @@ public class AddonRecipes {
 		AddonDefs.unfiredTerracotta.SetCanBeCookedByKiln(true).SetItemIndexDroppedWhenCookedByKiln(AddonDefs.terracotta.blockID);
 		for (int i = 0; i < 32; i++)
 		{
-			FCRecipes.AddStokedCauldronRecipe(new ItemStack(AddonDefs.stainedTerracotta, 1, i), new ItemStack[] { new ItemStack(AddonDefs.terracotta), new ItemStack(Item.dyePowder, 1, i) });
+			FCRecipes.AddStokedCauldronRecipe(new ItemStack(AddonDefs.stainedTerracotta, 8, i), new ItemStack[] { new ItemStack(AddonDefs.terracotta, 8), new ItemStack(Item.dyePowder, 1, i) });
 		}
 		FCRecipes.AddRecipe(new ItemStack(AddonDefs.unfiredTerracotta, 1), new Object[] {"###", "#@#", "###", '#', FCBetterThanWolves.fcItemPileSand, '@', Item.clay});
 		FCRecipes.AddRecipe(new ItemStack(AddonDefs.unfiredTerracotta, 1), new Object[] {"###", "#@#", "###", '#', FCBetterThanWolves.fcItemPileSand, '@', FCBetterThanWolves.fcItemNetherSludge});
@@ -93,8 +94,8 @@ public class AddonRecipes {
 		FCRecipes.AddRecipe(new ItemStack(Item.glassBottle, 3), new Object[] {" # ", "# #", "###", '#', AddonDefs.glassChunk});
 		FCRecipes.AddStokedCrucibleRecipe(new ItemStack(AddonDefs.glassChunk, 2), new ItemStack[] {new ItemStack(Item.glassBottle, 1)});
 		
-		for (int Index = 0; Index < 16; Index++) {
-			FCRecipes.AddStokedCauldronRecipe(new ItemStack(AddonDefs.stainedGlassItem, 1, Index), new ItemStack[] {new ItemStack(Block.glass), new ItemStack(Item.dyePowder, 1, Index+16)});
+		for (int Index = 0; Index < 32; Index++) {
+			FCRecipes.AddStokedCauldronRecipe(new ItemStack(AddonDefs.stainedGlassItem, 8, Index % 16), new ItemStack[] {new ItemStack(Block.glass, 8), new ItemStack(Item.dyePowder, 1, Index)});
 		}
 	}
 	
@@ -185,7 +186,7 @@ public class AddonRecipes {
 		FCRecipes.AddStokedCrucibleRecipe(new ItemStack(AddonDefs.graniteCobbleLoose, 8), new ItemStack[] {new ItemStack(AddonDefs.dioriteCobbleLoose, 8), new ItemStack(Item.netherQuartz)});
 		FCRecipes.AddStokedCrucibleRecipe(new ItemStack(AddonDefs.andesiteCobbleLoose, 8), new ItemStack[] {new ItemStack(AddonDefs.dioriteCobbleLoose, 8), new ItemStack(FCBetterThanWolves.fcItemStone, 8)});
 		FCRecipes.AddStokedCrucibleRecipe(new ItemStack(AddonDefs.andesiteCobbleLoose, 1), new ItemStack[] {new ItemStack(AddonDefs.dioriteCobbleLoose, 1), new ItemStack(FCBetterThanWolves.fcItemStone, 1)});
-		FCRecipes.AddStokedCrucibleRecipe(new ItemStack(AddonDefs.graniteCobbleLoose, 8), new ItemStack[] {new ItemStack(FCBetterThanWolves.fcBlockCobblestoneLoose, 8), new ItemStack(Item.netherQuartz)});
+		FCRecipes.AddStokedCrucibleRecipe(new ItemStack(AddonDefs.dioriteCobbleLoose, 8), new ItemStack[] {new ItemStack(FCBetterThanWolves.fcBlockCobblestoneLoose, 8), new ItemStack(Item.netherQuartz)});
 		
 		FCRecipes.AddStokedCrucibleRecipe(new ItemStack(AddonDefs.stoneTypesSmooth, 1, 0), new ItemStack[] {new ItemStack(AddonDefs.stoneTypes, 1, 0)});
 		FCRecipes.AddStokedCrucibleRecipe(new ItemStack(AddonDefs.stoneTypesSmooth, 1, 1), new ItemStack[] {new ItemStack(AddonDefs.stoneTypes, 1, 1)});
@@ -247,14 +248,18 @@ public class AddonRecipes {
         //Painted Planks
 		for (int Index = 0; Index < 32; Index++)
 		{
-			FCRecipes.AddStokedCauldronRecipe(new ItemStack(AddonDefs.planksPainted,1,Index % 16),
-				new ItemStack[]{new ItemStack(Item.dyePowder,1,Index),new ItemStack(Block.planks)});
+			FCRecipes.AddStokedCauldronRecipe(new ItemStack(AddonDefs.planksPainted,8,Index % 16),
+				new ItemStack[]{new ItemStack(Item.dyePowder,1,Index),new ItemStack(Block.planks, 8)});
 			//FCRecipes.AddRecipe(new ItemStack(stainedGlassPane, 16, Index), new Object[] { "GGG", "GGG", 'G', new ItemStack(stainedGlass, 1, Index) });
 			//FCRecipes.AddStokedCrucibleRecipe(new ItemStack(stainedGlass, 3, Index), new ItemStack[] { new ItemStack(stainedGlassPane, 8, Index) });
 		}
 		
 		//Pergola
 		FCRecipes.AddRecipe(new ItemStack(AddonDefs.pergola), new Object[] {" X ", "X X", " X ", 'X', new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, 32767)});
+	}
+	
+	private void addPaintedPlanksRecipes() {
+		
 	}
 	
 	private void addDecoRecipes() {
@@ -288,7 +293,7 @@ public class AddonRecipes {
         FCRecipes.AddRecipe(new ItemStack(AddonDefs.coarseDirtSlab, 4), new Object[] {"XX", 'X', AddonDefs.coarseDirt});
         
         //Podzol
-        FCRecipes.AddShapelessRecipe(new ItemStack(AddonDefs.podzol, 2), new ItemStack[] {new ItemStack(Block.grass), new ItemStack(Block.sand)});
+        FCRecipes.AddShapelessRecipe(new ItemStack(AddonDefs.podzol, 9), new ItemStack[] {new ItemStack(Block.grass), new ItemStack(AddonDefs.coarseDirt, 8)});
 	}
 	
 	private void addMortarRecipes() {
