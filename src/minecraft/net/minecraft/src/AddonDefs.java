@@ -69,8 +69,8 @@ public class AddonDefs {
 		id_planksPainted=3232,
 		id_pergola=3240,
 		
-		id_paintedPlanksSubStart=3249,
-		//end 3299
+		id_paintedPlanksSubStart=3248,
+		//end 3296
 		id_coarseDirt=3300,
 		id_coarseDirtSlab=3301,
 		id_podzol=3302,
@@ -91,13 +91,17 @@ public class AddonDefs {
 	public static final int
 		id_glassChunk = 30002,
 		id_fertilizer = 30003,
+		
 		id_bottleHempOil = 30007,
 		id_glassStainedItem = 30008,
+		
 		id_itemDoorSpruce = 30020,
 		id_itemDoorBirch = 30021,
 		id_itemDoorJungle = 30022,
 		id_itemDoorBlood = 30023,
-		id_chiselDiamond = 30050;
+		
+		id_chiselDiamond = 30050,
+		id_woodBleach=30051;
 	
 	//Clay
 	public static Block terracotta, stainedTerracotta, unfiredTerracotta;
@@ -137,6 +141,7 @@ public class AddonDefs {
 	public static Block planksPainted;
 	public static Block[] paintedPlanksSidingAndCorner, paintedPlanksMouldingAndDecorative, paintedPlanksStairs;
 	public static Block pergola;
+	public static Item woodBleach;
 	
 	//Deco
 	public static Block blockDiamondium;
@@ -168,6 +173,7 @@ public class AddonDefs {
 		addWoodDefs();
 		addDecoDefs();
 		addToolDefs();
+		addSubBlockReplaceDefs();
 	}
 	
 	private void addClayDefs() {
@@ -380,15 +386,15 @@ public class AddonDefs {
 
         //Sub blocks
 		int start = id_paintedPlanksSubStart,
-				end = start+51,
+				end = start+48,
 				id = start,
 				i = 0;
 		final String main = "Painted Planks";
 		
 		while(i < 16)
 		{
-			paintedPlanksSidingAndCorner[i] = new FCBlockSidingAndCornerAndDecorative(id++, FCBetterThanWolves.fcMaterialPlanks, "ginger_planksPainted_"+i, 2.0F, 5.0F, Block.soundWoodFootstep, "paintedPlanksSiding_"+i).setCreativeTab(CreativeTabs.tabDecorations);;
-			paintedPlanksMouldingAndDecorative[i] = new FCBlockMouldingAndDecorative(id++, FCBetterThanWolves.fcMaterialPlanks, "ginger_planksPainted_"+i, "ginger_paintedPlanks_column_"+i, 3042, 2.0F, 5.0F, Block.soundWoodFootstep, "paintedPlanksMoulding_"+i).setCreativeTab(CreativeTabs.tabDecorations);;
+			paintedPlanksSidingAndCorner[i] = new AddonBlockSidingAndCornerAndDecorative(id++, FCBetterThanWolves.fcMaterialPlanks, "ginger_planksPainted_"+i, 2.0F, 5.0F, Block.soundWoodFootstep, "paintedPlanksSiding_"+i).setCreativeTab(CreativeTabs.tabDecorations);;
+			paintedPlanksMouldingAndDecorative[i] = new FCBlockMouldingAndDecorative(id++, FCBetterThanWolves.fcMaterialPlanks, "ginger_planksPainted_"+i, "ginger_planksPainted_column_"+i, 3042, 2.0F, 5.0F, Block.soundWoodFootstep, "paintedPlanksMoulding_"+i).setCreativeTab(CreativeTabs.tabDecorations);;
 			paintedPlanksStairs[i] = new FCBlockStairs(id++, planksPainted, i).setUnlocalizedName("stairsPaintedPlanks"+i);
 
 			Item.itemsList[paintedPlanksSidingAndCorner[i].blockID] = new FCItemBlockSidingAndCorner(paintedPlanksSidingAndCorner[i].blockID - 256);
@@ -398,6 +404,9 @@ public class AddonDefs {
 
 			i++;//i is metadata from original 16 color set
 		}
+		
+		woodBleach = new Item(id_woodBleach).setUnlocalizedName("ginger_woodBleach").setCreativeTab(CreativeTabs.tabMaterials);
+		AddonManager.Name(woodBleach, "Wood Bleach");
 	
 		//Pergola
 		pergola = new AddonBlockPergola(id_pergola);
@@ -457,8 +466,8 @@ public class AddonDefs {
 		AddonManager.SetVanillaBlockFinal("portal", Block.portal, addonPortal);
 		
 		//Decorative leaves
-		decorativeLeaves = new FCBlockLeaves(id_decorativeLeaves);
-		AddonManager.Register(decorativeLeaves, new String[] {"oakLeavesDeco", "spruceLeavesDeco", "birchLeavesDeco", "jungleLeavesDeco"}, new String[] {"Decorative Oak Leaves", "Decorative Spruce Leaves", "Decorative Birch Leaves", "Decorative Jungle Leaves"});
+		//decorativeLeaves = new FCBlockLeaves(id_decorativeLeaves);
+		//AddonManager.Register(decorativeLeaves, new String[] {"oakLeavesDeco", "spruceLeavesDeco", "birchLeavesDeco", "jungleLeavesDeco"}, new String[] {"Decorative Oak Leaves", "Decorative Spruce Leaves", "Decorative Birch Leaves", "Decorative Jungle Leaves"});
 	}
 	
 	private void addToolDefs() {
@@ -479,5 +488,9 @@ public class AddonDefs {
 		
 		//Allows custom saw recipes
 		FCBetterThanWolves.fcSaw = new AddonBlockSaw((FCBlockSaw) FCBetterThanWolves.fcSaw, AddonManager.ReplaceBlockID(FCBetterThanWolves.fcSaw));
+	}
+	
+	private void addSubBlockReplaceDefs() {
+		
 	}
 }
