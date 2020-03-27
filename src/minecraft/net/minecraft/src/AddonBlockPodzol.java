@@ -5,6 +5,7 @@ import java.util.Random;
 public class AddonBlockPodzol extends FCBlockDirt {
 	protected AddonBlockPodzol(int ID) {
 		super(ID);
+        this.setUnlocalizedName("ginger_podzol");
 		this.setCreativeTab(CreativeTabs.tabBlock);
 	}
 	

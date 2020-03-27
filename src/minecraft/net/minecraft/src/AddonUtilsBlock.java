@@ -20,7 +20,7 @@ public class AddonUtilsBlock {
 		Block block = Block.blocksList[blockID];
 		
 		boolean isFenceConnector = blockID == thisBlock.blockID || isFence(blockID, metadata) || isFenceGate(blockID);
-		boolean isSolid = block != null && block.blockMaterial.isOpaque() && block.renderAsNormalBlock() ? block.blockMaterial != Material.pumpkin : false;
+		boolean isSolid = block != null && block.blockMaterial.isOpaque() && block.renderAsNormalBlock();
 		boolean isGlass = block != null && blockID == Block.glass.blockID || blockID == AddonDefs.glassStained.blockID;
 		boolean hasCenterPoint = FCUtilsWorld.DoesBlockHaveLargeCenterHardpointToFacing(world, x, y, z, Facing.oppositeSide[facing]);
 		

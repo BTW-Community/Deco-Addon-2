@@ -8,6 +8,7 @@ public class AddonBlockDirtCoarseSlab extends FCBlockSlabAttached {
         this.SetShovelsEffectiveOn();
         this.SetHoesEffectiveOn();
         this.setStepSound(soundGravelFootstep);
+        this.setUnlocalizedName("ginger_coarseDirtSlab");
         this.setCreativeTab(CreativeTabs.tabBlock);
 	}
 	
@@ -31,5 +32,11 @@ public class AddonBlockDirtCoarseSlab extends FCBlockSlabAttached {
 	@Override
 	public int GetCombinedBlockID(int var1) {
 		return AddonDefs.coarseDirt.blockID;
+	}
+	
+	//CLIENT ONLY
+	public Icon getIcon(int Side, int Meta)
+	{
+		return AddonDefs.coarseDirt.getIcon(Side, Meta);
 	}
 }

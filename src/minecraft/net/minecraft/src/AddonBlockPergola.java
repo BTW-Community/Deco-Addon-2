@@ -6,7 +6,11 @@ public class AddonBlockPergola extends Block {
     private boolean swapSideIcons;
     
 	protected AddonBlockPergola(int ID) {
-		super(ID, Material.wood);
+		super(ID, FCBetterThanWolves.fcMaterialPlanks);
+        this.setHardness(1.0F);
+        this.setResistance(5.0F);
+        this.SetFireProperties(FCEnumFlammability.PLANKS);
+        this.SetBuoyant();
         this.setStepSound(soundWoodFootstep);
 		this.setCreativeTab(CreativeTabs.tabDecorations);
 		this.InitBlockBounds(this.GetBlockBoundsFromPool());
@@ -39,6 +43,17 @@ public class AddonBlockPergola extends Block {
         FCModelBlock var8 = this.blockModel.MakeTemporaryCopy();
         var8.RotateAroundJToFacing(var7);
         return var8.CollisionRayTrace(var1, var2, var3, var4, var5, var6);
+    }
+
+    public int GetHarvestToolLevel(IBlockAccess var1, int var2, int var3, int var4)
+    {
+        return 2;
+    }
+
+    public boolean DropComponentItemsOnBadBreak(World var1, int var2, int var3, int var4, int var5, float var6)
+    {
+        this.DropItemsIndividualy(var1, var2, var3, var4, FCBetterThanWolves.fcItemSawDust.itemID, 2, 0, var6);
+        return true;
     }
 
     /**
