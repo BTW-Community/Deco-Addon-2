@@ -41,8 +41,8 @@ public class AddonBlockTrapDoor extends FCBlockTrapDoor {
 		{
 			var10 += 8;
 		}
-		
-		if (side == 1){
+
+		if (side == 0 || side == 1) {
 			flagBetterPlaceRule = true;
 			betterPlaceRuleIsLower = (side == 1 ? true : false);
 		}
@@ -78,8 +78,36 @@ public class AddonBlockTrapDoor extends FCBlockTrapDoor {
 			{
 				world.setBlockMetadataWithNotify(x, y, z, metadataMod + 2);
 			}
-			
+
 			flagBetterPlaceRule = false;
+		}
+	}
+
+	public boolean IsBlockClimbable(World var1, int var2, int var3, int var4)
+	{
+		return var1.getBlockId(var2, var3 - 1, var4) == FCBetterThanWolves.fcBlockLadder.blockID || var1.getBlockId(var2, var3 - 1, var4) == FCBetterThanWolves.fcBlockLadderOnFire.blockID;
+	}
+	
+	@Override
+    public boolean HasLargeCenterHardPointToFacing(IBlockAccess blockAccess, int x, int y, int z, int facing, boolean var6) {
+		int metadata = blockAccess.getBlockMetadata(x,  y,  z);
+		int facingOpposite = Facing.oppositeSide[facing];
+		
+		switch (facingOpposite) {
+		case 0:
+			return metadata >= 8 && metadata < 12;
+		case 1:
+			return metadata < 4;
+		case 2:
+			return metadata == 4 || metadata == 12;
+		case 3:
+			return metadata == 5 || metadata == 13;
+		case 4:
+			return metadata == 6 || metadata == 14;
+		case 5:
+			return metadata == 7 || metadata == 15;
+		default:
+			return false;	
 		}
 	}
 }
