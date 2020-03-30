@@ -10,6 +10,7 @@ public class AddonBlockPergola extends Block {
         this.setHardness(1.0F);
         this.setResistance(5.0F);
         this.SetFireProperties(FCEnumFlammability.PLANKS);
+        this.SetAxesEffectiveOn();
         this.SetBuoyant();
         this.setStepSound(soundWoodFootstep);
 		this.setCreativeTab(CreativeTabs.tabDecorations);
