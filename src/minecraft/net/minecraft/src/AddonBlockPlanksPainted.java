@@ -18,6 +18,25 @@ public class AddonBlockPlanksPainted extends FCBlockPlanks {
 	public int damageDropped(int metadata){
 		return metadata;
 	}
+
+	@Override
+    public int GetItemIDDroppedOnSaw(World var1, int var2, int var3, int var4)
+    {
+		int metadata = var1.getBlockMetadata(var2, var3, var4);
+        return AddonDefs.paintedPlanksSidingAndCorner[metadata].blockID;
+    }
+
+	@Override
+    public int GetItemCountDroppedOnSaw(World var1, int var2, int var3, int var4)
+    {
+        return 2;
+    }
+
+	@Override
+    public int GetItemDamageDroppedOnSaw(World var1, int var2, int var3, int var4)
+    {
+        return 0;
+    }
 	
 	//CLIENT ONLY
 	@Override
