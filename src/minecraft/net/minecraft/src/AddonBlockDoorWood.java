@@ -12,18 +12,24 @@ public class AddonBlockDoorWood extends FCBlockDoorWood {
 	
 	@Override
     public int idDropped(int par1, Random par2Random, int par3) {
+		int returnID = 0;
+		
 		switch (this.blockID) {
 		case AddonDefs.id_doorSpruce:
-			return AddonDefs.itemDoorSpruce.itemID;
+			returnID =  AddonDefs.itemDoorSpruce.itemID;
+			break;
 		case AddonDefs.id_doorBirch:
-			return AddonDefs.itemDoorBirch.itemID;
+			returnID =  AddonDefs.itemDoorBirch.itemID;
+			break;
 		case AddonDefs.id_doorJungle:
-			return AddonDefs.itemDoorJungle.itemID;
+			returnID =  AddonDefs.itemDoorJungle.itemID;
+			break;
 		case AddonDefs.id_doorBlood:
-			return AddonDefs.itemDoorBlood.itemID;
-		default:
-			return AddonDefs.itemDoorSpruce.itemID;
+			returnID =  AddonDefs.itemDoorBlood.itemID;
+			break;
 		}
+		
+		return (par1 & 8) != 0 ? 0 : returnID;
 	}
 	
     public int idPicked(World par1World, int par2, int par3, int par4) {
