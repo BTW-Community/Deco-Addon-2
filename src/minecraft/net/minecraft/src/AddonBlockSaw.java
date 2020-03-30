@@ -38,8 +38,6 @@ public class AddonBlockSaw extends FCBlockSaw {
 	private boolean HandleSawingExceptionCases(World var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, Random var9)
 	{
 		int id = var1.getBlockId(var2, var3, var4);
-		
-		System.out.println(id);
 
 		if (id == Block.pistonMoving.blockID)
 			return true;
@@ -48,16 +46,12 @@ public class AddonBlockSaw extends FCBlockSaw {
 
 		if (id == AddonDefs.strippedLog.blockID) {
 			metadata &= 3;
-			
-			System.out.println("Sawed stripped log");
 
-			for (int i = 0; i < 4; ++i)
-			{
+			for (int i = 0; i < 4; ++i) {
 				FCUtilsItem.EjectSingleItemWithRandomOffset(var1, var2, var3, var4, Block.planks.blockID, metadata);
 			}
 
-			for (int i = 0; i < 2; ++i)
-			{
+			for (int i = 0; i < 2; ++i) {
 				FCUtilsItem.EjectSingleItemWithRandomOffset(var1, var2, var3, var4, FCBetterThanWolves.fcItemSawDust.itemID, 0);
 			}
 

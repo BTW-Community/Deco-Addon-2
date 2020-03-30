@@ -13,6 +13,7 @@ public class AddonUtilsObfuscationMap {
 		blockMap.put("trapdoor", "bo");
 		blockMap.put("portal", "bi");
 		blockMap.put("fence", "bd");
+		blockMap.put("netherFence", "bF");
 	}
 	
 	public static String getBlockLookup(String blockName) {

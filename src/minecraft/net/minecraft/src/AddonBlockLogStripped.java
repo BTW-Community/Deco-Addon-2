@@ -1,5 +1,7 @@
 package net.minecraft.src;
 
+import java.util.Random;
+
 public class AddonBlockLogStripped extends FCBlockLog {
 
 	public AddonBlockLogStripped(int ID) {
@@ -11,6 +13,14 @@ public class AddonBlockLogStripped extends FCBlockLog {
 	public boolean GetIsStump(IBlockAccess access, int x, int y, int z) {
 		return false;
 	}
+
+    /**
+     * Returns the ID of the items to drop on destruction.
+     */
+    public int idDropped(int par1, Random par2Random, int par3)
+    {
+        return AddonDefs.strippedLog.blockID;
+    }
 
 	//Removes bark drop from chisel use
 	@Override

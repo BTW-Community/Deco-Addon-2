@@ -17,14 +17,23 @@ public class AddonBlockStone extends Block {
 		AddonManager.Register(this, new String[] {"granite", "andesite", "diorite"}, new String[] {"Granite", "Andesite", "Diorite"});
 	}
 	
-	public int idDropped(int var1, Random rand, int var3) {
+	public int idDropped(int id) {
 		return AddonDefs.stoneTypesCobble.blockID;
 	}
-
-	public int damageDropped(int Meta)
-	{
-		return Meta;
+	
+	public int damageDropped(int meta) {
+		return meta;
 	}
+
+    /**
+     * returns a list of blocks with the same ID, but different meta (eg: wood returns 4 blocks)
+     */
+    public void getSubBlocks(int var1, CreativeTabs var2, List var3)
+    {
+        var3.add(new ItemStack(var1, 1, 0));
+        var3.add(new ItemStack(var1, 1, 1));
+        var3.add(new ItemStack(var1, 1, 2));
+    }
 	
 	//CLIENT ONLY METHODS
 	public static Icon[] Icons = new Icon[3];

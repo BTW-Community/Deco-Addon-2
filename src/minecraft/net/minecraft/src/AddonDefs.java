@@ -12,21 +12,26 @@ public class AddonDefs {
 		id_flower=3002,
 		id_glassStained=3003,
 		id_glassPaneStained=3004,
+		
 		id_tulip=3006,
 		id_blockDiamondium=3007,
 		id_whiteStoneBrick=3008,
 		id_whiteBrickSidingAndCorner=3009,
 		id_whiteBrickMouldingAndDecorative=3010,
 		id_whiteBrickStairs=3011,
+		
 		id_hayBale=3025,
+		id_hayBaleStairs=3026,
 		id_lanternPaper=3027,
 		id_chandelier=3028,
 		id_lanternSteel=3029,
+		
 		id_oakWoodChair=3036,
 		id_spruceWoodChair=3037,
 		id_birchWoodChair=3038,
 		id_jungleWoodChair=3039,
 		id_bloodWoodChair=3040,
+		
 		id_terracotta=3044,
 		id_stainedTerracotta=3045,
 		id_unfiredTerracotta=3046,
@@ -42,10 +47,16 @@ public class AddonDefs {
 		id_andesiteStoneBrickLoose=3107,
 		id_dioriteStoneBrickLoose=3108,
 		id_stoneTypeSmooth=3109,
+		id_stoneSingleSlab=3110,
+		id_stoneDoubleSlab=3111,
+		
 		id_glazedTerracottaStart=3134,
 		//end 3149
+		
 		id_strippedLog=3200,
+		
 		id_workbench=3210,
+		
 		id_trapdoorSpruce=3220,
 		id_trapdoorBirch=3221,
 		id_trapdoorJungle=3222,
@@ -60,24 +71,40 @@ public class AddonDefs {
 		id_gateBlood=3231,
 		id_planksPainted=3232,
 		id_pergola=3240,
+		
+		id_paintedPlanksSubStart=3248,
+		//end 3296
 		id_coarseDirt=3300,
 		id_coarseDirtSlab=3301,
 		id_podzol=3302,
 		id_podzolSlab=3303,
 		id_decorativeLeaves=3304,
 		
+		id_redSand=3310,
+		id_redSandSlab=3311,
+		id_redSandstone=3312,
+		id_redSandstoneSlab=3313,
+		id_redSandstoneStairs=3314,
+		id_redSandstoneSidingAndCorner=3315,
+		id_redSandstoneMouldingAndDecorative=3316,
+		
 		id_flag_start=4000;
 	
 	public static final int
 		id_glassChunk = 30002,
 		id_fertilizer = 30003,
+		
 		id_bottleHempOil = 30007,
 		id_glassStainedItem = 30008,
+		
 		id_itemDoorSpruce = 30020,
 		id_itemDoorBirch = 30021,
 		id_itemDoorJungle = 30022,
 		id_itemDoorBlood = 30023,
-		id_chiselDiamond = 30050;
+		
+		id_chiselDiamond = 30050,
+		id_woodBleach=30051,
+		id_pileRedSand=30052;
 	
 	//Clay
 	public static Block terracotta, stainedTerracotta, unfiredTerracotta;
@@ -108,6 +135,13 @@ public class AddonDefs {
 	public static Block graniteStoneBrickLoose, andesiteStoneBrickLoose, dioriteStoneBrickLoose;
 	public static Block stoneTypesSmooth;
 	
+	public static BlockHalfSlab stoneSingleSlab, stoneDoubleSlab;
+	
+	//Sandstone
+	public static Block redSand, redSandSlab;
+	public static Block redSandStone, redSandStoneStairs, redSandStoneSidingAndCorner, redSandStoneMouldingAndDecorative;
+	public static Item pileRedSand;
+	
 	//Wood
 	public static Block strippedLog;
 	public static BlockTrapDoor trapdoorSpruce, trapdoorBirch, trapdoorJungle, trapdoorBlood;
@@ -115,11 +149,13 @@ public class AddonDefs {
 	public static FCItemDoor itemDoorSpruce, itemDoorBirch, itemDoorJungle, itemDoorBlood;
 	public static BlockFenceGate gateSpruce, gateBirch, gateJungle, gateBlood;
 	public static Block planksPainted;
+	public static Block[] paintedPlanksSidingAndCorner, paintedPlanksMouldingAndDecorative, paintedPlanksStairs;
 	public static Block pergola;
+	public static Item woodBleach;
 	
 	//Deco
 	public static Block blockDiamondium;
-	public static Block hayBale;
+	public static Block hayBale, hayBaleStairs;
 	public static BlockPane paperWall, fenceSteel;
 	public static Block lanternPaper, lanternSteel, chandelier;
 	public static Block workbench;
@@ -147,6 +183,7 @@ public class AddonDefs {
 		addWoodDefs();
 		addDecoDefs();
 		addToolDefs();
+		addSubBlockReplaceDefs();
 	}
 	
 	private void addClayDefs() {
@@ -162,8 +199,8 @@ public class AddonDefs {
 				id = start,
 				i = 0;
 		final String main = "Terracotta";
-		terracottaSidingAndCorner = new AddonBlockSidingAndCornerDecorativeWall(id++, Material.rock, "ginger_clay", 2.0F, 5.0F, Block.soundWoodFootstep, "claySiding", "Hardened Clay");
-		terracottaMouldingAndDecorative = new FCBlockMouldingAndDecorative(id++, Material.rock, "ginger_clay", "ginger_clay_column", 3042, 2.0F, 5.0F, Block.soundWoodFootstep, "clayMolding");
+		terracottaSidingAndCorner = new AddonBlockSidingAndCornerDecorativeWall(id++, Material.rock, "ginger_clay", 2.0F, 5.0F, Block.soundWoodFootstep, "claySiding", "Terracotta");
+		terracottaMouldingAndDecorative = new FCBlockMouldingAndDecorative(id++, Material.rock, "ginger_clay", "ginger_clay_column", 3042, 2.0F, 5.0F, Block.soundWoodFootstep, "clayMoulding");
 		terracottaStairs = new FCBlockStairs(id++, terracotta, i).setUnlocalizedName("stairsHardenedClay");
 
 		Item.itemsList[terracottaSidingAndCorner.blockID] = new FCItemBlockSidingAndCorner(terracottaSidingAndCorner.blockID - 256);
@@ -177,7 +214,7 @@ public class AddonDefs {
 		
 		while(i < 16)
 		{
-			stainedTerracottaSidingAndCorner[i] = new AddonBlockSidingAndCornerDecorativeWall(id++, Material.rock, "ginger_clay_"+i, 2.0F, 5.0F, Block.soundStoneFootstep, "stainedClaySiding_"+i, "Stained Clay");
+			stainedTerracottaSidingAndCorner[i] = new AddonBlockSidingAndCornerDecorativeWall(id++, Material.rock, "ginger_clay_"+i, 2.0F, 5.0F, Block.soundStoneFootstep, "stainedClaySiding_"+i, "Stained Terracotta");
 			stainedTerracottaMouldingAndDecorative[i] = new FCBlockMouldingAndDecorative(id++, Material.rock, "ginger_clay_"+i, "ginger_clay_column_"+i, 3042, 2.0F, 5.0F, Block.soundWoodFootstep, "stainedClayMoulding_"+i);
 			stainedTerracottaStairs[i] = new FCBlockStairs(id++, stainedTerracotta, i).setUnlocalizedName("stairsStainedClay_"+i);
 
@@ -225,8 +262,8 @@ public class AddonDefs {
 	
 	private void addWhiteStoneDefs() {
 		whiteStoneBrick = new AddonBlockWhiteStoneBrick(id_whiteStoneBrick);
-		whiteBrickSidingAndCorner = new AddonBlockSidingAndCornerDecorativeWall(id_whiteBrickSidingAndCorner, Material.rock, "ginger_bricks_white_0_decorative", 2.0F, 5.0F, Block.soundWoodFootstep, "whiteBrickSiding", "White Brick");
-		whiteBrickMouldingAndDecorative = new FCBlockMouldingAndDecorative(id_whiteBrickMouldingAndDecorative, Material.rock, "ginger_bricks_white_0_decorative", "ginger_bricks_white_0_column", 3042, 2.0F, 5.0F, Block.soundWoodFootstep, "whiteBrickMolding");
+		whiteBrickSidingAndCorner = new AddonBlockSidingAndCornerDecorativeWall(id_whiteBrickSidingAndCorner, Material.rock, "ginger_bricks_white_0_decorative", 2.0F, 5.0F, Block.soundStoneFootstep, "whiteBrickSiding", "White Brick");
+		whiteBrickMouldingAndDecorative = new FCBlockMouldingAndDecorative(id_whiteBrickMouldingAndDecorative, Material.rock, "ginger_bricks_white_0_decorative", "ginger_bricks_white_0_column", 3042, 2.0F, 5.0F, Block.soundStoneFootstep, "whiteBrickMolding");
 		whiteBrickStairs = new FCBlockStairs(id_whiteBrickStairs, whiteStoneBrick, 0).setUnlocalizedName("stairsWhiteBrick");
 
 		Item.itemsList[whiteBrickSidingAndCorner.blockID] = new FCItemBlockSidingAndCorner(whiteBrickSidingAndCorner.blockID - 256);
@@ -264,6 +301,11 @@ public class AddonDefs {
 	}
 	
 	private void addStoneDefs() {
+		stoneSingleSlab = new AddonBlockStep(id_stoneSingleSlab, false);
+		stoneDoubleSlab = new AddonBlockStep(id_stoneDoubleSlab, true);
+		AddonManager.Register(stoneSingleSlab, new String[] {"redSandstoneSlab"}, new String[] {"Red Sandstone Slab"});
+		//AddonManager.Register(stoneDoubleSlab);
+		
 		AddonManager.Name(Block.stairsCobblestone, "Cobblestone Stairs");
 		
 		stoneTypes = new AddonBlockStone(id_stoneType);
@@ -276,6 +318,25 @@ public class AddonDefs {
 		andesiteStoneBrickLoose = new AddonBlockStoneBrickLooseAndesite(id_andesiteStoneBrickLoose);
 		dioriteStoneBrickLoose = new AddonBlockStoneBrickLooseDiorite(id_dioriteStoneBrickLoose);
 		stoneTypesSmooth = new AddonBlockStoneSmooth(id_stoneTypeSmooth);
+		
+		redSand = new AddonBlockRedSand(id_redSand);
+		redSandSlab = new AddonBlockRedSandSlab(id_redSandSlab);
+		redSandStone = new AddonBlockRedSandStone(id_redSandstone);
+		redSandStoneStairs = new AddonBlockStairsRedSandStone(id_redSandstoneStairs);
+		redSandStoneSidingAndCorner = new AddonBlockRedSandStoneSidingAndCornerDecorativeWall(id_redSandstoneSidingAndCorner);
+		redSandStoneMouldingAndDecorative = new AddonBlockRedSandStoneMouldingAndDecorative(id_redSandstoneMouldingAndDecorative);
+
+		AddonManager.Register(redSand, "Red Sand");
+		AddonManager.Register(redSandSlab, "Red Sand Slab");
+		AddonManager.Register(redSandStone, new String[] {"redSandtone", "chiseledRedSandstone", "smoothRedSandstone"}, new String[] {"Red Sandstone", "Chiseled Red Sandstone", "Smooth Red Sandstone"});
+		AddonManager.Register(redSandStoneStairs, "Red Sandstone Stairs");
+
+		Item.itemsList[redSandStoneSidingAndCorner.blockID] = new FCItemBlockSidingAndCorner(redSandStoneSidingAndCorner.blockID - 256);
+		Item.itemsList[redSandStoneMouldingAndDecorative.blockID] = new FCItemBlockMouldingAndDecorative(redSandStoneMouldingAndDecorative.blockID - 256);
+		AddonManager.NameSubBlocks_Wall(redSandStoneSidingAndCorner, redSandStoneMouldingAndDecorative, "Red Sandstone");
+		
+		pileRedSand = new AddonItemPileRedSand(id_pileRedSand);
+		AddonManager.Name(pileRedSand,  "Red Sand Pile");
 	}
 	
 	private void addWoodDefs() {
@@ -295,6 +356,10 @@ public class AddonDefs {
 		//Stripped Logs
 		strippedLog = new AddonBlockLogStripped(id_strippedLog);
 		Item.itemsList[AddonDefs.strippedLog.blockID] = new AddonItemBlockLogStripped(AddonDefs.strippedLog.blockID - 256, AddonDefs.strippedLog, new String[] {"oakLogStripped", "spruceLogStripped", "brichLogStripped", "jungleLogStripped"});
+		
+		//Ladders (used for block bounds change)
+		FCBetterThanWolves.fcBlockLadder = new AddonBlockLadder(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockLadder));
+		FCBetterThanWolves.fcBlockLadderOnFire = new AddonBlockLadderOnFire(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockLadderOnFire));
 		
 		//Trapdoors
 		//Forces oak trap doors to inherit texture rotations and eventually better placement
@@ -342,12 +407,36 @@ public class AddonDefs {
 		AddonManager.Register(gateJungle, "Jungle Fence Gate");
 		AddonManager.Register(gateBlood, "Blood Wood Fence Gate");
 		
-		//Fences
-		Block fence = new AddonBlockFenceWood(AddonManager.ReplaceBlockID(Block.fence));
-		AddonManager.SetVanillaBlockFinal("fence", Block.fence, fence);
-		
 		//Painted planks
-		planksPainted = (new AddonBlockPlanksPainted(id_planksPainted, "ginger_planksPainted", "Painted Planks")).setHardness(2.0F).setResistance(10.0F).setStepSound(Block.soundStoneFootstep).setCreativeTab(CreativeTabs.tabBlock);
+		planksPainted = (new AddonBlockPlanksPainted(id_planksPainted, "ginger_planksPainted", "Painted Planks")).setHardness(2.0F).setResistance(10.0F).setStepSound(Block.soundWoodFootstep).setCreativeTab(CreativeTabs.tabBlock);
+
+		paintedPlanksSidingAndCorner = new Block[16];
+		paintedPlanksMouldingAndDecorative = new Block[16];
+		paintedPlanksStairs = new Block[16];
+
+        //Sub blocks
+		int start = id_paintedPlanksSubStart,
+				end = start+48,
+				id = start,
+				i = 0;
+		final String main = "Painted Planks";
+		
+		while(i < 16)
+		{
+			paintedPlanksSidingAndCorner[i] = new AddonBlockPlanksPaintedSidingAndCornerAndDecorative(id++, "ginger_planksPainted_"+i, "paintedPlanksSiding_"+i).setCreativeTab(CreativeTabs.tabDecorations);
+			paintedPlanksMouldingAndDecorative[i] = new AddonBlockPlanksPaintedMouldingAndDecorative(id++, "ginger_planksPainted_"+i, "ginger_planksPainted_column_"+i, 3042, "paintedPlanksMoulding_"+i).setCreativeTab(CreativeTabs.tabDecorations);;
+			paintedPlanksStairs[i] = new FCBlockStairs(id++, planksPainted, i).setUnlocalizedName("stairsPaintedPlanks"+i);
+
+			Item.itemsList[paintedPlanksSidingAndCorner[i].blockID] = new FCItemBlockSidingAndCorner(paintedPlanksSidingAndCorner[i].blockID - 256);
+			Item.itemsList[paintedPlanksMouldingAndDecorative[i].blockID] = new FCItemBlockMouldingAndDecorative(paintedPlanksMouldingAndDecorative[i].blockID - 256);
+			AddonManager.Register(paintedPlanksStairs[i], AddonBlockPlanksPainted.names[i]+" "+main+" Stairs");
+			AddonManager.NameSubBlocks(paintedPlanksSidingAndCorner[i], paintedPlanksMouldingAndDecorative[i], AddonBlockPlanksPainted.names[i]+" "+main);
+
+			i++;//i is metadata from original 16 color set
+		}
+		
+		woodBleach = new Item(id_woodBleach).setUnlocalizedName("ginger_woodBleach").setCreativeTab(CreativeTabs.tabMaterials);
+		AddonManager.Name(woodBleach, "Wood Bleach");
 	
 		//Pergola
 		pergola = new AddonBlockPergola(id_pergola);
@@ -363,11 +452,8 @@ public class AddonDefs {
 		
 		//Haybale
 		hayBale = new AddonBlockHayBale(id_hayBale);
+		hayBaleStairs = new AddonBlockStairsHay(id_hayBaleStairs);
 		FCBetterThanWolves.fcItemWheat = new AddonItemWheat(AddonManager.ReplaceItemID(FCBetterThanWolves.fcItemWheat));
-		
-		//Walls
-		FCBetterThanWolves.fcBlockStoneBrickSidingAndCorner = new AddonBlockSidingAndCornerDecorativeWall(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockStoneBrickSidingAndCorner),  Material.rock, "fcBlockDecorativeStoneBrick", 1.5F, 10.0F, Block.soundStoneFootstep, "fcStoneBrickSiding", "Stone Brick");
-		FCBetterThanWolves.fcBlockBrickSidingAndCorner = new AddonBlockSidingAndCornerDecorativeWall(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockBrickSidingAndCorner), Material.rock, "fcBlockDecorativeBrick", 2.0F, 10.0F, Block.soundStoneFootstep, "fcBrickSiding","Brick");
 		
 		//Lanterns
 		paperWall = new AddonBlockPaperWall(id_paperWall);
@@ -392,14 +478,12 @@ public class AddonDefs {
 		//Coarse Dirt
 		coarseDirt = new AddonBlockDirtCoarse(id_coarseDirt);
 		AddonManager.Register(coarseDirt, "Coarse Dirt");
-		coarseDirtSlab = new AddonBlockDirtCoarseSlab(id_coarseDirtSlab).setUnlocalizedName("ginger_coarseDirt");;
+		coarseDirtSlab = new AddonBlockDirtCoarseSlab(id_coarseDirtSlab);
 		AddonManager.Register(coarseDirtSlab, "Coarse Dirt Slab");
 		
 		//Podzol
 		podzol = new AddonBlockPodzol(id_podzol);
 		AddonManager.Register(podzol, "Podzol");
-		//Ran into weird issue where dirt got renamed, so this fixes that
-		AddonManager.Name(Block.dirt, "Dirt");
 		//podzolSlab = new AddonBlockDirtSlab(id_podzolSlab));
 		
 		//Nether portal
@@ -407,8 +491,8 @@ public class AddonDefs {
 		AddonManager.SetVanillaBlockFinal("portal", Block.portal, addonPortal);
 		
 		//Decorative leaves
-		decorativeLeaves = new FCBlockLeaves(id_decorativeLeaves);
-		AddonManager.Register(decorativeLeaves, new String[] {"oakLeavesDeco", "spruceLeavesDeco", "birchLeavesDeco", "jungleLeavesDeco"}, new String[] {"Decorative Oak Leaves", "Decorative Spruce Leaves", "Decorative Birch Leaves", "Decorative Jungle Leaves"});
+		//decorativeLeaves = new FCBlockLeaves(id_decorativeLeaves);
+		//AddonManager.Register(decorativeLeaves, new String[] {"oakLeavesDeco", "spruceLeavesDeco", "birchLeavesDeco", "jungleLeavesDeco"}, new String[] {"Decorative Oak Leaves", "Decorative Spruce Leaves", "Decorative Birch Leaves", "Decorative Jungle Leaves"});
 	}
 	
 	private void addToolDefs() {
@@ -429,5 +513,24 @@ public class AddonDefs {
 		
 		//Allows custom saw recipes
 		FCBetterThanWolves.fcSaw = new AddonBlockSaw((FCBlockSaw) FCBetterThanWolves.fcSaw, AddonManager.ReplaceBlockID(FCBetterThanWolves.fcSaw));
+	}
+	
+	private void addSubBlockReplaceDefs() {
+		//Walls
+		FCBetterThanWolves.fcBlockStoneBrickSidingAndCorner = new AddonBlockSidingAndCornerDecorativeWall(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockStoneBrickSidingAndCorner),  Material.rock, "fcBlockDecorativeStoneBrick", 1.5F, 10.0F, Block.soundStoneFootstep, "fcStoneBrickSiding", "Stone Brick");
+		FCBetterThanWolves.fcBlockBrickSidingAndCorner = new AddonBlockSidingAndCornerDecorativeWall(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockBrickSidingAndCorner), Material.rock, "fcBlockDecorativeBrick", 2.0F, 10.0F, Block.soundStoneFootstep, "fcBrickSiding","Brick");
+		
+		//Fences
+		Block fence = new AddonBlockFenceWood(AddonManager.ReplaceBlockID(Block.fence));
+		AddonManager.SetVanillaBlockFinal("fence", Block.fence, fence);
+		AddonManager.Name(Block.fence, "Oak Fence");
+		//FCBetterThanWolves.fcBlockWoodOakSidingAndCorner = new AddonBlockWoodSidingAndCornerAndDecorative(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockWoodOakSidingAndCorner),"fcBlockDecorativeWoodOak", "fcWoodOakSiding");
+		FCBetterThanWolves.fcBlockWoodSpruceSidingAndCorner = new AddonBlockWoodSidingAndCornerAndDecorative(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockWoodSpruceSidingAndCorner),"fcBlockDecorativeWoodSpruce", "fcWoodSpruceSiding");
+		FCBetterThanWolves.fcBlockWoodBirchSidingAndCorner = new AddonBlockWoodSidingAndCornerAndDecorative(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockWoodBirchSidingAndCorner),"fcBlockDecorativeWoodBirch", "fcWoodBirchSiding");
+		FCBetterThanWolves.fcBlockWoodJungleSidingAndCorner = new AddonBlockWoodSidingAndCornerAndDecorative(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockWoodJungleSidingAndCorner),"fcBlockDecorativeWoodJungle", "fcWoodJungleSiding");
+		FCBetterThanWolves.fcBlockWoodBloodSidingAndCorner = new AddonBlockWoodSidingAndCornerAndDecorative(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockWoodBloodSidingAndCorner),"fcBlockDecorativeWoodBlood", "fcWoodBloodSiding");
+		
+		Block netherFence = new AddonBlockFence(AddonManager.ReplaceBlockID(Block.netherFence), "netherBrick", FCBetterThanWolves.fcMaterialNetherRock).setHardness(2.0F).setResistance(10.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("netherFence");;
+		AddonManager.SetVanillaBlockFinal("netherFence", Block.netherFence, netherFence);
 	}
 }
