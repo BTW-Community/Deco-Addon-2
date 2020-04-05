@@ -2,6 +2,8 @@ package net.minecraft.src;
 
 import java.util.ArrayList;
 
+import org.lwjgl.opengl.GL11;
+
 public class AddonBlockSidingAndCornerDecorativeWall extends AddonBlockSidingAndCornerAndDecorative
 {
 	static ArrayList<AddonBlockSidingAndCornerDecorativeWall> wallBlocks = new ArrayList<AddonBlockSidingAndCornerDecorativeWall>();
@@ -157,5 +159,66 @@ public class AddonBlockSidingAndCornerDecorativeWall extends AddonBlockSidingAnd
 		me.setBlockBoundsBasedOnState(Render.blockAccess, X, Y, Z);
 		return true;
 	}
+
+    public static void RenderFenceInvBlock(RenderBlocks var0, Block var1, int var2)
+    {
+        Tessellator var3 = Tessellator.instance;
+
+        for (int var4 = 0; var4 < 4; ++var4)
+        {
+            float var5 = 0.125F;
+
+            if (var4 == 0)
+            {
+                var0.setRenderBounds((double)(0.5F - var5), 0.0D, 0.0D, (double)(0.5F + var5), 1.0D, (double)(var5 * 2.0F));
+            }
+
+            if (var4 == 1)
+            {
+                var0.setRenderBounds((double)(0.5F - var5), 0.0D, (double)(1.0F - var5 * 2.0F), (double)(0.5F + var5), 1.0D, 1.0D);
+            }
+
+            var5 = 0.0625F;
+
+            if (var4 == 2)
+            {
+                var0.setRenderBounds((double)(0.5F - var5), (double)(1.0F - var5 * 3.0F), (double)(-var5 * 2.0F), (double)(0.5F + var5), (double)(1.0F - var5), (double)(1.0F + var5 * 2.0F));
+            }
+
+            if (var4 == 3)
+            {
+                var0.setRenderBounds((double)(0.5F - var5), (double)(0.5F - var5 * 3.0F), (double)(-var5 * 2.0F), (double)(0.5F + var5), (double)(0.5F - var5), (double)(1.0F + var5 * 2.0F));
+            }
+
+            GL11.glTranslatef(-0.5F, -0.5F, -0.5F);
+            var3.startDrawingQuads();
+            var3.setNormal(0.0F, -1.0F, 0.0F);
+            var0.renderFaceYNeg(var1, 0.0D, 0.0D, 0.0D, var1.getBlockTextureFromSide(0));
+            var3.draw();
+            var3.startDrawingQuads();
+            var3.setNormal(0.0F, 1.0F, 0.0F);
+            var0.renderFaceYPos(var1, 0.0D, 0.0D, 0.0D, var1.getBlockTextureFromSide(1));
+            var3.draw();
+            var3.startDrawingQuads();
+            var3.setNormal(0.0F, 0.0F, -1.0F);
+            var0.renderFaceZNeg(var1, 0.0D, 0.0D, 0.0D, var1.getBlockTextureFromSide(2));
+            var3.draw();
+            var3.startDrawingQuads();
+            var3.setNormal(0.0F, 0.0F, 1.0F);
+            var0.renderFaceZPos(var1, 0.0D, 0.0D, 0.0D, var1.getBlockTextureFromSide(3));
+            var3.draw();
+            var3.startDrawingQuads();
+            var3.setNormal(-1.0F, 0.0F, 0.0F);
+            var0.renderFaceXNeg(var1, 0.0D, 0.0D, 0.0D, var1.getBlockTextureFromSide(4));
+            var3.draw();
+            var3.startDrawingQuads();
+            var3.setNormal(1.0F, 0.0F, 0.0F);
+            var0.renderFaceXPos(var1, 0.0D, 0.0D, 0.0D, var1.getBlockTextureFromSide(5));
+            var3.draw();
+            GL11.glTranslatef(0.5F, 0.5F, 0.5F);
+        }
+
+        var0.setRenderBounds(0.0D, 0.0D, 0.0D, 1.0D, 1.0D, 1.0D);
+    }
 	//
 }

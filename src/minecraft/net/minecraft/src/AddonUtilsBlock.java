@@ -28,7 +28,7 @@ public class AddonUtilsBlock {
 	}
 	
 	public static boolean isFence(int blockID, int metadata) {
-		return blockID == Block.fence.blockID || (Block.blocksList[blockID] instanceof AddonBlockSidingAndCornerAndDecorative && ((AddonBlockSidingAndCornerAndDecorative) Block.blocksList[blockID]).isFenceFromMetadata(metadata));
+		return blockID == Block.fence.blockID || ((Block.blocksList[blockID] instanceof AddonBlockSidingAndCornerAndDecorative && metadata == 14) && !(Block.blocksList[blockID] instanceof AddonBlockSidingAndCornerDecorativeWall) && ((AddonBlockSidingAndCornerAndDecorative) Block.blocksList[blockID]).isFenceFromMetadata(metadata));
 	}
 	
 	public static boolean isFenceGate(int blockID) {

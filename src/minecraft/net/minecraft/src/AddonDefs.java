@@ -425,7 +425,7 @@ public class AddonDefs {
 		{
 			paintedPlanksSidingAndCorner[i] = new AddonBlockPlanksPaintedSidingAndCornerAndDecorative(id++, "ginger_planksPainted_"+i, "paintedPlanksSiding_"+i).setCreativeTab(CreativeTabs.tabDecorations);
 			paintedPlanksMouldingAndDecorative[i] = new AddonBlockPlanksPaintedMouldingAndDecorative(id++, "ginger_planksPainted_"+i, "ginger_planksPainted_column_"+i, 3042, "paintedPlanksMoulding_"+i).setCreativeTab(CreativeTabs.tabDecorations);;
-			paintedPlanksStairs[i] = new FCBlockStairs(id++, planksPainted, i).setUnlocalizedName("stairsPaintedPlanks"+i);
+			paintedPlanksStairs[i] = new AddonBlockStairsPaintedPlanks(id++, planksPainted, i).setUnlocalizedName("stairsPaintedPlanks"+i);
 
 			Item.itemsList[paintedPlanksSidingAndCorner[i].blockID] = new FCItemBlockSidingAndCorner(paintedPlanksSidingAndCorner[i].blockID - 256);
 			Item.itemsList[paintedPlanksMouldingAndDecorative[i].blockID] = new FCItemBlockMouldingAndDecorative(paintedPlanksMouldingAndDecorative[i].blockID - 256);
