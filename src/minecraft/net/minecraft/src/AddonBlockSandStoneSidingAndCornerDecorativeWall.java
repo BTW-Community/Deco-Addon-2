@@ -1,13 +1,15 @@
 package net.minecraft.src;
 
-public class AddonBlockRedSandStoneSidingAndCornerDecorativeWall extends AddonBlockSidingAndCornerDecorativeWall
+public class AddonBlockSandStoneSidingAndCornerDecorativeWall extends AddonBlockSidingAndCornerDecorativeWall
 {
     private Icon[] m_IconBySideArray = new Icon[6];
+    private String[] textures;
 
-    protected AddonBlockRedSandStoneSidingAndCornerDecorativeWall(int var1)
+    protected AddonBlockSandStoneSidingAndCornerDecorativeWall(int var1, String[] textures, String tag, String name)
     {
-        super(var1, Material.rock, "ginger_redSandstoneDecorative_top", 0.8F, 1.34F, Block.soundStoneFootstep, "redSandStoneSiding", "Red Sandstone");
+        super(var1, Material.rock, textures[1], 0.8F, 1.34F, Block.soundStoneFootstep, tag, name);
         this.SetPicksEffectiveOn();
+        this.textures = textures;
     }
 
     /**
@@ -17,9 +19,9 @@ public class AddonBlockRedSandStoneSidingAndCornerDecorativeWall extends AddonBl
     public void registerIcons(IconRegister var1)
     {
         super.registerIcons(var1);
-        this.m_IconBySideArray[0] = var1.registerIcon("ginger_redSandstoneDecorative_bottom");
-        this.m_IconBySideArray[1] = var1.registerIcon("ginger_redSandstoneDecorative_top");
-        Icon var2 = var1.registerIcon("ginger_redSandstoneDecorative_side");
+        this.m_IconBySideArray[0] = var1.registerIcon(textures[0]);
+        this.m_IconBySideArray[1] = var1.registerIcon(textures[1]);
+        Icon var2 = var1.registerIcon(textures[2]);
         this.m_IconBySideArray[2] = var2;
         this.m_IconBySideArray[3] = var2;
         this.m_IconBySideArray[4] = var2;
