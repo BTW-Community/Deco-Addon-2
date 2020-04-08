@@ -1,4 +1,5 @@
 package net.minecraft.src;
+
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.DataInputStream;
@@ -7,8 +8,12 @@ import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
+import java.lang.management.ManagementFactory;
+import java.lang.management.RuntimeMXBean;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
+import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -26,6 +31,12 @@ public class AddonManager extends FCAddOn
 	private static ArrayList<String> loadedAddons = new ArrayList<String>();
 	
 	private static boolean isObfuscated = false;
+	
+	public static ArrayList<Object> builders= new ArrayList<Object>();
+	
+	public void initiateTransforms() {
+		
+	}
 
 	@Override
 	public void PreInitialize() {
@@ -44,6 +55,26 @@ public class AddonManager extends FCAddOn
 		
 		addonDefs.addDefinitions();
 		addonRecipes.addAllAddonRecipes();
+	}
+	
+	@Override
+	public void PostInitialize() {
+		
+	}
+	
+	public String getPID() {
+		RuntimeMXBean bean = ManagementFactory.getRuntimeMXBean();
+
+        // Get name representing the running Java virtual machine.
+        // It returns something like 6460@AURORA. Where the value
+        // before the @ symbol is the PID.
+        String jvmName = bean.getName();
+        System.out.println("Name = " + jvmName);
+
+        // Extract the PID by splitting the string returned by the
+        // bean.getName() method.
+        String pid = jvmName.split("@")[0];
+        return pid;
 	}
 	
 	public boolean getObfuscation() {

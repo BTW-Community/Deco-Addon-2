@@ -307,6 +307,30 @@ public class AddonRecipes {
 		
 		//Wood bleach
 		FCRecipes.AddCauldronRecipe(new ItemStack(AddonDefs.woodBleach), new ItemStack[] {new ItemStack(AddonDefs.bottleHempOil), new ItemStack(Item.dyePowder, 1, 15)});
+		
+		//Barrels
+        FCRecipes.RemoveVanillaRecipe(new ItemStack(FCBetterThanWolves.fcAestheticOpaque, 2, 11), new Object[] {"###", "#X#", "###", '#', new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, 32767), 'X', FCBetterThanWolves.fcItemGlue});
+        FCRecipes.AddRecipe(new ItemStack(AddonDefs.barrelEmpty, 2, 0), new Object[] {"###", "#X#", "###", '#', new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, 0), 'X', FCBetterThanWolves.fcItemGlue});
+        FCRecipes.AddRecipe(new ItemStack(AddonDefs.barrelEmpty, 2, 1), new Object[] {"###", "#X#", "###", '#', new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, 1), 'X', FCBetterThanWolves.fcItemGlue});
+        FCRecipes.AddRecipe(new ItemStack(AddonDefs.barrelEmpty, 2, 2), new Object[] {"###", "#X#", "###", '#', new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, 2), 'X', FCBetterThanWolves.fcItemGlue});
+        FCRecipes.AddRecipe(new ItemStack(AddonDefs.barrelEmpty, 2, 3), new Object[] {"###", "#X#", "###", '#', new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, 3), 'X', FCBetterThanWolves.fcItemGlue});
+
+        for (int i = 0; i < AddonBlockBarrelFilled.types.length; i++) {
+        	FCRecipes.AddRecipe(new ItemStack(AddonDefs.barrelFullOak, 1, i), new Object[] {"###", "#X#", "###", '#', new ItemStack(AddonBlockBarrelFilled.types[i], 1, 0), 'X', new ItemStack(AddonDefs.barrelEmpty, 1, 0)});
+        	FCRecipes.AddRecipe(new ItemStack(AddonDefs.barrelFullSpruce, 1, i), new Object[] {"###", "#X#", "###", '#', new ItemStack(AddonBlockBarrelFilled.types[i], 1, 0), 'X', new ItemStack(AddonDefs.barrelEmpty, 1, 1)});
+        	FCRecipes.AddRecipe(new ItemStack(AddonDefs.barrelFullBirch, 1, i), new Object[] {"###", "#X#", "###", '#', new ItemStack(AddonBlockBarrelFilled.types[i], 1, 0), 'X', new ItemStack(AddonDefs.barrelEmpty, 1, 2)});
+        	FCRecipes.AddRecipe(new ItemStack(AddonDefs.barrelFullJungle, 1, i), new Object[] {"###", "#X#", "###", '#', new ItemStack(AddonBlockBarrelFilled.types[i], 1, 0), 'X', new ItemStack(AddonDefs.barrelEmpty, 1, 3)});
+        	
+        	FCRecipes.AddShapelessRecipeWithSecondaryOutputIndicator(new ItemStack(AddonBlockBarrelFilled.types[i], 8), new ItemStack[] {new ItemStack(AddonDefs.barrelFullOak, 1, i)});
+        	FCRecipes.AddShapelessRecipeWithSecondaryOutputIndicator(new ItemStack(AddonBlockBarrelFilled.types[i], 8), new ItemStack[] {new ItemStack(AddonDefs.barrelFullSpruce, 1, i)});
+        	FCRecipes.AddShapelessRecipeWithSecondaryOutputIndicator(new ItemStack(AddonBlockBarrelFilled.types[i], 8), new ItemStack[] {new ItemStack(AddonDefs.barrelFullBirch, 1, i)});
+        	FCRecipes.AddShapelessRecipeWithSecondaryOutputIndicator(new ItemStack(AddonBlockBarrelFilled.types[i], 8), new ItemStack[] {new ItemStack(AddonDefs.barrelFullJungle, 1, i)});
+        }
+        
+        //Crates
+        for (int i = 0; i < 4; i++) {
+        	FCRecipes.AddRecipe(new ItemStack(AddonDefs.crate, 2, i), new Object[] {" # ", "#X#", " # ", '#', new ItemStack(FCBetterThanWolves.fcBlockWoodSidingItemStubID, 1, i), 'X', FCBetterThanWolves.fcItemGlue});
+        }
 	}
 	
 	private void addDecoRecipes() {

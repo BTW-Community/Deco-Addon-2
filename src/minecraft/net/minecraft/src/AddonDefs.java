@@ -70,6 +70,13 @@ public class AddonDefs {
 		id_gateJungle=3230,
 		id_gateBlood=3231,
 		id_planksPainted=3232,
+		id_barrelEmpty=3233,
+		id_barrelFullOak=3234,
+		id_barrelFullSpruce=3235,
+		id_barrelFullBirch=3236,
+		id_barrelFullJungle=3237,
+		id_crate=3238,
+		
 		id_pergola=3240,
 		
 		id_paintedPlanksSubStart=3248,
@@ -151,6 +158,8 @@ public class AddonDefs {
 	public static Block planksPainted;
 	public static Block[] paintedPlanksSidingAndCorner, paintedPlanksMouldingAndDecorative, paintedPlanksStairs;
 	public static Block pergola;
+	public static Block barrelEmpty, barrelFullOak, barrelFullSpruce, barrelFullBirch, barrelFullJungle;
+	public static Block crate;
 	public static Item woodBleach;
 	
 	//Deco
@@ -441,6 +450,37 @@ public class AddonDefs {
 		//Pergola
 		pergola = new AddonBlockPergola(id_pergola);
 		AddonManager.Register(pergola, "Pergola");
+		
+		//Barrels
+		barrelEmpty = new AddonBlockBarrelEmpty(id_barrelEmpty);
+		AddonManager.Register(barrelEmpty, new String[] {"oakBarrel", "spruceBarrel", "birchBarrel", "jungleBarrel"}, new String[] {"Oak Barrel", "Spruce Barrel", "Birch Barrel", "Jungle Barrel"});
+		
+		barrelFullOak = new AddonBlockBarrelFilled(id_barrelFullOak, "barrelOak", "Oak Barrel");
+		barrelFullSpruce = new AddonBlockBarrelFilled(id_barrelFullSpruce, "barrelSpruce", "Spruce Barrel");
+		barrelFullBirch = new AddonBlockBarrelFilled(id_barrelFullBirch, "barrelBirch", "Birch Barrel");
+		barrelFullJungle = new AddonBlockBarrelFilled(id_barrelFullJungle, "barrelJungle", "Jungle Barrel");
+		
+		Item.itemsList[barrelFullOak.blockID] = new AddonItemBlockBarrelFilled(barrelFullOak.blockID - 256, barrelFullOak, new String[] {"barrelOak_wheat", "barrelOak_hemp", "barrelOak_potato", "barrelOak_carrot", "barrelOak_fish"}, "Oak Barrel");
+		Item.itemsList[barrelFullSpruce.blockID] = new AddonItemBlockBarrelFilled(barrelFullSpruce.blockID - 256, barrelFullSpruce, new String[] {"barrelSpruce_wheat", "barrelSpruce_hemp", "barrelSpruce_potato", "barrelSpruce_carrot", "barrelSpruce_fish"}, "Spruce Barrel");
+		Item.itemsList[barrelFullBirch.blockID] = new AddonItemBlockBarrelFilled(barrelFullBirch.blockID - 256, barrelFullBirch, new String[] {"barrelBirch_wheat", "barrelBirch_hemp", "barrelBirch_potato", "barrelBirch_carrot", "barrelBirch_fish"}, "Birch Barrel");
+		Item.itemsList[barrelFullJungle.blockID] = new AddonItemBlockBarrelFilled(barrelFullJungle.blockID - 256, barrelFullJungle, new String[] {"barrelJungle_wheat", "barrelJungle_hemp", "barrelJungle_potato", "barrelJungle_carrot", "barrelJungle_fish"}, "Jungle Barrel");
+		
+		AddonItemBlockBarrelFilled[] barrelsFull = new AddonItemBlockBarrelFilled[4];
+		barrelsFull[0] = (AddonItemBlockBarrelFilled) Item.itemsList[barrelFullOak.blockID];
+		barrelsFull[1] = (AddonItemBlockBarrelFilled) Item.itemsList[barrelFullSpruce.blockID];
+		barrelsFull[2] = (AddonItemBlockBarrelFilled) Item.itemsList[barrelFullBirch.blockID];
+		barrelsFull[3] = (AddonItemBlockBarrelFilled) Item.itemsList[barrelFullJungle.blockID];
+		
+		for (int j = 0; j < AddonBlockBarrelFilled.types.length; j++) {
+			AddonManager.Name(new ItemStack(barrelsFull[0], 1, j), "Oak Barrel of " + AddonBlockBarrelFilled.typeNames[j]);
+			AddonManager.Name(new ItemStack(barrelsFull[1], 1, j), "Spruce Barrel of " + AddonBlockBarrelFilled.typeNames[j]);
+			AddonManager.Name(new ItemStack(barrelsFull[2], 1, j), "Birch Barrel of " + AddonBlockBarrelFilled.typeNames[j]);
+			AddonManager.Name(new ItemStack(barrelsFull[3], 1, j), "Jungle Barrel of " + AddonBlockBarrelFilled.typeNames[j]);
+		}
+		
+		//Crates
+		crate = new AddonBlockCrate(id_crate);
+		AddonManager.Register(crate, new String[] {"crateOak", "crateSpruce", "crateBirch", "crateJungle"}, new String[] {"Oak Crate", "Spruce Crate", "Birch Crate", "Jungle Crate"});
 	}
 	
 	private void addDecoDefs() {
@@ -513,6 +553,8 @@ public class AddonDefs {
 		
 		//Allows custom saw recipes
 		FCBetterThanWolves.fcSaw = new AddonBlockSaw((FCBlockSaw) FCBetterThanWolves.fcSaw, AddonManager.ReplaceBlockID(FCBetterThanWolves.fcSaw));
+		
+		//FCBetterThanWolves.fcHopper = new AddonBlockHopper(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcHopper));
 	}
 	
 	private void addSubBlockReplaceDefs() {
