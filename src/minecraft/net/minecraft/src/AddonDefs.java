@@ -100,6 +100,17 @@ public class AddonDefs {
 		id_redSandstoneSmoothMouldingAndDecorative=3318,
 		id_sandstoneSmoothSidingAndCorner=3319,
 		id_sandstoneSmoothMouldingAndDecorative=3320,
+		id_prismarine=3321,
+		id_prismarineLantern=3322,
+		id_prismarineSidingAndCorner=3323,
+		id_prismarineMouldingAndDecorative=3324,
+		id_prismarineStairs=3325,
+		id_prismarineBrickSidingAndCorner=3326,
+		id_prismarineBrickMouldingAndDecorative=3327,
+		id_prismarineBrickStairs=3328,
+		id_prismarineDarkSidingAndCorner=3329,
+		id_prismarineDarkMouldingAndDecorative=3330,
+		id_prismarineDarkStairs=3331,
 		
 		id_flag_start=4000;
 	
@@ -117,7 +128,10 @@ public class AddonDefs {
 		
 		id_chiselDiamond = 30050,
 		id_woodBleach=30051,
-		id_pileRedSand=30052;
+		id_pileRedSand=30052,
+		
+		id_prismarineShard=30060,
+		id_prismarineCrystal=30061;
 	
 	//Clay
 	public static Block terracotta, stainedTerracotta, unfiredTerracotta;
@@ -149,6 +163,14 @@ public class AddonDefs {
 	public static Block stoneTypesSmooth;
 	
 	public static BlockHalfSlab stoneSingleSlab, stoneDoubleSlab;
+	
+	public static Block prismarine;
+	public static Block prismarineLantern;
+	public static Block prismarineSidingAndCorner, prismarineMouldingAndDecorative, prismarineStairs;
+	public static Block prismarineBrickSidingAndCorner, prismarineBrickMouldingAndDecorative, prismarineBrickStairs;
+	public static Block prismarineDarkSidingAndCorner, prismarineDarkMouldingAndDecorative, prismarineDarkStairs;
+	public static Item prismarineShard;
+	public static Item prismarineCrystal;
 	
 	//Sandstone
 	public static Block redSand, redSandSlab;
@@ -201,6 +223,7 @@ public class AddonDefs {
 		addDecoDefs();
 		addToolDefs();
 		addSubBlockReplaceDefs();
+		addEntityDefs();
 	}
 	
 	private void addClayDefs() {
@@ -366,6 +389,39 @@ public class AddonDefs {
 		Item.itemsList[sandstoneSmoothSidingAndCorner.blockID] = new FCItemBlockSidingAndCorner(sandstoneSmoothSidingAndCorner.blockID - 256);
 		Item.itemsList[sandstoneSmoothMouldingAndDecorative.blockID] = new FCItemBlockMouldingAndDecorative(sandstoneSmoothMouldingAndDecorative.blockID - 256);
 		AddonManager.NameSubBlocks_Wall(sandstoneSmoothSidingAndCorner, sandstoneSmoothMouldingAndDecorative, "Smooth Sandstone");
+		
+		//Prismarine
+		prismarine = new AddonBlockPrismarine(id_prismarine);
+		prismarineLantern = new AddonBlockPrismarineLantern(id_prismarineLantern);
+		AddonManager.Register(prismarineLantern, "Prismarine Lantern");
+		
+		prismarineSidingAndCorner = new AddonBlockSidingAndCornerDecorativeWall(id_prismarineSidingAndCorner,  Material.rock, "ginger_prismarineDecorative", 1.5F, 10.0F, Block.soundStoneFootstep, "prismarineSiding", "Prismarine").SetPicksEffectiveOn();
+		prismarineMouldingAndDecorative = new FCBlockMouldingAndDecorative(id_prismarineMouldingAndDecorative, Material.rock, "ginger_prismarineDecorative", "ginger_prismarineDecorative_column", 3042, 1.5F, 10.0F, Block.soundStoneFootstep, "prismarineMoulding").SetPicksEffectiveOn();
+		prismarineStairs = new FCBlockStairs(id_prismarineStairs, prismarine, 0).setUnlocalizedName("stairsPrismarine");
+		prismarineBrickSidingAndCorner = new AddonBlockSidingAndCornerDecorativeWall(id_prismarineBrickSidingAndCorner,  Material.rock, "ginger_prismarineBrickDecorative", 1.5F, 10.0F, Block.soundStoneFootstep, "prismarineBrickSiding", "Prismarine Brick").SetPicksEffectiveOn();
+		prismarineBrickMouldingAndDecorative = new FCBlockMouldingAndDecorative(id_prismarineBrickMouldingAndDecorative, Material.rock, "ginger_prismarineBrickDecorative", "ginger_prismarineBrickDecorative_column", 3042, 1.5F, 10.0F, Block.soundStoneFootstep, "prismarineBrickMoulding").SetPicksEffectiveOn();
+		prismarineBrickStairs = new FCBlockStairs(id_prismarineBrickStairs, prismarine, 1).setUnlocalizedName("stairsPrismarineBrick");
+		prismarineDarkSidingAndCorner = new AddonBlockSidingAndCornerDecorativeWall(id_prismarineDarkSidingAndCorner,  Material.rock, "ginger_prismarineDarkDecorative", 1.5F, 10.0F, Block.soundStoneFootstep, "prismarineDarkSiding", "Dark Prismarine").SetPicksEffectiveOn();
+		prismarineDarkMouldingAndDecorative = new FCBlockMouldingAndDecorative(id_prismarineDarkMouldingAndDecorative, Material.rock, "ginger_prismarineDarkDecorative", "ginger_prismarineDarkDecorative_column", 3042, 1.5F, 10.0F, Block.soundStoneFootstep, "prismarineDarkMoulding").SetPicksEffectiveOn();
+		prismarineDarkStairs = new FCBlockStairs(id_prismarineDarkStairs, prismarine, 2).setUnlocalizedName("stairsPrismarineDark");
+
+		Item.itemsList[prismarineSidingAndCorner.blockID] = new FCItemBlockSidingAndCorner(prismarineSidingAndCorner.blockID - 256);
+		Item.itemsList[prismarineMouldingAndDecorative.blockID] = new FCItemBlockMouldingAndDecorative(prismarineMouldingAndDecorative.blockID - 256);
+		AddonManager.NameSubBlocks_Wall(prismarineSidingAndCorner, prismarineMouldingAndDecorative, "Prismarine");
+		AddonManager.Register(prismarineStairs, "Prismarine Stairs");
+		Item.itemsList[prismarineBrickSidingAndCorner.blockID] = new FCItemBlockSidingAndCorner(prismarineBrickSidingAndCorner.blockID - 256);
+		Item.itemsList[prismarineBrickMouldingAndDecorative.blockID] = new FCItemBlockMouldingAndDecorative(prismarineBrickMouldingAndDecorative.blockID - 256);
+		AddonManager.NameSubBlocks_Wall(prismarineBrickSidingAndCorner, prismarineBrickMouldingAndDecorative, "Prismarine Brick");
+		AddonManager.Register(prismarineBrickStairs, "Prismarine Brick Stairs");
+		Item.itemsList[prismarineDarkSidingAndCorner.blockID] = new FCItemBlockSidingAndCorner(prismarineDarkSidingAndCorner.blockID - 256);
+		Item.itemsList[prismarineDarkMouldingAndDecorative.blockID] = new FCItemBlockMouldingAndDecorative(prismarineDarkMouldingAndDecorative.blockID - 256);
+		AddonManager.NameSubBlocks_Wall(prismarineDarkSidingAndCorner, prismarineDarkMouldingAndDecorative, "Dark Prismarine");
+		AddonManager.Register(prismarineDarkStairs, "Dark Prismarine Stairs");
+
+		prismarineShard = new Item(id_prismarineShard).setUnlocalizedName("ginger_prismarineShard").setCreativeTab(CreativeTabs.tabMaterials);
+		AddonManager.Name(prismarineShard, "Prismarine Shard");
+		prismarineCrystal = new Item(id_prismarineCrystal).setUnlocalizedName("ginger_prismarineCrystal").setCreativeTab(CreativeTabs.tabMaterials);
+		AddonManager.Name(prismarineCrystal, "Prismarine Crystal");
 	}
 	
 	private void addWoodDefs() {
@@ -606,5 +662,9 @@ public class AddonDefs {
 
 	    Block wall = (new AddonBlockWall(AddonManager.ReplaceBlockID(Block.cobblestoneWall), Block.cobblestone)).setUnlocalizedName("cobbleWall");
 	    AddonManager.SetVanillaBlockFinal("cobblestoneWall", Block.cobblestoneWall, wall);
+	}
+	
+	private void addEntityDefs() {
+		AddonManager.ReplaceSpawnableEntity("Squid", FCEntitySquid.class, AddonEntitySquid.class);
 	}
 }

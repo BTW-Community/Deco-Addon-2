@@ -229,6 +229,23 @@ public class AddonRecipes {
 		this.RemoveSubBlockRecipes(Block.sandStone, 32767, 0, FCBetterThanWolves.fcBlockSandstoneSidingAndCorner, FCBetterThanWolves.fcBlockSandstoneMouldingAndDecorative, true);
 		FCRecipes.AddSubBlockRecipesOfType(Block.sandStone, 0, FCBetterThanWolves.fcBlockSandstoneSidingAndCorner, FCBetterThanWolves.fcBlockSandstoneMouldingAndDecorative, true);
 		FCRecipes.AddSubBlockRecipesOfType(Block.sandStone, 2, AddonDefs.sandstoneSmoothSidingAndCorner, AddonDefs.sandstoneSmoothMouldingAndDecorative, true);
+		
+		//Prismarine
+		FCRecipes.AddRecipe(new ItemStack(AddonDefs.prismarine, 1, 0), new Object[] {"XX", "XX", 'X', AddonDefs.prismarineShard});
+		FCRecipes.AddRecipe(new ItemStack(AddonDefs.prismarine, 4, 1), new Object[] {"XX", "XX", 'X', new ItemStack(AddonDefs.prismarine, 1, 0)});
+		FCRecipes.AddRecipe(new ItemStack(AddonDefs.prismarine, 2, 2), new Object[] {"XXX", "X#X", "XXX", 'X', AddonDefs.prismarineShard, '#', new ItemStack(Item.dyePowder, 1, 0)});
+		FCRecipes.AddSubBlockRecipesOfType(AddonDefs.prismarine, 0, AddonDefs.prismarineSidingAndCorner, AddonDefs.prismarineMouldingAndDecorative, true);
+		FCRecipes.AddSubBlockRecipesOfType(AddonDefs.prismarine, 1, AddonDefs.prismarineBrickSidingAndCorner, AddonDefs.prismarineBrickMouldingAndDecorative, true);
+		FCRecipes.AddSubBlockRecipesOfType(AddonDefs.prismarine, 2, AddonDefs.prismarineDarkSidingAndCorner, AddonDefs.prismarineDarkMouldingAndDecorative, true);
+		FCRecipes.AddRecipe(new ItemStack(AddonDefs.prismarineStairs,  4), new Object[] {"X  ", "XX ", "XXX", 'X', new ItemStack(AddonDefs.prismarine, 1, 0)});
+		FCRecipes.AddRecipe(new ItemStack(AddonDefs.prismarineBrickStairs,  4), new Object[] {"X  ", "XX ", "XXX", 'X', new ItemStack(AddonDefs.prismarine, 1, 1)});
+		FCRecipes.AddRecipe(new ItemStack(AddonDefs.prismarineDarkStairs,  4), new Object[] {"X  ", "XX ", "XXX", 'X', new ItemStack(AddonDefs.prismarine, 1, 2)});
+		FCRecipes.AddRecipe(new ItemStack(AddonDefs.prismarineStairs), new Object[] {"X ", "XX", 'X', new ItemStack(AddonDefs.prismarineMouldingAndDecorative, 1, 0)});
+		FCRecipes.AddRecipe(new ItemStack(AddonDefs.prismarineBrickStairs), new Object[] {"X ", "XX", 'X', new ItemStack(AddonDefs.prismarineBrickMouldingAndDecorative, 1, 0)});
+		FCRecipes.AddRecipe(new ItemStack(AddonDefs.prismarineDarkStairs), new Object[] {"X ", "XX", 'X', new ItemStack(AddonDefs.prismarineDarkMouldingAndDecorative, 1, 0)});
+		
+		FCRecipes.AddStokedCrucibleRecipe(new ItemStack(AddonDefs.prismarineCrystal), new ItemStack[] {new ItemStack(AddonDefs.prismarineShard), new ItemStack(Item.lightStoneDust)});
+		FCRecipes.AddRecipe(new ItemStack(AddonDefs.prismarineLantern), new Object[] {"XXX", "X#X", "XXX", 'X', AddonDefs.prismarineShard, '#', new ItemStack(AddonDefs.prismarineCrystal)});
 	}
 	
 	private void addWoodRecipes() {

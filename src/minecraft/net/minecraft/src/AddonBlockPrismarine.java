@@ -1,7 +1,7 @@
 package net.minecraft.src;
 
-public class AddonBlockStoneBrick extends Block {
-	public AddonBlockStoneBrick(int ID) {
+public class AddonBlockPrismarine extends Block {
+	public AddonBlockPrismarine(int ID) {
 		super(ID, Material.rock);
         this.setHardness(2.25F);
         this.setResistance(10.0F);
@@ -10,18 +10,13 @@ public class AddonBlockStoneBrick extends Block {
 		this.setUnlocalizedName("addonStone");
 		this.setCreativeTab(CreativeTabs.tabBlock);
 
-		AddonManager.Register(this, new String[] {"graniteBrick", "andesiteBrick", "dioriteBrick"}, new String[] {"Granite Brick", "Andesite Brick", "Diorite Brick"});
+		AddonManager.Register(this, new String[] {"prismarine", "prismarineBrick", "prismarineDark"}, new String[] {"Prismarine", "Prismarine Bricks", "Dark Prismarine"});
 	}
 
 	public int damageDropped(int Meta)
 	{
 		return Meta;
 	}
-
-    public boolean HasMortar(IBlockAccess var1, int var2, int var3, int var4)
-    {
-        return true;
-    }
 	
 	//CLIENT ONLY METHODS
 	public static Icon[] Icons = new Icon[3];
@@ -31,9 +26,9 @@ public class AddonBlockStoneBrick extends Block {
 	}
 	public void registerIcons(IconRegister Register)
 	{
-		Icons[0] = Register.registerIcon("ginger_graniteBrick");
-		Icons[1] = Register.registerIcon("ginger_andesiteBrick");
-		Icons[2] = Register.registerIcon("ginger_dioriteBrick");
+		Icons[0] = Register.registerIcon("ginger_prismarine");
+		Icons[1] = Register.registerIcon("ginger_prismarineBrick");
+		Icons[2] = Register.registerIcon("ginger_prismarineDark");
 	}
 	//
 }
