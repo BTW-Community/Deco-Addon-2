@@ -1,4 +1,5 @@
 package net.minecraft.src;
+
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.DataInputStream;
@@ -7,8 +8,12 @@ import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
+import java.lang.management.ManagementFactory;
+import java.lang.management.RuntimeMXBean;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
+import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -24,8 +29,14 @@ public class AddonManager extends FCAddOn
 	private static ArrayList<String> Names = new ArrayList<String>();
 	private static ArrayList<Object> NameTargets = new ArrayList<Object>();
 	private static ArrayList<String> loadedAddons = new ArrayList<String>();
-	
+
 	private static boolean isObfuscated = false;
+
+	public static ArrayList<Object> builders= new ArrayList<Object>();
+
+	public void initiateTransforms() {
+
+	}
 
 	@Override
 	public void PreInitialize() {
@@ -33,23 +44,43 @@ public class AddonManager extends FCAddOn
 		//AddonUtilsObfuscationMap.listAllBlockFields();
 		//AddonUtilsObfuscationMap.listAllItemFields();
 	}
-	
+
 	@Override
 	public void Initialize()
 	{
 		System.out.println("[INFO] AddonManager: Initialize");
-		
+
 		addonDefs = AddonDefs.instance;
 		addonRecipes = AddonRecipes.instance;
-		
+
 		addonDefs.addDefinitions();
 		addonRecipes.addAllAddonRecipes();
 	}
-	
+
+	@Override
+	public void PostInitialize() {
+
+	}
+
+	public String getPID() {
+		RuntimeMXBean bean = ManagementFactory.getRuntimeMXBean();
+
+		// Get name representing the running Java virtual machine.
+		// It returns something like 6460@AURORA. Where the value
+		// before the @ symbol is the PID.
+		String jvmName = bean.getName();
+		System.out.println("Name = " + jvmName);
+
+		// Extract the PID by splitting the string returned by the
+		// bean.getName() method.
+		String pid = jvmName.split("@")[0];
+		return pid;
+	}
+
 	public boolean getObfuscation() {
 		return isObfuscated;
 	}
-	
+
 	private static boolean Create_HasCall=false;
 	public void OnLanguageLoaded(StringTranslate Language)
 	{
@@ -115,31 +146,31 @@ public class AddonManager extends FCAddOn
 		Name(tag + ".pedestal" + ".name", name + " Pedestal");
 		Name(tag + ".table" + ".name", name + " Table");
 	}
-	
+
 	//Use to replace block ids
 	public static int ReplaceBlockID(Block block)
 	{
 		Block.blocksList[block.blockID] = null;
 		return block.blockID;
 	}
-	
+
 	//Does really hacky stuff using reflection to replace final references to vanilla blocks
 	public static void SetVanillaBlockFinal(String blockName, Block oldBlock, Block newBlock) {
 		try {
 			String name;
-			
+
 			if (isObfuscated)
 				name = AddonUtilsObfuscationMap.getBlockLookup(blockName);
 			else
 				name = blockName;
-			
+
 			Field block = (AddonDefs.terracotta.getClass().getDeclaredField(name));
 			block.setAccessible(true);
-			
+
 			Field modifiersField = Field.class.getDeclaredField( "modifiers" );
-            modifiersField.setAccessible( true );
-            modifiersField.setInt( block, block.getModifiers() & ~Modifier.FINAL );
-			
+			modifiersField.setAccessible( true );
+			modifiersField.setInt( block, block.getModifiers() & ~Modifier.FINAL );
+
 			//Block.blocksList[oldBlock.blockID] = null;
 			block.set(newBlock, newBlock);
 			block.setAccessible(false);
@@ -159,23 +190,23 @@ public class AddonManager extends FCAddOn
 			e.printStackTrace();
 		}
 	}
-	
+
 	//Used to replace item ids
 	public static int ReplaceItemID(Item item) {
 		Item.itemsList[item.itemID - 256] = null; 
 		return item.itemID - 256;
 	}
-	
+
 	//Does really hacky stuff using reflection to replace final references to vanilla blocks
 	public static void SetVanillaItemFinal(String name, Item oldItem, Item newItem) {
 		try {
 			Field item = (AddonDefs.glassChunk.getClass().getDeclaredField(name));
 			item.setAccessible(true);
-			
+
 			Field modifiersField = Field.class.getDeclaredField( "modifiers" );
-            modifiersField.setAccessible( true );
-            modifiersField.setInt( item, item.getModifiers() & ~Modifier.FINAL );
-			
+			modifiersField.setAccessible( true );
+			modifiersField.setInt( item, item.getModifiers() & ~Modifier.FINAL );
+
 			//Block.blocksList[oldBlock.blockID] = null;
 			item.set(newItem, newItem);
 			item.setAccessible(false);
@@ -189,7 +220,103 @@ public class AddonManager extends FCAddOn
 			e.printStackTrace();
 		}
 	}
-	
+
+	public static void ReplaceSpawnableEntity(String name, Class oldEntity, Class newEntity) {
+		try {
+			for (BiomeGenBase b : BiomeGenBase.biomeList) {
+				if (b == null)
+					continue;
+				
+				Field creatureList;
+				Field monsterList;
+				Field waterCreatureList;
+				Field caveCreatureList;
+
+				if (isObfuscated) {
+					if (b.getClass().getSuperclass().equals(BiomeGenBase.class)) {
+						creatureList = b.getClass().getSuperclass().getDeclaredField("K");
+						monsterList = b.getClass().getSuperclass().getDeclaredField("J");
+						waterCreatureList = b.getClass().getSuperclass().getDeclaredField("L");
+						caveCreatureList = b.getClass().getSuperclass().getDeclaredField("M");
+					}
+					else {
+						creatureList = b.getClass().getSuperclass().getSuperclass().getDeclaredField("K");
+						monsterList = b.getClass().getSuperclass().getSuperclass().getDeclaredField("J");
+						waterCreatureList = b.getClass().getSuperclass().getSuperclass().getDeclaredField("L");
+						caveCreatureList = b.getClass().getSuperclass().getSuperclass().getDeclaredField("M");
+					}
+				}
+				else {
+					if (b.getClass().getSuperclass().equals(BiomeGenBase.class)) {
+						creatureList = b.getClass().getSuperclass().getDeclaredField("spawnableCreatureList");
+						monsterList = b.getClass().getSuperclass().getDeclaredField("spawnableMonsterList");
+						waterCreatureList = b.getClass().getSuperclass().getDeclaredField("spawnableWaterCreatureList");
+						caveCreatureList = b.getClass().getSuperclass().getDeclaredField("spawnableCaveCreatureList");
+					}
+					else {
+						creatureList = b.getClass().getSuperclass().getSuperclass().getDeclaredField("spawnableCreatureList");
+						monsterList = b.getClass().getSuperclass().getSuperclass().getDeclaredField("spawnableMonsterList");
+						waterCreatureList = b.getClass().getSuperclass().getSuperclass().getDeclaredField("spawnableWaterCreatureList");
+						caveCreatureList = b.getClass().getSuperclass().getSuperclass().getDeclaredField("spawnableCaveCreatureList");
+					}
+				}
+
+				creatureList.setAccessible(true);
+				monsterList.setAccessible(true);
+				waterCreatureList.setAccessible(true);
+				caveCreatureList.setAccessible(true);
+
+				ArrayList<SpawnListEntry> creature = (ArrayList<SpawnListEntry>)creatureList.get(b);
+				ArrayList<SpawnListEntry> monster = (ArrayList<SpawnListEntry>)monsterList.get(b);
+				ArrayList<SpawnListEntry> water = (ArrayList<SpawnListEntry>)waterCreatureList.get(b);
+				ArrayList<SpawnListEntry> cave = (ArrayList<SpawnListEntry>)caveCreatureList.get(b);
+
+				for (SpawnListEntry s : creature) {
+					if (s.entityClass == oldEntity) {
+						s.entityClass = newEntity;
+					}
+				}
+
+				for (SpawnListEntry s : monster) {
+					if (s.entityClass == oldEntity) {
+						s.entityClass = newEntity;
+					}
+				}
+
+				for (SpawnListEntry s : water) {
+					if (s.entityClass == oldEntity) {
+						s.entityClass = newEntity;
+					}
+				}
+
+				for (SpawnListEntry s : cave) {
+					if (s.entityClass == oldEntity) {
+						s.entityClass = newEntity;
+					}
+				}
+				
+		        EntityList.ReplaceExistingMapping(newEntity, name);
+			}
+		} catch (NoSuchFieldException e) {
+			/*
+			if (isObfuscated) {
+				e.printStackTrace();
+			}
+			else {
+				isObfuscated = true;
+				ReplaceSpawnableEntity(oldEntity, newEntity);
+			}
+			 */
+			e.printStackTrace();
+		} catch (SecurityException e) {
+			e.printStackTrace();
+		} catch (IllegalArgumentException e) {
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		}
+	}
+
 	public static void MakeStorage(Item subItem, Block container)
 	{
 		FCRecipes.AddRecipe(new ItemStack(container), new Object[]{"XXX","XXX","XXX",'X',subItem});
@@ -218,17 +345,17 @@ public class AddonManager extends FCAddOn
 	{
 		Item.itemsList[target.blockID] = new AddonItemMultiBlock(target, names, preTitle, titles, postTitle);
 	}
-	
+
 	public static void Register(Block target, String[] names, String[] titles)
 	{
 		Item.itemsList[target.blockID] = new AddonItemMultiBlock(target, names, "", titles, "");
 	}
-	
+
 	public static void Register(Block target, String[] names, String[] titles, String postTitle)
 	{
 		Item.itemsList[target.blockID] = new AddonItemMultiBlock(target, names, "", titles, postTitle);
 	}
-	
+
 	public static void Register(Block target, String[] names, String preTitle, String[] titles)
 	{
 		Item.itemsList[target.blockID] = new AddonItemMultiBlock(target, names, preTitle, titles, "");

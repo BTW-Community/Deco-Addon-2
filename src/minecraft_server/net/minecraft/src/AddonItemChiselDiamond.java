@@ -41,7 +41,7 @@ public class AddonItemChiselDiamond extends FCItemChisel {
 	{
 		PlayStoneSplitSoundOnPlayer(var1);
 
-		if (!var1.worldObj.isRemote && var2.itemID == FCBetterThanWolves.fcItemStoneBrick.itemID)
+		if (!var1.worldObj.isRemote && var2.itemID == FCBetterThanWolves.fcBlockStoneBrickLoose.blockID)
 		{
 			FCUtilsItem.EjectStackWithRandomVelocity(var1.worldObj, var1.posX, var1.posY, var1.posZ, new ItemStack(FCBetterThanWolves.fcItemPileGravel, 2));
 		}

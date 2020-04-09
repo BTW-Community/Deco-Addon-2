@@ -1,8 +1,7 @@
 package net.minecraft.src;
 
 public class AddonBlockStoneBrick extends Block {
-
-	protected AddonBlockStoneBrick(int ID) {
+	public AddonBlockStoneBrick(int ID) {
 		super(ID, Material.rock);
         this.setHardness(2.25F);
         this.setResistance(10.0F);
