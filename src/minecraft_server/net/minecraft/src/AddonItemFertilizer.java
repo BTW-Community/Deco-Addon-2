@@ -7,6 +7,7 @@ public class AddonItemFertilizer extends Item
 		super(ID);
 		setUnlocalizedName("ginger_fertilizer");
 		setCreativeTab(CreativeTabs.tabMaterials);
+		SetFilterableProperties(8);
 		SetBellowsBlowDistance(FCBetterThanWolves.fcItemCoalDust.GetBellowsBlowDistance(0));
 		AddonManager.Name(this, "Fertilizer");
 	}
