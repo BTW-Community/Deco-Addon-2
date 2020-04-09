@@ -293,7 +293,7 @@ public class AddonDefs {
 	}
 	
 	private void addGlassDefs() {
-		glassChunk = new Item(id_glassChunk).setUnlocalizedName("ginger_glassball").setCreativeTab(CreativeTabs.tabMaterials);
+		glassChunk = new Item(id_glassChunk).setUnlocalizedName("ginger_glassball").setCreativeTab(CreativeTabs.tabMaterials).SetFilterableProperties(2);
 		glassStained = new AddonBlockGlassStained(id_glassStained);
 		stainedGlassItem = new AddonItemGlassStained(id_glassStainedItem);
 		AddonManager.Name(glassChunk, "Piece of Glass");
@@ -418,9 +418,9 @@ public class AddonDefs {
 		AddonManager.NameSubBlocks_Wall(prismarineDarkSidingAndCorner, prismarineDarkMouldingAndDecorative, "Dark Prismarine");
 		AddonManager.Register(prismarineDarkStairs, "Dark Prismarine Stairs");
 
-		prismarineShard = new Item(id_prismarineShard).setUnlocalizedName("ginger_prismarineShard").setCreativeTab(CreativeTabs.tabMaterials);
+		prismarineShard = new Item(id_prismarineShard).setUnlocalizedName("ginger_prismarineShard").setCreativeTab(CreativeTabs.tabMaterials).SetFilterableProperties(4);
 		AddonManager.Name(prismarineShard, "Prismarine Shard");
-		prismarineCrystal = new Item(id_prismarineCrystal).setUnlocalizedName("ginger_prismarineCrystal").setCreativeTab(CreativeTabs.tabMaterials);
+		prismarineCrystal = new Item(id_prismarineCrystal).setUnlocalizedName("ginger_prismarineCrystal").setCreativeTab(CreativeTabs.tabMaterials).SetFilterableProperties(4);
 		AddonManager.Name(prismarineCrystal, "Prismarine Crystal");
 	}
 	

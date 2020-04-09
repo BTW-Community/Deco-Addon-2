@@ -35,6 +35,15 @@ public class AddonBlockPumpkinLit extends FCBlockJackOLantern {
         this.CheckForExtinguish(var1, var2, var3, var4);
     }
 
+	public int RotateMetadataAroundJAxis(int meta, boolean var2)
+	{
+		int damage = meta % 4;
+		int facing = meta / 4;
+		int newFacing = (facing - 1) % 4;
+		
+		return damage + newFacing * 4;
+	}
+
     /**
      * Lets the block know when one of its neighbor changes. Doesn't know which neighbor changed (coordinates passed are
      * their own) Args: x, y, z, neighbor blockID
@@ -48,7 +57,7 @@ public class AddonBlockPumpkinLit extends FCBlockJackOLantern {
     {
         int var5 = var1.getBlockMetadata(var2, var3, var4);
 
-        if ((var5 & 8) != 0 && this.HasWaterToSidesOrTop(var1, var2, var3, var4))
+        if (this.HasWaterToSidesOrTop(var1, var2, var3, var4))
         {
             this.ExtinguishLantern(var1, var2, var3, var4);
         }
@@ -57,7 +66,7 @@ public class AddonBlockPumpkinLit extends FCBlockJackOLantern {
     private void ExtinguishLantern(World var1, int var2, int var3, int var4)
     {
         int var5 = var1.getBlockMetadata(var2, var3, var4);
-        var1.setBlockAndMetadataWithNotify(var2, var3, var4, Block.pumpkin.blockID, var5 & 3);
+        var1.setBlockAndMetadataWithNotify(var2, var3, var4, AddonDefs.pumpkin.blockID, var5);
         var1.playAuxSFX(2227, var2, var3, var4, 0);
     }
 

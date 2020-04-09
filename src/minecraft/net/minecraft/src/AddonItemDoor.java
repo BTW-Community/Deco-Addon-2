@@ -8,6 +8,7 @@ public class AddonItemDoor extends FCItemDoor {
         this.SetBuoyant();
         this.SetIncineratedInCrucible();
         this.setUnlocalizedName(texture);
+        this.SetBuoyant();
         AddonManager.Name(this, name);
         doorBlock = door;
 	}

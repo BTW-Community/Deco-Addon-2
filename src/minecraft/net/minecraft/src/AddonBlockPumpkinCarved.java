@@ -49,30 +49,13 @@ public class AddonBlockPumpkinCarved extends Block{
 		}
 	}
 
-	public int RotateMetadataAroundJAxis(int var1, boolean var2)
+	public int RotateMetadataAroundJAxis(int meta, boolean var2)
 	{
-		int var3 = var1 & 3;
-
-		if (var2)
-		{
-			++var3;
-
-			if (var3 > 3)
-			{
-				var3 = 0;
-			}
-		}
-		else
-		{
-			--var3;
-
-			if (var3 < 0)
-			{
-				var3 = 3;
-			}
-		}
-
-		return var1 & -4 | var3;
+		int damage = meta % 4;
+		int facing = meta / 4;
+		int newFacing = (facing - 1) % 4;
+		
+		return damage + newFacing * 4;
 	}
 
 	public boolean CanBeGrazedOn(IBlockAccess var1, int var2, int var3, int var4, EntityAnimal var5)
