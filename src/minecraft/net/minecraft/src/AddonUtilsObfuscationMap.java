@@ -15,6 +15,7 @@ public class AddonUtilsObfuscationMap {
 		blockMap.put("fence", "bd");
 		blockMap.put("netherFence", "bF");
 		blockMap.put("cobblestoneWall", "cf");
+		blockMap.put("netherrack", "bf");
 	}
 	
 	public static String getBlockLookup(String blockName) {
