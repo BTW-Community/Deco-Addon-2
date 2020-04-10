@@ -5,6 +5,7 @@ public class AddonItemBlockBarrelFilled  extends ItemMultiTextureTile
     public AddonItemBlockBarrelFilled(int var1, Block var2, String[] var3, String name)
     {
         super(var1, var2, var3);
+        this.maxStackSize = 16;
     }
 
 	public void OnUsedInCrafting(int var1, EntityPlayer var2, ItemStack var3)

@@ -39,4 +39,6 @@ public class AddonBlockDirtCoarseSlab extends FCBlockSlabAttached {
 	{
 		return AddonDefs.coarseDirt.getIcon(Side, Meta);
 	}
+    
+    public void registerIcons(IconRegister register) {}
 }

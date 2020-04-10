@@ -73,4 +73,6 @@ public class AddonBlockRedSandSlab extends FCBlockSlabFalling
 	{
 		return AddonDefs.redSand.getIcon(Side, Meta);
 	}
+    
+    public void registerIcons(IconRegister register) {}
 }

@@ -17,10 +17,6 @@ public class AddonBlockStone extends Block {
 		AddonManager.Register(this, new String[] {"granite", "andesite", "diorite"}, new String[] {"Granite", "Andesite", "Diorite"});
 	}
 	
-	public int idDropped(int id) {
-		return AddonDefs.stoneTypesCobble.blockID;
-	}
-	
 	public int damageDropped(int meta) {
 		return meta;
 	}
