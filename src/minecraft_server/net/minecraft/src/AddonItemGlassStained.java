@@ -72,20 +72,20 @@ public class AddonItemGlassStained extends Item {
 			return false;
 		} else if (!par2EntityPlayer.canPlayerEdit(par4, par5, par6, par7, par1ItemStack)) {
 			return false;
-		} else if (par5 == 255 && Block.blocksList[AddonDefs.id_glassStained].blockMaterial.isSolid()) {
+		} else if (par5 == 255 && Block.blocksList[AddonDefs.glassStained.blockID].blockMaterial.isSolid()) {
 			return false;
-		} else if (par3World.canPlaceEntityOnSide(AddonDefs.id_glassStained, par4, par5, par6, false, par7, par2EntityPlayer,
+		} else if (par3World.canPlaceEntityOnSide(AddonDefs.glassStained.blockID, par4, par5, par6, false, par7, par2EntityPlayer,
 				par1ItemStack)) {
-			Block var12 = Block.blocksList[AddonDefs.id_glassStained];
+			Block var12 = Block.blocksList[AddonDefs.glassStained.blockID];
 			int var13 = par1ItemStack.getItemDamage();
-			int var14 = Block.blocksList[AddonDefs.id_glassStained].onBlockPlaced(par3World, par4, par5, par6, par7, par8, par9, par10,
+			int var14 = Block.blocksList[AddonDefs.glassStained.blockID].onBlockPlaced(par3World, par4, par5, par6, par7, par8, par9, par10,
 					var13);
 
-			if (par3World.setBlock(par4, par5, par6, AddonDefs.id_glassStained, var14, 3)) {
-				if (par3World.getBlockId(par4, par5, par6) == AddonDefs.id_glassStained) {
-					Block.blocksList[AddonDefs.id_glassStained].onBlockPlacedBy(par3World, par4, par5, par6, par2EntityPlayer, par1ItemStack);
-					Block.blocksList[AddonDefs.id_glassStained].onPostBlockPlaced(par3World, par4, par5, par6, var14);
-					par3World.NotifyNearbyAnimalsOfPlayerBlockAddOrRemove(par2EntityPlayer, Block.blocksList[AddonDefs.id_glassStained], par4,
+			if (par3World.setBlock(par4, par5, par6, AddonDefs.glassStained.blockID, var14, 3)) {
+				if (par3World.getBlockId(par4, par5, par6) == AddonDefs.glassStained.blockID) {
+					Block.blocksList[AddonDefs.glassStained.blockID].onBlockPlacedBy(par3World, par4, par5, par6, par2EntityPlayer, par1ItemStack);
+					Block.blocksList[AddonDefs.glassStained.blockID].onPostBlockPlaced(par3World, par4, par5, par6, var14);
+					par3World.NotifyNearbyAnimalsOfPlayerBlockAddOrRemove(par2EntityPlayer, Block.blocksList[AddonDefs.glassStained.blockID], par4,
 							par5, par6);
 				}
 
