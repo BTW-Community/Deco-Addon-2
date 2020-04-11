@@ -13,7 +13,7 @@ public class AddonBlockStoneBrickLooseDiorite extends FCBlockLavaReceiver
         this.setStepSound(soundStoneFootstep);
         this.setUnlocalizedName("ginger_dioriteBrickLoose");
         this.setCreativeTab(CreativeTabs.tabBlock);
-        AddonManager.Register(this, "Loose Diorite Brick");
+        AddonManager.Register(this, "Loose Diorite Bricks");
     }
 
     public boolean OnMortarApplied(World world, int x, int y, int z)

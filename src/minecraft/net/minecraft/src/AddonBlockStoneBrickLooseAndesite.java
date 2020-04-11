@@ -12,7 +12,7 @@ public class AddonBlockStoneBrickLooseAndesite extends FCBlockLavaReceiver
         this.setStepSound(soundStoneFootstep);
         this.setUnlocalizedName("ginger_andesiteBrickLoose");
         this.setCreativeTab(CreativeTabs.tabBlock);
-        AddonManager.Register(this, "Loose Andesite  Brick");
+        AddonManager.Register(this, "Loose Andesite Bricks");
     }
 
     public boolean OnMortarApplied(World world, int x, int y, int z)
