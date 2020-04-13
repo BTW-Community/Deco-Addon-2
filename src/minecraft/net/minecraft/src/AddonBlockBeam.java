@@ -1,9 +1,9 @@
 package net.minecraft.src;
 
-public class AddonBlockPergola extends Block {
-    private final FCModelBlock blockModel = new AddonModelBlockPergola();
+public class AddonBlockBeam extends Block {
+    private final FCModelBlock blockModel = new AddonModelBlockBeam();
     
-	protected AddonBlockPergola(int ID) {
+	protected AddonBlockBeam(int ID) {
 		super(ID, FCBetterThanWolves.fcMaterialPlanks);
         this.setHardness(1.0F);
         this.setResistance(5.0F);
@@ -12,7 +12,6 @@ public class AddonBlockPergola extends Block {
         this.SetBuoyant();
         this.setStepSound(soundWoodFootstep);
 		this.setCreativeTab(CreativeTabs.tabDecorations);
-		this.InitBlockBounds(this.GetBlockBoundsFromPool());
 	}
 
     /**
@@ -22,14 +21,6 @@ public class AddonBlockPergola extends Block {
     public boolean isOpaqueCube()
     {
         return false;
-    }
-    
-    public AxisAlignedBB GetBlockBoundsFromPool(IBlockAccess Access, int x, int y, int z) {
-		return AxisAlignedBB.getAABBPool().getAABB(0, 0, 0, 1, ((AddonModelBlockPergola) this.blockModel).blockHeight, 1);
-    }
-    
-    public AxisAlignedBB GetBlockBoundsFromPool() {
-		return AxisAlignedBB.getAABBPool().getAABB(0, 0, 0, 1, ((AddonModelBlockPergola) this.blockModel).blockHeight, 1);
     }
 
     /**
@@ -62,11 +53,20 @@ public class AddonBlockPergola extends Block {
     {
         int var8 = MathHelper.floor_double((double)(var5.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3;
         
-        int var7 = FCUtilsMisc.ConvertOrientationToFlatBlockFacingReversed(var5);
-        this.SetFacing(var1, var2, var3, var4, var7);
-        //this.SetFacing(var1, var2, var3, var4, var8);
-        
-        //swapSideIcons = var8 > 1;
+        switch (var8 + 2) {
+        case 2:
+            this.SetFacing(var1, var2, var3, var4, 5);
+        	break;
+        case 3:
+            this.SetFacing(var1, var2, var3, var4, 2);
+            break;
+        case 4:
+            this.SetFacing(var1, var2, var3, var4, 4);
+            break;
+        case 5:
+            this.SetFacing(var1, var2, var3, var4, 3);
+            break;
+        }
     }
 
     public int GetFacing(int var1)
@@ -80,31 +80,18 @@ public class AddonBlockPergola extends Block {
     }
 	
 	//CLIENT ONLY
-    private Icon icon_top;
-    private Icon icon_bottom;
-    private Icon icon_sides_0;
-    private Icon icon_sides_1;
+    private Icon icon;
     
     public Icon getIcon(int side, int metadata) {
-    	if (side == 0) {
-    		return icon_bottom;
-    	}
-    	else if (side == 1) {
-    		return icon_top;
-    	}
-    	else if (((side == 2 || side == 3) && metadata <=3) || ((side == 4 || side == 5) && metadata >= 4)) {
-    		return icon_sides_0;
-    	}
-    	else {
-    		return icon_sides_1;
-    	}
+    	return icon;
+    }
+    
+    public Icon GetIconByIndex(int index) {
+    	return icon;
     }
     
     public void registerIcons(IconRegister register) {
-    	icon_top = register.registerIcon("ginger_pergola_top");
-    	icon_bottom = register.registerIcon("ginger_pergola_bottom");
-    	icon_sides_0 = register.registerIcon("ginger_pergola_sides_0");
-    	icon_sides_1 = register.registerIcon("ginger_pergola_sides_1");
+    	icon = register.registerIcon("ginger_crateOak");
     }
     
     /**

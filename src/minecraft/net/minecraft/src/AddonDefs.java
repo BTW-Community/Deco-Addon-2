@@ -90,10 +90,13 @@ public class AddonDefs {
 		id_stoneTypeLooseSlab=3192,
 		id_netherBrickLooseStairs=3193,
 		id_netherBrickLooseSlab=3194,
+		id_netherrackSuperheated=3195,
+		id_magma=3196,
 		
 		id_strippedLog=3200,
 		
 		id_workbench=3210,
+		id_beamStart=3211,
 		
 		id_trapdoorSpruce=3220,
 		id_trapdoorBirch=3221,
@@ -228,6 +231,8 @@ public class AddonDefs {
 	public static Block infusedStoneBrickSidingAndCorner, infusedStoneBrickMouldingAndDecorative, infusedStoneBrickStairs;
 	public static Block netherBrickLoose, netherBrickLooseStairs, netherBrickLooseSlab;
 	
+	public static Block netherrackSuperheated, magma;
+	
 	//Sandstone
 	public static Block redSand, redSandSlab;
 	public static Block redSandStone, redSandStoneStairs, redSandStoneSidingAndCorner, redSandStoneMouldingAndDecorative, redSandStoneSmoothSidingAndCorner, redSandStoneSmoothMouldingAndDecorative;
@@ -246,6 +251,7 @@ public class AddonDefs {
 	public static Block barrelEmpty, barrelFullOak, barrelFullSpruce, barrelFullBirch, barrelFullJungle;
 	public static Block crate;
 	public static Item woodBleach;
+	public static Block[] beams;
 	
 	//Deco
 	public static Block blockDiamondium;
@@ -577,9 +583,13 @@ public class AddonDefs {
 		Item.itemsList[netherBrickMouldingAndDecorative.blockID] = new FCItemBlockMouldingAndDecorative(netherBrickMouldingAndDecorative.blockID - 256);
 		AddonManager.NameSubBlocks_Wall(netherBrickSidingAndCorner, netherBrickMouldingAndDecorative, "Red Nether Brick");
 		
-		Block netherrack = new AddonBlockNetherrack(AddonManager.ReplaceBlockID(Block.netherrack));
-		AddonManager.SetVanillaBlockFinal("netherrack", Block.netherrack, netherrack);
-		FCBetterThanWolves.fcBlockNetherrackFalling = new AddonBlockNetherrackFalling(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockNetherrackFalling));
+		//Netherrack
+		netherrackSuperheated = new AddonBlockNetherrackSuperheated(id_netherrackSuperheated);
+		AddonManager.Register(netherrackSuperheated);
+		magma = new AddonBlockMagma(id_magma);
+		AddonManager.Register(magma, "Magma Block");
+		Block quartzOre = new AddonBlockNetherQuartzOre(AddonManager.ReplaceBlockID(Block.oreNetherQuartz));
+		AddonManager.SetVanillaBlockFinal("oreNetherQuartz", Block.oreNetherQuartz, quartzOre);
 		
 		//Basalt
 		basalt = new AddonBlockBasalt(id_basalt);
@@ -788,6 +798,11 @@ public class AddonDefs {
 		//Crates
 		crate = new AddonBlockCrate(id_crate);
 		AddonManager.Register(crate, new String[] {"crateOak", "crateSpruce", "crateBirch", "crateJungle"}, new String[] {"Oak Crate", "Spruce Crate", "Birch Crate", "Jungle Crate"});
+		
+		//Beams
+		beams = new Block[1];
+		beams[0] = new AddonBlockBeam(id_beamStart);
+		AddonManager.Register(beams[0], "Beam");
 	}
 	
 	private void addDecoDefs() {
@@ -855,6 +870,9 @@ public class AddonDefs {
 		//Coal block
 		coalBlock = new Block(id_coalBlock, Material.rock).setUnlocalizedName("ginger_coalBlock").SetPicksEffectiveOn().SetFireProperties(FCEnumFlammability.EXTREME).setHardness(1.5F).setResistance(10.0F).setCreativeTab(CreativeTabs.tabBlock);
 		AddonManager.Register(coalBlock, "Block of Coal");
+		
+		//Stoked fire
+		FCBetterThanWolves.fcBlockFireStoked = new AddonBlockFireStoked(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockFireStoked));
 	}
 	
 	private void addToolDefs() {

@@ -74,8 +74,10 @@ public class AddonBlockChair extends Block {
 	}
 	@Override public void onBlockPlacedBy(World world, int var2, int var3, int var4, EntityLiving var5, ItemStack var6)
 	{
-		int var7 = FCUtilsMisc.ConvertPlacingEntityOrientationToBlockFacingReversed(var5);
-		this.SetFacing(world, var2, var3, var4, var7);
+        int var8 = MathHelper.floor_double((double)(var5.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3;
+        
+        int var7 = FCUtilsMisc.ConvertOrientationToFlatBlockFacingReversed(var5);
+        this.SetFacing(world, var2, var3, var4, var7);
 	}
 	@Override public AxisAlignedBB getCollisionBoundingBoxFromPool(World world, int var2, int var3, int var4)
 	{
