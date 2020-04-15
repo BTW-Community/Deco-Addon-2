@@ -20,6 +20,16 @@ public class AddonBlockCarpet extends Block {
         return -0.9375F;
     }
 
+    public boolean CanGroundCoverRestOnBlock(World var1, int var2, int var3, int var4)
+    {
+        return true;
+    }
+
+    public float GroundCoverRestingOnVisualOffset(IBlockAccess var1, int var2, int var3, int var4)
+    {
+        return -0.9375F;
+    }
+
     public boolean getBlocksMovement(IBlockAccess var1, int var2, int var3, int var4)
     {
         return false;

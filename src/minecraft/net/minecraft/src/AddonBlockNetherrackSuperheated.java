@@ -56,7 +56,16 @@ public class AddonBlockNetherrackSuperheated extends FCBlockNetherrack {
 			world.setBlockWithNotify(x, y, z, Block.netherrack.blockID);
     	}
     }
+
+    /**
+     * Return true if a player with Silk Touch can harvest this block directly, and not its normal drops.
+     */
+    protected boolean canSilkHarvest()
+    {
+        return false;
+    }
     
+    //CLIENT ONLY
     public void randomDisplayTick(World var1, int var2, int var3, int var4, Random var5)
     {
     	for (int i = 2; i < 6; i++)

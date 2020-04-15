@@ -19,6 +19,11 @@ public class AddonDefs {
 		id_whiteBrickSidingAndCorner=3009,
 		id_whiteBrickMouldingAndDecorative=3010,
 		id_whiteBrickStairs=3011,
+		id_polishedStone=3012,
+		id_polishedStoneStairs=3013,
+		id_polishedStoneSidingAndCorner=3014,
+		id_polishedStoneMouldingAndDecorative=3015,
+		id_bonePillar=3016,
 		
 		id_hayBale=3025,
 		id_hayBaleStairs=3026,
@@ -211,6 +216,8 @@ public class AddonDefs {
 	public static Block[] stoneTypesLooseStairs;
 	public static Block stoneTypesLooseSlab;
 	
+	public static Block polishedStone, polishedStoneStairs, polishedStoneSidingAndCorner, polishedStoneMouldingAndDecorative;
+	
 	public static AddonBlockStep stoneSlab, stoneSlab2, stoneSlab3;
 	
 	public static Block cobblestoneSidingAndCorner, cobblestoneMouldingAndDecorative;
@@ -268,6 +275,7 @@ public class AddonDefs {
 	public static Block pumpkin, pumpkinLit;
 	public static Block carpet;
 	public static Block coalBlock;
+	public static Block bonePillar;
 	
 	//Tools
 	public static AddonItemChiselDiamond chiselDiamond;
@@ -501,6 +509,18 @@ public class AddonDefs {
 		AddonManager.Register(stoneTypesLooseStairs[4], "Loose Andesite Stone Brick Stairs");
 		AddonManager.Register(stoneTypesLooseStairs[5], "Loose Diorite Stone Brick Stairs");
 		
+		polishedStone = new Block(id_polishedStone, Material.rock).setHardness(2.25F).setResistance(10.0F).SetPicksEffectiveOn().setUnlocalizedName("stoneslab_top").setStepSound(Block.soundStoneFootstep).setCreativeTab(CreativeTabs.tabBlock);
+		polishedStoneStairs = new FCBlockStairs(id_polishedStoneStairs, polishedStone, 0).setHardness(2.25F).setResistance(10.0F).SetPicksEffectiveOn().setUnlocalizedName("polishedStoneStairs").setStepSound(Block.soundStoneFootstep).setCreativeTab(CreativeTabs.tabBlock);
+		polishedStoneSidingAndCorner = new AddonBlockSidingAndCornerDecorativeWall(id_polishedStoneSidingAndCorner, Material.rock, "stoneslab_top", 2.25F, 10.0F, Block.soundStoneFootstep, "polishedStoneSiding", "Polished Stone").SetPicksEffectiveOn();
+		polishedStoneMouldingAndDecorative = new FCBlockMouldingAndDecorative(id_polishedStoneMouldingAndDecorative, Material.rock, "stoneslab_top", "stoneslab_top", 3042, 2.25F, 10.0F, Block.soundStoneFootstep, "polishedStoneMoulding").SetPicksEffectiveOn();
+		
+		AddonManager.Register(polishedStone, "Polished Stone");
+		AddonManager.Register(polishedStoneStairs, "Polished Stone Stairs");
+		Item.itemsList[polishedStoneSidingAndCorner.blockID] = new FCItemBlockSidingAndCorner(polishedStoneSidingAndCorner.blockID - 256);
+		Item.itemsList[polishedStoneMouldingAndDecorative.blockID] = new FCItemBlockMouldingAndDecorative(polishedStoneMouldingAndDecorative.blockID - 256);
+		AddonManager.NameSubBlocks_Wall(polishedStoneSidingAndCorner, polishedStoneMouldingAndDecorative, "Polished Stone");
+		
+		//Red sandstone
 		redSand = new AddonBlockRedSand(id_redSand);
 		redSandSlab = new AddonBlockRedSandSlab(id_redSandSlab);
 		redSandStone = new AddonBlockRedSandStone(id_redSandstone);
@@ -645,7 +665,7 @@ public class AddonDefs {
 		AddonManager.Name(new ItemStack(AddonDefs.stoneSlab2, 1, 6), "Granite Cobblestone Slab");
 		AddonManager.Name(new ItemStack(AddonDefs.stoneSlab2, 1, 7), "Andesite Cobblestone Slab");
 
-		stoneSlab3 = new AddonBlockStep(id_stoneSlab3, new Block[] {AddonDefs.stoneTypesCobble, AddonDefs.stoneTypesStoneBrick, AddonDefs.stoneTypesStoneBrick, AddonDefs.stoneTypesStoneBrick, AddonDefs.infusedStone, AddonDefs.infusedStone, AddonDefs.infusedStone}, new int[] {2, 0, 1, 2, 0, 1, 2});
+		stoneSlab3 = new AddonBlockStep(id_stoneSlab3, new Block[] {AddonDefs.stoneTypesCobble, AddonDefs.stoneTypesStoneBrick, AddonDefs.stoneTypesStoneBrick, AddonDefs.stoneTypesStoneBrick, AddonDefs.infusedStone, AddonDefs.infusedStone, AddonDefs.infusedStone, Block.stone}, new int[] {2, 0, 1, 2, 0, 1, 2, 0});
 		Item.itemsList[AddonDefs.stoneSlab3.blockID] = new AddonItemBlockStep(AddonDefs.stoneSlab3.blockID - 256);
 		AddonManager.Name(new ItemStack(AddonDefs.stoneSlab3, 1, 0), "Diorite Cobblestone Slab");
 		AddonManager.Name(new ItemStack(AddonDefs.stoneSlab3, 1, 1), "Granite Brick Slab");
@@ -654,6 +674,9 @@ public class AddonDefs {
 		AddonManager.Name(new ItemStack(AddonDefs.stoneSlab3, 1, 4), "Infused Stone Slab");
 		AddonManager.Name(new ItemStack(AddonDefs.stoneSlab3, 1, 5), "Polished Infused Stone Slab");
 		AddonManager.Name(new ItemStack(AddonDefs.stoneSlab3, 1, 6), "Infused Stone Brick Slab");
+		AddonManager.Name(new ItemStack(AddonDefs.stoneSlab3, 1, 7), "Stone Slab");
+		
+		AddonManager.Name(new ItemStack(Block.stoneSingleSlab, 1, 0), "Polished Stone Slab");
 		
 		stoneTypesLooseSlab = new AddonBlockStoneLooseSlab(id_stoneTypeLooseSlab);
 		Item.itemsList[AddonDefs.stoneTypesLooseSlab.blockID] = new AddonItemBlockSlabLoose(AddonDefs.stoneTypesLooseSlab.blockID - 256);
@@ -873,6 +896,10 @@ public class AddonDefs {
 		
 		//Stoked fire
 		FCBetterThanWolves.fcBlockFireStoked = new AddonBlockFireStoked(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockFireStoked));
+		
+		//Bone pillar
+		bonePillar = new AddonBlockBonePillar(id_bonePillar);
+		AddonManager.Register(bonePillar, "Bone Pillar");
 	}
 	
 	private void addToolDefs() {

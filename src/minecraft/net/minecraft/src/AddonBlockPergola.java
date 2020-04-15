@@ -23,6 +23,17 @@ public class AddonBlockPergola extends Block {
     {
         return false;
     }
+
+    public boolean CanGroundCoverRestOnBlock(World var1, int var2, int var3, int var4)
+    {
+    	int idBelow = var1.getBlockId(var2, var3 - 1, var4);
+        return Block.blocksList[idBelow].CanGroundCoverRestOnBlock(var1, var2, var3, var4);
+    }
+
+    public float GroundCoverRestingOnVisualOffset(IBlockAccess var1, int var2, int var3, int var4)
+    {
+        return -1.0F;
+    }
     
     public AxisAlignedBB GetBlockBoundsFromPool(IBlockAccess Access, int x, int y, int z) {
 		return AxisAlignedBB.getAABBPool().getAABB(0, 0, 0, 1, ((AddonModelBlockPergola) this.blockModel).blockHeight, 1);
