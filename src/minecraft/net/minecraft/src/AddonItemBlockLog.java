@@ -11,7 +11,7 @@ public class AddonItemBlockLog extends FCItemBlockLog
     {
         if (!var2.worldObj.isRemote)
         {
-            if (var3.itemID == AddonDefs.strippedLog.blockID)
+            if (var3.itemID == AddonDefs.strippedLog.blockID || var3.itemID == AddonDefs.barkLogStripped.blockID)
             {
                 FCUtilsItem.EjectStackWithRandomVelocity(var2.worldObj, var2.posX, var2.posY, var2.posZ, new ItemStack(FCBetterThanWolves.fcItemBark, 1, var3.getItemDamage()));
             }

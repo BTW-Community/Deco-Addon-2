@@ -135,6 +135,6 @@ public class AddonRecipesLogChopping extends FCRecipesLogChopping {
     
 	private boolean IsLog(ItemStack itemstack) {
 		int ID = itemstack.itemID;
-		return ID == AddonDefs.strippedLog.blockID;
+		return ID == AddonDefs.strippedLog.blockID || ID == AddonDefs.barkLog.blockID || ID == AddonDefs.barkLogStripped.blockID;
 	}
 }

@@ -99,6 +99,8 @@ public class AddonDefs {
 		id_magma=3196,
 		
 		id_strippedLog=3200,
+		id_barkLog=3201,
+		id_barkLogStripped=3202,
 		
 		id_workbench=3210,
 		id_beamStart=3211,
@@ -247,7 +249,7 @@ public class AddonDefs {
 	public static Item pileRedSand;
 	
 	//Wood
-	public static Block strippedLog;
+	public static Block strippedLog, barkLog, barkLogStripped;
 	public static BlockTrapDoor trapdoorSpruce, trapdoorBirch, trapdoorJungle, trapdoorBlood;
 	public static BlockDoor doorSpruce, doorBirch, doorJungle, doorBlood;
 	public static FCItemDoor itemDoorSpruce, itemDoorBirch, itemDoorJungle, itemDoorBlood;
@@ -693,7 +695,7 @@ public class AddonDefs {
 		BlockLog addonLog = new AddonBlockLogReplace(AddonManager.ReplaceBlockID(Block.wood));
 		AddonManager.SetVanillaBlockFinal("wood", Block.wood, addonLog);
 		
-		Item.itemsList[Block.wood.blockID] = new AddonItemBlockLog(Block.wood.blockID - 256, Block.wood, new String[] {"oakLog", "spruceLog", "brichLog", "jungleLog"});
+		Item.itemsList[Block.wood.blockID] = new AddonItemBlockLog(Block.wood.blockID - 256, Block.wood, new String[] {"oakLog", "spruceLog", "birchLog", "jungleLog"});
 		
 		AddonManager.Name(new ItemStack(Block.wood, 1, 0), "Oak Log");
 		AddonManager.Name(new ItemStack(Block.wood, 1, 1), "Spruce Log");
@@ -702,9 +704,12 @@ public class AddonDefs {
 		
 		AddonManager.Name(FCBetterThanWolves.fcBloodWood, "Blood Wood Log");
 		
-		//Stripped Logs
 		strippedLog = new AddonBlockLogStripped(id_strippedLog);
 		Item.itemsList[AddonDefs.strippedLog.blockID] = new AddonItemBlockLogStripped(AddonDefs.strippedLog.blockID - 256, AddonDefs.strippedLog, new String[] {"oakLogStripped", "spruceLogStripped", "brichLogStripped", "jungleLogStripped"});
+		barkLog = new AddonBlockLogBark(id_barkLog);
+		Item.itemsList[barkLog.blockID] = new AddonItemBlockLog(barkLog.blockID - 256, barkLog, new String[] {"barkOak", "barkSpruce", "barkBirch", "barkJungle"});
+		barkLogStripped = new AddonBlockLogBarkStripped(id_barkLogStripped);
+		Item.itemsList[barkLogStripped.blockID] = new AddonItemBlockLogStripped(barkLogStripped.blockID - 256, barkLogStripped, new String[] {"barkOakStripped", "barkSpruceStripped", "barkBirchStripped", "barkJungleStripped"});
 		
 		//Ladders (used for block bounds change)
 		FCBetterThanWolves.fcBlockLadder = new AddonBlockLadder(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockLadder));

@@ -400,6 +400,11 @@ public class AddonRecipes {
 		for (int i = 0; i < 4; i++) {
 			FCRecipes.AddShapelessRecipeWithSecondaryOutputIndicator(new ItemStack(AddonDefs.strippedLog, 1, i), new Object[] {new ItemStack(FCBetterThanWolves.fcItemChiselIron, 1, 32767), new ItemStack(Block.wood, 1, i)});
 			FCRecipes.AddShapelessRecipeWithSecondaryOutputIndicator(new ItemStack(AddonDefs.strippedLog, 1, i), new Object[] {new ItemStack(AddonDefs.chiselDiamond, 1, 32767), new ItemStack(Block.wood, 1, i)});
+			FCRecipes.AddShapelessRecipeWithSecondaryOutputIndicator(new ItemStack(AddonDefs.barkLogStripped, 1, i), new Object[] {new ItemStack(FCBetterThanWolves.fcItemChiselIron, 1, 32767), new ItemStack(AddonDefs.barkLog, 1, i)});
+			FCRecipes.AddShapelessRecipeWithSecondaryOutputIndicator(new ItemStack(AddonDefs.barkLogStripped, 1, i), new Object[] {new ItemStack(AddonDefs.chiselDiamond, 1, 32767), new ItemStack(AddonDefs.barkLog, 1, i)});
+			
+			FCRecipes.AddRecipe(new ItemStack(AddonDefs.barkLog, 4, i), new Object[] {"XX", "XX", 'X', new ItemStack(Block.wood, 1, i)});
+			FCRecipes.AddRecipe(new ItemStack(AddonDefs.barkLogStripped, 4, i), new Object[] {"XX", "XX", 'X', new ItemStack(AddonDefs.strippedLog, 1, i)});
 		}
 		
 		//Trapdoors
