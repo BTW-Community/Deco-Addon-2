@@ -2,11 +2,10 @@ package net.minecraft.src;
 
 public class AddonBlockStairsRedSandStone extends FCBlockStairs
 {
-    protected AddonBlockStairsRedSandStone(int var1)
+    protected AddonBlockStairsRedSandStone(int var1, Block owner, int ownerMeta)
     {
-        super(var1, AddonDefs.redSandStone, 0);
+        super(var1, owner, ownerMeta);
         this.setCreativeTab(CreativeTabs.tabBlock);
-        this.setUnlocalizedName("redSandStoneStairs");
         this.SetPicksEffectiveOn();
     }
 

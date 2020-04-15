@@ -18,6 +18,7 @@ public class AddonItemGlassStained extends Item {
 		this.setHasSubtypes(true);
 		this.setMaxDamage(0);
 		this.setUnlocalizedName("ginger_stained_glass_item");
+		this.setCreativeTab(CreativeTabs.tabBlock);
 	}
 
 	public Icon getIconFromDamage(int damage) {

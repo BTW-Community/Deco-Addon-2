@@ -44,7 +44,7 @@ public class AddonBlockSaw extends FCBlockSaw {
 
 		int metadata = var1.getBlockMetadata(var2,  var3,  var4);
 
-		if (id == AddonDefs.strippedLog.blockID) {
+		if (id == AddonDefs.strippedLog.blockID || id == AddonDefs.barkLog.blockID || id == AddonDefs.barkLogStripped.blockID) {
 			metadata &= 3;
 
 			for (int i = 0; i < 4; ++i) {
@@ -53,6 +53,10 @@ public class AddonBlockSaw extends FCBlockSaw {
 
 			for (int i = 0; i < 2; ++i) {
 				FCUtilsItem.EjectSingleItemWithRandomOffset(var1, var2, var3, var4, FCBetterThanWolves.fcItemSawDust.itemID, 0);
+			}
+			
+			if (id == AddonDefs.barkLog.blockID) {
+				FCUtilsItem.EjectSingleItemWithRandomOffset(var1, var2, var3, var4, FCBetterThanWolves.fcItemBark.itemID, metadata);
 			}
 
             this.EmitSawParticles(var1, var2, var3, var4, var9);

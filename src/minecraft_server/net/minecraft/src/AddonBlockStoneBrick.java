@@ -1,5 +1,7 @@
 package net.minecraft.src;
 
+import java.util.List;
+
 public class AddonBlockStoneBrick extends Block {
 	public AddonBlockStoneBrick(int ID) {
 		super(ID, Material.rock);

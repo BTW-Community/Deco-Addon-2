@@ -298,15 +298,13 @@ public class AddonManager extends FCAddOn
 		        EntityList.ReplaceExistingMapping(newEntity, name);
 			}
 		} catch (NoSuchFieldException e) {
-			/*
 			if (isObfuscated) {
 				e.printStackTrace();
 			}
 			else {
 				isObfuscated = true;
-				ReplaceSpawnableEntity(oldEntity, newEntity);
+				ReplaceSpawnableEntity(name, oldEntity, newEntity);
 			}
-			 */
 			e.printStackTrace();
 		} catch (SecurityException e) {
 			e.printStackTrace();

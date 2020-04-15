@@ -3,8 +3,6 @@ package net.minecraft.src;
 public class AddonBlockPergola extends Block {
     private final FCModelBlock blockModel = new AddonModelBlockPergola();
     
-    private boolean swapSideIcons;
-    
 	protected AddonBlockPergola(int ID) {
 		super(ID, FCBetterThanWolves.fcMaterialPlanks);
         this.setHardness(1.0F);
@@ -15,6 +13,7 @@ public class AddonBlockPergola extends Block {
         this.setStepSound(soundWoodFootstep);
 		this.setCreativeTab(CreativeTabs.tabDecorations);
 		this.InitBlockBounds(this.GetBlockBoundsFromPool());
+		this.setUnlocalizedName("pergola");
 	}
 
     /**
@@ -24,6 +23,16 @@ public class AddonBlockPergola extends Block {
     public boolean isOpaqueCube()
     {
         return false;
+    }
+
+    public boolean CanGroundCoverRestOnBlock(World var1, int var2, int var3, int var4)
+    {
+        return true;
+    }
+
+    public float GroundCoverRestingOnVisualOffset(IBlockAccess var1, int var2, int var3, int var4)
+    {
+        return -1.0F;
     }
     
     public AxisAlignedBB GetBlockBoundsFromPool(IBlockAccess Access, int x, int y, int z) {
@@ -56,28 +65,6 @@ public class AddonBlockPergola extends Block {
         this.DropItemsIndividualy(var1, var2, var3, var4, FCBetterThanWolves.fcItemSawDust.itemID, 2, 0, var6);
         return true;
     }
-
-    /**
-     * Called when the block is placed in the world.
-     */
-    /*public void onBlockPlacedBy(World world, int x, int y, int z, EntityLiving entity, ItemStack itemStack)
-    {
-        int var7 = MathHelper.floor_double((double)(entity.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3;
-
-        if (var7 == 0 || var7 == 2)
-        {
-        	world.setBlockMetadataWithNotify(x, y, z, 0, 2);
-        }
-
-        if (var7 == 1 || var7 == 3)
-        {
-        	world.setBlockMetadataWithNotify(x, y, z, 1, 2);
-        }
-    }*/
-
-    /**
-     * Called when a block is placed using its ItemBlock. Args: World, X, Y, Z, side, hitX, hitY, hitZ, block metadata
-     */
 
     /**
      * Called when the block is placed in the world.
