@@ -33,6 +33,16 @@ public class AddonBlockLantern extends Block
 		return false;
 	}
 
+    public boolean CanGroundCoverRestOnBlock(World var1, int var2, int var3, int var4)
+    {
+        return true;
+    }
+
+    public float GroundCoverRestingOnVisualOffset(IBlockAccess var1, int var2, int var3, int var4)
+    {
+        return -1.0F;
+    }
+
 	public AxisAlignedBB GetBlockBoundsFromPoolBasedOnState(IBlockAccess Access, int x, int y, int z)
 	{
 		double[] bounds = new double[6];
