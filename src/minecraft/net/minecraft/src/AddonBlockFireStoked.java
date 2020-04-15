@@ -18,10 +18,20 @@ public class AddonBlockFireStoked extends FCBlockFireStoked {
             {
                 var1.setBlockWithNotify(var2, var3 + 1, var4, FCBetterThanWolves.fcKiln.blockID);
             }
-            
-            if (var1.getBlockId(var2, var3 + 1, var4) == Block.netherrack.blockID)
+            else if (var1.getBlockId(var2, var3 + 1, var4) == Block.netherrack.blockID)
             {
                 var1.setBlockWithNotify(var2, var3 + 1, var4, AddonDefs.netherrackSuperheated.blockID);
+            }
+            else if (var1.getBlockId(var2, var3 + 1, var4) == Block.netherBrick.blockID) 
+            {
+                var1.setBlockWithNotify(var2, var3 + 1, var4, AddonDefs.netherBrickSuperheated.blockID);
+                var1.setBlockMetadata(var2, var3 + 1, var4, 0);
+            }
+            else if (var1.getBlockId(var2, var3 + 1, var4) == AddonDefs.netherBrick.blockID) 
+            {
+            	int brickMeta = var1.getBlockMetadata(var2, var3 + 1, var4);
+                var1.setBlockWithNotify(var2, var3 + 1, var4, AddonDefs.netherBrickSuperheated.blockID);
+                var1.setBlockMetadata(var2, var3 + 1, var4, brickMeta == 2 ? 0 : 1);
             }
 
             int var6 = var1.getBlockMetadata(var2, var3, var4);

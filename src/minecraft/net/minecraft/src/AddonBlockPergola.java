@@ -13,6 +13,7 @@ public class AddonBlockPergola extends Block {
         this.setStepSound(soundWoodFootstep);
 		this.setCreativeTab(CreativeTabs.tabDecorations);
 		this.InitBlockBounds(this.GetBlockBoundsFromPool());
+		this.setUnlocalizedName("pergola");
 	}
 
     /**
@@ -26,8 +27,7 @@ public class AddonBlockPergola extends Block {
 
     public boolean CanGroundCoverRestOnBlock(World var1, int var2, int var3, int var4)
     {
-    	int idBelow = var1.getBlockId(var2, var3 - 1, var4);
-        return Block.blocksList[idBelow].CanGroundCoverRestOnBlock(var1, var2, var3, var4);
+        return true;
     }
 
     public float GroundCoverRestingOnVisualOffset(IBlockAccess var1, int var2, int var3, int var4)

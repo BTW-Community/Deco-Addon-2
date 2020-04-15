@@ -35,8 +35,7 @@ public class AddonBlockLantern extends Block
 
     public boolean CanGroundCoverRestOnBlock(World var1, int var2, int var3, int var4)
     {
-    	int idBelow = var1.getBlockId(var2, var3 - 1, var4);
-        return Block.blocksList[idBelow].CanGroundCoverRestOnBlock(var1, var2, var3, var4);
+        return true;
     }
 
     public float GroundCoverRestingOnVisualOffset(IBlockAccess var1, int var2, int var3, int var4)

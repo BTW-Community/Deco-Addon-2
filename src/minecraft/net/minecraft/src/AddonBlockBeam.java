@@ -11,7 +11,7 @@ public class AddonBlockBeam extends Block {
         this.SetAxesEffectiveOn();
         this.SetBuoyant();
         this.setStepSound(soundWoodFootstep);
-		this.setCreativeTab(CreativeTabs.tabDecorations);
+		//this.setCreativeTab(CreativeTabs.tabDecorations);
 		this.setUnlocalizedName("beam");
 	}
 

@@ -97,6 +97,8 @@ public class AddonDefs {
 		id_netherBrickLooseSlab=3194,
 		id_netherrackSuperheated=3195,
 		id_magma=3196,
+		id_netherBrickSuperheated=3197,
+		id_stoneSlab4=3198,
 		
 		id_strippedLog=3200,
 		id_barkLog=3201,
@@ -161,6 +163,20 @@ public class AddonDefs {
 		id_prismarineDarkMouldingAndDecorative=3330,
 		id_prismarineDarkStairs=3331,
 		id_carpet=3332,
+		id_polishedSandstoneStairs=3333,
+		id_polishedSandstoneSidingAndCorner=3334,
+		id_polishedSandstoneMouldingAndDecorative=3335,
+		id_polishedRedSandstoneStairs=3336,
+		id_polishedRedSandstoneSidingAndCorner=3337,
+		id_polishedRedSandstoneMouldingAndDecorative=3338,
+		id_sandstoneBrickStairs=3339,
+		id_sandstoneBrickSidingAndCorner=3340,
+		id_sandstoneBrickMouldingAndDecorative=3341,
+		id_redSandstoneBrickStairs=3342,
+		id_redSandstoneBrickSidingAndCorner=3343,
+		id_redSandstoneBrickMouldingAndDecorative=3344,
+		id_sandstoneSmoothStairs=3345,
+		id_redSandstoneSmoothStairs=3346,
 		
 		id_flag_start=4000;
 	
@@ -220,7 +236,7 @@ public class AddonDefs {
 	
 	public static Block polishedStone, polishedStoneStairs, polishedStoneSidingAndCorner, polishedStoneMouldingAndDecorative;
 	
-	public static AddonBlockStep stoneSlab, stoneSlab2, stoneSlab3;
+	public static AddonBlockStep stoneSlab, stoneSlab2, stoneSlab3, stoneSlab4;
 	
 	public static Block cobblestoneSidingAndCorner, cobblestoneMouldingAndDecorative;
 	public static Block mossyCobblestoneSidingAndCorner, mossyCobblestoneMouldingAndDecorative, mossyCobblestoneStairs;
@@ -240,12 +256,16 @@ public class AddonDefs {
 	public static Block infusedStoneBrickSidingAndCorner, infusedStoneBrickMouldingAndDecorative, infusedStoneBrickStairs;
 	public static Block netherBrickLoose, netherBrickLooseStairs, netherBrickLooseSlab;
 	
-	public static Block netherrackSuperheated, magma;
+	public static Block netherrackSuperheated, magma, netherBrickSuperheated;
 	
 	//Sandstone
 	public static Block redSand, redSandSlab;
-	public static Block redSandStone, redSandStoneStairs, redSandStoneSidingAndCorner, redSandStoneMouldingAndDecorative, redSandStoneSmoothSidingAndCorner, redSandStoneSmoothMouldingAndDecorative;
-	public static Block sandstoneSmoothSidingAndCorner, sandstoneSmoothMouldingAndDecorative;
+	public static Block redSandStone, redSandStoneStairs, redSandStoneSidingAndCorner, redSandStoneMouldingAndDecorative, redSandStoneSmoothSidingAndCorner, redSandStoneSmoothMouldingAndDecorative, redSandStoneSmoothStairs;
+	public static Block redSandStonePolishedSidingAndCorner, redSandStonePolishedMouldingAndDecorative, redSandStonePolishedStairs;
+	public static Block redSandStoneBrickSidingAndCorner, redSandStoneBrickMouldingAndDecorative, redSandStoneBrickStairs;
+	public static Block sandStoneSmoothSidingAndCorner, sandStoneSmoothMouldingAndDecorative, sandStoneSmoothStairs;
+	public static Block sandStonePolishedSidingAndCorner, sandStonePolishedMouldingAndDecorative, sandStonePolishedStairs;
+	public static Block sandStoneBrickSidingAndCorner, sandStoneBrickMouldingAndDecorative, sandStoneBrickStairs;
 	public static Item pileRedSand;
 	
 	//Wood
@@ -367,6 +387,8 @@ public class AddonDefs {
 	}
 	
 	private void addGlassDefs() {
+		Material.glass.SetMobsCantSpawnOn();
+		
 		glassChunk = new Item(id_glassChunk).setUnlocalizedName("ginger_glassball").setCreativeTab(CreativeTabs.tabMaterials).SetFilterableProperties(2);
 		glassStained = new AddonBlockGlassStained(id_glassStained);
 		stainedGlassItem = new AddonItemGlassStained(id_glassStainedItem);
@@ -522,37 +544,75 @@ public class AddonDefs {
 		Item.itemsList[polishedStoneMouldingAndDecorative.blockID] = new FCItemBlockMouldingAndDecorative(polishedStoneMouldingAndDecorative.blockID - 256);
 		AddonManager.NameSubBlocks_Wall(polishedStoneSidingAndCorner, polishedStoneMouldingAndDecorative, "Polished Stone");
 		
-		//Red sandstone
+		//Sandstone
 		redSand = new AddonBlockRedSand(id_redSand);
 		redSandSlab = new AddonBlockRedSandSlab(id_redSandSlab);
 		redSandStone = new AddonBlockRedSandStone(id_redSandstone);
-		redSandStoneStairs = new AddonBlockStairsRedSandStone(id_redSandstoneStairs);
+		redSandStoneStairs = new AddonBlockStairsRedSandStone(id_redSandstoneStairs, redSandStone, 0).setUnlocalizedName("redSandStoneStairs");
 		redSandStoneSidingAndCorner = new AddonBlockSandStoneSidingAndCornerDecorativeWall(id_redSandstoneSidingAndCorner, new String[] {"ginger_redSandstoneDecorative_bottom", "ginger_redSandstoneDecorative_top", "ginger_redSandstoneDecorative_side", "ginger_redSandstoneDecorative_column"}, "redSandstoneSiding", "Red Sandstone");
 		redSandStoneMouldingAndDecorative = new AddonBlockSandStoneMouldingAndDecorative(id_redSandstoneMouldingAndDecorative, new String[] {"ginger_redSandstoneDecorative_bottom", "ginger_redSandstoneDecorative_top", "ginger_redSandstoneDecorative_side", "ginger_redSandstoneDecorative_column"}, redSandStoneSidingAndCorner.blockID, "redSandstoneMoulding");
+		redSandStoneSmoothStairs = new AddonBlockStairsRedSandStone(id_redSandstoneSmoothStairs, redSandStone, 2).setUnlocalizedName("redSandStoneStairsSmooth");
 		redSandStoneSmoothSidingAndCorner = new AddonBlockSandStoneSidingAndCornerDecorativeWall(id_redSandstoneSmoothSidingAndCorner, new String[] {"ginger_redSandstoneDecorative_bottom", "ginger_redSandstoneDecorative_top", "ginger_redSandstoneSmoothDecorative_side", "ginger_redSandstoneSmoothDecorative_column"}, "redSandstoneSmoothSiding", "Smooth Red Sandstone");
 		redSandStoneSmoothMouldingAndDecorative = new AddonBlockSandStoneMouldingAndDecorative(id_redSandstoneSmoothMouldingAndDecorative, new String[] {"ginger_redSandstoneDecorative_bottom", "ginger_redSandstoneDecorative_top", "ginger_redSandstoneSmoothDecorative_side", "ginger_redSandstoneSmoothDecorative_column"}, redSandStoneSmoothSidingAndCorner.blockID, "redSandstoneSmoothMoulding");
+		redSandStonePolishedStairs = new AddonBlockStairsRedSandStone(id_polishedRedSandstoneStairs, redSandStone, 3).setUnlocalizedName("redSandStoneStairsPolished");
+		redSandStonePolishedSidingAndCorner = new AddonBlockSandStoneSidingAndCornerDecorativeWall(id_polishedRedSandstoneSidingAndCorner, new String[] {"ginger_redSandstoneDecorative_top", "ginger_redSandstoneDecorative_top", "ginger_redSandstoneDecorative_top", "ginger_redSandstoneDecorative_top"}, "redSandstonePolishedSiding", "Polished Red Sandstone");
+		redSandStonePolishedMouldingAndDecorative = new AddonBlockSandStoneMouldingAndDecorative(id_polishedRedSandstoneMouldingAndDecorative, new String[] {"ginger_redSandstoneDecorative_top", "ginger_redSandstoneDecorative_top", "ginger_redSandstoneDecorative_top", "ginger_redSandstoneDecorative_top"}, redSandStonePolishedSidingAndCorner.blockID, "redSandstonePolishedMoulding");
+		redSandStoneBrickStairs = new AddonBlockStairsRedSandStone(id_redSandstoneBrickStairs, redSandStone, 4).setUnlocalizedName("redSandStoneStairsBrick");
+		redSandStoneBrickSidingAndCorner = new AddonBlockSandStoneSidingAndCornerDecorativeWall(id_redSandstoneBrickSidingAndCorner, new String[] {"ginger_redSandstoneBrickDecorative", "ginger_redSandstoneBrickDecorative", "ginger_redSandstoneBrickDecorative", "ginger_redSandstoneBrickDecorative_column"}, "redSandstoneBrickSiding", "Red Sandstone Brick");
+		redSandStoneBrickMouldingAndDecorative = new AddonBlockSandStoneMouldingAndDecorative(id_redSandstoneBrickMouldingAndDecorative, new String[] {"ginger_redSandstoneBrickDecorative", "ginger_redSandstoneBrickDecorative", "ginger_redSandstoneBrickDecorative", "ginger_redSandstoneBrickDecorative_column"}, redSandStoneBrickSidingAndCorner.blockID, "redSandstoneBrickMoulding");
 
 		AddonManager.Register(redSand, "Red Sand");
 		AddonManager.Register(redSandSlab, "Red Sand Slab");
-		AddonManager.Register(redSandStone, new String[] {"redSandtone", "chiseledRedSandstone", "smoothRedSandstone"}, new String[] {"Red Sandstone", "Chiseled Red Sandstone", "Smooth Red Sandstone"});
+		AddonManager.Register(redSandStone, new String[] {"redSandtone", "chiseledRedSandstone", "smoothRedSandstone", "polishedRedSandstone", "redSandstoneBrick"}, new String[] {"Red Sandstone", "Chiseled Red Sandstone", "Cut Red Sandstone", "Polished Red Sandstone", "Red Sandstone Brick"});
 		AddonManager.Register(redSandStoneStairs, "Red Sandstone Stairs");
+		AddonManager.Register(redSandStoneSmoothStairs, "Cut Red Sandstone Stairs");
+		AddonManager.Register(redSandStonePolishedStairs, "Polished Red Sandstone Stairs");
+		AddonManager.Register(redSandStoneBrickStairs, "Red Sandstone Brick Stairs");
 
 		Item.itemsList[redSandStoneSidingAndCorner.blockID] = new FCItemBlockSidingAndCorner(redSandStoneSidingAndCorner.blockID - 256);
 		Item.itemsList[redSandStoneMouldingAndDecorative.blockID] = new FCItemBlockMouldingAndDecorative(redSandStoneMouldingAndDecorative.blockID - 256);
 		AddonManager.NameSubBlocks_Wall(redSandStoneSidingAndCorner, redSandStoneMouldingAndDecorative, "Red Sandstone");
 		Item.itemsList[redSandStoneSmoothSidingAndCorner.blockID] = new FCItemBlockSidingAndCorner(redSandStoneSmoothSidingAndCorner.blockID - 256);
 		Item.itemsList[redSandStoneSmoothMouldingAndDecorative.blockID] = new FCItemBlockMouldingAndDecorative(redSandStoneSmoothMouldingAndDecorative.blockID - 256);
-		AddonManager.NameSubBlocks_Wall(redSandStoneSmoothSidingAndCorner, redSandStoneSmoothMouldingAndDecorative, "Smooth Red Sandstone");
+		AddonManager.NameSubBlocks_Wall(redSandStoneSmoothSidingAndCorner, redSandStoneSmoothMouldingAndDecorative, "Cut Red Sandstone");
+		Item.itemsList[redSandStonePolishedSidingAndCorner.blockID]= new FCItemBlockSidingAndCorner(redSandStonePolishedSidingAndCorner.blockID - 256);
+		Item.itemsList[redSandStonePolishedMouldingAndDecorative.blockID] = new FCItemBlockMouldingAndDecorative(redSandStonePolishedMouldingAndDecorative.blockID - 256);
+		AddonManager.NameSubBlocks_Wall(redSandStonePolishedSidingAndCorner, redSandStonePolishedMouldingAndDecorative, "Polished Red Sandstone");
+		Item.itemsList[redSandStoneBrickSidingAndCorner.blockID] = new FCItemBlockSidingAndCorner(redSandStoneBrickSidingAndCorner.blockID - 256);
+		Item.itemsList[redSandStoneBrickMouldingAndDecorative.blockID] = new FCItemBlockMouldingAndDecorative(redSandStoneBrickMouldingAndDecorative.blockID - 256);
+		AddonManager.NameSubBlocks_Wall(redSandStoneBrickSidingAndCorner, redSandStoneBrickMouldingAndDecorative, "Red Sandstone Brick");
 		
 		pileRedSand = new AddonItemPileRedSand(id_pileRedSand);
 		AddonManager.Name(pileRedSand,  "Red Sand Pile");
 		
-		sandstoneSmoothSidingAndCorner = new AddonBlockSandStoneSidingAndCornerDecorativeWall(id_sandstoneSmoothSidingAndCorner, new String[] {"fcBlockDecorativeSandstone_bottom", "fcBlockDecorativeSandstone_top", "ginger_sandstoneSmoothDecorative_side", "ginger_sandstoneSmoothDecorative_column"}, "sandstoneSmoothSiding", "Smooth Sandstone");
-		sandstoneSmoothMouldingAndDecorative = new AddonBlockSandStoneMouldingAndDecorative(id_sandstoneSmoothMouldingAndDecorative, new String[] {"fcBlockDecorativeSandstone_bottom", "fcBlockDecorativeSandstone_top", "ginger_sandstoneSmoothDecorative_side", "ginger_sandstoneSmoothDecorative_column"}, sandstoneSmoothSidingAndCorner.blockID, "sandstoneSmoothMoulding");
+		Block sandStone = new AddonBlockSandStone(AddonManager.ReplaceBlockID(Block.sandStone));
+		AddonManager.SetVanillaBlockFinal("sandStone", Block.sandStone, sandStone);
+		AddonManager.Register(Block.sandStone, new String[] {"sandstone", "sandstoneChiseled", "sandstoneCut", "sandstonePolished", "sandstoneBrick"}, new String[] {"Sandstone", "Chiseled Sandstone", "Cut Sandstone", "Polished Sandstone", "Sandstone Brick"});
+		Block sandStoneStairs = (new AddonBlockStairsSandStone(AddonManager.ReplaceBlockID(Block.stairsSandStone), Block.sandStone, 0)).setUnlocalizedName("stairsSandStone");
+		AddonManager.SetVanillaBlockFinal("stairsSandStone", Block.stairsSandStone, sandStoneStairs);
 		
-		Item.itemsList[sandstoneSmoothSidingAndCorner.blockID] = new FCItemBlockSidingAndCorner(sandstoneSmoothSidingAndCorner.blockID - 256);
-		Item.itemsList[sandstoneSmoothMouldingAndDecorative.blockID] = new FCItemBlockMouldingAndDecorative(sandstoneSmoothMouldingAndDecorative.blockID - 256);
-		AddonManager.NameSubBlocks_Wall(sandstoneSmoothSidingAndCorner, sandstoneSmoothMouldingAndDecorative, "Smooth Sandstone");
+		sandStoneSmoothStairs = new AddonBlockStairsSandStone(id_sandstoneSmoothStairs, Block.sandStone, 2).setUnlocalizedName("stairsSandStoneSmooth");
+		sandStoneSmoothSidingAndCorner = new AddonBlockSandStoneSidingAndCornerDecorativeWall(id_sandstoneSmoothSidingAndCorner, new String[] {"fcBlockDecorativeSandstone_bottom", "fcBlockDecorativeSandstone_top", "ginger_sandstoneSmoothDecorative_side", "ginger_sandstoneSmoothDecorative_column"}, "sandstoneSmoothSiding", "Smooth Sandstone");
+		sandStoneSmoothMouldingAndDecorative = new AddonBlockSandStoneMouldingAndDecorative(id_sandstoneSmoothMouldingAndDecorative, new String[] {"fcBlockDecorativeSandstone_bottom", "fcBlockDecorativeSandstone_top", "ginger_sandstoneSmoothDecorative_side", "ginger_sandstoneSmoothDecorative_column"}, sandStoneSmoothSidingAndCorner.blockID, "sandstoneSmoothMoulding");
+		sandStonePolishedStairs = new AddonBlockStairsSandStone(id_polishedSandstoneStairs, Block.sandStone, 3).setUnlocalizedName("stairsSandStonePolished");
+		sandStonePolishedSidingAndCorner = new AddonBlockSandStoneSidingAndCornerDecorativeWall(id_polishedSandstoneSidingAndCorner, new String[] {"fcBlockDecorativeSandstone_top", "fcBlockDecorativeSandstone_top", "fcBlockDecorativeSandstone_top", "fcBlockDecorativeSandstone_top"}, "sandstonePolishedSiding", "Polished Sandstone");
+		sandStonePolishedMouldingAndDecorative = new AddonBlockSandStoneMouldingAndDecorative(id_polishedSandstoneMouldingAndDecorative, new String[] {"fcBlockDecorativeSandstone_top", "fcBlockDecorativeSandstone_top", "fcBlockDecorativeSandstone_top", "fcBlockDecorativeSandstone_top"}, sandStonePolishedSidingAndCorner.blockID, "sandstonePolishedMoulding");
+		sandStoneBrickStairs = new AddonBlockStairsSandStone(id_sandstoneBrickStairs, Block.sandStone, 4).setUnlocalizedName("stairsSandStoneBrick");
+		sandStoneBrickSidingAndCorner = new AddonBlockSandStoneSidingAndCornerDecorativeWall(id_sandstoneBrickSidingAndCorner, new String[] {"ginger_sandstoneBrickDecorative", "ginger_sandstoneBrickDecorative", "ginger_sandstoneBrickDecorative", "ginger_sandstoneBrickDecorative_column"}, "sandstoneBrickSiding", "Brick Sandstone");
+		sandStoneBrickMouldingAndDecorative = new AddonBlockSandStoneMouldingAndDecorative(id_sandstoneBrickMouldingAndDecorative, new String[] {"ginger_sandstoneBrickDecorative", "ginger_sandstoneBrickDecorative", "ginger_sandstoneBrickDecorative", "ginger_sandstoneBrickDecorative_column"}, sandStoneBrickSidingAndCorner.blockID, "sandstoneBrickMoulding");
+		
+		Item.itemsList[sandStoneSmoothSidingAndCorner.blockID] = new FCItemBlockSidingAndCorner(sandStoneSmoothSidingAndCorner.blockID - 256);
+		Item.itemsList[sandStoneSmoothMouldingAndDecorative.blockID] = new FCItemBlockMouldingAndDecorative(sandStoneSmoothMouldingAndDecorative.blockID - 256);
+		AddonManager.NameSubBlocks_Wall(sandStoneSmoothSidingAndCorner, sandStoneSmoothMouldingAndDecorative, "Cut Sandstone");
+		Item.itemsList[sandStonePolishedSidingAndCorner.blockID] = new FCItemBlockSidingAndCorner(sandStonePolishedSidingAndCorner.blockID - 256);
+		Item.itemsList[sandStonePolishedMouldingAndDecorative.blockID] = new FCItemBlockMouldingAndDecorative(sandStonePolishedMouldingAndDecorative.blockID - 256);
+		AddonManager.NameSubBlocks_Wall(sandStonePolishedSidingAndCorner, sandStonePolishedMouldingAndDecorative, "Polished Sandstone");
+		Item.itemsList[sandStoneBrickSidingAndCorner.blockID] = new FCItemBlockSidingAndCorner(sandStoneBrickSidingAndCorner.blockID - 256);
+		Item.itemsList[sandStoneBrickMouldingAndDecorative.blockID] = new FCItemBlockMouldingAndDecorative(sandStoneBrickMouldingAndDecorative.blockID - 256);
+		AddonManager.NameSubBlocks_Wall(sandStoneBrickSidingAndCorner, sandStoneBrickMouldingAndDecorative, "Sandstone Brick");
+		AddonManager.Register(sandStoneSmoothStairs, "Cut Sandstone Stairs");
+		AddonManager.Register(sandStonePolishedStairs, "Polished Sandstone Stairs");
+		AddonManager.Register(sandStoneBrickStairs, "Sandstone Brick Stairs");
 		
 		//Prismarine
 		prismarine = new AddonBlockPrismarine(id_prismarine);
@@ -604,6 +664,9 @@ public class AddonDefs {
 		Item.itemsList[netherBrickSidingAndCorner.blockID] = new FCItemBlockSidingAndCorner(netherBrickSidingAndCorner.blockID - 256);
 		Item.itemsList[netherBrickMouldingAndDecorative.blockID] = new FCItemBlockMouldingAndDecorative(netherBrickMouldingAndDecorative.blockID - 256);
 		AddonManager.NameSubBlocks_Wall(netherBrickSidingAndCorner, netherBrickMouldingAndDecorative, "Red Nether Brick");
+		
+		netherBrickSuperheated = new AddonBlockNetherBrickSuperheated(id_netherBrickSuperheated);
+		AddonManager.Register(netherBrickSuperheated);
 		
 		//Netherrack
 		netherrackSuperheated = new AddonBlockNetherrackSuperheated(id_netherrackSuperheated);
@@ -677,6 +740,15 @@ public class AddonDefs {
 		AddonManager.Name(new ItemStack(AddonDefs.stoneSlab3, 1, 5), "Polished Infused Stone Slab");
 		AddonManager.Name(new ItemStack(AddonDefs.stoneSlab3, 1, 6), "Infused Stone Brick Slab");
 		AddonManager.Name(new ItemStack(AddonDefs.stoneSlab3, 1, 7), "Stone Slab");
+		
+		stoneSlab4 = new AddonBlockStep(id_stoneSlab4, new Block[] {Block.sandStone, Block.sandStone, Block.sandStone, AddonDefs.redSandStone, AddonDefs.redSandStone, AddonDefs.redSandStone}, new int[] {2, 3, 4, 2, 3, 4});
+		Item.itemsList[AddonDefs.stoneSlab4.blockID] = new AddonItemBlockStep(AddonDefs.stoneSlab4.blockID - 256);
+		AddonManager.Name(new ItemStack(AddonDefs.stoneSlab4, 1, 0), "Cut Sandstone Slab");
+		AddonManager.Name(new ItemStack(AddonDefs.stoneSlab4, 1, 1), "Polished Sandstone Slab");
+		AddonManager.Name(new ItemStack(AddonDefs.stoneSlab4, 1, 2), "Sandstone Brick Slab");
+		AddonManager.Name(new ItemStack(AddonDefs.stoneSlab4, 1, 3), "Cut Red Sandstone Slab");
+		AddonManager.Name(new ItemStack(AddonDefs.stoneSlab4, 1, 4), "Polished Red Sandstone Slab");
+		AddonManager.Name(new ItemStack(AddonDefs.stoneSlab4, 1, 5), "Red Sandstone Brick Slab");
 		
 		AddonManager.Name(new ItemStack(Block.stoneSingleSlab, 1, 0), "Polished Stone Slab");
 		
@@ -905,6 +977,11 @@ public class AddonDefs {
 		//Bone pillar
 		bonePillar = new AddonBlockBonePillar(id_bonePillar);
 		AddonManager.Register(bonePillar, "Bone Pillar");
+		
+		//Ender Pearl
+		//Item enderPearl = new AddonItemEnderPearl(AddonManager.ReplaceItemID(Item.enderPearl)).SetFilterableProperties(2).setUnlocalizedName("enderPearl");
+		Item enderPearl = new AddonItemEnderPearl(Item.enderPearl.itemID - 256).SetFilterableProperties(2).setUnlocalizedName("enderPearl");
+		AddonManager.SetVanillaItemFinal("enderPearl", Item.enderPearl, enderPearl);
 	}
 	
 	private void addToolDefs() {
@@ -942,10 +1019,10 @@ public class AddonDefs {
 		AddonManager.SetVanillaBlockFinal("fence", Block.fence, fence);
 		AddonManager.Name(Block.fence, "Oak Fence");
 		//FCBetterThanWolves.fcBlockWoodOakSidingAndCorner = new AddonBlockWoodSidingAndCornerAndDecorative(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockWoodOakSidingAndCorner),"fcBlockDecorativeWoodOak", "fcWoodOakSiding");
-		FCBetterThanWolves.fcBlockWoodSpruceSidingAndCorner = new AddonBlockWoodSidingAndCornerAndDecorative(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockWoodSpruceSidingAndCorner),"fcBlockDecorativeWoodSpruce", "fcWoodSpruceSiding");
-		FCBetterThanWolves.fcBlockWoodBirchSidingAndCorner = new AddonBlockWoodSidingAndCornerAndDecorative(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockWoodBirchSidingAndCorner),"fcBlockDecorativeWoodBirch", "fcWoodBirchSiding");
-		FCBetterThanWolves.fcBlockWoodJungleSidingAndCorner = new AddonBlockWoodSidingAndCornerAndDecorative(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockWoodJungleSidingAndCorner),"fcBlockDecorativeWoodJungle", "fcWoodJungleSiding");
-		FCBetterThanWolves.fcBlockWoodBloodSidingAndCorner = new AddonBlockWoodSidingAndCornerAndDecorative(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockWoodBloodSidingAndCorner),"fcBlockDecorativeWoodBlood", "fcWoodBloodSiding");
+		FCBetterThanWolves.fcBlockWoodSpruceSidingAndCorner = new AddonBlockWoodSidingAndCornerAndDecorative(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockWoodSpruceSidingAndCorner),"fcBlockDecorativeWoodSpruce", "fcWoodSpruceSiding").setUnlocalizedName("fcBlockSpruceSiding");
+		FCBetterThanWolves.fcBlockWoodBirchSidingAndCorner = new AddonBlockWoodSidingAndCornerAndDecorative(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockWoodBirchSidingAndCorner),"fcBlockDecorativeWoodBirch", "fcWoodBirchSiding").setUnlocalizedName("fcBlockBirchSiding");
+		FCBetterThanWolves.fcBlockWoodJungleSidingAndCorner = new AddonBlockWoodSidingAndCornerAndDecorative(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockWoodJungleSidingAndCorner),"fcBlockDecorativeWoodJungle", "fcWoodJungleSiding").setUnlocalizedName("fcBlockJungleSiding");
+		FCBetterThanWolves.fcBlockWoodBloodSidingAndCorner = new AddonBlockWoodSidingAndCornerAndDecorative(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockWoodBloodSidingAndCorner),"fcBlockDecorativeWoodBlood", "fcWoodBloodSiding").setUnlocalizedName("fcBlockBloodSiding");
 		
 		Block netherFence = new AddonBlockFence(AddonManager.ReplaceBlockID(Block.netherFence), "netherBrick", FCBetterThanWolves.fcMaterialNetherRock).setHardness(2.0F).setResistance(10.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("netherFence");;
 		AddonManager.SetVanillaBlockFinal("netherFence", Block.netherFence, netherFence);

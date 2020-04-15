@@ -7,6 +7,7 @@ public class AddonBlockNetherrackSuperheated extends FCBlockNetherrack {
 		super(id);
 		this.setUnlocalizedName("ginger_netherrackSuperheated");
 		this.setTickRandomly(true);
+		this.setCreativeTab(null);
 	}
 
 	/**
@@ -36,14 +37,6 @@ public class AddonBlockNetherrackSuperheated extends FCBlockNetherrack {
 		else {
 			world.setBlockWithNotify(x, y, z, Block.netherrack.blockID);
 		}
-	}
-
-	/**
-	 * How many world ticks before ticking
-	 */
-	public int tickRate(World par1World)
-	{
-		return 10;
 	}
 
     /**

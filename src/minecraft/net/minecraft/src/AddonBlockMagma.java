@@ -13,17 +13,17 @@ public class AddonBlockMagma extends Block {
         this.setUnlocalizedName("ginger_magma");
 	}
 
-   public void onBlockAdded(World world, int x, int y, int z) {
-    	if (this.HasWaterToSidesOrTop(world, x, y, z)) {
+	public void onBlockAdded(World world, int x, int y, int z) {
+		if (this.HasWaterToSidesOrTop(world, x, y, z)) {
 			world.setBlockWithNotify(x, y, z, AddonDefs.basalt.blockID);
-	        world.playAuxSFX(2227, x, y, z, 0);
-    	}
-    }
-   
-    public void onNeighborBlockChange(World world, int x, int y, int z, int neighborID) {
-    	if (this.HasWaterToSidesOrTop(world, x, y, z)) {
+			world.playAuxSFX(2227, x, y, z, 0);
+		}
+	}
+
+	public void onNeighborBlockChange(World world, int x, int y, int z, int neighborID) {
+		if (this.HasWaterToSidesOrTop(world, x, y, z)) {
 			world.setBlockWithNotify(x, y, z, AddonDefs.basalt.blockID);
-	        world.playAuxSFX(2227, x, y, z, 0);
-    	}
-    }
+			world.playAuxSFX(2227, x, y, z, 0);
+		}
+	}
 }

@@ -4,8 +4,8 @@ import java.util.List;
 
 public class AddonBlockRedSandStone extends Block
 {
-    public static final String[] SAND_STONE_TYPES = new String[] {"default", "chiseled", "smooth"};
-    private static final String[] field_94405_b = new String[] {"ginger_redSandstone_side", "ginger_redSandstone_carved", "ginger_redSandstone_smooth"};
+    public static final String[] SAND_STONE_TYPES = new String[] {"default", "chiseled", "smooth", "polished", "brick"};
+    private static final String[] field_94405_b = new String[] {"ginger_redSandstone_side", "ginger_redSandstone_carved", "ginger_redSandstone_smooth", "ginger_redSandstone_top", "ginger_redSandstone_brick"};
     private Icon[] field_94406_c;
     private Icon field_94403_cO;
     private Icon field_94404_cP;
@@ -55,6 +55,14 @@ public class AddonBlockRedSandStone extends Block
      */
     public Icon getIcon(int par1, int par2)
     {
+    	if (par2 == 3) {
+    		return field_94403_cO;
+    	}
+    	
+    	if (par2 == 4) {
+            return this.field_94406_c[par2];
+    	}
+    	
         if (par1 != 1 && (par1 != 0 || par2 != 1 && par2 != 2))
         {
             if (par1 == 0)
