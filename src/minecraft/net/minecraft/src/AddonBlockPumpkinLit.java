@@ -70,7 +70,10 @@ public class AddonBlockPumpkinLit extends FCBlockJackOLantern {
         var1.playAuxSFX(2227, var2, var3, var4, 0);
     }
 
-    //CLIENT ONLY
+    public boolean GetCanBlockLightItemOnFire(IBlockAccess var1, int var2, int var3, int var4)
+    {
+        return true;
+    }
 
     //CLIENT ONLY
     public Icon sideIcon;

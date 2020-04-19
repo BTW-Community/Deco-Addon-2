@@ -13,6 +13,7 @@ public class AddonBlockBarrelEmpty extends Block {
         this.setStepSound(soundWoodFootstep);
         this.setCreativeTab(CreativeTabs.tabBlock);
 	}
+	
 	@Override public boolean isOpaqueCube()
 	{
 		return true;
@@ -61,11 +62,7 @@ public class AddonBlockBarrelEmpty extends Block {
 	{
 		return true;
 	}
-	@Override public boolean RotateAroundJAxis(World world, int X, int Y, int Z, boolean var5)
-	{
-		return FCUtilsMisc.StandardRotateAroundJ(this, world, X, Y, Z, var5);
-	}
-	@Override 
+
     public int RotateMetadataAroundJAxis(int var1, boolean var2)
     {
         int var3 = var1 & 12;
@@ -86,6 +83,7 @@ public class AddonBlockBarrelEmpty extends Block {
 
         return var1;
     }
+    
 	@Override public boolean ToggleFacing(World world, int X, int Y, int Z, boolean var5)
 	{
 		this.RotateAroundJAxis(world, X, Y, Z, var5);

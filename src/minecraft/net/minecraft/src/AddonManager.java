@@ -226,7 +226,7 @@ public class AddonManager extends FCAddOn
 			for (BiomeGenBase b : BiomeGenBase.biomeList) {
 				if (b == null)
 					continue;
-				
+
 				Field creatureList;
 				Field monsterList;
 				Field waterCreatureList;
@@ -294,8 +294,8 @@ public class AddonManager extends FCAddOn
 						s.entityClass = newEntity;
 					}
 				}
-				
-		        EntityList.ReplaceExistingMapping(newEntity, name);
+
+				EntityList.ReplaceExistingMapping(newEntity, name);
 			}
 		} catch (NoSuchFieldException e) {
 			if (isObfuscated) {
@@ -304,6 +304,40 @@ public class AddonManager extends FCAddOn
 			else {
 				isObfuscated = true;
 				ReplaceSpawnableEntity(name, oldEntity, newEntity);
+			}
+			e.printStackTrace();
+		} catch (SecurityException e) {
+			e.printStackTrace();
+		} catch (IllegalArgumentException e) {
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void AddCustomTileEntityRenderer(Class tileEntityClass, TileEntitySpecialRenderer customRenderer) {
+		TileEntityRenderer renderer = TileEntityRenderer.instance;
+
+		try {
+			Field specialRendererMapField;
+
+			if (isObfuscated) {
+				specialRendererMapField = renderer.getClass().getDeclaredField("j");
+			}
+			else {
+				specialRendererMapField = renderer.getClass().getDeclaredField("specialRendererMap");
+			}
+
+			specialRendererMapField.setAccessible(true);
+			Map specialRendererMap = (Map)specialRendererMapField.get(renderer);
+			specialRendererMap.put(tileEntityClass, customRenderer);
+		} catch (NoSuchFieldException e) {
+			if (isObfuscated) {
+				e.printStackTrace();
+			}
+			else {
+				isObfuscated = true;
+				AddCustomTileEntityRenderer(tileEntityClass, customRenderer);
 			}
 			e.printStackTrace();
 		} catch (SecurityException e) {

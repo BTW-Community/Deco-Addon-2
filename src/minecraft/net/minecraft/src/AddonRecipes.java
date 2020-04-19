@@ -3,9 +3,7 @@ package net.minecraft.src;
 public class AddonRecipes {
 	public static final AddonRecipes instance = new AddonRecipes();
 	
-	private AddonRecipes() {
-		
-	}
+	private AddonRecipes() {}
 	
 	public void addAllAddonRecipes() {
 		addClayRecipes();
@@ -178,7 +176,7 @@ public class AddonRecipes {
 		FCRecipes.AddStokedCrucibleRecipe(new ItemStack(AddonDefs.andesiteCobbleLoose, 8), new ItemStack[] {new ItemStack(AddonDefs.dioriteCobbleLoose, 8), new ItemStack(FCBetterThanWolves.fcItemStone, 8)});
 		FCRecipes.AddStokedCrucibleRecipe(new ItemStack(AddonDefs.andesiteCobbleLoose, 1), new ItemStack[] {new ItemStack(AddonDefs.dioriteCobbleLoose, 1), new ItemStack(FCBetterThanWolves.fcItemStone, 1)});
 		FCRecipes.AddStokedCrucibleRecipe(new ItemStack(AddonDefs.dioriteCobbleLoose, 8), new ItemStack[] {new ItemStack(FCBetterThanWolves.fcBlockCobblestoneLoose, 8), new ItemStack(Item.netherQuartz)});
-		FCRecipes.AddStokedCrucibleRecipe(new ItemStack(AddonDefs.graniteCobbleLoose, 8), new ItemStack[] {new ItemStack(AddonDefs.dioriteCobbleLoose, 8), new ItemStack(Item.netherQuartz)});
+		FCRecipes.AddStokedCrucibleRecipe(new ItemStack(AddonDefs.graniteCobbleLoose, 8), new ItemStack[] {new ItemStack(AddonDefs.andesiteCobbleLoose, 8), new ItemStack(Item.netherQuartz)});
 		
 		FCRecipes.AddStokedCrucibleRecipe(new ItemStack(AddonDefs.stoneTypesSmooth, 1, 0), new ItemStack[] {new ItemStack(AddonDefs.stoneTypes, 1, 0)});
 		FCRecipes.AddStokedCrucibleRecipe(new ItemStack(AddonDefs.stoneTypesSmooth, 1, 1), new ItemStack[] {new ItemStack(AddonDefs.stoneTypes, 1, 1)});
@@ -297,6 +295,9 @@ public class AddonRecipes {
 
         FCRecipes.RemoveVanillaRecipe(new ItemStack(Block.stoneSingleSlab, 6, 1), new Object[] {"###", '#', Block.sandStone});
 		FCRecipes.AddRecipe(new ItemStack(Block.stoneSingleSlab, 6, 1), new Object[] {"XXX", 'X', new ItemStack(Block.sandStone, 1, 0)});
+		
+		FCRecipes.RemoveVanillaRecipe(new ItemStack(Block.stairsSandStone, 4), new Object[] {"#  ", "## ", "###", '#', Block.sandStone});
+		FCRecipes.AddRecipe(new ItemStack(Block.stairsSandStone, 4), new Object[] {"#  ", "## ", "###", '#', new ItemStack(Block.sandStone, 1, 0)});
 		
 		FCRecipes.AddRecipe(new ItemStack(AddonDefs.stoneSlab4, 6, 0), new Object[] {"XXX", 'X', new ItemStack(Block.sandStone, 1, 2)});
 		FCRecipes.AddRecipe(new ItemStack(AddonDefs.stoneSlab4, 6, 1), new Object[] {"XXX", 'X', new ItemStack(Block.sandStone, 1, 3)});
@@ -420,6 +421,12 @@ public class AddonRecipes {
 		FCRecipes.AddRecipe(new ItemStack(AddonDefs.polishedStoneStairs, 4), new Object[] {"X  ", "XX ", "XXX", 'X', new ItemStack(AddonDefs.polishedStone, 1, 0)});
 		FCRecipes.AddRecipe(new ItemStack(AddonDefs.polishedStoneStairs, 1), new Object[] {"X ", "XX", 'X', new ItemStack(AddonDefs.polishedStoneMouldingAndDecorative, 1, 0)});
 		FCRecipes.AddSubBlockRecipesOfType(AddonDefs.polishedStone, 0, AddonDefs.polishedStoneSidingAndCorner, AddonDefs.polishedStoneMouldingAndDecorative, true);
+		
+		//Concrete
+		for (int Index = 0; Index < 32; Index++)
+		{
+			FCRecipes.AddStokedCrucibleRecipe(new ItemStack(AddonDefs.concretePowder,8,Index % 16), new ItemStack[]{new ItemStack(Item.dyePowder,1,Index),new ItemStack(Block.sand, 4), new ItemStack(Block.gravel, 4)});
+		}
 		
 		//Misc Subblocks
 		FCRecipes.AddSubBlockRecipesOfType(Block.cobblestone, 0, AddonDefs.cobblestoneSidingAndCorner, AddonDefs.cobblestoneMouldingAndDecorative, false);
@@ -627,6 +634,10 @@ public class AddonRecipes {
         //Bone Pillars
         FCRecipes.AddRecipe(new ItemStack(AddonDefs.bonePillar, 2), new Object[] {"X", "X", 'X', new ItemStack(FCBetterThanWolves.fcAestheticOpaque, 1, 15)});
         FCRecipes.AddShapelessRecipe(new ItemStack(Item.bone, 9), new ItemStack[] {new ItemStack(AddonDefs.bonePillar)});
+        
+        //Chains
+        FCRecipes.AddRecipe(new ItemStack(AddonDefs.chain, 1), new Object[] {"X", "X", "X", 'X', FCBetterThanWolves.fcItemNuggetIron});
+        FCRecipes.AddStokedCrucibleRecipe(new ItemStack(FCBetterThanWolves.fcItemNuggetIron, 2), new ItemStack[] {new ItemStack(AddonDefs.chain)});
 	}
 	
 	private void addMortarRecipes() {

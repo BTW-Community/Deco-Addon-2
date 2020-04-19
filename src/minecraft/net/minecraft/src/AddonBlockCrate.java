@@ -37,6 +37,10 @@ public class AddonBlockCrate extends Block {
         }
     }
     
+    public int damageDropped(int meta) {
+    	return meta;
+    }
+    
     //CLIENT ONLY
     private Icon[] icons;
     
