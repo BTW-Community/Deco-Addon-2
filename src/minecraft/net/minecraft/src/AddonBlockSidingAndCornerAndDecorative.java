@@ -8,7 +8,6 @@ public class AddonBlockSidingAndCornerAndDecorative extends FCBlockSidingAndCorn
 	public AddonBlockSidingAndCornerAndDecorative(int var1, Material var2, String var3, float var4, float var5, StepSound var6, String var7)
 	{
 		super(var1, var2, var3, var4, var5, var6, var7);
-		setCreativeTab(CreativeTabs.tabDecorations);
 	}
 
 	@Override

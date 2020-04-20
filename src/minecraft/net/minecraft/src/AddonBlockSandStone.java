@@ -22,6 +22,8 @@ public class AddonBlockSandStone extends FCBlockSandStone {
         par3List.add(new ItemStack(par1, 1, 5));
         par3List.add(new ItemStack(par1, 1, 6));
         par3List.add(new ItemStack(par1, 1, 7));
+        par3List.add(new ItemStack(par1, 1, 8));
+        par3List.add(new ItemStack(par1, 1, 9));
     }
 	
 	public void updateTick(World world, int x, int y, int z, Random rand)
@@ -32,9 +34,17 @@ public class AddonBlockSandStone extends FCBlockSandStone {
         {
             int idAbove = world.getBlockId(x, y + 1, z);
 
-            if (idAbove == Block.waterMoving.blockID || idAbove == Block.waterStill.blockID)
+            if (idAbove != Block.waterMoving.blockID && idAbove != Block.waterStill.blockID)
             {
-                world.setBlockMetadataWithNotify(x, y, z, 5);
+                if ((idAbove == Block.lavaMoving.blockID || idAbove == Block.lavaStill.blockID) && rand.nextInt(15) == 0)
+                {
+                	world.setBlockMetadataWithNotify(x, y, z, 8);
+                    world.markBlockRangeForRenderUpdate(x, y, z, x, y, z);
+                }
+            }
+            else if (rand.nextInt(15) == 0)
+            {
+            	world.setBlockMetadataWithNotify(x, y, z, 5);
                 world.markBlockRangeForRenderUpdate(x, y, z, x, y, z);
             }
         }
@@ -43,17 +53,25 @@ public class AddonBlockSandStone extends FCBlockSandStone {
         {
             int idAbove = world.getBlockId(x, y + 1, z);
 
-            if (idAbove == Block.waterMoving.blockID || idAbove == Block.waterStill.blockID)
+            if (idAbove != Block.waterMoving.blockID && idAbove != Block.waterStill.blockID)
             {
-                world.setBlockMetadataWithNotify(x, y, z, 7);
+                if ((idAbove == Block.lavaMoving.blockID || idAbove == Block.lavaStill.blockID) && rand.nextInt(15) == 0)
+                {
+                	world.setBlockMetadataWithNotify(x, y, z, 9);
+                    world.markBlockRangeForRenderUpdate(x, y, z, x, y, z);
+                }
+            }
+            else if (rand.nextInt(15) == 0)
+            {
+            	world.setBlockMetadataWithNotify(x, y, z, 7);
                 world.markBlockRangeForRenderUpdate(x, y, z, x, y, z);
             }
         }
     }
 
     //CLIENT ONLY
-    public static final String[] SAND_STONE_TYPES = new String[] {"default", "chiseled", "smooth", "polished", "brick", "mossy", "largeBrick", "largeBrickMossy"};
-    private static final String[] textures = new String[] {"sandstone_side", "sandstone_carved", "sandstone_smooth", "sandstone_top", "ginger_sandstone_brick", "ginger_sandstone_mossy", "ginger_sandstone_stonebrick", "ginger_sandstone_stonebrick_mossy"};
+    public static final String[] SAND_STONE_TYPES = new String[] {"default", "chiseled", "smooth", "polished", "brick", "mossy", "largeBrick", "largeBrickMossy", "cracked", "largeBrickCracked"};
+    private static final String[] textures = new String[] {"sandstone_side", "sandstone_carved", "sandstone_smooth", "sandstone_top", "ginger_sandstone_brick", "ginger_sandstone_mossy", "ginger_sandstone_stonebrick", "ginger_sandstone_stonebrick_mossy", "sandstone_bottom", "ginger_sandstone_stonebrick_cracked"};
     private Icon[] sideIcons;
     private Icon iconTop;
     private Icon iconBottom;
@@ -69,7 +87,7 @@ public class AddonBlockSandStone extends FCBlockSandStone {
     		return iconTop;
     	}
     	
-    	if (meta == 4 || meta == 6 || meta == 7) {
+    	if (meta == 4 || meta == 6 || meta == 7 || meta == 8 || meta == 9) {
             return this.sideIcons[meta];
     	}
     	

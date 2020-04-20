@@ -11,7 +11,6 @@ public class AddonBlockSidingAndCornerDecorativeWall extends AddonBlockSidingAnd
 	public AddonBlockSidingAndCornerDecorativeWall(int var1, Material var2, String var3, float var4, float var5, StepSound var6, String var7, String originalName)
 	{
 		super(var1, var2, var3, var4, var5, var6, var7);
-		setCreativeTab(CreativeTabs.tabDecorations);
 		AddonManager.Name(getUnlocalizedName() + ".fence" + ".name", originalName + " Wall");
 		wallBlocks.add(this);
 	}

@@ -4,8 +4,8 @@ import java.util.List;
 
 public class AddonBlockRedSandStone extends Block
 {
-    public static final String[] SAND_STONE_TYPES = new String[] {"default", "chiseled", "smooth", "polished", "brick", "mossy", "largeBrick", "largeBrickMossy"};
-    private static final String[] textures = new String[] {"ginger_redSandstone_side", "ginger_redSandstone_carved", "ginger_redSandstone_smooth", "ginger_redSandstone_top", "ginger_redSandstone_brick", "ginger_redSandstone_mossy", "ginger_redSandstone_stonebrick", "ginger_redSandstone_stonebrick_mossy"};
+    public static final String[] SAND_STONE_TYPES = new String[] {"default", "chiseled", "smooth", "polished", "brick", "mossy", "largeBrick", "largeBrickMossy", "cracked", "largeBrickCracked"};
+    private static final String[] textures = new String[] {"ginger_redSandstone_side", "ginger_redSandstone_carved", "ginger_redSandstone_smooth", "ginger_redSandstone_top", "ginger_redSandstone_brick", "ginger_redSandstone_mossy", "ginger_redSandstone_stonebrick", "ginger_redSandstone_stonebrick_mossy", "ginger_redSandstone_bottom", "ginger_redSandstone_stonebrick_cracked"};
     private Icon[] sideIcons;
     private Icon iconTop;
     private Icon iconBottom;
@@ -67,7 +67,7 @@ public class AddonBlockRedSandStone extends Block
     		return iconTop;
     	}
     	
-    	if (meta == 4 || meta == 6 || meta == 7) {
+    	if (meta == 4 || meta == 6 || meta == 7 || meta == 8 || meta == 9) {
             return this.sideIcons[meta];
     	}
     	
