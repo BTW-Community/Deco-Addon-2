@@ -23,6 +23,16 @@ public class AddonBlockLogDamaged extends FCBlockLogDamaged {
 	}
 
     /**
+     * Lets the block know when one of its neighbor changes. Doesn't know which neighbor changed (coordinates passed are
+     * their own) Args: x, y, z, neighbor blockID
+     */
+    public void onNeighborBlockChange(World var1, int var2, int var3, int var4, int var5)
+    {
+        int var6 = var1.getBlockMetadata(var2, var3, var4);
+        this.CheckForReplaceWithSpike(var1, var2, var3, var4, var6);
+    }
+
+    /**
      * returns a list of blocks with the same ID, but different meta (eg: wood returns 4 blocks)
      */
     public void getSubBlocks(int var1, CreativeTabs var2, List var3)
@@ -106,6 +116,30 @@ public class AddonBlockLogDamaged extends FCBlockLogDamaged {
         FCModelBlock var8 = this.m_tempCurrentModel.MakeTemporaryCopy();
         var8.TiltToFacingAlongJ(var7);
         return var8.CollisionRayTrace(var1, var2, var3, var4, var5, var6);
+    }
+
+    private boolean CheckForReplaceWithSpike(World var1, int var2, int var3, int var4, int var5)
+    {
+        if (this.GetDamageLevel(var5) == 3 && !GetIsStump(var5))
+        {
+            int var6 = this.SetConnectionFlagsForBlock(var1, var2, var3, var4, var5);
+
+            if (this.m_bTempPosNarrow != this.m_bTempNegNarrow)
+            {
+                FCUtilsBlockPos var7 = new FCUtilsBlockPos(var2, var3, var4);
+                var7.AddFacingAsOffset(var6);
+                int var8 = var1.getBlockId(var7.i, var7.j, var7.k);
+                Block var10000 = Block.blocksList[var8];
+
+                if (var8 != this.blockID || this.GetOrientation(var5) != this.GetOrientation(var1, var7.i, var7.j, var7.k))
+                {
+                    var1.setBlockAndMetadataWithNotify(var2, var3, var4, AddonUtilsBlock.getLogSpikeFromBlockID(this.blockID), var6);
+                    return true;
+                }
+            }
+        }
+
+        return false;
     }
 	
 	public int SetCurrentModelForBlock(IBlockAccess var1, int var2, int var3, int var4)

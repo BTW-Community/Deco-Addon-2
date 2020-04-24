@@ -18,8 +18,9 @@ public class AddonBlockDoorWood extends FCBlockDoorWood {
 		int doorBirch = AddonDefs.doorBirch.blockID;
 		int doorJungle = AddonDefs.doorJungle.blockID;
 		int doorBlood = AddonDefs.doorBlood.blockID;
+		int doorCherry = AddonDefs.doorCherry.blockID;
 		
-		returnID = this.blockID == doorSpruce ? AddonDefs.itemDoorSpruce.itemID : (this.blockID == doorBirch ? AddonDefs.itemDoorBirch.itemID : (this.blockID == doorJungle ? AddonDefs.itemDoorJungle.itemID : AddonDefs.itemDoorBlood.itemID));
+		returnID = this.blockID == doorSpruce ? AddonDefs.itemDoorSpruce.itemID : (this.blockID == doorBirch ? AddonDefs.itemDoorBirch.itemID : (this.blockID == doorJungle ? AddonDefs.itemDoorJungle.itemID : (this.blockID == doorBlood ? AddonDefs.itemDoorBlood.itemID : AddonDefs.itemDoorCherry.itemID)));
 		
 		return (par1 & 8) != 0 ? 0 : returnID;
 	}
@@ -29,8 +30,9 @@ public class AddonBlockDoorWood extends FCBlockDoorWood {
 		int doorBirch = AddonDefs.doorBirch.blockID;
 		int doorJungle = AddonDefs.doorJungle.blockID;
 		int doorBlood = AddonDefs.doorBlood.blockID;
-		
-		return this.blockID == doorSpruce ? AddonDefs.itemDoorSpruce.itemID : (this.blockID == doorBirch ? AddonDefs.itemDoorBirch.itemID : (this.blockID == doorJungle ? AddonDefs.itemDoorJungle.itemID : AddonDefs.itemDoorBlood.itemID));
+		int doorCherry = AddonDefs.doorCherry.blockID;
+
+		return this.blockID == doorSpruce ? AddonDefs.itemDoorSpruce.itemID : (this.blockID == doorBirch ? AddonDefs.itemDoorBirch.itemID : (this.blockID == doorJungle ? AddonDefs.itemDoorJungle.itemID : (this.blockID == doorBlood ? AddonDefs.itemDoorBlood.itemID : AddonDefs.itemDoorCherry.itemID)));
     }
 	
 	//CLIENT ONLY

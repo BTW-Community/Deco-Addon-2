@@ -468,6 +468,7 @@ public class AddonRecipes {
 		//Polished Stone
 		FCRecipes.AddStokedCrucibleRecipe(new ItemStack(AddonDefs.polishedStone), new ItemStack[] {new ItemStack(Block.stone)});
 		FCRecipes.AddRecipe(new ItemStack(Block.stoneSingleSlab, 6, 0), new Object[] {"###", '#', new ItemStack(AddonDefs.polishedStone)});
+		FCRecipes.AddRecipe(new ItemStack(AddonDefs.polishedStone, 1, 0), new Object[] {"X", "X", 'X', new ItemStack(Block.stoneSingleSlab, 1, 0)});
 		FCRecipes.AddRecipe(new ItemStack(AddonDefs.polishedStoneStairs, 4), new Object[] {"X  ", "XX ", "XXX", 'X', new ItemStack(AddonDefs.polishedStone, 1, 0)});
 		FCRecipes.AddRecipe(new ItemStack(AddonDefs.polishedStoneStairs, 1), new Object[] {"X ", "XX", 'X', new ItemStack(AddonDefs.polishedStoneMouldingAndDecorative, 1, 0)});
 		FCRecipes.AddSubBlockRecipesOfType(AddonDefs.polishedStone, 0, AddonDefs.polishedStoneSidingAndCorner, AddonDefs.polishedStoneMouldingAndDecorative, true);
@@ -477,6 +478,17 @@ public class AddonRecipes {
 		{
 			FCRecipes.AddStokedCrucibleRecipe(new ItemStack(AddonDefs.concretePowder,8,Index % 16), new ItemStack[]{new ItemStack(Item.dyePowder,1,Index),new ItemStack(Block.sand, 4), new ItemStack(Block.gravel, 4)});
 		}
+		
+		//End Stone Brick
+		FCRecipes.AddRecipe(new ItemStack(AddonDefs.endStoneBrick, 4), new Object[] {"XX", "XX", 'X', new ItemStack(Block.whiteStone)});
+		FCRecipes.AddSubBlockRecipesOfType(AddonDefs.endStoneBrick, 0, AddonDefs.endStoneBrickSidingAndCorner, AddonDefs.endStoneBrickMouldingAndDecorative, true);
+		FCRecipes.AddRecipe(new ItemStack(AddonDefs.endStoneBrickStairs, 4), new Object[] {"X  ", "XX ", "XXX", 'X', new ItemStack(AddonDefs.endStoneBrick, 1, 0)});
+		FCRecipes.AddRecipe(new ItemStack(AddonDefs.endStoneBrickStairs, 1), new Object[] {"X ", "XX", 'X', new ItemStack(AddonDefs.endStoneBrickMouldingAndDecorative, 1, 0)});
+		FCRecipes.AddRecipe(new ItemStack(AddonDefs.stoneSlab6, 6, 2), new Object[] {"###", '#', new ItemStack(AddonDefs.endStoneBrick, 1, 0)});
+		FCRecipes.AddRecipe(new ItemStack(AddonDefs.endStoneBrick, 1, 0), new Object[] {"X", "X", 'X', new ItemStack(AddonDefs.stoneSlab6, 1, 2)});
+		
+		//Obsidian
+		FCRecipes.AddShapelessRecipe(new ItemStack(Block.obsidian, 1, 1), new ItemStack[] {new ItemStack(Block.obsidian, 1, 0), new ItemStack(FCBetterThanWolves.fcItemSoulFlux)});
 		
 		//Misc Subblocks
 		FCRecipes.AddSubBlockRecipesOfType(Block.cobblestone, 0, AddonDefs.cobblestoneSidingAndCorner, AddonDefs.cobblestoneMouldingAndDecorative, false);

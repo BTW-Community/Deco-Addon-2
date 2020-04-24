@@ -54,4 +54,17 @@ public class AddonUtilsBlock {
 			return AddonDefs.logDamagedCherry.blockID;
 		}
 	}
+	
+	public static int getLogSpikeFromBlockID(int id) {
+		if (id == FCBetterThanWolves.fcBlockLogDamaged.blockID)
+			return FCBetterThanWolves.fcBlockLogSpike.blockID;
+		else if (id == AddonDefs.logDamagedSpruce.blockID)
+			return AddonDefs.logSpikeSpruce.blockID;
+		else if (id == AddonDefs.logDamagedBirch.blockID)
+			return AddonDefs.logSpikeBirch.blockID;
+		else if (id == AddonDefs.logDamagedJungle.blockID)
+			return AddonDefs.logSpikeJungle.blockID;
+		else
+			return AddonDefs.logSpikeCherry.blockID;
+	}
 }

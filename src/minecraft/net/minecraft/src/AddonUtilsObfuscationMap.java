@@ -23,8 +23,12 @@ public class AddonUtilsObfuscationMap {
 		blockMap.put("stairsWoodSpruce", "ca");
 		blockMap.put("stairsWoodBirch", "cb");
 		blockMap.put("stairsWoodJungle", "cc");
+		blockMap.put("obsidian", "at");
+		blockMap.put("signPost", "aH");
+		blockMap.put("signWall", "aM");
 		
 		itemMap.put("enderPearl", "bo");
+		itemMap.put("sign", "av");
 	}
 	
 	public static String getBlockLookup(String blockName) {
