@@ -19,7 +19,7 @@ public class AddonBlockLogBarkStripped extends FCBlockLog {
      */
     public int idDropped(int par1, Random par2Random, int par3)
     {
-        return AddonDefs.strippedLog.blockID;
+        return AddonDefs.barkLogStripped.blockID;
     }
 
 	//Removes bark drop from chisel use

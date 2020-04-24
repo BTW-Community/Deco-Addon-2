@@ -14,6 +14,10 @@ public class AddonBlockStep extends FCBlockSlab
 	{
 		super(par1, Material.rock);
 		this.setCreativeTab(CreativeTabs.tabBlock);
+		this.setHardness(2.0F);
+		this.setResistance(10.0F);
+		this.SetPicksEffectiveOn();
+		this.setStepSound(Block.soundStoneFootstep);
 		blockTypes = blocks;
 		typeMetas = metas;
 	}
@@ -27,8 +31,12 @@ public class AddonBlockStep extends FCBlockSlab
 	 */
 	public int idDropped(int par1, Random par2Random, int par3)
 	{
-		return AddonDefs.stoneSlab.blockID;
+		return this.blockID;
 	}
+    
+    public int damageDropped(int meta) {
+    	return meta;
+    }
 
 	/**
 	 * Returns an item stack containing a single instance of the current block type. 'i' is the block's subtype/damage

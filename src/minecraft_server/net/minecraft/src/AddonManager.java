@@ -226,7 +226,7 @@ public class AddonManager extends FCAddOn
 			for (BiomeGenBase b : BiomeGenBase.biomeList) {
 				if (b == null)
 					continue;
-				
+
 				Field creatureList;
 				Field monsterList;
 				Field waterCreatureList;
@@ -294,8 +294,8 @@ public class AddonManager extends FCAddOn
 						s.entityClass = newEntity;
 					}
 				}
-				
-		        EntityList.ReplaceExistingMapping(newEntity, name);
+
+				EntityList.ReplaceExistingMapping(newEntity, name);
 			}
 		} catch (NoSuchFieldException e) {
 			if (isObfuscated) {

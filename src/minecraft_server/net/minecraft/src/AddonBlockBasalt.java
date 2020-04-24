@@ -69,4 +69,25 @@ public class AddonBlockBasalt extends Block {
     {
         return par0 & 3;
     }
+
+    public int RotateMetadataAroundJAxis(int var1, boolean var2)
+    {
+        int var3 = var1 & 12;
+
+        if (var3 != 0)
+        {
+            if (var3 == 4)
+            {
+                var3 = 8;
+            }
+            else if (var3 == 8)
+            {
+                var3 = 4;
+            }
+
+            var1 = var1 & -13 | var3;
+        }
+
+        return var1;
+    }
 }

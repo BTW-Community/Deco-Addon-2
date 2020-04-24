@@ -47,7 +47,7 @@ public class AddonBlockLogBarkStripped extends FCBlockLog {
             var10 = FCBetterThanWolves.fcBlockLogDamaged.SetOrientation(var8, var9);
         }
 
-        var2.setBlockAndMetadataWithNotify(var3, var4, var5, FCBetterThanWolves.fcBlockLogDamaged.blockID, var10);
+        var2.setBlockAndMetadataWithNotify(var3, var4, var5, AddonUtilsBlock.getDamagedLogFromMetadata(var7 & 3), var10);
 
         return true;
     }

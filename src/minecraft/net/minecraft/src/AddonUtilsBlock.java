@@ -38,4 +38,20 @@ public class AddonUtilsBlock {
 	public static boolean isWall(int blockID, int metadata) {
 		return blockID == Block.cobblestoneWall.blockID || (Block.blocksList[blockID] instanceof AddonBlockSidingAndCornerDecorativeWall && metadata == 14);
 	}
+	
+	public static int getDamagedLogFromMetadata(int meta) {
+		switch (meta) {
+		case 0:
+		default:
+			return FCBetterThanWolves.fcBlockLogDamaged.blockID;
+		case 1:
+			return AddonDefs.logDamagedSpruce.blockID;
+		case 2:
+			return AddonDefs.logDamagedBirch.blockID;
+		case 3:
+			return AddonDefs.logDamagedJungle.blockID;
+		case 4:
+			return AddonDefs.logDamagedCherry.blockID;
+		}
+	}
 }

@@ -36,4 +36,8 @@ public class AddonBlockCrate extends Block {
             var3.add(new ItemStack(var1, 1, var4));
         }
     }
+    
+    public int damageDropped(int meta) {
+    	return meta;
+    }
 }

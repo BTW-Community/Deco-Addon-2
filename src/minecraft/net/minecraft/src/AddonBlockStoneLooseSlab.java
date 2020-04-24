@@ -3,10 +3,10 @@ package net.minecraft.src;
 public class AddonBlockStoneLooseSlab extends FCBlockMortarReceiverSlab
 {
 	private Block[] owners = {AddonDefs.graniteCobbleLoose, AddonDefs.andesiteCobbleLoose, AddonDefs.dioriteCobbleLoose, AddonDefs.graniteStoneBrickLoose, AddonDefs.andesiteStoneBrickLoose, AddonDefs.dioriteStoneBrickLoose};
-	private int[] mortaredIDs = {AddonDefs.stoneSlab2.blockID, AddonDefs.stoneSlab2.blockID, AddonDefs.stoneSlab3.blockID, AddonDefs.stoneSlab3.blockID, AddonDefs.stoneSlab3.blockID, AddonDefs.stoneSlab3.blockID};
+	private int[] mortaredIDs;
 	private int[] mortaredMetas = {6, 7, 0, 1, 2, 3};
 	
-    public AddonBlockStoneLooseSlab(int var1)
+    public AddonBlockStoneLooseSlab(int var1, int[] mortarID)
     {
         super(var1, Material.rock);
         this.setHardness(1.0F);
@@ -15,6 +15,7 @@ public class AddonBlockStoneLooseSlab extends FCBlockMortarReceiverSlab
         this.setStepSound(soundStoneFootstep);
         this.setCreativeTab(CreativeTabs.tabBlock);
         this.setUnlocalizedName("stoneLooseSlab");
+        mortaredIDs = mortarID;
     }
 
     public int GetCombinedBlockID(int var1)

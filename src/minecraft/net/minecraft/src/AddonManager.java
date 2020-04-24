@@ -2,7 +2,9 @@ package net.minecraft.src;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileReader;
@@ -401,7 +403,7 @@ public class AddonManager extends FCAddOn
 				int size = dis.readInt();
 				int damage = dis.readInt();
 
-				ItemStack stack = new ItemStack(30008+256,size,damage);
+				ItemStack stack = new ItemStack(AddonDefs.stainedGlassItem.itemID+256,size,damage);
 				epmp.inventory.setInventorySlotContents(epmp.inventory.currentItem, stack);
 			}
 		} catch (IOException e) {

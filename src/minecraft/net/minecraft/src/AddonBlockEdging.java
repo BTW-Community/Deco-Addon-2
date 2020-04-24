@@ -11,7 +11,7 @@ public class AddonBlockEdging extends Block {
     {
         super(var1, var2.blockMaterial);
         Block.useNeighborBrightness[var1] = true;
-        this.setCreativeTab(CreativeTabs.tabDecorations);
+        //this.setCreativeTab(CreativeTabs.tabDecorations);
         this.m_referenceBlock = var2;
         this.m_iReferenceBlockMetadata = var3;
         this.setHardness(var2.blockHardness);
