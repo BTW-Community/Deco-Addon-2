@@ -106,6 +106,10 @@ public class AddonBlockTrapDoor extends FCBlockTrapDoor {
 		return var1.getBlockId(var2, var3 - 1, var4) == FCBetterThanWolves.fcBlockLadder.blockID || var1.getBlockId(var2, var3 - 1, var4) == FCBetterThanWolves.fcBlockLadderOnFire.blockID;
 	}
 	
+	public boolean GetCanGrassGrowUnderBlock(World world, int x, int y, int z, boolean var5) {
+		return true;
+	}
+	
 	@Override
     public boolean HasLargeCenterHardPointToFacing(IBlockAccess blockAccess, int x, int y, int z, int facing, boolean var6) {
 		int metadata = blockAccess.getBlockMetadata(x,  y,  z);

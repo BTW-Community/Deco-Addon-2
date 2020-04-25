@@ -259,6 +259,22 @@ public class AddonDefs {
 	id_signBloodWall=3446,
 	id_signCherry=3447,
 	id_signCherryWall=3448,
+	id_hedgeOakStairs=3449,
+	id_hedgeOakSidingandCorner=3450,
+	id_hedgeOakMoulingAndDecorative=3451,
+	id_hedgeSpruceStairs=3452,
+	
+	
+	id_hedgeBirchStairs=3455,
+	
+	
+	id_hedgeJungleStairs=3458,
+	
+	
+	id_hedgeBloodStairs=3461,
+	
+	
+	id_hedgeCherryStairs=3464,
 
 	id_flag_start=4000;
 
@@ -409,7 +425,12 @@ public class AddonDefs {
 	public static Block podzol;
 	public static Block podzolSlab;
 	public static BlockLeaves hedge;
-	public static Block hedgeSidingAndCorner, hedgeMouldingAndDecorative;
+	public static Block hedgeOakStairs, hedgeOakSidingAndCorner, hedgeOakMouldingAndDecorative;
+	public static Block hedgeSpruceStairs;
+	public static Block hedgeBirchStairs;
+	public static Block hedgeJungleStairs;
+	public static Block hedgeBloodStairs;
+	public static Block hedgeCherryStairs;
 	public static Block pumpkin, pumpkinLit;
 	public static Block carpet;
 	public static Block coalBlock, netherCoalBlock;
@@ -1286,6 +1307,8 @@ public class AddonDefs {
 		AddonManager.Register(pergola, "Pergola");
 
 		//Barrels
+		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcAestheticOpaque, 1, 11), "Old Barrel");
+		
 		barrelEmpty = new AddonBlockBarrelEmpty(id_barrelEmpty, new String[] {"ginger_barrelOak_top", "ginger_barrelSpruce_top", "ginger_barrelBirch_top", "ginger_barrelJungle_top"}, new String[] {"ginger_barrelOak_side", "ginger_barrelSpruce_side", "ginger_barrelBirch_side", "ginger_barrelJungle_side"});
 		barrelEmpty2 = new AddonBlockBarrelEmpty(id_barrelEmpty2, new String[] {"ginger_barrelBlood_top", "ginger_barrelCherry_top"}, new String[] {"ginger_barrelBlood_side", "ginger_barrelCherry_side"});
 		AddonManager.Register(barrelEmpty, new String[] {"oakBarrel", "spruceBarrel", "birchBarrel", "jungleBarrel"}, new String[] {"Oak Barrel", "Spruce Barrel", "Birch Barrel", "Jungle Barrel"});
@@ -1435,11 +1458,7 @@ public class AddonDefs {
 		//Nether portal
 		BlockPortal addonPortal = (BlockPortal) new AddonBlockPortal(AddonManager.ReplaceBlockID(Block.portal));
 		AddonManager.SetVanillaBlockFinal("portal", Block.portal, addonPortal);
-
-		//Hedge
-		hedge = new AddonBlockHedge(id_hedge);
-		AddonManager.Register(hedge, new String[] {"oakLeavesDeco", "spruceLeavesDeco", "birchLeavesDeco", "jungleLeavesDeco"}, new String[] {"Oak Hedge", "Spruce Hedge", "Birch Hedge", "Jungle Hedge"});
-
+		
 		//Pumpkins
 		pumpkin = new AddonBlockPumpkinCarved(id_pumpkin);
 		AddonManager.Register(pumpkin, new String[] {"pumpkinCarved1", "pumpkinCarved2", "pumpkinCarved3"}, new String[] {"Carved Pumpkin", "Carved Pumpkin", "Carved Pumpkin"});
@@ -1485,6 +1504,28 @@ public class AddonDefs {
 		AddonManager.Register(cherrySapling, "Cherry Sapling");
 		cherryLeaves = new AddonBlockLeavesCherry(id_cherryLeaves);
 		AddonManager.Register(cherryLeaves, "Cherry Leaves");
+
+		//Hedge
+		hedge = new AddonBlockHedge(id_hedge);
+		AddonManager.Register(hedge, new String[] {"oakLeavesDeco", "spruceLeavesDeco", "birchLeavesDeco", "jungleLeavesDeco"}, new String[] {"Oak Hedge", "Spruce Hedge", "Birch Hedge", "Jungle Hedge"});
+		
+		hedgeOakStairs = new AddonBlockStairsHedge(id_hedgeOakStairs, hedge, 0, true).setUnlocalizedName("hedgeOakStairs");
+		hedgeSpruceStairs = new AddonBlockStairsHedge(id_hedgeSpruceStairs, hedge, 1, true).setUnlocalizedName("hedgeSpruceStairs");
+		hedgeBirchStairs = new AddonBlockStairsHedge(id_hedgeBirchStairs, hedge, 2, true).setUnlocalizedName("hedgeBirchStairs");
+		hedgeJungleStairs = new AddonBlockStairsHedge(id_hedgeJungleStairs, hedge, 3, true).setUnlocalizedName("hedgeJungleStairs");
+		hedgeBloodStairs = new AddonBlockStairsHedge(id_hedgeBloodStairs, FCBetterThanWolves.fcBlockBloodLeaves, 0, true).setUnlocalizedName("hedgeBloodStairs");
+		hedgeCherryStairs = new AddonBlockStairsHedge(id_hedgeCherryStairs, cherryLeaves, 0, false).setUnlocalizedName("hedgeCherryStairs");
+		
+		AddonManager.Register(hedgeOakStairs, "Oak Hedge Stairs");
+		AddonManager.Register(hedgeSpruceStairs, "Spruce Hedge Stairs");
+		AddonManager.Register(hedgeBirchStairs, "Birch Hedge Stairs");
+		AddonManager.Register(hedgeJungleStairs, "Jungle Hedge Stairs");
+		AddonManager.Register(hedgeBloodStairs, "Blood Wood Hedge Stairs");
+		AddonManager.Register(hedgeCherryStairs, "Cherry Hedge Stairs");
+		
+		//Grass
+		Block grass = new AddonBlockGrass(AddonManager.ReplaceBlockID(Block.grass));
+		AddonManager.SetVanillaBlockFinal("grass", Block.grass, grass);
 	}
 
 	private void addToolDefs() {

@@ -6,12 +6,11 @@ public class AddonUtilsBlock {
 		int metadata = blockAccess.getBlockMetadata(x, y, z);
 		Block block = Block.blocksList[blockID];
 		
-		boolean isFenceConnector = (blockID == thisBlock.blockID && metadata == 14) || isFence(blockID, metadata) || isFenceGate(blockID);
-		boolean isSolid = block != null && block.blockMaterial.isOpaque() && block.renderAsNormalBlock() ? block.blockMaterial != Material.pumpkin : false;
-		boolean isGlass = block != null && blockID == Block.glass.blockID || blockID == AddonDefs.glassStained.blockID;
+		boolean isFenceConnector = isFence(blockID, metadata) || isFenceGate(blockID);
+		boolean isSolid = block != null && block.blockMaterial.isOpaque() && block.renderAsNormalBlock();
 		boolean hasCenterPoint = FCUtilsWorld.DoesBlockHaveLargeCenterHardpointToFacing(blockAccess, x, y, z, Facing.oppositeSide[facing]);
 		
-		return isFenceConnector || isSolid || isGlass || hasCenterPoint;
+		return isFenceConnector || isSolid || hasCenterPoint;
 	}
 	
 	public static boolean canWallConnect(IBlockAccess blockAccess, int x, int y, int z, int facing, Block thisBlock) {
@@ -19,12 +18,24 @@ public class AddonUtilsBlock {
 		int metadata = blockAccess.getBlockMetadata(x, y, z);
 		Block block = Block.blocksList[blockID];
 		
-		boolean isWallConnector = blockID == thisBlock.blockID || isWall(blockID, metadata) || isFenceGate(blockID);
-		boolean isSolid = block != null && block.blockMaterial.isOpaque() && block.renderAsNormalBlock() ? block.blockMaterial != Material.pumpkin : false;
-		boolean isGlass = block != null && blockID == Block.glass.blockID || blockID == AddonDefs.glassStained.blockID;
+		boolean isWallConnector = thisBlock == Block.cobblestoneWall || isWall(blockID, metadata) || isFenceGate(blockID);
+		boolean isSolid = block != null && block.blockMaterial.isOpaque() && block.renderAsNormalBlock();
 		boolean hasCenterPoint = FCUtilsWorld.DoesBlockHaveLargeCenterHardpointToFacing(blockAccess, x, y, z, Facing.oppositeSide[facing]);
 		
-		return isWallConnector || isSolid || isGlass || hasCenterPoint;
+		return isWallConnector || isSolid || hasCenterPoint;
+	}
+	
+	public static boolean canPaneConnect(IBlockAccess blockAccess, int x, int y, int z, int facing, Block thisBlock) {
+		int blockID = blockAccess.getBlockId(x, y, z);
+		int metadata = blockAccess.getBlockMetadata(x, y, z);
+		Block block = Block.blocksList[blockID];
+
+		boolean isPaneConnector = isPane(blockID);
+		boolean isGlass = block != null && blockID == Block.glass.blockID || blockID == AddonDefs.glassStained.blockID;
+		boolean isSolid = block != null && block.blockMaterial.isOpaque() && block.renderAsNormalBlock();
+		boolean hasCenterPoint = FCUtilsWorld.DoesBlockHaveLargeCenterHardpointToFacing(blockAccess, x, y, z, Facing.oppositeSide[facing]);
+		
+		return isPaneConnector || isSolid || isGlass || hasCenterPoint;
 	}
 	
 	public static boolean isFence(int blockID, int metadata) {
@@ -37,6 +48,10 @@ public class AddonUtilsBlock {
 	
 	public static boolean isWall(int blockID, int metadata) {
 		return blockID == Block.cobblestoneWall.blockID || (Block.blocksList[blockID] instanceof AddonBlockSidingAndCornerDecorativeWall && metadata == 14);
+	}
+	
+	public static boolean isPane(int blockID) {
+		return Block.blocksList[blockID] instanceof BlockPane;
 	}
 	
 	public static int getDamagedLogFromMetadata(int meta) {

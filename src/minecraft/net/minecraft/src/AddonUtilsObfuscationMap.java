@@ -26,6 +26,7 @@ public class AddonUtilsObfuscationMap {
 		blockMap.put("obsidian", "at");
 		blockMap.put("signPost", "aH");
 		blockMap.put("signWall", "aM");
+		blockMap.put("grass", "y");
 		
 		itemMap.put("enderPearl", "bo");
 		itemMap.put("sign", "av");

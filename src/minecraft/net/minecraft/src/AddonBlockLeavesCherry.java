@@ -13,7 +13,7 @@ public class AddonBlockLeavesCherry extends BlockLeavesBase
 
     protected AddonBlockLeavesCherry(int par1)
     {
-        super(par1, Material.leaves, false);
+        super(par1, AddonDefs.materialHedge, false);
         this.setTickRandomly(true);
         this.setCreativeTab(CreativeTabs.tabDecorations);
         this.setHardness(0.2F);
@@ -49,11 +49,6 @@ public class AddonBlockLeavesCherry extends BlockLeavesBase
     public ItemStack GetStackRetrievedByBlockDispenser(World var1, int var2, int var3, int var4)
     {
         return this.createStackedBlock(var1.getBlockMetadata(var2, var3, var4));
-    }
-
-    public boolean CanMobsSpawnOn(World var1, int var2, int var3, int var4)
-    {
-        return false;
     }
 
     protected void GenerateAshOnBurn(World var1, int var2, int var3, int var4)
