@@ -1,79 +1,129 @@
 package net.minecraft.src;
 
+import java.util.List;
+
 public class AddonItemSign extends Item
 {
+    public static final int m_iNumSubtypes = 6;
+    private String[] m_sNameExtensionsBySubtype = new String[] {"oak", "spruce", "birch", "jungle", "bloodwood", "cherry"};
+    private Icon[] m_IconBySubtype = new Icon[m_iNumSubtypes];
+    private String[] m_sIconNamesBySubtype = new String[] {"sign", "ginger_signSpruce", "ginger_signBirch", "ginger_signJungle", "ginger_signBlood", "ginger_signCherry"};
+    
+    private Block[] signPosts = {Block.signPost, AddonDefs.signSpruce, AddonDefs.signBirch, AddonDefs.signJungle, AddonDefs.signBlood, AddonDefs.signCherry};
+    private Block[] signWalls = {Block.signWall, AddonDefs.signSpruceWall, AddonDefs.signBirchWall, AddonDefs.signJungleWall, AddonDefs.signBloodWall, AddonDefs.signCherryWall};
+    
     public AddonItemSign(int par1)
     {
         super(par1);
         this.maxStackSize = 16;
         this.setCreativeTab(CreativeTabs.tabDecorations);
+        this.setHasSubtypes(true);
     }
 
     /**
      * Callback for item usage. If the item does something special on right clicking, he will have one of those. Return
      * True if something happen and false if it don't. This is for ITEMS, not BLOCKS
      */
-    public boolean onItemUse(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, World par3World, int par4, int par5, int par6, int par7, float par8, float par9, float par10)
+    public boolean onItemUse(ItemStack itemStack, EntityPlayer player, World world, int x, int y, int z, int side, float par8, float par9, float par10)
     {
-        if (par7 == 0)
+        if (side == 0)
         {
             return false;
         }
-        else if (!par3World.getBlockMaterial(par4, par5, par6).isSolid())
+        else if (!world.getBlockMaterial(x, y, z).isSolid())
         {
             return false;
         }
         else
         {
-            if (par7 == 1)
+            if (side == 1)
             {
-                ++par5;
+                ++y;
             }
 
-            if (par7 == 2)
+            if (side == 2)
             {
-                --par6;
+                --z;
             }
 
-            if (par7 == 3)
+            if (side == 3)
             {
-                ++par6;
+                ++z;
             }
 
-            if (par7 == 4)
+            if (side == 4)
             {
-                --par4;
+                --x;
             }
 
-            if (par7 == 5)
+            if (side == 5)
             {
-                ++par4;
+                ++x;
             }
 
-            if (!par2EntityPlayer.canPlayerEdit(par4, par5, par6, par7, par1ItemStack))
+            if (!player.canPlayerEdit(x, y, z, side, itemStack))
             {
                 return false;
             }
-            else if (!Block.signPost.canPlaceBlockAt(par3World, par4, par5, par6))
+            else if (!signPosts[itemStack.getItemDamage()].canPlaceBlockAt(world, x, y, z))
             {
                 return false;
             }
             else
             {
-                if (par7 == 1)
+                if (side == 1)
                 {
-                    int var11 = MathHelper.floor_double((double)((par2EntityPlayer.rotationYaw + 180.0F) * 16.0F / 360.0F) + 0.5D) & 15;
-                    par3World.setBlock(par4, par5, par6, Block.signPost.blockID, var11, 2);
+                    int var11 = MathHelper.floor_double((double)((player.rotationYaw + 180.0F) * 16.0F / 360.0F) + 0.5D) & 15;
+                    world.setBlock(x, y, z, signPosts[itemStack.getItemDamage()].blockID, var11, 2);
                 }
                 else
                 {
-                    par3World.setBlock(par4, par5, par6, Block.signWall.blockID, par7, 2);
+                    world.setBlock(x, y, z, signWalls[itemStack.getItemDamage()].blockID, side, 2);
                 }
 
-                --par1ItemStack.stackSize;
+                --itemStack.stackSize;
 
                 return true;
             }
         }
+    }
+
+    /**
+     * Returns the unlocalized name of this item. This version accepts an ItemStack so different stacks can have
+     * different names based on their damage or NBT.
+     */
+    public String getUnlocalizedName(ItemStack var1)
+    {
+        int var2 = MathHelper.clamp_int(var1.getItemDamage(), 0, m_iNumSubtypes - 1);
+        return super.getUnlocalizedName() + "." + this.m_sNameExtensionsBySubtype[var2];
+    }
+
+    /**
+     * returns a list of items with the same ID, but different meta (eg: dye returns 16 items)
+     */
+    public void getSubItems(int var1, CreativeTabs var2, List var3)
+    {
+        for (int var4 = 0; var4 < m_iNumSubtypes; ++var4)
+        {
+            var3.add(new ItemStack(var1, 1, var4));
+        }
+    }
+    
+    //CLIENT ONLY
+    public void registerIcons(IconRegister var1)
+    {
+        for (int var2 = 0; var2 < this.m_sIconNamesBySubtype.length; ++var2)
+        {
+            this.m_IconBySubtype[var2] = var1.registerIcon(this.m_sIconNamesBySubtype[var2]);
+        }
+    }
+
+    /**
+     * Gets an icon index based on an item's damage value
+     */
+    public Icon getIconFromDamage(int var1)
+    {
+        int var2 = MathHelper.clamp_int(var1, 0, m_iNumSubtypes - 1);
+        return this.m_IconBySubtype[var2];
     }
 }

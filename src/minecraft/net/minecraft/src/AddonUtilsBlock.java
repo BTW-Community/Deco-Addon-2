@@ -6,7 +6,7 @@ public class AddonUtilsBlock {
 		int metadata = blockAccess.getBlockMetadata(x, y, z);
 		Block block = Block.blocksList[blockID];
 		
-		boolean isFenceConnector = blockID == thisBlock.blockID || isFence(blockID, metadata) || isFenceGate(blockID);
+		boolean isFenceConnector = (blockID == thisBlock.blockID && metadata == 14) || isFence(blockID, metadata) || isFenceGate(blockID);
 		boolean isSolid = block != null && block.blockMaterial.isOpaque() && block.renderAsNormalBlock() ? block.blockMaterial != Material.pumpkin : false;
 		boolean isGlass = block != null && blockID == Block.glass.blockID || blockID == AddonDefs.glassStained.blockID;
 		boolean hasCenterPoint = FCUtilsWorld.DoesBlockHaveLargeCenterHardpointToFacing(blockAccess, x, y, z, Facing.oppositeSide[facing]);
@@ -32,7 +32,7 @@ public class AddonUtilsBlock {
 	}
 	
 	public static boolean isFenceGate(int blockID) {
-		return blockID == Block.fenceGate.blockID || blockID == AddonDefs.gateBirch.blockID || blockID == AddonDefs.gateBlood.blockID || blockID == AddonDefs.gateJungle.blockID || blockID == AddonDefs.gateSpruce.blockID;
+		return blockID == Block.fenceGate.blockID || blockID == AddonDefs.gateBirch.blockID || blockID == AddonDefs.gateBlood.blockID || blockID == AddonDefs.gateJungle.blockID || blockID == AddonDefs.gateSpruce.blockID || blockID == AddonDefs.gateCherry.blockID;
 	}
 	
 	public static boolean isWall(int blockID, int metadata) {

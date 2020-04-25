@@ -24,7 +24,7 @@ public class AddonDefs {
 		id_polishedStoneSidingAndCorner=3014,
 		id_polishedStoneMouldingAndDecorative=3015,
 		id_bonePillar=3016,
-		id_soulboundChest=3017,
+		
 		id_concrete=3018,
 		id_concretePowder=3019,
 		id_netherCoalBlock=3020,
@@ -247,6 +247,16 @@ public class AddonDefs {
 		id_endStoneBrickStairs=3435,
 		id_endStoneBrickSidingAndCorner=3436,
 		id_endStoneBrickMouldingAndDecorative=3437,
+		id_signSpruce=3438,
+		id_signSpruceWall=3439,
+		id_signBirch=3440,
+		id_signBirchWall=3441,
+		id_signJungle=3442,
+		id_signJungleWall=3443,
+		id_signBlood=3445,
+		id_signBloodWall=3446,
+		id_signCherry=3447,
+		id_signCherryWall=3448,
 		
 		id_flag_start=4000;
 	
@@ -372,12 +382,13 @@ public class AddonDefs {
 	public static BlockDoor doorSpruce, doorBirch, doorJungle, doorBlood, doorCherry;
 	public static FCItemDoor itemDoorSpruce, itemDoorBirch, itemDoorJungle, itemDoorBlood, itemDoorCherry;
 	public static BlockFenceGate gateSpruce, gateBirch, gateJungle, gateBlood, gateCherry;
-	public static Block stairsWoodCherry;
+	public static Block cherryStairs, cherrySidingAndCorner, cherryMouldingAndDecorative;
 	public static Block planksPainted;
 	public static Block[] paintedPlanksSidingAndCorner, paintedPlanksMouldingAndDecorative, paintedPlanksStairs;
 	public static Block pergola;
 	public static Block barrelEmpty, barrelFullOak, barrelFullSpruce, barrelFullBirch, barrelFullJungle;
 	public static Block crate;
+	public static Block signSpruce, signSpruceWall, signBirch, signBirchWall, signJungle, signJungleWall, signBlood, signBloodWall, signCherry, signCherryWall;
 	public static Item woodBleach;
 
 	public static AddonBlockWoodSlab woodSlab, woodSlab2, woodSlab3;
@@ -1092,9 +1103,9 @@ public class AddonDefs {
 	    AddonManager.Name(stairsWoodJungle, "Jungle Stairs");
         FCBetterThanWolves.fcBlockWoodBloodStairs = (new FCBlockStairsWood(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockWoodBloodStairs), Block.planks, 4)).setUnlocalizedName("fcBlockWoodBloodStairs");
         AddonManager.Name(FCBetterThanWolves.fcBlockWoodBloodStairs, "Blood Wood Stairs");
-        stairsWoodCherry = new FCBlockStairsWood(id_cherryStairs, Block.planks, 5).setUnlocalizedName("cherryStairs");
-        AddonManager.Register(stairsWoodCherry, "Cherry Stairs");
-		
+        cherryStairs = new FCBlockStairsWood(id_cherryStairs, Block.planks, 5).setUnlocalizedName("cherryStairs");
+        AddonManager.Register(cherryStairs, "Cherry Stairs");
+        
 		//Ladders (used for block bounds change)
 		FCBetterThanWolves.fcBlockLadder = new AddonBlockLadder(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockLadder));
 		FCBetterThanWolves.fcBlockLadderOnFire = new AddonBlockLadderOnFire(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockLadderOnFire));
@@ -1226,15 +1237,32 @@ public class AddonDefs {
 		crate = new AddonBlockCrate(id_crate);
 		AddonManager.Register(crate, new String[] {"crateOak", "crateSpruce", "crateBirch", "crateJungle"}, new String[] {"Oak Crate", "Spruce Crate", "Birch Crate", "Jungle Crate"});
 		
-		//Sign
-		Block signPost = new AddonBlockSign(AddonManager.ReplaceBlockID(Block.signPost), true);
+		//Signs
+		Block signPost = new AddonBlockSign(AddonManager.ReplaceBlockID(Block.signPost), true, 0);
 		AddonManager.SetVanillaBlockFinal("signPost", Block.signPost, signPost);
-		Block signWall = new AddonBlockSignWall(AddonManager.ReplaceBlockID(Block.signWall));
+		signSpruce = new AddonBlockSign(id_signSpruce, true, 1);
+		signBirch = new AddonBlockSign(id_signBirch, true, 2);
+		signJungle = new AddonBlockSign(id_signJungle, true, 3);
+		signBlood = new AddonBlockSign(id_signBlood, true, 4);
+		signCherry = new AddonBlockSign(id_signCherry, true, 5);
+		
+		Block signWall = new AddonBlockSignWall(AddonManager.ReplaceBlockID(Block.signWall), 0);
 		AddonManager.SetVanillaBlockFinal("signWall", Block.signWall, signWall);
+		signSpruceWall = new AddonBlockSignWall(id_signSpruceWall, 1);
+		signBirchWall = new AddonBlockSignWall(id_signBirchWall, 2);
+		signJungleWall = new AddonBlockSignWall(id_signJungleWall, 3);
+		signBloodWall = new AddonBlockSignWall(id_signBloodWall, 4);
+		signCherryWall = new AddonBlockSignWall(id_signCherryWall, 5);
 		
 		Item sign = new AddonItemSign(Item.sign.itemID - 256).SetBuoyant().SetIncineratedInCrucible().setUnlocalizedName("sign");
 		AddonManager.SetVanillaItemFinal("sign", Item.sign, sign);
-
+		AddonManager.Name(new ItemStack(Item.sign, 1, 0), "Oak Sign");
+		AddonManager.Name(new ItemStack(Item.sign, 1, 1), "Spruce Sign");
+		AddonManager.Name(new ItemStack(Item.sign, 1, 2), "Birch Sign");
+		AddonManager.Name(new ItemStack(Item.sign, 1, 3), "Jungle Sign");
+		AddonManager.Name(new ItemStack(Item.sign, 1, 4), "Blood Wood Sign");
+		AddonManager.Name(new ItemStack(Item.sign, 1, 5), "Cherry Sign");
+		
 		//Slabs
 		woodSlab = new AddonBlockWoodSlab(id_woodSlab, new Block[] {planksPainted, planksPainted, planksPainted, planksPainted, planksPainted, planksPainted, planksPainted, planksPainted}, new int[] {0, 1, 2, 3, 4, 5, 6, 7});
 		Item.itemsList[AddonDefs.woodSlab.blockID] = new AddonItemBlockWoodSlab(AddonDefs.woodSlab.blockID - 256);
@@ -1396,39 +1424,87 @@ public class AddonDefs {
 		FCBetterThanWolves.fcBlockWhiteStoneSidingAndCorner = new AddonBlockSidingAndCornerDecorativeWall(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockWhiteStoneSidingAndCorner),  Material.rock, "fcBlockDecorativeWhiteStone", 1.5F, 10.0F, Block.soundStoneFootstep, "fcWhiteStoneSiding", "White Stone").SetPicksEffectiveOn();
         FCBetterThanWolves.fcBlockSmoothStoneSidingAndCorner = (new AddonBlockSidingAndCornerDecorativeWall(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockSmoothStoneSidingAndCorner), Material.rock, "fcBlockDecorativeStone", 1.5F, 10.0F, Block.soundStoneFootstep, "fcStoneSiding", "Stone")).SetPicksEffectiveOn();
 		
-		//Fences
+		//Wood Sub Replace
 		Block fence = new AddonBlockFenceWood(AddonManager.ReplaceBlockID(Block.fence));
 		AddonManager.SetVanillaBlockFinal("fence", Block.fence, fence);
 		AddonManager.Name(Block.fence, "Oak Fence");
-		//FCBetterThanWolves.fcBlockWoodOakSidingAndCorner = new AddonBlockWoodSidingAndCornerAndDecorative(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockWoodOakSidingAndCorner),"fcBlockDecorativeWoodOak", "fcWoodOakSiding");
+		FCBetterThanWolves.fcBlockWoodOakSidingAndCorner = new AddonBlockWoodSidingAndCornerAndDecorative(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockWoodOakSidingAndCorner),"FCBlockDecorativeWoodOak", "fcWoodOakSiding");
 		FCBetterThanWolves.fcBlockWoodSpruceSidingAndCorner = new AddonBlockWoodSidingAndCornerAndDecorative(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockWoodSpruceSidingAndCorner),"fcBlockDecorativeWoodSpruce", "fcWoodSpruceSiding").setUnlocalizedName("fcBlockSpruceSiding");
 		FCBetterThanWolves.fcBlockWoodBirchSidingAndCorner = new AddonBlockWoodSidingAndCornerAndDecorative(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockWoodBirchSidingAndCorner),"fcBlockDecorativeWoodBirch", "fcWoodBirchSiding").setUnlocalizedName("fcBlockBirchSiding");
 		FCBetterThanWolves.fcBlockWoodJungleSidingAndCorner = new AddonBlockWoodSidingAndCornerAndDecorative(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockWoodJungleSidingAndCorner),"fcBlockDecorativeWoodJungle", "fcWoodJungleSiding").setUnlocalizedName("fcBlockJungleSiding");
 		FCBetterThanWolves.fcBlockWoodBloodSidingAndCorner = new AddonBlockWoodSidingAndCornerAndDecorative(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockWoodBloodSidingAndCorner),"fcBlockDecorativeWoodBlood", "fcWoodBloodSiding").setUnlocalizedName("fcBlockBloodSiding");
+        cherrySidingAndCorner = new AddonBlockWoodSidingAndCornerAndDecorative(id_cherrySidingAndCorner, "ginger_planks_cherryDecorative", "cherrySiding");
 
+		FCBetterThanWolves.fcBlockWoodOakMouldingAndDecorative = new AddonBlockWoodMouldingAndDecorative(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockWoodOakMouldingAndDecorative), "FCBlockDecorativeWoodOak", "fcBlockColumnWoodOak_side", FCBetterThanWolves.fcBlockWoodOakSidingAndCorner.blockID, "fcBlockWoodOakMoulding");
+		FCBetterThanWolves.fcBlockWoodSpruceMouldingAndDecorative = new AddonBlockWoodMouldingAndDecorative(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockWoodSpruceMouldingAndDecorative), "fcBlockDecorativeWoodSpruce", "fcBlockColumnWoodSpruce_side", FCBetterThanWolves.fcBlockWoodSpruceSidingAndCorner.blockID, "fcWoodSpruceMoulding");
+		FCBetterThanWolves.fcBlockWoodBirchMouldingAndDecorative = new AddonBlockWoodMouldingAndDecorative(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockWoodBirchMouldingAndDecorative), "fcBlockDecorativeWoodBirch", "fcBlockColumnWoodBirch_side", FCBetterThanWolves.fcBlockWoodBirchSidingAndCorner.blockID, "fcWoodBirchMoulding");
+		FCBetterThanWolves.fcBlockWoodJungleMouldingAndDecorative = new AddonBlockWoodMouldingAndDecorative(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockWoodJungleMouldingAndDecorative), "fcBlockDecorativeWoodJungle", "fcBlockColumnWoodJungle_side", FCBetterThanWolves.fcBlockWoodJungleSidingAndCorner.blockID, "fcWoodJungleMoulding");
+		FCBetterThanWolves.fcBlockWoodBloodMouldingAndDecorative = new AddonBlockWoodMouldingAndDecorative(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockWoodBloodMouldingAndDecorative), "fcBlockDecorativeWoodBlood", "fcBlockColumnWoodBlood_side", FCBetterThanWolves.fcBlockWoodBloodSidingAndCorner.blockID, "fcWoodBloodMoulding");
+        cherryMouldingAndDecorative = new AddonBlockWoodMouldingAndDecorative(id_cherryMouldingAndDecorative, "ginger_planks_cherryDecorative", "ginger_planks_cherryDecorative_column", cherrySidingAndCorner.blockID, "cherryMoulding");
+        
+        Item.itemsList[FCBetterThanWolves.fcBlockWoodSpruceSidingAndCorner.blockID] = new AddonItemBlockWoodSidingStub(FCBetterThanWolves.fcBlockWoodSpruceSidingAndCorner.blockID - 256);
+        Item.itemsList[FCBetterThanWolves.fcBlockWoodSpruceMouldingAndDecorative.blockID] = new AddonItemBlockWoodMouldingStub(FCBetterThanWolves.fcBlockWoodSpruceMouldingAndDecorative.blockID - 256);
+        Item.itemsList[FCBetterThanWolves.fcBlockWoodBirchSidingAndCorner.blockID] = new AddonItemBlockWoodCornerStub(FCBetterThanWolves.fcBlockWoodBirchSidingAndCorner.blockID - 256);
+        Item.itemsList[FCBetterThanWolves.fcBlockWoodBirchMouldingAndDecorative.blockID] = new AddonItemBlockWoodMouldingDecorativeStub(FCBetterThanWolves.fcBlockWoodBirchMouldingAndDecorative.blockID - 256);
+        Item.itemsList[FCBetterThanWolves.fcBlockWoodJungleSidingAndCorner.blockID] = new AddonItemBlockWoodSidingDecorativeStub(FCBetterThanWolves.fcBlockWoodJungleSidingAndCorner.blockID - 256);
+        
 		//Fix naming for block id 196
-		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodSidingItemStubID, 1, 0), "Oak Wood Siding");
-		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodSidingItemStubID, 1, 1), "Spruce Wood Siding");
-		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodSidingItemStubID, 1, 2), "Birch Wood Siding");
-		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodSidingItemStubID, 1, 3), "Jungle Wood Siding");
+		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodSidingItemStubID, 1, 0), "Oak Siding");
+		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodSidingItemStubID, 1, 1), "Spruce Siding");
+		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodSidingItemStubID, 1, 2), "Birch Siding");
+		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodSidingItemStubID, 1, 3), "Jungle Siding");
 		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodSidingItemStubID, 1, 4), "Blood Wood Siding");
+		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodSidingItemStubID, 1, 5), "Cherry Siding");
+
+		//Fix naming for block id 197
+		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, 0), "Oak Moulding");
+		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, 1), "Spruce Moulding");
+		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, 2), "Birch Moulding");
+		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, 3), "Jungle Moulding");
+		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, 4), "Blood Wood Moulding");
+		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, 5), "Cherry Moulding");
 		
 		//Fix naming for block id 198
-		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodCornerItemStubID, 1, 0), "Oak Wood Corner");
-		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodCornerItemStubID, 1, 1), "Spruce Wood Corner");
-		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodCornerItemStubID, 1, 2), "Birch Wood Corner");
-		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodCornerItemStubID, 1, 3), "Jungle Wood Corner");
+		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodCornerItemStubID, 1, 0), "Oak Corner");
+		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodCornerItemStubID, 1, 1), "Spruce Corner");
+		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodCornerItemStubID, 1, 2), "Birch Corner");
+		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodCornerItemStubID, 1, 3), "Jungle Corner");
 		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodCornerItemStubID, 1, 4), "Blood Wood Corner");
+		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodCornerItemStubID, 1, 5), "Cherry Corner");
+		
+		//Fix naming for block id 199
+		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingDecorativeItemStubID, 1, 0), "Oak Column");
+		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingDecorativeItemStubID, 1, 1), "Spruce Column");
+		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingDecorativeItemStubID, 1, 2), "Birch Column");
+		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingDecorativeItemStubID, 1, 3), "Jungle Column");
+		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingDecorativeItemStubID, 1, 4), "Oak Pedastal");
+		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingDecorativeItemStubID, 1, 5), "Spruce Pedastal");
+		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingDecorativeItemStubID, 1, 6), "Birch Pedastal");
+		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingDecorativeItemStubID, 1, 7), "Jungle Pedastal");
+		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingDecorativeItemStubID, 1, 8), "Oak Table");
+		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingDecorativeItemStubID, 1, 9), "Spruce Table");
+		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingDecorativeItemStubID, 1, 10), "Birch Table");
+		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingDecorativeItemStubID, 1, 11), "Jungle Table");
+		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingDecorativeItemStubID, 1, 16), "Blood Wood Column");
+		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingDecorativeItemStubID, 1, 17), "Cherry Column");
+		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingDecorativeItemStubID, 1, 20), "Blood Wood Pedastal");
+		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingDecorativeItemStubID, 1, 21), "Cherry Pedastal");
+		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingDecorativeItemStubID, 1, 24), "Blood Wood Table");
+		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingDecorativeItemStubID, 1, 25), "Cherry Table");
 		
 		//Fix naming for block id 200
-		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodSidingDecorativeItemStubID, 1, 0), "Oak Wood Bench");
-		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodSidingDecorativeItemStubID, 1, 1), "Spruce Wood Bench");
-		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodSidingDecorativeItemStubID, 1, 2), "Birch Wood Bench");
-		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodSidingDecorativeItemStubID, 1, 3), "Jungle Wood Bench");
-		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodSidingDecorativeItemStubID, 1, 4), "Oak Wood Fence");
-		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodSidingDecorativeItemStubID, 1, 5), "Spruce Wood Fence");
-		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodSidingDecorativeItemStubID, 1, 6), "Birch Wood Fence");
-		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodSidingDecorativeItemStubID, 1, 7), "Jungle Wood Fence");
+		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodSidingDecorativeItemStubID, 1, 0), "Oak Bench");
+		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodSidingDecorativeItemStubID, 1, 1), "Spruce Bench");
+		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodSidingDecorativeItemStubID, 1, 2), "Birch Bench");
+		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodSidingDecorativeItemStubID, 1, 3), "Jungle Bench");
+		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodSidingDecorativeItemStubID, 1, 4), "Oak Fence");
+		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodSidingDecorativeItemStubID, 1, 5), "Spruce Fence");
+		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodSidingDecorativeItemStubID, 1, 6), "Birch Fence");
+		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodSidingDecorativeItemStubID, 1, 7), "Jungle Fence");
+		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodSidingDecorativeItemStubID, 1, 16), "Blood Wood Bench");
+		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodSidingDecorativeItemStubID, 1, 17), "Cherry Bench");
+		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodSidingDecorativeItemStubID, 1, 20), "Blood Wood Fence");
+		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcBlockWoodSidingDecorativeItemStubID, 1, 21), "Cherry Fence");
 		
 		Block netherFence = new AddonBlockFence(AddonManager.ReplaceBlockID(Block.netherFence), "netherBrick", FCBetterThanWolves.fcMaterialNetherRock).setHardness(2.0F).setResistance(10.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("netherFence");;
 		AddonManager.SetVanillaBlockFinal("netherFence", Block.netherFence, netherFence);

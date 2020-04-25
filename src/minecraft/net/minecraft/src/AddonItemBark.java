@@ -37,6 +37,18 @@ public class AddonItemBark extends Item {
         return super.getUnlocalizedName() + "." + this.m_sNameExtensionsBySubtype[var2];
     }
 
+    /**
+     * returns a list of items with the same ID, but different meta (eg: dye returns 16 items)
+     */
+    public void getSubItems(int var1, CreativeTabs var2, List var3)
+    {
+        for (int var4 = 0; var4 < m_iNumSubtypes; ++var4)
+        {
+            var3.add(new ItemStack(var1, 1, var4));
+        }
+    }
+    
+    //CLIENT ONLY
     public void registerIcons(IconRegister var1)
     {
         for (int var2 = 0; var2 < this.m_sIconNamesBySubtype.length; ++var2)
@@ -52,17 +64,6 @@ public class AddonItemBark extends Item {
     {
         int var2 = MathHelper.clamp_int(var1, 0, m_iNumSubtypes - 1);
         return this.m_IconBySubtype[var2];
-    }
-
-    /**
-     * returns a list of items with the same ID, but different meta (eg: dye returns 16 items)
-     */
-    public void getSubItems(int var1, CreativeTabs var2, List var3)
-    {
-        for (int var4 = 0; var4 < m_iNumSubtypes; ++var4)
-        {
-            var3.add(new ItemStack(var1, 1, var4));
-        }
     }
 
 }

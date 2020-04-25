@@ -1,8 +1,11 @@
 package net.minecraft.src;
 
 public class AddonBlockSign extends FCBlockSign {
-	public AddonBlockSign(int id, boolean floor) {
+	int signItemMetaDrop;
+	
+	public AddonBlockSign(int id, boolean floor, int metaDrop) {
 		super(id, floor);
+		signItemMetaDrop = metaDrop;
 	}
 
 	/**
@@ -52,5 +55,10 @@ public class AddonBlockSign extends FCBlockSign {
 		{
 			return false;
 		}
+	}
+	
+	@Override
+	public int damageDropped(int meta) {
+		return signItemMetaDrop;
 	}
 }

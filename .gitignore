@@ -1474,7 +1474,6 @@ src/minecraft/net/minecraft/src/GuiCreateWorld.java
 src/minecraft/net/minecraft/src/GuiDisconnected.java
 src/minecraft/net/minecraft/src/GuiDispenser.java
 src/minecraft/net/minecraft/src/GuiDownloadTerrain.java
-src/minecraft/net/minecraft/src/GuiEditSign.java
 src/minecraft/net/minecraft/src/GuiEnchantment.java
 src/minecraft/net/minecraft/src/GuiErrorScreen.java
 src/minecraft/net/minecraft/src/GuiFlatPresets.java
@@ -2168,7 +2167,6 @@ src/minecraft/net/minecraft/src/TileEntityRecordPlayer.java
 src/minecraft/net/minecraft/src/TileEntityRenderer.java
 src/minecraft/net/minecraft/src/TileEntityRendererPiston.java
 src/minecraft/net/minecraft/src/TileEntitySign.java
-src/minecraft/net/minecraft/src/TileEntitySignRenderer.java
 src/minecraft/net/minecraft/src/TileEntitySkull.java
 src/minecraft/net/minecraft/src/TileEntitySkullRenderer.java
 src/minecraft/net/minecraft/src/TileEntitySpecialRenderer.java
