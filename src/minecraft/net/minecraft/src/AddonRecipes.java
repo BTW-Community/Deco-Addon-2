@@ -509,8 +509,8 @@ public class AddonRecipes {
 		FCRecipes.AddRecipe(new ItemStack(AddonDefs.stoneSlab6, 6, 0), new Object[] {"###", '#', new ItemStack(Block.stoneBrick, 1, 1)});
 		FCRecipes.AddRecipe(new ItemStack(AddonDefs.stoneSlab6, 6, 1), new Object[] {"###", '#', new ItemStack(Block.stoneBrick, 1, 2)});
 		FCRecipes.AddRecipe(new ItemStack(Block.stone, 1, 0), new Object[] {"X", "X", 'X', new ItemStack(AddonDefs.stoneSlab3, 1, 7)});
-		FCRecipes.AddRecipe(new ItemStack(Block.stoneBrick, 1, 0), new Object[] {"X", "X", 'X', new ItemStack(AddonDefs.stoneSlab6, 1, 0)});
-		FCRecipes.AddRecipe(new ItemStack(Block.stoneBrick, 1, 0), new Object[] {"X", "X", 'X', new ItemStack(AddonDefs.stoneSlab6, 1, 1)});
+		FCRecipes.AddRecipe(new ItemStack(Block.stoneBrick, 1, 1), new Object[] {"X", "X", 'X', new ItemStack(AddonDefs.stoneSlab6, 1, 0)});
+		FCRecipes.AddRecipe(new ItemStack(Block.stoneBrick, 1, 2), new Object[] {"X", "X", 'X', new ItemStack(AddonDefs.stoneSlab6, 1, 1)});
 		FCRecipes.RemoveVanillaRecipe(new ItemStack(Block.stairsStoneBrick, 4), new Object[] {"#  ", "## ", "###", '#', Block.stoneBrick});
 		FCRecipes.AddRecipe(new ItemStack(Block.stairsStoneBrick, 4), new Object[] {"X  ", "XX ", "XXX", 'X', new ItemStack(Block.stoneBrick, 1, 0)});
 		FCRecipes.AddRecipe(new ItemStack(AddonDefs.stoneBrickMossyStairs, 4), new Object[] {"X  ", "XX ", "XXX", 'X', new ItemStack(Block.stoneBrick, 1, 1)});
@@ -544,14 +544,16 @@ public class AddonRecipes {
 		FCRecipes.AddRecipe(new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingDecorativeItemStubID, 1, FCItemBlockWoodMouldingDecorativeStub.GetItemDamageForType(5, 0)), new Object[] {"M", "M", "M", 'M', new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, 5)});
 		FCRecipes.AddRecipe(new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingDecorativeItemStubID, 4, FCItemBlockWoodMouldingDecorativeStub.GetItemDamageForType(5, 2)), new Object[] {"###", " X ", " X ", '#', new ItemStack(FCBetterThanWolves.fcBlockWoodSidingItemStubID, 1, 5), 'X', new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, 5)});
 		FCRecipes.AddRecipe(new ItemStack(FCBetterThanWolves.fcBlockWoodSidingDecorativeItemStubID, 4, FCItemBlockWoodSidingDecorativeStub.GetItemDamageForType(5, 0)), new Object[] {"###", " X ", '#', new ItemStack(FCBetterThanWolves.fcBlockWoodSidingItemStubID, 1, 5), 'X', new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, 5)});
-
 		FCRecipes.AddRecipe(new ItemStack(FCBetterThanWolves.fcBlockWoodSidingDecorativeItemStubID, 6, FCItemBlockWoodSidingDecorativeStub.GetItemDamageForType(5, 1)), new Object[] {"###", "###", '#', new ItemStack(Block.planks, 1, 5)});
 		FCRecipes.AddRecipe(new ItemStack(FCBetterThanWolves.fcBlockWoodSidingDecorativeItemStubID, 2, FCItemBlockWoodSidingDecorativeStub.GetItemDamageForType(5, 1)), new Object[] {"###", '#', new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, 5)});
-
 		FCRecipes.AddShapelessRecipe(new ItemStack(Block.planks, 1, 5), new Object[] {new ItemStack(FCBetterThanWolves.fcBlockWoodSidingItemStubID, 1, 5), new ItemStack(FCBetterThanWolves.fcBlockWoodSidingItemStubID, 1, 5)});
 		FCRecipes.AddShapelessRecipe(new ItemStack(FCBetterThanWolves.fcBlockWoodSidingItemStubID, 1, 5), new Object[] {new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, 5), new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, 5)});
 		FCRecipes.AddShapelessRecipe(new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, 5), new Object[] {new ItemStack(FCBetterThanWolves.fcBlockWoodCornerItemStubID, 1, 5), new ItemStack(FCBetterThanWolves.fcBlockWoodCornerItemStubID, 1, 5)});
-
+		FCRecipes.AddRecipe(new ItemStack(AddonDefs.cherryStairs, 6), new Object[] {"X  ", "XX ", "XXX", 'X', new ItemStack(Block.planks, 1, 5)});
+		FCRecipes.AddRecipe(new ItemStack(AddonDefs.cherryStairs, 1), new Object[] {"X ", "XX", 'X', new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, 5)});
+		FCRecipes.AddRecipe(new ItemStack(AddonDefs.woodSlab3, 6, 0), new Object[] {"###", '#', new ItemStack(Block.planks, 1, 5)});
+		FCRecipes.AddRecipe(new ItemStack(Block.planks, 1, 5), new Object[] {"X", "X", 'X', new ItemStack(AddonDefs.woodSlab3, 1, 0)});
+		
 		//Trapdoors
 		FCRecipes.RemoveVanillaRecipe(new ItemStack(Block.trapdoor, 1), new Object[] {"WW#", "WW#", '#', Item.stick, 'W', Block.planks});
 		FCRecipes.RemoveVanillaRecipe(new ItemStack(Block.trapdoor, 2), new Object[] {"WW#", "WW#", '#', Item.stick, 'W', new ItemStack(FCBetterThanWolves.fcBlockWoodSidingItemStubID, 1, 32767)});
