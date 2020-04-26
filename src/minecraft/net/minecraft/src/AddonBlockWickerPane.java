@@ -2,11 +2,11 @@ package net.minecraft.src;
 
 import java.util.List;
 
-public class AddonBlockPane extends FCBlockPane {
-
-	protected AddonBlockPane(int id, String sideTexture, String topTexture, Material material, boolean canDropItself) {
-		super(id, sideTexture, topTexture, material, canDropItself);
-	}
+public class AddonBlockWickerPane extends FCBlockWickerPane {
+    protected AddonBlockWickerPane(int var1)
+    {
+        super(var1);
+    }
     
     public AxisAlignedBB GetBlockBoundsFromPoolBasedOnState(IBlockAccess blockAccess, int x, int y, int z) {
 		return AddonUtilsBlock.getPaneBlockBounds(blockAccess, x, y, z, this);
@@ -16,8 +16,8 @@ public class AddonBlockPane extends FCBlockPane {
     {
         AddonUtilsBlock.addPaneCollisionBoxesToList(world, x, y, z, aabb, collisionList, entity, this);
     }
-
-	//CLIENT ONLY
+    
+    //CLIENT ONLY
     public boolean RenderBlock(RenderBlocks render, int x, int y, int z) {
     	return AddonUtilsRender.renderPane(render, x, y, z, this);
     }

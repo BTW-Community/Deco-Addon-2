@@ -1,6 +1,6 @@
 package net.minecraft.src;
 
-public class AddonBlockPaperWall extends FCBlockPane
+public class AddonBlockPaperWall extends AddonBlockPane
 {
 	public AddonBlockPaperWall(int ID)
 	{

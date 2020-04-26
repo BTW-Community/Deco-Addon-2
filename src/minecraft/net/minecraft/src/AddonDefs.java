@@ -1526,6 +1526,15 @@ public class AddonDefs {
 		//Grass
 		Block grass = new AddonBlockGrass(AddonManager.ReplaceBlockID(Block.grass));
 		AddonManager.SetVanillaBlockFinal("grass", Block.grass, grass);
+		
+		//Panes replace
+		Block thinGlass = new AddonBlockPane(AddonManager.ReplaceBlockID(Block.thinGlass), "glass", "thinglass_top", Material.glass, false);
+		AddonManager.SetVanillaBlockFinal("thinGlass", Block.thinGlass, thinGlass);
+		Block fenceIron = new AddonBlockIronBars(AddonManager.ReplaceBlockID(Block.fenceIron));
+		AddonManager.SetVanillaBlockFinal("fenceIron", Block.fenceIron, fenceIron);
+		FCBetterThanWolves.fcBlockGrate = new AddonBlockGrate(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockGrate));
+		FCBetterThanWolves.fcBlockWickerPane = new AddonBlockWickerPane(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockWickerPane));
+		FCBetterThanWolves.fcBlockSlats = new AddonBlockSlats(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockSlats));
 	}
 
 	private void addToolDefs() {
