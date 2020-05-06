@@ -88,9 +88,9 @@ public class AddonBlockSaw extends FCBlockSaw {
 				e.printStackTrace();
 			} catch (SecurityException e) {
 				e.printStackTrace();
-			} finally {
-				return false;
 			}
+			
+			return false;
 		}
 	}
 }

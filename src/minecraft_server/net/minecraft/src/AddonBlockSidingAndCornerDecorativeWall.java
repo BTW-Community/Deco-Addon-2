@@ -13,181 +13,176 @@ public class AddonBlockSidingAndCornerDecorativeWall extends AddonBlockSidingAnd
 		wallBlocks.add(this);
 	}
 
-    /**
-     * Ray traces through the blocks collision from start vector to end vector returning a ray trace hit. Args: world,
-     * x, y, z, startVec, endVec
-     */
-    public MovingObjectPosition collisionRayTrace(World var1, int var2, int var3, int var4, Vec3 var5, Vec3 var6)
-    {
-        int var7 = var1.getBlockId(var2, var3, var4);
-        return this.IsBlockBench(var1, var2, var3, var4) && this.DoesBenchHaveLeg(var1, var2, var3, var4) ? this.CollisionRayTraceBenchWithLeg(var1, var2, var3, var4, var5, var6) : ((var7 != this.blockID || var1.getBlockMetadata(var2, var3, var4) != 14) && var7 != Block.fenceGate.blockID ? super.collisionRayTrace(var1, var2, var3, var4, var5, var6) : this.CollisionRayTraceFence(var1, var2, var3, var4, var5, var6));
-    }
+	/**
+	 * Ray traces through the blocks collision from start vector to end vector returning a ray trace hit. Args: world,
+	 * x, y, z, startVec, endVec
+	 */
+	public MovingObjectPosition collisionRayTrace(World var1, int var2, int var3, int var4, Vec3 var5, Vec3 var6)
+	{
+		int var7 = var1.getBlockId(var2, var3, var4);
+		return this.IsBlockBench(var1, var2, var3, var4) && this.DoesBenchHaveLeg(var1, var2, var3, var4) ? this.CollisionRayTraceBenchWithLeg(var1, var2, var3, var4, var5, var6) : ((var7 != this.blockID || var1.getBlockMetadata(var2, var3, var4) != 14) && var7 != Block.fenceGate.blockID ? super.collisionRayTrace(var1, var2, var3, var4, var5, var6) : this.CollisionRayTraceFence(var1, var2, var3, var4, var5, var6));
+	}
+	
+	public MovingObjectPosition CollisionRayTraceFence(World world, int x, int y, int z, Vec3 var5, Vec3 var6) {
+		boolean post = wallHasPost(world, x, y, z, true, true);
 
-    public MovingObjectPosition CollisionRayTraceFence(World world, int x, int y, int z, Vec3 var5, Vec3 var6)
-    {
-        FCUtilsRayTraceVsComplexBlock var7 = new FCUtilsRayTraceVsComplexBlock(world, x, y, z, var5, var6);
 		boolean east = this.CanConnectToBlockToFacing(world, x, y, z, 4);
 		boolean west = this.CanConnectToBlockToFacing(world, x, y, z, 5);
 		boolean north = this.CanConnectToBlockToFacing(world, x, y, z, 2);
 		boolean south = this.CanConnectToBlockToFacing(world, x, y, z, 3);
 
-        boolean EW = false;
+		boolean eastFullWall = shouldRenderFullHeightWallToFacing(world, x, y, z, 4);
+		boolean westFullWall = shouldRenderFullHeightWallToFacing(world, x, y, z, 5);
+		boolean northFullWall = shouldRenderFullHeightWallToFacing(world, x, y, z, 2);
+		boolean southFullWall = shouldRenderFullHeightWallToFacing(world, x, y, z, 3);
 
-        if (east || west)
-        {
-            EW = true;
-        }
+		FCUtilsRayTraceVsComplexBlock raytracer = new FCUtilsRayTraceVsComplexBlock(world, x, y, z, var5, var6);
+		
+		if (post) {
+			raytracer.AddBoxWithLocalCoordsToIntersectionList(0.25D, 0.0D, 0.25D, 0.75D, 1.0D, 0.75D);
+		}
 
-        boolean NS = false;
+		if (east)
+		{
+			double height = 0.8125;
+			if (eastFullWall)
+				height = 1.0;
 
-        if (north || south)
-        {
-            NS = true;
-        }
-        
-        if (EW == NS || east != west || north != south || !world.isAirBlock(x, y+1, z)) {
-            var7.AddBoxWithLocalCoordsToIntersectionList(0.25D, 0.0D, 0.25D, 0.75D, 1.0D, 0.75D);
-        }
+			raytracer.AddBoxWithLocalCoordsToIntersectionList(0.0D, 0.0D, 0.3125D, 0.5D, height, 0.6875D);
+		}
 
-        float var14 = 0.3125F;
-        float var15 = 0.6875F;
-        float var16 = 0F;
-        float var17 = 0.8125F;
-        float var18 = east ? 0.0F : var14;
-        float var19 = west ? 1.0F : var15;
-        float var20 = north ? 0.0F : var14;
-        float var21 = south ? 1.0F : var15;
+		if (west)
+		{
+			double height = 0.8125;
+			if (westFullWall)
+				height = 1.0;
 
-        if (EW)
-        {
-            var7.AddBoxWithLocalCoordsToIntersectionList((double)var18, (double)var16, (double)var14, (double)var19, (double)var17, (double)var15);
-        }
+			raytracer.AddBoxWithLocalCoordsToIntersectionList(0.5D, 0.0D, 0.3125D, 1.0D, height, 0.6875D);
+		}
 
-        if (NS)
-        {
-            var7.AddBoxWithLocalCoordsToIntersectionList((double)var14, (double)var16, (double)var20, (double)var15, (double)var17, (double)var21);
-        }
+		if (north)
+		{
+			double height = 0.8125;
+			if (northFullWall)
+				height = 1.0;
 
-        return var7.GetFirstIntersection();
-    }
+			raytracer.AddBoxWithLocalCoordsToIntersectionList(0.3125D, 0.0D, 0.0D, 0.6875D, height, 0.5D);
+		}
 
-    @Override
-    public AxisAlignedBB GetBlockBoundsFromPoolBasedOnState(IBlockAccess var1, int var2, int var3, int var4)
-    {
-        int var5 = var1.getBlockMetadata(var2, var3, var4);
-        return var5 == 12 ? this.GetBlockBoundsFromPoolForBench(var1, var2, var3, var4) : (var5 == 14 ? this.GetBlockBoundsFromPoolForFence(var1, var2, var3, var4) : super.GetBlockBoundsFromPoolBasedOnState(var1, var2, var3, var4));
-    }
+		if (south)
+		{
+			double height = 0.8125;
+			if (southFullWall)
+				height = 1.0;
 
-    @Override
-    public AxisAlignedBB GetBlockBoundsFromPoolForFence(IBlockAccess var1, int var2, int var3, int var4)
-    {
-		boolean var5 = this.CanConnectToBlockToFacing(var1, var2, var3, var4, 2);
-		boolean var6 = this.CanConnectToBlockToFacing(var1, var2, var3, var4, 3);
-		boolean var7 = this.CanConnectToBlockToFacing(var1, var2, var3, var4, 4);
-		boolean var8 = this.CanConnectToBlockToFacing(var1, var2, var3, var4, 5);
-        float var9 = 0.25F;
-        float var10 = 0.75F;
-        float var11 = 0.25F;
-        float var12 = 0.75F;
-        float var13 = 1.0F;
+			raytracer.AddBoxWithLocalCoordsToIntersectionList(0.3125D, 0.0D, 0.5D, 0.6875D, height, 1.0D);
+		}
+		
+		return raytracer.GetFirstIntersection();
+	}
 
-        if (var5)
-        {
-            var11 = 0.0F;
-        }
+	@Override
+	public AxisAlignedBB GetBlockBoundsFromPoolBasedOnState(IBlockAccess var1, int var2, int var3, int var4)
+	{
+		int var5 = var1.getBlockMetadata(var2, var3, var4);
+		return var5 == 12 ? this.GetBlockBoundsFromPoolForBench(var1, var2, var3, var4) : (var5 == 14 ? this.GetBlockBoundsFromPoolForFence(var1, var2, var3, var4) : super.GetBlockBoundsFromPoolBasedOnState(var1, var2, var3, var4));
+	}
 
-        if (var6)
-        {
-            var12 = 1.0F;
-        }
+	@Override
+	public AxisAlignedBB GetBlockBoundsFromPoolForFence(IBlockAccess blockAccess, int x, int y, int z) {
+		boolean post = wallHasPost(blockAccess, x, y, z, true, true);
 
-        if (var7)
-        {
-            var9 = 0.0F;
-        }
+		boolean east = this.CanConnectToBlockToFacing(blockAccess, x, y, z, 4);
+		boolean west = this.CanConnectToBlockToFacing(blockAccess, x, y, z, 5);
+		boolean north = this.CanConnectToBlockToFacing(blockAccess, x, y, z, 2);
+		boolean south = this.CanConnectToBlockToFacing(blockAccess, x, y, z, 3);
 
-        if (var8)
-        {
-            var10 = 1.0F;
-        }
+		boolean eastFullWall = shouldRenderFullHeightWallToFacing(blockAccess, x, y, z, 4);
+		boolean westFullWall = shouldRenderFullHeightWallToFacing(blockAccess, x, y, z, 5);
+		boolean northFullWall = shouldRenderFullHeightWallToFacing(blockAccess, x, y, z, 2);
+		boolean southFullWall = shouldRenderFullHeightWallToFacing(blockAccess, x, y, z, 3);
 
-        if (var5 && var6 && !var7 && !var8)
-        {
-            var13 = 0.8125F;
-            var9 = 0.3125F;
-            var10 = 0.6875F;
-        }
-        else if (!var5 && !var6 && var7 && var8)
-        {
-            var13 = 0.8125F;
-            var11 = 0.3125F;
-            var12 = 0.6875F;
-        }
+		double minX = .3125;
+		double minZ = .3125;
+		double maxX = .6875;
+		double maxZ = .6875;
+		
+		double height = 0.8125;
+		if (eastFullWall || westFullWall || northFullWall || southFullWall || post)
+			height = 1.0;
+		
+		if (post) {
+			minX = .25;
+			minZ = .25;
+			maxX = .75;
+			maxZ = .75;
+		}
+		
+		if (east)
+			minX = 0;
+		if (west)
+			maxX = 1;
+		if (north)
+			minZ = 0;
+		if (south)
+			maxZ = 1;
 
-        return AxisAlignedBB.getAABBPool().getAABB((double)var9, 0.0D, (double)var11, (double)var10, (double)var13, (double)var12);
-    }
+		return AxisAlignedBB.getAABBPool().getAABB(minX, 0.0D, minZ, maxX, height, maxZ);
+	}
 
-    /**
-     * Adds all intersecting collision boxes to a list. (Be sure to only add boxes to the list if they intersect the
-     * mask.) Parameters: World, X, Y, Z, mask, list, colliding entity
-     */
-    @Override
-    public void addCollisionBoxesToList(World var1, int var2, int var3, int var4, AxisAlignedBB var5, List var6, Entity var7)
-    {
-        int var8 = var1.getBlockMetadata(var2, var3, var4);
+	/**
+	 * Adds all intersecting collision boxes to a list. (Be sure to only add boxes to the list if they intersect the
+	 * mask.) Parameters: World, X, Y, Z, mask, list, colliding entity
+	 */
+	@Override
+	public void addCollisionBoxesToList(World var1, int var2, int var3, int var4, AxisAlignedBB var5, List var6, Entity var7)
+	{
+		int var8 = var1.getBlockMetadata(var2, var3, var4);
 
-        if (var8 == 14)
-        {
-            this.AddCollisionBoxesToListForFence(var1, var2, var3, var4, var5, var6, var7);
-        }
-        else
-        {
-            super.addCollisionBoxesToList(var1, var2, var3, var4, var5, var6, var7);
-        }
-    }
-    
-    @Override
-    public void AddCollisionBoxesToListForFence(World var1, int var2, int var3, int var4, AxisAlignedBB var5, List var6, Entity var7)
-    {
-		boolean var8 = this.CanConnectToBlockToFacing(var1, var2, var3, var4, 4);
-		boolean var9 = this.CanConnectToBlockToFacing(var1, var2, var3, var4, 5);
-		boolean var10 = this.CanConnectToBlockToFacing(var1, var2, var3, var4, 2);
-		boolean var11 = this.CanConnectToBlockToFacing(var1, var2, var3, var4, 3);
-        float var12 = 0.25F;
-        float var13 = 0.75F;
-        float var14 = 0.25F;
-        float var15 = 0.75F;
+		if (var8 == 14)
+		{
+			this.AddCollisionBoxesToListForFence(var1, var2, var3, var4, var5, var6, var7);
+		}
+		else
+		{
+			super.addCollisionBoxesToList(var1, var2, var3, var4, var5, var6, var7);
+		}
+	}
 
-        if (var10)
-        {
-            var14 = 0.0F;
-        }
+	public void AddCollisionBoxesToListForFence(World world, int x, int y, int z, AxisAlignedBB aabb, List collisionList, Entity entity) {
+		boolean post = wallHasPost(world, x, y, z, true, true);
 
-        if (var11)
-        {
-            var15 = 1.0F;
-        }
+		boolean east = this.CanConnectToBlockToFacing(world, x, y, z, 4);
+		boolean west = this.CanConnectToBlockToFacing(world, x, y, z, 5);
+		boolean north = this.CanConnectToBlockToFacing(world, x, y, z, 2);
+		boolean south = this.CanConnectToBlockToFacing(world, x, y, z, 3);
+		
+		if (post) {
+			AxisAlignedBB.getAABBPool().getAABB(0.25D, 0.0D, 0.25D, 0.75D, 1.5D, 0.75D).offset((double) x, (double) y, (double) z).AddToListIfIntersects(aabb, collisionList);
+		}
+		
+		double height = 1.5;
+		
+		if (east)
+		{
+			AxisAlignedBB.getAABBPool().getAABB(0.0D, 0.0D, 0.3125D, 0.5D, height, 0.6875D).offset((double) x, (double) y, (double) z).AddToListIfIntersects(aabb, collisionList);
+		}
 
-        if (var10 || var11)
-        {
-            AxisAlignedBB.getAABBPool().getAABB((double)var12, 0.0D, (double)var14, (double)var13, 1.5D, (double)var15).offset((double)var2, (double)var3, (double)var4).AddToListIfIntersects(var5, var6);
-        }
+		if (west)
+		{
+			AxisAlignedBB.getAABBPool().getAABB(0.5D, 0.0D, 0.3125D, 1.0D, height, 0.6875D).offset((double) x, (double) y, (double) z).AddToListIfIntersects(aabb, collisionList);
+		}
 
-        if (var8)
-        {
-            var12 = 0.0F;
-        }
+		if (north)
+		{
+			AxisAlignedBB.getAABBPool().getAABB(0.3125D, 0.0D, 0.0D, 0.6875D, height, 0.5D).offset((double) x, (double) y, (double) z).AddToListIfIntersects(aabb, collisionList);
+		}
 
-        if (var9)
-        {
-            var13 = 1.0F;
-        }
-
-        if (var8 || var9 || !var10 && !var11)
-        {
-            AxisAlignedBB.getAABBPool().getAABB((double)var12, 0.0D, 0.375D, (double)var13, 1.5D, 0.625D).offset((double)var2, (double)var3, (double)var4).AddToListIfIntersects(var5, var6);
-        }
-    }
+		if (south)
+		{
+			AxisAlignedBB.getAABBPool().getAABB(0.3125D, 0.0D, 0.5D, 0.6875D, height, 1.0D).offset((double) x, (double) y, (double) z).AddToListIfIntersects(aabb, collisionList);
+		}
+	}
 
 	protected boolean CanConnectToBlockToFacing(IBlockAccess blockAccess, int x, int y, int z, int facing)
 	{
@@ -199,5 +194,151 @@ public class AddonBlockSidingAndCornerDecorativeWall extends AddonBlockSidingAnd
 	{
 		FCUtilsBlockPos blockPos = new FCUtilsBlockPos(x, y, z, facing);
 		return AddonUtilsBlock.canWallConnect(world, blockPos.i, blockPos.j, blockPos.k, facing, this);
+	}
+
+	protected boolean wallHasPost(IBlockAccess blockAccess, int x, int y, int z, boolean checkAbove, boolean checkBelow) {
+		int idAbove = blockAccess.getBlockId(x, y + 1, z);
+		int metaAbove = blockAccess.getBlockMetadata(x, y + 1, z);
+		int idBelow = blockAccess.getBlockId(x, y - 1, z);
+		int metaBelow = blockAccess.getBlockMetadata(x, y - 1, z);
+
+		//Get whether the wall should connect to each facing
+		boolean north = this.CanConnectToBlockToFacing(blockAccess, x, y, z, 2);
+		boolean south = this.CanConnectToBlockToFacing(blockAccess, x, y, z, 3);
+		boolean east = this.CanConnectToBlockToFacing(blockAccess, x, y, z, 4);
+		boolean west = this.CanConnectToBlockToFacing(blockAccess, x, y, z, 5);
+		boolean NS = north && south && !east && !west;
+		boolean EW = !north && !south && east && west;
+
+		//If the wall does not have exactly 2 connections it must have a post
+		if (!NS && !EW)
+			return true;
+
+		if (AddonUtilsBlock.isWall(idAbove, metaAbove) || AddonUtilsBlock.isWall(idBelow, metaBelow)) {
+			boolean wallAbove = false;
+			boolean wallBelow = false;
+
+			//Recursively checks wall above
+			if (AddonUtilsBlock.isWall(idAbove, metaAbove) && checkAbove) {
+				return wallHasPost(blockAccess, x, y + 1, z, true, false);
+			}
+
+			//Checks wall below
+			if (AddonUtilsBlock.isWall(idBelow, metaBelow) && checkBelow) {
+				//return wallHasPost(blockAccess, x, y - 1, z, false, true);
+			}
+
+			if (wallAbove || wallBelow)
+				return true;
+		}
+
+		boolean airAbove = idAbove == 0 || idAbove == FCBetterThanWolves.fcBlockDetectorLogic.blockID || idAbove == FCBetterThanWolves.fcBlockDetectorGlowingLogic.blockID || FCUtilsWorld.IsGroundCoverOnBlock(blockAccess, x, y, z);
+		Block blockAbove = Block.blocksList[idAbove];
+		boolean solidSurface = blockAbove == null ? false : blockAbove.HasLargeCenterHardPointToFacing(blockAccess, x, y + 1, z, 0);
+		boolean paneAbove = blockAbove instanceof BlockPane;
+
+		boolean paneToSide = false;
+		
+		for (int i = 0; i < 4; i++) {
+			FCUtilsBlockPos blockPos = new FCUtilsBlockPos(x, y, z);
+			blockPos.AddFacingAsOffset(i + 2);
+			int idOffset = blockAccess.getBlockId(blockPos.i, blockPos.j, blockPos.k);
+			if (Block.blocksList[idOffset] instanceof BlockPane)
+				paneToSide = true;
+		}
+		
+		//No post if air above
+		if (airAbove && !paneToSide)
+			return false;
+
+		//No post if solid surface and BOTH connections are full height walls
+		if (solidSurface || paneAbove) {
+			if (NS) {
+				boolean northFullWall = shouldRenderFullHeightWallToFacing(blockAccess, x, y, z, 2);
+				boolean southFullWall = shouldRenderFullHeightWallToFacing(blockAccess, x, y, z, 3);
+
+				return !(northFullWall && southFullWall);
+			}
+			else {
+				boolean eastFullWall = shouldRenderFullHeightWallToFacing(blockAccess, x, y, z, 4);
+				boolean westFullWall = shouldRenderFullHeightWallToFacing(blockAccess, x, y, z, 5);
+
+				return !(eastFullWall && westFullWall);
+			}
+		}
+		
+		if (AddonUtilsBlock.blockIsWallConnectionAboveException(blockAccess, x, y + 1, z, blockAbove))
+			return AddonUtilsBlock.getWallConnectionAboveException(blockAccess, x, y + 1, z, blockAbove);
+		
+		return true;
+	}
+
+	protected boolean shouldRenderFullHeightWallToFacing(IBlockAccess blockAccess, int x, int y, int z, int facing) {
+		boolean connect = this.CanConnectToBlockToFacing(blockAccess, x, y, z, facing);
+
+		//Sanity check for non-connecting facing
+		if (!connect)
+			return false;
+
+		int idAbove = blockAccess.getBlockId(x, y + 1, z);
+		int metaAbove = blockAccess.getBlockMetadata(x, y + 1, z);
+		Block blockAbove = Block.blocksList[idAbove];
+		boolean solidSurface = blockAbove == null ? false : blockAbove.HasLargeCenterHardPointToFacing(blockAccess, x, y + 1, z, 0);
+		boolean paneAbove = blockAbove instanceof BlockPane;
+		boolean canPaneAboveConnectToFacing = false;
+
+		if (paneAbove) {
+			FCUtilsBlockPos blockPosPane = new FCUtilsBlockPos(x, y + 1, z, facing);
+			canPaneAboveConnectToFacing = AddonUtilsBlock.canPaneConnect(blockAccess, x, y, z, facing, blockAbove);
+		}
+		
+		if (AddonUtilsBlock.isWall(idAbove, metaAbove)) {
+			return CanConnectToBlockToFacing(blockAccess, x, y + 1, z, facing);
+		}
+		
+		//Gets coordinates for block in facing direction
+		FCUtilsBlockPos blockPos = new FCUtilsBlockPos(x, y, z);
+		blockPos.AddFacingAsOffset(facing);
+
+		Block sideBlock = Block.blocksList[blockAccess.getBlockId(blockPos.i, blockPos.j, blockPos.k)];
+		boolean solidSide = sideBlock.HasLargeCenterHardPointToFacing(blockAccess, blockPos.i, blockPos.j, blockPos.k, Facing.oppositeSide[facing]);
+
+		int idOffset = blockAccess.getBlockId(blockPos.i, blockPos.j, blockPos.k);
+		boolean paneToSide = Block.blocksList[idOffset] instanceof BlockPane;
+		
+		int idAboveOffset = blockAccess.getBlockId(blockPos.i, blockPos.j + 1, blockPos.k);
+		int metaAboveOffset = blockAccess.getBlockMetadata(blockPos.i, blockPos.j + 1, blockPos.k);
+		Block blockAboveOffset = Block.blocksList[idAboveOffset];
+		boolean solidSurfaceOffset = blockAboveOffset == null ? false : blockAboveOffset.HasLargeCenterHardPointToFacing(blockAccess, blockPos.i, blockPos.j + 1, blockPos.k, 0);
+		boolean paneAboveOffset = blockAboveOffset instanceof BlockPane;
+
+		//Both parts of connection need to satisfy requirements for a full height wall
+		return (AddonUtilsBlock.isWall(idAboveOffset, metaAboveOffset) || solidSurfaceOffset || (solidSide && (!paneAbove || canPaneAboveConnectToFacing)) || paneAboveOffset) && (AddonUtilsBlock.isWall(idAbove, metaAbove) || solidSurface || (paneAbove && canPaneAboveConnectToFacing)) || paneToSide;
+	}
+
+	public void onNeighborBlockChange(World world, int x, int y, int z, int neighborID) {
+		int i = x, j = y, k = z;
+		int id = world.getBlockId(x, y, z);
+		int meta = world.getBlockMetadata(x, y, z);
+
+		while (AddonUtilsBlock.isWall(id, meta)) {
+			world.markBlockForRenderUpdate(i, j, k);
+
+			j++;
+			id = world.getBlockId(i, j, k);
+			meta = world.getBlockMetadata(i, j, k);
+		}
+
+		j = y;
+		id = world.getBlockId(x, y, z);
+		meta = world.getBlockMetadata(x, y, z);
+
+		while (AddonUtilsBlock.isWall(id, meta)) {
+			world.markBlockForRenderUpdate(i, j, k);
+
+			j--;
+			id = world.getBlockId(i, j, k);
+			meta = world.getBlockMetadata(i, j, k);
+		}
 	}
 }

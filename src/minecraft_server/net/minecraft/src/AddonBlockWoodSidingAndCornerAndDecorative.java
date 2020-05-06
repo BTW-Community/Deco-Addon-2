@@ -153,9 +153,13 @@ public class AddonBlockWoodSidingAndCornerAndDecorative extends AddonBlockSiding
         {
             var1 = 3;
         }
-        else
+        else if (this.blockID == FCBetterThanWolves.fcBlockWoodBloodSidingAndCorner.blockID)
         {
             var1 = 4;
+        }
+        else
+        {
+        	var1 = 5;
         }
 
         return var1;

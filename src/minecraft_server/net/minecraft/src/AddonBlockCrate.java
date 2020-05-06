@@ -31,7 +31,7 @@ public class AddonBlockCrate extends Block {
      */
     public void getSubBlocks(int var1, CreativeTabs var2, List var3)
     {
-        for (int var4 = 0; var4 < 4; ++var4)
+        for (int var4 = 0; var4 < 6; ++var4)
         {
             var3.add(new ItemStack(var1, 1, var4));
         }

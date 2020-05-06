@@ -9,6 +9,8 @@ public class AddonBlockHayBale extends Block
 		setStepSound(soundGrassFootstep);
 		setCreativeTab(CreativeTabs.tabBlock);
 		this.SetAxesEffectiveOn(true);
+		this.setHardness(0.5F);
+		this.setResistance(2.0F);
 		AddonManager.Register(this);
 		AddonManager.Name(this, "Hay Bale");
 	}
@@ -35,7 +37,7 @@ public class AddonBlockHayBale extends Block
 
 		for (int i=0;i<8;++i)
 			if (world.rand.nextFloat()<=v)
-				dropBlockAsItem_do(world, X, Y, Z, new ItemStack(Item.wheat));
+				dropBlockAsItem_do(world, X, Y, Z, new ItemStack(FCBetterThanWolves.fcItemWheat));
 	}
 
 	@Override public int GetFacing(IBlockAccess access, int X, int Y, int Z)

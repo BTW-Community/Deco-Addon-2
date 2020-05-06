@@ -18,8 +18,18 @@ public class AddonUtilsObfuscationMap {
 		blockMap.put("oreNetherQuartz", "ct");
 		blockMap.put("sandStone", "U");
 		blockMap.put("stairsSandStone", "bU");
+		blockMap.put("planks", "B");
+		blockMap.put("stairsWoodOak", "ax");
+		blockMap.put("stairsWoodSpruce", "ca");
+		blockMap.put("stairsWoodBirch", "cb");
+		blockMap.put("stairsWoodJungle", "cc");
+		blockMap.put("obsidian", "at");
+		blockMap.put("signPost", "aH");
+		blockMap.put("signWall", "aM");
+		blockMap.put("grass", "y");
 		
 		itemMap.put("enderPearl", "bo");
+		itemMap.put("sign", "av");
 	}
 	
 	public static String getBlockLookup(String blockName) {

@@ -841,6 +841,7 @@ public class AddonDefs {
 		prismarine = new AddonBlockPrismarine(id_prismarine);
 		prismarineLantern = new AddonBlockPrismarineLantern(id_prismarineLantern);
 		AddonManager.Register(prismarineLantern, "Prismarine Lantern");
+        FCTileEntityBeacon.AddBeaconEffect(prismarineLantern.blockID, Potion.nightVision.getId());
 
 		prismarineSidingAndCorner = new AddonBlockSidingAndCornerDecorativeWall(id_prismarineSidingAndCorner,  Material.rock, "ginger_prismarineDecorative", 1.5F, 10.0F, Block.soundStoneFootstep, "prismarineSiding", "Prismarine").SetPicksEffectiveOn();
 		prismarineMouldingAndDecorative = new FCBlockMouldingAndDecorative(id_prismarineMouldingAndDecorative, Material.rock, "ginger_prismarineDecorative", "ginger_prismarineDecorative_column", 3042, 1.5F, 10.0F, Block.soundStoneFootstep, "prismarineMoulding").SetPicksEffectiveOn();
@@ -1441,6 +1442,7 @@ public class AddonDefs {
 		//Diamondium
 		blockDiamondium = new Block(id_blockDiamondium, Material.iron).setHardness(10.0F).setResistance(2000.0F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("blockDiamond").setCreativeTab(CreativeTabs.tabBlock);
 		Block.blockDiamond.setUnlocalizedName("ginger_solid_diamond");
+		FCTileEntityBeacon.AddBeaconEffect(blockDiamondium.blockID, FCBetterThanWolves.potionFortune.getId());
 
 		AddonManager.Register(blockDiamondium, "Block of Diamondium");
 
@@ -1582,15 +1584,6 @@ public class AddonDefs {
 		Item.itemsList[hedgeCherrySidingAndCorner.blockID] = new FCItemBlockSidingAndCorner(hedgeCherrySidingAndCorner.blockID - 256);
 		Item.itemsList[hedgeCherryMouldingAndDecorative.blockID] = new FCItemBlockMoulding(hedgeCherryMouldingAndDecorative.blockID - 256);
 		AddonManager.NameSubBlocks_Wall(hedgeCherrySidingAndCorner, hedgeCherryMouldingAndDecorative, "Cherry Hedge");
-		
-		//Grass and dirt
-		Block grass = new AddonBlockGrass(AddonManager.ReplaceBlockID(Block.grass));
-		AddonManager.SetVanillaBlockFinal("grass", Block.grass, grass);
-		Block dirt = new AddonBlockDirt(AddonManager.ReplaceBlockID(Block.dirt));
-		AddonManager.SetVanillaBlockFinal("dirt", Block.dirt, dirt);
-		FCBetterThanWolves.fcBlockDirtLoose = new AddonBlockDirtLoose(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockDirtLoose));
-		FCBetterThanWolves.fcBlockDirtSlab = new AddonBlockDirtSlab(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockDirtSlab));
-		FCBetterThanWolves.fcBlockDirtLooseSlab = new AddonBlockDirtLooseSlab(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockDirtLooseSlab));
 		
 		//Panes replace
 		Block thinGlass = new AddonBlockPane(AddonManager.ReplaceBlockID(Block.thinGlass), "glass", "thinglass_top", Material.glass, false);

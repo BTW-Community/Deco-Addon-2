@@ -8,7 +8,25 @@ public class AddonBlockStep extends FCBlockSlab
 	/** The list of the types of step blocks. */
 	public final Block[] blockTypes;
 	public final int[] typeMetas;
+	public final boolean[] mortaredList;
+	public final Block[] looseDropList;
+	public final int[] looseDropMetaList;
 	private Icon theIcon;
+
+	public AddonBlockStep(int par1, Block[] blocks, int[] metas, boolean[] mortared, Block[] looseDrop, int[] looseDropMeta)
+	{
+		super(par1, Material.rock);
+		this.setCreativeTab(CreativeTabs.tabBlock);
+		this.setHardness(2.0F);
+		this.setResistance(10.0F);
+		this.SetPicksEffectiveOn();
+		this.setStepSound(Block.soundStoneFootstep);
+		blockTypes = blocks;
+		typeMetas = metas;
+		mortaredList = mortared;
+		looseDropList = looseDrop;
+		looseDropMetaList = looseDropMeta;
+	}
 
 	public AddonBlockStep(int par1, Block[] blocks, int[] metas)
 	{
@@ -20,19 +38,42 @@ public class AddonBlockStep extends FCBlockSlab
 		this.setStepSound(Block.soundStoneFootstep);
 		blockTypes = blocks;
 		typeMetas = metas;
+		mortaredList = new boolean[] {false, false, false, false, false, false, false, false};
+		looseDropList = new Block[] {null, null, null, null, null, null, null, null};
+		looseDropMetaList = new int[] {0, 0, 0, 0, 0, 0, 0, 0};
 	}
 
 	public int GetHarvestToolLevel(IBlockAccess var1, int var2, int var3, int var4) {
-		return 3;
+    	int meta = var1.getBlockMetadata(var2, var3, var4);
+    	Block owner = blockTypes[meta % 8];
+    	
+    	return (owner instanceof AddonBlockSandStone || owner instanceof AddonBlockRedSandStone) ? 3 : 1;
 	}
 
-	/**
-	 * Returns the ID of the items to drop on destruction.
-	 */
-	public int idDropped(int par1, Random par2Random, int par3)
-	{
-		return this.blockID;
-	}
+    public boolean HasMortar(IBlockAccess var1, int var2, int var3, int var4)
+    {
+    	int meta = var1.getBlockMetadata(var2, var3, var4);
+        return mortaredList[meta % 8];
+    }
+
+    /**
+     * Drops the block items with a specified chance of dropping the specified items
+     */
+    public void dropBlockAsItemWithChance(World var1, int var2, int var3, int var4, int var5, float var6, int var7)
+    {
+        if (!var1.isRemote)
+        {
+        	Block drop = this;
+        	int dropMeta = var5;
+        	
+        	if (looseDropList[var5 % 8] != null) {
+        		drop = looseDropList[var5 % 8];
+        		dropMeta = looseDropMetaList[var5 % 8];
+        	}
+        	
+            this.dropBlockAsItem_do(var1, var2, var3, var4, new ItemStack(drop, 1, dropMeta));
+        }
+    }
     
     public int damageDropped(int meta) {
     	return meta;
@@ -44,15 +85,7 @@ public class AddonBlockStep extends FCBlockSlab
 	 */
 	protected ItemStack createStackedBlock(int par1)
 	{
-		return new ItemStack(AddonDefs.stoneSlab.blockID, 2, par1 & 7);
-	}
-
-	/**
-	 * Takes a block ID, returns true if it's the same as the ID for a stone or wooden single slab.
-	 */
-	private static boolean isBlockSingleSlab(int par0)
-	{
-		return par0 == AddonDefs.stoneSlab.blockID;
+		return new ItemStack(this.blockID, 2, par1 & 7);
 	}
 
 	/**
