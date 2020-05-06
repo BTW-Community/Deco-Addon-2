@@ -1,6 +1,6 @@
 package net.minecraft.src;
 
-public class AddonUtilsRender {
+public class AddonClientUtilsRender {
 	public static boolean renderPane(RenderBlocks render, int x, int y, int z, BlockPane pane) {
 		render.setRenderBounds(pane.GetBlockBoundsFromPoolBasedOnState(render.blockAccess, x, y, z));int var5 = render.blockAccess.getHeight();
         Tessellator var6 = Tessellator.instance;

@@ -80,7 +80,7 @@ public class AddonItemBlockWoodSidingDecorativeStub extends ItemBlock
         int var4 = var1.getItemDamage() >> 2;
         String var5;
 
-        if (var4 == 0)
+        if (var4 == 0 || (16 <= var1.getItemDamage() && var1.getItemDamage() < 20))
         {
             var5 = "bench";
         }

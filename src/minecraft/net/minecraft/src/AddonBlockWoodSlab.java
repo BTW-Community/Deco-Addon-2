@@ -8,9 +8,11 @@ public class AddonBlockWoodSlab extends FCBlockSlab
 	/** The list of the types of step blocks. */
 	public final Block[] blockTypes;
 	public final int[] typeMetas;
+	public final int[] sawedIDs;
+	public final int[] sawedMetas;
 	private Icon theIcon;
 
-	public AddonBlockWoodSlab(int par1, Block[] blocks, int[] metas)
+	public AddonBlockWoodSlab(int par1, Block[] blocks, int[] metas, int[] sawedIDs, int[] sawedMetas)
 	{
 		super(par1, FCBetterThanWolves.fcMaterialPlanks);
 		this.setCreativeTab(CreativeTabs.tabBlock);
@@ -20,8 +22,10 @@ public class AddonBlockWoodSlab extends FCBlockSlab
 		this.setStepSound(Block.soundWoodFootstep);
 		this.SetFireProperties(FCEnumFlammability.PLANKS);
 		this.SetBuoyant();
-		blockTypes = blocks;
-		typeMetas = metas;
+		this.blockTypes = blocks;
+		this.typeMetas = metas;
+		this.sawedIDs = sawedIDs;
+		this.sawedMetas = sawedMetas;
 	}
 
 	public int GetHarvestToolLevel(IBlockAccess var1, int var2, int var3, int var4) {
@@ -30,6 +34,26 @@ public class AddonBlockWoodSlab extends FCBlockSlab
     
     public int damageDropped(int meta) {
     	return meta;
+    }
+
+	@Override
+    public int GetItemIDDroppedOnSaw(World var1, int var2, int var3, int var4)
+    {
+		int metadata = var1.getBlockMetadata(var2, var3, var4);
+        return sawedIDs[metadata % 8];
+    }
+
+	@Override
+    public int GetItemCountDroppedOnSaw(World var1, int var2, int var3, int var4)
+    {
+        return 2;
+    }
+
+	@Override
+    public int GetItemDamageDroppedOnSaw(World var1, int var2, int var3, int var4)
+    {
+		int metadata = var1.getBlockMetadata(var2, var3, var4);
+        return sawedMetas[metadata % 8];
     }
 
 	/**

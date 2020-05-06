@@ -19,6 +19,6 @@ public class AddonBlockIronBars extends FCBlockIronBars {
     
     //CLIENT ONLY
     public boolean RenderBlock(RenderBlocks render, int x, int y, int z) {
-    	return AddonUtilsRender.renderPane(render, x, y, z, this);
+    	return AddonClientUtilsRender.renderPane(render, x, y, z, this);
     }
 }

@@ -34,12 +34,6 @@ public class AddonManager extends FCAddOn
 
 	private static boolean isObfuscated = false;
 
-	public static ArrayList<Object> builders= new ArrayList<Object>();
-
-	public void initiateTransforms() {
-
-	}
-
 	@Override
 	public void PreInitialize() {
 		AddonUtilsObfuscationMap.initialize();

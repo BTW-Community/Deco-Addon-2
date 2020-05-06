@@ -21,6 +21,7 @@ public class AddonItemDye extends FCItemDye
 			{
 				return super.getUnlocalizedName() + "." + ColorPlus_dyeColorNames[I.getItemDamage()&31];
 			}
+			
 	//CLIENT ONLY METHODS
 			@Override public void getSubItems(int par1, CreativeTabs par2CreativeTabs, List par3List)
 			{

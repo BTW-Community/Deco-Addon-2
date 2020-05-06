@@ -13,6 +13,11 @@ public class AddonBlockStairsHedge extends FCBlockStairs {
 		this.SetFireProperties(FCEnumFlammability.LEAVES);
 		this.shouldColor = shouldColor;
 	}
+
+    public float GetMovementModifier(World var1, int var2, int var3, int var4)
+    {
+        return 0.5F;
+    }
 	
 	public boolean GetCanGrassGrowUnderBlock(World world, int x, int y, int z, boolean var5) {
 		return true;
