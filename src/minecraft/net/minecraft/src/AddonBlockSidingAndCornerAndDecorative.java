@@ -186,46 +186,6 @@ public class AddonBlockSidingAndCornerAndDecorative extends FCBlockSidingAndCorn
         int var4 = var2;
         Object var5 = this;
 
-        if (this.blockID == FCBetterThanWolves.fcBlockWoodSidingDecorativeItemStubID)
-        {
-            int var6 = AddonItemBlockWoodSidingDecorativeStub.GetBlockType(var2);
-            int var7 = AddonItemBlockWoodSidingDecorativeStub.GetWoodType(var2);
-
-            if (var6 == 0)
-            {
-                var4 = 12;
-            }
-            else
-            {
-                var4 = 14;
-            }
-
-            if (var7 == 0)
-            {
-                var5 = FCBetterThanWolves.fcBlockWoodOakSidingAndCorner;
-            }
-            else if (var7 == 1)
-            {
-                var5 = FCBetterThanWolves.fcBlockWoodSpruceSidingAndCorner;
-            }
-            else if (var7 == 2)
-            {
-                var5 = FCBetterThanWolves.fcBlockWoodBirchSidingAndCorner;
-            }
-            else if (var7 == 3)
-            {
-                var5 = FCBetterThanWolves.fcBlockWoodJungleSidingAndCorner;
-            }
-            else if (var7 == 4)
-            {
-                var5 = FCBetterThanWolves.fcBlockWoodBloodSidingAndCorner;
-            }
-            else
-            {
-            	var5 = AddonDefs.cherrySidingAndCorner;
-            }
-        }
-
         if (var4 == 12)
         {
             RenderBenchInvBlock(var1, (Block)var5, var4);
@@ -236,7 +196,7 @@ public class AddonBlockSidingAndCornerAndDecorative extends FCBlockSidingAndCorn
         }
         else
         {
-        	if (this.blockID != FCBetterThanWolves.fcBlockWoodSidingItemStubID && ((var2 & 1) != 0 || this.blockID == FCBetterThanWolves.fcBlockWoodCornerItemStubID))
+        	if ((var2 & 1) != 0)
             {
                 var1.setRenderBounds(0.25D, 0.25D, 0.25D, 0.75D, 0.75D, 0.75D);
             }
@@ -244,38 +204,8 @@ public class AddonBlockSidingAndCornerAndDecorative extends FCBlockSidingAndCorn
             {
                 var1.setRenderBounds(0.0D, 0.0D, 0.0D, 0.5D, 1.0D, 1.0D);
             }
-
-            if (this.blockID != FCBetterThanWolves.fcBlockWoodSidingItemStubID && this.blockID != FCBetterThanWolves.fcBlockWoodCornerItemStubID)
-            {
-                FCClientUtilsRender.RenderInvBlockWithMetadata(var1, this, -0.5F, -0.5F, -0.5F, 0);
-            }
-            else
-            {
-                Icon icon;
-
-                switch (var2)
-                {
-                    case 1:
-                    	icon = FCBetterThanWolves.fcBlockWoodSpruceSidingAndCorner.blockIcon;
-                        break;
-                    case 2:
-                    	icon = FCBetterThanWolves.fcBlockWoodBirchSidingAndCorner.blockIcon;
-                        break;
-                    case 3:
-                    	icon = FCBetterThanWolves.fcBlockWoodJungleSidingAndCorner.blockIcon;
-                        break;
-                    case 4:
-                    	icon = FCBetterThanWolves.fcBlockWoodBloodSidingAndCorner.blockIcon;
-                        break;
-                    case 5:
-                    	icon = AddonDefs.cherrySidingAndCorner.blockIcon;
-                    	break;
-                    default:
-                    	icon = FCBetterThanWolves.fcBlockWoodOakSidingAndCorner.blockIcon;
-                }
-
-                FCClientUtilsRender.RenderInvBlockWithTexture(var1, this, -0.5F, -0.5F, -0.5F, icon);
-            }
+            
+        	FCClientUtilsRender.RenderInvBlockWithMetadata(var1, this, -0.5F, -0.5F, -0.5F, 0);
         }
     }
 

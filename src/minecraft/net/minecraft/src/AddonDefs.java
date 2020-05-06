@@ -439,7 +439,6 @@ public class AddonDefs {
 	public static Block carpet;
 	public static Block coalBlock, netherCoalBlock;
 	public static Block bonePillar;
-	public static AddonBlockSoulboundChest soulboundChest;
 
 	//Tools
 	public static AddonItemChiselDiamond chiselDiamond;
@@ -897,8 +896,6 @@ public class AddonDefs {
 		AddonManager.Register(netherrackSuperheated);
 		magma = new AddonBlockMagma(id_magma);
 		AddonManager.Register(magma, "Magma Block");
-		Block quartzOre = new AddonBlockNetherQuartzOre(AddonManager.ReplaceBlockID(Block.oreNetherQuartz));
-		AddonManager.SetVanillaBlockFinal("oreNetherQuartz", Block.oreNetherQuartz, quartzOre);
 
 		//Basalt
 		basalt = new AddonBlockBasalt(id_basalt);

@@ -428,9 +428,7 @@ public class AddonBlockSidingAndCornerDecorativeWall extends AddonBlockSidingAnd
 		}
 		else
 		{
-			var1.setRenderBounds(0.0D, 0.0D, 0.0D, 0.5D, 1.0D, 1.0D);
-
-			FCClientUtilsRender.RenderInvBlockWithMetadata(var1, this, -0.5F, -0.5F, -0.5F, 0);
+            super.RenderBlockAsItem(var1, var2, var3);
 		}
 	}
 

@@ -62,6 +62,39 @@ public class AddonBlockHedgeSidingAndCornerDecorativeWall extends AddonBlockSidi
 	}
 
 	//CLIENT ONLY
+    public void RenderBlockAsItem(RenderBlocks var1, int var2, float var3)
+    {
+        int meta = var2;
+        Object var5 = this;
+
+        if (meta == 12)
+        {
+            RenderBenchInvBlock(var1, (Block)var5, meta);
+        }
+        else if (meta == 14)
+        {
+            RenderFenceInvBlock(var1, (Block)var5, meta);
+        }
+        else
+        {
+        	if ((var2 & 1) != 0)
+            {
+                var1.setRenderBounds(0.25D, 0.25D, 0.25D, 0.75D, 0.75D, 0.75D);
+            }
+            else
+            {
+                var1.setRenderBounds(0.0D, 0.0D, 0.0D, 0.5D, 1.0D, 1.0D);
+            }
+        	
+            int color = getRenderColor(meta);
+            int red = (color >> 16) & 255;
+            int green = (color >> 8) & 255;
+            int blue = color & 255;
+            
+        	AddonClientUtilsRender.RenderInvBlockWithMetadataAndColor(var1, this, -0.5F, -0.5F, -0.5F, 0, red, green, blue);
+        }
+    }
+    
 	public boolean ShouldRenderNeighborHalfSlabSide(IBlockAccess var1, int var2, int var3, int var4, int var5, boolean var6)
 	{
 		return true;

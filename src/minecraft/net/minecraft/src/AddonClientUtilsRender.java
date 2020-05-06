@@ -1,6 +1,46 @@
 package net.minecraft.src;
 
+import org.lwjgl.opengl.GL11;
+
 public class AddonClientUtilsRender {
+
+    public static void RenderInvBlockWithMetadataAndColor(RenderBlocks render, Block block, float x, float y, float z, int meta, int red, int blue, int green)
+    {
+        Tessellator tess = Tessellator.instance;
+        GL11.glTranslatef(x, y, z);
+        tess.setColorOpaque_F(red, green, blue);
+        tess.startDrawingQuads();
+        tess.setNormal(0.0F, -1.0F, 0.0F);
+        render.renderFaceYNeg(block, 0.0D, 0.0D, 0.0D, block.getIcon(0, meta));
+        tess.draw();
+        tess.setColorOpaque_F(red, green, blue);
+        tess.startDrawingQuads();
+        tess.setNormal(0.0F, 1.0F, 0.0F);
+        render.renderFaceYPos(block, 0.0D, 0.0D, 0.0D, block.getIcon(1, meta));
+        tess.draw();
+        tess.setColorOpaque_F(red, green, blue);
+        tess.startDrawingQuads();
+        tess.setNormal(0.0F, 0.0F, -1.0F);
+        render.renderFaceZNeg(block, 0.0D, 0.0D, 0.0D, block.getIcon(2, meta));
+        tess.draw();
+        tess.setColorOpaque_F(red, green, blue);
+        tess.startDrawingQuads();
+        tess.setNormal(0.0F, 0.0F, 1.0F);
+        render.renderFaceZPos(block, 0.0D, 0.0D, 0.0D, block.getIcon(3, meta));
+        tess.draw();
+        tess.setColorOpaque_F(red, green, blue);
+        tess.startDrawingQuads();
+        tess.setNormal(-1.0F, 0.0F, 0.0F);
+        render.renderFaceXNeg(block, 0.0D, 0.0D, 0.0D, block.getIcon(4, meta));
+        tess.draw();
+        tess.setColorOpaque_F(red, green, blue);
+        tess.startDrawingQuads();
+        tess.setNormal(1.0F, 0.0F, 0.0F);
+        render.renderFaceXPos(block, 0.0D, 0.0D, 0.0D, block.getIcon(5, meta));
+        tess.draw();
+        GL11.glTranslatef(-x, -y, -z);
+    }
+    
 	public static boolean renderPane(RenderBlocks render, int x, int y, int z, BlockPane pane) {
 		render.setRenderBounds(pane.GetBlockBoundsFromPoolBasedOnState(render.blockAccess, x, y, z));int var5 = render.blockAccess.getHeight();
         Tessellator var6 = Tessellator.instance;

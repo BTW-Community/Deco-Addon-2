@@ -221,7 +221,8 @@ public class AddonBlockLogDamaged extends FCBlockLogDamaged {
     {
         int var7 = var2.getBlockId(var3, var4, var5);
         return var7 != this.blockID ? (var7 == FCBetterThanWolves.fcBlockLogSpike.blockID ? FCBetterThanWolves.fcBlockLogSpike.GetFacing(var2, var3, var4, var5) == Block.GetOppositeFacing(var6) : 
-        	(var7 == Block.wood.blockID || var7 == AddonDefs.barkLog.blockID || var7 == AddonDefs.barkLogStripped.blockID || var7 == AddonDefs.strippedLog.blockID || var7 == AddonDefs.cherryLog.blockID || var7 == AddonDefs.cherryStump.blockID)) : 
+        	(var7 == Block.wood.blockID || var7 == AddonDefs.barkLog.blockID || var7 == AddonDefs.barkLogStripped.blockID || var7 == AddonDefs.strippedLog.blockID || var7 == AddonDefs.cherryLog.blockID || var7 == AddonDefs.cherryStump.blockID || 
+        	var7 == FCBetterThanWolves.fcBlockLogDamaged.blockID || var7 == AddonDefs.logDamagedSpruce.blockID || var7 == AddonDefs.logDamagedBirch.blockID || var7 == AddonDefs.logDamagedJungle.blockID || var7 == AddonDefs.logDamagedCherry.blockID)) : 
         		this.GetDamageLevel(var2, var3, var4, var5) == 0 && var1 == this.GetOrientation(var2, var3, var4, var5);
     }
 
@@ -229,12 +230,32 @@ public class AddonBlockLogDamaged extends FCBlockLogDamaged {
     private Icon m_IconSide;
     private Icon m_IconStumpTop;
     
-    public boolean RenderBlock(RenderBlocks var1, int var2, int var3, int var4)
+    public boolean RenderBlock(RenderBlocks render, int x, int y, int z)
     {
-        int var5 = this.SetCurrentModelForBlock(var1.blockAccess, var2, var3, var4);
+        int var5 = this.SetCurrentModelForBlock(render.blockAccess, x, y, z);
         FCModelBlock var6 = this.m_tempCurrentModel.MakeTemporaryCopy();
         var6.TiltToFacingAlongJ(var5);
-        return var6.RenderAsBlock(var1, this, var2, var3, var4);
+
+        int var7 = render.blockAccess.getBlockMetadata(x, y, z);
+
+    	System.out.println("Chewed log meta" + var7);
+
+        if (var7 == 4 || var7 == 5 || var7 == 6 || var7 == 7)
+        {
+			render.SetUvRotateTop(1);
+			render.SetUvRotateBottom(1);
+			render.SetUvRotateWest(1);
+			render.SetUvRotateEast(1);
+        }
+        else if (var7 == 8 || var7 == 9 || var7 == 10 || var7 == 11)
+        {
+			render.SetUvRotateNorth(1);
+			render.SetUvRotateSouth(1);
+        }
+        
+        var6.RenderAsBlock(render, this, x, y, z);
+		render.ClearUvRotation();
+		return true;
     }
 
     public void RenderBlockAsItem(RenderBlocks var1, int var2, float var3)

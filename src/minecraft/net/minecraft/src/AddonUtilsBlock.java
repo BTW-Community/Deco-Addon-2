@@ -42,6 +42,7 @@ public class AddonUtilsBlock {
 		return isPaneConnector || isSolid || isGlass || hasCenterPoint;
 	}
 	
+	//This is really bad programming practice but it is the only way without modifying Block and each individual class with an exception
 	public static boolean blockIsWallConnectionAboveException(IBlockAccess blockAccess, int x, int y, int z, Block blockAbove) {
 		if (blockAbove instanceof BlockTrapDoor || 
 				blockAbove instanceof FCBlockSlab ||
@@ -58,7 +59,9 @@ public class AddonUtilsBlock {
 				blockAbove instanceof AddonBlockChandelier ||
 				blockAbove instanceof AddonBlockChair ||
 				blockAbove instanceof FCBlockSpike ||
-				blockAbove instanceof BlockSkull)
+				blockAbove instanceof BlockSkull ||
+				blockAbove instanceof FCBlockSidingAndCorner ||
+				blockAbove instanceof FCBlockMoulding)
 			return true;
 		else
 			return false;
@@ -88,6 +91,18 @@ public class AddonUtilsBlock {
 		}
 		else if (blockAbove instanceof FCBlockTorchBase) {
 			return meta == 5;
+		}
+		else if (blockAbove instanceof FCBlockSidingAndCorner) {
+			if (meta == 0 || meta == 5 || meta == 7 || meta == 13 || meta == 15)
+				return false;
+			else
+				return true;
+		}
+		else if (blockAbove instanceof FCBlockMoulding) {
+			if (meta == 8 || meta == 9 || meta == 10 || meta == 11)
+				return false;
+			else
+				return true;
 		}
 		else if (blockAbove instanceof BlockFenceGate ||
 				blockAbove instanceof FCBlockLadderBase ||
