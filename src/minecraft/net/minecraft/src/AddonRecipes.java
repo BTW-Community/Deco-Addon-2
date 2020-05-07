@@ -20,13 +20,18 @@ public class AddonRecipes {
 
 	private void addClayRecipes() {
 		AddonDefs.unfiredTerracotta.SetCanBeCookedByKiln(true).SetItemIndexDroppedWhenCookedByKiln(AddonDefs.terracotta.blockID);
-		for (int i = 0; i < 32; i++)
+		for (int i = 0; i < 16; i++)
 		{
-			FCRecipes.AddCauldronRecipe(new ItemStack(AddonDefs.stainedTerracotta, 8, i), new ItemStack[] { new ItemStack(AddonDefs.terracotta, 8), new ItemStack(Item.dyePowder, 1, i) });
+			FCRecipes.AddCauldronRecipe(new ItemStack(AddonDefs.stainedTerracotta, 8, i % 16), new ItemStack[] { new ItemStack(AddonDefs.terracotta, 8), new ItemStack(Item.dyePowder, 1, i)});
 		}
-		FCRecipes.AddRecipe(new ItemStack(AddonDefs.unfiredTerracotta, 1), new Object[] {"###", "#@#", "###", '#', FCBetterThanWolves.fcItemPileSand, '@', Item.clay});
-		FCRecipes.AddRecipe(new ItemStack(AddonDefs.unfiredTerracotta, 1), new Object[] {"###", "#@#", "###", '#', FCBetterThanWolves.fcItemPileSand, '@', FCBetterThanWolves.fcItemNetherSludge});
-
+		
+		FCRecipes.AddCauldronRecipe(new ItemStack(AddonDefs.stainedTerracotta, 8, 3), new ItemStack[] {new ItemStack(AddonDefs.terracotta, 8), new ItemStack(FCBetterThanWolves.fcItemDung)});
+		
+		FCRecipes.AddShapelessRecipe(new ItemStack(AddonDefs.unfiredTerracotta, 1), new Object[] {FCBetterThanWolves.fcItemPileSand, FCBetterThanWolves.fcItemPileSand, FCBetterThanWolves.fcItemPileSand, FCBetterThanWolves.fcItemPileSand, FCBetterThanWolves.fcItemPileSand, FCBetterThanWolves.fcItemPileSand, FCBetterThanWolves.fcItemPileSand, FCBetterThanWolves.fcItemPileSand, Item.clay});
+		FCRecipes.AddShapelessRecipe(new ItemStack(AddonDefs.unfiredTerracotta, 1), new Object[] {FCBetterThanWolves.fcItemPileSand, FCBetterThanWolves.fcItemPileSand, FCBetterThanWolves.fcItemPileSand, FCBetterThanWolves.fcItemPileSand, FCBetterThanWolves.fcItemPileSand, FCBetterThanWolves.fcItemPileSand, FCBetterThanWolves.fcItemPileSand, FCBetterThanWolves.fcItemPileSand, FCBetterThanWolves.fcItemNetherSludge});
+		FCRecipes.AddShapelessRecipe(new ItemStack(AddonDefs.unfiredTerracotta, 1), new Object[] {AddonDefs.pileRedSand, AddonDefs.pileRedSand, AddonDefs.pileRedSand, AddonDefs.pileRedSand, AddonDefs.pileRedSand, AddonDefs.pileRedSand, AddonDefs.pileRedSand, AddonDefs.pileRedSand, Item.clay});
+		FCRecipes.AddShapelessRecipe(new ItemStack(AddonDefs.unfiredTerracotta, 1), new Object[] {AddonDefs.pileRedSand, AddonDefs.pileRedSand, AddonDefs.pileRedSand, AddonDefs.pileRedSand, AddonDefs.pileRedSand, AddonDefs.pileRedSand, AddonDefs.pileRedSand, AddonDefs.pileRedSand, FCBetterThanWolves.fcItemNetherSludge});
+		
 		//Sub-blocks
 		FCRecipes.AddAnvilRecipe(new ItemStack(AddonDefs.terracottaSidingAndCorner, 8, 0), new Object[] {"####", '#', new ItemStack(AddonDefs.terracotta, 1, 0)});
 		FCRecipes.AddAnvilRecipe(new ItemStack(AddonDefs.terracottaMouldingAndDecorative, 8, 0), new Object[] {"####", '#', new ItemStack(AddonDefs.terracottaSidingAndCorner, 1, 0)});
@@ -95,6 +100,8 @@ public class AddonRecipes {
 		for (int Index = 0; Index < 32; Index++) {
 			FCRecipes.AddCauldronRecipe(new ItemStack(AddonDefs.stainedGlassItem, 8, Index % 16), new ItemStack[] {new ItemStack(Block.glass, 8), new ItemStack(Item.dyePowder, 1, Index)});
 		}
+
+		FCRecipes.AddCauldronRecipe(new ItemStack(AddonDefs.stainedGlassItem, 8, 3), new ItemStack[] {new ItemStack(Block.glass, 8), new ItemStack(FCBetterThanWolves.fcItemDung)});
 	}
 
 	private void addFlowerRecipes() {
@@ -140,6 +147,8 @@ public class AddonRecipes {
 		FCRecipes.AddMillStoneRecipe(new ItemStack[]{new ItemStack(Item.dyePowder, 3, 1)},	new ItemStack[]{new ItemStack(AddonDefs.flower, 1, 14)});
 		// Blue Rose
 		FCRecipes.AddMillStoneRecipe(new ItemStack[]{new ItemStack(Item.dyePowder, 2, 20)},	new ItemStack[]{new ItemStack(AddonDefs.flower, 1, 15)});
+		//Black Rose
+		FCRecipes.AddMillStoneRecipe(new ItemStack[]{new ItemStack(Item.dyePowder, 2, 16)},	new ItemStack[]{new ItemStack(AddonDefs.flower2, 1, 0)});
 		// Tulips
 		FCRecipes.AddMillStoneRecipe(new ItemStack[]{new ItemStack(Item.dyePowder, 1, 14),new ItemStack(Item.dyePowder, 1, 1)},	new ItemStack[]{new ItemStack(AddonDefs.tulip, 1, 0)});
 		FCRecipes.AddMillStoneRecipe(new ItemStack[]{new ItemStack(Item.dyePowder, 2, 9)},	new ItemStack[]{new ItemStack(AddonDefs.tulip, 1, 1)});
@@ -171,6 +180,12 @@ public class AddonRecipes {
 		FCRecipes.AddShapelessRecipe(new ItemStack(Item.dyePowder, 4, 13), new Object[] {new ItemStack(Item.dyePowder, 1, 20), new ItemStack(Item.dyePowder, 1, 1), new ItemStack(Item.dyePowder, 1, 1), new ItemStack(Item.dyePowder, 1, 15)});
 		FCRecipes.AddShapelessRecipe(new ItemStack(Item.dyePowder, 4, 13), new Object[] {new ItemStack(Item.dyePowder, 1, 20), new ItemStack(Item.dyePowder, 1, 1), new ItemStack(Item.dyePowder, 1, 1), new ItemStack(Item.dyePowder, 1, 31)});
 		FCRecipes.AddShapelessRecipe(new ItemStack(Item.dyePowder, 4, 13), new Object[] {new ItemStack(Item.dyePowder, 1, 4), new ItemStack(Item.dyePowder, 1, 1), new ItemStack(Item.dyePowder, 1, 1), new ItemStack(Item.dyePowder, 1, 31)});
+		
+		FCRecipes.AddShapelessRecipe(new ItemStack(Item.dyePowder, 2, 8), new Object[] {new ItemStack(Item.dyePowder, 1, 16), new ItemStack(Item.dyePowder, 1, 31)});
+		FCRecipes.AddShapelessRecipe(new ItemStack(Item.dyePowder, 3, 7), new Object[] {new ItemStack(Item.dyePowder, 1, 16), new ItemStack(Item.dyePowder, 1, 31), new ItemStack(Item.dyePowder, 1, 15)});
+		FCRecipes.AddShapelessRecipe(new ItemStack(Item.dyePowder, 3, 7), new Object[] {new ItemStack(Item.dyePowder, 1, 16), new ItemStack(Item.dyePowder, 1, 31), new ItemStack(Item.dyePowder, 1, 31)});
+		FCRecipes.AddShapelessRecipe(new ItemStack(Item.dyePowder, 2, 8), new Object[] {new ItemStack(Item.dyePowder, 1, 16), new ItemStack(Item.dyePowder, 1, 15)});
+		FCRecipes.AddShapelessRecipe(new ItemStack(Item.dyePowder, 3, 7), new Object[] {new ItemStack(Item.dyePowder, 1, 16), new ItemStack(Item.dyePowder, 1, 15), new ItemStack(Item.dyePowder, 1, 15)});
 	}
 
 	private void addStoneRecipes() {
@@ -272,7 +287,7 @@ public class AddonRecipes {
 		FCRecipes.AddRecipe(new ItemStack(AddonDefs.whiteStoneBrick, 1, 0), new Object[] {"X", "X", 'X', new ItemStack(AddonDefs.stoneSlab, 1, 5)});
 
 		//Sandstone
-		FCRecipes.AddRecipe(new ItemStack(AddonDefs.redSand),  new Object[] {"sss", "shs", "sss", 's', FCBetterThanWolves.fcItemPileSand, 'h', FCBetterThanWolves.fcItemHellfireDust});
+		FCRecipes.AddShapelessRecipe(new ItemStack(AddonDefs.redSand),  new Object[] {FCBetterThanWolves.fcItemPileSand, FCBetterThanWolves.fcItemPileSand, FCBetterThanWolves.fcItemPileSand, FCBetterThanWolves.fcItemPileSand, FCBetterThanWolves.fcItemPileSand, FCBetterThanWolves.fcItemPileSand, FCBetterThanWolves.fcItemPileSand, FCBetterThanWolves.fcItemPileSand, FCBetterThanWolves.fcItemHellfireDust});
 		FCRecipes.AddRecipe(new ItemStack(AddonDefs.redSandSlab, 4), new Object[] {"XX", 'X', AddonDefs.redSand});
 		FCRecipes.AddRecipe(new ItemStack(AddonDefs.redSand), new Object[] {"X", "X", 'X', AddonDefs.redSandSlab});
 		FCRecipes.AddShapelessRecipe(new ItemStack(AddonDefs.redSand), new ItemStack[] {new ItemStack(AddonDefs.pileRedSand), new ItemStack(AddonDefs.pileRedSand), new ItemStack(AddonDefs.pileRedSand), new ItemStack(AddonDefs.pileRedSand), new ItemStack(AddonDefs.pileRedSand), new ItemStack(AddonDefs.pileRedSand), new ItemStack(AddonDefs.pileRedSand), new ItemStack(AddonDefs.pileRedSand)});
@@ -408,6 +423,7 @@ public class AddonRecipes {
 		FCRecipes.AddRecipe(new ItemStack(AddonDefs.prismarine, 1, 0), new Object[] {"XX", "XX", 'X', AddonDefs.prismarineShard});
 		FCRecipes.AddRecipe(new ItemStack(AddonDefs.prismarine, 4, 1), new Object[] {"XX", "XX", 'X', new ItemStack(AddonDefs.prismarine, 1, 0)});
 		FCRecipes.AddRecipe(new ItemStack(AddonDefs.prismarine, 2, 2), new Object[] {"XXX", "X#X", "XXX", 'X', AddonDefs.prismarineShard, '#', new ItemStack(Item.dyePowder, 1, 0)});
+		FCRecipes.AddRecipe(new ItemStack(AddonDefs.prismarine, 2, 2), new Object[] {"XXX", "X#X", "XXX", 'X', AddonDefs.prismarineShard, '#', new ItemStack(Item.dyePowder, 1, 16)});
 		FCRecipes.AddSubBlockRecipesOfType(AddonDefs.prismarine, 0, AddonDefs.prismarineSidingAndCorner, AddonDefs.prismarineMouldingAndDecorative, true);
 		FCRecipes.AddSubBlockRecipesOfType(AddonDefs.prismarine, 1, AddonDefs.prismarineBrickSidingAndCorner, AddonDefs.prismarineBrickMouldingAndDecorative, true);
 		FCRecipes.AddSubBlockRecipesOfType(AddonDefs.prismarine, 2, AddonDefs.prismarineDarkSidingAndCorner, AddonDefs.prismarineDarkMouldingAndDecorative, true);
@@ -479,6 +495,7 @@ public class AddonRecipes {
 		for (int i = 0; i < 32; i++)
 		{
 			FCRecipes.AddStokedCrucibleRecipe(new ItemStack(AddonDefs.concretePowder,8,i % 16), new ItemStack[]{new ItemStack(Item.dyePowder,1,i),new ItemStack(Block.sand, 4), new ItemStack(Block.gravel, 4)});
+			FCRecipes.AddStokedCrucibleRecipe(new ItemStack(AddonDefs.concretePowder,8,i % 16), new ItemStack[]{new ItemStack(Item.dyePowder,1,i),new ItemStack(AddonDefs.redSand, 4), new ItemStack(Block.gravel, 4)});
 
 			if (i < 16) { 
 				FCRecipes.AddSubBlockRecipesOfType(AddonDefs.concrete, i, AddonDefs.concreteSidingAndCorner[i], AddonDefs.concreteMouldingAndDecorative[i], true);
@@ -486,6 +503,9 @@ public class AddonRecipes {
 				FCRecipes.AddRecipe(new ItemStack(AddonDefs.concreteStairs[i], 1, 0), new Object[]{"# ","##",'#',new ItemStack(AddonDefs.concreteMouldingAndDecorative[i], 1, 0)});
 			}
 		}
+		
+		FCRecipes.AddStokedCrucibleRecipe(new ItemStack(AddonDefs.concretePowder, 8, 3), new ItemStack[] {new ItemStack(FCBetterThanWolves.fcItemDung), new ItemStack(Block.sand, 4), new ItemStack(Block.gravel, 4)});
+		FCRecipes.AddStokedCrucibleRecipe(new ItemStack(AddonDefs.concretePowder, 8, 3), new ItemStack[] {new ItemStack(FCBetterThanWolves.fcItemDung), new ItemStack(AddonDefs.redSand, 4), new ItemStack(Block.gravel, 4)});
 
 		for (int i = 0; i < 8; i++) {
 			FCRecipes.AddRecipe(new ItemStack(AddonDefs.concreteSlab, 1, i), new Object[] {"XXX", 'X', new ItemStack(AddonDefs.concrete, 1, i)});
@@ -623,11 +643,13 @@ public class AddonRecipes {
 		//Painted Planks
 		for (int Index = 0; Index < 32; Index++)
 		{
-			FCRecipes.AddCauldronRecipe(new ItemStack(AddonDefs.planksPainted,8,Index % 16), new ItemStack[]{new ItemStack(Item.dyePowder,1,Index),new ItemStack(Block.planks, 8)});
+			FCRecipes.AddCauldronRecipe(new ItemStack(AddonDefs.planksPainted,8,Index % 16), new ItemStack[]{new ItemStack(Item.dyePowder,1,Index),new ItemStack(Block.planks, 8, 32767)});
 		}
+		
+		FCRecipes.AddCauldronRecipe(new ItemStack(AddonDefs.planksPainted, 8, 3), new ItemStack[] {new ItemStack(FCBetterThanWolves.fcItemDung), new ItemStack(Block.planks, 8, 32767)});
 
 		for (int i = 0; i < 16; i++) {
-			FCRecipes.AddCauldronRecipe(new ItemStack(Block.planks,  8), new ItemStack[] {new ItemStack(AddonDefs.woodBleach), new ItemStack(AddonDefs.planksPainted, 8)});
+			FCRecipes.AddCauldronRecipe(new ItemStack(Block.planks,  8), new ItemStack[] {new ItemStack(AddonDefs.woodBleach), new ItemStack(AddonDefs.planksPainted, 8, i)});
 
 			//Sub blocks
 			FCRecipes.AddRecipe(new ItemStack(AddonDefs.paintedPlanksMouldingAndDecorative[i], 1, 12), new Object[] {"M", "M", "M", 'M', new ItemStack(AddonDefs.paintedPlanksMouldingAndDecorative[i], 1, 0)});
@@ -658,8 +680,23 @@ public class AddonRecipes {
 		//Pergola
 		FCRecipes.AddRecipe(new ItemStack(AddonDefs.pergola), new Object[] {" X ", "X X", " X ", 'X', new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, 32767)});
 
-		//Wood bleach
+		//Wood bleach and stain
+		FCRecipes.AddStokedCauldronRecipe(new ItemStack(AddonDefs.bottleHempOil,1), new ItemStack[]{new ItemStack(Item.glassBottle), new ItemStack(FCBetterThanWolves.fcItemHempSeeds)});
+		
 		FCRecipes.AddCauldronRecipe(new ItemStack(AddonDefs.woodBleach), new ItemStack[] {new ItemStack(AddonDefs.bottleHempOil), new ItemStack(Item.dyePowder, 1, 15)});
+		FCRecipes.AddCauldronRecipe(new ItemStack(AddonDefs.woodBleach), new ItemStack[] {new ItemStack(AddonDefs.bottleHempOil), new ItemStack(Item.dyePowder, 1, 31)});
+		FCRecipes.AddCauldronRecipe(new ItemStack(AddonDefs.woodStain), new ItemStack[] {new ItemStack(AddonDefs.bottleHempOil), new ItemStack(Item.dyePowder, 1, 0)});
+		FCRecipes.AddCauldronRecipe(new ItemStack(AddonDefs.woodStain), new ItemStack[] {new ItemStack(AddonDefs.bottleHempOil), new ItemStack(Item.dyePowder, 1, 16)});
+		
+		FCRecipes.AddCauldronRecipe(new ItemStack(Block.planks, 8, 2), new ItemStack[] {new ItemStack(AddonDefs.woodBleach), new ItemStack(Block.planks, 8, 0)});
+		FCRecipes.AddCauldronRecipe(new ItemStack(Block.planks, 8, 0), new ItemStack[] {new ItemStack(AddonDefs.woodBleach), new ItemStack(Block.planks, 8, 3)});
+		FCRecipes.AddCauldronRecipe(new ItemStack(Block.planks, 8, 3), new ItemStack[] {new ItemStack(AddonDefs.woodBleach), new ItemStack(Block.planks, 8, 1)});
+		FCRecipes.AddCauldronRecipe(new ItemStack(Block.planks, 8, 1), new ItemStack[] {new ItemStack(AddonDefs.woodBleach), new ItemStack(Block.planks, 8, 5)});
+
+		FCRecipes.AddCauldronRecipe(new ItemStack(Block.planks, 8, 0), new ItemStack[] {new ItemStack(AddonDefs.woodStain), new ItemStack(Block.planks, 8, 2)});
+		FCRecipes.AddCauldronRecipe(new ItemStack(Block.planks, 8, 3), new ItemStack[] {new ItemStack(AddonDefs.woodStain), new ItemStack(Block.planks, 8, 0)});
+		FCRecipes.AddCauldronRecipe(new ItemStack(Block.planks, 8, 1), new ItemStack[] {new ItemStack(AddonDefs.woodStain), new ItemStack(Block.planks, 8, 3)});
+		FCRecipes.AddCauldronRecipe(new ItemStack(Block.planks, 8, 5), new ItemStack[] {new ItemStack(AddonDefs.woodStain), new ItemStack(Block.planks, 8, 1)});
 
 		//Barrels
 		FCRecipes.RemoveVanillaRecipe(new ItemStack(FCBetterThanWolves.fcAestheticOpaque, 2, 11), new Object[] {"###", "#X#", "###", '#', new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, 32767), 'X', FCBetterThanWolves.fcItemGlue});
@@ -717,7 +754,6 @@ public class AddonRecipes {
 		FCRecipes.AddStokedCrucibleRecipe(new ItemStack(FCBetterThanWolves.fcItemNuggetIron, 6), new ItemStack[] { new ItemStack(AddonDefs.fenceSteel, 1) });
 		FCRecipes.AddAnvilRecipe(new ItemStack(AddonDefs.fenceSteel, 10), new Object[] { " X X", "XXXX", " X X", " X X", 'X', new ItemStack(Item.ingotIron) });
 
-		FCRecipes.AddShapelessRecipe(new ItemStack(AddonDefs.bottleHempOil,1), new Object[]{Item.glassBottle, FCBetterThanWolves.fcItemHempSeeds});
 		FCRecipes.AddRecipe(new ItemStack(AddonDefs.lanternPaper,1),new Object[]{"pwp","wcw","pwp",'c', new ItemStack(FCBetterThanWolves.fcItemCandle,1,32767), 'p', Item.paper, 'w', new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, 32767)});
 		FCRecipes.AddAnvilRecipe(new ItemStack(AddonDefs.chandelier,2), new Object[]{" ss "," gg ","cggc","cggc",'s',Block.stone,'g',Item.goldNugget,'c', new ItemStack(FCBetterThanWolves.fcItemCandle,1,32767)});
 		FCRecipes.AddRecipe(new ItemStack(AddonDefs.lanternSteel,1),new Object[]{"nnn","ntn","nnn",'n',FCBetterThanWolves.fcItemNuggetIron,'t',FCBetterThanWolves.fcBlockTorchNetherBurning});
@@ -761,9 +797,9 @@ public class AddonRecipes {
 		FCRecipes.AddShapelessRecipe(new ItemStack(AddonDefs.pumpkin, 1, 1), new ItemStack[] {new ItemStack(AddonDefs.pumpkin, 1, 0), new ItemStack(AddonDefs.chiselDiamond, 1, 32767)});
 		FCRecipes.AddShapelessRecipe(new ItemStack(AddonDefs.pumpkin, 1, 2), new ItemStack[] {new ItemStack(AddonDefs.pumpkin, 1, 1), new ItemStack(AddonDefs.chiselDiamond, 1, 32767)});
 
-		FCRecipes.AddRecipe(new ItemStack(AddonDefs.pumpkinLit, 1, 0), new Object[] {"X", "#", 'X', new ItemStack(AddonDefs.pumpkin, 1, 0), '#', new ItemStack(FCBetterThanWolves.fcItemCandle, 1, 32767)});
-		FCRecipes.AddRecipe(new ItemStack(AddonDefs.pumpkinLit, 1, 1), new Object[] {"X", "#", 'X', new ItemStack(AddonDefs.pumpkin, 1, 1), '#', new ItemStack(FCBetterThanWolves.fcItemCandle, 1, 32767)});
-		FCRecipes.AddRecipe(new ItemStack(AddonDefs.pumpkinLit, 1, 2), new Object[] {"X", "#", 'X', new ItemStack(AddonDefs.pumpkin, 1, 2), '#', new ItemStack(FCBetterThanWolves.fcItemCandle, 1, 32767)});
+		FCRecipes.AddShapelessRecipe(new ItemStack(AddonDefs.pumpkinLit, 1, 0), new Object[] {new ItemStack(AddonDefs.pumpkin, 1, 0), new ItemStack(FCBetterThanWolves.fcItemCandle, 1, 32767)});
+		FCRecipes.AddShapelessRecipe(new ItemStack(AddonDefs.pumpkinLit, 1, 1), new Object[] {new ItemStack(AddonDefs.pumpkin, 1, 1), new ItemStack(FCBetterThanWolves.fcItemCandle, 1, 32767)});
+		FCRecipes.AddShapelessRecipe(new ItemStack(AddonDefs.pumpkinLit, 1, 2), new Object[] {new ItemStack(AddonDefs.pumpkin, 1, 2), new ItemStack(FCBetterThanWolves.fcItemCandle, 1, 32767)});
 
 		//Carpets
 		for (int i = 0; i < 16; i++) {
@@ -814,6 +850,11 @@ public class AddonRecipes {
 		FCRecipes.AddCauldronRecipe(new ItemStack(AddonDefs.cherrySapling), new ItemStack[] {new ItemStack(Block.sapling, 1, 0), new ItemStack(AddonDefs.fertilizer, 1, 0), new ItemStack(Item.dyePowder, 1, 9)});
 		FCRecipes.AddCauldronRecipe(new ItemStack(FCBetterThanWolves.fcItemTannedLeather, 1), new ItemStack[] {new ItemStack(FCBetterThanWolves.fcItemDung, 1), new ItemStack(FCBetterThanWolves.fcItemScouredLeather, 1), new ItemStack(FCBetterThanWolves.fcItemBark, 3, 5)});
 		FCRecipes.AddCauldronRecipe(new ItemStack(FCBetterThanWolves.fcItemTannedLeatherCut, 2), new ItemStack[] {new ItemStack(FCBetterThanWolves.fcItemDung, 1), new ItemStack(FCBetterThanWolves.fcItemScouredLeatherCut, 2), new ItemStack(FCBetterThanWolves.fcItemBark, 3, 5)});
+		
+		//Candles
+		for (int i = 0; i < 16; i++) {
+            FCRecipes.AddShapelessRecipe(new ItemStack(FCBetterThanWolves.fcItemCandle, 1, i), new Object[] {new ItemStack(Item.dyePowder, 1, i + 16), new ItemStack(FCBetterThanWolves.fcItemCandle, 1, 15)});
+		}
 	}
 
 	private void addMortarRecipes() {

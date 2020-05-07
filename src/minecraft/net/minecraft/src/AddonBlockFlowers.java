@@ -14,9 +14,13 @@ public class AddonBlockFlowers extends BlockFlower
 				super(ID);
 				TextureTag = Texture;
 				this.icons = new Icon[Names.length];
-				setUnlocalizedName("deco"+Texture);
-				setStepSound(soundGrassFootstep);
-				setCreativeTab(CreativeTabs.tabDecorations);
+				this.setUnlocalizedName("deco"+Texture);
+				this.setStepSound(soundGrassFootstep);
+				this.setCreativeTab(CreativeTabs.tabDecorations);
+		        this.setHardness(0.0F);
+		        this.SetBuoyant();
+		        this.SetFurnaceBurnTime(FCEnumFurnaceBurnTime.DAMP_VEGETATION);
+		        this.SetFilterableProperties(2);
 				AddonManager.Register(this, Names, PreTitle, Titles, PostTitle);
 			}
 			@Override public boolean canBlockStay(World par1World, int par2, int par3, int par4)

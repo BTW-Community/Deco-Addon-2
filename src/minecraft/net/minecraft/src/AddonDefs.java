@@ -24,7 +24,7 @@ public class AddonDefs {
 	id_polishedStoneSidingAndCorner=3014,
 	id_polishedStoneMouldingAndDecorative=3015,
 	id_bonePillar=3016,
-
+	id_flower2=3017,
 	id_concrete=3018,
 	id_concretePowder=3019,
 	id_netherCoalBlock=3020,
@@ -153,7 +153,7 @@ public class AddonDefs {
 	id_barrelFullBirch=3236,
 	id_barrelFullJungle=3237,
 	id_crate=3238,
-
+	id_flowerPot=3239,
 	id_pergola=3240,
 
 	id_paintedPlanksSubStart=3248,
@@ -297,6 +297,7 @@ public class AddonDefs {
 	id_chiselDiamond = 30050,
 	id_woodBleach=30051,
 	id_pileRedSand=30052,
+	id_woodStain=30053,
 
 	id_prismarineShard=30060,
 	id_prismarineCrystal=30061;
@@ -321,7 +322,8 @@ public class AddonDefs {
 	public static Block whiteStoneBrick, whiteBrickMouldingAndDecorative, whiteBrickSidingAndCorner, whiteBrickStairs;
 
 	//Flowers
-	public static Block flower, tulip;
+	public static Block flower, flower2, tulip;
+	public static Block flowerPot;
 	public static Item fertilizer;
 	public static Block cherrySapling, cherryLeaves;
 
@@ -411,7 +413,7 @@ public class AddonDefs {
 	public static Block barrelEmpty, barrelEmpty2, barrelFullOak, barrelFullSpruce, barrelFullBirch, barrelFullJungle, barrelFullBlood, barrelFullCherry;
 	public static Block crate;
 	public static Block signSpruce, signSpruceWall, signBirch, signBirchWall, signJungle, signJungleWall, signBlood, signBloodWall, signCherry, signCherryWall;
-	public static Item woodBleach;
+	public static Item woodBleach, woodStain;
 
 	public static AddonBlockWoodSlab paintedPlanksSlab, paintedPlanksSlab2, woodSlab;
 
@@ -548,8 +550,10 @@ public class AddonDefs {
 	private void addFlowerDefs() {
 		String[]
 				flowers = { "yucca", "hyacinth", "birdsParadise", "azalea", "cornFlower", "lavender", "honeysuckle","allium", "orchidBlue", "poppy", "azureBluet", "daisy", "peony","lilac","rosebush", "roseBlue"},
+				flowers2 = {"blackRose"},
 				tulips = { "red","pink", "orange", "white", "blue"},
 				flowerNames = { "Yucca", "Hyacinth", "Birds of Paradise", "Azaleas", "Cornflower", "Lavender", "Honeysuckle", "Allium","Blue Orchid", "Poppy", "Azure Bluet", "Daisy", "Peony", "Lilac", "Rose Bush", "Blue Rose"},
+				flowerNames2 = {"Black Rose"},
 				tulipNames = { "Red", "Pink", "Orange", "White", "Blue"};
 
 		Item.dyePowder = new AddonItemDye(95);
@@ -566,9 +570,15 @@ public class AddonDefs {
 
 		//FCBetterThanWolves.fcPlanter = new AddonBlockPlanter(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcPlanter));
 		flower = new AddonBlockFlowers(id_flower, "flower",flowers,flowerNames);
+		flower2 = new AddonBlockFlowers(id_flower2, "flower2", flowers2, flowerNames2);
 		tulip = new AddonBlockFlowers(id_tulip, "tulip", tulips, tulipNames, " Tulip");
 
 		fertilizer = new AddonItemFertilizer(id_fertilizer);
+		
+		AddonManager.Name(Block.plantRed, "Red Rose");
+		
+		//Flower pot
+		
 	}
 
 	private void addStoneDefs() {
@@ -1325,6 +1335,8 @@ public class AddonDefs {
 
 		woodBleach = new Item(id_woodBleach).setUnlocalizedName("ginger_woodBleach").setCreativeTab(CreativeTabs.tabMaterials);
 		AddonManager.Name(woodBleach, "Wood Bleach");
+		woodStain = new Item(id_woodStain).setUnlocalizedName("ginger_woodStain").setCreativeTab(CreativeTabs.tabMaterials);
+		AddonManager.Name(woodStain, "Wood Stain");
 
 		//Pergola
 		pergola = new AddonBlockPergola(id_pergola);
@@ -1506,7 +1518,9 @@ public class AddonDefs {
 		netherCoalBlock = new AddonBlockNetherCoal(id_netherCoalBlock);
 		AddonManager.Register(netherCoalBlock, "Block of Nethercoal");
 
-		//Stoked fire
+		//Fire
+		BlockFire fire = new AddonBlockFire(AddonManager.ReplaceBlockID(Block.fire));
+		AddonManager.SetVanillaBlockFinal("fire", Block.fire, fire);
 		FCBetterThanWolves.fcBlockFireStoked = new AddonBlockFireStoked(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockFireStoked));
 
 		//Bone pillar

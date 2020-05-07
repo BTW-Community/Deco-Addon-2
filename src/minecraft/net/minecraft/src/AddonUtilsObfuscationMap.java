@@ -29,6 +29,7 @@ public class AddonUtilsObfuscationMap {
 		blockMap.put("grass", "y");
 		blockMap.put("thinGlass", "bu");
 		blockMap.put("fenceIron", "bt");
+		blockMap.put("fire", "av");
 		
 		itemMap.put("enderPearl", "bo");
 		itemMap.put("sign", "av");

@@ -79,7 +79,7 @@ public class AddonItemFertilizer extends Item
 						CurrentWorld.setBlockAndMetadataWithNotify(NewX, NewY, NewZ, Block.tallGrass.blockID, 1);
 					else if (itemRand.nextInt(3) == 0 && Block.plantYellow.canBlockStay(CurrentWorld, NewX, NewY, NewZ))
 					{
-						int R = itemRand.nextInt(21);
+						int R = itemRand.nextInt(22);
 						switch (R)
 						{
 							case 0:
@@ -111,6 +111,10 @@ public class AddonItemFertilizer extends Item
 							case 20:
 								CurrentWorld.setBlockAndMetadataWithNotify(NewX, NewY, NewZ, AddonDefs.tulip.blockID, R-17);
 								break;
+							case 21:
+								CurrentWorld.setBlockAndMetadataWithNotify(NewX, NewY, NewZ, AddonDefs.flower2.blockID, R-21);
+								break;
+								
 						}
 					}
 					//else if (decoSapling.canBlockStay(CurrentWorld, NewX, NewY, NewZ))
