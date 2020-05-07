@@ -8,9 +8,11 @@ public class AddonBlockMagma extends Block {
         this.setHardness(0.6F);
         this.setResistance(0.6666667F);
         this.SetPicksEffectiveOn();
+		setLightValue(.375F);
         this.setStepSound(soundStoneFootstep);
         this.setCreativeTab(CreativeTabs.tabBlock);
         this.setUnlocalizedName("ginger_magma");
+        this.setTickRandomly(true);
 	}
 
 	public void onBlockAdded(World world, int x, int y, int z) {
@@ -26,4 +28,22 @@ public class AddonBlockMagma extends Block {
 			world.playAuxSFX(2227, x, y, z, 0);
 		}
 	}
+
+    /**
+     * Ticks the block if it's been scheduled
+     */
+    public void updateTick(World world, int x, int y, int z, Random rand)
+    {
+    	//Spreads quartz to nearby magma blocks in the nether
+        if (!world.isRemote && world.provider.isHellWorld && rand.nextInt(4) == 0 && world.checkChunksExist(x - 1, y - 1, z - 1, x + 1, y + 1, z + 1)) {
+        	int randFacing = rand.nextInt(6);
+        	FCUtilsBlockPos blockPos = new FCUtilsBlockPos(x, y, z);
+        	blockPos.AddFacingAsOffset(randFacing);
+
+            if (world.getBlockId(blockPos.i, blockPos.j, blockPos.k) == Block.oreNetherQuartz.blockID)
+            {
+                world.setBlockWithNotify(x, y, z, Block.oreNetherQuartz.blockID);
+            }
+        }
+    }
 }

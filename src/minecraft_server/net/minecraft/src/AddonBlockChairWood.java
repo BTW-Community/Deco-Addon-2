@@ -2,7 +2,7 @@ package net.minecraft.src;
 
 public class AddonBlockChairWood extends AddonBlockChair {
 	public AddonBlockChairWood(int id, String woodType, String woodName) {
-		super(id, FCBetterThanWolves.fcMaterialPlanks, woodType + "wood", woodName + " Wood");
+		super(id, FCBetterThanWolves.fcMaterialPlanks, woodType + "wood", woodName);
 		this.SetAxesEffectiveOn( true );
         this.setHardness(1.0F);
         this.setResistance(5.0F);

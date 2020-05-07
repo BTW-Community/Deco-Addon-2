@@ -4,7 +4,7 @@ public class AddonBlockBonePillar extends Block {
 	public AddonBlockBonePillar(int id) {
         super(id, FCBetterThanWolves.fcMaterialMiscellaneous);
         this.setHardness(2.0F);
-        this.SetPicksEffectiveOn(true);
+        this.SetPicksEffectiveOn();
         this.SetBuoyancy(1.0F);
         this.setStepSound(soundStoneFootstep);
         this.setCreativeTab(CreativeTabs.tabBlock);
@@ -70,5 +70,26 @@ public class AddonBlockBonePillar extends Block {
     public static int limitToValidMetadata(int par0)
     {
         return par0 & 3;
+    }
+
+    public int RotateMetadataAroundJAxis(int var1, boolean var2)
+    {
+        int var3 = var1 & 12;
+
+        if (var3 != 0)
+        {
+            if (var3 == 4)
+            {
+                var3 = 8;
+            }
+            else if (var3 == 8)
+            {
+                var3 = 4;
+            }
+
+            var1 = var1 & -13 | var3;
+        }
+
+        return var1;
     }
 }

@@ -43,6 +43,11 @@ public class AddonBlockLantern extends Block
         return -1.0F;
     }
 
+    public boolean GetCanBlockLightItemOnFire(IBlockAccess var1, int var2, int var3, int var4)
+    {
+        return true;
+    }
+
 	public AxisAlignedBB GetBlockBoundsFromPoolBasedOnState(IBlockAccess Access, int x, int y, int z)
 	{
 		double[] bounds = new double[6];

@@ -12,7 +12,6 @@ public class AddonBlockCarpet extends Block {
         this.setStepSound(soundClothFootstep);
         this.setUnlocalizedName("carpet");
         this.setCreativeTab(CreativeTabs.tabBlock);
-        this.SetAxesEffectiveOn();
 	}
 
     public float MobSpawnOnVerticalOffset(World var1, int var2, int var3, int var4)

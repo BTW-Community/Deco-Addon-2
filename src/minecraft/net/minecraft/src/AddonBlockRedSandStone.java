@@ -4,11 +4,13 @@ import java.util.List;
 
 public class AddonBlockRedSandStone extends Block
 {
-    public static final String[] SAND_STONE_TYPES = new String[] {"default", "chiseled", "smooth", "polished", "brick"};
-    private static final String[] field_94405_b = new String[] {"ginger_redSandstone_side", "ginger_redSandstone_carved", "ginger_redSandstone_smooth", "ginger_redSandstone_top", "ginger_redSandstone_brick"};
-    private Icon[] field_94406_c;
-    private Icon field_94403_cO;
-    private Icon field_94404_cP;
+    public static final String[] SAND_STONE_TYPES = new String[] {"default", "chiseled", "smooth", "polished", "brick", "mossy", "largeBrick", "largeBrickMossy", "cracked", "largeBrickCracked"};
+    private static final String[] textures = new String[] {"ginger_redSandstone_side", "ginger_redSandstone_carved", "ginger_redSandstone_smooth", "ginger_redSandstone_top", "ginger_redSandstone_brick", "ginger_redSandstone_mossy", "ginger_redSandstone_stonebrick", "ginger_redSandstone_stonebrick_mossy", "ginger_redSandstone_bottom", "ginger_redSandstone_stonebrick_cracked"};
+    private Icon[] sideIcons;
+    private Icon iconTop;
+    private Icon iconBottom;
+    private Icon iconTopMossy;
+    private Icon iconBottomMossy;
 
     public AddonBlockRedSandStone(int par1)
     {
@@ -18,6 +20,22 @@ public class AddonBlockRedSandStone extends Block
         this.setStepSound(soundStoneFootstep);
         this.setUnlocalizedName("redSandStone");
         this.setCreativeTab(CreativeTabs.tabBlock);
+        this.setTickRandomly(true);
+    }
+
+    /**
+     * returns a list of blocks with the same ID, but different meta (eg: wood returns 4 blocks)
+     */
+    public void getSubBlocks(int par1, CreativeTabs par2CreativeTabs, List par3List)
+    {
+        par3List.add(new ItemStack(par1, 1, 0));
+        par3List.add(new ItemStack(par1, 1, 1));
+        par3List.add(new ItemStack(par1, 1, 2));
+        par3List.add(new ItemStack(par1, 1, 3));
+        par3List.add(new ItemStack(par1, 1, 4));
+        par3List.add(new ItemStack(par1, 1, 5));
+        par3List.add(new ItemStack(par1, 1, 6));
+        par3List.add(new ItemStack(par1, 1, 7));
     }
 
     public int GetHarvestToolLevel(IBlockAccess var1, int var2, int var3, int var4)
@@ -39,49 +57,43 @@ public class AddonBlockRedSandStone extends Block
         return par1;
     }
 
-    /**
-     * returns a list of blocks with the same ID, but different meta (eg: wood returns 4 blocks)
-     */
-    public void getSubBlocks(int par1, CreativeTabs par2CreativeTabs, List par3List)
-    {
-        par3List.add(new ItemStack(par1, 1, 0));
-        par3List.add(new ItemStack(par1, 1, 1));
-        par3List.add(new ItemStack(par1, 1, 2));
-    }
-
     //CLIENT ONLY
     /**
      * From the specified side and block metadata retrieves the blocks texture. Args: side, metadata
      */
-    public Icon getIcon(int par1, int par2)
+    public Icon getIcon(int side, int meta)
     {
-    	if (par2 == 3) {
-    		return field_94403_cO;
+    	if (meta == 3) {
+    		return iconTop;
     	}
     	
-    	if (par2 == 4) {
-            return this.field_94406_c[par2];
+    	if (meta == 4 || meta == 6 || meta == 7 || meta == 8 || meta == 9) {
+            return this.sideIcons[meta];
     	}
     	
-        if (par1 != 1 && (par1 != 0 || par2 != 1 && par2 != 2))
+        if (side != 1 && (side != 0 || meta != 1 && meta != 2))
         {
-            if (par1 == 0)
+            if (side == 0)
             {
-                return this.field_94404_cP;
+            	if (meta == 5)
+            		return this.iconBottomMossy;
+                return this.iconBottom;
             }
             else
             {
-                if (par2 < 0 || par2 >= this.field_94406_c.length)
+                if (meta < 0 || meta >= this.sideIcons.length)
                 {
-                    par2 = 0;
+                    meta = 0;
                 }
 
-                return this.field_94406_c[par2];
+                return this.sideIcons[meta];
             }
         }
         else
         {
-            return this.field_94403_cO;
+        	if (meta == 5)
+        		return this.iconTopMossy;
+            return this.iconTop;
         }
     }
 
@@ -106,14 +118,16 @@ public class AddonBlockRedSandStone extends Block
      */
     public void registerIcons(IconRegister par1IconRegister)
     {
-        this.field_94406_c = new Icon[field_94405_b.length];
+        this.sideIcons = new Icon[textures.length];
 
-        for (int var2 = 0; var2 < this.field_94406_c.length; ++var2)
+        for (int var2 = 0; var2 < this.sideIcons.length; ++var2)
         {
-            this.field_94406_c[var2] = par1IconRegister.registerIcon(field_94405_b[var2]);
+            this.sideIcons[var2] = par1IconRegister.registerIcon(textures[var2]);
         }
 
-        this.field_94403_cO = par1IconRegister.registerIcon("ginger_redSandstone_top");
-        this.field_94404_cP = par1IconRegister.registerIcon("ginger_redSandstone_bottom");
+        this.iconTop = par1IconRegister.registerIcon("ginger_redSandstone_top");
+        this.iconBottom = par1IconRegister.registerIcon("ginger_redSandstone_bottom");
+        this.iconTopMossy = par1IconRegister.registerIcon("ginger_redSandstone_mossy_top");
+        this.iconBottomMossy = par1IconRegister.registerIcon("ginger_redSandstone_mossy_bottom");
     }
 }

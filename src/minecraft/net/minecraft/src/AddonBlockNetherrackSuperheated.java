@@ -59,6 +59,8 @@ public class AddonBlockNetherrackSuperheated extends FCBlockNetherrack {
     }
     
     //CLIENT ONLY
+	private Icon overlay;
+	
     public void randomDisplayTick(World var1, int var2, int var3, int var4, Random var5)
     {
     	for (int i = 2; i < 6; i++)
@@ -92,5 +94,15 @@ public class AddonBlockNetherrackSuperheated extends FCBlockNetherrack {
 
             var1.spawnParticle("fcwhitesmoke", var8, var10, var12, 0.0D, 0.0D, 0.0D);
         }
+    }
+	
+	public void registerIcons(IconRegister register) {
+		this.blockIcon = register.registerIcon("hellrock");
+		overlay = register.registerIcon("ginger_overlay_netherrackSuperheated");
+	}
+	
+	public void RenderBlockSecondPass(RenderBlocks var1, int var2, int var3, int var4, boolean var5)
+    {
+        FCClientUtilsRender.RenderBlockFullBrightWithTexture(var1, var1.blockAccess, var2, var3, var4, this.overlay);
     }
 }

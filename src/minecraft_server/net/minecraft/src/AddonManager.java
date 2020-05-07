@@ -2,7 +2,9 @@ package net.minecraft.src;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileReader;
@@ -12,12 +14,15 @@ import java.io.UnsupportedEncodingException;
 import java.lang.management.ManagementFactory;
 import java.lang.management.RuntimeMXBean;
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 import net.minecraft.server.MinecraftServer;
 
@@ -31,12 +36,6 @@ public class AddonManager extends FCAddOn
 	private static ArrayList<String> loadedAddons = new ArrayList<String>();
 
 	private static boolean isObfuscated = false;
-
-	public static ArrayList<Object> builders= new ArrayList<Object>();
-
-	public void initiateTransforms() {
-
-	}
 
 	@Override
 	public void PreInitialize() {
@@ -198,8 +197,15 @@ public class AddonManager extends FCAddOn
 	}
 
 	//Does really hacky stuff using reflection to replace final references to vanilla blocks
-	public static void SetVanillaItemFinal(String name, Item oldItem, Item newItem) {
+	public static void SetVanillaItemFinal(String itemName, Item oldItem, Item newItem) {
 		try {
+			String name;
+
+			if (isObfuscated)
+				name = AddonUtilsObfuscationMap.getItemLookup(itemName);
+			else
+				name = itemName;
+			
 			Field item = (AddonDefs.glassChunk.getClass().getDeclaredField(name));
 			item.setAccessible(true);
 
@@ -211,7 +217,13 @@ public class AddonManager extends FCAddOn
 			item.set(newItem, newItem);
 			item.setAccessible(false);
 		} catch (NoSuchFieldException e) {
-			e.printStackTrace();
+			if (isObfuscated) {
+				e.printStackTrace();
+			}
+			else {
+				isObfuscated = true;
+				SetVanillaItemFinal(itemName, oldItem, newItem);
+			}
 		} catch (SecurityException e) {
 			e.printStackTrace();
 		} catch (IllegalArgumentException e) {
@@ -226,7 +238,7 @@ public class AddonManager extends FCAddOn
 			for (BiomeGenBase b : BiomeGenBase.biomeList) {
 				if (b == null)
 					continue;
-				
+
 				Field creatureList;
 				Field monsterList;
 				Field waterCreatureList;
@@ -294,8 +306,8 @@ public class AddonManager extends FCAddOn
 						s.entityClass = newEntity;
 					}
 				}
-				
-		        EntityList.ReplaceExistingMapping(newEntity, name);
+
+				EntityList.ReplaceExistingMapping(newEntity, name);
 			}
 		} catch (NoSuchFieldException e) {
 			if (isObfuscated) {
@@ -367,7 +379,7 @@ public class AddonManager extends FCAddOn
 				int size = dis.readInt();
 				int damage = dis.readInt();
 
-				ItemStack stack = new ItemStack(30008+256,size,damage);
+				ItemStack stack = new ItemStack(AddonDefs.stainedGlassItem.itemID+256,size,damage);
 				epmp.inventory.setInventorySlotContents(epmp.inventory.currentItem, stack);
 			}
 		} catch (IOException e) {

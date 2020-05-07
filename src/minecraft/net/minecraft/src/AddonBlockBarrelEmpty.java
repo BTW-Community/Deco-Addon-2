@@ -3,7 +3,10 @@ package net.minecraft.src;
 import java.util.List;
 
 public class AddonBlockBarrelEmpty extends Block {
-	public AddonBlockBarrelEmpty(int id) {
+	public String[] topTextures;
+	public String[] sideTextures;
+	
+	public AddonBlockBarrelEmpty(int id, String[] topTextures, String[] sideTextures) {
 		super(id, FCBetterThanWolves.fcMaterialPlanks);
         this.SetAxesEffectiveOn();
         this.setHardness(1.0F);
@@ -12,7 +15,10 @@ public class AddonBlockBarrelEmpty extends Block {
         this.SetBuoyant();
         this.setStepSound(soundWoodFootstep);
         this.setCreativeTab(CreativeTabs.tabBlock);
+        this.topTextures = topTextures;
+        this.sideTextures = sideTextures;
 	}
+	
 	@Override public boolean isOpaqueCube()
 	{
 		return true;
@@ -61,11 +67,7 @@ public class AddonBlockBarrelEmpty extends Block {
 	{
 		return true;
 	}
-	@Override public boolean RotateAroundJAxis(World world, int X, int Y, int Z, boolean var5)
-	{
-		return FCUtilsMisc.StandardRotateAroundJ(this, world, X, Y, Z, var5);
-	}
-	@Override 
+
     public int RotateMetadataAroundJAxis(int var1, boolean var2)
     {
         int var3 = var1 & 12;
@@ -86,6 +88,7 @@ public class AddonBlockBarrelEmpty extends Block {
 
         return var1;
     }
+    
 	@Override public boolean ToggleFacing(World world, int X, int Y, int Z, boolean var5)
 	{
 		this.RotateAroundJAxis(world, X, Y, Z, var5);
@@ -141,17 +144,14 @@ public class AddonBlockBarrelEmpty extends Block {
      */
     public void getSubBlocks(int par1, CreativeTabs par2CreativeTabs, List par3List)
     {
-        par3List.add(new ItemStack(par1, 1, 0));
-        par3List.add(new ItemStack(par1, 1, 1));
-        par3List.add(new ItemStack(par1, 1, 2));
-        par3List.add(new ItemStack(par1, 1, 3));
+    	for (int i = 0; i < topTextures.length; i++) {
+    		par3List.add(new ItemStack(par1, 1, i));
+    	}
     }
     
 //CLIENT ONLY
-	public static String[] topTextures = {"ginger_barrelOak_top", "ginger_barrelSpruce_top", "ginger_barrelBirch_top", "ginger_barrelJungle_top"};
-	public static String[] sideTextures = {"ginger_barrelOak_side", "ginger_barrelSpruce_side", "ginger_barrelBirch_side", "ginger_barrelJungle_side"};
-	public static Icon[] topIcons;
-	public static Icon[] sideIcons;
+	public Icon[] topIcons;
+	public Icon[] sideIcons;
 	
 	public Icon getIcon(int par1, int par2)
     {
@@ -161,10 +161,10 @@ public class AddonBlockBarrelEmpty extends Block {
     }
 	@Override public void registerIcons(IconRegister register)
 	{
-		topIcons = new Icon[4];
-		sideIcons = new Icon[4];
+		topIcons = new Icon[topTextures.length];
+		sideIcons = new Icon[topTextures.length];
 		
-		for (int i = 0; i < 4; i++) {
+		for (int i = 0; i < topTextures.length; i++) {
 			topIcons[i] = register.registerIcon(topTextures[i]);
 			sideIcons[i] = register.registerIcon(sideTextures[i]);
 		}

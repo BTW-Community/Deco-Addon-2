@@ -19,11 +19,9 @@ public class AddonBlockLogBark extends FCBlockLog {
      */
     public int idDropped(int par1, Random par2Random, int par3)
     {
-        return AddonDefs.strippedLog.blockID;
+        return AddonDefs.barkLog.blockID;
     }
 
-	//Removes bark drop from chisel use
-	@Override
     public boolean ConvertBlock(ItemStack var1, World var2, int var3, int var4, int var5, int var6)
     {
         int var7 = var2.getBlockMetadata(var3, var4, var5);
@@ -47,7 +45,12 @@ public class AddonBlockLogBark extends FCBlockLog {
             var10 = FCBetterThanWolves.fcBlockLogDamaged.SetOrientation(var8, var9);
         }
 
-        var2.setBlockAndMetadataWithNotify(var3, var4, var5, FCBetterThanWolves.fcBlockLogDamaged.blockID, var10);
+        var2.setBlockAndMetadataWithNotify(var3, var4, var5, AddonUtilsBlock.getDamagedLogFromMetadata(var7 & 3), var10);
+
+        if (!var2.isRemote)
+        {
+            FCUtilsItem.EjectStackFromBlockTowardsFacing(var2, var3, var4, var5, new ItemStack(FCBetterThanWolves.fcItemBark, 1, var7 & 3), var6);
+        }
 
         return true;
     }

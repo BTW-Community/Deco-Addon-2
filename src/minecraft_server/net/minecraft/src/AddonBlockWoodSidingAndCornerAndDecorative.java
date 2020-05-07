@@ -11,6 +11,7 @@ public class AddonBlockWoodSidingAndCornerAndDecorative extends AddonBlockSiding
         this.SetAxesEffectiveOn(true);
         this.SetBuoyancy(1.0F);
         this.SetFireProperties(5, 20);
+        this.setCreativeTab(null);
     }
 
     /**
@@ -152,9 +153,13 @@ public class AddonBlockWoodSidingAndCornerAndDecorative extends AddonBlockSiding
         {
             var1 = 3;
         }
-        else
+        else if (this.blockID == FCBetterThanWolves.fcBlockWoodBloodSidingAndCorner.blockID)
         {
             var1 = 4;
+        }
+        else
+        {
+        	var1 = 5;
         }
 
         return var1;

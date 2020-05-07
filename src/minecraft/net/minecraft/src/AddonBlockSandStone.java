@@ -1,10 +1,12 @@
 package net.minecraft.src;
 
 import java.util.List;
+import java.util.Random;
 
 public class AddonBlockSandStone extends FCBlockSandStone {
 	public AddonBlockSandStone(int id) {
 		super(id);
+        this.setTickRandomly(true);
 	}
 
     /**
@@ -17,47 +19,101 @@ public class AddonBlockSandStone extends FCBlockSandStone {
         par3List.add(new ItemStack(par1, 1, 2));
         par3List.add(new ItemStack(par1, 1, 3));
         par3List.add(new ItemStack(par1, 1, 4));
+        par3List.add(new ItemStack(par1, 1, 5));
+        par3List.add(new ItemStack(par1, 1, 6));
+        par3List.add(new ItemStack(par1, 1, 7));
+        par3List.add(new ItemStack(par1, 1, 8));
+        par3List.add(new ItemStack(par1, 1, 9));
+    }
+	
+	public void updateTick(World world, int x, int y, int z, Random rand)
+    {
+        int meta = world.getBlockMetadata(x, y, z);
+
+        if (meta == 0 && !world.getBlockMaterial(x, y - 1, z).blocksMovement())
+        {
+            int idAbove = world.getBlockId(x, y + 1, z);
+
+            if (idAbove != Block.waterMoving.blockID && idAbove != Block.waterStill.blockID)
+            {
+                if ((idAbove == Block.lavaMoving.blockID || idAbove == Block.lavaStill.blockID) && rand.nextInt(15) == 0)
+                {
+                	world.setBlockMetadataWithNotify(x, y, z, 8);
+                    world.markBlockRangeForRenderUpdate(x, y, z, x, y, z);
+                }
+            }
+            else if (rand.nextInt(15) == 0)
+            {
+            	world.setBlockMetadataWithNotify(x, y, z, 5);
+                world.markBlockRangeForRenderUpdate(x, y, z, x, y, z);
+            }
+        }
+
+        if (meta == 6 && !world.getBlockMaterial(x, y - 1, z).blocksMovement())
+        {
+            int idAbove = world.getBlockId(x, y + 1, z);
+
+            if (idAbove != Block.waterMoving.blockID && idAbove != Block.waterStill.blockID)
+            {
+                if ((idAbove == Block.lavaMoving.blockID || idAbove == Block.lavaStill.blockID) && rand.nextInt(15) == 0)
+                {
+                	world.setBlockMetadataWithNotify(x, y, z, 9);
+                    world.markBlockRangeForRenderUpdate(x, y, z, x, y, z);
+                }
+            }
+            else if (rand.nextInt(15) == 0)
+            {
+            	world.setBlockMetadataWithNotify(x, y, z, 7);
+                world.markBlockRangeForRenderUpdate(x, y, z, x, y, z);
+            }
+        }
     }
 
     //CLIENT ONLY
-    public static final String[] SAND_STONE_TYPES = new String[] {"default", "chiseled", "smooth", "polished", "brick"};
-    private static final String[] field_94405_b = new String[] {"sandstone_side", "sandstone_carved", "sandstone_smooth", "sandstone_top", "ginger_sandstone_brick"};
-    private Icon[] field_94406_c;
-    private Icon field_94403_cO;
-    private Icon field_94404_cP;
+    public static final String[] SAND_STONE_TYPES = new String[] {"default", "chiseled", "smooth", "polished", "brick", "mossy", "largeBrick", "largeBrickMossy", "cracked", "largeBrickCracked"};
+    private static final String[] textures = new String[] {"sandstone_side", "sandstone_carved", "sandstone_smooth", "sandstone_top", "ginger_sandstone_brick", "ginger_sandstone_mossy", "ginger_sandstone_stonebrick", "ginger_sandstone_stonebrick_mossy", "sandstone_bottom", "ginger_sandstone_stonebrick_cracked"};
+    private Icon[] sideIcons;
+    private Icon iconTop;
+    private Icon iconBottom;
+    private Icon iconTopMossy;
+    private Icon iconBottomMossy;
     
     /**
      * From the specified side and block metadata retrieves the blocks texture. Args: side, metadata
      */
-    public Icon getIcon(int par1, int par2)
+    public Icon getIcon(int side, int meta)
     {
-    	if (par2 == 3) {
-    		return this.field_94403_cO;
+    	if (meta == 3) {
+    		return iconTop;
     	}
     	
-    	if (par2 == 4) {
-            return this.field_94406_c[par2];
+    	if (meta == 4 || meta == 6 || meta == 7 || meta == 8 || meta == 9) {
+            return this.sideIcons[meta];
     	}
     	
-        if (par1 != 1 && (par1 != 0 || par2 != 1 && par2 != 2))
+        if (side != 1 && (side != 0 || meta != 1 && meta != 2))
         {
-            if (par1 == 0)
+            if (side == 0)
             {
-                return this.field_94404_cP;
+            	if (meta == 5)
+            		return this.iconBottomMossy;
+                return this.iconBottom;
             }
             else
             {
-                if (par2 < 0 || par2 >= this.field_94406_c.length)
+                if (meta < 0 || meta >= this.sideIcons.length)
                 {
-                    par2 = 0;
+                    meta = 0;
                 }
 
-                return this.field_94406_c[par2];
+                return this.sideIcons[meta];
             }
         }
         else
         {
-            return this.field_94403_cO;
+        	if (meta == 5)
+        		return this.iconTopMossy;
+            return this.iconTop;
         }
     }
 
@@ -67,14 +123,16 @@ public class AddonBlockSandStone extends FCBlockSandStone {
      */
     public void registerIcons(IconRegister par1IconRegister)
     {
-        this.field_94406_c = new Icon[field_94405_b.length];
+        this.sideIcons = new Icon[textures.length];
 
-        for (int var2 = 0; var2 < this.field_94406_c.length; ++var2)
+        for (int var2 = 0; var2 < this.sideIcons.length; ++var2)
         {
-            this.field_94406_c[var2] = par1IconRegister.registerIcon(field_94405_b[var2]);
+            this.sideIcons[var2] = par1IconRegister.registerIcon(textures[var2]);
         }
 
-        this.field_94403_cO = par1IconRegister.registerIcon("sandstone_top");
-        this.field_94404_cP = par1IconRegister.registerIcon("sandstone_bottom");
+        this.iconTop = par1IconRegister.registerIcon("sandstone_top");
+        this.iconBottom = par1IconRegister.registerIcon("sandstone_bottom");
+        this.iconTopMossy = par1IconRegister.registerIcon("ginger_sandstone_mossy_top");
+        this.iconBottomMossy = par1IconRegister.registerIcon("ginger_sandstone_mossy_bottom");
     }
 }

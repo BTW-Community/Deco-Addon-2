@@ -8,7 +8,6 @@ public class AddonBlockSidingAndCornerAndDecorative extends FCBlockSidingAndCorn
 	public AddonBlockSidingAndCornerAndDecorative(int var1, Material var2, String var3, float var4, float var5, StepSound var6, String var7)
 	{
 		super(var1, var2, var3, var4, var5, var6, var7);
-		setCreativeTab(CreativeTabs.tabDecorations);
 	}
 
 	@Override
@@ -182,72 +181,162 @@ public class AddonBlockSidingAndCornerAndDecorative extends FCBlockSidingAndCorn
         return var5;
     }
     
-    /*
-    public static boolean RenderFence(RenderBlocks var0, IBlockAccess var1, int var2, int var3, int var4, Block var5)
+    public void RenderBlockAsItem(RenderBlocks var1, int var2, float var3)
     {
-        var0.setRenderBounds(0.375D, 0.0D, 0.375D, 0.625D, 1.0D, 0.625D);
-        var0.renderStandardBlock(var5, var2, var3, var4);
-        AddonBlockSidingAndCornerAndDecorative var6 = (AddonBlockSidingAndCornerAndDecorative)var5;
-        boolean var7 = false;
-        
-        boolean var8 = var6.CanConnectToBlockToFacing(var0.blockAccess, var2, var3, var4, 2);
-        boolean var9 = var6.CanConnectToBlockToFacing(var0.blockAccess, var2, var3, var4, 3);
-        boolean var10 = var6.CanConnectToBlockToFacing(var0.blockAccess, var2, var3, var4, 4);
-        boolean var11 = var6.CanConnectToBlockToFacing(var0.blockAccess, var2, var3, var4, 5);
+        int var4 = var2;
+        Object var5 = this;
 
-        if (var8 || var9)
+        if (this.blockID == FCBetterThanWolves.fcBlockWoodSidingDecorativeItemStubID)
         {
-            var7 = true;
+            int var6 = AddonItemBlockWoodSidingDecorativeStub.GetBlockType(var2);
+            int var7 = AddonItemBlockWoodSidingDecorativeStub.GetWoodType(var2);
+
+            if (var6 == 0)
+            {
+                var4 = 12;
+            }
+            else
+            {
+                var4 = 14;
+            }
+
+            if (var7 == 0)
+            {
+                var5 = FCBetterThanWolves.fcBlockWoodOakSidingAndCorner;
+            }
+            else if (var7 == 1)
+            {
+                var5 = FCBetterThanWolves.fcBlockWoodSpruceSidingAndCorner;
+            }
+            else if (var7 == 2)
+            {
+                var5 = FCBetterThanWolves.fcBlockWoodBirchSidingAndCorner;
+            }
+            else if (var7 == 3)
+            {
+                var5 = FCBetterThanWolves.fcBlockWoodJungleSidingAndCorner;
+            }
+            else if (var7 == 4)
+            {
+                var5 = FCBetterThanWolves.fcBlockWoodBloodSidingAndCorner;
+            }
+            else
+            {
+            	var5 = AddonDefs.cherrySidingAndCorner;
+            }
         }
 
-        boolean var12 = false;
-
-        if (var10 || var11)
+        if (var4 == 12)
         {
-            var12 = true;
+            RenderBenchInvBlock(var1, (Block)var5, var4);
+        }
+        else if (var4 == 14)
+        {
+            RenderFenceInvBlock(var1, (Block)var5, var4);
+        }
+        else
+        {
+        	if (this.blockID != FCBetterThanWolves.fcBlockWoodSidingItemStubID && ((var2 & 1) != 0 || this.blockID == FCBetterThanWolves.fcBlockWoodCornerItemStubID))
+            {
+                var1.setRenderBounds(0.25D, 0.25D, 0.25D, 0.75D, 0.75D, 0.75D);
+            }
+            else
+            {
+                var1.setRenderBounds(0.0D, 0.0D, 0.0D, 0.5D, 1.0D, 1.0D);
+            }
+
+            if (this.blockID != FCBetterThanWolves.fcBlockWoodSidingItemStubID && this.blockID != FCBetterThanWolves.fcBlockWoodCornerItemStubID)
+            {
+                FCClientUtilsRender.RenderInvBlockWithMetadata(var1, this, -0.5F, -0.5F, -0.5F, 0);
+            }
+            else
+            {
+                Icon icon;
+
+                switch (var2)
+                {
+                    case 1:
+                    	icon = FCBetterThanWolves.fcBlockWoodSpruceSidingAndCorner.blockIcon;
+                        break;
+                    case 2:
+                    	icon = FCBetterThanWolves.fcBlockWoodBirchSidingAndCorner.blockIcon;
+                        break;
+                    case 3:
+                    	icon = FCBetterThanWolves.fcBlockWoodJungleSidingAndCorner.blockIcon;
+                        break;
+                    case 4:
+                    	icon = FCBetterThanWolves.fcBlockWoodBloodSidingAndCorner.blockIcon;
+                        break;
+                    case 5:
+                    	icon = AddonDefs.cherrySidingAndCorner.blockIcon;
+                    	break;
+                    default:
+                    	icon = FCBetterThanWolves.fcBlockWoodOakSidingAndCorner.blockIcon;
+                }
+
+                FCClientUtilsRender.RenderInvBlockWithTexture(var1, this, -0.5F, -0.5F, -0.5F, icon);
+            }
+        }
+    }
+
+    public static void RenderFenceInvBlock(RenderBlocks var0, Block var1, int var2)
+    {
+        Tessellator var3 = Tessellator.instance;
+
+        for (int var4 = 0; var4 < 4; ++var4)
+        {
+            float var5 = 0.125F;
+
+            if (var4 == 0)
+            {
+                var0.setRenderBounds((double)(0.5F - var5), 0.0D, 0.0D, (double)(0.5F + var5), 1.0D, (double)(var5 * 2.0F));
+            }
+
+            if (var4 == 1)
+            {
+                var0.setRenderBounds((double)(0.5F - var5), 0.0D, (double)(1.0F - var5 * 2.0F), (double)(0.5F + var5), 1.0D, 1.0D);
+            }
+
+            var5 = 0.0625F;
+
+            if (var4 == 2)
+            {
+                var0.setRenderBounds((double)(0.5F - var5), (double)(1.0F - var5 * 4.0F), (double)(-var5 * 2.0F), (double)(0.5F + var5), (double)(1.0F - var5), (double)(1.0F + var5 * 2.0F));
+            }
+
+            if (var4 == 3)
+            {
+                var0.setRenderBounds((double)(0.5F - var5), (double)(0.5F - var5 * 2.0F), (double)(-var5 * 2.0F), (double)(0.5F + var5), (double)(0.5F + var5), (double)(1.0F + var5 * 2.0F));
+            }
+
+            GL11.glTranslatef(-0.5F, -0.5F, -0.5F);
+            var3.startDrawingQuads();
+            var3.setNormal(0.0F, -1.0F, 0.0F);
+            var0.renderFaceYNeg(var1, 0.0D, 0.0D, 0.0D, var1.getBlockTextureFromSide(0));
+            var3.draw();
+            var3.startDrawingQuads();
+            var3.setNormal(0.0F, 1.0F, 0.0F);
+            var0.renderFaceYPos(var1, 0.0D, 0.0D, 0.0D, var1.getBlockTextureFromSide(1));
+            var3.draw();
+            var3.startDrawingQuads();
+            var3.setNormal(0.0F, 0.0F, -1.0F);
+            var0.renderFaceZNeg(var1, 0.0D, 0.0D, 0.0D, var1.getBlockTextureFromSide(2));
+            var3.draw();
+            var3.startDrawingQuads();
+            var3.setNormal(0.0F, 0.0F, 1.0F);
+            var0.renderFaceZPos(var1, 0.0D, 0.0D, 0.0D, var1.getBlockTextureFromSide(3));
+            var3.draw();
+            var3.startDrawingQuads();
+            var3.setNormal(-1.0F, 0.0F, 0.0F);
+            var0.renderFaceXNeg(var1, 0.0D, 0.0D, 0.0D, var1.getBlockTextureFromSide(4));
+            var3.draw();
+            var3.startDrawingQuads();
+            var3.setNormal(1.0F, 0.0F, 0.0F);
+            var0.renderFaceXPos(var1, 0.0D, 0.0D, 0.0D, var1.getBlockTextureFromSide(5));
+            var3.draw();
+            GL11.glTranslatef(0.5F, 0.5F, 0.5F);
         }
 
-        if (!var7 && !var12)
-        {
-            var7 = true;
-        }
-
-        float var13 = 0.4375F;
-        float var14 = 0.5625F;
-        float var15 = 0.75F;
-        float var16 = 0.9375F;
-        float var17 = var8 ? 0.0F : var13;
-        float var18 = var9 ? 1.0F : var14;
-        float var19 = var10 ? 0.0F : var13;
-        float var20 = var11 ? 1.0F : var14;
-
-        if (var7)
-        {
-            var0.setRenderBounds((double)var17, (double)var15, (double)var13, (double)var18, (double)var16, (double)var14);
-            var0.renderStandardBlock(var6, var2, var3, var4);
-        }
-
-        if (var12)
-        {
-            var0.setRenderBounds((double)var13, (double)var15, (double)var19, (double)var14, (double)var16, (double)var20);
-            var0.renderStandardBlock(var6, var2, var3, var4);
-        }
-
-        var15 = 0.375F;
-        var16 = 0.5625F;
-
-        if (var7)
-        {
-            var0.setRenderBounds((double)var17, (double)var15, (double)var13, (double)var18, (double)var16, (double)var14);
-            var0.renderStandardBlock(var6, var2, var3, var4);
-        }
-
-        if (var12)
-        {
-            var0.setRenderBounds((double)var13, (double)var15, (double)var19, (double)var14, (double)var16, (double)var20);
-            var0.renderStandardBlock(var6, var2, var3, var4);
-        }
-
-        return true;
-    }*/
+        var0.setRenderBounds(0.0D, 0.0D, 0.0D, 1.0D, 1.0D, 1.0D);
+    }
 }

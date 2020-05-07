@@ -12,7 +12,6 @@ public class AddonBlockCarpet extends Block {
         this.setStepSound(soundClothFootstep);
         this.setUnlocalizedName("carpet");
         this.setCreativeTab(CreativeTabs.tabBlock);
-        this.SetAxesEffectiveOn();
 	}
 
     public float MobSpawnOnVerticalOffset(World var1, int var2, int var3, int var4)
@@ -77,9 +76,11 @@ public class AddonBlockCarpet extends Block {
     }
     
     //Client ONLY
+    Icon[] icons;
+    
     @Override
     public Icon getIcon(int side, int meta) {
-    	return Block.cloth.getIcon(side,  15 - meta);
+    	return icons[meta];
     }
 
     public boolean shouldSideBeRendered(IBlockAccess var1, int var2, int var3, int var4, int var5)
@@ -87,5 +88,11 @@ public class AddonBlockCarpet extends Block {
     	return true;
     }
     
-    public void registerIcons(IconRegister register) {}
+    public void registerIcons(IconRegister register) {
+    	icons = new Icon[16];
+    	
+    	for (int i = 0; i < 16; i++) {
+    		icons[i] = register.registerIcon("ginger_carpet_" + i);
+    	}
+    }
 }

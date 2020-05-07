@@ -10,6 +10,24 @@ public class AddonBlockTrapDoor extends FCBlockTrapDoor {
 		this.setUnlocalizedName("trapdoor");
 	}
 
+    /**
+     * Called upon block activation (right click on the block.)
+     */
+    public boolean onBlockActivated(World par1World, int par2, int par3, int par4, EntityPlayer par5EntityPlayer, int par6, float par7, float par8, float par9)
+    {
+        if (this.blockMaterial == Material.iron)
+        {
+            return true;
+        }
+        else
+        {
+            int var10 = par1World.getBlockMetadata(par2, par3, par4);
+            par1World.setBlockMetadataWithNotify(par2, par3, par4, var10 ^ 4);
+            par1World.playAuxSFXAtEntity(par5EntityPlayer, 1003, par2, par3, par4, 0);
+            return true;
+        }
+    }
+
 	/**
 	 * Called when a block is placed using its ItemBlock. Args: World, X, Y, Z, side, hitX, hitY, hitZ, block metadata
 	 */
@@ -86,6 +104,10 @@ public class AddonBlockTrapDoor extends FCBlockTrapDoor {
 	public boolean IsBlockClimbable(World var1, int var2, int var3, int var4)
 	{
 		return var1.getBlockId(var2, var3 - 1, var4) == FCBetterThanWolves.fcBlockLadder.blockID || var1.getBlockId(var2, var3 - 1, var4) == FCBetterThanWolves.fcBlockLadderOnFire.blockID;
+	}
+	
+	public boolean GetCanGrassGrowUnderBlock(World world, int x, int y, int z, boolean var5) {
+		return true;
 	}
 	
 	@Override

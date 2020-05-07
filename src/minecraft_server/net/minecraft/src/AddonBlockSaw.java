@@ -64,6 +64,15 @@ public class AddonBlockSaw extends FCBlockSaw {
             
 			return true;
 		}
+		else if (id == AddonDefs.cherryStairs.blockID) {
+			FCUtilsItem.EjectSingleItemWithRandomOffset(var1, var2, var3, var4, FCBetterThanWolves.fcBlockWoodSidingItemStubID, 5);
+			FCUtilsItem.EjectSingleItemWithRandomOffset(var1, var2, var3, var4, FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 5);
+
+            this.EmitSawParticles(var1, var2, var3, var4, var9);
+            var1.setBlockToAir(var2, var3, var4);
+			
+			return true;
+		}
 		else {
 			try {
 				Method sawExceptionsMethodSuperclass = FCBlockSaw.class.getDeclaredMethod("HandleSawingExceptionCases", new Class[] {World.class, int.class, int.class, int.class, int.class, int.class, int.class, int.class, Random.class});
@@ -79,9 +88,9 @@ public class AddonBlockSaw extends FCBlockSaw {
 				e.printStackTrace();
 			} catch (SecurityException e) {
 				e.printStackTrace();
-			} finally {
-				return false;
 			}
+			
+			return false;
 		}
 	}
 }

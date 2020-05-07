@@ -8,14 +8,13 @@ public class AddonBlockChandelier extends Block
 	{
 		super(ID, Material.iron);
 		setUnlocalizedName("ginger_lantern_gold");
-		setStepSound(soundStoneFootstep);
-		//setBlockBounds(0F, 0F, 0F, 1F, 1F, 1F);
+		setStepSound(soundMetalFootstep);
 		setCreativeTab(CreativeTabs.tabDecorations);
 		setHardness(0.3F);
 		setLightValue(1F);
 		AddonManager.Register(this, "Chandelier");
 		this.SetPicksEffectiveOn(true);
-		this.InitBlockBounds(.3125D,	0.0D,	.3125D,		.6875D,		.5D,	.6875D);
+		this.InitBlockBounds(.25D,	0.125D,	.25D,		.75D,		1.0D,	.75D);
 	}
 	@Override public boolean isOpaqueCube()
 	{
@@ -29,6 +28,11 @@ public class AddonBlockChandelier extends Block
 	{
 		return 1;
 	}
+
+    public boolean GetCanBlockLightItemOnFire(IBlockAccess var1, int var2, int var3, int var4)
+    {
+        return true;
+    }
 //CLIENT ONLY
 	@Override public void randomDisplayTick(World CurrentWorld, int X_, int Y_, int Z_, Random par5Random)
 	{

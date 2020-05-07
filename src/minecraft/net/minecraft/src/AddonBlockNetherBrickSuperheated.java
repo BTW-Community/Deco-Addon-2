@@ -114,13 +114,22 @@ public class AddonBlockNetherBrickSuperheated extends Block {
     
     //CLIENT ONLY
     private Icon[] icons = new Icon[2];
+	private Icon[] overlays = new Icon[2];
     
     public Icon getIcon(int side, int meta) {
     	return icons[meta];
     }
     
     public void registerIcons(IconRegister register) {
-    	icons[0] = register.registerIcon("ginger_netherBrickSuperheated");
-    	icons[1] = register.registerIcon("ginger_netherBrickRedSuperheated");
+    	icons[0] = register.registerIcon("netherBrick");
+    	icons[1] = register.registerIcon("ginger_netherBrickRed");
+		overlays[0] = register.registerIcon("ginger_overlay_netherBrickSuperheated");
+		overlays[1] = register.registerIcon("ginger_overlay_netherBrickRedSuperheated");
+    }
+    
+	public void RenderBlockSecondPass(RenderBlocks var1, int var2, int var3, int var4, boolean var5)
+    {
+		int meta = var1.blockAccess.getBlockMetadata(var2, var3, var4);
+        FCClientUtilsRender.RenderBlockFullBrightWithTexture(var1, var1.blockAccess, var2, var3, var4, this.overlays[meta]);
     }
 }

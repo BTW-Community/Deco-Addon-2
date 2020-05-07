@@ -31,10 +31,14 @@ public class AddonBlockCrate extends Block {
      */
     public void getSubBlocks(int var1, CreativeTabs var2, List var3)
     {
-        for (int var4 = 0; var4 < 4; ++var4)
+        for (int var4 = 0; var4 < 6; ++var4)
         {
             var3.add(new ItemStack(var1, 1, var4));
         }
+    }
+    
+    public int damageDropped(int meta) {
+    	return meta;
     }
     
     //CLIENT ONLY
@@ -47,11 +51,13 @@ public class AddonBlockCrate extends Block {
     
     @Override
     public void registerIcons(IconRegister register) {
-    	icons = new Icon[4];
+    	icons = new Icon[6];
     	
     	icons[0] = register.registerIcon("ginger_crateOak");
     	icons[1] = register.registerIcon("ginger_crateSpruce");
     	icons[2] = register.registerIcon("ginger_crateBirch");
     	icons[3] = register.registerIcon("ginger_crateJungle");
+    	icons[4] = register.registerIcon("ginger_crateBlood");
+    	icons[5] = register.registerIcon("ginger_crateCherry");
     }
 }

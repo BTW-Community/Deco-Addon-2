@@ -1,6 +1,6 @@
 package net.minecraft.src;
 
-public class AddonBlockWroughtBars extends FCBlockPane
+public class AddonBlockWroughtBars extends AddonBlockPane
 {
 	public AddonBlockWroughtBars(int ID)
 	{
