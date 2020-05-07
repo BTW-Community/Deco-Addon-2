@@ -197,8 +197,15 @@ public class AddonManager extends FCAddOn
 	}
 
 	//Does really hacky stuff using reflection to replace final references to vanilla blocks
-	public static void SetVanillaItemFinal(String name, Item oldItem, Item newItem) {
+	public static void SetVanillaItemFinal(String itemName, Item oldItem, Item newItem) {
 		try {
+			String name;
+
+			if (isObfuscated)
+				name = AddonUtilsObfuscationMap.getItemLookup(itemName);
+			else
+				name = itemName;
+			
 			Field item = (AddonDefs.glassChunk.getClass().getDeclaredField(name));
 			item.setAccessible(true);
 
@@ -210,7 +217,13 @@ public class AddonManager extends FCAddOn
 			item.set(newItem, newItem);
 			item.setAccessible(false);
 		} catch (NoSuchFieldException e) {
-			e.printStackTrace();
+			if (isObfuscated) {
+				e.printStackTrace();
+			}
+			else {
+				isObfuscated = true;
+				SetVanillaItemFinal(itemName, oldItem, newItem);
+			}
 		} catch (SecurityException e) {
 			e.printStackTrace();
 		} catch (IllegalArgumentException e) {

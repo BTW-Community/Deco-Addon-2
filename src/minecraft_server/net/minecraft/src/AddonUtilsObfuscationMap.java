@@ -27,9 +27,12 @@ public class AddonUtilsObfuscationMap {
 		blockMap.put("signPost", "aH");
 		blockMap.put("signWall", "aM");
 		blockMap.put("grass", "y");
+		blockMap.put("thinGlass", "bu");
+		blockMap.put("fenceIron", "bt");
 		
 		itemMap.put("enderPearl", "bo");
 		itemMap.put("sign", "av");
+		itemMap.put("shears", "bf");
 	}
 	
 	public static String getBlockLookup(String blockName) {
