@@ -1542,10 +1542,11 @@ public class AddonDefs {
 		chainItem = new AddonItemChain(id_chainItem);
 		AddonManager.Name(chainItem, "Chain");
 
-		//Soulbound chest
-		//soulboundChest = new AddonBlockSoulboundChest(id_soulboundChest);
-		//AddonManager.Register(soulboundChest, "Soulbound Chest");
-		//AddonManager.AddCustomTileEntityRenderer(AddonTileEntitySoulboundChest.class, new AddonTileEntitySoulboundChestRenderer());
+		//Buttons
+		Block woodButton = new AddonBlockButtonWood(AddonManager.ReplaceBlockID(Block.woodenButton)).setHardness(0.5F).setStepSound(Block.soundWoodFootstep).setUnlocalizedName("button");;
+		AddonManager.SetVanillaBlockFinal("woodenButton", Block.woodenButton, woodButton);
+		Block stoneButton = new AddonBlockButtonStone(AddonManager.ReplaceBlockID(Block.stoneButton)).setHardness(0.5F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("button");;
+		AddonManager.SetVanillaBlockFinal("stoneButton", Block.stoneButton, stoneButton);
 
 		//Cherry Tree
 		cherrySapling = new AddonBlockSaplingCherry(id_cherrySapling);
