@@ -26,8 +26,7 @@ public class AddonItemSign extends Item
      */
     public boolean onItemUse(ItemStack itemStack, EntityPlayer player, World world, int x, int y, int z, int side, float par8, float par9, float par10)
     {
-	    if (!world.isRemote)
-	    	world.playAuxSFX(2252, x, y, z, signPosts[itemStack.getItemDamage()].blockID);
+		world.playSound(x, y, z, "dig.wood", 1.0F, .75F);
 	    
         if (side == 0)
         {

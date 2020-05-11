@@ -18,10 +18,9 @@ public class AddonItemDoor extends FCItemDoor {
 		return doorBlock;
 	}
 
-	public boolean onItemUse(ItemStack var1, EntityPlayer var2, World var3, int var4, int var5, int var6, int var7, float var8, float var9, float var10)
+	public boolean onItemUse(ItemStack var1, EntityPlayer var2, World var3, int x, int y, int z, int var7, float var8, float var9, float var10)
     {
-	    if (!var3.isRemote)
-			var3.playAuxSFX(2252, var4, var5, var6, doorBlock.blockID);
-        return super.onItemUse(var1, var2, var3, var4, var5, var6, var7, var8, var9, var10);
+		var3.playSound(x, y, z, "dig.wood", 1.0F, .75F);
+        return super.onItemUse(var1, var2, var3, x, y, z, var7, var8, var9, var10);
     }
 }

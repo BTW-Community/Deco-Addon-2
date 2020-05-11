@@ -578,7 +578,11 @@ public class AddonDefs {
 		AddonManager.Name(Block.plantRed, "Red Rose");
 		
 		//Flower pot
-		
+		flowerPot = new AddonBlockFlowerPot(id_flowerPot);
+		TileEntity.addMapping(AddonTileEntityFlowerPot.class, "AddonFlowerPot");
+		//AddonManager.AddCustomTileEntityRenderer(AddonTileEntityFlowerPot.class, new AddonTileEntityFlowerPotRenderer());
+		Item flowerPotItem = new AddonItemFlowerPot(Item.flowerPot.itemID - 256);
+		AddonManager.SetVanillaItemFinal("flowerPot", Item.flowerPot, flowerPotItem);
 	}
 
 	private void addStoneDefs() {
@@ -1262,7 +1266,7 @@ public class AddonDefs {
 		AddonManager.Register(trapdoorCherry, "Cherry Trap Door");
 
 		//Doors
-		AddonManager.Name(Block.doorWood, "Oak Door");
+		AddonManager.Name(Item.doorWood, "Oak Door");
 
 		doorSpruce = new AddonBlockDoorWood(id_doorSpruce, new String[] {"ginger_doorSpruce_lower", "ginger_doorSpruce_upper"});
 		doorBirch = new AddonBlockDoorWood(id_doorBirch, new String[] {"ginger_doorBirch_lower", "ginger_doorBirch_upper"});
