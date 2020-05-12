@@ -4,9 +4,13 @@ import java.util.Random;
 
 public class AddonBlockButton extends FCBlockButton {
 	private static int[] metaForFacing = {0, 5, 4, 3, 2, 1};
+	private Block owner;
+	private int ownerMeta;
 	
-	protected AddonBlockButton(int id, boolean isWood) {
+	protected AddonBlockButton(int id, boolean isWood, Block owner, int ownerMeta) {
 		super(id, isWood);
+		this.owner = owner;
+		this.ownerMeta = ownerMeta;
 	}
 
     /**
@@ -141,7 +145,7 @@ public class AddonBlockButton extends FCBlockButton {
     	switch (meta & 7) {
     	default:
     	case 0:
-    		return new AxisAlignedBB(minW, 1-maxL, minH, maxW, 1, maxH);
+    		return new AxisAlignedBB(minW, 1-maxL, minW, maxW, 1, maxW);
     	case 1:
     		return new AxisAlignedBB(0, minH, minW, maxL, maxH, maxW);
     	case 2:
@@ -151,7 +155,7 @@ public class AddonBlockButton extends FCBlockButton {
     	case 4:
     		return new AxisAlignedBB(minW, minH, 1-maxL, maxW, maxH, 1);
     	case 5:
-    		return new AxisAlignedBB(minW, 0, minH, maxW, maxL, maxH);
+    		return new AxisAlignedBB(minW, 0, minW, maxW, maxL, maxW);
     	}
     }
 
@@ -250,5 +254,23 @@ public class AddonBlockButton extends FCBlockButton {
         	blockPos.AddFacingAsOffset(Facing.oppositeSide[sideReversed]);
             return blockAccess.isBlockNormalCube(blockPos.i, blockPos.j, blockPos.k) && (meta & 7) == metaForFacing[sideReversed] ? 15 : 0;
         }
+    }
+
+    /**
+     * Returns the unlocalized name of this block.
+     */
+    @Override
+    public String getUnlocalizedName()
+    {
+        return owner.getUnlocalizedName() + ".button" + ownerMeta;
+    }
+    
+    //CLIENT ONLY
+    /**
+     * From the specified side and block metadata retrieves the blocks texture. Args: side, metadata
+     */
+    public Icon getIcon(int side, int meta)
+    {
+        return this.owner.getIcon(side, ownerMeta);
     }
 }

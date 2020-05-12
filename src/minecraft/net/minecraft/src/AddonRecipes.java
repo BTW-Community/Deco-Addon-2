@@ -863,6 +863,22 @@ public class AddonRecipes {
 		for (int i = 0; i < 15; i++) {
 			FCRecipes.AddShapelessRecipe(new ItemStack(FCBetterThanWolves.fcVase, 1, BlockCloth.getBlockFromDye(i)), new Object[] {new ItemStack(Item.dyePowder, 1, i + 16), new ItemStack(Item.itemsList[FCBetterThanWolves.fcVase.blockID], 1, 0)});
 		}
+		
+		//Buttons
+        FCRecipes.RemoveVanillaRecipe(new ItemStack(Block.woodenButton, 1), new Object[] {"#", "r", '#', new ItemStack(FCBetterThanWolves.fcBlockWoodCornerItemStubID, 1, 32767), 'r', Item.redstone});
+		FCRecipes.AddRecipe(new ItemStack(Block.woodenButton), new Object[] {"#", "r", '#', new ItemStack(FCBetterThanWolves.fcBlockWoodCornerItemStubID, 1, 0), 'r', Item.redstone});
+		FCRecipes.AddRecipe(new ItemStack(AddonDefs.buttonSpruce), new Object[] {"#", "r", '#', new ItemStack(FCBetterThanWolves.fcBlockWoodCornerItemStubID, 1, 1), 'r', Item.redstone});
+		FCRecipes.AddRecipe(new ItemStack(AddonDefs.buttonBirch), new Object[] {"#", "r", '#', new ItemStack(FCBetterThanWolves.fcBlockWoodCornerItemStubID, 1, 2), 'r', Item.redstone});
+		FCRecipes.AddRecipe(new ItemStack(AddonDefs.buttonJungle), new Object[] {"#", "r", '#', new ItemStack(FCBetterThanWolves.fcBlockWoodCornerItemStubID, 1, 3), 'r', Item.redstone});
+		FCRecipes.AddRecipe(new ItemStack(AddonDefs.buttonBlood), new Object[] {"#", "r", '#', new ItemStack(FCBetterThanWolves.fcBlockWoodCornerItemStubID, 1, 4), 'r', Item.redstone});
+		FCRecipes.AddRecipe(new ItemStack(AddonDefs.buttonCherry), new Object[] {"#", "r", '#', new ItemStack(FCBetterThanWolves.fcBlockWoodCornerItemStubID, 1, 5), 'r', Item.redstone});
+
+		FCRecipes.AddRecipe(new ItemStack(AddonDefs.buttonInfusedStone), new Object[] {"#", "r", '#', new ItemStack(AddonDefs.infusedStoneSidingAndCorner, 1, 1), 'r', Item.redstone});
+		FCRecipes.AddRecipe(new ItemStack(AddonDefs.buttonGranite), new Object[] {"#", "r", '#', new ItemStack(AddonDefs.stoneTypesSidingAndCorner[0], 1, 1), 'r', Item.redstone});
+		FCRecipes.AddRecipe(new ItemStack(AddonDefs.buttonAndesite), new Object[] {"#", "r", '#', new ItemStack(AddonDefs.stoneTypesSidingAndCorner[1], 1, 1), 'r', Item.redstone});
+		FCRecipes.AddRecipe(new ItemStack(AddonDefs.buttonDiorite), new Object[] {"#", "r", '#', new ItemStack(AddonDefs.stoneTypesSidingAndCorner[2], 1, 1), 'r', Item.redstone});
+		FCRecipes.AddRecipe(new ItemStack(AddonDefs.buttonSandstone), new Object[] {"#", "r", '#', new ItemStack(FCBetterThanWolves.fcBlockSandstoneSidingAndCorner, 1, 1), 'r', Item.redstone});
+		FCRecipes.AddRecipe(new ItemStack(AddonDefs.buttonRedSandstone), new Object[] {"#", "r", '#', new ItemStack(AddonDefs.redSandStoneSidingAndCorner, 1, 1), 'r', Item.redstone});
 	}
 
 	private void addMortarRecipes() {

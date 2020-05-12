@@ -155,7 +155,8 @@ public class AddonDefs {
 	id_crate=3238,
 	id_flowerPot=3239,
 	id_pergola=3240,
-
+	id_barrelFilling=3241,
+	
 	id_paintedPlanksSubStart=3248,
 	//end 3296
 
@@ -277,6 +278,17 @@ public class AddonDefs {
 	id_hedgeCherryStairs=3464,
 	id_hedgeCherrySidingAndCorner=3465,
 	id_hedgeCherryMouldingAndDecorative=3466,
+	id_buttonSpruce=3467,
+	id_buttonBirch=3468,
+	id_buttonJungle=3469,
+	id_buttonBlood=3470,
+	id_buttonCherry=3471,
+	id_buttonInfusedStone=3472,
+	id_buttonGranite=3473,
+	id_buttonAndesite=3474,
+	id_buttonDiorite=3475,
+	id_buttonSandstone=3476,
+	id_buttonRedSandstone=3477,
 
 	id_flag_start=4000;
 
@@ -410,7 +422,7 @@ public class AddonDefs {
 	public static Block planksPainted;
 	public static Block[] paintedPlanksSidingAndCorner, paintedPlanksMouldingAndDecorative, paintedPlanksStairs;
 	public static Block pergola;
-	public static Block barrelEmpty, barrelEmpty2, barrelFullOak, barrelFullSpruce, barrelFullBirch, barrelFullJungle, barrelFullBlood, barrelFullCherry;
+	public static Block barrelEmpty, barrelEmpty2, barrelFilling, barrelFullOak, barrelFullSpruce, barrelFullBirch, barrelFullJungle, barrelFullBlood, barrelFullCherry;
 	public static Block crate;
 	public static Block signSpruce, signSpruceWall, signBirch, signBirchWall, signJungle, signJungleWall, signBlood, signBloodWall, signCherry, signCherryWall;
 	public static Item woodBleach, woodStain;
@@ -441,6 +453,8 @@ public class AddonDefs {
 	public static Block carpet;
 	public static Block coalBlock, netherCoalBlock;
 	public static Block bonePillar;
+	public static Block buttonSpruce, buttonBirch, buttonJungle, buttonBlood, buttonCherry;
+	public static Block buttonInfusedStone, buttonGranite, buttonAndesite, buttonDiorite, buttonSandstone, buttonRedSandstone;
 
 	//Tools
 	public static AddonItemChiselDiamond chiselDiamond;
@@ -970,7 +984,7 @@ public class AddonDefs {
 
 		//End Stone Brick
 		endStoneBrick = new Block(id_endStoneBrick, Material.rock).setHardness(3.0F).setResistance(15.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("ginger_endStoneBrick").setCreativeTab(CreativeTabs.tabBlock);
-		endStoneBrickStairs = new FCBlockStairs(id_endStoneBrickStairs, endStoneBrick, 0);
+		endStoneBrickStairs = new FCBlockStairs(id_endStoneBrickStairs, endStoneBrick, 0).setUnlocalizedName("endStoneBrickStairs");
 		endStoneBrickSidingAndCorner = new AddonBlockSidingAndCornerDecorativeWall(id_endStoneBrickSidingAndCorner, Material.rock, "ginger_endStoneBrickDecorative", 3.0F, 15.0F, Block.soundStoneFootstep, "endStoneBrickSiding", "End Stone Brick").SetPicksEffectiveOn();
 		endStoneBrickMouldingAndDecorative = new FCBlockMouldingAndDecorative(id_endStoneBrickMouldingAndDecorative, Material.rock, "ginger_endStoneBrickDecorative", "ginger_endStoneBrickDecorative_column", 3042, 2.0F, 10.0F, Block.soundStoneFootstep, "endStoneBrickMoulding").SetPicksEffectiveOn();
 
@@ -1266,8 +1280,6 @@ public class AddonDefs {
 		AddonManager.Register(trapdoorCherry, "Cherry Trap Door");
 
 		//Doors
-		AddonManager.Name(Item.doorWood, "Oak Door");
-
 		doorSpruce = new AddonBlockDoorWood(id_doorSpruce, new String[] {"ginger_doorSpruce_lower", "ginger_doorSpruce_upper"});
 		doorBirch = new AddonBlockDoorWood(id_doorBirch, new String[] {"ginger_doorBirch_lower", "ginger_doorBirch_upper"});
 		doorJungle = new AddonBlockDoorWood(id_doorJungle, new String[] {"ginger_doorJungle_lower", "ginger_doorJungle_upper"});
@@ -1280,6 +1292,8 @@ public class AddonDefs {
 		AddonManager.Register(doorBlood, "Blood Wood Door");
 		AddonManager.Register(doorCherry, "Cherry Door");
 
+		Item itemDoorOak = new AddonItemDoor(Item.doorWood.itemID - 256, "doorWood", "Oak Door", (BlockDoor) Block.doorWood);
+		AddonManager.SetVanillaItemFinal("doorWood", Item.doorWood, itemDoorOak);
 		itemDoorSpruce = new AddonItemDoor(id_itemDoorSpruce, "ginger_doorSpruceItem", "Spruce Door", doorSpruce);
 		itemDoorBirch = new AddonItemDoor(id_itemDoorBirch, "ginger_doorBirchItem", "Birch Door", doorBirch);
 		itemDoorJungle = new AddonItemDoor(id_itemDoorJungle, "ginger_doorJungleItem", "Jungle Door", doorJungle);
@@ -1353,6 +1367,9 @@ public class AddonDefs {
 		barrelEmpty2 = new AddonBlockBarrelEmpty(id_barrelEmpty2, new String[] {"ginger_barrelBlood_top", "ginger_barrelCherry_top"}, new String[] {"ginger_barrelBlood_side", "ginger_barrelCherry_side"});
 		AddonManager.Register(barrelEmpty, new String[] {"oakBarrel", "spruceBarrel", "birchBarrel", "jungleBarrel"}, new String[] {"Oak Barrel", "Spruce Barrel", "Birch Barrel", "Jungle Barrel"});
 		AddonManager.Register(barrelEmpty2, new String[] {"bloodBarrel", "cherryBarrel"}, new String[] {"Blood Wood Barrel", "Cherry Barrel"});
+		
+		barrelFilling = new AddonBlockBarrelFilling(id_barrelFilling);
+		TileEntity.addMapping(AddonTileEntityBarrelFilling.class, "barrelFilling");
 
 		barrelFullOak = new AddonBlockBarrelFilled(id_barrelFullOak, "barrelOak", "Oak Barrel");
 		barrelFullSpruce = new AddonBlockBarrelFilled(id_barrelFullSpruce, "barrelSpruce", "Spruce Barrel");
@@ -1543,10 +1560,39 @@ public class AddonDefs {
 		AddonManager.Name(chainItem, "Chain");
 
 		//Buttons
-		Block woodButton = new AddonBlockButtonWood(AddonManager.ReplaceBlockID(Block.woodenButton)).setHardness(0.5F).setStepSound(Block.soundWoodFootstep).setUnlocalizedName("button");;
+		Block woodButton = new AddonBlockButtonWood(AddonManager.ReplaceBlockID(Block.woodenButton), Block.planks, 0).setHardness(0.5F).setStepSound(Block.soundWoodFootstep);
 		AddonManager.SetVanillaBlockFinal("woodenButton", Block.woodenButton, woodButton);
-		Block stoneButton = new AddonBlockButtonStone(AddonManager.ReplaceBlockID(Block.stoneButton)).setHardness(0.5F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("button");;
+		Block stoneButton = new AddonBlockButtonStone(AddonManager.ReplaceBlockID(Block.stoneButton), Block.stone, 0).setHardness(0.5F).setStepSound(Block.soundStoneFootstep);
 		AddonManager.SetVanillaBlockFinal("stoneButton", Block.stoneButton, stoneButton);
+		
+		buttonSpruce = new AddonBlockButtonWood(id_buttonSpruce, Block.planks, 1);
+		buttonBirch = new AddonBlockButtonWood(id_buttonBirch, Block.planks, 2);
+		buttonJungle = new AddonBlockButtonWood(id_buttonJungle, Block.planks, 3);
+		buttonBlood = new AddonBlockButtonWood(id_buttonBlood, Block.planks, 4);
+		buttonCherry = new AddonBlockButtonWood(id_buttonCherry, Block.planks, 5);
+		
+		buttonInfusedStone = new AddonBlockButtonStone(id_buttonInfusedStone, infusedStone, 0);
+		buttonGranite = new AddonBlockButtonStone(id_buttonGranite, stoneTypes, 0);
+		buttonAndesite = new AddonBlockButtonStone(id_buttonAndesite, stoneTypes, 1);
+		buttonDiorite = new AddonBlockButtonStone(id_buttonDiorite, stoneTypes, 2);
+		buttonSandstone = new AddonBlockButtonStone(id_buttonSandstone, Block.sandStone, 3);
+		buttonRedSandstone = new AddonBlockButtonStone(id_buttonRedSandstone, redSandStone, 3);
+		
+		AddonManager.Name(Block.stoneButton, "Stone Button");
+		AddonManager.Name(Block.woodenButton, "Oak Button");
+		
+		AddonManager.Register(buttonSpruce, "Spruce Button");
+		AddonManager.Register(buttonBirch, "Birch Button");
+		AddonManager.Register(buttonJungle, "Jungle Button");
+		AddonManager.Register(buttonBlood, "Blood Wood Button");
+		AddonManager.Register(buttonCherry, "Cherry Button");
+		
+		AddonManager.Register(buttonInfusedStone, "Infused Stone Button");
+		AddonManager.Register(buttonGranite, "Granite Button");
+		AddonManager.Register(buttonAndesite, "AndesiteButton");
+		AddonManager.Register(buttonDiorite, "Diorite Button");
+		AddonManager.Register(buttonSandstone, "Sandstone Button");
+		AddonManager.Register(buttonRedSandstone, "Red Sandstone Button");
 
 		//Cherry Tree
 		cherrySapling = new AddonBlockSaplingCherry(id_cherrySapling);
@@ -1605,7 +1651,7 @@ public class AddonDefs {
 		AddonManager.NameSubBlocks_Wall(hedgeCherrySidingAndCorner, hedgeCherryMouldingAndDecorative, "Cherry Hedge");
 		
 		//Panes replace
-		Block thinGlass = new AddonBlockPane(AddonManager.ReplaceBlockID(Block.thinGlass), "glass", "thinglass_top", Material.glass, false);
+		Block thinGlass = new AddonBlockPane(AddonManager.ReplaceBlockID(Block.thinGlass), "glass", "thinglass_top", Material.glass, false).setHardness(0.3F).SetPicksEffectiveOn().setStepSound(Block.soundGlassFootstep).setUnlocalizedName("thinGlass");
 		AddonManager.SetVanillaBlockFinal("thinGlass", Block.thinGlass, thinGlass);
 		Block fenceIron = new AddonBlockIronBars(AddonManager.ReplaceBlockID(Block.fenceIron));
 		AddonManager.SetVanillaBlockFinal("fenceIron", Block.fenceIron, fenceIron);
@@ -1632,6 +1678,10 @@ public class AddonDefs {
 
 		//Allows custom saw recipes
 		FCBetterThanWolves.fcSaw = new AddonBlockSaw((FCBlockSaw) FCBetterThanWolves.fcSaw, AddonManager.ReplaceBlockID(FCBetterThanWolves.fcSaw));
+		
+		//Hopper
+		FCBetterThanWolves.fcHopper = new AddonBlockHopper(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcHopper));
+		TileEntity.ReplaceVanillaMapping(FCTileEntityHopper.class, AddonTileEntityHopper.class, "Hopper");
 
 		//Shears - for added efficient blocks
 		Item shears = new AddonItemShears(Item.shears.itemID - 256).setUnlocalizedName("shears");

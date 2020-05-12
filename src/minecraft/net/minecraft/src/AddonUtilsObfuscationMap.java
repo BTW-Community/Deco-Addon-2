@@ -30,11 +30,14 @@ public class AddonUtilsObfuscationMap {
 		blockMap.put("thinGlass", "bu");
 		blockMap.put("fenceIron", "bt");
 		blockMap.put("fire", "av");
+		blockMap.put("stoneButton", "aV");
+		blockMap.put("woodenButton", "cH");
 		
 		itemMap.put("enderPearl", "bo");
 		itemMap.put("sign", "av");
 		itemMap.put("shears", "bf");
-		itemMap.put("flowerPot", "bJ");
+		itemMap.put("flowerPot", "bJ");;
+		itemMap.put("doorWood", "aw");
 	}
 	
 	public static String getBlockLookup(String blockName) {

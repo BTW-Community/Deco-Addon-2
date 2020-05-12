@@ -132,6 +132,14 @@ public class AddonBlockWoodSlab extends FCBlockSlab
 		return typeMetas[var1];
 	}
 
+    /**
+     * Get the block's damage value (for use with pick block).
+     */
+    public int getDamageValue(World world, int x, int y, int z)
+    {
+        return world.getBlockMetadata(x, y, z) & 7;
+    }
+
 	//CLIENT ONLY
 	/**
 	 * From the specified side and block metadata retrieves the blocks texture. Args: side, metadata

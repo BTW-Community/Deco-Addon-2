@@ -1,18 +1,9 @@
 package net.minecraft.src;
 
 public class AddonBlockButtonStone extends AddonBlockButton {
-    protected AddonBlockButtonStone(int var1)
+    protected AddonBlockButtonStone(int var1, Block owner, int ownerMeta)
     {
-        super(var1, false);
+        super(var1, false, owner, ownerMeta);
         this.SetPicksEffectiveOn(true);
     }
-
-    /**
-     * From the specified side and block metadata retrieves the blocks texture. Args: side, metadata
-     */
-    public Icon getIcon(int var1, int var2)
-    {
-        return Block.stone.getBlockTextureFromSide(1);
-    }
-
 }
