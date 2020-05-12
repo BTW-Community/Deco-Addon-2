@@ -15,7 +15,6 @@ public class AddonPlayerControllerMP extends PlayerControllerMP {
 
     public EntityClientPlayerMP func_78754_a(World par1World)
     {
-    	System.out.println("Addon player controller new entity");
         return new EntityClientPlayerMP(this.mc, par1World, this.mc.session, this.netClientHandler);
     }
 
