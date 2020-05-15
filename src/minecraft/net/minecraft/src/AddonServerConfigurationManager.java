@@ -16,65 +16,65 @@ public class AddonServerConfigurationManager extends ServerConfigurationManager 
 		mcServer = par1MinecraftServer;
 	}
 
-    public void initializeConnectionToPlayer(INetworkManager par1INetworkManager, EntityPlayerMP par2EntityPlayerMP)
+    public void initializeConnectionToPlayer(INetworkManager networkManager, EntityPlayerMP player)
     {
-        NBTTagCompound var3 = this.readPlayerDataFromFile(par2EntityPlayerMP);
-        par2EntityPlayerMP.setWorld(this.mcServer.worldServerForDimension(par2EntityPlayerMP.dimension));
-        par2EntityPlayerMP.theItemInWorldManager.setWorld((WorldServer)par2EntityPlayerMP.worldObj);
-        String var4 = "local";
+        NBTTagCompound playerNBT = this.readPlayerDataFromFile(player);
+        player.setWorld(this.mcServer.worldServerForDimension(player.dimension));
+        player.theItemInWorldManager.setWorld((WorldServer)player.worldObj);
+        String socketAddress = "local";
 
-        if (par1INetworkManager.getSocketAddress() != null)
+        if (networkManager.getSocketAddress() != null)
         {
-            var4 = par1INetworkManager.getSocketAddress().toString();
+            socketAddress = networkManager.getSocketAddress().toString();
         }
 
-        this.mcServer.getLogAgent().logInfo(par2EntityPlayerMP.username + "[" + var4 + "] logged in with entity id " + par2EntityPlayerMP.entityId + " at (" + par2EntityPlayerMP.posX + ", " + par2EntityPlayerMP.posY + ", " + par2EntityPlayerMP.posZ + ")");
-        WorldServer var5 = this.mcServer.worldServerForDimension(par2EntityPlayerMP.dimension);
-        ChunkCoordinates var6 = var5.getSpawnPoint();
-        this.func_72381_a(par2EntityPlayerMP, (EntityPlayerMP)null, var5);
-        NetServerHandler var7 = new NetServerHandler(this.mcServer, par1INetworkManager, par2EntityPlayerMP);
-        var7.sendPacketToPlayer(new Packet1Login(par2EntityPlayerMP.entityId, var5.getWorldInfo().getTerrainType(), par2EntityPlayerMP.theItemInWorldManager.getGameType(), var5.getWorldInfo().isHardcoreModeEnabled(), var5.provider.dimensionId, var5.difficultySetting, var5.getHeight(), this.getMaxPlayers()));
-        var7.sendPacketToPlayer(new Packet6SpawnPosition(var6.posX, var6.posY, var6.posZ));
-        var7.sendPacketToPlayer(new Packet202PlayerAbilities(par2EntityPlayerMP.capabilities));
-        var7.sendPacketToPlayer(new Packet16BlockItemSwitch(par2EntityPlayerMP.inventory.currentItem));
-        this.func_96456_a((ServerScoreboard)var5.getScoreboard(), par2EntityPlayerMP);
-        this.updateTimeAndWeatherForPlayer(par2EntityPlayerMP, var5);
-        this.sendPacketToAllPlayers(new Packet3Chat(EnumChatFormatting.YELLOW + par2EntityPlayerMP.getTranslatedEntityName() + EnumChatFormatting.YELLOW + " joined the game."));
-        this.playerLoggedIn(par2EntityPlayerMP);
-        var7.setPlayerLocation(par2EntityPlayerMP.posX, par2EntityPlayerMP.posY, par2EntityPlayerMP.posZ, par2EntityPlayerMP.rotationYaw, par2EntityPlayerMP.rotationPitch);
-        this.mcServer.getNetworkThread().addPlayer(var7);
-        var7.sendPacketToPlayer(new Packet4UpdateTime(var5.getTotalWorldTime(), var5.getWorldTime()));
+        this.mcServer.getLogAgent().logInfo(player.username + "[" + socketAddress + "] logged in with entity id " + player.entityId + " at (" + player.posX + ", " + player.posY + ", " + player.posZ + ")");
+        WorldServer worldServer = this.mcServer.worldServerForDimension(player.dimension);
+        ChunkCoordinates spawnPoint = worldServer.getSpawnPoint();
+        this.func_72381_a(player, (EntityPlayerMP)null, worldServer);
+        NetServerHandler netServerHandler = new NetServerHandler(this.mcServer, networkManager, player);
+        netServerHandler.sendPacketToPlayer(new Packet1Login(player.entityId, worldServer.getWorldInfo().getTerrainType(), player.theItemInWorldManager.getGameType(), worldServer.getWorldInfo().isHardcoreModeEnabled(), worldServer.provider.dimensionId, worldServer.difficultySetting, worldServer.getHeight(), this.getMaxPlayers()));
+        netServerHandler.sendPacketToPlayer(new Packet6SpawnPosition(spawnPoint.posX, spawnPoint.posY, spawnPoint.posZ));
+        netServerHandler.sendPacketToPlayer(new Packet202PlayerAbilities(player.capabilities));
+        netServerHandler.sendPacketToPlayer(new Packet16BlockItemSwitch(player.inventory.currentItem));
+        this.func_96456_a((ServerScoreboard)worldServer.getScoreboard(), player);
+        this.updateTimeAndWeatherForPlayer(player, worldServer);
+        this.sendPacketToAllPlayers(new Packet3Chat(EnumChatFormatting.YELLOW + player.getTranslatedEntityName() + EnumChatFormatting.YELLOW + " joined the game."));
+        this.playerLoggedIn(player);
+        netServerHandler.setPlayerLocation(player.posX, player.posY, player.posZ, player.rotationYaw, player.rotationPitch);
+        this.mcServer.getNetworkThread().addPlayer(netServerHandler);
+        netServerHandler.sendPacketToPlayer(new Packet4UpdateTime(worldServer.getTotalWorldTime(), worldServer.getWorldTime()));
 
         if (this.mcServer.getTexturePack().length() > 0)
         {
-            par2EntityPlayerMP.requestTexturePackLoad(this.mcServer.getTexturePack(), this.mcServer.textureSize());
+            player.requestTexturePackLoad(this.mcServer.getTexturePack(), this.mcServer.textureSize());
         }
 
-        Iterator var8 = par2EntityPlayerMP.getActivePotionEffects().iterator();
+        Iterator potionIterator = player.getActivePotionEffects().iterator();
 
-        while (var8.hasNext())
+        while (potionIterator.hasNext())
         {
-            PotionEffect var9 = (PotionEffect)var8.next();
-            var7.sendPacketToPlayer(new Packet41EntityEffect(par2EntityPlayerMP.entityId, var9));
+            PotionEffect var9 = (PotionEffect)potionIterator.next();
+            netServerHandler.sendPacketToPlayer(new Packet41EntityEffect(player.entityId, var9));
         }
 
-        par2EntityPlayerMP.addSelfToInternalCraftingInventory();
+        player.addSelfToInternalCraftingInventory();
 
-        if (var3 != null && var3.hasKey("Riding"))
+        if (playerNBT != null && playerNBT.hasKey("Riding"))
         {
-            Entity var10 = EntityList.createEntityFromNBT(var3.getCompoundTag("Riding"), var5);
+            Entity riddenEntity = EntityList.createEntityFromNBT(playerNBT.getCompoundTag("Riding"), worldServer);
 
-            if (var10 != null)
+            if (riddenEntity != null)
             {
-                var10.field_98038_p = true;
-                var5.spawnEntityInWorld(var10);
-                par2EntityPlayerMP.mountEntity(var10);
-                var10.field_98038_p = false;
+                riddenEntity.field_98038_p = true;
+                worldServer.spawnEntityInWorld(riddenEntity);
+                player.mountEntity(riddenEntity);
+                riddenEntity.field_98038_p = false;
             }
         }
 
-        FCBetterThanWolves.ServerPlayerConnectionInitialized(var7, par2EntityPlayerMP);
-        AddonManager.ServerPlayerConnectionInitialized(var7, par2EntityPlayerMP);
+        FCBetterThanWolves.ServerPlayerConnectionInitialized(netServerHandler, player);
+        AddonManager.ServerPlayerConnectionInitialized(netServerHandler, player);
     }
 
     private void func_72381_a(EntityPlayerMP par1EntityPlayerMP, EntityPlayerMP par2EntityPlayerMP, World par3World)
@@ -89,10 +89,5 @@ public class AddonServerConfigurationManager extends ServerConfigurationManager 
         }
 
         par1EntityPlayerMP.theItemInWorldManager.initializeGameType(par3World.getWorldInfo().getGameType());
-    }
-
-    public void setGameType(EnumGameType par1EnumGameType)
-    {
-        this.gameType = par1EnumGameType;
     }
 }

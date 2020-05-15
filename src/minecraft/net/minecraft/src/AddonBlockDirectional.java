@@ -1,12 +1,21 @@
 package net.minecraft.src;
 
-public class AddonBlockBasalt extends Block {
-	public AddonBlockBasalt(int id) {
-		super(id, FCBetterThanWolves.fcMaterialNetherRock);
-		this.SetPicksEffectiveOn();
-		this.setCreativeTab(CreativeTabs.tabBlock);
-		this.setHardness(2.0F);
-		this.setHardness(10.0F);
+public class AddonBlockDirectional extends Block {
+	public String[] topTextures;
+	public String[] sideTextures;
+
+	protected AddonBlockDirectional(int par1, Material par2Material, String[] topTextures, String[] sideTextures) {
+		super(par1, par2Material);
+        this.topTextures = topTextures;
+        this.sideTextures = sideTextures;
+	}
+	@Override public boolean isOpaqueCube()
+	{
+		return true;
+	}
+	@Override public boolean renderAsNormalBlock()
+	{
+		return true;
 	}
 
 	@Override public int GetFacing(IBlockAccess access, int X, int Y, int Z)
@@ -24,6 +33,45 @@ public class AddonBlockBasalt extends Block {
 	@Override public int SetFacing(int var1, int var2)
 	{
 		return var2;
+	}
+	@Override public boolean CanRotateOnTurntable(IBlockAccess access, int X, int Y, int Z)
+	{
+		return access.getBlockMetadata(X,Y,Z)!=0;
+	}
+	@Override public boolean CanTransmitRotationHorizontallyOnTurntable(IBlockAccess access, int X, int Y, int Z)
+	{
+		return true;
+	}
+	@Override public boolean CanTransmitRotationVerticallyOnTurntable(IBlockAccess access, int X, int Y, int Z)
+	{
+		return true;
+	}
+
+    public int RotateMetadataAroundJAxis(int var1, boolean var2)
+    {
+        int var3 = var1 & 12;
+
+        if (var3 != 0)
+        {
+            if (var3 == 4)
+            {
+                var3 = 8;
+            }
+            else if (var3 == 8)
+            {
+                var3 = 4;
+            }
+
+            var1 = var1 & -13 | var3;
+        }
+
+        return var1;
+    }
+    
+	@Override public boolean ToggleFacing(World world, int X, int Y, int Z, boolean var5)
+	{
+		this.RotateAroundJAxis(world, X, Y, Z, var5);
+		return true;
 	}
 	@Override 
     /**
@@ -69,33 +117,10 @@ public class AddonBlockBasalt extends Block {
     {
         return par0 & 3;
     }
-
-    public int RotateMetadataAroundJAxis(int var1, boolean var2)
-    {
-        int var3 = var1 & 12;
-
-        if (var3 != 0)
-        {
-            if (var3 == 4)
-            {
-                var3 = 8;
-            }
-            else if (var3 == 8)
-            {
-                var3 = 4;
-            }
-
-            var1 = var1 & -13 | var3;
-        }
-
-        return var1;
-    }
     
-//CLIENT ONLY
-	public static String[] topTextures = {"ginger_basalt_top", "ginger_basaltSmooth_top"};
-	public static String[] sideTextures = {"ginger_basalt_side", "ginger_basaltSmooth_side"};
-	public static Icon[] topIcons;
-	public static Icon[] sideIcons;
+    //CLIENT ONLY
+	public Icon[] topIcons;
+	public Icon[] sideIcons;
 	
 	public Icon getIcon(int par1, int par2)
     {
@@ -105,10 +130,10 @@ public class AddonBlockBasalt extends Block {
     }
 	@Override public void registerIcons(IconRegister register)
 	{
-		topIcons = new Icon[2];
-		sideIcons = new Icon[2];
+		topIcons = new Icon[topTextures.length];
+		sideIcons = new Icon[topTextures.length];
 		
-		for (int i = 0; i < 2; i++) {
+		for (int i = 0; i < topTextures.length; i++) {
 			topIcons[i] = register.registerIcon(topTextures[i]);
 			sideIcons[i] = register.registerIcon(sideTextures[i]);
 		}

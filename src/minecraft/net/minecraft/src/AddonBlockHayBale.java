@@ -90,17 +90,11 @@ public class AddonBlockHayBale extends Block
 	@Override public void onBlockPlacedBy(World var1, int var2, int var3, int var4, EntityLiving var5, ItemStack var6)
 	{/*
 		int var7 = FCUtilsMisc.ConvertPlacingEntityOrientationToBlockFacing(var5);
-
 		if(var7<2)var7=0;
 		else if(var7<4)var7=1;
 		else var7=2;
 		this.SetFacing(var1, var2, var3, var4, var7);//*/
 	}
-
-    public boolean CanBePistonShoveled(World var1, int var2, int var3, int var4)
-    {
-        return true;
-    }
 //CLIENT ONLY
 	static Icon topIcon;
 	@Override public Icon getIcon(int side, int meta)

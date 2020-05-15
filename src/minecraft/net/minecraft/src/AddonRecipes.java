@@ -879,6 +879,12 @@ public class AddonRecipes {
 		FCRecipes.AddRecipe(new ItemStack(AddonDefs.buttonDiorite), new Object[] {"#", "r", '#', new ItemStack(AddonDefs.stoneTypesSidingAndCorner[2], 1, 1), 'r', Item.redstone});
 		FCRecipes.AddRecipe(new ItemStack(AddonDefs.buttonSandstone), new Object[] {"#", "r", '#', new ItemStack(FCBetterThanWolves.fcBlockSandstoneSidingAndCorner, 1, 1), 'r', Item.redstone});
 		FCRecipes.AddRecipe(new ItemStack(AddonDefs.buttonRedSandstone), new Object[] {"#", "r", '#', new ItemStack(AddonDefs.redSandStoneSidingAndCorner, 1, 1), 'r', Item.redstone});
+		
+		//Rope and chain
+       	FCRecipes.RemoveVanillaRecipe(new ItemStack(FCBetterThanWolves.fcAestheticOpaque, 1, 6), new Object[] {"###", "###", "###", '#', FCBetterThanWolves.fcItemRope});
+       	FCRecipes.AddShapelessRecipe(new ItemStack(AddonDefs.ropeCoil), new ItemStack[] {new ItemStack(FCBetterThanWolves.fcAestheticOpaque, 1, 6)});
+       	AddonManager.MakeStorage(FCBetterThanWolves.fcItemRope, AddonDefs.ropeCoil);
+       	AddonManager.MakeStorage(AddonDefs.chainItem, AddonDefs.chainCoil);
 	}
 
 	private void addMortarRecipes() {

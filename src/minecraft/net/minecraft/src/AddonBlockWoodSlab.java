@@ -33,7 +33,7 @@ public class AddonBlockWoodSlab extends FCBlockSlab
 	}
     
     public int damageDropped(int meta) {
-    	return meta;
+    	return meta % 8;
     }
 
 	@Override

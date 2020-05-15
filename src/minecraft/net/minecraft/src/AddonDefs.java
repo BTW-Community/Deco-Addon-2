@@ -156,6 +156,11 @@ public class AddonDefs {
 	id_flowerPot=3239,
 	id_pergola=3240,
 	id_barrelFilling=3241,
+	id_scaffolding=3242,
+	id_logDamagedBlood=3243,
+	id_logSpikeBlood=3244,
+	id_ropeCoil=3245,
+	id_chainCoil=3246,
 	
 	id_paintedPlanksSubStart=3248,
 	//end 3296
@@ -412,8 +417,8 @@ public class AddonDefs {
 
 	//Wood
 	public static Block strippedLog, barkLog, barkLogStripped, bloodLog, cherryLog, cherryStump;
-	public static Block logDamagedSpruce, logDamagedBirch, logDamagedJungle, logDamagedCherry;
-	public static Block logSpikeSpruce, logSpikeBirch, logSpikeJungle, logSpikeCherry;
+	public static Block logDamagedSpruce, logDamagedBirch, logDamagedJungle, logDamagedBlood, logDamagedCherry;
+	public static Block logSpikeSpruce, logSpikeBirch, logSpikeJungle, logSpikeBlood, logSpikeCherry;
 	public static BlockTrapDoor trapdoorSpruce, trapdoorBirch, trapdoorJungle, trapdoorBlood, trapdoorCherry;
 	public static BlockDoor doorSpruce, doorBirch, doorJungle, doorBlood, doorCherry;
 	public static FCItemDoor itemDoorSpruce, itemDoorBirch, itemDoorJungle, itemDoorBlood, itemDoorCherry;
@@ -425,6 +430,7 @@ public class AddonDefs {
 	public static Block barrelEmpty, barrelEmpty2, barrelFilling, barrelFullOak, barrelFullSpruce, barrelFullBirch, barrelFullJungle, barrelFullBlood, barrelFullCherry;
 	public static Block crate;
 	public static Block signSpruce, signSpruceWall, signBirch, signBirchWall, signJungle, signJungleWall, signBlood, signBloodWall, signCherry, signCherryWall;
+	public static Block scaffolding;
 	public static Item woodBleach, woodStain;
 
 	public static AddonBlockWoodSlab paintedPlanksSlab, paintedPlanksSlab2, woodSlab;
@@ -455,6 +461,7 @@ public class AddonDefs {
 	public static Block bonePillar;
 	public static Block buttonSpruce, buttonBirch, buttonJungle, buttonBlood, buttonCherry;
 	public static Block buttonInfusedStone, buttonGranite, buttonAndesite, buttonDiorite, buttonSandstone, buttonRedSandstone;
+	public static Block ropeCoil, chainCoil;
 
 	//Tools
 	public static AddonItemChiselDiamond chiselDiamond;
@@ -927,7 +934,11 @@ public class AddonDefs {
 		AddonManager.Register(magma, "Magma Block");
 
 		//Basalt
-		basalt = new AddonBlockBasalt(id_basalt);
+		basalt = new AddonBlockDirectional(id_basalt, FCBetterThanWolves.fcMaterialNetherRock, new String[] {"ginger_basalt_top", "ginger_basaltSmooth_top"}, new String[] {"ginger_basalt_side", "ginger_basaltSmooth_side"})
+				.SetPicksEffectiveOn()
+				.setCreativeTab(CreativeTabs.tabBlock)
+				.setHardness(2.0F)
+				.setHardness(10.0F);
 		AddonManager.Register(basalt, new String[] {"basalt", "basaltSmooth"}, new String[] {"Basalt", "Polished Basalt"});
 
 		//Infused stone
@@ -1119,6 +1130,7 @@ public class AddonDefs {
 		barkLogStripped = new AddonBlockLogBarkStripped(id_barkLogStripped);
 		Item.itemsList[barkLogStripped.blockID] = new AddonItemBlockLogStripped(barkLogStripped.blockID - 256, barkLogStripped, new String[] {"barkOakStripped", "barkSpruceStripped", "barkBirchStripped", "barkJungleStripped"});
 
+		FCBetterThanWolves.fcBloodWood = new AddonBlockLogBloodReplace(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBloodWood));
 		Item.itemsList[FCBetterThanWolves.fcBloodWood.blockID] = new AddonItemBlockBloodLogReplace(FCBetterThanWolves.fcBloodWood.blockID - 256);
 		AddonManager.Name(FCBetterThanWolves.fcBloodWood, "Blood Wood Log");
 		bloodLog = new AddonBlockLogBlood(id_bloodLog);
@@ -1142,22 +1154,26 @@ public class AddonDefs {
 		logDamagedSpruce = new AddonBlockLogDamaged(id_logDamagedSpruce, "ginger_strippedSpruceSide", "ginger_strippedSpruceTop", "ginger_trunkSpruceTop").setUnlocalizedName("chewedSpruce");
 		logDamagedBirch = new AddonBlockLogDamaged(id_logDamagedBirch, "ginger_strippedBirchSide", "ginger_strippedBirchTop", "ginger_trunkBirchTop").setUnlocalizedName("chewedBirch");
 		logDamagedJungle = new AddonBlockLogDamaged(id_logDamagedJungle, "ginger_strippedJungleSide", "ginger_strippedJungleTop", "ginger_trunkJungleTop").setUnlocalizedName("chewedJungle");
+		logDamagedBlood = new AddonBlockLogDamaged(id_logDamagedBlood, "ginger_strippedBloodSide", "ginger_strippedBloodTop", "ginger_trunkJungleTop").setUnlocalizedName("chewedBlood");
 		logDamagedCherry = new AddonBlockLogDamaged(id_logDamagedCherry, "ginger_strippedCherrySide", "ginger_strippedCherryTop", "ginger_trunkCherryTop").setUnlocalizedName("chewedCherry");
 		AddonManager.Name(FCBetterThanWolves.fcBlockLogDamaged, "Chewed Oak Log");
 		AddonManager.Register(logDamagedSpruce, "Chewed Spruce Log");
 		AddonManager.Register(logDamagedBirch, "Chewed Birch Log");
 		AddonManager.Register(logDamagedJungle, "Chewed Jungle Log");
+		AddonManager.Register(logDamagedBlood, "Chewed Blood Wood Log");
 		AddonManager.Register(logDamagedCherry, "Chewed Cherry Log");
 
 		FCBetterThanWolves.fcBlockLogSpike = (FCBlockLogSpike) new AddonBlockLogSpike(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockLogSpike), "ginger_strippedOakSide", "ginger_strippedOakTop").setUnlocalizedName("oakSpike");
 		logSpikeSpruce = new AddonBlockLogSpike(id_logSpikeSpruce, "ginger_strippedSpruceSide", "ginger_strippedSpruceTop").setUnlocalizedName("spruceSpike");
 		logSpikeBirch = new AddonBlockLogSpike(id_logSpikeBirch, "ginger_strippedBirchSide", "ginger_strippedBirchTop").setUnlocalizedName("birchSpike");
 		logSpikeJungle = new AddonBlockLogSpike(id_logSpikeJungle, "ginger_strippedJungleSide", "ginger_strippedJungleTop").setUnlocalizedName("jungleSpike");
+		logSpikeBlood = new AddonBlockLogSpike(id_logSpikeBlood, "ginger_strippedBloodSide", "ginger_strippedBloodTop").setUnlocalizedName("bloodSpike");
 		logSpikeCherry = new AddonBlockLogSpike(id_logSpikeCherry, "ginger_strippedCherrySide", "ginger_strippedCherryTop").setUnlocalizedName("cherrySpike");
 		AddonManager.Name(FCBetterThanWolves.fcBlockLogSpike, "Oak Log Spike");
 		AddonManager.Register(logSpikeSpruce, "Spruce Log Spike");
 		AddonManager.Register(logSpikeBirch, "Birch Log Spike");
 		AddonManager.Register(logSpikeJungle, "Jungle Log Spike");
+		AddonManager.Register(logSpikeBlood, "Blood Wood Log Spike");
 		AddonManager.Register(logSpikeCherry, "Cherry Log Spike");
 
 		//Planks
@@ -1545,7 +1561,13 @@ public class AddonDefs {
 		FCBetterThanWolves.fcBlockFireStoked = new AddonBlockFireStoked(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockFireStoked));
 
 		//Bone pillar
-		bonePillar = new AddonBlockBonePillar(id_bonePillar);
+		bonePillar = new AddonBlockDirectional(id_bonePillar, FCBetterThanWolves.fcMaterialMiscellaneous, new String[] {"ginger_bonePillar_top"}, new String[] {"ginger_bonePillar_side"})
+				.setHardness(2.0F)
+				.SetPicksEffectiveOn()
+				.SetBuoyancy(1.0F)
+				.setStepSound(Block.soundStoneFootstep)
+				.setCreativeTab(CreativeTabs.tabBlock)
+				.setUnlocalizedName("bonePillar");
 		AddonManager.Register(bonePillar, "Bone Pillar");
 
 		//Ender Pearl
@@ -1658,6 +1680,30 @@ public class AddonDefs {
 		FCBetterThanWolves.fcBlockGrate = new AddonBlockGrate(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockGrate));
 		FCBetterThanWolves.fcBlockWickerPane = new AddonBlockWickerPane(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockWickerPane));
 		FCBetterThanWolves.fcBlockSlats = new AddonBlockSlats(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockSlats));
+		
+		//Rope
+		ropeCoil = new AddonBlockDirectional(id_ropeCoil, FCBetterThanWolves.fcMaterialMiscellaneous, new String[] {"fcBlockRope_top"}, new String[] {"fcBlockRope_side"})
+		        .setHardness(2.0F)
+		        .SetAxesEffectiveOn(true)
+		        .setStepSound(Block.soundWoodFootstep)
+		        .setCreativeTab(CreativeTabs.tabBlock)
+		        .setUnlocalizedName("ropeCoil");
+		AddonManager.Register(ropeCoil, "Coil of Rope");
+		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcAestheticOpaque, 1, 6), "Old Coil of Rope");
+		
+		//Chain
+		chainCoil = new AddonBlockDirectional(id_chainCoil, Material.iron, new String[] {"ginger_chainCoil_top"}, new String[] {"ginger_chainCoil_side"})
+		        .setHardness(2.0F)
+		        .SetPicksEffectiveOn(true)
+		        .setStepSound(Block.soundMetalFootstep)
+		        .setCreativeTab(CreativeTabs.tabBlock)
+		        .setUnlocalizedName("chainCoil");
+		AddonManager.Register(ropeCoil, "Coil of Rope");
+		AddonManager.Register(chainCoil, "Coil of Chain");
+		
+		//Scaffolding
+		//scaffolding = new AddonBlockScaffolding(id_scaffolding);
+		//AddonManager.Register(scaffolding, "Scaffolding");
 	}
 
 	private void addToolDefs() {
@@ -1711,5 +1757,6 @@ public class AddonDefs {
 
 	private void addEntityDefs() {
 		AddonManager.ReplaceSpawnableEntity("Squid", FCEntitySquid.class, AddonEntitySquid.class);
+		AddonManager.ReplaceSpawnableEntity("Ozelot", FCEntityOcelot.class, EntityOcelot.class);
 	}
 }

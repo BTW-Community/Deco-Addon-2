@@ -95,7 +95,7 @@ public class AddonTileEntityFlowerPot extends TileEntity implements FCITileEntit
 			return;
 		
 		if (!player.capabilities.isCreativeMode)
-			player.inventory.addItemStackToInventory(new ItemStack(Item.itemsList[currentBlockID], 1, currentBlockMetadata));
+            FCUtilsItem.GivePlayerStackOrEjectFavorEmptyHand(player, new ItemStack(Item.itemsList[currentBlockID], 1, currentBlockMetadata), this.xCoord, this.yCoord, this.zCoord);
 		
 		hasItem = false;
 		currentBlockID = 0;

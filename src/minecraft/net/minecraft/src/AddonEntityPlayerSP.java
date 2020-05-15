@@ -11,13 +11,7 @@ public class AddonEntityPlayerSP extends EntityPlayerSP {
     public void updateEntityActionState()
     {
         super.updateEntityActionState();
-        this.moveStrafing = this.movementInput.moveStrafe;
-        this.moveForward = this.movementInput.moveForward;
         this.isJumping = this.movementInput.jump && !this.isClimbingFreestandingLadder();
-        this.prevRenderArmYaw = this.renderArmYaw;
-        this.prevRenderArmPitch = this.renderArmPitch;
-        this.renderArmPitch = (float)((double)this.renderArmPitch + (double)(this.rotationPitch - this.renderArmPitch) * 0.5D);
-        this.renderArmYaw = (float)((double)this.renderArmYaw + (double)(this.rotationYaw - this.renderArmYaw) * 0.5D);
     }
 
     /**
@@ -26,7 +20,6 @@ public class AddonEntityPlayerSP extends EntityPlayerSP {
      */
     public void onLivingUpdate()
     {
-
         if (this.mc.playerController.enableEverythingIsScrewedUpMode())
         {
             this.posX = this.posZ = 0.5D;

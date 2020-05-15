@@ -14,6 +14,7 @@ public class AddonBlockPergola extends Block {
 		this.setCreativeTab(CreativeTabs.tabDecorations);
 		this.InitBlockBounds(this.GetBlockBoundsFromPool());
 		this.setUnlocalizedName("pergola");
+		this.InitBlockBounds(0, 0, 0, 1, ((AddonModelBlockPergola) blockModel).blockHeight, 1);
 	}
 
     /**

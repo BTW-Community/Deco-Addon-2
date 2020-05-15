@@ -76,7 +76,7 @@ public class AddonBlockStep extends FCBlockSlab
     }
     
     public int damageDropped(int meta) {
-    	return meta;
+    	return meta % 8;
     }
 
 	/**

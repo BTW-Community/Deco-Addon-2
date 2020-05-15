@@ -61,7 +61,9 @@ public class AddonUtilsBlock {
 				blockAbove instanceof FCBlockSpike ||
 				blockAbove instanceof BlockSkull ||
 				blockAbove instanceof FCBlockSidingAndCorner ||
-				blockAbove instanceof FCBlockMoulding)
+				blockAbove instanceof FCBlockMoulding ||
+				blockAbove instanceof FCBlockLogSpike ||
+				blockAbove instanceof FCBlockLogDamaged)
 			return true;
 		else
 			return false;
@@ -70,7 +72,8 @@ public class AddonUtilsBlock {
 	public static boolean getWallConnectionAboveException(IBlockAccess blockAccess, int x, int y, int z, Block blockAbove) {
 		int meta = blockAccess.getBlockMetadata(x, y, z);
 		
-		if (blockAbove instanceof BlockTrapDoor) {
+		if (blockAbove instanceof BlockTrapDoor ||
+				blockAbove instanceof FCBlockLogDamaged) {
 			return meta < 4;
 		}
 		else if (blockAbove instanceof FCBlockSlab) {
@@ -86,7 +89,8 @@ public class AddonUtilsBlock {
 		}
 		else if (blockAbove instanceof AddonBlockLantern ||
 				blockAbove instanceof FCBlockStake ||
-				blockAbove instanceof BlockSkull) {
+				blockAbove instanceof BlockSkull ||
+				blockAbove instanceof FCBlockLogSpike) {
 			return meta == 1;
 		}
 		else if (blockAbove instanceof FCBlockTorchBase) {
@@ -244,6 +248,8 @@ public class AddonUtilsBlock {
 			return AddonDefs.logSpikeBirch.blockID;
 		else if (id == AddonDefs.logDamagedJungle.blockID)
 			return AddonDefs.logSpikeJungle.blockID;
+		else if (id == AddonDefs.logDamagedBlood.blockID)
+			return AddonDefs.logSpikeBlood.blockID;
 		else
 			return AddonDefs.logSpikeCherry.blockID;
 	}
