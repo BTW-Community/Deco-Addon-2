@@ -748,6 +748,8 @@ public class AddonRecipes {
 
 		FCRecipes.AddShapelessRecipe(new ItemStack(FCBetterThanWolves.fcItemWheat, 9), new ItemStack[]{new ItemStack(AddonDefs.hayBale)});
 		FCRecipes.AddRecipe(new ItemStack(AddonDefs.hayBaleStairs, 8), new Object[] {"X  ", "XX ", "XXX", 'X', AddonDefs.hayBale});
+		FCRecipes.AddShapelessRecipe(new ItemStack(FCBetterThanWolves.fcItemStraw, 9), new ItemStack[]{new ItemStack(AddonDefs.thatch)});
+		FCRecipes.AddRecipe(new ItemStack(AddonDefs.thatchStairs, 8), new Object[] {"X  ", "XX ", "XXX", 'X', AddonDefs.thatch});
 
 		//Lanterns
 		FCRecipes.AddRecipe(new ItemStack(AddonDefs.paperWall, 4), new Object[] { "ppp", "pwp", "ppp", 'p', Item.paper, 'w', new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, 32767) });
@@ -882,7 +884,6 @@ public class AddonRecipes {
 		
 		//Rope and chain
        	FCRecipes.RemoveVanillaRecipe(new ItemStack(FCBetterThanWolves.fcAestheticOpaque, 1, 6), new Object[] {"###", "###", "###", '#', FCBetterThanWolves.fcItemRope});
-       	FCRecipes.AddShapelessRecipe(new ItemStack(AddonDefs.ropeCoil), new ItemStack[] {new ItemStack(FCBetterThanWolves.fcAestheticOpaque, 1, 6)});
        	AddonManager.MakeStorage(FCBetterThanWolves.fcItemRope, AddonDefs.ropeCoil);
        	AddonManager.MakeStorage(AddonDefs.chainItem, AddonDefs.chainCoil);
 	}

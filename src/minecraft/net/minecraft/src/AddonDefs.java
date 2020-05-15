@@ -1317,6 +1317,8 @@ public class AddonDefs {
 		itemDoorCherry = new AddonItemDoor(id_itemDoorCherry, "ginger_doorCherryItem", "Cherry Door", doorCherry);
 
 		//Fence gates
+		BlockFenceGate gateOak = new AddonBlockFenceGate(AddonManager.ReplaceBlockID(Block.fenceGate), "wood");
+		AddonManager.SetVanillaBlockFinal("fenceGate", Block.fenceGate, gateOak);
 		AddonManager.Name(Block.fenceGate, "Oak Fence Gate");
 
 		gateSpruce = (BlockFenceGate) new AddonBlockFenceGate(id_gateSpruce, "ginger_gateSpruce");
@@ -1700,6 +1702,11 @@ public class AddonDefs {
 		        .setUnlocalizedName("chainCoil");
 		AddonManager.Register(ropeCoil, "Coil of Rope");
 		AddonManager.Register(chainCoil, "Coil of Chain");
+		
+		//Cocoa
+		FCBetterThanWolves.fcItemCocoaBeans = new AddonItemCocoaBeans(FCBetterThanWolves.fcItemCocoaBeans.itemID - 256);
+		Block cocoaPlant = new AddonBlockCocoa(AddonManager.ReplaceBlockID(Block.cocoaPlant));
+		AddonManager.SetVanillaBlockFinal("cocoaPlant", Block.cocoaPlant, cocoaPlant);
 		
 		//Scaffolding
 		//scaffolding = new AddonBlockScaffolding(id_scaffolding);

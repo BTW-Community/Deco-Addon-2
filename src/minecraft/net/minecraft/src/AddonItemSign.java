@@ -26,8 +26,6 @@ public class AddonItemSign extends Item
      */
     public boolean onItemUse(ItemStack itemStack, EntityPlayer player, World world, int x, int y, int z, int side, float par8, float par9, float par10)
     {
-		world.playSound(x, y, z, "dig.wood", 1.0F, .75F);
-	    
         if (side == 0)
         {
             return false;
@@ -38,6 +36,8 @@ public class AddonItemSign extends Item
         }
         else
         {
+    		world.playSound(x, y, z, "dig.wood", 1.0F, .75F);
+    		
             if (side == 1)
             {
                 ++y;

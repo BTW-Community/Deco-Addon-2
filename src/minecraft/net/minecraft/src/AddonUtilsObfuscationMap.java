@@ -32,6 +32,8 @@ public class AddonUtilsObfuscationMap {
 		blockMap.put("fire", "av");
 		blockMap.put("stoneButton", "aV");
 		blockMap.put("woodenButton", "cH");
+		blockMap.put("fenceGate", "bz");
+		blockMap.put("cocoaPlant", "bT");
 		
 		itemMap.put("enderPearl", "bo");
 		itemMap.put("sign", "av");

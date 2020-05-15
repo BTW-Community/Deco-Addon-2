@@ -30,6 +30,14 @@ public class AddonBlockMagma extends Block {
 	}
 
     /**
+     * Triggered whenever an entity collides with this block (enters into the block). Args: world, x, y, z, entity
+     */
+    public void onEntityCollidedWithBlock(World par1World, int par2, int par3, int par4, Entity par5Entity)
+    {
+        par5Entity.attackEntityFrom(DamageSource.inFire, 1);
+    }
+
+    /**
      * Ticks the block if it's been scheduled
      */
     public void updateTick(World world, int x, int y, int z, Random rand)
