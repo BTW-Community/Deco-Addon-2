@@ -1765,5 +1765,6 @@ public class AddonDefs {
 	private void addEntityDefs() {
 		AddonManager.ReplaceSpawnableEntity("Squid", FCEntitySquid.class, AddonEntitySquid.class);
 		AddonManager.ReplaceSpawnableEntity("Ozelot", FCEntityOcelot.class, EntityOcelot.class);
+		EntityList.AddMapping(AddonEntityFallingConcrete.class, "fallingConcrete", 3000);
 	}
 }
