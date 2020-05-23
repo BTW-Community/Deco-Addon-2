@@ -283,10 +283,6 @@ public class AddonBlockWall extends FCBlockWall {
 			canPaneAboveConnectToFacing = AddonUtilsBlock.canPaneConnect(blockAccess, x, y, z, facing, blockAbove);
 		}
 		
-		if (AddonUtilsBlock.isWall(idAbove, metaAbove)) {
-			return CanConnectToBlockToFacing(blockAccess, x, y + 1, z, facing);
-		}
-		
 		//Gets coordinates for block in facing direction
 		FCUtilsBlockPos blockPos = new FCUtilsBlockPos(x, y, z);
 		blockPos.AddFacingAsOffset(facing);
@@ -302,9 +298,15 @@ public class AddonBlockWall extends FCBlockWall {
 		Block blockAboveOffset = Block.blocksList[idAboveOffset];
 		boolean solidSurfaceOffset = blockAboveOffset == null ? false : blockAboveOffset.HasLargeCenterHardPointToFacing(blockAccess, blockPos.i, blockPos.j + 1, blockPos.k, 0);
 		boolean paneAboveOffset = blockAboveOffset instanceof BlockPane;
+		
+		if (AddonUtilsBlock.isWall(idAbove, metaAbove) && !solidSurfaceOffset) {
+			return CanConnectToBlockToFacing(blockAccess, x, y + 1, z, facing);
+		}
 
-		//Both parts of connection need to satisfy requirements for a full height wall
-		return (AddonUtilsBlock.isWall(idAboveOffset, metaAboveOffset) || solidSurfaceOffset || (solidSide && (!paneAbove || canPaneAboveConnectToFacing)) || paneAboveOffset) && (AddonUtilsBlock.isWall(idAbove, metaAbove) || solidSurface || (paneAbove && canPaneAboveConnectToFacing)) || paneToSide;
+		//Both parts of connection need to satisfy requirements for a full height wall, or the wall needs to be connecting to a pane
+		return (AddonUtilsBlock.isWall(idAboveOffset, metaAboveOffset) || solidSurfaceOffset || (solidSide && (!paneAbove || canPaneAboveConnectToFacing)) || paneAboveOffset) //Checks offsets
+				&& (AddonUtilsBlock.isWall(idAbove, metaAbove) || solidSurface || (paneAbove && canPaneAboveConnectToFacing)) //Checks block above
+				|| paneToSide;
 	}
 
 	public void onNeighborBlockChange(World world, int x, int y, int z, int neighborID) {

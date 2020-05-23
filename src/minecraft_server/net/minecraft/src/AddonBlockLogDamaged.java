@@ -23,6 +23,93 @@ public class AddonBlockLogDamaged extends FCBlockLogDamaged {
 	}
 
     /**
+     * ejects contained items into the world, and notifies neighbours of an update, as appropriate
+     */
+    public void breakBlock(World var1, int var2, int var3, int var4, int var5, int var6)
+    {
+    	if (this.blockID == AddonDefs.logDamagedBlood.blockID)
+    		var1.playAuxSFX(2225, var2, var3, var4, 0);
+        super.breakBlock(var1, var2, var3, var4, var5, var6);
+    }
+
+    public boolean ConvertBlock(ItemStack var1, World var2, int var3, int var4, int var5, int var6)
+    {
+    	if (this.blockID == AddonDefs.logDamagedBlood.blockID)
+    		var2.playAuxSFX(2225, var3, var4, var5, 0);
+    	
+        int var7 = var2.getBlockMetadata(var3, var4, var5);
+        int var8 = this.GetDamageLevel(var7);
+
+        if (var8 >= 3)
+        {
+            if (!var2.isRemote)
+            {
+                if (GetIsStump(var7))
+                {
+                    FCUtilsItem.DropStackAsIfBlockHarvested(var2, var3, var4, var5, new ItemStack(FCBetterThanWolves.fcItemSawDust, 1));
+                }
+                
+                if (this.blockID == AddonDefs.logDamagedBlood.blockID)
+                	FCUtilsItem.DropStackAsIfBlockHarvested(var2, var3, var4, var5, new ItemStack(FCBetterThanWolves.fcItemSoulDust, 1));
+                else
+                	FCUtilsItem.DropStackAsIfBlockHarvested(var2, var3, var4, var5, new ItemStack(FCBetterThanWolves.fcItemSawDust, 1));
+            }
+
+            return false;
+        }
+        else
+        {
+            ++var8;
+            this.SetDamageLevel(var2, var3, var4, var5, var8);
+
+            if (!var2.isRemote)
+            {
+                if (GetIsStump(var7))
+                {
+                    FCUtilsItem.EjectStackFromBlockTowardsFacing(var2, var3, var4, var5, new ItemStack(FCBetterThanWolves.fcItemSawDust, 1), var6);
+                    
+                    if (this.blockID == AddonDefs.logDamagedBlood.blockID)
+                        FCUtilsItem.EjectStackFromBlockTowardsFacing(var2, var3, var4, var5, new ItemStack(FCBetterThanWolves.fcItemSoulDust, 1), var6);
+                    else
+                        FCUtilsItem.EjectStackFromBlockTowardsFacing(var2, var3, var4, var5, new ItemStack(FCBetterThanWolves.fcItemSawDust, 1), var6);
+                }
+                else if (var8 != 1 && var8 != 3)
+                {
+                    if (this.blockID == AddonDefs.logDamagedBlood.blockID)
+                        FCUtilsItem.EjectStackFromBlockTowardsFacing(var2, var3, var4, var5, new ItemStack(FCBetterThanWolves.fcItemSoulDust, 1), var6);
+                    else
+                        FCUtilsItem.EjectStackFromBlockTowardsFacing(var2, var3, var4, var5, new ItemStack(FCBetterThanWolves.fcItemSawDust, 1), var6);
+                }
+                else
+                {
+                    var2.playAuxSFX(2268, var3, var4, var5, 0);
+                    FCUtilsItem.EjectStackFromBlockTowardsFacing(var2, var3, var4, var5, new ItemStack(Item.stick, 1), var6);
+                }
+            }
+
+            return true;
+        }
+    }
+
+    /**
+     * Called upon the block being destroyed by an explosion
+     */
+    public void onBlockDestroyedByExplosion(World var1, int var2, int var3, int var4, Explosion var5)
+    {
+        float var6 = 1.0F;
+
+        if (var5 != null)
+        {
+            var6 = 1.0F / var5.explosionSize;
+        }
+
+        if (this.blockID == AddonDefs.logDamagedBlood.blockID)
+        	this.DropItemsIndividualy(var1, var2, var3, var4, FCBetterThanWolves.fcItemSoulDust.itemID, 1, 0, var6);
+        else
+            this.DropItemsIndividualy(var1, var2, var3, var4, FCBetterThanWolves.fcItemSawDust.itemID, 1, 0, var6);
+    }
+
+    /**
      * Lets the block know when one of its neighbor changes. Doesn't know which neighbor changed (coordinates passed are
      * their own) Args: x, y, z, neighbor blockID
      */
@@ -221,8 +308,8 @@ public class AddonBlockLogDamaged extends FCBlockLogDamaged {
     {
         int var7 = var2.getBlockId(var3, var4, var5);
         return var7 != this.blockID ? (var7 == FCBetterThanWolves.fcBlockLogSpike.blockID ? FCBetterThanWolves.fcBlockLogSpike.GetFacing(var2, var3, var4, var5) == Block.GetOppositeFacing(var6) : 
-        	(var7 == Block.wood.blockID || var7 == AddonDefs.barkLog.blockID || var7 == AddonDefs.barkLogStripped.blockID || var7 == AddonDefs.strippedLog.blockID || var7 == AddonDefs.cherryLog.blockID || var7 == AddonDefs.cherryStump.blockID || 
-        	var7 == FCBetterThanWolves.fcBlockLogDamaged.blockID || var7 == AddonDefs.logDamagedSpruce.blockID || var7 == AddonDefs.logDamagedBirch.blockID || var7 == AddonDefs.logDamagedJungle.blockID || var7 == AddonDefs.logDamagedCherry.blockID)) : 
+        	(var7 == Block.wood.blockID || var7 == AddonDefs.barkLog.blockID || var7 == AddonDefs.barkLogStripped.blockID || var7 == AddonDefs.strippedLog.blockID || var7 == AddonDefs.cherryLog.blockID || var7 == FCBetterThanWolves.fcBloodWood.blockID || var7 == AddonDefs.bloodLog.blockID || var7 == AddonDefs.cherryStump.blockID || 
+        	var7 == FCBetterThanWolves.fcBlockLogDamaged.blockID || var7 == AddonDefs.logDamagedSpruce.blockID || var7 == AddonDefs.logDamagedBirch.blockID || var7 == AddonDefs.logDamagedJungle.blockID || var7 == AddonDefs.logDamagedBlood.blockID || var7 == AddonDefs.logDamagedCherry.blockID)) : 
         		this.GetDamageLevel(var2, var3, var4, var5) == 0 && var1 == this.GetOrientation(var2, var3, var4, var5);
     }
 }

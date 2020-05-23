@@ -7,299 +7,320 @@ public class AddonDefs {
 	public static final AddonDefs instance = new AddonDefs();
 
 	private static final int
-	id_paperWall=3000,
-	id_fenceSteel=3001,
-	id_flower=3002,
-	id_glassStained=3003,
-	id_glassPaneStained=3004,
-	id_coalBlock=3005,
-	id_tulip=3006,
-	id_blockDiamondium=3007,
-	id_whiteStoneBrick=3008,
-	id_whiteBrickSidingAndCorner=3009,
-	id_whiteBrickMouldingAndDecorative=3010,
-	id_whiteBrickStairs=3011,
-	id_polishedStone=3012,
-	id_polishedStoneStairs=3013,
-	id_polishedStoneSidingAndCorner=3014,
-	id_polishedStoneMouldingAndDecorative=3015,
-	id_bonePillar=3016,
-
-	id_concrete=3018,
-	id_concretePowder=3019,
-	id_netherCoalBlock=3020,
-	id_cherrySapling=3021,
-	id_cherryLeaves=3022,
-	id_thatch=3023,
-	id_thatchStairs=3024,
-	id_hayBale=3025,
-	id_hayBaleStairs=3026,
-	id_lanternPaper=3027,
-	id_chandelier=3028,
-	id_lanternSteel=3029,
-	id_chain=3030,
-	id_logSpikeSpruce=3031,
-	id_logSpikeBirch=3032,
-	id_logSpikeJungle=3033,
-	id_logSpikeCherry=3034,
-	id_cherryWoodChair=3035,
-	id_oakWoodChair=3036,
-	id_spruceWoodChair=3037,
-	id_birchWoodChair=3038,
-	id_jungleWoodChair=3039,
-	id_bloodWoodChair=3040,
-	id_paintedPlanksSlab=3041,
-	id_paintedPlanksSlab2=3042,
-	id_woodSlab=3043,
-	id_terracotta=3044,
-	id_stainedTerracotta=3045,
-	id_unfiredTerracotta=3046,
-	id_clay_sub_start=3049,
-	//end 3099
-	id_stoneType=3100,
-	id_stoneTypeCobble=3101,
-	id_graniteCobbleLoose=3102,
-	id_andesiteCobbleLoose=3103,
-	id_dioriteCobbleLoose=3104,
-	id_stoneTypeStoneBrick=3105,
-	id_graniteStoneBrickLoose=3106,
-	id_andesiteStoneBrickLoose=3107,
-	id_dioriteStoneBrickLoose=3108,
-	id_stoneTypeSmooth=3109,
-	id_stoneSlab=3110,
-	id_cobblestoneSidingAndCorner=3111,
-	id_cobblestoneMouldingAndDecorative=3112,
-	id_mossyCobblestoneSidingAndCorner=3113,
-	id_mossyCobblestoneMouldingAndDecorative=3114,
-	id_mossyCobblestoneStairs=3115,
-	id_stoneSlab2=3116,
-	id_stoneSlab3=3117,
-	id_netherBrick=3118,
-	id_netherBrickLoose=3119,
-	id_infusedStone=3120,
-	id_basalt=3121,
-	id_netherBrickStairs=3122,
-	id_netherBrickSidingAndCorner=3123,
-	id_netherBrickMouldingAndDecorative=3124,
-	id_infusedStoneStairs=3125,
-	id_infusedStoneSidingAndCorner=3126,
-	id_infusedStoneMouldingAndDecorative=3127,
-	id_infusedStoneSmoothStairs=3128,
-	id_infusedStoneSmoothSidingAndCorner=3129,
-	id_infusedStoneSmoothMouldingAndDecorative=3130,
-	id_infusedStoneBrickStairs=3131,
-	id_infusedStoneBrickSidingAndCorner=3132,
-	id_infusedStoneBrickMouldingAndDecorative=3133,
-	id_glazedTerracottaStart=3134,
-	//end 3149
-	id_stoneTypeSubStart=3150,
-	//end 3158
-	id_stoneTypeSmoothSubStart=3159,
-	//end 3167
-	id_stoneTypeCobbleSubStart=3168,
-	//end 3176
-	id_stoneTypeBrickSubStart=3177,
-	//end 3185
-	id_graniteCobbleLooseStairs=3186,
-	id_andesiteCobbleLooseStairs=3187,
-	id_dioriteCobbleLooseStairs=3188,
-	id_graniteStoneBrickLooseStairs=3189,
-	id_andesiteStoneBrickLooseStairs=3190,
-	id_dioriteStoneBrickLooseStairs=3191,
-	id_stoneTypeLooseSlab=3192,
-	id_netherBrickLooseStairs=3193,
-	id_netherBrickLooseSlab=3194,
-	id_netherrackSuperheated=3195,
-	id_magma=3196,
-	id_netherBrickSuperheated=3197,
-	id_stoneSlab4=3198,
-	id_stoneSlab5=3199,
-	id_strippedLog=3200,
-	id_barkLog=3201,
-	id_barkLogStripped=3202,
-	id_bloodLog=3203,
-	id_cherryLog=3204,
-	id_cherryStump=3205,
-	id_logDamagedSpruce=3206,
-	id_logDamagedBirch=3207,
-	id_logDamagedJungle=3208,
-	id_logDamagedCherry=3209,
-	id_workbench=3210,
-	id_barrelEmpty2=3211,
-	id_barrelFullBlood=3212,
-	id_barrelFullCherry=3213,
-	id_cherryStairs=3214,
-	id_cherrySidingAndCorner=3215,
-	id_cherryMouldingAndDecorative=3216,
-	id_gateCherry=3217,
-	id_doorCherry=3218,
-	id_trapdoorCherry=3219,
-	id_trapdoorSpruce=3220,
-	id_trapdoorBirch=3221,
-	id_trapdoorJungle=3222,
-	id_trapdoorBlood=3223,
-	id_doorSpruce=3224,
-	id_doorBirch=3225,
-	id_doorJungle=3226,
-	id_doorBlood=3227,
-	id_gateSpruce=3228,
-	id_gateBirch=3229,
-	id_gateJungle=3230,
-	id_gateBlood=3231,
-	id_planksPainted=3232,
-	id_barrelEmpty=3233,
-	id_barrelFullOak=3234,
-	id_barrelFullSpruce=3235,
-	id_barrelFullBirch=3236,
-	id_barrelFullJungle=3237,
-	id_crate=3238,
-
-	id_pergola=3240,
-
-	id_paintedPlanksSubStart=3248,
-	//end 3296
-
-	id_coarseDirt=3300,
-	id_coarseDirtSlab=3301,
-	id_podzol=3302,
-	id_podzolSlab=3303,
-	id_hedge=3304,
-	id_pumpkin=3305,
-	id_pumpkinLit=3306,
-
-	id_redSand=3310,
-	id_redSandSlab=3311,
-	id_redSandstone=3312,
-	id_redSandstoneSlab=3313,
-	id_redSandstoneStairs=3314,
-	id_redSandstoneSidingAndCorner=3315,
-	id_redSandstoneMouldingAndDecorative=3316,
-	id_redSandstoneSmoothSidingAndCorner=3317,
-	id_redSandstoneSmoothMouldingAndDecorative=3318,
-	id_sandstoneSmoothSidingAndCorner=3319,
-	id_sandstoneSmoothMouldingAndDecorative=3320,
-	id_prismarine=3321,
-	id_prismarineLantern=3322,
-	id_prismarineSidingAndCorner=3323,
-	id_prismarineMouldingAndDecorative=3324,
-	id_prismarineStairs=3325,
-	id_prismarineBrickSidingAndCorner=3326,
-	id_prismarineBrickMouldingAndDecorative=3327,
-	id_prismarineBrickStairs=3328,
-	id_prismarineDarkSidingAndCorner=3329,
-	id_prismarineDarkMouldingAndDecorative=3330,
-	id_prismarineDarkStairs=3331,
-	id_carpet=3332,
-	id_polishedSandstoneStairs=3333,
-	id_polishedSandstoneSidingAndCorner=3334,
-	id_polishedSandstoneMouldingAndDecorative=3335,
-	id_polishedRedSandstoneStairs=3336,
-	id_polishedRedSandstoneSidingAndCorner=3337,
-	id_polishedRedSandstoneMouldingAndDecorative=3338,
-	id_sandstoneBrickStairs=3339,
-	id_sandstoneBrickSidingAndCorner=3340,
-	id_sandstoneBrickMouldingAndDecorative=3341,
-	id_redSandstoneBrickStairs=3342,
-	id_redSandstoneBrickSidingAndCorner=3343,
-	id_redSandstoneBrickMouldingAndDecorative=3344,
-	id_sandstoneSmoothStairs=3345,
-	id_redSandstoneSmoothStairs=3346,
-	id_sandstoneMossyStairs=3347,
-	id_sandstoneMossySidingAndCorner=3348,
-	id_sandstoneMossyMouldingAndDecorative=3349,
-	id_sandstoneBrickLargeStairs=3350,
-	id_sandstoneBrickLargeSidingAndCorner=3351,
-	id_sandstoneBrickLargeMouldingAndDecorative=3352,
-	id_sandstoneBrickLargeMossyStairs=3353,
-	id_sandstoneBrickLargeMossySidingAndCorner=3354,
-	id_sandstoneBrickLargeMossyMouldingAndDecorative=3355,
-	id_redSandstoneMossyStairs=3356,
-	id_redSandstoneMossySidingAndCorner=3357,
-	id_redSandstoneMossyMouldingAndDecorative=3358,
-	id_redSandstoneBrickLargeStairs=3359,
-	id_redSandstoneBrickLargeSidingAndCorner=3360,
-	id_redSandstoneBrickLargeMouldingAndDecorative=3361,
-	id_redSandstoneBrickLargeMossyStairs=3362,
-	id_redSandstoneBrickLargeMossySidingAndCorner=3363,
-	id_redSandstoneBrickLargeMossyMouldingAndDecorative=3364,
-	id_sandstoneCrackedStairs=3365,
-	id_sandstoneCrackedSidingAndCorner=3366,
-	id_sandstoneCrackedMouldingAndDecorative=3367,
-	id_sandstoneBrickLargeCrackedStairs=3368,
-	id_sandstoneBrickLargeCrackedSidingAndCorner=3369,
-	id_sandstoneBrickLargeCrackedMouldingAndDecorative=3370,
-	id_redSandstoneCrackedStairs=3371,
-	id_redSandstoneCrackedSidingAndCorner=3372,
-	id_redSandstoneCrackedMouldingAndDecorative=3373,
-	id_redSandstoneBrickLargeCrackedStairs=3374,
-	id_redSandstoneBrickLargeCrackedSidingAndCorner=3375,
-	id_redSandstoneBrickLargeCrackedMouldingAndDecorative=3376,
-	id_stoneSlab6 = 3377,
-	id_stoneBrickMossyStairs=3378,
-	id_stoneBrickMossySidingAndCorner=3379,
-	id_stoneBrickMossyMouldingAndDecorative=3380,
-	id_stoneBrickCrackedStairs=3381,
-	id_stoneBrickCrackedSidingAndCorner=3382,
-	id_stoneBrickCrackedMouldingAndDecorative=3383,
-	id_concreteSubStart=3384,
-	//end 3431
-	id_concreteSlab=3432,
-	id_concreteSlab2=3433,
-	id_endStoneBrick=3434,
-	id_endStoneBrickStairs=3435,
-	id_endStoneBrickSidingAndCorner=3436,
-	id_endStoneBrickMouldingAndDecorative=3437,
-	id_signSpruce=3438,
-	id_signSpruceWall=3439,
-	id_signBirch=3440,
-	id_signBirchWall=3441,
-	id_signJungle=3442,
-	id_signJungleWall=3443,
-	id_signBlood=3445,
-	id_signBloodWall=3446,
-	id_signCherry=3447,
-	id_signCherryWall=3448,
-	id_hedgeOakStairs=3449,
-	id_hedgeOakSidingandCorner=3450,
-	id_hedgeOakMoulingAndDecorative=3451,
-	id_hedgeSpruceStairs=3452,
-	id_hedgeSpruceSidingAndCorner=3453,
-	id_hedgeSpruceMouldingAndDecorative=3454,
-	id_hedgeBirchStairs=3455,
-	id_hedgeBirchSidingAndCorner=3456,
-	id_hedgeBirchMouldingAndDecorative=3457,
-	id_hedgeJungleStairs=3458,
-	id_hedgeJungleSidingAndCorner=3459,
-	id_hedgeJungleMouldingAndDecorative=3460,
-	id_hedgeBloodStairs=3461,
-	id_hedgeBloodSidingAndCorner=3462,
-	id_hedgeBloodMouldingAndDecorative=3463,
-	id_hedgeCherryStairs=3464,
-	id_hedgeCherrySidingAndCorner=3465,
-	id_hedgeCherryMouldingAndDecorative=3466,
+		id_paperWall=3000,
+		id_fenceSteel=3001,
+		id_flower=3002,
+		id_glassStained=3003,
+		id_glassPaneStained=3004,
+		id_coalBlock=3005,
+		id_tulip=3006,
+		id_blockDiamondium=3007,
+		id_whiteStoneBrick=3008,
+		id_whiteBrickSidingAndCorner=3009,
+		id_whiteBrickMouldingAndDecorative=3010,
+		id_whiteBrickStairs=3011,
+		id_polishedStone=3012,
+		id_polishedStoneStairs=3013,
+		id_polishedStoneSidingAndCorner=3014,
+		id_polishedStoneMouldingAndDecorative=3015,
+		id_bonePillar=3016,
+		id_flower2=3017,
+		id_concrete=3018,
+		id_concretePowder=3019,
+		id_netherCoalBlock=3020,
+		id_cherrySapling=3021,
+		id_cherryLeaves=3022,
+		id_thatch=3023,
+		id_thatchStairs=3024,
+		id_hayBale=3025,
+		id_hayBaleStairs=3026,
+		id_lanternPaper=3027,
+		id_chandelier=3028,
+		id_lanternSteel=3029,
+		id_chain=3030,
+		id_logSpikeSpruce=3031,
+		id_logSpikeBirch=3032,
+		id_logSpikeJungle=3033,
+		id_logSpikeCherry=3034,
+		id_cherryWoodChair=3035,
+		id_oakWoodChair=3036,
+		id_spruceWoodChair=3037,
+		id_birchWoodChair=3038,
+		id_jungleWoodChair=3039,
+		id_bloodWoodChair=3040,
+		id_paintedPlanksSlab=3041,
+		id_paintedPlanksSlab2=3042,
+		id_woodSlab=3043,
+		id_terracotta=3044,
+		id_stainedTerracotta=3045,
+		id_unfiredTerracotta=3046,
+		id_clay_sub_start=3049,
+		//end 3099
+		id_stoneType=3100,
+		id_stoneTypeCobble=3101,
+		id_graniteCobbleLoose=3102,
+		id_andesiteCobbleLoose=3103,
+		id_dioriteCobbleLoose=3104,
+		id_stoneTypeStoneBrick=3105,
+		id_graniteStoneBrickLoose=3106,
+		id_andesiteStoneBrickLoose=3107,
+		id_dioriteStoneBrickLoose=3108,
+		id_stoneTypeSmooth=3109,
+		id_stoneSlab=3110,
+		id_cobblestoneSidingAndCorner=3111,
+		id_cobblestoneMouldingAndDecorative=3112,
+		id_mossyCobblestoneSidingAndCorner=3113,
+		id_mossyCobblestoneMouldingAndDecorative=3114,
+		id_mossyCobblestoneStairs=3115,
+		id_stoneSlab2=3116,
+		id_stoneSlab3=3117,
+		id_netherBrick=3118,
+		id_netherBrickLoose=3119,
+		id_infusedStone=3120,
+		id_basalt=3121,
+		id_netherBrickStairs=3122,
+		id_netherBrickSidingAndCorner=3123,
+		id_netherBrickMouldingAndDecorative=3124,
+		id_infusedStoneStairs=3125,
+		id_infusedStoneSidingAndCorner=3126,
+		id_infusedStoneMouldingAndDecorative=3127,
+		id_infusedStoneSmoothStairs=3128,
+		id_infusedStoneSmoothSidingAndCorner=3129,
+		id_infusedStoneSmoothMouldingAndDecorative=3130,
+		id_infusedStoneBrickStairs=3131,
+		id_infusedStoneBrickSidingAndCorner=3132,
+		id_infusedStoneBrickMouldingAndDecorative=3133,
+		id_glazedTerracottaStart=3134,
+		//end 3149
+		id_stoneTypeSubStart=3150,
+		//end 3158
+		id_stoneTypeSmoothSubStart=3159,
+		//end 3167
+		id_stoneTypeCobbleSubStart=3168,
+		//end 3176
+		id_stoneTypeBrickSubStart=3177,
+		//end 3185
+		id_graniteCobbleLooseStairs=3186,
+		id_andesiteCobbleLooseStairs=3187,
+		id_dioriteCobbleLooseStairs=3188,
+		id_graniteStoneBrickLooseStairs=3189,
+		id_andesiteStoneBrickLooseStairs=3190,
+		id_dioriteStoneBrickLooseStairs=3191,
+		id_stoneTypeLooseSlab=3192,
+		id_netherBrickLooseStairs=3193,
+		id_netherBrickLooseSlab=3194,
+		id_netherrackSuperheated=3195,
+		id_magma=3196,
+		id_netherBrickSuperheated=3197,
+		id_stoneSlab4=3198,
+		id_stoneSlab5=3199,
+		id_strippedLog=3200,
+		id_barkLog=3201,
+		id_barkLogStripped=3202,
+		id_bloodLog=3203,
+		id_cherryLog=3204,
+		id_cherryStump=3205,
+		id_logDamagedSpruce=3206,
+		id_logDamagedBirch=3207,
+		id_logDamagedJungle=3208,
+		id_logDamagedCherry=3209,
+		id_workbench=3210,
+		id_barrelEmpty2=3211,
+		id_barrelFullBlood=3212,
+		id_barrelFullCherry=3213,
+		id_cherryStairs=3214,
+		id_cherrySidingAndCorner=3215,
+		id_cherryMouldingAndDecorative=3216,
+		id_gateCherry=3217,
+		id_doorCherry=3218,
+		id_trapdoorCherry=3219,
+		id_trapdoorSpruce=3220,
+		id_trapdoorBirch=3221,
+		id_trapdoorJungle=3222,
+		id_trapdoorBlood=3223,
+		id_doorSpruce=3224,
+		id_doorBirch=3225,
+		id_doorJungle=3226,
+		id_doorBlood=3227,
+		id_gateSpruce=3228,
+		id_gateBirch=3229,
+		id_gateJungle=3230,
+		id_gateBlood=3231,
+		id_planksPainted=3232,
+		id_barrelEmpty=3233,
+		id_barrelFullOak=3234,
+		id_barrelFullSpruce=3235,
+		id_barrelFullBirch=3236,
+		id_barrelFullJungle=3237,
+		id_crate=3238,
+		id_flowerPot=3239,
+		id_pergola=3240,
+		id_barrelFilling=3241,
+		id_scaffolding=3242,
+		id_logDamagedBlood=3243,
+		id_logSpikeBlood=3244,
+		id_ropeCoil=3245,
+		id_chainCoil=3246,
+		
+		id_paintedPlanksSubStart=3248,
+		//end 3296
+	
+		id_coarseDirt=3300,
+		id_coarseDirtSlab=3301,
+		id_podzol=3302,
+		id_podzolSlab=3303,
+		id_hedge=3304,
+		id_pumpkin=3305,
+		id_pumpkinLit=3306,
+	
+		id_redSand=3310,
+		id_redSandSlab=3311,
+		id_redSandstone=3312,
+		id_redSandstoneSlab=3313,
+		id_redSandstoneStairs=3314,
+		id_redSandstoneSidingAndCorner=3315,
+		id_redSandstoneMouldingAndDecorative=3316,
+		id_redSandstoneSmoothSidingAndCorner=3317,
+		id_redSandstoneSmoothMouldingAndDecorative=3318,
+		id_sandstoneSmoothSidingAndCorner=3319,
+		id_sandstoneSmoothMouldingAndDecorative=3320,
+		id_prismarine=3321,
+		id_prismarineLantern=3322,
+		id_prismarineSidingAndCorner=3323,
+		id_prismarineMouldingAndDecorative=3324,
+		id_prismarineStairs=3325,
+		id_prismarineBrickSidingAndCorner=3326,
+		id_prismarineBrickMouldingAndDecorative=3327,
+		id_prismarineBrickStairs=3328,
+		id_prismarineDarkSidingAndCorner=3329,
+		id_prismarineDarkMouldingAndDecorative=3330,
+		id_prismarineDarkStairs=3331,
+		id_carpet=3332,
+		id_polishedSandstoneStairs=3333,
+		id_polishedSandstoneSidingAndCorner=3334,
+		id_polishedSandstoneMouldingAndDecorative=3335,
+		id_polishedRedSandstoneStairs=3336,
+		id_polishedRedSandstoneSidingAndCorner=3337,
+		id_polishedRedSandstoneMouldingAndDecorative=3338,
+		id_sandstoneBrickStairs=3339,
+		id_sandstoneBrickSidingAndCorner=3340,
+		id_sandstoneBrickMouldingAndDecorative=3341,
+		id_redSandstoneBrickStairs=3342,
+		id_redSandstoneBrickSidingAndCorner=3343,
+		id_redSandstoneBrickMouldingAndDecorative=3344,
+		id_sandstoneSmoothStairs=3345,
+		id_redSandstoneSmoothStairs=3346,
+		id_sandstoneMossyStairs=3347,
+		id_sandstoneMossySidingAndCorner=3348,
+		id_sandstoneMossyMouldingAndDecorative=3349,
+		id_sandstoneBrickLargeStairs=3350,
+		id_sandstoneBrickLargeSidingAndCorner=3351,
+		id_sandstoneBrickLargeMouldingAndDecorative=3352,
+		id_sandstoneBrickLargeMossyStairs=3353,
+		id_sandstoneBrickLargeMossySidingAndCorner=3354,
+		id_sandstoneBrickLargeMossyMouldingAndDecorative=3355,
+		id_redSandstoneMossyStairs=3356,
+		id_redSandstoneMossySidingAndCorner=3357,
+		id_redSandstoneMossyMouldingAndDecorative=3358,
+		id_redSandstoneBrickLargeStairs=3359,
+		id_redSandstoneBrickLargeSidingAndCorner=3360,
+		id_redSandstoneBrickLargeMouldingAndDecorative=3361,
+		id_redSandstoneBrickLargeMossyStairs=3362,
+		id_redSandstoneBrickLargeMossySidingAndCorner=3363,
+		id_redSandstoneBrickLargeMossyMouldingAndDecorative=3364,
+		id_sandstoneCrackedStairs=3365,
+		id_sandstoneCrackedSidingAndCorner=3366,
+		id_sandstoneCrackedMouldingAndDecorative=3367,
+		id_sandstoneBrickLargeCrackedStairs=3368,
+		id_sandstoneBrickLargeCrackedSidingAndCorner=3369,
+		id_sandstoneBrickLargeCrackedMouldingAndDecorative=3370,
+		id_redSandstoneCrackedStairs=3371,
+		id_redSandstoneCrackedSidingAndCorner=3372,
+		id_redSandstoneCrackedMouldingAndDecorative=3373,
+		id_redSandstoneBrickLargeCrackedStairs=3374,
+		id_redSandstoneBrickLargeCrackedSidingAndCorner=3375,
+		id_redSandstoneBrickLargeCrackedMouldingAndDecorative=3376,
+		id_stoneSlab6 = 3377,
+		id_stoneBrickMossyStairs=3378,
+		id_stoneBrickMossySidingAndCorner=3379,
+		id_stoneBrickMossyMouldingAndDecorative=3380,
+		id_stoneBrickCrackedStairs=3381,
+		id_stoneBrickCrackedSidingAndCorner=3382,
+		id_stoneBrickCrackedMouldingAndDecorative=3383,
+		id_concreteSubStart=3384,
+		//end 3431
+		id_concreteSlab=3432,
+		id_concreteSlab2=3433,
+		id_endStoneBrick=3434,
+		id_endStoneBrickStairs=3435,
+		id_endStoneBrickSidingAndCorner=3436,
+		id_endStoneBrickMouldingAndDecorative=3437,
+		id_signSpruce=3438,
+		id_signSpruceWall=3439,
+		id_signBirch=3440,
+		id_signBirchWall=3441,
+		id_signJungle=3442,
+		id_signJungleWall=3443,
+		id_signBlood=3445,
+		id_signBloodWall=3446,
+		id_signCherry=3447,
+		id_signCherryWall=3448,
+		id_hedgeOakStairs=3449,
+		id_hedgeOakSidingandCorner=3450,
+		id_hedgeOakMoulingAndDecorative=3451,
+		id_hedgeSpruceStairs=3452,
+		id_hedgeSpruceSidingAndCorner=3453,
+		id_hedgeSpruceMouldingAndDecorative=3454,
+		id_hedgeBirchStairs=3455,
+		id_hedgeBirchSidingAndCorner=3456,
+		id_hedgeBirchMouldingAndDecorative=3457,
+		id_hedgeJungleStairs=3458,
+		id_hedgeJungleSidingAndCorner=3459,
+		id_hedgeJungleMouldingAndDecorative=3460,
+		id_hedgeBloodStairs=3461,
+		id_hedgeBloodSidingAndCorner=3462,
+		id_hedgeBloodMouldingAndDecorative=3463,
+		id_hedgeCherryStairs=3464,
+		id_hedgeCherrySidingAndCorner=3465,
+		id_hedgeCherryMouldingAndDecorative=3466,
+		id_buttonSpruce=3467,
+		id_buttonBirch=3468,
+		id_buttonJungle=3469,
+		id_buttonBlood=3470,
+		id_buttonCherry=3471,
+		id_buttonInfusedStone=3472,
+		id_buttonGranite=3473,
+		id_buttonAndesite=3474,
+		id_buttonDiorite=3475,
+		id_buttonSandstone=3476,
+		id_buttonRedSandstone=3477,
 
 	id_flag_start=4000;
 
 	private static final int
-	id_glassChunk = 30002,
-	id_fertilizer = 30003,
-	id_chainItem = 30004,
-
-	id_bottleHempOil = 30007,
-	id_glassStainedItem = 30008,
-
-	id_itemDoorSpruce = 30020,
-	id_itemDoorBirch = 30021,
-	id_itemDoorJungle = 30022,
-	id_itemDoorBlood = 30023,
-	id_itemDoorCherry = 30024,
-
-	id_chiselDiamond = 30050,
-	id_woodBleach=30051,
-	id_pileRedSand=30052,
-
-	id_prismarineShard=30060,
-	id_prismarineCrystal=30061;
+		id_glassChunk = 30002,
+		id_fertilizer = 30003,
+		id_chainItem = 30004,
+	
+		id_bottleHempOil = 30007,
+		id_glassStainedItem = 30008,
+	
+		id_itemDoorSpruce = 30020,
+		id_itemDoorBirch = 30021,
+		id_itemDoorJungle = 30022,
+		id_itemDoorBlood = 30023,
+		id_itemDoorCherry = 30024,
+	
+		id_chiselDiamond = 30050,
+		id_woodBleach=30051,
+		id_pileRedSand=30052,
+		id_woodStain=30053,
+	
+		id_prismarineShard=30060,
+		id_prismarineCrystal=30061;
+	
+	private static final int
+		id_entityFallingConcrete=3000;
 
 	public static final Material materialHedge = (new Material(MapColor.foliageColor)).setBurning().setTranslucent().setNoPushMobility().SetAxesEfficientOn().SetAxesTreatAsVegetation().SetMobsCantSpawnOn();
 
@@ -321,7 +342,8 @@ public class AddonDefs {
 	public static Block whiteStoneBrick, whiteBrickMouldingAndDecorative, whiteBrickSidingAndCorner, whiteBrickStairs;
 
 	//Flowers
-	public static Block flower, tulip;
+	public static Block flower, flower2, tulip;
+	public static Block flowerPot;
 	public static Item fertilizer;
 	public static Block cherrySapling, cherryLeaves;
 
@@ -398,8 +420,8 @@ public class AddonDefs {
 
 	//Wood
 	public static Block strippedLog, barkLog, barkLogStripped, bloodLog, cherryLog, cherryStump;
-	public static Block logDamagedSpruce, logDamagedBirch, logDamagedJungle, logDamagedCherry;
-	public static Block logSpikeSpruce, logSpikeBirch, logSpikeJungle, logSpikeCherry;
+	public static Block logDamagedSpruce, logDamagedBirch, logDamagedJungle, logDamagedBlood, logDamagedCherry;
+	public static Block logSpikeSpruce, logSpikeBirch, logSpikeJungle, logSpikeBlood, logSpikeCherry;
 	public static BlockTrapDoor trapdoorSpruce, trapdoorBirch, trapdoorJungle, trapdoorBlood, trapdoorCherry;
 	public static BlockDoor doorSpruce, doorBirch, doorJungle, doorBlood, doorCherry;
 	public static FCItemDoor itemDoorSpruce, itemDoorBirch, itemDoorJungle, itemDoorBlood, itemDoorCherry;
@@ -408,10 +430,11 @@ public class AddonDefs {
 	public static Block planksPainted;
 	public static Block[] paintedPlanksSidingAndCorner, paintedPlanksMouldingAndDecorative, paintedPlanksStairs;
 	public static Block pergola;
-	public static Block barrelEmpty, barrelEmpty2, barrelFullOak, barrelFullSpruce, barrelFullBirch, barrelFullJungle, barrelFullBlood, barrelFullCherry;
+	public static Block barrelEmpty, barrelEmpty2, barrelFilling, barrelFullOak, barrelFullSpruce, barrelFullBirch, barrelFullJungle, barrelFullBlood, barrelFullCherry;
 	public static Block crate;
 	public static Block signSpruce, signSpruceWall, signBirch, signBirchWall, signJungle, signJungleWall, signBlood, signBloodWall, signCherry, signCherryWall;
-	public static Item woodBleach;
+	public static Block scaffolding;
+	public static Item woodBleach, woodStain;
 
 	public static AddonBlockWoodSlab paintedPlanksSlab, paintedPlanksSlab2, woodSlab;
 
@@ -439,6 +462,9 @@ public class AddonDefs {
 	public static Block carpet;
 	public static Block coalBlock, netherCoalBlock;
 	public static Block bonePillar;
+	public static Block buttonSpruce, buttonBirch, buttonJungle, buttonBlood, buttonCherry;
+	public static Block buttonInfusedStone, buttonGranite, buttonAndesite, buttonDiorite, buttonSandstone, buttonRedSandstone;
+	public static Block ropeCoil, chainCoil;
 
 	//Tools
 	public static AddonItemChiselDiamond chiselDiamond;
@@ -548,8 +574,10 @@ public class AddonDefs {
 	private void addFlowerDefs() {
 		String[]
 				flowers = { "yucca", "hyacinth", "birdsParadise", "azalea", "cornFlower", "lavender", "honeysuckle","allium", "orchidBlue", "poppy", "azureBluet", "daisy", "peony","lilac","rosebush", "roseBlue"},
+				flowers2 = {"blackRose"},
 				tulips = { "red","pink", "orange", "white", "blue"},
 				flowerNames = { "Yucca", "Hyacinth", "Birds of Paradise", "Azaleas", "Cornflower", "Lavender", "Honeysuckle", "Allium","Blue Orchid", "Poppy", "Azure Bluet", "Daisy", "Peony", "Lilac", "Rose Bush", "Blue Rose"},
+				flowerNames2 = {"Black Rose"},
 				tulipNames = { "Red", "Pink", "Orange", "White", "Blue"};
 
 		Item.dyePowder = new AddonItemDye(95);
@@ -566,9 +594,19 @@ public class AddonDefs {
 
 		//FCBetterThanWolves.fcPlanter = new AddonBlockPlanter(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcPlanter));
 		flower = new AddonBlockFlowers(id_flower, "flower",flowers,flowerNames);
+		flower2 = new AddonBlockFlowers(id_flower2, "flower2", flowers2, flowerNames2);
 		tulip = new AddonBlockFlowers(id_tulip, "tulip", tulips, tulipNames, " Tulip");
 
 		fertilizer = new AddonItemFertilizer(id_fertilizer);
+		
+		AddonManager.Name(Block.plantRed, "Red Rose");
+		
+		//Flower pot
+		flowerPot = new AddonBlockFlowerPot(id_flowerPot);
+		TileEntity.addMapping(AddonTileEntityFlowerPot.class, "AddonFlowerPot");
+		//AddonManager.AddCustomTileEntityRenderer(AddonTileEntityFlowerPot.class, new AddonTileEntityFlowerPotRenderer());
+		Item flowerPotItem = new AddonItemFlowerPot(Item.flowerPot.itemID - 256);
+		AddonManager.SetVanillaItemFinal("flowerPot", Item.flowerPot, flowerPotItem);
 	}
 
 	private void addStoneDefs() {
@@ -899,7 +937,11 @@ public class AddonDefs {
 		AddonManager.Register(magma, "Magma Block");
 
 		//Basalt
-		basalt = new AddonBlockBasalt(id_basalt);
+		basalt = new AddonBlockDirectional(id_basalt, FCBetterThanWolves.fcMaterialNetherRock, new String[] {"ginger_basalt_top", "ginger_basaltSmooth_top"}, new String[] {"ginger_basalt_side", "ginger_basaltSmooth_side"})
+				.SetPicksEffectiveOn()
+				.setCreativeTab(CreativeTabs.tabBlock)
+				.setHardness(2.0F)
+				.setHardness(10.0F);
 		AddonManager.Register(basalt, new String[] {"basalt", "basaltSmooth"}, new String[] {"Basalt", "Polished Basalt"});
 
 		//Infused stone
@@ -956,7 +998,7 @@ public class AddonDefs {
 
 		//End Stone Brick
 		endStoneBrick = new Block(id_endStoneBrick, Material.rock).setHardness(3.0F).setResistance(15.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("ginger_endStoneBrick").setCreativeTab(CreativeTabs.tabBlock);
-		endStoneBrickStairs = new FCBlockStairs(id_endStoneBrickStairs, endStoneBrick, 0);
+		endStoneBrickStairs = new FCBlockStairs(id_endStoneBrickStairs, endStoneBrick, 0).setUnlocalizedName("endStoneBrickStairs");
 		endStoneBrickSidingAndCorner = new AddonBlockSidingAndCornerDecorativeWall(id_endStoneBrickSidingAndCorner, Material.rock, "ginger_endStoneBrickDecorative", 3.0F, 15.0F, Block.soundStoneFootstep, "endStoneBrickSiding", "End Stone Brick").SetPicksEffectiveOn();
 		endStoneBrickMouldingAndDecorative = new FCBlockMouldingAndDecorative(id_endStoneBrickMouldingAndDecorative, Material.rock, "ginger_endStoneBrickDecorative", "ginger_endStoneBrickDecorative_column", 3042, 2.0F, 10.0F, Block.soundStoneFootstep, "endStoneBrickMoulding").SetPicksEffectiveOn();
 
@@ -1091,6 +1133,7 @@ public class AddonDefs {
 		barkLogStripped = new AddonBlockLogBarkStripped(id_barkLogStripped);
 		Item.itemsList[barkLogStripped.blockID] = new AddonItemBlockLogStripped(barkLogStripped.blockID - 256, barkLogStripped, new String[] {"barkOakStripped", "barkSpruceStripped", "barkBirchStripped", "barkJungleStripped"});
 
+		FCBetterThanWolves.fcBloodWood = new AddonBlockLogBloodReplace(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBloodWood));
 		Item.itemsList[FCBetterThanWolves.fcBloodWood.blockID] = new AddonItemBlockBloodLogReplace(FCBetterThanWolves.fcBloodWood.blockID - 256);
 		AddonManager.Name(FCBetterThanWolves.fcBloodWood, "Blood Wood Log");
 		bloodLog = new AddonBlockLogBlood(id_bloodLog);
@@ -1114,22 +1157,26 @@ public class AddonDefs {
 		logDamagedSpruce = new AddonBlockLogDamaged(id_logDamagedSpruce, "ginger_strippedSpruceSide", "ginger_strippedSpruceTop", "ginger_trunkSpruceTop").setUnlocalizedName("chewedSpruce");
 		logDamagedBirch = new AddonBlockLogDamaged(id_logDamagedBirch, "ginger_strippedBirchSide", "ginger_strippedBirchTop", "ginger_trunkBirchTop").setUnlocalizedName("chewedBirch");
 		logDamagedJungle = new AddonBlockLogDamaged(id_logDamagedJungle, "ginger_strippedJungleSide", "ginger_strippedJungleTop", "ginger_trunkJungleTop").setUnlocalizedName("chewedJungle");
+		logDamagedBlood = new AddonBlockLogDamaged(id_logDamagedBlood, "ginger_strippedBloodSide", "ginger_strippedBloodTop", "ginger_trunkJungleTop").setUnlocalizedName("chewedBlood");
 		logDamagedCherry = new AddonBlockLogDamaged(id_logDamagedCherry, "ginger_strippedCherrySide", "ginger_strippedCherryTop", "ginger_trunkCherryTop").setUnlocalizedName("chewedCherry");
 		AddonManager.Name(FCBetterThanWolves.fcBlockLogDamaged, "Chewed Oak Log");
 		AddonManager.Register(logDamagedSpruce, "Chewed Spruce Log");
 		AddonManager.Register(logDamagedBirch, "Chewed Birch Log");
 		AddonManager.Register(logDamagedJungle, "Chewed Jungle Log");
+		AddonManager.Register(logDamagedBlood, "Chewed Blood Wood Log");
 		AddonManager.Register(logDamagedCherry, "Chewed Cherry Log");
 
 		FCBetterThanWolves.fcBlockLogSpike = (FCBlockLogSpike) new AddonBlockLogSpike(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockLogSpike), "ginger_strippedOakSide", "ginger_strippedOakTop").setUnlocalizedName("oakSpike");
 		logSpikeSpruce = new AddonBlockLogSpike(id_logSpikeSpruce, "ginger_strippedSpruceSide", "ginger_strippedSpruceTop").setUnlocalizedName("spruceSpike");
 		logSpikeBirch = new AddonBlockLogSpike(id_logSpikeBirch, "ginger_strippedBirchSide", "ginger_strippedBirchTop").setUnlocalizedName("birchSpike");
 		logSpikeJungle = new AddonBlockLogSpike(id_logSpikeJungle, "ginger_strippedJungleSide", "ginger_strippedJungleTop").setUnlocalizedName("jungleSpike");
+		logSpikeBlood = new AddonBlockLogSpike(id_logSpikeBlood, "ginger_strippedBloodSide", "ginger_strippedBloodTop").setUnlocalizedName("bloodSpike");
 		logSpikeCherry = new AddonBlockLogSpike(id_logSpikeCherry, "ginger_strippedCherrySide", "ginger_strippedCherryTop").setUnlocalizedName("cherrySpike");
 		AddonManager.Name(FCBetterThanWolves.fcBlockLogSpike, "Oak Log Spike");
 		AddonManager.Register(logSpikeSpruce, "Spruce Log Spike");
 		AddonManager.Register(logSpikeBirch, "Birch Log Spike");
 		AddonManager.Register(logSpikeJungle, "Jungle Log Spike");
+		AddonManager.Register(logSpikeBlood, "Blood Wood Log Spike");
 		AddonManager.Register(logSpikeCherry, "Cherry Log Spike");
 
 		//Planks
@@ -1252,8 +1299,6 @@ public class AddonDefs {
 		AddonManager.Register(trapdoorCherry, "Cherry Trap Door");
 
 		//Doors
-		AddonManager.Name(Block.doorWood, "Oak Door");
-
 		doorSpruce = new AddonBlockDoorWood(id_doorSpruce, new String[] {"ginger_doorSpruce_lower", "ginger_doorSpruce_upper"});
 		doorBirch = new AddonBlockDoorWood(id_doorBirch, new String[] {"ginger_doorBirch_lower", "ginger_doorBirch_upper"});
 		doorJungle = new AddonBlockDoorWood(id_doorJungle, new String[] {"ginger_doorJungle_lower", "ginger_doorJungle_upper"});
@@ -1266,6 +1311,8 @@ public class AddonDefs {
 		AddonManager.Register(doorBlood, "Blood Wood Door");
 		AddonManager.Register(doorCherry, "Cherry Door");
 
+		Item itemDoorOak = new AddonItemDoor(Item.doorWood.itemID - 256, "doorWood", "Oak Door", (BlockDoor) Block.doorWood);
+		AddonManager.SetVanillaItemFinal("doorWood", Item.doorWood, itemDoorOak);
 		itemDoorSpruce = new AddonItemDoor(id_itemDoorSpruce, "ginger_doorSpruceItem", "Spruce Door", doorSpruce);
 		itemDoorBirch = new AddonItemDoor(id_itemDoorBirch, "ginger_doorBirchItem", "Birch Door", doorBirch);
 		itemDoorJungle = new AddonItemDoor(id_itemDoorJungle, "ginger_doorJungleItem", "Jungle Door", doorJungle);
@@ -1273,6 +1320,8 @@ public class AddonDefs {
 		itemDoorCherry = new AddonItemDoor(id_itemDoorCherry, "ginger_doorCherryItem", "Cherry Door", doorCherry);
 
 		//Fence gates
+		BlockFenceGate gateOak = new AddonBlockFenceGate(AddonManager.ReplaceBlockID(Block.fenceGate), "wood");
+		AddonManager.SetVanillaBlockFinal("fenceGate", Block.fenceGate, gateOak);
 		AddonManager.Name(Block.fenceGate, "Oak Fence Gate");
 
 		gateSpruce = (BlockFenceGate) new AddonBlockFenceGate(id_gateSpruce, "ginger_gateSpruce");
@@ -1323,9 +1372,12 @@ public class AddonDefs {
 			i++;//i is metadata from original 16 color set
 		}
 
-		woodBleach = new Item(id_woodBleach).setUnlocalizedName("ginger_woodBleach").setCreativeTab(CreativeTabs.tabMaterials);
+		bottleHempOil = new Item(id_bottleHempOil).setUnlocalizedName("ginger_bottle_hempoil").setCreativeTab(CreativeTabs.tabMaterials).SetBuoyant();
+		woodBleach = new Item(id_woodBleach).setUnlocalizedName("ginger_woodBleach").setCreativeTab(CreativeTabs.tabMaterials).SetBuoyant();
 		AddonManager.Name(woodBleach, "Wood Bleach");
-
+		woodStain = new Item(id_woodStain).setUnlocalizedName("ginger_woodStain").setCreativeTab(CreativeTabs.tabMaterials).SetBuoyant();
+		AddonManager.Name(woodStain, "Wood Stain");
+		
 		//Pergola
 		pergola = new AddonBlockPergola(id_pergola);
 		AddonManager.Register(pergola, "Pergola");
@@ -1464,8 +1516,6 @@ public class AddonDefs {
 		lanternSteel = new AddonBlockLantern(id_lanternSteel,Material.iron,.5F,"steel","Wrought Iron Lantern").setStepSound(Block.soundStoneFootstep);
 		lanternSteel.SetPicksEffectiveOn(true);
 
-		bottleHempOil = new Item(id_bottleHempOil).setUnlocalizedName("ginger_bottle_hempoil").setCreativeTab(CreativeTabs.tabMaterials);
-
 		AddonManager.Register(paperWall, "Paper Wall");
 		AddonManager.Register(fenceSteel, "Wrought Iron Bars");
 		AddonManager.Name(bottleHempOil, "Hemp Oil");
@@ -1501,16 +1551,28 @@ public class AddonDefs {
 				new String[] {"Black", "Red", "Green", "Brown", "Blue", "Purple", "Cyan", "Light Grey", "Grey", "Pink", "Lime", "Yellow", "Light Blue", "Magenta", "Orange", "White"}, " Carpet");
 
 		//Coal block
+		Item coal = new AddonItemCoal(Item.coal.itemID - 256).SetIncineratedInCrucible().SetFurnaceBurnTime(FCEnumFurnaceBurnTime.COAL).SetFilterableProperties(2).setUnlocalizedName("coal");
+		AddonManager.SetVanillaItemFinal("coal", Item.coal, coal);
+		FCBetterThanWolves.fcItemNethercoal = new AddonItemNethercoal(FCBetterThanWolves.fcItemNethercoal.itemID).SetFurnaceBurnTime(2 * FCEnumFurnaceBurnTime.COAL.m_iBurnTime).SetFilterableProperties(2).setUnlocalizedName("fcItemNethercoal").setCreativeTab(CreativeTabs.tabMaterials);
+		
 		coalBlock = new Block(id_coalBlock, Material.rock).setUnlocalizedName("ginger_coalBlock").SetPicksEffectiveOn().SetFireProperties(FCEnumFlammability.EXTREME).setHardness(1.5F).setResistance(10.0F).setCreativeTab(CreativeTabs.tabBlock);
 		AddonManager.Register(coalBlock, "Block of Coal");
 		netherCoalBlock = new AddonBlockNetherCoal(id_netherCoalBlock);
 		AddonManager.Register(netherCoalBlock, "Block of Nethercoal");
 
-		//Stoked fire
+		//Fire
+		BlockFire fire = new AddonBlockFire(AddonManager.ReplaceBlockID(Block.fire));
+		AddonManager.SetVanillaBlockFinal("fire", Block.fire, fire);
 		FCBetterThanWolves.fcBlockFireStoked = new AddonBlockFireStoked(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockFireStoked));
 
 		//Bone pillar
-		bonePillar = new AddonBlockBonePillar(id_bonePillar);
+		bonePillar = new AddonBlockDirectional(id_bonePillar, FCBetterThanWolves.fcMaterialMiscellaneous, new String[] {"ginger_bonePillar_top"}, new String[] {"ginger_bonePillar_side"})
+				.setHardness(2.0F)
+				.SetPicksEffectiveOn()
+				.SetBuoyancy(1.0F)
+				.setStepSound(Block.soundStoneFootstep)
+				.setCreativeTab(CreativeTabs.tabBlock)
+				.setUnlocalizedName("bonePillar");
 		AddonManager.Register(bonePillar, "Bone Pillar");
 
 		//Ender Pearl
@@ -1524,10 +1586,40 @@ public class AddonDefs {
 		chainItem = new AddonItemChain(id_chainItem);
 		AddonManager.Name(chainItem, "Chain");
 
-		//Soulbound chest
-		//soulboundChest = new AddonBlockSoulboundChest(id_soulboundChest);
-		//AddonManager.Register(soulboundChest, "Soulbound Chest");
-		//AddonManager.AddCustomTileEntityRenderer(AddonTileEntitySoulboundChest.class, new AddonTileEntitySoulboundChestRenderer());
+		//Buttons
+		Block woodButton = new AddonBlockButtonWood(AddonManager.ReplaceBlockID(Block.woodenButton), Block.planks, 0).setHardness(0.5F).setStepSound(Block.soundWoodFootstep);
+		AddonManager.SetVanillaBlockFinal("woodenButton", Block.woodenButton, woodButton);
+		Block stoneButton = new AddonBlockButtonStone(AddonManager.ReplaceBlockID(Block.stoneButton), Block.stone, 0).setHardness(0.5F).setStepSound(Block.soundStoneFootstep);
+		AddonManager.SetVanillaBlockFinal("stoneButton", Block.stoneButton, stoneButton);
+		
+		buttonSpruce = new AddonBlockButtonWood(id_buttonSpruce, Block.planks, 1);
+		buttonBirch = new AddonBlockButtonWood(id_buttonBirch, Block.planks, 2);
+		buttonJungle = new AddonBlockButtonWood(id_buttonJungle, Block.planks, 3);
+		buttonBlood = new AddonBlockButtonWood(id_buttonBlood, Block.planks, 4);
+		buttonCherry = new AddonBlockButtonWood(id_buttonCherry, Block.planks, 5);
+		
+		buttonInfusedStone = new AddonBlockButtonStone(id_buttonInfusedStone, infusedStone, 0);
+		buttonGranite = new AddonBlockButtonStone(id_buttonGranite, stoneTypes, 0);
+		buttonAndesite = new AddonBlockButtonStone(id_buttonAndesite, stoneTypes, 1);
+		buttonDiorite = new AddonBlockButtonStone(id_buttonDiorite, stoneTypes, 2);
+		buttonSandstone = new AddonBlockButtonStone(id_buttonSandstone, Block.sandStone, 3);
+		buttonRedSandstone = new AddonBlockButtonStone(id_buttonRedSandstone, redSandStone, 3);
+		
+		AddonManager.Name(Block.stoneButton, "Stone Button");
+		AddonManager.Name(Block.woodenButton, "Oak Button");
+		
+		AddonManager.Register(buttonSpruce, "Spruce Button");
+		AddonManager.Register(buttonBirch, "Birch Button");
+		AddonManager.Register(buttonJungle, "Jungle Button");
+		AddonManager.Register(buttonBlood, "Blood Wood Button");
+		AddonManager.Register(buttonCherry, "Cherry Button");
+		
+		AddonManager.Register(buttonInfusedStone, "Infused Stone Button");
+		AddonManager.Register(buttonGranite, "Granite Button");
+		AddonManager.Register(buttonAndesite, "AndesiteButton");
+		AddonManager.Register(buttonDiorite, "Diorite Button");
+		AddonManager.Register(buttonSandstone, "Sandstone Button");
+		AddonManager.Register(buttonRedSandstone, "Red Sandstone Button");
 
 		//Cherry Tree
 		cherrySapling = new AddonBlockSaplingCherry(id_cherrySapling);
@@ -1586,13 +1678,42 @@ public class AddonDefs {
 		AddonManager.NameSubBlocks_Wall(hedgeCherrySidingAndCorner, hedgeCherryMouldingAndDecorative, "Cherry Hedge");
 		
 		//Panes replace
-		Block thinGlass = new AddonBlockPane(AddonManager.ReplaceBlockID(Block.thinGlass), "glass", "thinglass_top", Material.glass, false);
+		Block thinGlass = new AddonBlockPane(AddonManager.ReplaceBlockID(Block.thinGlass), "glass", "thinglass_top", Material.glass, false).setHardness(0.3F).SetPicksEffectiveOn().setStepSound(Block.soundGlassFootstep).setUnlocalizedName("thinGlass");
 		AddonManager.SetVanillaBlockFinal("thinGlass", Block.thinGlass, thinGlass);
 		Block fenceIron = new AddonBlockIronBars(AddonManager.ReplaceBlockID(Block.fenceIron));
 		AddonManager.SetVanillaBlockFinal("fenceIron", Block.fenceIron, fenceIron);
 		FCBetterThanWolves.fcBlockGrate = new AddonBlockGrate(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockGrate));
 		FCBetterThanWolves.fcBlockWickerPane = new AddonBlockWickerPane(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockWickerPane));
 		FCBetterThanWolves.fcBlockSlats = new AddonBlockSlats(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockSlats));
+		
+		//Rope
+		ropeCoil = new AddonBlockDirectional(id_ropeCoil, FCBetterThanWolves.fcMaterialMiscellaneous, new String[] {"fcBlockRope_top"}, new String[] {"fcBlockRope_side"})
+		        .setHardness(2.0F)
+		        .SetAxesEffectiveOn(true)
+		        .setStepSound(Block.soundWoodFootstep)
+		        .setCreativeTab(CreativeTabs.tabBlock)
+		        .setUnlocalizedName("ropeCoil");
+		AddonManager.Register(ropeCoil, "Coil of Rope");
+		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcAestheticOpaque, 1, 6), "Old Coil of Rope");
+		
+		//Chain
+		chainCoil = new AddonBlockDirectional(id_chainCoil, Material.iron, new String[] {"ginger_chainCoil_top"}, new String[] {"ginger_chainCoil_side"})
+		        .setHardness(2.0F)
+		        .SetPicksEffectiveOn(true)
+		        .setStepSound(Block.soundMetalFootstep)
+		        .setCreativeTab(CreativeTabs.tabBlock)
+		        .setUnlocalizedName("chainCoil");
+		AddonManager.Register(ropeCoil, "Coil of Rope");
+		AddonManager.Register(chainCoil, "Coil of Chain");
+		
+		//Cocoa
+		FCBetterThanWolves.fcItemCocoaBeans = new AddonItemCocoaBeans(FCBetterThanWolves.fcItemCocoaBeans.itemID - 256);
+		Block cocoaPlant = new AddonBlockCocoa(AddonManager.ReplaceBlockID(Block.cocoaPlant));
+		AddonManager.SetVanillaBlockFinal("cocoaPlant", Block.cocoaPlant, cocoaPlant);
+		
+		//Scaffolding
+		//scaffolding = new AddonBlockScaffolding(id_scaffolding);
+		//AddonManager.Register(scaffolding, "Scaffolding");
 	}
 
 	private void addToolDefs() {
@@ -1613,6 +1734,10 @@ public class AddonDefs {
 
 		//Allows custom saw recipes
 		FCBetterThanWolves.fcSaw = new AddonBlockSaw((FCBlockSaw) FCBetterThanWolves.fcSaw, AddonManager.ReplaceBlockID(FCBetterThanWolves.fcSaw));
+		
+		//Hopper
+		//FCBetterThanWolves.fcHopper = new AddonBlockHopper(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcHopper));
+		//TileEntity.ReplaceVanillaMapping(FCTileEntityHopper.class, AddonTileEntityHopper.class, "Hopper");
 
 		//Shears - for added efficient blocks
 		Item shears = new AddonItemShears(Item.shears.itemID - 256).setUnlocalizedName("shears");
@@ -1627,7 +1752,7 @@ public class AddonDefs {
 		FCBetterThanWolves.fcBlockWhiteStoneSidingAndCorner = new AddonBlockSidingAndCornerDecorativeWall(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockWhiteStoneSidingAndCorner),  Material.rock, "fcBlockDecorativeWhiteStone", 1.5F, 10.0F, Block.soundStoneFootstep, "fcWhiteStoneSiding", "White Stone").SetPicksEffectiveOn();
 		FCBetterThanWolves.fcBlockSmoothStoneSidingAndCorner = (new AddonBlockSidingAndCornerDecorativeWall(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockSmoothStoneSidingAndCorner), Material.rock, "fcBlockDecorativeStone", 1.5F, 10.0F, Block.soundStoneFootstep, "fcStoneSiding", "Stone")).SetPicksEffectiveOn();
 
-		Block netherFence = new AddonBlockFence(AddonManager.ReplaceBlockID(Block.netherFence), "netherBrick", FCBetterThanWolves.fcMaterialNetherRock).setHardness(2.0F).setResistance(10.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("netherFence");;
+		Block netherFence = new AddonBlockFence(AddonManager.ReplaceBlockID(Block.netherFence), "netherBrick", FCBetterThanWolves.fcMaterialNetherRock).setHardness(2.0F).setResistance(10.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("netherFence");
 		AddonManager.SetVanillaBlockFinal("netherFence", Block.netherFence, netherFence);
 
 		Block wall = (new AddonBlockWall(AddonManager.ReplaceBlockID(Block.cobblestoneWall), Block.cobblestone)).setUnlocalizedName("cobbleWall");
@@ -1642,5 +1767,7 @@ public class AddonDefs {
 
 	private void addEntityDefs() {
 		AddonManager.ReplaceSpawnableEntity("Squid", FCEntitySquid.class, AddonEntitySquid.class);
+		AddonManager.ReplaceSpawnableEntity("Ozelot", FCEntityOcelot.class, EntityOcelot.class);
+		EntityList.AddMapping(AddonEntityFallingConcrete.class, "FallingConcrete", id_entityFallingConcrete);
 	}
 }

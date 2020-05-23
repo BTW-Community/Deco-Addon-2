@@ -26,4 +26,10 @@ public class AddonBlockTerracottaUnfired extends FCBlockFallingFullBlock
     public int GetCookTimeMultiplierInKiln(IBlockAccess var1, int var2, int var3, int var4) {
         return 4;
     }
+    
+    //CLIENT ONLY
+    public void RenderBlockSecondPass(RenderBlocks var1, int var2, int var3, int var4, boolean var5)
+    {
+        this.RenderCookingByKilnOverlay(var1, var2, var3, var4, var5);
+    }
 }

@@ -17,6 +17,10 @@ public class AddonBlockStoneLooseSlab extends FCBlockMortarReceiverSlab
         this.setUnlocalizedName("stoneLooseSlab");
         mortaredIDs = mortarID;
     }
+    
+    public int damageDropped(int meta) {
+    	return meta % 8;
+    }
 
     public int GetCombinedBlockID(int var1)
     {

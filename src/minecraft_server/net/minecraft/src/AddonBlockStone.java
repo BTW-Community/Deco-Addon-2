@@ -30,4 +30,12 @@ public class AddonBlockStone extends Block {
         var3.add(new ItemStack(var1, 1, 1));
         var3.add(new ItemStack(var1, 1, 2));
     }
+
+    /**
+     * Get the block's damage value (for use with pick block).
+     */
+    public int getDamageValue(World world, int x, int y, int z)
+    {
+        return world.getBlockMetadata(x, y, z);
+    }
 }

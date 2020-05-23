@@ -1718,7 +1718,6 @@ src/minecraft/net/minecraft/src/McoServerListINNER1.java
 src/minecraft/net/minecraft/src/MemoryConnection.java
 src/minecraft/net/minecraft/src/MerchantRecipe.java
 src/minecraft/net/minecraft/src/MerchantRecipeList.java
-src/minecraft/net/minecraft/src/MinecraftAppletImpl.java
 src/minecraft/net/minecraft/src/MinecraftError.java
 src/minecraft/net/minecraft/src/MinecraftException.java
 src/minecraft/net/minecraft/src/MinecraftFakeLauncher.java
@@ -2125,7 +2124,6 @@ src/minecraft/net/minecraft/src/TextureStitched.java
 src/minecraft/net/minecraft/src/TexturedQuad.java
 src/minecraft/net/minecraft/src/ThreadClientSleep.java
 src/minecraft/net/minecraft/src/ThreadConnectToOnlineServer.java
-src/minecraft/net/minecraft/src/ThreadConnectToServer.java
 src/minecraft/net/minecraft/src/ThreadDownloadImage.java
 src/minecraft/net/minecraft/src/ThreadDownloadImageData.java
 src/minecraft/net/minecraft/src/ThreadDownloadResources.java
@@ -2133,7 +2131,6 @@ src/minecraft/net/minecraft/src/ThreadLanServerFind.java
 src/minecraft/net/minecraft/src/ThreadLanServerPing.java
 src/minecraft/net/minecraft/src/ThreadLoginVerifier.java
 src/minecraft/net/minecraft/src/ThreadMinecraftServer.java
-src/minecraft/net/minecraft/src/ThreadOnlineConnect.java
 src/minecraft/net/minecraft/src/ThreadOnlineScreen.java
 src/minecraft/net/minecraft/src/ThreadPollServers.java
 src/minecraft/net/minecraft/src/ThreadShutdown.java
@@ -2592,7 +2589,6 @@ src/minecraft_server/net/minecraft/src/CreativeTabs.java
 src/minecraft_server/net/minecraft/src/CryptManager.java
 src/minecraft_server/net/minecraft/src/DamageSource.java
 src/minecraft_server/net/minecraft/src/DataWatcher.java
-src/minecraft_server/net/minecraft/src/DedicatedPlayerList.java
 src/minecraft_server/net/minecraft/src/DedicatedServer.java
 src/minecraft_server/net/minecraft/src/DedicatedServerCommandThread.java
 src/minecraft_server/net/minecraft/src/DedicatedServerListenThread.java

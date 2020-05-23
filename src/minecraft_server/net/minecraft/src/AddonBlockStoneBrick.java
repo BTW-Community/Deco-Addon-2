@@ -46,4 +46,22 @@ public class AddonBlockStoneBrick extends Block {
     {
         return true;
     }
+
+    /**
+     * returns a list of blocks with the same ID, but different meta (eg: wood returns 4 blocks)
+     */
+    public void getSubBlocks(int par1, CreativeTabs par2CreativeTabs, List par3List)
+    {
+        par3List.add(new ItemStack(par1, 1, 0));
+        par3List.add(new ItemStack(par1, 1, 1));
+        par3List.add(new ItemStack(par1, 1, 2));
+    }
+
+    /**
+     * Get the block's damage value (for use with pick block).
+     */
+    public int getDamageValue(World world, int x, int y, int z)
+    {
+        return world.getBlockMetadata(x, y, z);
+    }
 }

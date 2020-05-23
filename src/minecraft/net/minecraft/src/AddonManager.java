@@ -60,21 +60,16 @@ public class AddonManager extends FCAddOn
 	public void PostInitialize() {
 
 	}
-
-	public String getPID() {
-		RuntimeMXBean bean = ManagementFactory.getRuntimeMXBean();
-
-		// Get name representing the running Java virtual machine.
-		// It returns something like 6460@AURORA. Where the value
-		// before the @ symbol is the PID.
-		String jvmName = bean.getName();
-		System.out.println("Name = " + jvmName);
-
-		// Extract the PID by splitting the string returned by the
-		// bean.getName() method.
-		String pid = jvmName.split("@")[0];
-		return pid;
-	}
+	
+    public static void ServerPlayerConnectionInitialized(NetServerHandler var0, EntityPlayerMP var1) {
+        if (!MinecraftServer.getServer().isSinglePlayer())
+        {
+            FCUtilsWorld.SendPacketToPlayer(var0, new Packet3Chat("\u00a7e" + "Deco V" + "2.9"));
+        }
+        else {
+            FCUtilsWorld.SendPacketToPlayer(var0, new Packet3Chat("\u00a7f" + "Deco V" + "2.9"));
+        }
+    }
 
 	public boolean getObfuscation() {
 		return isObfuscated;
