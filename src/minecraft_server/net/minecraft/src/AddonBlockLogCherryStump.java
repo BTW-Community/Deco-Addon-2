@@ -20,6 +20,14 @@ public class AddonBlockLogCherryStump extends Block {
     {
         return false;
     }
+
+    /**
+     * only called by clickMiddleMouseButton , and passed to inventory.setCurrentItem (along with isCreative)
+     */
+    public int idPicked(World par1World, int par2, int par3, int par4)
+    {
+        return AddonDefs.cherryLog.blockID;
+    }
 	
 	public ItemStack GetStackRetrievedByBlockDispenser(World var1, int var2, int var3, int var4)
     {

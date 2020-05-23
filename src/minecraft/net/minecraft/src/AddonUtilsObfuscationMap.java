@@ -40,6 +40,7 @@ public class AddonUtilsObfuscationMap {
 		itemMap.put("shears", "bf");
 		itemMap.put("flowerPot", "bJ");;
 		itemMap.put("doorWood", "aw");
+		itemMap.put("coal", "n");
 	}
 	
 	public static String getBlockLookup(String blockName) {

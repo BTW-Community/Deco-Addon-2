@@ -47,6 +47,44 @@ public class AddonBlockConcretePowder extends FCBlockFallingFullBlock {
 			world.playAuxSFX(2227, x, y, z, 0);
 		}
 	}
+
+    protected boolean CheckForFall(World var1, int var2, int var3, int var4)
+    {
+        if (this.CanFallIntoBlockAtPos(var1, var2, var3 - 1, var4) && var3 >= 0)
+        {
+            if (!BlockSand.fallInstantly && var1.checkChunksExist(var2 - 32, var3 - 32, var4 - 32, var2 + 32, var3 + 32, var4 + 32))
+            {
+                if (!var1.isRemote)
+                {
+                	AddonEntityFallingConcrete var5 = new AddonEntityFallingConcrete(var1, (double)var2 + 0.5D, (double)var3 + 0.5D, (double)var4 + 0.5D, this.blockID, var1.getBlockMetadata(var2, var3, var4));
+                    this.onStartFalling(var5);
+                    var1.spawnEntityInWorld(var5);
+                }
+
+                return true;
+            }
+            else
+            {
+                var1.setBlockToAir(var2, var3, var4);
+
+                while (this.CanFallIntoBlockAtPos(var1, var2, var3 - 1, var4) && var3 > 0)
+                {
+                    --var3;
+                }
+
+                if (var3 > 0)
+                {
+                    var1.setBlock(var2, var3, var4, this.blockID);
+                }
+
+                return true;
+            }
+        }
+        else
+        {
+            return false;
+        }
+    }
 	
 	@Override
 	public int damageDropped(int metadata){

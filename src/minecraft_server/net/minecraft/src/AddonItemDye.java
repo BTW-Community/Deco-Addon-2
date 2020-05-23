@@ -14,6 +14,7 @@ public class AddonItemDye extends FCItemDye
 				super(ID);
 				setUnlocalizedName("dyePowder");
 				SetBellowsBlowDistance(2);
+				AddonManager.Name(new ItemStack(this, 1, 16), "Black Dye");
 				AddonManager.Name(new ItemStack(this, 1, 20), "Blue Dye");
 				AddonManager.Name(new ItemStack(this, 1, 31), "White Dye");
 			}

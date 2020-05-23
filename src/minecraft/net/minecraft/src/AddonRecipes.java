@@ -810,6 +810,8 @@ public class AddonRecipes {
 			if (i < 15) {
 				FCRecipes.AddCauldronRecipe(new ItemStack(AddonDefs.carpet, 16, i), new ItemStack[] {new ItemStack(AddonDefs.carpet, 16, 15), new ItemStack(Item.dyePowder, 1, i)});
 				FCRecipes.AddCauldronRecipe(new ItemStack(AddonDefs.carpet, 16, i), new ItemStack[] {new ItemStack(AddonDefs.carpet, 16, 15), new ItemStack(Item.dyePowder, 1, i + 16)});
+				FCRecipes.AddShapelessRecipe(new ItemStack(AddonDefs.carpet, 1, i), new ItemStack[] {new ItemStack(AddonDefs.carpet, 1, 15), new ItemStack(Item.dyePowder, 1, i)});
+				FCRecipes.AddShapelessRecipe(new ItemStack(AddonDefs.carpet, 1, i), new ItemStack[] {new ItemStack(AddonDefs.carpet, 1, 15), new ItemStack(Item.dyePowder, 1, i + 16)});
 			}
 		}
 

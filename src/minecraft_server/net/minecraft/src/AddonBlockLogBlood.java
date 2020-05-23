@@ -9,6 +9,7 @@ public class AddonBlockLogBlood extends Block {
         super(var1, FCBetterThanWolves.fcMaterialLog);
         this.setHardness(2.0F);
         this.SetAxesEffectiveOn(true);
+        this.SetChiselsEffectiveOn(true);
         this.SetBuoyancy(1.0F);
         this.SetFurnaceBurnTime(4 * FCEnumFurnaceBurnTime.PLANKS_BLOOD.m_iBurnTime);
         this.SetFireProperties(FCEnumFlammability.EXTREME);
@@ -28,6 +29,30 @@ public class AddonBlockLogBlood extends Block {
         var1.playAuxSFX(2225, var2, var3, var4, 0);
         super.breakBlock(var1, var2, var3, var4, var5, var6);
     }
+
+	public boolean CanConvertBlock(ItemStack var1, World var2, int var3, int var4, int var5)
+	{
+		return true;
+	}
+
+	public boolean ConvertBlock(ItemStack var1, World var2, int var3, int var4, int var5, int var6)
+	{
+		int var7 = var2.getBlockMetadata(var3, var4, var5);
+		byte var8 = 0;
+		int var10;
+
+		int var9 = var7 >> 2 & 3;
+		var10 = FCBetterThanWolves.fcBlockLogDamaged.SetOrientation(var8, var9);
+
+		var2.setBlockAndMetadataWithNotify(var3, var4, var5, AddonDefs.logDamagedBlood.blockID, var10);
+
+		if (!var2.isRemote && ((var7 & 3) == 0 || (var7 & 3) == 2))
+		{
+			FCUtilsItem.EjectStackFromBlockTowardsFacing(var2, var3, var4, var5, new ItemStack(FCBetterThanWolves.fcItemBark, 1, 4), var6);
+		}
+
+		return true;
+	}
 
     public boolean OnBlockSawed(World var1, int var2, int var3, int var4)
     {
