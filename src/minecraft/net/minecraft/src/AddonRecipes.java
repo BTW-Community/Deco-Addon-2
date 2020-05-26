@@ -107,11 +107,13 @@ public class AddonRecipes {
 	private void addFlowerRecipes() {
 		FCRecipes.RemoveVanillaRecipe(new ItemStack(Item.flowerPot, 1), new Object[] {"# #", " # ", '#', Item.brick});
 		FCRecipes.AddShapelessRecipe(new ItemStack(Item.flowerPot, 1), new ItemStack[]{new ItemStack(FCBetterThanWolves.fcItemPileDirt), new ItemStack(FCBetterThanWolves.fcItemUrn)});
-		for (int i = 0; i < 16; ++i)
-			FCRecipes.AddShapelessRecipe(new ItemStack(Block.cloth, 1, BlockCloth.getDyeFromBlock(i)), new Object[] {new ItemStack(Item.dyePowder, 1, i+16), new ItemStack(Item.itemsList[Block.cloth.blockID], 1, 0)});
+		for (int i = 0; i < 15; ++i) {
+			FCRecipes.AddShapelessRecipe(new ItemStack(Block.cloth, 1, BlockCloth.getDyeFromBlock(i)), new Object[] {new ItemStack(Item.dyePowder, 1, i+16), new ItemStack(Block.cloth.blockID, 1, 0)});
+			FCRecipes.AddCauldronRecipe(new ItemStack(Block.cloth, 8, BlockCloth.getDyeFromBlock(i)), new ItemStack[] {new ItemStack(Item.dyePowder, 1, i+16), new ItemStack(Block.cloth.blockID, 8, 0)});
+		}
 
 		//Fertilizer
-		FCRecipes.AddShapelessRecipe(new ItemStack(AddonDefs.fertilizer, 2), new ItemStack[] { new ItemStack(Item.dyePowder, 1, 15), new ItemStack(FCBetterThanWolves.fcItemDung) });
+		FCRecipes.AddShapelessRecipe(new ItemStack(AddonDefs.fertilizer, 2), new ItemStack[] {new ItemStack(Item.dyePowder, 1, 15), new ItemStack(FCBetterThanWolves.fcItemDung)});
 
 		//Flower Recipes
 
@@ -689,13 +691,11 @@ public class AddonRecipes {
 		FCRecipes.AddCauldronRecipe(new ItemStack(AddonDefs.woodStain), new ItemStack[] {new ItemStack(AddonDefs.bottleHempOil), new ItemStack(Item.dyePowder, 1, 16)});
 
 		FCRecipes.AddCauldronRecipe(new ItemStack(Block.planks, 8, 2), new ItemStack[] {new ItemStack(AddonDefs.woodBleach), new ItemStack(Block.planks, 8, 0)});
-		FCRecipes.AddCauldronRecipe(new ItemStack(Block.planks, 8, 0), new ItemStack[] {new ItemStack(AddonDefs.woodBleach), new ItemStack(Block.planks, 8, 3)});
-		FCRecipes.AddCauldronRecipe(new ItemStack(Block.planks, 8, 3), new ItemStack[] {new ItemStack(AddonDefs.woodBleach), new ItemStack(Block.planks, 8, 1)});
+		FCRecipes.AddCauldronRecipe(new ItemStack(Block.planks, 8, 0), new ItemStack[] {new ItemStack(AddonDefs.woodBleach), new ItemStack(Block.planks, 8, 1)});
 		FCRecipes.AddCauldronRecipe(new ItemStack(Block.planks, 8, 1), new ItemStack[] {new ItemStack(AddonDefs.woodBleach), new ItemStack(Block.planks, 8, 5)});
 
 		FCRecipes.AddCauldronRecipe(new ItemStack(Block.planks, 8, 0), new ItemStack[] {new ItemStack(AddonDefs.woodStain), new ItemStack(Block.planks, 8, 2)});
-		FCRecipes.AddCauldronRecipe(new ItemStack(Block.planks, 8, 3), new ItemStack[] {new ItemStack(AddonDefs.woodStain), new ItemStack(Block.planks, 8, 0)});
-		FCRecipes.AddCauldronRecipe(new ItemStack(Block.planks, 8, 1), new ItemStack[] {new ItemStack(AddonDefs.woodStain), new ItemStack(Block.planks, 8, 3)});
+		FCRecipes.AddCauldronRecipe(new ItemStack(Block.planks, 8, 1), new ItemStack[] {new ItemStack(AddonDefs.woodStain), new ItemStack(Block.planks, 8, 0)});
 		FCRecipes.AddCauldronRecipe(new ItemStack(Block.planks, 8, 5), new ItemStack[] {new ItemStack(AddonDefs.woodStain), new ItemStack(Block.planks, 8, 1)});
 
 		//Barrels

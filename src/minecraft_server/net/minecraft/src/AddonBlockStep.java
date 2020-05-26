@@ -76,7 +76,7 @@ public class AddonBlockStep extends FCBlockSlab
     }
     
     public int damageDropped(int meta) {
-    	return meta;
+    	return meta % 8;
     }
 
 	/**
@@ -154,4 +154,12 @@ public class AddonBlockStep extends FCBlockSlab
 	public int GetCombinedMetadata(int var1){
 		return typeMetas[var1];
 	}
+
+    /**
+     * Get the block's damage value (for use with pick block).
+     */
+    public int getDamageValue(World world, int x, int y, int z)
+    {
+        return world.getBlockMetadata(x, y, z) & 7;
+    }
 }
