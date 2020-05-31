@@ -14,6 +14,11 @@ public class AddonBlockThatch extends Block
 		AddonManager.Register(this);
 		AddonManager.Name(this, "Thatch");
 	}
+
+    public boolean CanBePistonShoveled(World var1, int var2, int var3, int var4)
+    {
+        return true;
+    }
 	@Override public boolean isOpaqueCube()
 	{
 		return true;
