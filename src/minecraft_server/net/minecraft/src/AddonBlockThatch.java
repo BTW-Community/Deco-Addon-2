@@ -4,7 +4,7 @@ public class AddonBlockThatch extends Block
 {
 	public AddonBlockThatch(int id)
 	{
-		super(id, Material.cloth);
+		super(id, AddonDefs.materialHay);
 		setUnlocalizedName("blockThatch");
 		setStepSound(soundGrassFootstep);
 		setCreativeTab(CreativeTabs.tabBlock);
@@ -14,6 +14,11 @@ public class AddonBlockThatch extends Block
 		AddonManager.Register(this);
 		AddonManager.Name(this, "Thatch");
 	}
+
+    public boolean CanBePistonShoveled(World var1, int var2, int var3, int var4)
+    {
+        return true;
+    }
 	@Override public boolean isOpaqueCube()
 	{
 		return true;

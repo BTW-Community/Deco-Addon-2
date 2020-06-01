@@ -51,6 +51,10 @@ public class AddonRecipes {
 		//Stairs
 		FCRecipes.AddRecipe(new ItemStack(AddonDefs.terracottaStairs, 4, 0), new Object[]{"#  ","## ","###",'#',new ItemStack(AddonDefs.terracotta, 1, 0)});
 		FCRecipes.AddRecipe(new ItemStack(AddonDefs.terracottaStairs, 1, 0), new Object[]{"# ","##",'#',new ItemStack(AddonDefs.terracottaMouldingAndDecorative, 1, 0)});
+		
+		//Slabs
+		FCRecipes.AddRecipe(new ItemStack(AddonDefs.stoneSlab6, 6, 3), new Object[] {"###", '#', new ItemStack(AddonDefs.terracotta, 1)});
+		FCRecipes.AddRecipe(new ItemStack(AddonDefs.terracotta, 1), new Object[] {"#", "#", '#', new ItemStack(AddonDefs.stoneSlab6, 1, 3)});
 
 		for(int i = 0; i < 16; i++){
 			//Sub blocks
@@ -75,6 +79,10 @@ public class AddonRecipes {
 			FCRecipes.AddRecipe(new ItemStack(AddonDefs.stainedTerracottaStairs[i], 4, 0), new Object[]{"#  ","## ","###",'#',new ItemStack(AddonDefs.stainedTerracotta, 1, i)});
 			FCRecipes.AddRecipe(new ItemStack(AddonDefs.stainedTerracottaStairs[i], 1, 0), new Object[]{"# ","##",'#',new ItemStack(AddonDefs.stainedTerracottaMouldingAndDecorative[i], 1, 0)});
 
+			//Slabs
+			FCRecipes.AddRecipe(new ItemStack(i < 8 ? AddonDefs.terracottaSlab : AddonDefs.terracottaSlab2, 6, i % 8), new Object[] {"###", '#', new ItemStack(AddonDefs.stainedTerracotta, 1, i)});
+			FCRecipes.AddRecipe(new ItemStack(AddonDefs.stainedTerracotta, 1, i), new Object[] {"#", "#", '#', new ItemStack(i < 8 ? AddonDefs.terracottaSlab : AddonDefs.terracottaSlab2, 1, i % 8)});
+			
 			//Glazed Terracotta
 			FCRecipes.AddStokedCrucibleRecipe(new ItemStack(AddonDefs.glazedTerracotta[i]), new ItemStack[] {new ItemStack(AddonDefs.stainedTerracotta, 1, i)});
 		}
@@ -575,6 +583,13 @@ public class AddonRecipes {
 
 		FCRecipes.AddRecipe(new ItemStack(AddonDefs.bloodLog, 4, 1), new Object[] {"XX", "XX", 'X', new ItemStack(FCBetterThanWolves.fcBloodWood)});
 		FCRecipes.AddRecipe(new ItemStack(AddonDefs.bloodLog, 4, 2), new Object[] {"XX", "XX", 'X', new ItemStack(AddonDefs.bloodLog, 1, 0)});
+		
+		FCRecipes.AddStokedCauldronRecipe(new ItemStack(FCBetterThanWolves.fcItemPotash), new ItemStack[] {new ItemStack(AddonDefs.barkLog)});
+		FCRecipes.AddStokedCauldronRecipe(new ItemStack(FCBetterThanWolves.fcItemPotash), new ItemStack[] {new ItemStack(AddonDefs.strippedLog)});
+		FCRecipes.AddStokedCauldronRecipe(new ItemStack(FCBetterThanWolves.fcItemPotash), new ItemStack[] {new ItemStack(AddonDefs.barkLogStripped)});
+		FCRecipes.AddStokedCauldronRecipe(new ItemStack(FCBetterThanWolves.fcItemPotash), new ItemStack[] {new ItemStack(AddonDefs.bloodLog)});
+		FCRecipes.AddStokedCauldronRecipe(new ItemStack(FCBetterThanWolves.fcItemPotash), new ItemStack[] {new ItemStack(AddonDefs.cherryLog)});
+		FCRecipes.AddStokedCauldronRecipe(new ItemStack(FCBetterThanWolves.fcItemPotash), new ItemStack[] {new ItemStack(AddonDefs.planksPainted, 6)});
 
 		//Cherry Sub
 		FCRecipes.AddRecipe(new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingDecorativeItemStubID, 6, FCItemBlockWoodMouldingDecorativeStub.GetItemDamageForType(5, 1)), new Object[] {" S ", "###", "###", '#', new ItemStack(Block.planks, 1, 5), 'S', new ItemStack(FCBetterThanWolves.fcBlockWoodSidingItemStubID, 1, 5)});
@@ -738,8 +753,8 @@ public class AddonRecipes {
 		FCRecipes.RemoveVanillaRecipe(new ItemStack(Item.sign, 3), new Object[] {"#", "X", '#', new ItemStack(FCBetterThanWolves.fcBlockWoodSidingItemStubID, 1, 32767), 'X', new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, 32767)});
 
 		for (int i = 0; i < 6; i++) {
-			FCRecipes.AddRecipe(new ItemStack(Item.sign, 3), new Object[] {"###", "###", " X ", '#', new ItemStack(Block.planks, 1, i), 'X', Item.stick});
-			FCRecipes.AddRecipe(new ItemStack(Item.sign, 3), new Object[] {"#", "X", '#', new ItemStack(FCBetterThanWolves.fcBlockWoodSidingItemStubID, 1, i), 'X', new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, i)});
+			FCRecipes.AddRecipe(new ItemStack(Item.sign, 3, i), new Object[] {"###", "###", " X ", '#', new ItemStack(Block.planks, 1, i), 'X', Item.stick});
+			FCRecipes.AddRecipe(new ItemStack(Item.sign, 3, i), new Object[] {"#", "X", '#', new ItemStack(FCBetterThanWolves.fcBlockWoodSidingItemStubID, 1, i), 'X', new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, i)});
 		}
 	}
 
