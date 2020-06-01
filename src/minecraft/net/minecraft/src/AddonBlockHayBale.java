@@ -4,7 +4,7 @@ public class AddonBlockHayBale extends Block
 {
 	public AddonBlockHayBale(int id)
 	{
-		super(id, Material.cloth);
+		super(id, AddonDefs.materialHay);
 		setUnlocalizedName("blockHay");
 		setStepSound(soundGrassFootstep);
 		setCreativeTab(CreativeTabs.tabBlock);

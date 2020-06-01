@@ -83,22 +83,23 @@ public class AddonItemFertilizer extends Item
 							case 12:
 							case 13:
 							case 14:
+							case 15:
 								world.setBlockAndMetadataWithNotify(NewX, NewY, NewZ, AddonDefs.flower.blockID, R);
 								break;
-							case 15:
+							case 16:
 								world.setBlockWithNotify(NewX, NewY, NewZ, Block.plantYellow.blockID);
 								break;
-							case 16:
+							case 17:
 								world.setBlockWithNotify(NewX, NewY, NewZ, Block.plantRed.blockID);
 								break;
-							case 17:
 							case 18:
 							case 19:
 							case 20:
-								world.setBlockAndMetadataWithNotify(NewX, NewY, NewZ, AddonDefs.tulip.blockID, R-17);
-								break;
 							case 21:
-								world.setBlockAndMetadataWithNotify(NewX, NewY, NewZ, AddonDefs.flower2.blockID, R-21);
+								world.setBlockAndMetadataWithNotify(NewX, NewY, NewZ, AddonDefs.tulip.blockID, R-18);
+								break;
+							case 22:
+								world.setBlockAndMetadataWithNotify(NewX, NewY, NewZ, AddonDefs.flower2.blockID, R-22);
 								break;
 
 							}

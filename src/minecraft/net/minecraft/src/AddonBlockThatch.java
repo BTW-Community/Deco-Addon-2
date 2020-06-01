@@ -4,7 +4,7 @@ public class AddonBlockThatch extends Block
 {
 	public AddonBlockThatch(int id)
 	{
-		super(id, Material.cloth);
+		super(id, AddonDefs.materialHay);
 		setUnlocalizedName("blockThatch");
 		setStepSound(soundGrassFootstep);
 		setCreativeTab(CreativeTabs.tabBlock);

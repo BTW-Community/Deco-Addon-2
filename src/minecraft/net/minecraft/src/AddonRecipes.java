@@ -51,6 +51,10 @@ public class AddonRecipes {
 		//Stairs
 		FCRecipes.AddRecipe(new ItemStack(AddonDefs.terracottaStairs, 4, 0), new Object[]{"#  ","## ","###",'#',new ItemStack(AddonDefs.terracotta, 1, 0)});
 		FCRecipes.AddRecipe(new ItemStack(AddonDefs.terracottaStairs, 1, 0), new Object[]{"# ","##",'#',new ItemStack(AddonDefs.terracottaMouldingAndDecorative, 1, 0)});
+		
+		//Slabs
+		FCRecipes.AddRecipe(new ItemStack(AddonDefs.stoneSlab6, 6, 3), new Object[] {"###", '#', new ItemStack(AddonDefs.terracotta, 1)});
+		FCRecipes.AddRecipe(new ItemStack(AddonDefs.terracotta, 1), new Object[] {"#", "#", '#', new ItemStack(AddonDefs.stoneSlab6, 1, 3)});
 
 		for(int i = 0; i < 16; i++){
 			//Sub blocks
@@ -75,6 +79,10 @@ public class AddonRecipes {
 			FCRecipes.AddRecipe(new ItemStack(AddonDefs.stainedTerracottaStairs[i], 4, 0), new Object[]{"#  ","## ","###",'#',new ItemStack(AddonDefs.stainedTerracotta, 1, i)});
 			FCRecipes.AddRecipe(new ItemStack(AddonDefs.stainedTerracottaStairs[i], 1, 0), new Object[]{"# ","##",'#',new ItemStack(AddonDefs.stainedTerracottaMouldingAndDecorative[i], 1, 0)});
 
+			//Slabs
+			FCRecipes.AddRecipe(new ItemStack(i < 8 ? AddonDefs.terracottaSlab : AddonDefs.terracottaSlab2, 6, i % 8), new Object[] {"###", '#', new ItemStack(AddonDefs.stainedTerracotta, 1, i)});
+			FCRecipes.AddRecipe(new ItemStack(AddonDefs.stainedTerracotta, 1, i), new Object[] {"#", "#", '#', new ItemStack(i < 8 ? AddonDefs.terracottaSlab : AddonDefs.terracottaSlab2, 1, i % 8)});
+			
 			//Glazed Terracotta
 			FCRecipes.AddStokedCrucibleRecipe(new ItemStack(AddonDefs.glazedTerracotta[i]), new ItemStack[] {new ItemStack(AddonDefs.stainedTerracotta, 1, i)});
 		}
