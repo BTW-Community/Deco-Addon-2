@@ -38,7 +38,7 @@ public class AddonUtilsObfuscationMap {
 		itemMap.put("enderPearl", "bo");
 		itemMap.put("sign", "av");
 		itemMap.put("shears", "bf");
-		itemMap.put("flowerPot", "bJ");;
+		itemMap.put("flowerPot", "bK");;
 		itemMap.put("doorWood", "aw");
 		itemMap.put("coal", "n");
 	}
