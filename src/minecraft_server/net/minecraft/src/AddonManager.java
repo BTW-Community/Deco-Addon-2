@@ -64,10 +64,10 @@ public class AddonManager extends FCAddOn
     public static void ServerPlayerConnectionInitialized(NetServerHandler var0, EntityPlayerMP var1) {
         if (!MinecraftServer.getServer().isSinglePlayer())
         {
-            FCUtilsWorld.SendPacketToPlayer(var0, new Packet3Chat("\u00a7f" + "Deco V" + "2.9c"));
+            FCUtilsWorld.SendPacketToPlayer(var0, new Packet3Chat("\u00a7f" + "Deco V" + "2.9d"));
         }
         else {
-            FCUtilsWorld.SendPacketToPlayer(var0, new Packet3Chat("\u00a7f" + "Deco V" + "2.9c"));
+            FCUtilsWorld.SendPacketToPlayer(var0, new Packet3Chat("\u00a7f" + "Deco V" + "2.9d"));
         }
     }
 
