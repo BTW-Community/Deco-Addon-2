@@ -100,8 +100,6 @@ public class AddonTileEntityFlowerPot extends TileEntity implements FCITileEntit
 		hasItem = false;
 		currentBlockID = 0;
 		
-		System.out.println("Item retrieved");
-		
         this.worldObj.markBlockRangeForRenderUpdate(this.xCoord, this.yCoord, this.zCoord, this.xCoord, this.yCoord, this.zCoord);
 
         if (!this.worldObj.isRemote)

@@ -2,6 +2,8 @@ package net.minecraft.src;
 
 import java.util.Random;
 
+import org.lwjgl.opengl.GL11;
+
 public class AddonBlockFlowerPot extends BlockContainer {
 	public AddonBlockFlowerPot(int id) {
 		super(id, Material.circuits);

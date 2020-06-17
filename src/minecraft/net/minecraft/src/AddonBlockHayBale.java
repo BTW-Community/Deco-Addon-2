@@ -4,7 +4,7 @@ public class AddonBlockHayBale extends Block
 {
 	public AddonBlockHayBale(int id)
 	{
-		super(id, Material.cloth);
+		super(id, AddonDefs.materialHay);
 		setUnlocalizedName("blockHay");
 		setStepSound(soundGrassFootstep);
 		setCreativeTab(CreativeTabs.tabBlock);
@@ -14,6 +14,11 @@ public class AddonBlockHayBale extends Block
 		AddonManager.Register(this);
 		AddonManager.Name(this, "Hay Bale");
 	}
+
+    public boolean CanBePistonShoveled(World var1, int var2, int var3, int var4)
+    {
+        return true;
+    }
 	@Override public boolean isOpaqueCube()
 	{
 		return true;

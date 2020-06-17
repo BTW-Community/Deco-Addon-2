@@ -64,10 +64,10 @@ public class AddonManager extends FCAddOn
     public static void ServerPlayerConnectionInitialized(NetServerHandler var0, EntityPlayerMP var1) {
         if (!MinecraftServer.getServer().isSinglePlayer())
         {
-            FCUtilsWorld.SendPacketToPlayer(var0, new Packet3Chat("\u00a7e" + "Deco V" + "2.9"));
+            FCUtilsWorld.SendPacketToPlayer(var0, new Packet3Chat("\u00a7f" + "Deco V" + "2.9c"));
         }
         else {
-            FCUtilsWorld.SendPacketToPlayer(var0, new Packet3Chat("\u00a7f" + "Deco V" + "2.9"));
+            FCUtilsWorld.SendPacketToPlayer(var0, new Packet3Chat("\u00a7f" + "Deco V" + "2.9c"));
         }
     }
 
@@ -161,9 +161,9 @@ public class AddonManager extends FCAddOn
 			Field block = (AddonDefs.terracotta.getClass().getDeclaredField(name));
 			block.setAccessible(true);
 
-			Field modifiersField = Field.class.getDeclaredField( "modifiers" );
-			modifiersField.setAccessible( true );
-			modifiersField.setInt( block, block.getModifiers() & ~Modifier.FINAL );
+			Field modifiersField = Field.class.getDeclaredField("modifiers");
+			modifiersField.setAccessible(true);
+			modifiersField.setInt(block, block.getModifiers() & ~Modifier.FINAL);
 
 			//Block.blocksList[oldBlock.blockID] = null;
 			block.set(newBlock, newBlock);
@@ -183,12 +183,6 @@ public class AddonManager extends FCAddOn
 		} catch (IllegalAccessException e) {
 			e.printStackTrace();
 		}
-	}
-
-	//Used to replace item ids
-	public static int ReplaceItemID(Item item) {
-		Item.itemsList[item.itemID - 256] = null; 
-		return item.itemID - 256;
 	}
 
 	//Does really hacky stuff using reflection to replace final references to vanilla blocks
