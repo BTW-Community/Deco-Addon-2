@@ -9,6 +9,40 @@ public class AddonBlockDoorWood extends FCBlockDoorWood {
 		super(ID);
 		doorIconNames = textures;
 	}
+
+    /**
+     * Called upon block activation (right click on the block.)
+     */
+    public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer var5, int var6, float var7, float var8, float var9)
+    {
+        if (this.blockMaterial == Material.iron)
+        {
+            return true;
+        }
+        else
+        {
+            int var10 = this.getFullMetadata(world, x, y, z);
+            int var11 = var10 & 7;
+            var11 ^= 4;
+
+            if ((var10 & 8) == 0)
+            {
+                world.SetBlockMetadataWithNotify(x, y, z, var11, 3);
+                world.notifyBlockChange(x, y + 1, z, this.blockID);
+                world.markBlockRangeForRenderUpdate(x, y, z, x, y, z);
+                AddonUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.doorOpen", 1, 1, "random.door_open", 1, 1);
+            }
+            else
+            {
+                world.SetBlockMetadataWithNotify(x, y - 1, z, var11, 3);
+                world.notifyBlockChange(x, y, z, this.blockID);
+                world.markBlockRangeForRenderUpdate(x, y - 1, z, x, y, z);
+                AddonUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.doorClose", 1, 1, "random.door_close", 1, 1);
+            }
+            
+            return true;
+        }
+    }
 	
 	@Override
     public int idDropped(int par1, Random par2Random, int par3) {

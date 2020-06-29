@@ -391,7 +391,6 @@ src/minecraft/net/minecraft/src/ContainerFurnace.java
 src/minecraft/net/minecraft/src/ContainerHopper.java
 src/minecraft/net/minecraft/src/ContainerMerchant.java
 src/minecraft/net/minecraft/src/ContainerPlayer.java
-src/minecraft/net/minecraft/src/ContainerRepair.java
 src/minecraft/net/minecraft/src/ContainerSheep.java
 src/minecraft/net/minecraft/src/ContainerWorkbench.java
 src/minecraft/net/minecraft/src/ConvertingProgressUpdate.java
@@ -1932,7 +1931,6 @@ src/minecraft/net/minecraft/src/RegionFileCache.java
 src/minecraft/net/minecraft/src/RegionFileChunkBuffer.java
 src/minecraft/net/minecraft/src/RegistryDefaulted.java
 src/minecraft/net/minecraft/src/RegistrySimple.java
-src/minecraft/net/minecraft/src/Render.java
 src/minecraft/net/minecraft/src/RenderArrow.java
 src/minecraft/net/minecraft/src/RenderBat.java
 src/minecraft/net/minecraft/src/RenderBiped.java
@@ -1957,12 +1955,10 @@ src/minecraft/net/minecraft/src/RenderFish.java
 src/minecraft/net/minecraft/src/RenderGhast.java
 src/minecraft/net/minecraft/src/RenderGiantZombie.java
 src/minecraft/net/minecraft/src/RenderGlobal.#
-src/minecraft/net/minecraft/src/RenderGlobal.java
 src/minecraft/net/minecraft/src/RenderGlobal.~
 src/minecraft/net/minecraft/src/RenderHelper.java
 src/minecraft/net/minecraft/src/RenderIronGolem.java
 src/minecraft/net/minecraft/src/RenderItem.java
-src/minecraft/net/minecraft/src/RenderItemFrame.java
 src/minecraft/net/minecraft/src/RenderLightningBolt.java
 src/minecraft/net/minecraft/src/RenderList.java
 src/minecraft/net/minecraft/src/RenderLiving.java
@@ -2045,7 +2041,6 @@ src/minecraft/net/minecraft/src/SlotEnchantment.java
 src/minecraft/net/minecraft/src/SlotEnchantmentTable.java
 src/minecraft/net/minecraft/src/SlotFurnace.java
 src/minecraft/net/minecraft/src/SlotMerchantResult.java
-src/minecraft/net/minecraft/src/SlotRepair.java
 src/minecraft/net/minecraft/src/SorterStatsBlock.java
 src/minecraft/net/minecraft/src/SorterStatsItem.java
 src/minecraft/net/minecraft/src/SoundManager.java
@@ -2227,7 +2222,6 @@ src/minecraft/net/minecraft/src/WorldProvider.java
 src/minecraft/net/minecraft/src/WorldProviderEnd.java
 src/minecraft/net/minecraft/src/WorldProviderHell.java
 src/minecraft/net/minecraft/src/WorldProviderSurface.java
-src/minecraft/net/minecraft/src/WorldRenderer.java
 src/minecraft/net/minecraft/src/WorldSavedData.java
 src/minecraft/net/minecraft/src/WorldServer.java
 src/minecraft/net/minecraft/src/WorldServerMulti.java

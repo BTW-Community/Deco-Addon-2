@@ -24,6 +24,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.server.MinecraftServer;
 
 public class AddonManager extends FCAddOn
@@ -36,10 +37,14 @@ public class AddonManager extends FCAddOn
 	private static ArrayList<String> loadedAddons = new ArrayList<String>();
 
 	private static boolean isObfuscated = false;
+	private static boolean newSoundsInstalled = true;
+
+	private static Minecraft mc;
 
 	@Override
 	public void PreInitialize() {
 		AddonUtilsObfuscationMap.initialize();
+		mc = Minecraft.getMinecraft();
 		//AddonUtilsObfuscationMap.listAllBlockFields();
 		//AddonUtilsObfuscationMap.listAllItemFields();
 	}
@@ -64,10 +69,10 @@ public class AddonManager extends FCAddOn
     public static void ServerPlayerConnectionInitialized(NetServerHandler var0, EntityPlayerMP var1) {
         if (!MinecraftServer.getServer().isSinglePlayer())
         {
-            FCUtilsWorld.SendPacketToPlayer(var0, new Packet3Chat("\u00a7f" + "Deco V" + "2.9d"));
+            FCUtilsWorld.SendPacketToPlayer(var0, new Packet3Chat("\u00a7f" + "Deco V" + "2.10"));
         }
         else {
-            FCUtilsWorld.SendPacketToPlayer(var0, new Packet3Chat("\u00a7f" + "Deco V" + "2.9d"));
+            FCUtilsWorld.SendPacketToPlayer(var0, new Packet3Chat("\u00a7f" + "Deco V" + "2.10"));
         }
     }
 
@@ -315,6 +320,38 @@ public class AddonManager extends FCAddOn
 			e.printStackTrace();
 		}
 	}
+	
+	public static void ReplaceEntityRenderMapping(Class entity, Render newRender) {
+		try {
+			Field rendererMapField;
+
+			if (isObfuscated) {
+				rendererMapField = RenderManager.class.getDeclaredField("q");
+			}
+			else {
+				rendererMapField = RenderManager.class.getDeclaredField("entityRenderMap");
+			}
+
+			rendererMapField.setAccessible(true);
+			Map specialRendererMap = (Map)rendererMapField.get(RenderManager.instance);
+			specialRendererMap.put(entity, newRender);
+		} catch (NoSuchFieldException e) {
+			if (isObfuscated) {
+				e.printStackTrace();
+			}
+			else {
+				isObfuscated = true;
+				ReplaceEntityRenderMapping(entity, newRender);
+			}
+			e.printStackTrace();
+		} catch (SecurityException e) {
+			e.printStackTrace();
+		} catch (IllegalArgumentException e) {
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		}
+	}
 
 	public static void AddCustomTileEntityRenderer(Class tileEntityClass, TileEntitySpecialRenderer customRenderer) {
 		TileEntityRenderer renderer = TileEntityRenderer.instance;
@@ -393,20 +430,21 @@ public class AddonManager extends FCAddOn
 	{
 		Item.itemsList[target.blockID] = new AddonItemMultiBlock(target, names, preTitle, titles, "");
 	}
-
-	public static void serverCustomPacketReceived(MinecraftServer ms, EntityPlayerMP epmp, Packet250CustomPayload packet) {
-		try {
-			DataInputStream dis = new DataInputStream(new ByteArrayInputStream(packet.data));
-
-			if (packet.channel.equals("DECO|OLDGLASS")) {
-				int size = dis.readInt();
-				int damage = dis.readInt();
-
-				ItemStack stack = new ItemStack(AddonDefs.stainedGlassItem.itemID+256,size,damage);
-				epmp.inventory.setInventorySlotContents(epmp.inventory.currentItem, stack);
+	
+	public static void installResource(String filename) {
+		if (newSoundsInstalled) {
+			File soundFile = new File(mc.mcDataDir, "resources/sound3/deco/" + filename + ".ogg");
+			
+			if (soundFile.exists())
+				mc.installResource("sound3/deco/" + filename + ".ogg", soundFile);
+			else {
+				newSoundsInstalled = false;
+				System.out.println("[INFO] Sound loading failed for " + filename + ", falling back to vanilla sounds");
 			}
-		} catch (IOException e) {
-			e.printStackTrace();
 		}
+	}
+	
+	public static boolean getNewSoundsInstalled() {
+		return newSoundsInstalled;
 	}
 }

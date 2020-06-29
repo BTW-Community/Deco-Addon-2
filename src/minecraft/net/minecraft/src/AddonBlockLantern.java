@@ -14,10 +14,17 @@ public class AddonBlockLantern extends Block
 		setCreativeTab(CreativeTabs.tabDecorations);
 		setHardness(hardness);
 		setLightValue(1F);
-		//setBlockBounds(.3125F, 0F, .3125F, .6875F, .5F, .6875F);
 		AddonManager.Register(this, name);
-		//FCBlockAestheticNonOpaque_LightningRodFix.AddHoldableBlock(this);
 		this.InitBlockBounds(.3125D,	0.0D,	.3125D,		.6875D,		.5D,	.6875D);
+		
+		if (material == Material.iron) {
+			if (AddonManager.getNewSoundsInstalled())
+				this.setStepSound(AddonDefs.stepSoundLantern);
+			else
+				this.setStepSound(Block.soundMetalFootstep);
+		}
+		else
+			this.setStepSound(Block.soundWoodFootstep);
 	}
 	@Override public int onBlockPlaced(World var1, int var2, int var3, int var4, int var5, float var6, float var7, float var8, int var9)
 	{

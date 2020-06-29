@@ -11,9 +11,9 @@ public class AddonItemBlockLogCherry extends FCItemBlockLog
     {
         if (!var2.worldObj.isRemote)
         {
-            if (var3.itemID == this.getBlockID() && var3.getItemDamage() != 1 && var1 == 1)
+            if (var3.itemID == this.getBlockID() && (var3.getItemDamage() == 1 || var3.getItemDamage() == 3) && var1 == 1)
             {
-                FCUtilsItem.EjectStackWithRandomVelocity(var2.worldObj, var2.posX, var2.posY, var2.posZ, new ItemStack(FCBetterThanWolves.fcItemBark, 1, 4));
+                FCUtilsItem.EjectStackWithRandomVelocity(var2.worldObj, var2.posX, var2.posY, var2.posZ, new ItemStack(FCBetterThanWolves.fcItemBark, 1, 5));
             }
             else if (var3.itemID == Block.planks.blockID)
             {

@@ -3,6 +3,8 @@ package net.minecraft.src;
 import java.util.ArrayList;
 import java.util.List;
 
+import net.minecraft.client.Minecraft;
+
 public class AddonDefs {
 	public static final AddonDefs instance = new AddonDefs();
 
@@ -303,6 +305,7 @@ public class AddonDefs {
 		id_glassChunk = 30002,
 		id_fertilizer = 30003,
 		id_chainItem = 30004,
+		id_nameTag=30005,
 	
 		id_bottleHempOil = 30007,
 		id_glassStainedItem = 30008,
@@ -326,6 +329,9 @@ public class AddonDefs {
 
 	public static final Material materialHedge = (new Material(MapColor.foliageColor)).setBurning().setTranslucent().setNoPushMobility().SetAxesEfficientOn().SetAxesTreatAsVegetation().SetMobsCantSpawnOn();
 	public static final Material materialHay = (new Material(MapColor.clothColor)).setBurning().SetAxesEfficientOn().SetAxesTreatAsVegetation().SetMobsCantSpawnOn();
+	
+	public static final StepSound stepSoundLantern = new AddonStepSound("lantern", 1, 1);
+	public static final StepSound stepSoundChain = new AddonStepSound("chain", 1, 1);
 
 	//Clay
 	public static Block terracotta, stainedTerracotta, unfiredTerracotta;
@@ -472,6 +478,7 @@ public class AddonDefs {
 
 	//Tools
 	public static AddonItemChiselDiamond chiselDiamond;
+	public static AddonItemNameTag nameTag;
 
 	//Extra SubBlocks
 	public static Block stoneBrickEdging;
@@ -480,6 +487,7 @@ public class AddonDefs {
 
 	public void addDefinitions() {
 		Item.m_bSuppressConflictWarnings=true;
+		addAllSoundsToPool();
 		addClayDefs();
 		addGlassDefs();
 		addWhiteStoneDefs();
@@ -492,6 +500,49 @@ public class AddonDefs {
 		addExtraSubBlockDefs();
 		addEntityDefs();
 		Item.m_bSuppressConflictWarnings=false;
+	}
+	
+	private void addAllSoundsToPool() {
+		AddonManager.installResource("random/doorClose1");
+		AddonManager.installResource("random/doorClose2");
+		AddonManager.installResource("random/doorClose3");
+		AddonManager.installResource("random/doorClose4");
+		AddonManager.installResource("random/doorClose5");
+		AddonManager.installResource("random/doorClose6");
+		AddonManager.installResource("random/doorOpen1");
+		AddonManager.installResource("random/doorOpen2");
+		AddonManager.installResource("random/doorOpen3");
+		AddonManager.installResource("random/doorOpen4");
+		
+		AddonManager.installResource("random/trapdoorClose1");
+		AddonManager.installResource("random/trapdoorClose2");
+		AddonManager.installResource("random/trapdoorClose3");
+		AddonManager.installResource("random/trapdoorOpen1");
+		AddonManager.installResource("random/trapdoorOpen2");
+		AddonManager.installResource("random/trapdoorOpen3");
+		AddonManager.installResource("random/trapdoorOpen4");
+		
+		AddonManager.installResource("dig/lantern1");
+		AddonManager.installResource("dig/lantern2");
+		AddonManager.installResource("dig/lantern3");
+		AddonManager.installResource("dig/lantern4");
+		AddonManager.installResource("dig/lantern5");
+		AddonManager.installResource("dig/lantern6");
+		AddonManager.installResource("step/lantern1");
+		AddonManager.installResource("step/lantern2");
+		AddonManager.installResource("step/lantern3");
+		AddonManager.installResource("step/lantern4");
+		AddonManager.installResource("step/lantern5");
+		AddonManager.installResource("step/lantern6");
+		
+		AddonManager.installResource("dig/chain1");
+		AddonManager.installResource("dig/chain2");
+		AddonManager.installResource("dig/chain3");
+		AddonManager.installResource("dig/chain4");
+		AddonManager.installResource("step/chain1");
+		AddonManager.installResource("step/chain2");
+		AddonManager.installResource("step/chain3");
+		AddonManager.installResource("step/chain4");
 	}
 
 	private void addClayDefs() {
@@ -750,8 +801,8 @@ public class AddonDefs {
 		stoneBrickCrackedSidingAndCorner = new AddonBlockSidingAndCornerDecorativeWall(id_stoneBrickCrackedSidingAndCorner, Material.rock, "ginger_stoneBrickCrackedDecorative", 2.25F, 10.0F, Block.soundStoneFootstep, "stoneBrickCrackedSiding", "Cracked Stone Brick").SetPicksEffectiveOn();
 		stoneBrickCrackedMouldingAndDecorative = new FCBlockMouldingAndDecorative(id_stoneBrickCrackedMouldingAndDecorative, Material.rock, "ginger_stoneBrickCrackedDecorative", "ginger_stoneBrickCrackedDecorative_column", 3042, 2.25F, 10.0F, Block.soundStoneFootstep, "stoneBrickCrackedMoulding").SetPicksEffectiveOn();
 
-		AddonManager.Register(stoneBrickMossyStairs,  "Mossy Stone brick Stairs");
-		AddonManager.Register(stoneBrickCrackedStairs, "Cracked Stone Bri8ck Stairs");
+		AddonManager.Register(stoneBrickMossyStairs,  "Mossy Stone Brick Stairs");
+		AddonManager.Register(stoneBrickCrackedStairs, "Cracked Stone Brick Stairs");
 		Item.itemsList[stoneBrickMossySidingAndCorner.blockID] = new FCItemBlockSidingAndCorner(stoneBrickMossySidingAndCorner.blockID - 256);
 		Item.itemsList[stoneBrickMossyMouldingAndDecorative.blockID] = new FCItemBlockMouldingAndDecorative(stoneBrickMossyMouldingAndDecorative.blockID - 256);
 		AddonManager.NameSubBlocks_Wall(stoneBrickMossySidingAndCorner, stoneBrickMossyMouldingAndDecorative, " Mossy Stone Brick");
@@ -1327,6 +1378,8 @@ public class AddonDefs {
 		AddonManager.Register(trapdoorCherry, "Cherry Trap Door");
 
 		//Doors
+		BlockDoor doorOak = new AddonBlockDoorWood(AddonManager.ReplaceBlockID(Block.doorWood), new String[] {"doorWood_lower", "doorWood_upper"});
+		AddonManager.SetVanillaBlockFinal("doorWood", Block.doorWood, doorOak);
 		doorSpruce = new AddonBlockDoorWood(id_doorSpruce, new String[] {"ginger_doorSpruce_lower", "ginger_doorSpruce_upper"});
 		doorBirch = new AddonBlockDoorWood(id_doorBirch, new String[] {"ginger_doorBirch_lower", "ginger_doorBirch_upper"});
 		doorJungle = new AddonBlockDoorWood(id_doorJungle, new String[] {"ginger_doorJungle_lower", "ginger_doorJungle_upper"});
@@ -1541,10 +1594,10 @@ public class AddonDefs {
 		paperWall = new AddonBlockPaperWall(id_paperWall);
 		fenceSteel = new AddonBlockWroughtBars(id_fenceSteel);
 
-		lanternPaper = new AddonBlockLantern(id_lanternPaper,Material.wood,.3F,"paper","Firefly Lantern",true).setStepSound(Block.soundWoodFootstep);
+		lanternPaper = new AddonBlockLantern(id_lanternPaper,Material.wood,.3F,"paper","Firefly Lantern",true);
 		lanternPaper.SetAxesEffectiveOn(true);
 		chandelier = new AddonBlockChandelier(id_chandelier);
-		lanternSteel = new AddonBlockLantern(id_lanternSteel,Material.iron,.5F,"steel","Wrought Iron Lantern").setStepSound(Block.soundStoneFootstep);
+		lanternSteel = new AddonBlockLantern(id_lanternSteel,Material.iron,.5F,"steel","Wrought Iron Lantern", false);
 		lanternSteel.SetPicksEffectiveOn(true);
 
 		AddonManager.Register(paperWall, "Paper Wall");
@@ -1773,6 +1826,10 @@ public class AddonDefs {
 		//Shears - for added efficient blocks
 		Item shears = new AddonItemShears(Item.shears.itemID - 256).setUnlocalizedName("shears");
 		AddonManager.SetVanillaItemFinal("shears", Item.shears, shears);
+		
+		//Name Tags
+		nameTag = new AddonItemNameTag(id_nameTag);
+		AddonManager.Name(nameTag, "Name Tag");
 	}
 
 	private void addSubBlockReplaceDefs() {
@@ -1800,5 +1857,6 @@ public class AddonDefs {
 		AddonManager.ReplaceSpawnableEntity("Squid", FCEntitySquid.class, AddonEntitySquid.class);
 		AddonManager.ReplaceSpawnableEntity("Ozelot", FCEntityOcelot.class, EntityOcelot.class);
 		EntityList.AddMapping(AddonEntityFallingConcrete.class, "FallingConcrete", id_entityFallingConcrete);
+		//AddonManager.ReplaceEntityRenderMapping(EntityItemFrame.class, new AddonRenderItemFrame());
 	}
 }
