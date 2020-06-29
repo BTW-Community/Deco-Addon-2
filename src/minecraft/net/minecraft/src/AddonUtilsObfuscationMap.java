@@ -43,6 +43,7 @@ public class AddonUtilsObfuscationMap {
 		itemMap.put("doorWood", "aw");
 		itemMap.put("coal", "n");
 		itemMap.put("itemFrame", "bJ");
+		itemMap.put("painting", "at");
 	}
 	
 	public static String getBlockLookup(String blockName) {

@@ -157,7 +157,7 @@ public class AddonBlockWoodSlab extends FCBlockSlab
 	 */
 	public void registerIcons(IconRegister par1IconRegister)
 	{
-		this.blockIcon = par1IconRegister.registerIcon("planks");
-		this.theIcon = par1IconRegister.registerIcon("planks");
+		this.blockIcon = par1IconRegister.registerIcon("wood");
+		this.theIcon = par1IconRegister.registerIcon("wood");
 	}
 }

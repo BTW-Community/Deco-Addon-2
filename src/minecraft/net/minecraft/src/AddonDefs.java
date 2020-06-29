@@ -337,6 +337,7 @@ public class AddonDefs {
 	public static final StepSound stepSoundBone = new AddonStepSound("bone", 1, 1);
 	public static final StepSound stepSoundSoulSand = new AddonStepSound("soulsand", 1, 1);
 	public static final StepSound stepSoundSteel = new AddonStepSound("soulsteel", 1, 1);
+	public static final StepSound stepSoundVine = new AddonStepSoundVine(1, 1); 
 
 	//Clay
 	public static Block terracotta, stainedTerracotta, unfiredTerracotta;
@@ -620,16 +621,20 @@ public class AddonDefs {
 		AddonManager.installResource("step/soulsteel5");
 		AddonManager.installResource("step/soulsteel6");
 		
+		AddonManager.installResource("step/vine1");
+		AddonManager.installResource("step/vine2");
+		AddonManager.installResource("step/vine3");
+		AddonManager.installResource("step/vine4");
+		AddonManager.installResource("step/vine5");
+		
 		AddonManager.installResource("mob/squid/say1");
 		AddonManager.installResource("mob/squid/say2");
 		AddonManager.installResource("mob/squid/say3");
 		AddonManager.installResource("mob/squid/say4");
 		AddonManager.installResource("mob/squid/say5");
-
 		AddonManager.installResource("mob/squid/death1");
 		AddonManager.installResource("mob/squid/death2");
 		AddonManager.installResource("mob/squid/death3");
-
 		AddonManager.installResource("mob/squid/hurt1");
 		AddonManager.installResource("mob/squid/hurt2");
 		AddonManager.installResource("mob/squid/hurt3");
@@ -654,8 +659,16 @@ public class AddonDefs {
 		AddonManager.installResource("misc/itemFrame/rotateItem3");
 		AddonManager.installResource("misc/itemFrame/rotateItem4");
 		
+		AddonManager.installResource("misc/painting/break1");
+		AddonManager.installResource("misc/painting/break2");
+		AddonManager.installResource("misc/painting/break3");
+		AddonManager.installResource("misc/painting/place1");
+		AddonManager.installResource("misc/painting/place2");
+		AddonManager.installResource("misc/painting/place3");
+		AddonManager.installResource("misc/painting/place4");
+		
 		if (AddonManager.getNewSoundsInstalled()) {
-			System.out.println("[INFO] Addon sounds successfully loaded");
+			System.out.println("[INFO] Addon Sounds Successfully Loaded");
 		}
 	}
 
@@ -1791,7 +1804,8 @@ public class AddonDefs {
 		AddonManager.SetVanillaBlockFinal("fire", Block.fire, fire);
 		FCBetterThanWolves.fcBlockFireStoked = new AddonBlockFireStoked(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockFireStoked));
 
-		//Bone pillar
+		//Bone
+		FCBetterThanWolves.fcAestheticOpaque = new AddonBlockAestheticOpaque(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcAestheticOpaque));
 		bonePillar = new AddonBlockDirectional(id_bonePillar, FCBetterThanWolves.fcMaterialMiscellaneous, new String[] {"ginger_bonePillar_top"}, new String[] {"ginger_bonePillar_side"})
 				.setHardness(2.0F)
 				.SetPicksEffectiveOn()
@@ -1945,7 +1959,9 @@ public class AddonDefs {
 		//Extra sounds
 		if (AddonManager.getNewSoundsInstalled()) {
 			Block.slowSand.setStepSound(stepSoundSoulSand);
+			Block.vine.setStepSound(stepSoundVine);
 			FCBetterThanWolves.fcSoulforgedSteelBlock.setStepSound(stepSoundSteel);
+			FCBetterThanWolves.fcAnvil.setStepSound(stepSoundSteel);
 		}
 		
 		//Scaffolding
@@ -2016,7 +2032,11 @@ public class AddonDefs {
 		Item itemFrame = new AddonItemFrame(Item.itemFrame.itemID - 256).SetBuoyant().SetIncineratedInCrucible().SetFilterableProperties(1).setUnlocalizedName("frame");
 		AddonManager.SetVanillaItemFinal("itemFrame", Item.itemFrame, itemFrame);
 		EntityList.ReplaceExistingMapping(AddonEntityItemFrame.class, "ItemFrame");
-		
 		//AddonManager.ReplaceEntityRenderMapping(EntityItemFrame.class, new AddonRenderItemFrame());
+		
+		//Painting
+	    Item painting = new AddonItemPainting(Item.painting.itemID - 256).SetBuoyant().SetIncineratedInCrucible().setUnlocalizedName("painting");
+	    AddonManager.SetVanillaItemFinal("painting", Item.painting, painting);
+	    EntityList.ReplaceExistingMapping(AddonEntityPainting.class, "Painting");
 	}
 }
