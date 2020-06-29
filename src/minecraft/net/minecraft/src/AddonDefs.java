@@ -332,6 +332,11 @@ public class AddonDefs {
 	
 	public static final StepSound stepSoundLantern = new AddonStepSound("lantern", 1, 1);
 	public static final StepSound stepSoundChain = new AddonStepSound("chain", 1, 1);
+	public static final StepSound stepSoundNetherrack = new AddonStepSound("netherrack", 1, 1);
+	public static final StepSound stepSoundNetherBrick = new AddonStepSound("netherbrick", 1, 1);
+	public static final StepSound stepSoundBone = new AddonStepSound("bone", 1, 1);
+	public static final StepSound stepSoundSoulSand = new AddonStepSound("soulsand", 1, 1);
+	public static final StepSound stepSoundSteel = new AddonStepSound("soulsteel", 1, 1);
 
 	//Clay
 	public static Block terracotta, stainedTerracotta, unfiredTerracotta;
@@ -522,6 +527,14 @@ public class AddonDefs {
 		AddonManager.installResource("random/trapdoorOpen3");
 		AddonManager.installResource("random/trapdoorOpen4");
 		
+		AddonManager.installResource("random/strip1");
+		AddonManager.installResource("random/strip2");
+		AddonManager.installResource("random/strip3");
+		AddonManager.installResource("random/strip4");
+
+		AddonManager.installResource("random/pumpkinCarve1");
+		AddonManager.installResource("random/pumpkinCarve2");
+		
 		AddonManager.installResource("dig/lantern1");
 		AddonManager.installResource("dig/lantern2");
 		AddonManager.installResource("dig/lantern3");
@@ -543,6 +556,107 @@ public class AddonDefs {
 		AddonManager.installResource("step/chain2");
 		AddonManager.installResource("step/chain3");
 		AddonManager.installResource("step/chain4");
+		
+		AddonManager.installResource("dig/netherrack1");
+		AddonManager.installResource("dig/netherrack2");
+		AddonManager.installResource("dig/netherrack3");
+		AddonManager.installResource("dig/netherrack4");
+		AddonManager.installResource("dig/netherrack5");
+		AddonManager.installResource("dig/netherrack6");
+		AddonManager.installResource("step/netherrack1");
+		AddonManager.installResource("step/netherrack2");
+		AddonManager.installResource("step/netherrack3");
+		AddonManager.installResource("step/netherrack4");
+		AddonManager.installResource("step/netherrack5");
+		AddonManager.installResource("step/netherrack6");
+
+		AddonManager.installResource("dig/netherbrick1");
+		AddonManager.installResource("dig/netherbrick2");
+		AddonManager.installResource("dig/netherbrick3");
+		AddonManager.installResource("dig/netherbrick4");
+		AddonManager.installResource("dig/netherbrick5");
+		AddonManager.installResource("dig/netherbrick6");
+		AddonManager.installResource("step/netherbrick1");
+		AddonManager.installResource("step/netherbrick2");
+		AddonManager.installResource("step/netherbrick3");
+		AddonManager.installResource("step/netherbrick4");
+		AddonManager.installResource("step/netherbrick5");
+		AddonManager.installResource("step/netherbrick6");
+
+		AddonManager.installResource("dig/bone1");
+		AddonManager.installResource("dig/bone2");
+		AddonManager.installResource("dig/bone3");
+		AddonManager.installResource("dig/bone4");
+		AddonManager.installResource("dig/bone5");
+		AddonManager.installResource("step/bone1");
+		AddonManager.installResource("step/bone2");
+		AddonManager.installResource("step/bone3");
+		AddonManager.installResource("step/bone4");
+		AddonManager.installResource("step/bone5");
+
+		AddonManager.installResource("dig/soulsand1");
+		AddonManager.installResource("dig/soulsand2");
+		AddonManager.installResource("dig/soulsand3");
+		AddonManager.installResource("dig/soulsand4");
+		AddonManager.installResource("dig/soulsand5");
+		AddonManager.installResource("dig/soulsand6");
+		AddonManager.installResource("dig/soulsand7");
+		AddonManager.installResource("dig/soulsand8");
+		AddonManager.installResource("dig/soulsand9");
+		AddonManager.installResource("step/soulsand1");
+		AddonManager.installResource("step/soulsand2");
+		AddonManager.installResource("step/soulsand3");
+		AddonManager.installResource("step/soulsand4");
+		AddonManager.installResource("step/soulsand5");
+
+		AddonManager.installResource("dig/soulsteel1");
+		AddonManager.installResource("dig/soulsteel2");
+		AddonManager.installResource("dig/soulsteel3");
+		AddonManager.installResource("dig/soulsteel4");
+		AddonManager.installResource("step/soulsteel1");
+		AddonManager.installResource("step/soulsteel2");
+		AddonManager.installResource("step/soulsteel3");
+		AddonManager.installResource("step/soulsteel4");
+		AddonManager.installResource("step/soulsteel5");
+		AddonManager.installResource("step/soulsteel6");
+		
+		AddonManager.installResource("mob/squid/say1");
+		AddonManager.installResource("mob/squid/say2");
+		AddonManager.installResource("mob/squid/say3");
+		AddonManager.installResource("mob/squid/say4");
+		AddonManager.installResource("mob/squid/say5");
+
+		AddonManager.installResource("mob/squid/death1");
+		AddonManager.installResource("mob/squid/death2");
+		AddonManager.installResource("mob/squid/death3");
+
+		AddonManager.installResource("mob/squid/hurt1");
+		AddonManager.installResource("mob/squid/hurt2");
+		AddonManager.installResource("mob/squid/hurt3");
+		
+		AddonManager.installResource("misc/itemFrame/addItem1");
+		AddonManager.installResource("misc/itemFrame/addItem2");
+		AddonManager.installResource("misc/itemFrame/addItem3");
+		AddonManager.installResource("misc/itemFrame/addItem4");
+		AddonManager.installResource("misc/itemFrame/break1");
+		AddonManager.installResource("misc/itemFrame/break2");
+		AddonManager.installResource("misc/itemFrame/break3");
+		AddonManager.installResource("misc/itemFrame/place1");
+		AddonManager.installResource("misc/itemFrame/place2");
+		AddonManager.installResource("misc/itemFrame/place3");
+		AddonManager.installResource("misc/itemFrame/place4");
+		AddonManager.installResource("misc/itemFrame/removeItem1");
+		AddonManager.installResource("misc/itemFrame/removeItem2");
+		AddonManager.installResource("misc/itemFrame/removeItem3");
+		AddonManager.installResource("misc/itemFrame/removeItem4");
+		AddonManager.installResource("misc/itemFrame/rotateItem1");
+		AddonManager.installResource("misc/itemFrame/rotateItem2");
+		AddonManager.installResource("misc/itemFrame/rotateItem3");
+		AddonManager.installResource("misc/itemFrame/rotateItem4");
+		
+		if (AddonManager.getNewSoundsInstalled()) {
+			System.out.println("[INFO] Addon sounds successfully loaded");
+		}
 	}
 
 	private void addClayDefs() {
@@ -1008,6 +1122,25 @@ public class AddonDefs {
 		netherBrickSuperheated = new AddonBlockNetherBrickSuperheated(id_netherBrickSuperheated);
 		AddonManager.Register(netherBrickSuperheated);
 
+		if (AddonManager.getNewSoundsInstalled()) {
+			Block.netherBrick.setStepSound(stepSoundNetherBrick);
+			Block.netherFence.setStepSound(stepSoundNetherBrick);
+			Block.stairsNetherBrick.setStepSound(stepSoundNetherBrick);
+			FCBetterThanWolves.fcBlockNetherBrickLoose.setStepSound(stepSoundNetherBrick);
+			FCBetterThanWolves.fcBlockNetherBrickLooseSlab.setStepSound(stepSoundNetherBrick);
+			FCBetterThanWolves.fcBlockNetherBrickLooseStairs.setStepSound(stepSoundNetherBrick);
+			FCBetterThanWolves.fcBlockNetherBrickMouldingAndDecorative.setStepSound(stepSoundNetherBrick);
+			FCBetterThanWolves.fcBlockNetherBrickSidingAndCorner.setStepSound(stepSoundNetherBrick);
+			netherBrick.setStepSound(stepSoundNetherBrick);
+			netherBrickLoose.setStepSound(stepSoundNetherBrick);
+			netherBrickStairs.setStepSound(stepSoundNetherBrick);
+			netherBrickSuperheated.setStepSound(stepSoundNetherBrick);
+			netherBrickLooseSlab.setStepSound(stepSoundNetherBrick);
+			netherBrickLooseStairs.setStepSound(stepSoundNetherBrick);
+			netherBrickSidingAndCorner.setStepSound(stepSoundNetherBrick);
+			netherBrickMouldingAndDecorative.setStepSound(stepSoundNetherBrick);
+		}
+
 		//Netherrack
 		netherrackSuperheated = new AddonBlockNetherrackSuperheated(id_netherrackSuperheated);
 		AddonManager.Register(netherrackSuperheated);
@@ -1021,6 +1154,14 @@ public class AddonDefs {
 				.setHardness(2.0F)
 				.setHardness(10.0F);
 		AddonManager.Register(basalt, new String[] {"basalt", "basaltSmooth"}, new String[] {"Basalt", "Polished Basalt"});
+
+		if (AddonManager.getNewSoundsInstalled()) {
+			Block.netherrack.setStepSound(stepSoundNetherrack);
+			Block.oreNetherQuartz.setStepSound(stepSoundNetherrack);
+			FCBetterThanWolves.fcBlockNetherrackFalling.setStepSound(stepSoundNetherrack);
+			netherrackSuperheated.setStepSound(stepSoundNetherrack);
+			basalt.setStepSound(stepSoundNetherrack);
+		}
 
 		//Infused stone
 		infusedStone = new AddonBlockInfusedStone(id_infusedStone);
@@ -1628,6 +1769,7 @@ public class AddonDefs {
 		AddonManager.Register(pumpkin, new String[] {"pumpkinCarved1", "pumpkinCarved2", "pumpkinCarved3"}, new String[] {"Carved Pumpkin", "Carved Pumpkin", "Carved Pumpkin"});
 		pumpkinLit = new AddonBlockPumpkinLit(id_pumpkinLit);
 		AddonManager.Register(pumpkinLit, new String[] {"pumpkinLit1", "pumpkinLit2", "pumpkinLit3"}, new String[] {"Jack 'o' Lantern", "Jack 'o' Lantern", "Jack 'o' Lantern"});
+		Item.itemsList[FCBetterThanWolves.fcBlockPumpkinFresh.blockID] = new AddonItemBlockPumpkinFresh(FCBetterThanWolves.fcBlockPumpkinFresh.blockID - 256);
 
 		//Carpets
 		carpet = new AddonBlockCarpet(id_carpet);
@@ -1658,6 +1800,11 @@ public class AddonDefs {
 				.setCreativeTab(CreativeTabs.tabBlock)
 				.setUnlocalizedName("bonePillar");
 		AddonManager.Register(bonePillar, "Bone Pillar");
+		
+		if (AddonManager.getNewSoundsInstalled()) {
+			bonePillar.setStepSound(stepSoundBone);
+			FCBetterThanWolves.fcBlockBoneSlab.setStepSound(stepSoundBone);
+		}
 
 		//Ender Pearl
 		//Item enderPearl = new AddonItemEnderPearl(AddonManager.ReplaceItemID(Item.enderPearl)).SetFilterableProperties(2).setUnlocalizedName("enderPearl");
@@ -1795,6 +1942,12 @@ public class AddonDefs {
 		Block cocoaPlant = new AddonBlockCocoa(AddonManager.ReplaceBlockID(Block.cocoaPlant)).setHardness(0.2F).setResistance(5.0F).SetBuoyant().setStepSound(Block.soundWoodFootstep).setUnlocalizedName("cocoa");;
 		AddonManager.SetVanillaBlockFinal("cocoaPlant", Block.cocoaPlant, cocoaPlant);
 		
+		//Extra sounds
+		if (AddonManager.getNewSoundsInstalled()) {
+			Block.slowSand.setStepSound(stepSoundSoulSand);
+			FCBetterThanWolves.fcSoulforgedSteelBlock.setStepSound(stepSoundSteel);
+		}
+		
 		//Scaffolding
 		//scaffolding = new AddonBlockScaffolding(id_scaffolding);
 		//AddonManager.Register(scaffolding, "Scaffolding");
@@ -1803,6 +1956,7 @@ public class AddonDefs {
 	private void addToolDefs() {
 		chiselDiamond = new AddonItemChiselDiamond(id_chiselDiamond);
 		AddonManager.Name(chiselDiamond, "Diamondium Chisel");
+		FCBetterThanWolves.fcItemChiselIron = new AddonItemChiselIron(FCBetterThanWolves.fcItemChiselIron.itemID - 256);
 
 		AddonManager.Name(Block.blockDiamond, "Block of Diamond");
 		AddonManager.Name(FCBetterThanWolves.fcItemIngotDiamond, "Diamondium Ingot");
@@ -1855,8 +2009,14 @@ public class AddonDefs {
 
 	private void addEntityDefs() {
 		AddonManager.ReplaceSpawnableEntity("Squid", FCEntitySquid.class, AddonEntitySquid.class);
-		AddonManager.ReplaceSpawnableEntity("Ozelot", FCEntityOcelot.class, EntityOcelot.class);
+		AddonManager.ReplaceSpawnableEntity("Ozelot", FCEntityOcelot.class, AddonEntityOcelot.class);
 		EntityList.AddMapping(AddonEntityFallingConcrete.class, "FallingConcrete", id_entityFallingConcrete);
+		
+		//Item frame
+		Item itemFrame = new AddonItemFrame(Item.itemFrame.itemID - 256).SetBuoyant().SetIncineratedInCrucible().SetFilterableProperties(1).setUnlocalizedName("frame");
+		AddonManager.SetVanillaItemFinal("itemFrame", Item.itemFrame, itemFrame);
+		EntityList.ReplaceExistingMapping(AddonEntityItemFrame.class, "ItemFrame");
+		
 		//AddonManager.ReplaceEntityRenderMapping(EntityItemFrame.class, new AddonRenderItemFrame());
 	}
 }

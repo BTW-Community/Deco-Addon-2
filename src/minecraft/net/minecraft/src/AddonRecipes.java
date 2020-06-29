@@ -20,7 +20,7 @@ public class AddonRecipes {
 
 	private void addClayRecipes() {
 		AddonDefs.unfiredTerracotta.SetCanBeCookedByKiln(true).SetItemIndexDroppedWhenCookedByKiln(AddonDefs.terracotta.blockID);
-		for (int i = 0; i < 16; i++)
+		for (int i = 0; i < 32; i++)
 		{
 			FCRecipes.AddCauldronRecipe(new ItemStack(AddonDefs.stainedTerracotta, 8, i % 16), new ItemStack[] { new ItemStack(AddonDefs.terracotta, 8), new ItemStack(Item.dyePowder, 1, i)});
 		}

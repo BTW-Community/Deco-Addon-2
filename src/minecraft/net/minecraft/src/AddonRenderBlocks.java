@@ -54,6 +54,9 @@ public class AddonRenderBlocks extends RenderBlocks {
     public boolean renderStandardFullBlockWithBlending(Block block, int x, int y, int z) {
     	GL11.glEnable(GL11.GL_BLEND);
     	GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
-    	return block.RenderBlock(this, x, y, z);
+    	boolean wasRendered = block.RenderBlock(this, x, y, z);
+    	GL11.glDisable(GL11.GL_BLEND);
+    	
+    	return wasRendered;
     }
 }

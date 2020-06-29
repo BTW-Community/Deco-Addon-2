@@ -439,7 +439,7 @@ public class AddonManager extends FCAddOn
 				mc.installResource("sound3/deco/" + filename + ".ogg", soundFile);
 			else {
 				newSoundsInstalled = false;
-				System.out.println("[INFO] Sound loading failed for " + filename + ", falling back to vanilla sounds");
+				System.out.println("[INFO] Sound loading failed for: " + filename + ", falling back to vanilla sounds");
 			}
 		}
 	}
