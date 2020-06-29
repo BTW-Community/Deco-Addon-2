@@ -42,6 +42,9 @@ public class MinecraftAppletImpl extends Minecraft
         }
 
         super.startGame();
+
+        this.renderGlobal = new AddonRenderGlobal(this, this.renderEngine);
+        this.renderEngine.refreshTextureMaps();
     }
 
     /**

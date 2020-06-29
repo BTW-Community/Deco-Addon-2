@@ -77,7 +77,7 @@ public class AddonManager extends FCAddOn
     }
 
 	public boolean getObfuscation() {
-		return isObfuscated;
+		return isObfuscated();
 	}
 
 	private static boolean Create_HasCall=false;
@@ -158,7 +158,7 @@ public class AddonManager extends FCAddOn
 		try {
 			String name;
 
-			if (isObfuscated)
+			if (isObfuscated())
 				name = AddonUtilsObfuscationMap.getBlockLookup(blockName);
 			else
 				name = blockName;
@@ -174,11 +174,11 @@ public class AddonManager extends FCAddOn
 			block.set(newBlock, newBlock);
 			block.setAccessible(false);
 		} catch (NoSuchFieldException e) {
-			if (isObfuscated) {
+			if (isObfuscated()) {
 				e.printStackTrace();
 			}
 			else {
-				isObfuscated = true;
+				setObfuscated(true);
 				SetVanillaBlockFinal(blockName, oldBlock, newBlock);
 			}
 		} catch (SecurityException e) {
@@ -195,7 +195,7 @@ public class AddonManager extends FCAddOn
 		try {
 			String name;
 
-			if (isObfuscated)
+			if (isObfuscated())
 				name = AddonUtilsObfuscationMap.getItemLookup(itemName);
 			else
 				name = itemName;
@@ -211,11 +211,11 @@ public class AddonManager extends FCAddOn
 			item.set(newItem, newItem);
 			item.setAccessible(false);
 		} catch (NoSuchFieldException e) {
-			if (isObfuscated) {
+			if (isObfuscated()) {
 				e.printStackTrace();
 			}
 			else {
-				isObfuscated = true;
+				setObfuscated(true);
 				SetVanillaItemFinal(itemName, oldItem, newItem);
 			}
 		} catch (SecurityException e) {
@@ -238,7 +238,7 @@ public class AddonManager extends FCAddOn
 				Field waterCreatureList;
 				Field caveCreatureList;
 
-				if (isObfuscated) {
+				if (isObfuscated()) {
 					if (b.getClass().getSuperclass().equals(BiomeGenBase.class)) {
 						creatureList = b.getClass().getSuperclass().getDeclaredField("K");
 						monsterList = b.getClass().getSuperclass().getDeclaredField("J");
@@ -304,11 +304,11 @@ public class AddonManager extends FCAddOn
 				EntityList.ReplaceExistingMapping(newEntity, name);
 			}
 		} catch (NoSuchFieldException e) {
-			if (isObfuscated) {
+			if (isObfuscated()) {
 				e.printStackTrace();
 			}
 			else {
-				isObfuscated = true;
+				setObfuscated(true);
 				ReplaceSpawnableEntity(name, oldEntity, newEntity);
 			}
 			e.printStackTrace();
@@ -325,7 +325,7 @@ public class AddonManager extends FCAddOn
 		try {
 			Field rendererMapField;
 
-			if (isObfuscated) {
+			if (isObfuscated()) {
 				rendererMapField = RenderManager.class.getDeclaredField("q");
 			}
 			else {
@@ -336,11 +336,11 @@ public class AddonManager extends FCAddOn
 			Map specialRendererMap = (Map)rendererMapField.get(RenderManager.instance);
 			specialRendererMap.put(entity, newRender);
 		} catch (NoSuchFieldException e) {
-			if (isObfuscated) {
+			if (isObfuscated()) {
 				e.printStackTrace();
 			}
 			else {
-				isObfuscated = true;
+				setObfuscated(true);
 				ReplaceEntityRenderMapping(entity, newRender);
 			}
 			e.printStackTrace();
@@ -359,7 +359,7 @@ public class AddonManager extends FCAddOn
 		try {
 			Field specialRendererMapField;
 
-			if (isObfuscated) {
+			if (isObfuscated()) {
 				specialRendererMapField = renderer.getClass().getDeclaredField("j");
 			}
 			else {
@@ -370,11 +370,11 @@ public class AddonManager extends FCAddOn
 			Map specialRendererMap = (Map)specialRendererMapField.get(renderer);
 			specialRendererMap.put(tileEntityClass, customRenderer);
 		} catch (NoSuchFieldException e) {
-			if (isObfuscated) {
+			if (isObfuscated()) {
 				e.printStackTrace();
 			}
 			else {
-				isObfuscated = true;
+				setObfuscated(true);
 				AddCustomTileEntityRenderer(tileEntityClass, customRenderer);
 			}
 			e.printStackTrace();
@@ -446,5 +446,13 @@ public class AddonManager extends FCAddOn
 	
 	public static boolean getNewSoundsInstalled() {
 		return newSoundsInstalled;
+	}
+
+	public static boolean isObfuscated() {
+		return isObfuscated;
+	}
+
+	public static void setObfuscated(boolean isObfuscated) {
+		AddonManager.isObfuscated = isObfuscated;
 	}
 }

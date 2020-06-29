@@ -5,11 +5,7 @@ public class AddonRenderBlocks extends RenderBlocks {
 		super();
 	}
 	
-	public AddonRenderBlocks(WorldClient worldClient) {
-		super(worldClient);
-	}
-
-	public AddonRenderBlocks(ChunkCache chunkCache) {
-		super(chunkCache);
+	public AddonRenderBlocks(IBlockAccess blockAccess) {
+		super(blockAccess);
 	}
 }

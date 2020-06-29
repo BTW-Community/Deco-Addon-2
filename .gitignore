@@ -1954,6 +1954,7 @@ src/minecraft/net/minecraft/src/RenderFireball.java
 src/minecraft/net/minecraft/src/RenderFish.java
 src/minecraft/net/minecraft/src/RenderGhast.java
 src/minecraft/net/minecraft/src/RenderGiantZombie.java
+src/minecraft/net/minecraft/src/RenderGlobal.java
 src/minecraft/net/minecraft/src/RenderGlobal.#
 src/minecraft/net/minecraft/src/RenderGlobal.~
 src/minecraft/net/minecraft/src/RenderHelper.java

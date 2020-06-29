@@ -34,7 +34,7 @@ public class RenderGlobal implements IWorldAccess
     private Minecraft mc;
 
     /** Global render blocks */
-    private AddonRenderBlocks globalRenderBlocks;
+    private RenderBlocks globalRenderBlocks;
 
     /** OpenGL occlusion query base */
     private IntBuffer glOcclusionQueryBase;
@@ -287,7 +287,7 @@ public class RenderGlobal implements IWorldAccess
         this.prevSortZ = -9999.0D;
         RenderManager.instance.set(par1WorldClient);
         this.theWorld = par1WorldClient;
-        this.globalRenderBlocks = new AddonRenderBlocks(par1WorldClient);
+        this.globalRenderBlocks = new RenderBlocks(par1WorldClient);
 
         if (par1WorldClient != null)
         {
