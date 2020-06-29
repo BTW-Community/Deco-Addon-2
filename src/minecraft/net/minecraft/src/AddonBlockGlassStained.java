@@ -51,6 +51,15 @@ public class AddonBlockGlassStained extends FCBlockGlass
         }
     }
 
+    /**
+     * Returns true if the given side of this block type should be rendered, if the adjacent block is at the given
+     * coordinates.  Args: blockAccess, x, y, z, side
+     */
+    public boolean shouldSideBeRendered(IBlockAccess par1IBlockAccess, int par2, int par3, int par4, int par5)
+    {
+    	return true;
+    }
+
 	public int damageDropped(int Meta)
 	{
 		return Meta;
