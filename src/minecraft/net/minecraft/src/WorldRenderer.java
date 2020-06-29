@@ -128,84 +128,84 @@ public class WorldRenderer
         if (this.needsUpdate)
         {
             this.needsUpdate = false;
-            int var1 = this.posX;
-            int var2 = this.posY;
-            int var3 = this.posZ;
-            int var4 = this.posX + 16;
-            int var5 = this.posY + 16;
-            int var6 = this.posZ + 16;
+            int xMin = this.posX;
+            int yMin = this.posY;
+            int zMin = this.posZ;
+            int xMax = this.posX + 16;
+            int yMax = this.posY + 16;
+            int zMax = this.posZ + 16;
 
-            for (int var7 = 0; var7 < 2; ++var7)
+            for (int i = 0; i < 2; ++i)
             {
-                this.skipRenderPass[var7] = true;
+                this.skipRenderPass[i] = true;
             }
 
             Chunk.isLit = false;
-            HashSet var21 = new HashSet();
-            var21.addAll(this.tileEntityRenderers);
+            HashSet tileEntityRendererSet = new HashSet();
+            tileEntityRendererSet.addAll(this.tileEntityRenderers);
             this.tileEntityRenderers.clear();
-            byte var8 = 1;
-            ChunkCache var9 = new ChunkCache(this.worldObj, var1 - var8, var2 - var8, var3 - var8, var4 + var8, var5 + var8, var6 + var8, var8);
+            byte posDiff = 1;
+            ChunkCache chunkCache = new ChunkCache(this.worldObj, xMin - posDiff, yMin - posDiff, zMin - posDiff, xMax + posDiff, yMax + posDiff, zMax + posDiff, posDiff);
 
-            if (!var9.extendedLevelsInChunkCache())
+            if (!chunkCache.extendedLevelsInChunkCache())
             {
                 ++chunksUpdated;
-                AddonRenderBlocks var10 = new AddonRenderBlocks(var9);
+                AddonRenderBlocks renderBlocks = new AddonRenderBlocks(chunkCache);
                 this.bytesDrawn = 0;
 
-                for (int var11 = 0; var11 < 2; ++var11)
+                for (int c = 0; c < 2; ++c)
                 {
                     boolean var12 = false;
                     boolean var13 = false;
                     boolean var14 = false;
 
-                    for (int var15 = var2; var15 < var5; ++var15)
+                    for (int j = yMin; j < yMax; ++j)
                     {
-                        for (int var16 = var3; var16 < var6; ++var16)
+                        for (int k = zMin; k < zMax; ++k)
                         {
-                            for (int var17 = var1; var17 < var4; ++var17)
+                            for (int i = xMin; i < xMax; ++i)
                             {
-                                int var18 = var9.getBlockId(var17, var15, var16);
+                                int var18 = chunkCache.getBlockId(i, j, k);
 
                                 if (var18 > 0)
                                 {
                                     if (!var14)
                                     {
                                         var14 = true;
-                                        GL11.glNewList(this.glRenderList + var11, GL11.GL_COMPILE);
+                                        GL11.glNewList(this.glRenderList + c, GL11.GL_COMPILE);
                                         GL11.glPushMatrix();
                                         this.setupGLTranslation();
-                                        float var19 = 1.000001F;
+                                        float scaleVal = 1.000001F;
                                         GL11.glTranslatef(-8.0F, -8.0F, -8.0F);
-                                        GL11.glScalef(var19, var19, var19);
+                                        GL11.glScalef(scaleVal, scaleVal, scaleVal);
                                         GL11.glTranslatef(8.0F, 8.0F, 8.0F);
                                         tessellator.startDrawingQuads();
                                         tessellator.setTranslation((double)(-this.posX), (double)(-this.posY), (double)(-this.posZ));
                                     }
 
-                                    Block var23 = Block.blocksList[var18];
+                                    Block blockForRender = Block.blocksList[var18];
 
-                                    if (var23 != null)
+                                    if (blockForRender != null)
                                     {
-                                        if (var11 == 0 && var23.hasTileEntity())
+                                        if (c == 0 && blockForRender.hasTileEntity())
                                         {
-                                            TileEntity var20 = var9.getBlockTileEntity(var17, var15, var16);
+                                            TileEntity tileEntityForRender = chunkCache.getBlockTileEntity(i, j, k);
 
-                                            if (TileEntityRenderer.instance.hasSpecialRenderer(var20))
+                                            if (TileEntityRenderer.instance.hasSpecialRenderer(tileEntityForRender))
                                             {
-                                                this.tileEntityRenderers.add(var20);
+                                                this.tileEntityRenderers.add(tileEntityForRender);
                                             }
                                         }
 
-                                        int var24 = var23.getRenderBlockPass();
+                                        int renderPass = blockForRender.getRenderBlockPass();
 
-                                        if (var24 != var11)
+                                        if (renderPass != c)
                                         {
                                             var12 = true;
                                         }
-                                        else if (var24 == var11)
+                                        else if (renderPass == c)
                                         {
-                                            var13 |= var10.renderBlockByRenderType(var23, var17, var15, var16);
+                                            var13 |= renderBlocks.renderBlockByRenderType(blockForRender, i, j, k);
                                         }
                                     }
                                 }
@@ -227,7 +227,7 @@ public class WorldRenderer
 
                     if (var13)
                     {
-                        this.skipRenderPass[var11] = false;
+                        this.skipRenderPass[c] = false;
                     }
 
                     if (!var12)
@@ -239,10 +239,10 @@ public class WorldRenderer
 
             HashSet var22 = new HashSet();
             var22.addAll(this.tileEntityRenderers);
-            var22.removeAll(var21);
+            var22.removeAll(tileEntityRendererSet);
             this.tileEntities.addAll(var22);
-            var21.removeAll(this.tileEntityRenderers);
-            this.tileEntities.removeAll(var21);
+            tileEntityRendererSet.removeAll(this.tileEntityRenderers);
+            this.tileEntities.removeAll(tileEntityRendererSet);
             this.isChunkLit = Chunk.isLit;
             this.isInitialized = true;
         }

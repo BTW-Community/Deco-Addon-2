@@ -43,6 +43,7 @@ public class MinecraftAppletImpl extends Minecraft
 
         super.startGame();
 
+        //Reassigns reference to renderGlobal after Minecraft.java has assigned it, and before it is passed anywhere
         this.renderGlobal = new AddonRenderGlobal(this, this.renderEngine);
     }
 

@@ -3,7 +3,16 @@ package net.minecraft.src;
 import org.lwjgl.opengl.GL11;
 
 public class AddonClientUtilsRender {
-
+	public static boolean shouldBlockRenderForMultipleLayers(IBlockAccess blockAccess, int x, int y, int z ) {
+		int id = blockAccess.getBlockId(x, y, z);
+		int meta = blockAccess.getBlockMetadata(x, y, z);
+		
+		if (id == Block.waterMoving.blockID || id == Block.waterStill.blockID || id == Block.portal.blockID || id == AddonDefs.glassStained.blockID)
+			return true;
+		else
+			return false;
+	}
+	
     public static void RenderInvBlockWithMetadataAndColor(RenderBlocks render, Block block, float x, float y, float z, int meta, int red, int blue, int green)
     {
         Tessellator tess = Tessellator.instance;
