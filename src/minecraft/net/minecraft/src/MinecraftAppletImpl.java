@@ -29,25 +29,6 @@ public class MinecraftAppletImpl extends Minecraft
     }
 
     /**
-     * Starts the game: initializes the canvas, the title, the settings, etcetera.
-     */
-    public void startGame() throws LWJGLException
-    {
-        this.mcDataDir = getMinecraftDir();
-        this.gameSettings = new GameSettings(this, this.mcDataDir);
-
-        if (this.gameSettings.overrideHeight > 0 && this.gameSettings.overrideWidth > 0 && this.mainFrame.getParent() != null && this.mainFrame.getParent().getParent() != null)
-        {
-            this.mainFrame.getParent().getParent().setSize(this.gameSettings.overrideWidth, this.gameSettings.overrideHeight);
-        }
-
-        super.startGame();
-
-        //Reassigns reference to renderGlobal after Minecraft.java has assigned it, and before it is passed anywhere
-        this.renderGlobal = new AddonRenderGlobal(this, this.renderEngine);
-    }
-
-    /**
      * Arguments: World foldername,  World ingame name, WorldSettings
      */
     public void launchIntegratedServer(String par1Str, String par2Str, WorldSettings par3WorldSettings)
