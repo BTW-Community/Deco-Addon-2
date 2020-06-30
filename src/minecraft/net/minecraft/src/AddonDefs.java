@@ -1580,7 +1580,7 @@ public class AddonDefs {
 		cherryWoodChair = new AddonBlockChairWood(id_cherryWoodChair, "cherry", "Cherry");
 
 		//Painted planks
-		planksPainted = (new AddonBlockPlanksPainted(id_planksPainted, "ginger_planksPainted", "Painted Planks")).setHardness(2.0F).setResistance(10.0F).setStepSound(Block.soundWoodFootstep).setCreativeTab(CreativeTabs.tabBlock);
+		planksPainted = (new AddonBlockPlanksPainted(id_planksPainted, "ginger_planksPainted", "Painted Planks")).setHardness(1.0F).setResistance(5.0F).setStepSound(Block.soundWoodFootstep).setCreativeTab(CreativeTabs.tabBlock);
 
 		paintedPlanksSidingAndCorner = new Block[16];
 		paintedPlanksMouldingAndDecorative = new Block[16];
@@ -1904,22 +1904,22 @@ public class AddonDefs {
 		AddonManager.Register(hedgeCherryStairs, "Cherry Hedge Stairs");
 		
 		Item.itemsList[hedgeOakSidingAndCorner.blockID] = new FCItemBlockSidingAndCorner(hedgeOakSidingAndCorner.blockID - 256);
-		Item.itemsList[hedgeOakMouldingAndDecorative.blockID] = new FCItemBlockMoulding(hedgeOakMouldingAndDecorative.blockID - 256);
+		Item.itemsList[hedgeOakMouldingAndDecorative.blockID] = new FCItemBlockMouldingAndDecorative(hedgeOakMouldingAndDecorative.blockID - 256);
 		AddonManager.NameSubBlocks_Wall(hedgeOakSidingAndCorner, hedgeOakMouldingAndDecorative, "Oak Hedge");
 		Item.itemsList[hedgeSpruceSidingAndCorner.blockID] = new FCItemBlockSidingAndCorner(hedgeSpruceSidingAndCorner.blockID - 256);
-		Item.itemsList[hedgeSpruceMouldingAndDecorative.blockID] = new FCItemBlockMoulding(hedgeSpruceMouldingAndDecorative.blockID - 256);
+		Item.itemsList[hedgeSpruceMouldingAndDecorative.blockID] = new FCItemBlockMouldingAndDecorative(hedgeSpruceMouldingAndDecorative.blockID - 256);
 		AddonManager.NameSubBlocks_Wall(hedgeSpruceSidingAndCorner, hedgeSpruceMouldingAndDecorative, "Spruce Hedge");
 		Item.itemsList[hedgeBirchSidingAndCorner.blockID] = new FCItemBlockSidingAndCorner(hedgeBirchSidingAndCorner.blockID - 256);
-		Item.itemsList[hedgeBirchMouldingAndDecorative.blockID] = new FCItemBlockMoulding(hedgeBirchMouldingAndDecorative.blockID - 256);
+		Item.itemsList[hedgeBirchMouldingAndDecorative.blockID] = new FCItemBlockMouldingAndDecorative(hedgeBirchMouldingAndDecorative.blockID - 256);
 		AddonManager.NameSubBlocks_Wall(hedgeBirchSidingAndCorner, hedgeBirchMouldingAndDecorative, "Birch Hedge");
 		Item.itemsList[hedgeJungleSidingAndCorner.blockID] = new FCItemBlockSidingAndCorner(hedgeJungleSidingAndCorner.blockID - 256);
-		Item.itemsList[hedgeJungleMouldingAndDecorative.blockID] = new FCItemBlockMoulding(hedgeJungleMouldingAndDecorative.blockID - 256);
+		Item.itemsList[hedgeJungleMouldingAndDecorative.blockID] = new FCItemBlockMouldingAndDecorative(hedgeJungleMouldingAndDecorative.blockID - 256);
 		AddonManager.NameSubBlocks_Wall(hedgeJungleSidingAndCorner, hedgeJungleMouldingAndDecorative, "Jungle Hedge");
 		Item.itemsList[hedgeBloodSidingAndCorner.blockID] = new FCItemBlockSidingAndCorner(hedgeBloodSidingAndCorner.blockID - 256);
-		Item.itemsList[hedgeBloodMouldingAndDecorative.blockID] = new FCItemBlockMoulding(hedgeBloodMouldingAndDecorative.blockID - 256);
+		Item.itemsList[hedgeBloodMouldingAndDecorative.blockID] = new FCItemBlockMouldingAndDecorative(hedgeBloodMouldingAndDecorative.blockID - 256);
 		AddonManager.NameSubBlocks_Wall(hedgeBloodSidingAndCorner, hedgeBloodMouldingAndDecorative, "Blood Wood Hedge");
 		Item.itemsList[hedgeCherrySidingAndCorner.blockID] = new FCItemBlockSidingAndCorner(hedgeCherrySidingAndCorner.blockID - 256);
-		Item.itemsList[hedgeCherryMouldingAndDecorative.blockID] = new FCItemBlockMoulding(hedgeCherryMouldingAndDecorative.blockID - 256);
+		Item.itemsList[hedgeCherryMouldingAndDecorative.blockID] = new FCItemBlockMouldingAndDecorative(hedgeCherryMouldingAndDecorative.blockID - 256);
 		AddonManager.NameSubBlocks_Wall(hedgeCherrySidingAndCorner, hedgeCherryMouldingAndDecorative, "Cherry Hedge");
 		
 		//Panes replace
@@ -1955,6 +1955,16 @@ public class AddonDefs {
 		FCBetterThanWolves.fcItemCocoaBeans = new AddonItemCocoaBeans(FCBetterThanWolves.fcItemCocoaBeans.itemID - 256);
 		Block cocoaPlant = new AddonBlockCocoa(AddonManager.ReplaceBlockID(Block.cocoaPlant)).setHardness(0.2F).setResistance(5.0F).SetBuoyant().setStepSound(Block.soundWoodFootstep).setUnlocalizedName("cocoa");;
 		AddonManager.SetVanillaBlockFinal("cocoaPlant", Block.cocoaPlant, cocoaPlant);
+		
+		//Fluids
+		BlockFluid waterStill = new AddonBlockWaterStationary(AddonManager.ReplaceBlockID(Block.waterStill), Material.water);
+		AddonManager.SetVanillaBlockFinal("waterStill", Block.waterStill, waterStill);
+		BlockFluid waterMoving = new AddonBlockWaterFlowing(AddonManager.ReplaceBlockID(Block.waterMoving), Material.water);
+		AddonManager.SetVanillaBlockFinal("waterMoving", Block.waterMoving, waterMoving);
+		BlockFluid lavaStill = new AddonBlockLavaStationary(AddonManager.ReplaceBlockID(Block.lavaStill), Material.lava);
+		AddonManager.SetVanillaBlockFinal("lavaStill", Block.lavaStill, lavaStill);
+		BlockFluid lavaMoving = new AddonBlockLavaFlowing(AddonManager.ReplaceBlockID(Block.lavaMoving), Material.lava);
+		AddonManager.SetVanillaBlockFinal("lavaMoving", Block.lavaMoving, lavaMoving);
 		
 		//Extra sounds
 		if (AddonManager.getNewSoundsInstalled()) {
@@ -2027,6 +2037,7 @@ public class AddonDefs {
 		AddonManager.ReplaceSpawnableEntity("Squid", FCEntitySquid.class, AddonEntitySquid.class);
 		AddonManager.ReplaceSpawnableEntity("Ozelot", FCEntityOcelot.class, AddonEntityOcelot.class);
 		EntityList.AddMapping(AddonEntityFallingConcrete.class, "FallingConcrete", id_entityFallingConcrete);
+		EntityList.ReplaceExistingMapping(AddonEntityVillager.class, "Villager");
 		
 		//Item frame
 		Item itemFrame = new AddonItemFrame(Item.itemFrame.itemID - 256).SetBuoyant().SetIncineratedInCrucible().SetFilterableProperties(1).setUnlocalizedName("frame");

@@ -414,7 +414,6 @@ src/minecraft/net/minecraft/src/CreativeTabTransport.java
 src/minecraft/net/minecraft/src/CreativeTabs.java
 src/minecraft/net/minecraft/src/CryptManager.java
 src/minecraft/net/minecraft/src/DamageSource.java
-src/minecraft/net/minecraft/src/DataWatcher.java
 src/minecraft/net/minecraft/src/DedicatedPlayerList.java
 src/minecraft/net/minecraft/src/DedicatedServer.java
 src/minecraft/net/minecraft/src/DedicatedServerCommandThread.java

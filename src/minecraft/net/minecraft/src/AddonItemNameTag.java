@@ -13,7 +13,7 @@ public class AddonItemNameTag extends Item {
 		String name = stack.getDisplayName();
 		
 		//Does not allow blank names (or unchanged from base name)
-		if (name.equals(""))
+		if (name.equals("") || !stack.hasDisplayName())
 			return false;
 		
 		//Applies the name

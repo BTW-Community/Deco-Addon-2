@@ -38,11 +38,11 @@ public class RenderItemFrame extends Render
 
         if (var4 != null)
         {
-            var2 = Boolean.valueOf(true);
+            var2 = true;
             var5 = new EntityItem(par1EntityItemFrame.worldObj, 0.0D, 0.0D, 0.0D, var4);
             var5.getEntityItem().stackSize = 1;
             var5.hoverStart = 0.0F;
-            var3 = Boolean.valueOf(var5.getEntityItem().getItem() == Item.map);
+            var3 = var5.getEntityItem().getItem() == Item.map;
         }
 
         GL11.glPushMatrix();
@@ -132,53 +132,57 @@ public class RenderItemFrame extends Render
             }
 
             GL11.glPopMatrix();
+            
+            if (var4.hasDisplayName()) {
+            	System.out.println("Display name");
+            	renderLivingLabel(par1EntityItemFrame, var4.getDisplayName(), par1EntityItemFrame.posX, par1EntityItemFrame.posY, par1EntityItemFrame.posZ, 8);
+            }
         }
     }
 
-    private void func_82402_b(EntityItemFrame par1EntityItemFrame)
+    /**
+     * Draws the debug or playername text above a living
+     */
+    protected void renderLivingLabel(EntityItemFrame itemFrame, String label, double par3, double par5, double par7, int par9)
     {
-        ItemStack var2 = par1EntityItemFrame.getDisplayedItem();
+        double var10 = itemFrame.getDistanceSqToEntity(this.renderManager.livingPlayer);
 
-        if (var2 != null)
+        if (var10 <= (double)(par9 * par9))
         {
-            EntityItem var3 = new EntityItem(par1EntityItemFrame.worldObj, 0.0D, 0.0D, 0.0D, var2);
-            var3.getEntityItem().stackSize = 1;
-            var3.hoverStart = 0.0F;
+            FontRenderer var12 = this.getFontRendererFromRenderManager();
+            float var13 = 1.6F;
+            float var14 = 0.016666668F * var13;
             GL11.glPushMatrix();
-            GL11.glTranslatef(-0.453125F * (float)Direction.offsetX[par1EntityItemFrame.hangingDirection], 0.0F, -0.453125F * (float)Direction.offsetZ[par1EntityItemFrame.hangingDirection]);
-            GL11.glRotatef(180.0F + par1EntityItemFrame.rotationYaw, 0.0F, 1.0F, 0.0F);
-            GL11.glRotatef((float)(-90 * par1EntityItemFrame.getRotation()), 0.0F, 0.0F, 1.0F);
+            GL11.glTranslatef((float)par3 + 0.0F, (float)par5 + itemFrame.height + 0.5F, (float)par7);
+            GL11.glNormal3f(0.0F, 1.0F, 0.0F);
+            GL11.glRotatef(-this.renderManager.playerViewY, 0.0F, 1.0F, 0.0F);
+            GL11.glRotatef(this.renderManager.playerViewX, 1.0F, 0.0F, 0.0F);
+            GL11.glScalef(-var14, -var14, var14);
+            GL11.glDisable(GL11.GL_LIGHTING);
+            GL11.glDepthMask(false);
 
-            if (var3.getEntityItem().getItem() == Item.map)
-            {
-                this.renderManager.renderEngine.bindTexture("/misc/mapbg.png");
-                Tessellator tess = Tessellator.instance;
-                GL11.glRotatef(180.0F, 0.0F, 1.0F, 0.0F);
-                GL11.glRotatef(180.0F, 0.0F, 0.0F, 1.0F);
-                GL11.glTranslatef(-0.5F, -0.5F, 0.0224F);
-                GL11.glScalef(0.0078125F, 0.0078125F, 0.0078125F);
-                GL11.glNormal3f(0.0F, 0.0F, -1.0F);
-                tess.startDrawingQuads();
-                tess.addVertexWithUV(0, 128, 0.0D, 0.0D, 1.0D);
-                tess.addVertexWithUV(128, 128, 0.0D, 1.0D, 1.0D);
-                tess.addVertexWithUV(128, 0, 0.0D, 1.0D, 0.0D);
-                tess.addVertexWithUV(0, 0, 0.0D, 0.0D, 0.0D);
-                tess.draw();
-                MapData var6 = Item.map.getMapData(var3.getEntityItem(), par1EntityItemFrame.worldObj);
+            GL11.glEnable(GL11.GL_BLEND);
+            GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
+            Tessellator var15 = Tessellator.instance;
+            byte var16 = 0;
 
-                if (var6 != null)
-                {
-                    this.renderManager.itemRenderer.mapItemRenderer.renderMap((EntityPlayer)null, this.renderManager.renderEngine, var6);
-                }
-            }
-            else
-            {
-                GL11.glTranslatef(0.0F, -0.18F, 0.0F);
-                RenderItem.renderInFrame = true;
-                RenderManager.instance.renderEntityWithPosYaw(var3, 0.0D, 0.0D, 0.0D, 0.0F, 0.0F);
-                RenderItem.renderInFrame = false;
-            }
-
+            GL11.glDisable(GL11.GL_TEXTURE_2D);
+            var15.startDrawingQuads();
+            int var17 = var12.getStringWidth(label) / 2;
+            var15.setColorRGBA_F(0.0F, 0.0F, 0.0F, 0.25F);
+            var15.addVertex((double)(-var17 - 1), (double)(-1 + var16), 0.0D);
+            var15.addVertex((double)(-var17 - 1), (double)(8 + var16), 0.0D);
+            var15.addVertex((double)(var17 + 1), (double)(8 + var16), 0.0D);
+            var15.addVertex((double)(var17 + 1), (double)(-1 + var16), 0.0D);
+            var15.draw();
+            GL11.glEnable(GL11.GL_TEXTURE_2D);
+            var12.drawString(label, -var12.getStringWidth(label) / 2, var16, 553648127);
+            GL11.glEnable(GL11.GL_DEPTH_TEST);
+            GL11.glDepthMask(true);
+            var12.drawString(label, -var12.getStringWidth(label) / 2, var16, -1);
+            GL11.glEnable(GL11.GL_LIGHTING);
+            GL11.glDisable(GL11.GL_BLEND);
+            GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
             GL11.glPopMatrix();
         }
     }

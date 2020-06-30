@@ -101,6 +101,10 @@ public class AddonRecipesLogChopping extends FCRecipesLogChopping {
 				{
 					return new ItemStack(Block.planks.blockID, 2, 4);
 				}
+				else if (var6 == AddonDefs.cherryLog.blockID)
+				{
+					return new ItemStack(Block.planks.blockID, 2, 5);
+				}
 				else {
 					return new ItemStack(Block.planks.blockID, 2, var3.getItemDamage());
 				}
@@ -143,6 +147,6 @@ public class AddonRecipesLogChopping extends FCRecipesLogChopping {
 
 	private boolean IsLog(ItemStack itemstack) {
 		int ID = itemstack.itemID;
-		return ID == AddonDefs.strippedLog.blockID || ID == AddonDefs.barkLog.blockID || ID == AddonDefs.barkLogStripped.blockID || ID == AddonDefs.bloodLog.blockID;
+		return ID == AddonDefs.strippedLog.blockID || ID == AddonDefs.barkLog.blockID || ID == AddonDefs.barkLogStripped.blockID || ID == AddonDefs.bloodLog.blockID || ID == AddonDefs.cherryLog.blockID;
 	}
 }
