@@ -6,7 +6,7 @@ public abstract class Render
 {
     protected RenderManager renderManager;
     private ModelBase modelBase = new ModelBiped();
-    protected AddonRenderBlocks renderBlocks = new AddonRenderBlocks();
+    protected RenderBlocks renderBlocks = new RenderBlocks();
     protected float shadowSize = 0.0F;
 
     /**
