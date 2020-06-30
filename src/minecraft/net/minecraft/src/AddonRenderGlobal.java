@@ -41,8 +41,8 @@ public class AddonRenderGlobal extends RenderGlobal {
 			Field renderBlocksField;
 
 			if (AddonManager.isObfuscated()) {
-				worldField = this.getClass().getSuperclass().getDeclaredField("r");
-				renderBlocksField = this.getClass().getSuperclass().getDeclaredField("h");
+				worldField = this.getClass().getSuperclass().getDeclaredField("h");
+				renderBlocksField = this.getClass().getSuperclass().getDeclaredField("r");
 			}
 			else {
 				worldField = this.getClass().getSuperclass().getDeclaredField("theWorld");
