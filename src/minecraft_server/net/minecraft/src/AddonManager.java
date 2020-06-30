@@ -36,10 +36,14 @@ public class AddonManager extends FCAddOn
 	private static ArrayList<String> loadedAddons = new ArrayList<String>();
 
 	private static boolean isObfuscated = false;
+	private static boolean newSoundsInstalled = true;
+
+	private static MinecraftServer mc;
 
 	@Override
 	public void PreInitialize() {
 		AddonUtilsObfuscationMap.initialize();
+		mc = MinecraftServer.getServer();
 		//AddonUtilsObfuscationMap.listAllBlockFields();
 		//AddonUtilsObfuscationMap.listAllItemFields();
 	}
@@ -64,15 +68,15 @@ public class AddonManager extends FCAddOn
     public static void ServerPlayerConnectionInitialized(NetServerHandler var0, EntityPlayerMP var1) {
         if (!MinecraftServer.getServer().isSinglePlayer())
         {
-            FCUtilsWorld.SendPacketToPlayer(var0, new Packet3Chat("\u00a7f" + "Deco V" + "2.9d"));
+            FCUtilsWorld.SendPacketToPlayer(var0, new Packet3Chat("\u00a7f" + "Deco V" + "2.10"));
         }
         else {
-            FCUtilsWorld.SendPacketToPlayer(var0, new Packet3Chat("\u00a7f" + "Deco V" + "2.9d"));
+            FCUtilsWorld.SendPacketToPlayer(var0, new Packet3Chat("\u00a7f" + "Deco V" + "2.10"));
         }
     }
 
 	public boolean getObfuscation() {
-		return isObfuscated;
+		return isObfuscated();
 	}
 
 	private static boolean Create_HasCall=false;
@@ -153,7 +157,7 @@ public class AddonManager extends FCAddOn
 		try {
 			String name;
 
-			if (isObfuscated)
+			if (isObfuscated())
 				name = AddonUtilsObfuscationMap.getBlockLookup(blockName);
 			else
 				name = blockName;
@@ -161,19 +165,19 @@ public class AddonManager extends FCAddOn
 			Field block = (AddonDefs.terracotta.getClass().getDeclaredField(name));
 			block.setAccessible(true);
 
-			Field modifiersField = Field.class.getDeclaredField( "modifiers" );
-			modifiersField.setAccessible( true );
-			modifiersField.setInt( block, block.getModifiers() & ~Modifier.FINAL );
+			Field modifiersField = Field.class.getDeclaredField("modifiers");
+			modifiersField.setAccessible(true);
+			modifiersField.setInt(block, block.getModifiers() & ~Modifier.FINAL);
 
 			//Block.blocksList[oldBlock.blockID] = null;
 			block.set(newBlock, newBlock);
 			block.setAccessible(false);
 		} catch (NoSuchFieldException e) {
-			if (isObfuscated) {
+			if (isObfuscated()) {
 				e.printStackTrace();
 			}
 			else {
-				isObfuscated = true;
+				setObfuscated(true);
 				SetVanillaBlockFinal(blockName, oldBlock, newBlock);
 			}
 		} catch (SecurityException e) {
@@ -185,18 +189,12 @@ public class AddonManager extends FCAddOn
 		}
 	}
 
-	//Used to replace item ids
-	public static int ReplaceItemID(Item item) {
-		Item.itemsList[item.itemID - 256] = null; 
-		return item.itemID - 256;
-	}
-
 	//Does really hacky stuff using reflection to replace final references to vanilla blocks
 	public static void SetVanillaItemFinal(String itemName, Item oldItem, Item newItem) {
 		try {
 			String name;
 
-			if (isObfuscated)
+			if (isObfuscated())
 				name = AddonUtilsObfuscationMap.getItemLookup(itemName);
 			else
 				name = itemName;
@@ -212,11 +210,11 @@ public class AddonManager extends FCAddOn
 			item.set(newItem, newItem);
 			item.setAccessible(false);
 		} catch (NoSuchFieldException e) {
-			if (isObfuscated) {
+			if (isObfuscated()) {
 				e.printStackTrace();
 			}
 			else {
-				isObfuscated = true;
+				setObfuscated(true);
 				SetVanillaItemFinal(itemName, oldItem, newItem);
 			}
 		} catch (SecurityException e) {
@@ -239,7 +237,7 @@ public class AddonManager extends FCAddOn
 				Field waterCreatureList;
 				Field caveCreatureList;
 
-				if (isObfuscated) {
+				if (isObfuscated()) {
 					if (b.getClass().getSuperclass().equals(BiomeGenBase.class)) {
 						creatureList = b.getClass().getSuperclass().getDeclaredField("K");
 						monsterList = b.getClass().getSuperclass().getDeclaredField("J");
@@ -305,11 +303,11 @@ public class AddonManager extends FCAddOn
 				EntityList.ReplaceExistingMapping(newEntity, name);
 			}
 		} catch (NoSuchFieldException e) {
-			if (isObfuscated) {
+			if (isObfuscated()) {
 				e.printStackTrace();
 			}
 			else {
-				isObfuscated = true;
+				setObfuscated(true);
 				ReplaceSpawnableEntity(name, oldEntity, newEntity);
 			}
 			e.printStackTrace();
@@ -365,20 +363,16 @@ public class AddonManager extends FCAddOn
 	{
 		Item.itemsList[target.blockID] = new AddonItemMultiBlock(target, names, preTitle, titles, "");
 	}
+	
+	public static boolean getNewSoundsInstalled() {
+		return newSoundsInstalled;
+	}
 
-	public static void serverCustomPacketReceived(MinecraftServer ms, EntityPlayerMP epmp, Packet250CustomPayload packet) {
-		try {
-			DataInputStream dis = new DataInputStream(new ByteArrayInputStream(packet.data));
+	public static boolean isObfuscated() {
+		return isObfuscated;
+	}
 
-			if (packet.channel.equals("DECO|OLDGLASS")) {
-				int size = dis.readInt();
-				int damage = dis.readInt();
-
-				ItemStack stack = new ItemStack(AddonDefs.stainedGlassItem.itemID+256,size,damage);
-				epmp.inventory.setInventorySlotContents(epmp.inventory.currentItem, stack);
-			}
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+	public static void setObfuscated(boolean isObfuscated) {
+		AddonManager.isObfuscated = isObfuscated;
 	}
 }

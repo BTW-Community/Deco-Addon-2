@@ -13,7 +13,7 @@ public class AddonBlockTrapDoor extends FCBlockTrapDoor {
     /**
      * Called upon block activation (right click on the block.)
      */
-    public boolean onBlockActivated(World par1World, int par2, int par3, int par4, EntityPlayer par5EntityPlayer, int par6, float par7, float par8, float par9)
+    public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int par6, float par7, float par8, float par9)
     {
         if (this.blockMaterial == Material.iron)
         {
@@ -21,9 +21,15 @@ public class AddonBlockTrapDoor extends FCBlockTrapDoor {
         }
         else
         {
-            int var10 = par1World.getBlockMetadata(par2, par3, par4);
-            par1World.setBlockMetadataWithNotify(par2, par3, par4, var10 ^ 4);
-            par1World.playAuxSFXAtEntity(par5EntityPlayer, 1003, par2, par3, par4, 0);
+            int var10 = world.getBlockMetadata(x, y, z);
+            world.setBlockMetadataWithNotify(x, y, z, var10 ^ 4);
+            //world.playAuxSFXAtEntity(player, 1003, x, y, z, 0);
+            
+            if ((var10 < 4) || (var10 >= 8 && var10 < 12))
+            	AddonUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.trapdoorOpen", 1, 1, "random.door_open", 1, 1);
+            else
+            	AddonUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.trapdoorClose", 1, 1, "random.door_close", 1, 1);
+            
             return true;
         }
     }

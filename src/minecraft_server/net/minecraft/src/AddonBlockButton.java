@@ -17,9 +17,9 @@ public class AddonBlockButton extends FCBlockButton {
      * checks to see if you can place this block can be placed on that side of a block: BlockLever overrides
      */
 	@Override
-    public boolean canPlaceBlockOnSide(World par1World, int par2, int par3, int par4, int par5)
+    public boolean canPlaceBlockOnSide(World world, int x, int y, int z, int side)
     {
-    	return true;
+    	return FCUtilsWorld.DoesBlockHaveLargeCenterHardpointToFacing(world, x, y, z, side);
     }
 
     public int GetFacing(int var1)

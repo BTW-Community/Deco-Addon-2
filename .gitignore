@@ -2559,7 +2559,6 @@ src/minecraft_server/net/minecraft/src/ContainerFurnace.java
 src/minecraft_server/net/minecraft/src/ContainerHopper.java
 src/minecraft_server/net/minecraft/src/ContainerMerchant.java
 src/minecraft_server/net/minecraft/src/ContainerPlayer.java
-src/minecraft_server/net/minecraft/src/ContainerRepair.java
 src/minecraft_server/net/minecraft/src/ContainerSheep.java
 src/minecraft_server/net/minecraft/src/ContainerWorkbench.java
 src/minecraft_server/net/minecraft/src/ConvertingProgressUpdate.java
@@ -2582,7 +2581,6 @@ src/minecraft_server/net/minecraft/src/CreativeTabTransport.java
 src/minecraft_server/net/minecraft/src/CreativeTabs.java
 src/minecraft_server/net/minecraft/src/CryptManager.java
 src/minecraft_server/net/minecraft/src/DamageSource.java
-src/minecraft_server/net/minecraft/src/DataWatcher.java
 src/minecraft_server/net/minecraft/src/DedicatedServer.java
 src/minecraft_server/net/minecraft/src/DedicatedServerCommandThread.java
 src/minecraft_server/net/minecraft/src/DedicatedServerListenThread.java
@@ -3853,7 +3851,6 @@ src/minecraft_server/net/minecraft/src/SlotEnchantment.java
 src/minecraft_server/net/minecraft/src/SlotEnchantmentTable.java
 src/minecraft_server/net/minecraft/src/SlotFurnace.java
 src/minecraft_server/net/minecraft/src/SlotMerchantResult.java
-src/minecraft_server/net/minecraft/src/SlotRepair.java
 src/minecraft_server/net/minecraft/src/SpawnListEntry.java
 src/minecraft_server/net/minecraft/src/SpawnerAnimals.java
 src/minecraft_server/net/minecraft/src/StatBase.java
@@ -3920,7 +3917,6 @@ src/minecraft_server/net/minecraft/src/TileEntityMobSpawnerLogic.java
 src/minecraft_server/net/minecraft/src/TileEntityNote.java
 src/minecraft_server/net/minecraft/src/TileEntityPiston.java
 src/minecraft_server/net/minecraft/src/TileEntityRecordPlayer.java
-src/minecraft_server/net/minecraft/src/TileEntitySign.java
 src/minecraft_server/net/minecraft/src/TileEntitySkull.java
 src/minecraft_server/net/minecraft/src/Tuple.java
 src/minecraft_server/net/minecraft/src/Vec3.java

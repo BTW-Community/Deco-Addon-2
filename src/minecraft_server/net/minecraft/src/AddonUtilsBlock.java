@@ -3,6 +3,8 @@ package net.minecraft.src;
 import java.util.List;
 
 public class AddonUtilsBlock {
+	//There's a lot of bad programming practices done here but without being able to edit Block.java there's not much I can do to get around it
+	
 	public static boolean canFenceConnect(IBlockAccess blockAccess, int x, int y, int z, int facing, Block thisBlock) {
 		int blockID = blockAccess.getBlockId(x, y, z);
 		int metadata = blockAccess.getBlockMetadata(x, y, z);
@@ -61,7 +63,9 @@ public class AddonUtilsBlock {
 				blockAbove instanceof FCBlockSpike ||
 				blockAbove instanceof BlockSkull ||
 				blockAbove instanceof FCBlockSidingAndCorner ||
-				blockAbove instanceof FCBlockMoulding)
+				blockAbove instanceof FCBlockMoulding ||
+				blockAbove instanceof FCBlockLogSpike ||
+				blockAbove instanceof FCBlockLogDamaged)
 			return true;
 		else
 			return false;
@@ -70,7 +74,8 @@ public class AddonUtilsBlock {
 	public static boolean getWallConnectionAboveException(IBlockAccess blockAccess, int x, int y, int z, Block blockAbove) {
 		int meta = blockAccess.getBlockMetadata(x, y, z);
 		
-		if (blockAbove instanceof BlockTrapDoor) {
+		if (blockAbove instanceof BlockTrapDoor ||
+				blockAbove instanceof FCBlockLogDamaged) {
 			return meta < 4;
 		}
 		else if (blockAbove instanceof FCBlockSlab) {
@@ -86,7 +91,8 @@ public class AddonUtilsBlock {
 		}
 		else if (blockAbove instanceof AddonBlockLantern ||
 				blockAbove instanceof FCBlockStake ||
-				blockAbove instanceof BlockSkull) {
+				blockAbove instanceof BlockSkull ||
+				blockAbove instanceof FCBlockLogSpike) {
 			return meta == 1;
 		}
 		else if (blockAbove instanceof FCBlockTorchBase) {
@@ -244,7 +250,42 @@ public class AddonUtilsBlock {
 			return AddonDefs.logSpikeBirch.blockID;
 		else if (id == AddonDefs.logDamagedJungle.blockID)
 			return AddonDefs.logSpikeJungle.blockID;
+		else if (id == AddonDefs.logDamagedBlood.blockID)
+			return AddonDefs.logSpikeBlood.blockID;
 		else
 			return AddonDefs.logSpikeCherry.blockID;
+	}
+	
+	public static double getFluidDripOffsetForBlockType(int blockID, int metadata) {
+		Block block = Block.blocksList[blockID];
+		double defaultVal = 1.05;
+		
+		if (block instanceof AddonBlockTrapDoor) {
+			if (metadata >= 8 && metadata < 12)
+				return .2375;
+			else
+				return defaultVal;
+		}
+		else if (block instanceof FCBlockSlab) {
+			if (((FCBlockSlab) block).GetIsUpsideDown(metadata))
+				return .55;
+		}
+		else if (block instanceof BlockHalfSlab) {
+			if (((BlockHalfSlab) block).GetIsUpsideDown(metadata))
+				return .55;
+		}
+		else if (block instanceof FCBlockSidingAndCorner) {
+			if (metadata == 0 || metadata == 5 || metadata == 7 || metadata == 13 || metadata == 15)
+				return .55;
+		}
+
+		else if (block instanceof FCBlockMoulding) {
+			if (metadata == 8 || metadata == 9 || metadata == 10 || metadata == 11)
+				return .55;
+			if (metadata == 15)
+				return .175;
+		}
+
+		return defaultVal;
 	}
 }
