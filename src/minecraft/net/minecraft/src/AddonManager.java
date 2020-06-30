@@ -24,6 +24,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.server.MinecraftServer;
 
 public class AddonManager extends FCAddOn
@@ -36,10 +37,14 @@ public class AddonManager extends FCAddOn
 	private static ArrayList<String> loadedAddons = new ArrayList<String>();
 
 	private static boolean isObfuscated = false;
+	private static boolean newSoundsInstalled = true;
+
+	private static Minecraft mc;
 
 	@Override
 	public void PreInitialize() {
 		AddonUtilsObfuscationMap.initialize();
+		mc = Minecraft.getMinecraft();
 		//AddonUtilsObfuscationMap.listAllBlockFields();
 		//AddonUtilsObfuscationMap.listAllItemFields();
 	}
@@ -64,15 +69,15 @@ public class AddonManager extends FCAddOn
     public static void ServerPlayerConnectionInitialized(NetServerHandler var0, EntityPlayerMP var1) {
         if (!MinecraftServer.getServer().isSinglePlayer())
         {
-            FCUtilsWorld.SendPacketToPlayer(var0, new Packet3Chat("\u00a7f" + "Deco V" + "2.9c"));
+            FCUtilsWorld.SendPacketToPlayer(var0, new Packet3Chat("\u00a7f" + "Deco V" + "2.10"));
         }
         else {
-            FCUtilsWorld.SendPacketToPlayer(var0, new Packet3Chat("\u00a7f" + "Deco V" + "2.9c"));
+            FCUtilsWorld.SendPacketToPlayer(var0, new Packet3Chat("\u00a7f" + "Deco V" + "2.10"));
         }
     }
 
 	public boolean getObfuscation() {
-		return isObfuscated;
+		return isObfuscated();
 	}
 
 	private static boolean Create_HasCall=false;
@@ -153,7 +158,7 @@ public class AddonManager extends FCAddOn
 		try {
 			String name;
 
-			if (isObfuscated)
+			if (isObfuscated())
 				name = AddonUtilsObfuscationMap.getBlockLookup(blockName);
 			else
 				name = blockName;
@@ -169,11 +174,11 @@ public class AddonManager extends FCAddOn
 			block.set(newBlock, newBlock);
 			block.setAccessible(false);
 		} catch (NoSuchFieldException e) {
-			if (isObfuscated) {
+			if (isObfuscated()) {
 				e.printStackTrace();
 			}
 			else {
-				isObfuscated = true;
+				setObfuscated(true);
 				SetVanillaBlockFinal(blockName, oldBlock, newBlock);
 			}
 		} catch (SecurityException e) {
@@ -190,7 +195,7 @@ public class AddonManager extends FCAddOn
 		try {
 			String name;
 
-			if (isObfuscated)
+			if (isObfuscated())
 				name = AddonUtilsObfuscationMap.getItemLookup(itemName);
 			else
 				name = itemName;
@@ -206,11 +211,11 @@ public class AddonManager extends FCAddOn
 			item.set(newItem, newItem);
 			item.setAccessible(false);
 		} catch (NoSuchFieldException e) {
-			if (isObfuscated) {
+			if (isObfuscated()) {
 				e.printStackTrace();
 			}
 			else {
-				isObfuscated = true;
+				setObfuscated(true);
 				SetVanillaItemFinal(itemName, oldItem, newItem);
 			}
 		} catch (SecurityException e) {
@@ -233,7 +238,7 @@ public class AddonManager extends FCAddOn
 				Field waterCreatureList;
 				Field caveCreatureList;
 
-				if (isObfuscated) {
+				if (isObfuscated()) {
 					if (b.getClass().getSuperclass().equals(BiomeGenBase.class)) {
 						creatureList = b.getClass().getSuperclass().getDeclaredField("K");
 						monsterList = b.getClass().getSuperclass().getDeclaredField("J");
@@ -299,12 +304,44 @@ public class AddonManager extends FCAddOn
 				EntityList.ReplaceExistingMapping(newEntity, name);
 			}
 		} catch (NoSuchFieldException e) {
-			if (isObfuscated) {
+			if (isObfuscated()) {
 				e.printStackTrace();
 			}
 			else {
-				isObfuscated = true;
+				setObfuscated(true);
 				ReplaceSpawnableEntity(name, oldEntity, newEntity);
+			}
+			e.printStackTrace();
+		} catch (SecurityException e) {
+			e.printStackTrace();
+		} catch (IllegalArgumentException e) {
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void ReplaceEntityRenderMapping(Class entity, Render newRender) {
+		try {
+			Field rendererMapField;
+
+			if (isObfuscated()) {
+				rendererMapField = RenderManager.class.getDeclaredField("q");
+			}
+			else {
+				rendererMapField = RenderManager.class.getDeclaredField("entityRenderMap");
+			}
+
+			rendererMapField.setAccessible(true);
+			Map specialRendererMap = (Map)rendererMapField.get(RenderManager.instance);
+			specialRendererMap.put(entity, newRender);
+		} catch (NoSuchFieldException e) {
+			if (isObfuscated()) {
+				e.printStackTrace();
+			}
+			else {
+				setObfuscated(true);
+				ReplaceEntityRenderMapping(entity, newRender);
 			}
 			e.printStackTrace();
 		} catch (SecurityException e) {
@@ -322,7 +359,7 @@ public class AddonManager extends FCAddOn
 		try {
 			Field specialRendererMapField;
 
-			if (isObfuscated) {
+			if (isObfuscated()) {
 				specialRendererMapField = renderer.getClass().getDeclaredField("j");
 			}
 			else {
@@ -333,11 +370,11 @@ public class AddonManager extends FCAddOn
 			Map specialRendererMap = (Map)specialRendererMapField.get(renderer);
 			specialRendererMap.put(tileEntityClass, customRenderer);
 		} catch (NoSuchFieldException e) {
-			if (isObfuscated) {
+			if (isObfuscated()) {
 				e.printStackTrace();
 			}
 			else {
-				isObfuscated = true;
+				setObfuscated(true);
 				AddCustomTileEntityRenderer(tileEntityClass, customRenderer);
 			}
 			e.printStackTrace();
@@ -393,20 +430,29 @@ public class AddonManager extends FCAddOn
 	{
 		Item.itemsList[target.blockID] = new AddonItemMultiBlock(target, names, preTitle, titles, "");
 	}
-
-	public static void serverCustomPacketReceived(MinecraftServer ms, EntityPlayerMP epmp, Packet250CustomPayload packet) {
-		try {
-			DataInputStream dis = new DataInputStream(new ByteArrayInputStream(packet.data));
-
-			if (packet.channel.equals("DECO|OLDGLASS")) {
-				int size = dis.readInt();
-				int damage = dis.readInt();
-
-				ItemStack stack = new ItemStack(AddonDefs.stainedGlassItem.itemID+256,size,damage);
-				epmp.inventory.setInventorySlotContents(epmp.inventory.currentItem, stack);
+	
+	public static void installResource(String filename) {
+		if (newSoundsInstalled) {
+			File soundFile = new File(mc.mcDataDir, "resources/sound3/deco/" + filename + ".ogg");
+			
+			if (soundFile.exists())
+				mc.installResource("sound3/deco/" + filename + ".ogg", soundFile);
+			else {
+				newSoundsInstalled = false;
+				System.out.println("[INFO] Sound loading failed for: " + filename + ", falling back to vanilla sounds");
 			}
-		} catch (IOException e) {
-			e.printStackTrace();
 		}
+	}
+	
+	public static boolean getNewSoundsInstalled() {
+		return newSoundsInstalled;
+	}
+
+	public static boolean isObfuscated() {
+		return isObfuscated;
+	}
+
+	public static void setObfuscated(boolean isObfuscated) {
+		AddonManager.isObfuscated = isObfuscated;
 	}
 }

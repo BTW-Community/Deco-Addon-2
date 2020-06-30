@@ -6,6 +6,30 @@ public class AddonEntitySquid extends FCEntitySquid {
 	}
 
     /**
+     * Returns the sound this mob makes on death.
+     */
+    protected String getLivingSound()
+    {
+    	return AddonManager.getNewSoundsInstalled() ? "deco.mob.squid.say" : "";
+    }
+
+    /**
+     * Returns the sound this mob makes on death.
+     */
+    protected String getHurtSound()
+    {
+    	return AddonManager.getNewSoundsInstalled() ? "deco.mob.squid.hurt" : "";
+    }
+
+    /**
+     * Returns the sound this mob makes on death.
+     */
+    protected String getDeathSound()
+    {
+    	return AddonManager.getNewSoundsInstalled() ? "deco.mob.squid.death" : "";
+    }
+
+    /**
      * Drop 0-2 items of this living's type. @param par1 - Whether this entity has recently been hit by a player. @param
      * par2 - Level of Looting used to kill this mob.
      */

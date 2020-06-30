@@ -4,7 +4,6 @@ public class AddonItemChiselDiamond extends FCItemChisel {
 	protected AddonItemChiselDiamond(int var1)
 	{
 		super(var1, EnumToolMaterial.EMERALD, 500);
-		//this.efficiencyOnProperMaterial /= 1.5F;
 		this.SetFilterableProperties(4);
 		this.setUnlocalizedName("ginger_chiselDiamond");
 	}
@@ -32,24 +31,34 @@ public class AddonItemChiselDiamond extends FCItemChisel {
 		return false;
 	}
 
-    public boolean IsConsumedInCrafting()
-    {
-        return false;
-    }
-
-	public void OnUsedInCrafting(EntityPlayer var1, ItemStack var2)
+	public boolean IsConsumedInCrafting()
 	{
-		PlayStoneSplitSoundOnPlayer(var1);
-
-		if (!var1.worldObj.isRemote && var2.itemID == FCBetterThanWolves.fcBlockStoneBrickLoose.blockID)
-		{
-			FCUtilsItem.EjectStackWithRandomVelocity(var1.worldObj, var1.posX, var1.posY, var1.posZ, new ItemStack(FCBetterThanWolves.fcItemPileGravel, 2));
-		}
+		return false;
 	}
 
-	public void OnBrokenInCrafting(EntityPlayer var1)
+	public void OnUsedInCrafting(EntityPlayer player, ItemStack stack)
 	{
-		PlayBreakSoundOnPlayer(var1);
+		if (player.m_iTimesCraftedThisTick == 0)
+		{
+			if (stack.itemID == AddonDefs.barkLogStripped.blockID || stack.itemID == AddonDefs.strippedLog.blockID || stack.itemID == AddonDefs.cherryLog.blockID) {
+				AddonUtilsSound.playSoundAtEntityWithVanillaFallback(player.worldObj, player, "deco.random.strip", 2, 1, "mob.zombie.wood", 0.5F, 2.5F);
+			}
+			else if (stack.itemID == AddonDefs.bloodLog.blockID) {
+				player.worldObj.playAuxSFX(2225, (int)player.posX, (int)player.posY, (int)player.posZ, 0);
+				AddonUtilsSound.playSoundAtEntityWithNullFallback(player.worldObj, player, "deco.random.strip", 2, 1);
+			}
+			else if (stack.itemID == AddonDefs.pumpkin.blockID) {
+            	AddonUtilsSound.playSoundAtEntityWithVanillaFallback(player.worldObj, player, "deco.random.pumpkinCarve", 2, 1, "mob.slime.attack", 0.5F, (player.worldObj.rand.nextFloat() - player.worldObj.rand.nextFloat()) * 0.1F + 0.7F);
+			}
+			else if (stack.itemID != Block.pumpkin.blockID) {
+				PlayStoneSplitSoundOnPlayer(player);
+			}
+		}
+
+		if (!player.worldObj.isRemote && stack.itemID == FCBetterThanWolves.fcBlockStoneBrickLoose.blockID)
+		{
+			FCUtilsItem.EjectStackWithRandomVelocity(player.worldObj, player.posX, player.posY, player.posZ, new ItemStack(FCBetterThanWolves.fcItemPileGravel, 2));
+		}
 	}
 
 	protected boolean CanToolStickInBlock(ItemStack var1, Block var2, World var3, int var4, int var5, int var6)
@@ -63,10 +72,5 @@ public class AddonItemChiselDiamond extends FCItemChisel {
 		{
 			var0.playSound("random.anvil_land", 0.5F, var0.worldObj.rand.nextFloat() * 0.25F + 1.75F);
 		}
-	}
-
-	public static void PlayBreakSoundOnPlayer(EntityPlayer var0)
-	{
-		var0.playSound("random.break", 0.8F, 0.8F + var0.worldObj.rand.nextFloat() * 0.4F);
 	}
 }

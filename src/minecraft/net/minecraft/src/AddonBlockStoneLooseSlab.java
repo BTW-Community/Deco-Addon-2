@@ -17,6 +17,19 @@ public class AddonBlockStoneLooseSlab extends FCBlockMortarReceiverSlab
         this.setUnlocalizedName("stoneLooseSlab");
         mortaredIDs = mortarID;
     }
+
+    public boolean AttemptToCombineWithFallingEntity(World var1, int var2, int var3, int var4, EntityFallingSand var5)
+    {
+        if ((var5.blockID == this.blockID) && (var5.metadata == var1.getBlockMetadata(var2, var3, var4)) && !this.GetIsUpsideDown(var1, var2, var3, var4))
+        {
+            this.ConvertToFullBlock(var1, var2, var3, var4);
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
     
     public int damageDropped(int meta) {
     	return meta % 8;

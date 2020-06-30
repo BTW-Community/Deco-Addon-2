@@ -9,7 +9,10 @@ public class AddonBlockChain extends Block {
 	{
 		super(ID, Material.iron);
 		setUnlocalizedName("ginger_chain");
-		setStepSound(Block.soundMetalFootstep);
+		if (AddonManager.getNewSoundsInstalled())
+			this.setStepSound(AddonDefs.stepSoundChain);
+		else
+			this.setStepSound(Block.soundMetalFootstep);
 		//setBlockBounds(0F, 0F, 0F, 1F, 1F, 1F);
 		setHardness(0.5F);
 		this.SetPicksEffectiveOn(true);

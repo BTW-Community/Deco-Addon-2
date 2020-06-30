@@ -18,20 +18,6 @@ public class AddonBlockGlassStained extends FCBlockGlass
 				new String[] { "Black", "Red", "Green", "Brown", "Blue", "Purple", "Cyan", "Light Grey", "Grey", "Pink", "Lime", "Yellow", "Light Blue", "Magenta", "Orange", "White" }, " Stained Glass Block");
 	}
 
-	@Override
-	public void onBlockPlacedBy(World par1World, int par2, int par3, int par4, EntityLiving par5EntityLiving,
-			ItemStack par6ItemStack) {
-		if (par5EntityLiving instanceof EntityPlayer) {
-			EntityPlayer ep = (EntityPlayer)par5EntityLiving;
-			if (ep.inventory.getCurrentItem().itemID != 3003)
-				return;
-		}
-
-		sendClientOldGlassBlockMessage(par6ItemStack.stackSize-1, par6ItemStack.getItemDamage());
-
-		super.onBlockPlacedBy(par1World, par2, par3, par4, par5EntityLiving, par6ItemStack);
-	}
-
     public ItemStack GetStackRetrievedByBlockDispenser(World var1, int var2, int var3, int var4)
     {
         int var5 = var1.getBlockMetadata(var2, var3, var4);
@@ -65,19 +51,14 @@ public class AddonBlockGlassStained extends FCBlockGlass
         }
     }
 
-	public void sendClientOldGlassBlockMessage(int size, int damage) {
-		try {
-			ByteArrayOutputStream baos = new ByteArrayOutputStream();
-			DataOutputStream dos = new DataOutputStream(baos);
-			dos.writeInt(size);
-			dos.writeInt(damage);
-			Packet250CustomPayload packet = new Packet250CustomPayload("DECO|OLDGLASS", baos.toByteArray());
-			Minecraft.getMinecraft().getNetHandler().addToSendQueue(packet);
-		}
-		catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+    /**
+     * Returns true if the given side of this block type should be rendered, if the adjacent block is at the given
+     * coordinates.  Args: blockAccess, x, y, z, side
+     */
+    public boolean shouldSideBeRendered(IBlockAccess par1IBlockAccess, int par2, int par3, int par4, int par5)
+    {
+    	return true;
+    }
 
 	public int damageDropped(int Meta)
 	{
