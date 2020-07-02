@@ -528,6 +528,16 @@ public class AddonDefs {
 		AddonManager.installResource("random/trapdoorOpen3");
 		AddonManager.installResource("random/trapdoorOpen4");
 		
+		AddonManager.installResource("random/gateClose1");
+		AddonManager.installResource("random/gateClose2");
+		AddonManager.installResource("random/gateOpen1");
+		AddonManager.installResource("random/gateOpen2");
+		
+		AddonManager.installResource("random/chestClose1");
+		AddonManager.installResource("random/chestClose2");
+		AddonManager.installResource("random/chestClose3");
+		AddonManager.installResource("random/chestOpen1");
+		
 		AddonManager.installResource("random/strip1");
 		AddonManager.installResource("random/strip2");
 		AddonManager.installResource("random/strip3");
@@ -1957,13 +1967,13 @@ public class AddonDefs {
 		AddonManager.SetVanillaBlockFinal("cocoaPlant", Block.cocoaPlant, cocoaPlant);
 		
 		//Fluids
-		BlockFluid waterStill = new AddonBlockWaterStationary(AddonManager.ReplaceBlockID(Block.waterStill), Material.water);
+		BlockFluid waterStill = (BlockFluid) new AddonBlockWaterStationary(AddonManager.ReplaceBlockID(Block.waterStill), Material.water).setHardness(100.0F).setLightOpacity(3).setUnlocalizedName("water").disableStats();
 		AddonManager.SetVanillaBlockFinal("waterStill", Block.waterStill, waterStill);
-		BlockFluid waterMoving = new AddonBlockWaterFlowing(AddonManager.ReplaceBlockID(Block.waterMoving), Material.water);
+		BlockFluid waterMoving = (BlockFluid) new AddonBlockWaterFlowing(AddonManager.ReplaceBlockID(Block.waterMoving), Material.water).setHardness(100.0F).setLightOpacity(3).setUnlocalizedName("water").disableStats();
 		AddonManager.SetVanillaBlockFinal("waterMoving", Block.waterMoving, waterMoving);
-		BlockFluid lavaStill = new AddonBlockLavaStationary(AddonManager.ReplaceBlockID(Block.lavaStill), Material.lava);
+		BlockFluid lavaStill = (BlockFluid) new AddonBlockLavaStationary(AddonManager.ReplaceBlockID(Block.lavaStill), Material.lava).setHardness(100.0F).setLightValue(1.0F).setUnlocalizedName("lava").disableStats();
 		AddonManager.SetVanillaBlockFinal("lavaStill", Block.lavaStill, lavaStill);
-		BlockFluid lavaMoving = new AddonBlockLavaFlowing(AddonManager.ReplaceBlockID(Block.lavaMoving), Material.lava);
+		BlockFluid lavaMoving = (BlockFluid) new AddonBlockLavaFlowing(AddonManager.ReplaceBlockID(Block.lavaMoving), Material.lava).setHardness(100.0F).setLightValue(1.0F).setUnlocalizedName("lava").disableStats();
 		AddonManager.SetVanillaBlockFinal("lavaMoving", Block.lavaMoving, lavaMoving);
 		
 		//Extra sounds

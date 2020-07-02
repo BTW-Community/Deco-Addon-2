@@ -63,6 +63,35 @@ public class AddonBlockFenceGate extends FCBlockFenceGate {
         
         return isNextToWall;
 	}
+
+    /**
+     * Called upon block activation (right click on the block.)
+     */
+    public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer par5EntityPlayer, int par6, float par7, float par8, float par9)
+    {
+        int var10 = world.getBlockMetadata(x, y, z);
+
+        if (isFenceGateOpen(var10))
+        {
+            world.setBlockMetadataWithNotify(x, y, z, var10 & -5, 2);
+            AddonUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.gateClose", 1, world.rand.nextFloat() * 0.1F + 0.9F, "random.door_close", 1, world.rand.nextFloat() * 0.1F + 0.9F);
+        }
+        else
+        {
+            int var11 = (MathHelper.floor_double((double)(par5EntityPlayer.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3) % 4;
+            int var12 = getDirection(var10);
+
+            if (var12 == (var11 + 2) % 4)
+            {
+                var10 = var11;
+            }
+
+            world.setBlockMetadataWithNotify(x, y, z, var10 | 4, 2);
+            AddonUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.gateOpen", 1, world.rand.nextFloat() * 0.1F + 0.9F, "random.door_open", 1, world.rand.nextFloat() * 0.1F + 0.9F);
+        }
+        
+        return true;
+    }
 	
 	//CLIENT ONLY
 	@Override

@@ -1930,6 +1930,7 @@ src/minecraft/net/minecraft/src/RegionFileCache.java
 src/minecraft/net/minecraft/src/RegionFileChunkBuffer.java
 src/minecraft/net/minecraft/src/RegistryDefaulted.java
 src/minecraft/net/minecraft/src/RegistrySimple.java
+src/minecraft/net/minecraft/src/Render.java
 src/minecraft/net/minecraft/src/RenderArrow.java
 src/minecraft/net/minecraft/src/RenderBat.java
 src/minecraft/net/minecraft/src/RenderBiped.java
@@ -2222,6 +2223,7 @@ src/minecraft/net/minecraft/src/WorldProvider.java
 src/minecraft/net/minecraft/src/WorldProviderEnd.java
 src/minecraft/net/minecraft/src/WorldProviderHell.java
 src/minecraft/net/minecraft/src/WorldProviderSurface.java
+src/minecraft/net/minecraft/src/WorldRenderer.java
 src/minecraft/net/minecraft/src/WorldSavedData.java
 src/minecraft/net/minecraft/src/WorldServer.java
 src/minecraft/net/minecraft/src/WorldServerMulti.java
@@ -3901,7 +3903,6 @@ src/minecraft_server/net/minecraft/src/ThreadedFileIOBase.java
 src/minecraft_server/net/minecraft/src/TileEntity.java
 src/minecraft_server/net/minecraft/src/TileEntityBeacon.java
 src/minecraft_server/net/minecraft/src/TileEntityBrewingStand.java
-src/minecraft_server/net/minecraft/src/TileEntityChest.java
 src/minecraft_server/net/minecraft/src/TileEntityCommandBlock.java
 src/minecraft_server/net/minecraft/src/TileEntityComparator.java
 src/minecraft_server/net/minecraft/src/TileEntityDaylightDetector.java

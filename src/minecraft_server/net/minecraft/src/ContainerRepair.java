@@ -377,11 +377,11 @@ public class ContainerRepair extends Container
 
     public boolean canInteractWith(EntityPlayer par1EntityPlayer)
     {
-        return this.theWorld.getBlockId(this.field_82861_i, this.field_82858_j, this.field_82859_k) != AddonDefs.workbench.blockID ? false : par1EntityPlayer.getDistanceSq((double)this.field_82861_i + 0.5D, (double)this.field_82858_j + 0.5D, (double)this.field_82859_k + 0.5D) <= 64.0D;
+        return this.theWorld.getBlockId(this.field_82861_i, this.field_82858_j, this.field_82859_k) != Block.anvil.blockID ? false : par1EntityPlayer.getDistanceSq((double)this.field_82861_i + 0.5D, (double)this.field_82858_j + 0.5D, (double)this.field_82859_k + 0.5D) <= 64.0D;
     }
 
     /**
-     * Take a stack from the specified inventory slot.
+     * Called when a player shift-clicks on a slot. You must override this or you will crash when someone does that.
      */
     public ItemStack transferStackInSlot(EntityPlayer par1EntityPlayer, int par2)
     {
@@ -393,23 +393,25 @@ public class ContainerRepair extends Container
             ItemStack var5 = var4.getStack();
             var3 = var5.copy();
 
-            if (par2 == 2)
+            if (par2 == 1)
             {
-                if (!this.mergeItemStack(var5, 3, 39, true))
+            	System.out.println("Out");
+                if (!this.mergeItemStack(var5, 2, 38, true))
                 {
                     return null;
                 }
 
                 var4.onSlotChange(var5, var3);
             }
-            else if (par2 != 0 && par2 != 1)
+            else if (par2 > 1)
             {
-                if (par2 >= 3 && par2 < 39 && !this.mergeItemStack(var5, 0, 2, false))
+            	System.out.println("Inv");
+                if (par2 >= 2 && par2 < 38 && !this.mergeItemStack(var5, 0, 1, false))
                 {
                     return null;
                 }
             }
-            else if (!this.mergeItemStack(var5, 3, 39, false))
+            else if (!this.mergeItemStack(var5, 2, 38, false))
             {
                 return null;
             }
@@ -421,11 +423,6 @@ public class ContainerRepair extends Container
             else
             {
                 var4.onSlotChanged();
-            }
-
-            if (var5.stackSize == var3.stackSize)
-            {
-                return null;
             }
 
             var4.onPickupFromSlot(par1EntityPlayer, var5);

@@ -26,9 +26,9 @@ public class AddonBlockTrapDoor extends FCBlockTrapDoor {
             //world.playAuxSFXAtEntity(player, 1003, x, y, z, 0);
             
             if ((var10 < 4) || (var10 >= 8 && var10 < 12))
-            	AddonUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.trapdoorOpen", 1, 1, "random.door_open", 1, 1);
+            	AddonUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.trapdoorOpen", 1, world.rand.nextFloat() * 0.1F + 0.9F, "random.door_open", 1, world.rand.nextFloat() * 0.1F + 0.9F);
             else
-            	AddonUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.trapdoorClose", 1, 1, "random.door_close", 1, 1);
+            	AddonUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.trapdoorClose", 1, world.rand.nextFloat() * 0.1F + 0.9F, "random.door_close", 1, world.rand.nextFloat() * 0.1F + 0.9F);
             
             return true;
         }

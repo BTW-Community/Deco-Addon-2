@@ -30,14 +30,14 @@ public class AddonBlockDoorWood extends FCBlockDoorWood {
                 world.SetBlockMetadataWithNotify(x, y, z, var11, 3);
                 world.notifyBlockChange(x, y + 1, z, this.blockID);
                 world.markBlockRangeForRenderUpdate(x, y, z, x, y, z);
-                AddonUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.doorOpen", 1, 1, "random.door_open", 1, 1);
+                AddonUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.doorOpen", 1, world.rand.nextFloat() * 0.1F + 0.9F, "random.door_open", 1, world.rand.nextFloat() * 0.1F + 0.9F);
             }
             else
             {
                 world.SetBlockMetadataWithNotify(x, y - 1, z, var11, 3);
                 world.notifyBlockChange(x, y, z, this.blockID);
                 world.markBlockRangeForRenderUpdate(x, y - 1, z, x, y, z);
-                AddonUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.doorClose", 1, 1, "random.door_close", 1, 1);
+                AddonUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.doorClose", 1, world.rand.nextFloat() * 0.1F + 0.9F, "random.door_close", 1, world.rand.nextFloat() * 0.1F + 0.9F);
             }
             
             return true;
