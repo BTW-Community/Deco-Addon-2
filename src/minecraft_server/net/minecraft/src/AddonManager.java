@@ -28,6 +28,8 @@ import net.minecraft.server.MinecraftServer;
 
 public class AddonManager extends FCAddOn
 {
+	public static final String addonVersion = "2.11";
+	
 	public static AddonDefs addonDefs;
 	public static AddonRecipes addonRecipes;
 
@@ -68,10 +70,25 @@ public class AddonManager extends FCAddOn
     public static void ServerPlayerConnectionInitialized(NetServerHandler var0, EntityPlayerMP var1) {
         if (!MinecraftServer.getServer().isSinglePlayer())
         {
-            FCUtilsWorld.SendPacketToPlayer(var0, new Packet3Chat("\u00a7f" + "Deco V" + "2.10d"));
+            FCUtilsWorld.SendPacketToPlayer(var0, new Packet3Chat("\u00a7f" + "Deco V" + addonVersion));
+            
+            ByteArrayOutputStream byteArrayOutput = new ByteArrayOutputStream();
+            DataOutputStream dataOutput = new DataOutputStream(byteArrayOutput);
+
+            try
+            {
+                dataOutput.writeUTF(addonVersion);
+            }
+            catch (Exception var9)
+            {
+                var9.printStackTrace();
+            }
+
+            Packet250CustomPayload var4 = new Packet250CustomPayload("Deco|VC", byteArrayOutput.toByteArray());
+            FCUtilsWorld.SendPacketToPlayer(var0, var4);
         }
         else {
-            FCUtilsWorld.SendPacketToPlayer(var0, new Packet3Chat("\u00a7f" + "Deco V" + "2.10d"));
+            FCUtilsWorld.SendPacketToPlayer(var0, new Packet3Chat("\u00a7f" + "Deco V" + addonVersion));
         }
     }
 

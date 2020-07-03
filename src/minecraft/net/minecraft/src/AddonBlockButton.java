@@ -19,7 +19,9 @@ public class AddonBlockButton extends FCBlockButton {
 	@Override
     public boolean canPlaceBlockOnSide(World world, int x, int y, int z, int side)
     {
-    	return FCUtilsWorld.DoesBlockHaveLargeCenterHardpointToFacing(world, x, y, z, side);
+		FCUtilsBlockPos blockPos = new FCUtilsBlockPos(x, y, z);
+		blockPos.AddFacingAsOffset(Facing.oppositeSide[side]);
+    	return FCUtilsWorld.DoesBlockHaveLargeCenterHardpointToFacing(world, blockPos.i, blockPos.j, blockPos.k, side);
     }
 
     public int GetFacing(int var1)

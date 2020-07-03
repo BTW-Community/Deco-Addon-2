@@ -29,6 +29,8 @@ import net.minecraft.server.MinecraftServer;
 
 public class AddonManager extends FCAddOn
 {
+	public static final String addonVersion = "2.11";
+	
 	public static AddonDefs addonDefs;
 	public static AddonRecipes addonRecipes;
 
@@ -40,6 +42,8 @@ public class AddonManager extends FCAddOn
 	private static boolean newSoundsInstalled = true;
 
 	private static Minecraft mc;
+	
+	public static final String addonCustomPacketChannelVersionCheck = "Deco|VC";
 
 	@Override
 	public void PreInitialize() {
@@ -52,13 +56,15 @@ public class AddonManager extends FCAddOn
 	@Override
 	public void Initialize()
 	{
-		System.out.println("[INFO] AddonManager: Initialize");
+		FCAddOnHandler.LogMessage("Deco Addon Initializing...");
 
 		addonDefs = AddonDefs.instance;
 		addonRecipes = AddonRecipes.instance;
 
 		addonDefs.addDefinitions();
 		addonRecipes.addAllAddonRecipes();
+
+		FCAddOnHandler.LogMessage("Deco Addon Initialization Complete.");
 	}
 
 	@Override
@@ -69,10 +75,25 @@ public class AddonManager extends FCAddOn
     public static void ServerPlayerConnectionInitialized(NetServerHandler var0, EntityPlayerMP var1) {
         if (!MinecraftServer.getServer().isSinglePlayer())
         {
-            FCUtilsWorld.SendPacketToPlayer(var0, new Packet3Chat("\u00a7f" + "Deco V" + "2.11"));
+            FCUtilsWorld.SendPacketToPlayer(var0, new Packet3Chat("\u00a7f" + "Deco V" + addonVersion));
+            
+            ByteArrayOutputStream byteArrayOutput = new ByteArrayOutputStream();
+            DataOutputStream dataOutput = new DataOutputStream(byteArrayOutput);
+
+            try
+            {
+                dataOutput.writeUTF(addonVersion);
+            }
+            catch (Exception var9)
+            {
+                var9.printStackTrace();
+            }
+
+            Packet250CustomPayload var4 = new Packet250CustomPayload("Deco|VC", byteArrayOutput.toByteArray());
+            FCUtilsWorld.SendPacketToPlayer(var0, var4);
         }
         else {
-            FCUtilsWorld.SendPacketToPlayer(var0, new Packet3Chat("\u00a7f" + "Deco V" + "2.11"));
+            FCUtilsWorld.SendPacketToPlayer(var0, new Packet3Chat("\u00a7f" + "Deco V" + addonVersion));
         }
     }
 
@@ -439,7 +460,7 @@ public class AddonManager extends FCAddOn
 				mc.installResource("sound3/deco/" + filename + ".ogg", soundFile);
 			else {
 				newSoundsInstalled = false;
-				System.out.println("[INFO] Sound loading failed for: " + filename + ", falling back to vanilla sounds");
+				FCAddOnHandler.LogMessage("[Warning] Sound loading failed for: " + filename + ", falling back to vanilla sounds");
 			}
 		}
 	}
@@ -454,5 +475,77 @@ public class AddonManager extends FCAddOn
 
 	public static void setObfuscated(boolean isObfuscated) {
 		AddonManager.isObfuscated = isObfuscated;
+	}
+
+    public boolean ClientCustomPacketReceived(Minecraft mc, Packet250CustomPayload packet)
+    {
+        try
+        {
+            WorldClient world = mc.theWorld;
+            DataInputStream dataStream = new DataInputStream(new ByteArrayInputStream(packet.data));
+            int packetType;
+            int var9;
+
+            if (packet.channel.equals(addonCustomPacketChannelVersionCheck))
+            {
+                String var33 = dataStream.readUTF();
+
+                if (var33.equals(addonVersion))
+                {
+                    mc.thePlayer.addChatMessage("\u00a7f" + "Deco Addon version check successful.");
+                }
+                else
+                {
+                    mc.thePlayer.addChatMessage("\u00a74" + "WARNING: Deco Addon version mismatch detected! Local Version: " + this.addonVersion + " Server Version: " + var33);
+                }
+
+                return true;
+            }
+        }
+        catch (IOException var23)
+        {
+            var23.printStackTrace();
+        }
+
+        return false;
+    }
+	
+	public static boolean interceptCustomClientPacket(Minecraft mc, Packet250CustomPayload packet) {
+        try
+        {
+            WorldClient world = mc.theWorld;
+            DataInputStream dataStream = new DataInputStream(new ByteArrayInputStream(packet.data));
+            int packetType;
+            int var9;
+
+            if (packet.channel.equals(FCBetterThanWolves.fcCustomPacketChannelSpawnCustomEntity))
+            {
+                Object var5 = null;
+                packetType = dataStream.readInt();
+                int var7 = dataStream.readInt();
+
+                if (packetType == 0)
+                {
+                    int var8 = dataStream.readInt();
+                    var9 = dataStream.readInt();
+                    int var10 = dataStream.readInt();
+                    int var11 = dataStream.readInt();
+                    int var12 = dataStream.readInt();
+                    var5 = new AddonEntityCanvas(world, var8, var9, var10, var11, var12);
+                }
+
+                if (var5 != null)
+                {
+                    world.addEntityToWorld(var7, (Entity)var5);
+                    return true;
+                }
+            }
+        }
+        catch (IOException var23)
+        {
+            var23.printStackTrace();
+        }
+
+        return false;
 	}
 }

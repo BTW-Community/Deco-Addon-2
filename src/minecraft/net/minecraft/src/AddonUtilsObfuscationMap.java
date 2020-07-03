@@ -39,7 +39,6 @@ public class AddonUtilsObfuscationMap {
 		blockMap.put("waterStill", "F");
 		blockMap.put("lavaMoving", "G");
 		blockMap.put("lavaStill", "H");
-		blockMap.put("chest", "ay");
 		
 		itemMap.put("enderPearl", "bo");
 		itemMap.put("sign", "av");

@@ -1031,6 +1031,13 @@ public class AddonRecipes {
 		FCRecipes.AddShapelessRecipeWithSecondaryOutputIndicator(new ItemStack(FCBetterThanWolves.fcBlockStoneBrickLoose), new Object[] {new ItemStack(AddonDefs.chiselDiamond, 1, 32767), new ItemStack(Block.stone)});
 		FCRecipes.AddStokedCrucibleRecipe(new ItemStack(FCBetterThanWolves.fcItemIngotDiamond, 1), new ItemStack[] {new ItemStack(AddonDefs.chiselDiamond, 1, 32767)});
 		
+		FCRecipes.AddRecipe(new ItemStack(AddonDefs.shearsDiamond), new Object[] {"X ", " X", 'X', new ItemStack(FCBetterThanWolves.fcItemIngotDiamond)});
+		FCRecipes.AddStokedCrucibleRecipe(new ItemStack(FCBetterThanWolves.fcItemIngotDiamond, 2), new ItemStack[] {new ItemStack(AddonDefs.shearsDiamond, 1, 32767)});
+		FCRecipes.AddShapelessRecipe(new ItemStack(FCBetterThanWolves.fcItemLeatherCut, 2), new Object[] {new ItemStack(AddonDefs.shearsDiamond, 1, 32767), new ItemStack(Item.leather)});
+		FCRecipes.AddShapelessRecipe(new ItemStack(FCBetterThanWolves.fcItemTannedLeatherCut, 2), new Object[] {new ItemStack(AddonDefs.shearsDiamond, 1, 32767), new ItemStack(FCBetterThanWolves.fcItemTannedLeather)});
+		FCRecipes.AddShapelessRecipe(new ItemStack(FCBetterThanWolves.fcItemScouredLeatherCut, 2), new Object[] {new ItemStack(AddonDefs.shearsDiamond, 1, 32767), new ItemStack(FCBetterThanWolves.fcItemScouredLeather)});
+		FCRecipes.AddShapelessRecipe(new ItemStack(FCBetterThanWolves.fcItemStrap, 4), new Object[] {new ItemStack(AddonDefs.shearsDiamond, 1, 32767), new ItemStack(FCBetterThanWolves.fcItemTannedLeatherCut)});
+		
 		FCRecipes.AddShapelessRecipe(new ItemStack(AddonDefs.nameTag), new Object[] {new ItemStack(Item.leather), new ItemStack(FCBetterThanWolves.fcItemNuggetIron)});
 		FCRecipes.AddShapelessRecipe(new ItemStack(AddonDefs.nameTag), new Object[] {new ItemStack(FCBetterThanWolves.fcItemLeatherCut), new ItemStack(FCBetterThanWolves.fcItemNuggetIron)});
 	}

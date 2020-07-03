@@ -9,6 +9,13 @@ public class AddonEntityVillager extends FCEntityVillager {
 		super(var1, var2);
 	}
 
+    public FCEntityVillager func_90012_b(EntityAgeable var1)
+    {
+        FCEntityVillager var2 = new AddonEntityVillager(this.worldObj);
+        var2.initCreature();
+        return var2;
+    }
+
     /**
      * Called when a player interacts with a mob. e.g. gets milk from a cow, gets into the saddle on a pig.
      */
