@@ -2095,14 +2095,19 @@ public class AddonDefs {
 	}
 
 	private void addEntityDefs() {
+		//Vanilla entities
 		AddonManager.ReplaceSpawnableEntity("Squid", FCEntitySquid.class, AddonEntitySquid.class);
 		AddonManager.ReplaceSpawnableEntity("Ozelot", FCEntityOcelot.class, AddonEntityOcelot.class);
 		AddonManager.ReplaceSpawnableEntity("Creeper", FCEntityCreeper.class, AddonEntityCreeper.class);
-		EntityList.AddMapping(AddonEntityFallingConcrete.class, "FallingConcrete", id_entityFallingConcrete);
+		AddonManager.ReplaceSpawnableEntity("Sheep", FCEntitySheep.class, AddonEntitySheep.class);
 		EntityList.ReplaceExistingMapping(AddonEntitySquid.class, "Squid");
 		EntityList.ReplaceExistingMapping(AddonEntityOcelot.class, "Ocelot");
 		EntityList.ReplaceExistingMapping(AddonEntityCreeper.class, "Creeper");
 		EntityList.ReplaceExistingMapping(AddonEntityVillager.class, "Villager");
+		EntityList.ReplaceExistingMapping(AddonEntitySheep.class, "Sheep");
+		
+		//Custom entities
+		EntityList.AddMapping(AddonEntityFallingConcrete.class, "FallingConcrete", id_entityFallingConcrete);
 		
 		//Item frame
 		Item itemFrame = new AddonItemFrame(Item.itemFrame.itemID - 256).SetBuoyant().SetIncineratedInCrucible().SetFilterableProperties(1).setUnlocalizedName("frame");
