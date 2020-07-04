@@ -404,7 +404,6 @@ public class ContainerRepair extends Container
 
             if (par2 == 1)
             {
-            	System.out.println("Out");
                 if (!this.mergeItemStack(var5, 2, 38, true))
                 {
                     return null;
@@ -414,7 +413,6 @@ public class ContainerRepair extends Container
             }
             else if (par2 > 1)
             {
-            	System.out.println("Inv");
                 if (par2 >= 2 && par2 < 38 && !this.mergeItemStack(var5, 0, 1, false))
                 {
                     return null;

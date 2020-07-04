@@ -126,7 +126,6 @@ public class AddonBlockButton extends FCBlockButton {
             var10 = 1;
         }
         
-        System.out.println(var10 + var11);
         return var10 + var11;
     }
     

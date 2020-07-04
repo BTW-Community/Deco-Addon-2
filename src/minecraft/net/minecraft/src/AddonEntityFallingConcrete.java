@@ -16,7 +16,6 @@ public class AddonEntityFallingConcrete extends FCEntityFallingBlock {
 
             if (this.AttemptToReplaceBlockAtPosition(x, y, z))
             {
-            	System.out.println("Replaced at y= " + y);
                 Block.blocksList[this.blockID].onFinishFalling(this.worldObj, x, y, z, this.metadata);
                 this.setDead();
                 return;

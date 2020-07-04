@@ -18,6 +18,13 @@ public class AddonBlockDoorIron extends FCBlockDoor {
             int var8 = var6 & 7;
             var8 ^= 4;
 
+            System.out.println(x + ", " + y + ", " + z);
+            
+            if (this.isDoorOpen(world, x, y, z))
+                AddonUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.doorClose", 1, world.rand.nextFloat() * 0.1F + 0.9F, "random.door_close", 1, world.rand.nextFloat() * 0.1F + 0.9F);
+            else
+                AddonUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.doorOpen", 1, world.rand.nextFloat() * 0.1F + 0.9F, "random.door_open", 1, world.rand.nextFloat() * 0.1F + 0.9F);
+            
             if ((var6 & 8) == 0)
             {
                 world.SetBlockMetadataWithNotify(x, y, z, var8, 3);
@@ -30,11 +37,6 @@ public class AddonBlockDoorIron extends FCBlockDoor {
                 world.notifyBlockChange(x, y, z, this.blockID);
                 world.markBlockRangeForRenderUpdate(x, y - 1, z, x, y, z);
             }
-            
-            if (world.rand.nextInt(2) == 0)
-                AddonUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.doorIronClose", 1, world.rand.nextFloat() * 0.1F + 0.9F, "random.door_close", 1, world.rand.nextFloat() * 0.1F + 0.9F);
-            else
-                AddonUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.doorIronOpen", 1, world.rand.nextFloat() * 0.1F + 0.9F, "random.door_open", 1, world.rand.nextFloat() * 0.1F + 0.9F);
         }
     }
 }
