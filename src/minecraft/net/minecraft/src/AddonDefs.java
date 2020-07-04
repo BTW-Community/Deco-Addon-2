@@ -674,6 +674,11 @@ public class AddonDefs {
 
 		AddonManager.installResource("random/pumpkinCarve1");
 		AddonManager.installResource("random/pumpkinCarve2");
+
+		AddonManager.installResource("random/till1");
+		AddonManager.installResource("random/till2");
+		AddonManager.installResource("random/till3");
+		AddonManager.installResource("random/till4");
 		
 		AddonManager.installResource("mob/squid/say1");
 		AddonManager.installResource("mob/squid/say2");
@@ -1831,6 +1836,15 @@ public class AddonDefs {
 		podzol = new AddonBlockPodzol(id_podzol);
 		AddonManager.Register(podzol, "Podzol");
 		//podzolSlab = new AddonBlockDirtSlab(id_podzolSlab));
+		
+		//Dirt Replace
+		Block grass = new AddonBlockGrass(AddonManager.ReplaceBlockID(Block.grass));
+		AddonManager.SetVanillaBlockFinal("grass", Block.grass, grass);
+		Block dirt = new AddonBlockDirt(AddonManager.ReplaceBlockID(Block.dirt));
+		AddonManager.SetVanillaBlockFinal("dirt", Block.dirt, dirt);
+		Block mycelium = new AddonBlockMycelium(AddonManager.ReplaceBlockID(Block.mycelium));
+		AddonManager.SetVanillaBlockFinal("mycelium", Block.mycelium, mycelium);
+		FCBetterThanWolves.fcBlockDirtLoose = new AddonBlockDirtLoose(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockDirtLoose));
 
 		//Nether portal
 		BlockPortal addonPortal = (BlockPortal) new AddonBlockPortal(AddonManager.ReplaceBlockID(Block.portal));
@@ -1881,7 +1895,6 @@ public class AddonDefs {
 		}
 
 		//Ender Pearl
-		//Item enderPearl = new AddonItemEnderPearl(AddonManager.ReplaceItemID(Item.enderPearl)).SetFilterableProperties(2).setUnlocalizedName("enderPearl");
 		Item enderPearl = new AddonItemEnderPearl(Item.enderPearl.itemID - 256).SetFilterableProperties(2).setUnlocalizedName("enderPearl");
 		AddonManager.SetVanillaItemFinal("enderPearl", Item.enderPearl, enderPearl);
 

@@ -82,7 +82,7 @@ public class AddonBlockLogDamaged extends FCBlockLogDamaged {
                 }
                 else
                 {
-                    var2.playAuxSFX(2268, var3, var4, var5, 0);
+                    var2.playAuxSFX(AddonManager.addonShaftRippedOffLogAuxFXID, var3, var4, var5, 0);
                     FCUtilsItem.EjectStackFromBlockTowardsFacing(var2, var3, var4, var5, new ItemStack(Item.stick, 1), var6);
                 }
             }
@@ -307,7 +307,7 @@ public class AddonBlockLogDamaged extends FCBlockLogDamaged {
     public boolean DoesTargetBlockConnectToFacing(int var1, IBlockAccess var2, int var3, int var4, int var5, int var6)
     {
         int var7 = var2.getBlockId(var3, var4, var5);
-        return var7 != this.blockID ? (var7 == FCBetterThanWolves.fcBlockLogSpike.blockID ? FCBetterThanWolves.fcBlockLogSpike.GetFacing(var2, var3, var4, var5) == Block.GetOppositeFacing(var6) : 
+        return var7 != this.blockID ? ((var7 == FCBetterThanWolves.fcBlockLogSpike.blockID || var7 == AddonDefs.logSpikeSpruce.blockID || var7 == AddonDefs.logSpikeBirch.blockID || var7 == AddonDefs.logSpikeJungle.blockID || var7 == AddonDefs.logSpikeBlood.blockID || var7 == AddonDefs.logSpikeCherry.blockID) ? FCBetterThanWolves.fcBlockLogSpike.GetFacing(var2, var3, var4, var5) == Block.GetOppositeFacing(var6) : 
         	(var7 == Block.wood.blockID || var7 == AddonDefs.barkLog.blockID || var7 == AddonDefs.barkLogStripped.blockID || var7 == AddonDefs.strippedLog.blockID || var7 == AddonDefs.cherryLog.blockID || var7 == FCBetterThanWolves.fcBloodWood.blockID || var7 == AddonDefs.bloodLog.blockID || var7 == AddonDefs.cherryStump.blockID || 
         	var7 == FCBetterThanWolves.fcBlockLogDamaged.blockID || var7 == AddonDefs.logDamagedSpruce.blockID || var7 == AddonDefs.logDamagedBirch.blockID || var7 == AddonDefs.logDamagedJungle.blockID || var7 == AddonDefs.logDamagedBlood.blockID || var7 == AddonDefs.logDamagedCherry.blockID)) : 
         		this.GetDamageLevel(var2, var3, var4, var5) == 0 && var1 == this.GetOrientation(var2, var3, var4, var5);

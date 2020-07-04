@@ -1617,6 +1617,15 @@ public class AddonDefs {
 		podzol = new AddonBlockPodzol(id_podzol);
 		AddonManager.Register(podzol, "Podzol");
 		//podzolSlab = new AddonBlockDirtSlab(id_podzolSlab));
+		
+		//Dirt Replace
+		Block grass = new AddonBlockGrass(AddonManager.ReplaceBlockID(Block.grass));
+		AddonManager.SetVanillaBlockFinal("grass", Block.grass, grass);
+		Block dirt = new AddonBlockDirt(AddonManager.ReplaceBlockID(Block.dirt));
+		AddonManager.SetVanillaBlockFinal("dirt", Block.dirt, dirt);
+		Block mycelium = new AddonBlockMycelium(AddonManager.ReplaceBlockID(Block.mycelium));
+		AddonManager.SetVanillaBlockFinal("mycelium", Block.mycelium, mycelium);
+		FCBetterThanWolves.fcBlockDirtLoose = new AddonBlockDirtLoose(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockDirtLoose));
 
 		//Nether portal
 		BlockPortal addonPortal = (BlockPortal) new AddonBlockPortal(AddonManager.ReplaceBlockID(Block.portal));
@@ -1651,6 +1660,7 @@ public class AddonDefs {
 
 		//Bone
 		FCBetterThanWolves.fcAestheticOpaque = new AddonBlockAestheticOpaque(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcAestheticOpaque));
+		Item.itemsList[FCBetterThanWolves.fcAestheticOpaque.blockID] = new AddonItemBlockAestheticOpaque(FCBetterThanWolves.fcAestheticOpaque.blockID - 256);
 		bonePillar = new AddonBlockDirectional(id_bonePillar, FCBetterThanWolves.fcMaterialMiscellaneous, new String[] {"ginger_bonePillar_top"}, new String[] {"ginger_bonePillar_side"})
 				.setHardness(2.0F)
 				.SetPicksEffectiveOn()
@@ -1666,7 +1676,6 @@ public class AddonDefs {
 		}
 
 		//Ender Pearl
-		//Item enderPearl = new AddonItemEnderPearl(AddonManager.ReplaceItemID(Item.enderPearl)).SetFilterableProperties(2).setUnlocalizedName("enderPearl");
 		Item enderPearl = new AddonItemEnderPearl(Item.enderPearl.itemID - 256).SetFilterableProperties(2).setUnlocalizedName("enderPearl");
 		AddonManager.SetVanillaItemFinal("enderPearl", Item.enderPearl, enderPearl);
 
@@ -1881,14 +1890,19 @@ public class AddonDefs {
 	}
 
 	private void addEntityDefs() {
+		//Vanilla entities
 		AddonManager.ReplaceSpawnableEntity("Squid", FCEntitySquid.class, AddonEntitySquid.class);
 		AddonManager.ReplaceSpawnableEntity("Ozelot", FCEntityOcelot.class, AddonEntityOcelot.class);
 		AddonManager.ReplaceSpawnableEntity("Creeper", FCEntityCreeper.class, AddonEntityCreeper.class);
-		EntityList.AddMapping(AddonEntityFallingConcrete.class, "FallingConcrete", id_entityFallingConcrete);
+		AddonManager.ReplaceSpawnableEntity("Sheep", FCEntitySheep.class, AddonEntitySheep.class);
 		EntityList.ReplaceExistingMapping(AddonEntitySquid.class, "Squid");
 		EntityList.ReplaceExistingMapping(AddonEntityOcelot.class, "Ocelot");
 		EntityList.ReplaceExistingMapping(AddonEntityCreeper.class, "Creeper");
 		EntityList.ReplaceExistingMapping(AddonEntityVillager.class, "Villager");
+		EntityList.ReplaceExistingMapping(AddonEntitySheep.class, "Sheep");
+		
+		//Custom entities
+		EntityList.AddMapping(AddonEntityFallingConcrete.class, "FallingConcrete", id_entityFallingConcrete);
 		
 		//Item frame
 		Item itemFrame = new AddonItemFrame(Item.itemFrame.itemID - 256).SetBuoyant().SetIncineratedInCrucible().SetFilterableProperties(1).setUnlocalizedName("frame");

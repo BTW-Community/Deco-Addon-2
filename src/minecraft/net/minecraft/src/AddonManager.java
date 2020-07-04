@@ -29,7 +29,7 @@ import net.minecraft.server.MinecraftServer;
 
 public class AddonManager extends FCAddOn
 {
-	public static final String addonVersion = "2.11";
+	public static final String addonVersion = "2.11b";
 
 	public static AddonDefs addonDefs;
 	public static AddonRecipes addonRecipes;
@@ -47,6 +47,7 @@ public class AddonManager extends FCAddOn
 
 	public static final int addonCustomBlockBreakAuxFXID = 3000;
 	public static final int addonCustomBlockConvertAuxFXID = 3001;
+	public static final int addonShaftRippedOffLogAuxFXID = 3100;
 
 	@Override
 	public void PreInitialize() {
@@ -502,11 +503,11 @@ public class AddonManager extends FCAddOn
 			{
 				Block block = Block.blocksList[blockID];
 				if (!AddonUtilsSound.playCustomSoundForBlockBreak(mc, world, x, y, z, block, blockMeta)) {
-					this.mc.sndManager.playSound(block.stepSound.getBreakSound(), (float)x + 0.5F, (float)y + 0.5F, (float)z + 0.5F, (block.stepSound.getVolume() + 1.0F) / 2.0F, block.stepSound.getPitch() * 0.8F);
+					mc.sndManager.playSound(block.stepSound.getBreakSound(), (float)x + 0.5F, (float)y + 0.5F, (float)z + 0.5F, (block.stepSound.getVolume() + 1.0F) / 2.0F, block.stepSound.getPitch() * 0.8F);
 				}
 			}
 
-			this.mc.effectRenderer.addBlockDestroyEffects(x, y, z, data & 4095, data >> 12 & 255);
+			mc.effectRenderer.addBlockDestroyEffects(x, y, z, data & 4095, data >> 12 & 255);
 			return true;
 		case addonCustomBlockConvertAuxFXID:
 			blockID = data & 4095;
@@ -516,12 +517,18 @@ public class AddonManager extends FCAddOn
 			{
 				Block block = Block.blocksList[blockID];
 				if (!AddonUtilsSound.playCustomSoundForBlockConvert(mc, world, x, y, z, block, blockMeta)) {
-					this.mc.sndManager.playSound(block.stepSound.getBreakSound(), (float)x + 0.5F, (float)y + 0.5F, (float)z + 0.5F, (block.stepSound.getVolume() + 1.0F) / 2.0F, block.stepSound.getPitch() * 0.8F);
+					mc.sndManager.playSound(block.stepSound.getBreakSound(), (float)x + 0.5F, (float)y + 0.5F, (float)z + 0.5F, (block.stepSound.getVolume() + 1.0F) / 2.0F, block.stepSound.getPitch() * 0.8F);
 				}
 			}
 
-			this.mc.effectRenderer.addBlockDestroyEffects(x, y, z, data & 4095, data >> 12 & 255);
+			mc.effectRenderer.addBlockDestroyEffects(x, y, z, data & 4095, data >> 12 & 255);
 			return true;
+        case addonShaftRippedOffLogAuxFXID:
+        	if (getNewSoundsInstalled())
+        		world.playSound(x, y, z, "deco.random.strip", 1, 0.5F + rand.nextFloat() * 0.25F);
+        	else
+        		world.playSound(x, y, z, "mob.zombie.woodbreak", 0.25F, 1.0F + rand.nextFloat() * 0.25F);
+            return true;
 		default:
 			return false;
 		}

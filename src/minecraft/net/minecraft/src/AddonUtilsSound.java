@@ -45,10 +45,18 @@ public class AddonUtilsSound {
 	public static boolean playCustomSoundForBlockConvert(Minecraft mc, World world, int x, int y, int z, Block block, int meta) {
 		boolean customSound = false;
 		
-		if (block instanceof BlockLog || (block instanceof FCBlockLogDamaged && block.blockID != AddonDefs.logDamagedBlood.blockID) || block.blockID == AddonDefs.cherryLog.blockID) {
+		if (block instanceof BlockLog || block instanceof FCBlockLogDamaged || block instanceof FCBlockLogSpike || block.blockID == AddonDefs.cherryLog.blockID || block.blockID == FCBetterThanWolves.fcBloodWood.blockID || block.blockID == AddonDefs.bloodLog.blockID) {
 			if (AddonManager.getNewSoundsInstalled()) {
 				customSound = true;
 				playBlockSound(mc, x, y, z, "deco.random.strip", 1, 1, false);
+			}
+			else
+				customSound = false;
+		}
+		else if (block.blockID == Block.dirt.blockID || block.blockID == Block.grass.blockID || block.blockID == Block.mycelium.blockID || block.blockID == FCBetterThanWolves.fcBlockDirtLoose.blockID) {
+			if (AddonManager.getNewSoundsInstalled()) {
+				customSound = true;
+				playBlockSound(mc, x, y, z, "deco.random.till", 1, 1, false);
 			}
 			else
 				customSound = false;

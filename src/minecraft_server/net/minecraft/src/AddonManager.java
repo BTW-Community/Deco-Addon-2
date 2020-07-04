@@ -28,7 +28,7 @@ import net.minecraft.server.MinecraftServer;
 
 public class AddonManager extends FCAddOn
 {
-	public static final String addonVersion = "2.11";
+	public static final String addonVersion = "2.11b";
 	
 	public static AddonDefs addonDefs;
 	public static AddonRecipes addonRecipes;
@@ -41,6 +41,10 @@ public class AddonManager extends FCAddOn
 	private static boolean newSoundsInstalled = true;
 	
 	public static final String addonCustomPacketChannelVersionCheck = "Deco|VC";
+
+	public static final int addonCustomBlockBreakAuxFXID = 3000;
+	public static final int addonCustomBlockConvertAuxFXID = 3001;
+	public static final int addonShaftRippedOffLogAuxFXID = 3100;
 
 	@Override
 	public void PreInitialize() {

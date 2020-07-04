@@ -26,7 +26,6 @@ public class AddonUtilsObfuscationMap {
 		blockMap.put("obsidian", "at");
 		blockMap.put("signPost", "aH");
 		blockMap.put("signWall", "aM");
-		blockMap.put("grass", "y");
 		blockMap.put("thinGlass", "bu");
 		blockMap.put("fenceIron", "bt");
 		blockMap.put("fire", "av");
@@ -40,6 +39,9 @@ public class AddonUtilsObfuscationMap {
 		blockMap.put("lavaMoving", "G");
 		blockMap.put("lavaStill", "H");
 		blockMap.put("doorIron", "aP");
+		blockMap.put("grass", "y");
+		blockMap.put("dirt", "z");
+		blockMap.put("mycelium", "bC");
 		
 		itemMap.put("enderPearl", "bo");
 		itemMap.put("sign", "av");

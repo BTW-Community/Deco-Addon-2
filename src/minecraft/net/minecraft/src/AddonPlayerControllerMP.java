@@ -88,9 +88,9 @@ public class AddonPlayerControllerMP extends PlayerControllerMP {
                     var8 = var6.ConvertBlock(this.mc.thePlayer.getCurrentEquippedItem(), var5, par1, par2, par3, par4);
                 }
 
-                var5.playAuxSFX(AddonManager.addonCustomBlockBreakAuxFXID, par1, par2, par3, var6.blockID + (var5.getBlockMetadata(par1, par2, par3) << 12));
                 if (!var8)
                 {
+                    var5.playAuxSFX(AddonManager.addonCustomBlockBreakAuxFXID, par1, par2, par3, var6.blockID + (var5.getBlockMetadata(par1, par2, par3) << 12));
                     var8 = var5.setBlockToAir(par1, par2, par3);
 
                     if (var8)
