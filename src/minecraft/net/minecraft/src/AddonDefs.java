@@ -1865,6 +1865,7 @@ public class AddonDefs {
 
 		//Bone
 		FCBetterThanWolves.fcAestheticOpaque = new AddonBlockAestheticOpaque(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcAestheticOpaque));
+		Item.itemsList[FCBetterThanWolves.fcAestheticOpaque.blockID] = new AddonItemBlockAestheticOpaque(FCBetterThanWolves.fcAestheticOpaque.blockID - 256);
 		bonePillar = new AddonBlockDirectional(id_bonePillar, FCBetterThanWolves.fcMaterialMiscellaneous, new String[] {"ginger_bonePillar_top"}, new String[] {"ginger_bonePillar_side"})
 				.setHardness(2.0F)
 				.SetPicksEffectiveOn()
