@@ -39,13 +39,12 @@ public class AddonManager extends FCAddOn
 
 	private static boolean isObfuscated = false;
 	private static boolean newSoundsInstalled = true;
-
-	private static MinecraftServer mc;
+	
+	public static final String addonCustomPacketChannelVersionCheck = "Deco|VC";
 
 	@Override
 	public void PreInitialize() {
 		AddonUtilsObfuscationMap.initialize();
-		mc = MinecraftServer.getServer();
 		//AddonUtilsObfuscationMap.listAllBlockFields();
 		//AddonUtilsObfuscationMap.listAllItemFields();
 	}
@@ -53,13 +52,15 @@ public class AddonManager extends FCAddOn
 	@Override
 	public void Initialize()
 	{
-		System.out.println("[INFO] AddonManager: Initialize");
+		FCAddOnHandler.LogMessage("Deco Addon Initializing...");
 
 		addonDefs = AddonDefs.instance;
 		addonRecipes = AddonRecipes.instance;
 
 		addonDefs.addDefinitions();
 		addonRecipes.addAllAddonRecipes();
+
+		FCAddOnHandler.LogMessage("Deco Addon Initialization Complete.");
 	}
 
 	@Override
