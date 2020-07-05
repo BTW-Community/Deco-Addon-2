@@ -1,6 +1,6 @@
 package net.minecraft.src;
 
-public class AddonBlockHedge extends FCBlockLeaves {
+public class AddonBlockHedge extends AddonBlockLeaves {
 	protected AddonBlockHedge(int id) {
 		super(id);
 		this.blockMaterial = AddonDefs.materialHedge;

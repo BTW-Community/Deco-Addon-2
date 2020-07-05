@@ -42,6 +42,8 @@ public class AddonUtilsObfuscationMap {
 		blockMap.put("grass", "y");
 		blockMap.put("dirt", "z");
 		blockMap.put("mycelium", "bC");
+		blockMap.put("leaves", "O");
+		blockMap.put("vine", "by");
 		
 		itemMap.put("enderPearl", "bo");
 		itemMap.put("sign", "av");

@@ -1719,6 +1719,15 @@ public class AddonDefs {
 		AddonManager.Register(cherrySapling, "Cherry Sapling");
 		cherryLeaves = new AddonBlockLeavesCherry(id_cherryLeaves);
 		AddonManager.Register(cherryLeaves, "Cherry Leaves");
+		
+		//Leaves, vines, and webs
+		Block leaves = new AddonBlockLeaves(AddonManager.ReplaceBlockID(Block.leaves));
+		AddonManager.SetVanillaBlockFinal("leaves", Block.leaves, leaves);
+		Block vine = new AddonBlockVine(AddonManager.ReplaceBlockID(Block.vine));
+		AddonManager.SetVanillaBlockFinal("vine", Block.vine, vine);
+        Item.itemsList[Block.vine.blockID] = new ItemColored(Block.vine.blockID - 256, false);
+		FCBetterThanWolves.fcBlockBloodLeaves = new AddonBlockLeavesBlood(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockBloodLeaves));
+		FCBetterThanWolves.fcBlockWeb = new AddonBlockWeb(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockWeb));
 
 		//Hedge
 		hedge = new AddonBlockHedge(id_hedge);
@@ -1806,6 +1815,9 @@ public class AddonDefs {
 		FCBetterThanWolves.fcItemCocoaBeans = new AddonItemCocoaBeans(FCBetterThanWolves.fcItemCocoaBeans.itemID - 256);
 		Block cocoaPlant = new AddonBlockCocoa(AddonManager.ReplaceBlockID(Block.cocoaPlant)).setHardness(0.2F).setResistance(5.0F).SetBuoyant().setStepSound(Block.soundWoodFootstep).setUnlocalizedName("cocoa");;
 		AddonManager.SetVanillaBlockFinal("cocoaPlant", Block.cocoaPlant, cocoaPlant);
+		
+		//Hemp
+		FCBetterThanWolves.fcBlockHempCrop = new AddonBlockHempCrop(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockHempCrop));
 		
 		//Fluids
 		BlockFluid waterStill = (BlockFluid) new AddonBlockWaterStationary(AddonManager.ReplaceBlockID(Block.waterStill), Material.water).setHardness(100.0F).setLightOpacity(3).setUnlocalizedName("water").disableStats();

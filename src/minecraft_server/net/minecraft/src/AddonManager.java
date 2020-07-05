@@ -28,7 +28,7 @@ import net.minecraft.server.MinecraftServer;
 
 public class AddonManager extends FCAddOn
 {
-	public static final String addonVersion = "2.11b";
+	public static final String addonVersion = "2.11d";
 	
 	public static AddonDefs addonDefs;
 	public static AddonRecipes addonRecipes;
