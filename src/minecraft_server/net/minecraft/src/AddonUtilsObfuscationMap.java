@@ -26,7 +26,6 @@ public class AddonUtilsObfuscationMap {
 		blockMap.put("obsidian", "at");
 		blockMap.put("signPost", "aH");
 		blockMap.put("signWall", "aM");
-		blockMap.put("grass", "y");
 		blockMap.put("thinGlass", "bu");
 		blockMap.put("fenceIron", "bt");
 		blockMap.put("fire", "av");
@@ -39,6 +38,12 @@ public class AddonUtilsObfuscationMap {
 		blockMap.put("waterStill", "F");
 		blockMap.put("lavaMoving", "G");
 		blockMap.put("lavaStill", "H");
+		blockMap.put("doorIron", "aP");
+		blockMap.put("grass", "y");
+		blockMap.put("dirt", "z");
+		blockMap.put("mycelium", "bC");
+		blockMap.put("leaves", "O");
+		blockMap.put("vine", "by");
 		
 		itemMap.put("enderPearl", "bo");
 		itemMap.put("sign", "av");
@@ -48,6 +53,7 @@ public class AddonUtilsObfuscationMap {
 		itemMap.put("coal", "n");
 		itemMap.put("itemFrame", "bJ");
 		itemMap.put("painting", "at");
+		itemMap.put("doorIron", "aC");
 	}
 	
 	public static String getBlockLookup(String blockName) {

@@ -1,6 +1,6 @@
 package net.minecraft.src;
 
-public class AddonBlockDirtCoarse extends Block{
+public class AddonBlockDirtCoarse extends Block {
 
 	protected AddonBlockDirtCoarse(int ID) {
         super(ID, Material.ground);
@@ -20,6 +20,11 @@ public class AddonBlockDirtCoarse extends Block{
     }
 
     public boolean CanBePistonShoveled(World var1, int var2, int var3, int var4)
+    {
+        return true;
+    }
+
+    public boolean CanReedsGrowOnBlock(World var1, int var2, int var3, int var4)
     {
         return true;
     }

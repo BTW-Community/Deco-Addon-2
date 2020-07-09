@@ -68,8 +68,6 @@ public class AddonEntityItemFrame extends EntityItemFrame {
     }
     
     public int getItemEjectFacingFromHangingDirection(int hangDir) {
-    	System.out.println("Hanging dir: " + hangDir);
-    	
     	switch (hangDir) {
     	case 0:
     		return 3;

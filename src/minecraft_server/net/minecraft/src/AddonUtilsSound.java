@@ -2,7 +2,6 @@ package net.minecraft.src;
 
 public class AddonUtilsSound {
 	public static void playSoundWithVanillaFallback(World world, double x, double y, double z, String sound, float volume, float pitch, String fallbackSound, float fallbackVolume, float fallbackPitch) {
-		System.out.println(AddonManager.getNewSoundsInstalled());
 		if (AddonManager.getNewSoundsInstalled())
 			world.playSound(x, y, z, sound, volume, pitch);
 		else

@@ -58,8 +58,6 @@ public class AddonBlockLogSpike extends FCBlockLogSpike {
 
         int var7 = render.blockAccess.getBlockMetadata(x, y, z);
 
-    	System.out.println("Chewed log meta" + var7);
-
         if (var7 == 4 || var7 == 5 || var7 == 6 || var7 == 7)
         {
 			render.SetUvRotateTop(1);

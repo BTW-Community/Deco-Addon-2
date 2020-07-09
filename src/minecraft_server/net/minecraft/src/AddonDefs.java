@@ -304,7 +304,7 @@ public class AddonDefs {
 		id_fertilizer = 30003,
 		id_chainItem = 30004,
 		id_nameTag=30005,
-	
+		id_shearsDiamond=30006,
 		id_bottleHempOil = 30007,
 		id_glassStainedItem = 30008,
 	
@@ -330,12 +330,15 @@ public class AddonDefs {
 	
 	public static final StepSound stepSoundLantern = new AddonStepSound("lantern", 1, 1);
 	public static final StepSound stepSoundChain = new AddonStepSound("chain", 1, 1);
+	public static final StepSound stepSoundChainDeep = new AddonStepSound("chain", 1, 0.33F);
 	public static final StepSound stepSoundNetherrack = new AddonStepSound("netherrack", 1, 1);
 	public static final StepSound stepSoundNetherBrick = new AddonStepSound("netherbrick", 1, 1);
 	public static final StepSound stepSoundBone = new AddonStepSound("bone", 1, 1);
 	public static final StepSound stepSoundSoulSand = new AddonStepSound("soulsand", 1, 1);
-	public static final StepSound stepSoundSteel = new AddonStepSound("soulsteel", 1, 1);
-	public static final StepSound stepSoundVine = new AddonStepSoundVine(1, 1); 
+	public static final StepSound stepSoundSteel = new AddonStepSound("soulsteel", 1.5F, 1);
+	public static final StepSound stepSoundVine = new AddonStepSoundVine(1, 1);
+	public static final StepSound stepSoundBloodLog = new AddonStepSound("bloodLog", 1, 1);
+	public static final StepSound stepSoundGroth = new AddonStepSound("groth", 1, 1);
 
 	//Clay
 	public static Block terracotta, stainedTerracotta, unfiredTerracotta;
@@ -482,6 +485,7 @@ public class AddonDefs {
 
 	//Tools
 	public static AddonItemChiselDiamond chiselDiamond;
+	public static AddonItemShearsDiamond shearsDiamond;
 	public static AddonItemNameTag nameTag;
 
 	//Extra SubBlocks
@@ -1207,6 +1211,11 @@ public class AddonDefs {
 		AddonManager.Name(new ItemStack(bloodLog, 1, 0), "Stripped Blood Wood Log");
 		AddonManager.Name(new ItemStack(bloodLog, 1, 1), "Blood Wood");
 		AddonManager.Name(new ItemStack(bloodLog, 1, 2), "Stripped Blood Wood");
+		
+		if (AddonManager.getNewSoundsInstalled()) {
+			FCBetterThanWolves.fcBloodWood.setStepSound(stepSoundBloodLog);
+			bloodLog.setStepSound(stepSoundBloodLog);
+		}
 
 		cherryLog = new AddonBlockLogCherry(id_cherryLog);
 		Item.itemsList[cherryLog.blockID] = new AddonItemBlockLogCherry(cherryLog.blockID - 256, cherryLog, new String[] {"logCherry", "strippedLogCherry", "woodCherry", "strippedWoodCherry"});
@@ -1386,6 +1395,12 @@ public class AddonDefs {
 		itemDoorJungle = new AddonItemDoor(id_itemDoorJungle, "ginger_doorJungleItem", "Jungle Door", doorJungle);
 		itemDoorBlood = new AddonItemDoor(id_itemDoorBlood, "ginger_doorBloodItem", "Blood Wood Door", doorBlood);
 		itemDoorCherry = new AddonItemDoor(id_itemDoorCherry, "ginger_doorCherryItem", "Cherry Door", doorCherry);
+		
+		BlockDoor doorIron = (BlockDoor) new AddonBlockDoorIron(AddonManager.ReplaceBlockID(Block.doorIron)).setHardness(5.0F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("doorIron").disableStats();
+		AddonManager.SetVanillaBlockFinal("doorIron", Block.doorIron, doorIron);
+		
+		Item itemDoorIron = new AddonItemDoor(Item.doorIron.itemID - 256, "doorIron", "Iron Door", (BlockDoor) Block.doorIron, false);
+		AddonManager.SetVanillaItemFinal("doorIron", Item.doorIron, itemDoorIron);
 
 		//Fence gates
 		BlockFenceGate gateOak = new AddonBlockFenceGate(AddonManager.ReplaceBlockID(Block.fenceGate), "wood");
@@ -1602,6 +1617,15 @@ public class AddonDefs {
 		podzol = new AddonBlockPodzol(id_podzol);
 		AddonManager.Register(podzol, "Podzol");
 		//podzolSlab = new AddonBlockDirtSlab(id_podzolSlab));
+		
+		//Dirt Replace
+		Block grass = new AddonBlockGrass(AddonManager.ReplaceBlockID(Block.grass));
+		AddonManager.SetVanillaBlockFinal("grass", Block.grass, grass);
+		Block dirt = new AddonBlockDirt(AddonManager.ReplaceBlockID(Block.dirt));
+		AddonManager.SetVanillaBlockFinal("dirt", Block.dirt, dirt);
+		Block mycelium = new AddonBlockMycelium(AddonManager.ReplaceBlockID(Block.mycelium));
+		AddonManager.SetVanillaBlockFinal("mycelium", Block.mycelium, mycelium);
+		FCBetterThanWolves.fcBlockDirtLoose = new AddonBlockDirtLoose(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockDirtLoose));
 
 		//Nether portal
 		BlockPortal addonPortal = (BlockPortal) new AddonBlockPortal(AddonManager.ReplaceBlockID(Block.portal));
@@ -1636,6 +1660,7 @@ public class AddonDefs {
 
 		//Bone
 		FCBetterThanWolves.fcAestheticOpaque = new AddonBlockAestheticOpaque(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcAestheticOpaque));
+		Item.itemsList[FCBetterThanWolves.fcAestheticOpaque.blockID] = new AddonItemBlockAestheticOpaque(FCBetterThanWolves.fcAestheticOpaque.blockID - 256);
 		bonePillar = new AddonBlockDirectional(id_bonePillar, FCBetterThanWolves.fcMaterialMiscellaneous, new String[] {"ginger_bonePillar_top"}, new String[] {"ginger_bonePillar_side"})
 				.setHardness(2.0F)
 				.SetPicksEffectiveOn()
@@ -1651,15 +1676,8 @@ public class AddonDefs {
 		}
 
 		//Ender Pearl
-		//Item enderPearl = new AddonItemEnderPearl(AddonManager.ReplaceItemID(Item.enderPearl)).SetFilterableProperties(2).setUnlocalizedName("enderPearl");
 		Item enderPearl = new AddonItemEnderPearl(Item.enderPearl.itemID - 256).SetFilterableProperties(2).setUnlocalizedName("enderPearl");
 		AddonManager.SetVanillaItemFinal("enderPearl", Item.enderPearl, enderPearl);
-
-		//Chain
-		chain = new AddonBlockChain(id_chain);
-		AddonManager.Register(chain, "Chain");
-		chainItem = new AddonItemChain(id_chainItem);
-		AddonManager.Name(chainItem, "Chain");
 
 		//Buttons
 		Block woodButton = new AddonBlockButtonWood(AddonManager.ReplaceBlockID(Block.woodenButton), Block.planks, 0).setHardness(0.5F).setStepSound(Block.soundWoodFootstep);
@@ -1701,6 +1719,15 @@ public class AddonDefs {
 		AddonManager.Register(cherrySapling, "Cherry Sapling");
 		cherryLeaves = new AddonBlockLeavesCherry(id_cherryLeaves);
 		AddonManager.Register(cherryLeaves, "Cherry Leaves");
+		
+		//Leaves, vines, and webs
+		Block leaves = new AddonBlockLeaves(AddonManager.ReplaceBlockID(Block.leaves));
+		AddonManager.SetVanillaBlockFinal("leaves", Block.leaves, leaves);
+		Block vine = new AddonBlockVine(AddonManager.ReplaceBlockID(Block.vine));
+		AddonManager.SetVanillaBlockFinal("vine", Block.vine, vine);
+        Item.itemsList[Block.vine.blockID] = new ItemColored(Block.vine.blockID - 256, false);
+		FCBetterThanWolves.fcBlockBloodLeaves = new AddonBlockLeavesBlood(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockBloodLeaves));
+		FCBetterThanWolves.fcBlockWeb = new AddonBlockWeb(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockWeb));
 
 		//Hedge
 		hedge = new AddonBlockHedge(id_hedge);
@@ -1765,20 +1792,23 @@ public class AddonDefs {
 		ropeCoil = new AddonBlockDirectional(id_ropeCoil, FCBetterThanWolves.fcMaterialMiscellaneous, new String[] {"fcBlockRope_top"}, new String[] {"fcBlockRope_side"})
 		        .setHardness(2.0F)
 		        .SetAxesEffectiveOn(true)
-		        .setStepSound(Block.soundWoodFootstep)
+		        .setStepSound(Block.soundGrassFootstep)
 		        .setCreativeTab(CreativeTabs.tabBlock)
 		        .setUnlocalizedName("ropeCoil");
 		AddonManager.Register(ropeCoil, "Coil of Rope");
 		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcAestheticOpaque, 1, 6), "Old Coil of Rope");
 		
 		//Chain
+		chain = new AddonBlockChain(id_chain);
+		AddonManager.Register(chain, "Chain");
+		chainItem = new AddonItemChain(id_chainItem);
+		AddonManager.Name(chainItem, "Chain");
 		chainCoil = new AddonBlockDirectional(id_chainCoil, Material.iron, new String[] {"ginger_chainCoil_top"}, new String[] {"ginger_chainCoil_side"})
 		        .setHardness(2.0F)
 		        .SetPicksEffectiveOn(true)
 		        .setStepSound(Block.soundMetalFootstep)
 		        .setCreativeTab(CreativeTabs.tabBlock)
 		        .setUnlocalizedName("chainCoil");
-		AddonManager.Register(ropeCoil, "Coil of Rope");
 		AddonManager.Register(chainCoil, "Coil of Chain");
 		
 		//Cocoa
@@ -1786,14 +1816,17 @@ public class AddonDefs {
 		Block cocoaPlant = new AddonBlockCocoa(AddonManager.ReplaceBlockID(Block.cocoaPlant)).setHardness(0.2F).setResistance(5.0F).SetBuoyant().setStepSound(Block.soundWoodFootstep).setUnlocalizedName("cocoa");;
 		AddonManager.SetVanillaBlockFinal("cocoaPlant", Block.cocoaPlant, cocoaPlant);
 		
+		//Hemp
+		FCBetterThanWolves.fcBlockHempCrop = new AddonBlockHempCrop(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockHempCrop));
+		
 		//Fluids
-		BlockFluid waterStill = new AddonBlockWaterStationary(AddonManager.ReplaceBlockID(Block.waterStill), Material.water);
+		BlockFluid waterStill = (BlockFluid) new AddonBlockWaterStationary(AddonManager.ReplaceBlockID(Block.waterStill), Material.water).setHardness(100.0F).setLightOpacity(3).setUnlocalizedName("water").disableStats();
 		AddonManager.SetVanillaBlockFinal("waterStill", Block.waterStill, waterStill);
-		BlockFluid waterMoving = new AddonBlockWaterFlowing(AddonManager.ReplaceBlockID(Block.waterMoving), Material.water);
+		BlockFluid waterMoving = (BlockFluid) new AddonBlockWaterFlowing(AddonManager.ReplaceBlockID(Block.waterMoving), Material.water).setHardness(100.0F).setLightOpacity(3).setUnlocalizedName("water").disableStats();
 		AddonManager.SetVanillaBlockFinal("waterMoving", Block.waterMoving, waterMoving);
-		BlockFluid lavaStill = new AddonBlockLavaStationary(AddonManager.ReplaceBlockID(Block.lavaStill), Material.lava);
+		BlockFluid lavaStill = (BlockFluid) new AddonBlockLavaStationary(AddonManager.ReplaceBlockID(Block.lavaStill), Material.lava).setHardness(100.0F).setLightValue(1.0F).setUnlocalizedName("lava").disableStats();
 		AddonManager.SetVanillaBlockFinal("lavaStill", Block.lavaStill, lavaStill);
-		BlockFluid lavaMoving = new AddonBlockLavaFlowing(AddonManager.ReplaceBlockID(Block.lavaMoving), Material.lava);
+		BlockFluid lavaMoving = (BlockFluid) new AddonBlockLavaFlowing(AddonManager.ReplaceBlockID(Block.lavaMoving), Material.lava).setHardness(100.0F).setLightValue(1.0F).setUnlocalizedName("lava").disableStats();
 		AddonManager.SetVanillaBlockFinal("lavaMoving", Block.lavaMoving, lavaMoving);
 		
 		//Extra sounds
@@ -1802,6 +1835,8 @@ public class AddonDefs {
 			Block.vine.setStepSound(stepSoundVine);
 			FCBetterThanWolves.fcSoulforgedSteelBlock.setStepSound(stepSoundSteel);
 			FCBetterThanWolves.fcAnvil.setStepSound(stepSoundSteel);
+			FCBetterThanWolves.fcBlockBloodMoss.setStepSound(stepSoundGroth);
+			chainCoil.setStepSound(stepSoundChainDeep);
 		}
 		
 		//Scaffolding
@@ -1837,6 +1872,9 @@ public class AddonDefs {
 		Item shears = new AddonItemShears(Item.shears.itemID - 256).setUnlocalizedName("shears");
 		AddonManager.SetVanillaItemFinal("shears", Item.shears, shears);
 		
+		shearsDiamond = (AddonItemShearsDiamond) new AddonItemShearsDiamond(id_shearsDiamond).setUnlocalizedName("ginger_shearsDiamond");
+		AddonManager.Name(shearsDiamond, "Diamondium Shears");
+		
 		//Name Tags
 		nameTag = new AddonItemNameTag(id_nameTag);
 		AddonManager.Name(nameTag, "Name Tag");
@@ -1864,20 +1902,28 @@ public class AddonDefs {
 	}
 
 	private void addEntityDefs() {
-		AddonManager.ReplaceSpawnableEntity("Squid", FCEntitySquid.class, AddonEntitySquid.class);
-		AddonManager.ReplaceSpawnableEntity("Ozelot", FCEntityOcelot.class, AddonEntityOcelot.class);
+		//Vanilla entities
+		AddonManager.ReplaceSpawnableEntity("Squid", FCEntitySquid.class, AddonEntitySquid.class, false);
+		AddonManager.ReplaceSpawnableEntity("Ozelot", FCEntityOcelot.class, AddonEntityOcelot.class, true);
+		AddonManager.ReplaceSpawnableEntity("Creeper", FCEntityCreeper.class, AddonEntityCreeper.class, false);
+		AddonManager.ReplaceSpawnableEntity("Sheep", FCEntitySheep.class, AddonEntitySheep.class, true);
+		AddonManager.replaceEntityMappingWithAllowanceForOldClass(FCEntityVillager.class, AddonEntityVillager.class, "Villager");
+		
+		//Custom entities
 		EntityList.AddMapping(AddonEntityFallingConcrete.class, "FallingConcrete", id_entityFallingConcrete);
-		EntityList.ReplaceExistingMapping(AddonEntityVillager.class, "Villager");
 		
 		//Item frame
 		Item itemFrame = new AddonItemFrame(Item.itemFrame.itemID - 256).SetBuoyant().SetIncineratedInCrucible().SetFilterableProperties(1).setUnlocalizedName("frame");
 		AddonManager.SetVanillaItemFinal("itemFrame", Item.itemFrame, itemFrame);
 		EntityList.ReplaceExistingMapping(AddonEntityItemFrame.class, "ItemFrame");
-		//AddonManager.ReplaceEntityRenderMapping(EntityItemFrame.class, new AddonRenderItemFrame());
 		
 		//Painting
 	    Item painting = new AddonItemPainting(Item.painting.itemID - 256).SetBuoyant().SetIncineratedInCrucible().setUnlocalizedName("painting");
 	    AddonManager.SetVanillaItemFinal("painting", Item.painting, painting);
 	    EntityList.ReplaceExistingMapping(AddonEntityPainting.class, "Painting");
+	    
+	    //Canvas
+	    FCBetterThanWolves.fcItemCanvas = new AddonItemCanvas(FCBetterThanWolves.fcItemCanvas.itemID - 256);
+	    EntityList.ReplaceExistingMapping(AddonEntityCanvas.class, "fcCanvas");
 	}
 }

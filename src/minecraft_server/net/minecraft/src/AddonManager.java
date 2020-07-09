@@ -28,6 +28,8 @@ import net.minecraft.server.MinecraftServer;
 
 public class AddonManager extends FCAddOn
 {
+	public static final String addonVersion = "2.11e";
+	
 	public static AddonDefs addonDefs;
 	public static AddonRecipes addonRecipes;
 
@@ -37,13 +39,16 @@ public class AddonManager extends FCAddOn
 
 	private static boolean isObfuscated = false;
 	private static boolean newSoundsInstalled = true;
+	
+	public static final String addonCustomPacketChannelVersionCheck = "Deco|VC";
 
-	private static MinecraftServer mc;
+	public static final int addonCustomBlockBreakAuxFXID = 3000;
+	public static final int addonCustomBlockConvertAuxFXID = 3001;
+	public static final int addonShaftRippedOffLogAuxFXID = 3100;
 
 	@Override
 	public void PreInitialize() {
 		AddonUtilsObfuscationMap.initialize();
-		mc = MinecraftServer.getServer();
 		//AddonUtilsObfuscationMap.listAllBlockFields();
 		//AddonUtilsObfuscationMap.listAllItemFields();
 	}
@@ -51,13 +56,15 @@ public class AddonManager extends FCAddOn
 	@Override
 	public void Initialize()
 	{
-		System.out.println("[INFO] AddonManager: Initialize");
+		FCAddOnHandler.LogMessage("Deco Addon Initializing...");
 
 		addonDefs = AddonDefs.instance;
 		addonRecipes = AddonRecipes.instance;
 
 		addonDefs.addDefinitions();
 		addonRecipes.addAllAddonRecipes();
+
+		FCAddOnHandler.LogMessage("Deco Addon Initialization Complete.");
 	}
 
 	@Override
@@ -68,10 +75,25 @@ public class AddonManager extends FCAddOn
     public static void ServerPlayerConnectionInitialized(NetServerHandler var0, EntityPlayerMP var1) {
         if (!MinecraftServer.getServer().isSinglePlayer())
         {
-            FCUtilsWorld.SendPacketToPlayer(var0, new Packet3Chat("\u00a7f" + "Deco V" + "2.10b"));
+            FCUtilsWorld.SendPacketToPlayer(var0, new Packet3Chat("\u00a7f" + "Deco V" + addonVersion));
+            
+            ByteArrayOutputStream byteArrayOutput = new ByteArrayOutputStream();
+            DataOutputStream dataOutput = new DataOutputStream(byteArrayOutput);
+
+            try
+            {
+                dataOutput.writeUTF(addonVersion);
+            }
+            catch (Exception var9)
+            {
+                var9.printStackTrace();
+            }
+
+            Packet250CustomPayload var4 = new Packet250CustomPayload("Deco|VC", byteArrayOutput.toByteArray());
+            FCUtilsWorld.SendPacketToPlayer(var0, var4);
         }
         else {
-            FCUtilsWorld.SendPacketToPlayer(var0, new Packet3Chat("\u00a7f" + "Deco V" + "2.10b"));
+            FCUtilsWorld.SendPacketToPlayer(var0, new Packet3Chat("\u00a7f" + "Deco V" + addonVersion));
         }
     }
 
@@ -226,7 +248,7 @@ public class AddonManager extends FCAddOn
 		}
 	}
 
-	public static void ReplaceSpawnableEntity(String name, Class oldEntity, Class newEntity) {
+	public static void ReplaceSpawnableEntity(String name, Class oldEntity, Class newEntity, boolean allowOldClass) {
 		try {
 			for (BiomeGenBase b : BiomeGenBase.biomeList) {
 				if (b == null)
@@ -300,7 +322,10 @@ public class AddonManager extends FCAddOn
 					}
 				}
 
-				EntityList.ReplaceExistingMapping(newEntity, name);
+				if (allowOldClass)
+					replaceEntityMappingWithAllowanceForOldClass(oldEntity, newEntity, name);
+				else
+					EntityList.ReplaceExistingMapping(newEntity, name);
 			}
 		} catch (NoSuchFieldException e) {
 			if (isObfuscated()) {
@@ -308,7 +333,7 @@ public class AddonManager extends FCAddOn
 			}
 			else {
 				setObfuscated(true);
-				ReplaceSpawnableEntity(name, oldEntity, newEntity);
+				ReplaceSpawnableEntity(name, oldEntity, newEntity, allowOldClass);
 			}
 			e.printStackTrace();
 		} catch (SecurityException e) {
@@ -316,6 +341,51 @@ public class AddonManager extends FCAddOn
 		} catch (IllegalArgumentException e) {
 			e.printStackTrace();
 		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void replaceEntityMappingWithAllowanceForOldClass(Class oldClass, Class newClass, String name) {
+		EntityList.ReplaceExistingMapping(newClass, name);
+		Field classToIdMappingField;
+		Field classToStringMappingField;
+		
+		try {
+			if (isObfuscated()) {
+				classToIdMappingField = EntityList.class.getDeclaredField("e");
+				classToStringMappingField = EntityList.class.getDeclaredField("c");
+			}
+			else {
+				classToIdMappingField = EntityList.class.getDeclaredField("classToIDMapping");
+				classToStringMappingField = EntityList.class.getDeclaredField("classToStringMapping");
+			}
+
+			classToIdMappingField.setAccessible(true);
+			classToStringMappingField.setAccessible(true);
+			
+			Map classToIDMapping = (Map) classToIdMappingField.get(null);
+			Map classToStringMapping = (Map) classToStringMappingField.get(null);
+			classToIDMapping.put(oldClass, EntityList.getEntityID((Entity)newClass.getConstructor(new Class[] {World.class}).newInstance(new Object[] {null})));
+			classToStringMapping.put(oldClass, name);
+		} catch (NoSuchFieldException e) {
+			if (isObfuscated()) {
+				e.printStackTrace();
+			}
+			else {
+				setObfuscated(true);
+				replaceEntityMappingWithAllowanceForOldClass(oldClass, newClass, name);
+			}
+		} catch (SecurityException e) {
+			e.printStackTrace();
+		} catch (IllegalArgumentException e) {
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		} catch (InstantiationException e) {
+			e.printStackTrace();
+		} catch (InvocationTargetException e) {
+			e.printStackTrace();
+		} catch (NoSuchMethodException e) {
 			e.printStackTrace();
 		}
 	}
