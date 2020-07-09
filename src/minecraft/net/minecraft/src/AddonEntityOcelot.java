@@ -5,6 +5,37 @@ public class AddonEntityOcelot extends FCEntityOcelot {
 		super(world);
 	}
 
+    /**
+     * Initialize this creature.
+     */
+    public void initCreature()
+    {
+        if (this.worldObj.rand.nextInt(7) == 0)
+        {
+            for (int var1 = 0; var1 < 2; ++var1)
+            {
+                FCEntityOcelot var2 = new AddonEntityOcelot(this.worldObj);
+                var2.setLocationAndAngles(this.posX, this.posY, this.posZ, this.rotationYaw, 0.0F);
+                var2.setGrowingAge(-var2.GetTicksForChildToGrow());
+                this.worldObj.spawnEntityInWorld(var2);
+            }
+        }
+    }
+
+    public EntityOcelot spawnBabyAnimal(EntityAgeable var1)
+    {
+        FCEntityOcelot var2 = new AddonEntityOcelot(this.worldObj);
+
+        if (this.isTamed())
+        {
+            var2.setOwner(this.getOwnerName());
+            var2.setTamed(true);
+            var2.setTameSkin(this.getTameSkin());
+        }
+
+        return var2;
+    }
+
 	/**
 	 * Checks if the entity's current position is a valid location to spawn this entity.
 	 */

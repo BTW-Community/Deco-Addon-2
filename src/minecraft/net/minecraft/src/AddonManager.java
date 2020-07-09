@@ -29,7 +29,7 @@ import net.minecraft.server.MinecraftServer;
 
 public class AddonManager extends FCAddOn
 {
-	public static final String addonVersion = "2.11d";
+	public static final String addonVersion = "2.11e";
 
 	public static AddonDefs addonDefs;
 	public static AddonRecipes addonRecipes;
@@ -252,7 +252,7 @@ public class AddonManager extends FCAddOn
 		}
 	}
 
-	public static void ReplaceSpawnableEntity(String name, Class oldEntity, Class newEntity) {
+	public static void ReplaceSpawnableEntity(String name, Class oldEntity, Class newEntity, boolean allowOldClass) {
 		try {
 			for (BiomeGenBase b : BiomeGenBase.biomeList) {
 				if (b == null)
@@ -326,7 +326,10 @@ public class AddonManager extends FCAddOn
 					}
 				}
 
-				EntityList.ReplaceExistingMapping(newEntity, name);
+				if (allowOldClass)
+					replaceEntityMappingWithAllowanceForOldClass(oldEntity, newEntity, name);
+				else
+					EntityList.ReplaceExistingMapping(newEntity, name);
 			}
 		} catch (NoSuchFieldException e) {
 			if (isObfuscated()) {
@@ -334,7 +337,7 @@ public class AddonManager extends FCAddOn
 			}
 			else {
 				setObfuscated(true);
-				ReplaceSpawnableEntity(name, oldEntity, newEntity);
+				ReplaceSpawnableEntity(name, oldEntity, newEntity, allowOldClass);
 			}
 			e.printStackTrace();
 		} catch (SecurityException e) {
@@ -342,6 +345,51 @@ public class AddonManager extends FCAddOn
 		} catch (IllegalArgumentException e) {
 			e.printStackTrace();
 		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void replaceEntityMappingWithAllowanceForOldClass(Class oldClass, Class newClass, String name) {
+		EntityList.ReplaceExistingMapping(newClass, name);
+		Field classToIdMappingField;
+		Field classToStringMappingField;
+		
+		try {
+			if (isObfuscated()) {
+				classToIdMappingField = EntityList.class.getDeclaredField("e");
+				classToStringMappingField = EntityList.class.getDeclaredField("c");
+			}
+			else {
+				classToIdMappingField = EntityList.class.getDeclaredField("classToIDMapping");
+				classToStringMappingField = EntityList.class.getDeclaredField("classToStringMapping");
+			}
+
+			classToIdMappingField.setAccessible(true);
+			classToStringMappingField.setAccessible(true);
+			
+			Map classToIDMapping = (Map) classToIdMappingField.get(null);
+			Map classToStringMapping = (Map) classToStringMappingField.get(null);
+			classToIDMapping.put(oldClass, EntityList.getEntityID((Entity)newClass.getConstructor(new Class[] {World.class}).newInstance(new Object[] {null})));
+			classToStringMapping.put(oldClass, name);
+		} catch (NoSuchFieldException e) {
+			if (isObfuscated()) {
+				e.printStackTrace();
+			}
+			else {
+				setObfuscated(true);
+				replaceEntityMappingWithAllowanceForOldClass(oldClass, newClass, name);
+			}
+		} catch (SecurityException e) {
+			e.printStackTrace();
+		} catch (IllegalArgumentException e) {
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		} catch (InstantiationException e) {
+			e.printStackTrace();
+		} catch (InvocationTargetException e) {
+			e.printStackTrace();
+		} catch (NoSuchMethodException e) {
 			e.printStackTrace();
 		}
 	}
