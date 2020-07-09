@@ -298,8 +298,16 @@ public class AddonDefs {
 		id_buttonDiorite=3475,
 		id_buttonSandstone=3476,
 		id_buttonRedSandstone=3477,
-
-	id_flag_start=4000;
+		id_nylium=3478,
+		id_stemCrimson=3479,
+		id_stemWarped=3480,
+		id_wartBlock=3481,
+		id_netherRoots=3482,
+		id_netherVines=3483,
+		id_stemDamagedCrimson=3484,
+		id_stemDamagedWarped=3485,
+		id_stemSpikeCrimson=3486,
+		id_stemSpikeWarped=3487;
 
 	private static final int
 		id_glassChunk = 30002,
@@ -341,6 +349,7 @@ public class AddonDefs {
 	public static final StepSound stepSoundVine = new AddonStepSoundVine(1, 1);
 	public static final StepSound stepSoundBloodLog = new AddonStepSound("bloodLog", 1, 1);
 	public static final StepSound stepSoundGroth = new AddonStepSound("groth", 1, 1);
+	public static final StepSound stepSoundNylium = new AddonStepSound("nylium", 1, 1);
 
 	//Clay
 	public static Block terracotta, stainedTerracotta, unfiredTerracotta;
@@ -484,6 +493,9 @@ public class AddonDefs {
 	public static Block buttonSpruce, buttonBirch, buttonJungle, buttonBlood, buttonCherry;
 	public static Block buttonInfusedStone, buttonGranite, buttonAndesite, buttonDiorite, buttonSandstone, buttonRedSandstone;
 	public static Block ropeCoil, chainCoil;
+	public static Block nylium;
+	public static Block stemCrimson, stemWarped, stemDamagedCrimson, stemDamagedWarped, stemSpikeCrimson, stemSpikeWarped, wartBlock;
+	public static Block netherRoots, netherVines;
 
 	//Tools
 	public static AddonItemChiselDiamond chiselDiamond;
@@ -1403,6 +1415,8 @@ public class AddonDefs {
 		//Logs
 		FCBetterThanWolves.fcItemBark = new AddonItemBark(FCBetterThanWolves.fcItemBark.itemID - 256);
 		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcItemBark, 1, 5), "Cherry Bark");
+		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcItemBark, 1, 6), "Crimson Bark");
+		AddonManager.Name(new ItemStack(FCBetterThanWolves.fcItemBark, 1, 7), "Warped Bark");
 		BlockLog addonLog = new AddonBlockLogReplace(AddonManager.ReplaceBlockID(Block.wood));
 		AddonManager.SetVanillaBlockFinal("wood", Block.wood, addonLog);
 		Item.itemsList[Block.wood.blockID] = new AddonItemBlockLog(Block.wood.blockID - 256, Block.wood, new String[] {"oakLog", "spruceLog", "birchLog", "jungleLog"});
@@ -1450,12 +1464,16 @@ public class AddonDefs {
 		logDamagedJungle = new AddonBlockLogDamaged(id_logDamagedJungle, "ginger_strippedJungleSide", "ginger_strippedJungleTop", "ginger_trunkJungleTop").setUnlocalizedName("chewedJungle");
 		logDamagedBlood = new AddonBlockLogDamaged(id_logDamagedBlood, "ginger_strippedBloodSide", "ginger_strippedBloodTop", "ginger_trunkJungleTop").setUnlocalizedName("chewedBlood");
 		logDamagedCherry = new AddonBlockLogDamaged(id_logDamagedCherry, "ginger_strippedCherrySide", "ginger_strippedCherryTop", "ginger_trunkCherryTop").setUnlocalizedName("chewedCherry");
+		stemDamagedCrimson = new AddonBlockLogDamaged(id_stemDamagedCrimson, "ginger_strippedCrimsonSide", "ginger_strippedCrimsonTop", "ginger_trunkJungleTop").setUnlocalizedName("chewedCrimson");
+		stemDamagedWarped = new AddonBlockLogDamaged(id_stemDamagedWarped, "ginger_strippedWarpedSide", "ginger_strippedWarpedTop", "ginger_trunkJungleTop").setUnlocalizedName("chewedWarped");
 		AddonManager.Name(FCBetterThanWolves.fcBlockLogDamaged, "Chewed Oak Log");
 		AddonManager.Register(logDamagedSpruce, "Chewed Spruce Log");
 		AddonManager.Register(logDamagedBirch, "Chewed Birch Log");
 		AddonManager.Register(logDamagedJungle, "Chewed Jungle Log");
 		AddonManager.Register(logDamagedBlood, "Chewed Blood Wood Log");
 		AddonManager.Register(logDamagedCherry, "Chewed Cherry Log");
+		AddonManager.Register(stemDamagedCrimson, "Chewed Crimson Stem");
+		AddonManager.Register(stemDamagedWarped, "Chewed Warped Stem");
 
 		FCBetterThanWolves.fcBlockLogSpike = (FCBlockLogSpike) new AddonBlockLogSpike(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockLogSpike), "ginger_strippedOakSide", "ginger_strippedOakTop").setUnlocalizedName("oakSpike");
 		logSpikeSpruce = new AddonBlockLogSpike(id_logSpikeSpruce, "ginger_strippedSpruceSide", "ginger_strippedSpruceTop").setUnlocalizedName("spruceSpike");
@@ -1463,17 +1481,67 @@ public class AddonDefs {
 		logSpikeJungle = new AddonBlockLogSpike(id_logSpikeJungle, "ginger_strippedJungleSide", "ginger_strippedJungleTop").setUnlocalizedName("jungleSpike");
 		logSpikeBlood = new AddonBlockLogSpike(id_logSpikeBlood, "ginger_strippedBloodSide", "ginger_strippedBloodTop").setUnlocalizedName("bloodSpike");
 		logSpikeCherry = new AddonBlockLogSpike(id_logSpikeCherry, "ginger_strippedCherrySide", "ginger_strippedCherryTop").setUnlocalizedName("cherrySpike");
+		stemSpikeCrimson = new AddonBlockLogSpike(id_stemSpikeCrimson, "ginger_strippedCrimsonSide", "ginger_strippedCrimsonTop").setUnlocalizedName("crimsonSpike");
+		stemSpikeWarped = new AddonBlockLogSpike(id_stemSpikeWarped, "ginger_strippedWarpedSide", "ginger_strippedWarpedTop").setUnlocalizedName("warpedSpike");
 		AddonManager.Name(FCBetterThanWolves.fcBlockLogSpike, "Oak Log Spike");
 		AddonManager.Register(logSpikeSpruce, "Spruce Log Spike");
 		AddonManager.Register(logSpikeBirch, "Birch Log Spike");
 		AddonManager.Register(logSpikeJungle, "Jungle Log Spike");
 		AddonManager.Register(logSpikeBlood, "Blood Wood Log Spike");
 		AddonManager.Register(logSpikeCherry, "Cherry Log Spike");
+		AddonManager.Register(stemSpikeCrimson, "Crimson Stem Spike");
+		AddonManager.Register(stemSpikeWarped, "Warped Stem Spike");
+		
+		stemCrimson = new AddonBlockStem(id_stemCrimson, new String[] {"ginger_stemCrimsonTop", "ginger_strippedCrimsonTop", "ginger_stemCrimsonSide", "ginger_strippedCrimsonSide"}, new String[] {"ginger_stemCrimsonSide", "ginger_strippedCrimsonSide", "ginger_stemCrimsonSide", "ginger_strippedCrimsonSide"}, 6, stemDamagedCrimson.blockID)
+				.setHardness(1.25F)
+				.setResistance(3.33F)
+				.SetAxesEffectiveOn()
+				.SetChiselsEffectiveOn()
+				.SetBuoyant()
+				.SetCanBeCookedByKiln(true)
+				.SetItemIndexDroppedWhenCookedByKiln(263)
+				.SetItemDamageDroppedWhenCookedByKiln(1)
+				.SetFireProperties(FCEnumFlammability.LOGS)
+				.setUnlocalizedName("crimsonStem")
+				.setCreativeTab(CreativeTabs.tabBlock);
+		Item.itemsList[stemCrimson.blockID] = new AddonItemBlockStem(stemCrimson.blockID - 256, stemCrimson, new String[] {"stemCrimson", "strippedStemCrimson", "woodCrimson", "strippedWoodCrimson"}, 6);
+		AddonManager.Name(new ItemStack(stemCrimson, 1, 0), "Crimson Stem");
+		AddonManager.Name(new ItemStack(stemCrimson, 1, 1), "Stripped Crimson Stem");
+		AddonManager.Name(new ItemStack(stemCrimson, 1, 2), "Crimson Hyphae");
+		AddonManager.Name(new ItemStack(stemCrimson, 1, 3), "Stripped Crimson Hyphae");
+
+		stemWarped = new AddonBlockStem(id_stemWarped, new String[] {"ginger_stemWarpedTop", "ginger_strippedWarpedTop", "ginger_stemWarpedSide", "ginger_strippedWarpedSide"}, new String[] {"ginger_stemWarpedSide", "ginger_strippedWarpedSide", "ginger_stemWarpedSide", "ginger_strippedWarpedSide"}, 7, stemDamagedWarped.blockID)
+				.setHardness(1.25F)
+				.setResistance(3.33F)
+				.SetAxesEffectiveOn()
+				.SetChiselsEffectiveOn()
+				.SetBuoyant()
+				.SetCanBeCookedByKiln(true)
+				.SetItemIndexDroppedWhenCookedByKiln(263)
+				.SetItemDamageDroppedWhenCookedByKiln(1)
+				.SetFireProperties(FCEnumFlammability.LOGS)
+				.setUnlocalizedName("warpedStem")
+				.setCreativeTab(CreativeTabs.tabBlock);
+		Item.itemsList[stemWarped.blockID] = new AddonItemBlockStem(stemWarped.blockID - 256, stemCrimson, new String[] {"stemWarped", "strippedStemWarped", "woodWarped", "strippedWoodWarped"}, 7);
+		AddonManager.Name(new ItemStack(stemWarped, 1, 0), "Warped Stem");
+		AddonManager.Name(new ItemStack(stemWarped, 1, 1), "Stripped Warped Stem");
+		AddonManager.Name(new ItemStack(stemWarped, 1, 2), "Warped Hyphae");
+		AddonManager.Name(new ItemStack(stemWarped, 1, 3), "Stripped Warped Hyphae");
+		
+		if (AddonManager.getNewSoundsInstalled()) {
+			stemCrimson.setStepSound(stepSoundBloodLog);
+			stemWarped.setStepSound(stepSoundBloodLog);
+		}
+		else {
+			stemCrimson.setStepSound(Block.soundWoodFootstep);
+			stemWarped.setStepSound(Block.soundWoodFootstep);
+		}
 
 		//Planks
 		Block planks = new AddonBlockPlanks(AddonManager.ReplaceBlockID(Block.planks));
 		AddonManager.SetVanillaBlockFinal("planks", Block.planks, planks);
-		AddonManager.Register(Block.planks, new String[] {"oakPlanks", "sprucePlanks", "birchPlanks", "junglePlanks", "bloodPlanks", "cherryPlanks"}, new String[] {"Oak Planks", "Spruce Planks", "Birch Planks", "Jungle Planks", "Blood Wood Planks", "Cherry Planks"});
+		AddonManager.Register(Block.planks, new String[] {"oakPlanks", "sprucePlanks", "birchPlanks", "junglePlanks", "bloodPlanks", "cherryPlanks", "crimsonPlanks", "warpedPlanks"},
+				new String[] {"Oak Planks", "Spruce Planks", "Birch Planks", "Jungle Planks", "Blood Wood Planks", "Cherry Planks", "Crimson Planks", "Warped Planks"});
 		Block stairsWoodOak = (new FCBlockStairsWood(AddonManager.ReplaceBlockID(Block.stairsWoodOak), Block.planks, 0)).setUnlocalizedName("stairsWood");
 		AddonManager.SetVanillaBlockFinal("stairsWoodOak", Block.stairsWoodOak, stairsWoodOak);
 		AddonManager.Name(stairsWoodOak, "Oak Stairs");

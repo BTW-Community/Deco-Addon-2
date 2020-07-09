@@ -3,7 +3,7 @@ package net.minecraft.src;
 import java.util.List;
 
 public class AddonBlockPlanks extends FCBlockPlanks {
-    public static final String[] m_sWoodTypes = new String[] {"oak", "spruce", "birch", "jungle", "blood", "cherry"};
+    public static final String[] m_sWoodTypes = new String[] {"oak", "spruce", "birch", "jungle", "blood", "cherry", "crimson", "warped"};
     
 	public AddonBlockPlanks(int id) {
 		super(id);
@@ -26,7 +26,7 @@ public class AddonBlockPlanks extends FCBlockPlanks {
     }
 
 	//CLIENT ONLY
-    public static final String[] m_sWoodTextureTypes = new String[] {"wood", "wood_spruce", "wood_birch", "wood_jungle", "fcBlockPlanks_blood", "ginger_planks_cherry"};
+    public static final String[] m_sWoodTextureTypes = new String[] {"wood", "wood_spruce", "wood_birch", "wood_jungle", "fcBlockPlanks_blood", "ginger_planks_cherry", "ginger_planks_crimson", "ginger_planks_warped"};
     private Icon[] m_iconArray;
 	
     /**
