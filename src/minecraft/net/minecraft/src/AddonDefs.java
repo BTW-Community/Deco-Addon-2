@@ -2190,15 +2190,11 @@ public class AddonDefs {
 
 	private void addEntityDefs() {
 		//Vanilla entities
-		AddonManager.ReplaceSpawnableEntity("Squid", FCEntitySquid.class, AddonEntitySquid.class);
-		AddonManager.ReplaceSpawnableEntity("Ozelot", FCEntityOcelot.class, AddonEntityOcelot.class);
-		AddonManager.ReplaceSpawnableEntity("Creeper", FCEntityCreeper.class, AddonEntityCreeper.class);
-		AddonManager.ReplaceSpawnableEntity("Sheep", FCEntitySheep.class, AddonEntitySheep.class);
-		EntityList.ReplaceExistingMapping(AddonEntitySquid.class, "Squid");
-		EntityList.ReplaceExistingMapping(AddonEntityOcelot.class, "Ozelot");
-		EntityList.ReplaceExistingMapping(AddonEntityCreeper.class, "Creeper");
-		EntityList.ReplaceExistingMapping(AddonEntityVillager.class, "Villager");
-		EntityList.ReplaceExistingMapping(AddonEntitySheep.class, "Sheep");
+		AddonManager.ReplaceSpawnableEntity("Squid", FCEntitySquid.class, AddonEntitySquid.class, false);
+		AddonManager.ReplaceSpawnableEntity("Ozelot", FCEntityOcelot.class, AddonEntityOcelot.class, true);
+		AddonManager.ReplaceSpawnableEntity("Creeper", FCEntityCreeper.class, AddonEntityCreeper.class, false);
+		AddonManager.ReplaceSpawnableEntity("Sheep", FCEntitySheep.class, AddonEntitySheep.class, true);
+		AddonManager.replaceEntityMappingWithAllowanceForOldClass(FCEntityVillager.class, AddonEntityVillager.class, "Villager");
 		
 		//Custom entities
 		EntityList.AddMapping(AddonEntityFallingConcrete.class, "FallingConcrete", id_entityFallingConcrete);
