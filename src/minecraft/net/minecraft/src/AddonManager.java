@@ -29,7 +29,7 @@ import net.minecraft.server.MinecraftServer;
 
 public class AddonManager extends FCAddOn
 {
-	public static final String addonVersion = "2.11d";
+	public static final String addonVersion = "2.12";
 
 	public static AddonDefs addonDefs;
 	public static AddonRecipes addonRecipes;
@@ -525,7 +525,7 @@ public class AddonManager extends FCAddOn
 			return true;
         case addonShaftRippedOffLogAuxFXID:
         	if (getNewSoundsInstalled())
-        		world.playSound(x, y, z, "deco.random.strip", 1, 0.5F + rand.nextFloat() * 0.25F);
+        		world.playSound(x, y, z, "deco.random.strip", 3.0F, 0.25F + rand.nextFloat() * 0.25F);
         	else
         		world.playSound(x, y, z, "mob.zombie.woodbreak", 0.25F, 1.0F + rand.nextFloat() * 0.25F);
             return true;
