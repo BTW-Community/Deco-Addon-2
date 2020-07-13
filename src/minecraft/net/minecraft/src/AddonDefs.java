@@ -307,7 +307,18 @@ public class AddonDefs {
 		id_stemDamagedCrimson=3484,
 		id_stemDamagedWarped=3485,
 		id_stemSpikeCrimson=3486,
-		id_stemSpikeWarped=3487;
+		id_stemSpikeWarped=3487,
+		
+		id_groundCoverDirt=3550,
+		id_groundCoverGrass=3551,
+		id_groundCoverGravel=3552,
+		id_groundCoverSand=3553,
+		id_groundCoverRedSand=3554,
+		id_groundCoverCoarseDirt=3555,
+		id_groundCoverPodzol=3556,
+		id_groundCoverPackedEarth=3557,
+		
+		placeholder = 4095;
 
 	private static final int
 		id_glassChunk = 30002,
@@ -497,6 +508,9 @@ public class AddonDefs {
 	public static Block stemCrimson, stemWarped, stemDamagedCrimson, stemDamagedWarped, stemSpikeCrimson, stemSpikeWarped, wartBlock;
 	public static Block netherRoots, netherVines;
 
+	//Ground Cover
+	public static Block groundCoverDirt, groundCoverGrass, groundCoverGravel, groundCoverSand, groundCoverRedSand, groundCoverCoarseDirt, groundCoverPodzol, groundCoverPackedEarth;
+	
 	//Tools
 	public static AddonItemChiselDiamond chiselDiamond;
 	public static AddonItemShearsDiamond shearsDiamond;
@@ -518,6 +532,7 @@ public class AddonDefs {
 		addWoodDefs();
 		addDecoDefs();
 		addToolDefs();
+		addGroundCoverDefs();
 		addSubBlockReplaceDefs();
 		addExtraSubBlockDefs();
 		addEntityDefs();
@@ -2172,6 +2187,18 @@ public class AddonDefs {
 		//Name Tags
 		nameTag = new AddonItemNameTag(id_nameTag);
 		AddonManager.Name(nameTag, "Name Tag");
+	}
+	
+	private void addGroundCoverDefs() {
+		//public static Block groundCoverDirt, groundCoverGrass, groundCoverGravel, groundCoverSand, groundCoverRedSand, groundCoverCoarseDirt, groundCoverPodzol, groundCoverPackedEarth;
+		groundCoverDirt = new AddonBlockGroundCover(id_groundCoverDirt, Material.ground, Block.dirt);
+		groundCoverGrass = new AddonBlockGroundCover(id_groundCoverGrass, Material.grass, Block.grass);
+
+		Item.itemsList[groundCoverDirt.blockID] = new AddonItemBlockGroundCover(groundCoverDirt.blockID - 256);
+		Item.itemsList[groundCoverGrass.blockID] = new AddonItemBlockGroundCover(groundCoverGrass.blockID - 256);
+		
+		AddonManager.Name(groundCoverDirt, "Dirt Layer");
+		AddonManager.Name(groundCoverGrass, "Grass Layer");
 	}
 
 	private void addSubBlockReplaceDefs() {

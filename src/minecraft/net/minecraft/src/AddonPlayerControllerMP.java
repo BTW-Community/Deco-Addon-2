@@ -170,6 +170,7 @@ public class AddonPlayerControllerMP extends PlayerControllerMP {
 
         if (!var12 && par3ItemStack != null && !par3ItemStack.getItem().CanItemBeUsedByPlayer(par2World, par4, par5, par6, par7, par1EntityPlayer, par3ItemStack))
         {
+        	System.out.println("Unable to place item");
             return false;
         }
         else if (AddonUtilsBlock.canBlocksBePlacedAgainstGivenBlock(lookedAtBlockID, lookedAtBlockMeta))
