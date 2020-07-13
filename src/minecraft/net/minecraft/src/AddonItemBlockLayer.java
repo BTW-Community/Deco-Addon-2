@@ -1,7 +1,7 @@
 package net.minecraft.src;
 
-public class AddonItemBlockGroundCover extends ItemBlock {
-	public AddonItemBlockGroundCover(int par1) {
+public class AddonItemBlockLayer extends ItemBlock {
+	public AddonItemBlockLayer(int par1) {
 		super(par1);
 	}
 
@@ -33,14 +33,17 @@ public class AddonItemBlockGroundCover extends ItemBlock {
 
 	public boolean attemptToCombineWithBlock(ItemStack var1, EntityPlayer var2, World var3, int var4, int var5, int var6, int var7, boolean var8)
 	{
+		if (var7 != 1)
+			return false;
+		
 		if (this.canCombineWithBlock(var3, var4, var5, var6, var1.getItemDamage()))
 		{
 			int var9 = var3.getBlockId(var4, var5, var6);
 			Block var10 = Block.blocksList[var9];
 
-			if (var10 != null && var10 instanceof AddonBlockGroundCover)
+			if (var10 != null && var10 instanceof AddonBlockLayer)
 			{
-				AddonBlockGroundCover var11 = (AddonBlockGroundCover)var10;
+				AddonBlockLayer var11 = (AddonBlockLayer)var10;
 				if (var3.checkNoEntityCollision(Block.GetFulBlockBoundingBoxFromPool(var3, var4, var5, var6)) && this.addLayer(var3, var4, var5, var6))
 				{
 					var3.playSoundEffect((double)((float)var4 + 0.5F), (double)((float)var5 + 0.5F), (double)((float)var6 + 0.5F), var11.stepSound.getPlaceSound(), (var11.stepSound.getVolume() + 1.0F) / 2.0F, var11.stepSound.getPitch() * 0.8F);
@@ -76,7 +79,7 @@ public class AddonItemBlockGroundCover extends ItemBlock {
     {
         int var5 = var1.getBlockId(var2, var3, var4);
         Block var6 = Block.blocksList[var5];
-        return var6 instanceof AddonBlockGroundCover ? ((AddonBlockGroundCover)var6).addLayer(var1, var2, var3, var4) : false;
+        return var6 instanceof AddonBlockLayer ? ((AddonBlockLayer)var6).addLayer(var1, var2, var3, var4) : false;
     }
 
     /**

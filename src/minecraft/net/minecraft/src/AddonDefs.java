@@ -309,14 +309,14 @@ public class AddonDefs {
 		id_stemSpikeCrimson=3486,
 		id_stemSpikeWarped=3487,
 		
-		id_groundCoverDirt=3550,
-		id_groundCoverGrass=3551,
-		id_groundCoverGravel=3552,
-		id_groundCoverSand=3553,
-		id_groundCoverRedSand=3554,
-		id_groundCoverCoarseDirt=3555,
-		id_groundCoverPodzol=3556,
-		id_groundCoverPackedEarth=3557,
+		id_layerDirt=3550,
+		id_layerGrass=3551,
+		id_layerGravel=3552,
+		id_layerSand=3553,
+		id_layerRedSand=3554,
+		id_layerCoarseDirt=3555,
+		id_layerPodzol=3556,
+		id_layerPackedEarth=3557,
 		
 		placeholder = 4095;
 
@@ -509,7 +509,7 @@ public class AddonDefs {
 	public static Block netherRoots, netherVines;
 
 	//Ground Cover
-	public static Block groundCoverDirt, groundCoverGrass, groundCoverGravel, groundCoverSand, groundCoverRedSand, groundCoverCoarseDirt, groundCoverPodzol, groundCoverPackedEarth;
+	public static Block layerDirt, layerGrass, layerGravel, layerSand, layerRedSand, layerCoarseDirt, layerPodzol, layerPackedEarth;
 	
 	//Tools
 	public static AddonItemChiselDiamond chiselDiamond;
@@ -532,7 +532,7 @@ public class AddonDefs {
 		addWoodDefs();
 		addDecoDefs();
 		addToolDefs();
-		addGroundCoverDefs();
+		addlayerDefs();
 		addSubBlockReplaceDefs();
 		addExtraSubBlockDefs();
 		addEntityDefs();
@@ -2189,16 +2189,19 @@ public class AddonDefs {
 		AddonManager.Name(nameTag, "Name Tag");
 	}
 	
-	private void addGroundCoverDefs() {
-		//public static Block groundCoverDirt, groundCoverGrass, groundCoverGravel, groundCoverSand, groundCoverRedSand, groundCoverCoarseDirt, groundCoverPodzol, groundCoverPackedEarth;
-		groundCoverDirt = new AddonBlockGroundCover(id_groundCoverDirt, Material.ground, Block.dirt);
-		groundCoverGrass = new AddonBlockGroundCover(id_groundCoverGrass, Material.grass, Block.grass);
+	private void addlayerDefs() {
+		//public static Block layerDirt, layerGrass, layerGravel, layerSand, layerRedSand, layerCoarseDirt, layerPodzol, layerPackedEarth;
+		layerDirt = new AddonBlockLayer(id_layerDirt, Material.ground, Block.dirt).SetShovelsEffectiveOn().setUnlocalizedName("dirtLayer");
+		layerGrass = new AddonBlockLayer(id_layerGrass, Material.grass, Block.grass).SetShovelsEffectiveOn().setUnlocalizedName("grassLayer");
+		layerGravel = new AddonBlockLayer(id_layerGravel, Material.ground, Block.gravel).SetShovelsEffectiveOn().setUnlocalizedName("gravelLayer");
 
-		Item.itemsList[groundCoverDirt.blockID] = new AddonItemBlockGroundCover(groundCoverDirt.blockID - 256);
-		Item.itemsList[groundCoverGrass.blockID] = new AddonItemBlockGroundCover(groundCoverGrass.blockID - 256);
+		Item.itemsList[layerDirt.blockID] = new AddonItemBlockLayer(layerDirt.blockID - 256);
+		Item.itemsList[layerGrass.blockID] = new AddonItemBlockLayer(layerGrass.blockID - 256);
+		Item.itemsList[layerGravel.blockID] = new AddonItemBlockLayer(layerGravel.blockID - 256);
 		
-		AddonManager.Name(groundCoverDirt, "Dirt Layer");
-		AddonManager.Name(groundCoverGrass, "Grass Layer");
+		AddonManager.Name(layerDirt, "Dirt Layer");
+		//AddonManager.Name(layerGrass, "Grass Layer");
+		AddonManager.Name(layerGravel, "Gravel Layer");
 	}
 
 	private void addSubBlockReplaceDefs() {
