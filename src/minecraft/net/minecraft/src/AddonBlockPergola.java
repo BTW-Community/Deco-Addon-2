@@ -44,18 +44,6 @@ public class AddonBlockPergola extends Block {
 		return AxisAlignedBB.getAABBPool().getAABB(0, 0, 0, 1, ((AddonModelBlockPergola) this.blockModel).blockHeight, 1);
     }
 
-    /**
-     * Ray traces through the blocks collision from start vector to end vector returning a ray trace hit. Args: world,
-     * x, y, z, startVec, endVec
-     */
-    public MovingObjectPosition collisionRayTrace(World var1, int var2, int var3, int var4, Vec3 var5, Vec3 var6)
-    {
-        int var7 = this.GetFacing(var1, var2, var3, var4);
-        FCModelBlock var8 = this.blockModel.MakeTemporaryCopy();
-        var8.RotateAroundJToFacing(var7);
-        return var8.CollisionRayTrace(var1, var2, var3, var4, var5, var6);
-    }
-
     public int GetHarvestToolLevel(IBlockAccess var1, int var2, int var3, int var4)
     {
         return 2;

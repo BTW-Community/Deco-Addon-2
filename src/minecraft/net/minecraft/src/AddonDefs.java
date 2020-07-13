@@ -1658,20 +1658,6 @@ public class AddonDefs {
 		AddonManager.Register(trapdoorCherry, "Cherry Trap Door");
 
 		//Doors
-		BlockDoor doorOak = new AddonBlockDoorWood(AddonManager.ReplaceBlockID(Block.doorWood), new String[] {"doorWood_lower", "doorWood_upper"});
-		AddonManager.SetVanillaBlockFinal("doorWood", Block.doorWood, doorOak);
-		doorSpruce = new AddonBlockDoorWood(id_doorSpruce, new String[] {"ginger_doorSpruce_lower", "ginger_doorSpruce_upper"});
-		doorBirch = new AddonBlockDoorWood(id_doorBirch, new String[] {"ginger_doorBirch_lower", "ginger_doorBirch_upper"});
-		doorJungle = new AddonBlockDoorWood(id_doorJungle, new String[] {"ginger_doorJungle_lower", "ginger_doorJungle_upper"});
-		doorBlood = new AddonBlockDoorWood(id_doorBlood, new String[] {"ginger_doorBlood_lower", "ginger_doorBlood_upper"});
-		doorCherry = new AddonBlockDoorWood(id_doorCherry, new String[] {"ginger_doorCherry_lower", "ginger_doorCherry_upper"});
-
-		AddonManager.Register(doorSpruce, "Spruce Door");
-		AddonManager.Register(doorBirch, "Birch Door");
-		AddonManager.Register(doorJungle, "Jungle Door");
-		AddonManager.Register(doorBlood, "Blood Wood Door");
-		AddonManager.Register(doorCherry, "Cherry Door");
-
 		Item itemDoorOak = new AddonItemDoor(Item.doorWood.itemID - 256, "doorWood", "Oak Door", (BlockDoor) Block.doorWood);
 		AddonManager.SetVanillaItemFinal("doorWood", Item.doorWood, itemDoorOak);
 		itemDoorSpruce = new AddonItemDoor(id_itemDoorSpruce, "ginger_doorSpruceItem", "Spruce Door", doorSpruce);
@@ -1685,6 +1671,20 @@ public class AddonDefs {
 		
 		Item itemDoorIron = new AddonItemDoor(Item.doorIron.itemID - 256, "doorIron", "Iron Door", (BlockDoor) Block.doorIron, false);
 		AddonManager.SetVanillaItemFinal("doorIron", Item.doorIron, itemDoorIron);
+		
+		BlockDoor doorOak = new AddonBlockDoorWood(AddonManager.ReplaceBlockID(Block.doorWood), new String[] {"doorWood_lower", "doorWood_upper"}, Item.doorWood.itemID);
+		AddonManager.SetVanillaBlockFinal("doorWood", Block.doorWood, doorOak);
+		doorSpruce = new AddonBlockDoorWood(id_doorSpruce, new String[] {"ginger_doorSpruce_lower", "ginger_doorSpruce_upper"}, itemDoorSpruce.itemID);
+		doorBirch = new AddonBlockDoorWood(id_doorBirch, new String[] {"ginger_doorBirch_lower", "ginger_doorBirch_upper"}, itemDoorBirch.itemID);
+		doorJungle = new AddonBlockDoorWood(id_doorJungle, new String[] {"ginger_doorJungle_lower", "ginger_doorJungle_upper"}, itemDoorJungle.itemID);
+		doorBlood = new AddonBlockDoorWood(id_doorBlood, new String[] {"ginger_doorBlood_lower", "ginger_doorBlood_upper"}, itemDoorBlood.itemID);
+		doorCherry = new AddonBlockDoorWood(id_doorCherry, new String[] {"ginger_doorCherry_lower", "ginger_doorCherry_upper"}, itemDoorCherry.itemID);
+
+		AddonManager.Register(doorSpruce, "Spruce Door");
+		AddonManager.Register(doorBirch, "Birch Door");
+		AddonManager.Register(doorJungle, "Jungle Door");
+		AddonManager.Register(doorBlood, "Blood Wood Door");
+		AddonManager.Register(doorCherry, "Cherry Door");
 
 		//Fence gates
 		BlockFenceGate gateOak = new AddonBlockFenceGate(AddonManager.ReplaceBlockID(Block.fenceGate), "wood");
@@ -1796,21 +1796,21 @@ public class AddonDefs {
 		AddonManager.Register(crate, new String[] {"crateOak", "crateSpruce", "crateBirch", "crateJungle", "crateBlood", "crateCherry"}, new String[] {"Oak Crate", "Spruce Crate", "Birch Crate", "Jungle Crate", "Blood Wood Crate", "Cherry Crate"});
 
 		//Signs
-		Block signPost = new AddonBlockSign(AddonManager.ReplaceBlockID(Block.signPost), true, 0);
+		Block signPost = new AddonBlockSign(AddonManager.ReplaceBlockID(Block.signPost), true, 0, "wood");
 		AddonManager.SetVanillaBlockFinal("signPost", Block.signPost, signPost);
-		signSpruce = new AddonBlockSign(id_signSpruce, true, 1);
-		signBirch = new AddonBlockSign(id_signBirch, true, 2);
-		signJungle = new AddonBlockSign(id_signJungle, true, 3);
-		signBlood = new AddonBlockSign(id_signBlood, true, 4);
-		signCherry = new AddonBlockSign(id_signCherry, true, 5);
+		signSpruce = new AddonBlockSign(id_signSpruce, true, 1, "wood_spruce");
+		signBirch = new AddonBlockSign(id_signBirch, true, 2, "wood_birch");
+		signJungle = new AddonBlockSign(id_signJungle, true, 3, "wood_jungle");
+		signBlood = new AddonBlockSign(id_signBlood, true, 4, "fcBlockPlanks_blood");
+		signCherry = new AddonBlockSign(id_signCherry, true, 5, "ginger_cherryPlanks");
 
-		Block signWall = new AddonBlockSignWall(AddonManager.ReplaceBlockID(Block.signWall), 0);
+		Block signWall = new AddonBlockSignWall(AddonManager.ReplaceBlockID(Block.signWall), 0, "wood");
 		AddonManager.SetVanillaBlockFinal("signWall", Block.signWall, signWall);
-		signSpruceWall = new AddonBlockSignWall(id_signSpruceWall, 1);
-		signBirchWall = new AddonBlockSignWall(id_signBirchWall, 2);
-		signJungleWall = new AddonBlockSignWall(id_signJungleWall, 3);
-		signBloodWall = new AddonBlockSignWall(id_signBloodWall, 4);
-		signCherryWall = new AddonBlockSignWall(id_signCherryWall, 5);
+		signSpruceWall = new AddonBlockSignWall(id_signSpruceWall, 1, "wood_spruce");
+		signBirchWall = new AddonBlockSignWall(id_signBirchWall, 2, "wood_birch");
+		signJungleWall = new AddonBlockSignWall(id_signJungleWall, 3, "wood_jungle");
+		signBloodWall = new AddonBlockSignWall(id_signBloodWall, 4, "fcBlockPlanks_blood");
+		signCherryWall = new AddonBlockSignWall(id_signCherryWall, 5, "ginger_cherryPlanks");
 
 		Item sign = new AddonItemSign(Item.sign.itemID - 256).SetBuoyant().SetIncineratedInCrucible().setUnlocalizedName("sign");
 		AddonManager.SetVanillaItemFinal("sign", Item.sign, sign);
@@ -2105,6 +2105,13 @@ public class AddonDefs {
 		
 		//Hemp
 		FCBetterThanWolves.fcBlockHempCrop = new AddonBlockHempCrop(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockHempCrop));
+		
+		//Lily pads
+		Item.itemsList[Block.waterlily.blockID] = new AddonItemBlockLilyPad(Block.waterlily.blockID - 256);
+		
+		//Tall grass
+		Block tallGrass = new AddonBlockTallGrass(AddonManager.ReplaceBlockID(Block.tallGrass));
+		AddonManager.SetVanillaBlockFinal("tallGrass", Block.tallGrass, tallGrass);
 		
 		//Fluids
 		BlockFluid waterStill = (BlockFluid) new AddonBlockWaterStationary(AddonManager.ReplaceBlockID(Block.waterStill), Material.water).setHardness(100.0F).setLightOpacity(3).setUnlocalizedName("water").disableStats();

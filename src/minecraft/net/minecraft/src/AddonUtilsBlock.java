@@ -273,4 +273,12 @@ public class AddonUtilsBlock {
 
 		return defaultVal;
 	}
+	
+	public static boolean canBlocksBePlacedAgainstGivenBlock(int id, int meta) {
+		if (id == Block.waterlily.blockID) {
+			return false;
+		}
+		
+		return true;
+	}
 }

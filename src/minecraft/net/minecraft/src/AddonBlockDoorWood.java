@@ -4,10 +4,12 @@ import java.util.Random;
 
 public class AddonBlockDoorWood extends FCBlockDoorWood {
 	private String[] doorIconNames;
+	private int doorItemID;
 	
-	protected AddonBlockDoorWood(int ID, String[] textures) {
+	protected AddonBlockDoorWood(int ID, String[] textures, int doorItemID) {
 		super(ID);
-		doorIconNames = textures;
+		this.doorIconNames = textures;
+		this.doorItemID = doorItemID;
 	}
 
     /**
@@ -49,27 +51,11 @@ public class AddonBlockDoorWood extends FCBlockDoorWood {
 	
 	@Override
     public int idDropped(int par1, Random par2Random, int par3) {
-		int returnID = 0;
-		
-		int doorSpruce = AddonDefs.doorSpruce.blockID; 
-		int doorBirch = AddonDefs.doorBirch.blockID;
-		int doorJungle = AddonDefs.doorJungle.blockID;
-		int doorBlood = AddonDefs.doorBlood.blockID;
-		int doorCherry = AddonDefs.doorCherry.blockID;
-		
-		returnID = this.blockID == doorSpruce ? AddonDefs.itemDoorSpruce.itemID : (this.blockID == doorBirch ? AddonDefs.itemDoorBirch.itemID : (this.blockID == doorJungle ? AddonDefs.itemDoorJungle.itemID : (this.blockID == doorBlood ? AddonDefs.itemDoorBlood.itemID : AddonDefs.itemDoorCherry.itemID)));
-		
-		return (par1 & 8) != 0 ? 0 : returnID;
+		return doorItemID;
 	}
 	
     public int idPicked(World par1World, int par2, int par3, int par4) {
-		int doorSpruce = AddonDefs.doorSpruce.blockID; 
-		int doorBirch = AddonDefs.doorBirch.blockID;
-		int doorJungle = AddonDefs.doorJungle.blockID;
-		int doorBlood = AddonDefs.doorBlood.blockID;
-		int doorCherry = AddonDefs.doorCherry.blockID;
-
-		return this.blockID == doorSpruce ? AddonDefs.itemDoorSpruce.itemID : (this.blockID == doorBirch ? AddonDefs.itemDoorBirch.itemID : (this.blockID == doorJungle ? AddonDefs.itemDoorJungle.itemID : (this.blockID == doorBlood ? AddonDefs.itemDoorBlood.itemID : AddonDefs.itemDoorCherry.itemID)));
+    	return doorItemID;
     }
 	
 	//CLIENT ONLY
