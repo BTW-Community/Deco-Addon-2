@@ -581,6 +581,40 @@ public class AddonManager extends FCAddOn
 			return false;
 		}
 	}
+	
+	public static EntityFX spawnCustomParticle(Minecraft mc, World world, String particleType, double x, double y, double z, double velX, double velY, double velZ) {
+        if (mc != null && mc.renderViewEntity != null && mc.effectRenderer != null) {
+            int particleSetting = mc.gameSettings.particleSetting;
+            EntityFX fx = null;
+
+            if (particleSetting == 1 && world.rand.nextInt(3) == 0) {
+                particleSetting = 2;
+            }
+
+            double distX = mc.renderViewEntity.posX - x;
+            double distY = mc.renderViewEntity.posY - y;
+            double distZ = mc.renderViewEntity.posZ - z;
+            double maxParticleDist = 16.0D;
+
+            //Only renders particles within maxParticleDist
+            if (distX * distX + distY * distY + distZ * distZ > maxParticleDist * maxParticleDist) {
+                return null;
+            }
+            //Reduces or eliminates particles based on game setting
+            else if (particleSetting > 1) {
+                return null;
+            }
+            else {
+            	if (particleType.equals("signalSmoke")) {
+            		
+            	}
+            	
+            	return fx;
+            }
+        }
+        
+		return null;
+	}
 
 	public static void ReplaceEntityRenderMapping(Class entity, Render newRender) {
 		try {

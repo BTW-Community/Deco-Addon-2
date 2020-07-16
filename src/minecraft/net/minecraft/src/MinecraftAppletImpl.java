@@ -20,6 +20,7 @@ public class MinecraftAppletImpl extends Minecraft
         this.mainFrame = par1MinecraftApplet;
     }
 
+    @Override
     public void displayCrashReportInternal(CrashReport par1CrashReport)
     {
         this.mainFrame.removeAll();
@@ -31,6 +32,7 @@ public class MinecraftAppletImpl extends Minecraft
     /**
      * Arguments: World foldername,  World ingame name, WorldSettings
      */
+    @Override
     public void launchIntegratedServer(String par1Str, String par2Str, WorldSettings par3WorldSettings)
     {
     	super.launchIntegratedServer(par1Str, par2Str, par3WorldSettings);
@@ -68,5 +70,12 @@ public class MinecraftAppletImpl extends Minecraft
         {
             this.displayCrashReport(this.addGraphicsAndWorldToCrashReport(new CrashReport("Connecting to integrated server", var8)));
         }
+    }
+    
+    @Override
+    public void startGame() throws LWJGLException {
+    	super.startGame();
+        this.renderGlobal = new AddonRenderGlobal(this, this.renderEngine);
+        this.renderEngine.refreshTextureMaps();
     }
 }
