@@ -7,12 +7,12 @@ public class AddonBlockLayer extends Block {
 	private Block referenceBlock;
 	private int referenceBlockMetadata;
 
-	public AddonBlockLayer(int id, Material material, Block referenceBlock) {
-		this(id, material, referenceBlock, 0);
+	public AddonBlockLayer(int id, Block referenceBlock) {
+		this(id, referenceBlock, 0);
 	}
 	
-	public AddonBlockLayer(int id, Material material, Block referenceBlock, int referenceBlockMetadata) {
-		super(id, material);
+	public AddonBlockLayer(int id, Block referenceBlock, int referenceBlockMetadata) {
+		super(id, referenceBlock.blockMaterial);
         this.InitBlockBounds(0.0D, 0.0D, 0.0D, 1.0D, 0.125D, 1.0D);
 		this.dropID = this.blockID;
 		this.referenceBlock = referenceBlock;
@@ -25,8 +25,8 @@ public class AddonBlockLayer extends Block {
         this.setCreativeTab(CreativeTabs.tabDecorations);
 	}
 
-	public AddonBlockLayer(int id, Material material, Block referenceBlock, int referenceBlockMetadata, int dropID) {
-		this(id, material, referenceBlock, referenceBlockMetadata);
+	public AddonBlockLayer(int id, Block referenceBlock, int referenceBlockMetadata, int dropID) {
+		this(id, referenceBlock, referenceBlockMetadata);
 		this.dropID = dropID;
 	}
 	
@@ -186,7 +186,7 @@ public class AddonBlockLayer extends Block {
 
 			if (idDropped > 0)
 			{
-				this.dropBlockAsItem_do(world, x, y, z, new ItemStack(idDropped, meta, this.damageDropped(meta)));
+				this.dropBlockAsItem_do(world, x, y, z, new ItemStack(idDropped, meta + 1, this.damageDropped(meta)));
 			}
 		}
 	}

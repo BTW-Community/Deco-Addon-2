@@ -11,7 +11,6 @@ public class AddonItemDoor extends FCItemDoor {
 	public AddonItemDoor(int ID, String texture, String name, BlockDoor door, boolean isWood) {
 		super(ID);
 		this.SetBuoyant();
-		this.SetIncineratedInCrucible();
 		this.setUnlocalizedName(texture);
 		this.SetBuoyant();
 		AddonManager.Name(this, name);

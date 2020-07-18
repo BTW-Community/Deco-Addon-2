@@ -317,6 +317,7 @@ public class AddonDefs {
 		id_layerCoarseDirt=3555,
 		id_layerPodzol=3556,
 		id_layerPackedEarth=3557,
+		id_layerDirtLoose=3558,
 		
 		placeholder = 4095;
 
@@ -346,8 +347,8 @@ public class AddonDefs {
 	private static final int
 		id_entityFallingConcrete=3000;
 
-	public static final Material materialHedge = (new Material(MapColor.foliageColor)).setBurning().setTranslucent().setNoPushMobility().SetAxesEfficientOn().SetAxesTreatAsVegetation().SetMobsCantSpawnOn();
-	public static final Material materialHay = (new Material(MapColor.clothColor)).setBurning().SetAxesEfficientOn().SetAxesTreatAsVegetation().SetMobsCantSpawnOn();
+	public static Material materialHedge;
+	public static Material materialHay;
 	
 	public static final StepSound stepSoundLantern = new AddonStepSound("lantern", 1, 1);
 	public static final StepSound stepSoundChain = new AddonStepSound("chain", 1, 1);
@@ -405,7 +406,7 @@ public class AddonDefs {
 	public static Block stoneBrickMossyStairs, stoneBrickMossySidingAndCorner, stoneBrickMossyMouldingAndDecorative;
 	public static Block stoneBrickCrackedStairs, stoneBrickCrackedSidingAndCorner, stoneBrickCrackedMouldingAndDecorative;
 
-	public static AddonBlockStep stoneSlab, stoneSlab2, stoneSlab3, stoneSlab4, stoneSlab5, stoneSlab6;
+	public static AddonBlockSlabStone stoneSlab, stoneSlab2, stoneSlab3, stoneSlab4, stoneSlab5, stoneSlab6;
 
 	public static Block cobblestoneSidingAndCorner, cobblestoneMouldingAndDecorative;
 	public static Block mossyCobblestoneSidingAndCorner, mossyCobblestoneMouldingAndDecorative, mossyCobblestoneStairs;
@@ -455,7 +456,7 @@ public class AddonDefs {
 	//Concrete
 	public static Block concrete, concretePowder;
 	public static Block[] concreteStairs, concreteSidingAndCorner, concreteMouldingAndDecorative;
-	public static AddonBlockStep concreteSlab, concreteSlab2;
+	public static AddonBlockSlabStone concreteSlab, concreteSlab2;
 
 	//Wood
 	public static Block strippedLog, barkLog, barkLogStripped, bloodLog, cherryLog, cherryStump;
@@ -509,7 +510,7 @@ public class AddonDefs {
 	public static Block netherRoots, netherVines;
 
 	//Ground Cover
-	public static Block layerDirt, layerGrass, layerGravel, layerSand, layerRedSand, layerCoarseDirt, layerPodzol, layerPackedEarth;
+	public static Block layerDirt, layerGrass, layerGravel, layerSand, layerRedSand, layerCoarseDirt, layerPodzol, layerPackedEarth, layerDirtLoose;
 	
 	//Tools
 	public static AddonItemChiselDiamond chiselDiamond;
@@ -524,6 +525,7 @@ public class AddonDefs {
 	public void addDefinitions() {
 		Item.m_bSuppressConflictWarnings=true;
 		addAllSoundsToPool();
+		addMaterialDefs();
 		addClayDefs();
 		addGlassDefs();
 		addWhiteStoneDefs();
@@ -655,6 +657,19 @@ public class AddonDefs {
 		AddonManager.installResource("step/groth3");
 		AddonManager.installResource("step/groth4");
 		AddonManager.installResource("step/groth5");
+		
+		AddonManager.installResource("dig/nylium1");
+		AddonManager.installResource("dig/nylium2");
+		AddonManager.installResource("dig/nylium3");
+		AddonManager.installResource("dig/nylium4");
+		AddonManager.installResource("dig/nylium5");
+		AddonManager.installResource("dig/nylium6");
+		AddonManager.installResource("step/nylium1");
+		AddonManager.installResource("step/nylium2");
+		AddonManager.installResource("step/nylium3");
+		AddonManager.installResource("step/nylium4");
+		AddonManager.installResource("step/nylium5");
+		AddonManager.installResource("step/nylium6");
 
 		AddonManager.installResource("random/doorClose1");
 		AddonManager.installResource("random/doorClose2");
@@ -751,6 +766,14 @@ public class AddonDefs {
 			FCAddOnHandler.LogMessage("Deco Addon Sounds Successfully Loaded");
 		}
 	}
+	
+	private void addMaterialDefs() {
+		materialHedge = (new Material(MapColor.foliageColor)).setBurning().setTranslucent().setNoPushMobility().SetAxesEfficientOn().SetAxesTreatAsVegetation().SetMobsCantSpawnOn();
+		materialHay = (new Material(MapColor.clothColor)).setBurning().SetAxesEfficientOn().SetAxesTreatAsVegetation().SetMobsCantSpawnOn();
+
+		Material.glass.SetMobsCantSpawnOn();
+		FCBetterThanWolves.fcMaterialWicker.SetMobsCantSpawnOn();
+	}
 
 	private void addClayDefs() {
 		terracotta = (new Block(id_terracotta, Material.rock)).setHardness(2.0F).setResistance(10.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("ginger_clay").setCreativeTab(CreativeTabs.tabBlock);
@@ -810,8 +833,8 @@ public class AddonDefs {
 		}
 
 		//Slabs
-		terracottaSlab = new AddonBlockStep(id_terracottaSlab, new Block[] {AddonDefs.stainedTerracotta, AddonDefs.stainedTerracotta, AddonDefs.stainedTerracotta, AddonDefs.stainedTerracotta, AddonDefs.stainedTerracotta, AddonDefs.stainedTerracotta, AddonDefs.stainedTerracotta, AddonDefs.stainedTerracotta}, new int[] {0, 1, 2, 3, 4, 5, 6, 7});
-		Item.itemsList[AddonDefs.terracottaSlab.blockID] = new AddonItemBlockStep(AddonDefs.terracottaSlab.blockID - 256);
+		terracottaSlab = new AddonBlockSlabStone(id_terracottaSlab, new Block[] {AddonDefs.stainedTerracotta, AddonDefs.stainedTerracotta, AddonDefs.stainedTerracotta, AddonDefs.stainedTerracotta, AddonDefs.stainedTerracotta, AddonDefs.stainedTerracotta, AddonDefs.stainedTerracotta, AddonDefs.stainedTerracotta}, new int[] {0, 1, 2, 3, 4, 5, 6, 7});
+		Item.itemsList[AddonDefs.terracottaSlab.blockID] = new AddonItemBlockSlab(AddonDefs.terracottaSlab.blockID - 256);
 		AddonManager.Name(new ItemStack(AddonDefs.terracottaSlab, 1, 0), "Black Terracotta Slab");
 		AddonManager.Name(new ItemStack(AddonDefs.terracottaSlab, 1, 1), "Red Terracotta Slab");
 		AddonManager.Name(new ItemStack(AddonDefs.terracottaSlab, 1, 2), "Green Terracotta Slab");
@@ -821,8 +844,8 @@ public class AddonDefs {
 		AddonManager.Name(new ItemStack(AddonDefs.terracottaSlab, 1, 6), "Cyan Terracotta Slab");
 		AddonManager.Name(new ItemStack(AddonDefs.terracottaSlab, 1, 7), "Light Grey Terracotta Slab");
 
-		terracottaSlab2 = new AddonBlockStep(id_terracottaSlab2, new Block[] {AddonDefs.stainedTerracotta, AddonDefs.stainedTerracotta, AddonDefs.stainedTerracotta, AddonDefs.stainedTerracotta, AddonDefs.stainedTerracotta, AddonDefs.stainedTerracotta, AddonDefs.stainedTerracotta, AddonDefs.stainedTerracotta}, new int[] {8, 9, 10, 11, 12, 13, 14, 15});
-		Item.itemsList[AddonDefs.terracottaSlab2.blockID] = new AddonItemBlockStep(AddonDefs.terracottaSlab2.blockID - 256);
+		terracottaSlab2 = new AddonBlockSlabStone(id_terracottaSlab2, new Block[] {AddonDefs.stainedTerracotta, AddonDefs.stainedTerracotta, AddonDefs.stainedTerracotta, AddonDefs.stainedTerracotta, AddonDefs.stainedTerracotta, AddonDefs.stainedTerracotta, AddonDefs.stainedTerracotta, AddonDefs.stainedTerracotta}, new int[] {8, 9, 10, 11, 12, 13, 14, 15});
+		Item.itemsList[AddonDefs.terracottaSlab2.blockID] = new AddonItemBlockSlab(AddonDefs.terracottaSlab2.blockID - 256);
 		AddonManager.Name(new ItemStack(AddonDefs.terracottaSlab2, 1, 0), "Gray Terracotta Slab");
 		AddonManager.Name(new ItemStack(AddonDefs.terracottaSlab2, 1, 1), "Pink Terracotta Slab");
 		AddonManager.Name(new ItemStack(AddonDefs.terracottaSlab2, 1, 2), "Lime Terracotta Slab");
@@ -834,8 +857,6 @@ public class AddonDefs {
 	}
 
 	private void addGlassDefs() {
-		Material.glass.SetMobsCantSpawnOn();
-
 		glassChunk = new Item(id_glassChunk).setUnlocalizedName("ginger_glassball").setCreativeTab(CreativeTabs.tabMaterials).SetFilterableProperties(2);
 		glassStained = new AddonBlockGlassStained(id_glassStained);
 		stainedGlassItem = new AddonItemGlassStained(id_glassStainedItem);
@@ -1239,6 +1260,10 @@ public class AddonDefs {
 		AddonManager.Register(netherrackSuperheated);
 		magma = new AddonBlockMagma(id_magma);
 		AddonManager.Register(magma, "Magma Block");
+		
+		//Nylium
+		nylium = new AddonBlockNylium(id_nylium);
+		AddonManager.Register(nylium, new String[] {"crimsonNylium", "warpedNylium"}, new String[] {"Crimson Nylium", "Warped Nylium"});
 
 		//Basalt
 		basalt = new AddonBlockDirectional(id_basalt, FCBetterThanWolves.fcMaterialNetherRock, new String[] {"ginger_basalt_top", "ginger_basaltSmooth_top"}, new String[] {"ginger_basalt_side", "ginger_basaltSmooth_side"})
@@ -1338,9 +1363,9 @@ public class AddonDefs {
 
 		AddonManager.Name(new ItemStack(Block.stoneSingleSlab, 1, 0), "Polished Stone Slab");
 
-		stoneSlab = new AddonBlockStep(id_stoneSlab, new Block[] {AddonDefs.redSandStone, AddonDefs.prismarine, AddonDefs.prismarine, AddonDefs.prismarine, FCBetterThanWolves.fcAestheticOpaque, AddonDefs.whiteStoneBrick, Block.cobblestoneMossy, AddonDefs.netherBrick}, new int[] {0, 0, 1, 2, 9, 0, 0, 0},
+		stoneSlab = new AddonBlockSlabStone(id_stoneSlab, new Block[] {AddonDefs.redSandStone, AddonDefs.prismarine, AddonDefs.prismarine, AddonDefs.prismarine, FCBetterThanWolves.fcAestheticOpaque, AddonDefs.whiteStoneBrick, Block.cobblestoneMossy, AddonDefs.netherBrick}, new int[] {0, 0, 1, 2, 9, 0, 0, 0},
 				new boolean[] {false, false, false, false, false, false, false, true}, new Block[] {null, null, null, null, null, null, null, netherBrickLooseSlab}, new int[] {0, 0, 0, 0, 0, 0, 0, 0});
-		Item.itemsList[AddonDefs.stoneSlab.blockID] = new AddonItemBlockStep(AddonDefs.stoneSlab.blockID - 256);
+		Item.itemsList[AddonDefs.stoneSlab.blockID] = new AddonItemBlockSlab(AddonDefs.stoneSlab.blockID - 256);
 		AddonManager.Name(new ItemStack(AddonDefs.stoneSlab, 1, 0), "Red Sandstone Slab");
 		AddonManager.Name(new ItemStack(AddonDefs.stoneSlab, 1, 1), "Prismarine Slab");
 		AddonManager.Name(new ItemStack(AddonDefs.stoneSlab, 1, 2), "Prismarine Bricks Slab");
@@ -1350,9 +1375,9 @@ public class AddonDefs {
 		AddonManager.Name(new ItemStack(AddonDefs.stoneSlab, 1, 6), "Mossy Cobblestone Slab");
 		AddonManager.Name(new ItemStack(AddonDefs.stoneSlab, 1, 7), "Red Nether Brick Slab");
 
-		stoneSlab2 = new AddonBlockStep(id_stoneSlab2, new Block[] {AddonDefs.stoneTypes, AddonDefs.stoneTypes, AddonDefs.stoneTypes, AddonDefs.stoneTypesSmooth, AddonDefs.stoneTypesSmooth, AddonDefs.stoneTypesSmooth, AddonDefs.stoneTypesCobble, AddonDefs.stoneTypesCobble}, new int[] {0, 1, 2, 0, 1, 2, 0, 1},
+		stoneSlab2 = new AddonBlockSlabStone(id_stoneSlab2, new Block[] {AddonDefs.stoneTypes, AddonDefs.stoneTypes, AddonDefs.stoneTypes, AddonDefs.stoneTypesSmooth, AddonDefs.stoneTypesSmooth, AddonDefs.stoneTypesSmooth, AddonDefs.stoneTypesCobble, AddonDefs.stoneTypesCobble}, new int[] {0, 1, 2, 0, 1, 2, 0, 1},
 				new boolean[] {false, false, false, false, false, false, true, true}, new Block[] {null, null, null, null, null, null, stoneTypesLooseSlab, stoneTypesLooseSlab}, new int[] {0, 0, 0, 0, 0, 0, 0, 1});
-		Item.itemsList[AddonDefs.stoneSlab2.blockID] = new AddonItemBlockStep(AddonDefs.stoneSlab2.blockID - 256);
+		Item.itemsList[AddonDefs.stoneSlab2.blockID] = new AddonItemBlockSlab(AddonDefs.stoneSlab2.blockID - 256);
 		AddonManager.Name(new ItemStack(AddonDefs.stoneSlab2, 1, 0), "Granite Slab");
 		AddonManager.Name(new ItemStack(AddonDefs.stoneSlab2, 1, 1), "Andesite Slab");
 		AddonManager.Name(new ItemStack(AddonDefs.stoneSlab2, 1, 2), "Diorite Slab");
@@ -1362,9 +1387,9 @@ public class AddonDefs {
 		AddonManager.Name(new ItemStack(AddonDefs.stoneSlab2, 1, 6), "Granite Cobblestone Slab");
 		AddonManager.Name(new ItemStack(AddonDefs.stoneSlab2, 1, 7), "Andesite Cobblestone Slab");
 
-		stoneSlab3 = new AddonBlockStep(id_stoneSlab3, new Block[] {AddonDefs.stoneTypesCobble, AddonDefs.stoneTypesStoneBrick, AddonDefs.stoneTypesStoneBrick, AddonDefs.stoneTypesStoneBrick, AddonDefs.infusedStone, AddonDefs.infusedStone, AddonDefs.infusedStone, Block.stone}, new int[] {2, 0, 1, 2, 0, 1, 2, 0},
+		stoneSlab3 = new AddonBlockSlabStone(id_stoneSlab3, new Block[] {AddonDefs.stoneTypesCobble, AddonDefs.stoneTypesStoneBrick, AddonDefs.stoneTypesStoneBrick, AddonDefs.stoneTypesStoneBrick, AddonDefs.infusedStone, AddonDefs.infusedStone, AddonDefs.infusedStone, Block.stone}, new int[] {2, 0, 1, 2, 0, 1, 2, 0},
 				new boolean[] {true, true, true, true, false, false, false, false}, new Block[] {stoneTypesLooseSlab, stoneTypesLooseSlab, stoneTypesLooseSlab, stoneTypesLooseSlab, null, null, null, null}, new int[] {2, 3, 4, 5, 0, 0, 0, 0});
-		Item.itemsList[AddonDefs.stoneSlab3.blockID] = new AddonItemBlockStep(AddonDefs.stoneSlab3.blockID - 256);
+		Item.itemsList[AddonDefs.stoneSlab3.blockID] = new AddonItemBlockSlab(AddonDefs.stoneSlab3.blockID - 256);
 		AddonManager.Name(new ItemStack(AddonDefs.stoneSlab3, 1, 0), "Diorite Cobblestone Slab");
 		AddonManager.Name(new ItemStack(AddonDefs.stoneSlab3, 1, 1), "Granite Brick Slab");
 		AddonManager.Name(new ItemStack(AddonDefs.stoneSlab3, 1, 2), "Andesite Brick Slab");
@@ -1374,8 +1399,8 @@ public class AddonDefs {
 		AddonManager.Name(new ItemStack(AddonDefs.stoneSlab3, 1, 6), "Infused Stone Brick Slab");
 		AddonManager.Name(new ItemStack(AddonDefs.stoneSlab3, 1, 7), "Stone Slab");
 
-		stoneSlab4 = new AddonBlockStep(id_stoneSlab4, new Block[] {Block.sandStone, Block.sandStone, Block.sandStone, AddonDefs.redSandStone, AddonDefs.redSandStone, AddonDefs.redSandStone, Block.sandStone, Block.sandStone}, new int[] {2, 3, 4, 2, 3, 4, 5, 6});
-		Item.itemsList[AddonDefs.stoneSlab4.blockID] = new AddonItemBlockStep(AddonDefs.stoneSlab4.blockID - 256);
+		stoneSlab4 = new AddonBlockSlabStone(id_stoneSlab4, new Block[] {Block.sandStone, Block.sandStone, Block.sandStone, AddonDefs.redSandStone, AddonDefs.redSandStone, AddonDefs.redSandStone, Block.sandStone, Block.sandStone}, new int[] {2, 3, 4, 2, 3, 4, 5, 6});
+		Item.itemsList[AddonDefs.stoneSlab4.blockID] = new AddonItemBlockSlab(AddonDefs.stoneSlab4.blockID - 256);
 		AddonManager.Name(new ItemStack(AddonDefs.stoneSlab4, 1, 0), "Cut Sandstone Slab");
 		AddonManager.Name(new ItemStack(AddonDefs.stoneSlab4, 1, 1), "Polished Sandstone Slab");
 		AddonManager.Name(new ItemStack(AddonDefs.stoneSlab4, 1, 2), "Sandstone Brick Slab");
@@ -1385,8 +1410,8 @@ public class AddonDefs {
 		AddonManager.Name(new ItemStack(AddonDefs.stoneSlab4, 1, 6), "Mossy Sandstone Slab");
 		AddonManager.Name(new ItemStack(AddonDefs.stoneSlab4, 1, 7), "Large Sandstone Brick Slab");
 
-		stoneSlab5 = new AddonBlockStep(id_stoneSlab5, new Block[] {Block.sandStone, AddonDefs.redSandStone, AddonDefs.redSandStone, AddonDefs.redSandStone, Block.sandStone, Block.sandStone, AddonDefs.redSandStone, AddonDefs.redSandStone}, new int[] {7, 5, 6, 7, 8, 9, 8, 9});
-		Item.itemsList[AddonDefs.stoneSlab5.blockID] = new AddonItemBlockStep(AddonDefs.stoneSlab5.blockID - 256);
+		stoneSlab5 = new AddonBlockSlabStone(id_stoneSlab5, new Block[] {Block.sandStone, AddonDefs.redSandStone, AddonDefs.redSandStone, AddonDefs.redSandStone, Block.sandStone, Block.sandStone, AddonDefs.redSandStone, AddonDefs.redSandStone}, new int[] {7, 5, 6, 7, 8, 9, 8, 9});
+		Item.itemsList[AddonDefs.stoneSlab5.blockID] = new AddonItemBlockSlab(AddonDefs.stoneSlab5.blockID - 256);
 		AddonManager.Name(new ItemStack(AddonDefs.stoneSlab5, 1, 0), "Large Mossy Sandstone Brick Slab");
 		AddonManager.Name(new ItemStack(AddonDefs.stoneSlab5, 1, 1), "Mossy Red Sandstone Slab");
 		AddonManager.Name(new ItemStack(AddonDefs.stoneSlab5, 1, 2), "Large Red Sandstone Brick Slab");
@@ -1396,15 +1421,15 @@ public class AddonDefs {
 		AddonManager.Name(new ItemStack(AddonDefs.stoneSlab5, 1, 6), "Cracked Red Sandstone Slab");
 		AddonManager.Name(new ItemStack(AddonDefs.stoneSlab5, 1, 7), "Cracked Large Red Sandstone Brick Slab");
 
-		stoneSlab6 = new AddonBlockStep(id_stoneSlab6, new Block[] {Block.stoneBrick, Block.stoneBrick, endStoneBrick, terracotta}, new int[] {1, 2, 0, 0});
-		Item.itemsList[AddonDefs.stoneSlab6.blockID] = new AddonItemBlockStep(AddonDefs.stoneSlab6.blockID - 256);
+		stoneSlab6 = new AddonBlockSlabStone(id_stoneSlab6, new Block[] {Block.stoneBrick, Block.stoneBrick, endStoneBrick, terracotta}, new int[] {1, 2, 0, 0});
+		Item.itemsList[AddonDefs.stoneSlab6.blockID] = new AddonItemBlockSlab(AddonDefs.stoneSlab6.blockID - 256);
 		AddonManager.Name(new ItemStack(AddonDefs.stoneSlab6, 1, 0), "Mossy Stone Brick Slab");
 		AddonManager.Name(new ItemStack(AddonDefs.stoneSlab6, 1, 1), "Cracked Stone Brick Slab");
 		AddonManager.Name(new ItemStack(AddonDefs.stoneSlab6, 1, 2), "End Stone Brick Slab");
 		AddonManager.Name(new ItemStack(AddonDefs.stoneSlab6, 1, 3), "Terracotta Slab");
 
-		concreteSlab = new AddonBlockStep(id_concreteSlab, new Block[] {AddonDefs.concrete, AddonDefs.concrete, AddonDefs.concrete, AddonDefs.concrete, AddonDefs.concrete, AddonDefs.concrete, AddonDefs.concrete, AddonDefs.concrete}, new int[] {0, 1, 2, 3, 4, 5, 6, 7});
-		Item.itemsList[AddonDefs.concreteSlab.blockID] = new AddonItemBlockStep(AddonDefs.concreteSlab.blockID - 256);
+		concreteSlab = new AddonBlockSlabStone(id_concreteSlab, new Block[] {AddonDefs.concrete, AddonDefs.concrete, AddonDefs.concrete, AddonDefs.concrete, AddonDefs.concrete, AddonDefs.concrete, AddonDefs.concrete, AddonDefs.concrete}, new int[] {0, 1, 2, 3, 4, 5, 6, 7});
+		Item.itemsList[AddonDefs.concreteSlab.blockID] = new AddonItemBlockSlab(AddonDefs.concreteSlab.blockID - 256);
 		AddonManager.Name(new ItemStack(AddonDefs.concreteSlab, 1, 0), "Black Concrete Slab");
 		AddonManager.Name(new ItemStack(AddonDefs.concreteSlab, 1, 1), "Red Concrete Slab");
 		AddonManager.Name(new ItemStack(AddonDefs.concreteSlab, 1, 2), "Green Concrete Slab");
@@ -1414,8 +1439,8 @@ public class AddonDefs {
 		AddonManager.Name(new ItemStack(AddonDefs.concreteSlab, 1, 6), "Cyan Concrete Slab");
 		AddonManager.Name(new ItemStack(AddonDefs.concreteSlab, 1, 7), "Light Grey Concrete Slab");
 
-		concreteSlab2 = new AddonBlockStep(id_concreteSlab2, new Block[] {AddonDefs.concrete, AddonDefs.concrete, AddonDefs.concrete, AddonDefs.concrete, AddonDefs.concrete, AddonDefs.concrete, AddonDefs.concrete, AddonDefs.concrete}, new int[] {8, 9, 10, 11, 12, 13, 14, 15});
-		Item.itemsList[AddonDefs.concreteSlab2.blockID] = new AddonItemBlockStep(AddonDefs.concreteSlab2.blockID - 256);
+		concreteSlab2 = new AddonBlockSlabStone(id_concreteSlab2, new Block[] {AddonDefs.concrete, AddonDefs.concrete, AddonDefs.concrete, AddonDefs.concrete, AddonDefs.concrete, AddonDefs.concrete, AddonDefs.concrete, AddonDefs.concrete}, new int[] {8, 9, 10, 11, 12, 13, 14, 15});
+		Item.itemsList[AddonDefs.concreteSlab2.blockID] = new AddonItemBlockSlab(AddonDefs.concreteSlab2.blockID - 256);
 		AddonManager.Name(new ItemStack(AddonDefs.concreteSlab2, 1, 0), "Gray Concrete Slab");
 		AddonManager.Name(new ItemStack(AddonDefs.concreteSlab2, 1, 1), "Pink Concrete Slab");
 		AddonManager.Name(new ItemStack(AddonDefs.concreteSlab2, 1, 2), "Lime Concrete Slab");
@@ -1673,13 +1698,13 @@ public class AddonDefs {
 		AddonManager.Register(trapdoorCherry, "Cherry Trap Door");
 
 		//Doors
-		Item itemDoorOak = new AddonItemDoor(Item.doorWood.itemID - 256, "doorWood", "Oak Door", (BlockDoor) Block.doorWood);
+		Item itemDoorOak = new AddonItemDoor(Item.doorWood.itemID - 256, "doorWood", "Oak Door", (BlockDoor) Block.doorWood).SetIncineratedInCrucible();;
 		AddonManager.SetVanillaItemFinal("doorWood", Item.doorWood, itemDoorOak);
-		itemDoorSpruce = new AddonItemDoor(id_itemDoorSpruce, "ginger_doorSpruceItem", "Spruce Door", doorSpruce);
-		itemDoorBirch = new AddonItemDoor(id_itemDoorBirch, "ginger_doorBirchItem", "Birch Door", doorBirch);
-		itemDoorJungle = new AddonItemDoor(id_itemDoorJungle, "ginger_doorJungleItem", "Jungle Door", doorJungle);
-		itemDoorBlood = new AddonItemDoor(id_itemDoorBlood, "ginger_doorBloodItem", "Blood Wood Door", doorBlood);
-		itemDoorCherry = new AddonItemDoor(id_itemDoorCherry, "ginger_doorCherryItem", "Cherry Door", doorCherry);
+		itemDoorSpruce = (FCItemDoor) new AddonItemDoor(id_itemDoorSpruce, "ginger_doorSpruceItem", "Spruce Door", doorSpruce).SetIncineratedInCrucible();;
+		itemDoorBirch = (FCItemDoor) new AddonItemDoor(id_itemDoorBirch, "ginger_doorBirchItem", "Birch Door", doorBirch).SetIncineratedInCrucible();;
+		itemDoorJungle = (FCItemDoor) new AddonItemDoor(id_itemDoorJungle, "ginger_doorJungleItem", "Jungle Door", doorJungle).SetIncineratedInCrucible();;
+		itemDoorBlood = (FCItemDoor) new AddonItemDoor(id_itemDoorBlood, "ginger_doorBloodItem", "Blood Wood Door", doorBlood).SetIncineratedInCrucible();;
+		itemDoorCherry = (FCItemDoor) new AddonItemDoor(id_itemDoorCherry, "ginger_doorCherryItem", "Cherry Door", doorCherry).SetIncineratedInCrucible();;
 		
 		BlockDoor doorIron = (BlockDoor) new AddonBlockDoorIron(AddonManager.ReplaceBlockID(Block.doorIron)).setHardness(5.0F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("doorIron").disableStats();
 		AddonManager.SetVanillaBlockFinal("doorIron", Block.doorIron, doorIron);
@@ -1817,7 +1842,7 @@ public class AddonDefs {
 		signBirch = new AddonBlockSign(id_signBirch, true, 2, "wood_birch");
 		signJungle = new AddonBlockSign(id_signJungle, true, 3, "wood_jungle");
 		signBlood = new AddonBlockSign(id_signBlood, true, 4, "fcBlockPlanks_blood");
-		signCherry = new AddonBlockSign(id_signCherry, true, 5, "ginger_cherryPlanks");
+		signCherry = new AddonBlockSign(id_signCherry, true, 5, "ginger_planks_cherry");
 
 		Block signWall = new AddonBlockSignWall(AddonManager.ReplaceBlockID(Block.signWall), 0, "wood");
 		AddonManager.SetVanillaBlockFinal("signWall", Block.signWall, signWall);
@@ -1825,7 +1850,7 @@ public class AddonDefs {
 		signBirchWall = new AddonBlockSignWall(id_signBirchWall, 2, "wood_birch");
 		signJungleWall = new AddonBlockSignWall(id_signJungleWall, 3, "wood_jungle");
 		signBloodWall = new AddonBlockSignWall(id_signBloodWall, 4, "fcBlockPlanks_blood");
-		signCherryWall = new AddonBlockSignWall(id_signCherryWall, 5, "ginger_cherryPlanks");
+		signCherryWall = new AddonBlockSignWall(id_signCherryWall, 5, "ginger_planks_cherry");
 
 		Item sign = new AddonItemSign(Item.sign.itemID - 256).SetBuoyant().SetIncineratedInCrucible().setUnlocalizedName("sign");
 		AddonManager.SetVanillaItemFinal("sign", Item.sign, sign);
@@ -1840,7 +1865,7 @@ public class AddonDefs {
 		paintedPlanksSlab = new AddonBlockWoodSlab(id_paintedPlanksSlab, new Block[] {planksPainted, planksPainted, planksPainted, planksPainted, planksPainted, planksPainted, planksPainted, planksPainted}, new int[] {0, 1, 2, 3, 4, 5, 6, 7},
 				new int[] {paintedPlanksMouldingAndDecorative[0].blockID, paintedPlanksMouldingAndDecorative[1].blockID, paintedPlanksMouldingAndDecorative[2].blockID, paintedPlanksMouldingAndDecorative[3].blockID, paintedPlanksMouldingAndDecorative[4].blockID, paintedPlanksMouldingAndDecorative[5].blockID, paintedPlanksMouldingAndDecorative[6].blockID, paintedPlanksMouldingAndDecorative[7].blockID},
 				new int[] {0, 0, 0, 0, 0, 0, 0, 0});
-		Item.itemsList[AddonDefs.paintedPlanksSlab.blockID] = new AddonItemBlockWoodSlab(AddonDefs.paintedPlanksSlab.blockID - 256);
+		Item.itemsList[AddonDefs.paintedPlanksSlab.blockID] = new AddonItemBlockSlab(AddonDefs.paintedPlanksSlab.blockID - 256);
 		AddonManager.Name(new ItemStack(AddonDefs.paintedPlanksSlab, 1, 0), "Black Painted Planks Slab");
 		AddonManager.Name(new ItemStack(AddonDefs.paintedPlanksSlab, 1, 1), "Red Painted Planks Slab");
 		AddonManager.Name(new ItemStack(AddonDefs.paintedPlanksSlab, 1, 2), "Green Painted Planks Slab");
@@ -1853,7 +1878,7 @@ public class AddonDefs {
 		paintedPlanksSlab2 = new AddonBlockWoodSlab(id_paintedPlanksSlab2, new Block[] {planksPainted, planksPainted, planksPainted, planksPainted, planksPainted, planksPainted, planksPainted, planksPainted}, new int[] {8, 9, 10, 11, 12, 13, 14, 15},
 				new int[] {paintedPlanksMouldingAndDecorative[8].blockID, paintedPlanksMouldingAndDecorative[9].blockID, paintedPlanksMouldingAndDecorative[10].blockID, paintedPlanksMouldingAndDecorative[11].blockID, paintedPlanksMouldingAndDecorative[12].blockID, paintedPlanksMouldingAndDecorative[13].blockID, paintedPlanksMouldingAndDecorative[14].blockID, paintedPlanksMouldingAndDecorative[15].blockID},
 				new int[] {0, 0, 0, 0, 0, 0, 0, 0});
-		Item.itemsList[AddonDefs.paintedPlanksSlab2.blockID] = new AddonItemBlockWoodSlab(AddonDefs.paintedPlanksSlab2.blockID - 256);
+		Item.itemsList[AddonDefs.paintedPlanksSlab2.blockID] = new AddonItemBlockSlab(AddonDefs.paintedPlanksSlab2.blockID - 256);
 		AddonManager.Name(new ItemStack(AddonDefs.paintedPlanksSlab2, 1, 0), "Grey Painted Planks Slab");
 		AddonManager.Name(new ItemStack(AddonDefs.paintedPlanksSlab2, 1, 1), "Pink Painted Planks Slab");
 		AddonManager.Name(new ItemStack(AddonDefs.paintedPlanksSlab2, 1, 2), "Lime Painted Planks Slab");
@@ -1865,7 +1890,7 @@ public class AddonDefs {
 
 		woodSlab = new AddonBlockWoodSlab(id_woodSlab, new Block[] {Block.planks}, new int[] {5},
 				new int[] {FCBetterThanWolves.fcBlockWoodMouldingItemStubID}, new int[] {5});
-		Item.itemsList[AddonDefs.woodSlab.blockID] = new AddonItemBlockWoodSlab(AddonDefs.woodSlab.blockID - 256);
+		Item.itemsList[AddonDefs.woodSlab.blockID] = new AddonItemBlockSlab(AddonDefs.woodSlab.blockID - 256);
 		AddonManager.Name(new ItemStack(AddonDefs.woodSlab, 1, 0), "Cherry Slab");
 		
 		AddonManager.Name(new ItemStack(Block.woodSingleSlab, 1, 0), "Oak Slab");
@@ -2127,6 +2152,7 @@ public class AddonDefs {
 		//Tall grass
 		Block tallGrass = new AddonBlockTallGrass(AddonManager.ReplaceBlockID(Block.tallGrass));
 		AddonManager.SetVanillaBlockFinal("tallGrass", Block.tallGrass, tallGrass);
+        Item.itemsList[tallGrass.blockID] = (new ItemColored(tallGrass.blockID - 256, true)).setBlockNames(new String[] {"shrub", "grass", "fern"});
 		
 		//Fluids
 		BlockFluid waterStill = (BlockFluid) new AddonBlockWaterStationary(AddonManager.ReplaceBlockID(Block.waterStill), Material.water).setHardness(100.0F).setLightOpacity(3).setUnlocalizedName("water").disableStats();
@@ -2191,17 +2217,35 @@ public class AddonDefs {
 	
 	private void addlayerDefs() {
 		//public static Block layerDirt, layerGrass, layerGravel, layerSand, layerRedSand, layerCoarseDirt, layerPodzol, layerPackedEarth;
-		layerDirt = new AddonBlockLayer(id_layerDirt, Material.ground, Block.dirt).SetShovelsEffectiveOn().setUnlocalizedName("dirtLayer");
-		layerGrass = new AddonBlockLayer(id_layerGrass, Material.grass, Block.grass).SetShovelsEffectiveOn().setUnlocalizedName("grassLayer");
-		layerGravel = new AddonBlockLayer(id_layerGravel, Material.ground, Block.gravel).SetShovelsEffectiveOn().setUnlocalizedName("gravelLayer");
+		layerDirt = new AddonBlockLayer(id_layerDirt, Block.dirt).SetShovelsEffectiveOn().setUnlocalizedName("dirtLayer");
+		layerGrass = new AddonBlockLayer(id_layerGrass, Block.grass).SetShovelsEffectiveOn().setUnlocalizedName("grassLayer");
+		layerGravel = new AddonBlockLayer(id_layerGravel, Block.gravel).SetShovelsEffectiveOn().setUnlocalizedName("gravelLayer");
+		layerSand = new AddonBlockLayer(id_layerSand, Block.sand).SetShovelsEffectiveOn().setUnlocalizedName("sandLayer");
+		layerRedSand = new AddonBlockLayer(id_layerRedSand, redSand).SetShovelsEffectiveOn().setUnlocalizedName("redSandLayer");
+		layerCoarseDirt = new AddonBlockLayer(id_layerCoarseDirt, coarseDirt).SetShovelsEffectiveOn().setUnlocalizedName("coarseDirtLayer");
+		layerPodzol = new AddonBlockLayer(id_layerPodzol, podzol).SetShovelsEffectiveOn().setUnlocalizedName("podzolLayer");
+		layerPackedEarth = new AddonBlockLayer(id_layerPackedEarth, FCBetterThanWolves.fcBlockAestheticOpaqueEarth, 6).SetShovelsEffectiveOn().setUnlocalizedName("packedEarthLayer");
+		layerDirtLoose = new AddonBlockLayer(id_layerDirtLoose, FCBetterThanWolves.fcBlockDirtLoose).SetShovelsEffectiveOn().setUnlocalizedName("looseDirtLayer");
 
 		Item.itemsList[layerDirt.blockID] = new AddonItemBlockLayer(layerDirt.blockID - 256);
 		Item.itemsList[layerGrass.blockID] = new AddonItemBlockLayer(layerGrass.blockID - 256);
 		Item.itemsList[layerGravel.blockID] = new AddonItemBlockLayer(layerGravel.blockID - 256);
+		Item.itemsList[layerSand.blockID] = new AddonItemBlockLayer(layerSand.blockID - 256);
+		Item.itemsList[layerRedSand.blockID] = new AddonItemBlockLayer(layerRedSand.blockID - 256);
+		Item.itemsList[layerCoarseDirt.blockID] = new AddonItemBlockLayer(layerCoarseDirt.blockID - 256);
+		Item.itemsList[layerPodzol.blockID] = new AddonItemBlockLayer(layerPodzol.blockID - 256);
+		Item.itemsList[layerPackedEarth.blockID] = new AddonItemBlockLayer(layerPackedEarth.blockID - 256);
+		Item.itemsList[layerDirtLoose.blockID] = new AddonItemBlockLayer(layerDirtLoose.blockID - 256);
 		
 		AddonManager.Name(layerDirt, "Dirt Layer");
 		//AddonManager.Name(layerGrass, "Grass Layer");
 		AddonManager.Name(layerGravel, "Gravel Layer");
+		AddonManager.Name(layerSand, "Sand Layer");
+		AddonManager.Name(layerRedSand, "Red Sand Layer");
+		AddonManager.Name(layerCoarseDirt, "Coarse Dirt Layer");
+		//AddonManager.Name(layerPodzol, "Podzol Layer");
+		AddonManager.Name(layerPackedEarth, "Packed Earth Layer");
+		AddonManager.Name(layerDirtLoose, "Loose Dirt Layer");
 	}
 
 	private void addSubBlockReplaceDefs() {

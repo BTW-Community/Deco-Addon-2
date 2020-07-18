@@ -13,6 +13,7 @@ public class AddonRecipes {
 		addStoneRecipes();
 		addWoodRecipes();
 		addDecoRecipes();
+		addLayerRecipes();
 		addMortarRecipes();
 		addToolRecipes();
 		addCustomRecipeClasses();
@@ -912,6 +913,12 @@ public class AddonRecipes {
        	AddonManager.MakeStorage(FCBetterThanWolves.fcItemRope, AddonDefs.ropeCoil);
        	AddonManager.MakeStorage(AddonDefs.chainItem, AddonDefs.chainCoil);
 	}
+	
+	private void addLayerRecipes() {
+		addLayerRecipe(AddonDefs.layerDirt, FCBetterThanWolves.fcBlockDirtSlab, 0, Block.dirt, 0, FCBetterThanWolves.fcItemPileDirt, 0, true);
+		addLayerRecipe(AddonDefs.layerGravel, FCBetterThanWolves.fcBlockSlabSandAndGravel, 1, Block.gravel, 0, FCBetterThanWolves.fcItemPileGravel, 0, true);
+		addLayerRecipe(AddonDefs.layerSand, FCBetterThanWolves.fcBlockSlabSandAndGravel, 0, Block.sand, 0, FCBetterThanWolves.fcItemPileSand, 0, true);
+	}
 
 	private void addMortarRecipes() {
 		FCRecipes.AddStokedCauldronRecipe(new ItemStack(Block.cobblestone), new ItemStack[] {new ItemStack(FCBetterThanWolves.fcBlockCobblestoneLoose), new ItemStack(Item.clay)});
@@ -1064,5 +1071,23 @@ public class AddonRecipes {
 		FCRecipes.RemoveVanillaShapelessRecipe(new ItemStack(var0, 1, var2), new Object[] {new ItemStack(var3, 1, 0), new ItemStack(var3, 1, 0)});
 		FCRecipes.RemoveVanillaShapelessRecipe(new ItemStack(var3, 1, 0), new Object[] {new ItemStack(var4, 1, 0), new ItemStack(var4, 1, 0)});
 		FCRecipes.RemoveVanillaShapelessRecipe(new ItemStack(var4, 1, 0), new Object[] {new ItemStack(var3, 1, 1), new ItemStack(var3, 1, 1)});
+	}
+
+	private void addLayerRecipe(Block layer, Block slab, int slabMeta, Block block, int blockMeta, Item componentItem, int componentMeta) {
+		addLayerRecipe(layer, slab, slabMeta, block, blockMeta, componentItem, componentMeta, false);
+	}
+	
+	private void addLayerRecipe(Block layer, Block slab, int slabMeta, Block block, int blockMeta, Item componentItem, int componentMeta, boolean fixSlabRecombine) {
+		if (fixSlabRecombine) {
+	        FCRecipes.RemoveVanillaShapelessRecipe(new ItemStack(block, 1, blockMeta), new Object[] {new ItemStack(slab, 1, slabMeta), new ItemStack(slab, 1, slabMeta)});
+	        FCRecipes.AddRecipe(new ItemStack(block, 1, blockMeta), new Object[] {"X", "X", 'X', new ItemStack(slab, 1, slabMeta)});
+		}
+		
+		FCRecipes.AddRecipe(new ItemStack(layer, 8), new Object[] {"XX", 'X', new ItemStack(slab, 1, slabMeta)});
+		FCRecipes.AddShapelessRecipe(new ItemStack(slab, 1, slabMeta), new ItemStack[] {new ItemStack(layer), new ItemStack(layer), new ItemStack(layer), new ItemStack(layer)});
+		FCRecipes.AddShapelessRecipe(new ItemStack(block, 1, blockMeta), new ItemStack[] {new ItemStack(layer), new ItemStack(layer), new ItemStack(layer), new ItemStack(layer), new ItemStack(layer), new ItemStack(layer), new ItemStack(layer), new ItemStack(layer)});
+		
+		if (componentItem != null)
+			FCRecipes.AddShapelessRecipe(new ItemStack(componentItem, 1, componentMeta), new ItemStack[] {new ItemStack(layer)});
 	}
 }

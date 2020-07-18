@@ -377,7 +377,7 @@ public class ContainerRepair extends Container
 
     public boolean canInteractWith(EntityPlayer par1EntityPlayer)
     {
-        return this.theWorld.getBlockId(this.field_82861_i, this.field_82858_j, this.field_82859_k) != Block.anvil.blockID ? false : par1EntityPlayer.getDistanceSq((double)this.field_82861_i + 0.5D, (double)this.field_82858_j + 0.5D, (double)this.field_82859_k + 0.5D) <= 64.0D;
+        return this.theWorld.getBlockId(this.field_82861_i, this.field_82858_j, this.field_82859_k) != AddonDefs.workbench.blockID ? false : par1EntityPlayer.getDistanceSq((double)this.field_82861_i + 0.5D, (double)this.field_82858_j + 0.5D, (double)this.field_82859_k + 0.5D) <= 64.0D;
     }
 
     /**
@@ -395,7 +395,6 @@ public class ContainerRepair extends Container
 
             if (par2 == 1)
             {
-            	System.out.println("Out");
                 if (!this.mergeItemStack(var5, 2, 38, true))
                 {
                     return null;
@@ -405,7 +404,6 @@ public class ContainerRepair extends Container
             }
             else if (par2 > 1)
             {
-            	System.out.println("Inv");
                 if (par2 >= 2 && par2 < 38 && !this.mergeItemStack(var5, 0, 1, false))
                 {
                     return null;

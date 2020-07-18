@@ -48,6 +48,8 @@ public class AddonManager extends FCAddOn
 	public static final int addonCustomBlockBreakAuxFXID = 3000;
 	public static final int addonCustomBlockConvertAuxFXID = 3001;
 	public static final int addonShaftRippedOffLogAuxFXID = 3100;
+	
+	public static final String signalSmokeParticle = "signalSmoke";
 
 	@Override
 	public void PreInitialize() {
@@ -497,6 +499,7 @@ public class AddonManager extends FCAddOn
 		return false;
 	}
 
+	//Used to modify existing client side packet250 behavior
 	public static boolean interceptCustomClientPacket(Minecraft mc, Packet250CustomPayload packet) {
 		try
 		{
@@ -605,7 +608,7 @@ public class AddonManager extends FCAddOn
                 return null;
             }
             else {
-            	if (particleType.equals("signalSmoke")) {
+            	if (particleType.equals(signalSmokeParticle)) {
             		
             	}
             	
