@@ -42,8 +42,15 @@ public class AddonManager extends FCAddOn
 	private static boolean newSoundsInstalled = true;
 
 	private static Minecraft mc;
+	
+	private static NetServerHandler netServerHandler;
+	
+	private static boolean awaitingLoginAck = false;
+	private static int ticksSinceAckRequested = 0;
+	private static final int maxTicksForAckWait = 20;
 
 	public static final String addonCustomPacketChannelVersionCheck = "Deco|VC";
+	public static final String addonCustomPacketChannelVersionCheckAck = "Deco|VC_Ack";
 
 	public static final int addonCustomBlockBreakAuxFXID = 3000;
 	public static final int addonCustomBlockConvertAuxFXID = 3001;
@@ -79,6 +86,8 @@ public class AddonManager extends FCAddOn
 	}
 
 	public static void ServerPlayerConnectionInitialized(NetServerHandler var0, EntityPlayerMP var1) {
+		netServerHandler = var0;
+		
 		if (!MinecraftServer.getServer().isSinglePlayer())
 		{
 			FCUtilsWorld.SendPacketToPlayer(var0, new Packet3Chat("\u00a7f" + "Deco V" + addonVersion));
@@ -95,8 +104,9 @@ public class AddonManager extends FCAddOn
 				var9.printStackTrace();
 			}
 
-			Packet250CustomPayload var4 = new Packet250CustomPayload("Deco|VC", byteArrayOutput.toByteArray());
+			Packet250CustomPayload var4 = new Packet250CustomPayload(addonCustomPacketChannelVersionCheck, byteArrayOutput.toByteArray());
 			FCUtilsWorld.SendPacketToPlayer(var0, var4);
+			awaitingLoginAck = true;
 		}
 		else {
 			FCUtilsWorld.SendPacketToPlayer(var0, new Packet3Chat("\u00a7f" + "Deco V" + addonVersion));
@@ -452,6 +462,33 @@ public class AddonManager extends FCAddOn
 		AddonManager.isObfuscated = isObfuscated;
 	}
 
+	public static boolean ServerCustomPacketReceived(MinecraftServer mcServer, Packet250CustomPayload packet)
+	{
+        if (AddonManager.addonCustomPacketChannelVersionCheckAck.equals(packet.channel)) {
+        	FCUtilsWorld.SendPacketToPlayer(netServerHandler, new Packet3Chat("Client ack"));
+        	awaitingLoginAck = false;
+        	ticksSinceAckRequested = 0;
+        }
+        
+		return false;
+	}
+	
+	public static boolean getAwaitingLoginAck() {
+		return awaitingLoginAck;
+	}
+	
+	public static void incrementTicksSinceAckRequested() {
+		ticksSinceAckRequested++;
+	}
+	
+	public static void handleAckCheck() {
+		if (ticksSinceAckRequested > maxTicksForAckWait) {
+			FCUtilsWorld.SendPacketToPlayer(netServerHandler, new Packet3Chat("\u00a74" + "WARNING: Client Deco Addon not installed, or version 2.11 or earlier is installed."));
+			awaitingLoginAck = false;
+			ticksSinceAckRequested = 0;
+		}
+	}
+
 	//CLIENT ONLY
 	public static void installResource(String filename) {
 		if (newSoundsInstalled) {
@@ -487,6 +524,21 @@ public class AddonManager extends FCAddOn
 				{
 					mc.thePlayer.addChatMessage("\u00a74" + "WARNING: Deco Addon version mismatch detected! Local Version: " + this.addonVersion + " Server Version: " + var33);
 				}
+				
+				ByteArrayOutputStream byteArrayOutput = new ByteArrayOutputStream();
+				DataOutputStream dataOutput = new DataOutputStream(byteArrayOutput);
+
+				try
+				{
+					dataOutput.writeUTF(addonVersion);
+				}
+				catch (Exception e)
+				{
+					e.printStackTrace();
+				}
+
+				Packet250CustomPayload ackPacket = new Packet250CustomPayload(addonCustomPacketChannelVersionCheckAck, byteArrayOutput.toByteArray());
+				//netServerHandler.handleCustomPayload(ackPacket);
 
 				return true;
 			}
