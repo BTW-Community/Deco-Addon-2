@@ -380,7 +380,8 @@ public class TileEntityChest extends TileEntity implements IInventory
                 var8 += 0.5D;
             }
 
-            AddonUtilsSound.playSoundWithVanillaFallback(this.worldObj, var11, (double)this.yCoord + 0.5D, var11, "deco.random.chestClose", 0.5F, this.worldObj.rand.nextFloat() * 0.1F + 0.9F, "random.chestclosed", 0.5F, this.worldObj.rand.nextFloat() * 0.1F + 0.9F);
+            //if (!this.worldObj.isRemote)
+            	AddonUtilsSound.playSoundWithVanillaFallback(this.worldObj, var11, (double)this.yCoord + 0.5D, var11, "deco.random.chestClose", 0.5F, this.worldObj.rand.nextFloat() * 0.1F + 0.9F, "random.chestclosed", 0.5F, this.worldObj.rand.nextFloat() * 0.1F + 0.9F);
         }
 
         if (this.numUsingPlayers == 0 && this.lidAngle > 0.0F || this.numUsingPlayers > 0 && this.lidAngle < 1.0F)
@@ -418,7 +419,8 @@ public class TileEntityChest extends TileEntity implements IInventory
                     var11 += 0.5D;
                 }
 
-                AddonUtilsSound.playSoundWithVanillaFallback(this.worldObj, var11, (double)this.yCoord + 0.5D, var6, "deco.random.chestClose", 0.5F, this.worldObj.rand.nextFloat() * 0.1F + 0.9F, "random.chestclosed", 0.5F, this.worldObj.rand.nextFloat() * 0.1F + 0.9F);
+                //if (!this.worldObj.isRemote)
+                	AddonUtilsSound.playSoundWithVanillaFallback(this.worldObj, var11, (double)this.yCoord + 0.5D, var6, "deco.random.chestClose", 0.5F, this.worldObj.rand.nextFloat() * 0.1F + 0.9F, "random.chestclosed", 0.5F, this.worldObj.rand.nextFloat() * 0.1F + 0.9F);
             }
 
             if (this.lidAngle < 0.0F)

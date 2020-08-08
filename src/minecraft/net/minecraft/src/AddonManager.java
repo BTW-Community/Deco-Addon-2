@@ -465,7 +465,7 @@ public class AddonManager extends FCAddOn
 	public static boolean ServerCustomPacketReceived(MinecraftServer mcServer, Packet250CustomPayload packet)
 	{
         if (AddonManager.addonCustomPacketChannelVersionCheckAck.equals(packet.channel)) {
-        	FCUtilsWorld.SendPacketToPlayer(netServerHandler, new Packet3Chat("Client ack"));
+			mc.thePlayer.addChatMessage("\u00a7f" + "Deco Addon version check successful.");
         	awaitingLoginAck = false;
         	ticksSinceAckRequested = 0;
         }
@@ -516,11 +516,7 @@ public class AddonManager extends FCAddOn
 			{
 				String var33 = dataStream.readUTF();
 
-				if (var33.equals(addonVersion))
-				{
-					mc.thePlayer.addChatMessage("\u00a7f" + "Deco Addon version check successful.");
-				}
-				else
+				if (!var33.equals(addonVersion))
 				{
 					mc.thePlayer.addChatMessage("\u00a74" + "WARNING: Deco Addon version mismatch detected! Local Version: " + this.addonVersion + " Server Version: " + var33);
 				}

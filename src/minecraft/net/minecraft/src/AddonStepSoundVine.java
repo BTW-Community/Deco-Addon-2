@@ -2,7 +2,7 @@ package net.minecraft.src;
 
 public class AddonStepSoundVine extends AddonStepSound {
 	public AddonStepSoundVine(float volume, float pitch) {
-		super("grass", volume, pitch);
+		super("grass", volume, pitch, "grass", Block.soundGrassFootstep.getVolume(), Block.soundGrassFootstep.getPitch());
 	}
 
     /**
