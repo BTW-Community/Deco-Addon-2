@@ -1989,7 +1989,8 @@ public class AddonDefs {
 				.setStepSound(Block.soundStoneFootstep)
 				.setCreativeTab(CreativeTabs.tabBlock)
 				.setUnlocalizedName("bonePillar");
-		AddonManager.Register(bonePillar, "Bone Pillar");
+		Item.itemsList[bonePillar.blockID] = new AddonItemBlockWithCustomSound(bonePillar.blockID - 256);
+		AddonManager.Name(bonePillar, "Bone Pillar");
 
 		bonePillar.setStepSound(stepSoundBone);
 		FCBetterThanWolves.fcBlockBoneSlab.setStepSound(stepSoundBone);
@@ -2128,7 +2129,8 @@ public class AddonDefs {
 				.setStepSound(Block.soundMetalFootstep)
 				.setCreativeTab(CreativeTabs.tabBlock)
 				.setUnlocalizedName("chainCoil");
-		AddonManager.Register(chainCoil, "Coil of Chain");
+		Item.itemsList[chainCoil.blockID] = new AddonItemBlockWithCustomSound(chainCoil.blockID - 256);
+		AddonManager.Name(chainCoil, "Coil of Chain");
 
 		//Cocoa
 		FCBetterThanWolves.fcItemCocoaBeans = new AddonItemCocoaBeans(FCBetterThanWolves.fcItemCocoaBeans.itemID - 256);
@@ -2158,10 +2160,14 @@ public class AddonDefs {
 
 		//Extra sounds
 		Block.slowSand.setStepSound(stepSoundSoulSand);
+		Item.itemsList[Block.slowSand.blockID] = new AddonItemBlockWithCustomSound(Block.slowSand.blockID - 256);
 		Block.vine.setStepSound(stepSoundVine);
 		FCBetterThanWolves.fcSoulforgedSteelBlock.setStepSound(stepSoundSteel);
+		Item.itemsList[FCBetterThanWolves.fcSoulforgedSteelBlock.blockID] = new AddonItemBlockWithCustomSound(FCBetterThanWolves.fcSoulforgedSteelBlock.blockID - 256);
 		FCBetterThanWolves.fcAnvil.setStepSound(stepSoundSteel);
+		Item.itemsList[FCBetterThanWolves.fcAnvil.blockID] = new AddonItemBlockWithCustomSound(FCBetterThanWolves.fcAnvil.blockID - 256);
 		FCBetterThanWolves.fcBlockBloodMoss.setStepSound(stepSoundGroth);
+		FCBetterThanWolves.fcItemBloodMossSpores = new AddonItemBloodMossSpores(FCBetterThanWolves.fcItemBloodMossSpores.itemID - 256);
 		chainCoil.setStepSound(stepSoundChainDeep);
 
 		//Scaffolding

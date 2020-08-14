@@ -54,6 +54,8 @@ public class AddonManager extends FCAddOn
 
 	public static final int addonCustomBlockBreakAuxFXID = 3000;
 	public static final int addonCustomBlockConvertAuxFXID = 3001;
+	public static final int addonCustomBlockPlaceAuxFXID = 3002;
+	
 	public static final int addonShaftRippedOffLogAuxFXID = 3100;
 	public static final int addonDoorWoodOpenAuxFXID = 3101;
 	public static final int addonDoorWoodCloseAuxFXID = 3102;
@@ -439,7 +441,7 @@ public class AddonManager extends FCAddOn
 	}
 	public static void Register(Block target)
 	{
-		Item.itemsList[target.blockID] = new ItemBlock(target.blockID - 256);
+		Item.itemsList[target.blockID] = new AddonItemBlockWithCustomSound(target.blockID - 256);
 	}
 	public static void Register(Block target, String name)
 	{
@@ -637,6 +639,17 @@ public class AddonManager extends FCAddOn
 			}
 
 			mc.effectRenderer.addBlockDestroyEffects(x, y, z, data & 4095, data >> 12 & 255);
+			return true;
+		case addonCustomBlockPlaceAuxFXID:
+			blockID = data & 4095;
+			blockMeta = data >> 12 & 255;
+			
+			if (blockID > 0)
+			{
+				Block block = Block.blocksList[blockID];
+				mc.sndManager.playSound(block.stepSound.getPlaceSound(), (float)x + 0.5F, (float)y + 0.5F, (float)z + 0.5F, (block.stepSound.getVolume() + 1.0F) / 2.0F, block.stepSound.getPitch() * 0.8F);
+			}
+			
 			return true;
         case addonShaftRippedOffLogAuxFXID:
             AddonUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.strip", 3.0F, 0.25F + rand.nextFloat() * 0.25F, "mob.zombie.woodbreak", 0.25F, 1.0F + rand.nextFloat() * 0.25F);

@@ -39,7 +39,7 @@ public class AddonUtilsSound {
 				customSound = false;
 		}
 		
-		return false;
+		return customSound;
 	}
 	
 	public static boolean playCustomSoundForBlockConvert(Minecraft mc, World world, int x, int y, int z, Block block, int meta) {

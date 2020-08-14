@@ -34,4 +34,13 @@ public class AddonItemBlockStem  extends FCItemBlockLog
             }
         }
     }
+
+    protected void PlayPlaceSound(World world, int x, int y, int z, Block block)
+    {
+    	int meta = world.getBlockMetadata(x, y, z);
+    	
+    	if (!world.isRemote) {
+    		world.playAuxSFX(AddonManager.addonCustomBlockPlaceAuxFXID, x, y, z, block.blockID + (meta << 12));
+    	}
+    }
 }

@@ -1,13 +1,9 @@
 package net.minecraft.src;
 
-public class AddonItemChain extends FCItemPlacesAsBlock
-{
-    public AddonItemChain(int var1)
-    {
-        super(var1, AddonDefs.chain.blockID);
-        this.setUnlocalizedName("ginger_chainItem");
-        this.setCreativeTab(CreativeTabs.tabDecorations);
-    }
+public class AddonItemBlockWithCustomSound extends ItemBlock {
+	public AddonItemBlockWithCustomSound(int par1) {
+		super(par1);
+	}
 
     protected void PlayPlaceSound(World world, int x, int y, int z, Block block)
     {

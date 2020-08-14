@@ -24,4 +24,13 @@ public class AddonItemMultiBlock extends ItemBlockWithMetadata
 		for (int var4 = 0; var4 < this.blockNames.length; ++var4)
 			var3.add(new ItemStack(this, 1, var4));
 	}
+
+    protected void PlayPlaceSound(World world, int x, int y, int z, Block block)
+    {
+    	int meta = world.getBlockMetadata(x, y, z);
+    	
+    	if (!world.isRemote) {
+    		world.playAuxSFX(AddonManager.addonCustomBlockPlaceAuxFXID, x, y, z, block.blockID + (meta << 12));
+    	}
+    }
 }
