@@ -23,12 +23,13 @@ public class AddonBlockTrapDoor extends FCBlockTrapDoor {
         {
             int var10 = world.getBlockMetadata(x, y, z);
             world.setBlockMetadataWithNotify(x, y, z, var10 ^ 4);
-            //world.playAuxSFXAtEntity(player, 1003, x, y, z, 0);
             
-            if ((var10 < 4) || (var10 >= 8 && var10 < 12))
-            	AddonUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.trapdoorOpen", 1, world.rand.nextFloat() * 0.1F + 0.9F, "random.door_open", 1, world.rand.nextFloat() * 0.1F + 0.9F);
-            else
-            	AddonUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.trapdoorClose", 1, world.rand.nextFloat() * 0.1F + 0.9F, "random.door_close", 1, world.rand.nextFloat() * 0.1F + 0.9F);
+            if (! world.isRemote) {
+            	if ((var10 < 4) || (var10 >= 8 && var10 < 12))
+            		world.playAuxSFX(AddonManager.addonTrapdoorOpenAuxFXID, x, y, z, 0);
+            	else
+            		world.playAuxSFX(AddonManager.addonTrapdoorCloseAuxFXID, x, y, z, 0);
+            }
             
             return true;
         }

@@ -27,10 +27,12 @@ public class AddonBlockDoorWood extends FCBlockDoorWood {
             int var11 = var10 & 7;
             var11 ^= 4;
             
-            if (this.isDoorOpen(world, x, y, z))
-                AddonUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.doorClose", 1, world.rand.nextFloat() * 0.1F + 0.9F, "random.door_close", 1, world.rand.nextFloat() * 0.1F + 0.9F);
-            else
-                AddonUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.doorOpen", 1, world.rand.nextFloat() * 0.1F + 0.9F, "random.door_open", 1, world.rand.nextFloat() * 0.1F + 0.9F);
+            if (! world.isRemote) {
+            	if (this.isDoorOpen(world, x, y, z))
+            		world.playAuxSFX(AddonManager.addonDoorWoodCloseAuxFXID, x, y, z, 0);
+            	else
+            		world.playAuxSFX(AddonManager.addonDoorWoodOpenAuxFXID, x, y, z, 0);
+            }
 
             if ((var10 & 8) == 0)
             {

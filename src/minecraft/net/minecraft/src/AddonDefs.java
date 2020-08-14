@@ -345,7 +345,7 @@ public class AddonDefs {
 		id_prismarineCrystal=30061;
 
 	private static final int
-	id_entityFallingConcrete=3000;
+		id_entityFallingConcrete=3000;
 
 	public static Material materialHedge;
 	public static Material materialHay;
@@ -778,7 +778,7 @@ public class AddonDefs {
 	    materialCarpet = (new Material(MapColor.clothColor)).setBurning().SetAxesEfficientOn().setRequiresTool();
 
 		Material.glass.SetMobsCantSpawnOn();
-		FCBetterThanWolves.fcMaterialWicker.SetMobsCantSpawnOn();
+		//FCBetterThanWolves.fcMaterialWicker.SetMobsCantSpawnOn();
 	}
 
 	private void addClayDefs() {

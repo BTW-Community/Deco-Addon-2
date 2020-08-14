@@ -55,8 +55,17 @@ public class AddonManager extends FCAddOn
 	public static final int addonCustomBlockBreakAuxFXID = 3000;
 	public static final int addonCustomBlockConvertAuxFXID = 3001;
 	public static final int addonShaftRippedOffLogAuxFXID = 3100;
+	public static final int addonDoorWoodOpenAuxFXID = 3101;
+	public static final int addonDoorWoodCloseAuxFXID = 3102;
+	public static final int addonDoorIronOpenAuxFXID = 3103;
+	public static final int addonDoorIronCloseAuxFXID = 3104;
+	public static final int addonTrapdoorOpenAuxFXID = 3105;
+	public static final int addonTrapdoorCloseAuxFXID = 3106;
 	
-	public static final String signalSmokeParticle = "signalSmoke";
+	public static final int addonChestOpenAuxFXID = 3109;
+	public static final int addonChestCloseAuxFXID = 3110;
+	
+	public static final String addonParticleSmokeColumn = "signalSmoke";
 
 	@Override
 	public void PreInitialize() {
@@ -623,11 +632,32 @@ public class AddonManager extends FCAddOn
 			mc.effectRenderer.addBlockDestroyEffects(x, y, z, data & 4095, data >> 12 & 255);
 			return true;
         case addonShaftRippedOffLogAuxFXID:
-        	if (getNewSoundsInstalled())
-        		world.playSound(x, y, z, "deco.random.strip", 3.0F, 0.25F + rand.nextFloat() * 0.25F);
-        	else
-        		world.playSound(x, y, z, "mob.zombie.woodbreak", 0.25F, 1.0F + rand.nextFloat() * 0.25F);
+            AddonUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.strip", 3.0F, 0.25F + rand.nextFloat() * 0.25F, "mob.zombie.woodbreak", 0.25F, 1.0F + rand.nextFloat() * 0.25F);
             return true;
+        case addonDoorWoodOpenAuxFXID:
+            AddonUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.doorOpen", 1, world.rand.nextFloat() * 0.1F + 0.9F, "random.door_open", 1, world.rand.nextFloat() * 0.1F + 0.9F);
+        	return true;
+        case addonDoorWoodCloseAuxFXID:
+            AddonUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.doorClose", 1, world.rand.nextFloat() * 0.1F + 0.9F, "random.door_close", 1, world.rand.nextFloat() * 0.1F + 0.9F);
+        	return true;
+        case addonDoorIronOpenAuxFXID:
+            AddonUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.doorIronOpen", 1, world.rand.nextFloat() * 0.1F + 0.9F, "random.door_open", 1, world.rand.nextFloat() * 0.1F + 0.9F);
+        	return true;
+        case addonDoorIronCloseAuxFXID:
+            AddonUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.doorIronClose", 1, world.rand.nextFloat() * 0.1F + 0.9F, "random.door_close", 1, world.rand.nextFloat() * 0.1F + 0.9F);
+        	return true;
+        case addonTrapdoorOpenAuxFXID:
+        	AddonUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.trapdoorOpen", 1, world.rand.nextFloat() * 0.1F + 0.9F, "random.door_open", 1, world.rand.nextFloat() * 0.1F + 0.9F);
+        	return true;
+        case addonTrapdoorCloseAuxFXID:
+        	AddonUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.trapdoorClose", 1, world.rand.nextFloat() * 0.1F + 0.9F, "random.door_close", 1, world.rand.nextFloat() * 0.1F + 0.9F);
+        	return true;
+        case addonChestOpenAuxFXID:
+        	AddonUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.chestOpen", 0.5F, world.rand.nextFloat() * 0.1F + 0.9F, "random.chestopen", 0.5F, world.rand.nextFloat() * 0.1F + 0.9F);
+        	return true;
+        case addonChestCloseAuxFXID:
+        	AddonUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.chestClose", 0.5F, world.rand.nextFloat() * 0.1F + 0.9F, "random.chestclosed", 0.5F, world.rand.nextFloat() * 0.1F + 0.9F);
+        	return true;
 		default:
 			return false;
 		}
@@ -656,7 +686,7 @@ public class AddonManager extends FCAddOn
                 return null;
             }
             else {
-            	if (particleType.equals(signalSmokeParticle)) {
+            	if (particleType.equals(addonParticleSmokeColumn)) {
             		
             	}
             	
