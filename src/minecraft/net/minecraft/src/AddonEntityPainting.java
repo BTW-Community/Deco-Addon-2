@@ -26,7 +26,7 @@ public class AddonEntityPainting extends EntityPainting {
         {
             if (!this.isDead && !this.worldObj.isRemote)
             {
-            	AddonUtilsSound.playSoundAtEntityWithNullFallback(this.worldObj, this, "deco.misc.painting.break", 1, 1);
+            	this.worldObj.playAuxSFX(AddonManager.addonPaintingBreakAuxFXID, this.xPosition, this.yPosition, this.zPosition, 0);
                 this.setDead();
                 this.setBeenAttacked();
                 EntityPlayer var3 = null;

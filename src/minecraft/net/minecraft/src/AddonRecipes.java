@@ -697,8 +697,8 @@ public class AddonRecipes {
 		}
 
 		for (int i = 0; i < 8; i++) {
-			FCRecipes.AddRecipe(new ItemStack(AddonDefs.paintedPlanksSlab, 1, i), new Object[] {"XXX", 'X', new ItemStack(AddonDefs.planksPainted, 1, i)});
-			FCRecipes.AddRecipe(new ItemStack(AddonDefs.paintedPlanksSlab2, 1, i), new Object[] {"XXX", 'X', new ItemStack(AddonDefs.planksPainted, 1, i + 8)});
+			FCRecipes.AddRecipe(new ItemStack(AddonDefs.paintedPlanksSlab, 6, i), new Object[] {"XXX", 'X', new ItemStack(AddonDefs.planksPainted, 1, i)});
+			FCRecipes.AddRecipe(new ItemStack(AddonDefs.paintedPlanksSlab2, 6, i), new Object[] {"XXX", 'X', new ItemStack(AddonDefs.planksPainted, 1, i + 8)});
 			FCRecipes.AddRecipe(new ItemStack(AddonDefs.planksPainted, 1, i), new Object[] {"X", "X", 'X', new ItemStack(AddonDefs.paintedPlanksSlab, 1, i)});
 			FCRecipes.AddRecipe(new ItemStack(AddonDefs.planksPainted, 1, i + 8), new Object[] {"X", "X", 'X', new ItemStack(AddonDefs.paintedPlanksSlab2, 1, i)});
 		}

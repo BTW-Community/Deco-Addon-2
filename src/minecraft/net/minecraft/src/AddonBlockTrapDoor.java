@@ -24,7 +24,7 @@ public class AddonBlockTrapDoor extends FCBlockTrapDoor {
             int var10 = world.getBlockMetadata(x, y, z);
             world.setBlockMetadataWithNotify(x, y, z, var10 ^ 4);
             
-            if (! world.isRemote) {
+            if (!world.isRemote) {
             	if ((var10 < 4) || (var10 >= 8 && var10 < 12))
             		world.playAuxSFX(AddonManager.addonTrapdoorOpenAuxFXID, x, y, z, 0);
             	else

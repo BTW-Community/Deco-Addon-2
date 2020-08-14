@@ -27,7 +27,7 @@ public class AddonBlockDoorWood extends FCBlockDoorWood {
             int var11 = var10 & 7;
             var11 ^= 4;
             
-            if (! world.isRemote) {
+            if (!world.isRemote) {
             	if (this.isDoorOpen(world, x, y, z))
             		world.playAuxSFX(AddonManager.addonDoorWoodCloseAuxFXID, x, y, z, 0);
             	else

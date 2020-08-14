@@ -61,9 +61,16 @@ public class AddonManager extends FCAddOn
 	public static final int addonDoorIronCloseAuxFXID = 3104;
 	public static final int addonTrapdoorOpenAuxFXID = 3105;
 	public static final int addonTrapdoorCloseAuxFXID = 3106;
-	
+	//Reserved for iron trapdoor
 	public static final int addonChestOpenAuxFXID = 3109;
 	public static final int addonChestCloseAuxFXID = 3110;
+	public static final int addonPaintingPlaceAuxFXID = 3111;
+	public static final int addonPaintingBreakAuxFXID = 3112;
+	public static final int addonItemFramePlaceAuxFXID = 3113;
+	public static final int addonItemFrameBreakAuxFXID = 3114;
+	public static final int addonItemFrameAddItemAuxFXID = 3115;
+	public static final int addonItemFrameRotateItemAuxFXID = 3116;
+	public static final int addonItemFrameRemoveItemAuxFXID = 3117;
 	
 	public static final String addonParticleSmokeColumn = "signalSmoke";
 
@@ -657,6 +664,27 @@ public class AddonManager extends FCAddOn
         	return true;
         case addonChestCloseAuxFXID:
         	AddonUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.chestClose", 0.5F, world.rand.nextFloat() * 0.1F + 0.9F, "random.chestclosed", 0.5F, world.rand.nextFloat() * 0.1F + 0.9F);
+        	return true;
+        case addonPaintingPlaceAuxFXID:
+        	AddonUtilsSound.playSoundWithNullFallback(world, x, y, z, "deco.misc.painting.place", 1, 1);
+        	return true;
+        case addonPaintingBreakAuxFXID:
+        	AddonUtilsSound.playSoundWithNullFallback(world, x, y, z, "deco.misc.painting.break", 1, 1);
+        	return true;
+        case addonItemFramePlaceAuxFXID:
+        	AddonUtilsSound.playSoundWithNullFallback(world, x, y, z, "deco.misc.itemFrame.place", 1, 1);
+        	return true;
+        case addonItemFrameBreakAuxFXID:
+        	AddonUtilsSound.playSoundWithNullFallback(world, x, y, z, "deco.misc.itemFrame.break", 1, 1);
+        	return true;
+        case addonItemFrameAddItemAuxFXID:
+        	AddonUtilsSound.playSoundWithNullFallback(world, x, y, z, "deco.misc.itemFrame.addItem", 1, 1);
+        	return true;
+        case addonItemFrameRotateItemAuxFXID:
+        	AddonUtilsSound.playSoundWithNullFallback(world, x, y, z, "deco.misc.itemFrame.rotateItem", 1, 1);
+        	return true;
+        case addonItemFrameRemoveItemAuxFXID:
+        	AddonUtilsSound.playSoundWithNullFallback(world, x, y, z, "deco.misc.itemFrame.removeItem", 1, 1);
         	return true;
 		default:
 			return false;
