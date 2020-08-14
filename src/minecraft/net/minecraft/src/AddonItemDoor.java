@@ -1,26 +1,30 @@
 package net.minecraft.src;
 
 public class AddonItemDoor extends FCItemDoor {
-	private BlockDoor doorBlock;
+	private int doorBlockID;
 	private boolean isWood;
 
-	public AddonItemDoor(int ID, String texture, String name, BlockDoor door) {
-		this(ID, texture, name, door, false);
+	public AddonItemDoor(int ID, String texture, String name, int doorID) {
+		this(ID, texture, name, doorID, false);
 	}
 	
-	public AddonItemDoor(int ID, String texture, String name, BlockDoor door, boolean isWood) {
+	public AddonItemDoor(int ID, String texture, String name, int doorID, boolean isWood) {
 		super(ID);
 		this.SetBuoyant();
 		this.setUnlocalizedName(texture);
 		this.SetBuoyant();
 		AddonManager.Name(this, name);
-		doorBlock = door;
+		doorBlockID = doorID;
 		this.isWood = isWood;
+		
+		if (this.isWood) {
+			this.SetIncineratedInCrucible();
+		}
 	}
 
 	@Override
 	public Block GetDoorBlock() {
-		return doorBlock;
+		return Block.blocksList[doorBlockID];
 	}
 
 	public boolean onItemUse(ItemStack var1, EntityPlayer var2, World var3, int x, int y, int z, int var7, float var8, float var9, float var10)
