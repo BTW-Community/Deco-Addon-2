@@ -25,7 +25,7 @@ public class AddonPlayerControllerMP extends PlayerControllerMP {
 	
 	private void setReflectionFields() {
 		try {
-			if (AddonManager.isObfuscated()) {
+			if (DawnUtilsReflection.isObfuscated()) {
 				blockHitDelayField = this.getClass().getSuperclass().getDeclaredField("i");
 				currentGameTypeField = this.getClass().getSuperclass().getDeclaredField("k");
 				blockYField = this.getClass().getSuperclass().getDeclaredField("d");
@@ -43,11 +43,11 @@ public class AddonPlayerControllerMP extends PlayerControllerMP {
 			blockYField.setAccessible(true);
 			currentPlayerItemField.setAccessible(true);
 		} catch (NoSuchFieldException e) {
-			if (AddonManager.isObfuscated()) {
+			if (DawnUtilsReflection.isObfuscated()) {
 				e.printStackTrace();
 			}
 			else {
-				AddonManager.setObfuscated(true);
+				DawnUtilsReflection.setObfuscated(true);
 				setReflectionFields();
 			}
 			e.printStackTrace();

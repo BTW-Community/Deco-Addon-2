@@ -8,11 +8,11 @@ import java.util.Iterator;
 
 import net.minecraft.server.MinecraftServer;
 
-public class AddonServerConfigurationManager extends ServerConfigurationManager {
+public class DawnServerConfigurationManager extends ServerConfigurationManager {
 	private final MinecraftServer mcServer;
     private EnumGameType gameType;
 	
-	public AddonServerConfigurationManager(MinecraftServer par1MinecraftServer) {
+	public DawnServerConfigurationManager(MinecraftServer par1MinecraftServer) {
 		super(par1MinecraftServer);
 		mcServer = par1MinecraftServer;
 	}
@@ -33,7 +33,7 @@ public class AddonServerConfigurationManager extends ServerConfigurationManager 
         WorldServer worldServer = this.mcServer.worldServerForDimension(player.dimension);
         ChunkCoordinates spawnPoint = worldServer.getSpawnPoint();
         this.func_72381_a(player, (EntityPlayerMP)null, worldServer);
-        NetServerHandler netServerHandler = new AddonNetServerHandler(this.mcServer, networkManager, player);
+        NetServerHandler netServerHandler = new DawnNetServerHandler(this.mcServer, networkManager, player);
         netServerHandler.sendPacketToPlayer(new Packet1Login(player.entityId, worldServer.getWorldInfo().getTerrainType(), player.theItemInWorldManager.getGameType(), worldServer.getWorldInfo().isHardcoreModeEnabled(), worldServer.provider.dimensionId, worldServer.difficultySetting, worldServer.getHeight(), this.getMaxPlayers()));
         netServerHandler.sendPacketToPlayer(new Packet6SpawnPosition(spawnPoint.posX, spawnPoint.posY, spawnPoint.posZ));
         netServerHandler.sendPacketToPlayer(new Packet202PlayerAbilities(player.capabilities));
@@ -75,7 +75,7 @@ public class AddonServerConfigurationManager extends ServerConfigurationManager 
         }
 
         FCBetterThanWolves.ServerPlayerConnectionInitialized(netServerHandler, player);
-        AddonManager.ServerPlayerConnectionInitialized(netServerHandler, player);
+        DawnAddonHandler.serverPlayerConnectionInitialized(netServerHandler, player);
     }
 
     /**

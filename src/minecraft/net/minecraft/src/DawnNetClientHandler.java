@@ -7,22 +7,22 @@ import java.lang.reflect.Field;
 
 import net.minecraft.client.Minecraft;
 
-public class AddonNetClientHandler extends NetClientHandler {
+public class DawnNetClientHandler extends NetClientHandler {
     /** Reference to the Minecraft object. */
     private Minecraft mc;
     private WorldClient worldClient;
     
-	public AddonNetClientHandler(Minecraft par1Minecraft, IntegratedServer par2IntegratedServer) throws IOException {
+	public DawnNetClientHandler(Minecraft par1Minecraft, IntegratedServer par2IntegratedServer) throws IOException {
 		super(par1Minecraft, par2IntegratedServer);
         this.mc = par1Minecraft;
 	}
 
-	public AddonNetClientHandler(Minecraft par1Minecraft, String par2Str, int par3, GuiScreen par4GuiScreen) throws IOException {
+	public DawnNetClientHandler(Minecraft par1Minecraft, String par2Str, int par3, GuiScreen par4GuiScreen) throws IOException {
 		super(par1Minecraft, par2Str, par3, par4GuiScreen);
         this.mc = par1Minecraft;
 	}
 
-	public AddonNetClientHandler(Minecraft par1Minecraft, String par2Str, int par3) throws IOException {
+	public DawnNetClientHandler(Minecraft par1Minecraft, String par2Str, int par3) throws IOException {
 		super(par1Minecraft, par2Str, par3);
         this.mc = par1Minecraft;
 	}
@@ -151,7 +151,7 @@ public class AddonNetClientHandler extends NetClientHandler {
                 var7.printStackTrace();
             }
         }
-        else if (!AddonManager.interceptCustomClientPacket(this.mc, par1Packet250CustomPayload))
+        else if (!DawnAddonHandler.interceptCustomClientPacket(this.mc, par1Packet250CustomPayload))
         {
             FCAddOnHandler.ClientCustomPacketReceived(this.mc, par1Packet250CustomPayload);
         }

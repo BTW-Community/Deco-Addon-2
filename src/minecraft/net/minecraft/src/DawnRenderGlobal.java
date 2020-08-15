@@ -2,12 +2,12 @@ package net.minecraft.src;
 
 import net.minecraft.client.Minecraft;
 
-public class AddonRenderGlobal extends RenderGlobal {
+public class DawnRenderGlobal extends RenderGlobal {
 	private Minecraft mc;
 	private RenderEngine renderEngine;
 	private WorldClient theWorld;
 	
-	public AddonRenderGlobal(Minecraft mc, RenderEngine renderEngine) {
+	public DawnRenderGlobal(Minecraft mc, RenderEngine renderEngine) {
 		super(mc, renderEngine);
 		this.mc = mc;
 		this.renderEngine = renderEngine;
@@ -30,7 +30,7 @@ public class AddonRenderGlobal extends RenderGlobal {
     	EntityFX fx = super.doSpawnParticle(particleType, x, y, z, velX, velY, velZ);
     	
     	if (fx == null)
-    		return AddonManager.spawnCustomParticle(this.mc, this.theWorld, particleType, x, y, z, velX, velY, velZ);
+    		return DawnAddonHandler.spawnCustomParticle(this.mc, this.theWorld, particleType, x, y, z, velX, velY, velZ);
     	else
     		return fx;
     }

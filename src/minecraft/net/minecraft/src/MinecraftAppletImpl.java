@@ -20,7 +20,6 @@ public class MinecraftAppletImpl extends Minecraft
         this.mainFrame = par1MinecraftApplet;
     }
 
-    @Override
     public void displayCrashReportInternal(CrashReport par1CrashReport)
     {
         this.mainFrame.removeAll();
@@ -28,7 +27,7 @@ public class MinecraftAppletImpl extends Minecraft
         this.mainFrame.add(new PanelCrashReport(par1CrashReport), "Center");
         this.mainFrame.validate();
     }
-
+    
     /**
      * Arguments: World foldername,  World ingame name, WorldSettings
      */
@@ -39,7 +38,7 @@ public class MinecraftAppletImpl extends Minecraft
 
         try
         {
-            NetClientHandler var10 = new AddonNetClientHandler(this, this.getIntegratedServer());
+            NetClientHandler var10 = new DawnNetClientHandler(this, this.getIntegratedServer());
             
         	Field networkManagerAccessField = null;
     		try {
@@ -71,11 +70,22 @@ public class MinecraftAppletImpl extends Minecraft
             this.displayCrashReport(this.addGraphicsAndWorldToCrashReport(new CrashReport("Connecting to integrated server", var8)));
         }
     }
-    
-    @Override
-    public void startGame() throws LWJGLException {
-    	super.startGame();
-        this.renderGlobal = new AddonRenderGlobal(this, this.renderEngine);
+
+    /**
+     * Starts the game: initializes the canvas, the title, the settings, etcetera.
+     */
+    public void startGame() throws LWJGLException
+    {
+        this.mcDataDir = getMinecraftDir();
+        this.gameSettings = new GameSettings(this, this.mcDataDir);
+
+        if (this.gameSettings.overrideHeight > 0 && this.gameSettings.overrideWidth > 0 && this.mainFrame.getParent() != null && this.mainFrame.getParent().getParent() != null)
+        {
+            this.mainFrame.getParent().getParent().setSize(this.gameSettings.overrideWidth, this.gameSettings.overrideHeight);
+        }
+
+        super.startGame();
+        this.renderGlobal = new DawnRenderGlobal(this, this.renderEngine);
         this.renderEngine.refreshTextureMaps();
     }
 }
