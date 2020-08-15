@@ -13,7 +13,7 @@ public class AddonRecipes {
 		addStoneRecipes();
 		addWoodRecipes();
 		addDecoRecipes();
-		addLayerRecipes();
+		//addLayerRecipes();
 		addMortarRecipes();
 		addToolRecipes();
 		addCustomRecipeClasses();

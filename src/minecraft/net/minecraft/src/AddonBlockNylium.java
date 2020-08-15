@@ -11,9 +11,9 @@ public class AddonBlockNylium extends Block {
         this.SetPicksEffectiveOn();
         this.setTickRandomly(true);
         
-        if (AddonManager.getNewSoundsInstalled())
-        	this.setStepSound(AddonDefs.stepSoundNylium);
-        else
+        //if (AddonManager.getNewSoundsInstalled())
+        //	this.setStepSound(AddonDefs.stepSoundNylium);
+        //else
         	this.setStepSound(soundStoneFootstep);
         
         this.setCreativeTab(CreativeTabs.tabBlock);
