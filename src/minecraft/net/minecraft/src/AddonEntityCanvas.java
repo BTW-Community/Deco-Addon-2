@@ -25,7 +25,7 @@ public class AddonEntityCanvas extends FCEntityCanvas {
     {
         if (!this.isDead && !this.worldObj.isRemote)
         {
-        	AddonUtilsSound.playSoundAtEntityWithNullFallback(this.worldObj, this, "deco.misc.painting.break", 1, 1);
+        	this.worldObj.playAuxSFX(AddonManager.addonPaintingBreakAuxFXID, this.xPosition, this.yPosition, this.zPosition, 0);
             this.setDead();
             this.setBeenAttacked();
             EntityPlayer player = null;

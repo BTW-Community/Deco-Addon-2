@@ -17,13 +17,13 @@ public class AddonBlockDoorIron extends FCBlockDoor {
         {
             int var8 = var6 & 7;
             var8 ^= 4;
-
-            System.out.println(x + ", " + y + ", " + z);
             
-            if (this.isDoorOpen(world, x, y, z))
-                AddonUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.doorClose", 1, world.rand.nextFloat() * 0.1F + 0.9F, "random.door_close", 1, world.rand.nextFloat() * 0.1F + 0.9F);
-            else
-                AddonUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.doorOpen", 1, world.rand.nextFloat() * 0.1F + 0.9F, "random.door_open", 1, world.rand.nextFloat() * 0.1F + 0.9F);
+            if (! world.isRemote) {
+            	if (this.isDoorOpen(world, x, y, z))
+            		world.playAuxSFX(AddonManager.addonDoorIronCloseAuxFXID, x, y, z, 0);
+            	else
+            		world.playAuxSFX(AddonManager.addonDoorIronOpenAuxFXID, x, y, z, 0);
+            }
             
             if ((var6 & 8) == 0)
             {

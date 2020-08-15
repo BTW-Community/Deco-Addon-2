@@ -13,6 +13,7 @@ public class AddonPlayerControllerMP extends PlayerControllerMP {
     private Field blockHitDelayField;
     private Field currentGameTypeField;
     private Field blockYField;
+    private Field currentPlayerItemField;
 
 	public AddonPlayerControllerMP(Minecraft par1Minecraft, NetClientHandler par2NetClientHandler) {
 		super(par1Minecraft, par2NetClientHandler);
@@ -28,16 +29,19 @@ public class AddonPlayerControllerMP extends PlayerControllerMP {
 				blockHitDelayField = this.getClass().getSuperclass().getDeclaredField("i");
 				currentGameTypeField = this.getClass().getSuperclass().getDeclaredField("k");
 				blockYField = this.getClass().getSuperclass().getDeclaredField("d");
+				currentPlayerItemField = this.getClass().getSuperclass().getDeclaredField("l");
 			}
 			else {
 				blockHitDelayField = this.getClass().getSuperclass().getDeclaredField("blockHitDelay");
 				currentGameTypeField = this.getClass().getSuperclass().getDeclaredField("currentGameType");
 				blockYField = this.getClass().getSuperclass().getDeclaredField("currentBlockY");
+				currentPlayerItemField = this.getClass().getSuperclass().getDeclaredField("currentPlayerItem");
 			}
 
 			blockHitDelayField.setAccessible(true);
 			currentGameTypeField.setAccessible(true);
 			blockYField.setAccessible(true);
+			currentPlayerItemField.setAccessible(true);
 		} catch (NoSuchFieldException e) {
 			if (AddonManager.isObfuscated()) {
 				e.printStackTrace();
@@ -142,6 +146,77 @@ public class AddonPlayerControllerMP extends PlayerControllerMP {
             this.mc.thePlayer.m_bExhaustionAddedSinceLastGuiUpdate = true;
         }
     }
+
+    /**
+     * Handles a players right click. Args: player, world, x, y, z, side, hitVec
+     */
+    public boolean onPlayerRightClick(EntityPlayer par1EntityPlayer, World par2World, ItemStack par3ItemStack, int par4, int par5, int par6, int par7, Vec3 par8Vec3)
+    {
+        this.syncCurrentPlayItem();
+        float var9 = (float)par8Vec3.xCoord - (float)par4;
+        float var10 = (float)par8Vec3.yCoord - (float)par5;
+        float var11 = (float)par8Vec3.zCoord - (float)par6;
+        boolean var12 = false;
+        int lookedAtBlockID = par2World.getBlockId(par4, par5, par6);
+        int lookedAtBlockMeta = par2World.getBlockMetadata(par4, par5, par6);
+
+        if (!par1EntityPlayer.isSneaking() || par1EntityPlayer.getHeldItem() == null)
+        {
+            if (lookedAtBlockID > 0 && Block.blocksList[lookedAtBlockID].onBlockActivated(par2World, par4, par5, par6, par1EntityPlayer, par7, var9, var10, var11))
+            {
+                var12 = true;
+            }
+        }
+
+        if (!var12 && par3ItemStack != null && !par3ItemStack.getItem().CanItemBeUsedByPlayer(par2World, par4, par5, par6, par7, par1EntityPlayer, par3ItemStack))
+        {
+        	System.out.println("Unable to place item");
+            return false;
+        }
+        else if (AddonUtilsBlock.canBlocksBePlacedAgainstGivenBlock(lookedAtBlockID, lookedAtBlockMeta))
+        {
+            this.netClientHandler.addToSendQueue(new Packet15Place(par4, par5, par6, par7, par1EntityPlayer.inventory.getCurrentItem(), var9, var10, var11));
+
+            if (var12)
+            {
+                return true;
+            }
+            else if (par3ItemStack == null)
+            {
+                return false;
+            }
+            else if (this.getCurrentGameType().isCreative())
+            {
+                int placedBlockMetadata = par3ItemStack.getItemDamage();
+                int var14 = par3ItemStack.stackSize;
+                boolean var15 = par3ItemStack.tryPlaceItemIntoWorld(par1EntityPlayer, par2World, par4, par5, par6, par7, var9, var10, var11);
+                par3ItemStack.setItemDamage(placedBlockMetadata);
+                par3ItemStack.stackSize = var14;
+                return var15;
+            }
+            else
+            {
+                return par3ItemStack.tryPlaceItemIntoWorld(par1EntityPlayer, par2World, par4, par5, par6, par7, var9, var10, var11);
+            }
+        }
+        else {
+        	return false;
+        }
+    }
+
+    /**
+     * Syncs the current player item with the server
+     */
+    private void syncCurrentPlayItem()
+    {
+        int var1 = this.mc.thePlayer.inventory.currentItem;
+
+        if (var1 != this.getCurrentPlayerItem())
+        {
+            this.setCurrentPlayerItem(var1);
+            this.netClientHandler.addToSendQueue(new Packet16BlockItemSwitch(this.getCurrentPlayerItem()));
+        }
+    }
     
     public EnumGameType getCurrentGameType() {
     	try {
@@ -167,6 +242,18 @@ public class AddonPlayerControllerMP extends PlayerControllerMP {
     	return 0;
     }
     
+    public int getCurrentPlayerItem() {
+    	try {
+			return (Integer) currentPlayerItemField.get(this);
+		} catch (IllegalArgumentException e) {
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		}
+    	
+    	return 0;
+    }
+    
     public void setBlockHitDelay(int delay) {
     	try {
 			blockHitDelayField.set(this, delay);
@@ -180,6 +267,16 @@ public class AddonPlayerControllerMP extends PlayerControllerMP {
     public void setBlockY(int y) {
     	try {
 			blockYField.set(this, y);
+		} catch (IllegalArgumentException e) {
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		}
+    }
+    
+    public void setCurrentPlayerItem(int id) {
+    	try {
+    		currentPlayerItemField.set(this, id);
 		} catch (IllegalArgumentException e) {
 			e.printStackTrace();
 		} catch (IllegalAccessException e) {

@@ -40,11 +40,11 @@ public class AddonEntityItemFrame extends EntityItemFrame {
                         FCUtilsItem.EjectStackFromBlockTowardsFacing(this.worldObj, this.xPosition, this.yPosition, this.zPosition, stack, getItemEjectFacingFromHangingDirection(this.hangingDirection));
                     }
 
-                	AddonUtilsSound.playSoundAtEntityWithNullFallback(this.worldObj, this, "deco.misc.itemFrame.removeItem", 1, 1);
+                	this.worldObj.playAuxSFX(AddonManager.addonItemFrameRemoveItemAuxFXID, this.xPosition, this.yPosition, this.zPosition, 0);
                     this.setDisplayedItem(null);
             	}
             	else {
-                	AddonUtilsSound.playSoundAtEntityWithNullFallback(this.worldObj, this, "deco.misc.itemFrame.break", 1, 1);
+                	this.worldObj.playAuxSFX(AddonManager.addonItemFrameBreakAuxFXID, this.xPosition, this.yPosition, this.zPosition, 0);
             		this.setDead();
                     this.setBeenAttacked();
                     EntityPlayer player = null;
@@ -68,8 +68,6 @@ public class AddonEntityItemFrame extends EntityItemFrame {
     }
     
     public int getItemEjectFacingFromHangingDirection(int hangDir) {
-    	System.out.println("Hanging dir: " + hangDir);
-    	
     	switch (hangDir) {
     	case 0:
     		return 3;
@@ -96,7 +94,7 @@ public class AddonEntityItemFrame extends EntityItemFrame {
             if (var2 != null && !this.worldObj.isRemote)
             {
                 this.setDisplayedItem(var2);
-            	AddonUtilsSound.playSoundAtEntityWithNullFallback(this.worldObj, this, "deco.misc.itemFrame.addItem", 1, 1);
+            	this.worldObj.playAuxSFX(AddonManager.addonItemFrameAddItemAuxFXID, this.xPosition, this.yPosition, this.zPosition, 0);
 
                 if (!par1EntityPlayer.capabilities.isCreativeMode && --var2.stackSize <= 0)
                 {
@@ -107,7 +105,7 @@ public class AddonEntityItemFrame extends EntityItemFrame {
         else if (!this.worldObj.isRemote)
         {
             this.setItemRotation(this.getRotation() + 1);
-        	AddonUtilsSound.playSoundAtEntityWithNullFallback(this.worldObj, this, "deco.misc.itemFrame.rotateItem", 1, 1);
+        	this.worldObj.playAuxSFX(AddonManager.addonItemFrameRotateItemAuxFXID, this.xPosition, this.yPosition, this.zPosition, 0);
         }
 
         return true;

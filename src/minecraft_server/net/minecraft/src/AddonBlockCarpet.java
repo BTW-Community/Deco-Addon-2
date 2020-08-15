@@ -4,7 +4,7 @@ import java.util.List;
 
 public class AddonBlockCarpet extends Block {
 	public AddonBlockCarpet(int id) {
-		super(id, Material.cloth);
+		super(id, AddonDefs.materialCarpet);
         this.InitBlockBounds(0.0D, 0.0D, 0.0D, 1.0D, 0.0625D, 1.0D);
         this.setHardness(0.8F);
         this.SetBuoyant();
@@ -73,5 +73,16 @@ public class AddonBlockCarpet extends Block {
     public boolean renderAsNormalBlock()
     {
         return false;
+    }
+
+    public int GetHarvestToolLevel(IBlockAccess var1, int var2, int var3, int var4)
+    {
+        return 2;
+    }
+
+    public boolean DropComponentItemsOnBadBreak(World var1, int var2, int var3, int var4, int var5, float var6)
+    {
+        this.DropItemsIndividualy(var1, var2, var3, var4, FCBetterThanWolves.fcItemWool.itemID, 1, var5, var6);
+        return true;
     }
 }

@@ -1,7 +1,6 @@
 package net.minecraft.src;
 
 public class AddonEntityPainting extends EntityPainting {
-
 	public AddonEntityPainting(World par1World, int par2, int par3, int par4, int par5) {
 		super(par1World, par2, par3, par4, par5);
 	}
@@ -23,7 +22,7 @@ public class AddonEntityPainting extends EntityPainting {
         {
             if (!this.isDead && !this.worldObj.isRemote)
             {
-            	AddonUtilsSound.playSoundAtEntityWithNullFallback(this.worldObj, this, "deco.misc.painting.break", 1, 1);
+            	this.worldObj.playAuxSFX(AddonManager.addonPaintingBreakAuxFXID, this.xPosition, this.yPosition, this.zPosition, 0);
                 this.setDead();
                 this.setBeenAttacked();
                 EntityPlayer var3 = null;

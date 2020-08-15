@@ -6,6 +6,8 @@ public class AddonItemChiselDiamond extends FCItemChisel {
 		super(var1, EnumToolMaterial.EMERALD, 500);
 		this.SetFilterableProperties(4);
 		this.setUnlocalizedName("ginger_chiselDiamond");
+        this.SetInfernalMaxEnchantmentCost(30);
+        this.SetInfernalMaxNumEnchants(4);
 	}
 
 	protected boolean GetCanBePlacedAsBlock()
@@ -73,4 +75,17 @@ public class AddonItemChiselDiamond extends FCItemChisel {
 			var0.playSound("random.anvil_land", 0.5F, var0.worldObj.rand.nextFloat() * 0.25F + 1.75F);
 		}
 	}
+
+    /**
+     * Return the enchantability factor of the item, most of the time is based on material.
+     */
+    public int getItemEnchantability()
+    {
+        return this.toolMaterial.getEnchantability();
+    }
+
+    public boolean IsEnchantmentApplicable(Enchantment var1)
+    {
+        return var1.type == EnumEnchantmentType.digger ? true : super.IsEnchantmentApplicable(var1);
+    }
 }

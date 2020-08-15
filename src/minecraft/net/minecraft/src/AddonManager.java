@@ -29,7 +29,7 @@ import net.minecraft.server.MinecraftServer;
 
 public class AddonManager extends FCAddOn
 {
-	public static final String addonVersion = "2.11e";
+	public static final String addonVersion = "2.12";
 
 	public static AddonDefs addonDefs;
 	public static AddonRecipes addonRecipes;
@@ -42,12 +42,39 @@ public class AddonManager extends FCAddOn
 	private static boolean newSoundsInstalled = true;
 
 	private static Minecraft mc;
+	
+	private static NetServerHandler netServerHandler;
+	
+	private static boolean awaitingLoginAck = false;
+	private static int ticksSinceAckRequested = 0;
+	private static final int maxTicksForAckWait = 20;
 
 	public static final String addonCustomPacketChannelVersionCheck = "Deco|VC";
+	public static final String addonCustomPacketChannelVersionCheckAck = "Deco|VC_Ack";
 
 	public static final int addonCustomBlockBreakAuxFXID = 3000;
 	public static final int addonCustomBlockConvertAuxFXID = 3001;
+	public static final int addonCustomBlockPlaceAuxFXID = 3002;
+	
 	public static final int addonShaftRippedOffLogAuxFXID = 3100;
+	public static final int addonDoorWoodOpenAuxFXID = 3101;
+	public static final int addonDoorWoodCloseAuxFXID = 3102;
+	public static final int addonDoorIronOpenAuxFXID = 3103;
+	public static final int addonDoorIronCloseAuxFXID = 3104;
+	public static final int addonTrapdoorOpenAuxFXID = 3105;
+	public static final int addonTrapdoorCloseAuxFXID = 3106;
+	//Reserved for iron trapdoor
+	public static final int addonChestOpenAuxFXID = 3109;
+	public static final int addonChestCloseAuxFXID = 3110;
+	public static final int addonPaintingPlaceAuxFXID = 3111;
+	public static final int addonPaintingBreakAuxFXID = 3112;
+	public static final int addonItemFramePlaceAuxFXID = 3113;
+	public static final int addonItemFrameBreakAuxFXID = 3114;
+	public static final int addonItemFrameAddItemAuxFXID = 3115;
+	public static final int addonItemFrameRotateItemAuxFXID = 3116;
+	public static final int addonItemFrameRemoveItemAuxFXID = 3117;
+	
+	public static final String addonParticleSmokeColumn = "signalSmoke";
 
 	@Override
 	public void PreInitialize() {
@@ -77,6 +104,8 @@ public class AddonManager extends FCAddOn
 	}
 
 	public static void ServerPlayerConnectionInitialized(NetServerHandler var0, EntityPlayerMP var1) {
+		netServerHandler = var0;
+		
 		if (!MinecraftServer.getServer().isSinglePlayer())
 		{
 			FCUtilsWorld.SendPacketToPlayer(var0, new Packet3Chat("\u00a7f" + "Deco V" + addonVersion));
@@ -93,8 +122,9 @@ public class AddonManager extends FCAddOn
 				var9.printStackTrace();
 			}
 
-			Packet250CustomPayload var4 = new Packet250CustomPayload("Deco|VC", byteArrayOutput.toByteArray());
+			Packet250CustomPayload var4 = new Packet250CustomPayload(addonCustomPacketChannelVersionCheck, byteArrayOutput.toByteArray());
 			FCUtilsWorld.SendPacketToPlayer(var0, var4);
+			awaitingLoginAck = true;
 		}
 		else {
 			FCUtilsWorld.SendPacketToPlayer(var0, new Packet3Chat("\u00a7f" + "Deco V" + addonVersion));
@@ -411,7 +441,7 @@ public class AddonManager extends FCAddOn
 	}
 	public static void Register(Block target)
 	{
-		Item.itemsList[target.blockID] = new ItemBlock(target.blockID - 256);
+		Item.itemsList[target.blockID] = new AddonItemBlockWithCustomSound(target.blockID - 256);
 	}
 	public static void Register(Block target, String name)
 	{
@@ -450,6 +480,33 @@ public class AddonManager extends FCAddOn
 		AddonManager.isObfuscated = isObfuscated;
 	}
 
+	public static boolean ServerCustomPacketReceived(MinecraftServer mcServer, Packet250CustomPayload packet)
+	{
+        if (AddonManager.addonCustomPacketChannelVersionCheckAck.equals(packet.channel)) {
+			mc.thePlayer.addChatMessage("\u00a7f" + "Deco Addon version check successful.");
+        	awaitingLoginAck = false;
+        	ticksSinceAckRequested = 0;
+        }
+        
+		return false;
+	}
+	
+	public static boolean getAwaitingLoginAck() {
+		return awaitingLoginAck;
+	}
+	
+	public static void incrementTicksSinceAckRequested() {
+		ticksSinceAckRequested++;
+	}
+	
+	public static void handleAckCheck() {
+		if (ticksSinceAckRequested > maxTicksForAckWait) {
+			FCUtilsWorld.SendPacketToPlayer(netServerHandler, new Packet3Chat("\u00a74" + "WARNING: Client Deco Addon not installed, or version 2.11 or earlier is installed on client."));
+			awaitingLoginAck = false;
+			ticksSinceAckRequested = 0;
+		}
+	}
+
 	//CLIENT ONLY
 	public static void installResource(String filename) {
 		if (newSoundsInstalled) {
@@ -477,14 +534,25 @@ public class AddonManager extends FCAddOn
 			{
 				String var33 = dataStream.readUTF();
 
-				if (var33.equals(addonVersion))
-				{
-					mc.thePlayer.addChatMessage("\u00a7f" + "Deco Addon version check successful.");
-				}
-				else
+				if (!var33.equals(addonVersion))
 				{
 					mc.thePlayer.addChatMessage("\u00a74" + "WARNING: Deco Addon version mismatch detected! Local Version: " + this.addonVersion + " Server Version: " + var33);
 				}
+				
+				ByteArrayOutputStream byteArrayOutput = new ByteArrayOutputStream();
+				DataOutputStream dataOutput = new DataOutputStream(byteArrayOutput);
+
+				try
+				{
+					dataOutput.writeUTF(addonVersion);
+				}
+				catch (Exception e)
+				{
+					e.printStackTrace();
+				}
+
+				Packet250CustomPayload ackPacket = new Packet250CustomPayload(addonCustomPacketChannelVersionCheckAck, byteArrayOutput.toByteArray());
+				mc.getNetHandler().addToSendQueue(ackPacket);
 
 				return true;
 			}
@@ -497,6 +565,7 @@ public class AddonManager extends FCAddOn
 		return false;
 	}
 
+	//Used to modify existing client side packet250 behavior
 	public static boolean interceptCustomClientPacket(Minecraft mc, Packet250CustomPayload packet) {
 		try
 		{
@@ -571,15 +640,102 @@ public class AddonManager extends FCAddOn
 
 			mc.effectRenderer.addBlockDestroyEffects(x, y, z, data & 4095, data >> 12 & 255);
 			return true;
+		case addonCustomBlockPlaceAuxFXID:
+			blockID = data & 4095;
+			blockMeta = data >> 12 & 255;
+			
+			if (blockID > 0)
+			{
+				Block block = Block.blocksList[blockID];
+				mc.sndManager.playSound(block.stepSound.getPlaceSound(), (float)x + 0.5F, (float)y + 0.5F, (float)z + 0.5F, (block.stepSound.getVolume() + 1.0F) / 2.0F, block.stepSound.getPitch() * 0.8F);
+			}
+			
+			return true;
         case addonShaftRippedOffLogAuxFXID:
-        	if (getNewSoundsInstalled())
-        		world.playSound(x, y, z, "deco.random.strip", 1, 0.5F + rand.nextFloat() * 0.25F);
-        	else
-        		world.playSound(x, y, z, "mob.zombie.woodbreak", 0.25F, 1.0F + rand.nextFloat() * 0.25F);
+            AddonUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.strip", 3.0F, 0.25F + rand.nextFloat() * 0.25F, "mob.zombie.woodbreak", 0.25F, 1.0F + rand.nextFloat() * 0.25F);
             return true;
+        case addonDoorWoodOpenAuxFXID:
+            AddonUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.doorOpen", 1, world.rand.nextFloat() * 0.1F + 0.9F, "random.door_open", 1, world.rand.nextFloat() * 0.1F + 0.9F);
+        	return true;
+        case addonDoorWoodCloseAuxFXID:
+            AddonUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.doorClose", 1, world.rand.nextFloat() * 0.1F + 0.9F, "random.door_close", 1, world.rand.nextFloat() * 0.1F + 0.9F);
+        	return true;
+        case addonDoorIronOpenAuxFXID:
+            AddonUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.doorIronOpen", 1, world.rand.nextFloat() * 0.1F + 0.9F, "random.door_open", 1, world.rand.nextFloat() * 0.1F + 0.9F);
+        	return true;
+        case addonDoorIronCloseAuxFXID:
+            AddonUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.doorIronClose", 1, world.rand.nextFloat() * 0.1F + 0.9F, "random.door_close", 1, world.rand.nextFloat() * 0.1F + 0.9F);
+        	return true;
+        case addonTrapdoorOpenAuxFXID:
+        	AddonUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.trapdoorOpen", 1, world.rand.nextFloat() * 0.1F + 0.9F, "random.door_open", 1, world.rand.nextFloat() * 0.1F + 0.9F);
+        	return true;
+        case addonTrapdoorCloseAuxFXID:
+        	AddonUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.trapdoorClose", 1, world.rand.nextFloat() * 0.1F + 0.9F, "random.door_close", 1, world.rand.nextFloat() * 0.1F + 0.9F);
+        	return true;
+        case addonChestOpenAuxFXID:
+        	AddonUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.chestOpen", 0.5F, world.rand.nextFloat() * 0.1F + 0.9F, "random.chestopen", 0.5F, world.rand.nextFloat() * 0.1F + 0.9F);
+        	return true;
+        case addonChestCloseAuxFXID:
+        	AddonUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.chestClose", 0.5F, world.rand.nextFloat() * 0.1F + 0.9F, "random.chestclosed", 0.5F, world.rand.nextFloat() * 0.1F + 0.9F);
+        	return true;
+        case addonPaintingPlaceAuxFXID:
+        	AddonUtilsSound.playSoundWithNullFallback(world, x, y, z, "deco.misc.painting.place", 1, 1);
+        	return true;
+        case addonPaintingBreakAuxFXID:
+        	AddonUtilsSound.playSoundWithNullFallback(world, x, y, z, "deco.misc.painting.break", 1, 1);
+        	return true;
+        case addonItemFramePlaceAuxFXID:
+        	AddonUtilsSound.playSoundWithNullFallback(world, x, y, z, "deco.misc.itemFrame.place", 1, 1);
+        	return true;
+        case addonItemFrameBreakAuxFXID:
+        	AddonUtilsSound.playSoundWithNullFallback(world, x, y, z, "deco.misc.itemFrame.break", 1, 1);
+        	return true;
+        case addonItemFrameAddItemAuxFXID:
+        	AddonUtilsSound.playSoundWithNullFallback(world, x, y, z, "deco.misc.itemFrame.addItem", 1, 1);
+        	return true;
+        case addonItemFrameRotateItemAuxFXID:
+        	AddonUtilsSound.playSoundWithNullFallback(world, x, y, z, "deco.misc.itemFrame.rotateItem", 1, 1);
+        	return true;
+        case addonItemFrameRemoveItemAuxFXID:
+        	AddonUtilsSound.playSoundWithNullFallback(world, x, y, z, "deco.misc.itemFrame.removeItem", 1, 1);
+        	return true;
 		default:
 			return false;
 		}
+	}
+	
+	public static EntityFX spawnCustomParticle(Minecraft mc, World world, String particleType, double x, double y, double z, double velX, double velY, double velZ) {
+        if (mc != null && mc.renderViewEntity != null && mc.effectRenderer != null) {
+            int particleSetting = mc.gameSettings.particleSetting;
+            EntityFX fx = null;
+
+            if (particleSetting == 1 && world.rand.nextInt(3) == 0) {
+                particleSetting = 2;
+            }
+
+            double distX = mc.renderViewEntity.posX - x;
+            double distY = mc.renderViewEntity.posY - y;
+            double distZ = mc.renderViewEntity.posZ - z;
+            double maxParticleDist = 16.0D;
+
+            //Only renders particles within maxParticleDist
+            if (distX * distX + distY * distY + distZ * distZ > maxParticleDist * maxParticleDist) {
+                return null;
+            }
+            //Reduces or eliminates particles based on game setting
+            else if (particleSetting > 1) {
+                return null;
+            }
+            else {
+            	if (particleType.equals(addonParticleSmokeColumn)) {
+            		
+            	}
+            	
+            	return fx;
+            }
+        }
+        
+		return null;
 	}
 
 	public static void ReplaceEntityRenderMapping(Class entity, Render newRender) {

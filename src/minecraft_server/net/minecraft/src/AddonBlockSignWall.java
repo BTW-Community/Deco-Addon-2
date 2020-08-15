@@ -1,9 +1,9 @@
 package net.minecraft.src;
 
 public class AddonBlockSignWall extends AddonBlockSign {
-    protected AddonBlockSignWall(int var1, int metaDrop)
+    protected AddonBlockSignWall(int var1, int metaDrop, String baseTexture)
     {
-        super(var1, false, metaDrop);
+        super(var1, false, metaDrop, baseTexture);
     }
 
     public boolean CanRotateAroundBlockOnTurntableToFacing(World var1, int var2, int var3, int var4, int var5)

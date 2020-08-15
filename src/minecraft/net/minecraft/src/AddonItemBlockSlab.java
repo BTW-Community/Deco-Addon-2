@@ -2,14 +2,14 @@ package net.minecraft.src;
 
 import java.util.List;
 
-public class AddonItemBlockStep extends FCItemBlockSlab {
-	public AddonItemBlockStep(int var1) {
+public class AddonItemBlockSlab extends FCItemBlockSlab {
+	public AddonItemBlockSlab(int var1) {
 		super(var1);
 	}
 	
 	public void getSubItems(int var1, CreativeTabs var2, List var3)
 	{
-		for (int i = 0; i < ((AddonBlockStep) Block.blocksList[var1]).blockTypes.length; ++i)
+		for (int i = 0; i < ((AddonBlockSlabBase) Block.blocksList[var1]).blockTypes.length; ++i)
 			var3.add(new ItemStack(this, 1, i));
 	}
 	
@@ -30,9 +30,9 @@ public class AddonItemBlockStep extends FCItemBlockSlab {
             int var9 = var3.getBlockId(var4, var5, var6);
             Block var10 = Block.blocksList[var9];
 
-            if (var10 != null && var10 instanceof AddonBlockStep)
+            if (var10 != null && var10 instanceof AddonBlockSlabBase)
             {
-            	AddonBlockStep var11 = (AddonBlockStep)var10;
+            	AddonBlockSlabBase var11 = (AddonBlockSlabBase)var10;
                 boolean var12 = var11.GetIsUpsideDown(var3, var4, var5, var6);
 
                 if (!var8 || var7 == 1 && !var12 || var7 == 0 && var12)
@@ -67,7 +67,7 @@ public class AddonItemBlockStep extends FCItemBlockSlab {
 
             if (var7 instanceof FCBlockSlab)
             {
-                int var8 = ((AddonBlockStep)var7).SetIsUpsideDown(var1.getBlockMetadata(var2, var3, var4), false);
+                int var8 = ((AddonBlockSlabBase)var7).SetIsUpsideDown(var1.getBlockMetadata(var2, var3, var4), false);
 
                 if (var8 == var5)
                 {

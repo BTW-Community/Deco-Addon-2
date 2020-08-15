@@ -33,7 +33,7 @@ public class AddonServerConfigurationManager extends ServerConfigurationManager 
         WorldServer worldServer = this.mcServer.worldServerForDimension(player.dimension);
         ChunkCoordinates spawnPoint = worldServer.getSpawnPoint();
         this.func_72381_a(player, (EntityPlayerMP)null, worldServer);
-        NetServerHandler netServerHandler = new NetServerHandler(this.mcServer, networkManager, player);
+        NetServerHandler netServerHandler = new AddonNetServerHandler(this.mcServer, networkManager, player);
         netServerHandler.sendPacketToPlayer(new Packet1Login(player.entityId, worldServer.getWorldInfo().getTerrainType(), player.theItemInWorldManager.getGameType(), worldServer.getWorldInfo().isHardcoreModeEnabled(), worldServer.provider.dimensionId, worldServer.difficultySetting, worldServer.getHeight(), this.getMaxPlayers()));
         netServerHandler.sendPacketToPlayer(new Packet6SpawnPosition(spawnPoint.posX, spawnPoint.posY, spawnPoint.posZ));
         netServerHandler.sendPacketToPlayer(new Packet202PlayerAbilities(player.capabilities));

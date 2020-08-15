@@ -220,7 +220,7 @@ public class AddonBlockLogDamaged extends FCBlockLogDamaged {
 
                 if (var8 != this.blockID || this.GetOrientation(var5) != this.GetOrientation(var1, var7.i, var7.j, var7.k))
                 {
-                    var1.setBlockAndMetadataWithNotify(var2, var3, var4, AddonUtilsBlock.getLogSpikeFromBlockID(this.blockID), var6);
+                    var1.setBlockAndMetadataWithNotify(var2, var3, var4, this.getLogSpikeFromBlockID(this.blockID), var6);
                     return true;
                 }
             }
@@ -307,9 +307,30 @@ public class AddonBlockLogDamaged extends FCBlockLogDamaged {
     public boolean DoesTargetBlockConnectToFacing(int var1, IBlockAccess var2, int var3, int var4, int var5, int var6)
     {
         int var7 = var2.getBlockId(var3, var4, var5);
-        return var7 != this.blockID ? ((var7 == FCBetterThanWolves.fcBlockLogSpike.blockID || var7 == AddonDefs.logSpikeSpruce.blockID || var7 == AddonDefs.logSpikeBirch.blockID || var7 == AddonDefs.logSpikeJungle.blockID || var7 == AddonDefs.logSpikeBlood.blockID || var7 == AddonDefs.logSpikeCherry.blockID) ? FCBetterThanWolves.fcBlockLogSpike.GetFacing(var2, var3, var4, var5) == Block.GetOppositeFacing(var6) : 
-        	(var7 == Block.wood.blockID || var7 == AddonDefs.barkLog.blockID || var7 == AddonDefs.barkLogStripped.blockID || var7 == AddonDefs.strippedLog.blockID || var7 == AddonDefs.cherryLog.blockID || var7 == FCBetterThanWolves.fcBloodWood.blockID || var7 == AddonDefs.bloodLog.blockID || var7 == AddonDefs.cherryStump.blockID || 
-        	var7 == FCBetterThanWolves.fcBlockLogDamaged.blockID || var7 == AddonDefs.logDamagedSpruce.blockID || var7 == AddonDefs.logDamagedBirch.blockID || var7 == AddonDefs.logDamagedJungle.blockID || var7 == AddonDefs.logDamagedBlood.blockID || var7 == AddonDefs.logDamagedCherry.blockID)) : 
+        return var7 != this.blockID ? ((Block.blocksList[var7] instanceof FCBlockLogSpike) ? FCBetterThanWolves.fcBlockLogSpike.GetFacing(var2, var3, var4, var5) == Block.GetOppositeFacing(var6) : 
+        	(var7 == Block.wood.blockID || var7 == AddonDefs.barkLog.blockID || var7 == AddonDefs.barkLogStripped.blockID || var7 == AddonDefs.strippedLog.blockID || var7 == AddonDefs.cherryLog.blockID || var7 == FCBetterThanWolves.fcBloodWood.blockID || var7 == AddonDefs.bloodLog.blockID || var7 == AddonDefs.cherryStump.blockID || var7 == AddonDefs.stemCrimson.blockID || var7 == AddonDefs.stemWarped.blockID ||
+        	Block.blocksList[var7] instanceof FCBlockLogDamaged)) : 
         		this.GetDamageLevel(var2, var3, var4, var5) == 0 && var1 == this.GetOrientation(var2, var3, var4, var5);
     }
+	
+	public static int getLogSpikeFromBlockID(int id) {
+		if (id == FCBetterThanWolves.fcBlockLogDamaged.blockID)
+			return FCBetterThanWolves.fcBlockLogSpike.blockID;
+		else if (id == AddonDefs.logDamagedSpruce.blockID)
+			return AddonDefs.logSpikeSpruce.blockID;
+		else if (id == AddonDefs.logDamagedBirch.blockID)
+			return AddonDefs.logSpikeBirch.blockID;
+		else if (id == AddonDefs.logDamagedJungle.blockID)
+			return AddonDefs.logSpikeJungle.blockID;
+		else if (id == AddonDefs.logDamagedBlood.blockID)
+			return AddonDefs.logSpikeBlood.blockID;
+		else if (id == AddonDefs.logDamagedCherry.blockID)
+			return AddonDefs.logSpikeCherry.blockID;
+		else if (id == AddonDefs.stemDamagedCrimson.blockID)
+			return AddonDefs.stemSpikeCrimson.blockID;
+		else if (id == AddonDefs.stemDamagedWarped.blockID)
+			return AddonDefs.stemSpikeWarped.blockID;
+		else
+			return FCBetterThanWolves.fcBlockLogSpike.blockID;
+	}
 }

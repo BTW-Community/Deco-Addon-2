@@ -33,19 +33,19 @@ public class AddonUtilsSound {
 		if (block.blockID == FCBetterThanWolves.fcAestheticOpaque.blockID && meta == 15) {
 			if (AddonManager.getNewSoundsInstalled()) {
 				customSound = true;
-				playBlockSound(mc, x, y, z, AddonDefs.stepSoundBone.getBreakSound(), AddonDefs.stepSoundBone.getVolume(), AddonDefs.stepSoundBone.getPitch(), true);
+				playBlockSound(mc, x, y, z, AddonDefs.stepSoundBone, true);
 			}
 			else
 				customSound = false;
 		}
 		
-		return false;
+		return customSound;
 	}
 	
 	public static boolean playCustomSoundForBlockConvert(Minecraft mc, World world, int x, int y, int z, Block block, int meta) {
 		boolean customSound = false;
 		
-		if (block instanceof BlockLog || block instanceof FCBlockLogDamaged || block instanceof FCBlockLogSpike || block.blockID == AddonDefs.cherryLog.blockID || block.blockID == FCBetterThanWolves.fcBloodWood.blockID || block.blockID == AddonDefs.bloodLog.blockID) {
+		if (block instanceof BlockLog || block instanceof FCBlockLogDamaged || block instanceof FCBlockLogSpike || block.blockID == AddonDefs.cherryLog.blockID || block.blockID == FCBetterThanWolves.fcBloodWood.blockID || block.blockID == AddonDefs.bloodLog.blockID || block instanceof AddonBlockStem) {
 			if (AddonManager.getNewSoundsInstalled()) {
 				customSound = true;
 				playBlockSound(mc, x, y, z, "deco.random.strip", 1, 1, false);
@@ -70,5 +70,9 @@ public class AddonUtilsSound {
 			mc.sndManager.playSound(breakSound, (float)x + 0.5F, (float)y + 0.5F, (float)z + 0.5F, (breakVolume + 1.0F) / 2.0F, breakPitch * 0.8F);
 		else
 			mc.sndManager.playSound(breakSound, (float)x + 0.5F, (float)y + 0.5F, (float)z + 0.5F, breakVolume, breakPitch);
+	}
+
+	private static void playBlockSound(Minecraft mc, int x, int y, int z, StepSound stepSound, boolean modulate) {
+		playBlockSound(mc, x, y, z, stepSound.getBreakSound(), stepSound.getVolume(), stepSound.getPitch(), modulate);
 	}
 }
