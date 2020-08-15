@@ -41,7 +41,7 @@ public class AddonItemCanvas extends FCItemCanvas {
                     if (!var3.isRemote)
                     {
                         var3.spawnEntityInWorld(var12);
-                    	AddonUtilsSound.playSoundAtEntityWithNullFallback(var2.worldObj, var12, "deco.misc.painting.place", 1, 1);
+                        var3.playAuxSFX(AddonManager.addonPaintingPlaceAuxFXID, var12.xPosition, var12.yPosition, var12.zPosition, 0);
                     }
 
                     --var1.stackSize;

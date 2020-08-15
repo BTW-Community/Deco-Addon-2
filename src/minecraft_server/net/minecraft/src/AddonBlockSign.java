@@ -1,11 +1,13 @@
 package net.minecraft.src;
 
 public class AddonBlockSign extends FCBlockSign {
-	int signItemMetaDrop;
+	private int signItemMetaDrop;
+	private String baseTexture;
 	
-	public AddonBlockSign(int id, boolean floor, int metaDrop) {
+	public AddonBlockSign(int id, boolean floor, int metaDrop, String baseTexture) {
 		super(id, floor);
-		signItemMetaDrop = metaDrop;
+		this.signItemMetaDrop = metaDrop;
+		this.baseTexture = baseTexture;
 	}
 
 	/**

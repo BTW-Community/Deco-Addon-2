@@ -36,7 +36,7 @@ public class AddonItemFrame extends ItemHangingEntity {
                     if (!world.isRemote)
                     {
                         world.spawnEntityInWorld(entityHanging);
-                    	AddonUtilsSound.playSoundAtEntityWithNullFallback(world, entityHanging, "deco.misc.itemFrame.place", 1, 1);
+                    	world.playAuxSFX(AddonManager.addonItemFramePlaceAuxFXID, entityHanging.xPosition, entityHanging.yPosition, entityHanging.zPosition, 0);
                     }
 
                     --par1ItemStack.stackSize;

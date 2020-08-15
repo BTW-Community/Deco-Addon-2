@@ -1,5 +1,6 @@
 package net.minecraft.src;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 
 import net.minecraft.server.MinecraftServer;
@@ -12,6 +13,46 @@ public class AddonServerConfigurationManager extends ServerConfigurationManager 
 		super(par1MinecraftServer);
         this.mcServer = par1MinecraftServer;
 	}
+
+    /**
+     * also checks for multiple logins
+     */
+    public EntityPlayerMP createPlayerForUser(String par1Str)
+    {
+        ArrayList var2 = new ArrayList();
+        EntityPlayerMP var3;
+
+        for (int var4 = 0; var4 < this.playerEntityList.size(); ++var4)
+        {
+            var3 = (EntityPlayerMP)this.playerEntityList.get(var4);
+
+            if (var3.username.equalsIgnoreCase(par1Str))
+            {
+                var2.add(var3);
+            }
+        }
+
+        Iterator var6 = var2.iterator();
+
+        while (var6.hasNext())
+        {
+            var3 = (EntityPlayerMP)var6.next();
+            var3.playerNetServerHandler.kickPlayer("You logged in from another location");
+        }
+
+        Object var5;
+
+        if (this.mcServer.isDemo())
+        {
+            var5 = new DemoWorldManager(this.mcServer.worldServerForDimension(0));
+        }
+        else
+        {
+            var5 = new AddonItemInWorldManager(this.mcServer.worldServerForDimension(0));
+        }
+
+        return new EntityPlayerMP(this.mcServer, this.mcServer.worldServerForDimension(0), par1Str, (ItemInWorldManager)var5);
+    }
 
     public void initializeConnectionToPlayer(INetworkManager par1INetworkManager, EntityPlayerMP par2EntityPlayerMP)
     {	
@@ -29,7 +70,7 @@ public class AddonServerConfigurationManager extends ServerConfigurationManager 
         WorldServer var5 = this.mcServer.worldServerForDimension(par2EntityPlayerMP.dimension);
         ChunkCoordinates var6 = var5.getSpawnPoint();
         this.func_72381_a(par2EntityPlayerMP, (EntityPlayerMP)null, var5);
-        NetServerHandler var7 = new NetServerHandler(this.mcServer, par1INetworkManager, par2EntityPlayerMP);
+        NetServerHandler var7 = new AddonNetServerHandler(this.mcServer, par1INetworkManager, par2EntityPlayerMP);
         var7.sendPacket(new Packet1Login(par2EntityPlayerMP.entityId, var5.getWorldInfo().getTerrainType(), par2EntityPlayerMP.theItemInWorldManager.getGameType(), var5.getWorldInfo().isHardcoreModeEnabled(), var5.provider.dimensionId, var5.difficultySetting, var5.getHeight(), this.getMaxPlayers()));
         var7.sendPacket(new Packet6SpawnPosition(var6.posX, var6.posY, var6.posZ));
         var7.sendPacket(new Packet202PlayerAbilities(par2EntityPlayerMP.capabilities));

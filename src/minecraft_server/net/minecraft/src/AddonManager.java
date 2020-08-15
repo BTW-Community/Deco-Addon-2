@@ -28,8 +28,8 @@ import net.minecraft.server.MinecraftServer;
 
 public class AddonManager extends FCAddOn
 {
-	public static final String addonVersion = "2.11e";
-	
+	public static final String addonVersion = "2.12";
+
 	public static AddonDefs addonDefs;
 	public static AddonRecipes addonRecipes;
 
@@ -40,11 +40,38 @@ public class AddonManager extends FCAddOn
 	private static boolean isObfuscated = false;
 	private static boolean newSoundsInstalled = true;
 	
+	private static NetServerHandler netServerHandler;
+	
+	private static boolean awaitingLoginAck = false;
+	private static int ticksSinceAckRequested = 0;
+	private static final int maxTicksForAckWait = 20;
+
 	public static final String addonCustomPacketChannelVersionCheck = "Deco|VC";
+	public static final String addonCustomPacketChannelVersionCheckAck = "Deco|VC_Ack";
 
 	public static final int addonCustomBlockBreakAuxFXID = 3000;
 	public static final int addonCustomBlockConvertAuxFXID = 3001;
+	public static final int addonCustomBlockPlaceAuxFXID = 3002;
+	
 	public static final int addonShaftRippedOffLogAuxFXID = 3100;
+	public static final int addonDoorWoodOpenAuxFXID = 3101;
+	public static final int addonDoorWoodCloseAuxFXID = 3102;
+	public static final int addonDoorIronOpenAuxFXID = 3103;
+	public static final int addonDoorIronCloseAuxFXID = 3104;
+	public static final int addonTrapdoorOpenAuxFXID = 3105;
+	public static final int addonTrapdoorCloseAuxFXID = 3106;
+	//Reserved for iron trapdoor
+	public static final int addonChestOpenAuxFXID = 3109;
+	public static final int addonChestCloseAuxFXID = 3110;
+	public static final int addonPaintingPlaceAuxFXID = 3111;
+	public static final int addonPaintingBreakAuxFXID = 3112;
+	public static final int addonItemFramePlaceAuxFXID = 3113;
+	public static final int addonItemFrameBreakAuxFXID = 3114;
+	public static final int addonItemFrameAddItemAuxFXID = 3115;
+	public static final int addonItemFrameRotateItemAuxFXID = 3116;
+	public static final int addonItemFrameRemoveItemAuxFXID = 3117;
+	
+	public static final String addonParticleSmokeColumn = "signalSmoke";
 
 	@Override
 	public void PreInitialize() {
@@ -71,31 +98,34 @@ public class AddonManager extends FCAddOn
 	public void PostInitialize() {
 
 	}
-	
-    public static void ServerPlayerConnectionInitialized(NetServerHandler var0, EntityPlayerMP var1) {
-        if (!MinecraftServer.getServer().isSinglePlayer())
-        {
-            FCUtilsWorld.SendPacketToPlayer(var0, new Packet3Chat("\u00a7f" + "Deco V" + addonVersion));
-            
-            ByteArrayOutputStream byteArrayOutput = new ByteArrayOutputStream();
-            DataOutputStream dataOutput = new DataOutputStream(byteArrayOutput);
 
-            try
-            {
-                dataOutput.writeUTF(addonVersion);
-            }
-            catch (Exception var9)
-            {
-                var9.printStackTrace();
-            }
+	public static void ServerPlayerConnectionInitialized(NetServerHandler var0, EntityPlayerMP var1) {
+		netServerHandler = var0;
+		
+		if (!MinecraftServer.getServer().isSinglePlayer())
+		{
+			FCUtilsWorld.SendPacketToPlayer(var0, new Packet3Chat("\u00a7f" + "Deco V" + addonVersion));
 
-            Packet250CustomPayload var4 = new Packet250CustomPayload("Deco|VC", byteArrayOutput.toByteArray());
-            FCUtilsWorld.SendPacketToPlayer(var0, var4);
-        }
-        else {
-            FCUtilsWorld.SendPacketToPlayer(var0, new Packet3Chat("\u00a7f" + "Deco V" + addonVersion));
-        }
-    }
+			ByteArrayOutputStream byteArrayOutput = new ByteArrayOutputStream();
+			DataOutputStream dataOutput = new DataOutputStream(byteArrayOutput);
+
+			try
+			{
+				dataOutput.writeUTF(addonVersion);
+			}
+			catch (Exception var9)
+			{
+				var9.printStackTrace();
+			}
+
+			Packet250CustomPayload var4 = new Packet250CustomPayload(addonCustomPacketChannelVersionCheck, byteArrayOutput.toByteArray());
+			FCUtilsWorld.SendPacketToPlayer(var0, var4);
+			awaitingLoginAck = true;
+		}
+		else {
+			FCUtilsWorld.SendPacketToPlayer(var0, new Packet3Chat("\u00a7f" + "Deco V" + addonVersion));
+		}
+	}
 
 	public boolean getObfuscation() {
 		return isObfuscated();
@@ -220,7 +250,7 @@ public class AddonManager extends FCAddOn
 				name = AddonUtilsObfuscationMap.getItemLookup(itemName);
 			else
 				name = itemName;
-			
+
 			Field item = (AddonDefs.glassChunk.getClass().getDeclaredField(name));
 			item.setAccessible(true);
 
@@ -407,7 +437,7 @@ public class AddonManager extends FCAddOn
 	}
 	public static void Register(Block target)
 	{
-		Item.itemsList[target.blockID] = new ItemBlock(target.blockID - 256);
+		Item.itemsList[target.blockID] = new AddonItemBlockWithCustomSound(target.blockID - 256);
 	}
 	public static void Register(Block target, String name)
 	{
@@ -433,7 +463,7 @@ public class AddonManager extends FCAddOn
 	{
 		Item.itemsList[target.blockID] = new AddonItemMultiBlock(target, names, preTitle, titles, "");
 	}
-	
+
 	public static boolean getNewSoundsInstalled() {
 		return newSoundsInstalled;
 	}
@@ -444,5 +474,32 @@ public class AddonManager extends FCAddOn
 
 	public static void setObfuscated(boolean isObfuscated) {
 		AddonManager.isObfuscated = isObfuscated;
+	}
+
+	public static boolean ServerCustomPacketReceived(MinecraftServer mcServer, Packet250CustomPayload packet, NetServerHandler serverHandler)
+	{
+        if (AddonManager.addonCustomPacketChannelVersionCheckAck.equals(packet.channel)) {
+        	FCUtilsWorld.SendPacketToPlayer(serverHandler, new Packet3Chat("\u00a7f" + "Deco Addon version check successful."));
+        	awaitingLoginAck = false;
+        	ticksSinceAckRequested = 0;
+        }
+        
+		return false;
+	}
+	
+	public static boolean getAwaitingLoginAck() {
+		return awaitingLoginAck;
+	}
+	
+	public static void incrementTicksSinceAckRequested() {
+		ticksSinceAckRequested++;
+	}
+	
+	public static void handleAckCheck() {
+		if (ticksSinceAckRequested > maxTicksForAckWait) {
+			FCUtilsWorld.SendPacketToPlayer(netServerHandler, new Packet3Chat("\u00a74" + "WARNING: Client Deco Addon not installed, or version 2.11 or earlier is installed on client."));
+			awaitingLoginAck = false;
+			ticksSinceAckRequested = 0;
+		}
 	}
 }

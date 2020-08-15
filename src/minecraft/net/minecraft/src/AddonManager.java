@@ -501,7 +501,7 @@ public class AddonManager extends FCAddOn
 	
 	public static void handleAckCheck() {
 		if (ticksSinceAckRequested > maxTicksForAckWait) {
-			FCUtilsWorld.SendPacketToPlayer(netServerHandler, new Packet3Chat("\u00a74" + "WARNING: Client Deco Addon not installed, or version 2.11 or earlier is installed."));
+			FCUtilsWorld.SendPacketToPlayer(netServerHandler, new Packet3Chat("\u00a74" + "WARNING: Client Deco Addon not installed, or version 2.11 or earlier is installed on client."));
 			awaitingLoginAck = false;
 			ticksSinceAckRequested = 0;
 		}
@@ -552,7 +552,7 @@ public class AddonManager extends FCAddOn
 				}
 
 				Packet250CustomPayload ackPacket = new Packet250CustomPayload(addonCustomPacketChannelVersionCheckAck, byteArrayOutput.toByteArray());
-				//netServerHandler.handleCustomPayload(ackPacket);
+				mc.getNetHandler().addToSendQueue(ackPacket);
 
 				return true;
 			}

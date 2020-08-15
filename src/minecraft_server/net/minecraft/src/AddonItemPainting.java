@@ -35,7 +35,7 @@ public class AddonItemPainting extends ItemHangingEntity {
                     if (!world.isRemote)
                     {
                         world.spawnEntityInWorld(entityHanging);
-                    	AddonUtilsSound.playSoundAtEntityWithNullFallback(world, entityHanging, "deco.misc.painting.place", 1, 1);
+                    	world.playAuxSFX(AddonManager.addonPaintingPlaceAuxFXID, entityHanging.xPosition, entityHanging.yPosition, entityHanging.zPosition, 0);
                     }
 
                     --par1ItemStack.stackSize;

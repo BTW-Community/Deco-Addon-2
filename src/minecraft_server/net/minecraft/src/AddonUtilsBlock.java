@@ -241,21 +241,6 @@ public class AddonUtilsBlock {
 		}
 	}
 	
-	public static int getLogSpikeFromBlockID(int id) {
-		if (id == FCBetterThanWolves.fcBlockLogDamaged.blockID)
-			return FCBetterThanWolves.fcBlockLogSpike.blockID;
-		else if (id == AddonDefs.logDamagedSpruce.blockID)
-			return AddonDefs.logSpikeSpruce.blockID;
-		else if (id == AddonDefs.logDamagedBirch.blockID)
-			return AddonDefs.logSpikeBirch.blockID;
-		else if (id == AddonDefs.logDamagedJungle.blockID)
-			return AddonDefs.logSpikeJungle.blockID;
-		else if (id == AddonDefs.logDamagedBlood.blockID)
-			return AddonDefs.logSpikeBlood.blockID;
-		else
-			return AddonDefs.logSpikeCherry.blockID;
-	}
-	
 	public static double getFluidDripOffsetForBlockType(int blockID, int metadata) {
 		Block block = Block.blocksList[blockID];
 		double defaultVal = 1.05;
@@ -287,5 +272,13 @@ public class AddonUtilsBlock {
 		}
 
 		return defaultVal;
+	}
+	
+	public static boolean canBlocksBePlacedAgainstGivenBlock(int id, int meta) {
+		if (id == Block.waterlily.blockID) {
+			return false;
+		}
+		
+		return true;
 	}
 }
