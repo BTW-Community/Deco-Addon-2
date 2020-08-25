@@ -1,17 +1,9 @@
 package net.minecraft.src;
 
-public class AddonBlockDirt extends FCBlockDirt {
-
-	public AddonBlockDirt(int var1) {
-		super(var1);
+public class AddonBlockDirtLooseSlab extends FCBlockDirtLooseSlab {
+	public AddonBlockDirtLooseSlab(int id) {
+		super(id);
 	}
-
-    public boolean ConvertBlock(ItemStack var1, World var2, int var3, int var4, int var5, int var6)
-    {
-        var2.setBlockWithNotify(var3, var4, var5, FCBetterThanWolves.fcBlockDirtLoose.blockID);
-
-        return true;
-    }
 
     public boolean AttempToSpreadGrassToBlock(World var1, int var2, int var3, int var4)
     {

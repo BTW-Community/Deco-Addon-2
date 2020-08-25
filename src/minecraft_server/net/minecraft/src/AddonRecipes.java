@@ -696,8 +696,8 @@ public class AddonRecipes {
 		}
 
 		for (int i = 0; i < 8; i++) {
-			FCRecipes.AddRecipe(new ItemStack(AddonDefs.paintedPlanksSlab, 1, i), new Object[] {"XXX", 'X', new ItemStack(AddonDefs.planksPainted, 1, i)});
-			FCRecipes.AddRecipe(new ItemStack(AddonDefs.paintedPlanksSlab2, 1, i), new Object[] {"XXX", 'X', new ItemStack(AddonDefs.planksPainted, 1, i + 8)});
+			FCRecipes.AddRecipe(new ItemStack(AddonDefs.paintedPlanksSlab, 6, i), new Object[] {"XXX", 'X', new ItemStack(AddonDefs.planksPainted, 1, i)});
+			FCRecipes.AddRecipe(new ItemStack(AddonDefs.paintedPlanksSlab2, 6, i), new Object[] {"XXX", 'X', new ItemStack(AddonDefs.planksPainted, 1, i + 8)});
 			FCRecipes.AddRecipe(new ItemStack(AddonDefs.planksPainted, 1, i), new Object[] {"X", "X", 'X', new ItemStack(AddonDefs.paintedPlanksSlab, 1, i)});
 			FCRecipes.AddRecipe(new ItemStack(AddonDefs.planksPainted, 1, i + 8), new Object[] {"X", "X", 'X', new ItemStack(AddonDefs.paintedPlanksSlab2, 1, i)});
 		}
@@ -828,11 +828,11 @@ public class AddonRecipes {
 
 		//Carpets
 		for (int i = 0; i < 16; i++) {
-			FCRecipes.AddRecipe(new ItemStack(AddonDefs.carpet, 1, i), new Object[] {"XX", 'X', new ItemStack(FCBetterThanWolves.fcItemWool, 1, i)});
+			FCRecipes.AddRecipe(new ItemStack(AddonDefs.carpet, 1, i), new Object[] {"XXX", 'X', new ItemStack(FCBetterThanWolves.fcItemWool, 1, i)});
 
 			if (i < 15) {
-				FCRecipes.AddCauldronRecipe(new ItemStack(AddonDefs.carpet, 16, i), new ItemStack[] {new ItemStack(AddonDefs.carpet, 16, 15), new ItemStack(Item.dyePowder, 1, i)});
-				FCRecipes.AddCauldronRecipe(new ItemStack(AddonDefs.carpet, 16, i), new ItemStack[] {new ItemStack(AddonDefs.carpet, 16, 15), new ItemStack(Item.dyePowder, 1, i + 16)});
+				FCRecipes.AddCauldronRecipe(new ItemStack(AddonDefs.carpet, 12, i), new ItemStack[] {new ItemStack(AddonDefs.carpet, 16, 15), new ItemStack(Item.dyePowder, 1, i)});
+				FCRecipes.AddCauldronRecipe(new ItemStack(AddonDefs.carpet, 12, i), new ItemStack[] {new ItemStack(AddonDefs.carpet, 16, 15), new ItemStack(Item.dyePowder, 1, i + 16)});
 				FCRecipes.AddShapelessRecipe(new ItemStack(AddonDefs.carpet, 1, i), new ItemStack[] {new ItemStack(AddonDefs.carpet, 1, 15), new ItemStack(Item.dyePowder, 1, i)});
 				FCRecipes.AddShapelessRecipe(new ItemStack(AddonDefs.carpet, 1, i), new ItemStack[] {new ItemStack(AddonDefs.carpet, 1, 15), new ItemStack(Item.dyePowder, 1, i + 16)});
 			}

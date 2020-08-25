@@ -70,8 +70,6 @@ public class AddonManager extends DawnAddon
 	@Override
 	public void PreInitialize() {
 		mc = Minecraft.getMinecraft();
-		//AddonUtilsObfuscationMap.listAllBlockFields();
-		//AddonUtilsObfuscationMap.listAllItemFields();
 	}
 
 	@Override
@@ -213,6 +211,39 @@ public class AddonManager extends DawnAddon
 
 	public static boolean getNewSoundsInstalled() {
 		return newSoundsInstalled;
+	}
+	
+	public static World getWorldFromChunkCache(ChunkCache chunkCache) {
+		Field worldField;
+		
+		try {
+			if (DawnUtilsReflection.isObfuscated()) {
+				worldField = chunkCache.getClass().getDeclaredField("e");
+			}
+			else {
+				worldField = chunkCache.getClass().getDeclaredField("worldObj");
+			}
+
+			worldField.setAccessible(true);
+			
+			return (World) worldField.get(chunkCache);
+		} catch (NoSuchFieldException e) {
+			if (DawnUtilsReflection.isObfuscated()) {
+				e.printStackTrace();
+			}
+			else {
+				DawnUtilsReflection.setObfuscated(true);
+				getWorldFromChunkCache(chunkCache);
+			}
+		} catch (SecurityException e) {
+			e.printStackTrace();
+		} catch (IllegalArgumentException e) {
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		}
+		
+		return null;
 	}
 
 	//CLIENT ONLY

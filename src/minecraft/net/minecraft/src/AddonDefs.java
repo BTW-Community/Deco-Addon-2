@@ -308,6 +308,11 @@ public class AddonDefs {
 		id_stemDamagedWarped=3485,
 		id_stemSpikeCrimson=3486,
 		id_stemSpikeWarped=3487,
+		id_acaciaLog=3488,
+		id_acaciaStump=3489,
+		id_acaciaLeaves=3490,
+		id_acaciaLogDamaged=3491,
+		id_acaciaLogSpike=3492,
 	
 		id_layerDirt=3550,
 		id_layerGrass=3551,
@@ -784,8 +789,8 @@ public class AddonDefs {
 	}
 
 	private void addClayDefs() {
-		terracotta = (new Block(id_terracotta, Material.rock)).setHardness(2.0F).setResistance(10.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("ginger_clay").setCreativeTab(CreativeTabs.tabBlock);
-		stainedTerracotta = (new AddonBlockTerracottaStained(id_stainedTerracotta, "ginger_clay", "Terracotta", Material.rock)).setHardness(2.0F).setResistance(10.0F).setStepSound(Block.soundStoneFootstep).setCreativeTab(CreativeTabs.tabBlock);
+		terracotta = new AddonBlockTerracotta(id_terracotta).setHardness(1.0F).setResistance(5.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("ginger_clay").setCreativeTab(CreativeTabs.tabBlock);
+		stainedTerracotta = (new AddonBlockTerracottaStained(id_stainedTerracotta, "ginger_clay", "Terracotta", Material.rock)).setHardness(1.0F).setResistance(5.0F).setStepSound(Block.soundStoneFootstep).setCreativeTab(CreativeTabs.tabBlock);
 		unfiredTerracotta = new AddonBlockTerracottaUnfired(id_unfiredTerracotta);
 		AddonManager.Register(terracotta, "Terracotta");
 		AddonManager.Register(unfiredTerracotta, "Unfired Terracotta");
@@ -1951,6 +1956,8 @@ public class AddonDefs {
 		Block mycelium = new AddonBlockMycelium(AddonManager.ReplaceBlockID(Block.mycelium));
 		DawnUtilsReflection.replaceVanillaBlock("mycelium", Block.mycelium, mycelium);
 		FCBetterThanWolves.fcBlockDirtLoose = new AddonBlockDirtLoose(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockDirtLoose));
+		FCBetterThanWolves.fcBlockDirtSlab = new AddonBlockDirtSlab(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockDirtSlab));
+		FCBetterThanWolves.fcBlockDirtLooseSlab = new AddonBlockDirtSlab(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcBlockDirtLooseSlab));
 
 		//Nether portal
 		BlockPortal addonPortal = (BlockPortal) new AddonBlockPortal(AddonManager.ReplaceBlockID(Block.portal));

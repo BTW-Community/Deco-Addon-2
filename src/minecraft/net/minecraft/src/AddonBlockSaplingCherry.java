@@ -88,7 +88,7 @@ public class AddonBlockSaplingCherry extends BlockFlower
             var1.setBlock(var2, var3, var4, 0);
         }
         
-        var7 = AddonUtilsTrees.GenerateCherry(var1, var5, var2, var3, var4);
+        var7 = AddonUtilsTrees.generateCherry(var1, var5, var2, var3, var4);
     }
 
     public boolean OnBlockSawed(World var1, int var2, int var3, int var4)

@@ -53,7 +53,10 @@ public class AddonBlockDoorWood extends FCBlockDoorWood {
 	
 	@Override
     public int idDropped(int par1, Random par2Random, int par3) {
-		return doorItemID;
+		if ((par1 & 8) == 0)
+			return doorItemID;
+		else
+			return 0;
 	}
 	
     public int idPicked(World par1World, int par2, int par3, int par4) {
