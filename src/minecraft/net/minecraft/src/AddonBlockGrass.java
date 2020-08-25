@@ -74,8 +74,15 @@ public class AddonBlockGrass extends FCBlockGrass {
      */
     public Icon getBlockTexture(IBlockAccess blockAccess, int x, int y, int z, int side)
     {
-    	ChunkCache chunkCache = (ChunkCache) blockAccess;
-    	World world = AddonManager.getWorldFromChunkCache(chunkCache);
+    	World world = null;
+    	
+    	if (blockAccess instanceof ChunkCache) {
+    		ChunkCache chunkCache = (ChunkCache) blockAccess;
+    		world = AddonManager.getWorldFromChunkCache(chunkCache);
+    	}
+    	else if (blockAccess instanceof World) {
+    		world = (World) blockAccess;
+    	}
     	int skylight = world.GetBlockNaturalLightValueMaximum(x, y + 1, z);
         return side == 1 ? (skylight >= 9 ? this.iconGrassTop : this.iconGrassTopRough) : (side == 0 ? Block.dirt.getBlockTextureFromSide(side) : (this.m_bTempHasSnowOnTop ? this.iconSnowSide : this.blockIcon));
     }
