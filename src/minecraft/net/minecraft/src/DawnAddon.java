@@ -12,10 +12,12 @@ import net.minecraft.server.MinecraftServer;
 public abstract class DawnAddon extends FCAddOn {
 	private String addonName;
 	private String versionString;
-	
+
+	protected boolean shouldVersionCheck = true;
+
 	private boolean awaitingLoginAck = false;
 	private int ticksSinceAckRequested = 0;
-	private static final int maxTicksForAckWait = 20;
+	private static final int maxTicksForAckWait = 30;
 
 	public final String addonCustomPacketChannelVersionCheck;
 	public final String addonCustomPacketChannelVersionCheckAck;
@@ -35,21 +37,23 @@ public abstract class DawnAddon extends FCAddOn {
 		{
 			FCUtilsWorld.SendPacketToPlayer(serverHandler, new Packet3Chat("\u00a7f" + addonName + " V" + versionString));
 
-			ByteArrayOutputStream byteArrayOutput = new ByteArrayOutputStream();
-			DataOutputStream dataOutput = new DataOutputStream(byteArrayOutput);
+			if (shouldVersionCheck) {
+				ByteArrayOutputStream byteArrayOutput = new ByteArrayOutputStream();
+				DataOutputStream dataOutput = new DataOutputStream(byteArrayOutput);
 
-			try
-			{
-				dataOutput.writeUTF(versionString);
-			}
-			catch (Exception var9)
-			{
-				var9.printStackTrace();
-			}
+				try
+				{
+					dataOutput.writeUTF(versionString);
+				}
+				catch (Exception var9)
+				{
+					var9.printStackTrace();
+				}
 
-			Packet250CustomPayload var4 = new Packet250CustomPayload(addonCustomPacketChannelVersionCheck, byteArrayOutput.toByteArray());
-			FCUtilsWorld.SendPacketToPlayer(serverHandler, var4);
-			awaitingLoginAck = true;
+				Packet250CustomPayload var4 = new Packet250CustomPayload(addonCustomPacketChannelVersionCheck, byteArrayOutput.toByteArray());
+				FCUtilsWorld.SendPacketToPlayer(serverHandler, var4);
+				awaitingLoginAck = true;
+			}
 		}
 		else {
 			FCUtilsWorld.SendPacketToPlayer(serverHandler, new Packet3Chat("\u00a7f" + addonName + " V" + versionString));
@@ -62,12 +66,12 @@ public abstract class DawnAddon extends FCAddOn {
 	 * @return true if packet was handled, false otherwise
 	 */
 	public boolean serverCustomPacketReceived(MinecraftServer mcServer, Packet250CustomPayload packet, NetServerHandler serverHandler) {
-        if (addonCustomPacketChannelVersionCheckAck.equals(packet.channel)) {
-        	FCUtilsWorld.SendPacketToPlayer(serverHandler, new Packet3Chat("\u00a7f" + addonName + " version check successful."));
-        	awaitingLoginAck = false;
-        	ticksSinceAckRequested = 0;
-        }
-        
+		if (addonCustomPacketChannelVersionCheckAck.equals(packet.channel)) {
+			FCUtilsWorld.SendPacketToPlayer(serverHandler, new Packet3Chat("\u00a7f" + addonName + " version check successful."));
+			awaitingLoginAck = false;
+			ticksSinceAckRequested = 0;
+		}
+
 		return false;
 	}
 
@@ -88,14 +92,14 @@ public abstract class DawnAddon extends FCAddOn {
 			ticksSinceAckRequested = 0;
 			return false;
 		}
-		
+
 		return true;
 	}
-	
+
 	public String getName() {
 		return this.addonName;
 	}
-	
+
 	public String getVersionString() {
 		return this.versionString;
 	}
@@ -129,9 +133,9 @@ public abstract class DawnAddon extends FCAddOn {
 
 				if (!var33.equals(versionString))
 				{
-					mc.thePlayer.addChatMessage("\u00a74" + "WARNING: Deco Addon version mismatch detected! Local Version: " + this.versionString + " Server Version: " + var33);
+					mc.thePlayer.addChatMessage("\u00a74" + "WARNING: " + this.getName() + " version mismatch detected! Local Version: " + this.versionString + " Server Version: " + var33);
 				}
-				
+
 				ByteArrayOutputStream byteArrayOutput = new ByteArrayOutputStream();
 				DataOutputStream dataOutput = new DataOutputStream(byteArrayOutput);
 

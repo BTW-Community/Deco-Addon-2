@@ -112,7 +112,7 @@ public class DawnServerConfigurationManager extends ServerConfigurationManager {
         }
         else
         {
-            var5 = new AddonItemInWorldManager(this.mcServer.worldServerForDimension(0));
+            var5 = new DecoItemInWorldManager(this.mcServer.worldServerForDimension(0));
         }
 
         return new EntityPlayerMP(this.mcServer, this.mcServer.worldServerForDimension(0), par1Str, (ItemInWorldManager)var5);
@@ -191,7 +191,7 @@ public class DawnServerConfigurationManager extends ServerConfigurationManager {
         }
         else
         {
-            var11 = new AddonItemInWorldManager(this.mcServer.worldServerForDimension(var7));
+            var11 = new DecoItemInWorldManager(this.mcServer.worldServerForDimension(var7));
         }
 
         EntityPlayerMP var12 = new EntityPlayerMP(this.mcServer, this.mcServer.worldServerForDimension(var7), par1EntityPlayerMP.username, (ItemInWorldManager)var11);

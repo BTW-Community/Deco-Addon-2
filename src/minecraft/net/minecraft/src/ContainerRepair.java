@@ -386,7 +386,7 @@ public class ContainerRepair extends Container
 
     public boolean canInteractWith(EntityPlayer par1EntityPlayer)
     {
-        return this.theWorld.getBlockId(this.field_82861_i, this.field_82858_j, this.field_82859_k) != AddonDefs.workbench.blockID ? false : par1EntityPlayer.getDistanceSq((double)this.field_82861_i + 0.5D, (double)this.field_82858_j + 0.5D, (double)this.field_82859_k + 0.5D) <= 64.0D;
+        return this.theWorld.getBlockId(this.field_82861_i, this.field_82858_j, this.field_82859_k) != DecoDefs.workbench.blockID ? false : par1EntityPlayer.getDistanceSq((double)this.field_82861_i + 0.5D, (double)this.field_82858_j + 0.5D, (double)this.field_82859_k + 0.5D) <= 64.0D;
     }
 
     /**
