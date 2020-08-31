@@ -163,7 +163,7 @@ public class DecoDefs {
 		id_logSpikeBlood=3244,
 		id_ropeCoil=3245,
 		id_chainCoil=3246,
-	
+		id_trapdoorIron=3247,
 		id_paintedPlanksSubStart=3248,
 		//end 3296
 		id_terracottaSlab=3297,
@@ -470,7 +470,7 @@ public class DecoDefs {
 	public static Block strippedLog, barkLog, barkLogStripped, bloodLog, cherryLog, cherryStump;
 	public static Block logDamagedSpruce, logDamagedBirch, logDamagedJungle, logDamagedBlood, logDamagedCherry;
 	public static Block logSpikeSpruce, logSpikeBirch, logSpikeJungle, logSpikeBlood, logSpikeCherry;
-	public static BlockTrapDoor trapdoorSpruce, trapdoorBirch, trapdoorJungle, trapdoorBlood, trapdoorCherry;
+	public static BlockTrapDoor trapdoorSpruce, trapdoorBirch, trapdoorJungle, trapdoorBlood, trapdoorCherry, trapdoorIron;
 	public static BlockDoor doorSpruce, doorBirch, doorJungle, doorBlood, doorCherry;
 	public static FCItemDoor itemDoorSpruce, itemDoorBirch, itemDoorJungle, itemDoorBlood, itemDoorCherry;
 	public static BlockFenceGate gateSpruce, gateBirch, gateJungle, gateBlood, gateCherry;
@@ -709,6 +709,15 @@ public class DecoDefs {
 		DecoManager.installResource("random/trapdoorOpen2");
 		DecoManager.installResource("random/trapdoorOpen3");
 		DecoManager.installResource("random/trapdoorOpen4");
+
+		DecoManager.installResource("random/trapdoorIronClose1");
+		DecoManager.installResource("random/trapdoorIronClose2");
+		DecoManager.installResource("random/trapdoorIronClose3");
+		DecoManager.installResource("random/trapdoorIronClose4");
+		DecoManager.installResource("random/trapdoorIronOpen1");
+		DecoManager.installResource("random/trapdoorIronOpen2");
+		DecoManager.installResource("random/trapdoorIronOpen3");
+		DecoManager.installResource("random/trapdoorIronOpen4");
 
 		DecoManager.installResource("random/gateClose1");
 		DecoManager.installResource("random/gateClose2");
@@ -1365,7 +1374,6 @@ public class DecoDefs {
 		Item.itemsList[DecoDefs.stoneTypesLooseSlab.blockID] = new DecoItemBlockSlabLoose(DecoDefs.stoneTypesLooseSlab.blockID - 256);
 		DecoManager.Name(new ItemStack(DecoDefs.stoneTypesLooseSlab, 1, 0), "Loose Granite Cobblestone Slab");
 		DecoManager.Name(new ItemStack(DecoDefs.stoneTypesLooseSlab, 1, 1), "Loose Andesite Cobblestone Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.stoneTypesLooseSlab, 1, 2), "Loose Diorite Cobblestone Slab");
 		DecoManager.Name(new ItemStack(DecoDefs.stoneTypesLooseSlab, 1, 3), "Loose Granite Brick Slab");
 		DecoManager.Name(new ItemStack(DecoDefs.stoneTypesLooseSlab, 1, 4), "Loose Andesite Brick Slab");
 		DecoManager.Name(new ItemStack(DecoDefs.stoneTypesLooseSlab, 1, 5), "Loose Diorite Brick Slab");
@@ -1693,12 +1701,16 @@ public class DecoDefs {
 		trapdoorJungle = (BlockTrapDoor) new DecoBlockTrapDoor(id_trapdoorJungle).setUnlocalizedName("ginger_trapdoorJungle");
 		trapdoorBlood = (BlockTrapDoor) new DecoBlockTrapDoor(id_trapdoorBlood).setUnlocalizedName("ginger_trapdoorBlood");
 		trapdoorCherry = (BlockTrapDoor) new DecoBlockTrapDoor(id_trapdoorCherry).setUnlocalizedName("ginger_trapdoorCherry");
+		
+		trapdoorIron = new DecoBlockTrapDoorIron(id_trapdoorIron); 
 
 		DecoManager.Register(trapdoorSpruce, "Spruce Trap Door");
 		DecoManager.Register(trapdoorBirch, "Birch Trap Door");
 		DecoManager.Register(trapdoorJungle, "Jungle Trap Door");
 		DecoManager.Register(trapdoorBlood, "Blood Wood Trap Door");
 		DecoManager.Register(trapdoorCherry, "Cherry Trap Door");
+		
+		DecoManager.Register(trapdoorIron, "Iron Trap Door");
 
 		//Doors
 		Item itemDoorOak = new DecoItemDoor(Item.doorWood.itemID - 256, "doorWood", "Oak Door", Block.doorWood.blockID, true);

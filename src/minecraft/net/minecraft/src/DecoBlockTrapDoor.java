@@ -110,7 +110,7 @@ public class DecoBlockTrapDoor extends FCBlockTrapDoor {
 
 	public boolean IsBlockClimbable(World var1, int var2, int var3, int var4)
 	{
-		return var1.getBlockId(var2, var3 - 1, var4) == FCBetterThanWolves.fcBlockLadder.blockID || var1.getBlockId(var2, var3 - 1, var4) == FCBetterThanWolves.fcBlockLadderOnFire.blockID;
+		return (var1.getBlockId(var2, var3 - 1, var4) == FCBetterThanWolves.fcBlockLadder.blockID || var1.getBlockId(var2, var3 - 1, var4) == FCBetterThanWolves.fcBlockLadderOnFire.blockID) && var1.getBlockMetadata(var2, var3 - 1, var4) == (var1.getBlockMetadata(var2, var3, var4) & 3);
 	}
 	
 	public boolean GetCanGrassGrowUnderBlock(World world, int x, int y, int z, boolean var5) {

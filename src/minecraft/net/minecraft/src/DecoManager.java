@@ -50,7 +50,8 @@ public class DecoManager extends DawnAddon
 	public static final int decoDoorIronCloseAuxFXID = 3104;
 	public static final int decoTrapdoorOpenAuxFXID = 3105;
 	public static final int decoTrapdoorCloseAuxFXID = 3106;
-	//Reserved for iron trapdoor
+	public static final int decoTrapdoorIronOpenAuxFXID = 3107;
+	public static final int decoTrapdoorIronCloseAuxFXID = 3108;
 	public static final int decoChestOpenAuxFXID = 3109;
 	public static final int decoChestCloseAuxFXID = 3110;
 	public static final int decoPaintingPlaceAuxFXID = 3111;
@@ -366,6 +367,12 @@ public class DecoManager extends DawnAddon
         	return true;
         case decoTrapdoorCloseAuxFXID:
         	DecoUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.trapdoorClose", 1, world.rand.nextFloat() * 0.1F + 0.9F, "random.door_close", 1, world.rand.nextFloat() * 0.1F + 0.9F);
+        	return true;
+        case decoTrapdoorIronOpenAuxFXID:
+        	DecoUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.trapdoorIronOpen", 1, world.rand.nextFloat() * 0.1F + 0.9F, "random.door_open", 1, world.rand.nextFloat() * 0.1F + 0.9F);
+        	return true;
+        case decoTrapdoorIronCloseAuxFXID:
+        	DecoUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.trapdoorIronClose", 1, world.rand.nextFloat() * 0.1F + 0.9F, "random.door_close", 1, world.rand.nextFloat() * 0.1F + 0.9F);
         	return true;
         case decoChestOpenAuxFXID:
         	DecoUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.chestOpen", 0.5F, world.rand.nextFloat() * 0.1F + 0.9F, "random.chestopen", 0.5F, world.rand.nextFloat() * 0.1F + 0.9F);

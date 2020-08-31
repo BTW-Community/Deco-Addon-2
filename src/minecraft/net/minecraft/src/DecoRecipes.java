@@ -632,6 +632,9 @@ public class DecoRecipes {
 		FCRecipes.AddRecipe(new ItemStack(DecoDefs.trapdoorCherry, 1), new Object[] {"WW#", "WW#", '#', Item.stick, 'W', new ItemStack(Block.planks, 1, 5)});
 		FCRecipes.AddRecipe(new ItemStack(DecoDefs.trapdoorCherry, 2), new Object[] {"WW#", "WW#", '#', Item.stick, 'W', new ItemStack(FCBetterThanWolves.fcBlockWoodSidingItemStubID, 1, 5)});
 
+		FCRecipes.AddRecipe(new ItemStack(DecoDefs.trapdoorIron, 2), new Object[] {"WW#", "WW#", '#', FCBetterThanWolves.fcItemRedstoneLatch, 'W', Item.ingotIron});
+		FCRecipes.AddStokedCrucibleRecipe(new ItemStack[] {new ItemStack(FCBetterThanWolves.fcItemNuggetIron, 12), new ItemStack(Item.goldNugget, 2)}, new ItemStack[] {new ItemStack(DecoDefs.trapdoorIron)});
+
 		//Doors
 		FCRecipes.RemoveVanillaRecipe(new ItemStack(Item.doorWood, 1), new Object[] {"##", "##", "##", '#', Block.planks});
 		FCRecipes.RemoveVanillaRecipe(new ItemStack(Item.doorWood, 1), new Object[] {"##", "##", "##", '#', new ItemStack(FCBetterThanWolves.fcBlockWoodSidingItemStubID, 1, 32767)});
