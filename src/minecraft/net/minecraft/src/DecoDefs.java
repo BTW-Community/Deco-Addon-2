@@ -1,5 +1,7 @@
 package net.minecraft.src;
 
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -313,6 +315,11 @@ public class DecoDefs {
 		id_acaciaLeaves=3490,
 		id_acaciaLogDamaged=3491,
 		id_acaciaLogSpike=3492,
+		id_acaciaSidingAndCorner=3493,
+		id_acaciaMouldingAndDecorative=3494,
+		id_autumnLeaves=3495,
+		
+		id_placedBottle=3500,
 	
 		id_layerDirt=3550,
 		id_layerGrass=3551,
@@ -368,8 +375,8 @@ public class DecoDefs {
 	public static final StepSound stepSoundVine = new DecoStepSoundVine(1, 1);
 	public static final StepSound stepSoundBloodLog = new DecoStepSound("bloodLog", 1, 1, "wood", Block.soundWoodFootstep.getVolume(), Block.soundWoodFootstep.getPitch());
 	public static final StepSound stepSoundGroth = new DecoStepSound("groth", 1, 1, "grass", Block.soundGrassFootstep.getVolume(), Block.soundGrassFootstep.getPitch());
-	//public static final StepSound stepSoundNylium = new AddonStepSound("nylium", 1, 1, "dirt", Block.soundGravelFootstep.getVolume(), Block.soundGravelFootstep.getPitch());
-	//public static final StepSound stepSoundWart = new AddonStepSound("netherWart", 1, 1, "grass", Block.soundGrassFootstep.getVolume(), Block.soundGrassFootstep.getPitch());
+	public static final StepSound stepSoundNylium = new DecoStepSound("nylium", 1, 1, "dirt", Block.soundGravelFootstep.getVolume(), Block.soundGravelFootstep.getPitch());
+	public static final StepSound stepSoundWart = new DecoStepSound("netherWart", 1, 1, "grass", Block.soundGrassFootstep.getVolume(), Block.soundGrassFootstep.getPitch());
 
 	//Clay
 	public static Block terracotta, stainedTerracotta, unfiredTerracotta;
@@ -516,6 +523,7 @@ public class DecoDefs {
 	public static Block nylium;
 	public static Block stemCrimson, stemWarped, stemDamagedCrimson, stemDamagedWarped, stemSpikeCrimson, stemSpikeWarped, wartBlock;
 	public static Block netherRoots, netherVines;
+	public static Block placedBottle;
 
 	//Ground Cover
 	public static Block layerDirt, layerGrass, layerGravel, layerSand, layerRedSand, layerCoarseDirt, layerPodzol, layerPackedEarth, layerDirtLoose;
@@ -667,20 +675,18 @@ public class DecoDefs {
 		DecoManager.installResource("step/groth4");
 		DecoManager.installResource("step/groth5");
 		
-		/*
-		AddonManager.installResource("dig/nylium1");
-		AddonManager.installResource("dig/nylium2");
-		AddonManager.installResource("dig/nylium3");
-		AddonManager.installResource("dig/nylium4");
-		AddonManager.installResource("dig/nylium5");
-		AddonManager.installResource("dig/nylium6");
-		AddonManager.installResource("step/nylium1");
-		AddonManager.installResource("step/nylium2");
-		AddonManager.installResource("step/nylium3");
-		AddonManager.installResource("step/nylium4");
-		AddonManager.installResource("step/nylium5");
-		AddonManager.installResource("step/nylium6");
-		*/
+		DecoManager.installResource("dig/nylium1");
+		DecoManager.installResource("dig/nylium2");
+		DecoManager.installResource("dig/nylium3");
+		DecoManager.installResource("dig/nylium4");
+		DecoManager.installResource("dig/nylium5");
+		DecoManager.installResource("dig/nylium6");
+		DecoManager.installResource("step/nylium1");
+		DecoManager.installResource("step/nylium2");
+		DecoManager.installResource("step/nylium3");
+		DecoManager.installResource("step/nylium4");
+		DecoManager.installResource("step/nylium5");
+		DecoManager.installResource("step/nylium6");
 
 		DecoManager.installResource("random/doorClose1");
 		DecoManager.installResource("random/doorClose2");
@@ -1283,7 +1289,7 @@ public class DecoDefs {
 
 		//Nylium
 		nylium = new DecoBlockNylium(id_nylium);
-		//AddonManager.Register(nylium, new String[] {"crimsonNylium", "warpedNylium"}, new String[] {"Crimson Nylium", "Warped Nylium"});
+		DecoManager.Register(nylium, new String[] {"crimsonNylium", "warpedNylium"}, new String[] {"Crimson Nylium", "Warped Nylium"});
 
 		//Basalt
 		basalt = new DecoBlockDirectional(id_basalt, FCBetterThanWolves.fcMaterialNetherRock, new String[] {"ginger_basalt_top", "ginger_basaltSmooth_top"}, new String[] {"ginger_basalt_side", "ginger_basaltSmooth_side"})
@@ -1527,8 +1533,8 @@ public class DecoDefs {
 		DecoManager.Register(logDamagedJungle, "Chewed Jungle Log");
 		DecoManager.Register(logDamagedBlood, "Chewed Blood Wood Log");
 		DecoManager.Register(logDamagedCherry, "Chewed Cherry Log");
-		//AddonManager.Register(stemDamagedCrimson, "Chewed Crimson Stem");
-		//AddonManager.Register(stemDamagedWarped, "Chewed Warped Stem");
+		DecoManager.Register(stemDamagedCrimson, "Chewed Crimson Stem");
+		DecoManager.Register(stemDamagedWarped, "Chewed Warped Stem");
 
 		FCBetterThanWolves.fcBlockLogSpike = (FCBlockLogSpike) new DecoBlockLogSpike(DecoManager.ReplaceBlockID(FCBetterThanWolves.fcBlockLogSpike), "ginger_strippedOakSide", "ginger_strippedOakTop").setUnlocalizedName("oakSpike");
 		logSpikeSpruce = new DecoBlockLogSpike(id_logSpikeSpruce, "ginger_strippedSpruceSide", "ginger_strippedSpruceTop").setUnlocalizedName("spruceSpike");
@@ -1544,8 +1550,8 @@ public class DecoDefs {
 		DecoManager.Register(logSpikeJungle, "Jungle Log Spike");
 		DecoManager.Register(logSpikeBlood, "Blood Wood Log Spike");
 		DecoManager.Register(logSpikeCherry, "Cherry Log Spike");
-		//AddonManager.Register(stemSpikeCrimson, "Crimson Stem Spike");
-		//AddonManager.Register(stemSpikeWarped, "Warped Stem Spike");
+		DecoManager.Register(stemSpikeCrimson, "Crimson Stem Spike");
+		DecoManager.Register(stemSpikeWarped, "Warped Stem Spike");
 
 		stemCrimson = new DecoBlockStem(id_stemCrimson, new String[] {"ginger_stemCrimsonTop", "ginger_strippedCrimsonTop", "ginger_stemCrimsonSide", "ginger_strippedCrimsonSide"}, new String[] {"ginger_stemCrimsonSide", "ginger_strippedCrimsonSide", "ginger_stemCrimsonSide", "ginger_strippedCrimsonSide"}, 6, stemDamagedCrimson.blockID)
 				.setHardness(1.25F)
@@ -1559,11 +1565,11 @@ public class DecoDefs {
 				.SetFireProperties(FCEnumFlammability.LOGS)
 				.setUnlocalizedName("crimsonStem")
 				.setCreativeTab(CreativeTabs.tabBlock);
-		//Item.itemsList[stemCrimson.blockID] = new AddonItemBlockStem(stemCrimson.blockID - 256, stemCrimson, new String[] {"stemCrimson", "strippedStemCrimson", "woodCrimson", "strippedWoodCrimson"}, 6);
-		//AddonManager.Name(new ItemStack(stemCrimson, 1, 0), "Crimson Stem");
-		//AddonManager.Name(new ItemStack(stemCrimson, 1, 1), "Stripped Crimson Stem");
-		//AddonManager.Name(new ItemStack(stemCrimson, 1, 2), "Crimson Hyphae");
-		//AddonManager.Name(new ItemStack(stemCrimson, 1, 3), "Stripped Crimson Hyphae");
+		Item.itemsList[stemCrimson.blockID] = new DecoItemBlockStem(stemCrimson.blockID - 256, stemCrimson, new String[] {"stemCrimson", "strippedStemCrimson", "woodCrimson", "strippedWoodCrimson"}, 6);
+		DecoManager.Name(new ItemStack(stemCrimson, 1, 0), "Crimson Stem");
+		DecoManager.Name(new ItemStack(stemCrimson, 1, 1), "Stripped Crimson Stem");
+		DecoManager.Name(new ItemStack(stemCrimson, 1, 2), "Crimson Hyphae");
+		DecoManager.Name(new ItemStack(stemCrimson, 1, 3), "Stripped Crimson Hyphae");
 
 		stemWarped = new DecoBlockStem(id_stemWarped, new String[] {"ginger_stemWarpedTop", "ginger_strippedWarpedTop", "ginger_stemWarpedSide", "ginger_strippedWarpedSide"}, new String[] {"ginger_stemWarpedSide", "ginger_strippedWarpedSide", "ginger_stemWarpedSide", "ginger_strippedWarpedSide"}, 7, stemDamagedWarped.blockID)
 				.setHardness(1.25F)
@@ -1577,11 +1583,11 @@ public class DecoDefs {
 				.SetFireProperties(FCEnumFlammability.LOGS)
 				.setUnlocalizedName("warpedStem")
 				.setCreativeTab(CreativeTabs.tabBlock);
-		//Item.itemsList[stemWarped.blockID] = new AddonItemBlockStem(stemWarped.blockID - 256, stemCrimson, new String[] {"stemWarped", "strippedStemWarped", "woodWarped", "strippedWoodWarped"}, 7);
-		//AddonManager.Name(new ItemStack(stemWarped, 1, 0), "Warped Stem");
-		//AddonManager.Name(new ItemStack(stemWarped, 1, 1), "Stripped Warped Stem");
-		//AddonManager.Name(new ItemStack(stemWarped, 1, 2), "Warped Hyphae");
-		//AddonManager.Name(new ItemStack(stemWarped, 1, 3), "Stripped Warped Hyphae");
+		Item.itemsList[stemWarped.blockID] = new DecoItemBlockStem(stemWarped.blockID - 256, stemCrimson, new String[] {"stemWarped", "strippedStemWarped", "woodWarped", "strippedWoodWarped"}, 7);
+		DecoManager.Name(new ItemStack(stemWarped, 1, 0), "Warped Stem");
+		DecoManager.Name(new ItemStack(stemWarped, 1, 1), "Stripped Warped Stem");
+		DecoManager.Name(new ItemStack(stemWarped, 1, 2), "Warped Hyphae");
+		DecoManager.Name(new ItemStack(stemWarped, 1, 3), "Stripped Warped Hyphae");
 
 		stemCrimson.setStepSound(stepSoundBloodLog);
 		stemWarped.setStepSound(stepSoundBloodLog);
@@ -1589,10 +1595,8 @@ public class DecoDefs {
 		//Planks
 		Block planks = new DecoBlockPlanks(DecoManager.ReplaceBlockID(Block.planks));
 		DawnUtilsReflection.replaceVanillaBlock("planks", Block.planks, planks);
-		DecoManager.Register(Block.planks, new String[] {"oakPlanks", "sprucePlanks", "birchPlanks", "junglePlanks", "bloodPlanks", "cherryPlanks"},
-				new String[] {"Oak Planks", "Spruce Planks", "Birch Planks", "Jungle Planks", "Blood Wood Planks", "Cherry Planks"});
-		//AddonManager.Register(Block.planks, new String[] {"oakPlanks", "sprucePlanks", "birchPlanks", "junglePlanks", "bloodPlanks", "cherryPlanks", "crimsonPlanks", "warpedPlanks"},
-		//		new String[] {"Oak Planks", "Spruce Planks", "Birch Planks", "Jungle Planks", "Blood Wood Planks", "Cherry Planks", "Crimson Planks", "Warped Planks"});
+		DecoManager.Register(Block.planks, new String[] {"oakPlanks", "sprucePlanks", "birchPlanks", "junglePlanks", "bloodPlanks", "cherryPlanks", "crimsonPlanks", "warpedPlanks"},
+				new String[] {"Oak Planks", "Spruce Planks", "Birch Planks", "Jungle Planks", "Blood Wood Planks", "Cherry Planks", "Crimson Planks", "Warped Planks"});
 		Block stairsWoodOak = (new FCBlockStairsWood(DecoManager.ReplaceBlockID(Block.stairsWoodOak), Block.planks, 0)).setUnlocalizedName("stairsWood");
 		DawnUtilsReflection.replaceVanillaBlock("stairsWoodOak", Block.stairsWoodOak, stairsWoodOak);
 		DecoManager.Name(stairsWoodOak, "Oak Stairs");
@@ -1970,6 +1974,29 @@ public class DecoDefs {
 		FCBetterThanWolves.fcBlockDirtLoose = new DecoBlockDirtLoose(DecoManager.ReplaceBlockID(FCBetterThanWolves.fcBlockDirtLoose));
 		FCBetterThanWolves.fcBlockDirtSlab = new DecoBlockDirtSlab(DecoManager.ReplaceBlockID(FCBetterThanWolves.fcBlockDirtSlab));
 		FCBetterThanWolves.fcBlockDirtLooseSlab = new DecoBlockDirtSlab(DecoManager.ReplaceBlockID(FCBetterThanWolves.fcBlockDirtLooseSlab));
+		
+		//MCPatcher dirt slab fix
+		try {
+			Class mcpatcherRenderBlockUtils = Class.forName("com.prupe.mcpatcher.mal.block.RenderBlocksUtils");
+			Field fcDirtSlab = mcpatcherRenderBlockUtils.getDeclaredField("fcDirtSlab");
+			fcDirtSlab.setAccessible(true);
+			
+			Field modifiersField = Field.class.getDeclaredField("modifiers");
+			modifiersField.setAccessible(true);
+			modifiersField.setInt(fcDirtSlab, fcDirtSlab.getModifiers() & ~Modifier.FINAL);
+			
+			fcDirtSlab.set(mcpatcherRenderBlockUtils, FCBetterThanWolves.fcBlockDirtSlab);
+		} catch (ClassNotFoundException e) {
+			System.out.println("MCPatcher not found, skipping integration");
+		} catch (NoSuchFieldException e) {
+			e.printStackTrace();
+		} catch (SecurityException e) {
+			e.printStackTrace();
+		} catch (IllegalArgumentException e) {
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		}
 
 		//Nether portal
 		BlockPortal addonPortal = (BlockPortal) new DecoBlockPortal(DecoManager.ReplaceBlockID(Block.portal));
@@ -2170,6 +2197,10 @@ public class DecoDefs {
 		Block tallGrass = new DecoBlockTallGrass(DecoManager.ReplaceBlockID(Block.tallGrass));
 		DawnUtilsReflection.replaceVanillaBlock("tallGrass", Block.tallGrass, tallGrass);
 		Item.itemsList[tallGrass.blockID] = (new ItemColored(tallGrass.blockID - 256, true)).setBlockNames(new String[] {"shrub", "grass", "fern"});
+		
+		//Bottles
+		placedBottle = new DecoBlockPlacedBottle(id_placedBottle);
+		DecoManager.Register(placedBottle);
 
 		//Fluids
 		BlockFluid waterStill = (BlockFluid) new DecoBlockWaterStationary(DecoManager.ReplaceBlockID(Block.waterStill), Material.water).setHardness(100.0F).setLightOpacity(3).setUnlocalizedName("water").disableStats();

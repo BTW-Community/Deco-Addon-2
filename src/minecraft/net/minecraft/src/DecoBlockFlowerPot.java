@@ -158,7 +158,6 @@ public class DecoBlockFlowerPot extends BlockContainer {
     //CLIENT ONLY
     @Override
     public boolean RenderBlock(RenderBlocks render, int x, int y, int z) {
-    	//Only renders the pot (copied from vanilla render code). The plant inside the pot is handled by the tile entity renderer.
         render.setRenderBounds(this.GetBlockBoundsFromPoolBasedOnState(render.blockAccess, x, y, z));
     	
         Tessellator tess = Tessellator.instance;

@@ -62,9 +62,4 @@ public class DecoBlockChain extends Block {
         FCModelBlock var6 = this.blockModel.MakeTemporaryCopy();
         return var6.RenderAsBlock(var1, this, var2, var3, var4);
     }
-
-    public void RenderBlockAsItem(RenderBlocks var1, int var2, float var3)
-    {
-        this.blockModel.RenderAsItemBlock(var1, this, var2);
-    }
 }

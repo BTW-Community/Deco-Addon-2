@@ -92,12 +92,12 @@ public class DecoBlockSlabBase extends FCBlockSlab {
 
 	@Override
 	public int GetCombinedBlockID(int var1) {
-		return blockTypes[var1].blockID;
+		return blockTypes[var1 & 7].blockID;
 	}
 
 	@Override
 	public int GetCombinedMetadata(int var1){
-		return typeMetas[var1];
+		return typeMetas[var1 & 7];
 	}
 
     /**
