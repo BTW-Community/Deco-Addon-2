@@ -1973,7 +1973,7 @@ public class DecoDefs {
 		DawnUtilsReflection.replaceVanillaBlock("mycelium", Block.mycelium, mycelium);
 		FCBetterThanWolves.fcBlockDirtLoose = new DecoBlockDirtLoose(DecoManager.ReplaceBlockID(FCBetterThanWolves.fcBlockDirtLoose));
 		FCBetterThanWolves.fcBlockDirtSlab = new DecoBlockDirtSlab(DecoManager.ReplaceBlockID(FCBetterThanWolves.fcBlockDirtSlab));
-		FCBetterThanWolves.fcBlockDirtLooseSlab = new DecoBlockDirtSlab(DecoManager.ReplaceBlockID(FCBetterThanWolves.fcBlockDirtLooseSlab));
+		FCBetterThanWolves.fcBlockDirtLooseSlab = new DecoBlockDirtLooseSlab(DecoManager.ReplaceBlockID(FCBetterThanWolves.fcBlockDirtLooseSlab));
 		
 		//MCPatcher dirt slab fix
 		try {

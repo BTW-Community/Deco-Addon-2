@@ -22,7 +22,7 @@ public class DecoEntityOcelot extends FCEntityOcelot {
         }
     }
 
-    public EntityOcelot spawnBabyAnimal(EntityAgeable var1)
+    public FCEntityOcelot spawnBabyAnimal(EntityAgeable var1)
     {
         FCEntityOcelot var2 = new DecoEntityOcelot(this.worldObj);
 

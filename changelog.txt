@@ -1,0 +1,16 @@
+Version 2.13
+I lost most of the data on my PC between this version and the last. While the source code for deco was safe on github, I did lose the old changelog. I've tried to reconstruct it from memory but there is a high liklihood that some changes or fixes present in this version are not listed in the changelog.
+[list]
+[*]Refactored the addon to use Dawn's Library.
+[*]Refactored file prefix to "Deco" rathher than "Addon" for clarity.
+[*]Added iron trapdoors, crafted with 4 iron ingots and 2 redstone latches, producing 2.
+[*]Changed grass to not die while in darkness in order to facilitate its decorative use and to remove ugly dirt under overhangs or dense trees. However, to maintain balance, animals may not eat from grass without sunlight, and the texture updates to reflect this.
+[*]Changed terracotta to break into 8 sand piles when broken with an iron pick or lower.
+[*]Changed stone variants to drop their cobblestone variant when broken with an iron pick or lower.
+[*]Changed (increased) the hardness and blast resistance of terracotta.
+[*]Changed doors to stack to 16.
+[*]Changed trapdoors above ladders to only be climbable if the trapdoor is attached to the same face as the ladder.
+[*]Fixed an issue where doors would drop 2 items in the top block was broken.
+[*]Fixed an issue where white stone slabs only made 1.
+[*]Fixed an issue where painted plank stairs only dropped a single moulding when sawed.
+[/lst]
