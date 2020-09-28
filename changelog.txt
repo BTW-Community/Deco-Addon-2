@@ -13,4 +13,7 @@ I lost most of the data on my PC between this version and the last. While the so
 [*]Fixed an issue where doors would drop 2 items in the top block was broken.
 [*]Fixed an issue where white stone slabs only made 1.
 [*]Fixed an issue where painted plank stairs only dropped a single moulding when sawed.
+[*]Fixed an issue where dyeing carpets consumed 16 despite producing 12.
+[*]Fixed an issue where loose nether brick slabs would turn into black stone slabs when applying mortar in a stoked cauldron.
+[*]Fixed an issue where normal loose nether brick slabs were named loose red nether brick slabs.
 [/lst]

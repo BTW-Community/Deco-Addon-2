@@ -9,7 +9,7 @@ public class DecoBlockNetherBrickRedLooseSlab extends FCBlockMortarReceiverSlab
         this.setResistance(5.0F);
         this.SetPicksEffectiveOn();
         this.setStepSound(soundStoneFootstep);
-        this.setUnlocalizedName("fcBlockNetherBrickLooseSlab");
+        this.setUnlocalizedName("fcBlockNetherBrickLooseSlabRed");
         this.setCreativeTab(CreativeTabs.tabBlock);
     }
 

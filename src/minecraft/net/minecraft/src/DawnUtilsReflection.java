@@ -20,9 +20,9 @@ public class DawnUtilsReflection {
 		try {
 			String name;
 
-			if (isObfuscated())
+			/*if (isObfuscated())
 				name = getBlockLookup(blockName);
-			else
+			else*/
 				name = blockName;
 
 			Field block = (Block.class.getDeclaredField(name));
@@ -35,13 +35,14 @@ public class DawnUtilsReflection {
 			block.set(newBlock, newBlock);
 			block.setAccessible(false);
 		} catch (NoSuchFieldException e) {
-			if (isObfuscated()) {
+			e.printStackTrace();
+			/*if (isObfuscated()) {
 				e.printStackTrace();
 			}
 			else {
 				setObfuscated(true);
 				replaceVanillaBlock(blockName, oldBlock, newBlock);
-			}
+			}*/
 		} catch (SecurityException e) {
 			e.printStackTrace();
 		} catch (IllegalArgumentException e) {
