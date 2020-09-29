@@ -12,9 +12,9 @@ public class DecoBlockCobbleLooseAndesite extends FCBlockLavaReceiver
         this.SetPicksEffectiveOn();
         this.SetChiselsEffectiveOn();
         this.setStepSound(soundStoneFootstep);
-        this.setUnlocalizedName("ginger_andesiteCobbleLoose");
+        this.setUnlocalizedName("decoBlockAndesiteCobbleLoose");
         this.setCreativeTab(CreativeTabs.tabBlock);
-        DecoManager.Register(this, "Loose Andesite Cobblestone");
+        DecoManager.Register(this);
     }
 
     public boolean OnMortarApplied(World world, int x, int y, int z)

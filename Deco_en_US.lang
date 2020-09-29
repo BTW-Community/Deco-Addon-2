@@ -4,7 +4,33 @@ tile.decoBlockTerracotta.name=Terracotta
 tile.decoBlockTerracottaUnfired.name=Unfired Terracotta
 tile.decoBlockTerracottaStairs.name=Terracotta Stairs
 tile.decoBlockWhiteBricksStairs.name=White Stone Brick Stairs
-this.decoBlockStairsMossyCobble.name=Mossy Cobblestone Stairs
+tile.decoBlockStairsMossyCobble.name=Mossy Cobblestone Stairs
+tile.decoBlockGraniteCobbleLoose.name=Loose Granite Cobblestone
+tile.decoBlockAndesiteCobbleLoose.name=Loose Andesite Cobblestone
+tile.decoBlockDioriteCobbleLoose.name=Loose Diorite Cobblestone
+tile.decoBlockGraniteBricksLoose.name=Loose Granite Bricks
+tile.decoBlockAndesiteBricksLoose.name=Loose Andesite Bricks
+tile.decoBlockDioriteBricksLoose.name=Loose Diorite Bricks
+tile.decoBlockGraniteStairs.name=Granite Stairs
+tile.decoBlockAndesiteStairs.name=Andesite Stairs
+tile.decoBlockDioriteStairs.name=Diorite Stairs
+tile.decoBlockGraniteStairsSmooth.name=Polished Granite Stairs
+tile.decoBlockAndesiteStairsSmooth.name=Polished Andesite Stairs
+tile.decoBlockDioriteStairsSmooth.name=Polished Diorite Stairs
+tile.decoBlockGraniteStairsCobble.name=Granite Cobblestone Stairs
+tile.decoBlockAndesiteStairsCobble.name=Andesite Cobblestone Stairs
+tile.decoBlockDioriteStairsCobble.name=Diorite Cobblestone Stairs
+tile.decoBlockGraniteStairsBrick.name=Granite Bricks Stairs
+tile.decoBlockAndesiteStairsBrick.name=Andesite Bricks Stairs
+tile.decoBlockDioriteStairsBrick.name=Diorite Bricks Stairs
+tile.decoBlockGraniteCobblestoneStairsLoose.name=Loose Granite Cobblestone Stairs
+tile.decoBlockAndesiteCobblestoneStairsLoose.name=Loose Andesite Cobblestone Stairs
+tile.decoBlockDioriteCobblestoneStairsLoose.name=Loose Diorite Cobblestone Stairs
+tile.decoBlockGraniteBrickStairsLoose.name=Loose Granite Brick Stairs
+tile.decoBlockAndesiteBrickStairsLoose.name=Loose Andesite Brick Stairs
+tile.decoBlockDioriteBrickStairsLoose.name=Loose Diorite Brick Stairs
+tile.decoBlockPolishedStone.name=Polished Stone
+tile.decoBlockPolishedStoneStairs.name=Polished Stone Stairs
 
 # Deco Complex Blocks
 
@@ -286,6 +312,122 @@ tile.decoBlockMossyCobbleMoulding.moulding.name=Mossy Cobblestone Moulding
 tile.decoBlockStone.granite.name=Granite
 tile.decoBlockStone.andesite.name=Andesite
 tile.decoBlockStone.diorite.name=Diorite
+
+tile.decoBlockCobblestone.granite.name=Granite Cobblestone
+tile.decoBlockCobblestone.andesite.name=Andesite Cobblestone
+tile.decoBlockCobblestone.diorite.name=Diorite Cobblestone
+
+tile.decoBlockStoneBricks.granite.name=Granite Bricks
+tile.decoBlockStoneBricks.andesite.name=Andesite Bricks
+tile.decoBlockStoneBricks.diorite.name=Diorite Bricks
+
+tile.decoBlockStoneSmooth.granite.name=Polished Granite
+tile.decoBlockStoneSmooth.andesite.name=Polished Andesite
+tile.decoBlockStoneSmooth.diorite.name=Polished Diorite
+
+this.decoBlockGraniteSiding.bench.name=Granite Bench
+this.decoBlockGraniteSiding.fence.name=Granite Wall
+this.decoBlockGraniteSiding.siding.name=Granite Siding
+this.decoBlockGraniteSiding.corner.name=Granite Corner
+this.decoBlockGraniteMoulding.column.name=Granite Column
+this.decoBlockGraniteMoulding.pedestal.name=Granite Pedestal
+this.decoBlockGraniteMoulding.moulding.name=Granite Moulding
+
+this.decoBlockAndesiteSiding.bench.name=Andesite Bench
+this.decoBlockAndesiteSiding.fence.name=Andesite Wall
+this.decoBlockAndesiteSiding.siding.name=Andesite Siding
+this.decoBlockAndesiteSiding.corner.name=Andesite Corner
+this.decoBlockAndesiteMoulding.column.name=Andesite Column
+this.decoBlockAndesiteMoulding.pedestal.name=Andesite Pedestal
+this.decoBlockAndesiteMoulding.moulding.name=Andesite Moulding
+
+this.decoBlockDioriteSiding.bench.name=Diorite Bench
+this.decoBlockDioriteSiding.fence.name=Diorite Wall
+this.decoBlockDioriteSiding.siding.name=Diorite Siding
+this.decoBlockDioriteSiding.corner.name=Diorite Corner
+this.decoBlockDioriteMoulding.column.name=Diorite Column
+this.decoBlockDioriteMoulding.pedestal.name=Diorite Pedestal
+this.decoBlockDioriteMoulding.moulding.name=Diorite Moulding
+
+this.decoBlockGraniteSmoothSiding.bench.name=Polished Granite Bench
+this.decoBlockGraniteSmoothSiding.fence.name=Polished Granite Wall
+this.decoBlockGraniteSmoothSiding.siding.name=Polished Granite Siding
+this.decoBlockGraniteSmoothSiding.corner.name=Polished Granite Corner
+this.decoBlockGraniteSmoothMoulding.column.name=Polished Granite Column
+this.decoBlockGraniteSmoothMoulding.pedestal.name=Polished Granite Pedestal
+this.decoBlockGraniteSmoothMoulding.moulding.name=Polished Granite Moulding
+
+this.decoBlockAndesiteSmoothSiding.bench.name=Polished Andesite Bench
+this.decoBlockAndesiteSmoothSiding.fence.name=Polished Andesite Wall
+this.decoBlockAndesiteSmoothSiding.siding.name=Polished Andesite Siding
+this.decoBlockAndesiteSmoothSiding.corner.name=Polished Andesite Corner
+this.decoBlockAndesiteSmoothMoulding.column.name=Polished Andesite Column
+this.decoBlockAndesiteSmoothMoulding.pedestal.name=Polished Andesite Pedestal
+this.decoBlockAndesiteSmoothMoulding.moulding.name=Polished Andesite Moulding
+
+this.decoBlockDioriteSmoothSiding.bench.name=Polished Diorite Bench
+this.decoBlockDioriteSmoothSiding.fence.name=Polished Diorite Wall
+this.decoBlockDioriteSmoothSiding.siding.name=Polished Diorite Siding
+this.decoBlockDioriteSmoothSiding.corner.name=Polished Diorite Corner
+this.decoBlockDioriteSmoothMoulding.column.name=Polished Diorite Column
+this.decoBlockDioriteSmoothMoulding.pedestal.name=Polished Diorite Pedestal
+this.decoBlockDioriteSmoothMoulding.moulding.name=Polished Diorite Moulding
+
+this.decoBlockGraniteCobbleSiding.bench.name=Granite Cobblestone Bench
+this.decoBlockGraniteCobbleSiding.fence.name=Granite Cobblestone Wall
+this.decoBlockGraniteCobbleSiding.siding.name=Granite Cobblestone Siding
+this.decoBlockGraniteCobbleSiding.corner.name=Granite Cobblestone Corner
+this.decoBlockGraniteCobbleMoulding.column.name=Granite Cobblestone Column
+this.decoBlockGraniteCobbleMoulding.pedestal.name=Granite Cobblestone Pedestal
+this.decoBlockGraniteCobbleMoulding.moulding.name=Granite Cobblestone Moulding
+
+this.decoBlockAndesiteCobbleSiding.bench.name=Andesite Cobblestone Bench
+this.decoBlockAndesiteCobbleSiding.fence.name=Andesite Cobblestone Wall
+this.decoBlockAndesiteCobbleSiding.siding.name=Andesite Cobblestone Siding
+this.decoBlockAndesiteCobbleSiding.corner.name=Andesite Cobblestone Corner
+this.decoBlockAndesiteCobbleMoulding.column.name=Andesite Cobblestone Column
+this.decoBlockAndesiteCobbleMoulding.pedestal.name=Andesite Cobblestone Pedestal
+this.decoBlockAndesiteCobbleMoulding.moulding.name=Andesite Cobblestone Moulding
+
+this.decoBlockDioriteCobbleSiding.bench.name=Diorite Cobblestone Bench
+this.decoBlockDioriteCobbleSiding.fence.name=Diorite Cobblestone Wall
+this.decoBlockDioriteCobbleSiding.siding.name=Diorite Cobblestone Siding
+this.decoBlockDioriteCobbleSiding.corner.name=Diorite Cobblestone Corner
+this.decoBlockDioriteCobbleMoulding.column.name=Diorite Cobblestone Column
+this.decoBlockDioriteCobbleMoulding.pedestal.name=Diorite Cobblestone Pedestal
+this.decoBlockDioriteCobbleMoulding.moulding.name=Diorite Cobblestone Moulding
+
+this.decoBlockGraniteBrickSiding.bench.name=Granite Bricks Bench
+this.decoBlockGraniteBrickSiding.fence.name=Granite Bricks Wall
+this.decoBlockGraniteBrickSiding.siding.name=Granite Bricks Siding
+this.decoBlockGraniteBrickSiding.corner.name=Granite Bricks Corner
+this.decoBlockGraniteBrickMoulding.column.name=Granite Bricks Column
+this.decoBlockGraniteBrickMoulding.pedestal.name=Granite Bricks Pedestal
+this.decoBlockGraniteBrickMoulding.moulding.name=Granite Bricks Moulding
+
+this.decoBlockAndesiteBrickSiding.bench.name=Andesite Bricks Bench
+this.decoBlockAndesiteBrickSiding.fence.name=Andesite Bricks Wall
+this.decoBlockAndesiteBrickSiding.siding.name=Andesite Bricks Siding
+this.decoBlockAndesiteBrickSiding.corner.name=Andesite Bricks Corner
+this.decoBlockAndesiteBrickMoulding.column.name=Andesite Bricks Column
+this.decoBlockAndesiteBrickMoulding.pedestal.name=Andesite Bricks Pedestal
+this.decoBlockAndesiteBrickMoulding.moulding.name=Andesite Bricks Moulding
+
+this.decoBlockDioriteBrickSiding.bench.name=Diorite Bricks Bench
+this.decoBlockDioriteBrickSiding.fence.name=Diorite Bricks Wall
+this.decoBlockDioriteBrickSiding.siding.name=Diorite Bricks Siding
+this.decoBlockDioriteBrickSiding.corner.name=Diorite Bricks Corner
+this.decoBlockDioriteBrickMoulding.column.name=Diorite Bricks Column
+this.decoBlockDioriteBrickMoulding.pedestal.name=Diorite Bricks Pedestal
+this.decoBlockDioriteBrickMoulding.moulding.name=Diorite Bricks Moulding
+
+tile.decoBlockPolishedStoneSiding.bench.name=Polished Stone Bench
+tile.decoBlockPolishedStoneSiding.fence.name=Polished Stone Wall
+tile.decoBlockPolishedStoneSiding.siding.name=Polished Stone Siding
+tile.decoBlockPolishedStoneSiding.corner.name=Polished Stone Corner
+tile.decoBlockPolishedStoneMoulding.column.name=Polished Stone Column
+tile.decoBlockPolishedStoneMoulding.pedestal.name=Polished Stone Pedestal
+tile.decoBlockPolishedStoneMoulding.moulding.name=Polsihed Stone Moulding
 
 # Vanilla/BTW Blocks Renamed
 

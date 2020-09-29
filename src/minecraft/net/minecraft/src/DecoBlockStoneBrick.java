@@ -9,10 +9,10 @@ public class DecoBlockStoneBrick extends Block {
         this.setResistance(10.0F);
         this.SetPicksEffectiveOn();
         this.setStepSound(soundStoneFootstep);
-		this.setUnlocalizedName("addonStone");
+		this.setUnlocalizedName("decoBlockStoneBricks");
 		this.setCreativeTab(CreativeTabs.tabBlock);
 
-		DecoManager.Register(this, new String[] {"graniteBrick", "andesiteBrick", "dioriteBrick"}, new String[] {"Granite Bricks", "Andesite Bricks", "Diorite Bricks"});
+		DecoManager.Register(this, new String[] {"granite", "andesite", "diorite"});
 	}
 
     /**
@@ -73,9 +73,9 @@ public class DecoBlockStoneBrick extends Block {
 	}
 	public void registerIcons(IconRegister Register)
 	{
-		Icons[0] = Register.registerIcon("ginger_graniteBrick");
-		Icons[1] = Register.registerIcon("ginger_andesiteBrick");
-		Icons[2] = Register.registerIcon("ginger_dioriteBrick");
+		Icons[0] = Register.registerIcon("decoBlockGraniteBrick");
+		Icons[1] = Register.registerIcon("decoBlockAndesiteBrick");
+		Icons[2] = Register.registerIcon("decoBlockDioriteBrick");
 	}
 	//
 }

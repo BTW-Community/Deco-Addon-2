@@ -13,9 +13,9 @@ public class DecoBlockStoneBrickLooseGranite extends FCBlockLavaReceiver
         this.SetPicksEffectiveOn();
         this.SetChiselsEffectiveOn();
         this.setStepSound(soundStoneFootstep);
-        this.setUnlocalizedName("ginger_graniteBrickLoose");
+        this.setUnlocalizedName("decoBlockGraniteBricksLoose");
         this.setCreativeTab(CreativeTabs.tabBlock);
-        DecoManager.Register(this, "Loose Granite Bricks");
+        DecoManager.Register(this);
     }
 
     public boolean OnMortarApplied(World world, int x, int y, int z)

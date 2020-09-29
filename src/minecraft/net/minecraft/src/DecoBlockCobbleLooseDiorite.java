@@ -13,9 +13,9 @@ public class DecoBlockCobbleLooseDiorite extends FCBlockLavaReceiver
         this.SetPicksEffectiveOn();
         this.SetChiselsEffectiveOn();
         this.setStepSound(soundStoneFootstep);
-        this.setUnlocalizedName("ginger_dioriteCobbleLoose");
+        this.setUnlocalizedName("decoBlockDioriteCobbleLoose");
         this.setCreativeTab(CreativeTabs.tabBlock);
-        DecoManager.Register(this, "Loose Diorite Cobblestone");
+        DecoManager.Register(this);
     }
 
     public boolean OnMortarApplied(World world, int x, int y, int z)

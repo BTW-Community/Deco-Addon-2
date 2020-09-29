@@ -11,10 +11,10 @@ public class DecoBlockCobble extends Block {
 		this.SetPicksEffectiveOn();
 		this.SetChiselsEffectiveOn();
 		this.setStepSound(soundStoneFootstep);
-		this.setUnlocalizedName("addonStone");
+		this.setUnlocalizedName("decoBlockCobblestone");
 		this.setCreativeTab(CreativeTabs.tabBlock);
 
-		DecoManager.Register(this, new String[] {"graniteCobble", "andesiteCobble", "dioriteCobble"}, new String[] {"Granite Cobblestone", "Andesite Cobblestone", "Diorite Cobblestone"});
+		DecoManager.Register(this, new String[] {"granite", "andesite", "diorite"});
 	}
 
     /**
@@ -75,9 +75,9 @@ public class DecoBlockCobble extends Block {
 	}
 	public void registerIcons(IconRegister Register)
 	{
-		Icons[0] = Register.registerIcon("ginger_graniteCobble");
-		Icons[1] = Register.registerIcon("ginger_andesiteCobble");
-		Icons[2] = Register.registerIcon("ginger_dioriteCobble");
+		Icons[0] = Register.registerIcon("decoBlockGraniteCobble");
+		Icons[1] = Register.registerIcon("decoBlockAndesiteCobble");
+		Icons[2] = Register.registerIcon("decoBlockDioriteCobble");
 	}
 	//
 }
