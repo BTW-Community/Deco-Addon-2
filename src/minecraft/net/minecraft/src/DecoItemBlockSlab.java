@@ -15,7 +15,7 @@ public class DecoItemBlockSlab extends FCItemBlockSlab {
 	
 	public String getUnlocalizedName(ItemStack reference)
 	{
-		return super.getUnlocalizedName() + "." + reference.getItem().itemID + "." + reference.getItemDamage();
+		return super.getUnlocalizedName() + "." + reference.getItemDamage();
 	}
 	
     public int getMetadata(int var1)

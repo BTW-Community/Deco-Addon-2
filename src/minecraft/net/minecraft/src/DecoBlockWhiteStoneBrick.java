@@ -10,10 +10,8 @@ public class DecoBlockWhiteStoneBrick extends Block {
 		setResistance(10.0F);
 		setStepSound(Block.soundStoneFootstep);
 		this.SetPicksEffectiveOn(true);
-		setUnlocalizedName("whiteStoneBrick");
 		setCreativeTab(CreativeTabs.tabBlock);
         this.setTickRandomly(true);
-		DecoManager.Register(this, new String[] { "regular", "mossy", "cracked", "chiseled" }, new String[] { "White Stone Bricks", "Mossy White Stone Bricks", "Cracked White Stone Bricks", "Chiseled White Stone" });
 	}
 	
 	public void updateTick(World var1, int var2, int var3, int var4, Random var5)
@@ -48,10 +46,10 @@ public class DecoBlockWhiteStoneBrick extends Block {
 	public static Icon[] Icons = new Icon[4];
 	public void registerIcons(IconRegister Register)
 	{
-		for (int Index = 0; Index < 4; Index++)
-		{
-			Icons[Index] = Register.registerIcon("ginger_bricks_white_" + Index);
-		}
+		Icons[0] = Register.registerIcon("decoBlockWhiteBricks");
+		Icons[1] = Register.registerIcon("decoBlockWhiteBricksMossy");
+		Icons[2] = Register.registerIcon("decoBlockWhiteBricksCracked");
+		Icons[3] = Register.registerIcon("decoBlockWhiteBricksChiseled");
 	}
 	public Icon getIcon(int Side, int Meta)
 	{

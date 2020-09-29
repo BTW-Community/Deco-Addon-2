@@ -2,22 +2,28 @@ package net.minecraft.src;
 
 import java.util.List;
 
-public class DecoItemMultiBlock extends ItemBlockWithMetadata
+public class DecoItemBlockMulti extends ItemBlockWithMetadata
 {
 	String[] blockNames;
-	public DecoItemMultiBlock(Block owner, String[] names, String preTitle, String[] titles, String postTitle)
+	
+	public DecoItemBlockMulti(Block owner)
 	{
 		super(owner.blockID - 256,owner);
 		setMaxDamage(0);
 		setHasSubtypes(true);
 		setUnlocalizedName(owner.getUnlocalizedName());
+	}
+	
+	public DecoItemBlockMulti(Block owner, String[] names)
+	{
+		this(owner);
 		blockNames = names;
-		for (int i = 0; i < titles.length; ++i)
-			DecoManager.Name(new ItemStack(this, 1, i), preTitle + titles[i] + postTitle);
 	}
 	public String getUnlocalizedName(ItemStack reference)
 	{
-		return super.getUnlocalizedName() + "." + this.blockNames[reference.getItemDamage()];
+		if (blockNames != null)
+			return super.getUnlocalizedName() + "." + this.blockNames[reference.getItemDamage()];
+		return super.getUnlocalizedName() + "." + reference.getItemDamage();
 	}
 	public void getSubItems(int var1, CreativeTabs var2, List var3)
 	{

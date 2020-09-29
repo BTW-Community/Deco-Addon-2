@@ -192,22 +192,27 @@ public class DecoManager extends DawnAddon
 	}
 	public static void Register(Block target, String[] names, String preTitle, String[] titles, String postTitle)
 	{
-		Item.itemsList[target.blockID] = new DecoItemMultiBlock(target, names, preTitle, titles, postTitle);
+		Item.itemsList[target.blockID] = new DecoItemBlockMulti(target, names);
+	}
+
+	public static void Register(Block target, String[] names)
+	{
+		Item.itemsList[target.blockID] = new DecoItemBlockMulti(target, names);
 	}
 
 	public static void Register(Block target, String[] names, String[] titles)
 	{
-		Item.itemsList[target.blockID] = new DecoItemMultiBlock(target, names, "", titles, "");
+		Item.itemsList[target.blockID] = new DecoItemBlockMulti(target, names);
 	}
 
 	public static void Register(Block target, String[] names, String[] titles, String postTitle)
 	{
-		Item.itemsList[target.blockID] = new DecoItemMultiBlock(target, names, "", titles, postTitle);
+		Item.itemsList[target.blockID] = new DecoItemBlockMulti(target, names);
 	}
 
 	public static void Register(Block target, String[] names, String preTitle, String[] titles)
 	{
-		Item.itemsList[target.blockID] = new DecoItemMultiBlock(target, names, preTitle, titles, "");
+		Item.itemsList[target.blockID] = new DecoItemBlockMulti(target, names);
 	}
 
 	public static boolean getNewSoundsInstalled() {

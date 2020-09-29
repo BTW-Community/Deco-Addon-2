@@ -13,9 +13,7 @@ public class DecoBlockGlassStained extends FCBlockGlass
 		setCreativeTab((CreativeTabs)null);
 		setHardness(0.3F);
 		setStepSound(soundGlassFootstep);
-		setUnlocalizedName("ginger_glass_");
-		DecoManager.Register(this, new String[] { "black", "red", "green", "brown", "blue", "purple", "cyan", "lightGrey", "grey", "pink", "lime", "yellow", "lightBlue", "magenta", "orange", "white" },
-				new String[] { "Black", "Red", "Green", "Brown", "Blue", "Purple", "Cyan", "Light Grey", "Grey", "Pink", "Lime", "Yellow", "Light Blue", "Magenta", "Orange", "White" }, " Stained Glass Block");
+		setUnlocalizedName("decoBlockStainedGlass");
 	}
 
     public ItemStack GetStackRetrievedByBlockDispenser(World var1, int var2, int var3, int var4)
@@ -69,17 +67,16 @@ public class DecoBlockGlassStained extends FCBlockGlass
 		return 1;
 	}
 //CLIENT ONLY METHODS
-	public static Icon[] PaneSideIcons = new Icon[16], Icons = new Icon[16];
+	public static Icon[] Icons = new Icon[16];
 	public Icon getIcon(int Side, int Meta)
 	{
 		return Icons[Meta];
 	}
 	public void registerIcons(IconRegister Register)
 	{
-		for (int Index = 0; Index < 16; Index++)
+		for (int i = 0; i < 16; i++)
 		{
-			Icons[Index] = Register.registerIcon("ginger_glass_" + Index);
-			PaneSideIcons[Index] = Register.registerIcon("ginger_glass_pane_top_" + Index);
+			Icons[i] = Register.registerIcon("decoBlockStainedGlass_" + DecoUtilsMisc.colorOrder[i]);
 		}
 	}
 //

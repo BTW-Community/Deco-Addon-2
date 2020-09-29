@@ -1,0 +1,325 @@
+# Deco Blocks
+
+tile.decoBlockTerracotta.name=Terracotta
+tile.decoBlockTerracottaUnfired.name=Unfired Terracotta
+tile.decoBlockTerracottaStairs.name=Terracotta Stairs
+tile.decoBlockWhiteBricksStairs.name=White Stone Brick Stairs
+this.decoBlockStairsMossyCobble.name=Mossy Cobblestone Stairs
+
+# Deco Complex Blocks
+
+tile.decoBlockTerracottaStained.black.name=Black Stained Terracotta
+tile.decoBlockTerracottaStained.red.name=Red Stained Terracotta
+tile.decoBlockTerracottaStained.green.name=Green Stained Terracotta
+tile.decoBlockTerracottaStained.brown.name=Brown Stained Terracotta
+tile.decoBlockTerracottaStained.blue.name=Blue Stained Terracotta
+tile.decoBlockTerracottaStained.purple.name=Purple Stained Terracotta
+tile.decoBlockTerracottaStained.cyan.name=Cyan Stained Terracotta
+tile.decoBlockTerracottaStained.lightGray.name=Light Gray Stained Terracotta
+tile.decoBlockTerracottaStained.gray.name=Gray Stained Terracotta
+tile.decoBlockTerracottaStained.pink.name=Pink Stained Terracotta
+tile.decoBlockTerracottaStained.lime.name=Lime Stained Terracotta
+tile.decoBlockTerracottaStained.yellow.name=Yellow Stained Terracotta
+tile.decoBlockTerracottaStained.lightBlue.name=Light Blue Stained Terracotta
+tile.decoBlockTerracottaStained.magenta.name=Magenta Stained Terracotta
+tile.decoBlockTerracottaStained.orange.name=Orange Stained Terracotta
+tile.decoBlockTerracottaStained.white.name=White Stained Terracotta
+
+tile.decoBlockTerracottaSiding.bench.name=Terracotta Bench
+tile.decoBlockTerracottaSiding.fence.name=Terracotta Wall
+tile.decoBlockTerracottaSiding.siding.name=Terracotta Siding
+tile.decoBlockTerracottaSiding.corner.name=Terracotta Corner
+tile.decoBlockTerracottaMoulding.column.name=Terracotta Column
+tile.decoBlockTerracottaMoulding.pedestal.name=Terracotta Pedestal
+tile.decoBlockTerracottaMoulding.table.name=Terracotta Table
+
+tile.decoBlockTerracottaStainedSiding.black.bench.name=Black Stained Terracotta Bench
+tile.decoBlockTerracottaStainedSiding.black.fence.name=Black Stained Terracotta Wall
+tile.decoBlockTerracottaStainedSiding.black.siding.name=Black Stained Terracotta Siding
+tile.decoBlockTerracottaStainedSiding.black.corner.name=Black Stained Terracotta Corner
+tile.decoBlockTerracottaStainedMoulding.black.column.name=Black Stained Terracotta Column
+tile.decoBlockTerracottaStainedMoulding.black.pedestal.name=Black Stained Terracotta Pedestal
+tile.decoBlockTerracottaStainedMoulding.black.moulding.name=Black Stained Terracotta Moulding
+tile.decoBlockTerracottaStainedStairs.black.name=Black Stained Terracotta Stairs
+
+tile.decoBlockTerracottaStainedSiding.red.bench.name=Red Stained Terracotta Bench
+tile.decoBlockTerracottaStainedSiding.red.fence.name=Red Stained Terracotta Wall
+tile.decoBlockTerracottaStainedSiding.red.siding.name=Red Stained Terracotta Siding
+tile.decoBlockTerracottaStainedSiding.red.corner.name=Red Stained Terracotta Corner
+tile.decoBlockTerracottaStainedMoulding.red.column.name=Red Stained Terracotta Column
+tile.decoBlockTerracottaStainedMoulding.red.pedestal.name=Red Stained Terracotta Pedestal
+tile.decoBlockTerracottaStainedMoulding.red.moulding.name=Red Stained Terracotta Moulding
+tile.decoBlockTerracottaStainedStairs.red.name=Red Stained Terracotta Stairs
+
+tile.decoBlockTerracottaStainedSiding.green.bench.name=Green Stained Terracotta Bench
+tile.decoBlockTerracottaStainedSiding.green.fence.name=Green Stained Terracotta Wall
+tile.decoBlockTerracottaStainedSiding.green.siding.name=Green Stained Terracotta Siding
+tile.decoBlockTerracottaStainedSiding.green.corner.name=Green Stained Terracotta Corner
+tile.decoBlockTerracottaStainedMoulding.green.column.name=Green Stained Terracotta Column
+tile.decoBlockTerracottaStainedMoulding.green.pedestal.name=Green Stained Terracotta Pedestal
+tile.decoBlockTerracottaStainedMoulding.green.moulding.name=Green Stained Terracotta Moulding
+tile.decoBlockTerracottaStainedStairs.green.name=Black Green Terracotta Stairs
+
+tile.decoBlockTerracottaStainedSiding.brown.bench.name=Brown Stained Terracotta Bench
+tile.decoBlockTerracottaStainedSiding.brown.fence.name=Brown Stained Terracotta Wall
+tile.decoBlockTerracottaStainedSiding.brown.siding.name=Brown Stained Terracotta Siding
+tile.decoBlockTerracottaStainedSiding.brown.corner.name=Brown Stained Terracotta Corner
+tile.decoBlockTerracottaStainedMoulding.brown.column.name=Brown Stained Terracotta Column
+tile.decoBlockTerracottaStainedMoulding.brown.pedestal.name=Brown Stained Terracotta Pedestal
+tile.decoBlockTerracottaStainedMoulding.brown.moulding.name=Brown Stained Terracotta Moulding
+tile.decoBlockTerracottaStainedStairs.brown.name=Brown Stained Terracotta Stairs
+
+tile.decoBlockTerracottaStainedSiding.blue.bench.name=Blue Stained Terracotta Bench
+tile.decoBlockTerracottaStainedSiding.blue.fence.name=Blue Stained Terracotta Wall
+tile.decoBlockTerracottaStainedSiding.blue.siding.name=Blue Stained Terracotta Siding
+tile.decoBlockTerracottaStainedSiding.blue.corner.name=Blue Stained Terracotta Corner
+tile.decoBlockTerracottaStainedMoulding.blue.column.name=Blue Stained Terracotta Column
+tile.decoBlockTerracottaStainedMoulding.blue.pedestal.name=Blue Stained Terracotta Pedestal
+tile.decoBlockTerracottaStainedMoulding.blue.moulding.name=Blue Stained Terracotta Moulding
+tile.decoBlockTerracottaStainedStairs.blue.name=Blue Stained Terracotta Stairs
+
+tile.decoBlockTerracottaStainedSiding.purple.bench.name=Purple Stained Terracotta Bench
+tile.decoBlockTerracottaStainedSiding.purple.fence.name=Purple Stained Terracotta Wall
+tile.decoBlockTerracottaStainedSiding.purple.siding.name=Purple Stained Terracotta Siding
+tile.decoBlockTerracottaStainedSiding.purple.corner.name=Purple Stained Terracotta Corner
+tile.decoBlockTerracottaStainedMoulding.purple.column.name=Purple Stained Terracotta Column
+tile.decoBlockTerracottaStainedMoulding.purple.pedestal.name=Purple Stained Terracotta Pedestal
+tile.decoBlockTerracottaStainedMoulding.purple.moulding.name=Purple Stained Terracotta Moulding
+tile.decoBlockTerracottaStainedStairs.purple.name=Purple Stained Terracotta Stairs
+
+tile.decoBlockTerracottaStainedSiding.cyan.bench.name=Cyan Stained Terracotta Bench
+tile.decoBlockTerracottaStainedSiding.cyan.fence.name=Cyan Stained Terracotta Wall
+tile.decoBlockTerracottaStainedSiding.cyan.siding.name=Cyan Stained Terracotta Siding
+tile.decoBlockTerracottaStainedSiding.cyan.corner.name=Cyan Stained Terracotta Corner
+tile.decoBlockTerracottaStainedMoulding.cyan.column.name=Cyan Stained Terracotta Column
+tile.decoBlockTerracottaStainedMoulding.cyan.pedestal.name=Cyan Stained Terracotta Pedestal
+tile.decoBlockTerracottaStainedMoulding.cyan.moulding.name=Cyan Stained Terracotta Moulding
+tile.decoBlockTerracottaStainedStairs.cyan.name=Cyan Stained Terracotta Stairs
+
+tile.decoBlockTerracottaStainedSiding.lightGray.bench.name=Light Gray Stained Terracotta Bench
+tile.decoBlockTerracottaStainedSiding.lightGray.fence.name=Light Gray Stained Terracotta Wall
+tile.decoBlockTerracottaStainedSiding.lightGray.siding.name=Light Gray Stained Terracotta Siding
+tile.decoBlockTerracottaStainedSiding.lightGray.corner.name=Light Gray Stained Terracotta Corner
+tile.decoBlockTerracottaStainedMoulding.lightGray.column.name=Light Gray Stained Terracotta Column
+tile.decoBlockTerracottaStainedMoulding.lightGray.pedestal.name=Light Gray Stained Terracotta Pedestal
+tile.decoBlockTerracottaStainedMoulding.lightGray.moulding.name=Light Gray Stained Terracotta Moulding
+tile.decoBlockTerracottaStainedStairs.lightGray.name=Light Gray Stained Terracotta Stairs
+
+tile.decoBlockTerracottaStainedSiding.gray.bench.name=Gray Stained Terracotta Bench
+tile.decoBlockTerracottaStainedSiding.gray.fence.name=Gray Stained Terracotta Wall
+tile.decoBlockTerracottaStainedSiding.gray.siding.name=Gray Stained Terracotta Siding
+tile.decoBlockTerracottaStainedSiding.gray.corner.name=Gray Stained Terracotta Corner
+tile.decoBlockTerracottaStainedMoulding.gray.column.name=Gray Stained Terracotta Column
+tile.decoBlockTerracottaStainedMoulding.gray.pedestal.name=Gray Stained Terracotta Pedestal
+tile.decoBlockTerracottaStainedMoulding.gray.moulding.name=Gray Stained Terracotta Moulding
+tile.decoBlockTerracottaStainedStairs.gray.name=Gray Stained Terracotta Stairs
+
+tile.decoBlockTerracottaStainedSiding.pink.bench.name=Pink Stained Terracotta Bench
+tile.decoBlockTerracottaStainedSiding.pink.fence.name=Pink Stained Terracotta Wall
+tile.decoBlockTerracottaStainedSiding.pink.siding.name=Pink Stained Terracotta Siding
+tile.decoBlockTerracottaStainedSiding.pink.corner.name=Pink Stained Terracotta Corner
+tile.decoBlockTerracottaStainedMoulding.pink.column.name=Pink Stained Terracotta Column
+tile.decoBlockTerracottaStainedMoulding.pink.pedestal.name=Pink Stained Terracotta Pedestal
+tile.decoBlockTerracottaStainedMoulding.pink.moulding.name=Pink Stained Terracotta Moulding
+tile.decoBlockTerracottaStainedStairs.pink.name=Pink Stained Terracotta Stairs
+
+tile.decoBlockTerracottaStainedSiding.lime.bench.name=Lime Stained Terracotta Bench
+tile.decoBlockTerracottaStainedSiding.lime.fence.name=Lime Stained Terracotta Wall
+tile.decoBlockTerracottaStainedSiding.lime.siding.name=Lime Stained Terracotta Siding
+tile.decoBlockTerracottaStainedSiding.lime.corner.name=Lime Stained Terracotta Corner
+tile.decoBlockTerracottaStainedMoulding.lime.column.name=Lime Stained Terracotta Column
+tile.decoBlockTerracottaStainedMoulding.lime.pedestal.name=Lime Stained Terracotta Pedestal
+tile.decoBlockTerracottaStainedMoulding.lime.moulding.name=Lime Stained Terracotta Moulding
+tile.decoBlockTerracottaStainedStairs.lime.name=Lime Stained Terracotta Stairs
+
+tile.decoBlockTerracottaStainedSiding.yellow.bench.name=Yellow Stained Terracotta Bench
+tile.decoBlockTerracottaStainedSiding.yellow.fence.name=Yellow Stained Terracotta Wall
+tile.decoBlockTerracottaStainedSiding.yellow.siding.name=Yellow Stained Terracotta Siding
+tile.decoBlockTerracottaStainedSiding.yellow.corner.name=Yellow Stained Terracotta Corner
+tile.decoBlockTerracottaStainedMoulding.yellow.column.name=Yellow Stained Terracotta Column
+tile.decoBlockTerracottaStainedMoulding.yellow.pedestal.name=Yellow Stained Terracotta Pedestal
+tile.decoBlockTerracottaStainedMoulding.yellow.moulding.name=Yellow Stained Terracotta Moulding
+tile.decoBlockTerracottaStainedStairs.yellow.name=Yellow Stained Terracotta Stairs
+
+tile.decoBlockTerracottaStainedSiding.lightBlue.bench.name=Light Blue Stained Terracotta Bench
+tile.decoBlockTerracottaStainedSiding.lightBlue.fence.name=Light Blue Stained Terracotta Wall
+tile.decoBlockTerracottaStainedSiding.lightBlue.siding.name=Light Blue Stained Terracotta Siding
+tile.decoBlockTerracottaStainedSiding.lightBlue.corner.name=Light Blue Stained Terracotta Corner
+tile.decoBlockTerracottaStainedMoulding.lightBlue.column.name=Light Blue Stained Terracotta Column
+tile.decoBlockTerracottaStainedMoulding.lightBlue.pedestal.name=Light Blue Stained Terracotta Pedestal
+tile.decoBlockTerracottaStainedMoulding.lightBlue.moulding.name=Light Blue Stained Terracotta Moulding
+tile.decoBlockTerracottaStainedStairs.lightBlue.name=Light Blue Stained Terracotta Stairs
+
+tile.decoBlockTerracottaStainedSiding.magenta.bench.name=Magenta Stained Terracotta Bench
+tile.decoBlockTerracottaStainedSiding.magenta.fence.name=Magenta Stained Terracotta Wall
+tile.decoBlockTerracottaStainedSiding.magenta.siding.name=Magenta Stained Terracotta Siding
+tile.decoBlockTerracottaStainedSiding.magenta.corner.name=Magenta Stained Terracotta Corner
+tile.decoBlockTerracottaStainedMoulding.magenta.column.name=Magenta Stained Terracotta Column
+tile.decoBlockTerracottaStainedMoulding.magenta.pedestal.name=Magenta Stained Terracotta Pedestal
+tile.decoBlockTerracottaStainedMoulding.magenta.moulding.name=Magenta Stained Terracotta Moulding
+tile.decoBlockTerracottaStainedStairs.magenta.name=Magenta Stained Terracotta Stairs
+
+tile.decoBlockTerracottaStainedSiding.orange.bench.name=Orange Stained Terracotta Bench
+tile.decoBlockTerracottaStainedSiding.orange.fence.name=Orange Stained Terracotta Wall
+tile.decoBlockTerracottaStainedSiding.orange.siding.name=Orange Stained Terracotta Siding
+tile.decoBlockTerracottaStainedSiding.orange.corner.name=Orange Stained Terracotta Corner
+tile.decoBlockTerracottaStainedMoulding.orange.column.name=Orange Stained Terracotta Column
+tile.decoBlockTerracottaStainedMoulding.orange.pedestal.name=Orange Stained Terracotta Pedestal
+tile.decoBlockTerracottaStainedMoulding.orange.moulding.name=Orange Stained Terracotta Moulding
+tile.decoBlockTerracottaStainedStairs.orange.name=Orange Stained Terracotta Stairs
+
+tile.decoBlockTerracottaStainedSiding.white.bench.name=White Stained Terracotta Bench
+tile.decoBlockTerracottaStainedSiding.white.fence.name=White Stained Terracotta Wall
+tile.decoBlockTerracottaStainedSiding.white.siding.name=White Stained Terracotta Siding
+tile.decoBlockTerracottaStainedSiding.white.corner.name=White Stained Terracotta Corner
+tile.decoBlockTerracottaStainedMoulding.white.column.name=White Stained Terracotta Column
+tile.decoBlockTerracottaStainedMoulding.white.pedestal.name=White Stained Terracotta Pedestal
+tile.decoBlockTerracottaStainedMoulding.white.moulding.name=White Stained Terracotta Moulding
+tile.decoBlockTerracottaStainedStairs.white.name=White Stained Terracotta Stairs
+
+tile.decoBlockGlazedTerracotta.black.name=Black Glazed Terracotta
+tile.decoBlockGlazedTerracotta.red.name=Red Glazed Terracotta
+tile.decoBlockGlazedTerracotta.green.name=Green Glazed Terracotta
+tile.decoBlockGlazedTerracotta.brown.name=Brown Glazed Terracotta
+tile.decoBlockGlazedTerracotta.blue.name=Blue Glazed Terracotta
+tile.decoBlockGlazedTerracotta.purple.name=Purple Glazed Terracotta
+tile.decoBlockGlazedTerracotta.cyan.name=Cyan Glazed Terracotta
+tile.decoBlockGlazedTerracotta.lightGray.name=Light Gray Glazed Terracotta
+tile.decoBlockGlazedTerracotta.gray.name=Gray Glazed Terracotta
+tile.decoBlockGlazedTerracotta.pink.name=Pink Glazed Terracotta
+tile.decoBlockGlazedTerracotta.lime.name=Lime Glazed Terracotta
+tile.decoBlockGlazedTerracotta.yellow.name=Yellow Glazed Terracotta
+tile.decoBlockGlazedTerracotta.lightBlue.name=Light Blue Glazed Terracotta
+tile.decoBlockGlazedTerracotta.magenta.name=Magenta Glazed Terracotta
+tile.decoBlockGlazedTerracotta.orange.name=Orange Glazed Terracotta
+tile.decoBlockGlazedTerracotta.white.name=White Glazed Terracotta
+
+tile.decoBlockTerracottaSlab.0.name=Black Stained Terracotta Slab
+tile.decoBlockTerracottaSlab.1.name=Red Stained Terracotta Slab
+tile.decoBlockTerracottaSlab.2.name=Green Stained Terracotta Slab
+tile.decoBlockTerracottaSlab.3.name=Brown Stained Terracotta Slab
+tile.decoBlockTerracottaSlab.4.name=Blue Stained Terracotta Slab
+tile.decoBlockTerracottaSlab.5.name=Purple Stained Terracotta Slab
+tile.decoBlockTerracottaSlab.6.name=Cyan Stained Terracotta Slab
+tile.decoBlockTerracottaSlab.7=Light Gray Stained Terracotta Slab
+
+tile.decoBlockTerracottaSlab2.0.name=Gray Stained Terracotta Slab
+tile.decoBlockTerracottaSlab2.1.name=Pink Stained Terracotta Slab
+tile.decoBlockTerracottaSlab2.2.name=Lime Stained Terracotta Slab
+tile.decoBlockTerracottaSlab2.3.name=Yellow Stained Terracotta Slab
+tile.decoBlockTerracottaSlab2.4.name=Light Blue Stained Terracotta Slab
+tile.decoBlockTerracottaSlab2.5.name=Magenta Stained Terracotta Slab
+tile.decoBlockTerracottaSlab2.6.name=Orange Stained Terracotta Slab
+tile.decoBlockTerracottaSlab2.7.name=White Stained Terracotta slab
+
+tile.decoBlockStainedGlass.black.name=Black Stained Glass
+tile.decoBlockStainedGlass.red.name=Red Stained Glass
+tile.decoBlockStainedGlass.green.name=Green Stained Glass
+tile.decoBlockStainedGlass.brown.name=Brown Stained Glass
+tile.decoBlockStainedGlass.blue.name=Blue Stained Glass
+tile.decoBlockStainedGlass.purple.name=Purple Stained Glass
+tile.decoBlockStainedGlass.cyan.name=Cyan Stained Glass
+tile.decoBlockStainedGlass.lightGray.name=Light gray Stained Glass
+tile.decoBlockStainedGlass.gray.name=Gray Stained Glass
+tile.decoBlockStainedGlass.pink.name=Pink Stained Glass
+tile.decoBlockStainedGlass.lime.name=Lime Stained Glass
+tile.decoBlockStainedGlass.yellow.name=Yellow Stained Glass
+tile.decoBlockStainedGlass.lightBlue.name=Light Blue Stained Glass
+tile.decoBlockStainedGlass.magenta.name=Magenta Stained Glass
+tile.decoBlockStainedGlass.orange.name=Orange Stained Glass
+tile.decoBlockStainedGlass.white.name=White Stained Glass
+
+tile.decoBlockWhiteBricks.name=White Stone Bricks
+tile.decoBlockWhiteBricks.mossy.name=Mossy White Stone Bricks
+tile.decoBlockWhiteBricks.cracked.name=Cracked White Stone Bricks
+tile.decoBlockWhiteBricks.chiseled.name=Chiseled White Stone Bricks
+
+tile.decoBlockWhiteBricksSiding.bench.name=White Stone Brick Bench
+tile.decoBlockWhiteBrickSiding.fence.name=White Stone Brick Wall
+tile.decoBlockWhiteBrickSiding.siding.name=White stone Brick Siding
+tile.decoBlockWhiteBrickSiding.corner.name=White Stone Brick Corner
+tile.decoBlockWhiteBrickSMoulding.column.name=White Stone Brick Column
+tile.decoBlockWhiteBrickSMoulding.pedestal.name=White Stone Brick Pedestal
+tile.decoBlockWhiteBrickSMoulding.moulding.name=White Stone Brick Moudling
+
+tile.decoBlockFlower.yucca.name=Yucca
+tile.decoBlockFlower.hyacinth.name=Hyacinth
+tile.decoBlockFlower.birdsParadise.name=Birds of Paradise
+tile.decoBlockFlower.azalea.name=Azalea
+tile.decoBlockFlower.cornflower.name=Cornflower
+tile.decoBlockFlower.lavender.name=Lavender
+tile.decoBlockFlower.honeysuckle.name=Honeysuckle
+tile.decoBlockFlower.allium.name=Allium
+tile.decoBlockFlower.orchidBlue.name=Blue Orchid
+tile.decoBlockFlower.poppy.name=Poppy
+tile.decoBlockFlower.azureBluet.name=Azure Bluet
+tile.decoBlockFlower.daisy.name=Daisy
+tile.decoBlockFlower.peony.name=Peony
+tile.decoBlockFlower.lilac.name=Lilac
+tile.decoBlockFlower.rosebush.name=Rose Bush
+tile.decoBlockFlower.roseBlue=Blue Rose
+
+tile.decoBlockFlower2.blackRose.name=Black Rose
+
+tile.decoBlockTulip.red.name=Red Tulip
+tile.decoBlockTulip.pink.name=Pink Tulip
+tile.decoBlockTulip.orange.name=Orange Tulip
+tile.decoBlockTulip.white.name=White Tulip
+tile.decoBlockTulip.blue.name=Blue Tulip
+
+tile.decoBlockCobblestoneSiding.bench.name=Cobblestone Bench
+tile.decoBlockCobblestoneSiding.fence.name=Cobblestone Wall
+tile.decoBlockCobblestoneSiding.siding.name=Cobblestone Siding
+tile.decoBlockCobblestoneSiding.corner.name=Cobblestone Corner
+tile.decoBlockCobblestoneMoulding.column.name=Cobblestone Column
+tile.decoBlockCobblestoneMoulding.pedestal.name=Cobblestone Pedestal
+tile.decoBlockCobblestoneMoulding.moulding.name=Cobblestone Moulding
+
+tile.decoBlockMossyCobbleSiding.bench.name=Mossy Cobblestone Bench
+tile.decoBlockMossyCobbleSiding.fence.name=Mossy Cobblestone Wall
+tile.decoBlockMossyCobbleSiding.siding.name=Mossy Cobblestone Siding
+tile.decoBlockMossyCobbleSiding.corner.name=Mossy Cobblestone Corner
+tile.decoBlockMossyCobbleMoulding.column.name=Mossy Cobblestone Column
+tile.decoBlockMossyCobbleMoulding.pedestal.name=Mossy Cobblestone Pedestal
+tile.decoBlockMossyCobbleMoulding.moulding.name=Mossy Cobblestone Moulding
+
+tile.decoBlockStone.granite.name=Granite
+tile.decoBlockStone.andesite.name=Andesite
+tile.decoBlockStone.diorite.name=Diorite
+
+# Vanilla/BTW Blocks Renamed
+
+tile.rose.name=Red Rose
+tile.stairsStone.name=Cobblestone Stairs
+tile.stoneMoss.name=Mossy Cobblestone
+
+# Deco Items
+
+item.decoItemGlassPiece.name=Piece of Glass
+item.decoItemFertilizer.name=Fertilizer
+
+# Deco Complex Items
+
+item.decoItemStainedGlass.black.name=Black Stained Glass
+item.decoItemStainedGlass.red.name=Red Stained Glass
+item.decoItemStainedGlass.green.name=Green Stained Glass
+item.decoItemStainedGlass.brown.name=Brown Stained Glass
+item.decoItemStainedGlass.blue.name=Blue Stained Glass
+item.decoItemStainedGlass.purple.name=Purple Stained Glass
+item.decoItemStainedGlass.cyan.name=Cyan Stained Glass
+item.decoItemStainedGlass.lightGray.name=Light gray Stained Glass
+item.decoItemStainedGlass.gray.name=Gray Stained Glass
+item.decoItemStainedGlass.pink.name=Pink Stained Glass
+item.decoItemStainedGlass.lime.name=Lime Stained Glass
+item.decoItemStainedGlass.yellow.name=Yellow Stained Glass
+item.decoItemStainedGlass.lightBlue.name=Light Blue Stained Glass
+item.decoItemStainedGlass.magenta.name=Magenta Stained Glass
+item.decoItemStainedGlass.orange.name=Orange Stained Glass
+item.decoItemStainedGlass.white.name=White Stained Glass
+
+# Vanilla/BTW Items Renamed
+
+
+
+# Container
+

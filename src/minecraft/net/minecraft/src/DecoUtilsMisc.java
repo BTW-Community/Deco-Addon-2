@@ -6,6 +6,8 @@ import java.util.Map;
 public class DecoUtilsMisc {
 	private static Map<Integer, String> formatMap = new HashMap<Integer, String>();
 	
+	public final static String[] colorOrder = {"black", "red", "green", "brown", "blue", "purple", "cyan", "lightGray", "gray", "pink", "lime", "yellow", "lightBlue", "magenta", "orange", "white"};
+	
 	static {
 		formatMap.put(0, "0");
 		formatMap.put(1, "4");

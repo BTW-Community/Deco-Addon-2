@@ -11,10 +11,10 @@ public class DecoBlockStone extends Block {
 		this.SetPicksEffectiveOn();
 		this.SetChiselsEffectiveOn();
 		this.setStepSound(soundStoneFootstep);
-		this.setUnlocalizedName("addonStone");
+		this.setUnlocalizedName("decoBlockStone");
 		this.setCreativeTab(CreativeTabs.tabBlock);
 
-		DecoManager.Register(this, new String[] {"granite", "andesite", "diorite"}, new String[] {"Granite", "Andesite", "Diorite"});
+		DecoManager.Register(this, new String[] {"granite", "andesite", "diorite"});
 	}
 
 	public int damageDropped(int meta) {
@@ -66,9 +66,9 @@ public class DecoBlockStone extends Block {
 	}
 	public void registerIcons(IconRegister Register)
 	{
-		Icons[0] = Register.registerIcon("ginger_granite");
-		Icons[1] = Register.registerIcon("ginger_andesite");
-		Icons[2] = Register.registerIcon("ginger_diorite");
+		Icons[0] = Register.registerIcon("decoBlockGranite");
+		Icons[1] = Register.registerIcon("decoBlockAndesite");
+		Icons[2] = Register.registerIcon("decoBlockDiorite");
 	}
 	//
 }

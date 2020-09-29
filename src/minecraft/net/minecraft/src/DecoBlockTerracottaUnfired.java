@@ -8,10 +8,7 @@ public class DecoBlockTerracottaUnfired extends FCBlockFallingFullBlock
         this.SetShovelsEffectiveOn();
         this.SetFilterableProperties(8);
         this.setStepSound(soundSandFootstep);
-        this.setUnlocalizedName("ginger_unfiredTerracotta");
         this.setCreativeTab(CreativeTabs.tabBlock);
-        
-        DecoManager.Register(this, "Unfired Terracotta");
 	}
 
     public void OnCookedByKiln(World var1, int var2, int var3, int var4) {

@@ -6,6 +6,7 @@ public class DecoBlockChair extends Block {
 		this.setUnlocalizedName("ginger_chair_" + tag);
 		this.setCreativeTab(CreativeTabs.tabDecorations);
 		DecoManager.Register(this, name + " Chair");
+		this.InitBlockBounds(.0625F, 0, .0625F, 0.9375F, .625F, 0.9375F);
 	}
 
     public boolean CanGroundCoverRestOnBlock(World var1, int var2, int var3, int var4)
@@ -72,14 +73,6 @@ public class DecoBlockChair extends Block {
 	}
 	@Override public int onBlockPlaced(World world, int var2, int var3, int var4, int var5, float var6, float var7, float var8, int var9)
 	{
-		/*if (var5 < 2)
-		{
-			var5 = 2;
-		}
-		else
-		{
-			var5 = FCUtilsMisc.GetOppositeFacing(var5);
-		}*/
 		return SetFacing(var9, var5);
 	}
 	@Override public void onBlockPlacedBy(World world, int var2, int var3, int var4, EntityLiving var5, ItemStack var6)
@@ -88,15 +81,6 @@ public class DecoBlockChair extends Block {
         
         int var7 = FCUtilsMisc.ConvertOrientationToFlatBlockFacingReversed(var5);
         this.SetFacing(world, var2, var3, var4, var7);
-	}
-	@Override public AxisAlignedBB getCollisionBoundingBoxFromPool(World world, int var2, int var3, int var4)
-	{
-		int var5 = this.GetFacing(world, var2, var3, var4);
-		return var5 != 2 && var5 != 3 ? AxisAlignedBB.getAABBPool().getAABB((double) ((float) var2), (double) ((float) var3), (double) ((float) var4 + 0.5F - 0.25F), (double) ((float) var2 + 1.0F), (double) ((float) var3 + 1.0F), (double) ((float) var4 + 0.5F + 0.25F)) : AxisAlignedBB.getAABBPool().getAABB((double) ((float) var2 + 0.5F - 0.25F), (double) ((float) var3), (double) ((float) var4), (double) ((float) var2 + 0.5F + 0.25F), (double) ((float) var3 + 1.0F), (double) ((float) var4 + 1.0F));
-	}
-	@Override public void setBlockBoundsBasedOnState(IBlockAccess blockAccess, int var2, int var3, int var4)
-	{
-		setBlockBounds(.0625F, 0.0F, .0625F, .9375F, 1.25F, .9375F);
 	}
 	//CLIENT ONLY
 	@Override public boolean shouldSideBeRendered(IBlockAccess blockAccess, int var2, int var3, int var4, int var5)

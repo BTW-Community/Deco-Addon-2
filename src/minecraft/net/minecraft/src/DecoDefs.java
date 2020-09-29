@@ -804,26 +804,25 @@ public class DecoDefs {
 	}
 
 	private void addClayDefs() {
-		terracotta = new DecoBlockTerracotta(id_terracotta).setHardness(1.0F).setResistance(5.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("ginger_clay").setCreativeTab(CreativeTabs.tabBlock);
-		stainedTerracotta = (new DecoBlockTerracottaStained(id_stainedTerracotta, "ginger_clay", "Terracotta", Material.rock)).setHardness(1.0F).setResistance(5.0F).setStepSound(Block.soundStoneFootstep).setCreativeTab(CreativeTabs.tabBlock);
-		unfiredTerracotta = new DecoBlockTerracottaUnfired(id_unfiredTerracotta);
-		DecoManager.Register(terracotta, "Terracotta");
-		DecoManager.Register(unfiredTerracotta, "Unfired Terracotta");
+		terracotta = new DecoBlockTerracotta(id_terracotta).setHardness(1.0F).setResistance(5.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("decoBlockTerracotta").setCreativeTab(CreativeTabs.tabBlock);
+		stainedTerracotta = (new DecoBlockTerracottaStained(id_stainedTerracotta)).setHardness(1.0F).setResistance(5.0F).setStepSound(Block.soundStoneFootstep).setCreativeTab(CreativeTabs.tabBlock).setUnlocalizedName("decoBlockTerracottaStained");
+		unfiredTerracotta = new DecoBlockTerracottaUnfired(id_unfiredTerracotta).setUnlocalizedName("decoBlockTerracottaUnfired");
+		DecoManager.Register(terracotta);
+		Item.itemsList[stainedTerracotta.blockID] = new DecoItemBlockColored(stainedTerracotta.blockID - 256, stainedTerracotta);
+		DecoManager.Register(unfiredTerracotta);
 
 		//Sub blocks
 		int start = id_clay_sub_start,
 				end = start+51,
 				id = start,
 				i = 0;
-		final String main = "Terracotta";
-		terracottaSidingAndCorner = new DecoBlockSidingAndCornerDecorativeWall(id++, Material.rock, "ginger_clay", 2.0F, 5.0F, Block.soundWoodFootstep, "claySiding", "Terracotta");
-		terracottaMouldingAndDecorative = new FCBlockMouldingAndDecorative(id++, Material.rock, "ginger_clay", "ginger_clay_column", 3042, 2.0F, 5.0F, Block.soundWoodFootstep, "clayMoulding");
-		terracottaStairs = new FCBlockStairs(id++, terracotta, i).setUnlocalizedName("stairsHardenedClay");
+		terracottaSidingAndCorner = new DecoBlockSidingAndCornerDecorativeWall(id++, Material.rock, "decoBlockTerracotta", 2.0F, 5.0F, Block.soundStoneFootstep, "decoBlockTerracottaSiding", "Terracotta");
+		terracottaMouldingAndDecorative = new FCBlockMouldingAndDecorative(id++, Material.rock, "decoBlockTerracotta", "decoBlockTerracottaColumn", 3042, 2.0F, 5.0F, Block.soundStoneFootstep, "decoBlockTerracottaMoulding");
+		terracottaStairs = new FCBlockStairs(id++, terracotta, i).setUnlocalizedName("decoBlockTerracottaStairs");
 
 		Item.itemsList[terracottaSidingAndCorner.blockID] = new FCItemBlockSidingAndCorner(terracottaSidingAndCorner.blockID - 256);
 		Item.itemsList[terracottaMouldingAndDecorative.blockID] = new FCItemBlockMouldingAndDecorative(terracottaMouldingAndDecorative.blockID - 256);
-		DecoManager.Register(terracottaStairs, main+" Stairs");
-		DecoManager.NameSubBlocks_Wall(terracottaSidingAndCorner, terracottaMouldingAndDecorative, main);
+		DecoManager.Register(terracottaStairs);
 
 		stainedTerracottaSidingAndCorner = new Block[16];
 		stainedTerracottaMouldingAndDecorative = new Block[16];
@@ -831,14 +830,13 @@ public class DecoDefs {
 
 		while(i < 16)
 		{
-			stainedTerracottaSidingAndCorner[i] = new DecoBlockSidingAndCornerDecorativeWall(id++, Material.rock, "ginger_clay_"+i, 2.0F, 5.0F, Block.soundStoneFootstep, "stainedClaySiding_"+i, "Stained Terracotta");
-			stainedTerracottaMouldingAndDecorative[i] = new FCBlockMouldingAndDecorative(id++, Material.rock, "ginger_clay_"+i, "ginger_clay_column_"+i, 3042, 2.0F, 5.0F, Block.soundWoodFootstep, "stainedClayMoulding_"+i);
-			stainedTerracottaStairs[i] = new FCBlockStairs(id++, stainedTerracotta, i).setUnlocalizedName("stairsStainedClay_"+i);
+			stainedTerracottaSidingAndCorner[i] = new DecoBlockSidingAndCornerDecorativeWall(id++, Material.rock, "decoBlockTerracottaStained_" + DecoUtilsMisc.colorOrder[i], 2.0F, 5.0F, Block.soundStoneFootstep, "decoBlockTerracottaStainedSiding." + DecoUtilsMisc.colorOrder[i], "Stained Terracotta");
+			stainedTerracottaMouldingAndDecorative[i] = new FCBlockMouldingAndDecorative(id++, Material.rock, "decoBlockTerracottaStained_" + DecoUtilsMisc.colorOrder[i], "decoBlockTerracottaStainedColumn_" + DecoUtilsMisc.colorOrder[i], 3042, 2.0F, 5.0F, Block.soundWoodFootstep, "decoBlockTerracottaStainedMoulding." + DecoUtilsMisc.colorOrder[i]);
+			stainedTerracottaStairs[i] = new FCBlockStairs(id++, stainedTerracotta, i).setUnlocalizedName("decoBlockTerracottaStainedStairs." + DecoUtilsMisc.colorOrder[i]);
 
 			Item.itemsList[stainedTerracottaSidingAndCorner[i].blockID] = new FCItemBlockSidingAndCorner(stainedTerracottaSidingAndCorner[i].blockID - 256);
 			Item.itemsList[stainedTerracottaMouldingAndDecorative[i].blockID] = new FCItemBlockMouldingAndDecorative(stainedTerracottaMouldingAndDecorative[i].blockID - 256);
-			DecoManager.Register(stainedTerracottaStairs[i], DecoBlockTerracottaStained.names[i]+" "+main+" Stairs");
-			DecoManager.NameSubBlocks_Wall(stainedTerracottaSidingAndCorner[i], stainedTerracottaMouldingAndDecorative[i], DecoBlockTerracottaStained.names[i]+" "+main);
+			DecoManager.Register(stainedTerracottaStairs[i]);
 
 			i++;//i is metadata from original 16 color set
 		}
@@ -855,67 +853,39 @@ public class DecoDefs {
 
 		while(i < 16)
 		{
-			glazedTerracotta[i] = new DecoBlockTerracottaGlazed(start + i, i, "ginger_glazedTerracotta_" + i, names + " Glazed Terracotta", Material.rock).setHardness(2.0F).setResistance(10.0F).setStepSound(Block.soundStoneFootstep).setCreativeTab(CreativeTabs.tabBlock);
-			DecoManager.Register(glazedTerracotta[i], names[i] + " Glazed Terracotta");
+			glazedTerracotta[i] = new DecoBlockTerracottaGlazed(start + i, i).setHardness(2.0F).setResistance(10.0F).setStepSound(Block.soundStoneFootstep).setCreativeTab(CreativeTabs.tabBlock).setUnlocalizedName("decoBlockGlazedTerracotta." + DecoUtilsMisc.colorOrder[i]);
+			DecoManager.Register(glazedTerracotta[i]);
 			i++;
 		}
 
 		//Slabs
-		terracottaSlab = new DecoBlockSlabStone(id_terracottaSlab, new Block[] {DecoDefs.stainedTerracotta, DecoDefs.stainedTerracotta, DecoDefs.stainedTerracotta, DecoDefs.stainedTerracotta, DecoDefs.stainedTerracotta, DecoDefs.stainedTerracotta, DecoDefs.stainedTerracotta, DecoDefs.stainedTerracotta}, new int[] {0, 1, 2, 3, 4, 5, 6, 7});
+		terracottaSlab = new DecoBlockSlabStone(id_terracottaSlab, new Block[] {DecoDefs.stainedTerracotta, DecoDefs.stainedTerracotta, DecoDefs.stainedTerracotta, DecoDefs.stainedTerracotta, DecoDefs.stainedTerracotta, DecoDefs.stainedTerracotta, DecoDefs.stainedTerracotta, DecoDefs.stainedTerracotta}, new int[] {0, 1, 2, 3, 4, 5, 6, 7}).setUnlocalizedName("decoBlockTerracottaSlab");
 		Item.itemsList[DecoDefs.terracottaSlab.blockID] = new DecoItemBlockSlab(DecoDefs.terracottaSlab.blockID - 256);
-		DecoManager.Name(new ItemStack(DecoDefs.terracottaSlab, 1, 0), "Black Terracotta Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.terracottaSlab, 1, 1), "Red Terracotta Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.terracottaSlab, 1, 2), "Green Terracotta Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.terracottaSlab, 1, 3), "Brown Terracotta Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.terracottaSlab, 1, 4), "Blue Terracotta Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.terracottaSlab, 1, 5), "Purple Terracotta Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.terracottaSlab, 1, 6), "Cyan Terracotta Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.terracottaSlab, 1, 7), "Light Grey Terracotta Slab");
 
-		terracottaSlab2 = new DecoBlockSlabStone(id_terracottaSlab2, new Block[] {DecoDefs.stainedTerracotta, DecoDefs.stainedTerracotta, DecoDefs.stainedTerracotta, DecoDefs.stainedTerracotta, DecoDefs.stainedTerracotta, DecoDefs.stainedTerracotta, DecoDefs.stainedTerracotta, DecoDefs.stainedTerracotta}, new int[] {8, 9, 10, 11, 12, 13, 14, 15});
+		terracottaSlab2 = new DecoBlockSlabStone(id_terracottaSlab2, new Block[] {DecoDefs.stainedTerracotta, DecoDefs.stainedTerracotta, DecoDefs.stainedTerracotta, DecoDefs.stainedTerracotta, DecoDefs.stainedTerracotta, DecoDefs.stainedTerracotta, DecoDefs.stainedTerracotta, DecoDefs.stainedTerracotta}, new int[] {8, 9, 10, 11, 12, 13, 14, 15}).setUnlocalizedName("decoBlockTerracottaSlab2");
 		Item.itemsList[DecoDefs.terracottaSlab2.blockID] = new DecoItemBlockSlab(DecoDefs.terracottaSlab2.blockID - 256);
-		DecoManager.Name(new ItemStack(DecoDefs.terracottaSlab2, 1, 0), "Gray Terracotta Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.terracottaSlab2, 1, 1), "Pink Terracotta Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.terracottaSlab2, 1, 2), "Lime Terracotta Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.terracottaSlab2, 1, 3), "Yellow Terracotta Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.terracottaSlab2, 1, 4), "Light Blue Terracotta Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.terracottaSlab2, 1, 5), "Magenta Terracotta Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.terracottaSlab2, 1, 6), "Orange Terracotta Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.terracottaSlab2, 1, 7), "White Terracotta Slab");
 	}
 
 	private void addGlassDefs() {
-		glassChunk = new Item(id_glassChunk).setUnlocalizedName("ginger_glassball").setCreativeTab(CreativeTabs.tabMaterials).SetFilterableProperties(2);
+		glassChunk = new Item(id_glassChunk).setUnlocalizedName("ginger_glassball").setCreativeTab(CreativeTabs.tabMaterials).SetFilterableProperties(2).setUnlocalizedName("decoItemGlassPiece");
 		glassStained = new DecoBlockGlassStained(id_glassStained);
-		stainedGlassItem = new DecoItemGlassStained(id_glassStainedItem);
-		DecoManager.Name(glassChunk, "Piece of Glass");
-		DecoManager.Name(stainedGlassItem, "Stained Glass");
+		stainedGlassItem = (DecoItemGlassStained) new DecoItemGlassStained(id_glassStainedItem).setUnlocalizedName("decoItemStainedGlass");
 	}
 
 	private void addWhiteStoneDefs() {
-		whiteStoneBrick = new DecoBlockWhiteStoneBrick(id_whiteStoneBrick);
-		whiteBrickSidingAndCorner = new DecoBlockSidingAndCornerDecorativeWall(id_whiteBrickSidingAndCorner, Material.rock, "ginger_bricks_white_0_decorative", 2.0F, 5.0F, Block.soundStoneFootstep, "whiteBrickSiding", "White Brick");
-		whiteBrickMouldingAndDecorative = new FCBlockMouldingAndDecorative(id_whiteBrickMouldingAndDecorative, Material.rock, "ginger_bricks_white_0_decorative", "ginger_bricks_white_0_column", 3042, 2.0F, 5.0F, Block.soundStoneFootstep, "whiteBrickMolding");
-		whiteBrickStairs = new FCBlockStairs(id_whiteBrickStairs, whiteStoneBrick, 0).setUnlocalizedName("stairsWhiteBrick");
+		whiteStoneBrick = new DecoBlockWhiteStoneBrick(id_whiteStoneBrick).setUnlocalizedName("decoBlockWhiteBricks");
+		whiteBrickSidingAndCorner = new DecoBlockSidingAndCornerDecorativeWall(id_whiteBrickSidingAndCorner, Material.rock, "decoBlockWhiteBricks", 2.0F, 5.0F, Block.soundStoneFootstep, "decoBlockWhiteBricksSiding", "White Brick");
+		whiteBrickMouldingAndDecorative = new FCBlockMouldingAndDecorative(id_whiteBrickMouldingAndDecorative, Material.rock, "decoBlockWhiteBricks", "decoBlockWhiteBricksColumn", 3042, 2.0F, 5.0F, Block.soundStoneFootstep, "decoBlockWhiteBricksMoulding");
+		whiteBrickStairs = new FCBlockStairs(id_whiteBrickStairs, whiteStoneBrick, 0).setUnlocalizedName("decoBlockWhiteBricksStairs");
 
+		Item.itemsList[whiteStoneBrick.blockID] = new DecoItemBlockBrick(whiteStoneBrick.blockID - 256, whiteStoneBrick);
 		Item.itemsList[whiteBrickSidingAndCorner.blockID] = new FCItemBlockSidingAndCorner(whiteBrickSidingAndCorner.blockID - 256);
 		Item.itemsList[whiteBrickMouldingAndDecorative.blockID] = new FCItemBlockMouldingAndDecorative(whiteBrickMouldingAndDecorative.blockID - 256);
-		DecoManager.Register(whiteBrickStairs, "White Stone Brick Stairs");
-
-		DecoManager.NameSubBlocks_Wall(whiteBrickSidingAndCorner, whiteBrickMouldingAndDecorative, "White Stone Brick");
+		DecoManager.Register(whiteBrickStairs);
 	}
 
 	private void addFlowerDefs() {
-		String[]
-				flowers = { "yucca", "hyacinth", "birdsParadise", "azalea", "cornFlower", "lavender", "honeysuckle","allium", "orchidBlue", "poppy", "azureBluet", "daisy", "peony","lilac","rosebush", "roseBlue"},
-				flowers2 = {"blackRose"},
-				tulips = { "red","pink", "orange", "white", "blue"},
-				flowerNames = { "Yucca", "Hyacinth", "Birds of Paradise", "Azaleas", "Cornflower", "Lavender", "Honeysuckle", "Allium","Blue Orchid", "Poppy", "Azure Bluet", "Daisy", "Peony", "Lilac", "Rose Bush", "Blue Rose"},
-				flowerNames2 = {"Black Rose"},
-				tulipNames = { "Red", "Pink", "Orange", "White", "Blue"};
-
-		Item.dyePowder = new DecoItemDye(95);
-		//Item.m_bSuppressConflictWarnings=false;
+		Item.dyePowder = new DecoItemDye(Item.dyePowder.itemID - 256);
 
 		List recipes = CraftingManager.getInstance().getRecipeList();
 		ArrayList<RecipeFireworks> fireworks = new ArrayList<RecipeFireworks>();
@@ -925,11 +895,14 @@ public class DecoDefs {
 		for(RecipeFireworks rf: fireworks)
 			recipes.remove(rf);
 		recipes.add(new DecoRecipeFireworksColor());
-
-		//FCBetterThanWolves.fcPlanter = new AddonBlockPlanter(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcPlanter));
-		flower = new DecoBlockFlowers(id_flower, "flower",flowers,flowerNames);
-		flower2 = new DecoBlockFlowers(id_flower2, "flower2", flowers2, flowerNames2);
-		tulip = new DecoBlockFlowers(id_tulip, "tulip", tulips, tulipNames, " Tulip");
+		
+		flower = new DecoBlockFlowers(id_flower, "decoBlockFlower", 16);
+		flower2 = new DecoBlockFlowers(id_flower2, "decoBlockFlower2", 1);
+		tulip = new DecoBlockFlowers(id_tulip, "decoBlockTulip", 5);
+		
+		Item.itemsList[flower.blockID] = new DecoItemBlockMulti(flower, new String[] {"yucca", "hyacinth", "birdsParadise", "azalea", "cornflower", "lavender", "honeysuckle","allium", "orchidBlue", "poppy", "azureBluet", "daisy", "peony","lilac","rosebush", "roseBlue"});
+		Item.itemsList[flower2.blockID] = new DecoItemBlockMulti(flower2, new String[] {"blackRose"});
+		Item.itemsList[tulip.blockID] = new DecoItemBlockMulti(tulip, new String[] {"red","pink", "orange", "white", "blue"});
 
 		fertilizer = new DecoItemFertilizer(id_fertilizer);
 
@@ -938,28 +911,21 @@ public class DecoDefs {
 		//Flower pot
 		flowerPot = new DecoBlockFlowerPot(id_flowerPot);
 		TileEntity.addMapping(DecoTileEntityFlowerPot.class, "AddonFlowerPot");
-		//AddonManager.AddCustomTileEntityRenderer(AddonTileEntityFlowerPot.class, new AddonTileEntityFlowerPotRenderer());
 		Item flowerPotItem = new DecoItemFlowerPot(Item.flowerPot.itemID - 256);
 		DawnUtilsReflection.replaceVanillaItem("flowerPot", Item.flowerPot, flowerPotItem);
 	}
 
 	private void addStoneDefs() {
-		DecoManager.Name(Block.stairsCobblestone, "Cobblestone Stairs");
-		DecoManager.Name(Block.cobblestoneMossy, "Mossy Cobblestone");
-
-		cobblestoneSidingAndCorner = new DecoBlockSidingAndCornerDecorativeWall(id_cobblestoneSidingAndCorner, Material.rock, "ginger_cobblestoneDecorative", 1.5F, 10.0F, Block.soundStoneFootstep, "cobblestoneSiding", "Cobblestone").SetPicksEffectiveOn();
-		cobblestoneMouldingAndDecorative = new FCBlockMouldingAndDecorative(id_cobblestoneMouldingAndDecorative, Material.rock, "ginger_cobblestoneDecorative", "ginger_cobblestoneDecorative_column", 3042, 1.5F, 10.0F, Block.soundStoneFootstep, "cobblestoneMoulding").SetPicksEffectiveOn();
-		mossyCobblestoneSidingAndCorner = new DecoBlockSidingAndCornerDecorativeWall(id_mossyCobblestoneSidingAndCorner, Material.rock, "ginger_mossyCobblestoneDecorative", 1.5F, 10.0F, Block.soundStoneFootstep, "mossyCobblestoneSiding", "Mossy Cobblestone").SetPicksEffectiveOn();
-		mossyCobblestoneMouldingAndDecorative = new FCBlockMouldingAndDecorative(id_mossyCobblestoneMouldingAndDecorative, Material.rock, "ginger_mossyCobblestoneDecorative", "ginger_mossyCobblestoneDecorative_column", 3042, 1.5F, 10.0F, Block.soundStoneFootstep, "mossyCobblestoneMoulding").SetPicksEffectiveOn();
-		mossyCobblestoneStairs = new FCBlockStairs(id_mossyCobblestoneStairs, Block.cobblestoneMossy, 0).setUnlocalizedName("stairsMossyCobblestone").SetPicksEffectiveOn();
+		cobblestoneSidingAndCorner = new DecoBlockSidingAndCornerDecorativeWall(id_cobblestoneSidingAndCorner, Material.rock, "stonebrick", 1.5F, 10.0F, Block.soundStoneFootstep, "decoBlockCobblestoneSiding", "Cobblestone").SetPicksEffectiveOn();
+		cobblestoneMouldingAndDecorative = new FCBlockMouldingAndDecorative(id_cobblestoneMouldingAndDecorative, Material.rock, "stonebrick", "decoBlockCobblestoneColumn", 3042, 1.5F, 10.0F, Block.soundStoneFootstep, "decoBlockCobblestoneMoulding").SetPicksEffectiveOn();
+		mossyCobblestoneSidingAndCorner = new DecoBlockSidingAndCornerDecorativeWall(id_mossyCobblestoneSidingAndCorner, Material.rock, "stonemoss", 1.5F, 10.0F, Block.soundStoneFootstep, "decoBlockMossyCobbleSiding", "Mossy Cobblestone").SetPicksEffectiveOn();
+		mossyCobblestoneMouldingAndDecorative = new FCBlockMouldingAndDecorative(id_mossyCobblestoneMouldingAndDecorative, Material.rock, "stonemoss", "decoBlockMossyCobbleColumn", 3042, 1.5F, 10.0F, Block.soundStoneFootstep, "decoBlockMossyCobbleMoulding").SetPicksEffectiveOn();
+		mossyCobblestoneStairs = new FCBlockStairs(id_mossyCobblestoneStairs, Block.cobblestoneMossy, 0).setUnlocalizedName("decoBlockStairsMossyCobble").SetPicksEffectiveOn();
 
 		Item.itemsList[cobblestoneSidingAndCorner.blockID] = new FCItemBlockSidingAndCorner(cobblestoneSidingAndCorner.blockID - 256);
 		Item.itemsList[cobblestoneMouldingAndDecorative.blockID] = new FCItemBlockMouldingAndDecorative(cobblestoneMouldingAndDecorative.blockID - 256);
-		DecoManager.NameSubBlocks_Wall(cobblestoneSidingAndCorner, cobblestoneMouldingAndDecorative, "Cobblestone");
 		Item.itemsList[mossyCobblestoneSidingAndCorner.blockID] = new FCItemBlockSidingAndCorner(mossyCobblestoneSidingAndCorner.blockID - 256);
 		Item.itemsList[mossyCobblestoneMouldingAndDecorative.blockID] = new FCItemBlockMouldingAndDecorative(mossyCobblestoneMouldingAndDecorative.blockID - 256);
-		DecoManager.NameSubBlocks_Wall(mossyCobblestoneSidingAndCorner, mossyCobblestoneMouldingAndDecorative, "Mossy Cobblestone");
-		DecoManager.Register(mossyCobblestoneStairs, "Mossy Cobblestone Stairs");
 
 		stoneTypes = new DecoBlockStone(id_stoneType);
 		stoneTypesCobble = new DecoBlockCobble(id_stoneTypeCobble);

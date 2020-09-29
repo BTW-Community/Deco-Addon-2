@@ -1,14 +1,11 @@
 package net.minecraft.src;
 
 public class DecoBlockTerracottaGlazed extends Block {
-
-	private String nameTag;
 	private int index;
-
-	protected DecoBlockTerracottaGlazed(int id, int index, String tag, String name, Material material) {
-		super(id, material);
-		this.nameTag = tag;
-		this.setUnlocalizedName(tag);
+	
+	protected DecoBlockTerracottaGlazed(int id, int index) {
+		super(id, Material.rock);
+		this.index = index;
 	}
 
     /**
@@ -124,9 +121,9 @@ public class DecoBlockTerracottaGlazed extends Block {
 	
 	@Override
 	public void registerIcons(IconRegister iconRegister) {
-		icons[0] = iconRegister.registerIcon(nameTag + "_0");
-		icons[1] = iconRegister.registerIcon(nameTag + "_1");
-		icons[2] = iconRegister.registerIcon(nameTag + "_2");
-		icons[3] = iconRegister.registerIcon(nameTag + "_3");
+		icons[0] = iconRegister.registerIcon("decoBlockGlazedTerracotta_" + DecoUtilsMisc.colorOrder[this.index] + "_0");
+		icons[1] = iconRegister.registerIcon("decoBlockGlazedTerracotta_" + DecoUtilsMisc.colorOrder[this.index] + "_1");
+		icons[2] = iconRegister.registerIcon("decoBlockGlazedTerracotta_" + DecoUtilsMisc.colorOrder[this.index] + "_2");
+		icons[3] = iconRegister.registerIcon("decoBlockGlazedTerracotta_" + DecoUtilsMisc.colorOrder[this.index] + "_3");
 	}
 }

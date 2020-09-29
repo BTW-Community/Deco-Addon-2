@@ -5,11 +5,10 @@ public class DecoItemFertilizer extends Item
 	public DecoItemFertilizer(int ID)
 	{
 		super(ID);
-		setUnlocalizedName("ginger_fertilizer");
+		setUnlocalizedName("decoItemFertilizer");
 		setCreativeTab(CreativeTabs.tabMaterials);
 		SetFilterableProperties(8);
 		SetBellowsBlowDistance(FCBetterThanWolves.fcItemCoalDust.GetBellowsBlowDistance(0));
-		DecoManager.Name(this, "Fertilizer");
 	}
 	@Override public boolean onItemUse(ItemStack stack, EntityPlayer player, World world, int x, int y, int z, int var7, float hitX, float hitY, float hitZ)
 	{
