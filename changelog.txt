@@ -12,6 +12,7 @@ I lost most of the data on my PC between this version and the last. While the so
 [*]Changed doors to stack to 16.
 [*]Changed trapdoors above ladders to only be climbable if the trapdoor is attached to the same face as the ladder.
 [*]Changed chair collision and selection box to better match the model.
+[*]Changed rendering on tables to have a wider leg if the block type uses walls to match the thickness of the walls.
 [*]Changed the texture on polished stone, polished stone variant, polished infused stone, cut sandstone, and cut red sandstone columns.
 [*]Removed specific textures for subblocks (except columns). Subblocks will now simply use the texture of their base block. However, MCPatcher will still allow texturepacks to override these textures if texturepack authors wish to do so.
 [*]Fixed an issue where doors would drop 2 items if the top block was broken.
