@@ -9,7 +9,7 @@ public class DecoBlockNetherBrickRedLoose extends FCBlockMortarReceiver
         this.setResistance(5.0F);
         this.SetPicksEffectiveOn();
         this.setStepSound(soundStoneFootstep);
-        this.setUnlocalizedName("ginger_netherBrickRedLoose");
+        this.setUnlocalizedName("decoBlockNetherBrickRedLoose");
         this.setCreativeTab(CreativeTabs.tabBlock);
     }
 

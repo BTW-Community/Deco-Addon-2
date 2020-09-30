@@ -8,7 +8,7 @@ public class DecoBlockPrismarineLantern extends Block {
         this.SetPicksEffectiveOn();
         this.setLightValue(1.0F);
         this.setStepSound(soundGlassFootstep);
-        this.setUnlocalizedName("ginger_prismarineLantern");
+        this.setUnlocalizedName("decoBlockPrismarineLantern");
         this.setCreativeTab(CreativeTabs.tabBlock);
 	}
 }

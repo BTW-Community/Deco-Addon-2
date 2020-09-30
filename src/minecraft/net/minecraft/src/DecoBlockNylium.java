@@ -17,7 +17,7 @@ public class DecoBlockNylium extends Block {
         	this.setStepSound(soundStoneFootstep);
         
         this.setCreativeTab(CreativeTabs.tabBlock);
-        this.setUnlocalizedName("ginger_nylium");
+        this.setUnlocalizedName("decoBlockNylium");
 	}
 
     /**
@@ -69,9 +69,9 @@ public class DecoBlockNylium extends Block {
     
     @Override
     public void registerIcons(IconRegister register) {
-    	crimson_top = register.registerIcon("ginger_nyliumCrimsonTop");
-    	crimson_side = register.registerIcon("ginger_nyliumCrimsonSide");
-    	warped_top = register.registerIcon("ginger_nyliumWarpedTop");
-    	warped_side = register.registerIcon("ginger_nyliumWarpedSide");
+    	crimson_top = register.registerIcon("decoBlockNyliumCrimson_top");
+    	crimson_side = register.registerIcon("decoBlockNyliumCrimson_side");
+    	warped_top = register.registerIcon("decoBlockNyliumWarped_top");
+    	warped_side = register.registerIcon("decoBlockNyliumWarped_side");
     }
 }

@@ -10,7 +10,7 @@ public class DecoBlockRedSandSlab extends FCBlockSlabFalling
         this.setHardness(0.5F);
         this.SetShovelsEffectiveOn(true);
         this.setStepSound(soundSandFootstep);
-        this.setUnlocalizedName("ginger_redSandSlab");
+        this.setUnlocalizedName("decoBlockRedSandSlab");
         this.setCreativeTab(CreativeTabs.tabBlock);
     }
 

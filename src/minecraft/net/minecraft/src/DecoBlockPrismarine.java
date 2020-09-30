@@ -7,10 +7,10 @@ public class DecoBlockPrismarine extends Block {
         this.setResistance(10.0F);
         this.SetPicksEffectiveOn();
         this.setStepSound(soundStoneFootstep);
-		this.setUnlocalizedName("addonStone");
+		this.setUnlocalizedName("decoBlockPrismarine");
 		this.setCreativeTab(CreativeTabs.tabBlock);
 
-		DecoManager.Register(this, new String[] {"prismarine", "prismarineBrick", "prismarineDark"}, new String[] {"Prismarine", "Prismarine Bricks", "Dark Prismarine"});
+		DecoManager.Register(this, new String[] {"prismarine", "prismarineBrick", "prismarineDark"});
 	}
 
 	public int damageDropped(int Meta)
@@ -26,9 +26,9 @@ public class DecoBlockPrismarine extends Block {
 	}
 	public void registerIcons(IconRegister Register)
 	{
-		Icons[0] = Register.registerIcon("ginger_prismarine");
-		Icons[1] = Register.registerIcon("ginger_prismarineBrick");
-		Icons[2] = Register.registerIcon("ginger_prismarineDark");
+		Icons[0] = Register.registerIcon("decoBlockPrismarine");
+		Icons[1] = Register.registerIcon("decoBlockPrismarineBrick");
+		Icons[2] = Register.registerIcon("decoBlockPrismarineDark");
 	}
 	//
 }

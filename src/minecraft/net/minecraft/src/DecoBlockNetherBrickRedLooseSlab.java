@@ -9,13 +9,13 @@ public class DecoBlockNetherBrickRedLooseSlab extends FCBlockMortarReceiverSlab
         this.setResistance(5.0F);
         this.SetPicksEffectiveOn();
         this.setStepSound(soundStoneFootstep);
-        this.setUnlocalizedName("fcBlockNetherBrickLooseSlabRed");
+        this.setUnlocalizedName("decoBlockNetherBrickRedSlabLoose");
         this.setCreativeTab(CreativeTabs.tabBlock);
     }
 
     public int GetCombinedBlockID(int var1)
     {
-        return DecoDefs.netherBrickLoose.blockID;
+        return DecoDefs.netherBrickRedLoose.blockID;
     }
 
     public boolean OnMortarApplied(World var1, int var2, int var3, int var4)

@@ -455,17 +455,17 @@ public class DecoRecipes {
 		FCRecipes.AddRecipe(new ItemStack(DecoDefs.prismarineLantern), new Object[] {"XXX", "X#X", "XXX", 'X', DecoDefs.prismarineShard, '#', new ItemStack(DecoDefs.prismarineCrystal)});
 
 		//Nether Brick
-		FCRecipes.AddShapelessRecipe(new ItemStack(DecoDefs.netherBrickLoose), new ItemStack[] {new ItemStack(FCBetterThanWolves.fcItemNetherBrick), new ItemStack(FCBetterThanWolves.fcItemNetherBrick), new ItemStack(FCBetterThanWolves.fcItemNetherBrick), new ItemStack(FCBetterThanWolves.fcItemNetherBrick), new ItemStack(FCBetterThanWolves.fcItemNetherBrick), new ItemStack(FCBetterThanWolves.fcItemNetherBrick), new ItemStack(FCBetterThanWolves.fcItemNetherBrick), new ItemStack(FCBetterThanWolves.fcItemNetherBrick), new ItemStack(FCBetterThanWolves.fcItemHellfireDust)});
-		FCRecipes.AddRecipe(new ItemStack(DecoDefs.netherBrickLooseStairs, 4), new Object[] {"X ", "XX", 'X', new ItemStack(DecoDefs.netherBrickLoose)});
-		FCRecipes.AddRecipe(new ItemStack(DecoDefs.netherBrickLooseStairs, 8), new Object[] {"X  ", "XX ", "XXX", 'X', new ItemStack(DecoDefs.netherBrickLoose)});
-		FCRecipes.AddRecipe(new ItemStack(DecoDefs.netherBrickLooseSlab, 4), new Object[] {"XX", 'X', new ItemStack(DecoDefs.netherBrickLoose)});
+		FCRecipes.AddShapelessRecipe(new ItemStack(DecoDefs.netherBrickRedLoose), new ItemStack[] {new ItemStack(FCBetterThanWolves.fcItemNetherBrick), new ItemStack(FCBetterThanWolves.fcItemNetherBrick), new ItemStack(FCBetterThanWolves.fcItemNetherBrick), new ItemStack(FCBetterThanWolves.fcItemNetherBrick), new ItemStack(FCBetterThanWolves.fcItemNetherBrick), new ItemStack(FCBetterThanWolves.fcItemNetherBrick), new ItemStack(FCBetterThanWolves.fcItemNetherBrick), new ItemStack(FCBetterThanWolves.fcItemNetherBrick), new ItemStack(FCBetterThanWolves.fcItemHellfireDust)});
+		FCRecipes.AddRecipe(new ItemStack(DecoDefs.netherBrickRedLooseStairs, 4), new Object[] {"X ", "XX", 'X', new ItemStack(DecoDefs.netherBrickRedLoose)});
+		FCRecipes.AddRecipe(new ItemStack(DecoDefs.netherBrickRedLooseStairs, 8), new Object[] {"X  ", "XX ", "XXX", 'X', new ItemStack(DecoDefs.netherBrickRedLoose)});
+		FCRecipes.AddRecipe(new ItemStack(DecoDefs.netherBrickRedLooseSlab, 4), new Object[] {"XX", 'X', new ItemStack(DecoDefs.netherBrickRedLoose)});
 		FCRecipes.AddShapelessRecipe(new ItemStack(DecoDefs.netherBrick, 1, 1), new Object[] {new ItemStack(FCBetterThanWolves.fcItemChiselIron, 1, 32767), new ItemStack(DecoDefs.netherBrick, 1, 0)});
 		FCRecipes.AddShapelessRecipe(new ItemStack(DecoDefs.netherBrick, 1, 1), new Object[] {new ItemStack(DecoDefs.chiselDiamond, 1, 32767), new ItemStack(DecoDefs.netherBrick, 1, 0)});
 		FCRecipes.AddShapelessRecipe(new ItemStack(DecoDefs.netherBrick, 1, 2), new Object[] {new ItemStack(FCBetterThanWolves.fcItemChiselIron, 1, 32767), new ItemStack(Block.netherBrick, 1, 0)});
 		FCRecipes.AddShapelessRecipe(new ItemStack(DecoDefs.netherBrick, 1, 2), new Object[] {new ItemStack(DecoDefs.chiselDiamond, 1, 32767), new ItemStack(Block.netherBrick, 1, 0)});
-		FCRecipes.AddSubBlockRecipesOfType(DecoDefs.netherBrick, 0, DecoDefs.netherBrickSidingAndCorner, DecoDefs.netherBrickMouldingAndDecorative, true);
-		FCRecipes.AddRecipe(new ItemStack(DecoDefs.netherBrickStairs, 4), new Object[] {"X  ", "XX ", "XXX", 'X', new ItemStack(DecoDefs.netherBrick, 1, 0)});
-		FCRecipes.AddRecipe(new ItemStack(DecoDefs.netherBrickStairs, 1), new Object[] {"X ", "XX", 'X', new ItemStack(DecoDefs.netherBrickMouldingAndDecorative, 1, 0)});
+		FCRecipes.AddSubBlockRecipesOfType(DecoDefs.netherBrick, 0, DecoDefs.netherBrickRedSidingAndCorner, DecoDefs.netherBrickRedMouldingAndDecorative, true);
+		FCRecipes.AddRecipe(new ItemStack(DecoDefs.netherBrickRedStairs, 4), new Object[] {"X  ", "XX ", "XXX", 'X', new ItemStack(DecoDefs.netherBrick, 1, 0)});
+		FCRecipes.AddRecipe(new ItemStack(DecoDefs.netherBrickRedStairs, 1), new Object[] {"X ", "XX", 'X', new ItemStack(DecoDefs.netherBrickRedMouldingAndDecorative, 1, 0)});
 		FCRecipes.AddRecipe(new ItemStack(DecoDefs.stoneSlab, 6, 7), new Object[] {"XXX", 'X', new ItemStack(DecoDefs.netherBrick)});
 		FCRecipes.AddRecipe(new ItemStack(DecoDefs.netherBrick, 1, 0), new Object[] {"X", "X", 'X', new ItemStack(DecoDefs.stoneSlab, 1, 7)});
 
@@ -964,15 +964,15 @@ public class DecoRecipes {
 		FCRecipes.AddStokedCauldronRecipe(new ItemStack(Block.stoneSingleSlab, 1, 6), new ItemStack[] {new ItemStack(FCBetterThanWolves.fcBlockNetherBrickLooseSlab), new ItemStack(Item.slimeBall)});
 		FCRecipes.AddStokedCauldronRecipe(new ItemStack(Block.stoneSingleSlab, 1, 6), new ItemStack[] {new ItemStack(FCBetterThanWolves.fcBlockNetherBrickLooseSlab), new ItemStack(FCBetterThanWolves.fcItemNetherSludge)});
 
-		FCRecipes.AddStokedCauldronRecipe(new ItemStack(DecoDefs.netherBrick), new ItemStack[] {new ItemStack(DecoDefs.netherBrickLoose), new ItemStack(Item.clay)});
-		FCRecipes.AddStokedCauldronRecipe(new ItemStack(DecoDefs.netherBrick), new ItemStack[] {new ItemStack(DecoDefs.netherBrickLoose), new ItemStack(Item.slimeBall)});
-		FCRecipes.AddStokedCauldronRecipe(new ItemStack(DecoDefs.netherBrick), new ItemStack[] {new ItemStack(DecoDefs.netherBrickLoose), new ItemStack(FCBetterThanWolves.fcItemNetherSludge)});
-		FCRecipes.AddStokedCauldronRecipe(new ItemStack(DecoDefs.netherBrickStairs), new ItemStack[] {new ItemStack(DecoDefs.netherBrickLooseStairs), new ItemStack(Item.clay)});
-		FCRecipes.AddStokedCauldronRecipe(new ItemStack(DecoDefs.netherBrickStairs), new ItemStack[] {new ItemStack(DecoDefs.netherBrickLooseStairs), new ItemStack(Item.slimeBall)});
-		FCRecipes.AddStokedCauldronRecipe(new ItemStack(DecoDefs.netherBrickStairs), new ItemStack[] {new ItemStack(DecoDefs.netherBrickLooseStairs), new ItemStack(FCBetterThanWolves.fcItemNetherSludge)});
-		FCRecipes.AddStokedCauldronRecipe(new ItemStack(DecoDefs.stoneSlab, 1, 7), new ItemStack[] {new ItemStack(DecoDefs.netherBrickLooseSlab), new ItemStack(Item.clay)});
-		FCRecipes.AddStokedCauldronRecipe(new ItemStack(DecoDefs.stoneSlab, 1, 7), new ItemStack[] {new ItemStack(DecoDefs.netherBrickLooseSlab), new ItemStack(Item.slimeBall)});
-		FCRecipes.AddStokedCauldronRecipe(new ItemStack(DecoDefs.stoneSlab, 1, 7), new ItemStack[] {new ItemStack(DecoDefs.netherBrickLooseSlab), new ItemStack(FCBetterThanWolves.fcItemNetherSludge)});
+		FCRecipes.AddStokedCauldronRecipe(new ItemStack(DecoDefs.netherBrick), new ItemStack[] {new ItemStack(DecoDefs.netherBrickRedLoose), new ItemStack(Item.clay)});
+		FCRecipes.AddStokedCauldronRecipe(new ItemStack(DecoDefs.netherBrick), new ItemStack[] {new ItemStack(DecoDefs.netherBrickRedLoose), new ItemStack(Item.slimeBall)});
+		FCRecipes.AddStokedCauldronRecipe(new ItemStack(DecoDefs.netherBrick), new ItemStack[] {new ItemStack(DecoDefs.netherBrickRedLoose), new ItemStack(FCBetterThanWolves.fcItemNetherSludge)});
+		FCRecipes.AddStokedCauldronRecipe(new ItemStack(DecoDefs.netherBrickRedStairs), new ItemStack[] {new ItemStack(DecoDefs.netherBrickRedLooseStairs), new ItemStack(Item.clay)});
+		FCRecipes.AddStokedCauldronRecipe(new ItemStack(DecoDefs.netherBrickRedStairs), new ItemStack[] {new ItemStack(DecoDefs.netherBrickRedLooseStairs), new ItemStack(Item.slimeBall)});
+		FCRecipes.AddStokedCauldronRecipe(new ItemStack(DecoDefs.netherBrickRedStairs), new ItemStack[] {new ItemStack(DecoDefs.netherBrickRedLooseStairs), new ItemStack(FCBetterThanWolves.fcItemNetherSludge)});
+		FCRecipes.AddStokedCauldronRecipe(new ItemStack(DecoDefs.stoneSlab, 1, 7), new ItemStack[] {new ItemStack(DecoDefs.netherBrickRedLooseSlab), new ItemStack(Item.clay)});
+		FCRecipes.AddStokedCauldronRecipe(new ItemStack(DecoDefs.stoneSlab, 1, 7), new ItemStack[] {new ItemStack(DecoDefs.netherBrickRedLooseSlab), new ItemStack(Item.slimeBall)});
+		FCRecipes.AddStokedCauldronRecipe(new ItemStack(DecoDefs.stoneSlab, 1, 7), new ItemStack[] {new ItemStack(DecoDefs.netherBrickRedLooseSlab), new ItemStack(FCBetterThanWolves.fcItemNetherSludge)});
 
 		FCRecipes.AddStokedCauldronRecipe(new ItemStack(DecoDefs.stoneTypesCobble), new ItemStack[] {new ItemStack(DecoDefs.graniteCobbleLoose), new ItemStack(Item.clay)});
 		FCRecipes.AddStokedCauldronRecipe(new ItemStack(DecoDefs.stoneTypesCobble), new ItemStack[] {new ItemStack(DecoDefs.graniteCobbleLoose), new ItemStack(Item.slimeBall)});

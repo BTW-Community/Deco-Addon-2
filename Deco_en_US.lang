@@ -31,6 +31,39 @@ tile.decoBlockAndesiteBrickStairsLoose.name=Loose Andesite Brick Stairs
 tile.decoBlockDioriteBrickStairsLoose.name=Loose Diorite Brick Stairs
 tile.decoBlockPolishedStone.name=Polished Stone
 tile.decoBlockPolishedStoneStairs.name=Polished Stone Stairs
+tile.decoBlockStoneBrickMossyStairs.name=Mossy Stone Brick Stairs
+tile.decoBlockStoneBrickCrackedStairs.name=Cracked Stone Brick Stairs
+tile.decoBlockRedSand.name=Red Sand
+tile.decoBlockRedSandSlab.name=Red Sand Slab
+tile.decoBlockRedSandStoneStairs.name=Red Sandstone Stairs
+tile.decoBlockRedSandStoneStairsSmooth.name=Cut Red Sandstone Stairs
+tile.decoBlockRedSandStoneStairsPolished.name=Polished Red Sandstone Stairs
+tile.decoBlockRedSandStoneStairsBrick.name=Red Sandstone Brick Stairs
+tile.decoBlockRedSandStoneMossyStairs.name=Mossy Red Sandstone Stairs
+tile.decoBlockRedSandStoneBrickLargeStairs.name=Large Red Sandstone Brick Stairs
+tile.decoBlockRedSandStoneBrickLargeMossyStairs.name=Large Mossy Red Sandstone Brick Stairs
+tile.decoBlockRedSandStoneCrackedStairs.name=Cracked Red Sandstone Stairs
+tile.decoBlockRedSandStoneBrickLargeCrackedStairs.name=Larged Cracked Red Sandstone Stairs
+tile.decoBlockSandStoneStairsSmooth.name=Cut Sandstone Stairs
+tile.decoBlockSandStoneStairsPolished.name=Polished Sandstone Stairs
+tile.decoBlockSandStoneStairsBrick.name=Sandstone Brick Stairs
+tile.decoBlockSandStoneMossyStairs.name=Mossy Sandstone Stairs
+tile.decoBlockSandStoneBrickLargeStairs.name=Large Sandstone Brick Stairs
+tile.decoBlockSandStoneBrickLargeMossyStairs.name=Large Mossy Sandstone Brick Stairs
+tile.decoBlockSandStoneCrackedStairs.name=Cracked Sandstone Stairs
+tile.decoBlockSandStoneBrickLargeCrackedStairs.name=Larged Cracked Sandstone Stairs
+tile.decoBlockPrismarineLantern.name=Prismarine Lantern
+tile.decoBlockStairsPrismarine.name=Prismarine Stairs
+tile.decoBlockStairsPrismarineBrick.name=Prismarine Brick Stairs
+tile.decoBlockStairsPrismarineDark.name=Dark Prismarine Stairs
+tile.decoBlockNetherBrickRedStairs.name=Red Nether Brick Stairs
+tile.decoBlockNetherBrickRedLoose.name=Loose Red Nether Brick
+tile.decoBlockNetherBrickRedSlabLoose.name=Loose Red Nether Brick Slab
+tile.decoBlockNetherBrickRedStairsLoose.name=Loose Red Nether Brick Stairs
+tile.decoBlockMagma.name=Magma Block
+tile.decoBlockInfusedStoneStairs.name=Infused Stone Stairs
+tile.decoBlockInfusedStoneSmoothStairs=Polished Infused Stone Stairs
+tile.decoBlockInfusedStoneBrickStairs=Infused Stone Brick Stairs
 
 # Deco Complex Blocks
 
@@ -244,7 +277,7 @@ tile.decoBlockTerracottaSlab.3.name=Brown Stained Terracotta Slab
 tile.decoBlockTerracottaSlab.4.name=Blue Stained Terracotta Slab
 tile.decoBlockTerracottaSlab.5.name=Purple Stained Terracotta Slab
 tile.decoBlockTerracottaSlab.6.name=Cyan Stained Terracotta Slab
-tile.decoBlockTerracottaSlab.7=Light Gray Stained Terracotta Slab
+tile.decoBlockTerracottaSlab.7.name=Light Gray Stained Terracotta Slab
 
 tile.decoBlockTerracottaSlab2.0.name=Gray Stained Terracotta Slab
 tile.decoBlockTerracottaSlab2.1.name=Pink Stained Terracotta Slab
@@ -462,16 +495,294 @@ tile.decoBlockPolishedStoneMoulding.pedestal.name=Polished Stone Pedestal
 tile.decoBlockPolishedStoneMoulding.moulding.name=Polsihed Stone Moulding
 tile.decoBlockPolishedStoneMoulding.table.name=Polished Stone Table
 
+tile.decoBlockStoneBrickMossySiding.bench.name=Mossy Stone Brick Bench
+tile.decoBlockStoneBrickMossySiding.fence.name=Mossy Stone Brick Wall
+tile.decoBlockStoneBrickMossySiding.siding.name=Mossy Stone Brick Siding
+tile.decoBlockStoneBrickMossySiding.corner.name=Mossy Stone Brick Corner
+tile.decoBlockStoneBrickMossyMoulding.column.name=Mossy Stone Brick Column
+tile.decoBlockStoneBrickMossyMoulding.pedestal.name=Mossy Stone Brick Pedestal
+tile.decoBlockStoneBrickMossyMoulding.moulding.name=Mossy Stone Brick Moulding
+tile.decoBlockStoneBrickMossyMoulding.table.name=Mossy Stone Brick Table
+
+tile.decoBlockStoneBrickCrackedSiding.bench.name=Cracked Stone Brick Bench
+tile.decoBlockStoneBrickCrackedSiding.fence.name=Cracked Stone Brick Wall
+tile.decoBlockStoneBrickCrackedSiding.siding.name=Cracked Stone Brick Siding
+tile.decoBlockStoneBrickCrackedSiding.corner.name=Cracked Stone Brick Corner
+tile.decoBlockStoneBrickCrackedMoulding.column.name=Cracked Stone Brick Column
+tile.decoBlockStoneBrickCrackedMoulding.pedestal.name=Cracked Stone Brick Pedestal
+tile.decoBlockStoneBrickCrackedMoulding.moulding.name=Cracked Stone Brick Moulding
+tile.decoBlockStoneBrickCrackedMoulding.table.name=Cracked Stone Brick Table
+
+tile.decoBlockRedSandstone.default.name=Red Sandstone
+tile.decoBlockRedSandstone.chiseled.name=Chiseled Red Sandstone
+tile.decoBlockRedSandstone.smooth.name=Cut Red Sandstone
+tile.decoBlockRedSandstone.polished.name=Polished Red Sandstone
+tile.decoBlockRedSandstone.brick.name=Red Sandstone Brick
+tile.decoBlockRedSandstone.mossy=Mossy Red Sandstone
+tile.decoBlockRedSandstone.largeBrick.name=Large Red Sandstone Brick
+tile.decoBlockRedSandstone.largeBrickMossy.name=Large Mossy Red Sandstone Brick
+tile.decoBlockRedSandstone.cracked.name=Cracked Red Sandstone
+tile.decoBlockRedSandstone.largeBrickCracked.name=Large Cracked Red Sandstone Brick
+
+tile.decoBlockRedSandstoneSiding.bench.name=Red Sandstone Bench
+tile.decoBlockRedSandstoneSiding.fence.name=Red Sandstone Wall
+tile.decoBlockRedSandstoneSiding.siding.name=Red Sandstone Siding
+tile.decoBlockRedSandstoneSiding.corner.name=Red Sandstone Corner
+tile.decoBlockRedSandstoneMoulding.column.name=Red Sandstone Column
+tile.decoBlockRedSandstoneMoulding.pedestal.name=Red Sandstone Pedestal
+tile.decoBlockRedSandstoneMoulding.moulding.name=Red Sandstone Moulding
+tile.decoBlockRedSandstoneMoulding.table.name=Red Sandstone Table
+
+tile.decoBlockRedSandstoneSmoothSiding.bench.name=Cut Red Sandstone Bench
+tile.decoBlockRedSandstoneSmoothSiding.fence.name=Cut Red Sandstone Wall
+tile.decoBlockRedSandstoneSmoothSiding.siding.name=Cut Red Sandstone Siding
+tile.decoBlockRedSandstoneSmoothSiding.corner.name=Cut Red Sandstone Corner
+tile.decoBlockRedSandstoneSmoothMoulding.column.name=Cut Red Sandstone Column
+tile.decoBlockRedSandstoneSmoothMoulding.pedestal.name=Cut Red Sandstone Pedestal
+tile.decoBlockRedSandstoneSmoothMoulding.moulding.name=Cut Red Sandstone Moulding
+tile.decoBlockRedSandstoneSmoothMoulding.table.name=Cut Red Sandstone Table
+
+tile.decoBlockRedSandstonePolishedSiding.bench.name=Polished Red Sandstone Bench
+tile.decoBlockRedSandstonePolishedSiding.fence.name=Polished Red Sandstone Wall
+tile.decoBlockRedSandstonePolishedSiding.siding.name=Polished Red Sandstone Siding
+tile.decoBlockRedSandstonePolishedSiding.corner.name=Polished Red Sandstone Corner
+tile.decoBlockRedSandstonePolishedMoulding.column.name=Polished Red Sandstone Column
+tile.decoBlockRedSandstonePolishedMoulding.pedestal.name=Polished Red Sandstone Pedestal
+tile.decoBlockRedSandstonePolishedMoulding.moulding.name=Polished Red Sandstone Moulding
+tile.decoBlockRedSandstonePolishedMoulding.table.name=Polished Red Sandstone Table
+
+tile.decoBlockRedSandstoneBrickSiding.bench.name=Red Sandstone Brick Bench
+tile.decoBlockRedSandstoneBrickSiding.fence.name=Red Sandstone Brick Wall
+tile.decoBlockRedSandstoneBrickSiding.siding.name=Red Sandstone Brick Siding
+tile.decoBlockRedSandstoneBrickSiding.corner.name=Red Sandstone Brick Corner
+tile.decoBlockRedSandstoneBrickMoulding.column.name=Red Sandstone Brick Column
+tile.decoBlockRedSandstoneBrickMoulding.pedestal.name=Red Sandstone Brick Pedestal
+tile.decoBlockRedSandstoneBrickMoulding.moulding.name=Red Sandstone Brick Moulding
+tile.decoBlockRedSandstoneBrickMoulding.table.name=Red Sandstone Brick Table
+
+tile.decoBlockRedSandstoneMossySiding.bench.name=Mossy Red Sandstone Bench
+tile.decoBlockRedSandstoneMossySiding.fence.name=Mossy Red Sandstone Wall
+tile.decoBlockRedSandstoneMossySiding.siding.name=Mossy Red Sandstone Siding
+tile.decoBlockRedSandstoneMossySiding.corner.name=Mossy Red Sandstone Corner
+tile.decoBlockRedSandstoneMossyMoulding.column.name=Mossy Red Sandstone Column
+tile.decoBlockRedSandstoneMossyMoulding.pedestal.name=Mossy Red Sandstone Pedestal
+tile.decoBlockRedSandstoneMossyMoulding.moulding.name=Mossy Red Sandstone Moulding
+tile.decoBlockRedSandstoneMossyMoulding.table.name=Mossy Red Sandstone Table
+
+tile.decoBlockRedSandstoneBrickLargeSiding.bench.name=Large Red Sandstone Brick Bench
+tile.decoBlockRedSandstoneBrickLargeSiding.fence.name=Large Red Sandstone Brick Wall
+tile.decoBlockRedSandstoneBrickLargeSiding.siding.name=Large Red Sandstone Brick Siding
+tile.decoBlockRedSandstoneBrickLargeSiding.corner.name=Large Red Sandstone Brick Corner
+tile.decoBlockRedSandstoneBrickLargeMoulding.column.name=Large Red Sandstone Brick Column
+tile.decoBlockRedSandstoneBrickLargeMoulding.pedestal.name=Large Red Sandstone Brick Pedestal
+tile.decoBlockRedSandstoneBrickLargeMoulding.moulding.name=Large Red Sandstone Brick Moulding
+tile.decoBlockRedSandstoneBrickLargeMoulding.table.name=Large Red Sandstone Brick Table
+
+tile.decoBlockRedSandstoneBrickLargeMossySiding.bench.name=Large Mossy Red Sandstone Brick Bench
+tile.decoBlockRedSandstoneBrickLargeMossySiding.fence.name=Large Mossy Red Sandstone Brick Wall
+tile.decoBlockRedSandstoneBrickLargeMossySiding.siding.name=Large Mossy Red Sandstone Brick Siding
+tile.decoBlockRedSandstoneBrickLargeMossySiding.corner.name=Large Mossy Red Sandstone Brick Corner
+tile.decoBlockRedSandstoneBrickLargeMossyMoulding.column.name=Large Mossy Red Sandstone Brick Column
+tile.decoBlockRedSandstoneBrickLargeMossyMoulding.pedestal.name=Large Mossy Red Sandstone Brick Pedestal
+tile.decoBlockRedSandstoneBrickLargeMossyMoulding.moulding.name=Large Mossy Red Sandstone Brick Moulding
+tile.decoBlockRedSandstoneBrickLargeMossyMoulding.table.name=Large Mossy Red Sandstone Brick Table
+
+tile.decoBlockRedSandstoneCrackedSiding.bench.name=Cracked Red Sandstone Bench
+tile.decoBlockRedSandstoneCrackedSiding.fence.name=Cracked Red Sandstone Wall
+tile.decoBlockRedSandstoneCrackedSiding.siding.name=Cracked Red Sandstone Siding
+tile.decoBlockRedSandstoneCrackedSiding.corner.name=Cracked Red Sandstone Corner
+tile.decoBlockRedSandstoneCrackedMoulding.column.name=Cracked Red Sandstone Column
+tile.decoBlockRedSandstoneCrackedMoulding.pedestal.name=Cracked Red Sandstone Pedestal
+tile.decoBlockRedSandstoneCrackedMoulding.moulding.name=Cracked Red Sandstone Moulding
+tile.decoBlockRedSandstoneCrackedMoulding.table.name=Cracked Red Sandstone Table
+
+tile.decoBlockRedSandstoneBrickLargeCrackedSiding.bench.name=Large Cracked Red Sandstone Brick Bench
+tile.decoBlockRedSandstoneBrickLargeCrackedSiding.fence.name=Large Cracked Red Sandstone Brick Wall
+tile.decoBlockRedSandstoneBrickLargeCrackedSiding.siding.name=Large Cracked Red Sandstone Brick Siding
+tile.decoBlockRedSandstoneBrickLargeCrackedSiding.corner.name=Large Cracked Red Sandstone Brick Corner
+tile.decoBlockRedSandstoneBrickLargeCrackedMoulding.column.name=Large Cracked Red Sandstone Brick Column
+tile.decoBlockRedSandstoneBrickLargeCrackedMoulding.pedestal.name=Large Cracked Red Sandstone Brick Pedestal
+tile.decoBlockRedSandstoneBrickLargeCrackedMoulding.moulding.name=Large Cracked Red Sandstone Brick Moulding
+tile.decoBlockRedSandstoneBrickLargeCrackedMoulding.table.name=Large Cracked Red Sandstone Brick Table
+
+tile.decoBlockSandstoneSmoothSiding.bench.name=Cut Sandstone Bench
+tile.decoBlockSandstoneSmoothSiding.fence.name=Cut Sandstone Wall
+tile.decoBlockSandstoneSmoothSiding.siding.name=Cut Sandstone Siding
+tile.decoBlockSandstoneSmoothSiding.corner.name=Cut Sandstone Corner
+tile.decoBlockSandstoneSmoothMoulding.column.name=Cut Sandstone Column
+tile.decoBlockSandstoneSmoothMoulding.pedestal.name=Cut Sandstone Pedestal
+tile.decoBlockSandstoneSmoothMoulding.moulding.name=Cut Sandstone Moulding
+tile.decoBlockSandstoneSmoothMoulding.table.name=Cut Sandstone Table
+
+tile.decoBlockSandstonePolishedSiding.bench.name=Polished Sandstone Bench
+tile.decoBlockSandstonePolishedSiding.fence.name=Polished Sandstone Wall
+tile.decoBlockSandstonePolishedSiding.siding.name=Polished Sandstone Siding
+tile.decoBlockSandstonePolishedSiding.corner.name=Polished Sandstone Corner
+tile.decoBlockSandstonePolishedMoulding.column.name=Polished Sandstone Column
+tile.decoBlockSandstonePolishedMoulding.pedestal.name=Polished Sandstone Pedestal
+tile.decoBlockSandstonePolishedMoulding.moulding.name=Polished Sandstone Moulding
+tile.decoBlockSandstonePolishedMoulding.table.name=Polished Sandstone Table
+
+tile.decoBlockSandstoneBrickSiding.bench.name=Sandstone Brick Bench
+tile.decoBlockSandstoneBrickSiding.fence.name=Sandstone Brick Wall
+tile.decoBlockSandstoneBrickSiding.siding.name=Sandstone Brick Siding
+tile.decoBlockSandstoneBrickSiding.corner.name=Sandstone Brick Corner
+tile.decoBlockSandstoneBrickMoulding.column.name=Sandstone Brick Column
+tile.decoBlockSandstoneBrickMoulding.pedestal.name=Sandstone Brick Pedestal
+tile.decoBlockSandstoneBrickMoulding.moulding.name=Sandstone Brick Moulding
+tile.decoBlockSandstoneBrickMoulding.table.name=Sandstone Brick Table
+
+tile.decoBlockSandstoneMossySiding.bench.name=Mossy Sandstone Bench
+tile.decoBlockSandstoneMossySiding.fence.name=Mossy Sandstone Wall
+tile.decoBlockSandstoneMossySiding.siding.name=Mossy Sandstone Siding
+tile.decoBlockSandstoneMossySiding.corner.name=Mossy Sandstone Corner
+tile.decoBlockSandstoneMossyMoulding.column.name=Mossy Sandstone Column
+tile.decoBlockSandstoneMossyMoulding.pedestal.name=Mossy Sandstone Pedestal
+tile.decoBlockSandstoneMossyMoulding.moulding.name=Mossy Sandstone Moulding
+tile.decoBlockSandstoneMossyMoulding.table.name=Mossy Sandstone Table
+
+tile.decoBlockSandstoneBrickLargeSiding.bench.name=Large Sandstone Brick Bench
+tile.decoBlockSandstoneBrickLargeSiding.fence.name=Large Sandstone Brick Wall
+tile.decoBlockSandstoneBrickLargeSiding.siding.name=Large Sandstone Brick Siding
+tile.decoBlockSandstoneBrickLargeSiding.corner.name=Large Sandstone Brick Corner
+tile.decoBlockSandstoneBrickLargeMoulding.column.name=Large Sandstone Brick Column
+tile.decoBlockSandstoneBrickLargeMoulding.pedestal.name=Large Sandstone Brick Pedestal
+tile.decoBlockSandstoneBrickLargeMoulding.moulding.name=Large Sandstone Brick Moulding
+tile.decoBlockSandstoneBrickLargeMoulding.table.name=Large Sandstone Brick Table
+
+tile.decoBlockSandstoneBrickLargeMossySiding.bench.name=Large Mossy Sandstone Brick Bench
+tile.decoBlockSandstoneBrickLargeMossySiding.fence.name=Large Mossy Sandstone Brick Wall
+tile.decoBlockSandstoneBrickLargeMossySiding.siding.name=Large Mossy Sandstone Brick Siding
+tile.decoBlockSandstoneBrickLargeMossySiding.corner.name=Large Mossy Sandstone Brick Corner
+tile.decoBlockSandstoneBrickLargeMossyMoulding.column.name=Large Mossy Sandstone Brick Column
+tile.decoBlockSandstoneBrickLargeMossyMoulding.pedestal.name=Large Mossy Sandstone Brick Pedestal
+tile.decoBlockSandstoneBrickLargeMossyMoulding.moulding.name=Large Mossy Sandstone Brick Moulding
+tile.decoBlockSandstoneBrickLargeMossyMoulding.table.name=Large Mossy Sandstone Brick Table
+
+tile.decoBlockSandstoneCrackedSiding.bench.name=Cracked Sandstone Bench
+tile.decoBlockSandstoneCrackedSiding.fence.name=Cracked Sandstone Wall
+tile.decoBlockSandstoneCrackedSiding.siding.name=Cracked Sandstone Siding
+tile.decoBlockSandstoneCrackedSiding.corner.name=Cracked Sandstone Corner
+tile.decoBlockSandstoneCrackedMoulding.column.name=Cracked Sandstone Column
+tile.decoBlockSandstoneCrackedMoulding.pedestal.name=Cracked Sandstone Pedestal
+tile.decoBlockSandstoneCrackedMoulding.moulding.name=Cracked Sandstone Moulding
+tile.decoBlockSandstoneCrackedMoulding.table.name=Cracked Sandstone Table
+
+tile.decoBlockSandstoneBrickLargeCrackedSiding.bench.name=Large Cracked Sandstone Brick Bench
+tile.decoBlockSandstoneBrickLargeCrackedSiding.fence.name=Large Cracked Sandstone Brick Wall
+tile.decoBlockSandstoneBrickLargeCrackedSiding.siding.name=Large Cracked Sandstone Brick Siding
+tile.decoBlockSandstoneBrickLargeCrackedSiding.corner.name=Large Cracked Sandstone Brick Corner
+tile.decoBlockSandstoneBrickLargeCrackedMoulding.column.name=Large Cracked Sandstone Brick Column
+tile.decoBlockSandstoneBrickLargeCrackedMoulding.pedestal.name=Large Cracked Sandstone Brick Pedestal
+tile.decoBlockSandstoneBrickLargeCrackedMoulding.moulding.name=Large Cracked Sandstone Brick Moulding
+tile.decoBlockSandstoneBrickLargeCrackedMoulding.table.name=Large Cracked Sandstone Brick Table
+
+tile.decoBlockPrismarine.prismarine.name=Prismarine
+tile.decoBlockPrismarine.prismarineBrick.name=Prismarine Brick
+tile.decoBlockPrismarine.prismarineDark=Dark Prismarine
+
+tile.decoBlockPrismarineSiding.bench.name=Prismarine Bench
+tile.decoBlockPrismarineSiding.fence.name=Prismarine Wall
+tile.decoBlockPrismarineSiding.siding.name=Prismarine Siding
+tile.decoBlockPrismarineSiding.corner.name=Prismarine Corner
+tile.decoBlockPrismarineMoulding.column.name=Prismarine Column
+tile.decoBlockPrismarineMoulding.pedestal.name=Prismarine Pedestal
+tile.decoBlockPrismarineMoulding.moulding.name=Prismarine Moulding
+tile.decoBlockPrismarineMoulding.table.name=Prismarine Table
+
+tile.decoBlockPrismarineBrickSiding.bench.name=Prismarine Brick Bench
+tile.decoBlockPrismarineBrickSiding.fence.name=Prismarine Brick Wall
+tile.decoBlockPrismarineBrickSiding.siding.name=Prismarine Brick Siding
+tile.decoBlockPrismarineBrickSiding.corner.name=Prismarine Brick Corner
+tile.decoBlockPrismarineBrickMoulding.column.name=Prismarine Brick Column
+tile.decoBlockPrismarineBrickMoulding.pedestal.name=Prismarine Brick Pedestal
+tile.decoBlockPrismarineBrickMoulding.moulding.name=Prismarine Brick Moulding
+tile.decoBlockPrismarineBrickMoulding.table.name=Prismarine Brick Table
+
+tile.decoBlockPrismarineDarkSiding.bench.name=Dark Prismarine Bench
+tile.decoBlockPrismarineDarkSiding.fence.name=Dark Prismarine Wall
+tile.decoBlockPrismarineDarkSiding.siding.name=Dark Prismarine Siding
+tile.decoBlockPrismarineDarkSiding.corner.name=Dark Prismarine Corner
+tile.decoBlockPrismarineDarkMoulding.column.name=Dark Prismarine Column
+tile.decoBlockPrismarineDarkMoulding.pedestal.name=Dark Prismarine Pedestal
+tile.decoBlockPrismarineDarkMoulding.moulding.name=Dark Prismarine Moulding
+tile.decoBlockPrismarineDarkMoulding.table.name=Dark Prismarine Table
+
+tile.decoBlockNetherBrick.red.name=Red Nether Brick
+tile.decoBlockNetherBrick.redChiseled.name=Chiseled Red Nether Brick
+tile.decoBlockNetherBrick.chiseled.name=Chiseled Nether Brick
+
+tile.decoBlockNetherBrickRedSiding.bench.name=Red Nether Brick Bench
+tile.decoBlockNetherBrickRedSiding.fence.name=Red Nether Brick Wall
+tile.decoBlockNetherBrickRedSiding.siding.name=Red Nether Brick Siding
+tile.decoBlockNetherBrickRedSiding.corner.name=Red Nether Brick Corner
+tile.decoBlockNetherBrickRedMoulding.column.name=Red Nether Brick Column
+tile.decoBlockNetherBrickRedMoulding.pedestal.name=Red Nether Brick Pedestal
+tile.decoBlockNetherBrickRedMoulding.moulding.name=Red Nether Brick Moulding
+tile.decoBlockNetherBrickRedMoulding.table.name=Red Nether Brick Table
+
+tile.decoBlockNylium.crimson.name=Crimson Nylium
+tile.decoBlockNylium.warped.name=Warped Nylium
+
+tile.decoBlockBasalt.basalt=Basalt
+tile.decoBlockBasalt.basaltSmooth=Polished Basalt
+
+tile.decoBlockInfusedStone.default.name=Infused Stone
+tile.decoBlockInfusedStone.smooth.name=Polished Infused Stone
+tile.decoBlockInfusedStone.brick.name=Infused Stone Bricks
+tile.decoBlockInfusedStone.chiseled.name=Chiseled Infused Stone Bricks
+
+tile.decoBlockInfusedStoneSiding.bench.name=Infused Stone Bench
+tile.decoBlockInfusedStoneSiding.fence.name=Infused Stone Wall
+tile.decoBlockInfusedStoneSiding.siding.name=Infused Stone Siding
+tile.decoBlockInfusedStoneSiding.corner.name=Infused Stone Corner
+tile.decoBlockInfusedStoneMoulding.column=Infused Stone Column
+tile.decoBlockInfusedStoneMoulding.pedestal=Infused Stone Column Pedestal
+tile.decoBlockInfusedStoneMoulding.moulding=Infused Stone Moulding
+tile.decoBlockInfusedStoneMoulding.table=Infused Stone Table
+
+tile.decoBlockInfusedStoneSmoothSiding.bench.name=Polished Infused Stone Bench
+tile.decoBlockInfusedStoneSmoothSiding.fence.name=Polished Infused Stone Wall
+tile.decoBlockInfusedStoneSmoothSiding.siding.name=Polished Infused Stone Siding
+tile.decoBlockInfusedStoneSmoothSiding.corner.name=Polished Infused Stone Corner
+tile.decoBlockInfusedStoneSmoothMoulding.column=Polished Infused Stone Column
+tile.decoBlockInfusedStoneSmoothMoulding.pedestal=Polished Infused Stone Column Pedestal
+tile.decoBlockInfusedStoneSmoothMoulding.moulding=Polished Infused Stone Moulding
+tile.decoBlockInfusedStoneSmoothMoulding.table=Polished Infused Stone Table
+
+tile.decoBlockInfusedStoneBrickSiding.bench.name=Infused Stone Brick Bench
+tile.decoBlockInfusedStoneBrickSiding.fence.name=Infused Stone Brick Wall
+tile.decoBlockInfusedStoneBrickSiding.siding.name=Infused Stone Brick Siding
+tile.decoBlockInfusedStoneBrickSiding.corner.name=Infused Stone Brick Corner
+tile.decoBlockInfusedStoneBrickMoulding.column=Infused Stone Brick Column
+tile.decoBlockInfusedStoneBrickMoulding.pedestal=Infused Stone Brick Column Pedestal
+tile.decoBlockInfusedStoneBrickMoulding.moulding=Infused Stone Brick Moulding
+tile.decoBlockInfusedStoneBrickMoulding.table=Infused Stone Brick Table
+
 # Vanilla/BTW Blocks Renamed
 
 tile.rose.name=Red Rose
 tile.stairsStone.name=Cobblestone Stairs
 tile.stoneMoss.name=Mossy Cobblestone
 
+tile.sandStone.default.name=Red Sandstone
+tile.sandStone.chiseled.name=Chiseled Red Sandstone
+tile.sandStone.smooth.name=Cut Red Sandstone
+tile.sandStone.polished.name=Polished Red Sandstone
+tile.sandStone.brick.name=Red Sandstone Brick
+tile.sandStone.mossy=Mossy Red Sandstone
+tile.sandStone.largeBrick.name=Large Red Sandstone Brick
+tile.sandStone.largeBrickMossy.name=Large Mossy Red Sandstone Brick
+tile.sandStone.cracked.name=Cracked Red Sandstone
+tile.sandStone.largeBrickCracked.name=Large Cracked Red Sandstone Brick
+
 # Deco Items
 
 item.decoItemGlassPiece.name=Piece of Glass
 item.decoItemFertilizer.name=Fertilizer
+item.decoItemPileRedSand.name=Red Sand Pile
+item.decoItemPrismarineShard.name=Prismarine Shard
+item.decoItemPrismarineCrystal.name=Prismarine Crystal
 
 # Deco Complex Items
 

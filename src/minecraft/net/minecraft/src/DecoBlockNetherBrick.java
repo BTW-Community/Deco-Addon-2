@@ -2,16 +2,17 @@ package net.minecraft.src;
 
 import java.util.Random;
 
-public class DecoBlockNetherBrickRed extends Block {
-    public DecoBlockNetherBrickRed(int var1)
+public class DecoBlockNetherBrick extends Block {
+    public DecoBlockNetherBrick(int var1)
     {
         super(var1, FCBetterThanWolves.fcMaterialNetherRock);
         this.setHardness(2.0F);
         this.setResistance(10.0F);
         this.SetPicksEffectiveOn();
         this.setStepSound(soundStoneFootstep);
-        this.setUnlocalizedName("netherBrickVariant");
+        this.setUnlocalizedName("decoBlockNetherBrick");
         this.setCreativeTab(CreativeTabs.tabBlock);
+		DecoManager.Register(this, new String[] {"red",  "redChiseled", "chiseled"});
     }
 
     /**
@@ -23,12 +24,12 @@ public class DecoBlockNetherBrickRed extends Block {
 
         if (!var1.isRemote)
         {
-        	Block drop = DecoDefs.netherBrickLoose;
+        	Block drop = DecoDefs.netherBrickRedLoose;
         	
         	switch (var5) {
         	case 0:
         	case 1:
-        		drop = DecoDefs.netherBrickLoose;
+        		drop = DecoDefs.netherBrickRedLoose;
         		break;
         	case 2:
         		drop = FCBetterThanWolves.fcBlockNetherBrickLoose;
@@ -59,8 +60,8 @@ public class DecoBlockNetherBrickRed extends Block {
     public void registerIcons(IconRegister register) {
     	icons = new Icon[3];
     	
-    	icons[0] = register.registerIcon("ginger_netherBrickRed");
-    	icons[1] = register.registerIcon("ginger_netherBrickRedChiseled");
-    	icons[2] = register.registerIcon("ginger_netherBrickChiseled");
+    	icons[0] = register.registerIcon("decoBlockNetherBrickRed");
+    	icons[1] = register.registerIcon("decoBlockNetherBrickRedChiseled");
+    	icons[2] = register.registerIcon("decoBlockNetherBrickChiseled");
     }
 }

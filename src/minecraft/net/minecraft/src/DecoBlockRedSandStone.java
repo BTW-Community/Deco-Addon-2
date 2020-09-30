@@ -5,7 +5,8 @@ import java.util.List;
 public class DecoBlockRedSandStone extends Block
 {
     public static final String[] SAND_STONE_TYPES = new String[] {"default", "chiseled", "smooth", "polished", "brick", "mossy", "largeBrick", "largeBrickMossy", "cracked", "largeBrickCracked"};
-    private static final String[] textures = new String[] {"ginger_redSandstone_side", "ginger_redSandstone_carved", "ginger_redSandstone_smooth", "ginger_redSandstone_top", "ginger_redSandstone_brick", "ginger_redSandstone_mossy", "ginger_redSandstone_stonebrick", "ginger_redSandstone_stonebrick_mossy", "ginger_redSandstone_bottom", "ginger_redSandstone_stonebrick_cracked"};
+    private static final String[] textures = new String[] {"decoBlockRedSandstone_side", "decoBlockRedSandstoneChiseled", "decoBlockRedSandstoneSmooth", "decoBlockRedSandstone_top", "decoBlockRedSandstoneBrick", "decoBlockRedSandstoneMossy_side", 
+    														"decoBlockRedSandstoneBrickLarge", "decoBlockRedSandstoneBrickLargeMossy", "decoBlockRedSandstone_bottom", "decoBlockRedSandstoneBrickLargeCracked"};
     private Icon[] sideIcons;
     private Icon iconTop;
     private Icon iconBottom;
@@ -18,7 +19,7 @@ public class DecoBlockRedSandStone extends Block
         this.SetPicksEffectiveOn();
         this.setHardness(1.5F);
         this.setStepSound(soundStoneFootstep);
-        this.setUnlocalizedName("redSandStone");
+        this.setUnlocalizedName("decoBlockRedSandStone");
         this.setCreativeTab(CreativeTabs.tabBlock);
         this.setTickRandomly(true);
     }
@@ -36,6 +37,8 @@ public class DecoBlockRedSandStone extends Block
         par3List.add(new ItemStack(par1, 1, 5));
         par3List.add(new ItemStack(par1, 1, 6));
         par3List.add(new ItemStack(par1, 1, 7));
+        par3List.add(new ItemStack(par1, 1, 8));
+        par3List.add(new ItemStack(par1, 1, 9));
     }
 
     public int GetHarvestToolLevel(IBlockAccess var1, int var2, int var3, int var4)
@@ -125,9 +128,9 @@ public class DecoBlockRedSandStone extends Block
             this.sideIcons[var2] = par1IconRegister.registerIcon(textures[var2]);
         }
 
-        this.iconTop = par1IconRegister.registerIcon("ginger_redSandstone_top");
-        this.iconBottom = par1IconRegister.registerIcon("ginger_redSandstone_bottom");
-        this.iconTopMossy = par1IconRegister.registerIcon("ginger_redSandstone_mossy_top");
-        this.iconBottomMossy = par1IconRegister.registerIcon("ginger_redSandstone_mossy_bottom");
+        this.iconTop = par1IconRegister.registerIcon("decoBlockRedSandstone_top");
+        this.iconBottom = par1IconRegister.registerIcon("decoBlockRedSandstone_bottom");
+        this.iconTopMossy = par1IconRegister.registerIcon("decoBlockRedSandstoneMossy_top");
+        this.iconBottomMossy = par1IconRegister.registerIcon("decoBlockRedSandstoneMossy_bottom");
     }
 }

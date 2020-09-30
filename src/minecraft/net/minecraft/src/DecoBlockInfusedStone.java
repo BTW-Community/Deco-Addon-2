@@ -7,6 +7,7 @@ public class DecoBlockInfusedStone extends Block {
 		this.setCreativeTab(CreativeTabs.tabBlock);
 		this.setHardness(1.5F);
 		this.setResistance(10F);
+		this.setUnlocalizedName("decoBlockInfusedStone");
 	}
 	
 	public int damageDropped(int meta) {
@@ -23,9 +24,9 @@ public class DecoBlockInfusedStone extends Block {
     public void registerIcons(IconRegister register) {
     	icons = new Icon[4];
     	
-    	icons[0] = register.registerIcon("ginger_infusedStone");
-    	icons[1] = register.registerIcon("ginger_infusedStoneSmooth");
-    	icons[2] = register.registerIcon("ginger_infusedStoneBrick");
-    	icons[3] = register.registerIcon("ginger_infusedStoneChiseled");
+    	icons[0] = register.registerIcon("decoBlockInfusedStone");
+    	icons[1] = register.registerIcon("decoBlockInfusedStoneSmooth");
+    	icons[2] = register.registerIcon("decoBlockInfusedStoneBrick");
+    	icons[3] = register.registerIcon("decoBlockInfusedStoneChiseled");
     }
 }

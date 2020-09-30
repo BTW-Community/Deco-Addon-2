@@ -18,7 +18,7 @@ public class DecoBlockNetherBrickSuperheated extends Block {
      */
     public int idDropped(int var1, Random var2, int var3)
     {
-        return var3 == 0 ? FCBetterThanWolves.fcBlockNetherBrickLoose.blockID : DecoDefs.netherBrickLoose.blockID;
+        return var3 == 0 ? FCBetterThanWolves.fcBlockNetherBrickLoose.blockID : DecoDefs.netherBrickRedLoose.blockID;
     }
 
     public void OnBlockDestroyedWithImproperTool(World var1, EntityPlayer var2, int var3, int var4, int var5, int var6)

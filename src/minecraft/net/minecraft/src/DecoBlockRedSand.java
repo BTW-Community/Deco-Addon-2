@@ -9,7 +9,7 @@ public class DecoBlockRedSand extends FCBlockFallingFullBlock
         this.SetShovelsEffectiveOn();
         this.SetFilterableProperties(8);
         this.setStepSound(soundSandFootstep);
-        this.setUnlocalizedName("ginger_redSand");
+        this.setUnlocalizedName("decoBlockRedSand");
         this.setCreativeTab(CreativeTabs.tabBlock);
     }
 
