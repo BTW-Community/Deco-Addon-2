@@ -64,6 +64,8 @@ tile.decoBlockMagma.name=Magma Block
 tile.decoBlockInfusedStoneStairs.name=Infused Stone Stairs
 tile.decoBlockInfusedStoneSmoothStairs=Polished Infused Stone Stairs
 tile.decoBlockInfusedStoneBrickStairs=Infused Stone Brick Stairs
+tile.decoBlockEndStoneBrick.name=End Stone Brick
+tile.decoBlockEndStoneBrickStairs=End Stone Brick Stairs
 
 # Deco Complex Blocks
 
@@ -759,6 +761,284 @@ tile.decoBlockInfusedStoneBrickMoulding.pedestal=Infused Stone Brick Column Pede
 tile.decoBlockInfusedStoneBrickMoulding.moulding=Infused Stone Brick Moulding
 tile.decoBlockInfusedStoneBrickMoulding.table=Infused Stone Brick Table
 
+tile.decoBlockConcrete.black.name=Black Concrete
+tile.decoBlockConcrete.red.name=Red Concrete
+tile.decoBlockConcrete.green.name=Green Concrete
+tile.decoBlockConcrete.brown.name=Brown Concrete
+tile.decoBlockConcrete.blue.name=Blue Concrete
+tile.decoBlockConcrete.purple.name=Purple Concrete
+tile.decoBlockConcrete.cyan.name=Cyan Concrete
+tile.decoBlockConcrete.lightGray.name=Light Gray Concrete
+tile.decoBlockConcrete.gray.name=Gray Concrete
+tile.decoBlockConcrete.pink.name=Pink Concrete
+tile.decoBlockConcrete.lime.name=Lime Concrete
+tile.decoBlockConcrete.yellow.name=Yellow Concrete
+tile.decoBlockConcrete.lightBlue.name=Light Blue Concrete
+tile.decoBlockConcrete.maganeta.name=Magenta Concrete
+tile.decoBlockConcrete.orange.name=Orange Concrete
+tile.decoBlockConcrete.white.name=White Concrete
+
+tile.decoBlockConcretePowder.black.name=Black Concrete Powder
+tile.decoBlockConcretePowder.red.name=Red Concrete Powder
+tile.decoBlockConcretePowder.green.name=Green Concrete Powder
+tile.decoBlockConcretePowder.brown.name=Brown Concrete Powder
+tile.decoBlockConcretePowder.blue.name=Blue Concrete Powder
+tile.decoBlockConcretePowder.purple.name=Purple Concrete Powder
+tile.decoBlockConcretePowder.cyan.name=Cyan Concrete Powder
+tile.decoBlockConcretePowder.lightGray.name=Light Gray Concrete Powder
+tile.decoBlockConcretePowder.gray.name=Gray Concrete Powder
+tile.decoBlockConcretePowder.pink.name=Pink Concrete Powder
+tile.decoBlockConcretePowder.lime.name=Lime Concrete Powder
+tile.decoBlockConcretePowder.yellow.name=Yellow Concrete Powder
+tile.decoBlockConcretePowder.lightBlue.name=Light Blue Concrete Powder
+tile.decoBlockConcretePowder.maganeta.name=Magenta Concrete Powder
+tile.decoBlockConcretePowder.orange.name=Orange Concrete Powder
+tile.decoBlockConcretePowder.white.name=White Concrete Powder
+
+tile.decoBlockConcreteSiding.black.bench.name=Black Concrete Bench
+tile.decoBlockConcreteSiding.black.fence.name=Black Concrete Wall
+tile.decoBlockConcreteSiding.black.siding.name=Black Concrete Siding
+tile.decoBlockConcreteSiding.black.corner.name=Black Concrete Corner
+tile.decoBlockConcreteMoulding.black.column.name=Black Concrete Column
+tile.decoBlockConcreteMoulding.black.pedestal.name=Black Concrete Pedestal
+tile.decoBlockConcreteMoulding.black.moulding.name=Black Concrete Moulding
+tile.decoBlockConcreteMoulding.black.table.name=Black Concrete Table
+tile.decoBlockConcreteStairs.black.name=Black Concrete Stairs
+
+tile.decoBlockConcreteSiding.red.bench.name=Red Concrete Bench
+tile.decoBlockConcreteSiding.red.fence.name=Red Concrete Wall
+tile.decoBlockConcreteSiding.red.siding.name=Red Concrete Siding
+tile.decoBlockConcreteSiding.red.corner.name=Red Concrete Corner
+tile.decoBlockConcreteMoulding.red.column.name=Red Concrete Column
+tile.decoBlockConcreteMoulding.red.pedestal.name=Red Concrete Pedestal
+tile.decoBlockConcreteMoulding.red.moulding.name=Red Concrete Moulding
+tile.decoBlockConcreteMoulding.red.table.name=Red Concrete Table
+tile.decoBlockConcreteStairs.red.name=Red Concrete Stairs
+
+tile.decoBlockConcreteSiding.green.bench.name=Green Concrete Bench
+tile.decoBlockConcreteSiding.green.fence.name=Green Concrete Wall
+tile.decoBlockConcreteSiding.green.siding.name=Green Concrete Siding
+tile.decoBlockConcreteSiding.green.corner.name=Green Concrete Corner
+tile.decoBlockConcreteMoulding.green.column.name=Green Concrete Column
+tile.decoBlockConcreteMoulding.green.pedestal.name=Green Concrete Pedestal
+tile.decoBlockConcreteMoulding.green.moulding.name=Green Concrete Moulding
+tile.decoBlockConcreteMoulding.green.table.name=Green Concrete Table
+tile.decoBlockConcreteStairs.green.name=Black Green Terracotta Stairs
+
+tile.decoBlockConcreteSiding.brown.bench.name=Brown Concrete Bench
+tile.decoBlockConcreteSiding.brown.fence.name=Brown Concrete Wall
+tile.decoBlockConcreteSiding.brown.siding.name=Brown Concrete Siding
+tile.decoBlockConcreteSiding.brown.corner.name=Brown Concrete Corner
+tile.decoBlockConcreteMoulding.brown.column.name=Brown Concrete Column
+tile.decoBlockConcreteMoulding.brown.pedestal.name=Brown Concrete Pedestal
+tile.decoBlockConcreteMoulding.brown.moulding.name=Brown Concrete Moulding
+tile.decoBlockConcreteMoulding.brown.table.name=Brown Concrete Table
+tile.decoBlockConcreteStairs.brown.name=Brown Concrete Stairs
+
+tile.decoBlockConcreteSiding.blue.bench.name=Blue Concrete Bench
+tile.decoBlockConcreteSiding.blue.fence.name=Blue Concrete Wall
+tile.decoBlockConcreteSiding.blue.siding.name=Blue Concrete Siding
+tile.decoBlockConcreteSiding.blue.corner.name=Blue Concrete Corner
+tile.decoBlockConcreteMoulding.blue.column.name=Blue Concrete Column
+tile.decoBlockConcreteMoulding.blue.pedestal.name=Blue Concrete Pedestal
+tile.decoBlockConcreteMoulding.blue.moulding.name=Blue Concrete Moulding
+tile.decoBlockConcreteMoulding.blue.table.name=Blue Concrete Table
+tile.decoBlockConcreteStairs.blue.name=Blue Concrete Stairs
+
+tile.decoBlockConcreteSiding.purple.bench.name=Purple Concrete Bench
+tile.decoBlockConcreteSiding.purple.fence.name=Purple Concrete Wall
+tile.decoBlockConcreteSiding.purple.siding.name=Purple Concrete Siding
+tile.decoBlockConcreteSiding.purple.corner.name=Purple Concrete Corner
+tile.decoBlockConcreteMoulding.purple.column.name=Purple Concrete Column
+tile.decoBlockConcreteMoulding.purple.pedestal.name=Purple Concrete Pedestal
+tile.decoBlockConcreteMoulding.purple.moulding.name=Purple Concrete Moulding
+tile.decoBlockConcreteMoulding.purple.table.name=Purple Concrete Table
+tile.decoBlockConcreteStairs.purple.name=Purple Concrete Stairs
+
+tile.decoBlockConcreteSiding.cyan.bench.name=Cyan Concrete Bench
+tile.decoBlockConcreteSiding.cyan.fence.name=Cyan Concrete Wall
+tile.decoBlockConcreteSiding.cyan.siding.name=Cyan Concrete Siding
+tile.decoBlockConcreteSiding.cyan.corner.name=Cyan Concrete Corner
+tile.decoBlockConcreteMoulding.cyan.column.name=Cyan Concrete Column
+tile.decoBlockConcreteMoulding.cyan.pedestal.name=Cyan Concrete Pedestal
+tile.decoBlockConcreteMoulding.cyan.moulding.name=Cyan Concrete Moulding
+tile.decoBlockConcreteMoulding.cyan.table.name=Cyan Concrete Table
+tile.decoBlockConcreteStairs.cyan.name=Cyan Concrete Stairs
+
+tile.decoBlockConcreteSiding.lightGray.bench.name=Light Gray Concrete Bench
+tile.decoBlockConcreteSiding.lightGray.fence.name=Light Gray Concrete Wall
+tile.decoBlockConcreteSiding.lightGray.siding.name=Light Gray Concrete Siding
+tile.decoBlockConcreteSiding.lightGray.corner.name=Light Gray Concrete Corner
+tile.decoBlockConcreteMoulding.lightGray.column.name=Light Gray Concrete Column
+tile.decoBlockConcreteMoulding.lightGray.pedestal.name=Light Gray Concrete Pedestal
+tile.decoBlockConcreteMoulding.lightGray.moulding.name=Light Gray Concrete Moulding
+tile.decoBlockConcreteMoulding.lightGray.table.name=Light Gray Concrete Table
+tile.decoBlockConcreteStairs.lightGray.name=Light Gray Concrete Stairs
+
+tile.decoBlockConcreteSiding.gray.bench.name=Gray Concrete Bench
+tile.decoBlockConcreteSiding.gray.fence.name=Gray Concrete Wall
+tile.decoBlockConcreteSiding.gray.siding.name=Gray Concrete Siding
+tile.decoBlockConcreteSiding.gray.corner.name=Gray Concrete Corner
+tile.decoBlockConcreteMoulding.gray.column.name=Gray Concrete Column
+tile.decoBlockConcreteMoulding.gray.pedestal.name=Gray Concrete Pedestal
+tile.decoBlockConcreteMoulding.gray.moulding.name=Gray Concrete Moulding
+tile.decoBlockConcreteMoulding.gray.table.name=Gray Concrete Table
+tile.decoBlockConcreteStairs.gray.name=Gray Concrete Stairs
+
+tile.decoBlockConcreteSiding.pink.bench.name=Pink Concrete Bench
+tile.decoBlockConcreteSiding.pink.fence.name=Pink Concrete Wall
+tile.decoBlockConcreteSiding.pink.siding.name=Pink Concrete Siding
+tile.decoBlockConcreteSiding.pink.corner.name=Pink Concrete Corner
+tile.decoBlockConcreteMoulding.pink.column.name=Pink Concrete Column
+tile.decoBlockConcreteMoulding.pink.pedestal.name=Pink Concrete Pedestal
+tile.decoBlockConcreteMoulding.pink.moulding.name=Pink Concrete Moulding
+tile.decoBlockConcreteMoulding.pink.table.name=Pink Concrete Table
+tile.decoBlockConcreteStairs.pink.name=Pink Concrete Stairs
+
+tile.decoBlockConcreteSiding.lime.bench.name=Lime Concrete Bench
+tile.decoBlockConcreteSiding.lime.fence.name=Lime Concrete Wall
+tile.decoBlockConcreteSiding.lime.siding.name=Lime Concrete Siding
+tile.decoBlockConcreteSiding.lime.corner.name=Lime Concrete Corner
+tile.decoBlockConcreteMoulding.lime.column.name=Lime Concrete Column
+tile.decoBlockConcreteMoulding.lime.pedestal.name=Lime Concrete Pedestal
+tile.decoBlockConcreteMoulding.lime.moulding.name=Lime Concrete Moulding
+tile.decoBlockConcreteMoulding.lime.table.name=Lime Concrete Table
+tile.decoBlockConcreteStairs.lime.name=Lime Concrete Stairs
+
+tile.decoBlockConcreteSiding.yellow.bench.name=Yellow Concrete Bench
+tile.decoBlockConcreteSiding.yellow.fence.name=Yellow Concrete Wall
+tile.decoBlockConcreteSiding.yellow.siding.name=Yellow Concrete Siding
+tile.decoBlockConcreteSiding.yellow.corner.name=Yellow Concrete Corner
+tile.decoBlockConcreteMoulding.yellow.column.name=Yellow Concrete Column
+tile.decoBlockConcreteMoulding.yellow.pedestal.name=Yellow Concrete Pedestal
+tile.decoBlockConcreteMoulding.yellow.moulding.name=Yellow Concrete Moulding
+tile.decoBlockConcreteMoulding.yellow.table.name=Yellow Concrete Table
+tile.decoBlockConcreteStairs.yellow.name=Yellow Concrete Stairs
+
+tile.decoBlockConcreteSiding.lightBlue.bench.name=Light Blue Concrete Bench
+tile.decoBlockConcreteSiding.lightBlue.fence.name=Light Blue Concrete Wall
+tile.decoBlockConcreteSiding.lightBlue.siding.name=Light Blue Concrete Siding
+tile.decoBlockConcreteSiding.lightBlue.corner.name=Light Blue Concrete Corner
+tile.decoBlockConcreteMoulding.lightBlue.column.name=Light Blue Concrete Column
+tile.decoBlockConcreteMoulding.lightBlue.pedestal.name=Light Blue Concrete Pedestal
+tile.decoBlockConcreteMoulding.lightBlue.moulding.name=Light Blue Concrete Moulding
+tile.decoBlockConcreteMoulding.lightBlue.table.name=Light Blue Concrete Table
+tile.decoBlockConcreteStairs.lightBlue.name=Light Blue Concrete Stairs
+
+tile.decoBlockConcreteSiding.magenta.bench.name=Magenta Concrete Bench
+tile.decoBlockConcreteSiding.magenta.fence.name=Magenta Concrete Wall
+tile.decoBlockConcreteSiding.magenta.siding.name=Magenta Concrete Siding
+tile.decoBlockConcreteSiding.magenta.corner.name=Magenta Concrete Corner
+tile.decoBlockConcreteMoulding.magenta.column.name=Magenta Concrete Column
+tile.decoBlockConcreteMoulding.magenta.pedestal.name=Magenta Concrete Pedestal
+tile.decoBlockConcreteMoulding.magenta.moulding.name=Magenta Concrete Moulding
+tile.decoBlockConcreteMoulding.magenta.table.name=Magenta Concrete Table
+tile.decoBlockConcreteStairs.magenta.name=Magenta Concrete Stairs
+
+tile.decoBlockConcreteSiding.orange.bench.name=Orange Concrete Bench
+tile.decoBlockConcreteSiding.orange.fence.name=Orange Concrete Wall
+tile.decoBlockConcreteSiding.orange.siding.name=Orange Concrete Siding
+tile.decoBlockConcreteSiding.orange.corner.name=Orange Concrete Corner
+tile.decoBlockConcreteMoulding.orange.column.name=Orange Concrete Column
+tile.decoBlockConcreteMoulding.orange.pedestal.name=Orange Concrete Pedestal
+tile.decoBlockConcreteMoulding.orange.moulding.name=Orange Concrete Moulding
+tile.decoBlockConcreteMoulding.orange.table.name=Orange Concrete Table
+tile.decoBlockConcreteStairs.orange.name=Orange Concrete Stairs
+
+tile.decoBlockConcreteSiding.white.bench.name=White Concrete Bench
+tile.decoBlockConcreteSiding.white.fence.name=White Concrete Wall
+tile.decoBlockConcreteSiding.white.siding.name=White Concrete Siding
+tile.decoBlockConcreteSiding.white.corner.name=White Concrete Corner
+tile.decoBlockConcreteMoulding.white.column.name=White Concrete Column
+tile.decoBlockConcreteMoulding.white.pedestal.name=White Concrete Pedestal
+tile.decoBlockConcreteMoulding.white.moulding.name=White Concrete Moulding
+tile.decoBlockConcreteMoulding.white.table.name=White Concrete Table
+tile.decoBlockConcreteStairs.white.name=White Concrete Stairs
+
+tile.decoBlockEndStoneBrickSiding.bench.name=End Stone Brick Bench
+tile.decoBlockEndStoneBrickSiding.fence.name=End Stone Brick Wall
+tile.decoBlockEndStoneBrickSiding.siding.name=End Stone Brick Siding
+tile.decoBlockEndStoneBrickSiding.corner.name=End Stone Brick Corner
+tile.decoBlockEndStoneBrickMoulding.column=End Stone Brick Column
+tile.decoBlockEndStoneBrickMoulding.pedestal=End Stone Brick Column Pedestal
+tile.decoBlockEndStoneBrickMoulding.moulding=End Stone Brick Moulding
+tile.decoBlockEndStoneBrickMoulding.table=End Stone Brick Table
+
+tile.decoBlockStoneSlabLoose.0.name=Loose Granite Cobblestone Slab
+tile.decoBlockStoneSlabLoose.1.name=Loose Andesite Cobblestone Slab
+tile.decoBlockStoneSlabLoose.2.name=Loose Diorite Cobblestone Slab
+tile.decoBlockStoneSlabLoose.0.name=Loose Granite Brick Slab
+tile.decoBlockStoneSlabLoose.1.name=Loose Andesite Brick Slab
+tile.decoBlockStoneSlabLoose.2.name=Loose Diorite Brick Slab
+
+tile.decoBlockStoneSlab.0.name=Red Sandstone Slab
+tile.decoBlockStoneSlab.1.name=Prismarine Slab
+tile.decoBlockStoneSlab.2.name=Prismarine Brick Slab
+tile.decoBlockStoneSlab.3.name=Dark Prismarine Slab
+tile.decoBlockStoneSlab.4.name=White Stone Slab
+tile.decoBlockStoneSlab.5.name=White Stone Brick Slab
+tile.decoBlockStoneSlab.6.name=Mossy Cobblestone Slab
+tile.decoBlockStoneSlab.7.name=Red Nether Brick Slab
+
+tile.decoBlockStoneSlab2.0.name=Granite Slab
+tile.decoBlockStoneSlab2.1.name=Andesite Slab
+tile.decoBlockStoneSlab2.2.name=Diorite Slab
+tile.decoBlockStoneSlab2.3.name=Polished Granite Slab
+tile.decoBlockStoneSlab2.4.name=Polished Andesite Slab
+tile.decoBlockStoneSlab2.5.name=Polished Diorite Slab
+tile.decoBlockStoneSlab2.6.name=Granite Cobblestone Slab=
+tile.decoBlockStoneSlab2.7.name=Andesite Cobblestone Slab
+
+tile.decoBlockStoneSlab3.0.name=Diorite Cobblestone Slab
+tile.decoBlockStoneSlab3.1.name=Granite Brick Slab
+tile.decoBlockStoneSlab3.2.name=Andesite Brick Slab
+tile.decoBlockStoneSlab3.3.name=Diorite Brick Slab
+tile.decoBlockStoneSlab3.4.name=Infused Stone Slab
+tile.decoBlockStoneSlab3.5.name=Polished Infused Stone Slab
+tile.decoBlockStoneSlab3.6.name=Infused Stone Brick Slab
+tile.decoBlockStoneSlab3.7.name=Stone Slab
+
+tile.decoBlockStoneSlab4.0.name=Cut Sandstone Slab
+tile.decoBlockStoneSlab4.1.name=Polished Sandstone Slab
+tile.decoBlockStoneSlab4.2.name=Sandstone Brick Slab
+tile.decoBlockStoneSlab4.3.name=Cut Red Sandstone Slab
+tile.decoBlockStoneSlab4.4.name=Polished Red Sandstone Slab
+tile.decoBlockStoneSlab4.5.name=Red Sandstone Brick Slab
+tile.decoBlockStoneSlab4.6.name=Mossy Sandstone Slab
+tile.decoBlockStoneSlab4.7.name=Large Sandstone Brick Slab
+
+tile.decoBlockStoneSlab5.0.name=Large Mossy Sandstone Brick Slab
+tile.decoBlockStoneSlab5.1.name=Mossy Red Sandstone Slab
+tile.decoBlockStoneSlab5.2.name=Large Red Sandstone Brick Slab
+tile.decoBlockStoneSlab5.3.name=Large Mossy Red Sandstone Brick Slab
+tile.decoBlockStoneSlab5.4.name=Cracked Sandstone Slab
+tile.decoBlockStoneSlab5.5.name=Large Cracked Sandstone Brick Slab
+tile.decoBlockStoneSlab5.6.name=Cracked Red Sandstone Slab
+tile.decoBlockStoneSlab5.7.name=Large Cracked Red Sandstone Slab
+
+tile.decoBlockStoneSlab6.0.name=Mossy Stone Brick Slab
+tile.decoBlockStoneSlab6.1.name=Cracked Stone Brick Slab
+tile.decoBlockStoneSlab6.2.name=End Stone Brick Slab
+tile.decoBlockStoneSlab6.3.name=Terracotta Slab
+
+tile.decoBlockConcreteSlab.0.name=Black Concrete Slab
+tile.decoBlockConcreteSlab.1.name=Red Concrete Slab
+tile.decoBlockConcreteSlab.2.name=Green Concrete Slab
+tile.decoBlockConcreteSlab.3.name=Brown Concrete Slab
+tile.decoBlockConcreteSlab.4.name=Blue Concrete Slab
+tile.decoBlockConcreteSlab.5.name=Purple Concrete Slab
+tile.decoBlockConcreteSlab.6.name=Cyan Concrete Slab
+tile.decoBlockConcreteSlab.7.name=Light Gray Concrete Slab
+
+tile.decoBlockConcreteSlab2.0.name=Gray Concrete Slab
+tile.decoBlockConcreteSlab2.1.name=Pink Concrete Slab
+tile.decoBlockConcreteSlab2.2.name=Lime Concrete Slab
+tile.decoBlockConcreteSlab2.3.name=Yellow Concrete Slab
+tile.decoBlockConcreteSlab2.4.name=Light Blue Concrete Slab
+tile.decoBlockConcreteSlab2.5.name=Magenta Concrete Slab
+tile.decoBlockConcreteSlab2.6.name=Orange Concrete Slab
+tile.decoBlockConcreteSlab2.7.name=White Concrete Slab
+
 # Vanilla/BTW Blocks Renamed
 
 tile.rose.name=Red Rose
@@ -775,6 +1055,9 @@ tile.sandStone.largeBrick.name=Large Red Sandstone Brick
 tile.sandStone.largeBrickMossy.name=Large Mossy Red Sandstone Brick
 tile.sandStone.cracked.name=Cracked Red Sandstone
 tile.sandStone.largeBrickCracked.name=Large Cracked Red Sandstone Brick
+tile.obsidian.obsidian.name=Obsidian
+tile.obsidian.infused.name=Infused Obsidian
+tile.stoneSlab.stone.name=Polished Stone Slab
 
 # Deco Items
 

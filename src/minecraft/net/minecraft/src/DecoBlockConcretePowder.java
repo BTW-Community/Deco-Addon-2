@@ -1,22 +1,17 @@
 package net.minecraft.src;
 
 public class DecoBlockConcretePowder extends FCBlockFallingFullBlock {
-	public static final String[] tags = new String[] { "black", "red", "green", "brown", "blue", "purple", "cyan", "lightGrey", "grey", "pink", "lime", "yellow", "lightBlue", "magenta", "orange", "white" };
-	public static final String[] names = new String[] { "Black", "Red", "Green", "Brown", "Blue", "Purple", "Cyan", "Light Grey", "Grey", "Pink", "Lime", "Yellow", "Light Blue", "Magenta", "Orange", "White" };
-	
-	private String nameTag;
 	private Icon[] icons = new Icon[16];
 	
-	public DecoBlockConcretePowder(int id, String tag, String name) {
+	public DecoBlockConcretePowder(int id) {
 		super(id, Material.ground);
         this.setHardness(0.5F);
         this.SetShovelsEffectiveOn();
         this.SetFilterableProperties(8);
         this.setStepSound(soundSandFootstep);
         this.setCreativeTab(CreativeTabs.tabBlock);
-		this.nameTag = tag;
-		this.setUnlocalizedName(tag);
-		DecoManager.Register(this,tags, names," " + name);
+		this.setUnlocalizedName("decoBlockConcretePowder");
+		DecoManager.Register(this, DecoUtilsMisc.colorOrder);
 	}
 
     public boolean DropComponentItemsOnBadBreak(World var1, int var2, int var3, int var4, int var5, float var6)
@@ -100,6 +95,6 @@ public class DecoBlockConcretePowder extends FCBlockFallingFullBlock {
 	@Override
 	public void registerIcons(IconRegister iconRegister) {
 		for (int i = 0; i < 16; i++)
-			this.icons[i] = iconRegister.registerIcon(nameTag+"_" + i);
+			this.icons[i] = iconRegister.registerIcon("decoBlockConcretePowder_" + DecoUtilsMisc.colorOrder[i]);
 	}
 }

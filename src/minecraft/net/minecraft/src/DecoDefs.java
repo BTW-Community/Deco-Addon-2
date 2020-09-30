@@ -1260,146 +1260,74 @@ public class DecoDefs {
 		DecoManager.Register(infusedStoneBrickStairs);
 
 		//Concrete
-		concrete = new DecoBlockConcrete(id_concrete, "ginger_concrete", "Concrete");
-		concretePowder = new DecoBlockConcretePowder(id_concretePowder, "ginger_concretePowder", "Concrete Powder");
+		concrete = new DecoBlockConcrete(id_concrete);
+		concretePowder = new DecoBlockConcretePowder(id_concretePowder);
 
 		concreteSidingAndCorner = new Block[16];
 		concreteMouldingAndDecorative = new Block[16];
 		concreteStairs = new Block[16];
 
-		int i = 0;
 		int id = id_concreteSubStart;
 		final String main = "Concrete";
 
-		while(i < 16)
+		for (int i = 0; i < 16; i++)
 		{
-			concreteSidingAndCorner[i] = new DecoBlockSidingAndCornerDecorativeWall(id++, Material.rock, "ginger_concrete_"+i, 2.0F, 5.0F, Block.soundStoneFootstep, "concreteSiding_"+i, "Concrete");
-			concreteMouldingAndDecorative[i] = new FCBlockMouldingAndDecorative(id++, Material.rock, "ginger_concrete_"+i, "ginger_concrete_column_"+i, 3042, 2.0F, 5.0F, Block.soundWoodFootstep, "concreteMoulding_"+i);
-			concreteStairs[i] = new FCBlockStairs(id++, concrete, i).setUnlocalizedName("stairsConcrete_"+i);
+			concreteSidingAndCorner[i] = new DecoBlockSidingAndCornerDecorativeWall(id++, Material.rock, "decoBlockConcrete_" + DecoUtilsMisc.colorOrder[i], 2.0F, 5.0F, Block.soundStoneFootstep, "decoBlockConcreteSiding." + DecoUtilsMisc.colorOrder[i], "Concrete");
+			concreteMouldingAndDecorative[i] = new DecoBlockMouldingAndDecorativeWall(id++, Material.rock, "decoBlockConcrete_" + DecoUtilsMisc.colorOrder[i], "decoBlockConcreteColumn_" + DecoUtilsMisc.colorOrder[i], concreteSidingAndCorner[i].blockID, 2.0F, 5.0F, Block.soundWoodFootstep, "decoBlockConcreteMoulding." + DecoUtilsMisc.colorOrder[i]);
+			concreteStairs[i] = new FCBlockStairs(id++, concrete, i).setUnlocalizedName("decoBlockConcreteStairs." + DecoUtilsMisc.colorOrder[i]);
 
 			Item.itemsList[concreteSidingAndCorner[i].blockID] = new FCItemBlockSidingAndCorner(concreteSidingAndCorner[i].blockID - 256);
 			Item.itemsList[concreteMouldingAndDecorative[i].blockID] = new FCItemBlockMouldingAndDecorative(concreteMouldingAndDecorative[i].blockID - 256);
-			DecoManager.Register(concreteStairs[i], DecoBlockConcrete.names[i]+" "+main+" Stairs");
-			DecoManager.NameSubBlocks_Wall(concreteSidingAndCorner[i], concreteMouldingAndDecorative[i], DecoBlockConcrete.names[i]+" "+main);
-
-			i++;//i is metadata from original 16 color set
+			DecoManager.Register(concreteStairs[i]);
 		}
 
 		//End Stone Brick
-		endStoneBrick = new Block(id_endStoneBrick, Material.rock).setHardness(3.0F).setResistance(15.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("ginger_endStoneBrick").setCreativeTab(CreativeTabs.tabBlock);
-		endStoneBrickStairs = new FCBlockStairs(id_endStoneBrickStairs, endStoneBrick, 0).setUnlocalizedName("endStoneBrickStairs");
-		endStoneBrickSidingAndCorner = new DecoBlockSidingAndCornerDecorativeWall(id_endStoneBrickSidingAndCorner, Material.rock, "ginger_endStoneBrickDecorative", 3.0F, 15.0F, Block.soundStoneFootstep, "endStoneBrickSiding", "End Stone Brick").SetPicksEffectiveOn();
-		endStoneBrickMouldingAndDecorative = new FCBlockMouldingAndDecorative(id_endStoneBrickMouldingAndDecorative, Material.rock, "ginger_endStoneBrickDecorative", "ginger_endStoneBrickDecorative_column", 3042, 2.0F, 10.0F, Block.soundStoneFootstep, "endStoneBrickMoulding").SetPicksEffectiveOn();
+		endStoneBrick = new Block(id_endStoneBrick, Material.rock).setHardness(3.0F).setResistance(15.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("decoBlockEndStoneBrick").setCreativeTab(CreativeTabs.tabBlock);
+		endStoneBrickStairs = new FCBlockStairs(id_endStoneBrickStairs, endStoneBrick, 0).setUnlocalizedName("decoBlockEndStoneBrickStairs");
+		endStoneBrickSidingAndCorner = new DecoBlockSidingAndCornerDecorativeWall(id_endStoneBrickSidingAndCorner, Material.rock, "decoBlockEndStoneBrick", 3.0F, 15.0F, Block.soundStoneFootstep, "decoBlockEndStoneBrickSiding", "End Stone Brick").SetPicksEffectiveOn();
+		endStoneBrickMouldingAndDecorative = new FCBlockMouldingAndDecorative(id_endStoneBrickMouldingAndDecorative, Material.rock, "decoBlockEndStoneBrick", "decoBlockEndStoneBrickColumn", endStoneBrickSidingAndCorner.blockID, 2.0F, 10.0F, Block.soundStoneFootstep, "decoBlockEndStoneBrickMoulding").SetPicksEffectiveOn();
 
-		DecoManager.Register(endStoneBrick, "End Stone Brick");
-		DecoManager.Register(endStoneBrickStairs, "End stone Brick Stairs");
+		DecoManager.Register(endStoneBrick);
+		DecoManager.Register(endStoneBrickStairs);
 		Item.itemsList[endStoneBrickSidingAndCorner.blockID] = new FCItemBlockSidingAndCorner(endStoneBrickSidingAndCorner.blockID - 256);
 		Item.itemsList[endStoneBrickMouldingAndDecorative.blockID] = new FCItemBlockMouldingAndDecorative(endStoneBrickMouldingAndDecorative.blockID - 256);
-		DecoManager.NameSubBlocks_Wall(endStoneBrickSidingAndCorner, endStoneBrickMouldingAndDecorative, "End Stone Brick");
 
 		//Obsidian
 		Block obsidian = new DecoBlockObsidian(DecoManager.ReplaceBlockID(Block.obsidian));
 		DawnUtilsReflection.replaceVanillaBlock("obsidian", Block.obsidian, obsidian);
-		DecoManager.Register(obsidian, new String[] {"obsidian", "infusedObsidian"}, new String[] {"Obsidian", "Infused Obsidian"});
+		DecoManager.Register(obsidian, new String[] {"obsidian", "infused"});
 
 		//MUST BE LAST OR NULL POINTER
 		//Has to be after reference blocks are declared
-		stoneTypesLooseSlab = new DecoBlockStoneLooseSlab(id_stoneTypeLooseSlab, new int[] {id_stoneSlab2, id_stoneSlab2, id_stoneSlab3, id_stoneSlab3, id_stoneSlab3, id_stoneSlab3});
-		Item.itemsList[DecoDefs.stoneTypesLooseSlab.blockID] = new DecoItemBlockSlabLoose(DecoDefs.stoneTypesLooseSlab.blockID - 256);
-		DecoManager.Name(new ItemStack(DecoDefs.stoneTypesLooseSlab, 1, 0), "Loose Granite Cobblestone Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.stoneTypesLooseSlab, 1, 1), "Loose Andesite Cobblestone Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.stoneTypesLooseSlab, 1, 3), "Loose Granite Brick Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.stoneTypesLooseSlab, 1, 4), "Loose Andesite Brick Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.stoneTypesLooseSlab, 1, 5), "Loose Diorite Brick Slab");
+		stoneTypesLooseSlab = new DecoBlockStoneLooseSlab(id_stoneTypeLooseSlab, new int[] {id_stoneSlab2, id_stoneSlab2, id_stoneSlab3, id_stoneSlab3, id_stoneSlab3, id_stoneSlab3}).setUnlocalizedName("decoBlockStoneSlabLoose");
+		Item.itemsList[DecoDefs.stoneTypesLooseSlab.blockID] = new DecoItemBlockSlab(DecoDefs.stoneTypesLooseSlab.blockID - 256);
 
-		DecoManager.Name(new ItemStack(Block.stoneSingleSlab, 1, 0), "Polished Stone Slab");
-
-		stoneSlab = new DecoBlockSlabStone(id_stoneSlab, new Block[] {DecoDefs.redSandStone, DecoDefs.prismarine, DecoDefs.prismarine, DecoDefs.prismarine, FCBetterThanWolves.fcAestheticOpaque, DecoDefs.whiteStoneBrick, Block.cobblestoneMossy, DecoDefs.netherBrick}, new int[] {0, 0, 1, 2, 9, 0, 0, 0},
-				new boolean[] {false, false, false, false, false, false, false, true}, new Block[] {null, null, null, null, null, null, null, netherBrickRedLooseSlab}, new int[] {0, 0, 0, 0, 0, 0, 0, 0});
+		stoneSlab = (DecoBlockSlabStone) new DecoBlockSlabStone(id_stoneSlab, new Block[] {DecoDefs.redSandStone, DecoDefs.prismarine, DecoDefs.prismarine, DecoDefs.prismarine, FCBetterThanWolves.fcAestheticOpaque, DecoDefs.whiteStoneBrick, Block.cobblestoneMossy, DecoDefs.netherBrick}, new int[] {0, 0, 1, 2, 9, 0, 0, 0},
+				new boolean[] {false, false, false, false, false, false, false, true}, new Block[] {null, null, null, null, null, null, null, netherBrickRedLooseSlab}, new int[] {0, 0, 0, 0, 0, 0, 0, 0}).setUnlocalizedName("decoBlockStoneSlab");
 		Item.itemsList[DecoDefs.stoneSlab.blockID] = new DecoItemBlockSlab(DecoDefs.stoneSlab.blockID - 256);
-		DecoManager.Name(new ItemStack(DecoDefs.stoneSlab, 1, 0), "Red Sandstone Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.stoneSlab, 1, 1), "Prismarine Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.stoneSlab, 1, 2), "Prismarine Bricks Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.stoneSlab, 1, 3), "Dark Prismarine Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.stoneSlab, 1, 4), "White Stone Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.stoneSlab, 1, 5), "White Stone Brick Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.stoneSlab, 1, 6), "Mossy Cobblestone Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.stoneSlab, 1, 7), "Red Nether Brick Slab");
 
-		stoneSlab2 = new DecoBlockSlabStone(id_stoneSlab2, new Block[] {DecoDefs.stoneTypes, DecoDefs.stoneTypes, DecoDefs.stoneTypes, DecoDefs.stoneTypesSmooth, DecoDefs.stoneTypesSmooth, DecoDefs.stoneTypesSmooth, DecoDefs.stoneTypesCobble, DecoDefs.stoneTypesCobble}, new int[] {0, 1, 2, 0, 1, 2, 0, 1},
-				new boolean[] {false, false, false, false, false, false, true, true}, new Block[] {null, null, null, null, null, null, stoneTypesLooseSlab, stoneTypesLooseSlab}, new int[] {0, 0, 0, 0, 0, 0, 0, 1});
+		stoneSlab2 = (DecoBlockSlabStone) new DecoBlockSlabStone(id_stoneSlab2, new Block[] {DecoDefs.stoneTypes, DecoDefs.stoneTypes, DecoDefs.stoneTypes, DecoDefs.stoneTypesSmooth, DecoDefs.stoneTypesSmooth, DecoDefs.stoneTypesSmooth, DecoDefs.stoneTypesCobble, DecoDefs.stoneTypesCobble}, new int[] {0, 1, 2, 0, 1, 2, 0, 1},
+				new boolean[] {false, false, false, false, false, false, true, true}, new Block[] {null, null, null, null, null, null, stoneTypesLooseSlab, stoneTypesLooseSlab}, new int[] {0, 0, 0, 0, 0, 0, 0, 1}).setUnlocalizedName("decoBlockStoneSlab2");
 		Item.itemsList[DecoDefs.stoneSlab2.blockID] = new DecoItemBlockSlab(DecoDefs.stoneSlab2.blockID - 256);
-		DecoManager.Name(new ItemStack(DecoDefs.stoneSlab2, 1, 0), "Granite Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.stoneSlab2, 1, 1), "Andesite Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.stoneSlab2, 1, 2), "Diorite Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.stoneSlab2, 1, 3), "Polished Granite Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.stoneSlab2, 1, 4), "Polished Andesite Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.stoneSlab2, 1, 5), "Polished Diorite Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.stoneSlab2, 1, 6), "Granite Cobblestone Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.stoneSlab2, 1, 7), "Andesite Cobblestone Slab");
 
-		stoneSlab3 = new DecoBlockSlabStone(id_stoneSlab3, new Block[] {DecoDefs.stoneTypesCobble, DecoDefs.stoneTypesStoneBrick, DecoDefs.stoneTypesStoneBrick, DecoDefs.stoneTypesStoneBrick, DecoDefs.infusedStone, DecoDefs.infusedStone, DecoDefs.infusedStone, Block.stone}, new int[] {2, 0, 1, 2, 0, 1, 2, 0},
-				new boolean[] {true, true, true, true, false, false, false, false}, new Block[] {stoneTypesLooseSlab, stoneTypesLooseSlab, stoneTypesLooseSlab, stoneTypesLooseSlab, null, null, null, null}, new int[] {2, 3, 4, 5, 0, 0, 0, 0});
+		stoneSlab3 = (DecoBlockSlabStone) new DecoBlockSlabStone(id_stoneSlab3, new Block[] {DecoDefs.stoneTypesCobble, DecoDefs.stoneTypesStoneBrick, DecoDefs.stoneTypesStoneBrick, DecoDefs.stoneTypesStoneBrick, DecoDefs.infusedStone, DecoDefs.infusedStone, DecoDefs.infusedStone, Block.stone}, new int[] {2, 0, 1, 2, 0, 1, 2, 0},
+				new boolean[] {true, true, true, true, false, false, false, false}, new Block[] {stoneTypesLooseSlab, stoneTypesLooseSlab, stoneTypesLooseSlab, stoneTypesLooseSlab, null, null, null, null}, new int[] {2, 3, 4, 5, 0, 0, 0, 0}).setUnlocalizedName("decoBlockStoneSlab3");
 		Item.itemsList[DecoDefs.stoneSlab3.blockID] = new DecoItemBlockSlab(DecoDefs.stoneSlab3.blockID - 256);
-		DecoManager.Name(new ItemStack(DecoDefs.stoneSlab3, 1, 0), "Diorite Cobblestone Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.stoneSlab3, 1, 1), "Granite Brick Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.stoneSlab3, 1, 2), "Andesite Brick Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.stoneSlab3, 1, 3), "Diorite Brick Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.stoneSlab3, 1, 4), "Infused Stone Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.stoneSlab3, 1, 5), "Polished Infused Stone Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.stoneSlab3, 1, 6), "Infused Stone Brick Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.stoneSlab3, 1, 7), "Stone Slab");
 
-		stoneSlab4 = new DecoBlockSlabStone(id_stoneSlab4, new Block[] {Block.sandStone, Block.sandStone, Block.sandStone, DecoDefs.redSandStone, DecoDefs.redSandStone, DecoDefs.redSandStone, Block.sandStone, Block.sandStone}, new int[] {2, 3, 4, 2, 3, 4, 5, 6});
+		stoneSlab4 = (DecoBlockSlabStone) new DecoBlockSlabStone(id_stoneSlab4, new Block[] {Block.sandStone, Block.sandStone, Block.sandStone, DecoDefs.redSandStone, DecoDefs.redSandStone, DecoDefs.redSandStone, Block.sandStone, Block.sandStone}, new int[] {2, 3, 4, 2, 3, 4, 5, 6}).setUnlocalizedName("decoBlockStoneSlab4");
 		Item.itemsList[DecoDefs.stoneSlab4.blockID] = new DecoItemBlockSlab(DecoDefs.stoneSlab4.blockID - 256);
-		DecoManager.Name(new ItemStack(DecoDefs.stoneSlab4, 1, 0), "Cut Sandstone Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.stoneSlab4, 1, 1), "Polished Sandstone Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.stoneSlab4, 1, 2), "Sandstone Brick Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.stoneSlab4, 1, 3), "Cut Red Sandstone Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.stoneSlab4, 1, 4), "Polished Red Sandstone Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.stoneSlab4, 1, 5), "Red Sandstone Brick Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.stoneSlab4, 1, 6), "Mossy Sandstone Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.stoneSlab4, 1, 7), "Large Sandstone Brick Slab");
 
-		stoneSlab5 = new DecoBlockSlabStone(id_stoneSlab5, new Block[] {Block.sandStone, DecoDefs.redSandStone, DecoDefs.redSandStone, DecoDefs.redSandStone, Block.sandStone, Block.sandStone, DecoDefs.redSandStone, DecoDefs.redSandStone}, new int[] {7, 5, 6, 7, 8, 9, 8, 9});
+		stoneSlab5 = (DecoBlockSlabStone) new DecoBlockSlabStone(id_stoneSlab5, new Block[] {Block.sandStone, DecoDefs.redSandStone, DecoDefs.redSandStone, DecoDefs.redSandStone, Block.sandStone, Block.sandStone, DecoDefs.redSandStone, DecoDefs.redSandStone}, new int[] {7, 5, 6, 7, 8, 9, 8, 9}).setUnlocalizedName("decoBlockStoneSlab5");
 		Item.itemsList[DecoDefs.stoneSlab5.blockID] = new DecoItemBlockSlab(DecoDefs.stoneSlab5.blockID - 256);
-		DecoManager.Name(new ItemStack(DecoDefs.stoneSlab5, 1, 0), "Large Mossy Sandstone Brick Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.stoneSlab5, 1, 1), "Mossy Red Sandstone Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.stoneSlab5, 1, 2), "Large Red Sandstone Brick Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.stoneSlab5, 1, 3), "Large Mossy Red Sandstone Brick Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.stoneSlab5, 1, 4), "Cracked Sandstone Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.stoneSlab5, 1, 5), "Cracked Large Sandstone Brick Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.stoneSlab5, 1, 6), "Cracked Red Sandstone Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.stoneSlab5, 1, 7), "Cracked Large Red Sandstone Brick Slab");
 
-		stoneSlab6 = new DecoBlockSlabStone(id_stoneSlab6, new Block[] {Block.stoneBrick, Block.stoneBrick, endStoneBrick, terracotta}, new int[] {1, 2, 0, 0});
+		stoneSlab6 = (DecoBlockSlabStone) new DecoBlockSlabStone(id_stoneSlab6, new Block[] {Block.stoneBrick, Block.stoneBrick, endStoneBrick, terracotta}, new int[] {1, 2, 0, 0}).setUnlocalizedName("decoBlockStoneSlab6");
 		Item.itemsList[DecoDefs.stoneSlab6.blockID] = new DecoItemBlockSlab(DecoDefs.stoneSlab6.blockID - 256);
-		DecoManager.Name(new ItemStack(DecoDefs.stoneSlab6, 1, 0), "Mossy Stone Brick Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.stoneSlab6, 1, 1), "Cracked Stone Brick Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.stoneSlab6, 1, 2), "End Stone Brick Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.stoneSlab6, 1, 3), "Terracotta Slab");
 
-		concreteSlab = new DecoBlockSlabStone(id_concreteSlab, new Block[] {DecoDefs.concrete, DecoDefs.concrete, DecoDefs.concrete, DecoDefs.concrete, DecoDefs.concrete, DecoDefs.concrete, DecoDefs.concrete, DecoDefs.concrete}, new int[] {0, 1, 2, 3, 4, 5, 6, 7});
+		concreteSlab = (DecoBlockSlabStone) new DecoBlockSlabStone(id_concreteSlab, new Block[] {DecoDefs.concrete, DecoDefs.concrete, DecoDefs.concrete, DecoDefs.concrete, DecoDefs.concrete, DecoDefs.concrete, DecoDefs.concrete, DecoDefs.concrete}, new int[] {0, 1, 2, 3, 4, 5, 6, 7}).setUnlocalizedName("decoBlockConcreteSlab");
 		Item.itemsList[DecoDefs.concreteSlab.blockID] = new DecoItemBlockSlab(DecoDefs.concreteSlab.blockID - 256);
-		DecoManager.Name(new ItemStack(DecoDefs.concreteSlab, 1, 0), "Black Concrete Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.concreteSlab, 1, 1), "Red Concrete Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.concreteSlab, 1, 2), "Green Concrete Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.concreteSlab, 1, 3), "Brown Concrete Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.concreteSlab, 1, 4), "Blue Concrete Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.concreteSlab, 1, 5), "Purple Concrete Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.concreteSlab, 1, 6), "Cyan Concrete Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.concreteSlab, 1, 7), "Light Grey Concrete Slab");
 
-		concreteSlab2 = new DecoBlockSlabStone(id_concreteSlab2, new Block[] {DecoDefs.concrete, DecoDefs.concrete, DecoDefs.concrete, DecoDefs.concrete, DecoDefs.concrete, DecoDefs.concrete, DecoDefs.concrete, DecoDefs.concrete}, new int[] {8, 9, 10, 11, 12, 13, 14, 15});
+		concreteSlab2 = (DecoBlockSlabStone) new DecoBlockSlabStone(id_concreteSlab2, new Block[] {DecoDefs.concrete, DecoDefs.concrete, DecoDefs.concrete, DecoDefs.concrete, DecoDefs.concrete, DecoDefs.concrete, DecoDefs.concrete, DecoDefs.concrete}, new int[] {8, 9, 10, 11, 12, 13, 14, 15}).setUnlocalizedName("decoBlockConcreteSlab2");
 		Item.itemsList[DecoDefs.concreteSlab2.blockID] = new DecoItemBlockSlab(DecoDefs.concreteSlab2.blockID - 256);
-		DecoManager.Name(new ItemStack(DecoDefs.concreteSlab2, 1, 0), "Gray Concrete Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.concreteSlab2, 1, 1), "Pink Concrete Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.concreteSlab2, 1, 2), "Lime Concrete Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.concreteSlab2, 1, 3), "Yellow Concrete Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.concreteSlab2, 1, 4), "Light Blue Concrete Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.concreteSlab2, 1, 5), "Magenta Concrete Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.concreteSlab2, 1, 6), "Orange Concrete Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.concreteSlab2, 1, 7), "White Concrete Slab");
 	}
 
 	private void addWoodDefs() {
