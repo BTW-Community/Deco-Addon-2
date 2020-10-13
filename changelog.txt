@@ -5,7 +5,7 @@ THIS VERSION WILL REQUIRE A CLEAN INSTALL
 [*]Refactored the addon to use Dawn's Library. This is provided as a separate download.
 [*]Refactored file prefix to "Deco" rather than "Addon" for clarity.
 [*]Refactored texture names to make them more consistent. This will mean texture packs will need to update to the new file names.
-[*]Added localization support to deco. Included with the addon in the lang folder is the file Deco_en_US.lang, which contains all english translations for the addon. Anyone who wishes to make and distribute translations is free to do so, and I will include it here.
+[*]Added localization support to deco. Included with the addon in the lang folder is the file Deco_en_US.lang, which contains all english translations for the addon. Anyone who wishes to make and distribute translations is free to do so, and I will include it here if you link it.
 [*]Added iron trapdoors, crafted with 4 iron ingots and 2 redstone latches, producing 2.
 [*]Changed grass to not die while in darkness in order to facilitate its decorative use and to prevent ugly dirt under overhangs or dense trees. However, to maintain balance, animals may not eat from grass without sunlight, and the texture updates to reflect this.
 [*]Changed terracotta to break into 8 sand piles when broken with an iron pick or lower.
@@ -16,6 +16,7 @@ THIS VERSION WILL REQUIRE A CLEAN INSTALL
 [*]Changed chair collision and selection box to better match the model.
 [*]Changed rendering on tables to have a wider leg if the block type uses walls to match the thickness of the walls.
 [*]Changed the texture on polished stone, polished stone variant, polished infused stone, cut sandstone, and cut red sandstone columns.
+[*]Refactored loose slab code to simplify the related code and assimilate it into the main slab code.
 [*]Removed specific textures for subblocks (except columns). Subblocks will now simply use the texture of their base block. However, MCPatcher will still allow texturepacks to override these textures if texturepack authors wish to do so.
 [*]Removed the item form of superheated netherrack and nether brick, meaning they can only exist in the world but not in inventories.
 [*]Fixed an issue where doors would drop 2 items if the top block was broken.

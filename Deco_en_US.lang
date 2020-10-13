@@ -66,6 +66,37 @@ tile.decoBlockInfusedStoneSmoothStairs=Polished Infused Stone Stairs
 tile.decoBlockInfusedStoneBrickStairs=Infused Stone Brick Stairs
 tile.decoBlockEndStoneBrick.name=End Stone Brick
 tile.decoBlockEndStoneBrickStairs=End Stone Brick Stairs
+tile.decoBlockChewedOak.name=Chewed Oak Log
+tile.decoBlockChewedSpruce.name=Chewed Spruce Log
+tile.decoBlockChewedBirch.name=Chewed Birch Log
+tile.decoBlockChewedJungle.name=Chewed Jungle Log
+tile.decoBlockChewedBlood.name=Chewed Blood Wood Log
+tile.decoBlockChewedCherry.name=Chewed Cherry Log
+tile.decoBlockChewedCrimson.nameChewed Crimson Stem
+tile.decoBlockChewedWarped.name=Chewed Warped Stem
+tile.decoBlockCherryStairs.name=Cherry Stairs
+tile.decoBlockTrapdoorSpruce.name=Spruce Trap Door
+tile.decoBlockTrapdoorBirch.name=Birch Trap Door
+tile.decoBlockTrapdoorJungle.name=Jungle Trap Door
+tile.decoBlockTrapdoorBlood.name=Blood Wood Trap Door
+tile.decoBlockTrapdoorCherry.name=Cherry Trap Door
+tile.decoBlockTrapdoorIron.name=Iron Trap Door
+tile.decoBlockDoorSpruce.name=Spruce Door
+tile.decoBlockDoorBirch.name=Birch Door
+tile.decoBlockDoorJungle.name=Jungle Door
+tile.decoBlockDoorBlood.name=Blood Wood Door
+tile.decoBlockDoorCherry.name=Cherry Door
+tile.decoBlockGateSpruce.name=Spruce Fence Gate
+tile.decoBlockGateBirch.name=Birch Fence Gate
+tile.decoBlockGateJungle.name=Jungle Fence Gate
+tile.decoBlockGateBlood.name=Blood Wood Fence Gate
+tile.decoBlockGateCherry.name=Cherry Fence Gate
+tile.decoBlockChairOak.name=Oak Chair
+tile.decoBlockChairSpruce.name=Spruce Chair
+tile.decoBlockChairBirch.name=Birch Chair
+tile.decoBlockChairJungle.name=Jungle Chair
+tile.decoBlockChairBlood.name=Blood Wood Chair
+tile.decoBlockChairCherry.name=Cherry Chair
 
 # Deco Complex Blocks
 
@@ -1039,25 +1070,150 @@ tile.decoBlockConcreteSlab2.5.name=Magenta Concrete Slab
 tile.decoBlockConcreteSlab2.6.name=Orange Concrete Slab
 tile.decoBlockConcreteSlab2.7.name=White Concrete Slab
 
+tile.decoBlockLogStripped.oak.name=Stripped Oak Log
+tile.decoBlockLogStripped.spruce.name=Stripped Spruce Log
+tile.decoBlockLogStripped.birch.name=Stripped Birch Log
+tile.decoBlockLogStripped.jungle.name=Stripped Jungle Log
+
+tile.decoBlockLogBark.oak.name=Oak Wood
+tile.decoBlockLogBark.spruce.name=Spruce Wood
+tile.decoBlockLogBark.birch.name=Birch Wood
+tile.decoBlockLogBark.jungle.name=Jungle Wood
+
+tile.decoBlockLogBarkStripped.oak.name=Stripped Oak Wood
+tile.decoBlockLogBarkStripped.spruce.name=Stripped Spruce Wood
+tile.decoBlockLogBarkStripped.birch.name=Stripped Birch Wood
+tile.decoBlockLogBarkStripped.jungle.name=Stripped Jungle Wood
+
+tile.decoBlockCherryLog.name=Cherry Log
+tile.decoBlockCherryLog.stripped.name=Stripped Cherry Log
+tile.decoBlockCherryLog.wood.name=Cherry Wood
+tile.decoBlockCherryLog.strippedWood.name=Stripped Cherry Wood
+
+tile.decoBlockCrimsonStem.name=Crimson Stem
+tile.decoBlockCrimsonStem.stripped.name=Stripped Crimson Stem
+tile.decoBlockCrimsonStem.wood.name=Crimson Hyphae
+tile.decoBlockCrimsonStem.strippedWood.name=Stripped Crimson Hyphae
+
+tile.decoBlockWarpedStem.name=Warped Stem
+tile.decoBlockWarpedStem.stripped.name=Stripped Warped Stem
+tile.decoBlockWarpedStem.wood.name=Warped Hyphae
+tile.decoBlockWarpedStem.strippedWood.name=Stripped Warped Hyphae
+
+tile.decoBlockPlanksPainted.black.name=Black Painted Planks
+tile.decoBlockPlanksPainted.red.name=Red Painted Planks
+tile.decoBlockPlanksPainted.green.name=Green Painted Planks
+tile.decoBlockPlanksPainted.brown.name=Brown Painted Planks
+tile.decoBlockPlanksPainted.blue.name=Blue Painted Planks
+tile.decoBlockPlanksPainted.purple.name=Purple Painted Planks
+tile.decoBlockPlanksPainted.cyan.name=Cyan Painted Planks
+tile.decoBlockPlanksPainted.lightGray.name=Light Gray Painted Planks
+tile.decoBlockPlanksPainted.gray.name=Gray Painted Planks
+tile.decoBlockPlanksPainted.pink.name=Pink Painted Planks
+tile.decoBlockPlanksPainted.lime.name=Lime Painted Planks
+tile.decoBlockPlanksPainted.yellow.name=Yellow Painted Planks
+tile.decoBlockPlanksPainted.lightBlue.name=Light Blue Painted Planks
+tile.decoBlockPlanksPainted.magenta.name=Magenta Painted Planks
+tile.decoBlockPlanksPainted.orange.name=Orange Painted Planks
+tile.decoBlockPlanksPainted.white.name=White Painted Planks
+
 # Vanilla/BTW Blocks Renamed
 
 tile.rose.name=Red Rose
 tile.stairsStone.name=Cobblestone Stairs
 tile.stoneMoss.name=Mossy Cobblestone
-
-tile.sandStone.default.name=Red Sandstone
-tile.sandStone.chiseled.name=Chiseled Red Sandstone
-tile.sandStone.smooth.name=Cut Red Sandstone
-tile.sandStone.polished.name=Polished Red Sandstone
-tile.sandStone.brick.name=Red Sandstone Brick
-tile.sandStone.mossy=Mossy Red Sandstone
-tile.sandStone.largeBrick.name=Large Red Sandstone Brick
-tile.sandStone.largeBrickMossy.name=Large Mossy Red Sandstone Brick
-tile.sandStone.cracked.name=Cracked Red Sandstone
-tile.sandStone.largeBrickCracked.name=Large Cracked Red Sandstone Brick
+tile.sandStone.default.name=Sandstone
+tile.sandStone.chiseled.name=Chiseled Sandstone
+tile.sandStone.smooth.name=Cut Sandstone
+tile.sandStone.polished.name=Polished Sandstone
+tile.sandStone.brick.name=Sandstone Brick
+tile.sandStone.mossy=Mossy Sandstone
+tile.sandStone.largeBrick.name=Large Sandstone Brick
+tile.sandStone.largeBrickMossy.name=Large Mossy Sandstone Brick
+tile.sandStone.cracked.name=Cracked Sandstone
+tile.sandStone.largeBrickCracked.name=Large Cracked Sandstone Brick
 tile.obsidian.obsidian.name=Obsidian
 tile.obsidian.infused.name=Infused Obsidian
 tile.stoneSlab.stone.name=Polished Stone Slab
+tile.log.oakLog.name=Oak Log
+tile.log.spruceLog.name=Spruce Log
+tile.log.birchLog.name=Birch Log
+tile.log.jungleLog.name=Jungle Log
+tile.fcBlockBloodWood.name=Blood Wood Log
+tile.fcBlockBloodWood.stripped.name=Stripped Blood Wood Log
+tile.fcBlockBloodWood.wood.name=Blood Wood
+tile.fcBlockBloodWood.strippedWood.name=Stripped Blood Wood
+tile.wood.oak.name=Oak Planks
+tile.wood.spruce.name=Spruce Planks
+tile.wood.birch.name=Birch Planks
+tile.wood.jungle.name=Jungle Planks
+tile.wood.cherry.name=Cherry Planks
+tile.wood.crimson.name=Crimson Planks
+tile.wood.warped.name=Warped Planks
+tile.stairsWoodOak.name=Oak Stairs
+tile.stairsWoodSpruce.name=Spruce Stairs
+tile.stairsWoodBirch.name=Birch Stairs
+tile.stairsWoodJungle.name=Jungle Stairs
+tile.fence.name=Oak Fence
+
+tile.fcWoodSpruceSiding.oak.name=Oak Siding
+tile.fcWoodSpruceSiding.spruce.name=Spruce Siding
+tile.fcWoodSpruceSiding.birch.name=Birch Siding
+tile.fcWoodSpruceSiding.jungle.name=Jungle Siding
+tile.fcWoodSpruceSiding.blood.name=Blood Wood Siding
+tile.fcWoodSpruceSiding.cherry.name=Cherry Siding
+
+tile.fcWoodSpruceMoulding.oak.name=Oak Moulding
+tile.fcWoodSpruceMoulding.spruce.name=Spruce Moulding
+tile.fcWoodSpruceMoulding.birch.name=Birch Moulding
+tile.fcWoodSpruceMoulding.jungle.name=Jungle Moulding
+tile.fcWoodSpruceMoulding.blood.name=Blood Wood Moulding
+tile.fcWoodSpruceMoulding.cherry.name=Cherry Moulding
+
+tile.fcWoodBirchSiding.oak.name=Oak Corner
+tile.fcWoodBirchSiding.spruce.name=Spruce Corner
+tile.fcWoodBirchSiding.birch.name=Birch Corner
+tile.fcWoodBirchSiding.jungle.name=Jungle Corner
+tile.fcWoodBirchSiding.blood.name=Blood Wood Corner
+tile.fcWoodBirchSiding.cherry.name=Cherry Corner
+
+tile.fcWoodBirchMoulding.oak.pedestal.name=Oak Pedestal
+tile.fcWoodBirchMoulding.spruce.pedestal.name=Spruce Pedestal
+tile.fcWoodBirchMoulding.birch.pedestal.name=Birch Pedestal
+tile.fcWoodBirchMoulding.jungle.pedestal.name=Jungle Pedestal
+tile.fcWoodBirchMoulding.blood.pedestal.name=Blood Wood Pedestal
+tile.fcWoodBirchMoulding.cherry.pedestal.name=Cherry Pedestal
+
+tile.fcWoodBirchMoulding.oak.column.name=Oak Column
+tile.fcWoodBirchMoulding.spruce.column.name=Spruce Column
+tile.fcWoodBirchMoulding.birch.column.name=Birch Column
+tile.fcWoodBirchMoulding.jungle.column.name=Jungle Column
+tile.fcWoodBirchMoulding.blood.column.name=Blood Wood Column
+tile.fcWoodBirchMoulding.cherry.column.name=Cherry Column
+
+tile.fcWoodBirchMoulding.oak.table.name=Oak Table
+tile.fcWoodBirchMoulding.spruce.table.name=Spruce Table
+tile.fcWoodBirchMoulding.birch.table.name=Birch Table
+tile.fcWoodBirchMoulding.jungle.table.name=Jungle Table
+tile.fcWoodBirchMoulding.blood.table.name=Blood Wood Table
+tile.fcWoodBirchMoulding.cherry.table.name=Cherry Table
+
+tile.fcWoodJungleSiding.oak.bench.name=Oak Bench
+tile.fcWoodJungleSiding.spruce.bench.name=Spruce Bench
+tile.fcWoodJungleSiding.birch.bench.name=Birch Bench
+tile.fcWoodJungleSiding.jungle.bench.name=Jungle Bench
+tile.fcWoodJungleSiding.blood.bench.name=Blood Wood Bench
+tile.fcWoodJungleSiding.cherry.bench.name=Cherry Bench
+
+tile.fcWoodJungleSiding.oak.fence.name=Oak Fence
+tile.fcWoodJungleSiding.spruce.fence.name=Spruce Fence
+tile.fcWoodJungleSiding.birch.fence.name=Birch Fence
+tile.fcWoodJungleSiding.jungle.fence.name=Jungle Fence
+tile.fcWoodJungleSiding.blood.fence.name=Blood Wood Fence
+tile.fcWoodJungleSiding.cherry.fence.name=Cherry Fence
+
+tile.trapdoor.name=Oak Trap Door
+tile.fenceGate.name=Oak Fence Gate
 
 # Deco Items
 
@@ -1088,7 +1244,9 @@ item.decoItemStainedGlass.white.name=White Stained Glass
 
 # Vanilla/BTW Items Renamed
 
-
+item.fcItemBark.cherry=Cherry Bark
+item.fcItemBark.crimson=Crimson Bark
+item.fcItemBark.warped=Warped Bark
 
 # Container
 

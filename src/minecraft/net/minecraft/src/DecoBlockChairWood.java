@@ -1,8 +1,8 @@
 package net.minecraft.src;
 
 public class DecoBlockChairWood extends DecoBlockChair {
-	public DecoBlockChairWood(int id, String woodType, String woodName) {
-		super(id, FCBetterThanWolves.fcMaterialPlanks, woodType + "wood", woodName);
+	public DecoBlockChairWood(int id, String woodType) {
+		super(id, FCBetterThanWolves.fcMaterialPlanks, woodType);
 		this.SetAxesEffectiveOn( true );
         this.setHardness(1.0F);
         this.setResistance(5.0F);

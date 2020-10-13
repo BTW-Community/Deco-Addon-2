@@ -11,7 +11,7 @@ public class DecoBlockMagma extends Block {
 		setLightValue(.375F);
         this.setStepSound(soundStoneFootstep);
         this.setCreativeTab(CreativeTabs.tabBlock);
-        this.setUnlocalizedName("ginger_magma");
+        this.setUnlocalizedName("decoBlockMagma");
         this.setTickRandomly(true);
 	}
 

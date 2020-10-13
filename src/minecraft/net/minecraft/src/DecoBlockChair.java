@@ -1,11 +1,11 @@
 package net.minecraft.src;
 
 public class DecoBlockChair extends Block {
-	public DecoBlockChair(int id, Material material, String tag, String name) {
+	public DecoBlockChair(int id, Material material, String tag) {
 		super(id, material);
-		this.setUnlocalizedName("ginger_chair_" + tag);
+		this.setUnlocalizedName("decoBlockChair" + tag);
 		this.setCreativeTab(CreativeTabs.tabDecorations);
-		DecoManager.Register(this, name + " Chair");
+		DecoManager.Register(this);
 		this.InitBlockBounds(.0625F, 0, .0625F, 0.9375F, .625F, 0.9375F);
 	}
 

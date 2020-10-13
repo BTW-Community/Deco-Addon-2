@@ -5,7 +5,7 @@ public class DecoBlockTrapDoorIron extends DecoBlockTrapDoor {
 	public DecoBlockTrapDoorIron(int id) {
 		super(id);
 		this.blockMaterial = Material.iron;
-		this.setUnlocalizedName("ginger_trapdoorIron");
+		this.setUnlocalizedName("decoBlockTrapdoorIron");
 		this.setStepSound(soundMetalFootstep);
 	}
 

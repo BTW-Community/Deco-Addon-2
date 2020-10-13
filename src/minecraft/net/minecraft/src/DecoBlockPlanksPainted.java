@@ -1,17 +1,15 @@
 package net.minecraft.src;
 
+import java.util.List;
+
 public class DecoBlockPlanksPainted extends FCBlockPlanks {
-	public static final String[] tags = new String[] { "black", "red", "green", "brown", "blue", "purple", "cyan", "lightGrey", "grey", "pink", "lime", "yellow", "lightBlue", "magenta", "orange", "white" };
-	public static final String[] names = new String[] { "Black", "Red", "Green", "Brown", "Blue", "Purple", "Cyan", "Light Grey", "Grey", "Pink", "Lime", "Yellow", "Light Blue", "Magenta", "Orange", "White" };
-	
 	private String nameTag;
 	private Icon[] icons = new Icon[16];
 
-	public DecoBlockPlanksPainted(int ID, String tag, String name) {
+	public DecoBlockPlanksPainted(int ID, String tag) {
 		super(ID);
 		this.nameTag = tag;
 		this.setUnlocalizedName(tag);
-		DecoManager.Register(this,tags, names," " + name);
 	}
 	
 	@Override
@@ -48,6 +46,17 @@ public class DecoBlockPlanksPainted extends FCBlockPlanks {
         this.DropItemsIndividualy(var1, var2, var3, var4, FCBetterThanWolves.fcItemSawDust.itemID, 2, 0, var6);
         return true;
     }
+
+    /**
+     * returns a list of blocks with the same ID, but different meta (eg: wood returns 4 blocks)
+     */
+    public void getSubBlocks(int var1, CreativeTabs var2, List var3)
+    {
+        for (int var4 = 0; var4 < 16; ++var4)
+        {
+            var3.add(new ItemStack(var1, 1, var4));
+        }
+    }
 	
 	//CLIENT ONLY
 	@Override
@@ -58,6 +67,6 @@ public class DecoBlockPlanksPainted extends FCBlockPlanks {
 	@Override
 	public void registerIcons(IconRegister iconRegister) {
 		for (int i = 0; i < 16; i++)
-			this.icons[i] = iconRegister.registerIcon(nameTag+"_" + i);
+			this.icons[i] = iconRegister.registerIcon(nameTag+"_" + DecoUtilsMisc.colorOrder[i]);
 	}
 }

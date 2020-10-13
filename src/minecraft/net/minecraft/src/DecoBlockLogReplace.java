@@ -3,11 +3,12 @@ package net.minecraft.src;
 import java.util.List;
 
 public class DecoBlockLogReplace extends FCBlockLog {
-	private String[] topTextureTypes = {"tree_top", "ginger_logSpruceTop", "ginger_logBirchTop", "ginger_logJungleTop"};
-	private String[] trunkTopTextureTypes = {"fcBlockTrunkTop", "ginger_trunkSpruceTop", "ginger_trunkBirchTop", "ginger_trunkJungleTop"};
+	private String[] topTextureTypes = {"tree_top", "decoBlockLogSpruce_top", "decoBlockLogBirch_top", "decoBlockLogJungle_top"};
+	private String[] trunkTopTextureTypes = {"fcBlockTrunkTop", "decoBlockTrunkSpruce_top", "decoBlockTrunkBirch_top", "decoBlockTrunkJungle_t"};
 	
 	public DecoBlockLogReplace(int ID) {
 		super(ID);
+		this.setUnlocalizedName("log");
 	}
 
     public boolean ConvertBlock(ItemStack var1, World var2, int var3, int var4, int var5, int var6)

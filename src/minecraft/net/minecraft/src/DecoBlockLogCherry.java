@@ -15,7 +15,7 @@ public class DecoBlockLogCherry extends Block {
 		this.SetItemDamageDroppedWhenCookedByKiln(1);
 		this.SetFireProperties(FCEnumFlammability.LOGS);
 		this.setStepSound(soundWoodFootstep);
-		this.setUnlocalizedName("cherryLog");
+		this.setUnlocalizedName("decoBlockCherryLog");
 		this.setCreativeTab(CreativeTabs.tabBlock);
 	}
 
@@ -193,8 +193,8 @@ public class DecoBlockLogCherry extends Block {
 	}
 
 	//CLIENT ONLY
-	public static String[] topTextures = {"ginger_logCherryTop", "ginger_strippedCherryTop", "ginger_logCherrySide", "ginger_strippedCherrySide"};
-	public static String[] sideTextures = {"ginger_logCherrySide", "ginger_strippedCherrySide", "ginger_logCherrySide", "ginger_strippedCherrySide"};
+	public static String[] topTextures = {"decoBlockLogCherry_top", "decoBlockStrippedCherry_top", "decoBlockLogCherry_side", "decoBlockStrippedCherry_side"};
+	public static String[] sideTextures = {"decoBlockLogCherry_side", "decoBlockStrippedCherry_top", "decoBlockLogCherry_side", "decoBlockStrippedCherry_top"};
 	public static Icon[] topIcons;
 	public static Icon[] sideIcons;
 

@@ -9,8 +9,12 @@ public class DecoItemBlockSlab extends FCItemBlockSlab {
 	
 	public void getSubItems(int var1, CreativeTabs var2, List var3)
 	{
-		for (int i = 0; i < ((DecoBlockSlabBase) Block.blocksList[var1]).blockTypes.length; ++i)
-			var3.add(new ItemStack(this, 1, i));
+		if (Block.blocksList[var1] instanceof DecoBlockSlabBase)
+			for (int i = 0; i < ((DecoBlockSlabBase) Block.blocksList[var1]).blockTypes.length; ++i)
+				var3.add(new ItemStack(this, 1, i));
+		else if (Block.blocksList[var1] instanceof DecoBlockStoneLooseSlab)
+			for (int i = 0; i < ((DecoBlockStoneLooseSlab) Block.blocksList[var1]).blockTypes.length; ++i)
+				var3.add(new ItemStack(this, 1, i));
 	}
 	
 	public String getUnlocalizedName(ItemStack reference)
@@ -52,6 +56,28 @@ public class DecoItemBlockSlab extends FCItemBlockSlab {
                     return true;
                 }
             }
+            else if (var10 != null && var10 instanceof DecoBlockStoneLooseSlab)
+            {
+            	DecoBlockStoneLooseSlab var11 = (DecoBlockStoneLooseSlab)var10;
+                boolean var12 = var11.GetIsUpsideDown(var3, var4, var5, var6);
+
+                if (!var8 || var7 == 1 && !var12 || var7 == 0 && var12)
+                {
+                    if (var3.checkNoEntityCollision(Block.GetFulBlockBoundingBoxFromPool(var3, var4, var5, var6)) && this.convertToFullBlock(var3, var4, var5, var6))
+                    {
+                        var3.playSoundEffect((double)((float)var4 + 0.5F), (double)((float)var5 + 0.5F), (double)((float)var6 + 0.5F), var11.stepSound.getStepSound(), (var11.stepSound.getVolume() + 1.0F) / 2.0F, var11.stepSound.getPitch() * 0.8F);
+                        --var1.stackSize;
+                        Block var13 = Block.blocksList[var3.getBlockId(var4, var5, var6)];
+
+                        if (var13 != null)
+                        {
+                            var3.NotifyNearbyAnimalsOfPlayerBlockAddOrRemove(var2, var13, var4, var5, var6);
+                        }
+                    }
+
+                    return true;
+                }
+            }
         }
 
         return false;
@@ -65,9 +91,18 @@ public class DecoItemBlockSlab extends FCItemBlockSlab {
         {
             Block var7 = Block.blocksList[var6];
 
-            if (var7 instanceof FCBlockSlab)
+            if (var7 instanceof DecoBlockSlabBase)
             {
                 int var8 = ((DecoBlockSlabBase)var7).SetIsUpsideDown(var1.getBlockMetadata(var2, var3, var4), false);
+
+                if (var8 == var5)
+                {
+                    return true;
+                }
+            }
+            else if (var7 instanceof DecoBlockStoneLooseSlab)
+            {
+                int var8 = ((DecoBlockStoneLooseSlab)var7).SetIsUpsideDown(var1.getBlockMetadata(var2, var3, var4), false);
 
                 if (var8 == var5)
                 {

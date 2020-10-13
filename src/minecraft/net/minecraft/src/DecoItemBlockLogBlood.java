@@ -42,4 +42,22 @@ public class DecoItemBlockLogBlood extends FCItemBlockLog
     		world.playAuxSFX(DecoManager.decoCustomBlockPlaceAuxFXID, x, y, z, block.blockID + (meta << 12));
     	}
     }
+    
+	public String getUnlocalizedName(ItemStack reference)
+	{
+		String unlocalizedName = super.getUnlocalizedName();
+		switch (reference.getItemDamage()) {
+		case 0:
+			unlocalizedName += ".stripped";
+			break;
+		case 1:
+			unlocalizedName += ".wood";
+			break;
+		case 2:
+			unlocalizedName += ".strippedWood";
+			break;
+		}
+		
+		return unlocalizedName;
+	}
 }

@@ -2,7 +2,7 @@ package net.minecraft.src;
 
 public class DecoBlockStoneLooseSlab extends FCBlockMortarReceiverSlab
 {
-	private Block[] owners = {DecoDefs.graniteCobbleLoose, DecoDefs.andesiteCobbleLoose, DecoDefs.dioriteCobbleLoose, DecoDefs.graniteStoneBrickLoose, DecoDefs.andesiteStoneBrickLoose, DecoDefs.dioriteStoneBrickLoose};
+	public final Block[] blockTypes = {DecoDefs.graniteCobbleLoose, DecoDefs.andesiteCobbleLoose, DecoDefs.dioriteCobbleLoose, DecoDefs.graniteStoneBrickLoose, DecoDefs.andesiteStoneBrickLoose, DecoDefs.dioriteStoneBrickLoose};
 	private int[] mortaredIDs;
 	private int[] mortaredMetas = {6, 7, 0, 1, 2, 3};
 	
@@ -37,7 +37,7 @@ public class DecoBlockStoneLooseSlab extends FCBlockMortarReceiverSlab
 
     public int GetCombinedBlockID(int var1)
     {
-        return owners[var1 & 7].blockID;
+        return blockTypes[var1 & 7].blockID;
     }
 
     public boolean OnMortarApplied(World var1, int var2, int var3, int var4)
@@ -87,7 +87,7 @@ public class DecoBlockStoneLooseSlab extends FCBlockMortarReceiverSlab
 
     //CLIENT ONLY
     public Icon getIcon(int side, int meta) {
-    	return owners[meta & 7].getIcon(side, meta);
+    	return blockTypes[meta & 7].getIcon(side, meta);
     }
     
     public void registerIcons(IconRegister register) {}

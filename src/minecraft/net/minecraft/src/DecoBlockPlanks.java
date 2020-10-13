@@ -26,7 +26,7 @@ public class DecoBlockPlanks extends FCBlockPlanks {
     }
 
 	//CLIENT ONLY
-    public static final String[] m_sWoodTextureTypes = new String[] {"wood", "wood_spruce", "wood_birch", "wood_jungle", "fcBlockPlanks_blood", "ginger_planks_cherry", "ginger_planks_crimson", "ginger_planks_warped"};
+    public static final String[] m_sWoodTextureTypes = new String[] {"wood", "wood_spruce", "wood_birch", "wood_jungle", "fcBlockPlanks_blood", "decoBlockPlanksCherry", "decoBlockPlanksCrimson", "decoBlockPlanksWarped"};
     private Icon[] m_iconArray;
 	
     /**

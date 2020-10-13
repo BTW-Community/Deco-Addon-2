@@ -187,8 +187,8 @@ public class DecoBlockLogBlood extends Block {
     }
     
 //CLIENT ONLY
-	public static String[] topTextures = {"ginger_strippedBloodTop", "fcBlockBloodWood_side", "ginger_strippedBloodSide"};
-	public static String[] sideTextures = {"ginger_strippedBloodSide", "fcBlockBloodWood_side", "ginger_strippedBloodSide"};
+	public static String[] topTextures = {"decoBlockStrippedBlood_top", "fcBlockBloodWood_side", "decoBlockStrippedBlood_side"};
+	public static String[] sideTextures = {"decoBlockStrippedBlood_side", "fcBlockBloodWood_side", "decoBlockStrippedBlood_side"};
 	public static Icon[] topIcons;
 	public static Icon[] sideIcons;
 	

@@ -31,4 +31,22 @@ public class DecoItemBlockLogCherry extends FCItemBlockLog
             }
         }
     }
+    
+	public String getUnlocalizedName(ItemStack reference)
+	{
+		String unlocalizedName = super.getUnlocalizedName();
+		switch (reference.getItemDamage()) {
+		case 1:
+			unlocalizedName += ".stripped";
+			break;
+		case 2:
+			unlocalizedName += ".wood";
+			break;
+		case 3:
+			unlocalizedName += ".strippedWood";
+			break;
+		}
+		
+		return unlocalizedName;
+	}
 }

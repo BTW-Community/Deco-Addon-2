@@ -6,7 +6,7 @@ public class DecoBlockLogBark extends FCBlockLog {
 
 	public DecoBlockLogBark(int ID) {
 		super(ID);
-		DecoManager.Register(this, new String[] {"barkOak", "barkSpruce", "barkBirch", "barkJungle"}, new String[] {"Oak Wood", "Spruce Wood", "Birch Wood", "Jungle Wood"});
+		this.setUnlocalizedName("decoBlockLogBark");
 	}
 	
 	@Override
