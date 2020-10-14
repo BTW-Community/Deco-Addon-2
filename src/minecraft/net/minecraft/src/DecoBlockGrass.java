@@ -64,7 +64,7 @@ public class DecoBlockGrass extends FCBlockGrass {
     {
         super.registerIcons(var1);
         this.iconGrassTop = var1.registerIcon("grass_top");
-        this.iconGrassTopRough = var1.registerIcon("ginger_grassRough");
+        this.iconGrassTopRough = var1.registerIcon("decoBlockGrassRough");
         this.iconSnowSide = var1.registerIcon("snow_side");
         this.iconGrassSideOverlay = var1.registerIcon("grass_side_overlay");
     }

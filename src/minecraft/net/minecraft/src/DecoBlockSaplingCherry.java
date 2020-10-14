@@ -8,7 +8,7 @@ public class DecoBlockSaplingCherry extends BlockFlower
     private static final double m_dWidth = 0.8D;
     private static final double m_dHalfWidth = 0.4D;
     private Icon[][] m_IconArray = new Icon[4][4];
-    public static final String[] m_sBaseTextureNames = new String[] {"ginger_saplingCherry_0"};
+    public static final String[] m_sBaseTextureNames = new String[] {"decoBlockSaplingCherry_0"};
 
     protected DecoBlockSaplingCherry(int var1)
     {
@@ -19,7 +19,7 @@ public class DecoBlockSaplingCherry extends BlockFlower
         this.SetFilterableProperties(0);
         this.InitBlockBounds(0.1D, 0.0D, 0.1D, 0.9D, 0.8D, 0.9D);
         this.SetBuoyant();
-        this.setUnlocalizedName("cherrySapling");
+        this.setUnlocalizedName("decoBlockSaplingCherry");
         this.setStepSound(Block.soundGrassFootstep);
     }
 

@@ -105,9 +105,9 @@ public class DecoBlockPumpkinLit extends FCBlockJackOLantern {
     public void registerIcons(IconRegister register)
     {
     	faces = new Icon[3];
-    	faces[0] = register.registerIcon("ginger_pumpkin1_lit");
-    	faces[1] = register.registerIcon("ginger_pumpkin2_lit");
-    	faces[2] = register.registerIcon("ginger_pumpkin3_lit");
+    	faces[0] = register.registerIcon("decoBlockPumpkin_0_lit");
+    	faces[1] = register.registerIcon("decoBlockPumpkin_1_lit");
+    	faces[2] = register.registerIcon("decoBlockPumpkin_2_lit");
         this.topIcon = register.registerIcon("pumpkin_top");
         this.sideIcon = register.registerIcon("pumpkin_side");
     }

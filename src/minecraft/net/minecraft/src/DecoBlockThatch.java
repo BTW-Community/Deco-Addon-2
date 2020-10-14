@@ -5,14 +5,13 @@ public class DecoBlockThatch extends Block
 	public DecoBlockThatch(int id)
 	{
 		super(id, DecoDefs.materialHay);
-		setUnlocalizedName("blockThatch");
+		setUnlocalizedName("decoBlockThatch");
 		setStepSound(soundGrassFootstep);
 		setCreativeTab(CreativeTabs.tabBlock);
 		this.SetAxesEffectiveOn(true);
 		this.setHardness(0.5F);
 		this.setResistance(2.0F);
 		DecoManager.Register(this);
-		DecoManager.Name(this, "Thatch");
 	}
 
     public boolean CanBePistonShoveled(World var1, int var2, int var3, int var4)
@@ -116,8 +115,8 @@ public class DecoBlockThatch extends Block
 	}
 	@Override public void registerIcons(IconRegister r)
 	{
-		blockIcon = r.registerIcon("ginger_thatch_side");
-		topIcon = r.registerIcon("ginger_thatch_top");
+		blockIcon = r.registerIcon("decoBlockThatch_side");
+		topIcon = r.registerIcon("decoBlockThatch_top");
 	}
 	@Override public boolean RenderBlock(RenderBlocks r, int X, int Y, int Z)
 	{

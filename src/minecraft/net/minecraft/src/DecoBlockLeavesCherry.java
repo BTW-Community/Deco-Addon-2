@@ -22,7 +22,7 @@ public class DecoBlockLeavesCherry extends BlockLeavesBase
         this.setLightOpacity(1);
         this.SetFireProperties(FCEnumFlammability.LEAVES);
         this.setStepSound(soundGrassFootstep);
-        this.setUnlocalizedName("ginger_leavesCherry");
+        this.setUnlocalizedName("decoBlockLeavesCherry");
     }
 
     public float GetMovementModifier(World var1, int var2, int var3, int var4)

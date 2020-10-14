@@ -5,14 +5,13 @@ public class DecoBlockHayBale extends Block
 	public DecoBlockHayBale(int id)
 	{
 		super(id, DecoDefs.materialHay);
-		setUnlocalizedName("blockHay");
+		setUnlocalizedName("decoBlockHay");
 		setStepSound(soundGrassFootstep);
 		setCreativeTab(CreativeTabs.tabBlock);
 		this.SetAxesEffectiveOn(true);
 		this.setHardness(0.5F);
 		this.setResistance(2.0F);
 		DecoManager.Register(this);
-		DecoManager.Name(this, "Hay Bale");
 	}
 
     public boolean CanBePistonShoveled(World var1, int var2, int var3, int var4)
@@ -116,8 +115,8 @@ public class DecoBlockHayBale extends Block
 	}
 	@Override public void registerIcons(IconRegister r)
 	{
-		blockIcon = r.registerIcon("ginger_hay_side");
-		topIcon = r.registerIcon("ginger_hay_top");
+		blockIcon = r.registerIcon("decoBlockHay_side");
+		topIcon = r.registerIcon("decoBlockHay_top");
 	}
 	@Override public boolean RenderBlock(RenderBlocks r, int X, int Y, int Z)
 	{

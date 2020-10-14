@@ -98,9 +98,39 @@ tile.decoBlockChairJungle.name=Jungle Chair
 tile.decoBlockChairBlood.name=Blood Wood Chair
 tile.decoBlockChairCherry.name=Cherry Chair
 tile.decoBlockPergola.name=Pergola
+tile.decoBlockDiamond.name=Block of Diamond
+tile.decoBlockHay.name=Hay Bale
+tile.decoBlockThatch.name=Thatch
+tile.decoBlockHayStairs.name=Hay Stairs
+tile.decoBlockThatchStairs.name=Thatch Stairs
+tile.decoBlockPaperWall.name=Paper Wall
+tile.decoBlockWroughtIronBars.name=Wrought Iron Bars
+tile.decoBlockCoal.name=Block of Coal
+tile.decoBlockNetherCoal.name=Block of Nethercoal
+tile.decoBlockBonePillar.name=Bone Pillar
+tile.decoBlockButtonSpruce.name=Spruce Button
+tile.decoBlockButtonBirch.name=Birch Button
+tile.decoBlockButtonJungle.name=Jungle Button
+tile.decoBlockButtonBlood.name=Blood Wood Button
+tile.decoBlockButtonCherry.name=Cherry Button
+tile.decoBlockButtonInfusedStone.name=Infused Stone Button
+tile.decoBlockButtonGranite.name=Granite Button
+tile.decoBlockButtonAndesite.name=Andesite Button
+tile.decoBlockButtonDiorite.name=Diorite Button
+tile.decoBlockButtonSandstone.name=Sandstone Button
+tile.decoBlockButtonRedSandstone.name=Red Sandstone Button
+tile.decoBlockLeavesCherry.name=Cherry Leaves
+tile.decoBlockSaplingCherry.name=Cherry Sapling
+tile.decoBlockHedgeOakStairs.name=Oak Hedge Stairs
+tile.decoBlockHedgeSpruceStairs.name=Spruce Hedge Stairs
+tile.decoBlockHedgeBirchStairs.name=Birch Hedge Stairs
+tile.decoBlockHedgeJungleStairs.name=Jungle Hedge Stairs
+tile.decoBlockHedgeBloodStairs.name=Blood Wood Hedge Stairs
+tile.decoBlockHedgeCherryStairs.name=Cherry Hedge Stairs
+tile.decoBlockRopeCoil.name=Coil of Rope
+tile.decoBlockChainCoil.name=Coil of Chain
 
 # Deco Complex Blocks
-
 tile.decoBlockTerracottaStained.black.name=Black Stained Terracotta
 tile.decoBlockTerracottaStained.red.name=Red Stained Terracotta
 tile.decoBlockTerracottaStained.green.name=Green Stained Terracotta
@@ -1278,23 +1308,6 @@ tile.decoBlockPlanksPaintedMoulding.white.moulding.name=White Painted Planks Mou
 tile.decoBlockPlanksPaintedMoulding.white.table.name=White Painted Planks Table
 tile.decoBlockPlanksPaintedStairs.white.name=White Painted Planks Stairs
 
-tile.decoBlockPlanksPaintedStairs.black.name=Black Painted Planks Stairs
-tile.decoBlockPlanksPaintedStairs.red.name=Red Painted Planks Stairs
-tile.decoBlockPlanksPaintedStairs.green.name=Green Painted Planks Stairs
-tile.decoBlockPlanksPaintedStairs.brown.name=Brown Painted Planks Stairs
-tile.decoBlockPlanksPaintedStairs.blue.name=Blue Painted Planks Stairs
-tile.decoBlockPlanksPaintedStairs.purple.name=Purple Painted Planks Stairs
-tile.decoBlockPlanksPaintedStairs.cyan.name=Cyan Painted Planks Stairs
-tile.decoBlockPlanksPaintedStairs.lightGray.name=Light Gray Painted Planks Stairs
-tile.decoBlockPlanksPaintedStairs.gray.name=Gray Painted Planks Stairs
-tile.decoBlockPlanksPaintedStairs.pink.name=Pink Painted Planks Stairs
-tile.decoBlockPlanksPaintedStairs.lime.name=Lime Painted Planks Stairs
-tile.decoBlockPlanksPaintedStairs.yellow.name=Yellow Painted Planks Stairs
-tile.decoBlockPlanksPaintedStairs.lightBlue.name=Light Blue Painted Planks Stairs
-tile.decoBlockPlanksPaintedStairs.magenta.name=Magenta Painted Planks Stairs
-tile.decoBlockPlanksPaintedStairs.orange.name=Orange Painted Planks Stairs
-tile.decoBlockPlanksPaintedStairs.white.name=White Painted Planks Stairs
-
 tile.decoBlockBarrel1.oak.name=Oak Barrel
 tile.decoBlockBarrel1.spruce.name=Spruce Barrel
 tile.decoBlockBarrel1.birch.name=Birch Barrel
@@ -1363,7 +1376,83 @@ tile.decoBlockPlanksPaintedSlab2.5.name=Magenta Painted Planks Slab
 tile.decoBlockPlanksPaintedSlab2.6.name=Orange Painted Planks Slab
 tile.decoBlockPlanksPaintedSlab2.7.name=White Painted Planks Slab
 
+tile.decoBlockHedgeOakSiding.bench.name=Oak Hedge Bench
+tile.decoBlockHedgeOakSiding.fence.name=Oak Hedge Wall
+tile.decoBlockHedgeOakSiding.siding.name=Oak Hedge Siding
+tile.decoBlockHedgeOakSiding.corner.name=Oak Hedge Corner
+tile.decoBlockHedgeOakMoulding.column.name=Oak Hedge Column
+tile.decoBlockHedgeOakMoulding.pedestal.name=Oak Hedge Pedestal
+tile.decoBlockHedgeOakMoulding.moulding.name=Oak Hedge Moulding
+tile.decoBlockHedgeOakMoulding.table.name=Oak Hedge Table
+
+tile.decoBlockHedgeSpruceSiding.bench.name=Spruce Hedge Bench
+tile.decoBlockHedgeSpruceSiding.fence.name=Spruce Hedge Wall
+tile.decoBlockHedgeSpruceSiding.siding.name=Spruce Hedge Siding
+tile.decoBlockHedgeSpruceSiding.corner.name=Spruce Hedge Corner
+tile.decoBlockHedgeSpruceMoulding.column.name=Spruce Hedge Column
+tile.decoBlockHedgeSpruceMoulding.pedestal.name=Spruce Hedge Pedestal
+tile.decoBlockHedgeSpruceMoulding.moulding.name=Spruce Hedge Moulding
+tile.decoBlockHedgeSpruceMoulding.table.name=Spruce Hedge Table
+
+tile.decoBlockHedgeBirchSiding.bench.name=Birch Hedge Bench
+tile.decoBlockHedgeBirchSiding.fence.name=Birch Hedge Wall
+tile.decoBlockHedgeBirchSiding.siding.name=Birch Hedge Siding
+tile.decoBlockHedgeBirchSiding.corner.name=Birch Hedge Corner
+tile.decoBlockHedgeBirchMoulding.column.name=Birch Hedge Column
+tile.decoBlockHedgeBirchMoulding.pedestal.name=Birch Hedge Pedestal
+tile.decoBlockHedgeBirchMoulding.moulding.name=Birch Hedge Moulding
+tile.decoBlockHedgeBirchMoulding.table.name=Birch Hedge Table
+
+tile.decoBlockHedgeJungleSiding.bench.name=Jungle Hedge Bench
+tile.decoBlockHedgeJungleSiding.fence.name=Jungle Hedge Wall
+tile.decoBlockHedgeJungleSiding.siding.name=Jungle Hedge Siding
+tile.decoBlockHedgeJungleSiding.corner.name=Jungle Hedge Corner
+tile.decoBlockHedgeJungleMoulding.column.name=Jungle Hedge Column
+tile.decoBlockHedgeJungleMoulding.pedestal.name=Jungle Hedge Pedestal
+tile.decoBlockHedgeJungleMoulding.moulding.name=Jungle Hedge Moulding
+tile.decoBlockHedgeJungleMoulding.table.name=Jungle Hedge Table
+
+tile.decoBlockHedgeBloodSiding.bench.name=Blood Wood Hedge Bench
+tile.decoBlockHedgeBloodSiding.fence.name=Blood Wood Hedge Wall
+tile.decoBlockHedgeBloodSiding.siding.name=Blood Wood Hedge Siding
+tile.decoBlockHedgeBloodSiding.corner.name=Blood Wood Hedge Corner
+tile.decoBlockHedgeBloodMoulding.column.name=Blood Wood Hedge Column
+tile.decoBlockHedgeBloodMoulding.pedestal.name=Blood Wood Hedge Pedestal
+tile.decoBlockHedgeBloodMoulding.moulding.name=Blood Wood Hedge Moulding
+tile.decoBlockHedgeBloodMoulding.table.name=Blood Wood Hedge Table
+
+tile.decoBlockHedgeCherrySiding.bench.name=Cherry Hedge Bench
+tile.decoBlockHedgeCherrySiding.fence.name=Cherry Hedge Wall
+tile.decoBlockHedgeCherrySiding.siding.name=Cherry Hedge Siding
+tile.decoBlockHedgeCherrySiding.corner.name=Cherry Hedge Corner
+tile.decoBlockHedgeCherryMoulding.column.name=Cherry Hedge Column
+tile.decoBlockHedgeCherryMoulding.pedestal.name=Cherry Hedge Pedestal
+tile.decoBlockHedgeCherryMoulding.moulding.name=Cherry Hedge Moulding
+tile.decoBlockHedgeCherryMoulding.table.name=Cherry Hedge Table
+
 tile.decoBlockWoodSlab.0.name=Cherry Slab
+
+tile.decoBlockCarpet.black.name=Black Carpet
+tile.decoBlockCarpet.red.name=Red Carpet
+tile.decoBlockCarpet.green.name=Green Carpet
+tile.decoBlockCarpet.brown.name=Brown Carpet
+tile.decoBlockCarpet.blue.name=Blue Carpet
+tile.decoBlockCarpet.purple.name=Purple Carpet
+tile.decoBlockCarpet.cyan.name=Cyan Carpet
+tile.decoBlockCarpet.lightGray.name=Light Gray Carpet
+tile.decoBlockCarpet.gray.name=Gray Carpet
+tile.decoBlockCarpet.pink.name=Pink Carpet
+tile.decoBlockCarpet.lime.name=Lime Carpet
+tile.decoBlockCarpet.yellow.name=Yellow Carpet
+tile.decoBlockCarpet.lightBlue.name=Light Blue Carpet
+tile.decoBlockCarpet.magenta.name=Magenta Carpet
+tile.decoBlockCarpet.orange.name=Orange Carpet
+tile.decoBlockCarpet.white.name=White Carpet
+
+tile.decoBlockHedge.oak.name=Oak Hedge
+tile.decoBlockHedge.spruce.name=Spruce Hedge
+tile.decoBlockHedge.birch.name=Birch Hedge
+tile.decoBlockHedge.jungle.name=Jungle Hedge
 
 # Vanilla/BTW Blocks Renamed
 
@@ -1468,6 +1557,21 @@ tile.woodSlab.oak.name=Oak Slab
 tile.woodSlab.spruce.name=Spruce Slab
 tile.woodSlab.birch.name=Birch Slab
 tile.woodSlab.jungle.name=Jungle Slab
+
+tile.blockDiamond.name=Block of Diamondium
+
+tile.pumpkin.0.name=Carved Pumpkin
+tile.pumpkin.1.name=Carved Pumpkin
+tile.pumpkin.2.name=Carved Pumpkin
+
+tile.litpumpkin.0.name=Jack 'o' Lantern
+tile.litpumpkin.1.name=Jack 'o' Lantern
+tile.litpumpkin.2.name=Jack 'o' Lantern
+
+tile.woodenButton.name=Oak Button
+tile.stoneButton.name=Stone Button
+
+tile.fcBlockAestheticOpaque.rope.name=Old Coil of Rope
 
 # Deco Items
 

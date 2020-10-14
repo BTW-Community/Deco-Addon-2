@@ -2,7 +2,7 @@ package net.minecraft.src;
 
 import java.util.Random;
 
-public class DecoBlockHedgeMouldingAndDecorative extends FCBlockMouldingAndDecorative {
+public class DecoBlockHedgeMouldingAndDecorative extends DecoBlockMouldingAndDecorativeWall {
 	private boolean shouldColor;
 	private Block owner;
 	private int ownerMeta;

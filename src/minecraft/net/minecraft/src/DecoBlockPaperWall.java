@@ -4,11 +4,11 @@ public class DecoBlockPaperWall extends DecoBlockPane
 {
 	public DecoBlockPaperWall(int ID)
 	{
-		super(ID, "ginger_panel_paperwall_face", "ginger_panel_paperwall_side", Material.wood, true);
+		super(ID, "decoBlockPaperWall_top", "decoBlockPaperWall_side", Material.wood, true);
 		setHardness(0.3F);
 		setResistance(1.0F);
 		setStepSound(Block.soundWoodFootstep);
-		setUnlocalizedName("paperWall");
+		setUnlocalizedName("decoBlockPaperWall");
 		setCreativeTab(CreativeTabs.tabDecorations);
 	}
 }

@@ -10,7 +10,7 @@ public class DecoBlockCarpet extends Block {
         this.SetBuoyant();
         this.SetFireProperties(FCEnumFlammability.CLOTH);
         this.setStepSound(soundClothFootstep);
-        this.setUnlocalizedName("carpet");
+        this.setUnlocalizedName("decoBlockCarpet");
         this.setCreativeTab(CreativeTabs.tabBlock);
 	}
 
@@ -103,7 +103,7 @@ public class DecoBlockCarpet extends Block {
     	icons = new Icon[16];
     	
     	for (int i = 0; i < 16; i++) {
-    		icons[i] = register.registerIcon("ginger_carpet_" + i);
+    		icons[i] = register.registerIcon("decoBlockCarpet_" + DecoUtilsMisc.colorOrder);
     	}
     }
 }

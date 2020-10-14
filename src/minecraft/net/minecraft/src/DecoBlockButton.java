@@ -256,15 +256,6 @@ public class DecoBlockButton extends FCBlockButton {
             return blockAccess.isBlockNormalCube(blockPos.i, blockPos.j, blockPos.k) && (meta & 7) == metaForFacing[sideReversed] ? 15 : 0;
         }
     }
-
-    /**
-     * Returns the unlocalized name of this block.
-     */
-    @Override
-    public String getUnlocalizedName()
-    {
-        return owner.getUnlocalizedName() + ".button" + ownerMeta;
-    }
     
     //CLIENT ONLY
     /**

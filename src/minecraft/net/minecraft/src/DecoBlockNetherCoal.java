@@ -3,7 +3,7 @@ package net.minecraft.src;
 public class DecoBlockNetherCoal extends Block {
 	public DecoBlockNetherCoal(int id) {
 		super(id, Material.rock);
-		this.setUnlocalizedName("ginger_netherCoalBlock");
+		this.setUnlocalizedName("decoBlockNetherCoal");
 		this.SetPicksEffectiveOn();
 		this.setHardness(1.5F);
 		this.setResistance(10.0F);

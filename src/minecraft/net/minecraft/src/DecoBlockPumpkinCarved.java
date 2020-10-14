@@ -103,9 +103,9 @@ public class DecoBlockPumpkinCarved extends Block{
     public void registerIcons(IconRegister register)
     {
     	faces = new Icon[3];
-    	faces[0] = register.registerIcon("ginger_pumpkin1");
-    	faces[1] = register.registerIcon("ginger_pumpkin2");
-    	faces[2] = register.registerIcon("ginger_pumpkin3");
+    	faces[0] = register.registerIcon("decoBlockPumpkin_0");
+    	faces[1] = register.registerIcon("decoBlockPumpkin_1");
+    	faces[2] = register.registerIcon("decoBlockPumpkin_2");
         this.topIcon = register.registerIcon("pumpkin_top");
         this.sideIcon = register.registerIcon("pumpkin_side");
     }
