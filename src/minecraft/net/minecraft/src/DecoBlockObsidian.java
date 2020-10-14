@@ -32,6 +32,6 @@ public class DecoBlockObsidian extends FCBlockObsidian {
     @Override
     public void registerIcons(IconRegister register) {
     	icons[0] = register.registerIcon("obsidian");
-    	icons[1] = register.registerIcon("ginger_infusedObsidian");
+    	icons[1] = register.registerIcon("decoBlockInfusedObsidian");
     }
 }

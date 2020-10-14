@@ -103,7 +103,7 @@ public class DecoBlockCarpet extends Block {
     	icons = new Icon[16];
     	
     	for (int i = 0; i < 16; i++) {
-    		icons[i] = register.registerIcon("decoBlockCarpet_" + DecoUtilsMisc.colorOrder);
+    		icons[i] = register.registerIcon("decoBlockCarpet_" + DecoUtilsMisc.colorOrder[i]);
     	}
     }
 }

@@ -5,7 +5,7 @@ import java.util.Random;
 public class DecoBlockPodzol extends FCBlockDirt {
 	protected DecoBlockPodzol(int ID) {
 		super(ID);
-        this.setUnlocalizedName("ginger_podzol");
+        this.setUnlocalizedName("decoBlockPodzol");
 		this.setCreativeTab(CreativeTabs.tabBlock);
 	}
 	
@@ -74,8 +74,8 @@ public class DecoBlockPodzol extends FCBlockDirt {
      */
     public void registerIcons(IconRegister par1IconRegister)
     {
-        this.blockIcon = par1IconRegister.registerIcon("ginger_podzol_side");
-        this.iconPodzolTop = par1IconRegister.registerIcon("ginger_podzol_top");
-        this.iconSnowSide = par1IconRegister.registerIcon("ginger_snow_side");
+        this.blockIcon = par1IconRegister.registerIcon("decoBlockPodzol_side");
+        this.iconPodzolTop = par1IconRegister.registerIcon("decoBlockPodzol_top");
+        this.iconSnowSide = par1IconRegister.registerIcon("decoBlockPodzol_sideSnow");
     }
 }

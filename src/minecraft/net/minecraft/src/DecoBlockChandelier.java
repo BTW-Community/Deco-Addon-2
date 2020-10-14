@@ -7,7 +7,7 @@ public class DecoBlockChandelier extends Block
 	public DecoBlockChandelier(int ID)
 	{
 		super(ID, Material.iron);
-		setUnlocalizedName("ginger_lantern_gold");
+		setUnlocalizedName("decoBlockChandelier");
 		setStepSound(soundMetalFootstep);
 		setCreativeTab(CreativeTabs.tabDecorations);
 		setHardness(0.3F);

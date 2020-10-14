@@ -12,7 +12,7 @@ public class DecoBlockStoneBrickLooseAndesite extends FCBlockLavaReceiver
         this.SetPicksEffectiveOn();
         this.SetChiselsEffectiveOn();
         this.setStepSound(soundStoneFootstep);
-        this.setUnlocalizedName("decoBlockAndesiteBricksLoose");
+        this.setUnlocalizedName("decoBlockAndesiteBrickLoose");
         this.setCreativeTab(CreativeTabs.tabBlock);
         DecoManager.Register(this);
     }
@@ -63,7 +63,7 @@ public class DecoBlockStoneBrickLooseAndesite extends FCBlockLavaReceiver
     public void registerIcons(IconRegister Register)
     {
     	super.registerIcons(Register);
-    	lavaCrackOverlay = Register.registerIcon("ginger_overlay_andesiteBrickLava");
+    	lavaCrackOverlay = Register.registerIcon("decoOverlayAndesiteBrickLava");
     }
 
     protected Icon GetLavaCracksOverlay()

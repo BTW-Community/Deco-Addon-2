@@ -30,7 +30,7 @@ public class DecoBlockWorkStump extends FCBlockWorkStump {
     }
 
     //CLIENT ONLY
-    public static final String[] m_sideTextureNames = new String[] {"fcBlockWorkStumpOak", "fcBlockWorkStumpSpruce", "fcBlockWorkStumpBirch", "fcBlockWorkStumpJungle", "ginger_workStumpCherry"};
+    public static final String[] m_sideTextureNames = new String[] {"fcBlockWorkStumpOak", "fcBlockWorkStumpSpruce", "fcBlockWorkStumpBirch", "fcBlockWorkStumpJungle", "decoBlockWorkStumpCherry"};
     private Icon[] m_iconSideArray;
     private Icon m_iconTop;
     

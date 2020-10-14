@@ -5,7 +5,7 @@ import java.util.Random;
 public class DecoBlockNetherrackSuperheated extends FCBlockNetherrack {
 	public DecoBlockNetherrackSuperheated(int id) {
 		super(id);
-		this.setUnlocalizedName("ginger_netherrackSuperheated");
+		this.setUnlocalizedName("decoBlockNetherrackSuperheated");
 		this.setTickRandomly(true);
 		this.setCreativeTab(null);
 	}
@@ -98,7 +98,7 @@ public class DecoBlockNetherrackSuperheated extends FCBlockNetherrack {
 	
 	public void registerIcons(IconRegister register) {
 		this.blockIcon = register.registerIcon("hellrock");
-		overlay = register.registerIcon("ginger_overlay_netherrackSuperheated");
+		overlay = register.registerIcon("decoOverlayNetherrackSuperheated");
 	}
 	
 	public void RenderBlockSecondPass(RenderBlocks var1, int var2, int var3, int var4, boolean var5)

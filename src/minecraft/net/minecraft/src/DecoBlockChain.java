@@ -8,7 +8,7 @@ public class DecoBlockChain extends Block {
 	public DecoBlockChain(int ID)
 	{
 		super(ID, Material.iron);
-		setUnlocalizedName("ginger_chain");
+		setUnlocalizedName("decoBlockChain");
 		if (DecoManager.getNewSoundsInstalled())
 			this.setStepSound(DecoDefs.stepSoundChain);
 		else

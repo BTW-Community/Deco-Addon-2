@@ -64,7 +64,7 @@ public class DecoBlockCobbleLooseDiorite extends FCBlockLavaReceiver
     public void registerIcons(IconRegister Register)
     {
     	super.registerIcons(Register);
-    	lavaCrackOverlay = Register.registerIcon("ginger_overlay_dioriteCobblestoneLava");
+    	lavaCrackOverlay = Register.registerIcon("decoOverlayDioriteCobbleLava");
     }
 
     protected Icon GetLavaCracksOverlay()

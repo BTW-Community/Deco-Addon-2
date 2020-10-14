@@ -81,7 +81,7 @@ public class DecoBlockLogBarkStripped extends FCBlockLog {
     }
 
 	//CLIENT ONLY
-    public static final String[] textureTypes = new String[] {"ginger_strippedOakSide", "ginger_strippedSpruceSide", "ginger_strippedBirchSide", "ginger_strippedJungleSide"};
+    public static final String[] textureTypes = new String[] {"decoBlockStrippedOak_side", "decoBlockStrippedSpruce_side", "decoBlockStrippedBirch_side", "decoBlockStrippedJungle_side"};
     private Icon[] icons;
 	
     /**

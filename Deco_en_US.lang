@@ -8,9 +8,9 @@ tile.decoBlockStairsMossyCobble.name=Mossy Cobblestone Stairs
 tile.decoBlockGraniteCobbleLoose.name=Loose Granite Cobblestone
 tile.decoBlockAndesiteCobbleLoose.name=Loose Andesite Cobblestone
 tile.decoBlockDioriteCobbleLoose.name=Loose Diorite Cobblestone
-tile.decoBlockGraniteBricksLoose.name=Loose Granite Bricks
-tile.decoBlockAndesiteBricksLoose.name=Loose Andesite Bricks
-tile.decoBlockDioriteBricksLoose.name=Loose Diorite Bricks
+tile.decoBlockGraniteBrickLoose.name=Loose Granite Bricks
+tile.decoBlockAndesiteBrickLoose.name=Loose Andesite Bricks
+tile.decoBlockDioriteBrickLoose.name=Loose Diorite Bricks
 tile.decoBlockGraniteStairs.name=Granite Stairs
 tile.decoBlockAndesiteStairs.name=Andesite Stairs
 tile.decoBlockDioriteStairs.name=Diorite Stairs
@@ -129,6 +129,10 @@ tile.decoBlockHedgeBloodStairs.name=Blood Wood Hedge Stairs
 tile.decoBlockHedgeCherryStairs.name=Cherry Hedge Stairs
 tile.decoBlockRopeCoil.name=Coil of Rope
 tile.decoBlockChainCoil.name=Coil of Chain
+tile.decoBlockCoarseDirt.name=Coarse Dirt
+tile.decoBlockCoarseDirtSlab.name=Coarse Dirt Slab
+tile.decoBlockLanternPaper=Paper Lantern
+tile.decoBlockLanternIron=Wrought Iron Lantern
 
 # Deco Complex Blocks
 tile.decoBlockTerracottaStained.black.name=Black Stained Terracotta

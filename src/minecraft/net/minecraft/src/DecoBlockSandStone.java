@@ -71,7 +71,7 @@ public class DecoBlockSandStone extends FCBlockSandStone {
 
     //CLIENT ONLY
     public static final String[] SAND_STONE_TYPES = new String[] {"default", "chiseled", "smooth", "polished", "brick", "mossy", "largeBrick", "largeBrickMossy", "cracked", "largeBrickCracked"};
-    private static final String[] textures = new String[] {"sandstone_side", "sandstone_carved", "sandstone_smooth", "sandstone_top", "ginger_sandstone_brick", "ginger_sandstone_mossy", "ginger_sandstone_stonebrick", "ginger_sandstone_stonebrick_mossy", "sandstone_bottom", "ginger_sandstone_stonebrick_cracked"};
+    private static final String[] textures = new String[] {"sandstone_side", "sandstone_carved", "sandstone_smooth", "sandstone_top", "decoBlockSandstoneBrick", "decoBlockSandstoneMossy_side", "decoBlockSandstoneBrickLarge", "decoBlockSandstoneBrickLargeMossy", "sandstone_bottom", "decoBlockSandstoneBrickLargeCracked"};
     private Icon[] sideIcons;
     private Icon iconTop;
     private Icon iconBottom;
@@ -132,7 +132,7 @@ public class DecoBlockSandStone extends FCBlockSandStone {
 
         this.iconTop = par1IconRegister.registerIcon("sandstone_top");
         this.iconBottom = par1IconRegister.registerIcon("sandstone_bottom");
-        this.iconTopMossy = par1IconRegister.registerIcon("ginger_sandstone_mossy_top");
-        this.iconBottomMossy = par1IconRegister.registerIcon("ginger_sandstone_mossy_bottom");
+        this.iconTopMossy = par1IconRegister.registerIcon("decoBlockSandstoneMossy_top");
+        this.iconBottomMossy = par1IconRegister.registerIcon("decoBlockSandstoneMossy_bottom");
     }
 }

@@ -8,7 +8,7 @@ public class DecoBlockDirtCoarse extends Block {
         this.SetShovelsEffectiveOn();
         this.SetHoesEffectiveOn();
         this.setStepSound(soundGravelFootstep);
-        this.setUnlocalizedName("ginger_coarseDirt");
+        this.setUnlocalizedName("decoBlockCoarseDirt");
         this.setCreativeTab(CreativeTabs.tabBlock);
 	}
 	

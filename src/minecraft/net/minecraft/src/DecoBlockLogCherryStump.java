@@ -109,7 +109,7 @@ public class DecoBlockLogCherryStump extends Block {
 	
 	@Override
 	public void registerIcons(IconRegister register) {
-		sideIcon = register.registerIcon("ginger_trunkCherrySide");
-		topIcon = register.registerIcon("ginger_trunkCherryTop");
+		sideIcon = register.registerIcon("decoBlockTrunkCherry_side");
+		topIcon = register.registerIcon("decoBlockTrunkCherry_top");
 	}
 }

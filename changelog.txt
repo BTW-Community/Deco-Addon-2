@@ -14,6 +14,7 @@ THIS VERSION WILL REQUIRE A CLEAN INSTALL
 [*]Changed doors to stack to 16.
 [*]Changed trapdoors above ladders to only be climbable if the trapdoor is attached to the same face as the ladder.
 [*]Changed chair collision and selection box to better match the model.
+[*]Changed coarse dirt to be able to grow reeds, flowers, and other plants.
 [*]Changed rendering on tables to have a wider leg if the block type uses walls to match the thickness of the walls.
 [*]Changed the texture on polished stone, polished stone variant, polished infused stone, cut sandstone, and cut red sandstone columns.
 [*]Changed the name of several items and blocks slightly to be more consistent.

@@ -9,7 +9,7 @@ public class DecoBlockNetherBrickSuperheated extends Block {
         this.setResistance(10.0F);
         this.SetPicksEffectiveOn();
         this.setStepSound(soundStoneFootstep);
-        this.setUnlocalizedName("ginger_netherBrickSuperheated");
+        this.setUnlocalizedName("decoBlockNetherBrickSuperheated");
         this.setTickRandomly(true);
 	}
 
@@ -122,9 +122,9 @@ public class DecoBlockNetherBrickSuperheated extends Block {
     
     public void registerIcons(IconRegister register) {
     	icons[0] = register.registerIcon("netherBrick");
-    	icons[1] = register.registerIcon("ginger_netherBrickRed");
-		overlays[0] = register.registerIcon("ginger_overlay_netherBrickSuperheated");
-		overlays[1] = register.registerIcon("ginger_overlay_netherBrickRedSuperheated");
+    	icons[1] = register.registerIcon("decoBlockNetherBrickRed");
+		overlays[0] = register.registerIcon("decoOverlayNetherBrickSuperheated");
+		overlays[1] = register.registerIcon("decoOverlayNetherBrickRedSuperheated");
     }
     
 	public void RenderBlockSecondPass(RenderBlocks var1, int var2, int var3, int var4, boolean var5)

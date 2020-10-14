@@ -8,7 +8,7 @@ public class DecoBlockDirtCoarseSlab extends FCBlockSlabAttached {
         this.SetShovelsEffectiveOn();
         this.SetHoesEffectiveOn();
         this.setStepSound(soundGravelFootstep);
-        this.setUnlocalizedName("ginger_coarseDirtSlab");
+        this.setUnlocalizedName("decoOverlayCoarseDirtSlab");
         this.setCreativeTab(CreativeTabs.tabBlock);
 	}
 	

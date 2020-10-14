@@ -52,7 +52,7 @@ public class DecoBlockMagma extends Block {
 	
 	public void registerIcons(IconRegister register) {
 		super.registerIcons(register);
-		overlay = register.registerIcon("ginger_overlay_magma");
+		overlay = register.registerIcon("decoOverlayMagma");
 	}
 	
 	public void RenderBlockSecondPass(RenderBlocks var1, int var2, int var3, int var4, boolean var5)

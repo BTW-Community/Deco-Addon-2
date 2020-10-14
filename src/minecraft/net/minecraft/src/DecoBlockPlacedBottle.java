@@ -11,7 +11,7 @@ public class DecoBlockPlacedBottle extends Block {
         this.setLightOpacity(0);
         this.setStepSound(soundGlassFootstep);
         this.InitBlockBounds(.34375, 0, .34375, .65625, .5, .65625);
-        this.setUnlocalizedName("ginger_placedBottle");
+        this.setUnlocalizedName("decoBlockPlacedBottle");
 	}
 	@Override public boolean isOpaqueCube()
 	{

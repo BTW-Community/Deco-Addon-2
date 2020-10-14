@@ -92,7 +92,7 @@ public class DecoBlockBeam extends Block {
     }
     
     public void registerIcons(IconRegister register) {
-    	icon = register.registerIcon("ginger_crateOak");
+    	icon = register.registerIcon("decoBlockCrateOak");
     }
     
     /**

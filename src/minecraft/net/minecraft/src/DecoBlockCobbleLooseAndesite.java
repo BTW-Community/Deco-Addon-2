@@ -63,7 +63,7 @@ public class DecoBlockCobbleLooseAndesite extends FCBlockLavaReceiver
     public void registerIcons(IconRegister Register)
     {
     	super.registerIcons(Register);
-    	lavaCrackOverlay = Register.registerIcon("ginger_overlay_andesiteCobblestoneLava");
+    	lavaCrackOverlay = Register.registerIcon("decoOverlayAndesiteCobbleLava");
     }
 
     protected Icon GetLavaCracksOverlay()

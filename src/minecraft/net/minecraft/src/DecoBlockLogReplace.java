@@ -4,7 +4,7 @@ import java.util.List;
 
 public class DecoBlockLogReplace extends FCBlockLog {
 	private String[] topTextureTypes = {"tree_top", "decoBlockLogSpruce_top", "decoBlockLogBirch_top", "decoBlockLogJungle_top"};
-	private String[] trunkTopTextureTypes = {"fcBlockTrunkTop", "decoBlockTrunkSpruce_top", "decoBlockTrunkBirch_top", "decoBlockTrunkJungle_t"};
+	private String[] trunkTopTextureTypes = {"fcBlockTrunkTop", "decoBlockTrunkSpruce_top", "decoBlockTrunkBirch_top", "decoBlockTrunkJungle_top"};
 	
 	public DecoBlockLogReplace(int ID) {
 		super(ID);

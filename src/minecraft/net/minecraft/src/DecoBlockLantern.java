@@ -4,17 +4,17 @@ public class DecoBlockLantern extends Block
 {
 	String tag;
 	boolean animate;
-	public DecoBlockLantern(int ID, Material material,float hardness, String tag, String name){this(ID,material,hardness,tag,name,false);}
-	public DecoBlockLantern(int ID, Material material,float hardness, String tag, String name,boolean animate)
+	public DecoBlockLantern(int ID, Material material,float hardness, String tag){this(ID,material,hardness,tag,false);}
+	public DecoBlockLantern(int ID, Material material,float hardness, String tag ,boolean animate)
 	{
 		super(ID, material);
 		this.tag=tag;
 		this.animate=animate;
-		setUnlocalizedName("ginger_lantern_"+tag);
+		setUnlocalizedName("decoBlockLantern" + tag);
 		setCreativeTab(CreativeTabs.tabDecorations);
 		setHardness(hardness);
 		setLightValue(1F);
-		DecoManager.Register(this, name);
+		DecoManager.Register(this);
 		this.InitBlockBounds(.3125D,	0.0D,	.3125D,		.6875D,		.5D,	.6875D);
 		
 		if (material == Material.iron) {
@@ -137,8 +137,8 @@ public class DecoBlockLantern extends Block
 	}
 	@Override public void registerIcons(IconRegister Register)
 	{
-		blockIcon = Register.registerIcon("ginger_lantern_"+tag+(animate?"_anim":""));
-		TopIcon = Register.registerIcon("ginger_lantern_"+tag+"_top");
+		blockIcon = Register.registerIcon("decoBlockLantern"+tag+(animate?"_anim":""));
+		TopIcon = Register.registerIcon("decoBlockLantern"+tag+"_top");
 	}
 	@Override public Icon getIcon(int side, int meta)
 	{

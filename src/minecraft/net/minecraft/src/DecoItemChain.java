@@ -5,7 +5,7 @@ public class DecoItemChain extends FCItemPlacesAsBlock
     public DecoItemChain(int var1)
     {
         super(var1, DecoDefs.chain.blockID);
-        this.setUnlocalizedName("ginger_chainItem");
+        this.setUnlocalizedName("decoItemChain");
         this.setCreativeTab(CreativeTabs.tabDecorations);
     }
 

@@ -37,6 +37,6 @@ public class DecoBlockNetherBrickRedLooseSlab extends FCBlockMortarReceiverSlab
      */
     public void registerIcons(IconRegister var1)
     {
-        this.blockIcon = var1.registerIcon("ginger_netherBrickRedLoose");
+        this.blockIcon = var1.registerIcon("decoBlockNetherBrickRedLoose");
     }
 }
