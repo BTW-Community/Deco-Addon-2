@@ -5,7 +5,7 @@ public class DecoItemChiselDiamond extends FCItemChisel {
 	{
 		super(var1, EnumToolMaterial.EMERALD, 500);
 		this.SetFilterableProperties(4);
-		this.setUnlocalizedName("ginger_chiselDiamond");
+		this.setUnlocalizedName("decoItemChiselDiamond");
         this.SetInfernalMaxEnchantmentCost(30);
         this.SetInfernalMaxNumEnchants(4);
 	}

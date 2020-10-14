@@ -1909,20 +1909,7 @@ public class DecoDefs {
 
 	private void addToolDefs() {
 		chiselDiamond = new DecoItemChiselDiamond(id_chiselDiamond);
-		DecoManager.Name(chiselDiamond, "Diamondium Chisel");
 		FCBetterThanWolves.fcItemChiselIron = new DecoItemChiselIron(FCBetterThanWolves.fcItemChiselIron.itemID - 256);
-
-		DecoManager.Name(Block.blockDiamond, "Block of Diamond");
-		DecoManager.Name(FCBetterThanWolves.fcItemIngotDiamond, "Diamondium Ingot");
-		DecoManager.Name(Item.pickaxeDiamond, "Diamondium Pickaxe");
-		DecoManager.Name(Item.axeDiamond, "Diamondium Axe");
-		DecoManager.Name(Item.shovelDiamond, "Diamondium Shovel");
-		DecoManager.Name(Item.hoeDiamond, "Diamondium Hoe");
-		DecoManager.Name(Item.swordDiamond, "Diamondium Sword");
-		DecoManager.Name(Item.helmetDiamond, "Diamondium Helmet");
-		DecoManager.Name(Item.plateDiamond, "Diamondium Chestplate");
-		DecoManager.Name(Item.legsDiamond, "Diamondium Leggings");
-		DecoManager.Name(Item.bootsDiamond,  "Diamondium Boots");
 
 		//Allows custom saw recipes
 		FCBetterThanWolves.fcSaw = new DecoBlockSaw((FCBlockSaw) FCBetterThanWolves.fcSaw, DecoManager.ReplaceBlockID(FCBetterThanWolves.fcSaw));
@@ -1935,12 +1922,10 @@ public class DecoDefs {
 		Item shears = new DecoItemShears(Item.shears.itemID - 256).setUnlocalizedName("shears");
 		DawnUtilsReflection.replaceVanillaItem("shears", Item.shears, shears);
 
-		shearsDiamond = (DecoItemShearsDiamond) new DecoItemShearsDiamond(id_shearsDiamond).setUnlocalizedName("ginger_shearsDiamond");
-		DecoManager.Name(shearsDiamond, "Diamondium Shears");
+		shearsDiamond = (DecoItemShearsDiamond) new DecoItemShearsDiamond(id_shearsDiamond).setUnlocalizedName("decoItemShearsDiamond");
 
 		//Name Tags
 		nameTag = new DecoItemNameTag(id_nameTag);
-		DecoManager.Name(nameTag, "Name Tag");
 	}
 
 	private void addlayerDefs() {

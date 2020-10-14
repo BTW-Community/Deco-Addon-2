@@ -1589,6 +1589,9 @@ item.decoItemDoorBirch.name=Birch Door
 item.decoItemDoorJungle.name=Jungle Door
 item.decoItemDoorBlood.name=Blood Wood Door
 item.decoItemDoorCherry.name=Cherry Door
+item.decoItemChiselDiamond.name=Diamondium Chisel
+item.decoItemShearsDiamond.name=Diamondium Shears
+item.decoItemNameTag.name=Name Tag
 
 # Deco Complex Items
 
@@ -1618,13 +1621,22 @@ item.dyePowder.black2.name=Black Dye
 item.dyePowder.blue2.name=Blue Dye
 item.dyePowder.white2.name=White Dye
 item.doorWood.name=Oak Door
-
 item.sign.oak.name=Oak Sign
 item.sign.spruce.name=Spruce Sign
 item.sign.birch.name=Birch Sign
 item.sign.jungle.name=Jungle Sign
 item.sign.blood.name=Blood Wood Sign
 item.sign.cherry.name=Cherry Sign
+item.fcItemIngotDiamond.name=Diamondium Ingot
+item.pickaxeDiamond.name=Diamondium Pickaxe
+item.hatchetDiamond.name=Diamondium Axe
+item.shovelDiamond.name=Diamondium Shovel
+item.hoeDiamond.name=Diamondium Hoe
+item.swordDiamond.name=Diamondium Sword
+item.helmetDiamond.name=Diamondium Helmet
+item.chestplateDiamond.name=Diamondium Chestplate
+item.leggingsDiamond.name=Diamondium Leggings
+item.bootsDiamond.name=Diamondium Boots
 
 # Container
 
