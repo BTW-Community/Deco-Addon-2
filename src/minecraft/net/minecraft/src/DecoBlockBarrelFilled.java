@@ -4,12 +4,10 @@ import java.util.List;
 
 public class DecoBlockBarrelFilled extends Block {
 	public static final Item[] types = {FCBetterThanWolves.fcItemWheat, FCBetterThanWolves.fcItemHemp, Item.potato, Item.carrot, Item.fishRaw};
-	public static final String[] typeTags = {"_wheat", "_hemp", "_potato", "_carrot", "_fish"};
-	public static final String[] typeNames = {"Wheat", "Hemp", "Potatoes", "Carrots", "Fish"};
+	public static final String[] typeTags = {"wheat", "hemp", "potato", "carrot", "fish"};
 	public final String tag;
-	public final String name;
 	
-	public DecoBlockBarrelFilled(int id, String tag, String name) {
+	public DecoBlockBarrelFilled(int id, String tag) {
 		super(id, FCBetterThanWolves.fcMaterialPlanks);
         this.SetAxesEffectiveOn();
         this.setHardness(1.0F);
@@ -19,7 +17,7 @@ public class DecoBlockBarrelFilled extends Block {
         this.setStepSound(soundWoodFootstep);
         this.setCreativeTab(CreativeTabs.tabBlock);
         this.tag = tag;
-        this.name = name;
+        this.setUnlocalizedName(tag);
 	}
 
     /**
@@ -71,12 +69,12 @@ public class DecoBlockBarrelFilled extends Block {
 	
 	@Override
 	public void registerIcons(IconRegister register) {
-		sideIcon = register.registerIcon("ginger_" + tag + "_side");
-		bottomIcon = register.registerIcon("ginger_" + tag + "_top");
+		sideIcon = register.registerIcon(tag + "_side");
+		bottomIcon = register.registerIcon(tag + "_top");
 		topIcons = new Icon[typeTags.length];
 		
 		for (int i = 0; i < typeTags.length; i++) {
-			topIcons[i] = register.registerIcon("ginger_" + tag + typeTags[i]);
+			topIcons[i] = register.registerIcon(tag + "_" + typeTags[i]);
 		}
 	}
 }

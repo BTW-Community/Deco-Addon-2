@@ -11,7 +11,7 @@ public class DecoBlockCrate extends Block {
         this.SetFireProperties(FCEnumFlammability.PLANKS);
         this.SetBuoyant();
         this.setStepSound(soundWoodFootstep);
-        this.setUnlocalizedName("crate");
+        this.setUnlocalizedName("decoBlockCrate");
         this.setCreativeTab(CreativeTabs.tabBlock);
 	}
 
@@ -53,11 +53,11 @@ public class DecoBlockCrate extends Block {
     public void registerIcons(IconRegister register) {
     	icons = new Icon[6];
     	
-    	icons[0] = register.registerIcon("ginger_crateOak");
-    	icons[1] = register.registerIcon("ginger_crateSpruce");
-    	icons[2] = register.registerIcon("ginger_crateBirch");
-    	icons[3] = register.registerIcon("ginger_crateJungle");
-    	icons[4] = register.registerIcon("ginger_crateBlood");
-    	icons[5] = register.registerIcon("ginger_crateCherry");
+    	icons[0] = register.registerIcon("decoBlockCrateOak");
+    	icons[1] = register.registerIcon("decoBlockCrateSpruce");
+    	icons[2] = register.registerIcon("decoBlockCrateBirch");
+    	icons[3] = register.registerIcon("decoBlockCrateJungle");
+    	icons[4] = register.registerIcon("decoBlockCrateBlood");
+    	icons[5] = register.registerIcon("decoBlockCrateCherry");
     }
 }

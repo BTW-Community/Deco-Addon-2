@@ -700,10 +700,10 @@ public class DecoRecipes {
 		}
 
 		for (int i = 0; i < 8; i++) {
-			FCRecipes.AddRecipe(new ItemStack(DecoDefs.paintedPlanksSlab, 6, i), new Object[] {"XXX", 'X', new ItemStack(DecoDefs.planksPainted, 1, i)});
-			FCRecipes.AddRecipe(new ItemStack(DecoDefs.paintedPlanksSlab2, 6, i), new Object[] {"XXX", 'X', new ItemStack(DecoDefs.planksPainted, 1, i + 8)});
-			FCRecipes.AddRecipe(new ItemStack(DecoDefs.planksPainted, 1, i), new Object[] {"X", "X", 'X', new ItemStack(DecoDefs.paintedPlanksSlab, 1, i)});
-			FCRecipes.AddRecipe(new ItemStack(DecoDefs.planksPainted, 1, i + 8), new Object[] {"X", "X", 'X', new ItemStack(DecoDefs.paintedPlanksSlab2, 1, i)});
+			FCRecipes.AddRecipe(new ItemStack(DecoDefs.planksPaintedSlab, 6, i), new Object[] {"XXX", 'X', new ItemStack(DecoDefs.planksPainted, 1, i)});
+			FCRecipes.AddRecipe(new ItemStack(DecoDefs.planksPaintedSlab2, 6, i), new Object[] {"XXX", 'X', new ItemStack(DecoDefs.planksPainted, 1, i + 8)});
+			FCRecipes.AddRecipe(new ItemStack(DecoDefs.planksPainted, 1, i), new Object[] {"X", "X", 'X', new ItemStack(DecoDefs.planksPaintedSlab, 1, i)});
+			FCRecipes.AddRecipe(new ItemStack(DecoDefs.planksPainted, 1, i + 8), new Object[] {"X", "X", 'X', new ItemStack(DecoDefs.planksPaintedSlab2, 1, i)});
 		}
 
 		//Pergola

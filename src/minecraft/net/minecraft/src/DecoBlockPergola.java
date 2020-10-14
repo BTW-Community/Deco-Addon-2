@@ -13,7 +13,7 @@ public class DecoBlockPergola extends Block {
         this.setStepSound(soundWoodFootstep);
 		this.setCreativeTab(CreativeTabs.tabDecorations);
 		this.InitBlockBounds(this.GetBlockBoundsFromPool());
-		this.setUnlocalizedName("pergola");
+		this.setUnlocalizedName("decoBlockPergola");
 		this.InitBlockBounds(0, 0, 0, 1, ((DecoModelBlockPergola) blockModel).blockHeight, 1);
 	}
 
@@ -101,10 +101,10 @@ public class DecoBlockPergola extends Block {
     }
     
     public void registerIcons(IconRegister register) {
-    	icon_top = register.registerIcon("ginger_pergola_top");
-    	icon_bottom = register.registerIcon("ginger_pergola_bottom");
-    	icon_sides_0 = register.registerIcon("ginger_pergola_sides_0");
-    	icon_sides_1 = register.registerIcon("ginger_pergola_sides_1");
+    	icon_top = register.registerIcon("decoBlockPergola_top");
+    	icon_bottom = register.registerIcon("decoBlockPergola_bottom");
+    	icon_sides_0 = register.registerIcon("decoBlockPergola_sides_0");
+    	icon_sides_1 = register.registerIcon("decoBlockPergola_sides_1");
     }
     
     /**

@@ -4,17 +4,16 @@ public class DecoItemDoor extends FCItemDoor {
 	private int doorBlockID;
 	private boolean isWood;
 
-	public DecoItemDoor(int ID, String texture, String name, int doorID) {
-		this(ID, texture, name, doorID, false);
+	public DecoItemDoor(int ID, String texture, int doorID) {
+		this(ID, texture, doorID, false);
 	}
 	
-	public DecoItemDoor(int ID, String texture, String name, int doorID, boolean isWood) {
+	public DecoItemDoor(int ID, String texture, int doorID, boolean isWood) {
 		super(ID);
 		this.SetBuoyant();
 		this.setUnlocalizedName(texture);
 		this.SetBuoyant();
 		this.setMaxStackSize(16);
-		DecoManager.Name(this, name);
 		doorBlockID = doorID;
 		this.isWood = isWood;
 		

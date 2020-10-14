@@ -5,9 +5,9 @@ import java.util.List;
 public class DecoItemSign extends Item
 {
     public static final int m_iNumSubtypes = 6;
-    private String[] m_sNameExtensionsBySubtype = new String[] {"oak", "spruce", "birch", "jungle", "bloodwood", "cherry"};
+    private String[] m_sNameExtensionsBySubtype = new String[] {"oak", "spruce", "birch", "jungle", "blood", "cherry"};
     private Icon[] m_IconBySubtype = new Icon[m_iNumSubtypes];
-    private String[] m_sIconNamesBySubtype = new String[] {"sign", "ginger_signSpruce", "ginger_signBirch", "ginger_signJungle", "ginger_signBlood", "ginger_signCherry"};
+    private String[] m_sIconNamesBySubtype = new String[] {"sign", "decoItemSignSpruce", "decoItemSignBirch", "decoItemSignJungle", "decoItemSignBlood", "decoItemSignCherry"};
     
     private Block[] signPosts = {Block.signPost, DecoDefs.signSpruce, DecoDefs.signBirch, DecoDefs.signJungle, DecoDefs.signBlood, DecoDefs.signCherry};
     private Block[] signWalls = {Block.signWall, DecoDefs.signSpruceWall, DecoDefs.signBirchWall, DecoDefs.signJungleWall, DecoDefs.signBloodWall, DecoDefs.signCherryWall};

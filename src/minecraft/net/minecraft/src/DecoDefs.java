@@ -491,7 +491,7 @@ public class DecoDefs {
 	public static Block scaffolding;
 	public static Item woodBleach, woodStain;
 
-	public static DecoBlockWoodSlab paintedPlanksSlab, paintedPlanksSlab2, woodSlab;
+	public static DecoBlockWoodSlab planksPaintedSlab, planksPaintedSlab2, woodSlab;
 
 	//Deco
 	public static Block blockDiamondium;
@@ -1493,18 +1493,18 @@ public class DecoDefs {
 		DecoManager.Register(trapdoorIron);
 
 		//Doors
-		Item itemDoorOak = new DecoItemDoor(Item.doorWood.itemID - 256, "doorWood", "Oak Door", Block.doorWood.blockID, true);
+		Item itemDoorOak = new DecoItemDoor(Item.doorWood.itemID - 256, "doorWood", Block.doorWood.blockID, true);
 		DawnUtilsReflection.replaceVanillaItem("doorWood", Item.doorWood, itemDoorOak);
-		itemDoorSpruce = (FCItemDoor) new DecoItemDoor(id_itemDoorSpruce, "ginger_doorSpruceItem", "Spruce Door", id_doorSpruce, true);
-		itemDoorBirch = (FCItemDoor) new DecoItemDoor(id_itemDoorBirch, "ginger_doorBirchItem", "Birch Door", id_doorBirch, true);
-		itemDoorJungle = (FCItemDoor) new DecoItemDoor(id_itemDoorJungle, "ginger_doorJungleItem", "Jungle Door", id_doorJungle, true);
-		itemDoorBlood = (FCItemDoor) new DecoItemDoor(id_itemDoorBlood, "ginger_doorBloodItem", "Blood Wood Door", id_doorBlood, true);
-		itemDoorCherry = (FCItemDoor) new DecoItemDoor(id_itemDoorCherry, "ginger_doorCherryItem", "Cherry Door", id_doorCherry, true);
+		itemDoorSpruce = (FCItemDoor) new DecoItemDoor(id_itemDoorSpruce, "decoItemDoorSpruce", id_doorSpruce, true);
+		itemDoorBirch = (FCItemDoor) new DecoItemDoor(id_itemDoorBirch, "decoItemDoorBirch", id_doorBirch, true);
+		itemDoorJungle = (FCItemDoor) new DecoItemDoor(id_itemDoorJungle, "decoItemDoorJungle", id_doorJungle, true);
+		itemDoorBlood = (FCItemDoor) new DecoItemDoor(id_itemDoorBlood, "decoItemDoorBlood", id_doorBlood, true);
+		itemDoorCherry = (FCItemDoor) new DecoItemDoor(id_itemDoorCherry, "decoItemDoorCherry", id_doorCherry, true);
 
 		BlockDoor doorIron = (BlockDoor) new DecoBlockDoorIron(DecoManager.ReplaceBlockID(Block.doorIron)).setHardness(5.0F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("doorIron").disableStats();
 		DawnUtilsReflection.replaceVanillaBlock("doorIron", Block.doorIron, doorIron);
 
-		Item itemDoorIron = new DecoItemDoor(Item.doorIron.itemID - 256, "doorIron", "Iron Door", Block.doorIron.blockID, false);
+		Item itemDoorIron = new DecoItemDoor(Item.doorIron.itemID - 256, "doorIron", Block.doorIron.blockID, false);
 		DawnUtilsReflection.replaceVanillaItem("doorIron", Item.doorIron, itemDoorIron);
 
 		BlockDoor doorOak = new DecoBlockDoorWood(DecoManager.ReplaceBlockID(Block.doorWood), new String[] {"doorWood_lower", "doorWood_upper"}, Item.doorWood.itemID);
@@ -1555,79 +1555,51 @@ public class DecoDefs {
 
 		//Sub blocks
 		int start = id_paintedPlanksSubStart,
-				end = start+48,
-				id = start,
-				i = 0;
-		final String main = "Painted Planks";
+				end = start + 48,
+				id = start;
 
-		while(i < 16)
-		{
-			paintedPlanksSidingAndCorner[i] = new DecoBlockPlanksPaintedSidingAndCornerAndDecorative(id++, "ginger_planksPainted_"+i, "paintedPlanksSiding_"+i).setCreativeTab(CreativeTabs.tabDecorations);
-			paintedPlanksMouldingAndDecorative[i] = new DecoBlockPlanksPaintedMouldingAndDecorative(id++, "ginger_planksPainted_"+i, "ginger_planksPainted_column_"+i, 3042, "paintedPlanksMoulding_"+i).setCreativeTab(CreativeTabs.tabDecorations);;
-			paintedPlanksStairs[i] = new DecoBlockStairsPaintedPlanks(id++, planksPainted, i, i).setUnlocalizedName("stairsPaintedPlanks"+i);
+		for (int i = 0; i < 16; i++) {
+			paintedPlanksSidingAndCorner[i] = new DecoBlockPlanksPaintedSidingAndCornerAndDecorative(id++, "decoBlockPlanksPainted_"+ DecoUtilsMisc.colorOrder[i], "decoBlockPlanksPaintedSiding."+ DecoUtilsMisc.colorOrder[i]);
+			paintedPlanksMouldingAndDecorative[i] = new DecoBlockPlanksPaintedMouldingAndDecorative(id++, "decoBlockPlanksPainted_"+ DecoUtilsMisc.colorOrder[i], "decoBlockPlanksPainted_column."+ DecoUtilsMisc.colorOrder[i], 3042, "decoBlockPlanksPaintedMoulding_"+ DecoUtilsMisc.colorOrder[i]);
+			paintedPlanksStairs[i] = new DecoBlockStairsPaintedPlanks(id++, planksPainted, i, i).setUnlocalizedName("decoBlockPlanksPaintedStairs." + DecoUtilsMisc.colorOrder[i]).setCreativeTab(CreativeTabs.tabBlock);
 
 			Item.itemsList[paintedPlanksSidingAndCorner[i].blockID] = new FCItemBlockSidingAndCorner(paintedPlanksSidingAndCorner[i].blockID - 256);
 			Item.itemsList[paintedPlanksMouldingAndDecorative[i].blockID] = new FCItemBlockMouldingAndDecorative(paintedPlanksMouldingAndDecorative[i].blockID - 256);
 			DecoManager.Register(paintedPlanksStairs[i]);
-
-			i++;//i is metadata from original 16 color set
 		}
 
-		bottleHempOil = new Item(id_bottleHempOil).setUnlocalizedName("ginger_bottle_hempoil").setCreativeTab(CreativeTabs.tabMaterials).SetBuoyant();
-		woodBleach = new Item(id_woodBleach).setUnlocalizedName("ginger_woodBleach").setCreativeTab(CreativeTabs.tabMaterials).SetBuoyant();
-		DecoManager.Name(woodBleach, "Wood Bleach");
-		woodStain = new Item(id_woodStain).setUnlocalizedName("ginger_woodStain").setCreativeTab(CreativeTabs.tabMaterials).SetBuoyant();
-		DecoManager.Name(woodStain, "Wood Stain");
+		bottleHempOil = new Item(id_bottleHempOil).setUnlocalizedName("decoItemHempOil").setCreativeTab(CreativeTabs.tabMaterials).SetBuoyant();
+		woodBleach = new Item(id_woodBleach).setUnlocalizedName("decoItemWoodBleach").setCreativeTab(CreativeTabs.tabMaterials).SetBuoyant();
+		woodStain = new Item(id_woodStain).setUnlocalizedName("decoItemWoodStain").setCreativeTab(CreativeTabs.tabMaterials).SetBuoyant();
 
 		//Pergola
 		pergola = new DecoBlockPergola(id_pergola);
-		DecoManager.Register(pergola, "Pergola");
+		DecoManager.Register(pergola);
 
 		//Barrels
-		DecoManager.Name(new ItemStack(FCBetterThanWolves.fcAestheticOpaque, 1, 11), "Old Barrel");
+		barrelEmpty = new DecoBlockBarrelEmpty(id_barrelEmpty, new String[] {"decoBlockBarrelOak_top", "decoBlockBarrelSpruce_top", "decoBlockBarrelBirch_top", "decoBlockBarrelJungle_top"},
+				new String[] {"decoBlockBarrelOak_side", "decoBlockBarrelSpruce_side", "decoBlockBarrelBirch_side", "decoBlockBarrelJungle_side"}).setUnlocalizedName("decoBlockBarrel1");
+		barrelEmpty2 = new DecoBlockBarrelEmpty(id_barrelEmpty2, new String[] {"decoBlockBarrelBlood_top", "decoBlockBarrelCherry_top"}, new String[] {"decoBlockBarrelBlood_side", "decoBlockBarrelCherry_side"}).setUnlocalizedName("decoBlockBarrel2");
+		DecoManager.Register(barrelEmpty, new String[] {"oak", "spruce", "birch", "jungle"});
+		DecoManager.Register(barrelEmpty2, new String[] {"blood", "cherry"});
 
-		barrelEmpty = new DecoBlockBarrelEmpty(id_barrelEmpty, new String[] {"ginger_barrelOak_top", "ginger_barrelSpruce_top", "ginger_barrelBirch_top", "ginger_barrelJungle_top"}, new String[] {"ginger_barrelOak_side", "ginger_barrelSpruce_side", "ginger_barrelBirch_side", "ginger_barrelJungle_side"});
-		barrelEmpty2 = new DecoBlockBarrelEmpty(id_barrelEmpty2, new String[] {"ginger_barrelBlood_top", "ginger_barrelCherry_top"}, new String[] {"ginger_barrelBlood_side", "ginger_barrelCherry_side"});
-		DecoManager.Register(barrelEmpty, new String[] {"oakBarrel", "spruceBarrel", "birchBarrel", "jungleBarrel"}, new String[] {"Oak Barrel", "Spruce Barrel", "Birch Barrel", "Jungle Barrel"});
-		DecoManager.Register(barrelEmpty2, new String[] {"bloodBarrel", "cherryBarrel"}, new String[] {"Blood Wood Barrel", "Cherry Barrel"});
+		barrelFullOak = new DecoBlockBarrelFilled(id_barrelFullOak, "decoBlockBarrelOak");
+		barrelFullSpruce = new DecoBlockBarrelFilled(id_barrelFullSpruce, "decoBlockBarrelSpruce");
+		barrelFullBirch = new DecoBlockBarrelFilled(id_barrelFullBirch, "decoBlockBarrelBirch");
+		barrelFullJungle = new DecoBlockBarrelFilled(id_barrelFullJungle, "decoBlockBarrelJungle");
+		barrelFullBlood = new DecoBlockBarrelFilled(id_barrelFullBlood, "decoBlockBarrelBlood");
+		barrelFullCherry = new DecoBlockBarrelFilled(id_barrelFullCherry, "decoBlockBarrelCherry");
 
-		barrelFilling = new DecoBlockBarrelFilling(id_barrelFilling);
-		TileEntity.addMapping(DecoTileEntityBarrelFilling.class, "barrelFilling");
-
-		barrelFullOak = new DecoBlockBarrelFilled(id_barrelFullOak, "barrelOak", "Oak Barrel");
-		barrelFullSpruce = new DecoBlockBarrelFilled(id_barrelFullSpruce, "barrelSpruce", "Spruce Barrel");
-		barrelFullBirch = new DecoBlockBarrelFilled(id_barrelFullBirch, "barrelBirch", "Birch Barrel");
-		barrelFullJungle = new DecoBlockBarrelFilled(id_barrelFullJungle, "barrelJungle", "Jungle Barrel");
-		barrelFullBlood = new DecoBlockBarrelFilled(id_barrelFullBlood, "barrelBlood", "Blood Wood Barrel");
-		barrelFullCherry = new DecoBlockBarrelFilled(id_barrelFullCherry, "barrelCherry", "Cherry Barrel");
-
-		Item.itemsList[barrelFullOak.blockID] = new DecoItemBlockBarrelFilled(barrelFullOak.blockID - 256, barrelFullOak, new String[] {"barrelOak_wheat", "barrelOak_hemp", "barrelOak_potato", "barrelOak_carrot", "barrelOak_fish"}, "Oak Barrel");
-		Item.itemsList[barrelFullSpruce.blockID] = new DecoItemBlockBarrelFilled(barrelFullSpruce.blockID - 256, barrelFullSpruce, new String[] {"barrelSpruce_wheat", "barrelSpruce_hemp", "barrelSpruce_potato", "barrelSpruce_carrot", "barrelSpruce_fish"}, "Spruce Barrel");
-		Item.itemsList[barrelFullBirch.blockID] = new DecoItemBlockBarrelFilled(barrelFullBirch.blockID - 256, barrelFullBirch, new String[] {"barrelBirch_wheat", "barrelBirch_hemp", "barrelBirch_potato", "barrelBirch_carrot", "barrelBirch_fish"}, "Birch Barrel");
-		Item.itemsList[barrelFullJungle.blockID] = new DecoItemBlockBarrelFilled(barrelFullJungle.blockID - 256, barrelFullJungle, new String[] {"barrelJungle_wheat", "barrelJungle_hemp", "barrelJungle_potato", "barrelJungle_carrot", "barrelJungle_fish"}, "Jungle Barrel");
-		Item.itemsList[barrelFullBlood.blockID] = new DecoItemBlockBarrelFilled(barrelFullBlood.blockID - 256, barrelFullBlood, new String[] {"barrelBlood_wheat", "barrelBlood_hemp", "barrelBlood_potato", "barrelBlood_carrot", "barrelBlood_fish"}, "Blood Wood Barrel");
-		Item.itemsList[barrelFullCherry.blockID] = new DecoItemBlockBarrelFilled(barrelFullCherry.blockID - 256, barrelFullCherry, new String[] {"barrelCherry_wheat", "barrelCherry_hemp", "barrelCherry_potato", "barrelCherry_carrot", "barrelCherry_fish"}, "Cherry Barrel");
-
-		DecoItemBlockBarrelFilled[] barrelsFull = new DecoItemBlockBarrelFilled[6];
-		barrelsFull[0] = (DecoItemBlockBarrelFilled) Item.itemsList[barrelFullOak.blockID];
-		barrelsFull[1] = (DecoItemBlockBarrelFilled) Item.itemsList[barrelFullSpruce.blockID];
-		barrelsFull[2] = (DecoItemBlockBarrelFilled) Item.itemsList[barrelFullBirch.blockID];
-		barrelsFull[3] = (DecoItemBlockBarrelFilled) Item.itemsList[barrelFullJungle.blockID];
-		barrelsFull[4] = (DecoItemBlockBarrelFilled) Item.itemsList[barrelFullBlood.blockID];
-		barrelsFull[5] = (DecoItemBlockBarrelFilled) Item.itemsList[barrelFullCherry.blockID];
-
-		for (int j = 0; j < DecoBlockBarrelFilled.types.length; j++) {
-			DecoManager.Name(new ItemStack(barrelsFull[0], 1, j), "Oak Barrel of " + DecoBlockBarrelFilled.typeNames[j]);
-			DecoManager.Name(new ItemStack(barrelsFull[1], 1, j), "Spruce Barrel of " + DecoBlockBarrelFilled.typeNames[j]);
-			DecoManager.Name(new ItemStack(barrelsFull[2], 1, j), "Birch Barrel of " + DecoBlockBarrelFilled.typeNames[j]);
-			DecoManager.Name(new ItemStack(barrelsFull[3], 1, j), "Jungle Barrel of " + DecoBlockBarrelFilled.typeNames[j]);
-			DecoManager.Name(new ItemStack(barrelsFull[4], 1, j), "Blood Wood Barrel of " + DecoBlockBarrelFilled.typeNames[j]);
-			DecoManager.Name(new ItemStack(barrelsFull[5], 1, j), "Cherry Barrel of " + DecoBlockBarrelFilled.typeNames[j]);
-		}
+		Item.itemsList[barrelFullOak.blockID] = new DecoItemBlockBarrelFilled(barrelFullOak.blockID - 256, barrelFullOak, DecoBlockBarrelFilled.typeTags);
+		Item.itemsList[barrelFullSpruce.blockID] = new DecoItemBlockBarrelFilled(barrelFullSpruce.blockID - 256, barrelFullSpruce, DecoBlockBarrelFilled.typeTags);
+		Item.itemsList[barrelFullBirch.blockID] = new DecoItemBlockBarrelFilled(barrelFullBirch.blockID - 256, barrelFullBirch, DecoBlockBarrelFilled.typeTags);
+		Item.itemsList[barrelFullJungle.blockID] = new DecoItemBlockBarrelFilled(barrelFullJungle.blockID - 256, barrelFullJungle, DecoBlockBarrelFilled.typeTags);
+		Item.itemsList[barrelFullBlood.blockID] = new DecoItemBlockBarrelFilled(barrelFullBlood.blockID - 256, barrelFullBlood, DecoBlockBarrelFilled.typeTags);
+		Item.itemsList[barrelFullCherry.blockID] = new DecoItemBlockBarrelFilled(barrelFullCherry.blockID - 256, barrelFullCherry, DecoBlockBarrelFilled.typeTags);
 
 		//Crates
 		crate = new DecoBlockCrate(id_crate);
-		DecoManager.Register(crate, new String[] {"crateOak", "crateSpruce", "crateBirch", "crateJungle", "crateBlood", "crateCherry"}, new String[] {"Oak Crate", "Spruce Crate", "Birch Crate", "Jungle Crate", "Blood Wood Crate", "Cherry Crate"});
+		DecoManager.Register(crate, new String[] {"oak", "spruce", "birch", "jungle", "blood", "cherry"});
 
 		//Signs
 		Block signPost = new DecoBlockSign(DecoManager.ReplaceBlockID(Block.signPost), true, 0, "wood");
@@ -1636,7 +1608,7 @@ public class DecoDefs {
 		signBirch = new DecoBlockSign(id_signBirch, true, 2, "wood_birch");
 		signJungle = new DecoBlockSign(id_signJungle, true, 3, "wood_jungle");
 		signBlood = new DecoBlockSign(id_signBlood, true, 4, "fcBlockPlanks_blood");
-		signCherry = new DecoBlockSign(id_signCherry, true, 5, "ginger_planks_cherry");
+		signCherry = new DecoBlockSign(id_signCherry, true, 5, "decoBlockPlanksCherry");
 
 		Block signWall = new DecoBlockSignWall(DecoManager.ReplaceBlockID(Block.signWall), 0, "wood");
 		DawnUtilsReflection.replaceVanillaBlock("signWall", Block.signWall, signWall);
@@ -1644,48 +1616,25 @@ public class DecoDefs {
 		signBirchWall = new DecoBlockSignWall(id_signBirchWall, 2, "wood_birch");
 		signJungleWall = new DecoBlockSignWall(id_signJungleWall, 3, "wood_jungle");
 		signBloodWall = new DecoBlockSignWall(id_signBloodWall, 4, "fcBlockPlanks_blood");
-		signCherryWall = new DecoBlockSignWall(id_signCherryWall, 5, "ginger_planks_cherry");
+		signCherryWall = new DecoBlockSignWall(id_signCherryWall, 5, "decoBlockPlanksCherry");
 
 		Item sign = new DecoItemSign(Item.sign.itemID - 256).SetBuoyant().SetIncineratedInCrucible().setUnlocalizedName("sign");
 		DawnUtilsReflection.replaceVanillaItem("sign", Item.sign, sign);
-		DecoManager.Name(new ItemStack(Item.sign, 1, 0), "Oak Sign");
-		DecoManager.Name(new ItemStack(Item.sign, 1, 1), "Spruce Sign");
-		DecoManager.Name(new ItemStack(Item.sign, 1, 2), "Birch Sign");
-		DecoManager.Name(new ItemStack(Item.sign, 1, 3), "Jungle Sign");
-		DecoManager.Name(new ItemStack(Item.sign, 1, 4), "Blood Wood Sign");
-		DecoManager.Name(new ItemStack(Item.sign, 1, 5), "Cherry Sign");
 
 		//Slabs
-		paintedPlanksSlab = new DecoBlockWoodSlab(id_paintedPlanksSlab, new Block[] {planksPainted, planksPainted, planksPainted, planksPainted, planksPainted, planksPainted, planksPainted, planksPainted}, new int[] {0, 1, 2, 3, 4, 5, 6, 7},
+		planksPaintedSlab = (DecoBlockWoodSlab) new DecoBlockWoodSlab(id_paintedPlanksSlab, new Block[] {planksPainted, planksPainted, planksPainted, planksPainted, planksPainted, planksPainted, planksPainted, planksPainted}, new int[] {0, 1, 2, 3, 4, 5, 6, 7},
 				new int[] {paintedPlanksMouldingAndDecorative[0].blockID, paintedPlanksMouldingAndDecorative[1].blockID, paintedPlanksMouldingAndDecorative[2].blockID, paintedPlanksMouldingAndDecorative[3].blockID, paintedPlanksMouldingAndDecorative[4].blockID, paintedPlanksMouldingAndDecorative[5].blockID, paintedPlanksMouldingAndDecorative[6].blockID, paintedPlanksMouldingAndDecorative[7].blockID},
-				new int[] {0, 0, 0, 0, 0, 0, 0, 0});
-		Item.itemsList[DecoDefs.paintedPlanksSlab.blockID] = new DecoItemBlockSlab(DecoDefs.paintedPlanksSlab.blockID - 256);
-		DecoManager.Name(new ItemStack(DecoDefs.paintedPlanksSlab, 1, 0), "Black Painted Planks Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.paintedPlanksSlab, 1, 1), "Red Painted Planks Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.paintedPlanksSlab, 1, 2), "Green Painted Planks Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.paintedPlanksSlab, 1, 3), "Brown Painted Planks Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.paintedPlanksSlab, 1, 4), "Blue Painted Planks Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.paintedPlanksSlab, 1, 5), "Purple Painted Planks Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.paintedPlanksSlab, 1, 6), "Cyan Painted Planks Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.paintedPlanksSlab, 1, 7), "Light Grey Painted Planks Slab");
+				new int[] {0, 0, 0, 0, 0, 0, 0, 0}).setUnlocalizedName("decoBlockPlanksPaintedSlab");
+		Item.itemsList[DecoDefs.planksPaintedSlab.blockID] = new DecoItemBlockSlab(DecoDefs.planksPaintedSlab.blockID - 256);
 
-		paintedPlanksSlab2 = new DecoBlockWoodSlab(id_paintedPlanksSlab2, new Block[] {planksPainted, planksPainted, planksPainted, planksPainted, planksPainted, planksPainted, planksPainted, planksPainted}, new int[] {8, 9, 10, 11, 12, 13, 14, 15},
+		planksPaintedSlab2 = (DecoBlockWoodSlab) new DecoBlockWoodSlab(id_paintedPlanksSlab2, new Block[] {planksPainted, planksPainted, planksPainted, planksPainted, planksPainted, planksPainted, planksPainted, planksPainted}, new int[] {8, 9, 10, 11, 12, 13, 14, 15},
 				new int[] {paintedPlanksMouldingAndDecorative[8].blockID, paintedPlanksMouldingAndDecorative[9].blockID, paintedPlanksMouldingAndDecorative[10].blockID, paintedPlanksMouldingAndDecorative[11].blockID, paintedPlanksMouldingAndDecorative[12].blockID, paintedPlanksMouldingAndDecorative[13].blockID, paintedPlanksMouldingAndDecorative[14].blockID, paintedPlanksMouldingAndDecorative[15].blockID},
-				new int[] {0, 0, 0, 0, 0, 0, 0, 0});
-		Item.itemsList[DecoDefs.paintedPlanksSlab2.blockID] = new DecoItemBlockSlab(DecoDefs.paintedPlanksSlab2.blockID - 256);
-		DecoManager.Name(new ItemStack(DecoDefs.paintedPlanksSlab2, 1, 0), "Grey Painted Planks Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.paintedPlanksSlab2, 1, 1), "Pink Painted Planks Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.paintedPlanksSlab2, 1, 2), "Lime Painted Planks Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.paintedPlanksSlab2, 1, 3), "Yellow Painted Planks Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.paintedPlanksSlab2, 1, 4), "Light Blue Painted Planks Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.paintedPlanksSlab2, 1, 5), "Magenta Painted Planks Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.paintedPlanksSlab2, 1, 6), "Orange Painted Planks Slab");
-		DecoManager.Name(new ItemStack(DecoDefs.paintedPlanksSlab2, 1, 7), "White Painted Planks Slab");
+				new int[] {0, 0, 0, 0, 0, 0, 0, 0}).setUnlocalizedName("decoBlockPlanksPaintedSlab2");
+		Item.itemsList[DecoDefs.planksPaintedSlab2.blockID] = new DecoItemBlockSlab(DecoDefs.planksPaintedSlab2.blockID - 256);
 
-		woodSlab = new DecoBlockWoodSlab(id_woodSlab, new Block[] {Block.planks}, new int[] {5},
-				new int[] {FCBetterThanWolves.fcBlockWoodMouldingItemStubID}, new int[] {5});
+		woodSlab = (DecoBlockWoodSlab) new DecoBlockWoodSlab(id_woodSlab, new Block[] {Block.planks}, new int[] {5},
+				new int[] {FCBetterThanWolves.fcBlockWoodMouldingItemStubID}, new int[] {5}).setUnlocalizedName("decoBlockWoodSlab");
 		Item.itemsList[DecoDefs.woodSlab.blockID] = new DecoItemBlockSlab(DecoDefs.woodSlab.blockID - 256);
-		DecoManager.Name(new ItemStack(DecoDefs.woodSlab, 1, 0), "Cherry Slab");
 
 		DecoManager.Name(new ItemStack(Block.woodSingleSlab, 1, 0), "Oak Slab");
 		DecoManager.Name(new ItemStack(Block.woodSingleSlab, 1, 1), "Spruce Slab");

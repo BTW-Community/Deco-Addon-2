@@ -28,5 +28,6 @@ THIS VERSION WILL REQUIRE A CLEAN INSTALL
 [*]Fixed an issue where terracotta subblocks made wood sounds.
 [*]Fixed an issue where some stone variant brick subblocks had inconsistent naming.
 [*]Fixed an issue where most addon tables would not connect to walls below them.
+[*]Fixed an issue where painted planks stairs were not available in the creative menu.
 [*]Fixed (hopefully) an issue where servers would incorrectly display an error message that the addon was not installed properly if the client was on a high latency connection. Let me know if this still happens as this simply involved increasing the amount of time the server would wait for the client to acknowledge from 1 second to 2.5.
 [/lst]

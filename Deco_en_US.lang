@@ -97,6 +97,7 @@ tile.decoBlockChairBirch.name=Birch Chair
 tile.decoBlockChairJungle.name=Jungle Chair
 tile.decoBlockChairBlood.name=Blood Wood Chair
 tile.decoBlockChairCherry.name=Cherry Chair
+tile.decoBlockPergola.name=Pergola
 
 # Deco Complex Blocks
 
@@ -1117,6 +1118,253 @@ tile.decoBlockPlanksPainted.magenta.name=Magenta Painted Planks
 tile.decoBlockPlanksPainted.orange.name=Orange Painted Planks
 tile.decoBlockPlanksPainted.white.name=White Painted Planks
 
+tile.decoBlockPlanksPaintedSiding.black.bench.name=Black Painted Planks Bench
+tile.decoBlockPlanksPaintedSiding.black.fence.name=Black Painted Planks Wall
+tile.decoBlockPlanksPaintedSiding.black.siding.name=Black Painted Planks Siding
+tile.decoBlockPlanksPaintedSiding.black.corner.name=Black Painted Planks Corner
+tile.decoBlockPlanksPaintedMoulding.black.column.name=Black Painted Planks Column
+tile.decoBlockPlanksPaintedMoulding.black.pedestal.name=Black Painted Planks Pedestal
+tile.decoBlockPlanksPaintedMoulding.black.moulding.name=Black Painted Planks Moulding
+tile.decoBlockPlanksPaintedMoulding.black.table.name=Black Painted Planks Table
+tile.decoBlockPlanksPaintedStairs.black.name=Black Painted Planks Stairs
+
+tile.decoBlockPlanksPaintedSiding.red.bench.name=Red Painted Planks Bench
+tile.decoBlockPlanksPaintedSiding.red.fence.name=Red Painted Planks Wall
+tile.decoBlockPlanksPaintedSiding.red.siding.name=Red Painted Planks Siding
+tile.decoBlockPlanksPaintedSiding.red.corner.name=Red Painted Planks Corner
+tile.decoBlockPlanksPaintedMoulding.red.column.name=Red Painted Planks Column
+tile.decoBlockPlanksPaintedMoulding.red.pedestal.name=Red Painted Planks Pedestal
+tile.decoBlockPlanksPaintedMoulding.red.moulding.name=Red Painted Planks Moulding
+tile.decoBlockPlanksPaintedMoulding.red.table.name=Red Painted Planks Table
+tile.decoBlockPlanksPaintedStairs.red.name=Red Painted Planks Stairs
+
+tile.decoBlockPlanksPaintedSiding.green.bench.name=Green Painted Planks Bench
+tile.decoBlockPlanksPaintedSiding.green.fence.name=Green Painted Planks Wall
+tile.decoBlockPlanksPaintedSiding.green.siding.name=Green Painted Planks Siding
+tile.decoBlockPlanksPaintedSiding.green.corner.name=Green Painted Planks Corner
+tile.decoBlockPlanksPaintedMoulding.green.column.name=Green Painted Planks Column
+tile.decoBlockPlanksPaintedMoulding.green.pedestal.name=Green Painted Planks Pedestal
+tile.decoBlockPlanksPaintedMoulding.green.moulding.name=Green Painted Planks Moulding
+tile.decoBlockPlanksPaintedMoulding.green.table.name=Green Painted Planks Table
+tile.decoBlockPlanksPaintedStairs.green.name=Black Green Terracotta Stairs
+
+tile.decoBlockPlanksPaintedSiding.brown.bench.name=Brown Painted Planks Bench
+tile.decoBlockPlanksPaintedSiding.brown.fence.name=Brown Painted Planks Wall
+tile.decoBlockPlanksPaintedSiding.brown.siding.name=Brown Painted Planks Siding
+tile.decoBlockPlanksPaintedSiding.brown.corner.name=Brown Painted Planks Corner
+tile.decoBlockPlanksPaintedMoulding.brown.column.name=Brown Painted Planks Column
+tile.decoBlockPlanksPaintedMoulding.brown.pedestal.name=Brown Painted Planks Pedestal
+tile.decoBlockPlanksPaintedMoulding.brown.moulding.name=Brown Painted Planks Moulding
+tile.decoBlockPlanksPaintedMoulding.brown.table.name=Brown Painted Planks Table
+tile.decoBlockPlanksPaintedStairs.brown.name=Brown Painted Planks Stairs
+
+tile.decoBlockPlanksPaintedSiding.blue.bench.name=Blue Painted Planks Bench
+tile.decoBlockPlanksPaintedSiding.blue.fence.name=Blue Painted Planks Wall
+tile.decoBlockPlanksPaintedSiding.blue.siding.name=Blue Painted Planks Siding
+tile.decoBlockPlanksPaintedSiding.blue.corner.name=Blue Painted Planks Corner
+tile.decoBlockPlanksPaintedMoulding.blue.column.name=Blue Painted Planks Column
+tile.decoBlockPlanksPaintedMoulding.blue.pedestal.name=Blue Painted Planks Pedestal
+tile.decoBlockPlanksPaintedMoulding.blue.moulding.name=Blue Painted Planks Moulding
+tile.decoBlockPlanksPaintedMoulding.blue.table.name=Blue Painted Planks Table
+tile.decoBlockPlanksPaintedStairs.blue.name=Blue Painted Planks Stairs
+
+tile.decoBlockPlanksPaintedSiding.purple.bench.name=Purple Painted Planks Bench
+tile.decoBlockPlanksPaintedSiding.purple.fence.name=Purple Painted Planks Wall
+tile.decoBlockPlanksPaintedSiding.purple.siding.name=Purple Painted Planks Siding
+tile.decoBlockPlanksPaintedSiding.purple.corner.name=Purple Painted Planks Corner
+tile.decoBlockPlanksPaintedMoulding.purple.column.name=Purple Painted Planks Column
+tile.decoBlockPlanksPaintedMoulding.purple.pedestal.name=Purple Painted Planks Pedestal
+tile.decoBlockPlanksPaintedMoulding.purple.moulding.name=Purple Painted Planks Moulding
+tile.decoBlockPlanksPaintedMoulding.purple.table.name=Purple Painted Planks Table
+tile.decoBlockPlanksPaintedStairs.purple.name=Purple Painted Planks Stairs
+
+tile.decoBlockPlanksPaintedSiding.cyan.bench.name=Cyan Painted Planks Bench
+tile.decoBlockPlanksPaintedSiding.cyan.fence.name=Cyan Painted Planks Wall
+tile.decoBlockPlanksPaintedSiding.cyan.siding.name=Cyan Painted Planks Siding
+tile.decoBlockPlanksPaintedSiding.cyan.corner.name=Cyan Painted Planks Corner
+tile.decoBlockPlanksPaintedMoulding.cyan.column.name=Cyan Painted Planks Column
+tile.decoBlockPlanksPaintedMoulding.cyan.pedestal.name=Cyan Painted Planks Pedestal
+tile.decoBlockPlanksPaintedMoulding.cyan.moulding.name=Cyan Painted Planks Moulding
+tile.decoBlockPlanksPaintedMoulding.cyan.table.name=Cyan Painted Planks Table
+tile.decoBlockPlanksPaintedStairs.cyan.name=Cyan Painted Planks Stairs
+
+tile.decoBlockPlanksPaintedSiding.lightGray.bench.name=Light Gray Painted Planks Bench
+tile.decoBlockPlanksPaintedSiding.lightGray.fence.name=Light Gray Painted Planks Wall
+tile.decoBlockPlanksPaintedSiding.lightGray.siding.name=Light Gray Painted Planks Siding
+tile.decoBlockPlanksPaintedSiding.lightGray.corner.name=Light Gray Painted Planks Corner
+tile.decoBlockPlanksPaintedMoulding.lightGray.column.name=Light Gray Painted Planks Column
+tile.decoBlockPlanksPaintedMoulding.lightGray.pedestal.name=Light Gray Painted Planks Pedestal
+tile.decoBlockPlanksPaintedMoulding.lightGray.moulding.name=Light Gray Painted Planks Moulding
+tile.decoBlockPlanksPaintedMoulding.lightGray.table.name=Light Gray Painted Planks Table
+tile.decoBlockPlanksPaintedStairs.lightGray.name=Light Gray Painted Planks Stairs
+
+tile.decoBlockPlanksPaintedSiding.gray.bench.name=Gray Painted Planks Bench
+tile.decoBlockPlanksPaintedSiding.gray.fence.name=Gray Painted Planks Wall
+tile.decoBlockPlanksPaintedSiding.gray.siding.name=Gray Painted Planks Siding
+tile.decoBlockPlanksPaintedSiding.gray.corner.name=Gray Painted Planks Corner
+tile.decoBlockPlanksPaintedMoulding.gray.column.name=Gray Painted Planks Column
+tile.decoBlockPlanksPaintedMoulding.gray.pedestal.name=Gray Painted Planks Pedestal
+tile.decoBlockPlanksPaintedMoulding.gray.moulding.name=Gray Painted Planks Moulding
+tile.decoBlockPlanksPaintedMoulding.gray.table.name=Gray Painted Planks Table
+tile.decoBlockPlanksPaintedStairs.gray.name=Gray Painted Planks Stairs
+
+tile.decoBlockPlanksPaintedSiding.pink.bench.name=Pink Painted Planks Bench
+tile.decoBlockPlanksPaintedSiding.pink.fence.name=Pink Painted Planks Wall
+tile.decoBlockPlanksPaintedSiding.pink.siding.name=Pink Painted Planks Siding
+tile.decoBlockPlanksPaintedSiding.pink.corner.name=Pink Painted Planks Corner
+tile.decoBlockPlanksPaintedMoulding.pink.column.name=Pink Painted Planks Column
+tile.decoBlockPlanksPaintedMoulding.pink.pedestal.name=Pink Painted Planks Pedestal
+tile.decoBlockPlanksPaintedMoulding.pink.moulding.name=Pink Painted Planks Moulding
+tile.decoBlockPlanksPaintedMoulding.pink.table.name=Pink Painted Planks Table
+tile.decoBlockPlanksPaintedStairs.pink.name=Pink Painted Planks Stairs
+
+tile.decoBlockPlanksPaintedSiding.lime.bench.name=Lime Painted Planks Bench
+tile.decoBlockPlanksPaintedSiding.lime.fence.name=Lime Painted Planks Wall
+tile.decoBlockPlanksPaintedSiding.lime.siding.name=Lime Painted Planks Siding
+tile.decoBlockPlanksPaintedSiding.lime.corner.name=Lime Painted Planks Corner
+tile.decoBlockPlanksPaintedMoulding.lime.column.name=Lime Painted Planks Column
+tile.decoBlockPlanksPaintedMoulding.lime.pedestal.name=Lime Painted Planks Pedestal
+tile.decoBlockPlanksPaintedMoulding.lime.moulding.name=Lime Painted Planks Moulding
+tile.decoBlockPlanksPaintedMoulding.lime.table.name=Lime Painted Planks Table
+tile.decoBlockPlanksPaintedStairs.lime.name=Lime Painted Planks Stairs
+
+tile.decoBlockPlanksPaintedSiding.yellow.bench.name=Yellow Painted Planks Bench
+tile.decoBlockPlanksPaintedSiding.yellow.fence.name=Yellow Painted Planks Wall
+tile.decoBlockPlanksPaintedSiding.yellow.siding.name=Yellow Painted Planks Siding
+tile.decoBlockPlanksPaintedSiding.yellow.corner.name=Yellow Painted Planks Corner
+tile.decoBlockPlanksPaintedMoulding.yellow.column.name=Yellow Painted Planks Column
+tile.decoBlockPlanksPaintedMoulding.yellow.pedestal.name=Yellow Painted Planks Pedestal
+tile.decoBlockPlanksPaintedMoulding.yellow.moulding.name=Yellow Painted Planks Moulding
+tile.decoBlockPlanksPaintedMoulding.yellow.table.name=Yellow Painted Planks Table
+tile.decoBlockPlanksPaintedStairs.yellow.name=Yellow Painted Planks Stairs
+
+tile.decoBlockPlanksPaintedSiding.lightBlue.bench.name=Light Blue Painted Planks Bench
+tile.decoBlockPlanksPaintedSiding.lightBlue.fence.name=Light Blue Painted Planks Wall
+tile.decoBlockPlanksPaintedSiding.lightBlue.siding.name=Light Blue Painted Planks Siding
+tile.decoBlockPlanksPaintedSiding.lightBlue.corner.name=Light Blue Painted Planks Corner
+tile.decoBlockPlanksPaintedMoulding.lightBlue.column.name=Light Blue Painted Planks Column
+tile.decoBlockPlanksPaintedMoulding.lightBlue.pedestal.name=Light Blue Painted Planks Pedestal
+tile.decoBlockPlanksPaintedMoulding.lightBlue.moulding.name=Light Blue Painted Planks Moulding
+tile.decoBlockPlanksPaintedMoulding.lightBlue.table.name=Light Blue Painted Planks Table
+tile.decoBlockPlanksPaintedStairs.lightBlue.name=Light Blue Painted Planks Stairs
+
+tile.decoBlockPlanksPaintedSiding.magenta.bench.name=Magenta Painted Planks Bench
+tile.decoBlockPlanksPaintedSiding.magenta.fence.name=Magenta Painted Planks Wall
+tile.decoBlockPlanksPaintedSiding.magenta.siding.name=Magenta Painted Planks Siding
+tile.decoBlockPlanksPaintedSiding.magenta.corner.name=Magenta Painted Planks Corner
+tile.decoBlockPlanksPaintedMoulding.magenta.column.name=Magenta Painted Planks Column
+tile.decoBlockPlanksPaintedMoulding.magenta.pedestal.name=Magenta Painted Planks Pedestal
+tile.decoBlockPlanksPaintedMoulding.magenta.moulding.name=Magenta Painted Planks Moulding
+tile.decoBlockPlanksPaintedMoulding.magenta.table.name=Magenta Painted Planks Table
+tile.decoBlockPlanksPaintedStairs.magenta.name=Magenta Painted Planks Stairs
+
+tile.decoBlockPlanksPaintedSiding.orange.bench.name=Orange Painted Planks Bench
+tile.decoBlockPlanksPaintedSiding.orange.fence.name=Orange Painted Planks Wall
+tile.decoBlockPlanksPaintedSiding.orange.siding.name=Orange Painted Planks Siding
+tile.decoBlockPlanksPaintedSiding.orange.corner.name=Orange Painted Planks Corner
+tile.decoBlockPlanksPaintedMoulding.orange.column.name=Orange Painted Planks Column
+tile.decoBlockPlanksPaintedMoulding.orange.pedestal.name=Orange Painted Planks Pedestal
+tile.decoBlockPlanksPaintedMoulding.orange.moulding.name=Orange Painted Planks Moulding
+tile.decoBlockPlanksPaintedMoulding.orange.table.name=Orange Painted Planks Table
+tile.decoBlockPlanksPaintedStairs.orange.name=Orange Painted Planks Stairs
+
+tile.decoBlockPlanksPaintedSiding.white.bench.name=White Painted Planks Bench
+tile.decoBlockPlanksPaintedSiding.white.fence.name=White Painted Planks Wall
+tile.decoBlockPlanksPaintedSiding.white.siding.name=White Painted Planks Siding
+tile.decoBlockPlanksPaintedSiding.white.corner.name=White Painted Planks Corner
+tile.decoBlockPlanksPaintedMoulding.white.column.name=White Painted Planks Column
+tile.decoBlockPlanksPaintedMoulding.white.pedestal.name=White Painted Planks Pedestal
+tile.decoBlockPlanksPaintedMoulding.white.moulding.name=White Painted Planks Moulding
+tile.decoBlockPlanksPaintedMoulding.white.table.name=White Painted Planks Table
+tile.decoBlockPlanksPaintedStairs.white.name=White Painted Planks Stairs
+
+tile.decoBlockPlanksPaintedStairs.black.name=Black Painted Planks Stairs
+tile.decoBlockPlanksPaintedStairs.red.name=Red Painted Planks Stairs
+tile.decoBlockPlanksPaintedStairs.green.name=Green Painted Planks Stairs
+tile.decoBlockPlanksPaintedStairs.brown.name=Brown Painted Planks Stairs
+tile.decoBlockPlanksPaintedStairs.blue.name=Blue Painted Planks Stairs
+tile.decoBlockPlanksPaintedStairs.purple.name=Purple Painted Planks Stairs
+tile.decoBlockPlanksPaintedStairs.cyan.name=Cyan Painted Planks Stairs
+tile.decoBlockPlanksPaintedStairs.lightGray.name=Light Gray Painted Planks Stairs
+tile.decoBlockPlanksPaintedStairs.gray.name=Gray Painted Planks Stairs
+tile.decoBlockPlanksPaintedStairs.pink.name=Pink Painted Planks Stairs
+tile.decoBlockPlanksPaintedStairs.lime.name=Lime Painted Planks Stairs
+tile.decoBlockPlanksPaintedStairs.yellow.name=Yellow Painted Planks Stairs
+tile.decoBlockPlanksPaintedStairs.lightBlue.name=Light Blue Painted Planks Stairs
+tile.decoBlockPlanksPaintedStairs.magenta.name=Magenta Painted Planks Stairs
+tile.decoBlockPlanksPaintedStairs.orange.name=Orange Painted Planks Stairs
+tile.decoBlockPlanksPaintedStairs.white.name=White Painted Planks Stairs
+
+tile.decoBlockBarrel1.oak.name=Oak Barrel
+tile.decoBlockBarrel1.spruce.name=Spruce Barrel
+tile.decoBlockBarrel1.birch.name=Birch Barrel
+tile.decoBlockBarrel1.jungle.name=Jungle Barrel
+tile.decoBlockBarrel2.blood.name=Blood Wood Barrel
+tile.decoBlockBarrel2.cherry.name=Cherry Barrel
+
+tile.decoBlockBarrelOak.wheat.name=Oak Barrel of Wheat
+tile.decoBlockBarrelOak.hemp.name=Oak Barrel of Hemp
+tile.decoBlockBarrelOak.potato.name=Oak Barrel of Potatoes
+tile.decoBlockBarrelOak.carrot.name=Oak Barrel of Carrots
+tile.decoBlockBarrelOak.fish.name=Oak Barrel of Fish
+
+tile.decoBlockBarrelSpruce.wheat.name=Spruce Barrel of Wheat
+tile.decoBlockBarrelSpruce.hemp.name=Spruce Barrel of Hemp
+tile.decoBlockBarrelSpruce.potato.name=Spruce Barrel of Potatoes
+tile.decoBlockBarrelSpruce.carrot.name=Spruce Barrel of Carrots
+tile.decoBlockBarrelSpruce.fish.name=Spruce Barrel of Fish
+
+tile.decoBlockBarrelBirch.wheat.name=Birch Barrel of Wheat
+tile.decoBlockBarrelBirch.hemp.name=Birch Barrel of Hemp
+tile.decoBlockBarrelBirch.potato.name=Birch Barrel of Potatoes
+tile.decoBlockBarrelBirch.carrot.name=Birch Barrel of Carrots
+tile.decoBlockBarrelBirch.fish.name=Birch Barrel of Fish
+
+tile.decoBlockBarrelJungle.wheat.name=Jungle Barrel of Wheat
+tile.decoBlockBarrelJungle.hemp.name=Jungle Barrel of Hemp
+tile.decoBlockBarrelJungle.potato.name=Jungle Barrel of Potatoes
+tile.decoBlockBarrelJungle.carrot.name=Jungle Barrel of Carrots
+tile.decoBlockBarrelJungle.fish.name=Jungle Barrel of Fish
+
+tile.decoBlockBarrelBlood.wheat.name=Blood Wood Barrel of Wheat
+tile.decoBlockBarrelBlood.hemp.name=Blood Wood Barrel of Hemp
+tile.decoBlockBarrelBlood.potato.name=Blood Wood Barrel of Potatoes
+tile.decoBlockBarrelBlood.carrot.name=Blood Wood Barrel of Carrots
+tile.decoBlockBarrelBlood.fish.name=Blood Wood Barrel of Fish
+
+tile.decoBlockBarrelCherry.wheat.name=Cherry Barrel of Wheat
+tile.decoBlockBarrelCherry.hemp.name=Cherry Barrel of Hemp
+tile.decoBlockBarrelCherry.potato.name=Cherry Barrel of Potatoes
+tile.decoBlockBarrelCherry.carrot.name=Cherry Barrel of Carrots
+tile.decoBlockBarrelCherry.fish.name=Cherry Barrel of Fish
+
+tile.decoBlockCrate.oak.name=Oak Crate
+tile.decoBlockCrate.spruce.name=Spruce Crate
+tile.decoBlockCrate.birch.name=Birch Crate
+tile.decoBlockCrate.jungle.name=Jungle Crate
+tile.decoBlockCrate.blood.name=Blood Wood Crate
+tile.decoBlockCrate.cherry.name=Cherry Crate
+
+tile.decoBlockPlanksPaintedSlab.0.name=Black Painted Planks Slab
+tile.decoBlockPlanksPaintedSlab.1.name=Red Painted Planks Slab
+tile.decoBlockPlanksPaintedSlab.2.name=Green Painted Planks Slab
+tile.decoBlockPlanksPaintedSlab.3.name=Brown Painted Planks Slab
+tile.decoBlockPlanksPaintedSlab.4.name=Blue Painted Planks Slab
+tile.decoBlockPlanksPaintedSlab.5.name=Purple Painted Planks Slab
+tile.decoBlockPlanksPaintedSlab.6.name=Cyan Painted Planks Slab
+tile.decoBlockPlanksPaintedSlab.7.name=Light Gray Painted Planks Slab
+
+tile.decoBlockPlanksPaintedSlab2.0.name=Gray Painted Planks Slab
+tile.decoBlockPlanksPaintedSlab2.1.name=Pink Painted Planks Slab
+tile.decoBlockPlanksPaintedSlab2.2.name=Lime Painted Planks Slab
+tile.decoBlockPlanksPaintedSlab2.3.name=Yellow Painted Planks Slab
+tile.decoBlockPlanksPaintedSlab2.4.name=Light Blue Painted Planks Slab
+tile.decoBlockPlanksPaintedSlab2.5.name=Magenta Painted Planks Slab
+tile.decoBlockPlanksPaintedSlab2.6.name=Orange Painted Planks Slab
+tile.decoBlockPlanksPaintedSlab2.7.name=White Painted Planks Slab
+
+tile.decoBlockWoodSlab.0.name=Cherry Slab
+
 # Vanilla/BTW Blocks Renamed
 
 tile.rose.name=Red Rose
@@ -1214,6 +1462,12 @@ tile.fcWoodJungleSiding.cherry.fence.name=Cherry Fence
 
 tile.trapdoor.name=Oak Trap Door
 tile.fenceGate.name=Oak Fence Gate
+tile.fcBlockAestheticOpaque.barrel.name=Old Barrel
+
+tile.woodSlab.oak.name=Oak Slab
+tile.woodSlab.spruce.name=Spruce Slab
+tile.woodSlab.birch.name=Birch Slab
+tile.woodSlab.jungle.name=Jungle Slab
 
 # Deco Items
 
@@ -1222,6 +1476,15 @@ item.decoItemFertilizer.name=Fertilizer
 item.decoItemPileRedSand.name=Red Sand Pile
 item.decoItemPrismarineShard.name=Prismarine Shard
 item.decoItemPrismarineCrystal.name=Prismarine Crystal
+item.decoItemHempOil.name=Hemp Oil
+item.decoItemHempOil.name=Hemp Oil
+item.decoItemWoodBleach.name=Wood Bleach
+item.decoItemWoodStain.name=Wood Stain
+item.decoItemDoorSpruce.name=Spruce Door
+item.decoItemDoorBirch.name=Birch Door
+item.decoItemDoorJungle.name=Jungle Door
+item.decoItemDoorBlood.name=Blood Wood Door
+item.decoItemDoorCherry.name=Cherry Door
 
 # Deco Complex Items
 
@@ -1244,9 +1507,20 @@ item.decoItemStainedGlass.white.name=White Stained Glass
 
 # Vanilla/BTW Items Renamed
 
-item.fcItemBark.cherry=Cherry Bark
-item.fcItemBark.crimson=Crimson Bark
-item.fcItemBark.warped=Warped Bark
+item.fcItemBark.cherry.name=Cherry Bark
+item.fcItemBark.crimson.name=Crimson Bark
+item.fcItemBark.warped.name=Warped Bark
+item.dyePowder.black2.name=Black Dye
+item.dyePowder.blue2.name=Blue Dye
+item.dyePowder.white2.name=White Dye
+item.doorWood.name=Oak Door
+
+item.sign.oak.name=Oak Sign
+item.sign.spruce.name=Spruce Sign
+item.sign.birch.name=Birch Sign
+item.sign.jungle.name=Jungle Sign
+item.sign.blood.name=Blood Wood Sign
+item.sign.cherry.name=Cherry Sign
 
 # Container
 
