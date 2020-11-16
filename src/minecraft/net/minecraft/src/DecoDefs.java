@@ -370,7 +370,7 @@ public class DecoDefs {
 	public static final StepSound stepSoundNetherrack = new DecoStepSound("netherrack", 1, 1, "stone", Block.soundStoneFootstep.getVolume(), Block.soundStoneFootstep.getPitch());
 	public static final StepSound stepSoundNetherBrick = new DecoStepSound("netherbrick", 1, 1, "stone", Block.soundStoneFootstep.getVolume(), Block.soundStoneFootstep.getPitch());
 	public static final StepSound stepSoundBone = new DecoStepSound("bone", 1, 1, "stone", Block.soundStoneFootstep.getVolume(), Block.soundStoneFootstep.getPitch());
-	public static final StepSound stepSoundSoulSand = new DecoStepSound("soulsand", 1, 1, "stone", Block.soundSandFootstep.getVolume(), Block.soundSandFootstep.getPitch());
+	public static final StepSound stepSoundSoulSand = new DecoStepSound("soulsand", 1, 1, "sand", Block.soundSandFootstep.getVolume(), Block.soundSandFootstep.getPitch());
 	public static final StepSound stepSoundSteel = new DecoStepSound("soulsteel", 1.5F, 1, "stone", Block.soundMetalFootstep.getVolume(), Block.soundMetalFootstep.getPitch());
 	public static final StepSound stepSoundVine = new DecoStepSoundVine(1, 1);
 	public static final StepSound stepSoundBloodLog = new DecoStepSound("bloodLog", 1, 1, "wood", Block.soundWoodFootstep.getVolume(), Block.soundWoodFootstep.getPitch());

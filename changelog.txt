@@ -1,21 +1,44 @@
+Todo:
+Tweak magma creation
+Change stained glass back to blocks
+
+Issues:
+Grass does not spread on darkness
+Grass snow side gets colored
+Benches do not have wider leg
+Occasionally walls will not update when they should show or not show a post. Updating any nearby block fixes this.
+Hedge subblocks do not always show the right color on the item.
+Issues rendering the right metadata on flower pots. [MCPatcher only]
+Glass pane ctm is broken. [MCPatcher only]
+Walls connected to two panes on opposite sides still have posts.
+Walls connected to panes which have a wall above them do not render full height connections.
+Loose stone variant slabs display as granite while falling [MCPatcher only]
+Missing dye combo recipes using white dye
+Item frame map z-fighting
+Shift clicking into a workbench creates ghost items.
+Flowers pop off in darkness but only after a block update. [Vanilla behavior but I intend to fix it]
+New block sounds, except for mining, are silent in multiplayer for clients who do not have new sounds installed.
+Strange behavior with other items being renamed when using a workbench.
+Slabs do not use custom sounds.
+
 Version 2.13
-I lost most of the data on my PC between this version and the last. While the source code for deco was safe on github, I did lose the old changelog. I've tried to reconstruct it from memory but there is a high likelihood that some changes or fixes present in this version are not listed in the changelog.
+I lost most of the data on my PC between this version and the last. While the source code for deco was safe on github, I did lose the old changelog (new changelog is backed up on github now). I've tried to reconstruct it from memory but there is a high likelihood that some changes or fixes present in this version are not listed in the changelog.
 THIS VERSION WILL REQUIRE A CLEAN INSTALL
 [list]
 [*]Refactored the addon to use Dawn's Library. This is provided as a separate download.
 [*]Refactored file prefix to "Deco" rather than "Addon" for clarity.
-[*]Refactored texture names to make them more consistent, following BTW's naming scheme and removing ginger_ as the prefix, as that was largely a relic from taking over development from Yhetti. This means texture packs will need to update to use the new file names.
+[*]Refactored texture names to make them more consistent, following BTW's naming scheme and removing ginger_ as the prefix, as that (along with the aforementioned file prefix) was largely a relic from taking over development from Yhetti. This means texture packs will need to update to use the new file names.
 [*]Added localization support to deco. Included with the addon in the lang folder is the file Deco_en_US.lang, which contains all english translations for the addon. Anyone who wishes to make and distribute translations is free to do so, and I will include it here if you link it.
-[*]Added iron trapdoors, crafted with 4 iron ingots and 2 redstone latches, producing 2.
+[*]Added iron trapdoors, crafted with 4 iron ingots and 2 redstone latches, producing 2. They work just like iron doors and will only respond to redstone signals.
 [*]Changed grass to not die while in darkness in order to facilitate its decorative use and to prevent ugly dirt under overhangs or dense trees. However, to maintain balance, animals may not eat from grass without sunlight, and the texture updates slightly to reflect this.
-[*]Changed terracotta to break into 8 sand piles when broken with an iron pick or lower.
+[*]Changed terracotta to break into 8 sand piles when broken with an iron pick or lower. This and the below change were done for balance with my world gen addon.
 [*]Changed stone variants to drop their loose cobblestone variant when broken with an iron pick or lower.
 [*]Changed (increased) the hardness and blast resistance of terracotta.
 [*]Changed doors to stack to 16.
 [*]Changed trapdoors above ladders to only be climbable if the trapdoor is attached to the same face as the ladder.
 [*]Changed chair collision and selection box to better match the model.
 [*]Changed coarse dirt to be able to grow reeds, flowers, and other plants.
-[*]Changed rendering on tables to have a wider leg if the block type uses walls to match the thickness of the walls.
+[*]Changed rendering on tables to have a wider leg if the block type uses walls instead of fences to match the thickness of the walls.
 [*]Changed the texture on polished stone, polished stone variant, polished infused stone, cut sandstone, and cut red sandstone columns.
 [*]Changed the name of several items and blocks slightly to be more consistent.
 [*]Refactored loose slab code to simplify the related code and assimilate it into the main slab code.
@@ -29,6 +52,8 @@ THIS VERSION WILL REQUIRE A CLEAN INSTALL
 [*]Fixed an issue where normal loose nether brick slabs were named loose red nether brick slabs.
 [*]Fixed an issue where terracotta subblocks made wood sounds.
 [*]Fixed an issue where most addon tables would not connect to walls below them.
-[*]Fixed an issue where painted planks stairs were not available in the creative menu.
-[*]Fixed (hopefully) an issue where servers would incorrectly display an error message that the addon was not installed properly if the client was on a high latency connection. Let me know if this still happens as this simply involved increasing the amount of time the server would wait for the client to acknowledge from 1 second to 2.5.
+[*]Fixed an issue where painted plank stairs were not available in the creative menu.
+[*]Fixed an issue where placing a slab against a top slab would crash the game.
+[*]Fixed an issue where soul sand used the stone sound for clients without new sounds installed.
+[*]Fixed (hopefully) an issue where servers would incorrectly display an error message that the addon was not installed properly if the client was on a high latency connection. Let me know if this still happens as this simply involved increasing the amount of time the server would wait for the client to acknowledge from 1 second to 2.5. This functionality was also moved to Dawn's library to allow other addons using the library to access this code.
 [/lst]

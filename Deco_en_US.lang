@@ -135,6 +135,7 @@ tile.decoBlockLanternPaper=Paper Lantern
 tile.decoBlockLanternIron=Wrought Iron Lantern
 
 # Deco Complex Blocks
+
 tile.decoBlockTerracottaStained.black.name=Black Stained Terracotta
 tile.decoBlockTerracottaStained.red.name=Red Stained Terracotta
 tile.decoBlockTerracottaStained.green.name=Green Stained Terracotta

@@ -20,7 +20,7 @@ public class DecoBlockGrass extends FCBlockGrass {
             {
                 world.setBlock(x, y, z, Block.dirt.blockID);
             }
-            else if (world.getBlockLightValue(x, y + 1, z) >= 9 && (blockAbove == null || blockAbove.GetCanGrassGrowUnderBlock(world, x, y + 1, z, false)))
+            else if ((world.getBlockLightValue(x, y + 1, z) >= 9 || world.GetBlockNaturalLightValue(x, y + 1, z) >= 9) && (blockAbove == null || blockAbove.GetCanGrassGrowUnderBlock(world, x, y + 1, z, false)))
             {
                 CheckForGrassSpreadFromLocation(world, x, y, z);
             }
@@ -91,6 +91,6 @@ public class DecoBlockGrass extends FCBlockGrass {
     	else
     		skylight = 9;
     	
-        return side == 1 ? (skylight >= 9 ? this.iconGrassTop : this.iconGrassTopRough) : (side == 0 ? Block.dirt.getBlockTextureFromSide(side) : (this.m_bTempHasSnowOnTop ? this.iconSnowSide : this.blockIcon));
+        return side == 1 ? (skylight >= 9 ? this.iconGrassTop : this.iconGrassTopRough) : this.getIcon(side, world.getBlockMetadata(x,  y,  z));
     }
 }
