@@ -14,7 +14,7 @@ public class DecoBlockPergola extends Block {
 		this.setCreativeTab(CreativeTabs.tabDecorations);
 		this.InitBlockBounds(this.GetBlockBoundsFromPool());
 		this.setUnlocalizedName("decoBlockPergola");
-		this.InitBlockBounds(0, 0, 0, 1, ((DecoModelBlockPergola) blockModel).blockHeight, 1);
+		this.InitBlockBounds(0, 0, 0, 1, 0.5, 1);
 	}
 
     /**

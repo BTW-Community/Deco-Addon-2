@@ -304,8 +304,8 @@ public class DecoBlockWall extends FCBlockWall {
 		}
 
 		//Both parts of connection need to satisfy requirements for a full height wall, or the wall needs to be connecting to a pane
-		return (DecoUtilsBlock.isWall(idAboveOffset, metaAboveOffset) || solidSurfaceOffset || (solidSide && (!paneAbove || canPaneAboveConnectToFacing)) || paneAboveOffset) //Checks offsets
-				&& (DecoUtilsBlock.isWall(idAbove, metaAbove) || solidSurface || (paneAbove && canPaneAboveConnectToFacing)) //Checks block above
+		return (DecoUtilsBlock.isWall(idAboveOffset, metaAboveOffset) || DecoUtilsBlock.isBenchOrTable(idAboveOffset, metaAboveOffset) || solidSurfaceOffset || (solidSide && (!paneAbove || canPaneAboveConnectToFacing)) || paneAboveOffset) //Checks offsets
+				&& (DecoUtilsBlock.isWall(idAbove, metaAbove) || DecoUtilsBlock.isBenchOrTable(idAbove, metaAbove) || solidSurface || (paneAbove && canPaneAboveConnectToFacing)) //Checks block above
 				|| paneToSide;
 	}
 

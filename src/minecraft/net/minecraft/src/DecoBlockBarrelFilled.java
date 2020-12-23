@@ -38,7 +38,7 @@ public class DecoBlockBarrelFilled extends Block {
     	int meta = var1.getBlockMetadata(var2, var3, var4);
     	
         this.DropItemsIndividualy(var1, var2, var3, var4, FCBetterThanWolves.fcItemSawDust.itemID, 2, 0, var6);
-        this.DropItemsIndividualy(var1, var2, var3, var4, types[meta].itemID, 8, 0, var6);
+        this.DropItemsIndividualy(var1, var2, var3, var4, types[var5].itemID, 8, 0, var6);
         return true;
     }
 

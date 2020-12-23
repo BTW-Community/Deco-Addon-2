@@ -315,8 +315,8 @@ public class DecoBlockSidingAndCornerDecorativeWall extends DecoBlockSidingAndCo
 		}
 
 		//Both parts of connection need to satisfy requirements for a full height wall, or the wall needs to be connecting to a pane
-		return (DecoUtilsBlock.isWall(idAboveOffset, metaAboveOffset) || solidSurfaceOffset || (solidSide && (!paneAbove || canPaneAboveConnectToFacing)) || paneAboveOffset) //Checks offsets
-				&& (DecoUtilsBlock.isWall(idAbove, metaAbove) || solidSurface || (paneAbove && canPaneAboveConnectToFacing)) //Checks block above
+		return (DecoUtilsBlock.isWall(idAboveOffset, metaAboveOffset) || DecoUtilsBlock.isBenchOrTable(idAboveOffset, metaAboveOffset) || solidSurfaceOffset || (solidSide && (!paneAbove || canPaneAboveConnectToFacing)) || paneAboveOffset) //Checks offsets
+				&& (DecoUtilsBlock.isWall(idAbove, metaAbove) || DecoUtilsBlock.isBenchOrTable(idAbove, metaAbove) || solidSurface || (paneAbove && canPaneAboveConnectToFacing)) //Checks block above
 				|| paneToSide;
 	}
 
@@ -353,6 +353,38 @@ public class DecoBlockSidingAndCornerDecorativeWall extends DecoBlockSidingAndCo
 		int var6 = var5.getBlockMetadata(var2, var3, var4);
 		return var6 == 12 ? RenderBench(var1, var5, var2, var3, var4, this) : (var6 == 14 ? this.renderBlockFence(var1, var2, var3, var4) : super.RenderBlock(var1, var2, var3, var4));
 	}
+    
+    public static boolean RenderBench(RenderBlocks renderBlocks, IBlockAccess blockAccess, int x, int y, int z, Block block)
+    {
+    	DecoBlockSidingAndCornerDecorativeWall blockSiding = (DecoBlockSidingAndCornerDecorativeWall)block;
+        renderBlocks.setRenderBounds(0.0D, 0.375D, 0.0D, 1.0D, 0.5D, 1.0D);
+        renderBlocks.renderStandardBlock(block, x, y, z);
+
+        if (blockSiding.DoesBenchHaveLeg(blockAccess, x, y, z))
+        {
+            renderBlocks.setRenderBounds(0.25D, 0.0D, 0.25D, 0.75D, 0.375D, 0.75D);
+            renderBlocks.renderStandardBlock(block, x, y, z);
+            
+            if (blockSiding.DoesBenchHaveLeg(blockAccess, x - 1, y, z) && Block.blocksList[blockAccess.getBlockId(x - 1, y, z)] instanceof DecoBlockSidingAndCornerDecorativeWall && blockAccess.getBlockMetadata(x - 1, y, z) == 12) {
+                renderBlocks.setRenderBounds(0.25D, 0.0D, 0.6875D, 0D, 0.375D, 0.3125D);
+                renderBlocks.renderStandardBlock(block, x, y, z);
+            }
+            if (blockSiding.DoesBenchHaveLeg(blockAccess, x, y, z - 1) && Block.blocksList[blockAccess.getBlockId(x, y, z - 1)] instanceof DecoBlockSidingAndCornerDecorativeWall && blockAccess.getBlockMetadata(x, y, z - 1) == 12) {
+                renderBlocks.setRenderBounds(0.6875D, 0.0D, 0.25D, 0.3125D, 0.375D, 0D);
+                renderBlocks.renderStandardBlock(block, x, y, z);
+            }
+            if (blockSiding.DoesBenchHaveLeg(blockAccess, x + 1, y, z) && Block.blocksList[blockAccess.getBlockId(x + 1, y, z)] instanceof DecoBlockSidingAndCornerDecorativeWall && blockAccess.getBlockMetadata(x + 1, y, z) == 12) {
+                renderBlocks.setRenderBounds(1D, 0.0D, 0.6875D, 0.75D, 0.375D, 0.3125D);
+                renderBlocks.renderStandardBlock(block, x, y, z);
+            }
+            if (blockSiding.DoesBenchHaveLeg(blockAccess, x, y, z + 1) && Block.blocksList[blockAccess.getBlockId(x, y, z + 1)] instanceof DecoBlockSidingAndCornerDecorativeWall && blockAccess.getBlockMetadata(x, y, z + 1) == 12) {
+                renderBlocks.setRenderBounds(0.6875D, 0.0D, 1D, 0.3125D, 0.375D, 0.75D);
+                renderBlocks.renderStandardBlock(block, x, y, z);
+            }
+        }
+
+        return true;
+    }
 
 	public boolean renderBlockFence(RenderBlocks render, int x, int y, int z) {
 		boolean post = wallHasPost(render.blockAccess, x, y, z, true, true);

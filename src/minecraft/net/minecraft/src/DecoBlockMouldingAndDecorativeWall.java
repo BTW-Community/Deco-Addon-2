@@ -90,19 +90,19 @@ public class DecoBlockMouldingAndDecorativeWall extends FCBlockMouldingAndDecora
             renderBlocks.setRenderBounds(0.25D, 0.0D, 0.25D, 0.75D, 0.875D, 0.75D);
             renderBlocks.renderStandardBlock(block, x, y, z);
             
-            if (blockMoulding.DoesTableHaveLeg(blockAccess, x - 1, y, z) && Block.blocksList[blockAccess.getBlockId(x - 1, y, z)] instanceof DecoBlockMouldingAndDecorativeWall) {
+            if (blockMoulding.DoesTableHaveLeg(blockAccess, x - 1, y, z) && Block.blocksList[blockAccess.getBlockId(x - 1, y, z)] instanceof DecoBlockMouldingAndDecorativeWall && blockAccess.getBlockMetadata(x - 1, y, z) == 15) {
                 renderBlocks.setRenderBounds(0.25D, 0.0D, 0.6875D, 0D, 0.875D, 0.3125D);
                 renderBlocks.renderStandardBlock(block, x, y, z);
             }
-            if (blockMoulding.DoesTableHaveLeg(blockAccess, x, y, z - 1) && Block.blocksList[blockAccess.getBlockId(x, y, z - 1)] instanceof DecoBlockMouldingAndDecorativeWall) {
+            if (blockMoulding.DoesTableHaveLeg(blockAccess, x, y, z - 1) && Block.blocksList[blockAccess.getBlockId(x, y, z - 1)] instanceof DecoBlockMouldingAndDecorativeWall && blockAccess.getBlockMetadata(x, y, z - 1) == 15) {
                 renderBlocks.setRenderBounds(0.6875D, 0.0D, 0.25D, 0.3125D, 0.875D, 0D);
                 renderBlocks.renderStandardBlock(block, x, y, z);
             }
-            if (blockMoulding.DoesTableHaveLeg(blockAccess, x + 1, y, z) && Block.blocksList[blockAccess.getBlockId(x + 1, y, z)] instanceof DecoBlockMouldingAndDecorativeWall) {
+            if (blockMoulding.DoesTableHaveLeg(blockAccess, x + 1, y, z) && Block.blocksList[blockAccess.getBlockId(x + 1, y, z)] instanceof DecoBlockMouldingAndDecorativeWall && blockAccess.getBlockMetadata(x + 1, y, z) == 15) {
                 renderBlocks.setRenderBounds(1D, 0.0D, 0.6875D, 0.75D, 0.875D, 0.3125D);
                 renderBlocks.renderStandardBlock(block, x, y, z);
             }
-            if (blockMoulding.DoesTableHaveLeg(blockAccess, x, y, z + 1) && Block.blocksList[blockAccess.getBlockId(x, y, z + 1)] instanceof DecoBlockMouldingAndDecorativeWall) {
+            if (blockMoulding.DoesTableHaveLeg(blockAccess, x, y, z + 1) && Block.blocksList[blockAccess.getBlockId(x, y, z + 1)] instanceof DecoBlockMouldingAndDecorativeWall && blockAccess.getBlockMetadata(x, y, z + 1) == 15) {
                 renderBlocks.setRenderBounds(0.6875D, 0.0D, 1D, 0.3125D, 0.875D, 0.75D);
                 renderBlocks.renderStandardBlock(block, x, y, z);
             }

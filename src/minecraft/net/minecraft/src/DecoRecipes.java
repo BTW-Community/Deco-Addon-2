@@ -106,8 +106,8 @@ public class DecoRecipes {
 		FCRecipes.AddRecipe(new ItemStack(Item.glassBottle, 3), new Object[] {" # ", "# #", "###", '#', DecoDefs.glassChunk});
 		FCRecipes.AddStokedCrucibleRecipe(new ItemStack(DecoDefs.glassChunk, 2), new ItemStack[] {new ItemStack(Item.glassBottle, 1)});
 
-		for (int Index = 0; Index < 32; Index++) {
-			FCRecipes.AddCauldronRecipe(new ItemStack(DecoDefs.stainedGlassItem, 8, Index % 16), new ItemStack[] {new ItemStack(Block.glass, 8), new ItemStack(Item.dyePowder, 1, Index)});
+		for (int i = 0; i < 32; i++) {
+			FCRecipes.AddCauldronRecipe(new ItemStack(DecoDefs.stainedGlassItem, 8, i % 16), new ItemStack[] {new ItemStack(Block.glass, 8), new ItemStack(Item.dyePowder, 1, i)});
 		}
 
 		FCRecipes.AddCauldronRecipe(new ItemStack(DecoDefs.stainedGlassItem, 8, 3), new ItemStack[] {new ItemStack(Block.glass, 8), new ItemStack(FCBetterThanWolves.fcItemDung)});
@@ -168,12 +168,9 @@ public class DecoRecipes {
 		FCRecipes.AddMillStoneRecipe(new ItemStack[]{new ItemStack(Item.dyePowder, 2, 20)},	new ItemStack[]{new ItemStack(DecoDefs.tulip, 1, 4)});
 
 		//Cooking with dyes
-		for (int Index = 0; Index < 16; Index++)
+		for (int i = 0; i < 16; i++)
 		{
-			FCRecipes.AddStokedCauldronRecipe(new ItemStack(Block.cloth,1,BlockCloth.getDyeFromBlock(Index)),
-					new ItemStack[]{new ItemStack(Item.dyePowder,1,Index+16),new ItemStack(Item.itemsList[Block.cloth.blockID], 1,0)});
-			//FCRecipes.AddRecipe(new ItemStack(stainedGlassPane, 16, Index), new Object[] { "GGG", "GGG", 'G', new ItemStack(stainedGlass, 1, Index) });
-			//FCRecipes.AddStokedCrucibleRecipe(new ItemStack(stainedGlass, 3, Index), new ItemStack[] { new ItemStack(stainedGlassPane, 8, Index) });
+			FCRecipes.AddCauldronRecipe(new ItemStack(Block.cloth,1,BlockCloth.getDyeFromBlock(i)), new ItemStack[]{new ItemStack(Item.dyePowder,1,i+16),new ItemStack(Item.itemsList[Block.cloth.blockID], 1,0)});
 		}
 		//Mixing dyes
 		FCRecipes.AddShapelessRecipe(new ItemStack(Item.dyePowder, 2, 10), new Object[] {new ItemStack(Item.dyePowder, 1, 2), new ItemStack(Item.dyePowder, 1, 31)});
@@ -915,6 +912,11 @@ public class DecoRecipes {
        	FCRecipes.RemoveVanillaRecipe(new ItemStack(FCBetterThanWolves.fcAestheticOpaque, 1, 6), new Object[] {"###", "###", "###", '#', FCBetterThanWolves.fcItemRope});
        	DecoManager.MakeStorage(FCBetterThanWolves.fcItemRope, DecoDefs.ropeCoil);
        	DecoManager.MakeStorage(DecoDefs.chainItem, DecoDefs.chainCoil);
+       	
+       	//Spider eyes
+       	FCRecipes.AddRecipe(new ItemStack(DecoDefs.spiderEyeSlab), new Object[] {"###", '#', DecoDefs.spiderEyeBlock});
+       	FCRecipes.AddShapelessRecipe(new ItemStack(Item.spiderEye, 16), new ItemStack[] {new ItemStack(DecoDefs.spiderEyeBlock)});
+       	FCRecipes.AddShapelessRecipe(new ItemStack(Item.spiderEye, 8), new ItemStack[] {new ItemStack(DecoDefs.spiderEyeSlab)});
 	}
 	
 	private void addLayerRecipes() {

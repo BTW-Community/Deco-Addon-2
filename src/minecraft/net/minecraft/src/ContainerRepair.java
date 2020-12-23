@@ -445,9 +445,9 @@ public class ContainerRepair extends Container
     {
         this.repairedItemName = par1Str;
 
-        if (this.getSlot(2).getHasStack())
+        if (this.getSlot(1).getHasStack())
         {
-            this.getSlot(2).getStack().setItemName(this.repairedItemName);
+            this.getSlot(1).getStack().setItemName(this.repairedItemName);
         }
 
         this.updateRepairOutput();

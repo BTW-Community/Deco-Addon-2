@@ -318,9 +318,10 @@ public class DecoDefs {
 		id_acaciaSidingAndCorner=3493,
 		id_acaciaMouldingAndDecorative=3494,
 		id_autumnLeaves=3495,
-		
-		id_placedBottle=3500,
 	
+		id_spiderEyeBlock=3500,
+		id_spiderEyeSlab=3501,
+		
 		id_layerDirt=3550,
 		id_layerGrass=3551,
 		id_layerGravel=3552,
@@ -523,7 +524,7 @@ public class DecoDefs {
 	public static Block nylium;
 	public static Block stemCrimson, stemWarped, stemDamagedCrimson, stemDamagedWarped, stemSpikeCrimson, stemSpikeWarped, wartBlock;
 	public static Block netherRoots, netherVines;
-	public static Block placedBottle;
+	public static Block spiderEyeBlock, spiderEyeSlab;
 
 	//Ground Cover
 	public static Block layerDirt, layerGrass, layerGravel, layerSand, layerRedSand, layerCoarseDirt, layerPodzol, layerPackedEarth, layerDirtLoose;
@@ -675,6 +676,7 @@ public class DecoDefs {
 		DecoManager.installResource("step/groth4");
 		DecoManager.installResource("step/groth5");
 		
+		/*
 		DecoManager.installResource("dig/nylium1");
 		DecoManager.installResource("dig/nylium2");
 		DecoManager.installResource("dig/nylium3");
@@ -687,6 +689,7 @@ public class DecoDefs {
 		DecoManager.installResource("step/nylium4");
 		DecoManager.installResource("step/nylium5");
 		DecoManager.installResource("step/nylium6");
+		*/
 
 		DecoManager.installResource("random/doorClose1");
 		DecoManager.installResource("random/doorClose2");
@@ -869,6 +872,7 @@ public class DecoDefs {
 	private void addGlassDefs() {
 		glassChunk = new Item(id_glassChunk).setCreativeTab(CreativeTabs.tabMaterials).SetFilterableProperties(2).setUnlocalizedName("decoItemGlassPiece");
 		glassStained = new DecoBlockGlassStained(id_glassStained);
+		DecoManager.Register(glassStained);
 		stainedGlassItem = (DecoItemGlassStained) new DecoItemGlassStained(id_glassStainedItem).setUnlocalizedName("decoItemStainedGlass");
 	}
 
@@ -1876,6 +1880,14 @@ public class DecoDefs {
 		DawnUtilsReflection.replaceVanillaBlock("tallGrass", Block.tallGrass, tallGrass);
 		Item.itemsList[tallGrass.blockID] = (new ItemColored(tallGrass.blockID - 256, true)).setBlockNames(new String[] {"shrub", "grass", "fern"});
 		
+		//Spider eyes
+		Item spiderEye = new DecoItemSpiderEye(Item.spiderEye.itemID - 256);
+		DawnUtilsReflection.replaceVanillaItem("spiderEye", Item.spiderEye, spiderEye);
+		spiderEyeBlock = new DecoBlockSpiderEye(id_spiderEyeBlock);
+		DecoManager.Register(spiderEyeBlock);
+		spiderEyeSlab = new DecoBlockSpiderEyeSlab(id_spiderEyeSlab);
+		DecoManager.Register(spiderEyeSlab);
+		
 		//Bottles
 		//placedBottle = new DecoBlockPlacedBottle(id_placedBottle);
 		//DecoManager.Register(placedBottle);
@@ -2055,5 +2067,6 @@ public class DecoDefs {
 		DawnUtilsReflection.registerItemObfuscationMappping("itemFrame", "bJ");
 		DawnUtilsReflection.registerItemObfuscationMappping("painting", "at");
 		DawnUtilsReflection.registerItemObfuscationMappping("doorIron", "aC");
+		DawnUtilsReflection.registerItemObfuscationMappping("spiderEye", "bv");
 	}
 }

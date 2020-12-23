@@ -133,6 +133,8 @@ tile.decoBlockCoarseDirt.name=Coarse Dirt
 tile.decoBlockCoarseDirtSlab.name=Coarse Dirt Slab
 tile.decoBlockLanternPaper=Paper Lantern
 tile.decoBlockLanternIron=Wrought Iron Lantern
+tile.decoBlockSpiderEye=Block of Spider Eyes
+tile.decoBlockSpiderEyeSlab=Spider Eye Slab
 
 # Deco Complex Blocks
 
@@ -1645,3 +1647,4 @@ item.bootsDiamond.name=Diamondium Boots
 
 # Container
 
+container.repair.name=Name Items

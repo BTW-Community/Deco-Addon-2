@@ -134,6 +134,10 @@ public class DecoUtilsBlock {
 		return blockID == Block.cobblestoneWall.blockID || (Block.blocksList[blockID] instanceof DecoBlockSidingAndCornerDecorativeWall && metadata == 14);
 	}
 	
+	public static boolean isBenchOrTable(int blockID, int metadata) {
+		return Block.blocksList[blockID] instanceof DecoBlockSidingAndCornerDecorativeWall && metadata == 12 || Block.blocksList[blockID] instanceof DecoBlockMouldingAndDecorativeWall && metadata == 15;
+	}
+	
 	public static boolean isPane(int blockID) {
 		return Block.blocksList[blockID] instanceof BlockPane;
 	}
