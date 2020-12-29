@@ -5,6 +5,14 @@ public class DecoBlockDoorIron extends FCBlockDoor {
 		super(id, Material.iron);
 	}
 
+	/**
+	 * Called upon block activation (right click on the block.)
+	 */
+	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int par6, float par7, float par8, float par9)
+	{
+		return false;
+	}
+
     /**
      * A function to open a door.
      */

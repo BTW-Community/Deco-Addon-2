@@ -131,10 +131,10 @@ tile.decoBlockRopeCoil.name=Coil of Rope
 tile.decoBlockChainCoil.name=Coil of Chain
 tile.decoBlockCoarseDirt.name=Coarse Dirt
 tile.decoBlockCoarseDirtSlab.name=Coarse Dirt Slab
-tile.decoBlockLanternPaper=Paper Lantern
-tile.decoBlockLanternIron=Wrought Iron Lantern
-tile.decoBlockSpiderEye=Block of Spider Eyes
-tile.decoBlockSpiderEyeSlab=Spider Eye Slab
+tile.decoBlockLanternPaper.name=Paper Lantern
+tile.decoBlockLanternIron.name=Wrought Iron Lantern
+tile.decoBlockSpiderEye.name=Block of Spider Eyes
+tile.decoBlockSpiderEyeSlab.name=Spider Eye Slab
 
 # Deco Complex Blocks
 
@@ -408,6 +408,7 @@ tile.decoBlockFlower.rosebush.name=Rose Bush
 tile.decoBlockFlower.roseBlue=Blue Rose
 
 tile.decoBlockFlower2.blackRose.name=Black Rose
+tile.decoBlockFlower2.lilyOfTheValley=Lily of the Valley
 
 tile.decoBlockTulip.red.name=Red Tulip
 tile.decoBlockTulip.pink.name=Pink Tulip

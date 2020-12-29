@@ -10,30 +10,23 @@ public class DecoBlockTrapDoor extends FCBlockTrapDoor {
 		this.setUnlocalizedName("trapdoor");
 	}
 
-    /**
-     * Called upon block activation (right click on the block.)
-     */
-    public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int par6, float par7, float par8, float par9)
-    {
-        if (this.blockMaterial == Material.iron)
-        {
-            return true;
-        }
-        else
-        {
-            int var10 = world.getBlockMetadata(x, y, z);
-            world.setBlockMetadataWithNotify(x, y, z, var10 ^ 4);
-            
-            if (!world.isRemote) {
-            	if ((var10 < 4) || (var10 >= 8 && var10 < 12))
-            		world.playAuxSFX(DecoManager.decoTrapdoorOpenAuxFXID, x, y, z, 0);
-            	else
-            		world.playAuxSFX(DecoManager.decoTrapdoorCloseAuxFXID, x, y, z, 0);
-            }
-            
-            return true;
-        }
-    }
+	/**
+	 * Called upon block activation (right click on the block.)
+	 */
+	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int par6, float par7, float par8, float par9)
+	{
+		int var10 = world.getBlockMetadata(x, y, z);
+		world.setBlockMetadataWithNotify(x, y, z, var10 ^ 4);
+
+		if (!world.isRemote) {
+			if ((var10 < 4) || (var10 >= 8 && var10 < 12))
+				world.playAuxSFX(DecoManager.decoTrapdoorOpenAuxFXID, x, y, z, 0);
+			else
+				world.playAuxSFX(DecoManager.decoTrapdoorCloseAuxFXID, x, y, z, 0);
+		}
+
+		return true;
+	}
 
 	/**
 	 * Called when a block is placed using its ItemBlock. Args: World, X, Y, Z, side, hitX, hitY, hitZ, block metadata
@@ -112,16 +105,16 @@ public class DecoBlockTrapDoor extends FCBlockTrapDoor {
 	{
 		return (var1.getBlockId(var2, var3 - 1, var4) == FCBetterThanWolves.fcBlockLadder.blockID || var1.getBlockId(var2, var3 - 1, var4) == FCBetterThanWolves.fcBlockLadderOnFire.blockID) && var1.getBlockMetadata(var2, var3 - 1, var4) == (var1.getBlockMetadata(var2, var3, var4) & 3);
 	}
-	
+
 	public boolean GetCanGrassGrowUnderBlock(World world, int x, int y, int z, boolean var5) {
 		return true;
 	}
-	
+
 	@Override
-    public boolean HasLargeCenterHardPointToFacing(IBlockAccess blockAccess, int x, int y, int z, int facing, boolean var6) {
+	public boolean HasLargeCenterHardPointToFacing(IBlockAccess blockAccess, int x, int y, int z, int facing, boolean var6) {
 		int metadata = blockAccess.getBlockMetadata(x,  y,  z);
 		int facingOpposite = Facing.oppositeSide[facing];
-		
+
 		switch (facingOpposite) {
 		case 0:
 			return metadata >= 8 && metadata < 12;

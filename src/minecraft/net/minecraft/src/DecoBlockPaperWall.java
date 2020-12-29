@@ -4,7 +4,7 @@ public class DecoBlockPaperWall extends DecoBlockPane
 {
 	public DecoBlockPaperWall(int ID)
 	{
-		super(ID, "decoBlockPaperWall_top", "decoBlockPaperWall", Material.wood, true);
+		super(ID, "decoBlockPaperWall", "decoBlockPaperWall_top", Material.wood, true);
 		setHardness(0.3F);
 		setResistance(1.0F);
 		setStepSound(Block.soundWoodFootstep);

@@ -317,7 +317,9 @@ public class DecoDefs {
 		id_acaciaLogSpike=3492,
 		id_acaciaSidingAndCorner=3493,
 		id_acaciaMouldingAndDecorative=3494,
-		id_autumnLeaves=3495,
+		id_acaciaSpaling=3495,
+		id_autmnSapling=3496,
+		id_autmnLeaves=3497,
 	
 		id_spiderEyeBlock=3500,
 		id_spiderEyeSlab=3501,
@@ -901,11 +903,11 @@ public class DecoDefs {
 		recipes.add(new DecoRecipeFireworksColor());
 		
 		flower = new DecoBlockFlowers(id_flower, "decoBlockFlower", 16);
-		flower2 = new DecoBlockFlowers(id_flower2, "decoBlockFlower2", 1);
+		flower2 = new DecoBlockFlowers(id_flower2, "decoBlockFlower2", 2);
 		tulip = new DecoBlockFlowers(id_tulip, "decoBlockTulip", 5);
 		
 		Item.itemsList[flower.blockID] = new DecoItemBlockMulti(flower, new String[] {"yucca", "hyacinth", "birdsParadise", "azalea", "cornflower", "lavender", "honeysuckle","allium", "orchidBlue", "poppy", "azureBluet", "daisy", "peony","lilac","rosebush", "roseBlue"});
-		Item.itemsList[flower2.blockID] = new DecoItemBlockMulti(flower2, new String[] {"blackRose"});
+		Item.itemsList[flower2.blockID] = new DecoItemBlockMulti(flower2, new String[] {"blackRose", "lilyOfTheValley"});
 		Item.itemsList[tulip.blockID] = new DecoItemBlockMulti(tulip, new String[] {"red","pink", "orange", "white", "blue"});
 
 		fertilizer = new DecoItemFertilizer(id_fertilizer);
@@ -1660,6 +1662,8 @@ public class DecoDefs {
 		//Lanterns
 		paperWall = new DecoBlockPaperWall(id_paperWall);
 		fenceSteel = new DecoBlockWroughtBars(id_fenceSteel);
+		DecoManager.Register(fenceSteel);
+		DecoManager.Register(paperWall);
 
 		lanternPaper = new DecoBlockLantern(id_lanternPaper,Material.wood,.3F,"Paper",true);
 		lanternPaper.SetAxesEffectiveOn(true);
@@ -1774,11 +1778,13 @@ public class DecoDefs {
 		DecoManager.Register(buttonSandstone);
 		DecoManager.Register(buttonRedSandstone);
 
-		//Cherry Tree
+		//Trees
 		cherrySapling = new DecoBlockSaplingCherry(id_cherrySapling);
 		DecoManager.Register(cherrySapling);
 		cherryLeaves = new DecoBlockLeavesCherry(id_cherryLeaves);
 		DecoManager.Register(cherryLeaves);
+		
+		
 
 		//Leaves, vines, and webs
 		Block leaves = new DecoBlockLeaves(DecoManager.ReplaceBlockID(Block.leaves));
@@ -1887,10 +1893,6 @@ public class DecoDefs {
 		DecoManager.Register(spiderEyeBlock);
 		spiderEyeSlab = new DecoBlockSpiderEyeSlab(id_spiderEyeSlab);
 		DecoManager.Register(spiderEyeSlab);
-		
-		//Bottles
-		//placedBottle = new DecoBlockPlacedBottle(id_placedBottle);
-		//DecoManager.Register(placedBottle);
 
 		//Fluids
 		BlockFluid waterStill = (BlockFluid) new DecoBlockWaterStationary(DecoManager.ReplaceBlockID(Block.waterStill), Material.water).setHardness(100.0F).setLightOpacity(3).setUnlocalizedName("water").disableStats();
@@ -1925,6 +1927,8 @@ public class DecoDefs {
 
 		//Allows custom saw recipes
 		FCBetterThanWolves.fcSaw = new DecoBlockSaw((FCBlockSaw) FCBetterThanWolves.fcSaw, DecoManager.ReplaceBlockID(FCBetterThanWolves.fcSaw));
+		
+		FCBetterThanWolves.fcBlockDispenser = new DecoBlockBlockDispenser(DecoManager.ReplaceBlockID(FCBetterThanWolves.fcBlockDispenser));
 
 		//Hopper
 		//FCBetterThanWolves.fcHopper = new AddonBlockHopper(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcHopper));

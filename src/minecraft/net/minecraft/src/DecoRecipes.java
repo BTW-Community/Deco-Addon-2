@@ -122,7 +122,7 @@ public class DecoRecipes {
 		}
 
 		//Fertilizer
-		FCRecipes.AddShapelessRecipe(new ItemStack(DecoDefs.fertilizer, 2), new ItemStack[] {new ItemStack(Item.dyePowder, 1, 15), new ItemStack(FCBetterThanWolves.fcItemDung)});
+		FCRecipes.AddCauldronRecipe(new ItemStack(DecoDefs.fertilizer, 2), new ItemStack[] {new ItemStack(Item.dyePowder, 1, 15), new ItemStack(FCBetterThanWolves.fcItemDung)});
 
 		//Flower Recipes
 

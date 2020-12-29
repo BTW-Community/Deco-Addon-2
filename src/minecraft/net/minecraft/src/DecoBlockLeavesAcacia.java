@@ -3,13 +3,13 @@ package net.minecraft.src;
 import java.util.List;
 import java.util.Random;
 
-public class DecoBlockLeavesCherry extends BlockLeavesBase
+public class DecoBlockLeavesAcacia extends BlockLeavesBase
 {
     private int field_94394_cP;
     private Icon[][] iconArray = new Icon[2][];
     int[] adjacentTreeBlocks;
 
-    protected DecoBlockLeavesCherry(int par1)
+    protected DecoBlockLeavesAcacia(int par1)
     {
         super(par1, DecoDefs.materialHedge, false);
         this.setTickRandomly(true);
@@ -20,7 +20,7 @@ public class DecoBlockLeavesCherry extends BlockLeavesBase
         this.setLightOpacity(1);
         this.SetFireProperties(FCEnumFlammability.LEAVES);
         this.setStepSound(soundGrassFootstep);
-        this.setUnlocalizedName("decoBlockLeavesCherry");
+        this.setUnlocalizedName("decoBlockLeavesAcacia");
     }
 
     public float GetMovementModifier(World var1, int var2, int var3, int var4)

@@ -9,6 +9,14 @@ public class DecoBlockTrapDoorIron extends DecoBlockTrapDoor {
 		this.setStepSound(soundMetalFootstep);
 	}
 
+	/**
+	 * Called upon block activation (right click on the block.)
+	 */
+	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int par6, float par7, float par8, float par9)
+	{
+		return false;
+	}
+
     public void onPoweredBlockChange(World world, int x, int y, int z, boolean par5)
     {
         int var6 = world.getBlockMetadata(x, y, z);
