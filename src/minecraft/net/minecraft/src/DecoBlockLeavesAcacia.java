@@ -138,7 +138,7 @@ public class DecoBlockLeavesAcacia extends BlockLeavesBase
                             {
                                 var15 = par1World.getBlockId(par2 + var12, par3 + var13, par4 + var14);
 
-                                if (var15 == Block.wood.blockID || var15 == DecoDefs.cherryLog.blockID)
+                                if (var15 == Block.wood.blockID || var15 == DecoDefs.acaciaLog.blockID)
                                 {
                                     this.adjacentTreeBlocks[(var12 + var11) * var10 + (var13 + var11) * var9 + var14 + var11] = 0;
                                 }
@@ -233,7 +233,7 @@ public class DecoBlockLeavesAcacia extends BlockLeavesBase
      */
     public int idDropped(int par1, Random par2Random, int par3)
     {
-        return DecoDefs.cherrySapling.blockID;
+        return DecoDefs.acaciaSapling.blockID;
     }
 
     /**

@@ -105,13 +105,9 @@ public class DecoRecipesLogChopping extends FCRecipesLogChopping {
 				{
 					return new ItemStack(Block.planks.blockID, 2, 5);
 				}
-				else if (var6 == DecoDefs.stemCrimson.blockID)
+				else if (var6 == DecoDefs.acaciaLog.blockID)
 				{
 					return new ItemStack(Block.planks.blockID, 2, 6);
-				}
-				else if (var6 == DecoDefs.stemWarped.blockID)
-				{
-					return new ItemStack(Block.planks.blockID, 2, 7);
 				}
 				else {
 					return new ItemStack(Block.planks.blockID, 2, var3.getItemDamage());
@@ -155,6 +151,6 @@ public class DecoRecipesLogChopping extends FCRecipesLogChopping {
 
 	private boolean IsLog(ItemStack itemstack) {
 		int ID = itemstack.itemID;
-		return ID == DecoDefs.strippedLog.blockID || ID == DecoDefs.barkLog.blockID || ID == DecoDefs.barkLogStripped.blockID || ID == DecoDefs.bloodLog.blockID || ID == DecoDefs.cherryLog.blockID || ID == DecoDefs.stemCrimson.blockID || ID == DecoDefs.stemWarped.blockID;
+		return ID == DecoDefs.strippedLog.blockID || ID == DecoDefs.barkLog.blockID || ID == DecoDefs.barkLogStripped.blockID || ID == DecoDefs.bloodLog.blockID || ID == DecoDefs.cherryLog.blockID || ID == DecoDefs.acaciaLog.blockID;
 	}
 }

@@ -194,7 +194,7 @@ public class DecoBlockLogCherry extends Block {
 
 	//CLIENT ONLY
 	public static String[] topTextures = {"decoBlockLogCherry_top", "decoBlockStrippedCherry_top", "decoBlockLogCherry_side", "decoBlockStrippedCherry_side"};
-	public static String[] sideTextures = {"decoBlockLogCherry_side", "decoBlockStrippedCherry_top", "decoBlockLogCherry_side", "decoBlockStrippedCherry_top"};
+	public static String[] sideTextures = {"decoBlockLogCherry_side", "decoBlockStrippedCherry_side", "decoBlockLogCherry_side", "decoBlockStrippedCherry_side"};
 	public static Icon[] topIcons;
 	public static Icon[] sideIcons;
 

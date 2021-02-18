@@ -532,6 +532,7 @@ public class DecoDefs {
 	public static Block stemCrimson, stemWarped, stemDamagedCrimson, stemDamagedWarped, stemSpikeCrimson, stemSpikeWarped, wartBlock;
 	public static Block netherRoots, netherVines;
 	public static Block spiderEyeBlock, spiderEyeSlab;
+	public static Block acaciaLeaves, acaciaSapling;
 	public static Block autumnLeaves, autumnSapling;
 
 	//Ground Cover
@@ -1408,7 +1409,7 @@ public class DecoDefs {
 		
 		cherryStairs = new FCBlockStairsWood(id_cherryStairs, Block.planks, 5).setUnlocalizedName("decoBlockCherryStairs");
 		DecoManager.Register(cherryStairs);
-		acaciaStairs = new FCBlockStairsWood(id_acaciaStairs, Block.planks, 5).setUnlocalizedName("decoBlockAcaciaStairs");
+		acaciaStairs = new FCBlockStairsWood(id_acaciaStairs, Block.planks, 6).setUnlocalizedName("decoBlockAcaciaStairs");
 		DecoManager.Register(acaciaStairs);
 
 		//Wood Sub Replace
@@ -1732,6 +1733,10 @@ public class DecoDefs {
 		DecoManager.Register(cherrySapling);
 		cherryLeaves = new DecoBlockLeavesCherry(id_cherryLeaves);
 		DecoManager.Register(cherryLeaves);
+		acaciaSapling = new DecoBlockSaplingAcacia(id_acaciaSapling);
+		DecoManager.Register(acaciaSapling);
+		acaciaLeaves = new DecoBlockLeavesAcacia(id_acaciaLeaves);
+		DecoManager.Register(acaciaLeaves);
 		
 		autumnLeaves = new DecoBlockLeavesAutumn(id_autumnLeaves);
 		Item.itemsList[autumnLeaves.blockID] = new DecoItemBlockMulti(autumnLeaves, DecoBlockLeavesAutumn.LEAF_TYPES);

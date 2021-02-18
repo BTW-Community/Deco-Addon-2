@@ -3,12 +3,14 @@ I lost most of the data on my PC between this version and the last. While the so
 THIS VERSION WILL REQUIRE A CLEAN INSTALL
 Due to my grass changes, if you use mcpatcher this version and all future versions must be installed with mcpatcher and cannot be installed over it.
 
+Thanks to Sockthing for the textures for acacia saplings, blood wood doors and trap doors, and spider eye blocks!
+
 - Refactored the addon to use BTW Extended Addon API, allowing other addons to use the networking and reflection utilities which deco uses. This is provided as a separate download.
 - Refactored file prefix to "Deco" rather than "Addon". This, and the below texture name change, were relics from Yhetti's development and have both been changed for clarity.
 - Refactored texture names to make them more consistent, following BTW's naming scheme to use things such as decoBlockXXXX and removing ginger_ as the prefix. This means texture packs will need to update to use the new file names.
 - Added localization support. Included with the addon in the lang folder is the file Deco_en_US.lang, which contains all english translations for the addon. Anyone who wishes to make and distribute translations is free to do so, and I will include it here if you link it.
 - Added iron trapdoors, crafted with 4 iron ingots and 2 redstone latches, producing 2. They work just like iron doors and will only respond to redstone signals.
-- Added spider eye blocks, created by packing 16 spider eyes together, and spider eye slabs. Thanks to Sockthing for these tetxures!
+- Added spider eye blocks, created by packing 16 spider eyes together, and spider eye slabs.
 - Added the ability for fertilizer to spawn ferns.
 - Added the ability for the block dispenser to use fertilizer on grass to spawn flowers. The block dispenser will also not immediately suck up flowers placed using fertilizer (but can still suck up flowers in other circumstances). This, combined with the recipe change below, allows for automated production of flowers and dye.
 - Added the lily of the valley as a new type of flower, which can be ground down into 2 white dye.
@@ -27,6 +29,7 @@ Due to my grass changes, if you use mcpatcher this version and all future versio
 - Changed (decreased) the amount of tall grass which spawns from fertilizer.
 - Changed (increased) the amount of flowers which spawn from fertilizer.
 - Changed the fertilizer recipe to be made in a cauldron, and to use potash instead of dung.
+- Changed the textures of blood wood doors and trapdoors.
 - Refactored loose slab code to simplify the related code and assimilate it into the main slab code.
 - Removed the ability for animals to eat addon flowers.
 - Removed specific textures for subblocks (except columns). Subblocks will now simply use the texture of their base block. However, MCPatcher will still allow texturepacks to override these textures if texturepack authors wish to do so.
