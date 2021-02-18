@@ -9,12 +9,11 @@ public class DecoItemBark extends Item {
     public static final int m_iSubtypeJungle = 3;
     public static final int m_iSubtypeBloodWood = 4;
     public static final int m_iSubtypeCherry = 5;
-    public static final int m_iSubtypeCrimson = 6;
-    public static final int m_iSubtypeWarped = 7;
-    public static final int m_iNumSubtypes = 8;
-    private String[] m_sNameExtensionsBySubtype = new String[] {"oak", "spruce", "birch", "jungle", "bloodwood", "cherry", "crimson", "warped"};
+    public static final int m_iSubtypeAcacia = 6;
+    public static final int m_iNumSubtypes = 7;
+    private String[] m_sNameExtensionsBySubtype = new String[] {"oak", "spruce", "birch", "jungle", "bloodwood", "cherry", "acacia"};
     private Icon[] m_IconBySubtype = new Icon[m_iNumSubtypes];
-    private String[] m_sIconNamesBySubtype = new String[] {"fcItemBarkOak", "fcItemBarkSpruce", "fcItemBarkBirch", "fcItemBarkJungle", "fcItemBarkBloodWood", "decoItemBarkCherry", "decoItemBarkCrimson", "decoItemBarkWarped"};
+    private String[] m_sIconNamesBySubtype = new String[] {"fcItemBarkOak", "fcItemBarkSpruce", "fcItemBarkBirch", "fcItemBarkJungle", "fcItemBarkBloodWood", "decoItemBarkCherry", "decoItemBarkAcacia"};
 
     public DecoItemBark(int var1)
     {

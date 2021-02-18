@@ -30,6 +30,8 @@ public class DecoItemBlockWoodMouldingDecorativeStub extends ItemBlock
                 return FCBetterThanWolves.fcBlockWoodBloodMouldingAndDecorative.blockID;
             case 5:
             	return DecoDefs.cherryMouldingAndDecorative.blockID;
+            case 6:
+            	return DecoDefs.acaciaMouldingAndDecorative.blockID;
             default:
                 return FCBetterThanWolves.fcBlockWoodOakMouldingAndDecorative.blockID;
         }
@@ -76,6 +78,10 @@ public class DecoItemBlockWoodMouldingDecorativeStub extends ItemBlock
         else if (var2 == 5)
         {
         	var3 = "cherry";
+        }
+        else if (var2 == 6)
+        {
+        	var3 = "acacia";
         }
 
         int var4 = GetBlockType(var1.getItemDamage());

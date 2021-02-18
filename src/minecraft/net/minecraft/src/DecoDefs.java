@@ -178,7 +178,9 @@ public class DecoDefs {
 		id_hedge=3304,
 		id_pumpkin=3305,
 		id_pumpkinLit=3306,
-	
+		id_spiderEyeBlock=3307,
+		id_spiderEyeSlab=3308,
+		
 		id_redSand=3310,
 		id_redSandSlab=3311,
 		id_redSandstone=3312,
@@ -313,16 +315,17 @@ public class DecoDefs {
 		id_acaciaLog=3488,
 		id_acaciaStump=3489,
 		id_acaciaLeaves=3490,
-		id_acaciaLogDamaged=3491,
-		id_acaciaLogSpike=3492,
+		id_logDamagedAcacia=3491,
+		id_logSpikeAcacia=3492,
 		id_acaciaSidingAndCorner=3493,
 		id_acaciaMouldingAndDecorative=3494,
-		id_acaciaSpaling=3495,
-		id_autumnSapling=3496,
-		id_autumnLeaves=3497,
-	
-		id_spiderEyeBlock=3500,
-		id_spiderEyeSlab=3501,
+		id_acaciaStairs=3495,
+		id_gateAcacia=3496,
+		id_trapdoorAcacia=3497,
+		id_doorAcacia=3498,
+		id_acaciaSapling=3499,
+		id_autumnSapling=3500,
+		id_autumnLeaves=3501,
 		
 		id_layerDirt=3550,
 		id_layerGrass=3551,
@@ -350,6 +353,7 @@ public class DecoDefs {
 		id_itemDoorJungle = 30022,
 		id_itemDoorBlood = 30023,
 		id_itemDoorCherry = 30024,
+		id_itemDoorAcacia = 30025,
 	
 		id_chiselDiamond = 30050,
 		id_woodBleach=30051,
@@ -477,14 +481,15 @@ public class DecoDefs {
 	public static DecoBlockSlabStone concreteSlab, concreteSlab2;
 
 	//Wood
-	public static Block strippedLog, barkLog, barkLogStripped, bloodLog, cherryLog, cherryStump;
-	public static Block logDamagedSpruce, logDamagedBirch, logDamagedJungle, logDamagedBlood, logDamagedCherry;
-	public static Block logSpikeSpruce, logSpikeBirch, logSpikeJungle, logSpikeBlood, logSpikeCherry;
-	public static BlockTrapDoor trapdoorSpruce, trapdoorBirch, trapdoorJungle, trapdoorBlood, trapdoorCherry, trapdoorIron;
-	public static BlockDoor doorSpruce, doorBirch, doorJungle, doorBlood, doorCherry;
-	public static FCItemDoor itemDoorSpruce, itemDoorBirch, itemDoorJungle, itemDoorBlood, itemDoorCherry;
-	public static BlockFenceGate gateSpruce, gateBirch, gateJungle, gateBlood, gateCherry;
+	public static Block strippedLog, barkLog, barkLogStripped, bloodLog, cherryLog, cherryStump, acaciaLog, acaciaStump;
+	public static Block logDamagedSpruce, logDamagedBirch, logDamagedJungle, logDamagedBlood, logDamagedCherry, logDamagedAcacia;
+	public static Block logSpikeSpruce, logSpikeBirch, logSpikeJungle, logSpikeBlood, logSpikeCherry, logSpikeAcacia;
+	public static BlockTrapDoor trapdoorSpruce, trapdoorBirch, trapdoorJungle, trapdoorBlood, trapdoorCherry, trapdoorAcacia, trapdoorIron;
+	public static BlockDoor doorSpruce, doorBirch, doorJungle, doorBlood, doorCherry, doorAcacia;
+	public static FCItemDoor itemDoorSpruce, itemDoorBirch, itemDoorJungle, itemDoorBlood, itemDoorCherry, itemDoorAcacia;
+	public static BlockFenceGate gateSpruce, gateBirch, gateJungle, gateBlood, gateCherry, gateAcacia;
 	public static Block cherryStairs, cherrySidingAndCorner, cherryMouldingAndDecorative;
+	public static Block acaciaStairs, acaciaSidingAndCorner, acaciaMouldingAndDecorative;
 	public static Block planksPainted;
 	public static Block[] paintedPlanksSidingAndCorner, paintedPlanksMouldingAndDecorative, paintedPlanksStairs;
 	public static Block pergola;
@@ -1355,13 +1360,13 @@ public class DecoDefs {
 
 		cherryLog = new DecoBlockLogCherry(id_cherryLog);
 		Item.itemsList[cherryLog.blockID] = new DecoItemBlockLogCherry(cherryLog.blockID - 256, cherryLog, new String[] {"logCherry", "strippedLogCherry", "woodCherry", "strippedWoodCherry"});
-		DecoManager.Name(new ItemStack(cherryLog, 1, 0), "Cherry Log");
-		DecoManager.Name(new ItemStack(cherryLog, 1, 1), "Stripped Cherry Log");
-		DecoManager.Name(new ItemStack(cherryLog, 1, 2), "Cherry Wood");
-		DecoManager.Name(new ItemStack(cherryLog, 1, 3), "Stripped Cherry Wood");
+		acaciaLog = new DecoBlockLogAcacia(id_acaciaLog);
+		Item.itemsList[acaciaLog.blockID] = new DecoItemBlockLogCherry(acaciaLog.blockID - 256, cherryLog, new String[] {"logAcacia", "strippedLogAcacia", "woodAcacia", "strippedWoodAcacia"});
 
 		cherryStump = new DecoBlockLogCherryStump(id_cherryStump);
 		DecoManager.Register(cherryStump);
+		acaciaStump = new DecoBlockLogAcaciaStump(id_acaciaStump);
+		DecoManager.Register(acaciaStump);
 		FCBetterThanWolves.fcBlockWorkStump = new DecoBlockWorkStump(DecoManager.ReplaceBlockID(FCBetterThanWolves.fcBlockWorkStump));
 
 		FCBetterThanWolves.fcBlockLogDamaged = (FCBlockLogDamaged) new DecoBlockLogDamaged(DecoManager.ReplaceBlockID(FCBetterThanWolves.fcBlockLogDamaged), "decoBlockStrippedOak_side", "decoBlockStrippedOak_top", "fcBlockTrunkTop").setUnlocalizedName("decoBlockChewedOak");
@@ -1370,15 +1375,13 @@ public class DecoDefs {
 		logDamagedJungle = new DecoBlockLogDamaged(id_logDamagedJungle, "decoBlockStrippedJungle_side", "decoBlockStrippedJungle_top", "decoBlockTrunkJungle_top").setUnlocalizedName("decoBlockChewedJungle");
 		logDamagedBlood = new DecoBlockLogDamaged(id_logDamagedBlood, "decoBlockStrippedBlood_side", "decoBlockStrippedBlood_top", "decoBlockTrunkJungle_top").setUnlocalizedName("decoBlockChewedBlood");
 		logDamagedCherry = new DecoBlockLogDamaged(id_logDamagedCherry, "decoBlockStrippedCherry_side", "decoBlockStrippedCherry_top", "decoBlockTrunkCherry_top").setUnlocalizedName("decoBlockChewedCherry");
-		stemDamagedCrimson = new DecoBlockLogDamaged(id_stemDamagedCrimson, "decoBlockStrippedCrimson_side", "decoBlockStrippedCrimson_top", "decoBlockTrunkJungle_top").setUnlocalizedName("decoBlockChewedCrimson");
-		stemDamagedWarped = new DecoBlockLogDamaged(id_stemDamagedWarped, "decoBlockStrippedWarped_side", "decoBlockStrippedWarped_top", "decoBlockTrunkJungle_top").setUnlocalizedName("decoBlockChewedWarped");
+		logDamagedAcacia = new DecoBlockLogDamaged(id_logDamagedAcacia, "decoBlockStrippedAcacia_side", "decoBlockStrippedAcacia_top", "decoBlockTrunkAcacia_top").setUnlocalizedName("decoBlockChewedAcacia");
 		DecoManager.Register(logDamagedSpruce);
 		DecoManager.Register(logDamagedBirch);
 		DecoManager.Register(logDamagedJungle);
 		DecoManager.Register(logDamagedBlood);
 		DecoManager.Register(logDamagedCherry);
-		DecoManager.Register(stemDamagedCrimson);
-		DecoManager.Register(stemDamagedWarped);
+		DecoManager.Register(logDamagedAcacia);
 
 		FCBetterThanWolves.fcBlockLogSpike = (FCBlockLogSpike) new DecoBlockLogSpike(DecoManager.ReplaceBlockID(FCBetterThanWolves.fcBlockLogSpike), "decoBlockStrippedOak_side", "decoBlockStrippedOak_top").setUnlocalizedName("decoBlockSpikeOak");
 		logSpikeSpruce = new DecoBlockLogSpike(id_logSpikeSpruce, "decoBlockStrippedSpruce_side", "decoBlockStrippedSpruce_top").setUnlocalizedName("decoBlockSpikeSpruce");
@@ -1386,52 +1389,17 @@ public class DecoDefs {
 		logSpikeJungle = new DecoBlockLogSpike(id_logSpikeJungle, "decoBlockStrippedJungle_side", "decoBlockStrippedJungle_top").setUnlocalizedName("decoBlockSpikeJungle");
 		logSpikeBlood = new DecoBlockLogSpike(id_logSpikeBlood, "decoBlockStrippedBlood_side", "decoBlockStrippedBlood_top").setUnlocalizedName("decoBlockSpikeBlood");
 		logSpikeCherry = new DecoBlockLogSpike(id_logSpikeCherry, "decoBlockStrippedCherry_side", "decoBlockStrippedCherry_top").setUnlocalizedName("decoBlockSpikeCherry");
-		stemSpikeCrimson = new DecoBlockLogSpike(id_stemSpikeCrimson, "decoBlockStrippedCrimson_side", "decoBlockStrippedCrimson_top").setUnlocalizedName("decoBlockSpikeCrimson");
-		stemSpikeWarped = new DecoBlockLogSpike(id_stemSpikeWarped, "decoBlockStrippedWarped_side", "decoBlockStrippedWarped_top").setUnlocalizedName("decoBlockSpikeWarped");
+		logSpikeAcacia = new DecoBlockLogSpike(id_logSpikeAcacia, "decoBlockStrippedAcacia_side", "decoBlockStrippedAcacia_top").setUnlocalizedName("decoBlockSpikeAcacia");
 		DecoManager.Register(logSpikeSpruce);
 		DecoManager.Register(logSpikeBirch);
 		DecoManager.Register(logSpikeJungle);
 		DecoManager.Register(logSpikeBlood);
 		DecoManager.Register(logSpikeCherry);
-		DecoManager.Register(stemSpikeCrimson);
-		DecoManager.Register(stemSpikeWarped);
-
-		stemCrimson = new DecoBlockStem(id_stemCrimson, new String[] {"decoBlockStemCrimson_top", "decoBlockStrippedCrimson_top", "decoBlockStemCrimson_side", "decoBlockStrippedCrimson_side"}, 
-				new String[] {"decoBlockStemCrimson_side", "decoBlockStrippedCrimson_side", "decoBlockStemCrimson_side", "decoBlockStrippedCrimson_side"}, 6, stemDamagedCrimson.blockID)
-				.setHardness(1.25F)
-				.setResistance(3.33F)
-				.SetAxesEffectiveOn()
-				.SetChiselsEffectiveOn()
-				.SetBuoyant()
-				.SetCanBeCookedByKiln(true)
-				.SetItemIndexDroppedWhenCookedByKiln(263)
-				.SetItemDamageDroppedWhenCookedByKiln(1)
-				.SetFireProperties(FCEnumFlammability.LOGS)
-				.setUnlocalizedName("decoBlockCrimsonStem")
-				.setCreativeTab(CreativeTabs.tabBlock);
-		Item.itemsList[stemCrimson.blockID] = new DecoItemBlockStem(stemCrimson.blockID - 256, stemCrimson, new String[] {"stemCrimson", "strippedStemCrimson", "woodCrimson", "strippedWoodCrimson"}, 6);
-
-		stemWarped = new DecoBlockStem(id_stemWarped, new String[] {"decoBlockStemWarped_top", "decoBlockStrippedWarped_top", "decoBlockStemWarped_side", "decoBlockStrippedWarped_side"},
-				new String[] {"decoBlockStemWarped_side", "decoBlockStrippedWarped_side", "decoBlockStemWarped_side", "decoBlockStrippedWarped_side"}, 7, stemDamagedWarped.blockID)
-				.setHardness(1.25F)
-				.setResistance(3.33F)
-				.SetAxesEffectiveOn()
-				.SetChiselsEffectiveOn()
-				.SetBuoyant()
-				.SetCanBeCookedByKiln(true)
-				.SetItemIndexDroppedWhenCookedByKiln(263)
-				.SetItemDamageDroppedWhenCookedByKiln(1)
-				.SetFireProperties(FCEnumFlammability.LOGS)
-				.setUnlocalizedName("decoBlockWarpedStem")
-				.setCreativeTab(CreativeTabs.tabBlock);
-		Item.itemsList[stemWarped.blockID] = new DecoItemBlockStem(stemWarped.blockID - 256, stemCrimson, new String[] {"stemWarped", "strippedStemWarped", "woodWarped", "strippedWoodWarped"}, 7);
-
-		stemCrimson.setStepSound(stepSoundBloodLog);
-		stemWarped.setStepSound(stepSoundBloodLog);
+		DecoManager.Register(logSpikeAcacia);
 
 		//Planks
 		Block.planks = Block.replaceBlock(Block.planks.blockID, DecoBlockPlanks.class);
-		DecoManager.Register(Block.planks, new String[] {"oak", "spruce", "birch", "jungle", "blood", "cherry", "crimson", "warped"});
+		DecoManager.Register(Block.planks, new String[] {"oak", "spruce", "birch", "jungle", "blood", "cherry", "acacia"});
 		Block.stairsWoodOak = Block.replaceBlock(Block.stairsWoodOak.blockID, FCBlockStairsWood.class, Block.planks, 0);
 		Block.stairsWoodSpruce = Block.replaceBlock(Block.stairsWoodSpruce.blockID, FCBlockStairsWood.class, Block.planks, 1);
 		Block.stairsWoodBirch = Block.replaceBlock(Block.stairsWoodBirch.blockID, FCBlockStairsWood.class, Block.planks, 2);
@@ -1440,6 +1408,8 @@ public class DecoDefs {
 		
 		cherryStairs = new FCBlockStairsWood(id_cherryStairs, Block.planks, 5).setUnlocalizedName("decoBlockCherryStairs");
 		DecoManager.Register(cherryStairs);
+		acaciaStairs = new FCBlockStairsWood(id_acaciaStairs, Block.planks, 5).setUnlocalizedName("decoBlockAcaciaStairs");
+		DecoManager.Register(acaciaStairs);
 
 		//Wood Sub Replace
 		Block.fence = Block.replaceBlock(Block.fence.blockID, DecoBlockFenceWood.class);
@@ -1449,6 +1419,7 @@ public class DecoDefs {
 		FCBetterThanWolves.fcBlockWoodJungleSidingAndCorner = new DecoBlockWoodSidingAndCornerAndDecorative(DecoManager.ReplaceBlockID(FCBetterThanWolves.fcBlockWoodJungleSidingAndCorner),"fcBlockDecorativeWoodJungle", "fcWoodJungleSiding").setUnlocalizedName("fcWoodJungleSiding");
 		FCBetterThanWolves.fcBlockWoodBloodSidingAndCorner = new DecoBlockWoodSidingAndCornerAndDecorative(DecoManager.ReplaceBlockID(FCBetterThanWolves.fcBlockWoodBloodSidingAndCorner),"fcBlockDecorativeWoodBlood", "fcWoodBloodSiding").setUnlocalizedName("fcWoodBloodSiding");
 		cherrySidingAndCorner = new DecoBlockWoodSidingAndCornerAndDecorative(id_cherrySidingAndCorner, "decoBlockPlanksCherry", "cherrySiding").setUnlocalizedName("decoBlockCherrySiding");
+		acaciaSidingAndCorner = new DecoBlockWoodSidingAndCornerAndDecorative(id_acaciaSidingAndCorner, "decoBlockPlanksAcacia", "acaciaSiding").setUnlocalizedName("decoBlockAcaciaSiding");
 
 		FCBetterThanWolves.fcBlockWoodOakMouldingAndDecorative = new DecoBlockWoodMouldingAndDecorative(DecoManager.ReplaceBlockID(FCBetterThanWolves.fcBlockWoodOakMouldingAndDecorative), "FCBlockDecorativeWoodOak", "fcBlockColumnWoodOak_side", FCBetterThanWolves.fcBlockWoodOakSidingAndCorner.blockID, "fcWoodOakMoulding");
 		FCBetterThanWolves.fcBlockWoodSpruceMouldingAndDecorative = new DecoBlockWoodMouldingAndDecorative(DecoManager.ReplaceBlockID(FCBetterThanWolves.fcBlockWoodSpruceMouldingAndDecorative), "fcBlockDecorativeWoodSpruce", "fcBlockColumnWoodSpruce_side", FCBetterThanWolves.fcBlockWoodSpruceSidingAndCorner.blockID, "fcWoodSpruceMoulding");
@@ -1456,6 +1427,7 @@ public class DecoDefs {
 		FCBetterThanWolves.fcBlockWoodJungleMouldingAndDecorative = new DecoBlockWoodMouldingAndDecorative(DecoManager.ReplaceBlockID(FCBetterThanWolves.fcBlockWoodJungleMouldingAndDecorative), "fcBlockDecorativeWoodJungle", "fcBlockColumnWoodJungle_side", FCBetterThanWolves.fcBlockWoodJungleSidingAndCorner.blockID, "fcWoodJungleMoulding");
 		FCBetterThanWolves.fcBlockWoodBloodMouldingAndDecorative = new DecoBlockWoodMouldingAndDecorative(DecoManager.ReplaceBlockID(FCBetterThanWolves.fcBlockWoodBloodMouldingAndDecorative), "fcBlockDecorativeWoodBlood", "fcBlockColumnWoodBlood_side", FCBetterThanWolves.fcBlockWoodBloodSidingAndCorner.blockID, "fcWoodBloodMoulding");
 		cherryMouldingAndDecorative = new DecoBlockWoodMouldingAndDecorative(id_cherryMouldingAndDecorative, "decoBlockPlanksCherry", "decoBlockPlanksCherryColumn", cherrySidingAndCorner.blockID, "decoBlockCherryMoulding").setUnlocalizedName("decoBlockCherryMoulding");
+		acaciaMouldingAndDecorative = new DecoBlockWoodMouldingAndDecorative(id_acaciaMouldingAndDecorative, "decoBlockPlanksAcacia", "decoBlockPlanksAcaciaColumn", cherrySidingAndCorner.blockID, "decoBlockAcaciaMoulding").setUnlocalizedName("decoBlockAcaciaMoulding");
 
 		Item.itemsList[FCBetterThanWolves.fcBlockWoodSpruceSidingAndCorner.blockID] = new DecoItemBlockWoodSidingStub(FCBetterThanWolves.fcBlockWoodSpruceSidingAndCorner.blockID - 256);
 		Item.itemsList[FCBetterThanWolves.fcBlockWoodSpruceMouldingAndDecorative.blockID] = new DecoItemBlockWoodMouldingStub(FCBetterThanWolves.fcBlockWoodSpruceMouldingAndDecorative.blockID - 256);
@@ -1477,6 +1449,7 @@ public class DecoDefs {
 		trapdoorJungle = (BlockTrapDoor) new DecoBlockTrapDoor(id_trapdoorJungle).setUnlocalizedName("decoBlockTrapdoorJungle");
 		trapdoorBlood = (BlockTrapDoor) new DecoBlockTrapDoor(id_trapdoorBlood).setUnlocalizedName("decoBlockTrapdoorBlood");
 		trapdoorCherry = (BlockTrapDoor) new DecoBlockTrapDoor(id_trapdoorCherry).setUnlocalizedName("decoBlockTrapdoorCherry");
+		trapdoorAcacia = (BlockTrapDoor) new DecoBlockTrapDoor(id_trapdoorAcacia).setUnlocalizedName("decoBlockTrapdoorAcacia");
 		
 		trapdoorIron = new DecoBlockTrapDoorIron(id_trapdoorIron); 
 
@@ -1485,6 +1458,7 @@ public class DecoDefs {
 		DecoManager.Register(trapdoorJungle);
 		DecoManager.Register(trapdoorBlood);
 		DecoManager.Register(trapdoorCherry);
+		DecoManager.Register(trapdoorAcacia);
 		
 		DecoManager.Register(trapdoorIron);
 
@@ -1496,6 +1470,7 @@ public class DecoDefs {
 		itemDoorJungle = (FCItemDoor) new DecoItemDoor(id_itemDoorJungle, "decoItemDoorJungle", id_doorJungle, true);
 		itemDoorBlood = (FCItemDoor) new DecoItemDoor(id_itemDoorBlood, "decoItemDoorBlood", id_doorBlood, true);
 		itemDoorCherry = (FCItemDoor) new DecoItemDoor(id_itemDoorCherry, "decoItemDoorCherry", id_doorCherry, true);
+		itemDoorAcacia = (FCItemDoor) new DecoItemDoor(id_itemDoorAcacia, "decoItemDoorAcacia", id_doorAcacia, true);
 		
 		Block.doorWood = Block.replaceBlock(Block.doorWood.blockID, DecoBlockDoorWood.class, new String[] {"doorWood_lower", "doorWood_upper"}, Item.doorWood.itemID);
 		Block.doorIron = Block.replaceBlock(Block.doorIron.blockID, DecoBlockDoorIron.class);
@@ -1504,12 +1479,14 @@ public class DecoDefs {
 		doorJungle = (BlockDoor) new DecoBlockDoorWood(id_doorJungle, new String[] {"decoBlockDoorJungle_lower", "decoBlockDoorJungle_upper"}, itemDoorJungle.itemID).setUnlocalizedName("decoBlockDoorJungle");
 		doorBlood = (BlockDoor) new DecoBlockDoorWood(id_doorBlood, new String[] {"decoBlockDoorBlood_lower", "decoBlockDoorBlood_upper"}, itemDoorBlood.itemID).setUnlocalizedName("decoBlockDoorBlood");
 		doorCherry = (BlockDoor) new DecoBlockDoorWood(id_doorCherry, new String[] {"decoBlockDoorCherry_lower", "decoBlockDoorCherry_upper"}, itemDoorCherry.itemID).setUnlocalizedName("decoBlockDoorCherry");
+		doorAcacia = (BlockDoor) new DecoBlockDoorWood(id_doorAcacia, new String[] {"decoBlockDoorAcacia_lower", "decoBlockDoorAcacia_upper"}, itemDoorAcacia.itemID).setUnlocalizedName("decoBlockDoorAcacia");
 
 		DecoManager.Register(doorSpruce);
 		DecoManager.Register(doorBirch);
 		DecoManager.Register(doorJungle);
 		DecoManager.Register(doorBlood);
 		DecoManager.Register(doorCherry);
+		DecoManager.Register(doorAcacia);
 
 		//Fence gates
 		Block.fenceGate = Block.replaceBlock(Block.fenceGate.blockID, DecoBlockFenceGate.class, "wood");
@@ -1518,12 +1495,14 @@ public class DecoDefs {
 		gateJungle = (BlockFenceGate) new DecoBlockFenceGate(id_gateJungle, "decoBlockGateJungle");
 		gateBlood = (BlockFenceGate) new DecoBlockFenceGate(id_gateBlood, "decoBlockGateBlood");
 		gateCherry = (BlockFenceGate) new DecoBlockFenceGate(id_gateCherry, "decoBlockGateCherry");
+		gateAcacia = (BlockFenceGate) new DecoBlockFenceGate(id_gateAcacia, "decoBlockGateAcacia");
 
 		DecoManager.Register(gateSpruce);
 		DecoManager.Register(gateBirch);
 		DecoManager.Register(gateJungle);
 		DecoManager.Register(gateBlood);
 		DecoManager.Register(gateCherry);
+		DecoManager.Register(gateAcacia);
 
 		//Chairs
 		oakWoodChair = new DecoBlockChairWood(id_oakWoodChair, "Oak");

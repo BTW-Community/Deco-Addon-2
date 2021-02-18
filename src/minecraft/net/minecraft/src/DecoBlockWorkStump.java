@@ -10,6 +10,8 @@ public class DecoBlockWorkStump extends FCBlockWorkStump {
     	int meta = var1.getBlockMetadata(var2, var3, var4);
     	if (meta == 4)
     		return DecoDefs.cherryLog.GetStackRetrievedByBlockDispenser(var1, var2, var3, var4);
+    	else if (meta == 5)
+    		return DecoDefs.acaciaLog.GetStackRetrievedByBlockDispenser(var1, var2, var3, var4);
     	else
     		return Block.wood.GetStackRetrievedByBlockDispenser(var1, var2, var3, var4);
     }
@@ -30,7 +32,7 @@ public class DecoBlockWorkStump extends FCBlockWorkStump {
     }
 
     //CLIENT ONLY
-    public static final String[] m_sideTextureNames = new String[] {"fcBlockWorkStumpOak", "fcBlockWorkStumpSpruce", "fcBlockWorkStumpBirch", "fcBlockWorkStumpJungle", "decoBlockWorkStumpCherry"};
+    public static final String[] m_sideTextureNames = new String[] {"fcBlockWorkStumpOak", "fcBlockWorkStumpSpruce", "fcBlockWorkStumpBirch", "fcBlockWorkStumpJungle", "decoBlockWorkStumpCherry", "decoBlockWorkStumpAcacia"};
     private Icon[] m_iconSideArray;
     private Icon m_iconTop;
     

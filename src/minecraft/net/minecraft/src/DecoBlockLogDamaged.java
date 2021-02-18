@@ -308,8 +308,8 @@ public class DecoBlockLogDamaged extends FCBlockLogDamaged {
     {
         int var7 = var2.getBlockId(var3, var4, var5);
         return var7 != this.blockID ? ((Block.blocksList[var7] instanceof FCBlockLogSpike) ? FCBetterThanWolves.fcBlockLogSpike.GetFacing(var2, var3, var4, var5) == Block.GetOppositeFacing(var6) : 
-        	(var7 == Block.wood.blockID || var7 == DecoDefs.barkLog.blockID || var7 == DecoDefs.barkLogStripped.blockID || var7 == DecoDefs.strippedLog.blockID || var7 == DecoDefs.cherryLog.blockID || var7 == FCBetterThanWolves.fcBloodWood.blockID || var7 == DecoDefs.bloodLog.blockID || var7 == DecoDefs.cherryStump.blockID || var7 == DecoDefs.stemCrimson.blockID || var7 == DecoDefs.stemWarped.blockID ||
-        	Block.blocksList[var7] instanceof FCBlockLogDamaged)) : 
+        	(var7 == Block.wood.blockID || var7 == DecoDefs.barkLog.blockID || var7 == DecoDefs.barkLogStripped.blockID || var7 == DecoDefs.strippedLog.blockID || var7 == DecoDefs.cherryLog.blockID || var7 == FCBetterThanWolves.fcBloodWood.blockID || var7 == DecoDefs.bloodLog.blockID ||
+        	var7 == DecoDefs.cherryStump.blockID || var7 == DecoDefs.acaciaLog.blockID || var7 == DecoDefs.acaciaStump.blockID || Block.blocksList[var7] instanceof FCBlockLogDamaged)) : 
         		this.GetDamageLevel(var2, var3, var4, var5) == 0 && var1 == this.GetOrientation(var2, var3, var4, var5);
     }
 	
@@ -326,10 +326,8 @@ public class DecoBlockLogDamaged extends FCBlockLogDamaged {
 			return DecoDefs.logSpikeBlood.blockID;
 		else if (id == DecoDefs.logDamagedCherry.blockID)
 			return DecoDefs.logSpikeCherry.blockID;
-		else if (id == DecoDefs.stemDamagedCrimson.blockID)
-			return DecoDefs.stemSpikeCrimson.blockID;
-		else if (id == DecoDefs.stemDamagedWarped.blockID)
-			return DecoDefs.stemSpikeWarped.blockID;
+		else if (id == DecoDefs.logDamagedAcacia.blockID)
+			return DecoDefs.logSpikeAcacia.blockID;
 		else
 			return FCBetterThanWolves.fcBlockLogSpike.blockID;
 	}

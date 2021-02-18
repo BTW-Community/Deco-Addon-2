@@ -242,6 +242,8 @@ public class DecoUtilsBlock {
 			return DecoDefs.logDamagedJungle.blockID;
 		case 4:
 			return DecoDefs.logDamagedCherry.blockID;
+		case 5:
+			return DecoDefs.logDamagedAcacia.blockID;
 		}
 	}
 	

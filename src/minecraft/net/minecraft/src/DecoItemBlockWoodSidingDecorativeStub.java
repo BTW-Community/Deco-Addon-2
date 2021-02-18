@@ -29,6 +29,8 @@ public class DecoItemBlockWoodSidingDecorativeStub extends ItemBlock
                 return FCBetterThanWolves.fcBlockWoodBloodSidingAndCorner.blockID;
             case 5:
             	return DecoDefs.cherrySidingAndCorner.blockID;
+            case 6:
+            	return DecoDefs.acaciaSidingAndCorner.blockID;
             default:
                 return FCBetterThanWolves.fcBlockWoodOakSidingAndCorner.blockID;
         }
@@ -75,6 +77,9 @@ public class DecoItemBlockWoodSidingDecorativeStub extends ItemBlock
         else if (var2 == 5)
         {
         	var3 = "cherry";
+        }
+        else if (var2 == 6) {
+        	var3 = "acacia";
         }
 
         int var4 = var1.getItemDamage() >> 2;

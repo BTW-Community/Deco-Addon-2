@@ -3,7 +3,7 @@ package net.minecraft.src;
 import java.util.List;
 
 public class DecoBlockPlanks extends FCBlockPlanks {
-    public static final String[] m_sWoodTypes = new String[] {"oak", "spruce", "birch", "jungle", "blood", "cherry", "crimson", "warped"};
+    public static final String[] m_sWoodTypes = new String[] {"oak", "spruce", "birch", "jungle", "blood", "cherry", "acacia"};
     
 	public DecoBlockPlanks(int id) {
 		super(id);
@@ -11,7 +11,7 @@ public class DecoBlockPlanks extends FCBlockPlanks {
 
     public static int GetFurnaceBurnTimeByWoodType(int var0)
     {
-        return (var0 == 0 || var0 == 5) ? FCEnumFurnaceBurnTime.PLANKS_OAK.m_iBurnTime : (var0 == 1 ? FCEnumFurnaceBurnTime.PLANKS_SPRUCE.m_iBurnTime : (var0 == 2 ? FCEnumFurnaceBurnTime.PLANKS_BIRCH.m_iBurnTime : (var0 == 3 ? FCEnumFurnaceBurnTime.PLANKS_JUNGLE.m_iBurnTime : FCEnumFurnaceBurnTime.PLANKS_BLOOD.m_iBurnTime)));
+        return (var0 == 0 || var0 == 5 || var0 == 6) ? FCEnumFurnaceBurnTime.PLANKS_OAK.m_iBurnTime : (var0 == 1 ? FCEnumFurnaceBurnTime.PLANKS_SPRUCE.m_iBurnTime : (var0 == 2 ? FCEnumFurnaceBurnTime.PLANKS_BIRCH.m_iBurnTime : (var0 == 3 ? FCEnumFurnaceBurnTime.PLANKS_JUNGLE.m_iBurnTime : FCEnumFurnaceBurnTime.PLANKS_BLOOD.m_iBurnTime)));
     }
 
     /**
@@ -26,7 +26,7 @@ public class DecoBlockPlanks extends FCBlockPlanks {
     }
 
 	//CLIENT ONLY
-    public static final String[] m_sWoodTextureTypes = new String[] {"wood", "wood_spruce", "wood_birch", "wood_jungle", "fcBlockPlanks_blood", "decoBlockPlanksCherry", "decoBlockPlanksCrimson", "decoBlockPlanksWarped"};
+    public static final String[] m_sWoodTextureTypes = new String[] {"wood", "wood_spruce", "wood_birch", "wood_jungle", "fcBlockPlanks_blood", "decoBlockPlanksCherry", "decoBlockPlanksAcacia"};
     private Icon[] m_iconArray;
 	
     /**

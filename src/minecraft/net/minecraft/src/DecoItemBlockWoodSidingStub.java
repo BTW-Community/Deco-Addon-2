@@ -23,6 +23,8 @@ public class DecoItemBlockWoodSidingStub extends ItemBlock {
                 return FCBetterThanWolves.fcBlockWoodBloodSidingAndCorner.blockID;
             case 5:
             	return DecoDefs.cherrySidingAndCorner.blockID;
+            case 6:
+            	return DecoDefs.acaciaSidingAndCorner.blockID;
             default:
                 return FCBetterThanWolves.fcBlockWoodOakSidingAndCorner.blockID;
         }
@@ -42,7 +44,27 @@ public class DecoItemBlockWoodSidingStub extends ItemBlock {
      */
     public String getUnlocalizedName(ItemStack var1)
     {
-        return var1.getItemDamage() == 0 ? super.getUnlocalizedName() + "." + "oak" : (var1.getItemDamage() == 1 ? super.getUnlocalizedName() + "." + "spruce" : (var1.getItemDamage() == 2 ? super.getUnlocalizedName() + "." + "birch" : (var1.getItemDamage() == 3 ? super.getUnlocalizedName() + "." + "jungle" : (var1.getItemDamage() == 4 ? super.getUnlocalizedName() + "." + "blood" : super.getUnlocalizedName() + "." + "cherry"))));
+    	int meta = var1.getItemDamage();
+    	String name = super.getUnlocalizedName() + ".";
+    	
+    	switch (meta) {
+    	case 0:
+    		return name + "oak";
+    	case 1:
+    		return name + "spruce";
+    	case 2:
+    		return name + "birch";
+    	case 3:
+    		return name + "jungle";
+    	case 4:
+    		return name + "blood";
+    	case 5:
+    		return name + "cherry";
+    	case 6:
+    		return name + "acacia";
+    	default:
+    		return name + "oak";
+    	}
     }
 
     public int GetFurnaceBurnTime(int var1)
