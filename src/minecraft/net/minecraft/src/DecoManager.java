@@ -27,7 +27,7 @@ import java.util.Random;
 import net.minecraft.client.Minecraft;
 import net.minecraft.server.MinecraftServer;
 
-public class DecoManager extends DawnAddon
+public class DecoManager extends AddonExt
 {
 	public static DecoDefs decoDefs;
 	public static DecoRecipes decoRecipes;
@@ -42,7 +42,7 @@ public class DecoManager extends DawnAddon
 	public static final int decoCustomBlockBreakAuxFXID = 3000;
 	public static final int decoCustomBlockConvertAuxFXID = 3001;
 	public static final int decoCustomBlockPlaceAuxFXID = 3002;
-	
+
 	public static final int decoShaftRippedOffLogAuxFXID = 3100;
 	public static final int decoDoorWoodOpenAuxFXID = 3101;
 	public static final int decoDoorWoodCloseAuxFXID = 3102;
@@ -61,8 +61,10 @@ public class DecoManager extends DawnAddon
 	public static final int decoItemFrameAddItemAuxFXID = 3115;
 	public static final int decoItemFrameRotateItemAuxFXID = 3116;
 	public static final int decoItemFrameRemoveItemAuxFXID = 3117;
-	
+
 	public static final String decoParticleSmokeColumn = "signalSmoke";
+
+	public static final String decoPacketChannelRender = "Deco|Render";
 
 	public DecoManager() {
 		super("Deco Addon", "2.13", "Deco");
@@ -81,17 +83,16 @@ public class DecoManager extends DawnAddon
 		decoDefs = DecoDefs.instance;
 		decoRecipes = DecoRecipes.instance;
 
-		decoDefs.registerObfuscationMappings();
 		decoDefs.addDefinitions();
 		decoRecipes.addAllDecoRecipes();
 
 		FCAddOnHandler.LogMessage("Deco Addon Initialization Complete.");
 	}
 
-    public String GetLanguageFilePrefix()
-    {
-        return "Deco";
-    }
+	public String GetLanguageFilePrefix()
+	{
+		return "Deco";
+	}
 
 	private static boolean Create_HasCall=false;
 	public void OnLanguageLoaded(StringTranslate Language)
@@ -218,39 +219,6 @@ public class DecoManager extends DawnAddon
 	public static boolean getNewSoundsInstalled() {
 		return newSoundsInstalled;
 	}
-	
-	public static World getWorldFromChunkCache(ChunkCache chunkCache) {
-		Field worldField;
-		
-		try {
-			if (DawnUtilsReflection.isObfuscated()) {
-				worldField = chunkCache.getClass().getDeclaredField("e");
-			}
-			else {
-				worldField = chunkCache.getClass().getDeclaredField("worldObj");
-			}
-
-			worldField.setAccessible(true);
-			
-			return (World) worldField.get(chunkCache);
-		} catch (NoSuchFieldException e) {
-			if (DawnUtilsReflection.isObfuscated()) {
-				e.printStackTrace();
-			}
-			else {
-				DawnUtilsReflection.setObfuscated(true);
-				getWorldFromChunkCache(chunkCache);
-			}
-		} catch (SecurityException e) {
-			e.printStackTrace();
-		} catch (IllegalArgumentException e) {
-			e.printStackTrace();
-		} catch (IllegalAccessException e) {
-			e.printStackTrace();
-		}
-		
-		return null;
-	}
 
 	//CLIENT ONLY
 	public static void installResource(String filename) {
@@ -297,6 +265,18 @@ public class DecoManager extends DawnAddon
 					return true;
 				}
 			}
+			else if (packet.channel.equals(decoPacketChannelRender)) {
+				packetType = dataStream.readInt();
+
+				if (packetType == 0)
+				{
+					int attackYawInt = dataStream.readByte();
+					int attackYawFrac = dataStream.readByte();
+					
+					float attackYaw = attackYawInt + .01F * attackYawFrac;
+					mc.renderViewEntity.attackedAtYaw = attackYaw;
+				}
+			}
 		}
 		catch (IOException var23)
 		{
@@ -317,16 +297,16 @@ public class DecoManager extends DawnAddon
 			blockID = data & 4095;
 			blockMeta = data >> 12 & 255;
 
-			if (blockID > 0)
-			{
-				Block block = Block.blocksList[blockID];
-				if (!DecoUtilsSound.playCustomSoundForBlockBreak(mc, world, x, y, z, block, blockMeta)) {
-					mc.sndManager.playSound(block.stepSound.getBreakSound(), (float)x + 0.5F, (float)y + 0.5F, (float)z + 0.5F, (block.stepSound.getVolume() + 1.0F) / 2.0F, block.stepSound.getPitch() * 0.8F);
-				}
+		if (blockID > 0)
+		{
+			Block block = Block.blocksList[blockID];
+			if (!DecoUtilsSound.playCustomSoundForBlockBreak(mc, world, x, y, z, block, blockMeta)) {
+				mc.sndManager.playSound(block.stepSound.getBreakSound(), (float)x + 0.5F, (float)y + 0.5F, (float)z + 0.5F, (block.stepSound.getVolume() + 1.0F) / 2.0F, block.stepSound.getPitch() * 0.8F);
 			}
+		}
 
-			mc.effectRenderer.addBlockDestroyEffects(x, y, z, data & 4095, data >> 12 & 255);
-			return true;
+		mc.effectRenderer.addBlockDestroyEffects(x, y, z, data & 4095, data >> 12 & 255);
+		return true;
 		case decoCustomBlockConvertAuxFXID:
 			blockID = data & 4095;
 			blockMeta = data >> 12 & 255;
@@ -344,104 +324,104 @@ public class DecoManager extends DawnAddon
 		case decoCustomBlockPlaceAuxFXID:
 			blockID = data & 4095;
 			blockMeta = data >> 12 & 255;
-			
+
 			if (blockID > 0)
 			{
 				Block block = Block.blocksList[blockID];
 				mc.sndManager.playSound(block.stepSound.getPlaceSound(), (float)x + 0.5F, (float)y + 0.5F, (float)z + 0.5F, (block.stepSound.getVolume() + 1.0F) / 2.0F, block.stepSound.getPitch() * 0.8F);
 			}
-			
+
 			return true;
-        case decoShaftRippedOffLogAuxFXID:
-            DecoUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.strip", 3.0F, 0.25F + rand.nextFloat() * 0.25F, "mob.zombie.woodbreak", 0.25F, 1.0F + rand.nextFloat() * 0.25F);
-            return true;
-        case decoDoorWoodOpenAuxFXID:
-            DecoUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.doorOpen", 1, world.rand.nextFloat() * 0.1F + 0.9F, "random.door_open", 1, world.rand.nextFloat() * 0.1F + 0.9F);
-        	return true;
-        case decoDoorWoodCloseAuxFXID:
-            DecoUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.doorClose", 1, world.rand.nextFloat() * 0.1F + 0.9F, "random.door_close", 1, world.rand.nextFloat() * 0.1F + 0.9F);
-        	return true;
-        case decoDoorIronOpenAuxFXID:
-            DecoUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.doorIronOpen", 1, world.rand.nextFloat() * 0.1F + 0.9F, "random.door_open", 1, world.rand.nextFloat() * 0.1F + 0.9F);
-        	return true;
-        case decoDoorIronCloseAuxFXID:
-            DecoUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.doorIronClose", 1, world.rand.nextFloat() * 0.1F + 0.9F, "random.door_close", 1, world.rand.nextFloat() * 0.1F + 0.9F);
-        	return true;
-        case decoTrapdoorOpenAuxFXID:
-        	DecoUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.trapdoorOpen", 1, world.rand.nextFloat() * 0.1F + 0.9F, "random.door_open", 1, world.rand.nextFloat() * 0.1F + 0.9F);
-        	return true;
-        case decoTrapdoorCloseAuxFXID:
-        	DecoUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.trapdoorClose", 1, world.rand.nextFloat() * 0.1F + 0.9F, "random.door_close", 1, world.rand.nextFloat() * 0.1F + 0.9F);
-        	return true;
-        case decoTrapdoorIronOpenAuxFXID:
-        	DecoUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.trapdoorIronOpen", 1, world.rand.nextFloat() * 0.1F + 0.9F, "random.door_open", 1, world.rand.nextFloat() * 0.1F + 0.9F);
-        	return true;
-        case decoTrapdoorIronCloseAuxFXID:
-        	DecoUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.trapdoorIronClose", 1, world.rand.nextFloat() * 0.1F + 0.9F, "random.door_close", 1, world.rand.nextFloat() * 0.1F + 0.9F);
-        	return true;
-        case decoChestOpenAuxFXID:
-        	DecoUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.chestOpen", 0.5F, world.rand.nextFloat() * 0.1F + 0.9F, "random.chestopen", 0.5F, world.rand.nextFloat() * 0.1F + 0.9F);
-        	return true;
-        case decoChestCloseAuxFXID:
-        	DecoUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.chestClose", 0.5F, world.rand.nextFloat() * 0.1F + 0.9F, "random.chestclosed", 0.5F, world.rand.nextFloat() * 0.1F + 0.9F);
-        	return true;
-        case decoPaintingPlaceAuxFXID:
-        	DecoUtilsSound.playSoundWithNullFallback(world, x, y, z, "deco.misc.painting.place", 1, 1);
-        	return true;
-        case decoPaintingBreakAuxFXID:
-        	DecoUtilsSound.playSoundWithNullFallback(world, x, y, z, "deco.misc.painting.break", 1, 1);
-        	return true;
-        case decoItemFramePlaceAuxFXID:
-        	DecoUtilsSound.playSoundWithNullFallback(world, x, y, z, "deco.misc.itemFrame.place", 1, 1);
-        	return true;
-        case decoItemFrameBreakAuxFXID:
-        	DecoUtilsSound.playSoundWithNullFallback(world, x, y, z, "deco.misc.itemFrame.break", 1, 1);
-        	return true;
-        case decoItemFrameAddItemAuxFXID:
-        	DecoUtilsSound.playSoundWithNullFallback(world, x, y, z, "deco.misc.itemFrame.addItem", 1, 1);
-        	return true;
-        case decoItemFrameRotateItemAuxFXID:
-        	DecoUtilsSound.playSoundWithNullFallback(world, x, y, z, "deco.misc.itemFrame.rotateItem", 1, 1);
-        	return true;
-        case decoItemFrameRemoveItemAuxFXID:
-        	DecoUtilsSound.playSoundWithNullFallback(world, x, y, z, "deco.misc.itemFrame.removeItem", 1, 1);
-        	return true;
+		case decoShaftRippedOffLogAuxFXID:
+			DecoUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.strip", 3.0F, 0.25F + rand.nextFloat() * 0.25F, "mob.zombie.woodbreak", 0.25F, 1.0F + rand.nextFloat() * 0.25F);
+			return true;
+		case decoDoorWoodOpenAuxFXID:
+			DecoUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.doorOpen", 1, world.rand.nextFloat() * 0.1F + 0.9F, "random.door_open", 1, world.rand.nextFloat() * 0.1F + 0.9F);
+			return true;
+		case decoDoorWoodCloseAuxFXID:
+			DecoUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.doorClose", 1, world.rand.nextFloat() * 0.1F + 0.9F, "random.door_close", 1, world.rand.nextFloat() * 0.1F + 0.9F);
+			return true;
+		case decoDoorIronOpenAuxFXID:
+			DecoUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.doorIronOpen", 1, world.rand.nextFloat() * 0.1F + 0.9F, "random.door_open", 1, world.rand.nextFloat() * 0.1F + 0.9F);
+			return true;
+		case decoDoorIronCloseAuxFXID:
+			DecoUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.doorIronClose", 1, world.rand.nextFloat() * 0.1F + 0.9F, "random.door_close", 1, world.rand.nextFloat() * 0.1F + 0.9F);
+			return true;
+		case decoTrapdoorOpenAuxFXID:
+			DecoUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.trapdoorOpen", 1, world.rand.nextFloat() * 0.1F + 0.9F, "random.door_open", 1, world.rand.nextFloat() * 0.1F + 0.9F);
+			return true;
+		case decoTrapdoorCloseAuxFXID:
+			DecoUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.trapdoorClose", 1, world.rand.nextFloat() * 0.1F + 0.9F, "random.door_close", 1, world.rand.nextFloat() * 0.1F + 0.9F);
+			return true;
+		case decoTrapdoorIronOpenAuxFXID:
+			DecoUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.trapdoorIronOpen", 1, world.rand.nextFloat() * 0.1F + 0.9F, "random.door_open", 1, world.rand.nextFloat() * 0.1F + 0.9F);
+			return true;
+		case decoTrapdoorIronCloseAuxFXID:
+			DecoUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.trapdoorIronClose", 1, world.rand.nextFloat() * 0.1F + 0.9F, "random.door_close", 1, world.rand.nextFloat() * 0.1F + 0.9F);
+			return true;
+		case decoChestOpenAuxFXID:
+			DecoUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.chestOpen", 0.5F, world.rand.nextFloat() * 0.1F + 0.9F, "random.chestopen", 0.5F, world.rand.nextFloat() * 0.1F + 0.9F);
+			return true;
+		case decoChestCloseAuxFXID:
+			DecoUtilsSound.playSoundWithVanillaFallback(world, x, y, z, "deco.random.chestClose", 0.5F, world.rand.nextFloat() * 0.1F + 0.9F, "random.chestclosed", 0.5F, world.rand.nextFloat() * 0.1F + 0.9F);
+			return true;
+		case decoPaintingPlaceAuxFXID:
+			DecoUtilsSound.playSoundWithNullFallback(world, x, y, z, "deco.misc.painting.place", 1, 1);
+			return true;
+		case decoPaintingBreakAuxFXID:
+			DecoUtilsSound.playSoundWithNullFallback(world, x, y, z, "deco.misc.painting.break", 1, 1);
+			return true;
+		case decoItemFramePlaceAuxFXID:
+			DecoUtilsSound.playSoundWithNullFallback(world, x, y, z, "deco.misc.itemFrame.place", 1, 1);
+			return true;
+		case decoItemFrameBreakAuxFXID:
+			DecoUtilsSound.playSoundWithNullFallback(world, x, y, z, "deco.misc.itemFrame.break", 1, 1);
+			return true;
+		case decoItemFrameAddItemAuxFXID:
+			DecoUtilsSound.playSoundWithNullFallback(world, x, y, z, "deco.misc.itemFrame.addItem", 1, 1);
+			return true;
+		case decoItemFrameRotateItemAuxFXID:
+			DecoUtilsSound.playSoundWithNullFallback(world, x, y, z, "deco.misc.itemFrame.rotateItem", 1, 1);
+			return true;
+		case decoItemFrameRemoveItemAuxFXID:
+			DecoUtilsSound.playSoundWithNullFallback(world, x, y, z, "deco.misc.itemFrame.removeItem", 1, 1);
+			return true;
 		default:
 			return false;
 		}
 	}
-	
+
 	public EntityFX spawnCustomParticle(Minecraft mc, World world, String particleType, double x, double y, double z, double velX, double velY, double velZ) {
-        if (mc != null && mc.renderViewEntity != null && mc.effectRenderer != null) {
-            int particleSetting = mc.gameSettings.particleSetting;
-            EntityFX fx = null;
+		if (mc != null && mc.renderViewEntity != null && mc.effectRenderer != null) {
+			int particleSetting = mc.gameSettings.particleSetting;
+			EntityFX fx = null;
 
-            if (particleSetting == 1 && world.rand.nextInt(3) == 0) {
-                particleSetting = 2;
-            }
+			if (particleSetting == 1 && world.rand.nextInt(3) == 0) {
+				particleSetting = 2;
+			}
 
-            double distX = mc.renderViewEntity.posX - x;
-            double distY = mc.renderViewEntity.posY - y;
-            double distZ = mc.renderViewEntity.posZ - z;
-            double maxParticleDist = 16.0D;
+			double distX = mc.renderViewEntity.posX - x;
+			double distY = mc.renderViewEntity.posY - y;
+			double distZ = mc.renderViewEntity.posZ - z;
+			double maxParticleDist = 16.0D;
 
-            //Only renders particles within maxParticleDist
-            if (distX * distX + distY * distY + distZ * distZ > maxParticleDist * maxParticleDist) {
-                return null;
-            }
-            //Reduces or eliminates particles based on game setting
-            else if (particleSetting > 1) {
-                return null;
-            }
-            else {
-            	if (particleType.equals(decoParticleSmokeColumn)) {
-            		
-            	}
-            	
-            	return fx;
-            }
-        }
-        
+			//Only renders particles within maxParticleDist
+			if (distX * distX + distY * distY + distZ * distZ > maxParticleDist * maxParticleDist) {
+				return null;
+			}
+			//Reduces or eliminates particles based on game setting
+			else if (particleSetting > 1) {
+				return null;
+			}
+			else {
+				if (particleType.equals(decoParticleSmokeColumn)) {
+
+				}
+
+				return fx;
+			}
+		}
+
 		return null;
 	}
 }

@@ -4,7 +4,7 @@ import java.util.List;
 
 public class DecoBlockPane extends FCBlockPane {
 
-	protected DecoBlockPane(int id, String sideTexture, String topTexture, Material material, boolean canDropItself) {
+	public DecoBlockPane(int id, String sideTexture, String topTexture, Material material, boolean canDropItself) {
 		super(id, sideTexture, topTexture, material, canDropItself);
 	}
     

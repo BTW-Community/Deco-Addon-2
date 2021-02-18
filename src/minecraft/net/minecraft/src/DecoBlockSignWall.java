@@ -1,7 +1,7 @@
 package net.minecraft.src;
 
 public class DecoBlockSignWall extends DecoBlockSign {
-    protected DecoBlockSignWall(int var1, int metaDrop, String baseTexture)
+    public DecoBlockSignWall(int var1, int metaDrop, String baseTexture)
     {
         super(var1, false, metaDrop, baseTexture);
     }

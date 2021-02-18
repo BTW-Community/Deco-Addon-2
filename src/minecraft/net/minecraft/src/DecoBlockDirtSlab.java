@@ -48,7 +48,7 @@ public class DecoBlockDirtSlab extends FCBlockDirtSlab {
     	
     	if (blockAccess instanceof ChunkCache) {
     		ChunkCache chunkCache = (ChunkCache) blockAccess;
-    		world = DecoManager.getWorldFromChunkCache(chunkCache);
+    		world = chunkCache.worldObj;
     	}
     	else if (blockAccess instanceof World) {
     		world = (World) blockAccess;

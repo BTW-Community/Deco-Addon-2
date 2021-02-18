@@ -132,7 +132,7 @@ public class DataWatcher
     {
         WatchableObject var3 = this.getWatchedObject(par1);
 
-        if (par2Obj == null || !par2Obj.equals(var3.getObject()))
+        if (!par2Obj.equals(var3.getObject()))
         {
             var3.setObject(par2Obj);
             var3.setWatched(true);

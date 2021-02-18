@@ -3,7 +3,7 @@ package net.minecraft.src;
 import java.util.Random;
 
 public class DecoBlockGrass extends FCBlockGrass {
-	protected DecoBlockGrass(int var1) {
+	public DecoBlockGrass(int var1) {
 		super(var1);
 	}
 
@@ -78,7 +78,7 @@ public class DecoBlockGrass extends FCBlockGrass {
     	
     	if (blockAccess instanceof ChunkCache) {
     		ChunkCache chunkCache = (ChunkCache) blockAccess;
-    		world = DecoManager.getWorldFromChunkCache(chunkCache);
+    		world = chunkCache.worldObj;
     	}
     	else if (blockAccess instanceof World) {
     		world = (World) blockAccess;

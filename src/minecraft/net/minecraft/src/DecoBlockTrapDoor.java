@@ -5,7 +5,7 @@ public class DecoBlockTrapDoor extends FCBlockTrapDoor {
 	private boolean flagBetterPlaceRule;
 	private boolean betterPlaceRuleIsLower;
 
-	protected DecoBlockTrapDoor(int ID) {
+	public DecoBlockTrapDoor(int ID) {
 		super(ID);
 		this.setUnlocalizedName("trapdoor");
 	}

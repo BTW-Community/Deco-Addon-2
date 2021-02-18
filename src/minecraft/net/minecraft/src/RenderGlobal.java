@@ -1825,20 +1825,20 @@ public class RenderGlobal implements IWorldAccess
             double var15 = this.mc.renderViewEntity.posX - par2;
             double var17 = this.mc.renderViewEntity.posY - par4;
             double var19 = this.mc.renderViewEntity.posZ - par6;
-            EntityFX var21 = null;
+            Object var21 = null;
             double var22;
 
             if (par1Str.equals("hugeexplosion"))
             {
-                this.mc.effectRenderer.addEffect(var21 = new EntityHugeExplodeFX(this.theWorld, par2, par4, par6, par8, par10, par12));
+                this.mc.effectRenderer.addEffect((EntityFX) (var21 = new EntityHugeExplodeFX(this.theWorld, par2, par4, par6, par8, par10, par12)));
             }
             else if (par1Str.equals("largeexplode"))
             {
-                this.mc.effectRenderer.addEffect(var21 = new EntityLargeExplodeFX(this.renderEngine, this.theWorld, par2, par4, par6, par8, par10, par12));
+                this.mc.effectRenderer.addEffect((EntityFX) (var21 = new EntityLargeExplodeFX(this.renderEngine, this.theWorld, par2, par4, par6, par8, par10, par12)));
             }
             else if (par1Str.equals("fireworksSpark"))
             {
-                this.mc.effectRenderer.addEffect(var21 = new EntityFireworkSparkFX(this.theWorld, par2, par4, par6, par8, par10, par12, this.mc.effectRenderer));
+                this.mc.effectRenderer.addEffect((EntityFX) (var21 = new EntityFireworkSparkFX(this.theWorld, par2, par4, par6, par8, par10, par12, this.mc.effectRenderer)));
             }
             else if (par1Str.equals("fccinders"))
             {
@@ -1846,7 +1846,7 @@ public class RenderGlobal implements IWorldAccess
 
                 if (var22 < 1024.0D)
                 {
-                    this.mc.effectRenderer.addEffect(var21 = new FCClientEntityCindersFX(this.theWorld, par2, par4, par6));
+                    this.mc.effectRenderer.addEffect((EntityFX) (var21 = new FCClientEntityCindersFX(this.theWorld, par2, par4, par6)));
                 }
             }
 
@@ -2028,6 +2028,9 @@ public class RenderGlobal implements IWorldAccess
                     else if (par1Str.equals("fcsmallflame"))
                     {
                         var21 = new FCClientEntitySmallFlameFX(this.theWorld, par2, par4, par6, par8, par10, par12);
+                    }
+                    else {
+                    	var21 = AddonExtHandler.spawnCustomParticle(this.theWorld, par1Str, par2, par4, par6, par8, par10, par12);
                     }
 
                     if (var21 != null)

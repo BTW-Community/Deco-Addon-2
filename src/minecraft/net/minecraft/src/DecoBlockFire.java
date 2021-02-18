@@ -1,7 +1,7 @@
 package net.minecraft.src;
 
 public class DecoBlockFire extends FCBlockFire {
-    protected DecoBlockFire(int id) {
+    public DecoBlockFire(int id) {
 		super(id);
 	}
 

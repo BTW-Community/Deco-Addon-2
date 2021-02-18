@@ -3,7 +3,7 @@ package net.minecraft.src;
 import java.util.List;
 
 public class DecoBlockIronBars extends FCBlockIronBars {
-    protected DecoBlockIronBars(int var1)
+    public DecoBlockIronBars(int var1)
     {
         super(var1);
     }

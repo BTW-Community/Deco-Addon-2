@@ -43,28 +43,6 @@ public class DecoBlockTrapDoorIron extends DecoBlockTrapDoor {
         if (!par1World.isRemote)
         {
             int var6 = par1World.getBlockMetadata(par2, par3, par4);
-            int var7 = par2;
-            int var8 = par4;
-
-            if ((var6 & 3) == 0)
-            {
-                var8 = par4 + 1;
-            }
-
-            if ((var6 & 3) == 1)
-            {
-                --var8;
-            }
-
-            if ((var6 & 3) == 2)
-            {
-                var7 = par2 + 1;
-            }
-
-            if ((var6 & 3) == 3)
-            {
-                --var7;
-            }
 
             boolean var9 = par1World.isBlockIndirectlyGettingPowered(par2, par3, par4);
 

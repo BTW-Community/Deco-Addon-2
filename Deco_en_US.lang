@@ -62,10 +62,10 @@ tile.decoBlockNetherBrickRedSlabLoose.name=Loose Red Nether Brick Slab
 tile.decoBlockNetherBrickRedStairsLoose.name=Loose Red Nether Brick Stairs
 tile.decoBlockMagma.name=Magma Block
 tile.decoBlockInfusedStoneStairs.name=Infused Stone Stairs
-tile.decoBlockInfusedStoneSmoothStairs=Polished Infused Stone Stairs
-tile.decoBlockInfusedStoneBrickStairs=Infused Stone Brick Stairs
+tile.decoBlockInfusedStoneSmoothStairs.name=Polished Infused Stone Stairs
+tile.decoBlockInfusedStoneBrickStairs.name=Infused Stone Brick Stairs
 tile.decoBlockEndStoneBrick.name=End Stone Brick
-tile.decoBlockEndStoneBrickStairs=End Stone Brick Stairs
+tile.decoBlockEndStoneBrickStairs.name=End Stone Brick Stairs
 tile.decoBlockChewedOak.name=Chewed Oak Log
 tile.decoBlockChewedSpruce.name=Chewed Spruce Log
 tile.decoBlockChewedBirch.name=Chewed Birch Log
@@ -405,10 +405,10 @@ tile.decoBlockFlower.daisy.name=Daisy
 tile.decoBlockFlower.peony.name=Peony
 tile.decoBlockFlower.lilac.name=Lilac
 tile.decoBlockFlower.rosebush.name=Rose Bush
-tile.decoBlockFlower.roseBlue=Blue Rose
+tile.decoBlockFlower.roseBlue.name=Blue Rose
 
 tile.decoBlockFlower2.blackRose.name=Black Rose
-tile.decoBlockFlower2.lilyOfTheValley=Lily of the Valley
+tile.decoBlockFlower2.lilyOfTheValley.name=Lily of the Valley
 
 tile.decoBlockTulip.red.name=Red Tulip
 tile.decoBlockTulip.pink.name=Pink Tulip
@@ -590,7 +590,7 @@ tile.decoBlockRedSandstone.chiseled.name=Chiseled Red Sandstone
 tile.decoBlockRedSandstone.smooth.name=Cut Red Sandstone
 tile.decoBlockRedSandstone.polished.name=Polished Red Sandstone
 tile.decoBlockRedSandstone.brick.name=Red Sandstone Brick
-tile.decoBlockRedSandstone.mossy=Mossy Red Sandstone
+tile.decoBlockRedSandstone.mossy.name=Mossy Red Sandstone
 tile.decoBlockRedSandstone.largeBrick.name=Large Red Sandstone Brick
 tile.decoBlockRedSandstone.largeBrickMossy.name=Large Mossy Red Sandstone Brick
 tile.decoBlockRedSandstone.cracked.name=Cracked Red Sandstone
@@ -751,7 +751,7 @@ tile.decoBlockSandstoneBrickLargeCrackedMoulding.table.name=Large Cracked Sandst
 
 tile.decoBlockPrismarine.prismarine.name=Prismarine
 tile.decoBlockPrismarine.prismarineBrick.name=Prismarine Brick
-tile.decoBlockPrismarine.prismarineDark=Dark Prismarine
+tile.decoBlockPrismarine.prismarineDark.name=Dark Prismarine
 
 tile.decoBlockPrismarineSiding.bench.name=Prismarine Bench
 tile.decoBlockPrismarineSiding.fence.name=Prismarine Wall
@@ -796,8 +796,8 @@ tile.decoBlockNetherBrickRedMoulding.table.name=Red Nether Brick Table
 tile.decoBlockNylium.crimson.name=Crimson Nylium
 tile.decoBlockNylium.warped.name=Warped Nylium
 
-tile.decoBlockBasalt.basalt=Basalt
-tile.decoBlockBasalt.basaltSmooth=Polished Basalt
+tile.decoBlockBasalt.basalt.name=Basalt
+tile.decoBlockBasalt.basaltSmooth.name=Polished Basalt
 
 tile.decoBlockInfusedStone.default.name=Infused Stone
 tile.decoBlockInfusedStone.smooth.name=Polished Infused Stone
@@ -808,28 +808,28 @@ tile.decoBlockInfusedStoneSiding.bench.name=Infused Stone Bench
 tile.decoBlockInfusedStoneSiding.fence.name=Infused Stone Wall
 tile.decoBlockInfusedStoneSiding.siding.name=Infused Stone Siding
 tile.decoBlockInfusedStoneSiding.corner.name=Infused Stone Corner
-tile.decoBlockInfusedStoneMoulding.column=Infused Stone Column
-tile.decoBlockInfusedStoneMoulding.pedestal=Infused Stone Column Pedestal
-tile.decoBlockInfusedStoneMoulding.moulding=Infused Stone Moulding
-tile.decoBlockInfusedStoneMoulding.table=Infused Stone Table
+tile.decoBlockInfusedStoneMoulding.column.name=Infused Stone Column
+tile.decoBlockInfusedStoneMoulding.pedestal.name=Infused Stone Column Pedestal
+tile.decoBlockInfusedStoneMoulding.moulding.name=Infused Stone Moulding
+tile.decoBlockInfusedStoneMoulding.table.name=Infused Stone Table
 
 tile.decoBlockInfusedStoneSmoothSiding.bench.name=Polished Infused Stone Bench
 tile.decoBlockInfusedStoneSmoothSiding.fence.name=Polished Infused Stone Wall
 tile.decoBlockInfusedStoneSmoothSiding.siding.name=Polished Infused Stone Siding
 tile.decoBlockInfusedStoneSmoothSiding.corner.name=Polished Infused Stone Corner
-tile.decoBlockInfusedStoneSmoothMoulding.column=Polished Infused Stone Column
-tile.decoBlockInfusedStoneSmoothMoulding.pedestal=Polished Infused Stone Column Pedestal
-tile.decoBlockInfusedStoneSmoothMoulding.moulding=Polished Infused Stone Moulding
-tile.decoBlockInfusedStoneSmoothMoulding.table=Polished Infused Stone Table
+tile.decoBlockInfusedStoneSmoothMoulding.column.name=Polished Infused Stone Column
+tile.decoBlockInfusedStoneSmoothMoulding.pedestal.name=Polished Infused Stone Column Pedestal
+tile.decoBlockInfusedStoneSmoothMoulding.moulding.name=Polished Infused Stone Moulding
+tile.decoBlockInfusedStoneSmoothMoulding.table.name=Polished Infused Stone Table
 
 tile.decoBlockInfusedStoneBrickSiding.bench.name=Infused Stone Brick Bench
 tile.decoBlockInfusedStoneBrickSiding.fence.name=Infused Stone Brick Wall
 tile.decoBlockInfusedStoneBrickSiding.siding.name=Infused Stone Brick Siding
 tile.decoBlockInfusedStoneBrickSiding.corner.name=Infused Stone Brick Corner
-tile.decoBlockInfusedStoneBrickMoulding.column=Infused Stone Brick Column
-tile.decoBlockInfusedStoneBrickMoulding.pedestal=Infused Stone Brick Column Pedestal
-tile.decoBlockInfusedStoneBrickMoulding.moulding=Infused Stone Brick Moulding
-tile.decoBlockInfusedStoneBrickMoulding.table=Infused Stone Brick Table
+tile.decoBlockInfusedStoneBrickMoulding.column.name=Infused Stone Brick Column
+tile.decoBlockInfusedStoneBrickMoulding.pedestal.name=Infused Stone Brick Column Pedestal
+tile.decoBlockInfusedStoneBrickMoulding.moulding.name=Infused Stone Brick Moulding
+tile.decoBlockInfusedStoneBrickMoulding.table.name=Infused Stone Brick Table
 
 tile.decoBlockConcrete.black.name=Black Concrete
 tile.decoBlockConcrete.red.name=Red Concrete
@@ -1029,10 +1029,10 @@ tile.decoBlockEndStoneBrickSiding.bench.name=End Stone Brick Bench
 tile.decoBlockEndStoneBrickSiding.fence.name=End Stone Brick Wall
 tile.decoBlockEndStoneBrickSiding.siding.name=End Stone Brick Siding
 tile.decoBlockEndStoneBrickSiding.corner.name=End Stone Brick Corner
-tile.decoBlockEndStoneBrickMoulding.column=End Stone Brick Column
-tile.decoBlockEndStoneBrickMoulding.pedestal=End Stone Brick Column Pedestal
-tile.decoBlockEndStoneBrickMoulding.moulding=End Stone Brick Moulding
-tile.decoBlockEndStoneBrickMoulding.table=End Stone Brick Table
+tile.decoBlockEndStoneBrickMoulding.column.name=End Stone Brick Column
+tile.decoBlockEndStoneBrickMoulding.pedestal.name=End Stone Brick Column Pedestal
+tile.decoBlockEndStoneBrickMoulding.moulding.name=End Stone Brick Moulding
+tile.decoBlockEndStoneBrickMoulding.table.name=End Stone Brick Table
 
 tile.decoBlockStoneSlabLoose.0.name=Loose Granite Cobblestone Slab
 tile.decoBlockStoneSlabLoose.1.name=Loose Andesite Cobblestone Slab
@@ -1056,7 +1056,7 @@ tile.decoBlockStoneSlab2.2.name=Diorite Slab
 tile.decoBlockStoneSlab2.3.name=Polished Granite Slab
 tile.decoBlockStoneSlab2.4.name=Polished Andesite Slab
 tile.decoBlockStoneSlab2.5.name=Polished Diorite Slab
-tile.decoBlockStoneSlab2.6.name=Granite Cobblestone Slab=
+tile.decoBlockStoneSlab2.6.name=Granite Cobblestone Slab.name=
 tile.decoBlockStoneSlab2.7.name=Andesite Cobblestone Slab
 
 tile.decoBlockStoneSlab3.0.name=Diorite Cobblestone Slab
@@ -1472,7 +1472,7 @@ tile.sandStone.chiseled.name=Chiseled Sandstone
 tile.sandStone.smooth.name=Cut Sandstone
 tile.sandStone.polished.name=Polished Sandstone
 tile.sandStone.brick.name=Sandstone Brick
-tile.sandStone.mossy=Mossy Sandstone
+tile.sandStone.mossy.name=Mossy Sandstone
 tile.sandStone.largeBrick.name=Large Sandstone Brick
 tile.sandStone.largeBrickMossy.name=Large Mossy Sandstone Brick
 tile.sandStone.cracked.name=Cracked Sandstone

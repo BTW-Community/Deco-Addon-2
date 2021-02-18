@@ -6,7 +6,7 @@ public class DecoBlockDoorWood extends FCBlockDoorWood {
 	private String[] doorIconNames;
 	private int doorItemID;
 
-	protected DecoBlockDoorWood(int ID, String[] textures, int doorItemID) {
+	public DecoBlockDoorWood(int ID, String[] textures, int doorItemID) {
 		super(ID);
 		this.doorIconNames = textures;
 		this.doorItemID = doorItemID;

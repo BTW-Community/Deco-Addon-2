@@ -109,6 +109,15 @@ public class DecoItemBlockSlab extends FCItemBlockSlab {
                     return true;
                 }
             }
+            else if (var7 instanceof DecoBlockRedSandSlab)
+            {
+                int var8 = ((DecoBlockRedSandSlab)var7).SetIsUpsideDown(var1.getBlockMetadata(var2, var3, var4), false);
+
+                if (var8 == var5)
+                {
+                    return true;
+                }
+            }
         }
 
         return false;

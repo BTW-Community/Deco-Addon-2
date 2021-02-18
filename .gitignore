@@ -21,6 +21,10 @@ reobfuscate.sh
 reobfuscate_srg.bat
 reobfuscate_srg.sh
 runtime/
+
+src/minecraft/net/minecraft/src/FC*
+src/minecraft_server/net/minecraft/src/FC*
+
 src - BTW 4B02 clean/
 src/minecraft/Start.java
 src/minecraft/argo/
@@ -266,7 +270,6 @@ src/minecraft/net/minecraft/src/ChatClickData.java
 src/minecraft/net/minecraft/src/ChatLine.java
 src/minecraft/net/minecraft/src/ChestItemRenderHelper.java
 src/minecraft/net/minecraft/src/Chunk.java
-src/minecraft/net/minecraft/src/ChunkCache.java
 src/minecraft/net/minecraft/src/ChunkCoordIntPair.java
 src/minecraft/net/minecraft/src/ChunkCoordinates.java
 src/minecraft/net/minecraft/src/ChunkLoader.java
@@ -939,7 +942,6 @@ src/minecraft/net/minecraft/src/FCBlockStairsNetherBrick.java
 src/minecraft/net/minecraft/src/FCBlockStairsSandStone.java
 src/minecraft/net/minecraft/src/FCBlockStairsStoneBrick.java
 src/minecraft/net/minecraft/src/FCBlockStairsWhiteStone.java
-src/minecraft/net/minecraft/src/FCBlockStairsWood.java
 src/minecraft/net/minecraft/src/FCBlockStake.java
 src/minecraft/net/minecraft/src/FCBlockStakeString.java
 src/minecraft/net/minecraft/src/FCBlockStem.java
@@ -1494,7 +1496,6 @@ src/minecraft/net/minecraft/src/GuiParticle.java
 src/minecraft/net/minecraft/src/GuiPlayerInfo.java
 src/minecraft/net/minecraft/src/GuiProgress.java
 src/minecraft/net/minecraft/src/GuiRenameWorld.java
-src/minecraft/net/minecraft/src/GuiRepair.java
 src/minecraft/net/minecraft/src/GuiScreen.java
 src/minecraft/net/minecraft/src/GuiScreenAddServer.java
 src/minecraft/net/minecraft/src/GuiScreenBook.java
@@ -1884,7 +1885,6 @@ src/minecraft/net/minecraft/src/PathFinder.java
 src/minecraft/net/minecraft/src/PathNavigate.java
 src/minecraft/net/minecraft/src/PathPoint.java
 src/minecraft/net/minecraft/src/PlayerCapabilities.java
-src/minecraft/net/minecraft/src/PlayerControllerMP.java
 src/minecraft/net/minecraft/src/PlayerInstance.java
 src/minecraft/net/minecraft/src/PlayerManager.java
 src/minecraft/net/minecraft/src/PlayerNotFoundException.java
@@ -2023,7 +2023,6 @@ src/minecraft/net/minecraft/src/ServerCommand.java
 src/minecraft/net/minecraft/src/ServerCommandManager.java
 src/minecraft/net/minecraft/src/ServerCommandScoreboard.java
 src/minecraft/net/minecraft/src/ServerCommandTestFor.java
-src/minecraft/net/minecraft/src/ServerConfigurationManager.java
 src/minecraft/net/minecraft/src/ServerData.java
 src/minecraft/net/minecraft/src/ServerList.java
 src/minecraft/net/minecraft/src/ServerListenThread.java

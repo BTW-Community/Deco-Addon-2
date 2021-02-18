@@ -318,8 +318,8 @@ public class DecoDefs {
 		id_acaciaSidingAndCorner=3493,
 		id_acaciaMouldingAndDecorative=3494,
 		id_acaciaSpaling=3495,
-		id_autmnSapling=3496,
-		id_autmnLeaves=3497,
+		id_autumnSapling=3496,
+		id_autumnLeaves=3497,
 	
 		id_spiderEyeBlock=3500,
 		id_spiderEyeSlab=3501,
@@ -527,6 +527,7 @@ public class DecoDefs {
 	public static Block stemCrimson, stemWarped, stemDamagedCrimson, stemDamagedWarped, stemSpikeCrimson, stemSpikeWarped, wartBlock;
 	public static Block netherRoots, netherVines;
 	public static Block spiderEyeBlock, spiderEyeSlab;
+	public static Block autumnLeaves, autumnSapling;
 
 	//Ground Cover
 	public static Block layerDirt, layerGrass, layerGravel, layerSand, layerRedSand, layerCoarseDirt, layerPodzol, layerPackedEarth, layerDirtLoose;
@@ -917,8 +918,7 @@ public class DecoDefs {
 		//Flower pot
 		flowerPot = new DecoBlockFlowerPot(id_flowerPot);
 		TileEntity.addMapping(DecoTileEntityFlowerPot.class, "AddonFlowerPot");
-		Item flowerPotItem = new DecoItemFlowerPot(Item.flowerPot.itemID - 256);
-		DawnUtilsReflection.replaceVanillaItem("flowerPot", Item.flowerPot, flowerPotItem);
+		Item.replaceItem(Item.flowerPot.itemID - 256, DecoItemFlowerPot.class);
 	}
 
 	private void addStoneDefs() {
@@ -1096,12 +1096,9 @@ public class DecoDefs {
 		Item.itemsList[redSandStoneBrickLargeCrackedMouldingAndDecorative.blockID] = new FCItemBlockMouldingAndDecorative(redSandStoneBrickLargeCrackedMouldingAndDecorative.blockID - 256);
 
 		pileRedSand = new DecoItemPileRedSand(id_pileRedSand);
-
-		Block sandStone = new DecoBlockSandStone(DecoManager.ReplaceBlockID(Block.sandStone));
-		DawnUtilsReflection.replaceVanillaBlock("sandStone", Block.sandStone, sandStone);
+		Block.sandStone = Block.replaceBlock(Block.sandStone.blockID, DecoBlockSandStone.class);
 		DecoManager.Register(Block.sandStone, new String[] {"default", "chiseled", "smooth", "polished", "brick", "mossy", "largeBrick", "largeBrickMossy", "cracked", "largeBrickCracked"});
-		Block sandStoneStairs = (new DecoBlockStairsSandStone(DecoManager.ReplaceBlockID(Block.stairsSandStone), Block.sandStone, 0)).setUnlocalizedName("stairsSandStone");
-		DawnUtilsReflection.replaceVanillaBlock("stairsSandStone", Block.stairsSandStone, sandStoneStairs);
+		Block.stairsSandStone = Block.replaceBlock(Block.stairsSandStone.blockID, DecoBlockStairsSandStone.class, Block.sandStone, 0);
 
 		sandStoneSmoothStairs = new DecoBlockStairsSandStone(id_sandstoneSmoothStairs, Block.sandStone, 2).setUnlocalizedName("decoBlockStairsSandStoneSmooth");
 		sandStoneSmoothSidingAndCorner = new DecoBlockSandStoneSidingAndCornerDecorativeWall(id_sandstoneSmoothSidingAndCorner, new String[] {"fcBlockDecorativeSandstone_top", "fcBlockDecorativeSandstone_top", "sandstone_smooth", "decoBlockSandstoneSmoothColumn"}, "decoBlockSandstoneSmoothSiding", "Smooth Sandstone");
@@ -1299,9 +1296,8 @@ public class DecoDefs {
 		Item.itemsList[endStoneBrickMouldingAndDecorative.blockID] = new FCItemBlockMouldingAndDecorative(endStoneBrickMouldingAndDecorative.blockID - 256);
 
 		//Obsidian
-		Block obsidian = new DecoBlockObsidian(DecoManager.ReplaceBlockID(Block.obsidian));
-		DawnUtilsReflection.replaceVanillaBlock("obsidian", Block.obsidian, obsidian);
-		DecoManager.Register(obsidian, new String[] {"obsidian", "infused"});
+		Block.obsidian = Block.replaceBlock(Block.obsidian.blockID, DecoBlockObsidian.class);
+		DecoManager.Register(Block.obsidian, new String[] {"obsidian", "infused"});
 
 		//MUST BE LAST OR NULL POINTER
 		//Has to be after reference blocks are declared
@@ -1339,8 +1335,7 @@ public class DecoDefs {
 	private void addWoodDefs() {
 		//Logs
 		FCBetterThanWolves.fcItemBark = new DecoItemBark(FCBetterThanWolves.fcItemBark.itemID - 256);
-		BlockLog addonLog = new DecoBlockLogReplace(DecoManager.ReplaceBlockID(Block.wood));
-		DawnUtilsReflection.replaceVanillaBlock("wood", Block.wood, addonLog);
+		Block.wood = Block.replaceBlock(Block.wood.blockID, DecoBlockLogReplace.class);
 		Item.itemsList[Block.wood.blockID] = new DecoItemBlockLog(Block.wood.blockID - 256, Block.wood, new String[] {"oakLog", "spruceLog", "birchLog", "jungleLog"});
 
 		strippedLog = new DecoBlockLogStripped(id_strippedLog);
@@ -1435,24 +1430,19 @@ public class DecoDefs {
 		stemWarped.setStepSound(stepSoundBloodLog);
 
 		//Planks
-		Block planks = new DecoBlockPlanks(DecoManager.ReplaceBlockID(Block.planks));
-		DawnUtilsReflection.replaceVanillaBlock("planks", Block.planks, planks);
+		Block.planks = Block.replaceBlock(Block.planks.blockID, DecoBlockPlanks.class);
 		DecoManager.Register(Block.planks, new String[] {"oak", "spruce", "birch", "jungle", "blood", "cherry", "crimson", "warped"});
-		Block stairsWoodOak = (new FCBlockStairsWood(DecoManager.ReplaceBlockID(Block.stairsWoodOak), Block.planks, 0)).setUnlocalizedName("stairsWood");
-		DawnUtilsReflection.replaceVanillaBlock("stairsWoodOak", Block.stairsWoodOak, stairsWoodOak);
-		Block stairsWoodSpruce = (new FCBlockStairsWood(DecoManager.ReplaceBlockID(Block.stairsWoodSpruce), Block.planks, 1)).setUnlocalizedName("stairsWoodSpruce");
-		DawnUtilsReflection.replaceVanillaBlock("stairsWoodSpruce", Block.stairsWoodSpruce, stairsWoodSpruce);
-		Block stairsWoodBirch = (new FCBlockStairsWood(DecoManager.ReplaceBlockID(Block.stairsWoodBirch), Block.planks, 2)).setUnlocalizedName("stairsWoodBirch");
-		DawnUtilsReflection.replaceVanillaBlock("stairsWoodBirch", Block.stairsWoodBirch, stairsWoodBirch);
-		Block stairsWoodJungle = (new FCBlockStairsWood(DecoManager.ReplaceBlockID(Block.stairsWoodJungle), Block.planks, 3)).setUnlocalizedName("stairsWoodJungle");
-		DawnUtilsReflection.replaceVanillaBlock("stairsWoodJungle", Block.stairsWoodJungle, stairsWoodJungle);
-		FCBetterThanWolves.fcBlockWoodBloodStairs = (new FCBlockStairsWood(DecoManager.ReplaceBlockID(FCBetterThanWolves.fcBlockWoodBloodStairs), Block.planks, 4)).setUnlocalizedName("fcBlockWoodBloodStairs");
+		Block.stairsWoodOak = Block.replaceBlock(Block.stairsWoodOak.blockID, FCBlockStairsWood.class, Block.planks, 0);
+		Block.stairsWoodSpruce = Block.replaceBlock(Block.stairsWoodSpruce.blockID, FCBlockStairsWood.class, Block.planks, 1);
+		Block.stairsWoodBirch = Block.replaceBlock(Block.stairsWoodBirch.blockID, FCBlockStairsWood.class, Block.planks, 2);
+		Block.stairsWoodJungle = Block.replaceBlock(Block.stairsWoodJungle.blockID, FCBlockStairsWood.class, Block.planks, 3);
+		FCBetterThanWolves.fcBlockWoodBloodStairs = Block.replaceBlock(FCBetterThanWolves.fcBlockWoodBloodStairs.blockID, FCBlockStairsWood.class, Block.planks, 4);
+		
 		cherryStairs = new FCBlockStairsWood(id_cherryStairs, Block.planks, 5).setUnlocalizedName("decoBlockCherryStairs");
 		DecoManager.Register(cherryStairs);
 
 		//Wood Sub Replace
-		Block fence = new DecoBlockFenceWood(DecoManager.ReplaceBlockID(Block.fence));
-		DawnUtilsReflection.replaceVanillaBlock("fence", Block.fence, fence);
+		Block.fence = Block.replaceBlock(Block.fence.blockID, DecoBlockFenceWood.class);
 		FCBetterThanWolves.fcBlockWoodOakSidingAndCorner = new DecoBlockWoodSidingAndCornerAndDecorative(DecoManager.ReplaceBlockID(FCBetterThanWolves.fcBlockWoodOakSidingAndCorner),"FCBlockDecorativeWoodOak", "fcWoodOakSiding");
 		FCBetterThanWolves.fcBlockWoodSpruceSidingAndCorner = new DecoBlockWoodSidingAndCornerAndDecorative(DecoManager.ReplaceBlockID(FCBetterThanWolves.fcBlockWoodSpruceSidingAndCorner),"fcBlockDecorativeWoodSpruce", "fcWoodSpruceSiding").setUnlocalizedName("fcWoodSpruceSiding");
 		FCBetterThanWolves.fcBlockWoodBirchSidingAndCorner = new DecoBlockWoodSidingAndCornerAndDecorative(DecoManager.ReplaceBlockID(FCBetterThanWolves.fcBlockWoodBirchSidingAndCorner),"fcBlockDecorativeWoodBirch", "fcWoodBirchSiding").setUnlocalizedName("fcWoodBirchSiding");
@@ -1479,7 +1469,7 @@ public class DecoDefs {
 
 		//Trapdoors
 		//Forces oak trap doors to inherit texture rotations and eventually better placement
-		DawnUtilsReflection.replaceVanillaBlock("trapdoor", Block.trapdoor, new DecoBlockTrapDoor(DecoManager.ReplaceBlockID(Block.trapdoor)));
+		Block.trapdoor = Block.replaceBlock(Block.trapdoor.blockID, DecoBlockTrapDoor.class);
 		DecoManager.Name(Block.trapdoor, "Oak Trap Door");
 
 		trapdoorSpruce = (BlockTrapDoor) new DecoBlockTrapDoor(id_trapdoorSpruce).setUnlocalizedName("decoBlockTrapdoorSpruce");
@@ -1499,22 +1489,16 @@ public class DecoDefs {
 		DecoManager.Register(trapdoorIron);
 
 		//Doors
-		Item itemDoorOak = new DecoItemDoor(Item.doorWood.itemID - 256, "doorWood", Block.doorWood.blockID, true);
-		DawnUtilsReflection.replaceVanillaItem("doorWood", Item.doorWood, itemDoorOak);
+		Item.doorWood = Item.replaceItem(Item.doorWood.itemID, DecoItemDoor.class, "doorWood", Block.doorWood.blockID, true);
+		Item.doorIron = Item.replaceItem(Item.doorIron.itemID, DecoItemDoor.class, "doorIron", Block.doorIron.blockID, false);
 		itemDoorSpruce = (FCItemDoor) new DecoItemDoor(id_itemDoorSpruce, "decoItemDoorSpruce", id_doorSpruce, true);
 		itemDoorBirch = (FCItemDoor) new DecoItemDoor(id_itemDoorBirch, "decoItemDoorBirch", id_doorBirch, true);
 		itemDoorJungle = (FCItemDoor) new DecoItemDoor(id_itemDoorJungle, "decoItemDoorJungle", id_doorJungle, true);
 		itemDoorBlood = (FCItemDoor) new DecoItemDoor(id_itemDoorBlood, "decoItemDoorBlood", id_doorBlood, true);
 		itemDoorCherry = (FCItemDoor) new DecoItemDoor(id_itemDoorCherry, "decoItemDoorCherry", id_doorCherry, true);
-
-		BlockDoor doorIron = (BlockDoor) new DecoBlockDoorIron(DecoManager.ReplaceBlockID(Block.doorIron)).setHardness(5.0F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("doorIron").disableStats();
-		DawnUtilsReflection.replaceVanillaBlock("doorIron", Block.doorIron, doorIron);
-
-		Item itemDoorIron = new DecoItemDoor(Item.doorIron.itemID - 256, "doorIron", Block.doorIron.blockID, false);
-		DawnUtilsReflection.replaceVanillaItem("doorIron", Item.doorIron, itemDoorIron);
-
-		BlockDoor doorOak = new DecoBlockDoorWood(DecoManager.ReplaceBlockID(Block.doorWood), new String[] {"doorWood_lower", "doorWood_upper"}, Item.doorWood.itemID);
-		DawnUtilsReflection.replaceVanillaBlock("doorWood", Block.doorWood, doorOak);
+		
+		Block.doorWood = Block.replaceBlock(Block.doorWood.blockID, DecoBlockDoorWood.class, new String[] {"doorWood_lower", "doorWood_upper"}, Item.doorWood.itemID);
+		Block.doorIron = Block.replaceBlock(Block.doorIron.blockID, DecoBlockDoorIron.class);
 		doorSpruce = (BlockDoor) new DecoBlockDoorWood(id_doorSpruce, new String[] {"decoBlockDoorSpruce_lower", "decoBlockDoorSpruce_upper"}, itemDoorSpruce.itemID).setUnlocalizedName("decoBlockDoorSpruce");
 		doorBirch = (BlockDoor) new DecoBlockDoorWood(id_doorBirch, new String[] {"decoBlockDoorBirch_lower", "decoBlockDoorBirch_upper"}, itemDoorBirch.itemID).setUnlocalizedName("decoBlockDoorBirch");
 		doorJungle = (BlockDoor) new DecoBlockDoorWood(id_doorJungle, new String[] {"decoBlockDoorJungle_lower", "decoBlockDoorJungle_upper"}, itemDoorJungle.itemID).setUnlocalizedName("decoBlockDoorJungle");
@@ -1528,9 +1512,7 @@ public class DecoDefs {
 		DecoManager.Register(doorCherry);
 
 		//Fence gates
-		BlockFenceGate gateOak = new DecoBlockFenceGate(DecoManager.ReplaceBlockID(Block.fenceGate), "wood");
-		DawnUtilsReflection.replaceVanillaBlock("fenceGate", Block.fenceGate, gateOak);
-
+		Block.fenceGate = Block.replaceBlock(Block.fenceGate.blockID, DecoBlockFenceGate.class, "wood");
 		gateSpruce = (BlockFenceGate) new DecoBlockFenceGate(id_gateSpruce, "decoBlockGateSpruce");
 		gateBirch = (BlockFenceGate) new DecoBlockFenceGate(id_gateBirch, "decoBlockGateBirch");
 		gateJungle = (BlockFenceGate) new DecoBlockFenceGate(id_gateJungle, "decoBlockGateJungle");
@@ -1608,24 +1590,21 @@ public class DecoDefs {
 		DecoManager.Register(crate, new String[] {"oak", "spruce", "birch", "jungle", "blood", "cherry"});
 
 		//Signs
-		Block signPost = new DecoBlockSign(DecoManager.ReplaceBlockID(Block.signPost), true, 0, "wood");
-		DawnUtilsReflection.replaceVanillaBlock("signPost", Block.signPost, signPost);
+		Block.signPost = Block.replaceBlock(Block.signPost.blockID, DecoBlockSign.class, true, 0, "wood");
 		signSpruce = new DecoBlockSign(id_signSpruce, true, 1, "wood_spruce");
 		signBirch = new DecoBlockSign(id_signBirch, true, 2, "wood_birch");
 		signJungle = new DecoBlockSign(id_signJungle, true, 3, "wood_jungle");
 		signBlood = new DecoBlockSign(id_signBlood, true, 4, "fcBlockPlanks_blood");
 		signCherry = new DecoBlockSign(id_signCherry, true, 5, "decoBlockPlanksCherry");
 
-		Block signWall = new DecoBlockSignWall(DecoManager.ReplaceBlockID(Block.signWall), 0, "wood");
-		DawnUtilsReflection.replaceVanillaBlock("signWall", Block.signWall, signWall);
+		Block.signWall = Block.replaceBlock(Block.signWall.blockID, DecoBlockSignWall.class, 0, "wood");
 		signSpruceWall = new DecoBlockSignWall(id_signSpruceWall, 1, "wood_spruce");
 		signBirchWall = new DecoBlockSignWall(id_signBirchWall, 2, "wood_birch");
 		signJungleWall = new DecoBlockSignWall(id_signJungleWall, 3, "wood_jungle");
 		signBloodWall = new DecoBlockSignWall(id_signBloodWall, 4, "fcBlockPlanks_blood");
 		signCherryWall = new DecoBlockSignWall(id_signCherryWall, 5, "decoBlockPlanksCherry");
 
-		Item sign = new DecoItemSign(Item.sign.itemID - 256).SetBuoyant().SetIncineratedInCrucible().setUnlocalizedName("sign");
-		DawnUtilsReflection.replaceVanillaItem("sign", Item.sign, sign);
+		Item.sign = Item.replaceItem(Item.sign.itemID, DecoItemSign.class);
 
 		//Slabs
 		planksPaintedSlab = (DecoBlockWoodSlab) new DecoBlockWoodSlab(id_paintedPlanksSlab, new Block[] {planksPainted, planksPainted, planksPainted, planksPainted, planksPainted, planksPainted, planksPainted, planksPainted}, new int[] {0, 1, 2, 3, 4, 5, 6, 7},
@@ -1687,19 +1666,15 @@ public class DecoDefs {
 		//podzolSlab = new AddonBlockDirtSlab(id_podzolSlab));
 
 		//Dirt Replace
-		Block grass = new DecoBlockGrass(DecoManager.ReplaceBlockID(Block.grass));
-		DawnUtilsReflection.replaceVanillaBlock("grass", Block.grass, grass);
-		Block dirt = new DecoBlockDirt(DecoManager.ReplaceBlockID(Block.dirt));
-		DawnUtilsReflection.replaceVanillaBlock("dirt", Block.dirt, dirt);
-		Block mycelium = new DecoBlockMycelium(DecoManager.ReplaceBlockID(Block.mycelium));
-		DawnUtilsReflection.replaceVanillaBlock("mycelium", Block.mycelium, mycelium);
+		Block.grass = (BlockGrass) Block.replaceBlock(Block.grass.blockID, DecoBlockGrass.class);
+		Block.dirt = Block.replaceBlock(Block.dirt.blockID, DecoBlockDirt.class);
+		Block.mycelium = (BlockMycelium) Block.replaceBlock(Block.mycelium.blockID, DecoBlockMycelium.class);
 		FCBetterThanWolves.fcBlockDirtLoose = new DecoBlockDirtLoose(DecoManager.ReplaceBlockID(FCBetterThanWolves.fcBlockDirtLoose));
 		FCBetterThanWolves.fcBlockDirtSlab = new DecoBlockDirtSlab(DecoManager.ReplaceBlockID(FCBetterThanWolves.fcBlockDirtSlab));
 		FCBetterThanWolves.fcBlockDirtLooseSlab = new DecoBlockDirtLooseSlab(DecoManager.ReplaceBlockID(FCBetterThanWolves.fcBlockDirtLooseSlab));
 
 		//Nether portal
-		BlockPortal addonPortal = (BlockPortal) new DecoBlockPortal(DecoManager.ReplaceBlockID(Block.portal));
-		DawnUtilsReflection.replaceVanillaBlock("portal", Block.portal, addonPortal);
+		Block.portal = (BlockPortal) Block.replaceBlock(Block.portal.blockID, DecoBlockPortal.class);
 
 		//Pumpkins
 		pumpkin = new DecoBlockPumpkinCarved(id_pumpkin);
@@ -1713,8 +1688,7 @@ public class DecoDefs {
 		DecoManager.Register(carpet, DecoUtilsMisc.colorOrder);
 
 		//Coal block
-		Item coal = new DecoItemCoal(Item.coal.itemID - 256).SetIncineratedInCrucible().SetFurnaceBurnTime(FCEnumFurnaceBurnTime.COAL).SetFilterableProperties(2).setUnlocalizedName("coal");
-		DawnUtilsReflection.replaceVanillaItem("coal", Item.coal, coal);
+		Item.coal = Item.replaceItem(Item.coal.itemID, DecoItemCoal.class);
 		FCBetterThanWolves.fcItemNethercoal = new DecoItemNethercoal(FCBetterThanWolves.fcItemNethercoal.itemID - 256).SetFurnaceBurnTime(2 * FCEnumFurnaceBurnTime.COAL.m_iBurnTime).SetFilterableProperties(2).setUnlocalizedName("fcItemNethercoal").setCreativeTab(CreativeTabs.tabMaterials);
 
 		coalBlock = new Block(id_coalBlock, Material.rock).setUnlocalizedName("decoBlockCoal").SetPicksEffectiveOn().SetFireProperties(FCEnumFlammability.EXTREME).setHardness(1.5F).setResistance(10.0F).setCreativeTab(CreativeTabs.tabBlock);
@@ -1723,8 +1697,7 @@ public class DecoDefs {
 		DecoManager.Register(netherCoalBlock);
 
 		//Fire
-		BlockFire fire = new DecoBlockFire(DecoManager.ReplaceBlockID(Block.fire));
-		DawnUtilsReflection.replaceVanillaBlock("fire", Block.fire, fire);
+		Block.fire = (BlockFire) Block.replaceBlock(Block.fire.blockID, DecoBlockFire.class);
 		FCBetterThanWolves.fcBlockFireStoked = new DecoBlockFireStoked(DecoManager.ReplaceBlockID(FCBetterThanWolves.fcBlockFireStoked));
 
 		//Bone
@@ -1743,14 +1716,11 @@ public class DecoDefs {
 		FCBetterThanWolves.fcBlockBoneSlab.setStepSound(stepSoundBone);
 
 		//Ender Pearl
-		Item enderPearl = new DecoItemEnderPearl(Item.enderPearl.itemID - 256).SetFilterableProperties(2).setUnlocalizedName("enderPearl");
-		DawnUtilsReflection.replaceVanillaItem("enderPearl", Item.enderPearl, enderPearl);
+		Item.enderPearl = Item.replaceItem(Item.enderPearl.itemID, DecoItemEnderPearl.class);
 
 		//Buttons
-		Block woodButton = new DecoBlockButtonWood(DecoManager.ReplaceBlockID(Block.woodenButton), Block.planks, 0).setHardness(0.5F).setStepSound(Block.soundWoodFootstep).setUnlocalizedName("woodenButton");
-		DawnUtilsReflection.replaceVanillaBlock("woodenButton", Block.woodenButton, woodButton);
-		Block stoneButton = new DecoBlockButtonStone(DecoManager.ReplaceBlockID(Block.stoneButton), Block.stone, 0).setHardness(0.5F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("stoneButton");
-		DawnUtilsReflection.replaceVanillaBlock("stoneButton", Block.stoneButton, stoneButton);
+		Block.woodenButton = Block.replaceBlock(Block.woodenButton.blockID, DecoBlockButtonWood.class, Block.planks, 0);
+		Block.stoneButton = Block.replaceBlock(Block.stoneButton.blockID, DecoBlockButtonStone.class, Block.stone, 0);
 
 		buttonSpruce = new DecoBlockButtonWood(id_buttonSpruce, Block.planks, 1).setHardness(0.5F).setStepSound(Block.soundWoodFootstep).setUnlocalizedName("decoBlockButtonSpruce");
 		buttonBirch = new DecoBlockButtonWood(id_buttonBirch, Block.planks, 2).setHardness(0.5F).setStepSound(Block.soundWoodFootstep).setUnlocalizedName("decoBlockButtonBirch");
@@ -1784,13 +1754,14 @@ public class DecoDefs {
 		cherryLeaves = new DecoBlockLeavesCherry(id_cherryLeaves);
 		DecoManager.Register(cherryLeaves);
 		
-		
+		autumnLeaves = new DecoBlockLeavesAutumn(id_autumnLeaves);
+		Item.itemsList[autumnLeaves.blockID] = new DecoItemBlockMulti(autumnLeaves, DecoBlockLeavesAutumn.LEAF_TYPES);
+		autumnSapling = new DecoBlockSaplingAutumn(id_autumnSapling);
+		Item.itemsList[autumnSapling.blockID] = new DecoItemBlockMulti(autumnSapling, DecoBlockLeavesAutumn.LEAF_TYPES);
 
 		//Leaves, vines, and webs
-		Block leaves = new DecoBlockLeaves(DecoManager.ReplaceBlockID(Block.leaves));
-		DawnUtilsReflection.replaceVanillaBlock("leaves", Block.leaves, leaves);
-		Block vine = new DecoBlockVine(DecoManager.ReplaceBlockID(Block.vine));
-		DawnUtilsReflection.replaceVanillaBlock("vine", Block.vine, vine);
+		Block.leaves = (BlockLeaves) Block.replaceBlock(Block.leaves.blockID, DecoBlockLeaves.class);
+		Block.vine = Block.replaceBlock(Block.vine.blockID, DecoBlockVine.class);
 		Item.itemsList[Block.vine.blockID] = new ItemColored(Block.vine.blockID - 256, false);
 		FCBetterThanWolves.fcBlockBloodLeaves = new DecoBlockLeavesBlood(DecoManager.ReplaceBlockID(FCBetterThanWolves.fcBlockBloodLeaves));
 		FCBetterThanWolves.fcBlockWeb = new DecoBlockWeb(DecoManager.ReplaceBlockID(FCBetterThanWolves.fcBlockWeb));
@@ -1840,10 +1811,8 @@ public class DecoDefs {
 		Item.itemsList[hedgeCherryMouldingAndDecorative.blockID] = new FCItemBlockMouldingAndDecorative(hedgeCherryMouldingAndDecorative.blockID - 256);
 
 		//Panes replace
-		Block thinGlass = new DecoBlockPane(DecoManager.ReplaceBlockID(Block.thinGlass), "glass", "thinglass_top", Material.glass, false).setHardness(0.3F).SetPicksEffectiveOn().setStepSound(Block.soundGlassFootstep).setUnlocalizedName("thinGlass");
-		DawnUtilsReflection.replaceVanillaBlock("thinGlass", Block.thinGlass, thinGlass);
-		Block fenceIron = new DecoBlockIronBars(DecoManager.ReplaceBlockID(Block.fenceIron));
-		DawnUtilsReflection.replaceVanillaBlock("fenceIron", Block.fenceIron, fenceIron);
+		Block.thinGlass = Block.replaceBlock(Block.thinGlass.blockID, DecoBlockPane.class, "glass", "thinglass_top", Material.glass, false);
+		Block.fenceIron = Block.replaceBlock(Block.fenceIron.blockID, DecoBlockIronBars.class);
 		FCBetterThanWolves.fcBlockGrate = new DecoBlockGrate(DecoManager.ReplaceBlockID(FCBetterThanWolves.fcBlockGrate));
 		FCBetterThanWolves.fcBlockWickerPane = new DecoBlockWickerPane(DecoManager.ReplaceBlockID(FCBetterThanWolves.fcBlockWickerPane));
 		FCBetterThanWolves.fcBlockSlats = new DecoBlockSlats(DecoManager.ReplaceBlockID(FCBetterThanWolves.fcBlockSlats));
@@ -1872,8 +1841,7 @@ public class DecoDefs {
 
 		//Cocoa
 		FCBetterThanWolves.fcItemCocoaBeans = new DecoItemCocoaBeans(FCBetterThanWolves.fcItemCocoaBeans.itemID - 256);
-		Block cocoaPlant = new DecoBlockCocoa(DecoManager.ReplaceBlockID(Block.cocoaPlant)).setHardness(0.2F).setResistance(5.0F).SetBuoyant().setStepSound(Block.soundWoodFootstep).setUnlocalizedName("cocoa");;
-		DawnUtilsReflection.replaceVanillaBlock("cocoaPlant", Block.cocoaPlant, cocoaPlant);
+		Block.cocoaPlant = Block.replaceBlock(Block.cocoaPlant.blockID, DecoBlockCocoa.class);
 
 		//Hemp
 		FCBetterThanWolves.fcBlockHempCrop = new DecoBlockHempCrop(DecoManager.ReplaceBlockID(FCBetterThanWolves.fcBlockHempCrop));
@@ -1882,27 +1850,21 @@ public class DecoDefs {
 		Item.itemsList[Block.waterlily.blockID] = new DecoItemBlockLilyPad(Block.waterlily.blockID - 256);
 
 		//Tall grass
-		Block tallGrass = new DecoBlockTallGrass(DecoManager.ReplaceBlockID(Block.tallGrass));
-		DawnUtilsReflection.replaceVanillaBlock("tallGrass", Block.tallGrass, tallGrass);
-		Item.itemsList[tallGrass.blockID] = (new ItemColored(tallGrass.blockID - 256, true)).setBlockNames(new String[] {"shrub", "grass", "fern"});
+		Block.tallGrass = (BlockTallGrass) Block.replaceBlock(Block.tallGrass.blockID, DecoBlockTallGrass.class);
+		Item.itemsList[Block.tallGrass.blockID] = (new ItemColored(Block.tallGrass.blockID - 256, true)).setBlockNames(new String[] {"shrub", "grass", "fern"});
 		
 		//Spider eyes
-		Item spiderEye = new DecoItemSpiderEye(Item.spiderEye.itemID - 256);
-		DawnUtilsReflection.replaceVanillaItem("spiderEye", Item.spiderEye, spiderEye);
+		Item.spiderEye = Item.replaceItem(Item.spiderEye.itemID, DecoItemSpiderEye.class);
 		spiderEyeBlock = new DecoBlockSpiderEye(id_spiderEyeBlock);
 		DecoManager.Register(spiderEyeBlock);
 		spiderEyeSlab = new DecoBlockSpiderEyeSlab(id_spiderEyeSlab);
 		DecoManager.Register(spiderEyeSlab);
 
 		//Fluids
-		BlockFluid waterStill = (BlockFluid) new DecoBlockWaterStationary(DecoManager.ReplaceBlockID(Block.waterStill), Material.water).setHardness(100.0F).setLightOpacity(3).setUnlocalizedName("water").disableStats();
-		DawnUtilsReflection.replaceVanillaBlock("waterStill", Block.waterStill, waterStill);
-		BlockFluid waterMoving = (BlockFluid) new DecoBlockWaterFlowing(DecoManager.ReplaceBlockID(Block.waterMoving), Material.water).setHardness(100.0F).setLightOpacity(3).setUnlocalizedName("water").disableStats();
-		DawnUtilsReflection.replaceVanillaBlock("waterMoving", Block.waterMoving, waterMoving);
-		BlockFluid lavaStill = (BlockFluid) new DecoBlockLavaStationary(DecoManager.ReplaceBlockID(Block.lavaStill), Material.lava).setHardness(100.0F).setLightValue(1.0F).setUnlocalizedName("lava").disableStats();
-		DawnUtilsReflection.replaceVanillaBlock("lavaStill", Block.lavaStill, lavaStill);
-		BlockFluid lavaMoving = (BlockFluid) new DecoBlockLavaFlowing(DecoManager.ReplaceBlockID(Block.lavaMoving), Material.lava).setHardness(100.0F).setLightValue(1.0F).setUnlocalizedName("lava").disableStats();
-		DawnUtilsReflection.replaceVanillaBlock("lavaMoving", Block.lavaMoving, lavaMoving);
+		Block.waterStill = (BlockFluid) Block.replaceBlock(Block.waterStill.blockID, DecoBlockWaterStationary.class, Material.water);
+		Block.waterMoving = (BlockFluid) Block.replaceBlock(Block.waterMoving.blockID, DecoBlockWaterFlowing.class, Material.water);
+		Block.lavaStill = (BlockFluid) Block.replaceBlock(Block.lavaStill.blockID, DecoBlockLavaStationary.class, Material.lava);
+		Block.lavaMoving = (BlockFluid) Block.replaceBlock(Block.lavaMoving.blockID, DecoBlockLavaFlowing.class, Material.lava);
 
 		//Extra sounds
 		Block.slowSand.setStepSound(stepSoundSoulSand);
@@ -1935,8 +1897,7 @@ public class DecoDefs {
 		//TileEntity.ReplaceVanillaMapping(FCTileEntityHopper.class, AddonTileEntityHopper.class, "Hopper");
 
 		//Shears - for added efficient blocks
-		Item shears = new DecoItemShears(Item.shears.itemID - 256).setUnlocalizedName("shears");
-		DawnUtilsReflection.replaceVanillaItem("shears", Item.shears, shears);
+		Item.shears = (ItemShears) Item.replaceItem(Item.shears.itemID, DecoItemShears.class);
 
 		shearsDiamond = (DecoItemShearsDiamond) new DecoItemShearsDiamond(id_shearsDiamond).setUnlocalizedName("decoItemShearsDiamond");
 
@@ -1985,11 +1946,9 @@ public class DecoDefs {
 		FCBetterThanWolves.fcBlockWhiteStoneSidingAndCorner = new DecoBlockSidingAndCornerDecorativeWall(DecoManager.ReplaceBlockID(FCBetterThanWolves.fcBlockWhiteStoneSidingAndCorner),  Material.rock, "fcBlockDecorativeWhiteStone", 1.5F, 10.0F, Block.soundStoneFootstep, "fcWhiteStoneSiding", "White Stone").SetPicksEffectiveOn();
 		FCBetterThanWolves.fcBlockSmoothStoneSidingAndCorner = (new DecoBlockSidingAndCornerDecorativeWall(DecoManager.ReplaceBlockID(FCBetterThanWolves.fcBlockSmoothStoneSidingAndCorner), Material.rock, "fcBlockDecorativeStone", 1.5F, 10.0F, Block.soundStoneFootstep, "fcStoneSiding", "Stone")).SetPicksEffectiveOn();
 
-		Block netherFence = new DecoBlockFence(DecoManager.ReplaceBlockID(Block.netherFence), "netherBrick", FCBetterThanWolves.fcMaterialNetherRock).setHardness(2.0F).setResistance(10.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("netherFence");
-		DawnUtilsReflection.replaceVanillaBlock("netherFence", Block.netherFence, netherFence);
-
-		Block wall = (new DecoBlockWall(DecoManager.ReplaceBlockID(Block.cobblestoneWall), Block.cobblestone)).setUnlocalizedName("cobbleWall");
-		DawnUtilsReflection.replaceVanillaBlock("cobblestoneWall", Block.cobblestoneWall, wall);
+		Block.netherFence = Block.replaceBlock(Block.netherFence.blockID, DecoBlockFence.class, "netherBrick", FCBetterThanWolves.fcMaterialNetherRock);
+		
+		Block.cobblestoneWall = Block.replaceBlock(Block.cobblestoneWall.blockID, DecoBlockWall.class, Block.cobblestone);
 	}
 
 	private void addExtraSubBlockDefs() {
@@ -2000,77 +1959,25 @@ public class DecoDefs {
 
 	private void addEntityDefs() {
 		//Vanilla entities
-		DawnUtilsReflection.replaceEntityMappingWithAllowanceForOldClass(FCEntityVillager.class, DecoEntityVillager.class, "Villager");
-		DawnUtilsReflection.replaceEntityMappingWithAllowanceForOldClass(FCEntitySquid.class, DecoEntitySquid.class, "Squid");
-		DawnUtilsReflection.replaceEntityMappingWithAllowanceForOldClass(FCEntityOcelot.class, DecoEntityOcelot.class, "Ozelot");
-		DawnUtilsReflection.replaceEntityMappingWithAllowanceForOldClass(FCEntityCreeper.class, DecoEntityCreeper.class, "Creeper");
-		DawnUtilsReflection.replaceEntityMappingWithAllowanceForOldClass(FCEntitySheep.class, DecoEntitySheep.class, "Sheep");
+		EntityList.ReplaceExistingMapping(DecoEntitySquid.class, "Squid");
+		EntityList.ReplaceExistingMapping(DecoEntityOcelot.class, "Ozelot");
+		EntityList.ReplaceExistingMapping(DecoEntityCreeper.class, "Creeper");
+		EntityList.ReplaceExistingMapping(DecoEntitySheep.class, "Sheep");
+		EntityList.replaceExistingMappingSafe(DecoEntityVillager.class, "Villager");
 
 		//Custom entities
 		EntityList.AddMapping(DecoEntityFallingConcrete.class, "FallingConcrete", id_entityFallingConcrete);
 
 		//Item frame
-		Item itemFrame = new DecoItemFrame(Item.itemFrame.itemID - 256).SetBuoyant().SetIncineratedInCrucible().SetFilterableProperties(1).setUnlocalizedName("frame");
-		DawnUtilsReflection.replaceVanillaItem("itemFrame", Item.itemFrame, itemFrame);
+		Item.itemFrame = Item.replaceItem(Item.itemFrame.itemID, DecoItemFrame.class);
 		EntityList.ReplaceExistingMapping(DecoEntityItemFrame.class, "ItemFrame");
 
 		//Painting
-		Item painting = new DecoItemPainting(Item.painting.itemID - 256).SetBuoyant().SetIncineratedInCrucible().setUnlocalizedName("painting");
-		DawnUtilsReflection.replaceVanillaItem("painting", Item.painting, painting);
+		Item.painting = Item.replaceItem(Item.painting.itemID, DecoItemPainting.class);
 		EntityList.ReplaceExistingMapping(DecoEntityPainting.class, "Painting");
 
 		//Canvas
 		FCBetterThanWolves.fcItemCanvas = new DecoItemCanvas(FCBetterThanWolves.fcItemCanvas.itemID - 256);
 		EntityList.ReplaceExistingMapping(DecoEntityCanvas.class, "fcCanvas");
-	}
-	
-	public void registerObfuscationMappings() {
-		DawnUtilsReflection.registerBlockObfuscationMappping("wood", "N");
-		DawnUtilsReflection.registerBlockObfuscationMappping("trapdoor", "bo");
-		DawnUtilsReflection.registerBlockObfuscationMappping("portal", "bi");
-		DawnUtilsReflection.registerBlockObfuscationMappping("fence", "bd");
-		DawnUtilsReflection.registerBlockObfuscationMappping("netherFence", "bF");
-		DawnUtilsReflection.registerBlockObfuscationMappping("cobblestoneWall", "cf");
-		DawnUtilsReflection.registerBlockObfuscationMappping("oreNetherQuartz", "ct");
-		DawnUtilsReflection.registerBlockObfuscationMappping("sandStone", "U");
-		DawnUtilsReflection.registerBlockObfuscationMappping("stairsSandStone", "bU");
-		DawnUtilsReflection.registerBlockObfuscationMappping("planks", "B");
-		DawnUtilsReflection.registerBlockObfuscationMappping("stairsWoodOak", "ax");
-		DawnUtilsReflection.registerBlockObfuscationMappping("stairsWoodSpruce", "ca");
-		DawnUtilsReflection.registerBlockObfuscationMappping("stairsWoodBirch", "cb");
-		DawnUtilsReflection.registerBlockObfuscationMappping("stairsWoodJungle", "cc");
-		DawnUtilsReflection.registerBlockObfuscationMappping("obsidian", "at");
-		DawnUtilsReflection.registerBlockObfuscationMappping("signPost", "aH");
-		DawnUtilsReflection.registerBlockObfuscationMappping("signWall", "aM");
-		DawnUtilsReflection.registerBlockObfuscationMappping("thinGlass", "bu");
-		DawnUtilsReflection.registerBlockObfuscationMappping("fenceIron", "bt");
-		DawnUtilsReflection.registerBlockObfuscationMappping("fire", "av");
-		DawnUtilsReflection.registerBlockObfuscationMappping("stoneButton", "aV");
-		DawnUtilsReflection.registerBlockObfuscationMappping("woodenButton", "cj");
-		DawnUtilsReflection.registerBlockObfuscationMappping("fenceGate", "bz");
-		DawnUtilsReflection.registerBlockObfuscationMappping("cocoaPlant", "bT");
-		DawnUtilsReflection.registerBlockObfuscationMappping("doorWood", "aI");
-		DawnUtilsReflection.registerBlockObfuscationMappping("waterMoving", "E");
-		DawnUtilsReflection.registerBlockObfuscationMappping("waterStill", "F");
-		DawnUtilsReflection.registerBlockObfuscationMappping("lavaMoving", "G");
-		DawnUtilsReflection.registerBlockObfuscationMappping("lavaStill", "H");
-		DawnUtilsReflection.registerBlockObfuscationMappping("doorIron", "aP");
-		DawnUtilsReflection.registerBlockObfuscationMappping("grass", "y");
-		DawnUtilsReflection.registerBlockObfuscationMappping("dirt", "z");
-		DawnUtilsReflection.registerBlockObfuscationMappping("mycelium", "bC");
-		DawnUtilsReflection.registerBlockObfuscationMappping("leaves", "O");
-		DawnUtilsReflection.registerBlockObfuscationMappping("vine", "by");
-		DawnUtilsReflection.registerBlockObfuscationMappping("tallGrass", "ab");
-		
-		DawnUtilsReflection.registerItemObfuscationMappping("enderPearl", "bo");
-		DawnUtilsReflection.registerItemObfuscationMappping("sign", "av");
-		DawnUtilsReflection.registerItemObfuscationMappping("shears", "bf");
-		DawnUtilsReflection.registerItemObfuscationMappping("flowerPot", "bK");;
-		DawnUtilsReflection.registerItemObfuscationMappping("doorWood", "aw");
-		DawnUtilsReflection.registerItemObfuscationMappping("coal", "n");
-		DawnUtilsReflection.registerItemObfuscationMappping("itemFrame", "bJ");
-		DawnUtilsReflection.registerItemObfuscationMappping("painting", "at");
-		DawnUtilsReflection.registerItemObfuscationMappping("doorIron", "aC");
-		DawnUtilsReflection.registerItemObfuscationMappping("spiderEye", "bv");
 	}
 }

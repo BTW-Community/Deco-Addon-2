@@ -8,7 +8,7 @@ import java.io.PrintWriter;
 import java.util.Iterator;
 import net.minecraft.server.MinecraftServer;
 
-public class DedicatedPlayerList extends AddonServerConfigurationManager
+public class DedicatedPlayerList extends ServerConfigurationManager
 {
     private File opsList;
     private File whiteList;

@@ -2,9 +2,6 @@ package net.minecraft.src;
 
 import java.awt.BorderLayout;
 import java.awt.Canvas;
-import java.io.IOException;
-import java.lang.reflect.Field;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.MinecraftApplet;
 import org.lwjgl.LWJGLException;
@@ -27,49 +24,6 @@ public class MinecraftAppletImpl extends Minecraft
         this.mainFrame.add(new PanelCrashReport(par1CrashReport), "Center");
         this.mainFrame.validate();
     }
-    
-    /**
-     * Arguments: World foldername,  World ingame name, WorldSettings
-     */
-    @Override
-    public void launchIntegratedServer(String par1Str, String par2Str, WorldSettings par3WorldSettings)
-    {
-    	super.launchIntegratedServer(par1Str, par2Str, par3WorldSettings);
-
-        try
-        {
-            NetClientHandler var10 = new DawnNetClientHandler(this, this.getIntegratedServer());
-            
-        	Field networkManagerAccessField = null;
-    		try {
-    			networkManagerAccessField = this.getClass().getSuperclass().getDeclaredField("myNetworkManager");
-    		} catch (NoSuchFieldException e) {
-    			try {
-    				networkManagerAccessField = this.getClass().getSuperclass().getDeclaredField("ak");
-    			} catch (NoSuchFieldException e1) {
-    				e1.printStackTrace();
-    			} catch (SecurityException e1) {
-    				e1.printStackTrace();
-    			}
-    		} catch (SecurityException e) {
-    			e.printStackTrace();
-    		}
-    		
-    		networkManagerAccessField.setAccessible(true);
-        	
-        	try {
-    			networkManagerAccessField.set(this, var10.getNetManager());
-    		} catch (IllegalArgumentException e) {
-    			e.printStackTrace();
-    		} catch (IllegalAccessException e) {
-    			e.printStackTrace();
-    		}
-        }
-        catch (IOException var8)
-        {
-            this.displayCrashReport(this.addGraphicsAndWorldToCrashReport(new CrashReport("Connecting to integrated server", var8)));
-        }
-    }
 
     /**
      * Starts the game: initializes the canvas, the title, the settings, etcetera.
@@ -85,7 +39,5 @@ public class MinecraftAppletImpl extends Minecraft
         }
 
         super.startGame();
-        this.renderGlobal = new DawnRenderGlobal(this, this.renderEngine);
-        this.renderEngine.refreshTextureMaps();
     }
 }

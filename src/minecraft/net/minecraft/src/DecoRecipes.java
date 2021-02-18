@@ -122,7 +122,7 @@ public class DecoRecipes {
 		}
 
 		//Fertilizer
-		FCRecipes.AddCauldronRecipe(new ItemStack(DecoDefs.fertilizer, 2), new ItemStack[] {new ItemStack(Item.dyePowder, 1, 15), new ItemStack(FCBetterThanWolves.fcItemDung)});
+		FCRecipes.AddCauldronRecipe(new ItemStack(DecoDefs.fertilizer, 2), new ItemStack[] {new ItemStack(Item.dyePowder, 1, 15), new ItemStack(FCBetterThanWolves.fcItemPotash)});
 
 		//Flower Recipes
 
@@ -160,6 +160,8 @@ public class DecoRecipes {
 		FCRecipes.AddMillStoneRecipe(new ItemStack[]{new ItemStack(Item.dyePowder, 2, 20)},	new ItemStack[]{new ItemStack(DecoDefs.flower, 1, 15)});
 		//Black Rose
 		FCRecipes.AddMillStoneRecipe(new ItemStack[]{new ItemStack(Item.dyePowder, 2, 16)},	new ItemStack[]{new ItemStack(DecoDefs.flower2, 1, 0)});
+		//Lily of the valley
+		FCRecipes.AddMillStoneRecipe(new ItemStack[]{new ItemStack(Item.dyePowder, 2, 31)},	new ItemStack[]{new ItemStack(DecoDefs.flower2, 1, 1)});
 		// Tulips
 		FCRecipes.AddMillStoneRecipe(new ItemStack[]{new ItemStack(Item.dyePowder, 1, 14),new ItemStack(Item.dyePowder, 1, 1)},	new ItemStack[]{new ItemStack(DecoDefs.tulip, 1, 0)});
 		FCRecipes.AddMillStoneRecipe(new ItemStack[]{new ItemStack(Item.dyePowder, 2, 9)},	new ItemStack[]{new ItemStack(DecoDefs.tulip, 1, 1)});

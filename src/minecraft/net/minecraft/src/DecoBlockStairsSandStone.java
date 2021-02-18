@@ -2,7 +2,7 @@ package net.minecraft.src;
 
 public class DecoBlockStairsSandStone extends FCBlockStairs
 {
-    protected DecoBlockStairsSandStone(int var1, Block owner, int ownerMeta)
+    public DecoBlockStairsSandStone(int var1, Block owner, int ownerMeta)
     {
         super(var1, owner, ownerMeta);
         this.setCreativeTab(CreativeTabs.tabBlock);

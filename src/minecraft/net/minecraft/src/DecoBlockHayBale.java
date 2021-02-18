@@ -91,6 +91,11 @@ public class DecoBlockHayBale extends Block
 		else if(var5<4)return 1;
 		else return 2;
 	}
+
+    public boolean CanToolsStickInBlock(IBlockAccess var1, int var2, int var3, int var4)
+    {
+        return false;
+    }
 	@Override public void onBlockPlacedBy(World var1, int var2, int var3, int var4, EntityLiving var5, ItemStack var6)
 	{/*
 		int var7 = FCUtilsMisc.ConvertPlacingEntityOrientationToBlockFacing(var5);

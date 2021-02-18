@@ -15,4 +15,9 @@ public class DecoBlockStairsThatch extends FCBlockStairs {
         this.DropItemsIndividualy(var1, var2, var3, var4, FCBetterThanWolves.fcItemStraw.itemID, 6, 0, var6);
         return true;
     }
+
+    public boolean CanToolsStickInBlock(IBlockAccess var1, int var2, int var3, int var4)
+    {
+        return false;
+    }
 }
