@@ -26,12 +26,12 @@ public class DecoBlockLogAcaciaStump extends Block {
      */
     public int idPicked(World par1World, int par2, int par3, int par4)
     {
-        return DecoDefs.cherryLog.blockID;
+        return DecoDefs.acaciaLog.blockID;
     }
 	
 	public ItemStack GetStackRetrievedByBlockDispenser(World var1, int var2, int var3, int var4)
     {
-    	return new ItemStack(DecoDefs.cherryLog, 1, 0);
+    	return new ItemStack(DecoDefs.acaciaLog, 1, 0);
     }
 
 	public boolean GetIsProblemToRemove(IBlockAccess var1, int var2, int var3, int var4)

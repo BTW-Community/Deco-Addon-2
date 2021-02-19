@@ -276,7 +276,7 @@ public class DecoUtilsTrees {
 		int rand = 4 + par2Random.nextInt(3);
 		for(int i = 0; i < rand; i++) { par1World.setBlock(x, y + i, z, DecoDefs.acaciaLog.blockID); }
 
-        //par1World.setBlockMetadataWithClient(x, y, z, metaWood | 12); // place stump
+        par1World.setBlock(x, y, z, DecoDefs.acaciaStump.blockID); // place stump
 
 		if(par2Random.nextInt(4) == 0) { //branch1
 			par1World.setBlock(x + 0, y + rand + 1, z + 1, DecoDefs.acaciaLog.blockID);
