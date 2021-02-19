@@ -32,9 +32,13 @@ public class DecoBlockWoodMouldingAndDecorative extends FCBlockWoodMouldingAndDe
         {
             var2 = 4;
         }
+        else if (this.blockID == DecoDefs.cherryMouldingAndDecorative.blockID)
+        {
+            var2 = 5;
+        }
         else
         {
-        	var2 = 5;
+        	var2 = 6;
         }
 
         if (!this.IsDecorative(var1))
@@ -122,9 +126,13 @@ public class DecoBlockWoodMouldingAndDecorative extends FCBlockWoodMouldingAndDe
             {
                 var4 = FCBetterThanWolves.fcBlockWoodBloodMouldingAndDecorative;
             }
-            else
+            else if (var6 == 5)
             {
             	var4 = DecoDefs.cherryMouldingAndDecorative;
+            }
+            else
+            {
+            	var4 = DecoDefs.acaciaMouldingAndDecorative;
             }
 
             if (var7 == 15 && var4.blockID == FCBetterThanWolves.fcBlockWoodOakMouldingAndDecorative.blockID)
@@ -157,6 +165,8 @@ public class DecoBlockWoodMouldingAndDecorative extends FCBlockWoodMouldingAndDe
                     break;
                 case 5:
                 	var8 = DecoDefs.cherryMouldingAndDecorative.blockIcon;
+                case 6:
+                	var8 = DecoDefs.acaciaMouldingAndDecorative.blockIcon;
                 	break;
                 default:
                     var8 = FCBetterThanWolves.fcBlockWoodOakMouldingAndDecorative.blockIcon;

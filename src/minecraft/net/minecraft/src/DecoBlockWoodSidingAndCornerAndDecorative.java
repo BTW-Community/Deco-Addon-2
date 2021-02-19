@@ -157,9 +157,13 @@ public class DecoBlockWoodSidingAndCornerAndDecorative extends DecoBlockSidingAn
         {
             var1 = 4;
         }
-        else
+        else if (this.blockID == DecoDefs.cherrySidingAndCorner.blockID)
         {
         	var1 = 5;
+        }
+        else
+        {
+        	var1 = 6;
         }
 
         return var1;

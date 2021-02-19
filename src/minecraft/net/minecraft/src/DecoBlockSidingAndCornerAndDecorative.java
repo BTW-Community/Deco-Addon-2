@@ -220,9 +220,13 @@ public class DecoBlockSidingAndCornerAndDecorative extends FCBlockSidingAndCorne
             {
                 var5 = FCBetterThanWolves.fcBlockWoodBloodSidingAndCorner;
             }
-            else
+            else if (var7 == 5)
             {
             	var5 = DecoDefs.cherrySidingAndCorner;
+            }
+            else
+            {
+            	var5 = DecoDefs.acaciaSidingAndCorner;
             }
         }
 
@@ -269,6 +273,9 @@ public class DecoBlockSidingAndCornerAndDecorative extends FCBlockSidingAndCorne
                         break;
                     case 5:
                     	icon = DecoDefs.cherrySidingAndCorner.blockIcon;
+                    	break;
+                    case 6:
+                    	icon = DecoDefs.acaciaSidingAndCorner.blockIcon;
                     	break;
                     default:
                     	icon = FCBetterThanWolves.fcBlockWoodOakSidingAndCorner.blockIcon;

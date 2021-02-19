@@ -1584,7 +1584,7 @@ public class DecoDefs {
 		signBloodWall = new DecoBlockSignWall(id_signBloodWall, 4, "fcBlockPlanks_blood");
 		signCherryWall = new DecoBlockSignWall(id_signCherryWall, 5, "decoBlockPlanksCherry");
 
-		Item.sign = Item.replaceItem(Item.sign.itemID, DecoItemSign.class);
+		Item.sign = Item.replaceItem(Item.sign.itemID, DecoItemSign.class).setUnlocalizedName("sign");
 
 		//Slabs
 		planksPaintedSlab = (DecoBlockWoodSlab) new DecoBlockWoodSlab(id_paintedPlanksSlab, new Block[] {planksPainted, planksPainted, planksPainted, planksPainted, planksPainted, planksPainted, planksPainted, planksPainted}, new int[] {0, 1, 2, 3, 4, 5, 6, 7},
@@ -1668,7 +1668,7 @@ public class DecoDefs {
 		DecoManager.Register(carpet, DecoUtilsMisc.colorOrder);
 
 		//Coal block
-		Item.coal = Item.replaceItem(Item.coal.itemID, DecoItemCoal.class);
+		Item.coal = Item.replaceItem(Item.coal.itemID, DecoItemCoal.class).setUnlocalizedName("coal");
 		FCBetterThanWolves.fcItemNethercoal = new DecoItemNethercoal(FCBetterThanWolves.fcItemNethercoal.itemID - 256).SetFurnaceBurnTime(2 * FCEnumFurnaceBurnTime.COAL.m_iBurnTime).SetFilterableProperties(2).setUnlocalizedName("fcItemNethercoal").setCreativeTab(CreativeTabs.tabMaterials);
 
 		coalBlock = new Block(id_coalBlock, Material.rock).setUnlocalizedName("decoBlockCoal").SetPicksEffectiveOn().SetFireProperties(FCEnumFlammability.EXTREME).setHardness(1.5F).setResistance(10.0F).setCreativeTab(CreativeTabs.tabBlock);
@@ -1696,7 +1696,7 @@ public class DecoDefs {
 		FCBetterThanWolves.fcBlockBoneSlab.setStepSound(stepSoundBone);
 
 		//Ender Pearl
-		Item.enderPearl = Item.replaceItem(Item.enderPearl.itemID, DecoItemEnderPearl.class);
+		Item.enderPearl = Item.replaceItem(Item.enderPearl.itemID, DecoItemEnderPearl.class).setUnlocalizedName("enderPearl");
 
 		//Buttons
 		Block.woodenButton = Block.replaceBlock(Block.woodenButton.blockID, DecoBlockButtonWood.class, Block.planks, 0);
@@ -1845,8 +1845,8 @@ public class DecoDefs {
 		DecoManager.Register(spiderEyeSlab);
 
 		//Fluids
-		Block.waterStill = (BlockFluid) Block.replaceBlock(Block.waterStill.blockID, DecoBlockWaterStationary.class, Material.water);
-		Block.waterMoving = (BlockFluid) Block.replaceBlock(Block.waterMoving.blockID, DecoBlockWaterFlowing.class, Material.water);
+		Block.waterStill = (BlockFluid) Block.replaceBlock(Block.waterStill.blockID, DecoBlockWaterStationary.class, Material.water).setLightOpacity(3);
+		Block.waterMoving = (BlockFluid) Block.replaceBlock(Block.waterMoving.blockID, DecoBlockWaterFlowing.class, Material.water).setLightOpacity(3);
 		Block.lavaStill = (BlockFluid) Block.replaceBlock(Block.lavaStill.blockID, DecoBlockLavaStationary.class, Material.lava);
 		Block.lavaMoving = (BlockFluid) Block.replaceBlock(Block.lavaMoving.blockID, DecoBlockLavaFlowing.class, Material.lava);
 
@@ -1881,7 +1881,7 @@ public class DecoDefs {
 		//TileEntity.ReplaceVanillaMapping(FCTileEntityHopper.class, AddonTileEntityHopper.class, "Hopper");
 
 		//Shears - for added efficient blocks
-		Item.shears = (ItemShears) Item.replaceItem(Item.shears.itemID, DecoItemShears.class);
+		Item.shears = (ItemShears) Item.replaceItem(Item.shears.itemID, DecoItemShears.class).setUnlocalizedName("shears");
 
 		shearsDiamond = (DecoItemShearsDiamond) new DecoItemShearsDiamond(id_shearsDiamond).setUnlocalizedName("decoItemShearsDiamond");
 
@@ -1943,21 +1943,21 @@ public class DecoDefs {
 
 	private void addEntityDefs() {
 		//Vanilla entities
-		EntityList.ReplaceExistingMapping(DecoEntitySquid.class, "Squid");
-		EntityList.ReplaceExistingMapping(DecoEntityOcelot.class, "Ozelot");
-		EntityList.ReplaceExistingMapping(DecoEntityCreeper.class, "Creeper");
-		EntityList.ReplaceExistingMapping(DecoEntitySheep.class, "Sheep");
+		EntityList.replaceExistingMappingSafe(DecoEntitySquid.class, "Squid");
+		EntityList.replaceExistingMappingSafe(DecoEntityOcelot.class, "Ozelot");
+		EntityList.replaceExistingMappingSafe(DecoEntityCreeper.class, "Creeper");
+		EntityList.replaceExistingMappingSafe(DecoEntitySheep.class, "Sheep");
 		EntityList.replaceExistingMappingSafe(DecoEntityVillager.class, "Villager");
 
 		//Custom entities
 		EntityList.AddMapping(DecoEntityFallingConcrete.class, "FallingConcrete", id_entityFallingConcrete);
 
 		//Item frame
-		Item.itemFrame = Item.replaceItem(Item.itemFrame.itemID, DecoItemFrame.class);
+		Item.itemFrame = Item.replaceItem(Item.itemFrame.itemID, DecoItemFrame.class).setUnlocalizedName("frame");
 		EntityList.ReplaceExistingMapping(DecoEntityItemFrame.class, "ItemFrame");
 
 		//Painting
-		Item.painting = Item.replaceItem(Item.painting.itemID, DecoItemPainting.class);
+		Item.painting = Item.replaceItem(Item.painting.itemID, DecoItemPainting.class).setUnlocalizedName("painting");
 		EntityList.ReplaceExistingMapping(DecoEntityPainting.class, "Painting");
 
 		//Canvas
