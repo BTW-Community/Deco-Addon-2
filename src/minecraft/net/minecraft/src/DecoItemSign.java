@@ -36,8 +36,6 @@ public class DecoItemSign extends Item
         }
         else
         {
-    		world.playSound(x, y, z, "dig.wood", 1.0F, .75F);
-    		
             if (side == 1)
             {
                 ++y;
@@ -82,6 +80,8 @@ public class DecoItemSign extends Item
                 {
                     world.setBlock(x, y, z, signWalls[itemStack.getItemDamage()].blockID, side, 2);
                 }
+
+        		world.playSound(x, y, z, "dig.wood", 1.0F, .75F);
 
                 --itemStack.stackSize;
 
