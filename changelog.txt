@@ -6,10 +6,10 @@ Due to my grass changes, if you use mcpatcher this version and all future versio
 Thanks to Sockthing for the textures for acacia saplings, blood wood doors and trap doors, and spider eye blocks!
 
 - Refactored the addon to use BTW Extended Addon API to increase compatibility with future addons. This is provided as a separate download.
-- Refactored file prefix to "Deco" rather than "Addon". This, and the below texture name change, were relics from Yhetti's development and have both been changed for clarity.
+- Refactored file prefix to "Deco" rather than "Addon". This, and the below texture name change, were relics from Yhetti's development and have both been changed for clarity given the opening up of BTW modding.
 - Refactored texture names to make them more consistent, following BTW's naming scheme to use things such as decoBlockXXXX and removing ginger_ as the prefix. This means texture packs will need to update to use the new file names.
 - Added localization support. Included with the addon in the lang folder is the file Deco_en_US.lang, which contains all english translations for the addon. Anyone who wishes to make and distribute translations is free to do so, and I will include it here if you link it.
-- Added acacia trees and accompanying wood type. Acacia saplings can be crafted with an oak sapling, fertilizer, and gray dye in a cauldron.
+- Added acacia trees and the accompanying wood type. Acacia saplings can be crafted with an oak sapling, fertilizer, and gray dye in a cauldron.
 - Added autumn trees. These trees generate as oak trees with red, orange, or yellow leaves. Autumn saplings can be crafted with an oak sapling, fertilizer, and red, orange, or yellow dye in a cauldron.
 - Added iron trapdoors, crafted with 4 iron ingots and 2 redstone latches, producing 2. They work just like iron doors and will only respond to redstone signals.
 - Added spider eye blocks, created by packing 16 spider eyes together, and spider eye slabs.
@@ -19,7 +19,7 @@ Thanks to Sockthing for the textures for acacia saplings, blood wood doors and t
 - Added broken paper lanterns, which look similar to normal paper lanterns but give off no light. They can be crafted by excluding the candle from the normal paper lantern recipe.
 - Changed grass to not die while in darkness in order to facilitate its decorative use and to prevent ugly dirt under overhangs or dense trees. However, to maintain balance, animals may not eat from grass without sunlight, and the texture updates slightly to reflect this.
 - Changed terracotta to break into 8 red sand piles when broken with an iron pick or lower. This and the below change were done for balance with my upcoming world gen addon.
-- Changed stone variants (and polished versions) to drop their loose cobblestone variant when broken with an iron pick or lower.
+- Changed stone variants (and polished versions) to drop their loose cobblestone variant when broken with an iron pick or lower in order to match sandstone.
 - Changed (increased) the hardness and blast resistance of terracotta.
 - Changed doors to stack to 16.
 - Changed trapdoors above ladders to only be climbable if the trapdoor is attached to the same face as the ladder.
@@ -31,8 +31,8 @@ Thanks to Sockthing for the textures for acacia saplings, blood wood doors and t
 - Changed the collision box of pergolas to make them a full half block tall to allow stepping onto full blocks from them.
 - Changed (decreased) the amount of tall grass which spawns from fertilizer.
 - Changed (increased) the amount of flowers which spawn from fertilizer.
-- Changed the fertilizer recipe to be made in a cauldron, and to use potash instead of dung.
-- Changed the textures of blood wood doors and trapdoors as they were previously reccolors of vanilla's acacia textures.
+- Changed the fertilizer recipe to be made in a cauldron, and to use potash instead of dung. This, combined with the the block dispenser change above, allows for automation of flowers.
+- Changed the textures of blood wood doors and trapdoors as they were previously recolors of vanilla's acacia textures.
 - Refactored loose slab code to simplify the related code and assimilate it into the main slab code.
 - Removed specific textures for subblocks (except columns). Subblocks will now simply use the texture of their base block. However, MCPatcher will still allow texturepacks to override these textures if texturepack authors wish to do so.
 - Removed the item form of superheated netherrack and nether brick, meaning they can only exist in the world but not in inventories.
@@ -55,6 +55,6 @@ Thanks to Sockthing for the textures for acacia saplings, blood wood doors and t
 - Fixed an issue where the renaming gui erroneously had 2 slots even though only 1 was functional.
 - Fixed an issue where renaming items on the workbench would also name items in the top left inventory slot.
 - Fixed an issue where renaming an item still required the player to have a certian number of experience levels, even though they were not consumed.
-- Fixed an issue where attempting to place a sign would always play a sound, even if the sign was not successfully placed.
+- Fixed an issue where attempting to place a sign would always play a sound, even if  placement was not successful.
 - Fixed a vanilla issue where right clicking an iron door still made the animation like something had happened.
 - Fixed an issue (hopefully) where servers would incorrectly display an error message that the addon was not installed properly if the client was on a high latency connection. Let me know if this still happens as this simply involved increasing the amount of time the server would wait for the client to acknowledge. This functionality was also moved to the Extended Addon API to allow other addons using the API to access this code.
