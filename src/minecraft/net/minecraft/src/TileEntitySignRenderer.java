@@ -14,7 +14,7 @@ public class TileEntitySignRenderer extends TileEntitySpecialRenderer
         float var10 = 0.6666667F;
         float var12;
 
-        if (var9 == Block.signPost || var9 == DecoDefs.signSpruce || var9 == DecoDefs.signBirch || var9 == DecoDefs.signJungle || var9 == DecoDefs.signBlood || var9 == DecoDefs.signCherry)
+        if (var9 == Block.signPost || var9 == DecoDefs.signSpruce || var9 == DecoDefs.signBirch || var9 == DecoDefs.signJungle || var9 == DecoDefs.signBlood || var9 == DecoDefs.signCherry || var9 == DecoDefs.signAcacia)
         {
             GL11.glTranslatef((float)par2 + 0.5F, (float)par4 + 0.75F * var10, (float)par6 + 0.5F);
             float var11 = (float)(par1TileEntitySign.getBlockMetadata() * 360) / 16.0F;
@@ -59,6 +59,8 @@ public class TileEntitySignRenderer extends TileEntitySpecialRenderer
         	texture = "/deco/signBlood.png";
         if (var9 == DecoDefs.signCherry || var9 == DecoDefs.signCherryWall)
         	texture = "/deco/signCherry.png";
+        if (var9 == DecoDefs.signAcacia || var9 == DecoDefs.signAcaciaWall)
+        	texture = "/deco/signAcacia.png";
         
         this.bindTextureByName(texture);
         GL11.glPushMatrix();

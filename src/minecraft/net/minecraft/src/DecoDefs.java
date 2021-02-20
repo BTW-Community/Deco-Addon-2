@@ -326,6 +326,9 @@ public class DecoDefs {
 		id_acaciaSapling=3499,
 		id_autumnSapling=3500,
 		id_autumnLeaves=3501,
+		id_acaciaWoodChair=3502,
+		id_signAcacia=3503,
+		id_signAcaciaWall=3504,
 		
 		id_layerDirt=3550,
 		id_layerGrass=3551,
@@ -393,7 +396,7 @@ public class DecoDefs {
 	public static Block terracottaSlab, terracottaSlab2;
 
 	//Chairs
-	public static Block birchWoodChair, spruceWoodChair, jungleWoodChair, oakWoodChair, bloodWoodChair, cherryWoodChair;
+	public static Block birchWoodChair, spruceWoodChair, jungleWoodChair, oakWoodChair, bloodWoodChair, cherryWoodChair, acaciaWoodChair;
 
 	//Glass
 	public static Block glassStained, glassPaneStained;
@@ -495,7 +498,7 @@ public class DecoDefs {
 	public static Block pergola;
 	public static Block barrelEmpty, barrelEmpty2, barrelFilling, barrelFullOak, barrelFullSpruce, barrelFullBirch, barrelFullJungle, barrelFullBlood, barrelFullCherry;
 	public static Block crate;
-	public static Block signSpruce, signSpruceWall, signBirch, signBirchWall, signJungle, signJungleWall, signBlood, signBloodWall, signCherry, signCherryWall;
+	public static Block signSpruce, signSpruceWall, signBirch, signBirchWall, signJungle, signJungleWall, signBlood, signBloodWall, signCherry, signCherryWall, signAcacia, signAcaciaWall;
 	public static Block scaffolding;
 	public static Item woodBleach, woodStain;
 
@@ -1512,6 +1515,7 @@ public class DecoDefs {
 		jungleWoodChair = new DecoBlockChairWood(id_jungleWoodChair, "Jungle");
 		bloodWoodChair = new DecoBlockChairWood(id_bloodWoodChair, "Blood");
 		cherryWoodChair = new DecoBlockChairWood(id_cherryWoodChair, "Cherry");
+		acaciaWoodChair = new DecoBlockChairWood(id_acaciaWoodChair, "Acacia");
 
 		//Painted planks
 		planksPainted = (new DecoBlockPlanksPainted(id_planksPainted, "decoBlockPlanksPainted")).setHardness(1.0F).setResistance(5.0F).setStepSound(Block.soundWoodFootstep).setCreativeTab(CreativeTabs.tabBlock);
@@ -1576,6 +1580,7 @@ public class DecoDefs {
 		signJungle = new DecoBlockSign(id_signJungle, true, 3, "wood_jungle");
 		signBlood = new DecoBlockSign(id_signBlood, true, 4, "fcBlockPlanks_blood");
 		signCherry = new DecoBlockSign(id_signCherry, true, 5, "decoBlockPlanksCherry");
+		signAcacia = new DecoBlockSign(id_signAcacia, true, 6, "decoBlockPlanksAcacia");
 
 		Block.signWall = Block.replaceBlock(Block.signWall.blockID, DecoBlockSignWall.class, 0, "wood");
 		signSpruceWall = new DecoBlockSignWall(id_signSpruceWall, 1, "wood_spruce");
@@ -1583,6 +1588,7 @@ public class DecoDefs {
 		signJungleWall = new DecoBlockSignWall(id_signJungleWall, 3, "wood_jungle");
 		signBloodWall = new DecoBlockSignWall(id_signBloodWall, 4, "fcBlockPlanks_blood");
 		signCherryWall = new DecoBlockSignWall(id_signCherryWall, 5, "decoBlockPlanksCherry");
+		signAcaciaWall = new DecoBlockSignWall(id_signAcaciaWall, 6, "decoBlockPlanksAcacia");
 
 		Item.sign = Item.replaceItem(Item.sign.itemID, DecoItemSign.class).setUnlocalizedName("sign");
 

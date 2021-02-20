@@ -4,13 +4,13 @@ import java.util.List;
 
 public class DecoItemSign extends Item
 {
-    public static final int m_iNumSubtypes = 6;
-    private String[] m_sNameExtensionsBySubtype = new String[] {"oak", "spruce", "birch", "jungle", "blood", "cherry"};
+    public static final int m_iNumSubtypes = 7;
+    private String[] m_sNameExtensionsBySubtype = new String[] {"oak", "spruce", "birch", "jungle", "blood", "cherry", "acacia"};
     private Icon[] m_IconBySubtype = new Icon[m_iNumSubtypes];
-    private String[] m_sIconNamesBySubtype = new String[] {"sign", "decoItemSignSpruce", "decoItemSignBirch", "decoItemSignJungle", "decoItemSignBlood", "decoItemSignCherry"};
+    private String[] m_sIconNamesBySubtype = new String[] {"sign", "decoItemSignSpruce", "decoItemSignBirch", "decoItemSignJungle", "decoItemSignBlood", "decoItemSignCherry", "decoItemSignAcacia"};
     
-    private Block[] signPosts = {Block.signPost, DecoDefs.signSpruce, DecoDefs.signBirch, DecoDefs.signJungle, DecoDefs.signBlood, DecoDefs.signCherry};
-    private Block[] signWalls = {Block.signWall, DecoDefs.signSpruceWall, DecoDefs.signBirchWall, DecoDefs.signJungleWall, DecoDefs.signBloodWall, DecoDefs.signCherryWall};
+    private Block[] signPosts = {Block.signPost, DecoDefs.signSpruce, DecoDefs.signBirch, DecoDefs.signJungle, DecoDefs.signBlood, DecoDefs.signCherry, DecoDefs.signAcacia};
+    private Block[] signWalls = {Block.signWall, DecoDefs.signSpruceWall, DecoDefs.signBirchWall, DecoDefs.signJungleWall, DecoDefs.signBloodWall, DecoDefs.signCherryWall, DecoDefs.signAcaciaWall};
     
     public DecoItemSign(int par1)
     {
