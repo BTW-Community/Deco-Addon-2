@@ -32,11 +32,6 @@ public class DecoBlockFlowers extends BlockFlower
 	{
 		return Meta;
 	}
-
-    public boolean CanBeGrazedOn(IBlockAccess var1, int var2, int var3, int var4, EntityAnimal var5)
-    {
-        return false;
-    }
 	//CLIENT ONLY METHODS
 	@Override public Icon getIcon(int Side, int Meta)
 	{

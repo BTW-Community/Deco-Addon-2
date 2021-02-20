@@ -19,14 +19,14 @@ Thanks to Sockthing for the textures for acacia saplings, blood wood doors and t
 - Added broken paper lanterns, which look similar to normal paper lanterns but give off no light. They can be crafted by excluding the candle from the normal paper lantern recipe.
 - Changed grass to not die while in darkness in order to facilitate its decorative use and to prevent ugly dirt under overhangs or dense trees. However, to maintain balance, animals may not eat from grass without sunlight, and the texture updates slightly to reflect this.
 - Changed terracotta to break into 8 red sand piles when broken with an iron pick or lower. This and the below change were done for balance with my upcoming world gen addon.
-- Changed stone variants to drop their loose cobblestone variant when broken with an iron pick or lower.
+- Changed stone variants (and polished versions) to drop their loose cobblestone variant when broken with an iron pick or lower.
 - Changed (increased) the hardness and blast resistance of terracotta.
 - Changed doors to stack to 16.
 - Changed trapdoors above ladders to only be climbable if the trapdoor is attached to the same face as the ladder.
-- Changed chair collision and selection box to better match the model. I intend to make further changes here, such as to make the back collidable, but that would require some rewrites.
+- Changed chair collision and selection box to better match the model. I intend to make further changes here, such as to make the back collidable, but that will require some further rewrites.
 - Changed coarse dirt to be able to grow reeds, flowers, and other plants.
-- Changed rendering on tables to have a wider leg if the block type uses walls instead of fences to match the thickness of the walls.
-- Changed the texture on polished stone, polished stone variant, polished infused stone, cut sandstone, and cut red sandstone columns to better reflect their model.
+- Changed rendering on tables to have a wider leg if the block type uses walls instead of fences to match the thickness of the walls, and changed the legs to connect to each other when adjacent to match the rendering of walls.
+- Changed the texture on polished stone, polished stone variants, polished infused stone, cut sandstone, and cut red sandstone columns to better reflect their model.
 - Changed the name of several items and blocks slightly to be more consistent.
 - Changed the collision box of pergolas to make them a full half block tall to allow stepping onto full blocks from them.
 - Changed (decreased) the amount of tall grass which spawns from fertilizer.
@@ -34,7 +34,6 @@ Thanks to Sockthing for the textures for acacia saplings, blood wood doors and t
 - Changed the fertilizer recipe to be made in a cauldron, and to use potash instead of dung.
 - Changed the textures of blood wood doors and trapdoors as they were previously reccolors of vanilla's acacia textures.
 - Refactored loose slab code to simplify the related code and assimilate it into the main slab code.
-- Removed the ability for animals to eat addon flowers.
 - Removed specific textures for subblocks (except columns). Subblocks will now simply use the texture of their base block. However, MCPatcher will still allow texturepacks to override these textures if texturepack authors wish to do so.
 - Removed the item form of superheated netherrack and nether brick, meaning they can only exist in the world but not in inventories.
 - Removed the ability to stick axes in hay or thatch.
