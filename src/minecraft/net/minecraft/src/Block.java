@@ -2942,8 +2942,7 @@ public class Block
     		try {
 				newBlock = (Block) newClass.getConstructor(parameterTypes).newInstance(parameterValues);
 			} catch (Exception e) {
-				e.printStackTrace();
-				//throw new RuntimeException("A problem has occured attempting to instantiate replacement for " + blocksList[id]);
+				throw new RuntimeException("A problem has occured attempting to instantiate replacement for " + blocksList[id]);
 			}
     		
     		blockReplaced[id] = true;

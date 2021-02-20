@@ -34,8 +34,7 @@ public class ContainerRepair extends Container
         this.field_82858_j = par4;
         this.field_82859_k = par5;
         this.thePlayer = par6EntityPlayer;
-        this.addSlotToContainer(new Slot(this.inputSlots, 0, 27, 47));
-        this.addSlotToContainer(new Slot(this.inputSlots, 1, 76, 47));
+        this.addSlotToContainer(new Slot(this.inputSlots, 0, 76, 47));
         this.addSlotToContainer(new SlotRepair(this, this.outputSlot, 2, 134, 47, par2World, par3, par4, par5));
         int var7;
 
@@ -175,7 +174,7 @@ public class ContainerRepair extends Container
 
                         var14 = var10000;
                         int var15 = var14 - var13;
-                        boolean var16 = var22.func_92089_a(var1);
+                        boolean var16 = true;
 
                         if (this.thePlayer.capabilities.isCreativeMode || var1.itemID == ItemEnchantedBook.enchantedBook.itemID)
                         {
@@ -311,7 +310,6 @@ public class ContainerRepair extends Container
 
             if (var4 == var2 && var4 > 0 && this.maximumCost >= 40)
             {
-                this.theWorld.getWorldLogAgent().func_98233_a("Naming an item only, cost too high; giving discount to cap cost to 39 levels");
                 this.maximumCost = 39;
             }
 
@@ -339,8 +337,8 @@ public class ContainerRepair extends Container
                     var10 = 0;
                 }
 
-                var10 += 2;
-                var5.setRepairCost(var10);
+                var10 = 0;
+                var5.setRepairCost(0);
                 EnchantmentHelper.setEnchantments(var7, var5);
             }
 
@@ -349,10 +347,12 @@ public class ContainerRepair extends Container
         }
     }
 
-    public void onCraftGuiOpened(ICrafting par1ICrafting)
+    public void updateProgressBar(int par1, int par2)
     {
-        super.onCraftGuiOpened(par1ICrafting);
-        par1ICrafting.sendProgressBarUpdate(this, 0, this.maximumCost);
+        if (par1 == 0)
+        {
+            this.maximumCost = par2;
+        }
     }
 
     /**
@@ -378,11 +378,11 @@ public class ContainerRepair extends Container
 
     public boolean canInteractWith(EntityPlayer par1EntityPlayer)
     {
-        return this.theWorld.getBlockId(this.field_82861_i, this.field_82858_j, this.field_82859_k) != Block.anvil.blockID ? false : par1EntityPlayer.getDistanceSq((double)this.field_82861_i + 0.5D, (double)this.field_82858_j + 0.5D, (double)this.field_82859_k + 0.5D) <= 64.0D;
+        return this.theWorld.getBlockId(this.field_82861_i, this.field_82858_j, this.field_82859_k) != DecoDefs.workbench.blockID ? false : par1EntityPlayer.getDistanceSq((double)this.field_82861_i + 0.5D, (double)this.field_82858_j + 0.5D, (double)this.field_82859_k + 0.5D) <= 64.0D;
     }
 
     /**
-     * Take a stack from the specified inventory slot.
+     * Called when a player shift-clicks on a slot. You must override this or you will crash when someone does that.
      */
     public ItemStack transferStackInSlot(EntityPlayer par1EntityPlayer, int par2)
     {
@@ -394,23 +394,23 @@ public class ContainerRepair extends Container
             ItemStack var5 = var4.getStack();
             var3 = var5.copy();
 
-            if (par2 == 2)
+            if (par2 == 1)
             {
-                if (!this.mergeItemStack(var5, 3, 39, true))
+                if (!this.mergeItemStack(var5, 2, 38, true))
                 {
                     return null;
                 }
 
                 var4.onSlotChange(var5, var3);
             }
-            else if (par2 != 0 && par2 != 1)
+            else if (par2 > 1)
             {
-                if (par2 >= 3 && par2 < 39 && !this.mergeItemStack(var5, 0, 2, false))
+                if (par2 >= 2 && par2 < 38 && !this.mergeItemStack(var5, 0, 1, false))
                 {
                     return null;
                 }
             }
-            else if (!this.mergeItemStack(var5, 3, 39, false))
+            else if (!this.mergeItemStack(var5, 2, 38, false))
             {
                 return null;
             }
@@ -422,11 +422,6 @@ public class ContainerRepair extends Container
             else
             {
                 var4.onSlotChanged();
-            }
-
-            if (var5.stackSize == var3.stackSize)
-            {
-                return null;
             }
 
             var4.onPickupFromSlot(par1EntityPlayer, var5);
@@ -442,9 +437,9 @@ public class ContainerRepair extends Container
     {
         this.repairedItemName = par1Str;
 
-        if (this.getSlot(2).getHasStack())
+        if (this.getSlot(1).getHasStack())
         {
-            this.getSlot(2).getStack().setItemName(this.repairedItemName);
+            this.getSlot(1).getStack().setItemName(this.repairedItemName);
         }
 
         this.updateRepairOutput();
