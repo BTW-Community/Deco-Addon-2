@@ -64,7 +64,7 @@ public class DecoManager extends AddonExt
 	public static final String decoPacketChannelRender = "Deco|Render";
 
 	public DecoManager() {
-		super("Deco Addon", "2.13", "Deco");
+		super("Deco Addon", "2.13b", "Deco");
 	}
 
 	@Override
