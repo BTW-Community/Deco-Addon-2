@@ -268,81 +268,104 @@ public class DecoUtilsTrees {
 		}
 	}
 	
-	public static boolean generateAcacia(World par1World, Random par2Random, int x, int y, int z)
+	public static boolean generateAcacia(World world, Random rand, int x, int y, int z)
 	{
-		int var5 = par1World.getBlockId(x, y - 1, z);
-		if (var5 != Block.grass.blockID)
-			return false;
-		int rand = 4 + par2Random.nextInt(3);
-		for(int i = 0; i < rand; i++) { par1World.setBlock(x, y + i, z, DecoDefs.acaciaLog.blockID); }
+		int baseHeight = 4 + rand.nextInt(3);
+		
+		//Base tree
+		for(int i = 0; i < baseHeight + 4; i++) {
+			int blockID = world.getBlockId(x, y + i, z);
 
-        par1World.setBlock(x, y, z, DecoDefs.acaciaStump.blockID); // place stump
+			//Checks trunk space
+			if (!(world.isAirBlock(x, y + i, z) || blockID == DecoDefs.acaciaLeaves.blockID)) {
+				return false;
+			}
+		}
+		
+		for(int i = 0; i < baseHeight + 3; i++) {
+			world.setBlock(x, y + i, z, DecoDefs.acaciaLog.blockID);
+		}
+		
+		createAcaciaLeaves(world, rand, x + 0, y + baseHeight + 3, z - 0, 3);
+		createAcaciaLeaves(world, rand, x + 0, y + baseHeight + 4, z - 0, 2);
 
-		if(par2Random.nextInt(4) == 0) { //branch1
-			par1World.setBlock(x + 0, y + rand + 1, z + 1, DecoDefs.acaciaLog.blockID);
-			par1World.setBlock(x + 1, y + rand + 2, z + 2, DecoDefs.acaciaLog.blockID);
-			createAcaciaLeaves(par1World, par2Random, x + 1, y + rand + 2, z + 2, 3);
-			createAcaciaLeaves(par1World, par2Random, x + 1, y + rand + 3, z + 2, 2);
+        world.setBlock(x, y, z, DecoDefs.acaciaStump.blockID);
+
+        //Branches
+		if(rand.nextInt(4) == 0 && 
+				(world.isAirBlock(x + 0, y + baseHeight + 1, z + 1) || world.getBlockId(x + 0, y + baseHeight + 1, z + 1) == DecoDefs.acaciaLeaves.blockID) && 
+				(world.isAirBlock(x + 1, y + baseHeight + 2, z + 2) || world.getBlockId(x + 1, y + baseHeight + 2, z + 2) == DecoDefs.acaciaLeaves.blockID)) {
+			world.setBlock(x + 0, y + baseHeight + 1, z + 1, DecoDefs.acaciaLog.blockID);
+			world.setBlock(x + 1, y + baseHeight + 2, z + 2, DecoDefs.acaciaLog.blockID);
+			createAcaciaLeaves(world, rand, x + 1, y + baseHeight + 2, z + 2, 3);
+			createAcaciaLeaves(world, rand, x + 1, y + baseHeight + 3, z + 2, 2);
 		}
 
-		if(par2Random.nextInt(4) == 0) { //branch2
-			par1World.setBlock(x + 1, y + rand + 0, z + 0, DecoDefs.acaciaLog.blockID);
-			par1World.setBlock(x + 2, y + rand + 1, z + 0, DecoDefs.acaciaLog.blockID);
-			par1World.setBlock(x + 3, y + rand + 2, z - 1, DecoDefs.acaciaLog.blockID);
-			createAcaciaLeaves(par1World, par2Random, x + 3, y + rand + 3, z - 1, 3);
-			createAcaciaLeaves(par1World, par2Random, x + 3, y + rand + 4, z - 1, 2);
+		if(rand.nextInt(4) == 0 && 
+				(world.isAirBlock(x + 1, y + baseHeight + 0, z + 0) || world.getBlockId(x + 1, y + baseHeight + 0, z + 0) == DecoDefs.acaciaLeaves.blockID) && 
+				(world.isAirBlock(x + 2, y + baseHeight + 1, z + 0) || world.getBlockId(x + 2, y + baseHeight + 1, z + 0) == DecoDefs.acaciaLeaves.blockID) && 
+				(world.isAirBlock(x + 3, y + baseHeight + 2, z + 1) || world.getBlockId(x + 3, y + baseHeight + 2, z + 1) == DecoDefs.acaciaLeaves.blockID)) {
+			world.setBlock(x + 1, y + baseHeight + 0, z + 0, DecoDefs.acaciaLog.blockID);
+			world.setBlock(x + 2, y + baseHeight + 1, z + 0, DecoDefs.acaciaLog.blockID);
+			world.setBlock(x + 3, y + baseHeight + 2, z - 1, DecoDefs.acaciaLog.blockID);
+			createAcaciaLeaves(world, rand, x + 3, y + baseHeight + 3, z - 1, 3);
+			createAcaciaLeaves(world, rand, x + 3, y + baseHeight + 4, z - 1, 2);
 		}
 
-		if(par2Random.nextInt(4) == 0) { //branch3
-			par1World.setBlock(x - 1, y + rand + 0, z + 0, DecoDefs.acaciaLog.blockID);
-			par1World.setBlock(x - 2, y + rand + 1, z + 0, DecoDefs.acaciaLog.blockID);
-			par1World.setBlock(x - 3, y + rand + 2, z - 1, DecoDefs.acaciaLog.blockID);
-			par1World.setBlock(x - 4, y + rand + 3, z - 2, DecoDefs.acaciaLog.blockID);
-			createAcaciaLeaves(par1World, par2Random, x - 4, y + rand + 4, z - 2, 3);
-			createAcaciaLeaves(par1World, par2Random, x - 4, y + rand + 5, z - 2, 2);
+		if(rand.nextInt(4) == 0 && 
+				(world.isAirBlock(x - 1, y + baseHeight + 0, z + 0) || world.getBlockId(x - 1, y + baseHeight + 0, z + 0) == DecoDefs.acaciaLeaves.blockID) && 
+				(world.isAirBlock(x - 2, y + baseHeight + 1, z + 0) || world.getBlockId(x - 2, y + baseHeight + 1, z + 0) == DecoDefs.acaciaLeaves.blockID) && 
+				(world.isAirBlock(x - 3, y + baseHeight + 2, z - 1) || world.getBlockId(x - 3, y + baseHeight + 2, z - 1) == DecoDefs.acaciaLeaves.blockID) && 
+				(world.isAirBlock(x - 4, y + baseHeight + 3, z - 2) || world.getBlockId(x - 4, y + baseHeight + 3, z - 2) == DecoDefs.acaciaLeaves.blockID)) {
+			world.setBlock(x - 1, y + baseHeight + 0, z + 0, DecoDefs.acaciaLog.blockID);
+			world.setBlock(x - 2, y + baseHeight + 1, z + 0, DecoDefs.acaciaLog.blockID);
+			world.setBlock(x - 3, y + baseHeight + 2, z - 1, DecoDefs.acaciaLog.blockID);
+			world.setBlock(x - 4, y + baseHeight + 3, z - 2, DecoDefs.acaciaLog.blockID);
+			createAcaciaLeaves(world, rand, x - 4, y + baseHeight + 4, z - 2, 3);
+			createAcaciaLeaves(world, rand, x - 4, y + baseHeight + 5, z - 2, 2);
 		}
 
-		if(par2Random.nextInt(4) == 0) { //branch4
-			par1World.setBlock(x + 0, y + rand + 0, z - 1, DecoDefs.acaciaLog.blockID);
-			par1World.setBlock(x + 1, y + rand + 1, z - 2, DecoDefs.acaciaLog.blockID);
-			par1World.setBlock(x + 2, y + rand + 2, z - 2, DecoDefs.acaciaLog.blockID);
-			par1World.setBlock(x + 3, y + rand + 3, z - 2, DecoDefs.acaciaLog.blockID);
-			createAcaciaLeaves(par1World, par2Random, x + 3, y + rand + 3, z - 2, 3);
-			createAcaciaLeaves(par1World, par2Random, x + 3, y + rand + 4, z - 2, 2);
+		if(rand.nextInt(4) == 0 && 
+				(world.isAirBlock(x + 0, y + baseHeight + 0, z - 1) || world.getBlockId(x + 0, y + baseHeight + 0, z - 1) == DecoDefs.acaciaLeaves.blockID) && 
+				(world.isAirBlock(x + 1, y + baseHeight + 1, z - 1) || world.getBlockId(x + 1, y + baseHeight + 1, z - 1) == DecoDefs.acaciaLeaves.blockID) && 
+				(world.isAirBlock(x + 2, y + baseHeight + 2, z - 2) || world.getBlockId(x + 2, y + baseHeight + 2, z - 2) == DecoDefs.acaciaLeaves.blockID) && 
+				(world.isAirBlock(x + 3, y + baseHeight + 3, z - 2) || world.getBlockId(x + 3, y + baseHeight + 3, z - 2) == DecoDefs.acaciaLeaves.blockID)) {
+			world.setBlock(x + 0, y + baseHeight + 0, z - 1, DecoDefs.acaciaLog.blockID);
+			world.setBlock(x + 1, y + baseHeight + 1, z - 2, DecoDefs.acaciaLog.blockID);
+			world.setBlock(x + 2, y + baseHeight + 2, z - 2, DecoDefs.acaciaLog.blockID);
+			world.setBlock(x + 3, y + baseHeight + 3, z - 2, DecoDefs.acaciaLog.blockID);
+			createAcaciaLeaves(world, rand, x + 3, y + baseHeight + 3, z - 2, 3);
+			createAcaciaLeaves(world, rand, x + 3, y + baseHeight + 4, z - 2, 2);
 		}
 
-		if(par2Random.nextInt(4) == 0) { //branch5
-			par1World.setBlock(x + 0, y + rand + 0, z - 1, DecoDefs.acaciaLog.blockID);
-			par1World.setBlock(x + 0, y + rand + 0, z - 2, DecoDefs.acaciaLog.blockID);
-			par1World.setBlock(x + 1, y + rand + 1, z - 3, DecoDefs.acaciaLog.blockID);
-			createAcaciaLeaves(par1World, par2Random, x + 1, y + rand + 1, z - 3, 3);
-			createAcaciaLeaves(par1World, par2Random, x + 1, y + rand + 2, z - 3, 2);
+		if(rand.nextInt(4) == 0 && 
+				(world.isAirBlock(x + 0, y + baseHeight + 0, z - 1) || world.getBlockId(x + 0, y + baseHeight + 0, z - 1) == DecoDefs.acaciaLeaves.blockID) && 
+				(world.isAirBlock(x + 0, y + baseHeight + 0, z - 2) || world.getBlockId(x + 0, y + baseHeight + 0, z - 2) == DecoDefs.acaciaLeaves.blockID) && 
+				(world.isAirBlock(x + 1, y + baseHeight + 1, z - 3) || world.getBlockId(x + 1, y + baseHeight + 0, z - 3) == DecoDefs.acaciaLeaves.blockID)) {
+			world.setBlock(x + 0, y + baseHeight + 0, z - 1, DecoDefs.acaciaLog.blockID);
+			world.setBlock(x + 0, y + baseHeight + 0, z - 2, DecoDefs.acaciaLog.blockID);
+			world.setBlock(x + 1, y + baseHeight + 1, z - 3, DecoDefs.acaciaLog.blockID);
+			createAcaciaLeaves(world, rand, x + 1, y + baseHeight + 1, z - 3, 3);
+			createAcaciaLeaves(world, rand, x + 1, y + baseHeight + 2, z - 3, 2);
 		}
-
-		//branch6
-		par1World.setBlock(x - 0, y + rand + 0, z + 0, DecoDefs.acaciaLog.blockID);
-		par1World.setBlock(x - 0, y + rand + 1, z + 0, DecoDefs.acaciaLog.blockID);
-		par1World.setBlock(x - 0, y + rand + 2, z - 0, DecoDefs.acaciaLog.blockID);
-		createAcaciaLeaves(par1World, par2Random, x + 0, y + rand + 3, z - 0, 3);
-		createAcaciaLeaves(par1World, par2Random, x + 0, y + rand + 4, z - 0, 2);
 
 		return true;
 	}
 
 	private static void createAcaciaLeaves(World par1World, Random par2Random, int x, int y, int z, int size)
 	{
-		for(int x1 = -size + x; x1 < size + 1 + x; x1++)
-		{
-			for(int z1 = -size + z; z1 < size + 1 + z; z1++)
-			{
-				int var5 = par1World.getBlockId(x1, y, z1);
-				if (var5 == 0)
+		for(int i = -size + x; i < size + 1 + x; i++) {
+			for(int k = -size + z; k < size + 1 + z; k++) {
+				int currentID = par1World.getBlockId(i, y, k);
+				
+				if (currentID == 0)
 				{
-					if(x1 == -size + x && z1 == -size + z ){} else if(x1 == -size + x && z1 == size + z ){} else if(x1 == size + x && z1 == -size + z ){} else if(x1 == size + x && z1 == size + z ){}
-					else { par1World.setBlock(x1, y, z1, DecoDefs.acaciaLeaves.blockID); }
+					if(i == -size + x && k == -size + z ){} else if(i == -size + x && k == size + z ){} else if(i == size + x && k == -size + z ){} else if(i == size + x && k == size + z ){}
+					else { par1World.setBlock(i, y, k, DecoDefs.acaciaLeaves.blockID); }
 				}
 			}
 		}
+		
 		if(size==3){par1World.setBlock(x, y, z, DecoDefs.acaciaLog.blockID);}
 	}
 }

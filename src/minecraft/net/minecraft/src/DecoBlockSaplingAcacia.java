@@ -24,16 +24,6 @@ public class DecoBlockSaplingAcacia extends BlockFlower
     }
 
     /**
-     * Called upon block activation (right click on the block.)
-     */
-    
-    public boolean onBlockActivated(World par1World, int par2, int par3, int par4, EntityPlayer par5EntityPlayer, int par6, float par7, float par8, float par9)
-    {
-        growTree(par1World, par2, par3, par4, new Random());
-        return true;
-    }
-
-    /**
      * Ticks the block if it's been scheduled
      */
     public void updateTick(World var1, int var2, int var3, int var4, Random var5)
