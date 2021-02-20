@@ -330,6 +330,8 @@ public class DecoDefs {
 		id_signAcacia=3503,
 		id_signAcaciaWall=3504,
 		
+		id_lanternPaperBroken=3510,
+		
 		id_layerDirt=3550,
 		id_layerGrass=3551,
 		id_layerGravel=3552,
@@ -508,7 +510,7 @@ public class DecoDefs {
 	public static Block blockDiamondium;
 	public static Block hayBale, hayBaleStairs, thatch, thatchStairs;
 	public static BlockPane paperWall, fenceSteel;
-	public static Block lanternPaper, lanternSteel, chandelier;
+	public static Block lanternPaper, lanternPaperBroken, lanternSteel, chandelier;
 	public static Block chain;
 	public static Item chainItem;
 	public static Block workbench;
@@ -1630,11 +1632,10 @@ public class DecoDefs {
 		DecoManager.Register(fenceSteel);
 		DecoManager.Register(paperWall);
 
-		lanternPaper = new DecoBlockLantern(id_lanternPaper,Material.wood,.3F,"Paper",true);
-		lanternPaper.SetAxesEffectiveOn(true);
+		lanternPaper = new DecoBlockLantern(id_lanternPaper,Material.wood,.3F,"Paper",true).SetAxesEffectiveOn(true);
+		lanternPaperBroken = new DecoBlockLantern(id_lanternPaperBroken,Material.wood,.3F,"PaperBroken",false).setLightValue(0).SetAxesEffectiveOn(true);
 		chandelier = new DecoBlockChandelier(id_chandelier);
-		lanternSteel = new DecoBlockLantern(id_lanternSteel,Material.iron,.5F,"Iron", false);
-		lanternSteel.SetPicksEffectiveOn(true);
+		lanternSteel = new DecoBlockLantern(id_lanternSteel,Material.iron,.5F,"Iron", false).SetPicksEffectiveOn(true);
 
 		//Workbench
 		workbench = new DecoBlockWorkbench(id_workbench);

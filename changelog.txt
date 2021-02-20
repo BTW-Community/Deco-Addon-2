@@ -16,6 +16,7 @@ Thanks to Sockthing for the textures for acacia saplings, blood wood doors and t
 - Added the ability for fertilizer to spawn ferns.
 - Added the ability for the block dispenser to use fertilizer on grass to spawn flowers. The block dispenser will also not immediately suck up flowers placed using fertilizer (but can still suck up flowers in other circumstances). This, combined with the recipe change below, allows for automated production of flowers and dye.
 - Added the lily of the valley as a new type of flower, which can be ground down into 2 white dye.
+- Added broken paper lanterns, which look similar to normal paper lanterns but give off no light. They can be crafted by excluding the candle from the normal paper lantern recipe.
 - Changed grass to not die while in darkness in order to facilitate its decorative use and to prevent ugly dirt under overhangs or dense trees. However, to maintain balance, animals may not eat from grass without sunlight, and the texture updates slightly to reflect this.
 - Changed terracotta to break into 8 red sand piles when broken with an iron pick or lower. This and the below change were done for balance with my world gen addon.
 - Changed stone variants to drop their loose cobblestone variant when broken with an iron pick or lower.
@@ -52,8 +53,9 @@ Thanks to Sockthing for the textures for acacia saplings, blood wood doors and t
 - Fixed an issue where diamondium shears made sounds twice when crafted.
 - Fixed an issue where dyeing wool with addon dyes required a stoked cauldron instead of a regular cauldron.
 - Fixed an issue where black roses would not properly spawn from fertilizer.
-- Fixed a vanilla issue where right clicking an iron door still made the animation like something had happened.
 - Fixed an issue where the renaming gui erroneously had 2 slots even though only 1 was functional.
 - Fixed an issue where renaming items on the workbench would also name items in the top left inventory slot.
 - Fixed an issue where renaming an item still required the player to have a certian number of experience levels, even though they were not consumed.
+- Fixed an issue where attempting to place a sign would always play a sound, even if the sign was not successfully placed.
+- Fixed a vanilla issue where right clicking an iron door still made the animation like something had happened.
 - Fixed an issue (hopefully) where servers would incorrectly display an error message that the addon was not installed properly if the client was on a high latency connection. Let me know if this still happens as this simply involved increasing the amount of time the server would wait for the client to acknowledge. This functionality was also moved to the Extended Addon API to allow other addons using the API to access this code.

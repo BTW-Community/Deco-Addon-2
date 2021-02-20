@@ -3,7 +3,6 @@ Broken paper lantern
 Add hard point to lantern top/bottom
 Tweak magma creation
 Change stained glass back to blocks
-Acacia signs and chairs
 Empty bookshleves (and other shelf-type blocks)
 Change how chair model is done to allow back to have collision
 Add capacity to have interchangeable ids in shaped recipes.

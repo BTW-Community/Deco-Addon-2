@@ -96,6 +96,7 @@ public class DecoRecipes {
 		FCRecipes.AddRecipe(new ItemStack(DecoDefs.jungleWoodChair, 4), new Object[] {"#  ", "###","X X", '#', new ItemStack(FCBetterThanWolves.fcBlockWoodSidingItemStubID, 1, 3), 'X', new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, 3)});
 		FCRecipes.AddRecipe(new ItemStack(DecoDefs.bloodWoodChair, 4), new Object[] {"#  ", "###","X X", '#', new ItemStack(FCBetterThanWolves.fcBlockWoodSidingItemStubID, 1, 4), 'X', new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, 4)});
 		FCRecipes.AddRecipe(new ItemStack(DecoDefs.cherryWoodChair, 4), new Object[] {"#  ", "###","X X", '#', new ItemStack(FCBetterThanWolves.fcBlockWoodSidingItemStubID, 1, 5), 'X', new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, 5)});
+		FCRecipes.AddRecipe(new ItemStack(DecoDefs.acaciaWoodChair, 4), new Object[] {"#  ", "###","X X", '#', new ItemStack(FCBetterThanWolves.fcBlockWoodSidingItemStubID, 1, 6), 'X', new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, 6)});
 	}
 
 	private void addGlassRecipes() {
@@ -790,7 +791,7 @@ public class DecoRecipes {
 		FCRecipes.RemoveVanillaRecipe(new ItemStack(Item.sign, 3), new Object[] {"###", "###", " X ", '#', Block.planks, 'X', Item.stick});
 		FCRecipes.RemoveVanillaRecipe(new ItemStack(Item.sign, 3), new Object[] {"#", "X", '#', new ItemStack(FCBetterThanWolves.fcBlockWoodSidingItemStubID, 1, 32767), 'X', new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, 32767)});
 
-		for (int i = 0; i < 6; i++) {
+		for (int i = 0; i < 7; i++) {
 			FCRecipes.AddRecipe(new ItemStack(Item.sign, 3, i), new Object[] {"###", "###", " X ", '#', new ItemStack(Block.planks, 1, i), 'X', Item.stick});
 			FCRecipes.AddRecipe(new ItemStack(Item.sign, 3, i), new Object[] {"#", "X", '#', new ItemStack(FCBetterThanWolves.fcBlockWoodSidingItemStubID, 1, i), 'X', new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, i)});
 		}
@@ -805,11 +806,12 @@ public class DecoRecipes {
 		FCRecipes.AddRecipe(new ItemStack(DecoDefs.thatchStairs, 8), new Object[] {"X  ", "XX ", "XXX", 'X', DecoDefs.thatch});
 
 		//Lanterns
-		FCRecipes.AddRecipe(new ItemStack(DecoDefs.paperWall, 4), new Object[] { "ppp", "pwp", "ppp", 'p', Item.paper, 'w', new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, 32767) });
-		FCRecipes.AddStokedCrucibleRecipe(new ItemStack(FCBetterThanWolves.fcItemNuggetIron, 6), new ItemStack[] { new ItemStack(DecoDefs.fenceSteel, 1) });
-		FCRecipes.AddAnvilRecipe(new ItemStack(DecoDefs.fenceSteel, 10), new Object[] { " X X", "XXXX", " X X", " X X", 'X', new ItemStack(Item.ingotIron) });
+		FCRecipes.AddRecipe(new ItemStack(DecoDefs.paperWall, 4), new Object[] {"ppp", "pwp", "ppp", 'p', Item.paper, 'w', new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, 32767)});
+		FCRecipes.AddStokedCrucibleRecipe(new ItemStack(FCBetterThanWolves.fcItemNuggetIron, 6), new ItemStack[] {new ItemStack(DecoDefs.fenceSteel, 1)});
+		FCRecipes.AddAnvilRecipe(new ItemStack(DecoDefs.fenceSteel, 10), new Object[] {" X X", "XXXX", " X X", " X X", 'X', new ItemStack(Item.ingotIron)});
 
 		FCRecipes.AddRecipe(new ItemStack(DecoDefs.lanternPaper,1),new Object[]{"pwp","wcw","pwp",'c', new ItemStack(FCBetterThanWolves.fcItemCandle,1,32767), 'p', Item.paper, 'w', new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, 32767)});
+		FCRecipes.AddRecipe(new ItemStack(DecoDefs.lanternPaperBroken,1),new Object[]{"pwp","w w","pwp", 'p', Item.paper, 'w', new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, 32767)});
 		FCRecipes.AddAnvilRecipe(new ItemStack(DecoDefs.chandelier,2), new Object[]{" ss "," gg ","cggc","cggc",'s',Block.stone,'g',Item.goldNugget,'c', new ItemStack(FCBetterThanWolves.fcItemCandle,1,32767)});
 		FCRecipes.AddRecipe(new ItemStack(DecoDefs.lanternSteel,1),new Object[]{"nnn","ntn","nnn",'n',FCBetterThanWolves.fcItemNuggetIron,'t',FCBetterThanWolves.fcBlockTorchNetherBurning});
 		FCRecipes.AddStokedCrucibleRecipe(new ItemStack(FCBetterThanWolves.fcItemNuggetIron, 5), new ItemStack[]{new ItemStack(DecoDefs.lanternSteel,1)});

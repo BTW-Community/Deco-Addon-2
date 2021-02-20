@@ -144,6 +144,7 @@ tile.decoBlockChainCoil.name=Coil of Chain
 tile.decoBlockCoarseDirt.name=Coarse Dirt
 tile.decoBlockCoarseDirtSlab.name=Coarse Dirt Slab
 tile.decoBlockLanternPaper.name=Paper Lantern
+tile.decoBlockLanternPaperBroken.name=Broken Paper Lantern
 tile.decoBlockLanternIron.name=Wrought Iron Lantern
 tile.decoBlockSpiderEye.name=Block of Spider Eyes
 tile.decoBlockSpiderEyeSlab.name=Spider Eye Slab
