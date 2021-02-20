@@ -15,7 +15,6 @@ Mobs still spawn on glass
 Tree growth does not check against all log or leaf types
 Fertilizer is not properly placing ferns
 Iron doors and trapdoors do not check redstone state when placed
-White dye missing texture
 Benches and tables do not have the right selection hitbox
 Occasionally walls will not update when they should show or not show a post. Updating any nearby block fixes this.
 Hedge subblocks do not always show the right color on the item.

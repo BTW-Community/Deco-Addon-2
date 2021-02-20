@@ -1,5 +1,4 @@
 BlockPane
-ChunkCache
 ContainerRepair
 DataWatcher
 GuiEditSign
@@ -9,6 +8,10 @@ RenderItemFrame
 SlotRepair
 TileEntitySignRenderer
 
+ChunkCache*
 PlayerControllerMP*
 ServerConfigurationManager*
 FCBlockStairsWood*
+FCBlockGrass*
+FCBlockDirtSlab*
+Block*

@@ -1653,12 +1653,10 @@ public class DecoDefs {
 		//podzolSlab = new AddonBlockDirtSlab(id_podzolSlab));
 
 		//Dirt Replace
-		Block.grass = (BlockGrass) Block.replaceBlock(Block.grass.blockID, DecoBlockGrass.class);
 		Block.dirt = Block.replaceBlock(Block.dirt.blockID, DecoBlockDirt.class);
 		Block.mycelium = (BlockMycelium) Block.replaceBlock(Block.mycelium.blockID, DecoBlockMycelium.class);
 		FCBetterThanWolves.fcBlockDirtLoose = new DecoBlockDirtLoose(DecoManager.ReplaceBlockID(FCBetterThanWolves.fcBlockDirtLoose));
-		FCBetterThanWolves.fcBlockDirtSlab = new DecoBlockDirtSlab(DecoManager.ReplaceBlockID(FCBetterThanWolves.fcBlockDirtSlab));
-		FCBetterThanWolves.fcBlockDirtLooseSlab = new DecoBlockDirtLooseSlab(DecoManager.ReplaceBlockID(FCBetterThanWolves.fcBlockDirtLooseSlab));
+		//FCBetterThanWolves.fcBlockDirtSlab = new DecoBlockDirtSlab(DecoManager.ReplaceBlockID(FCBetterThanWolves.fcBlockDirtSlab));
 
 		//Nether portal
 		Block.portal = (BlockPortal) Block.replaceBlock(Block.portal.blockID, DecoBlockPortal.class);

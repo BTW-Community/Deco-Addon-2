@@ -72,7 +72,6 @@ src/minecraft/net/minecraft/src/BiomeGenRiver.java
 src/minecraft/net/minecraft/src/BiomeGenSnow.java
 src/minecraft/net/minecraft/src/BiomeGenSwamp.java
 src/minecraft/net/minecraft/src/BiomeGenTaiga.java
-src/minecraft/net/minecraft/src/Block.java
 src/minecraft/net/minecraft/src/BlockAnvil.java
 src/minecraft/net/minecraft/src/BlockBasePressurePlate.java
 src/minecraft/net/minecraft/src/BlockBaseRailLogic.java
@@ -766,7 +765,6 @@ src/minecraft/net/minecraft/src/FCBlockDetectorRail.java
 src/minecraft/net/minecraft/src/FCBlockDirt.java
 src/minecraft/net/minecraft/src/FCBlockDirtLoose.java
 src/minecraft/net/minecraft/src/FCBlockDirtLooseSlab.java
-src/minecraft/net/minecraft/src/FCBlockDirtSlab.java
 src/minecraft/net/minecraft/src/FCBlockDispenserVanilla.java
 src/minecraft/net/minecraft/src/FCBlockDoor.java
 src/minecraft/net/minecraft/src/FCBlockDoorWood.java
@@ -800,7 +798,6 @@ src/minecraft/net/minecraft/src/FCBlockGearBox.java
 src/minecraft/net/minecraft/src/FCBlockGlass.java
 src/minecraft/net/minecraft/src/FCBlockGlowStone.java
 src/minecraft/net/minecraft/src/FCBlockGourd.java
-src/minecraft/net/minecraft/src/FCBlockGrass.java
 src/minecraft/net/minecraft/src/FCBlockGrate.java
 src/minecraft/net/minecraft/src/FCBlockGravel.java
 src/minecraft/net/minecraft/src/FCBlockGroundCover.java
@@ -3060,7 +3057,6 @@ src/minecraft_server/net/minecraft/src/FCBlockStairsNetherBrick.java
 src/minecraft_server/net/minecraft/src/FCBlockStairsSandStone.java
 src/minecraft_server/net/minecraft/src/FCBlockStairsStoneBrick.java
 src/minecraft_server/net/minecraft/src/FCBlockStairsWhiteStone.java
-src/minecraft_server/net/minecraft/src/FCBlockStairsWood.java
 src/minecraft_server/net/minecraft/src/FCBlockStake.java
 src/minecraft_server/net/minecraft/src/FCBlockStakeString.java
 src/minecraft_server/net/minecraft/src/FCBlockStem.java
@@ -3833,7 +3829,6 @@ src/minecraft_server/net/minecraft/src/ServerCommand.java
 src/minecraft_server/net/minecraft/src/ServerCommandManager.java
 src/minecraft_server/net/minecraft/src/ServerCommandScoreboard.java
 src/minecraft_server/net/minecraft/src/ServerCommandTestFor.java
-src/minecraft_server/net/minecraft/src/ServerConfigurationManager.java
 src/minecraft_server/net/minecraft/src/ServerGUI.java
 src/minecraft_server/net/minecraft/src/ServerGuiCommandListener.java
 src/minecraft_server/net/minecraft/src/ServerGuiFocusAdapter.java
