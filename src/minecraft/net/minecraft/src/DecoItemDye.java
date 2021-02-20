@@ -31,9 +31,9 @@ public class DecoItemDye extends FCItemDye
 		par3List.add(new ItemStack(par1, 1, 31));
 	}
 
-	@Override public Icon getIconFromDamage(int Meta)
+	@Override public Icon getIconFromDamage(int meta)
 	{
-		return Meta>15 ? extraIcons[Meta-16] : super.getIconFromDamage(Meta);
+		return meta>15 ? extraIcons[meta-16] : super.getIconFromDamage(meta);
 	}
 
 	@Override public void registerIcons(IconRegister var1)
@@ -42,7 +42,6 @@ public class DecoItemDye extends FCItemDye
 		for (int i = 0; i < 16; i++)
 		{
 			extraIcons[i] = var1.registerIcon("decoItemDye_" + DecoUtilsMisc.colorOrder[i]);
-			i++;
 		}
 	}
 }

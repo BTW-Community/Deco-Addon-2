@@ -8,6 +8,7 @@ Add capacity to have interchangeable ids in shaped recipes.
 Change cactus to stay on red sand
 
 ## Issues ##
+Some stone type slabs and stairs have the wrong or missing names
 Cherry leaves don't decay until a leaf is mined. Probably applies to acacia too.
 Grass with snow is colored
 Mobs still spawn on glass
