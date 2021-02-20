@@ -9,7 +9,7 @@ Thanks to Sockthing for the textures for acacia saplings, blood wood doors and t
 - Refactored file prefix to "Deco" rather than "Addon". This, and the below texture name change, were relics from Yhetti's development and have both been changed for clarity.
 - Refactored texture names to make them more consistent, following BTW's naming scheme to use things such as decoBlockXXXX and removing ginger_ as the prefix. This means texture packs will need to update to use the new file names.
 - Added localization support. Included with the addon in the lang folder is the file Deco_en_US.lang, which contains all english translations for the addon. Anyone who wishes to make and distribute translations is free to do so, and I will include it here if you link it.
-- Added acacia trees and accompanying logs and planks. Acacia saplings can be crafted with an oak sapling, fertilizer, and gray dye in a cauldron.
+- Added acacia trees and accompanying wood type. Acacia saplings can be crafted with an oak sapling, fertilizer, and gray dye in a cauldron.
 - Added autumn trees. These trees generate as oak trees with red, orange, or yellow leaves. Autumn saplings can be crafted with an oak sapling, fertilizer, and red, orange, or yellow dye in a cauldron.
 - Added iron trapdoors, crafted with 4 iron ingots and 2 redstone latches, producing 2. They work just like iron doors and will only respond to redstone signals.
 - Added spider eye blocks, created by packing 16 spider eyes together, and spider eye slabs.
@@ -18,7 +18,7 @@ Thanks to Sockthing for the textures for acacia saplings, blood wood doors and t
 - Added the lily of the valley as a new type of flower, which can be ground down into 2 white dye.
 - Added broken paper lanterns, which look similar to normal paper lanterns but give off no light. They can be crafted by excluding the candle from the normal paper lantern recipe.
 - Changed grass to not die while in darkness in order to facilitate its decorative use and to prevent ugly dirt under overhangs or dense trees. However, to maintain balance, animals may not eat from grass without sunlight, and the texture updates slightly to reflect this.
-- Changed terracotta to break into 8 red sand piles when broken with an iron pick or lower. This and the below change were done for balance with my world gen addon.
+- Changed terracotta to break into 8 red sand piles when broken with an iron pick or lower. This and the below change were done for balance with my upcoming world gen addon.
 - Changed stone variants to drop their loose cobblestone variant when broken with an iron pick or lower.
 - Changed (increased) the hardness and blast resistance of terracotta.
 - Changed doors to stack to 16.
@@ -32,7 +32,7 @@ Thanks to Sockthing for the textures for acacia saplings, blood wood doors and t
 - Changed (decreased) the amount of tall grass which spawns from fertilizer.
 - Changed (increased) the amount of flowers which spawn from fertilizer.
 - Changed the fertilizer recipe to be made in a cauldron, and to use potash instead of dung.
-- Changed the textures of blood wood doors and trapdoors as they were previously based on vanilla's acacia textures.
+- Changed the textures of blood wood doors and trapdoors as they were previously reccolors of vanilla's acacia textures.
 - Refactored loose slab code to simplify the related code and assimilate it into the main slab code.
 - Removed the ability for animals to eat addon flowers.
 - Removed specific textures for subblocks (except columns). Subblocks will now simply use the texture of their base block. However, MCPatcher will still allow texturepacks to override these textures if texturepack authors wish to do so.

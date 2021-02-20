@@ -1,5 +1,4 @@
 ## Todo ##
-Broken paper lantern
 Add hard point to lantern top/bottom
 Tweak magma creation
 Change stained glass back to blocks
