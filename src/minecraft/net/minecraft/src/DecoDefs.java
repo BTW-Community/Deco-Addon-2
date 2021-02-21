@@ -302,6 +302,9 @@ public class DecoDefs {
 		id_buttonDiorite=3475,
 		id_buttonSandstone=3476,
 		id_buttonRedSandstone=3477,
+		id_grimstoneRough=3478,
+		id_grimstoneTilesLoose=3479,
+		id_grimstoneBrickLoose=3480,
 		
 		id_acaciaLog=3488,
 		id_acaciaStump=3489,
@@ -343,6 +346,8 @@ public class DecoDefs {
 		id_shearsDiamond=30006,
 		id_bottleHempOil = 30007,
 		id_glassStainedItem = 30008,
+		id_grimstoneTile = 30009,
+		id_grimstoneBrickItem = 30010,
 	
 		id_itemDoorSpruce = 30020,
 		id_itemDoorBirch = 30021,
@@ -445,8 +450,11 @@ public class DecoDefs {
 	public static Block netherBrickRedLoose, netherBrickRedLooseStairs, netherBrickRedLooseSlab;
 
 	public static Block netherrackSuperheated, magma, netherBrickSuperheated;
+	public static Item grimstoneTile, grimstoneBrickItem;
 
 	public static Block endStoneBrick, endStoneBrickStairs, endStoneBrickSidingAndCorner, endStoneBrickMouldingAndDecorative;
+	
+	public static Block grimstoneRough, grimstoneTilesLoose, grimstoneBrickLoose;
 
 	//Sandstone
 	public static Block redSand, redSandSlab;
@@ -935,7 +943,7 @@ public class DecoDefs {
 		Item.itemsList[mossyCobblestoneSidingAndCorner.blockID] = new FCItemBlockSidingAndCorner(mossyCobblestoneSidingAndCorner.blockID - 256);
 		Item.itemsList[mossyCobblestoneMouldingAndDecorative.blockID] = new FCItemBlockMouldingAndDecorative(mossyCobblestoneMouldingAndDecorative.blockID - 256);
 
-		stoneTypes = new DecoBlockStone(id_stoneType);
+		stoneTypes = new DecoBlockStoneVariants(id_stoneType);
 		stoneTypesCobble = new DecoBlockCobble(id_stoneTypeCobble);
 		graniteCobbleLoose = new DecoBlockCobbleLooseGranite(id_graniteCobbleLoose);
 		andesiteCobbleLoose = new DecoBlockCobbleLooseAndesite(id_andesiteCobbleLoose);
@@ -1300,6 +1308,16 @@ public class DecoDefs {
 		//Obsidian
 		Block.obsidian = Block.replaceBlock(Block.obsidian.blockID, DecoBlockObsidian.class);
 		DecoManager.Register(Block.obsidian, new String[] {"obsidian", "infused"});
+		
+		//Grimstone
+		grimstoneRough = new DecoBlockGrimstoneRough(id_grimstoneRough);
+		FCBlockStoneRough.m_startaLevelBlockArray[3] = (FCBlockStoneRough) grimstoneRough;
+		DecoManager.Register(grimstoneRough);
+		grimstoneTilesLoose = new DecoBlockGrimstoneTilesLoose(id_grimstoneTilesLoose);
+		grimstoneBrickLoose = new DecoBlockGrimstoneBrickLoose(id_grimstoneBrickLoose);
+		
+        grimstoneTile = new DecoItemGrimstoneTile(id_grimstoneTile);
+        grimstoneBrickItem = (new Item(id_grimstoneBrickItem)).setUnlocalizedName("decoItemGrimstoneBrick").setCreativeTab(CreativeTabs.tabMaterials);
 
 		//MUST BE LAST OR NULL POINTER
 		//Has to be after reference blocks are declared

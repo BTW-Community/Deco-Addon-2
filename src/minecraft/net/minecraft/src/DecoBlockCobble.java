@@ -14,7 +14,7 @@ public class DecoBlockCobble extends Block {
 		this.setUnlocalizedName("decoBlockCobblestone");
 		this.setCreativeTab(CreativeTabs.tabBlock);
 
-		DecoManager.Register(this, new String[] {"granite", "andesite", "diorite"});
+		DecoManager.Register(this, new String[] {"granite", "andesite", "diorite", "grimstone"});
 	}
 
     /**
@@ -38,6 +38,9 @@ public class DecoBlockCobble extends Block {
         	case 2:
         		drop = DecoDefs.dioriteCobbleLoose;
         		break;
+        	case 3:
+        		drop = DecoDefs.grimstoneTilesLoose;
+        		break;
         	}
         	
             this.dropBlockAsItem_do(var1, var2, var3, var4, new ItemStack(drop));
@@ -57,6 +60,7 @@ public class DecoBlockCobble extends Block {
         par3List.add(new ItemStack(par1, 1, 0));
         par3List.add(new ItemStack(par1, 1, 1));
         par3List.add(new ItemStack(par1, 1, 2));
+        par3List.add(new ItemStack(par1, 1, 3));
     }
 
     /**
@@ -68,7 +72,7 @@ public class DecoBlockCobble extends Block {
     }
 	
 	//CLIENT ONLY METHODS
-	public static Icon[] Icons = new Icon[3];
+	public static Icon[] Icons = new Icon[4];
 	public Icon getIcon(int Side, int Meta)
 	{
 		return Icons[Meta];
@@ -78,6 +82,7 @@ public class DecoBlockCobble extends Block {
 		Icons[0] = Register.registerIcon("decoBlockGraniteCobble");
 		Icons[1] = Register.registerIcon("decoBlockAndesiteCobble");
 		Icons[2] = Register.registerIcon("decoBlockDioriteCobble");
+		Icons[3] = Register.registerIcon("decoBlockGrimstoneTiles");
 	}
 	//
 }

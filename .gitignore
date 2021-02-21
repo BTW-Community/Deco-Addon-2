@@ -943,12 +943,10 @@ src/minecraft/net/minecraft/src/FCBlockStake.java
 src/minecraft/net/minecraft/src/FCBlockStakeString.java
 src/minecraft/net/minecraft/src/FCBlockStem.java
 src/minecraft/net/minecraft/src/FCBlockStep.java
-src/minecraft/net/minecraft/src/FCBlockStone.java
 src/minecraft/net/minecraft/src/FCBlockStoneBrick.java
 src/minecraft/net/minecraft/src/FCBlockStoneBrickLoose.java
 src/minecraft/net/minecraft/src/FCBlockStoneBrickLooseSlab.java
 src/minecraft/net/minecraft/src/FCBlockStoneBrickLooseStairs.java
-src/minecraft/net/minecraft/src/FCBlockStoneRough.java
 src/minecraft/net/minecraft/src/FCBlockStub.java
 src/minecraft/net/minecraft/src/FCBlockStumpCharred.java
 src/minecraft/net/minecraft/src/FCBlockTallGrass.java

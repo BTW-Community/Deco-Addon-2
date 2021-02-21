@@ -3,8 +3,8 @@ package net.minecraft.src;
 import java.util.List;
 import java.util.Random;
 
-public class DecoBlockStone extends Block {
-	public DecoBlockStone(int ID) {
+public class DecoBlockStoneVariants extends Block {
+	public DecoBlockStoneVariants(int ID) {
 		super(ID, Material.rock);
 		this.setHardness(2.25F);
 		this.setResistance(10.0F);
