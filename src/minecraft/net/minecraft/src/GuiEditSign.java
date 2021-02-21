@@ -125,7 +125,7 @@ public class GuiEditSign extends GuiScreen
         GL11.glRotatef(180.0F, 0.0F, 1.0F, 0.0F);
         Block var5 = this.entitySign.getBlockType();
 
-        if (var5 == Block.signPost || var5 == AddonDefs.signSpruce || var5 == AddonDefs.signBirch || var5 == AddonDefs.signJungle || var5 == AddonDefs.signBlood || var5 == AddonDefs.signCherry)
+        if (var5 == Block.signPost || var5 == DecoDefs.signSpruce || var5 == DecoDefs.signBirch || var5 == DecoDefs.signJungle || var5 == DecoDefs.signBlood || var5 == DecoDefs.signCherry)
         {
             float var6 = (float)(this.entitySign.getBlockMetadata() * 360) / 16.0F;
             GL11.glRotatef(var6, 0.0F, 1.0F, 0.0F);

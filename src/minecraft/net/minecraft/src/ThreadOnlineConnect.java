@@ -22,7 +22,7 @@ class ThreadOnlineConnect extends Thread
     {
         try
         {
-            TaskOnlineConnect.func_96583_a(this.field_96594_c, new AddonNetClientHandler(this.field_96594_c.func_96578_b(), this.field_96595_a, this.field_96593_b, TaskOnlineConnect.func_98172_a(this.field_96594_c)));
+            TaskOnlineConnect.func_96583_a(this.field_96594_c, new NetClientHandler(this.field_96594_c.func_96578_b(), this.field_96595_a, this.field_96593_b, TaskOnlineConnect.func_98172_a(this.field_96594_c)));
 
             if (this.field_96594_c.func_96577_c())
             {

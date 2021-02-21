@@ -380,8 +380,7 @@ public class TileEntityChest extends TileEntity implements IInventory
                 var8 += 0.5D;
             }
 
-            if (!this.worldObj.isRemote)
-            	this.worldObj.playAuxSFX(AddonManager.addonChestOpenAuxFXID, (int) var8, this.yCoord, (int) var11, 0);
+            this.worldObj.playSoundEffect(var8, (double)this.yCoord + 0.5D, var11, "random.chestopen", 0.5F, this.worldObj.rand.nextFloat() * 0.1F + 0.9F);
         }
 
         if (this.numUsingPlayers == 0 && this.lidAngle > 0.0F || this.numUsingPlayers > 0 && this.lidAngle < 1.0F)
@@ -419,8 +418,7 @@ public class TileEntityChest extends TileEntity implements IInventory
                     var11 += 0.5D;
                 }
 
-                if (!this.worldObj.isRemote)
-                	this.worldObj.playAuxSFX(AddonManager.addonChestCloseAuxFXID, (int) var11, this.yCoord, (int) var6, 0);
+                this.worldObj.playSoundEffect(var11, (double)this.yCoord + 0.5D, var6, "random.chestclosed", 0.5F, this.worldObj.rand.nextFloat() * 0.1F + 0.9F);
             }
 
             if (this.lidAngle < 0.0F)

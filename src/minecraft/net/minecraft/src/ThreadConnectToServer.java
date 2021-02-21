@@ -25,7 +25,7 @@ class ThreadConnectToServer extends Thread
     {
         try
         {
-            GuiConnecting.setNetClientHandler(this.connectingGui, new AddonNetClientHandler(GuiConnecting.func_74256_a(this.connectingGui), this.ip, this.port));
+            GuiConnecting.setNetClientHandler(this.connectingGui, new NetClientHandler(GuiConnecting.func_74256_a(this.connectingGui), this.ip, this.port));
 
             if (GuiConnecting.isCancelled(this.connectingGui))
             {

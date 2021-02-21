@@ -5,8 +5,7 @@ import java.util.Random;
 
 public class BlockPane extends Block
 {
-	static{new AddonManager();}
-    
+    static {new DecoManager();}
     /**
      * Holds the texture index of the side of the pane (the thin lateral side)
      */
@@ -18,6 +17,7 @@ public class BlockPane extends Block
      */
     private final boolean canDropItself;
     private final String field_94402_c;
+    private Icon theIcon;
 
     protected BlockPane(int par1, String par2Str, String par3Str, Material par4Material, boolean par5)
     {
@@ -43,22 +43,6 @@ public class BlockPane extends Block
     public boolean isOpaqueCube()
     {
         return false;
-    }
-
-    /**
-     * If this block doesn't render as an ordinary block it will return False (examples: signs, buttons, stairs, etc)
-     */
-    public boolean renderAsNormalBlock()
-    {
-        return false;
-    }
-
-    /**
-     * The type of render function that is called for this block
-     */
-    public int getRenderType()
-    {
-        return 18;
     }
 
     /**

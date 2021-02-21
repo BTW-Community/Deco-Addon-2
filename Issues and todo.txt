@@ -1,0 +1,34 @@
+## Todo ##
+Add hard point to lantern top/bottom
+Tweak magma creation
+Change stained glass back to blocks
+Empty bookshleves (and other shelf-type blocks)
+Change how chair model is done to allow back to have collision
+Add capacity to have interchangeable ids in shaped recipes.
+Change cactus to stay on red sand
+
+## Issues ##
+Cherry leaves don't decay until a leaf is mined. Probably applies to acacia too.
+Mobs still spawn on glass
+Tree growth does not check against all log or leaf types
+Fertilizer is not properly placing ferns
+Iron doors and trapdoors do not check redstone state when placed
+Benches and tables do not have the right selection hitbox
+Occasionally walls will not update when they should show or not show a post. Updating any nearby block fixes this.
+Hedge subblocks do not always show the right color on the item.
+Walls connected to two panes on opposite sides still have posts.
+Walls connected to panes which have a wall above them do not render full height connections.
+Missing dye combo recipes using white dye
+Item frame map z-fighting
+Shift clicking into a workbench creates ghost items.
+Flowers pop off in darkness but only after a block update. [Vanilla behavior but I intend to fix it]
+New block sounds, except for mining, are silent in multiplayer for clients who do not have new sounds installed.
+Slabs do not use custom sounds.
+Entities can have weird collision with pergolas.
+
+## MCPatcher Issues ##
+Loading a texturepack from game start will cause any CTM blocks to display wrong, reloading TP fixes it [MCPatcher only]
+Falling slabs do not render the right metadata while falling [MCPatcher only]
+Issues rendering the right metadata on flower pots. [MCPatcher only]
+Glass pane ctm is broken. [MCPatcher only]
+Rough grass does not support CTM [MCPatcher only]

@@ -36,7 +36,7 @@ class SlotRepair extends Slot
      */
     public boolean canTakeStack(EntityPlayer par1EntityPlayer)
     {
-        return (par1EntityPlayer.capabilities.isCreativeMode || par1EntityPlayer.experienceLevel >= this.anvil.maximumCost) && this.anvil.maximumCost > 0 && this.getHasStack();
+    	return true;
     }
 
     public void onPickupFromSlot(EntityPlayer par1EntityPlayer, ItemStack par2ItemStack)

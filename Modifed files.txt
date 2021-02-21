@@ -1,0 +1,17 @@
+BlockPane
+ContainerRepair
+DataWatcher
+GuiEditSign
+GuiRepair
+Render
+RenderItemFrame
+SlotRepair
+TileEntitySignRenderer
+
+ChunkCache*
+PlayerControllerMP*
+ServerConfigurationManager*
+FCBlockStairsWood*
+FCBlockGrass*
+FCBlockDirtSlab*
+Block*

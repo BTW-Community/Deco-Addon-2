@@ -2,9 +2,6 @@ package net.minecraft.src;
 
 import java.awt.BorderLayout;
 import java.awt.Canvas;
-import java.io.IOException;
-import java.lang.reflect.Field;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.MinecraftApplet;
 import org.lwjgl.LWJGLException;
@@ -20,7 +17,6 @@ public class MinecraftAppletImpl extends Minecraft
         this.mainFrame = par1MinecraftApplet;
     }
 
-    @Override
     public void displayCrashReportInternal(CrashReport par1CrashReport)
     {
         this.mainFrame.removeAll();
@@ -30,52 +26,18 @@ public class MinecraftAppletImpl extends Minecraft
     }
 
     /**
-     * Arguments: World foldername,  World ingame name, WorldSettings
+     * Starts the game: initializes the canvas, the title, the settings, etcetera.
      */
-    @Override
-    public void launchIntegratedServer(String par1Str, String par2Str, WorldSettings par3WorldSettings)
+    public void startGame() throws LWJGLException
     {
-    	super.launchIntegratedServer(par1Str, par2Str, par3WorldSettings);
+        this.mcDataDir = getMinecraftDir();
+        this.gameSettings = new GameSettings(this, this.mcDataDir);
 
-        try
+        if (this.gameSettings.overrideHeight > 0 && this.gameSettings.overrideWidth > 0 && this.mainFrame.getParent() != null && this.mainFrame.getParent().getParent() != null)
         {
-            NetClientHandler var10 = new AddonNetClientHandler(this, this.getIntegratedServer());
-            
-        	Field networkManagerAccessField = null;
-    		try {
-    			networkManagerAccessField = this.getClass().getSuperclass().getDeclaredField("myNetworkManager");
-    		} catch (NoSuchFieldException e) {
-    			try {
-    				networkManagerAccessField = this.getClass().getSuperclass().getDeclaredField("ak");
-    			} catch (NoSuchFieldException e1) {
-    				e1.printStackTrace();
-    			} catch (SecurityException e1) {
-    				e1.printStackTrace();
-    			}
-    		} catch (SecurityException e) {
-    			e.printStackTrace();
-    		}
-    		
-    		networkManagerAccessField.setAccessible(true);
-        	
-        	try {
-    			networkManagerAccessField.set(this, var10.getNetManager());
-    		} catch (IllegalArgumentException e) {
-    			e.printStackTrace();
-    		} catch (IllegalAccessException e) {
-    			e.printStackTrace();
-    		}
+            this.mainFrame.getParent().getParent().setSize(this.gameSettings.overrideWidth, this.gameSettings.overrideHeight);
         }
-        catch (IOException var8)
-        {
-            this.displayCrashReport(this.addGraphicsAndWorldToCrashReport(new CrashReport("Connecting to integrated server", var8)));
-        }
-    }
-    
-    @Override
-    public void startGame() throws LWJGLException {
-    	super.startGame();
-        this.renderGlobal = new AddonRenderGlobal(this, this.renderEngine);
-        this.renderEngine.refreshTextureMaps();
+
+        super.startGame();
     }
 }

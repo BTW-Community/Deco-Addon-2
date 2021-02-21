@@ -29,7 +29,7 @@ public class TileEntitySign extends TileEntity
      */
     public void readFromNBT(NBTTagCompound par1NBTTagCompound)
     {
-        this.isEditable = true;
+        this.isEditable = false;
         super.readFromNBT(par1NBTTagCompound);
 
         for (int var2 = 0; var2 < 4; ++var2)
