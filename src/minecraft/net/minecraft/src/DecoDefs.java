@@ -928,7 +928,7 @@ public class DecoDefs {
 		//Flower pot
 		flowerPot = new DecoBlockFlowerPot(id_flowerPot);
 		TileEntity.addMapping(DecoTileEntityFlowerPot.class, "AddonFlowerPot");
-		Item.replaceItem(Item.flowerPot.itemID - 256, DecoItemFlowerPot.class);
+		Item.replaceItem(Item.flowerPot.itemID, DecoItemFlowerPot.class);
 	}
 
 	private void addStoneDefs() {
