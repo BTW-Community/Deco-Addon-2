@@ -1651,7 +1651,7 @@ item.decoItemStainedGlass.white.name=White Stained Glass
 # Vanilla/BTW Items Renamed
 
 item.fcItemBark.cherry.name=Cherry Bark
-item.fcItemBark.acacua.name=Acacia Bark
+item.fcItemBark.acacia.name=Acacia Bark
 item.dyePowder.black2.name=Black Dye
 item.dyePowder.blue2.name=Blue Dye
 item.dyePowder.white2.name=White Dye
