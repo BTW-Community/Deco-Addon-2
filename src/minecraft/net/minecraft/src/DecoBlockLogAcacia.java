@@ -88,7 +88,7 @@ public class DecoBlockLogAcacia extends Block {
 
 	public int GetItemDamageDroppedOnSaw(World var1, int var2, int var3, int var4)
 	{
-		return 5;
+		return 6;
 	}
 
 	public boolean DropComponentItemsOnBadBreak(World var1, int var2, int var3, int var4, int var5, float var6)
