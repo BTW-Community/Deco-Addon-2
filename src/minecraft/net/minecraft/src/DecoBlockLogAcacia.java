@@ -19,6 +19,11 @@ public class DecoBlockLogAcacia extends Block {
 		this.setCreativeTab(CreativeTabs.tabBlock);
 	}
 
+    public int GetFurnaceBurnTime(int var1)
+    {
+        return FCBlockPlanks.GetFurnaceBurnTimeByWoodType(0) * 4;
+    }
+
 	public boolean CanConvertBlock(ItemStack var1, World var2, int var3, int var4, int var5)
 	{
 		return true;
