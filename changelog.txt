@@ -71,3 +71,4 @@ Thanks to Sockthing for the textures for acacia saplings, blood wood doors and t
 [*]Fixed an issue where sawing acacia logs turned into cherry planks.
 [*]Fixed an issue where shears were not efficient against acacia or autumn leaves.
 [*]Fixed an issue where cherry and acacia logs could not be used as fuel in an oven.
+[*]Fixed an issue where it took much less time to make a crafting table out of a cherry or acacia stump than other wood types.
