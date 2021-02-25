@@ -63,6 +63,7 @@ Thanks to Sockthing for the textures for acacia saplings, blood wood doors and t
 [*]Fixed an issue where dirt slabs displayed the wrong top texture.
 
 2.13.2
+This version may require a clean install for the texture fix to properly show up due to how windows handles file capitalization (I don't know how other OS's handle it)
 [*]Changed versioning scheme
 [*]Fixed an issue where flower pots overwrote spruce stairs in inventory. They will properly revert back to spruce stairs when installing this release.
 [*]Fixed an issue where acacia logs dropped cherry bark when split in a crafting grid.
@@ -72,3 +73,7 @@ Thanks to Sockthing for the textures for acacia saplings, blood wood doors and t
 [*]Fixed an issue where shears were not efficient against acacia or autumn leaves.
 [*]Fixed an issue where cherry and acacia logs could not be used as fuel in an oven.
 [*]Fixed an issue where it took much less time to make a crafting table out of a cherry or acacia stump than other wood types.
+[*]Fixed an issue with the capitalization of textures for pumpkins and prismarine causing some textures to not load correctly.
+
+2.13.3
+[*]Fixed an issue where shears were still not efficient against acacia and autumn leaves in the server version.
