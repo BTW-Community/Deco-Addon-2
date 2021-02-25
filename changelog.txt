@@ -58,3 +58,16 @@ Thanks to Sockthing for the textures for acacia saplings, blood wood doors and t
 [*]Fixed an issue where attempting to place a sign would always play a sound, even if  placement was not successful.
 [*]Fixed a vanilla issue where right clicking an iron door still made the animation like something had happened.
 [*]Fixed an issue (hopefully) where servers would incorrectly display an error message that the addon was not installed properly if the client was on a high latency connection. Let me know if this still happens as this simply involved increasing the amount of time the server would wait for the client to acknowledge. This functionality was also moved to the Extended Addon API to allow other addons using the API to access this code.
+
+2.13b
+[*]Fixed an issue where dirt slabs displayed the wrong top texture.
+
+2.13.2
+[*]Changed versioning scheme
+[*]Fixed an issue where flower pots overwrote spruce stairs in inventory. They will properly revert back to spruce stairs when installing this release.
+[*]Fixed an issue where acacia logs dropped cherry bark when split in a crafting grid.
+[*]Fixed an issue where a typo in the translation file caused acacia bark to display without a name.
+[*]Fixed an issue where cherry moulding rendered in inventory with acacia texture.
+[*]Fixed an issue where sawing acacia logs turned into cherry planks.
+[*]Fixed an issue where shears were not efficient against acacia or autumn leaves.
+[*]Fixed an issue where cherry and acacia logs could not be used as fuel in an oven.

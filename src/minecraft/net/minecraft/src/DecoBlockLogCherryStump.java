@@ -3,7 +3,7 @@ package net.minecraft.src;
 public class DecoBlockLogCherryStump extends Block {
 	public DecoBlockLogCherryStump(int id) {
 		super(id, FCBetterThanWolves.fcMaterialLog);
-        this.setHardness(1.25F);
+        this.setHardness(3.75F);
         this.setResistance(3.33F);
         this.SetAxesEffectiveOn();
         this.SetChiselsEffectiveOn();
