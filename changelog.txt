@@ -77,3 +77,5 @@ This version may require a clean install for the texture fix to properly show up
 
 2.13.3
 [*]Fixed an issue where shears were still not efficient against acacia and autumn leaves in the server version.
+[*]Fixed an issue where making work stumps out of acacia or cherry did not damage the chisel enough.
+[*]Fixed an issue where the typo for acacia bark from the last release was persisting.
