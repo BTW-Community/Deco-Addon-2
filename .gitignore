@@ -21,6 +21,7 @@ reobfuscate.sh
 reobfuscate_srg.bat
 reobfuscate_srg.sh
 runtime/
+reobf/
 
 src deco/
 
