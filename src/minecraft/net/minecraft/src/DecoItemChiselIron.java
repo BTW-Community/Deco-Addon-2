@@ -5,6 +5,19 @@ public class DecoItemChiselIron extends FCItemChiselIron {
 		super(id);
 	}
 
+    public boolean onBlockDestroyed(ItemStack var1, World var2, int var3, int var4, int var5, int var6, EntityLiving var7)
+    {
+        if ((var3 == Block.wood.blockID || var3 == DecoDefs.cherryStump.blockID || var3 == DecoDefs.acaciaStump.blockID) && var2.getBlockId(var4, var5, var6) == FCBetterThanWolves.fcBlockWorkStump.blockID)
+        {
+            var1.damageItem(10, var7);
+            return true;
+        }
+        else
+        {
+            return super.onBlockDestroyed(var1, var2, var3, var4, var5, var6, var7);
+        }
+    }
+
 	public void OnUsedInCrafting(EntityPlayer player, ItemStack stack)
 	{
 		if (player.m_iTimesCraftedThisTick == 0)

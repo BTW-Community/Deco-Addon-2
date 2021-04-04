@@ -222,7 +222,6 @@ public class DecoUtilsTrees {
 
 								if ((Math.abs(var18) != var16 || Math.abs(var20) != var16 || var1.nextInt(2) != 0 && var15 != 0) && !Block.opaqueCubeLookup[var0.getBlockId(var17, var14, var19)])
 								{
-									System.out.println(leafMeta);
 									var0.setBlockAndMetadataWithNotify(var17, var14, var19, DecoDefs.autumnLeaves.blockID, leafMeta);
 								}
 							}

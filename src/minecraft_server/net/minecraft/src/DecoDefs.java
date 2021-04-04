@@ -552,6 +552,7 @@ public class DecoDefs {
 
 	public void addDefinitions() {
 		Item.m_bSuppressConflictWarnings=true;
+		addAllSoundsToPool();
 		//AddonManager.installResource("fail");
 		addMaterialDefs();
 		addClayDefs();
@@ -568,6 +569,8 @@ public class DecoDefs {
 		addEntityDefs();
 		Item.m_bSuppressConflictWarnings=false;
 	}
+
+	private void addAllSoundsToPool() {}
 
 	private void addMaterialDefs() {
 		materialHedge = (new Material(MapColor.foliageColor)).setBurning().setTranslucent().setNoPushMobility().SetAxesEfficientOn().SetAxesTreatAsVegetation().SetMobsCantSpawnOn();
@@ -1136,7 +1139,7 @@ public class DecoDefs {
 		cherryLog = new DecoBlockLogCherry(id_cherryLog);
 		Item.itemsList[cherryLog.blockID] = new DecoItemBlockLogCherry(cherryLog.blockID - 256, cherryLog, new String[] {"logCherry", "strippedLogCherry", "woodCherry", "strippedWoodCherry"});
 		acaciaLog = new DecoBlockLogAcacia(id_acaciaLog);
-		Item.itemsList[acaciaLog.blockID] = new DecoItemBlockLogCherry(acaciaLog.blockID - 256, cherryLog, new String[] {"logAcacia", "strippedLogAcacia", "woodAcacia", "strippedWoodAcacia"});
+		Item.itemsList[acaciaLog.blockID] = new DecoItemBlockLogAcacia(acaciaLog.blockID - 256, cherryLog, new String[] {"logAcacia", "strippedLogAcacia", "woodAcacia", "strippedWoodAcacia"});
 
 		cherryStump = new DecoBlockLogCherryStump(id_cherryStump);
 		DecoManager.Register(cherryStump);

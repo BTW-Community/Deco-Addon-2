@@ -3,7 +3,7 @@ package net.minecraft.src;
 import java.util.List;
 import java.util.Random;
 
-public class DecoBlockLeavesAutumn extends Block
+public class DecoBlockLeavesAutumn extends BlockLeavesBase
 {
     public static final String[] LEAF_TYPES = new String[] {"red", "orange", "yellow"};
     private int field_94394_cP;
@@ -11,7 +11,7 @@ public class DecoBlockLeavesAutumn extends Block
 
     protected DecoBlockLeavesAutumn(int par1)
     {
-        super(par1, DecoDefs.materialHedge);
+        super(par1, DecoDefs.materialHedge, false);
         this.setTickRandomly(true);
         this.setCreativeTab(CreativeTabs.tabDecorations);
         this.setHardness(0.2F);

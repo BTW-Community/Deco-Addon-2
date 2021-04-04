@@ -165,6 +165,7 @@ public class DecoBlockWoodMouldingAndDecorative extends FCBlockWoodMouldingAndDe
                     break;
                 case 5:
                 	var8 = DecoDefs.cherryMouldingAndDecorative.blockIcon;
+                	break;
                 case 6:
                 	var8 = DecoDefs.acaciaMouldingAndDecorative.blockIcon;
                 	break;
