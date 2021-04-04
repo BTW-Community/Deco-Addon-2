@@ -11,7 +11,7 @@ public class DecoBlockStoneSmooth extends Block{
 		this.setUnlocalizedName("decoBlockStoneSmooth");
 		this.setCreativeTab(CreativeTabs.tabBlock);
 
-		DecoManager.Register(this, new String[] {"granite", "andesite", "diorite"});
+		DecoManager.Register(this, new String[] {"granite", "andesite", "diorite", "grimstone"});
 	}
 
 	public int damageDropped(int Meta)
@@ -46,11 +46,14 @@ public class DecoBlockStoneSmooth extends Block{
 		else if (var5 == 2) {
 			this.DropItemsIndividualy(var1, var2, var3, var4, DecoDefs.dioriteCobbleLoose.blockID, 1, 0, var6);
 		}
+		else if (var5 == 2) {
+			this.DropItemsIndividualy(var1, var2, var3, var4, DecoDefs.grimstoneTilesLoose.blockID, 1, 0, var6);
+		}
 		return true;
 	}
 	
 	//CLIENT ONLY METHODS
-	public static Icon[] Icons = new Icon[3];
+	public static Icon[] Icons = new Icon[4];
 	public Icon getIcon(int Side, int Meta)
 	{
 		return Icons[Meta];
@@ -60,6 +63,7 @@ public class DecoBlockStoneSmooth extends Block{
 		Icons[0] = Register.registerIcon("decoBlockGraniteSmooth");
 		Icons[1] = Register.registerIcon("decoBlockAndesiteSmooth");
 		Icons[2] = Register.registerIcon("decoBlockDioriteSmooth");
+		Icons[3] = Register.registerIcon("decoBlockGrimstoneSmooth");
 	}
 	//
 }

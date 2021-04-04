@@ -16,6 +16,11 @@ public class DecoBlockWickerPane extends FCBlockWickerPane {
     {
         DecoUtilsBlock.addPaneCollisionBoxesToList(world, x, y, z, aabb, collisionList, entity, this);
     }
+
+    public boolean CanTransformItemIfFilter(ItemStack var1)
+    {
+        return var1.itemID == Block.gravel.blockID || var1.itemID == FCBetterThanWolves.fcItemWheat.itemID;
+    }
     
     //CLIENT ONLY
     public boolean RenderBlock(RenderBlocks render, int x, int y, int z) {

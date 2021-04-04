@@ -3,8 +3,8 @@ package net.minecraft.src;
 import java.util.List;
 import java.util.Random;
 
-public class DecoBlockStone extends Block {
-	public DecoBlockStone(int ID) {
+public class DecoBlockStoneVariants extends Block {
+	public DecoBlockStoneVariants(int ID) {
 		super(ID, Material.rock);
 		this.setHardness(2.25F);
 		this.setResistance(10.0F);
@@ -68,18 +68,4 @@ public class DecoBlockStone extends Block {
 	{
 		return world.getBlockMetadata(x, y, z);
 	}
-
-	//CLIENT ONLY METHODS
-	public static Icon[] Icons = new Icon[3];
-	public Icon getIcon(int Side, int Meta)
-	{
-		return Icons[Meta];
-	}
-	public void registerIcons(IconRegister Register)
-	{
-		Icons[0] = Register.registerIcon("decoBlockGranite");
-		Icons[1] = Register.registerIcon("decoBlockAndesite");
-		Icons[2] = Register.registerIcon("decoBlockDiorite");
-	}
-	//
 }

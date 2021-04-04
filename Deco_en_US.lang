@@ -8,9 +8,11 @@ tile.decoBlockStairsMossyCobble.name=Mossy Cobblestone Stairs
 tile.decoBlockGraniteCobbleLoose.name=Loose Granite Cobblestone
 tile.decoBlockAndesiteCobbleLoose.name=Loose Andesite Cobblestone
 tile.decoBlockDioriteCobbleLoose.name=Loose Diorite Cobblestone
+tile.decoBlockGrimstoneTilesLoose.name=Loose Slate Tiles
 tile.decoBlockGraniteBrickLoose.name=Loose Granite Bricks
 tile.decoBlockAndesiteBrickLoose.name=Loose Andesite Bricks
 tile.decoBlockDioriteBrickLoose.name=Loose Diorite Bricks
+tile.decoBlockGrimstoneBrickLoose.name=Loose Slate Bricks
 tile.decoBlockGraniteStairs.name=Granite Stairs
 tile.decoBlockAndesiteStairs.name=Andesite Stairs
 tile.decoBlockDioriteStairs.name=Diorite Stairs
@@ -454,14 +456,17 @@ tile.decoBlockStone.diorite.name=Diorite
 tile.decoBlockCobblestone.granite.name=Granite Cobblestone
 tile.decoBlockCobblestone.andesite.name=Andesite Cobblestone
 tile.decoBlockCobblestone.diorite.name=Diorite Cobblestone
+tile.decoBlockCobblestone.grimstone.name=Slate Tiles
 
 tile.decoBlockStoneBricks.granite.name=Granite Bricks
 tile.decoBlockStoneBricks.andesite.name=Andesite Bricks
 tile.decoBlockStoneBricks.diorite.name=Diorite Bricks
+tile.decoBlockStoneBricks.grimstone.name=Slate Bricks
 
 tile.decoBlockStoneSmooth.granite.name=Polished Granite
 tile.decoBlockStoneSmooth.andesite.name=Polished Andesite
 tile.decoBlockStoneSmooth.diorite.name=Polished Diorite
+tile.decoBlockStoneSmooth.grimstone.name=Polished Grimstone
 
 tile.decoBlockGraniteSiding.bench.name=Granite Bench
 tile.decoBlockGraniteSiding.fence.name=Granite Wall
@@ -1069,7 +1074,7 @@ tile.decoBlockStoneSlab2.2.name=Diorite Slab
 tile.decoBlockStoneSlab2.3.name=Polished Granite Slab
 tile.decoBlockStoneSlab2.4.name=Polished Andesite Slab
 tile.decoBlockStoneSlab2.5.name=Polished Diorite Slab
-tile.decoBlockStoneSlab2.6.name=Granite Cobblestone Slab.name=
+tile.decoBlockStoneSlab2.6.name=Granite Cobblestone Slab
 tile.decoBlockStoneSlab2.7.name=Andesite Cobblestone Slab
 
 tile.decoBlockStoneSlab3.0.name=Diorite Cobblestone Slab
@@ -1628,6 +1633,8 @@ item.decoItemDoorAcacia.name=Acacia Door
 item.decoItemChiselDiamond.name=Diamondium Chisel
 item.decoItemShearsDiamond.name=Diamondium Shears
 item.decoItemNameTag.name=Name Tag
+item.decoItemGrimstoneTile.name=Slate Tile
+item.decoItemGrimstoneBrick.name=Slate Brick
 
 # Deco Complex Items
 

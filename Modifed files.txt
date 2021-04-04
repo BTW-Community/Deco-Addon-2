@@ -7,11 +7,15 @@ Render
 RenderItemFrame
 SlotRepair
 TileEntitySignRenderer
+ChunkCache
+ServerConfigurationManager
+FCBlockStairsWood
+FCBlockGrass
+FCBlockDirtSlab
+Block
+FCBlockStone
+FCBlockStoneRough
 
-ChunkCache*
-PlayerControllerMP*
-ServerConfigurationManager*
-FCBlockStairsWood*
-FCBlockGrass*
-FCBlockDirtSlab*
-Block*
+##Clieny Only##
+EntityPlayerSP
+PlayerControllerMP

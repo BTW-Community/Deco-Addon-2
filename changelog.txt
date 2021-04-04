@@ -1,3 +1,43 @@
+Version 2.13.4
+Some textures in this version have been used from Vanilla Tweaks. Their license allows inclusion of their work as long as there have either been modifications to their work, or their work is incorporated into a larger original work (aka anything that is not wholesale redistribution of the pack).
+[list]
+[*]Updated to Extended Addon API 1.1.0.
+[*]Removed space in filename to assist users on linux.
+[*]Added slate as a new stone variant. It is not yet obtainable in survival but is available in the creative menu.
+[*]Changed the texture of stone variant bricks using textures from Vanilla Tweaks.
+[*]Fixed an issue where trying to remove an item from an item frame in multiplayer would kick the client.
+[*]Fixed an issue with the name of granite cobblestone slabs.
+[*]Fixed an issue where diamond shears behaved inconsistently against creepers and sheep.
+[*]Fixed an issue where squids inconsistently dropped prismarine.
+[*]Fixed an issue where ocelots could still spawn on grass.
+[/list]
+
+Version 2.13.3
+[list]
+[*]Fixed an issue where shears were still not efficient against acacia and autumn leaves in the server version.
+[*]Fixed an issue where making work stumps out of acacia or cherry did not damage the chisel enough.
+[*]Fixed an issue where the typo for acacia bark from the last release was persisting.
+[/list]
+
+Version 2.13.2
+[list]
+[*]Changed versioning scheme
+[*]Fixed an issue where flower pots overwrote spruce stairs in inventory. They will properly revert back to spruce stairs when installing this release.
+[*]Fixed an issue where acacia logs dropped cherry bark when split in a crafting grid.
+[*]Fixed an issue where a typo in the translation file caused acacia bark to display without a name.
+[*]Fixed an issue where cherry moulding rendered in inventory with acacia texture.
+[*]Fixed an issue where sawing acacia logs turned into cherry planks.
+[*]Fixed an issue where shears were not efficient against acacia or autumn leaves.
+[*]Fixed an issue where cherry and acacia logs could not be used as fuel in an oven.
+[*]Fixed an issue where it took much less time to make a crafting table out of a cherry or acacia stump than other wood types.
+[*]Fixed an issue with the capitalization of textures for pumpkins and prismarine causing some textures to not load correctly.
+[/list]
+
+Version 2.13b
+[list]
+[*]Fixed an issue where dirt slabs displayed the wrong top texture.
+[/list]
+
 Version 2.13
 I lost most of the data on my PC between this version and the last. While the source code for deco was safe on github, I did lose the old changelog (new changelog is backed up on github now). I've tried to reconstruct it from memory but there is a high likelihood that some changes or fixes present in this version are not listed in the changelog.
 THIS VERSION WILL REQUIRE A CLEAN INSTALL

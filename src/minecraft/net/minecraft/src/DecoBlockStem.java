@@ -2,7 +2,7 @@ package net.minecraft.src;
 
 import java.util.List;
 
-public class DecoBlockStem extends DecoBlockDirectional {
+public class DecoBlockStem extends AddonBlockDirectional {
 	private int barkMeta;
 	private int damagedLogID;
 	
