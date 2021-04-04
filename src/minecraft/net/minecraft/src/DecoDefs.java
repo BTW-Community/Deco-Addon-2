@@ -1235,7 +1235,7 @@ public class DecoDefs {
 		//DecoManager.Register(nylium, new String[] {"crimsonNylium", "warpedNylium"});
 
 		//Basalt
-		basalt = new DecoBlockDirectional(id_basalt, FCBetterThanWolves.fcMaterialNetherRock, new String[] {"decoBlockBasalt_top", "decoBlockBasaltSmooth_top"}, new String[] {"decoBlockBasalt_side", "decoBlockBasaltSmooth_side"})
+		basalt = new AddonBlockDirectional(id_basalt, FCBetterThanWolves.fcMaterialNetherRock, new String[] {"decoBlockBasalt_top", "decoBlockBasaltSmooth_top"}, new String[] {"decoBlockBasalt_side", "decoBlockBasaltSmooth_side"})
 				.SetPicksEffectiveOn()
 				.setCreativeTab(CreativeTabs.tabBlock)
 				.setHardness(2.0F)
@@ -1697,7 +1697,7 @@ public class DecoDefs {
 		//Bone
 		FCBetterThanWolves.fcAestheticOpaque = new DecoBlockAestheticOpaque(DecoManager.ReplaceBlockID(FCBetterThanWolves.fcAestheticOpaque));
 		Item.itemsList[FCBetterThanWolves.fcAestheticOpaque.blockID] = new DecoItemBlockAestheticOpaque(FCBetterThanWolves.fcAestheticOpaque.blockID - 256);
-		bonePillar = new DecoBlockDirectional(id_bonePillar, FCBetterThanWolves.fcMaterialMiscellaneous, new String[] {"decoBlockBonePillar_top"}, new String[] {"decoBlockBonePillar_side"})
+		bonePillar = new AddonBlockDirectional(id_bonePillar, FCBetterThanWolves.fcMaterialMiscellaneous, new String[] {"decoBlockBonePillar_top"}, new String[] {"decoBlockBonePillar_side"})
 				.setHardness(2.0F)
 				.SetPicksEffectiveOn()
 				.SetBuoyancy(1.0F)
@@ -1816,7 +1816,7 @@ public class DecoDefs {
 		FCBetterThanWolves.fcBlockSlats = new DecoBlockSlats(DecoManager.ReplaceBlockID(FCBetterThanWolves.fcBlockSlats));
 
 		//Rope
-		ropeCoil = new DecoBlockDirectional(id_ropeCoil, FCBetterThanWolves.fcMaterialMiscellaneous, new String[] {"fcBlockRope_top"}, new String[] {"fcBlockRope_side"})
+		ropeCoil = new AddonBlockDirectional(id_ropeCoil, FCBetterThanWolves.fcMaterialMiscellaneous, new String[] {"fcBlockRope_top"}, new String[] {"fcBlockRope_side"})
 				.setHardness(2.0F)
 				.SetAxesEffectiveOn(true)
 				.setStepSound(Block.soundGrassFootstep)
@@ -1829,7 +1829,7 @@ public class DecoDefs {
 		DecoManager.Register(chain, "Chain");
 		chainItem = new DecoItemChain(id_chainItem);
 		DecoManager.Name(chainItem, "Chain");
-		chainCoil = new DecoBlockDirectional(id_chainCoil, Material.iron, new String[] {"decoBlockChainCoil_top"}, new String[] {"decoBlockChainCoil_side"})
+		chainCoil = new AddonBlockDirectional(id_chainCoil, Material.iron, new String[] {"decoBlockChainCoil_top"}, new String[] {"decoBlockChainCoil_side"})
 				.setHardness(2.0F)
 				.SetPicksEffectiveOn(true)
 				.setStepSound(Block.soundMetalFootstep)
@@ -1956,13 +1956,6 @@ public class DecoDefs {
 	}
 
 	private void addEntityDefs() {
-		//Vanilla entities
-		EntityList.replaceExistingMappingSafe(DecoEntitySquid.class, "Squid");
-		EntityList.replaceExistingMappingSafe(DecoEntityOcelot.class, "Ozelot");
-		EntityList.replaceExistingMappingSafe(DecoEntityCreeper.class, "Creeper");
-		EntityList.replaceExistingMappingSafe(DecoEntitySheep.class, "Sheep");
-		EntityList.replaceExistingMappingSafe(DecoEntityVillager.class, "Villager");
-
 		//Custom entities
 		EntityList.AddMapping(DecoEntityFallingConcrete.class, "FallingConcrete", id_entityFallingConcrete);
 

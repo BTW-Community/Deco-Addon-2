@@ -300,6 +300,9 @@ public class DecoDefs {
 		id_buttonDiorite=3475,
 		id_buttonSandstone=3476,
 		id_buttonRedSandstone=3477,
+		id_grimstoneRough=3478,
+		id_grimstoneTilesLoose=3479,
+		id_grimstoneBrickLoose=3480,
 		
 		id_acaciaLog=3488,
 		id_acaciaStump=3489,
@@ -341,6 +344,8 @@ public class DecoDefs {
 		id_shearsDiamond=30006,
 		id_bottleHempOil = 30007,
 		id_glassStainedItem = 30008,
+		id_grimstoneTile = 30009,
+		id_grimstoneBrickItem = 30010,
 	
 		id_itemDoorSpruce = 30020,
 		id_itemDoorBirch = 30021,
@@ -443,8 +448,11 @@ public class DecoDefs {
 	public static Block netherBrickRedLoose, netherBrickRedLooseStairs, netherBrickRedLooseSlab;
 
 	public static Block netherrackSuperheated, magma, netherBrickSuperheated;
+	public static Item grimstoneTile, grimstoneBrickItem;
 
 	public static Block endStoneBrick, endStoneBrickStairs, endStoneBrickSidingAndCorner, endStoneBrickMouldingAndDecorative;
+	
+	public static Block grimstoneRough, grimstoneTilesLoose, grimstoneBrickLoose;
 
 	//Sandstone
 	public static Block redSand, redSandSlab;
@@ -680,7 +688,7 @@ public class DecoDefs {
 		//Flower pot
 		flowerPot = new DecoBlockFlowerPot(id_flowerPot);
 		TileEntity.addMapping(DecoTileEntityFlowerPot.class, "AddonFlowerPot");
-		Item.replaceItem(Item.flowerPot.itemID - 256, DecoItemFlowerPot.class);
+		Item.replaceItem(Item.flowerPot.itemID, DecoItemFlowerPot.class);
 	}
 
 	private void addStoneDefs() {
@@ -695,7 +703,7 @@ public class DecoDefs {
 		Item.itemsList[mossyCobblestoneSidingAndCorner.blockID] = new FCItemBlockSidingAndCorner(mossyCobblestoneSidingAndCorner.blockID - 256);
 		Item.itemsList[mossyCobblestoneMouldingAndDecorative.blockID] = new FCItemBlockMouldingAndDecorative(mossyCobblestoneMouldingAndDecorative.blockID - 256);
 
-		stoneTypes = new DecoBlockStone(id_stoneType);
+		stoneTypes = new DecoBlockStoneVariants(id_stoneType);
 		stoneTypesCobble = new DecoBlockCobble(id_stoneTypeCobble);
 		graniteCobbleLoose = new DecoBlockCobbleLooseGranite(id_graniteCobbleLoose);
 		andesiteCobbleLoose = new DecoBlockCobbleLooseAndesite(id_andesiteCobbleLoose);
@@ -987,7 +995,7 @@ public class DecoDefs {
 		//DecoManager.Register(nylium, new String[] {"crimsonNylium", "warpedNylium"});
 
 		//Basalt
-		basalt = new DecoBlockDirectional(id_basalt, FCBetterThanWolves.fcMaterialNetherRock, new String[] {"decoBlockBasalt_top", "decoBlockBasaltSmooth_top"}, new String[] {"decoBlockBasalt_side", "decoBlockBasaltSmooth_side"})
+		basalt = new AddonBlockDirectional(id_basalt, FCBetterThanWolves.fcMaterialNetherRock, new String[] {"decoBlockBasalt_top", "decoBlockBasaltSmooth_top"}, new String[] {"decoBlockBasalt_side", "decoBlockBasaltSmooth_side"})
 				.SetPicksEffectiveOn()
 				.setCreativeTab(CreativeTabs.tabBlock)
 				.setHardness(2.0F)
@@ -1060,6 +1068,16 @@ public class DecoDefs {
 		//Obsidian
 		Block.obsidian = Block.replaceBlock(Block.obsidian.blockID, DecoBlockObsidian.class);
 		DecoManager.Register(Block.obsidian, new String[] {"obsidian", "infused"});
+		
+		//Grimstone
+		grimstoneRough = new DecoBlockGrimstoneRough(id_grimstoneRough);
+		FCBlockStoneRough.m_startaLevelBlockArray[3] = (FCBlockStoneRough) grimstoneRough;
+		DecoManager.Register(grimstoneRough);
+		grimstoneTilesLoose = new DecoBlockGrimstoneTilesLoose(id_grimstoneTilesLoose);
+		grimstoneBrickLoose = new DecoBlockGrimstoneBrickLoose(id_grimstoneBrickLoose);
+		
+        grimstoneTile = new DecoItemGrimstoneTile(id_grimstoneTile);
+        grimstoneBrickItem = (new Item(id_grimstoneBrickItem)).setUnlocalizedName("decoItemGrimstoneBrick").setCreativeTab(CreativeTabs.tabMaterials);
 
 		//MUST BE LAST OR NULL POINTER
 		//Has to be after reference blocks are declared
@@ -1439,7 +1457,7 @@ public class DecoDefs {
 		//Bone
 		FCBetterThanWolves.fcAestheticOpaque = new DecoBlockAestheticOpaque(DecoManager.ReplaceBlockID(FCBetterThanWolves.fcAestheticOpaque));
 		Item.itemsList[FCBetterThanWolves.fcAestheticOpaque.blockID] = new DecoItemBlockAestheticOpaque(FCBetterThanWolves.fcAestheticOpaque.blockID - 256);
-		bonePillar = new DecoBlockDirectional(id_bonePillar, FCBetterThanWolves.fcMaterialMiscellaneous, new String[] {"decoBlockBonePillar_top"}, new String[] {"decoBlockBonePillar_side"})
+		bonePillar = new AddonBlockDirectional(id_bonePillar, FCBetterThanWolves.fcMaterialMiscellaneous, new String[] {"decoBlockBonePillar_top"}, new String[] {"decoBlockBonePillar_side"})
 				.setHardness(2.0F)
 				.SetPicksEffectiveOn()
 				.SetBuoyancy(1.0F)
@@ -1558,7 +1576,7 @@ public class DecoDefs {
 		FCBetterThanWolves.fcBlockSlats = new DecoBlockSlats(DecoManager.ReplaceBlockID(FCBetterThanWolves.fcBlockSlats));
 
 		//Rope
-		ropeCoil = new DecoBlockDirectional(id_ropeCoil, FCBetterThanWolves.fcMaterialMiscellaneous, new String[] {"fcBlockRope_top"}, new String[] {"fcBlockRope_side"})
+		ropeCoil = new AddonBlockDirectional(id_ropeCoil, FCBetterThanWolves.fcMaterialMiscellaneous, new String[] {"fcBlockRope_top"}, new String[] {"fcBlockRope_side"})
 				.setHardness(2.0F)
 				.SetAxesEffectiveOn(true)
 				.setStepSound(Block.soundGrassFootstep)
@@ -1571,7 +1589,7 @@ public class DecoDefs {
 		DecoManager.Register(chain, "Chain");
 		chainItem = new DecoItemChain(id_chainItem);
 		DecoManager.Name(chainItem, "Chain");
-		chainCoil = new DecoBlockDirectional(id_chainCoil, Material.iron, new String[] {"decoBlockChainCoil_top"}, new String[] {"decoBlockChainCoil_side"})
+		chainCoil = new AddonBlockDirectional(id_chainCoil, Material.iron, new String[] {"decoBlockChainCoil_top"}, new String[] {"decoBlockChainCoil_side"})
 				.setHardness(2.0F)
 				.SetPicksEffectiveOn(true)
 				.setStepSound(Block.soundMetalFootstep)
@@ -1698,13 +1716,6 @@ public class DecoDefs {
 	}
 
 	private void addEntityDefs() {
-		//Vanilla entities
-		EntityList.replaceExistingMappingSafe(DecoEntitySquid.class, "Squid");
-		EntityList.replaceExistingMappingSafe(DecoEntityOcelot.class, "Ozelot");
-		EntityList.replaceExistingMappingSafe(DecoEntityCreeper.class, "Creeper");
-		EntityList.replaceExistingMappingSafe(DecoEntitySheep.class, "Sheep");
-		EntityList.replaceExistingMappingSafe(DecoEntityVillager.class, "Villager");
-
 		//Custom entities
 		EntityList.AddMapping(DecoEntityFallingConcrete.class, "FallingConcrete", id_entityFallingConcrete);
 

@@ -22,8 +22,13 @@ reobfuscate_srg.bat
 reobfuscate_srg.sh
 runtime/
 
+src deco/
+
 src/minecraft/net/minecraft/src/FC*
 src/minecraft_server/net/minecraft/src/FC*
+
+src/minecraft/net/minecraft/src/World.java
+src/minecraft_server/net/minecraft/src/World.java
 
 src - BTW 4B02 clean/
 src/minecraft/Start.java
@@ -601,7 +606,6 @@ src/minecraft/net/minecraft/src/EntityPig.java
 src/minecraft/net/minecraft/src/EntityPigZombie.java
 src/minecraft/net/minecraft/src/EntityPlayer.java
 src/minecraft/net/minecraft/src/EntityPlayerMP.java
-src/minecraft/net/minecraft/src/EntityPlayerSP.java
 src/minecraft/net/minecraft/src/EntityPortalFX.java
 src/minecraft/net/minecraft/src/EntityPotion.java
 src/minecraft/net/minecraft/src/EntityRainFX.java
@@ -1093,7 +1097,6 @@ src/minecraft/net/minecraft/src/FCEntityCanvas.java
 src/minecraft/net/minecraft/src/FCEntityCaveSpider.java
 src/minecraft/net/minecraft/src/FCEntityChicken.java
 src/minecraft/net/minecraft/src/FCEntityCow.java
-src/minecraft/net/minecraft/src/FCEntityCreeper.java
 src/minecraft/net/minecraft/src/FCEntityDynamite.java
 src/minecraft/net/minecraft/src/FCEntityEnderman.java
 src/minecraft/net/minecraft/src/FCEntityFallingBlock.java
@@ -1109,20 +1112,16 @@ src/minecraft/net/minecraft/src/FCEntityMechPowerHorizontal.java
 src/minecraft/net/minecraft/src/FCEntityMiningCharge.java
 src/minecraft/net/minecraft/src/FCEntityMovingAnchor.java
 src/minecraft/net/minecraft/src/FCEntityMovingPlatform.java
-src/minecraft/net/minecraft/src/FCEntityOcelot.java
 src/minecraft/net/minecraft/src/FCEntityPig.java
 src/minecraft/net/minecraft/src/FCEntityPigZombie.java
 src/minecraft/net/minecraft/src/FCEntityRottenArrow.java
-src/minecraft/net/minecraft/src/FCEntitySheep.java
 src/minecraft/net/minecraft/src/FCEntitySkeleton.java
 src/minecraft/net/minecraft/src/FCEntitySlime.java
 src/minecraft/net/minecraft/src/FCEntitySnowman.java
 src/minecraft/net/minecraft/src/FCEntitySoulSand.java
 src/minecraft/net/minecraft/src/FCEntitySpider.java
 src/minecraft/net/minecraft/src/FCEntitySpiderWeb.java
-src/minecraft/net/minecraft/src/FCEntitySquid.java
 src/minecraft/net/minecraft/src/FCEntityUrn.java
-src/minecraft/net/minecraft/src/FCEntityVillager.java
 src/minecraft/net/minecraft/src/FCEntityWaterWheel.java
 src/minecraft/net/minecraft/src/FCEntityWindMill.java
 src/minecraft/net/minecraft/src/FCEntityWindMillVertical.java
@@ -2176,7 +2175,6 @@ src/minecraft/net/minecraft/src/WeightedRandom.java
 src/minecraft/net/minecraft/src/WeightedRandomChestContent.java
 src/minecraft/net/minecraft/src/WeightedRandomItem.java
 src/minecraft/net/minecraft/src/WeightedRandomMinecart.java
-src/minecraft/net/minecraft/src/World.java
 src/minecraft/net/minecraft/src/WorldChunkManager.java
 src/minecraft/net/minecraft/src/WorldChunkManagerHell.java
 src/minecraft/net/minecraft/src/WorldClient.java
@@ -3159,7 +3157,6 @@ src/minecraft_server/net/minecraft/src/FCEntityCanvas.java
 src/minecraft_server/net/minecraft/src/FCEntityCaveSpider.java
 src/minecraft_server/net/minecraft/src/FCEntityChicken.java
 src/minecraft_server/net/minecraft/src/FCEntityCow.java
-src/minecraft_server/net/minecraft/src/FCEntityCreeper.java
 src/minecraft_server/net/minecraft/src/FCEntityDynamite.java
 src/minecraft_server/net/minecraft/src/FCEntityEnderman.java
 src/minecraft_server/net/minecraft/src/FCEntityFallingBlock.java
@@ -3175,18 +3172,15 @@ src/minecraft_server/net/minecraft/src/FCEntityMechPowerHorizontal.java
 src/minecraft_server/net/minecraft/src/FCEntityMiningCharge.java
 src/minecraft_server/net/minecraft/src/FCEntityMovingAnchor.java
 src/minecraft_server/net/minecraft/src/FCEntityMovingPlatform.java
-src/minecraft_server/net/minecraft/src/FCEntityOcelot.java
 src/minecraft_server/net/minecraft/src/FCEntityPig.java
 src/minecraft_server/net/minecraft/src/FCEntityPigZombie.java
 src/minecraft_server/net/minecraft/src/FCEntityRottenArrow.java
-src/minecraft_server/net/minecraft/src/FCEntitySheep.java
 src/minecraft_server/net/minecraft/src/FCEntitySkeleton.java
 src/minecraft_server/net/minecraft/src/FCEntitySlime.java
 src/minecraft_server/net/minecraft/src/FCEntitySnowman.java
 src/minecraft_server/net/minecraft/src/FCEntitySoulSand.java
 src/minecraft_server/net/minecraft/src/FCEntitySpider.java
 src/minecraft_server/net/minecraft/src/FCEntitySpiderWeb.java
-src/minecraft_server/net/minecraft/src/FCEntitySquid.java
 src/minecraft_server/net/minecraft/src/FCEntityUrn.java
 src/minecraft_server/net/minecraft/src/FCEntityVillager.java
 src/minecraft_server/net/minecraft/src/FCEntityWaterWheel.java
@@ -3924,7 +3918,6 @@ src/minecraft_server/net/minecraft/src/WeightedRandom.java
 src/minecraft_server/net/minecraft/src/WeightedRandomChestContent.java
 src/minecraft_server/net/minecraft/src/WeightedRandomItem.java
 src/minecraft_server/net/minecraft/src/WeightedRandomMinecart.java
-src/minecraft_server/net/minecraft/src/World.java
 src/minecraft_server/net/minecraft/src/WorldChunkManager.java
 src/minecraft_server/net/minecraft/src/WorldChunkManagerHell.java
 src/minecraft_server/net/minecraft/src/WorldGenBigMushroom.java
