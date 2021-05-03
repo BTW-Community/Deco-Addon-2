@@ -51,7 +51,7 @@ public class DecoBlockCrate extends Block {
     
     @Override
     public void registerIcons(IconRegister register) {
-    	icons = new Icon[6];
+    	icons = new Icon[7];
     	
     	icons[0] = register.registerIcon("decoBlockCrateOak");
     	icons[1] = register.registerIcon("decoBlockCrateSpruce");
@@ -59,5 +59,6 @@ public class DecoBlockCrate extends Block {
     	icons[3] = register.registerIcon("decoBlockCrateJungle");
     	icons[4] = register.registerIcon("decoBlockCrateBlood");
     	icons[5] = register.registerIcon("decoBlockCrateCherry");
+    	icons[6] = register.registerIcon("decoBlockCrateAcacia");
     }
 }

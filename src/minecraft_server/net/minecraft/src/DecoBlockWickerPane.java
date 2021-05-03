@@ -16,4 +16,13 @@ public class DecoBlockWickerPane extends FCBlockWickerPane {
     {
         DecoUtilsBlock.addPaneCollisionBoxesToList(world, x, y, z, aabb, collisionList, entity, this);
     }
+
+    public boolean CanTransformItemIfFilter(ItemStack var1)
+    {
+        try {
+			return var1.itemID == Block.gravel.blockID || (var1.itemID == FCBetterThanWolves.fcItemWheat.itemID && Class.forName("AutoPlusMod") != null);
+		} catch (ClassNotFoundException e) {
+			return false;
+		}
+    }
 }

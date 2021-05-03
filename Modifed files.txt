@@ -1,6 +1,7 @@
 BlockPane
 ContainerRepair
 DataWatcher
+EntityPlayer
 GuiEditSign
 GuiRepair
 Render

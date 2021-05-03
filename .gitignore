@@ -24,9 +24,10 @@ runtime/
 reobf/
 
 src deco/
+modsrc/
 
-src/minecraft/net/minecraft/src/FC*
-src/minecraft_server/net/minecraft/src/FC*
+src/minecraft/net/minecraft/src/Addon*
+src/minecraft_server/net/minecraft/src/Addon*
 
 src/minecraft/net/minecraft/src/World.java
 src/minecraft_server/net/minecraft/src/World.java
@@ -605,7 +606,6 @@ src/minecraft/net/minecraft/src/EntityPainting.java
 src/minecraft/net/minecraft/src/EntityPickupFX.java
 src/minecraft/net/minecraft/src/EntityPig.java
 src/minecraft/net/minecraft/src/EntityPigZombie.java
-src/minecraft/net/minecraft/src/EntityPlayer.java
 src/minecraft/net/minecraft/src/EntityPlayerMP.java
 src/minecraft/net/minecraft/src/EntityPortalFX.java
 src/minecraft/net/minecraft/src/EntityPotion.java
@@ -2731,7 +2731,6 @@ src/minecraft_server/net/minecraft/src/EntityOcelot.java
 src/minecraft_server/net/minecraft/src/EntityPainting.java
 src/minecraft_server/net/minecraft/src/EntityPig.java
 src/minecraft_server/net/minecraft/src/EntityPigZombie.java
-src/minecraft_server/net/minecraft/src/EntityPlayer.java
 src/minecraft_server/net/minecraft/src/EntityPlayerMP.java
 src/minecraft_server/net/minecraft/src/EntityPotion.java
 src/minecraft_server/net/minecraft/src/EntitySelectorAlive.java

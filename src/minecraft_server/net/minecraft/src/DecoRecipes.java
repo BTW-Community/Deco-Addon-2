@@ -536,6 +536,64 @@ public class DecoRecipes {
 		//Obsidian
 		FCRecipes.AddShapelessRecipe(new ItemStack(Block.obsidian, 1, 1), new ItemStack[] {new ItemStack(Block.obsidian, 1, 0), new ItemStack(FCBetterThanWolves.fcItemSoulFlux)});
 
+		//Slate
+        FCRecipes.AddShapelessRecipe(new ItemStack(DecoDefs.slateCobbleLoose), new Object[] {new ItemStack(DecoDefs.slateStone), new ItemStack(DecoDefs.slateStone), new ItemStack(DecoDefs.slateStone), new ItemStack(DecoDefs.slateStone), new ItemStack(DecoDefs.slateStone), new ItemStack(DecoDefs.slateStone), new ItemStack(DecoDefs.slateStone), new ItemStack(DecoDefs.slateStone)});
+        FCRecipes.AddShapelessRecipe(new ItemStack(DecoDefs.stoneTypesLooseSlab, 1, 6), new Object[] {new ItemStack(DecoDefs.slateStone), new ItemStack(DecoDefs.slateStone), new ItemStack(DecoDefs.slateStone), new ItemStack(DecoDefs.slateStone)});
+        FCRecipes.AddRecipe(new ItemStack(DecoDefs.slateCobbleLooseStairs), new Object[] {"#  ", "## ", "###", '#', new ItemStack(DecoDefs.slateStone)});
+        FCRecipes.AddRecipe(new ItemStack(DecoDefs.slateCobbleLooseStairs, 8), new Object[] {"#  ", "## ", "###", '#', new ItemStack(DecoDefs.slateCobbleLoose)});
+        FCRecipes.AddRecipe(new ItemStack(DecoDefs.slateCobbleLooseStairs, 4), new Object[] {"# ", "##", '#', new ItemStack(DecoDefs.slateCobbleLoose)});
+        FCRecipes.AddRecipe(new ItemStack(DecoDefs.slateCobbleLooseStairs, 2), new Object[] {"# ", "##", '#', new ItemStack(DecoDefs.stoneTypesLooseSlab, 1, 6)});
+        FCRecipes.AddRecipe(new ItemStack(DecoDefs.slateCobbleLoose), new Object[] {"X", "X", 'X', new ItemStack(DecoDefs.stoneTypesLooseSlab, 1, 6)});
+        FCRecipes.AddRecipe(new ItemStack(DecoDefs.stoneTypesLooseSlab, 4, 7), new Object[] {"XX", 'X', DecoDefs.slateCobbleLoose});
+        FCRecipes.AddShapelessRecipe(new ItemStack(DecoDefs.slateStone, 8), new Object[] {new ItemStack(DecoDefs.slateCobbleLoose)});
+        FCRecipes.AddShapelessRecipe(new ItemStack(DecoDefs.slateStone, 4), new Object[] {new ItemStack(DecoDefs.stoneTypesLooseSlab, 1, 6)});
+        FCRecipes.AddShapelessRecipe(new ItemStack(DecoDefs.slateStone, 6), new Object[] {new ItemStack(DecoDefs.slateCobbleLooseStairs)});
+
+        FCRecipes.AddShapelessRecipe(new ItemStack(DecoDefs.slateBrickLoose), new Object[] {new ItemStack(DecoDefs.slateBrickItem), new ItemStack(DecoDefs.slateBrickItem), new ItemStack(DecoDefs.slateBrickItem), new ItemStack(DecoDefs.slateBrickItem), new ItemStack(DecoDefs.slateBrickItem), new ItemStack(DecoDefs.slateBrickItem), new ItemStack(DecoDefs.slateBrickItem), new ItemStack(DecoDefs.slateBrickItem)});
+        FCRecipes.AddShapelessRecipe(new ItemStack(DecoDefs.stoneTypesLooseSlab, 1, 7), new Object[] {new ItemStack(DecoDefs.slateBrickItem), new ItemStack(DecoDefs.slateBrickItem), new ItemStack(DecoDefs.slateBrickItem), new ItemStack(DecoDefs.slateBrickItem)});
+        FCRecipes.AddRecipe(new ItemStack(DecoDefs.slateBrickLooseStairs), new Object[] {"#  ", "## ", "###", '#', new ItemStack(DecoDefs.slateBrickItem)});
+        FCRecipes.AddRecipe(new ItemStack(DecoDefs.slateBrickLooseStairs, 8), new Object[] {"#  ", "## ", "###", '#', new ItemStack(DecoDefs.slateBrickLoose)});
+        FCRecipes.AddRecipe(new ItemStack(DecoDefs.slateBrickLooseStairs, 4), new Object[] {"# ", "##", '#', new ItemStack(DecoDefs.slateBrickLoose)});
+        FCRecipes.AddRecipe(new ItemStack(DecoDefs.slateBrickLooseStairs, 2), new Object[] {"# ", "##", '#', new ItemStack(DecoDefs.stoneTypesLooseSlab, 1, 7)});
+        FCRecipes.AddRecipe(new ItemStack(DecoDefs.slateBrickLoose), new Object[] {"X", "X", 'X', new ItemStack(DecoDefs.stoneTypesLooseSlab, 1, 7)});
+        FCRecipes.AddRecipe(new ItemStack(DecoDefs.stoneTypesLooseSlab, 4, 7), new Object[] {"XX", 'X', DecoDefs.slateBrickLoose});
+        FCRecipes.AddShapelessRecipe(new ItemStack(DecoDefs.slateBrickItem, 8), new Object[] {new ItemStack(DecoDefs.slateBrickLoose)});
+        FCRecipes.AddShapelessRecipe(new ItemStack(DecoDefs.slateBrickItem, 4), new Object[] {new ItemStack(DecoDefs.stoneTypesLooseSlab, 1, 7)});
+        FCRecipes.AddShapelessRecipe(new ItemStack(DecoDefs.slateBrickItem, 6), new Object[] {new ItemStack(DecoDefs.slateBrickLooseStairs)});
+		
+		FCRecipes.AddStokedCrucibleRecipe(new ItemStack(DecoDefs.stoneTypesSmooth, 1, 3), new ItemStack[] {new ItemStack(Block.stone, 1, 3)});
+		FCRecipes.AddShapelessRecipe(new ItemStack(DecoDefs.slateCobbleLoose), new ItemStack[] {new ItemStack(Block.stone, 1, 3), new ItemStack(DecoDefs.chiselDiamond, 1, 32767)});
+		FCRecipes.AddShapelessRecipe(new ItemStack(DecoDefs.slateCobbleLoose), new ItemStack[] {new ItemStack(Block.stone, 1, 3), new ItemStack(FCBetterThanWolves.fcItemChiselIron, 1, 32767)});
+		FCRecipes.AddShapelessRecipe(new ItemStack(DecoDefs.slateBrickLoose), new ItemStack[] {new ItemStack(DecoDefs.stoneTypesSmooth, 1, 3), new ItemStack(DecoDefs.chiselDiamond, 1, 32767)});
+		FCRecipes.AddShapelessRecipe(new ItemStack(DecoDefs.slateBrickLoose), new ItemStack[] {new ItemStack(DecoDefs.stoneTypesSmooth, 1, 3), new ItemStack(FCBetterThanWolves.fcItemChiselIron, 1, 32767)});
+		FCRecipes.AddShapelessRecipe(new ItemStack(DecoDefs.stoneTypesStoneBrick, 1, 4), new ItemStack[] {new ItemStack(DecoDefs.stoneTypesStoneBrick, 1, 3), new ItemStack(DecoDefs.chiselDiamond, 1, 32767)});
+		FCRecipes.AddShapelessRecipe(new ItemStack(DecoDefs.stoneTypesStoneBrick, 1, 4), new ItemStack[] {new ItemStack(DecoDefs.stoneTypesStoneBrick, 1, 3), new ItemStack(FCBetterThanWolves.fcItemChiselIron, 1, 32767)});
+		
+		FCRecipes.AddRecipe(new ItemStack(DecoDefs.stoneSlab6, 6, 4), new Object[] {"###", '#', new ItemStack(Block.stone, 1, 3)});
+		FCRecipes.AddRecipe(new ItemStack(DecoDefs.slateStairs, 4), new Object[] {"X  ", "XX ", "XXX", 'X', new ItemStack(Block.stone, 1, 3)});
+		FCRecipes.AddRecipe(new ItemStack(DecoDefs.slateStairs, 1), new Object[] {"X ", "XX", 'X', new ItemStack(DecoDefs.slateMouldingAndDecorative, 1, 0)});
+		FCRecipes.AddSubBlockRecipesOfType(Block.stone, 3, DecoDefs.slateSidingAndCorner, DecoDefs.slateMouldingAndDecorative, true);
+
+		FCRecipes.AddRecipe(new ItemStack(DecoDefs.stoneSlab6, 6, 5), new Object[] {"###", '#', new ItemStack(DecoDefs.stoneTypesSmooth, 1, 3)});
+		FCRecipes.AddRecipe(new ItemStack(DecoDefs.slateSmoothStairs, 4), new Object[] {"X  ", "XX ", "XXX", 'X', new ItemStack(DecoDefs.stoneTypesSmooth, 1, 3)});
+		FCRecipes.AddRecipe(new ItemStack(DecoDefs.slateSmoothStairs, 1), new Object[] {"X ", "XX", 'X', new ItemStack(DecoDefs.slateSmoothMouldingAndDecorative, 1, 0)});
+		FCRecipes.AddSubBlockRecipesOfType(DecoDefs.stoneTypesSmooth, 3, DecoDefs.slateSmoothSidingAndCorner, DecoDefs.slateSmoothMouldingAndDecorative, true);
+
+		FCRecipes.AddRecipe(new ItemStack(DecoDefs.stoneSlab6, 6, 6), new Object[] {"###", '#', new ItemStack(DecoDefs.stoneTypesCobble, 1, 3)});
+		FCRecipes.AddRecipe(new ItemStack(DecoDefs.slateCobbleStairs, 4), new Object[] {"X  ", "XX ", "XXX", 'X', new ItemStack(DecoDefs.stoneTypesCobble, 1, 3)});
+		FCRecipes.AddRecipe(new ItemStack(DecoDefs.slateCobbleStairs, 1), new Object[] {"X ", "XX", 'X', new ItemStack(DecoDefs.slateCobbleMouldingAndDecorative, 1, 0)});
+		FCRecipes.AddSubBlockRecipesOfType(DecoDefs.stoneTypesCobble, 3, DecoDefs.slateCobbleSidingAndCorner, DecoDefs.slateCobbleMouldingAndDecorative, true);
+
+		FCRecipes.AddRecipe(new ItemStack(DecoDefs.stoneSlab6, 6, 7), new Object[] {"###", '#', new ItemStack(DecoDefs.stoneTypesStoneBrick, 1, 3)});
+		FCRecipes.AddRecipe(new ItemStack(DecoDefs.slateBrickStairs, 4), new Object[] {"X  ", "XX ", "XXX", 'X', new ItemStack(DecoDefs.stoneTypesStoneBrick, 1, 3)});
+		FCRecipes.AddRecipe(new ItemStack(DecoDefs.slateBrickStairs, 1), new Object[] {"X ", "XX", 'X', new ItemStack(DecoDefs.slateBrickMouldingAndDecorative, 1, 0)});
+		FCRecipes.AddSubBlockRecipesOfType(DecoDefs.stoneTypesStoneBrick, 3, DecoDefs.slateBrickSidingAndCorner, DecoDefs.slateBrickMouldingAndDecorative, true);
+
+		FCRecipes.AddRecipe(new ItemStack(DecoDefs.stoneSlab7, 6, 0), new Object[] {"###", '#', new ItemStack(DecoDefs.stoneTypesStoneBrick, 1, 4)});
+		FCRecipes.AddRecipe(new ItemStack(DecoDefs.slateTilesStairs, 4), new Object[] {"X  ", "XX ", "XXX", 'X', new ItemStack(DecoDefs.stoneTypesStoneBrick, 1, 4)});
+		FCRecipes.AddRecipe(new ItemStack(DecoDefs.slateTilesStairs, 1), new Object[] {"X ", "XX", 'X', new ItemStack(DecoDefs.slateTilesMouldingAndDecorative, 1, 0)});
+		FCRecipes.AddSubBlockRecipesOfType(DecoDefs.stoneTypesStoneBrick, 4, DecoDefs.slateTilesSidingAndCorner, DecoDefs.slateTilesMouldingAndDecorative, true);
+		
 		//Misc Subblocks
 		FCRecipes.AddSubBlockRecipesOfType(Block.cobblestone, 0, DecoDefs.cobblestoneSidingAndCorner, DecoDefs.cobblestoneMouldingAndDecorative, false);
 		FCRecipes.AddSubBlockRecipesOfType(Block.cobblestoneMossy, 0, DecoDefs.mossyCobblestoneSidingAndCorner, DecoDefs.mossyCobblestoneMouldingAndDecorative, false);
@@ -563,6 +621,120 @@ public class DecoRecipes {
 		FCRecipes.AddRecipe(new ItemStack(DecoDefs.stoneBrickMossyStairs, 1), new Object[] {"X ", "XX", 'X', new ItemStack(DecoDefs.stoneBrickMossyMouldingAndDecorative, 1, 0)});
 		FCRecipes.AddRecipe(new ItemStack(DecoDefs.stoneBrickCrackedStairs, 4), new Object[] {"X  ", "XX ", "XXX", 'X', new ItemStack(Block.stoneBrick, 1, 2)});
 		FCRecipes.AddRecipe(new ItemStack(DecoDefs.stoneBrickCrackedStairs, 1), new Object[] {"X ", "XX", 'X', new ItemStack(DecoDefs.stoneBrickCrackedMouldingAndDecorative, 1, 0)});
+		
+		//Automation+ stonecutter
+		((FCBlockSidingAndCornerAndDecorative) DecoDefs.stoneBrickCrackedSidingAndCorner).setMouldingIDDroppedOnStonecutter(DecoDefs.stoneBrickCrackedMouldingAndDecorative.blockID);
+		((FCBlockMouldingAndDecorative) DecoDefs.stoneBrickCrackedMouldingAndDecorative).setCornerIDDroppedOnStonecutter(DecoDefs.stoneBrickCrackedSidingAndCorner.blockID);
+
+		((FCBlockSidingAndCornerAndDecorative) DecoDefs.stoneBrickMossySidingAndCorner).setMouldingIDDroppedOnStonecutter(DecoDefs.stoneBrickMossyMouldingAndDecorative.blockID);
+		((FCBlockMouldingAndDecorative) DecoDefs.stoneBrickMossyMouldingAndDecorative).setCornerIDDroppedOnStonecutter(DecoDefs.stoneBrickMossySidingAndCorner.blockID);
+		
+		Block.cobblestone.setItemIDDroppedOnStonecutter(DecoDefs.cobblestoneSidingAndCorner.blockID);
+		Block.cobblestone.setItemCountDroppedOnStonecutter(2);
+		((FCBlockSidingAndCornerAndDecorative) DecoDefs.cobblestoneSidingAndCorner).setMouldingIDDroppedOnStonecutter(DecoDefs.cobblestoneMouldingAndDecorative.blockID);
+		((FCBlockMouldingAndDecorative) DecoDefs.cobblestoneMouldingAndDecorative).setCornerIDDroppedOnStonecutter(DecoDefs.cobblestoneSidingAndCorner.blockID);
+
+		Block.cobblestoneMossy.setItemIDDroppedOnStonecutter(DecoDefs.mossyCobblestoneSidingAndCorner.blockID);
+		Block.cobblestoneMossy.setItemCountDroppedOnStonecutter(2);
+		((FCBlockSidingAndCornerAndDecorative) DecoDefs.mossyCobblestoneSidingAndCorner).setMouldingIDDroppedOnStonecutter(DecoDefs.mossyCobblestoneMouldingAndDecorative.blockID);
+		((FCBlockMouldingAndDecorative) DecoDefs.mossyCobblestoneMouldingAndDecorative).setCornerIDDroppedOnStonecutter(DecoDefs.mossyCobblestoneSidingAndCorner.blockID);
+		
+		for (int i = 0; i < 3; i++) {
+			((FCBlockSidingAndCornerAndDecorative) DecoDefs.stoneTypesSidingAndCorner[i]).setMouldingIDDroppedOnStonecutter(DecoDefs.stoneTypesMouldingAndDecorative[i].blockID);
+			((FCBlockMouldingAndDecorative) DecoDefs.stoneTypesMouldingAndDecorative[i]).setCornerIDDroppedOnStonecutter(DecoDefs.stoneTypesSidingAndCorner[i].blockID);
+			((FCBlockSidingAndCornerAndDecorative) DecoDefs.stoneTypesSmoothSidingAndCorner[i]).setMouldingIDDroppedOnStonecutter(DecoDefs.stoneTypesSmoothMouldingAndDecorative[i].blockID);
+			((FCBlockMouldingAndDecorative) DecoDefs.stoneTypesSmoothMouldingAndDecorative[i]).setCornerIDDroppedOnStonecutter(DecoDefs.stoneTypesSmoothSidingAndCorner[i].blockID);
+			((FCBlockSidingAndCornerAndDecorative) DecoDefs.stoneTypesStoneBrickSidingAndCorner[i]).setMouldingIDDroppedOnStonecutter(DecoDefs.stoneTypesStoneBrickMouldingAndDecorative[i].blockID);
+			((FCBlockMouldingAndDecorative) DecoDefs.stoneTypesStoneBrickMouldingAndDecorative[i]).setCornerIDDroppedOnStonecutter(DecoDefs.stoneTypesStoneBrickSidingAndCorner[i].blockID);
+			((FCBlockSidingAndCornerAndDecorative) DecoDefs.stoneTypesCobblestoneSidingAndCorner[i]).setMouldingIDDroppedOnStonecutter(DecoDefs.stoneTypesCobblestoneMouldingAndDecorative[i].blockID);
+			((FCBlockMouldingAndDecorative) DecoDefs.stoneTypesCobblestoneMouldingAndDecorative[i]).setCornerIDDroppedOnStonecutter(DecoDefs.stoneTypesCobblestoneSidingAndCorner[i].blockID);
+		}
+
+		((FCBlockSidingAndCornerAndDecorative) DecoDefs.slateSidingAndCorner).setMouldingIDDroppedOnStonecutter(DecoDefs.slateMouldingAndDecorative.blockID);
+		((FCBlockMouldingAndDecorative) DecoDefs.slateMouldingAndDecorative).setCornerIDDroppedOnStonecutter(DecoDefs.slateSidingAndCorner.blockID);
+		((FCBlockSidingAndCornerAndDecorative) DecoDefs.slateSmoothSidingAndCorner).setMouldingIDDroppedOnStonecutter(DecoDefs.slateSmoothMouldingAndDecorative.blockID);
+		((FCBlockMouldingAndDecorative) DecoDefs.slateSmoothMouldingAndDecorative).setCornerIDDroppedOnStonecutter(DecoDefs.slateSmoothSidingAndCorner.blockID);
+		((FCBlockSidingAndCornerAndDecorative) DecoDefs.slateBrickSidingAndCorner).setMouldingIDDroppedOnStonecutter(DecoDefs.slateBrickMouldingAndDecorative.blockID);
+		((FCBlockMouldingAndDecorative) DecoDefs.slateBrickMouldingAndDecorative).setCornerIDDroppedOnStonecutter(DecoDefs.slateBrickSidingAndCorner.blockID);
+		((FCBlockSidingAndCornerAndDecorative) DecoDefs.slateCobbleSidingAndCorner).setMouldingIDDroppedOnStonecutter(DecoDefs.slateCobbleMouldingAndDecorative.blockID);
+		((FCBlockMouldingAndDecorative) DecoDefs.slateCobbleMouldingAndDecorative).setCornerIDDroppedOnStonecutter(DecoDefs.slateCobbleSidingAndCorner.blockID);
+		
+		((FCBlockSidingAndCornerAndDecorative) FCBetterThanWolves.fcBlockSandstoneSidingAndCorner).setMouldingIDDroppedOnStonecutter(FCBetterThanWolves.fcBlockSandstoneMouldingAndDecorative.blockID);
+		((FCBlockMouldingAndDecorative) FCBetterThanWolves.fcBlockSandstoneMouldingAndDecorative).setCornerIDDroppedOnStonecutter(FCBetterThanWolves.fcBlockSandstoneSidingAndCorner.blockID);
+		((FCBlockSidingAndCornerAndDecorative) DecoDefs.sandStoneSmoothSidingAndCorner).setMouldingIDDroppedOnStonecutter(DecoDefs.sandStoneSmoothMouldingAndDecorative.blockID);
+		((FCBlockMouldingAndDecorative) DecoDefs.sandStoneSmoothMouldingAndDecorative).setCornerIDDroppedOnStonecutter(DecoDefs.sandStoneSmoothSidingAndCorner.blockID);
+		((FCBlockSidingAndCornerAndDecorative) DecoDefs.sandStonePolishedSidingAndCorner).setMouldingIDDroppedOnStonecutter(DecoDefs.sandStonePolishedMouldingAndDecorative.blockID);
+		((FCBlockMouldingAndDecorative) DecoDefs.sandStonePolishedMouldingAndDecorative).setCornerIDDroppedOnStonecutter(DecoDefs.sandStonePolishedSidingAndCorner.blockID);
+		((FCBlockSidingAndCornerAndDecorative) DecoDefs.sandStoneBrickSidingAndCorner).setMouldingIDDroppedOnStonecutter(DecoDefs.sandStoneBrickMouldingAndDecorative.blockID);
+		((FCBlockMouldingAndDecorative) DecoDefs.sandStoneBrickMouldingAndDecorative).setCornerIDDroppedOnStonecutter(DecoDefs.sandStoneBrickSidingAndCorner.blockID);
+		((FCBlockSidingAndCornerAndDecorative) DecoDefs.sandStoneMossySidingAndCorner).setMouldingIDDroppedOnStonecutter(DecoDefs.sandStoneMossyMouldingAndDecorative.blockID);
+		((FCBlockMouldingAndDecorative) DecoDefs.sandStoneMossyMouldingAndDecorative).setCornerIDDroppedOnStonecutter(DecoDefs.sandStoneMossySidingAndCorner.blockID);
+		((FCBlockSidingAndCornerAndDecorative) DecoDefs.sandStoneBrickLargeSidingAndCorner).setMouldingIDDroppedOnStonecutter(DecoDefs.sandStoneBrickLargeMouldingAndDecorative.blockID);
+		((FCBlockMouldingAndDecorative) DecoDefs.sandStoneBrickLargeMouldingAndDecorative).setCornerIDDroppedOnStonecutter(DecoDefs.sandStoneBrickLargeSidingAndCorner.blockID);
+		((FCBlockSidingAndCornerAndDecorative) DecoDefs.sandStoneBrickLargeMossySidingAndCorner).setMouldingIDDroppedOnStonecutter(DecoDefs.sandStoneBrickLargeMossyMouldingAndDecorative.blockID);
+		((FCBlockMouldingAndDecorative) DecoDefs.sandStoneBrickLargeMossyMouldingAndDecorative).setCornerIDDroppedOnStonecutter(DecoDefs.sandStoneBrickLargeMossySidingAndCorner.blockID);
+		((FCBlockSidingAndCornerAndDecorative) DecoDefs.sandStoneCrackedSidingAndCorner).setMouldingIDDroppedOnStonecutter(DecoDefs.sandStoneCrackedMouldingAndDecorative.blockID);
+		((FCBlockMouldingAndDecorative) DecoDefs.sandStoneCrackedMouldingAndDecorative).setCornerIDDroppedOnStonecutter(DecoDefs.sandStoneCrackedSidingAndCorner.blockID);
+		((FCBlockSidingAndCornerAndDecorative) DecoDefs.sandStoneBrickLargeCrackedSidingAndCorner).setMouldingIDDroppedOnStonecutter(DecoDefs.sandStoneBrickLargeCrackedMouldingAndDecorative.blockID);
+		((FCBlockMouldingAndDecorative) DecoDefs.redSandStoneBrickLargeCrackedMouldingAndDecorative).setCornerIDDroppedOnStonecutter(DecoDefs.redSandStoneBrickLargeCrackedSidingAndCorner.blockID);
+
+		((FCBlockSidingAndCornerAndDecorative) DecoDefs.redSandStoneSidingAndCorner).setMouldingIDDroppedOnStonecutter(DecoDefs.redSandStoneMouldingAndDecorative.blockID);
+		((FCBlockMouldingAndDecorative) DecoDefs.redSandStoneMouldingAndDecorative).setCornerIDDroppedOnStonecutter(DecoDefs.redSandStoneSidingAndCorner.blockID);
+		((FCBlockSidingAndCornerAndDecorative) DecoDefs.redSandStoneSmoothSidingAndCorner).setMouldingIDDroppedOnStonecutter(DecoDefs.redSandStoneSmoothMouldingAndDecorative.blockID);
+		((FCBlockMouldingAndDecorative) DecoDefs.redSandStoneSmoothMouldingAndDecorative).setCornerIDDroppedOnStonecutter(DecoDefs.redSandStoneSmoothSidingAndCorner.blockID);
+		((FCBlockSidingAndCornerAndDecorative) DecoDefs.redSandStonePolishedSidingAndCorner).setMouldingIDDroppedOnStonecutter(DecoDefs.redSandStonePolishedMouldingAndDecorative.blockID);
+		((FCBlockMouldingAndDecorative) DecoDefs.redSandStonePolishedMouldingAndDecorative).setCornerIDDroppedOnStonecutter(DecoDefs.redSandStonePolishedSidingAndCorner.blockID);
+		((FCBlockSidingAndCornerAndDecorative) DecoDefs.redSandStoneBrickSidingAndCorner).setMouldingIDDroppedOnStonecutter(DecoDefs.redSandStoneBrickMouldingAndDecorative.blockID);
+		((FCBlockMouldingAndDecorative) DecoDefs.redSandStoneBrickMouldingAndDecorative).setCornerIDDroppedOnStonecutter(DecoDefs.redSandStoneBrickSidingAndCorner.blockID);
+		((FCBlockSidingAndCornerAndDecorative) DecoDefs.redSandStoneMossySidingAndCorner).setMouldingIDDroppedOnStonecutter(DecoDefs.redSandStoneMossyMouldingAndDecorative.blockID);
+		((FCBlockMouldingAndDecorative) DecoDefs.redSandStoneMossyMouldingAndDecorative).setCornerIDDroppedOnStonecutter(DecoDefs.redSandStoneMossySidingAndCorner.blockID);
+		((FCBlockSidingAndCornerAndDecorative) DecoDefs.redSandStoneBrickLargeSidingAndCorner).setMouldingIDDroppedOnStonecutter(DecoDefs.redSandStoneBrickLargeMouldingAndDecorative.blockID);
+		((FCBlockMouldingAndDecorative) DecoDefs.redSandStoneBrickLargeMouldingAndDecorative).setCornerIDDroppedOnStonecutter(DecoDefs.redSandStoneBrickLargeSidingAndCorner.blockID);
+		((FCBlockSidingAndCornerAndDecorative) DecoDefs.redSandStoneBrickLargeMossySidingAndCorner).setMouldingIDDroppedOnStonecutter(DecoDefs.redSandStoneBrickLargeMossyMouldingAndDecorative.blockID);
+		((FCBlockMouldingAndDecorative) DecoDefs.redSandStoneBrickLargeMossyMouldingAndDecorative).setCornerIDDroppedOnStonecutter(DecoDefs.redSandStoneBrickLargeMossySidingAndCorner.blockID);
+		((FCBlockSidingAndCornerAndDecorative) DecoDefs.redSandStoneCrackedSidingAndCorner).setMouldingIDDroppedOnStonecutter(DecoDefs.redSandStoneCrackedMouldingAndDecorative.blockID);
+		((FCBlockMouldingAndDecorative) DecoDefs.redSandStoneCrackedMouldingAndDecorative).setCornerIDDroppedOnStonecutter(DecoDefs.redSandStoneCrackedSidingAndCorner.blockID);
+		((FCBlockSidingAndCornerAndDecorative) DecoDefs.redSandStoneBrickLargeCrackedSidingAndCorner).setMouldingIDDroppedOnStonecutter(DecoDefs.redSandStoneBrickLargeCrackedMouldingAndDecorative.blockID);
+		((FCBlockMouldingAndDecorative) DecoDefs.redSandStoneBrickLargeCrackedMouldingAndDecorative).setCornerIDDroppedOnStonecutter(DecoDefs.redSandStoneBrickLargeCrackedSidingAndCorner.blockID);
+
+		((FCBlockSidingAndCornerAndDecorative) DecoDefs.prismarineSidingAndCorner).setMouldingIDDroppedOnStonecutter(DecoDefs.prismarineMouldingAndDecorative.blockID);
+		((FCBlockMouldingAndDecorative) DecoDefs.prismarineMouldingAndDecorative).setCornerIDDroppedOnStonecutter(DecoDefs.prismarineSidingAndCorner.blockID);
+		((FCBlockSidingAndCornerAndDecorative) DecoDefs.prismarineBrickSidingAndCorner).setMouldingIDDroppedOnStonecutter(DecoDefs.prismarineBrickMouldingAndDecorative.blockID);
+		((FCBlockMouldingAndDecorative) DecoDefs.prismarineBrickMouldingAndDecorative).setCornerIDDroppedOnStonecutter(DecoDefs.prismarineBrickSidingAndCorner.blockID);
+		((FCBlockSidingAndCornerAndDecorative) DecoDefs.prismarineDarkSidingAndCorner).setMouldingIDDroppedOnStonecutter(DecoDefs.prismarineDarkMouldingAndDecorative.blockID);
+		((FCBlockMouldingAndDecorative) DecoDefs.prismarineDarkMouldingAndDecorative).setCornerIDDroppedOnStonecutter(DecoDefs.prismarineDarkSidingAndCorner.blockID);
+
+		((FCBlockSidingAndCornerAndDecorative) DecoDefs.netherBrickRedSidingAndCorner).setMouldingIDDroppedOnStonecutter(DecoDefs.netherBrickRedMouldingAndDecorative.blockID);
+		((FCBlockMouldingAndDecorative) DecoDefs.netherBrickRedMouldingAndDecorative).setCornerIDDroppedOnStonecutter(DecoDefs.netherBrickRedSidingAndCorner.blockID);
+
+		((FCBlockSidingAndCornerAndDecorative) DecoDefs.infusedStoneSidingAndCorner).setMouldingIDDroppedOnStonecutter(DecoDefs.infusedStoneMouldingAndDecorative.blockID);
+		((FCBlockMouldingAndDecorative) DecoDefs.infusedStoneMouldingAndDecorative).setCornerIDDroppedOnStonecutter(DecoDefs.infusedStoneSidingAndCorner.blockID);
+		((FCBlockSidingAndCornerAndDecorative) DecoDefs.infusedStoneSmoothSidingAndCorner).setMouldingIDDroppedOnStonecutter(DecoDefs.infusedStoneSmoothMouldingAndDecorative.blockID);
+		((FCBlockMouldingAndDecorative) DecoDefs.infusedStoneSmoothMouldingAndDecorative).setCornerIDDroppedOnStonecutter(DecoDefs.infusedStoneSmoothSidingAndCorner.blockID);
+		((FCBlockSidingAndCornerAndDecorative) DecoDefs.infusedStoneBrickSidingAndCorner).setMouldingIDDroppedOnStonecutter(DecoDefs.infusedStoneBrickMouldingAndDecorative.blockID);
+		((FCBlockMouldingAndDecorative) DecoDefs.infusedStoneBrickMouldingAndDecorative).setCornerIDDroppedOnStonecutter(DecoDefs.infusedStoneBrickSidingAndCorner.blockID);
+		
+		for (int i = 0; i < 16; i++) {
+			((FCBlockSidingAndCornerAndDecorative) DecoDefs.concreteSidingAndCorner[i]).setMouldingIDDroppedOnStonecutter(DecoDefs.concreteMouldingAndDecorative[i].blockID);
+			((FCBlockMouldingAndDecorative) DecoDefs.concreteMouldingAndDecorative[i]).setCornerIDDroppedOnStonecutter(DecoDefs.concreteSidingAndCorner[i].blockID);
+
+			((FCBlockSidingAndCornerAndDecorative) DecoDefs.stainedTerracottaSidingAndCorner[i]).setMouldingIDDroppedOnStonecutter(DecoDefs.stainedTerracottaMouldingAndDecorative[i].blockID);
+			((FCBlockMouldingAndDecorative) DecoDefs.stainedTerracottaMouldingAndDecorative[i]).setCornerIDDroppedOnStonecutter(DecoDefs.stainedTerracottaSidingAndCorner[i].blockID);
+		}
+		DecoDefs.terracotta.setItemIDDroppedOnStonecutter(DecoDefs.terracottaSidingAndCorner.blockID);
+		DecoDefs.terracotta.setItemCountDroppedOnStonecutter(2);
+		((FCBlockSidingAndCornerAndDecorative) DecoDefs.terracottaSidingAndCorner).setMouldingIDDroppedOnStonecutter(DecoDefs.terracottaMouldingAndDecorative.blockID);
+		((FCBlockMouldingAndDecorative) DecoDefs.terracottaMouldingAndDecorative).setCornerIDDroppedOnStonecutter(DecoDefs.terracottaSidingAndCorner.blockID);
+
+		DecoDefs.endStoneBrick.setItemIDDroppedOnStonecutter(DecoDefs.endStoneBrickSidingAndCorner.blockID);
+		DecoDefs.endStoneBrick.setItemCountDroppedOnStonecutter(2);
+		((FCBlockSidingAndCornerAndDecorative) DecoDefs.endStoneBrickSidingAndCorner).setMouldingIDDroppedOnStonecutter(DecoDefs.endStoneBrickMouldingAndDecorative.blockID);
+		((FCBlockMouldingAndDecorative) DecoDefs.endStoneBrickMouldingAndDecorative).setCornerIDDroppedOnStonecutter(DecoDefs.endStoneBrickSidingAndCorner.blockID);
+
+		DecoDefs.whiteStoneBrick.setItemIDDroppedOnStonecutter(DecoDefs.whiteBrickSidingAndCorner.blockID);
+		DecoDefs.whiteStoneBrick.setItemCountDroppedOnStonecutter(2);
+		((FCBlockSidingAndCornerAndDecorative) DecoDefs.whiteBrickSidingAndCorner).setMouldingIDDroppedOnStonecutter(DecoDefs.whiteBrickMouldingAndDecorative.blockID);
+		((FCBlockMouldingAndDecorative) DecoDefs.whiteBrickMouldingAndDecorative).setCornerIDDroppedOnStonecutter(DecoDefs.whiteBrickSidingAndCorner.blockID);
 	}
 
 	private void addWoodRecipes() {
@@ -618,8 +790,9 @@ public class DecoRecipes {
 		FCRecipes.AddShapelessRecipe(new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, 5), new Object[] {new ItemStack(FCBetterThanWolves.fcBlockWoodCornerItemStubID, 1, 5), new ItemStack(FCBetterThanWolves.fcBlockWoodCornerItemStubID, 1, 5)});
 		FCRecipes.AddRecipe(new ItemStack(DecoDefs.cherryStairs, 6), new Object[] {"X  ", "XX ", "XXX", 'X', new ItemStack(Block.planks, 1, 5)});
 		FCRecipes.AddRecipe(new ItemStack(DecoDefs.cherryStairs, 1), new Object[] {"X ", "XX", 'X', new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, 5)});
-		FCRecipes.AddRecipe(new ItemStack(DecoDefs.woodSlab, 6, 0), new Object[] {"###", '#', new ItemStack(Block.planks, 1, 5)});
-		FCRecipes.AddRecipe(new ItemStack(Block.planks, 1, 5), new Object[] {"X", "X", 'X', new ItemStack(DecoDefs.woodSlab, 1, 0)});
+		FCRecipes.AddRecipe(new ItemStack(Block.woodSingleSlab, 6, 5), new Object[] {"###", '#', new ItemStack(Block.planks, 1, 5)});
+		FCRecipes.AddRecipe(new ItemStack(Block.planks, 1, 5), new Object[] {"X", "X", 'X', new ItemStack(Block.woodSingleSlab, 1, 5)});
+		FCRecipes.AddShapelessRecipe(new ItemStack(Block.woodSingleSlab, 1, 5), new ItemStack[] {new ItemStack(DecoDefs.woodSlab, 1, 0)});
 		
 		//Acacia Sub
 		FCRecipes.AddRecipe(new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingDecorativeItemStubID, 6, FCItemBlockWoodMouldingDecorativeStub.GetItemDamageForType(6, 1)), new Object[] {" S ", "###", "###", '#', new ItemStack(Block.planks, 1, 5), 'S', new ItemStack(FCBetterThanWolves.fcBlockWoodSidingItemStubID, 1, 6)});
@@ -633,8 +806,9 @@ public class DecoRecipes {
 		FCRecipes.AddShapelessRecipe(new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, 6), new Object[] {new ItemStack(FCBetterThanWolves.fcBlockWoodCornerItemStubID, 1, 6), new ItemStack(FCBetterThanWolves.fcBlockWoodCornerItemStubID, 1, 6)});
 		FCRecipes.AddRecipe(new ItemStack(DecoDefs.acaciaStairs, 6), new Object[] {"X  ", "XX ", "XXX", 'X', new ItemStack(Block.planks, 1, 6)});
 		FCRecipes.AddRecipe(new ItemStack(DecoDefs.acaciaStairs, 1), new Object[] {"X ", "XX", 'X', new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, 6)});
-		FCRecipes.AddRecipe(new ItemStack(DecoDefs.woodSlab, 6, 1), new Object[] {"###", '#', new ItemStack(Block.planks, 1, 6)});
-		FCRecipes.AddRecipe(new ItemStack(Block.planks, 1, 6), new Object[] {"X", "X", 'X', new ItemStack(DecoDefs.woodSlab, 1, 1)});
+		FCRecipes.AddRecipe(new ItemStack(Block.woodSingleSlab, 6, 6), new Object[] {"###", '#', new ItemStack(Block.planks, 1, 6)});
+		FCRecipes.AddRecipe(new ItemStack(Block.planks, 1, 6), new Object[] {"X", "X", 'X', new ItemStack(Block.woodSingleSlab, 1, 6)});
+		FCRecipes.AddShapelessRecipe(new ItemStack(Block.woodSingleSlab, 1, 6), new ItemStack[] {new ItemStack(DecoDefs.woodSlab, 1, 1)});
 
 		//Trapdoors
 		FCRecipes.RemoveVanillaRecipe(new ItemStack(Block.trapdoor, 1), new Object[] {"WW#", "WW#", '#', Item.stick, 'W', Block.planks});
@@ -756,12 +930,12 @@ public class DecoRecipes {
 		FCRecipes.RemoveVanillaRecipe(new ItemStack(FCBetterThanWolves.fcAestheticOpaque, 2, 11), new Object[] {"###", "#X#", "###", '#', new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, 32767), 'X', FCBetterThanWolves.fcItemGlue});
 		FCRecipes.AddShapelessRecipe(new ItemStack(DecoDefs.barrelEmpty, 1, 1), new ItemStack[] {new ItemStack(FCBetterThanWolves.fcAestheticOpaque, 1, 11)});
 
-		FCRecipes.AddRecipe(new ItemStack(DecoDefs.barrelEmpty, 2, 0), new Object[] {"###", "#X#", "###", '#', new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, 0), 'X', FCBetterThanWolves.fcItemGlue});
-		FCRecipes.AddRecipe(new ItemStack(DecoDefs.barrelEmpty, 2, 1), new Object[] {"###", "#X#", "###", '#', new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, 1), 'X', FCBetterThanWolves.fcItemGlue});
-		FCRecipes.AddRecipe(new ItemStack(DecoDefs.barrelEmpty, 2, 2), new Object[] {"###", "#X#", "###", '#', new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, 2), 'X', FCBetterThanWolves.fcItemGlue});
-		FCRecipes.AddRecipe(new ItemStack(DecoDefs.barrelEmpty, 2, 3), new Object[] {"###", "#X#", "###", '#', new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, 3), 'X', FCBetterThanWolves.fcItemGlue});
-		FCRecipes.AddRecipe(new ItemStack(DecoDefs.barrelEmpty2, 2, 0), new Object[] {"###", "#X#", "###", '#', new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, 4), 'X', FCBetterThanWolves.fcItemGlue});
-		FCRecipes.AddRecipe(new ItemStack(DecoDefs.barrelEmpty2, 2, 1), new Object[] {"###", "#X#", "###", '#', new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, 5), 'X', FCBetterThanWolves.fcItemGlue});
+		FCRecipes.AddRecipe(new ItemStack(DecoDefs.barrelEmpty, 2, 0), new Object[] {"###", "# #", "###", '#', new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, 0)});
+		FCRecipes.AddRecipe(new ItemStack(DecoDefs.barrelEmpty, 2, 1), new Object[] {"###", "# #", "###", '#', new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, 1)});
+		FCRecipes.AddRecipe(new ItemStack(DecoDefs.barrelEmpty, 2, 2), new Object[] {"###", "# #", "###", '#', new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, 2)});
+		FCRecipes.AddRecipe(new ItemStack(DecoDefs.barrelEmpty, 2, 3), new Object[] {"###", "# #", "###", '#', new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, 3)});
+		FCRecipes.AddRecipe(new ItemStack(DecoDefs.barrelEmpty2, 2, 0), new Object[] {"###", "# #", "###", '#', new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, 4)});
+		FCRecipes.AddRecipe(new ItemStack(DecoDefs.barrelEmpty2, 2, 1), new Object[] {"###", "# #", "###", '#', new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, 5)});
 
 		for (int i = 0; i < DecoBlockBarrelFilled.types.length; i++) {
 			FCRecipes.AddRecipe(new ItemStack(DecoDefs.barrelFullOak, 1, i), new Object[] {"###", "#X#", "###", '#', new ItemStack(DecoBlockBarrelFilled.types[i], 1, 0), 'X', new ItemStack(DecoDefs.barrelEmpty, 1, 0)});
@@ -770,6 +944,7 @@ public class DecoRecipes {
 			FCRecipes.AddRecipe(new ItemStack(DecoDefs.barrelFullJungle, 1, i), new Object[] {"###", "#X#", "###", '#', new ItemStack(DecoBlockBarrelFilled.types[i], 1, 0), 'X', new ItemStack(DecoDefs.barrelEmpty, 1, 3)});
 			FCRecipes.AddRecipe(new ItemStack(DecoDefs.barrelFullBlood, 1, i), new Object[] {"###", "#X#", "###", '#', new ItemStack(DecoBlockBarrelFilled.types[i], 1, 0), 'X', new ItemStack(DecoDefs.barrelEmpty2, 1, 0)});
 			FCRecipes.AddRecipe(new ItemStack(DecoDefs.barrelFullCherry, 1, i), new Object[] {"###", "#X#", "###", '#', new ItemStack(DecoBlockBarrelFilled.types[i], 1, 0), 'X', new ItemStack(DecoDefs.barrelEmpty2, 1, 1)});
+			FCRecipes.AddRecipe(new ItemStack(DecoDefs.barrelFullAcacia, 1, i), new Object[] {"###", "#X#", "###", '#', new ItemStack(DecoBlockBarrelFilled.types[i], 1, 0), 'X', new ItemStack(DecoDefs.barrelEmpty2, 1, 2)});
 
 			FCRecipes.AddShapelessRecipeWithSecondaryOutputIndicator(new ItemStack(DecoBlockBarrelFilled.types[i], 8), new ItemStack[] {new ItemStack(DecoDefs.barrelFullOak, 1, i)});
 			FCRecipes.AddShapelessRecipeWithSecondaryOutputIndicator(new ItemStack(DecoBlockBarrelFilled.types[i], 8), new ItemStack[] {new ItemStack(DecoDefs.barrelFullSpruce, 1, i)});
@@ -777,14 +952,16 @@ public class DecoRecipes {
 			FCRecipes.AddShapelessRecipeWithSecondaryOutputIndicator(new ItemStack(DecoBlockBarrelFilled.types[i], 8), new ItemStack[] {new ItemStack(DecoDefs.barrelFullJungle, 1, i)});
 			FCRecipes.AddShapelessRecipeWithSecondaryOutputIndicator(new ItemStack(DecoBlockBarrelFilled.types[i], 8), new ItemStack[] {new ItemStack(DecoDefs.barrelFullBlood, 1, i)});
 			FCRecipes.AddShapelessRecipeWithSecondaryOutputIndicator(new ItemStack(DecoBlockBarrelFilled.types[i], 8), new ItemStack[] {new ItemStack(DecoDefs.barrelFullCherry, 1, i)});
+			FCRecipes.AddShapelessRecipeWithSecondaryOutputIndicator(new ItemStack(DecoBlockBarrelFilled.types[i], 8), new ItemStack[] {new ItemStack(DecoDefs.barrelFullAcacia, 1, i)});
 		}
 
-		FCRecipes.AddRecipe(new ItemStack(Block.tnt, 1), new Object[] {"GFG", "GBG", "GGG", 'B', new ItemStack(DecoDefs.barrelEmpty, 1, 32767), 'G', Item.gunpowder, 'F', FCBetterThanWolves.fcItemFuse});
-		FCRecipes.AddRecipe(new ItemStack(Block.tnt, 1), new Object[] {"GFG", "GBG", "GGG", 'B', new ItemStack(DecoDefs.barrelEmpty2, 1, 32767), 'G', Item.gunpowder, 'F', FCBetterThanWolves.fcItemFuse});
+        FCRecipes.RemoveVanillaRecipe(new ItemStack(Block.tnt, 1), new Object[] {"GFG", "GBG", "GGG", 'B', new ItemStack(FCBetterThanWolves.fcAestheticOpaque, 1, 11), 'G', Item.gunpowder, 'F', FCBetterThanWolves.fcItemFuse});
+		FCRecipes.AddRecipe(new ItemStack(Block.tnt, 1), new Object[] {"GFG", "GBG", "GgG", 'B', new ItemStack(DecoDefs.barrelEmpty, 1, 32767), 'G', Item.gunpowder, 'F', FCBetterThanWolves.fcItemFuse, 'g', FCBetterThanWolves.fcItemGlue});
+		FCRecipes.AddRecipe(new ItemStack(Block.tnt, 1), new Object[] {"GFG", "GBG", "GgG", 'B', new ItemStack(DecoDefs.barrelEmpty2, 1, 32767), 'G', Item.gunpowder, 'F', FCBetterThanWolves.fcItemFuse, 'g', FCBetterThanWolves.fcItemGlue});
 
 		//Crates
 		for (int i = 0; i < 6; i++) {
-			FCRecipes.AddRecipe(new ItemStack(DecoDefs.crate, 2, i), new Object[] {" # ", "#X#", " # ", '#', new ItemStack(FCBetterThanWolves.fcBlockWoodSidingItemStubID, 1, i), 'X', FCBetterThanWolves.fcItemGlue});
+			FCRecipes.AddRecipe(new ItemStack(DecoDefs.crate, 2, i), new Object[] {" # ", "# #", " # ", '#', new ItemStack(FCBetterThanWolves.fcBlockWoodSidingItemStubID, 1, i)});
 		}
 
 		//Signs
@@ -1045,6 +1222,16 @@ public class DecoRecipes {
 		FCRecipes.AddStokedCauldronRecipe(new ItemStack(DecoDefs.stoneSlab3, 1, 0), new ItemStack[] {new ItemStack(DecoDefs.stoneTypesLooseSlab, 1, 2), new ItemStack(Item.slimeBall)});
 		FCRecipes.AddStokedCauldronRecipe(new ItemStack(DecoDefs.stoneSlab3, 1, 0), new ItemStack[] {new ItemStack(DecoDefs.stoneTypesLooseSlab, 1, 2), new ItemStack(FCBetterThanWolves.fcItemNetherSludge)});
 
+		FCRecipes.AddStokedCauldronRecipe(new ItemStack(DecoDefs.stoneTypesCobble, 1, 3), new ItemStack[] {new ItemStack(DecoDefs.slateCobbleLoose), new ItemStack(Item.clay)});
+		FCRecipes.AddStokedCauldronRecipe(new ItemStack(DecoDefs.stoneTypesCobble, 1, 3), new ItemStack[] {new ItemStack(DecoDefs.slateCobbleLoose), new ItemStack(Item.slimeBall)});
+		FCRecipes.AddStokedCauldronRecipe(new ItemStack(DecoDefs.stoneTypesCobble, 1, 3), new ItemStack[] {new ItemStack(DecoDefs.slateCobbleLoose), new ItemStack(FCBetterThanWolves.fcItemNetherSludge)});
+		FCRecipes.AddStokedCauldronRecipe(new ItemStack(DecoDefs.slateCobbleStairs), new ItemStack[] {new ItemStack(DecoDefs.slateCobbleLooseStairs), new ItemStack(Item.clay)});
+		FCRecipes.AddStokedCauldronRecipe(new ItemStack(DecoDefs.slateCobbleStairs), new ItemStack[] {new ItemStack(DecoDefs.slateCobbleLooseStairs), new ItemStack(Item.slimeBall)});
+		FCRecipes.AddStokedCauldronRecipe(new ItemStack(DecoDefs.slateCobbleStairs), new ItemStack[] {new ItemStack(DecoDefs.slateCobbleLooseStairs), new ItemStack(FCBetterThanWolves.fcItemNetherSludge)});
+		FCRecipes.AddStokedCauldronRecipe(new ItemStack(DecoDefs.stoneSlab6, 1, 7), new ItemStack[] {new ItemStack(DecoDefs.stoneTypesLooseSlab, 1, 6), new ItemStack(Item.clay)});
+		FCRecipes.AddStokedCauldronRecipe(new ItemStack(DecoDefs.stoneSlab6, 1, 7), new ItemStack[] {new ItemStack(DecoDefs.stoneTypesLooseSlab, 1, 6), new ItemStack(Item.slimeBall)});
+		FCRecipes.AddStokedCauldronRecipe(new ItemStack(DecoDefs.stoneSlab6, 1, 7), new ItemStack[] {new ItemStack(DecoDefs.stoneTypesLooseSlab, 1, 6), new ItemStack(FCBetterThanWolves.fcItemNetherSludge)});
+
 		FCRecipes.AddStokedCauldronRecipe(new ItemStack(DecoDefs.stoneTypesStoneBrick), new ItemStack[] {new ItemStack(DecoDefs.graniteStoneBrickLoose), new ItemStack(Item.clay)});
 		FCRecipes.AddStokedCauldronRecipe(new ItemStack(DecoDefs.stoneTypesStoneBrick), new ItemStack[] {new ItemStack(DecoDefs.graniteStoneBrickLoose), new ItemStack(Item.slimeBall)});
 		FCRecipes.AddStokedCauldronRecipe(new ItemStack(DecoDefs.stoneTypesStoneBrick), new ItemStack[] {new ItemStack(DecoDefs.graniteStoneBrickLoose), new ItemStack(FCBetterThanWolves.fcItemNetherSludge)});
@@ -1074,6 +1261,16 @@ public class DecoRecipes {
 		FCRecipes.AddStokedCauldronRecipe(new ItemStack(DecoDefs.stoneSlab3, 1, 3), new ItemStack[] {new ItemStack(DecoDefs.stoneTypesLooseSlab, 1, 5), new ItemStack(Item.clay)});
 		FCRecipes.AddStokedCauldronRecipe(new ItemStack(DecoDefs.stoneSlab3, 1, 3), new ItemStack[] {new ItemStack(DecoDefs.stoneTypesLooseSlab, 1, 5), new ItemStack(Item.slimeBall)});
 		FCRecipes.AddStokedCauldronRecipe(new ItemStack(DecoDefs.stoneSlab3, 1, 3), new ItemStack[] {new ItemStack(DecoDefs.stoneTypesLooseSlab, 1, 5), new ItemStack(FCBetterThanWolves.fcItemNetherSludge)});
+
+		FCRecipes.AddStokedCauldronRecipe(new ItemStack(DecoDefs.stoneTypesStoneBrick, 1, 3), new ItemStack[] {new ItemStack(DecoDefs.slateBrickLoose), new ItemStack(Item.clay)});
+		FCRecipes.AddStokedCauldronRecipe(new ItemStack(DecoDefs.stoneTypesStoneBrick, 1, 3), new ItemStack[] {new ItemStack(DecoDefs.slateBrickLoose), new ItemStack(Item.slimeBall)});
+		FCRecipes.AddStokedCauldronRecipe(new ItemStack(DecoDefs.stoneTypesStoneBrick, 1, 3), new ItemStack[] {new ItemStack(DecoDefs.slateBrickLoose), new ItemStack(FCBetterThanWolves.fcItemNetherSludge)});
+		FCRecipes.AddStokedCauldronRecipe(new ItemStack(DecoDefs.slateBrickStairs), new ItemStack[] {new ItemStack(DecoDefs.slateBrickLooseStairs), new ItemStack(Item.clay)});
+		FCRecipes.AddStokedCauldronRecipe(new ItemStack(DecoDefs.slateBrickStairs), new ItemStack[] {new ItemStack(DecoDefs.slateBrickLooseStairs), new ItemStack(Item.slimeBall)});
+		FCRecipes.AddStokedCauldronRecipe(new ItemStack(DecoDefs.slateBrickStairs), new ItemStack[] {new ItemStack(DecoDefs.slateBrickLooseStairs), new ItemStack(FCBetterThanWolves.fcItemNetherSludge)});
+		FCRecipes.AddStokedCauldronRecipe(new ItemStack(DecoDefs.stoneSlab6, 1, 6), new ItemStack[] {new ItemStack(DecoDefs.stoneTypesLooseSlab, 1, 7), new ItemStack(Item.clay)});
+		FCRecipes.AddStokedCauldronRecipe(new ItemStack(DecoDefs.stoneSlab6, 1, 6), new ItemStack[] {new ItemStack(DecoDefs.stoneTypesLooseSlab, 1, 7), new ItemStack(Item.slimeBall)});
+		FCRecipes.AddStokedCauldronRecipe(new ItemStack(DecoDefs.stoneSlab6, 1, 6), new ItemStack[] {new ItemStack(DecoDefs.stoneTypesLooseSlab, 1, 7), new ItemStack(FCBetterThanWolves.fcItemNetherSludge)});
 	}
 
 	private void addToolRecipes() {

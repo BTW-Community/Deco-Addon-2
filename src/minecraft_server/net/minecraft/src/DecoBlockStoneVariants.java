@@ -9,7 +9,7 @@ public class DecoBlockStoneVariants extends Block {
 		this.setHardness(2.25F);
 		this.setResistance(10.0F);
 		this.SetPicksEffectiveOn();
-		this.SetChiselsEffectiveOn();
+		this.SetChiselsEffectiveOn(false);
 		this.setStepSound(soundStoneFootstep);
 		this.setUnlocalizedName("decoBlockStone");
 		this.setCreativeTab(CreativeTabs.tabBlock);
@@ -48,6 +48,7 @@ public class DecoBlockStoneVariants extends Block {
 		else if (var5 == 2) {
 			this.DropItemsIndividualy(var1, var2, var3, var4, DecoDefs.dioriteCobbleLoose.blockID, 1, 0, var6);
 		}
+		
 		return true;
 	}
 
@@ -68,4 +69,35 @@ public class DecoBlockStoneVariants extends Block {
 	{
 		return world.getBlockMetadata(x, y, z);
 	}
+
+	@Override
+	public boolean IsNaturalStone(IBlockAccess blockAccess, int i, int j, int k)
+	{
+		return true;
+	}
+
+	@Override
+    public int getItemIDDroppedOnStonecutter(World world, int x, int y, int z) {
+        int meta = world.getBlockMetadata(x, y, z);
+        
+        switch (meta) {
+        default:
+        case 0:
+        	return DecoDefs.stoneTypesSidingAndCorner[0].blockID;
+        case 1:
+        	return DecoDefs.stoneTypesSidingAndCorner[1].blockID;
+        case 2:
+        	return DecoDefs.stoneTypesSidingAndCorner[2].blockID;
+        }
+    }
+
+	@Override
+    public int getItemCountDroppedOnStonecutter(World world, int x, int y, int z) {
+        return 2;
+    }
+
+	@Override
+    public int getItemDamageDroppedOnStonecutter(World world, int x, int y, int z)  {
+        return 0;
+    }
 }

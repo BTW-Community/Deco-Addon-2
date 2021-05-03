@@ -14,7 +14,7 @@ public class DecoBlockCobble extends Block {
 		this.setUnlocalizedName("decoBlockCobblestone");
 		this.setCreativeTab(CreativeTabs.tabBlock);
 
-		DecoManager.Register(this, new String[] {"granite", "andesite", "diorite"});
+		DecoManager.Register(this, new String[] {"granite", "andesite", "diorite", "slate"});
 	}
 
     /**
@@ -38,6 +38,9 @@ public class DecoBlockCobble extends Block {
         	case 2:
         		drop = DecoDefs.dioriteCobbleLoose;
         		break;
+        	case 3:
+        		drop = DecoDefs.slateCobbleLoose;
+        		break;
         	}
         	
             this.dropBlockAsItem_do(var1, var2, var3, var4, new ItemStack(drop));
@@ -57,6 +60,7 @@ public class DecoBlockCobble extends Block {
         par3List.add(new ItemStack(par1, 1, 0));
         par3List.add(new ItemStack(par1, 1, 1));
         par3List.add(new ItemStack(par1, 1, 2));
+        par3List.add(new ItemStack(par1, 1, 3));
     }
 
     /**
