@@ -27,7 +27,8 @@ public class DecoEntityFallingConcrete extends FCEntityFallingBlock {
 
     private boolean AttemptToReplaceBlockAtPosition(int x, int y, int z)
     {
-        if (!this.m_bHasBlockBrokenOnLand && this.CanReplaceBlockAtPosition(x, y, z) && (!Block.blocksList[this.blockID].CanFallIntoBlockAtPos(this.worldObj, x, y - 1, z) || (Block.blocksList[this.worldObj.getBlockId(x, y, z)] != null && Block.blocksList[this.worldObj.getBlockId(x, y, z)].blockMaterial == Material.water)))
+        if (!this.m_bHasBlockBrokenOnLand && this.CanReplaceBlockAtPosition(x, y, z) && (!Block.blocksList[this.blockID].CanFallIntoBlockAtPos(this.worldObj, x, y - 1, z) || 
+        		(Block.blocksList[this.worldObj.getBlockId(x, y, z)] != null && Block.blocksList[this.worldObj.getBlockId(x, y, z)].blockMaterial == Material.water)))
         {
             Block var4 = Block.blocksList[this.worldObj.getBlockId(x, y, z)];
 
@@ -36,6 +37,8 @@ public class DecoEntityFallingConcrete extends FCEntityFallingBlock {
                 var4.OnCrushedByFallingEntity(this.worldObj, x, y, z, this);
             }
 
+            this.worldObj.playSoundEffect((double)((float)x + 0.5F), (double)((float)y + 0.5F), (double)((float)z + 0.5F), "random.fizz", 0.3F, 2.6F + (this.worldObj.rand.nextFloat() - this.worldObj.rand.nextFloat()) * 0.8F);
+            
             return this.worldObj.setBlock(x, y, z, this.blockID, this.metadata, 3);
         }
         else

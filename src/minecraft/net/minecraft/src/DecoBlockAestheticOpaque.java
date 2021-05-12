@@ -20,6 +20,28 @@ public class DecoBlockAestheticOpaque extends FCBlockAestheticOpaque {
         }
     }
 
+    public int getItemIDDroppedOnStonecutter(World world, int x, int y, int z)
+    {
+    	int meta = world.getBlockMetadata(x, y, z);
+        return meta == this.m_iSubtypeWhiteStone ? FCBetterThanWolves.fcBlockWhiteStoneSidingAndCorner.blockID : 0;
+    }
+
+    public int getItemCountDroppedOnStonecutter(World world, int x, int y, int z)
+    {
+    	return 2;
+    }
+
+    public int getItemDamageDroppedOnStonecutter(World world, int x, int y, int z)
+    {
+        return 0;
+    }
+
+    public boolean doesBlockBreakStonecutter(World world, int x, int y, int z)
+    {
+    	int meta = world.getBlockMetadata(x, y, z);
+        return meta == m_iSubtypeBarrel || meta == m_iSubtypeDung || meta == m_iSubtypePadding || meta == m_iSubtypeRope || meta == m_iSubtypeSoap || meta == m_iSubtypeWicker;
+    }
+
     /**
      * returns a list of blocks with the same ID, but different meta (eg: wood returns 4 blocks)
      */

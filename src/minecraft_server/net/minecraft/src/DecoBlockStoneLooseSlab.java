@@ -2,11 +2,11 @@ package net.minecraft.src;
 
 public class DecoBlockStoneLooseSlab extends FCBlockMortarReceiverSlab
 {
-	public final Block[] blockTypes = {DecoDefs.graniteCobbleLoose, DecoDefs.andesiteCobbleLoose, DecoDefs.dioriteCobbleLoose, DecoDefs.graniteStoneBrickLoose, DecoDefs.andesiteStoneBrickLoose, DecoDefs.dioriteStoneBrickLoose};
+	public final Block[] blockTypes;
 	private int[] mortaredIDs;
-	private int[] mortaredMetas = {6, 7, 0, 1, 2, 3};
+	private int[] mortaredMetas;
 	
-    public DecoBlockStoneLooseSlab(int var1, int[] mortarID)
+    public DecoBlockStoneLooseSlab(int var1, Block[] parents, int[] mortaredIDs, int[] mortaredMetas)
     {
         super(var1, Material.rock);
         this.setHardness(1.0F);
@@ -15,7 +15,9 @@ public class DecoBlockStoneLooseSlab extends FCBlockMortarReceiverSlab
         this.setStepSound(soundStoneFootstep);
         this.setCreativeTab(CreativeTabs.tabBlock);
         this.setUnlocalizedName("stoneLooseSlab");
-        mortaredIDs = mortarID;
+        this.blockTypes = parents;
+        this.mortaredIDs = mortaredIDs;
+        this.mortaredMetas = mortaredMetas;
     }
 
     public boolean AttemptToCombineWithFallingEntity(World var1, int var2, int var3, int var4, EntityFallingSand var5)

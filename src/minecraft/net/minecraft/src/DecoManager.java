@@ -67,7 +67,7 @@ public class DecoManager extends AddonExt
 	public static final String decoPacketChannelRender = "Deco|Render";
 
 	public DecoManager() {
-		super("Deco Addon", "2.13.4", "Deco");
+		super("Deco Addon", "2.14.0", "Deco");
 	}
 
 	@Override
@@ -93,8 +93,7 @@ public class DecoManager extends AddonExt
 	{
 		return "Deco";
 	}
-
-	private static boolean Create_HasCall=false;
+	
 	public void OnLanguageLoaded(StringTranslate Language)
 	{
 		int Index = 0;
@@ -120,44 +119,10 @@ public class DecoManager extends AddonExt
 			Index++;
 		}
 	}
-	public static void Name(Object target, String name)
-	{
+	
+	public static void Name(Object target, String name) {
 		Names.add(name);
 		NameTargets.add(target);
-	}
-	public static void NameSubBlocks(Block sidingAndCorner, Block mouldingAndDecorative, String name)
-	{
-		Name(sidingAndCorner, "Siding And Corner");
-		Name(mouldingAndDecorative, "Moulding And Decorative");
-
-		String tag = sidingAndCorner.getUnlocalizedName();
-		Name(tag + ".siding" + ".name", name + " Siding");
-		Name(tag + ".corner" + ".name", name + " Corner");
-		Name(tag + ".bench" + ".name", name + " Bench");
-		Name(tag + ".fence" + ".name", name + " Fence");
-
-		tag = mouldingAndDecorative.getUnlocalizedName();
-		Name(tag + ".moulding" + ".name", name + " Moulding");
-		Name(tag + ".column" + ".name", name + " Column");
-		Name(tag + ".pedestal" + ".name", name + " Pedestal");
-		Name(tag + ".table" + ".name", name + " Table");
-	}
-	public static void NameSubBlocks_Wall(Block sidingAndCorner, Block mouldingAndDecorative, String name)
-	{
-		Name(sidingAndCorner, "Siding And Corner");
-		Name(mouldingAndDecorative, "Moulding And Decorative");
-
-		String tag = sidingAndCorner.getUnlocalizedName();
-		Name(tag + ".siding" + ".name", name + " Siding");
-		Name(tag + ".corner" + ".name", name + " Corner");
-		Name(tag + ".bench" + ".name", name + " Bench");
-		Name(tag + ".fence" + ".name", name + " Wall");
-
-		tag = mouldingAndDecorative.getUnlocalizedName();
-		Name(tag + ".moulding" + ".name", name + " Moulding");
-		Name(tag + ".column" + ".name", name + " Column");
-		Name(tag + ".pedestal" + ".name", name + " Pedestal");
-		Name(tag + ".table" + ".name", name + " Table");
 	}
 
 	//Use to replace block ids

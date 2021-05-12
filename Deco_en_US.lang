@@ -8,29 +8,36 @@ tile.decoBlockStairsMossyCobble.name=Mossy Cobblestone Stairs
 tile.decoBlockGraniteCobbleLoose.name=Loose Granite Cobblestone
 tile.decoBlockAndesiteCobbleLoose.name=Loose Andesite Cobblestone
 tile.decoBlockDioriteCobbleLoose.name=Loose Diorite Cobblestone
-tile.decoBlockGrimstoneTilesLoose.name=Loose Slate Tiles
+tile.decoBlockSlateCobbleLoose.name=Loose Slate Cobblestone
 tile.decoBlockGraniteBrickLoose.name=Loose Granite Bricks
 tile.decoBlockAndesiteBrickLoose.name=Loose Andesite Bricks
 tile.decoBlockDioriteBrickLoose.name=Loose Diorite Bricks
-tile.decoBlockGrimstoneBrickLoose.name=Loose Slate Bricks
+tile.decoBlockSlateBrickLoose.name=Loose Slate Bricks
 tile.decoBlockGraniteStairs.name=Granite Stairs
 tile.decoBlockAndesiteStairs.name=Andesite Stairs
 tile.decoBlockDioriteStairs.name=Diorite Stairs
+tile.decoBlockSlateStairs.name=Slate Stairs
 tile.decoBlockGraniteSmoothStairs.name=Polished Granite Stairs
 tile.decoBlockAndesiteSmoothStairs.name=Polished Andesite Stairs
 tile.decoBlockDioriteSmoothStairs.name=Polished Diorite Stairs
+tile.decoBlockSlateSmoothStairs.name=Polished Slate Stairs
 tile.decoBlockGraniteCobbleStairs.name=Granite Cobblestone Stairs
 tile.decoBlockAndesiteCobbleStairs.name=Andesite Cobblestone Stairs
 tile.decoBlockDioriteCobbleStairs.name=Diorite Cobblestone Stairs
-tile.decoBlockGraniteBrickStairs.name=Granite Bricks Stairs
-tile.decoBlockAndesiteBrickStairs.name=Andesite Bricks Stairs
-tile.decoBlockDioriteBrickStairs.name=Diorite Bricks Stairs
+tile.decoBlockSlateCobblestoneStairs.name=Slate Cobblestone Stairs
+tile.decoBlockGraniteBrickStairs.name=Granite Brick Stairs
+tile.decoBlockAndesiteBrickStairs.name=Andesite Brick Stairs
+tile.decoBlockDioriteBrickStairs.name=Diorite Brick Stairs
+tile.decoBlockSlateBrickStairs.name=Slate Brick Stairs
+tile.decoBlockSlateTilesStairs.name=Slate Tile Stairs
 tile.decoBlockGraniteCobblestoneStairsLoose.name=Loose Granite Cobblestone Stairs
 tile.decoBlockAndesiteCobblestoneStairsLoose.name=Loose Andesite Cobblestone Stairs
 tile.decoBlockDioriteCobblestoneStairsLoose.name=Loose Diorite Cobblestone Stairs
+tile.decoBlockSlateCobblestoneStairsLoose.name=Loose Slate Cobblestone Stairs
 tile.decoBlockGraniteBrickStairsLoose.name=Loose Granite Brick Stairs
 tile.decoBlockAndesiteBrickStairsLoose.name=Loose Andesite Brick Stairs
 tile.decoBlockDioriteBrickStairsLoose.name=Loose Diorite Brick Stairs
+tile.decoBlockSlateBrickStairsLoose.name=Loose Slate Brick Stairs
 tile.decoBlockPolishedStone.name=Polished Stone
 tile.decoBlockPolishedStoneStairs.name=Polished Stone Stairs
 tile.decoBlockStoneBrickMossyStairs.name=Mossy Stone Brick Stairs
@@ -150,6 +157,7 @@ tile.decoBlockLanternPaperBroken.name=Broken Paper Lantern
 tile.decoBlockLanternIron.name=Wrought Iron Lantern
 tile.decoBlockSpiderEye.name=Block of Spider Eyes
 tile.decoBlockSpiderEyeSlab.name=Spider Eye Slab
+tile.decoBlockSlateRough.name=Rough Slate
 
 # Deco Complex Blocks
 
@@ -456,17 +464,18 @@ tile.decoBlockStone.diorite.name=Diorite
 tile.decoBlockCobblestone.granite.name=Granite Cobblestone
 tile.decoBlockCobblestone.andesite.name=Andesite Cobblestone
 tile.decoBlockCobblestone.diorite.name=Diorite Cobblestone
-tile.decoBlockCobblestone.grimstone.name=Slate Tiles
+tile.decoBlockCobblestone.slate.name=Slate Cobblestone
 
 tile.decoBlockStoneBricks.granite.name=Granite Bricks
 tile.decoBlockStoneBricks.andesite.name=Andesite Bricks
 tile.decoBlockStoneBricks.diorite.name=Diorite Bricks
-tile.decoBlockStoneBricks.grimstone.name=Slate Bricks
+tile.decoBlockStoneBricks.slate.name=Slate Bricks
+tile.decoBlockStoneBricks.slateTiles.name=Slate Tiles
 
 tile.decoBlockStoneSmooth.granite.name=Polished Granite
 tile.decoBlockStoneSmooth.andesite.name=Polished Andesite
 tile.decoBlockStoneSmooth.diorite.name=Polished Diorite
-tile.decoBlockStoneSmooth.grimstone.name=Polished Grimstone
+tile.decoBlockStoneSmooth.slate.name=Polished Slate
 
 tile.decoBlockGraniteSiding.bench.name=Granite Bench
 tile.decoBlockGraniteSiding.fence.name=Granite Wall
@@ -495,6 +504,15 @@ tile.decoBlockDioriteMoulding.pedestal.name=Diorite Pedestal
 tile.decoBlockDioriteMoulding.moulding.name=Diorite Moulding
 tile.decoBlockDioriteMoulding.table.name=Diorite Table
 
+tile.decoBlockSlateSiding.bench.name=Slate Bench
+tile.decoBlockSlateSiding.fence.name=Slate Wall
+tile.decoBlockSlateSiding.siding.name=Slate Siding
+tile.decoBlockSlateSiding.corner.name=Slate Corner
+tile.decoBlockSlateMoulding.column.name=Slate Column
+tile.decoBlockSlateMoulding.pedestal.name=Slate Pedestal
+tile.decoBlockSlateMoulding.moulding.name=Slate Moulding
+tile.decoBlockSlateMoulding.table.name=Slate Table
+
 tile.decoBlockGraniteSmoothSiding.bench.name=Polished Granite Bench
 tile.decoBlockGraniteSmoothSiding.fence.name=Polished Granite Wall
 tile.decoBlockGraniteSmoothSiding.siding.name=Polished Granite Siding
@@ -522,6 +540,15 @@ tile.decoBlockDioriteSmoothMoulding.pedestal.name=Polished Diorite Pedestal
 tile.decoBlockDioriteSmoothMoulding.moulding.name=Polished Diorite Moulding
 tile.decoBlockDioriteSmoothMoulding.table.name=Polished Diorite Table
 
+tile.decoBlockSlateSmoothSiding.bench.name=Polished Slate Bench
+tile.decoBlockSlateSmoothSiding.fence.name=Polished Slate Wall
+tile.decoBlockSlateSmoothSiding.siding.name=Polished Slate Siding
+tile.decoBlockSlateSmoothSiding.corner.name=Polished Slate Corner
+tile.decoBlockSlateSmoothMoulding.column.name=Polished Slate Column
+tile.decoBlockSlateSmoothMoulding.pedestal.name=Polished Slate Pedestal
+tile.decoBlockSlateSmoothMoulding.moulding.name=Polished Slate Moulding
+tile.decoBlockSlateSmoothMoulding.table.name=Polished Slate Table
+
 tile.decoBlockGraniteCobbleSiding.bench.name=Granite Cobblestone Bench
 tile.decoBlockGraniteCobbleSiding.fence.name=Granite Cobblestone Wall
 tile.decoBlockGraniteCobbleSiding.siding.name=Granite Cobblestone Siding
@@ -538,7 +565,7 @@ tile.decoBlockAndesiteCobbleSiding.corner.name=Andesite Cobblestone Corner
 tile.decoBlockAndesiteCobbleMoulding.column.name=Andesite Cobblestone Column
 tile.decoBlockAndesiteCobbleMoulding.pedestal.name=Andesite Cobblestone Pedestal
 tile.decoBlockAndesiteCobbleMoulding.moulding.name=Andesite Cobblestone Moulding
-tile.Andesite.table.name=Andesite Cobblestone Table
+tile.decoBlockAndesiteCobbleMoulding.table.name=Andesite Cobblestone Table
 
 tile.decoBlockDioriteCobbleSiding.bench.name=Diorite Cobblestone Bench
 tile.decoBlockDioriteCobbleSiding.fence.name=Diorite Cobblestone Wall
@@ -549,32 +576,59 @@ tile.decoBlockDioriteCobbleMoulding.pedestal.name=Diorite Cobblestone Pedestal
 tile.decoBlockDioriteCobbleMoulding.moulding.name=Diorite Cobblestone Moulding
 tile.decoBlockDioriteCobbleMoulding.table.name=Diorite Cobblestone Table
 
-tile.decoBlockGraniteBrickSiding.bench.name=Granite Bricks Bench
-tile.decoBlockGraniteBrickSiding.fence.name=Granite Bricks Wall
-tile.decoBlockGraniteBrickSiding.siding.name=Granite Bricks Siding
-tile.decoBlockGraniteBrickSiding.corner.name=Granite Bricks Corner
-tile.decoBlockGraniteBrickMoulding.column.name=Granite Bricks Column
-tile.decoBlockGraniteBrickMoulding.pedestal.name=Granite Bricks Pedestal
-tile.decoBlockGraniteBrickMoulding.moulding.name=Granite Bricks Moulding
-tile.decoBlockGraniteBrickMoulding.table.name=Granite Bricks Table
+tile.decoBlockSlateCobbleSiding.bench.name=Slate Cobblestone Bench
+tile.decoBlockSlateCobbleSiding.fence.name=Slate Cobblestone Wall
+tile.decoBlockSlateCobbleSiding.siding.name=Slate Cobblestone Siding
+tile.decoBlockSlateCobbleSiding.corner.name=Slate Cobblestone Corner
+tile.decoBlockSlateCobbleMoulding.column.name=Slate Cobblestone Column
+tile.decoBlockSlateCobbleMoulding.pedestal.name=Slate Cobblestone Pedestal
+tile.decoBlockSlateCobbleMoulding.moulding.name=Slate Cobblestone Moulding
+tile.decoBlockSlateCobbleMoulding.table.name=Slate Cobblestone Table
 
-tile.decoBlockAndesiteBrickSiding.bench.name=Andesite Bricks Bench
-tile.decoBlockAndesiteBrickSiding.fence.name=Andesite Bricks Wall
-tile.decoBlockAndesiteBrickSiding.siding.name=Andesite Bricks Siding
-tile.decoBlockAndesiteBrickSiding.corner.name=Andesite Bricks Corner
-tile.decoBlockAndesiteBrickMoulding.column.name=Andesite Bricks Column
-tile.decoBlockAndesiteBrickMoulding.pedestal.name=Andesite Bricks Pedestal
-tile.decoBlockAndesiteBrickMoulding.moulding.name=Andesite Bricks Moulding
-tile.decoBlockAndesiteBrickMoulding.table.name=Andesite Bricks Table
+tile.decoBlockGraniteBrickSiding.bench.name=Granite Brick Bench
+tile.decoBlockGraniteBrickSiding.fence.name=Granite Brick Wall
+tile.decoBlockGraniteBrickSiding.siding.name=Granite Brick Siding
+tile.decoBlockGraniteBrickSiding.corner.name=Granite Brick Corner
+tile.decoBlockGraniteBrickMoulding.column.name=Granite Brick Column
+tile.decoBlockGraniteBrickMoulding.pedestal.name=Granite Brick Pedestal
+tile.decoBlockGraniteBrickMoulding.moulding.name=Granite Brick Moulding
+tile.decoBlockGraniteBrickMoulding.table.name=Granite Brick Table
 
-tile.decoBlockDioriteBrickSiding.bench.name=Diorite Bricks Bench
-tile.decoBlockDioriteBrickSiding.fence.name=Diorite Bricks Wall
-tile.decoBlockDioriteBrickSiding.siding.name=Diorite Bricks Siding
-tile.decoBlockDioriteBrickSiding.corner.name=Diorite Bricks Corner
-tile.decoBlockDioriteBrickMoulding.column.name=Diorite Bricks Column
-tile.decoBlockDioriteBrickMoulding.pedestal.name=Diorite Bricks Pedestal
-tile.decoBlockDioriteBrickMoulding.moulding.name=Diorite Bricks Moulding
-tile.decoBlockDioriteBrickMoulding.table.name=Diorite Bricks Table
+tile.decoBlockAndesiteBrickSiding.bench.name=Andesite Brick Bench
+tile.decoBlockAndesiteBrickSiding.fence.name=Andesite Brick Wall
+tile.decoBlockAndesiteBrickSiding.siding.name=Andesite Brick Siding
+tile.decoBlockAndesiteBrickSiding.corner.name=Andesite Brick Corner
+tile.decoBlockAndesiteBrickMoulding.column.name=Andesite Brick Column
+tile.decoBlockAndesiteBrickMoulding.pedestal.name=Andesite Brick Pedestal
+tile.decoBlockAndesiteBrickMoulding.moulding.name=Andesite Brick Moulding
+tile.decoBlockAndesiteBrickMoulding.table.name=Andesite Brick Table
+
+tile.decoBlockDioriteBrickSiding.bench.name=Diorite Brick Bench
+tile.decoBlockDioriteBrickSiding.fence.name=Diorite Brick Wall
+tile.decoBlockDioriteBrickSiding.siding.name=Diorite Brick Siding
+tile.decoBlockDioriteBrickSiding.corner.name=Diorite Brick Corner
+tile.decoBlockDioriteBrickMoulding.column.name=Diorite Brick Column
+tile.decoBlockDioriteBrickMoulding.pedestal.name=Diorite Brick Pedestal
+tile.decoBlockDioriteBrickMoulding.moulding.name=Diorite Brick Moulding
+tile.decoBlockDioriteBrickMoulding.table.name=Diorite Brick Table
+
+tile.decoBlockSlateBrickSiding.bench.name=Slate Brick Bench
+tile.decoBlockSlateBrickSiding.fence.name=Slate Brick Wall
+tile.decoBlockSlateBrickSiding.siding.name=Slate Brick Siding
+tile.decoBlockSlateBrickSiding.corner.name=Slate Brick Corner
+tile.decoBlockSlateBrickMoulding.column.name=Slate Brick Column
+tile.decoBlockSlateBrickMoulding.pedestal.name=Slate Brick Pedestal
+tile.decoBlockSlateBrickMoulding.moulding.name=Slate Brick Moulding
+tile.decoBlockSlateBrickMoulding.table.name=Slate Brick Table
+
+tile.decoBlockSlateTilesSiding.bench.name=Slate Tile Bench
+tile.decoBlockSlateTilesSiding.fence.name=Slate Tile Wall
+tile.decoBlockSlateTilesSiding.siding.name=Slate Tile Siding
+tile.decoBlockSlateTilesSiding.corner.name=Slate Tile Corner
+tile.decoBlockSlateTilesMoulding.column.name=Slate Tile Column
+tile.decoBlockSlateTilesMoulding.pedestal.name=Slate Tile Pedestal
+tile.decoBlockSlateTilesMoulding.moulding.name=Slate Tile Moulding
+tile.decoBlockSlateTilesMoulding.table.name=Slate Tile Table
 
 tile.decoBlockPolishedStoneSiding.bench.name=Polished Stone Bench
 tile.decoBlockPolishedStoneSiding.fence.name=Polished Stone Wall
@@ -1058,6 +1112,8 @@ tile.decoBlockStoneSlabLoose.2.name=Loose Diorite Cobblestone Slab
 tile.decoBlockStoneSlabLoose.3.name=Loose Granite Brick Slab
 tile.decoBlockStoneSlabLoose.4.name=Loose Andesite Brick Slab
 tile.decoBlockStoneSlabLoose.5.name=Loose Diorite Brick Slab
+tile.decoBlockStoneSlabLoose.6.name=Loose Slate Cobblestone Slab
+tile.decoBlockStoneSlabLoose.7.name=Loose Slate Brick Slab
 
 tile.decoBlockStoneSlab.0.name=Red Sandstone Slab
 tile.decoBlockStoneSlab.1.name=Prismarine Slab
@@ -1108,6 +1164,12 @@ tile.decoBlockStoneSlab6.0.name=Mossy Stone Brick Slab
 tile.decoBlockStoneSlab6.1.name=Cracked Stone Brick Slab
 tile.decoBlockStoneSlab6.2.name=End Stone Brick Slab
 tile.decoBlockStoneSlab6.3.name=Terracotta Slab
+tile.decoBlockStoneSlab6.4.name=Slate Slab
+tile.decoBlockStoneSlab6.5.name=Polished Slate Slab
+tile.decoBlockStoneSlab6.6.name=Slate Brick Slab
+tile.decoBlockStoneSlab6.7.name=Slate Cobblestone Slab
+
+tile.decoBlockStoneSlab7.0.name=Slate Tile Slab
 
 tile.decoBlockConcreteSlab.0.name=Black Concrete Slab
 tile.decoBlockConcreteSlab.1.name=Red Concrete Slab
@@ -1151,16 +1213,6 @@ tile.decoBlockAcaciaLog.name=Acacia Log
 tile.decoBlockAcaciaLog.stripped.name=Stripped Acacia Log
 tile.decoBlockAcaciaLog.wood.name=Acacia Wood
 tile.decoBlockAcaciaLog.strippedWood.name=Stripped Acacia Wood
-
-tile.decoBlockCrimsonStem.name=Crimson Stem
-tile.decoBlockCrimsonStem.stripped.name=Stripped Crimson Stem
-tile.decoBlockCrimsonStem.wood.name=Crimson Hyphae
-tile.decoBlockCrimsonStem.strippedWood.name=Stripped Crimson Hyphae
-
-tile.decoBlockWarpedStem.name=Warped Stem
-tile.decoBlockWarpedStem.stripped.name=Stripped Warped Stem
-tile.decoBlockWarpedStem.wood.name=Warped Hyphae
-tile.decoBlockWarpedStem.strippedWood.name=Stripped Warped Hyphae
 
 tile.decoBlockPlanksPainted.black.name=Black Painted Planks
 tile.decoBlockPlanksPainted.red.name=Red Painted Planks
@@ -1345,6 +1397,7 @@ tile.decoBlockBarrel1.birch.name=Birch Barrel
 tile.decoBlockBarrel1.jungle.name=Jungle Barrel
 tile.decoBlockBarrel2.blood.name=Blood Wood Barrel
 tile.decoBlockBarrel2.cherry.name=Cherry Barrel
+tile.decoBlockBarrel2.acacia.name=Acacia Barrel
 
 tile.decoBlockBarrelOak.wheat.name=Oak Barrel of Wheat
 tile.decoBlockBarrelOak.hemp.name=Oak Barrel of Hemp
@@ -1382,12 +1435,19 @@ tile.decoBlockBarrelCherry.potato.name=Cherry Barrel of Potatoes
 tile.decoBlockBarrelCherry.carrot.name=Cherry Barrel of Carrots
 tile.decoBlockBarrelCherry.fish.name=Cherry Barrel of Fish
 
+tile.decoBlockBarrelAcacia.wheat.name=Acacia Barrel of Wheat
+tile.decoBlockBarrelAcacia.hemp.name=Acacia Barrel of Hemp
+tile.decoBlockBarrelAcacia.potato.name=Acacia Barrel of Potatoes
+tile.decoBlockBarrelAcacia.carrot.name=Acacia Barrel of Carrots
+tile.decoBlockBarrelAcacia.fish.name=Acacia Barrel of Fish
+
 tile.decoBlockCrate.oak.name=Oak Crate
 tile.decoBlockCrate.spruce.name=Spruce Crate
 tile.decoBlockCrate.birch.name=Birch Crate
 tile.decoBlockCrate.jungle.name=Jungle Crate
 tile.decoBlockCrate.blood.name=Blood Wood Crate
 tile.decoBlockCrate.cherry.name=Cherry Crate
+tile.decoBlockCrate.acacia.name=Acacia Crate
 
 tile.decoBlockPlanksPaintedSlab.0.name=Black Painted Planks Slab
 tile.decoBlockPlanksPaintedSlab.1.name=Red Painted Planks Slab
@@ -1461,8 +1521,8 @@ tile.decoBlockHedgeCherryMoulding.pedestal.name=Cherry Hedge Pedestal
 tile.decoBlockHedgeCherryMoulding.moulding.name=Cherry Hedge Moulding
 tile.decoBlockHedgeCherryMoulding.table.name=Cherry Hedge Table
 
-tile.decoBlockWoodSlab.0.name=Cherry Slab
-tile.decoBlockWoodSlab.1.name=Acacia Slab
+tile.decoBlockWoodSlab.0.name=Old Cherry Slab
+tile.decoBlockWoodSlab.1.name=Old Acacia Slab
 
 tile.decoBlockCarpet.black.name=Black Carpet
 tile.decoBlockCarpet.red.name=Red Carpet
@@ -1488,6 +1548,16 @@ tile.decoBlockHedge.jungle.name=Jungle Hedge
 
 # Vanilla/BTW Blocks Renamed
 
+tile.stone.strata1.name=Smooth Stone
+tile.stone.strata2.name=Smooth Stone
+tile.stone.strata3.name=Smooth Stone
+tile.stone.slate.name=Slate
+tile.stone.rough1.name=Cracked Stone
+tile.stone.rough2.name=Cracked Stone
+tile.stone.rough3.name=Cracked Stone
+tile.stone.roughSlate.name=Cracked Slate
+
+tile.fcBlockStoneRough.name=Rough Stone
 tile.rose.name=Red Rose
 tile.stairsStone.name=Cobblestone Stairs
 tile.stoneMoss.name=Mossy Cobblestone
@@ -1597,6 +1667,9 @@ tile.woodSlab.oak.name=Oak Slab
 tile.woodSlab.spruce.name=Spruce Slab
 tile.woodSlab.birch.name=Birch Slab
 tile.woodSlab.jungle.name=Jungle Slab
+tile.woodSlab.blood.name=Blood Wood Slab
+tile.woodSlab.cherry.name=Cherry Slab
+tile.woodSlab.acacia.name=Acacia Slab
 
 tile.blockDiamond.name=Block of Diamondium
 
@@ -1621,7 +1694,6 @@ item.decoItemPileRedSand.name=Red Sand Pile
 item.decoItemPrismarineShard.name=Prismarine Shard
 item.decoItemPrismarineCrystal.name=Prismarine Crystal
 item.decoItemHempOil.name=Hemp Oil
-item.decoItemHempOil.name=Hemp Oil
 item.decoItemWoodBleach.name=Wood Bleach
 item.decoItemWoodStain.name=Wood Stain
 item.decoItemDoorSpruce.name=Spruce Door
@@ -1633,8 +1705,8 @@ item.decoItemDoorAcacia.name=Acacia Door
 item.decoItemChiselDiamond.name=Diamondium Chisel
 item.decoItemShearsDiamond.name=Diamondium Shears
 item.decoItemNameTag.name=Name Tag
-item.decoItemGrimstoneTile.name=Slate Tile
-item.decoItemGrimstoneBrick.name=Slate Brick
+item.decoItemSlateStone.name=Slate Stone
+item.decoItemSlateBrick.name=Slate Brick
 
 # Deco Complex Items
 

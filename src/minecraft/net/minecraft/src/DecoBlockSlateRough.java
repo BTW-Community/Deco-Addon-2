@@ -1,10 +1,10 @@
 package net.minecraft.src;
 
-public class DecoBlockGrimstoneRough extends FCBlockStoneRough {
+public class DecoBlockSlateRough extends FCBlockStoneRough {
 
-	public DecoBlockGrimstoneRough(int var1) {
-		super(var1, 2);
-		this.setUnlocalizedName("decoBlockGrimstoneRough");
+	public DecoBlockSlateRough(int var1) {
+		super(var1, 3);
+		this.setUnlocalizedName("decoBlockSlateRough");
 	}
 
     public int GetHarvestToolLevel(IBlockAccess var1, int var2, int var3, int var4)
@@ -32,13 +32,13 @@ public class DecoBlockGrimstoneRough extends FCBlockStoneRough {
                     if ((var7 & 1) == 0)
                     {
                         var2.playAuxSFX(2269, var3, var4, var5, 0);
-                        FCUtilsItem.EjectStackFromBlockTowardsFacing(var2, var3, var4, var5, new ItemStack(DecoDefs.grimstoneTile, 1), var6);
+                        FCUtilsItem.EjectStackFromBlockTowardsFacing(var2, var3, var4, var5, new ItemStack(DecoDefs.slateStone, 1), var6);
                     }
                     else if (var7 <= 5 && this.IsUberItemConversionTool(var1, var2, var3, var4, var5))
                     {
                         var7 += 3;
                         var2.playAuxSFX(2269, var3, var4, var5, 0);
-                        FCUtilsItem.EjectStackFromBlockTowardsFacing(var2, var3, var4, var5, new ItemStack(DecoDefs.grimstoneBrickItem), var6);
+                        FCUtilsItem.EjectStackFromBlockTowardsFacing(var2, var3, var4, var5, new ItemStack(DecoDefs.slateBrickItem), var6);
                     }
                 }
                 else if (var7 == 12)
@@ -70,7 +70,7 @@ public class DecoBlockGrimstoneRough extends FCBlockStoneRough {
     {
         if (!var1.isRemote)
         {
-            int var8 = DecoDefs.grimstoneTile.itemID;
+            int var8 = DecoDefs.slateStone.itemID;
             int var9 = 1;
 
             if (var5 < 8)
@@ -104,13 +104,13 @@ public class DecoBlockGrimstoneRough extends FCBlockStoneRough {
      */
     public void registerIcons(IconRegister var1)
     {
-        this.blockIcon = var1.registerIcon("decoBlockGrimstoneRough");
-        this.m_iconBroken = var1.registerIcon("decoBlockGrimstoneRough_broken");
+        this.blockIcon = var1.registerIcon("decoBlockSlateRough");
+        this.m_iconBroken = var1.registerIcon("decoBlockSlateRough_broken");
         this.m_crackIcons = new Icon[7];
 
         for (int var3 = 0; var3 < 7; ++var3)
         {
-            this.m_crackIcons[var3] = var1.registerIcon("decoOverlayGrimstoneRough_" + (var3 + 1));
+            this.m_crackIcons[var3] = var1.registerIcon("decoOverlaySlateRough_" + (var3 + 1));
         }
     }
 

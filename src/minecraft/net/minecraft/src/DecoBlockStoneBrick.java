@@ -2,52 +2,54 @@ package net.minecraft.src;
 
 import java.util.List;
 
-public class DecoBlockStoneBrick extends Block {
-	public DecoBlockStoneBrick(int ID) {
-		super(ID, Material.rock);
-        this.setHardness(2.25F);
-        this.setResistance(10.0F);
-        this.SetPicksEffectiveOn();
-        this.setStepSound(soundStoneFootstep);
-		this.setUnlocalizedName("decoBlockStoneBricks");
-		this.setCreativeTab(CreativeTabs.tabBlock);
-
-		DecoManager.Register(this, new String[] {"granite", "andesite", "diorite", "grimstone"});
+public class DecoBlockStoneBrick extends FCBlockStoneBrick {
+	public DecoBlockStoneBrick(int id) {
+		super(id);
 	}
 
-    /**
-     * Drops the block items with a specified chance of dropping the specified items
-     */
-    public void dropBlockAsItemWithChance(World var1, int var2, int var3, int var4, int var5, float var6, int var7)
-    {
-        //super.dropBlockAsItemWithChance(var1, var2, var3, var4, var5, var6, var7);
-
-        if (!var1.isRemote)
-        {
-        	Block drop = DecoDefs.graniteStoneBrickLoose;
-        	
-        	switch (var5) {
-        	case 0:
-        		drop = DecoDefs.graniteStoneBrickLoose;
-        		break;
-        	case 1:
-        		drop = DecoDefs.andesiteStoneBrickLoose;
-        		break;
-        	case 2:
-        		drop = DecoDefs.dioriteStoneBrickLoose;
-        		break;
-        	case 3:
-        		drop = DecoDefs.grimstoneBrickLoose;
-        		break;
-        	}
-        	
-            this.dropBlockAsItem_do(var1, var2, var3, var4, new ItemStack(drop));
+	@Override
+    public int getItemIDDroppedOnStonecutter(World world, int x, int y, int z) {
+        int meta = world.getBlockMetadata(x, y, z);
+        
+        switch (meta) {
+        default:
+        case 0:
+        	return FCBetterThanWolves.fcBlockStoneBrickSidingAndCorner.blockID;
+        case 1:
+        	return DecoDefs.stoneBrickMossySidingAndCorner.blockID;
+        case 2:
+        	return DecoDefs.stoneBrickCrackedSidingAndCorner.blockID;
         }
     }
 
-    public boolean HasMortar(IBlockAccess var1, int var2, int var3, int var4)
+	@Override
+    public int getItemCountDroppedOnStonecutter(World world, int x, int y, int z) {
+        return 2;
+    }
+
+	//CLIENT ONLY
+    public static final String[] textureStrings = new String[] {"stonebricksmooth", "stonebricksmooth_mossy", "stonebricksmooth_cracked", "stonebricksmooth_carved"};
+    private Icon[] icons;
+    
+    /**
+     * From the specified side and block metadata retrieves the blocks texture. Args: side, metadata
+     */
+    public Icon getIcon(int par1, int par2)
     {
-        return true;
+        if (par2 < 0 || par2 >= textureStrings.length)
+        {
+            par2 = 0;
+        }
+
+        return this.icons[par2];
+    }
+
+    /**
+     * Determines the damage on the item the block drops. Used in cloth and wood.
+     */
+    public int damageDropped(int par1)
+    {
+        return par1;
     }
 
     /**
@@ -55,32 +57,23 @@ public class DecoBlockStoneBrick extends Block {
      */
     public void getSubBlocks(int par1, CreativeTabs par2CreativeTabs, List par3List)
     {
-        par3List.add(new ItemStack(par1, 1, 0));
-        par3List.add(new ItemStack(par1, 1, 1));
-        par3List.add(new ItemStack(par1, 1, 2));
-        par3List.add(new ItemStack(par1, 1, 3));
+        for (int var4 = 0; var4 < 4; ++var4)
+        {
+            par3List.add(new ItemStack(par1, 1, var4));
+        }
     }
 
     /**
-     * Get the block's damage value (for use with pick block).
+     * When this method is called, your block should register all the icons it needs with the given IconRegister. This
+     * is the only chance you get to register icons.
      */
-    public int getDamageValue(World world, int x, int y, int z)
+    public void registerIcons(IconRegister par1IconRegister)
     {
-        return world.getBlockMetadata(x, y, z);
+        this.icons = new Icon[textureStrings.length];
+
+        for (int var2 = 0; var2 < this.icons.length; ++var2)
+        {
+            this.icons[var2] = par1IconRegister.registerIcon(textureStrings[var2]);
+        }
     }
-	
-	//CLIENT ONLY METHODS
-	public static Icon[] Icons = new Icon[4];
-	public Icon getIcon(int Side, int Meta)
-	{
-		return Icons[Meta];
-	}
-	public void registerIcons(IconRegister Register)
-	{
-		Icons[0] = Register.registerIcon("decoBlockGraniteBrick");
-		Icons[1] = Register.registerIcon("decoBlockAndesiteBrick");
-		Icons[2] = Register.registerIcon("decoBlockDioriteBrick");
-		Icons[3] = Register.registerIcon("decoBlockGrimstoneBrick");
-	}
-	//
 }

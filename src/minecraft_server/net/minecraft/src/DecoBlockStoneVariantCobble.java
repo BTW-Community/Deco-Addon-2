@@ -3,8 +3,8 @@ package net.minecraft.src;
 import java.util.List;
 import java.util.Random;
 
-public class DecoBlockCobble extends Block {
-	public DecoBlockCobble(int ID) {
+public class DecoBlockStoneVariantCobble extends Block {
+	public DecoBlockStoneVariantCobble(int ID) {
 		super(ID, Material.rock);
 		this.setHardness(2.25F);
 		this.setResistance(10.0F);
@@ -14,7 +14,7 @@ public class DecoBlockCobble extends Block {
 		this.setUnlocalizedName("decoBlockCobblestone");
 		this.setCreativeTab(CreativeTabs.tabBlock);
 
-		DecoManager.Register(this, new String[] {"granite", "andesite", "diorite", "grimstone"});
+		DecoManager.Register(this, new String[] {"granite", "andesite", "diorite", "slate"});
 	}
 
     /**
@@ -39,7 +39,7 @@ public class DecoBlockCobble extends Block {
         		drop = DecoDefs.dioriteCobbleLoose;
         		break;
         	case 3:
-        		drop = DecoDefs.grimstoneTilesLoose;
+        		drop = DecoDefs.slateCobbleLoose;
         		break;
         	}
         	
@@ -70,19 +70,31 @@ public class DecoBlockCobble extends Block {
     {
         return world.getBlockMetadata(x, y, z);
     }
-	
-	//CLIENT ONLY METHODS
-	public static Icon[] Icons = new Icon[4];
-	public Icon getIcon(int Side, int Meta)
-	{
-		return Icons[Meta];
-	}
-	public void registerIcons(IconRegister Register)
-	{
-		Icons[0] = Register.registerIcon("decoBlockGraniteCobble");
-		Icons[1] = Register.registerIcon("decoBlockAndesiteCobble");
-		Icons[2] = Register.registerIcon("decoBlockDioriteCobble");
-		Icons[3] = Register.registerIcon("decoBlockGrimstoneTiles");
-	}
-	//
+
+	@Override
+    public int getItemIDDroppedOnStonecutter(World world, int x, int y, int z) {
+        int meta = world.getBlockMetadata(x, y, z);
+        
+        switch (meta) {
+        default:
+        case 0:
+        	return DecoDefs.stoneTypesCobblestoneSidingAndCorner[0].blockID;
+        case 1:
+        	return DecoDefs.stoneTypesCobblestoneSidingAndCorner[1].blockID;
+        case 2:
+        	return DecoDefs.stoneTypesCobblestoneSidingAndCorner[2].blockID;
+        case 3:
+        	return DecoDefs.slateCobbleSidingAndCorner.blockID;
+        }
+    }
+
+	@Override
+    public int getItemCountDroppedOnStonecutter(World world, int x, int y, int z) {
+        return 2;
+    }
+
+	@Override
+    public int getItemDamageDroppedOnStonecutter(World world, int x, int y, int z)  {
+        return 0;
+    }
 }

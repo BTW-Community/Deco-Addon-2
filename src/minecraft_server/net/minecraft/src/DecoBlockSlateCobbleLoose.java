@@ -2,9 +2,9 @@ package net.minecraft.src;
 
 import java.util.Random;
 
-public class DecoBlockGrimstoneBrickLoose extends FCBlockLavaReceiver
+public class DecoBlockSlateCobbleLoose extends FCBlockLavaReceiver
 {
-    public DecoBlockGrimstoneBrickLoose(int var1)
+    public DecoBlockSlateCobbleLoose(int var1)
     {
         super(var1, Material.rock);
         this.setHardness(1.0F);
@@ -12,14 +12,14 @@ public class DecoBlockGrimstoneBrickLoose extends FCBlockLavaReceiver
         this.SetPicksEffectiveOn();
         this.SetChiselsEffectiveOn();
         this.setStepSound(soundStoneFootstep);
-        this.setUnlocalizedName("decoBlockGrimstoneBrickLoose");
+        this.setUnlocalizedName("decoBlockSlateCobbleLoose");
         this.setCreativeTab(CreativeTabs.tabBlock);
         DecoManager.Register(this);
     }
 
     public boolean OnMortarApplied(World world, int x, int y, int z)
     {
-        world.setBlockAndMetadataWithNotify(x, y, z, DecoDefs.stoneTypesStoneBrick.blockID, 4);
+        world.setBlockAndMetadataWithNotify(x, y, z, DecoDefs.stoneTypesCobble.blockID, 3);
         return true;
     }
 
@@ -36,7 +36,7 @@ public class DecoBlockGrimstoneBrickLoose extends FCBlockLavaReceiver
                 {
                     var1.playAuxSFX(2227, var2, var3, var4, 0);
                     var1.setBlockWithNotify(var2, var3, var4, DecoDefs.stoneTypes.blockID);
-                    var1.setBlockMetadataWithClient(var2, var3, var4, 4);
+                    var1.setBlockMetadataWithClient(var2, var3, var4, 3);
                     return;
                 }
             }
@@ -56,19 +56,4 @@ public class DecoBlockGrimstoneBrickLoose extends FCBlockLavaReceiver
             var1.setBlockMetadataWithClient(var2, var3, var4, 4);
         }
     }
-
-    //CLIENT ONLY
-    private Icon lavaCrackOverlay;
-    
-    public void registerIcons(IconRegister Register)
-    {
-    	super.registerIcons(Register);
-    	lavaCrackOverlay = Register.registerIcon("decoOverlayGrimstoneBrickLava");
-    }
-
-    protected Icon GetLavaCracksOverlay()
-    {
-        return lavaCrackOverlay;
-    }
-    //
 }

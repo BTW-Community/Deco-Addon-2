@@ -19,7 +19,11 @@ public class DecoBlockWickerPane extends FCBlockWickerPane {
 
     public boolean CanTransformItemIfFilter(ItemStack var1)
     {
-        return var1.itemID == Block.gravel.blockID || var1.itemID == FCBetterThanWolves.fcItemWheat.itemID;
+        try {
+			return var1.itemID == Block.gravel.blockID || (var1.itemID == FCBetterThanWolves.fcItemWheat.itemID && Class.forName("AutoPlusMod") != null);
+		} catch (ClassNotFoundException e) {
+			return false;
+		}
     }
     
     //CLIENT ONLY

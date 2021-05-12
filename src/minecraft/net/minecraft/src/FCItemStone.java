@@ -1,11 +1,11 @@
 package net.minecraft.src;
 
-public class DecoItemGrimstoneTile extends Item
+public class FCItemStone extends Item
 {
-    public DecoItemGrimstoneTile(int var1)
+    public FCItemStone(int var1)
     {
         super(var1);
-        this.setUnlocalizedName("decoItemGrimstoneTile");
+        this.setUnlocalizedName("fcItemStone");
         this.SetFilterableProperties(2);
         this.setCreativeTab(CreativeTabs.tabMaterials);
     }
@@ -22,6 +22,6 @@ public class DecoItemGrimstoneTile extends Item
 
     public int GetResultingBlockIDOnPistonPack(ItemStack var1)
     {
-        return DecoDefs.grimstoneTilesLoose.blockID;
+        return FCBetterThanWolves.fcBlockCobblestoneLoose.blockID;
     }
 }

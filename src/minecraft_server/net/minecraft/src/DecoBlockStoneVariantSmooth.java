@@ -1,7 +1,7 @@
 package net.minecraft.src;
 
-public class DecoBlockStoneSmooth extends Block{
-	public DecoBlockStoneSmooth(int ID) {
+public class DecoBlockStoneVariantSmooth extends Block{
+	public DecoBlockStoneVariantSmooth(int ID) {
 		super(ID, Material.rock);
 		this.setHardness(2.25F);
 		this.setResistance(10.0F);
@@ -11,7 +11,7 @@ public class DecoBlockStoneSmooth extends Block{
 		this.setUnlocalizedName("decoBlockStoneSmooth");
 		this.setCreativeTab(CreativeTabs.tabBlock);
 
-		DecoManager.Register(this, new String[] {"granite", "andesite", "diorite", "grimstone"});
+		DecoManager.Register(this, new String[] {"granite", "andesite", "diorite", "slate"});
 	}
 
 	public int damageDropped(int Meta)
@@ -47,23 +47,35 @@ public class DecoBlockStoneSmooth extends Block{
 			this.DropItemsIndividualy(var1, var2, var3, var4, DecoDefs.dioriteCobbleLoose.blockID, 1, 0, var6);
 		}
 		else if (var5 == 2) {
-			this.DropItemsIndividualy(var1, var2, var3, var4, DecoDefs.grimstoneTilesLoose.blockID, 1, 0, var6);
+			this.DropItemsIndividualy(var1, var2, var3, var4, DecoDefs.slateCobbleLoose.blockID, 1, 0, var6);
 		}
 		return true;
 	}
-	
-	//CLIENT ONLY METHODS
-	public static Icon[] Icons = new Icon[4];
-	public Icon getIcon(int Side, int Meta)
-	{
-		return Icons[Meta];
-	}
-	public void registerIcons(IconRegister Register)
-	{
-		Icons[0] = Register.registerIcon("decoBlockGraniteSmooth");
-		Icons[1] = Register.registerIcon("decoBlockAndesiteSmooth");
-		Icons[2] = Register.registerIcon("decoBlockDioriteSmooth");
-		Icons[3] = Register.registerIcon("decoBlockGrimstoneSmooth");
-	}
-	//
+
+	@Override
+    public int getItemIDDroppedOnStonecutter(World world, int x, int y, int z) {
+        int meta = world.getBlockMetadata(x, y, z);
+        
+        switch (meta) {
+        default:
+        case 0:
+        	return DecoDefs.stoneTypesSmoothSidingAndCorner[0].blockID;
+        case 1:
+        	return DecoDefs.stoneTypesSmoothSidingAndCorner[1].blockID;
+        case 2:
+        	return DecoDefs.stoneTypesSmoothSidingAndCorner[2].blockID;
+        case 3:
+        	return DecoDefs.slateSmoothSidingAndCorner.blockID;
+        }
+    }
+
+	@Override
+    public int getItemCountDroppedOnStonecutter(World world, int x, int y, int z) {
+        return 2;
+    }
+
+	@Override
+    public int getItemDamageDroppedOnStonecutter(World world, int x, int y, int z)  {
+        return 0;
+    }
 }

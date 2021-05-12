@@ -2,9 +2,9 @@ package net.minecraft.src;
 
 import java.util.Random;
 
-public class DecoBlockGrimstoneTilesLoose extends FCBlockLavaReceiver
+public class DecoBlockSlateBrickLoose extends FCBlockLavaReceiver
 {
-    public DecoBlockGrimstoneTilesLoose(int var1)
+    public DecoBlockSlateBrickLoose(int var1)
     {
         super(var1, Material.rock);
         this.setHardness(1.0F);
@@ -12,14 +12,14 @@ public class DecoBlockGrimstoneTilesLoose extends FCBlockLavaReceiver
         this.SetPicksEffectiveOn();
         this.SetChiselsEffectiveOn();
         this.setStepSound(soundStoneFootstep);
-        this.setUnlocalizedName("decoBlockGrimstoneTilesLoose");
+        this.setUnlocalizedName("decoBlockSlateBrickLoose");
         this.setCreativeTab(CreativeTabs.tabBlock);
         DecoManager.Register(this);
     }
 
     public boolean OnMortarApplied(World world, int x, int y, int z)
     {
-        world.setBlockAndMetadataWithNotify(x, y, z, DecoDefs.stoneTypesCobble.blockID, 4);
+        world.setBlockAndMetadataWithNotify(x, y, z, DecoDefs.stoneTypesStoneBrick.blockID, 4);
         return true;
     }
 
@@ -56,19 +56,4 @@ public class DecoBlockGrimstoneTilesLoose extends FCBlockLavaReceiver
             var1.setBlockMetadataWithClient(var2, var3, var4, 4);
         }
     }
-
-    //CLIENT ONLY
-    private Icon lavaCrackOverlay;
-    
-    public void registerIcons(IconRegister Register)
-    {
-    	super.registerIcons(Register);
-    	lavaCrackOverlay = Register.registerIcon("decoOverlayGrimstoneTilesLava");
-    }
-
-    protected Icon GetLavaCracksOverlay()
-    {
-        return lavaCrackOverlay;
-    }
-    //
 }

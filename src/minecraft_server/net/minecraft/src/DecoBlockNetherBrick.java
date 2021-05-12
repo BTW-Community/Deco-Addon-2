@@ -3,6 +3,10 @@ package net.minecraft.src;
 import java.util.Random;
 
 public class DecoBlockNetherBrick extends Block {
+	public static final int typeRed = 0;
+	public static final int typeRedChiseled = 1;
+	public static final int typeChiseled = 2;
+	
     public DecoBlockNetherBrick(int var1)
     {
         super(var1, FCBetterThanWolves.fcMaterialNetherRock);
@@ -48,5 +52,22 @@ public class DecoBlockNetherBrick extends Block {
     public boolean HasMortar(IBlockAccess var1, int var2, int var3, int var4)
     {
         return true;
+    }
+
+	@Override
+    public int getItemIDDroppedOnStonecutter(World world, int x, int y, int z) {
+        int meta = world.getBlockMetadata(x, y, z);
+        
+        switch (meta) {
+        default:
+        	return DecoDefs.netherBrickRedSidingAndCorner.blockID;
+        case typeChiseled:
+        	return FCBetterThanWolves.fcBlockNetherBrickSidingAndCorner.blockID;
+        }
+    }
+
+	@Override
+    public int getItemCountDroppedOnStonecutter(World world, int x, int y, int z) {
+        return 2;
     }
 }

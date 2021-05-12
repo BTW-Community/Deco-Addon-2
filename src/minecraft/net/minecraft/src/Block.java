@@ -2932,6 +2932,12 @@ public class Block
     			else if (type == Boolean.class) {
     				type = Boolean.TYPE;
     			}
+    			else if (type == Float.class) {
+    				type = Float.TYPE;
+    			}
+    			else if (type == Double.class) {
+    				type = Double.TYPE;
+    			}
     			else if (Block.class.isAssignableFrom(type)) {
     				type = Block.class;
     			}
