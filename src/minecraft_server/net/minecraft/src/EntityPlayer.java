@@ -1832,7 +1832,7 @@ public abstract class EntityPlayer extends EntityLiving implements ICommandSende
 
     public boolean canPlayerEdit(int par1, int par2, int par3, int par4, ItemStack par5ItemStack)
     {
-        return !this.capabilities.isCreativeMode && !this.onGround && !this.inWater && !this.isOnLadder() && this.ridingEntity == null && !this.handleLavaMovement() ? false : (this.capabilities.allowEdit ? true : (par5ItemStack != null ? par5ItemStack.func_82835_x() : false));
+        return this.capabilities.allowEdit ? true : (par5ItemStack != null ? par5ItemStack.func_82835_x() : false);
     }
 
     /**
