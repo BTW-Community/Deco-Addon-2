@@ -1,3 +1,26 @@
+Version 2.15.0
+Several textures have been used or modified from Quark in this version. Quark is provided under the Creative Commons 3.0 Attribution Non-Commercial Share-Alike license which is compatible with the license Deco uses, which allows me to use textures from there.
+[list]
+[*]Added shingles and colored shingles, along with a full set of subblocks. Shingles can be crafted by chiseling terracotta in a crafting grid, and colored shingles can be crafted either by dyeing shingles in a cauldron or by chiseling stained terracotta.
+[*]Added bottle racks of each wood type, crafted with an X of planks or moulding. Empty bottle racks can be crafted with 5 glass bottles shapelessly to make a filled bottle rack. They may be decrafted to retrieve the bottles and the empty rack.
+[*]Added a high efficiency recipe for ladders using moulding instead of sticks, producing 3.
+[*]Added ladders for each wood type, made using moulding of the respective wood type. The normal stick recipe produces oak ladders still.
+[*]Added iron ladders, crafted with 7 ingots in an H, producing 7. These function exactly like normal ladders but are not flammible.
+[*]Added bookshleves of each wood type.
+[*]Added decorative, non-functional bookshelves, and changed vanilla bookshelves to enchanted bookshelves.
+[*]Added non-functional books, crafted with 3 paper shapelessly, and changed vanilla books to enchanted books.
+[*]Added empty bookshelves made with 6 siding on top and bottom and 2 moulding on the sides, or with 8 planks in a circle.
+[*]Changed the recipe for bookshelves to be a shapeless recipe with an empty bookshelf and 3 books (or enchanted books for enchanted bookshelves).
+[*]Changed decrafting bookshelves into books so that it ejects an empty bookshelf similar to decrafting barrels.
+[*]Changed the recipe for the note block back to its old recipe of using redstone instead of a latch. While the gold made thematic sense, it made it difficult to justify using note blocks decoratively.
+[*]Changed the textures for painted planks to use a different color pallete and to be less harsh.
+[*]Changed the glass recipe to be 16 sand and 1 nether quartz for 16 glass.
+[*]Changed the recipe for glass bottles to output 6 instead of 3.
+[*]Fixed an issue where trapdoors would always display as oak when used as a hopper filter.
+[*]Fixed an issue where only black stained terracotta showed up in the creative menu.
+[*]Fixed an issue where the game would crash when trying to interact with villagers with an empty hand.
+[/list]
+
 Version 2.14.1
 [list]
 [*]Fixed an issue where hardcore bouncing was still in effect.
@@ -6,7 +29,6 @@ Version 2.14.1
 Version 2.14.0
 [list]
 [*]Updated to API 1.1.1.
-[*]Added compatibility with Automation+.
 [*]Added the ability to harvest stone intact when using a diamond or better pickaxe or chisel if the stone is isolated from neighboring stone, in the same manner as one used to be able to do in BTW.
 [*]Added slate as a new stone variant which behaves the same as 3rd strata stone, except that it can be placed in each direction similarly to logs. Slate can be obtained by packing 2 stone together. All slate variants are crafted the same as other stone types (this is a repeat from last release with more detail).
 [*]Added slate stone and stone brick items, which are used for crafting slate variants.

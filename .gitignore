@@ -1063,7 +1063,6 @@ src/minecraft/net/minecraft/src/FCContainerSoulforge.java
 src/minecraft/net/minecraft/src/FCContainerWithInventory.java
 src/minecraft/net/minecraft/src/FCContainerWorkbench.java
 src/minecraft/net/minecraft/src/FCCraftingManagerAnvil.java
-src/minecraft/net/minecraft/src/FCCraftingManagerBulk.java
 src/minecraft/net/minecraft/src/FCCraftingManagerBulkRecipe.java
 src/minecraft/net/minecraft/src/FCCraftingManagerCampfire.java
 src/minecraft/net/minecraft/src/FCCraftingManagerCauldron.java
@@ -3122,7 +3121,6 @@ src/minecraft_server/net/minecraft/src/FCContainerSoulforge.java
 src/minecraft_server/net/minecraft/src/FCContainerWithInventory.java
 src/minecraft_server/net/minecraft/src/FCContainerWorkbench.java
 src/minecraft_server/net/minecraft/src/FCCraftingManagerAnvil.java
-src/minecraft_server/net/minecraft/src/FCCraftingManagerBulk.java
 src/minecraft_server/net/minecraft/src/FCCraftingManagerBulkRecipe.java
 src/minecraft_server/net/minecraft/src/FCCraftingManagerCampfire.java
 src/minecraft_server/net/minecraft/src/FCCraftingManagerCauldron.java

@@ -145,10 +145,15 @@ public class DecoBlockTrapDoor extends FCBlockTrapDoor {
     }
 
 	//CLIENT ONLY
+    @Override
+    public Icon GetHopperFilterIcon()
+    {
+        return this.blockIcon;
+    }
+    
 	public void registerIcons(IconRegister var1)
 	{
 		super.registerIcons(var1);
-		//this.m_filterIcon = var1.registerIcon("fcBlockHopper_trap");
 	}
 
 	@Override public boolean RenderBlock(RenderBlocks r, int X, int Y, int Z)
