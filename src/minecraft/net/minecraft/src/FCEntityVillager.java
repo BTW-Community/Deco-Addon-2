@@ -803,7 +803,7 @@ public abstract class FCEntityVillager extends EntityVillager
 		}
 
 		return false;
-	}    
+	}
 
 	protected boolean CustomInteract( EntityPlayer player )
 	{
@@ -832,12 +832,12 @@ public abstract class FCEntityVillager extends EntityVillager
 
 			return true;
 		}
-		else if (heldStack.itemID == DecoDefs.nameTag.itemID) {
+		else if (heldStack != null && heldStack.itemID == DecoDefs.nameTag.itemID) {
 			DecoDefs.nameTag.itemInteractionForEntity(heldStack, this);
 		}
 
 		return false;
-	}    
+	}
 
 	private void CheckForInvalidTrades() {
 		MerchantRecipe trade;

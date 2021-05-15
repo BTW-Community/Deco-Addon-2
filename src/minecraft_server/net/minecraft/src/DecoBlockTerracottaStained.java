@@ -1,5 +1,7 @@
 package net.minecraft.src;
 
+import java.util.List;
+
 public class DecoBlockTerracottaStained extends Block
 {
 	private String nameTag;
@@ -27,7 +29,12 @@ public class DecoBlockTerracottaStained extends Block
 
 	@Override
     public int getItemIDDroppedOnStonecutter(World world, int x, int y, int z) {
-        return DecoDefs.stainedTerracottaSidingAndCorner[world.getBlockMetadata(x, y, z)].blockID;
+		if (this.blockID == DecoDefs.stainedTerracotta.blockID) {
+			return DecoDefs.stainedTerracottaSidingAndCorner[world.getBlockMetadata(x, y, z)].blockID;
+		}
+		else {
+			return DecoDefs.shingleColoredSidingAndCorner[world.getBlockMetadata(x, y, z)].blockID;
+		}
     }
 
 	@Override
