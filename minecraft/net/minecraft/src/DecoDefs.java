@@ -1008,8 +1008,6 @@ public class DecoDefs {
 
 		fertilizer = new DecoItemFertilizer(id_fertilizer);
 
-		DecoManager.Name(Block.plantRed, "Red Rose");
-
 		//Flower pot
 		flowerPot = new DecoBlockFlowerPot(id_flowerPot);
 		TileEntity.addMapping(DecoTileEntityFlowerPot.class, "AddonFlowerPot");
@@ -1487,14 +1485,14 @@ public class DecoDefs {
 		//Logs
 		FCBetterThanWolves.fcItemBark = new DecoItemBark(FCBetterThanWolves.fcItemBark.itemID - 256);
 		Block.wood = Block.replaceBlock(Block.wood.blockID, DecoBlockLogReplace.class);
-		Item.itemsList[Block.wood.blockID] = new DecoItemBlockLog(Block.wood.blockID - 256, Block.wood, new String[] {"oakLog", "spruceLog", "birchLog", "jungleLog"});
+		DecoManager.Register(Block.wood, new String[] {"oakLog", "spruceLog", "birchLog", "jungleLog"});
 
 		strippedLog = new DecoBlockLogStripped(id_strippedLog);
-		Item.itemsList[DecoDefs.strippedLog.blockID] = new DecoItemBlockLogStripped(DecoDefs.strippedLog.blockID - 256, DecoDefs.strippedLog, new String[] {"oak", "spruce", "birch", "jungle"});
+		DecoManager.Register(strippedLog, new String[] {"oak", "spruce", "birch", "jungle"});
 		barkLog = new DecoBlockLogBark(id_barkLog);
-		Item.itemsList[barkLog.blockID] = new DecoItemBlockLog(barkLog.blockID - 256, barkLog, new String[] {"oak", "spruce", "birch", "jungle"});
+		DecoManager.Register(barkLog, new String[] {"oak", "spruce", "birch", "jungle"});
 		barkLogStripped = new DecoBlockLogBarkStripped(id_barkLogStripped);
-		Item.itemsList[barkLogStripped.blockID] = new DecoItemBlockLogStripped(barkLogStripped.blockID - 256, barkLogStripped, new String[] {"oak", "spruce", "birch", "jungle"});
+		DecoManager.Register(barkLogStripped, new String[] {"oak", "spruce", "birch", "jungle"});
 
 		FCBetterThanWolves.fcBloodWood = new DecoBlockLogBloodReplace(DecoManager.ReplaceBlockID(FCBetterThanWolves.fcBloodWood));
 		Item.itemsList[FCBetterThanWolves.fcBloodWood.blockID] = new DecoItemBlockBloodLogReplace(FCBetterThanWolves.fcBloodWood.blockID - 256);
@@ -1505,9 +1503,9 @@ public class DecoDefs {
 		bloodLog.setStepSound(stepSoundBloodLog);
 
 		cherryLog = new DecoBlockLogCherry(id_cherryLog);
-		Item.itemsList[cherryLog.blockID] = new DecoItemBlockLogCherry(cherryLog.blockID - 256, cherryLog, new String[] {"logCherry", "strippedLogCherry", "woodCherry", "strippedWoodCherry"});
+		DecoManager.Register(cherryLog, new String[] {"logCherry", "strippedLogCherry", "woodCherry", "strippedWoodCherry"});
 		acaciaLog = new DecoBlockLogAcacia(id_acaciaLog);
-		Item.itemsList[acaciaLog.blockID] = new DecoItemBlockLogCherry(acaciaLog.blockID - 256, cherryLog, new String[] {"logAcacia", "strippedLogAcacia", "woodAcacia", "strippedWoodAcacia"});
+		DecoManager.Register(acaciaLog, new String[] {"logAcacia", "strippedLogAcacia", "woodAcacia", "strippedWoodAcacia"});
 
 		cherryStump = new DecoBlockLogCherryStump(id_cherryStump);
 		DecoManager.Register(cherryStump);
@@ -1584,7 +1582,6 @@ public class DecoDefs {
 		//Trapdoors
 		//Forces oak trap doors to inherit texture rotations and eventually better placement
 		Block.trapdoor = Block.replaceBlock(Block.trapdoor.blockID, DecoBlockTrapDoor.class);
-		DecoManager.Name(Block.trapdoor, "Oak Trap Door");
 
 		trapdoorSpruce = (BlockTrapDoor) new DecoBlockTrapDoor(id_trapdoorSpruce).setUnlocalizedName("decoBlockTrapdoorSpruce");
 		trapdoorBirch = (BlockTrapDoor) new DecoBlockTrapDoor(id_trapdoorBirch).setUnlocalizedName("decoBlockTrapdoorBirch");
@@ -1827,17 +1824,17 @@ public class DecoDefs {
 
 		//Workbench
 		workbench = new DecoBlockWorkbench(id_workbench);
-		DecoManager.Register(workbench, "Workbench");
+		DecoManager.Register(workbench);
 
 		//Coarse Dirt
 		coarseDirt = new DecoBlockDirtCoarse(id_coarseDirt);
-		DecoManager.Register(coarseDirt, "Coarse Dirt");
+		DecoManager.Register(coarseDirt);
 		coarseDirtSlab = new DecoBlockDirtCoarseSlab(id_coarseDirtSlab);
-		DecoManager.Register(coarseDirtSlab, "Coarse Dirt Slab");
+		DecoManager.Register(coarseDirtSlab);
 
 		//Podzol
 		podzol = new DecoBlockPodzol(id_podzol);
-		DecoManager.Register(podzol, "Podzol");
+		DecoManager.Register(podzol);
 		//podzolSlab = new AddonBlockDirtSlab(id_podzolSlab));
 
 		//Dirt Replace
@@ -2005,9 +2002,8 @@ public class DecoDefs {
 
 		//Chain
 		chain = new DecoBlockChain(id_chain);
-		DecoManager.Register(chain, "Chain");
+		DecoManager.Register(chain);
 		chainItem = new DecoItemChain(id_chainItem);
-		DecoManager.Name(chainItem, "Chain");
 		chainCoil = new FCBlockDirectional(id_chainCoil, Material.iron, new String[] {"decoBlockChainCoil_top"}, new String[] {"decoBlockChainCoil_side"})
 				.setHardness(2.0F)
 				.SetPicksEffectiveOn(true)

@@ -202,6 +202,10 @@ tile.decoBlockLadderCherry.name=Cherry Ladder
 tile.decoBlockLadderAcacia.name=Acacia Ladder
 tile.decoBlockLadderIron.name=Iron Ladder
 
+tile.decoBlockAsh.name=Ash
+tile.decoBlockPumice.name=Pumice
+tile.decoBlockAmethyst.name=Amethyst
+
 # Deco Complex Blocks
 
 tile.decoBlockTerracottaStained.black.name=Black Stained Terracotta
@@ -258,7 +262,7 @@ tile.decoBlockTerracottaStainedMoulding.green.column.name=Green Stained Terracot
 tile.decoBlockTerracottaStainedMoulding.green.pedestal.name=Green Stained Terracotta Pedestal
 tile.decoBlockTerracottaStainedMoulding.green.moulding.name=Green Stained Terracotta Moulding
 tile.decoBlockTerracottaStainedMoulding.green.table.name=Green Stained Terracotta Table
-tile.decoBlockTerracottaStainedStairs.green.name=Black Green Terracotta Stairs
+tile.decoBlockTerracottaStainedStairs.green.name=Green Terracotta Stairs
 
 tile.decoBlockTerracottaStainedSiding.brown.bench.name=Brown Stained Terracotta Bench
 tile.decoBlockTerracottaStainedSiding.brown.fence.name=Brown Stained Terracotta Wall
@@ -461,7 +465,7 @@ tile.decoBlockShinglesColoredMoulding.green.column.name=Green Shingles Column
 tile.decoBlockShinglesColoredMoulding.green.pedestal.name=Green Shingles Pedestal
 tile.decoBlockShinglesColoredMoulding.green.moulding.name=Green Shingles Moulding
 tile.decoBlockShinglesColoredMoulding.green.table.name=Green Shingles Table
-tile.decoBlockShinglesColoredStairs.green.name=Black Green Shingles Stairs
+tile.decoBlockShinglesColoredStairs.green.name=Green Shingles Stairs
 
 tile.decoBlockShinglesColoredSiding.brown.bench.name=Brown Shingles Bench
 tile.decoBlockShinglesColoredSiding.brown.fence.name=Brown Shingles Wall
@@ -1212,7 +1216,7 @@ tile.decoBlockConcreteMoulding.green.column.name=Green Concrete Column
 tile.decoBlockConcreteMoulding.green.pedestal.name=Green Concrete Pedestal
 tile.decoBlockConcreteMoulding.green.moulding.name=Green Concrete Moulding
 tile.decoBlockConcreteMoulding.green.table.name=Green Concrete Table
-tile.decoBlockConcreteStairs.green.name=Black Green Terracotta Stairs
+tile.decoBlockConcreteStairs.green.name=Green Concrete Stairs
 
 tile.decoBlockConcreteSiding.brown.bench.name=Brown Concrete Bench
 tile.decoBlockConcreteSiding.brown.fence.name=Brown Concrete Wall
@@ -1507,7 +1511,7 @@ tile.decoBlockPlanksPaintedMoulding.green.column.name=Green Painted Planks Colum
 tile.decoBlockPlanksPaintedMoulding.green.pedestal.name=Green Painted Planks Pedestal
 tile.decoBlockPlanksPaintedMoulding.green.moulding.name=Green Painted Planks Moulding
 tile.decoBlockPlanksPaintedMoulding.green.table.name=Green Painted Planks Table
-tile.decoBlockPlanksPaintedStairs.green.name=Black Green Terracotta Stairs
+tile.decoBlockPlanksPaintedStairs.green.name=Green Painted Planks Stairs
 
 tile.decoBlockPlanksPaintedSiding.brown.bench.name=Brown Painted Planks Bench
 tile.decoBlockPlanksPaintedSiding.brown.fence.name=Brown Painted Planks Wall
@@ -1826,6 +1830,15 @@ tile.decoBlockBottleRackEmpty.blood.name=Empty Blood Wood Bottle Rack
 tile.decoBlockBottleRackEmpty.cherry.name=Empty Cherry Bottle Rack
 tile.decoBlockBottleRackEmpty.acacia.name=Empty Acacia Bottle Rack
 
+tile.decoBlockGlassFramed.oak.name=Oak Framed Glass
+tile.decoBlockGlassFramed.spruce.name=Spruce Framed Glass
+tile.decoBlockGlassFramed.birch.name=Birch Framed Glass
+tile.decoBlockGlassFramed.jungle.name=Jungle Framed Glass
+tile.decoBlockGlassFramed.blood.name=Blood Wood Framed Glass
+tile.decoBlockGlassFramed.cherry.name=Cherry Framed Glass
+tile.decoBlockGlassFramed.acacia.name=Acacia Framed Glass
+tile.decoBlockGlassFramedIron.name=Iron Framed Glass
+
 # Vanilla/BTW Blocks Renamed
 
 tile.stone.strata1.name=Smooth Stone
@@ -1999,6 +2012,8 @@ item.decoItemShearsDiamond.name=Diamondium Shears
 item.decoItemNameTag.name=Name Tag
 item.decoItemSlateStone.name=Slate Stone
 item.decoItemSlateBrick.name=Slate Brick
+item.decoItemAmethystShard.name=Amethyst Shard
+item.decoItemBookEnchanted.name=Enchanted Book
 
 # Deco Complex Items
 

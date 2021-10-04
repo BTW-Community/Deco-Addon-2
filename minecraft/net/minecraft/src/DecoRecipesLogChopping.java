@@ -1,5 +1,7 @@
 package net.minecraft.src;
 
+import java.util.ArrayList;
+
 public class DecoRecipesLogChopping extends FCRecipesLogChopping {
 	/**
 	 * Used to check if a recipe matches current crafting inventory
@@ -95,8 +97,8 @@ public class DecoRecipesLogChopping extends FCRecipesLogChopping {
 			}
 			else
 			{
-                int var6 = var3.itemID;
-                
+				int var6 = var3.itemID;
+
 				if (var6 == DecoDefs.bloodLog.blockID)
 				{
 					return new ItemStack(Block.planks.blockID, 2, 4);
@@ -158,33 +160,97 @@ public class DecoRecipesLogChopping extends FCRecipesLogChopping {
 	public ItemStack[] getSecondaryOutput(IInventory inventory) {
 		ItemStack result = this.getCraftingResult((InventoryCrafting) inventory);
 		ItemStack[] outputs;
-		
-		boolean isBlood = false;
-		
+
+		ItemStack logStack = null;
+
 		for (int i = 0; i < inventory.getSizeInventory(); i++) {
 			ItemStack craftingStack = inventory.getStackInSlot(i);
-			
-			if (craftingStack != null && craftingStack.itemID == DecoDefs.bloodLog.blockID) {
-				isBlood = true;
-				break;
+
+			if (craftingStack != null && IsLog(craftingStack)) {
+				logStack = craftingStack.copy();
 			}
 		}
-		
-		if (isBlood) { //Blood wood
-			outputs = new ItemStack[3];
 
-			if (result.itemID == Block.planks.blockID) {
-				outputs[0] = new ItemStack(FCBetterThanWolves.fcItemSawDust, 1);
-				outputs[1] = new ItemStack(FCBetterThanWolves.fcItemSoulDust, 1);
-				outputs[2] = new ItemStack(FCBetterThanWolves.fcItemBark, 1, result.getItemDamage());
+		if (logStack.itemID == DecoDefs.bloodLog.blockID) {
+			//If the stack has bark
+			if (logStack.getItemDamage() == 1) {
+				outputs = new ItemStack[3];
+
+				if (result.itemID == Block.planks.blockID) {
+					outputs[0] = new ItemStack(FCBetterThanWolves.fcItemSawDust, 1);
+					outputs[1] = new ItemStack(FCBetterThanWolves.fcItemSoulDust, 1);
+					outputs[2] = new ItemStack(FCBetterThanWolves.fcItemBark, 1, result.getItemDamage());
+				}
+				else {
+					outputs[0] = new ItemStack(FCBetterThanWolves.fcItemSawDust, 3);
+					outputs[1] = new ItemStack(FCBetterThanWolves.fcItemSoulDust, 1);
+					outputs[2] = new ItemStack(FCBetterThanWolves.fcItemBark, 1, result.getItemDamage());
+				}
 			}
 			else {
-				outputs[0] = new ItemStack(FCBetterThanWolves.fcItemSawDust, 3);
-				outputs[1] = new ItemStack(FCBetterThanWolves.fcItemSoulDust, 1);
-				outputs[2] = new ItemStack(FCBetterThanWolves.fcItemBark, 1, result.getItemDamage());
+				outputs = new ItemStack[2];
+
+				if (result.itemID == Block.planks.blockID) {
+					outputs[0] = new ItemStack(FCBetterThanWolves.fcItemSawDust, 1);
+					outputs[1] = new ItemStack(FCBetterThanWolves.fcItemSoulDust, 1);
+				}
+				else {
+					outputs[0] = new ItemStack(FCBetterThanWolves.fcItemSawDust, 3);
+					outputs[1] = new ItemStack(FCBetterThanWolves.fcItemSoulDust, 1);
+				}
 			}
 		}
-		else {
+		else if (logStack.itemID == DecoDefs.cherryLog.blockID) {
+			//If the stack has bark
+			if (logStack.getItemDamage() == 0 || logStack.getItemDamage() == 2) {
+				outputs = new ItemStack[2];
+
+				if (result.itemID == Block.planks.blockID) {
+					outputs[0] = new ItemStack(FCBetterThanWolves.fcItemSawDust, 2);
+					outputs[1] = new ItemStack(FCBetterThanWolves.fcItemBark, 1, 5);
+				}
+				else {
+					outputs[0] = new ItemStack(FCBetterThanWolves.fcItemSawDust, 4);
+					outputs[1] = new ItemStack(FCBetterThanWolves.fcItemBark, 1, 5);
+				}
+			}
+			else {
+				outputs = new ItemStack[1];
+
+				if (result.itemID == Block.planks.blockID) {
+					outputs[0] = new ItemStack(FCBetterThanWolves.fcItemSawDust, 2);
+				}
+				else {
+					outputs[0] = new ItemStack(FCBetterThanWolves.fcItemSawDust, 4);
+				}
+			}
+		}
+		else if (logStack.itemID == DecoDefs.acaciaLog.blockID) {
+			//If the stack has bark
+			if (logStack.getItemDamage() == 0 || logStack.getItemDamage() == 2) {
+				outputs = new ItemStack[2];
+
+				if (result.itemID == Block.planks.blockID) {
+					outputs[0] = new ItemStack(FCBetterThanWolves.fcItemSawDust, 2);
+					outputs[1] = new ItemStack(FCBetterThanWolves.fcItemBark, 1, 6);
+				}
+				else {
+					outputs[0] = new ItemStack(FCBetterThanWolves.fcItemSawDust, 4);
+					outputs[1] = new ItemStack(FCBetterThanWolves.fcItemBark, 1, 6);
+				}
+			}
+			else {
+				outputs = new ItemStack[1];
+
+				if (result.itemID == Block.planks.blockID) {
+					outputs[0] = new ItemStack(FCBetterThanWolves.fcItemSawDust, 2);
+				}
+				else {
+					outputs[0] = new ItemStack(FCBetterThanWolves.fcItemSawDust, 4);
+				}
+			}
+		}
+		else if (logStack.itemID == DecoDefs.barkLog.blockID){
 			outputs = new ItemStack[2];
 
 			if (result.itemID == Block.planks.blockID) {
@@ -194,6 +260,16 @@ public class DecoRecipesLogChopping extends FCRecipesLogChopping {
 			else {
 				outputs[0] = new ItemStack(FCBetterThanWolves.fcItemSawDust, 4);
 				outputs[1] = new ItemStack(FCBetterThanWolves.fcItemBark, 1, result.getItemDamage());
+			}
+		}
+		else { //Stripped vanilla logs
+			outputs = new ItemStack[1];
+
+			if (result.itemID == Block.planks.blockID) {
+				outputs[0] = new ItemStack(FCBetterThanWolves.fcItemSawDust, 2);
+			}
+			else {
+				outputs[0] = new ItemStack(FCBetterThanWolves.fcItemSawDust, 4);
 			}
 		}
 

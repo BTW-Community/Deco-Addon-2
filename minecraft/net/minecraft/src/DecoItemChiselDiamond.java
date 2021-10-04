@@ -56,11 +56,6 @@ public class DecoItemChiselDiamond extends FCItemChisel {
 				PlayStoneSplitSoundOnPlayer(player);
 			}
 		}
-
-		if (!player.worldObj.isRemote && stack.itemID == FCBetterThanWolves.fcBlockStoneBrickLoose.blockID)
-		{
-			FCUtilsItem.EjectStackWithRandomVelocity(player.worldObj, player.posX, player.posY, player.posZ, new ItemStack(FCBetterThanWolves.fcItemPileGravel, 2));
-		}
 	}
 
 	protected boolean CanToolStickInBlock(ItemStack var1, Block var2, World var3, int var4, int var5, int var6)

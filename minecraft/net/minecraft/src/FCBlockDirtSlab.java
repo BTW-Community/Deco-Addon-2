@@ -33,32 +33,31 @@ public class FCBlockDirtSlab extends FCBlockSlabAttached
 
 		setCreativeTab( CreativeTabs.tabBlock );        
 	}
+    
+    @Override
+    public void updateTick( World world, int i, int j, int k, Random rand )
+    {
+    	int iBlockAboveID = world.getBlockId( i, j + 1, k );
+    	Block blockAbove = Block.blocksList[iBlockAboveID];
 
-	@Override
-	public void updateTick( World world, int i, int j, int k, Random rand )
-	{
-		int iSubType = GetSubtype( world, i, j, k );
-
-		if ( iSubType == m_iSubtypeGrass )
-		{
-			int iBlockAboveMaxNaturalLight = world.GetBlockNaturalLightValueMaximum( i, j + 1, k );
-			int iBlockAboveCurrentNaturalLight = iBlockAboveMaxNaturalLight - world.skylightSubtracted;
-
-			boolean bIsUpsideDown = GetIsUpsideDown( world, i, j, k );
-			int iBlockAboveID = world.getBlockId( i, j + 1, k );
-			Block blockAbove = Block.blocksList[iBlockAboveID];            
-
-			if ( ( blockAbove != null && !blockAbove.GetCanGrassGrowUnderBlock( world, i, j + 1, k, !bIsUpsideDown ) ) || 
-					iBlockAboveMaxNaturalLight < FCBlockGrass.m_iGrassSurviveMinimumLightLevel || Block.lightOpacity[world.getBlockId( i, j + 1, k )] > 2 )
-			{
-				SetSubtype( world, i, j, k, m_iSubtypeDirt );
-			}
-			else if ( iBlockAboveCurrentNaturalLight >= FCBlockGrass.m_iGrassSpreadFromLightLevel )
-			{
-				FCBlockGrass.CheckForGrassSpreadFromLocation( world, i, j, k );
-			}
-		}
-	}
+    	int iBlockAboveLight = world.getBlockLightValue(i, j + 1, k);
+    	
+    	int iBlockAboveMaxNaturalLight = world.GetBlockNaturalLightValueMaximum( i, j + 1, k );
+    	int iBlockAboveCurrentNaturalLight = iBlockAboveMaxNaturalLight - world.skylightSubtracted;
+    	
+        if ((iBlockAboveMaxNaturalLight < FCBlockGrass.m_iGrassSurviveMinimumLightLevel && iBlockAboveLight < FCBlockGrass.m_iGrassSurviveMinimumLightLevel) || 
+        		Block.lightOpacity[iBlockAboveID] > 2 ||
+        		(blockAbove != null && !blockAbove.GetCanGrassGrowUnderBlock( world, i, j + 1, k, false)))
+        {
+        	// convert back to dirt in low light
+        	
+        	SetSubtype( world, i, j, k, m_iSubtypeDirt );
+        }
+        else if (iBlockAboveCurrentNaturalLight >= FCBlockGrass.m_iGrassSpreadFromLightLevel || iBlockAboveLight >= FCBlockGrass.m_iGrassSpreadFromLightLevel)
+        {
+        	FCBlockGrass.CheckForGrassSpreadFromLocation( world, i, j, k );
+        }
+    }
 
 	@Override
 	public int damageDropped( int iMetadata )

@@ -1,3 +1,24 @@
+Version 3.0.0
+[list]
+[*]Updated to BTW CE 1.1.X.
+[*]Removed several base class modifications.
+[*]Added a config option to re-enable HC bouncing.
+[*]Added framed glass for each wood type, crafted with 5 moulding of the particular wood type in an X, with 4 glass shards in the remaining slots.
+[*]Added iron framed glass, produced the same as above but with iron nuggets instead of moulding.
+[*]Added ash blocks, which can be crafted by packing 8 potash together.
+[*]Added pumice, which can be crafted by packing 2 ash blocks together.
+[*]Added amethyst, which can be crafted with 4 nether quartz in a plus with purple dye in the middle.
+[*]Added amethyst shards, which drop from amethyst when mined in a similar manner to glowstone. 4 shards can be crafted into an amethyst block, and an amethyst block can be crafted back into 4 shards. Additionally, amethyst shards can be crafted with 1 quartz and 1 purple dye. Amethyst shards may also be placed in the world, though they must be attached to a block to do so.
+[*]Added the ability to salt fields using nitre. This stops weeds from growing and freezes crop growth at its current stage. This, combined with the drop change below, allows for large aesthetic fields once again without affecting farming balance for functional purposes.
+[*]Changed crops (except hemp) to be able to grow without hydration. However, unhydrated crops will drop no items.
+[*]Changed acacia to have the same burn time as birch (10 items), and cherry to have the same burn time as spruce (6 items).
+[*]Fixed an issue where empty bookshelves were able to be decrafted into books rather than full ones.
+[*]Fixed an issue where several green stairs had incorrect names.
+[*]Fixed an issue where enchanted books were missing their name.
+[*]Fixed an issue where cherry and acacia logs were not able to be used in ovens.
+[*]Fixed an issue where grass could still not grow without sunlight.
+[/list]
+
 Version 2.15.0
 Several textures have been used or modified from Quark in this version. Quark is provided under the Creative Commons 3.0 Attribution Non-Commercial Share-Alike license which is compatible with the license Deco uses, which allows me to use textures from there.
 [list]
@@ -155,24 +176,3 @@ Thanks to Sockthing for the textures for acacia saplings, blood wood doors and t
 [*]Fixed an issue where attempting to place a sign would always play a sound, even if  placement was not successful.
 [*]Fixed a vanilla issue where right clicking an iron door still made the animation like something had happened.
 [*]Fixed an issue (hopefully) where servers would incorrectly display an error message that the addon was not installed properly if the client was on a high latency connection. Let me know if this still happens as this simply involved increasing the amount of time the server would wait for the client to acknowledge. This functionality was also moved to the Extended Addon API to allow other addons using the API to access this code.
-
-2.13b
-[*]Fixed an issue where dirt slabs displayed the wrong top texture.
-
-2.13.2
-This version may require a clean install for the texture fix to properly show up due to how windows handles file capitalization (I don't know how other OS's handle it)
-[*]Changed versioning scheme
-[*]Fixed an issue where flower pots overwrote spruce stairs in inventory. They will properly revert back to spruce stairs when installing this release.
-[*]Fixed an issue where acacia logs dropped cherry bark when split in a crafting grid.
-[*]Fixed an issue where a typo in the translation file caused acacia bark to display without a name.
-[*]Fixed an issue where cherry moulding rendered in inventory with acacia texture.
-[*]Fixed an issue where sawing acacia logs turned into cherry planks.
-[*]Fixed an issue where shears were not efficient against acacia or autumn leaves.
-[*]Fixed an issue where cherry and acacia logs could not be used as fuel in an oven.
-[*]Fixed an issue where it took much less time to make a crafting table out of a cherry or acacia stump than other wood types.
-[*]Fixed an issue with the capitalization of textures for pumpkins and prismarine causing some textures to not load correctly.
-
-2.13.3
-[*]Fixed an issue where shears were still not efficient against acacia and autumn leaves in the server version.
-[*]Fixed an issue where making work stumps out of acacia or cherry did not damage the chisel enough.
-[*]Fixed an issue where the typo for acacia bark from the last release was persisting.

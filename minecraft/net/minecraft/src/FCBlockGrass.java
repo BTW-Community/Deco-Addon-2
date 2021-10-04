@@ -39,8 +39,9 @@ public class FCBlockGrass extends BlockGrass
     	int iBlockAboveMaxNaturalLight = world.GetBlockNaturalLightValueMaximum( i, j + 1, k );
     	int iBlockAboveCurrentNaturalLight = iBlockAboveMaxNaturalLight - world.skylightSubtracted;
     	
-        if (iBlockAboveMaxNaturalLight < m_iGrassSurviveMinimumLightLevel || iBlockAboveLight < m_iGrassSurviveMinimumLightLevel || Block.lightOpacity[iBlockAboveID] > 2 ||
-        	(blockAbove != null && !blockAbove.GetCanGrassGrowUnderBlock( world, i, j + 1, k, false)))
+        if ((iBlockAboveMaxNaturalLight < m_iGrassSurviveMinimumLightLevel && iBlockAboveLight < m_iGrassSurviveMinimumLightLevel) || 
+        		Block.lightOpacity[iBlockAboveID] > 2 ||
+        		(blockAbove != null && !blockAbove.GetCanGrassGrowUnderBlock( world, i, j + 1, k, false)))
         {
         	// convert back to dirt in low light
         	
