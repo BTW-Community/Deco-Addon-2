@@ -2123,17 +2123,21 @@ public class DecoDefs {
 	private void addEntityDefs() {
 		//Custom entities
 		EntityList.AddMapping(DecoEntityFallingConcrete.class, "FallingConcrete", id_entityFallingConcrete);
+		
+		//Mobs
+		EntityList.replaceExistingMappingSafe(DecoEntitySquid.class, "Squid");
+		EntityList.replaceExistingMappingSafe(DecoEntityOcelot.class, "Ozelot");
 
 		//Item frame
 		Item.itemFrame = Item.replaceItem(Item.itemFrame.itemID, DecoItemFrame.class).setUnlocalizedName("frame");
-		EntityList.ReplaceExistingMapping(DecoEntityItemFrame.class, "ItemFrame");
+		EntityList.replaceExistingMappingSafe(DecoEntityItemFrame.class, "ItemFrame");
 
 		//Painting
 		Item.painting = Item.replaceItem(Item.painting.itemID, DecoItemPainting.class).setUnlocalizedName("painting");
-		EntityList.ReplaceExistingMapping(DecoEntityPainting.class, "Painting");
+		EntityList.replaceExistingMappingSafe(DecoEntityPainting.class, "Painting");
 
 		//Canvas
 		FCBetterThanWolves.fcItemCanvas = new DecoItemCanvas(FCBetterThanWolves.fcItemCanvas.itemID - 256);
-		EntityList.ReplaceExistingMapping(DecoEntityCanvas.class, "fcCanvas");
+		EntityList.replaceExistingMappingSafe(DecoEntityCanvas.class, "fcCanvas");
 	}
 }

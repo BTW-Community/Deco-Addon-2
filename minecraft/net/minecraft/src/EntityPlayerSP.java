@@ -428,12 +428,12 @@ public class EntityPlayerSP extends EntityPlayer
      */
     public void onCriticalHit(Entity par1Entity)
     {
-        this.mc.effectRenderer.addEffect(new EntityCrit2FX(this.mc.theWorld, par1Entity));
+        this.mc.effectRenderer.addEffect((EntityFX) EntityList.createEntityOfType(EntityCrit2FX.class, this.mc.theWorld, par1Entity));
     }
 
     public void onEnchantmentCritical(Entity par1Entity)
     {
-        EntityCrit2FX var2 = new EntityCrit2FX(this.mc.theWorld, par1Entity, "magicCrit");
+        EntityCrit2FX var2 = (EntityCrit2FX) EntityList.createEntityOfType(EntityCrit2FX.class, this.mc.theWorld, par1Entity, "magicCrit");
         this.mc.effectRenderer.addEffect(var2);
     }
 
@@ -442,7 +442,7 @@ public class EntityPlayerSP extends EntityPlayer
      */
     public void onItemPickup(Entity par1Entity, int par2)
     {
-        this.mc.effectRenderer.addEffect(new EntityPickupFX(this.mc.theWorld, par1Entity, this, -0.5F));
+        this.mc.effectRenderer.addEffect((EntityFX) EntityList.createEntityOfType(EntityPickupFX.class, this.mc.theWorld, par1Entity, this, -0.5F));
     }
 
     /**

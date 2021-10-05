@@ -39,7 +39,7 @@ public class RenderItemFrame extends Render
         if (var4 != null)
         {
             var2 = true;
-            var5 = new EntityItem(par1EntityItemFrame.worldObj, 0.0D, 0.0D, 0.0D, var4);
+            var5 = (EntityItem) EntityList.createEntityOfType(EntityItem.class, par1EntityItemFrame.worldObj, 0.0D, 0.0D, 0.0D, var4);
             var5.getEntityItem().stackSize = 1;
             var5.hoverStart = 0.0F;
             var3 = var5.getEntityItem().getItem() == Item.map;

@@ -172,58 +172,6 @@ public class DecoManager extends FCAddOn
 		}
 	}
 
-	//Used to modify existing client side packet250 behavior
-	public boolean interceptCustomClientPacket(Minecraft mc, Packet250CustomPayload packet) {
-		try
-		{
-			WorldClient world = mc.theWorld;
-			DataInputStream dataStream = new DataInputStream(new ByteArrayInputStream(packet.data));
-			int packetType;
-			int var9;
-
-			if (packet.channel.equals(FCBetterThanWolves.fcCustomPacketChannelSpawnCustomEntity))
-			{
-				Object var5 = null;
-				packetType = dataStream.readInt();
-				int var7 = dataStream.readInt();
-
-				if (packetType == 0)
-				{
-					int var8 = dataStream.readInt();
-					var9 = dataStream.readInt();
-					int var10 = dataStream.readInt();
-					int var11 = dataStream.readInt();
-					int var12 = dataStream.readInt();
-					var5 = new DecoEntityCanvas(world, var8, var9, var10, var11, var12);
-				}
-
-				if (var5 != null)
-				{
-					world.addEntityToWorld(var7, (Entity)var5);
-					return true;
-				}
-			}
-			else if (packet.channel.equals(decoPacketChannelRender)) {
-				packetType = dataStream.readInt();
-
-				if (packetType == 0)
-				{
-					int attackYawInt = dataStream.readByte();
-					int attackYawFrac = dataStream.readByte();
-					
-					float attackYaw = attackYawInt + .01F * attackYawFrac;
-					mc.renderViewEntity.attackedAtYaw = attackYaw;
-				}
-			}
-		}
-		catch (IOException var23)
-		{
-			var23.printStackTrace();
-		}
-
-		return false;
-	}
-
 	public boolean ClientPlayCustomAuxFX(Minecraft mc, World world, EntityPlayer player, int id, int x, int y, int z, int data)
 	{
 		Random rand = world.rand;

@@ -34,7 +34,7 @@ public class DecoItemCanvas extends FCItemCanvas {
                     var11 = 3;
                 }
 
-                FCEntityCanvas var12 = new DecoEntityCanvas(var3, var4, var5, var6, var11);
+                FCEntityCanvas var12 = (FCEntityCanvas) EntityList.createEntityOfType(DecoEntityCanvas.class, var3, var4, var5, var6, var11);
 
                 if (var12.onValidSurface())
                 {
