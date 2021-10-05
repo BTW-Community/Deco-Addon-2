@@ -1,6 +1,6 @@
 package net.minecraft.src;
 
-public class DecoBlockHedge extends DecoBlockLeaves {
+public class DecoBlockHedge extends FCBlockLeaves {
 	protected DecoBlockHedge(int id) {
 		super(id);
 		this.blockMaterial = DecoDefs.materialHedge;

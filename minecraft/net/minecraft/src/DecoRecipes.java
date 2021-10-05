@@ -1783,8 +1783,8 @@ public class DecoRecipes {
 	}
 
 	private void addToolRecipes() {
-		FCRecipes.AddShapelessRecipe(new ItemStack(DecoDefs.nameTag), new Object[] {new ItemStack(Item.leather), new ItemStack(FCBetterThanWolves.fcItemNuggetIron)});
-		FCRecipes.AddShapelessRecipe(new ItemStack(DecoDefs.nameTag), new Object[] {new ItemStack(FCBetterThanWolves.fcItemLeatherCut), new ItemStack(FCBetterThanWolves.fcItemNuggetIron)});
+		FCRecipes.AddShapelessRecipe(new ItemStack(FCBetterThanWolves.fcItemNameTag), new Object[] {new ItemStack(Item.leather), new ItemStack(FCBetterThanWolves.fcItemNuggetIron)});
+		FCRecipes.AddShapelessRecipe(new ItemStack(FCBetterThanWolves.fcItemNameTag), new Object[] {new ItemStack(FCBetterThanWolves.fcItemLeatherCut), new ItemStack(FCBetterThanWolves.fcItemNuggetIron)});
 	}
 
 	private void addCustomRecipeClasses() {

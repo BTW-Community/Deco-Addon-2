@@ -599,8 +599,6 @@ public class DecoDefs {
 
 	//Tools
 	public static DecoItemChiselDiamond chiselDiamond;
-	public static DecoItemShearsDiamond shearsDiamond;
-	public static DecoItemNameTag nameTag;
 
 	//Extra SubBlocks
 	public static Block stoneBrickEdging;
@@ -1933,13 +1931,6 @@ public class DecoDefs {
 		autumnSapling = new DecoBlockSaplingAutumn(id_autumnSapling);
 		Item.itemsList[autumnSapling.blockID] = new DecoItemBlockMulti(autumnSapling, DecoBlockLeavesAutumn.LEAF_TYPES);
 
-		//Leaves, vines, and webs
-		Block.leaves = (BlockLeaves) Block.replaceBlock(Block.leaves.blockID, DecoBlockLeaves.class);
-		Block.vine = Block.replaceBlock(Block.vine.blockID, DecoBlockVine.class);
-		Item.itemsList[Block.vine.blockID] = new ItemColored(Block.vine.blockID - 256, false);
-		FCBetterThanWolves.fcBlockBloodLeaves = new DecoBlockLeavesBlood(DecoManager.ReplaceBlockID(FCBetterThanWolves.fcBlockBloodLeaves));
-		FCBetterThanWolves.fcBlockWeb = new DecoBlockWeb(DecoManager.ReplaceBlockID(FCBetterThanWolves.fcBlockWeb));
-
 		//Hedge
 		hedge = (BlockLeaves) new DecoBlockHedge(id_hedge).setCreativeTab(CreativeTabs.tabDecorations).setUnlocalizedName("decoBlockHedge");
 		DecoManager.Register(hedge, new String[] {"oak", "spruce", "birch", "jungle"});
@@ -2016,15 +2007,8 @@ public class DecoDefs {
 		FCBetterThanWolves.fcItemCocoaBeans = new DecoItemCocoaBeans(FCBetterThanWolves.fcItemCocoaBeans.itemID - 256);
 		Block.cocoaPlant = Block.replaceBlock(Block.cocoaPlant.blockID, DecoBlockCocoa.class);
 
-		//Hemp
-		FCBetterThanWolves.fcBlockHempCrop = new DecoBlockHempCrop(DecoManager.ReplaceBlockID(FCBetterThanWolves.fcBlockHempCrop));
-
 		//Lily pads
 		Item.itemsList[Block.waterlily.blockID] = new DecoItemBlockLilyPad(Block.waterlily.blockID - 256);
-
-		//Tall grass
-		Block.tallGrass = (BlockTallGrass) Block.replaceBlock(Block.tallGrass.blockID, DecoBlockTallGrass.class);
-		Item.itemsList[Block.tallGrass.blockID] = (new ItemColored(Block.tallGrass.blockID - 256, true)).setBlockNames(new String[] {"shrub", "grass", "fern"});
 		
 		//Spider eyes
 		Item.spiderEye = Item.replaceItem(Item.spiderEye.itemID, DecoItemSpiderEye.class);
@@ -2082,23 +2066,9 @@ public class DecoDefs {
 	private void addToolDefs() {
 		chiselDiamond = new DecoItemChiselDiamond(id_chiselDiamond);
 		FCBetterThanWolves.fcItemChiselIron = new DecoItemChiselIron(FCBetterThanWolves.fcItemChiselIron.itemID - 256);
-
-		//Allows custom saw recipes
-		FCBetterThanWolves.fcSaw = new DecoBlockSaw((FCBlockSaw) FCBetterThanWolves.fcSaw, DecoManager.ReplaceBlockID(FCBetterThanWolves.fcSaw));
-		
 		FCBetterThanWolves.fcBlockDispenser = new DecoBlockBlockDispenser(DecoManager.ReplaceBlockID(FCBetterThanWolves.fcBlockDispenser));
-
-		//Hopper
-		//FCBetterThanWolves.fcHopper = new AddonBlockHopper(AddonManager.ReplaceBlockID(FCBetterThanWolves.fcHopper));
-		//TileEntity.ReplaceVanillaMapping(FCTileEntityHopper.class, AddonTileEntityHopper.class, "Hopper");
-
-		//Shears - for added efficient blocks
-		Item.shears = (ItemShears) Item.replaceItem(Item.shears.itemID, DecoItemShears.class).setUnlocalizedName("shears");
-
-		shearsDiamond = (DecoItemShearsDiamond) new DecoItemShearsDiamond(id_shearsDiamond).setUnlocalizedName("decoItemShearsDiamond");
-
-		//Name Tags
-		nameTag = new DecoItemNameTag(id_nameTag);
+		
+		FCBetterThanWolves.fcItemNameTag.setCreativeTab(CreativeTabs.tabTools);
 	}
 
 	private void addSubBlockReplaceDefs() {
