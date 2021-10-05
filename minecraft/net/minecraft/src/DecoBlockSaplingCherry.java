@@ -82,11 +82,6 @@ public class DecoBlockSaplingCherry extends BlockFlower
         var9 = 0;
         int var10 = 0;
         boolean var11 = false;
-
-        if (var6 != 3)
-        {
-            var1.setBlock(var2, var3, var4, 0);
-        }
         
         var7 = DecoUtilsTrees.generateCherry(var1, var5, var2, var3, var4);
     }

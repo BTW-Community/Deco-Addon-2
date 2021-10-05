@@ -73,11 +73,6 @@ public class DecoBlockSaplingAutumn extends BlockFlower
         boolean var11 = false;
         
         int meta = var1.getBlockMetadata(var2, var3, var4);
-
-        if (var6 != 3)
-        {
-            var1.setBlock(var2, var3, var4, 0);
-        }
         
         var7 = DecoUtilsTrees.generateAutumn(var1, var5, var2, var3, var4, meta & 3);
     }

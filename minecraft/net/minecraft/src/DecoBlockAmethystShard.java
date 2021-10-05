@@ -102,11 +102,21 @@ public class DecoBlockAmethystShard extends Block {
     public boolean isOpaqueCube() {
         return false;
     }
-    
+
+	@Override
+    public boolean renderAsNormalBlock() {
+        return false;
+    }
+	
     @Override
     public int idDropped(int par1, Random par2Random, int par3) {
         return DecoDefs.amethystShard.itemID;
     }
+
+    @Override
+	public boolean GetPreventsFluidFlow(World world, int x, int y, int z, Block fluidBlock) {
+    	return false;
+	}
     
     @Override
     public int onBlockPlaced(World world, int x, int y, int z, int side, float hitX, float hitY, float hitZ, int meta) {

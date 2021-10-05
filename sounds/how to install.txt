@@ -1,0 +1,5 @@
+- Create an instance of 1.16 through the official launcher
+- Launch the instance to let it download all assets, then close it right after - you only need the downloaded assets
+- Place the appropriate script file in your .minecraft folder. On mac and linux, this is the sound.sh file (it also works on windows if you have a bash shell installed), otherwise on windows use the sound.bat file
+- Run the script and it will automatically convert the 1.16 sound files into the proper format for deco to recognize them
+- If you are using a 3rd party launcher, copy the files from resources/sound3/deco into wherever your launcher stores its resource files under sound3/deco

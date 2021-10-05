@@ -88,6 +88,9 @@ public class DecoManager extends FCAddOn
 		decoDefs = DecoDefs.instance;
 		decoRecipes = DecoRecipes.instance;
 
+		//Client only
+		addAllSoundsToPool();
+		
 		decoDefs.addDefinitions();
 		decoRecipes.addAllDecoRecipes();
 
@@ -169,6 +172,228 @@ public class DecoManager extends FCAddOn
 				newSoundsInstalled = false;
 				FCAddOnHandler.LogMessage("[Warning] Sound loading failed for: " + filename + ", falling back to vanilla sounds");
 			}
+		}
+	}
+
+	private void addAllSoundsToPool() {
+		DecoManager.installResource("dig/lantern1");
+		DecoManager.installResource("dig/lantern2");
+		DecoManager.installResource("dig/lantern3");
+		DecoManager.installResource("dig/lantern4");
+		DecoManager.installResource("dig/lantern5");
+		DecoManager.installResource("dig/lantern6");
+		DecoManager.installResource("step/lantern1");
+		DecoManager.installResource("step/lantern2");
+		DecoManager.installResource("step/lantern3");
+		DecoManager.installResource("step/lantern4");
+		DecoManager.installResource("step/lantern5");
+		DecoManager.installResource("step/lantern6");
+
+		DecoManager.installResource("dig/chain1");
+		DecoManager.installResource("dig/chain2");
+		DecoManager.installResource("dig/chain3");
+		DecoManager.installResource("dig/chain4");
+		DecoManager.installResource("step/chain1");
+		DecoManager.installResource("step/chain2");
+		DecoManager.installResource("step/chain3");
+		DecoManager.installResource("step/chain4");
+
+		DecoManager.installResource("dig/netherrack1");
+		DecoManager.installResource("dig/netherrack2");
+		DecoManager.installResource("dig/netherrack3");
+		DecoManager.installResource("dig/netherrack4");
+		DecoManager.installResource("dig/netherrack5");
+		DecoManager.installResource("dig/netherrack6");
+		DecoManager.installResource("step/netherrack1");
+		DecoManager.installResource("step/netherrack2");
+		DecoManager.installResource("step/netherrack3");
+		DecoManager.installResource("step/netherrack4");
+		DecoManager.installResource("step/netherrack5");
+		DecoManager.installResource("step/netherrack6");
+
+		DecoManager.installResource("dig/netherbrick1");
+		DecoManager.installResource("dig/netherbrick2");
+		DecoManager.installResource("dig/netherbrick3");
+		DecoManager.installResource("dig/netherbrick4");
+		DecoManager.installResource("dig/netherbrick5");
+		DecoManager.installResource("dig/netherbrick6");
+		DecoManager.installResource("step/netherbrick1");
+		DecoManager.installResource("step/netherbrick2");
+		DecoManager.installResource("step/netherbrick3");
+		DecoManager.installResource("step/netherbrick4");
+		DecoManager.installResource("step/netherbrick5");
+		DecoManager.installResource("step/netherbrick6");
+
+		DecoManager.installResource("dig/bone1");
+		DecoManager.installResource("dig/bone2");
+		DecoManager.installResource("dig/bone3");
+		DecoManager.installResource("dig/bone4");
+		DecoManager.installResource("dig/bone5");
+		DecoManager.installResource("step/bone1");
+		DecoManager.installResource("step/bone2");
+		DecoManager.installResource("step/bone3");
+		DecoManager.installResource("step/bone4");
+		DecoManager.installResource("step/bone5");
+
+		DecoManager.installResource("dig/soulsand1");
+		DecoManager.installResource("dig/soulsand2");
+		DecoManager.installResource("dig/soulsand3");
+		DecoManager.installResource("dig/soulsand4");
+		DecoManager.installResource("dig/soulsand5");
+		DecoManager.installResource("dig/soulsand6");
+		DecoManager.installResource("dig/soulsand7");
+		DecoManager.installResource("dig/soulsand8");
+		DecoManager.installResource("dig/soulsand9");
+		DecoManager.installResource("step/soulsand1");
+		DecoManager.installResource("step/soulsand2");
+		DecoManager.installResource("step/soulsand3");
+		DecoManager.installResource("step/soulsand4");
+		DecoManager.installResource("step/soulsand5");
+
+		DecoManager.installResource("dig/soulsteel1");
+		DecoManager.installResource("dig/soulsteel2");
+		DecoManager.installResource("dig/soulsteel3");
+		DecoManager.installResource("dig/soulsteel4");
+		DecoManager.installResource("step/soulsteel1");
+		DecoManager.installResource("step/soulsteel2");
+		DecoManager.installResource("step/soulsteel3");
+		DecoManager.installResource("step/soulsteel4");
+		DecoManager.installResource("step/soulsteel5");
+		DecoManager.installResource("step/soulsteel6");
+
+		DecoManager.installResource("step/vine1");
+		DecoManager.installResource("step/vine2");
+		DecoManager.installResource("step/vine3");
+		DecoManager.installResource("step/vine4");
+		DecoManager.installResource("step/vine5");
+
+		DecoManager.installResource("dig/bloodLog1");
+		DecoManager.installResource("dig/bloodLog2");
+		DecoManager.installResource("dig/bloodLog3");
+		DecoManager.installResource("dig/bloodLog4");
+		DecoManager.installResource("dig/bloodLog5");
+		DecoManager.installResource("dig/bloodLog6");
+		DecoManager.installResource("step/bloodLog1");
+		DecoManager.installResource("step/bloodLog2");
+		DecoManager.installResource("step/bloodLog3");
+		DecoManager.installResource("step/bloodLog4");
+		DecoManager.installResource("step/bloodLog5");
+		DecoManager.installResource("step/bloodLog6");
+
+		DecoManager.installResource("dig/groth1");
+		DecoManager.installResource("dig/groth2");
+		DecoManager.installResource("dig/groth3");
+		DecoManager.installResource("dig/groth4");
+		DecoManager.installResource("dig/groth5");
+		DecoManager.installResource("dig/groth6");
+		DecoManager.installResource("step/groth1");
+		DecoManager.installResource("step/groth2");
+		DecoManager.installResource("step/groth3");
+		DecoManager.installResource("step/groth4");
+		DecoManager.installResource("step/groth5");
+
+		DecoManager.installResource("random/doorClose1");
+		DecoManager.installResource("random/doorClose2");
+		DecoManager.installResource("random/doorClose3");
+		DecoManager.installResource("random/doorClose4");
+		DecoManager.installResource("random/doorClose5");
+		DecoManager.installResource("random/doorClose6");
+		DecoManager.installResource("random/doorOpen1");
+		DecoManager.installResource("random/doorOpen2");
+		DecoManager.installResource("random/doorOpen3");
+		DecoManager.installResource("random/doorOpen4");
+
+		DecoManager.installResource("random/doorIronClose1");
+		DecoManager.installResource("random/doorIronClose2");
+		DecoManager.installResource("random/doorIronClose3");
+		DecoManager.installResource("random/doorIronClose4");
+		DecoManager.installResource("random/doorIronOpen1");
+		DecoManager.installResource("random/doorIronOpen2");
+		DecoManager.installResource("random/doorIronOpen3");
+		DecoManager.installResource("random/doorIronOpen4");
+
+		DecoManager.installResource("random/trapdoorClose1");
+		DecoManager.installResource("random/trapdoorClose2");
+		DecoManager.installResource("random/trapdoorClose3");
+		DecoManager.installResource("random/trapdoorOpen1");
+		DecoManager.installResource("random/trapdoorOpen2");
+		DecoManager.installResource("random/trapdoorOpen3");
+		DecoManager.installResource("random/trapdoorOpen4");
+
+		DecoManager.installResource("random/trapdoorIronClose1");
+		DecoManager.installResource("random/trapdoorIronClose2");
+		DecoManager.installResource("random/trapdoorIronClose3");
+		DecoManager.installResource("random/trapdoorIronClose4");
+		DecoManager.installResource("random/trapdoorIronOpen1");
+		DecoManager.installResource("random/trapdoorIronOpen2");
+		DecoManager.installResource("random/trapdoorIronOpen3");
+		DecoManager.installResource("random/trapdoorIronOpen4");
+
+		DecoManager.installResource("random/gateClose1");
+		DecoManager.installResource("random/gateClose2");
+		DecoManager.installResource("random/gateOpen1");
+		DecoManager.installResource("random/gateOpen2");
+
+		DecoManager.installResource("random/chestClose1");
+		DecoManager.installResource("random/chestClose2");
+		DecoManager.installResource("random/chestClose3");
+		DecoManager.installResource("random/chestOpen1");
+
+		DecoManager.installResource("random/strip1");
+		DecoManager.installResource("random/strip2");
+		DecoManager.installResource("random/strip3");
+		DecoManager.installResource("random/strip4");
+
+		DecoManager.installResource("random/pumpkinCarve1");
+		DecoManager.installResource("random/pumpkinCarve2");
+
+		DecoManager.installResource("random/till1");
+		DecoManager.installResource("random/till2");
+		DecoManager.installResource("random/till3");
+		DecoManager.installResource("random/till4");
+
+		DecoManager.installResource("mob/squid/say1");
+		DecoManager.installResource("mob/squid/say2");
+		DecoManager.installResource("mob/squid/say3");
+		DecoManager.installResource("mob/squid/say4");
+		DecoManager.installResource("mob/squid/say5");
+		DecoManager.installResource("mob/squid/death1");
+		DecoManager.installResource("mob/squid/death2");
+		DecoManager.installResource("mob/squid/death3");
+		DecoManager.installResource("mob/squid/hurt1");
+		DecoManager.installResource("mob/squid/hurt2");
+		DecoManager.installResource("mob/squid/hurt3");
+
+		DecoManager.installResource("misc/itemFrame/addItem1");
+		DecoManager.installResource("misc/itemFrame/addItem2");
+		DecoManager.installResource("misc/itemFrame/addItem3");
+		DecoManager.installResource("misc/itemFrame/addItem4");
+		DecoManager.installResource("misc/itemFrame/break1");
+		DecoManager.installResource("misc/itemFrame/break2");
+		DecoManager.installResource("misc/itemFrame/break3");
+		DecoManager.installResource("misc/itemFrame/place1");
+		DecoManager.installResource("misc/itemFrame/place2");
+		DecoManager.installResource("misc/itemFrame/place3");
+		DecoManager.installResource("misc/itemFrame/place4");
+		DecoManager.installResource("misc/itemFrame/removeItem1");
+		DecoManager.installResource("misc/itemFrame/removeItem2");
+		DecoManager.installResource("misc/itemFrame/removeItem3");
+		DecoManager.installResource("misc/itemFrame/removeItem4");
+		DecoManager.installResource("misc/itemFrame/rotateItem1");
+		DecoManager.installResource("misc/itemFrame/rotateItem2");
+		DecoManager.installResource("misc/itemFrame/rotateItem3");
+		DecoManager.installResource("misc/itemFrame/rotateItem4");
+
+		DecoManager.installResource("misc/painting/break1");
+		DecoManager.installResource("misc/painting/break2");
+		DecoManager.installResource("misc/painting/break3");
+		DecoManager.installResource("misc/painting/place1");
+		DecoManager.installResource("misc/painting/place2");
+		DecoManager.installResource("misc/painting/place3");
+		DecoManager.installResource("misc/painting/place4");
+
+		if (DecoManager.getNewSoundsInstalled()) {
+			FCAddOnHandler.LogMessage("Deco Addon Sounds Successfully Loaded");
 		}
 	}
 

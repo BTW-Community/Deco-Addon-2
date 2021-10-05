@@ -1,7 +1,12 @@
+Version 3.1.0
+[list]
+[*]Added the ability to salt fields using nitre. This stops weeds from growing and freezes crop growth at its current stage. This, combined with the drop change below, allows for large aesthetic fields once again without affecting farming balance for functional purposes.
+[*]Changed crops (except hemp) to be able to grow without hydration. However, unhydrated crops will drop no items.
+[/list]
+
 Version 3.0.0
 [list]
-[*]Updated to BTW CE 1.1.X.
-[*]Removed several base class modifications.
+[*]Updated to BTW CE 1.1.X, and removed several base class modifications.
 [*]Added a config option to re-enable HC bouncing.
 [*]Added framed glass for each wood type, crafted with 5 moulding of the particular wood type in an X, with 4 glass shards in the remaining slots.
 [*]Added iron framed glass, produced the same as above but with iron nuggets instead of moulding.
@@ -9,14 +14,13 @@ Version 3.0.0
 [*]Added pumice, which can be crafted by packing 2 ash blocks together.
 [*]Added amethyst, which can be crafted with 4 nether quartz in a plus with purple dye in the middle.
 [*]Added amethyst shards, which drop from amethyst when mined in a similar manner to glowstone. 4 shards can be crafted into an amethyst block, and an amethyst block can be crafted back into 4 shards. Additionally, amethyst shards can be crafted with 1 quartz and 1 purple dye. Amethyst shards may also be placed in the world, though they must be attached to a block to do so.
-[*]Added the ability to salt fields using nitre. This stops weeds from growing and freezes crop growth at its current stage. This, combined with the drop change below, allows for large aesthetic fields once again without affecting farming balance for functional purposes.
-[*]Changed crops (except hemp) to be able to grow without hydration. However, unhydrated crops will drop no items.
 [*]Changed acacia to have the same burn time as birch (10 items), and cherry to have the same burn time as spruce (6 items).
 [*]Fixed an issue where empty bookshelves were able to be decrafted into books rather than full ones.
 [*]Fixed an issue where several green stairs had incorrect names.
 [*]Fixed an issue where enchanted books were missing their name.
 [*]Fixed an issue where cherry and acacia logs were not able to be used in ovens.
 [*]Fixed an issue where grass could still not grow without sunlight.
+[*]Fixed an issue where addon saplings would delete themselves when trying to grow without space.
 [/list]
 
 Version 2.15.0
