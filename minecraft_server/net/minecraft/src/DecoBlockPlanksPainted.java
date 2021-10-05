@@ -17,25 +17,6 @@ public class DecoBlockPlanksPainted extends FCBlockPlanks {
 		return metadata;
 	}
 
-	@Override
-    public int GetItemIDDroppedOnSaw(World var1, int var2, int var3, int var4)
-    {
-		int metadata = var1.getBlockMetadata(var2, var3, var4);
-        return DecoDefs.paintedPlanksSidingAndCorner[metadata].blockID;
-    }
-
-	@Override
-    public int GetItemCountDroppedOnSaw(World var1, int var2, int var3, int var4)
-    {
-        return 2;
-    }
-
-	@Override
-    public int GetItemDamageDroppedOnSaw(World var1, int var2, int var3, int var4)
-    {
-        return 0;
-    }
-
     public int GetHarvestToolLevel(IBlockAccess var1, int var2, int var3, int var4)
     {
         return 2;

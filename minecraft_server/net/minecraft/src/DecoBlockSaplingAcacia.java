@@ -71,11 +71,6 @@ public class DecoBlockSaplingAcacia extends BlockFlower
         var9 = 0;
         int var10 = 0;
         boolean var11 = false;
-
-        if (var6 != 3)
-        {
-            var1.setBlock(var2, var3, var4, 0);
-        }
         
         var7 = DecoUtilsTrees.generateAcacia(var1, var5, var2, var3, var4);
     }
@@ -112,16 +107,5 @@ public class DecoBlockSaplingAcacia extends BlockFlower
     public int damageDropped(int par1)
     {
         return par1 & 3;
-    }
-
-    /**
-     * returns a list of blocks with the same ID, but different meta (eg: wood returns 4 blocks)
-     */
-    public void getSubBlocks(int par1, CreativeTabs par2CreativeTabs, List par3List)
-    {
-        par3List.add(new ItemStack(par1, 1, 0));
-        //par3List.add(new ItemStack(par1, 1, 1));
-        //par3List.add(new ItemStack(par1, 1, 2));
-        //par3List.add(new ItemStack(par1, 1, 3));
     }
 }

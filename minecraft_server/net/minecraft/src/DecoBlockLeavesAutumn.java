@@ -258,7 +258,7 @@ public class DecoBlockLeavesAutumn extends Block
      */
     public void harvestBlock(World par1World, EntityPlayer par2EntityPlayer, int par3, int par4, int par5, int par6)
     {
-        if (!par1World.isRemote && par2EntityPlayer.getCurrentEquippedItem() != null && (par2EntityPlayer.getCurrentEquippedItem().itemID == Item.shears.itemID || par2EntityPlayer.getCurrentEquippedItem().itemID == DecoDefs.shearsDiamond.itemID))
+        if (!par1World.isRemote && par2EntityPlayer.getCurrentEquippedItem() != null && (par2EntityPlayer.getCurrentEquippedItem().getItem() instanceof FCItemShears))
         {
             par2EntityPlayer.addStat(StatList.mineBlockStatArray[this.blockID], 1);
             this.dropBlockAsItem_do(par1World, par3, par4, par5, new ItemStack(this.blockID, 1, par6 & 3));

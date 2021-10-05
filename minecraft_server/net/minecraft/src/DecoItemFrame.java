@@ -52,6 +52,6 @@ public class DecoItemFrame extends ItemHangingEntity {
      */
     private EntityHanging createHangingEntity(World world, int x, int y, int z, int par5)
     {
-        return new DecoEntityItemFrame(world, x, y, z, par5);
+        return (EntityHanging) EntityList.createEntityOfType(DecoEntityItemFrame.class, world, x, y, z, par5);
     }
 }

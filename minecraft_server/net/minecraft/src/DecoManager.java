@@ -26,7 +26,7 @@ import java.util.Random;
 
 import net.minecraft.server.MinecraftServer;
 
-public class DecoManager extends AddonExt
+public class DecoManager extends FCAddOn
 {
 	public static DecoDefs decoDefs;
 	public static DecoRecipes decoRecipes;
@@ -35,6 +35,8 @@ public class DecoManager extends AddonExt
 	private static ArrayList<Object> NameTargets = new ArrayList<Object>();
 
 	private static boolean newSoundsInstalled = true;
+	
+	public static boolean disableHardcoreBouncing = true;
 
 	public static final int decoCustomBlockBreakAuxFXID = 3000;
 	public static final int decoCustomBlockConvertAuxFXID = 3001;
@@ -64,12 +66,12 @@ public class DecoManager extends AddonExt
 	public static final String decoPacketChannelRender = "Deco|Render";
 
 	public DecoManager() {
-		super("Deco Addon", "2.16.0", "Deco");
+		super("Deco Addon", "3.0.0", "Deco");
 	}
 
 	@Override
 	public void PreInitialize() {
-		
+		this.registerProperty("DisableHardcoreBouncing", "True", "Set the following to false to disable placing blocks while jumping");
 	}
 
 	@Override
@@ -79,7 +81,7 @@ public class DecoManager extends AddonExt
 
 		decoDefs = DecoDefs.instance;
 		decoRecipes = DecoRecipes.instance;
-
+		
 		decoDefs.addDefinitions();
 		decoRecipes.addAllDecoRecipes();
 
@@ -91,35 +93,8 @@ public class DecoManager extends AddonExt
 		return "Deco";
 	}
 	
-	public void OnLanguageLoaded(StringTranslate Language)
-	{
-		int Index = 0;
-		while(Index<Names.size())
-		{
-			if(NameTargets.get(Index) instanceof Item)
-			{
-				Language.GetTranslateTable().put(((Item)NameTargets.get(Index)).getUnlocalizedName() + ".name", Names.get(Index));
-			}
-			else if(NameTargets.get(Index) instanceof Block)
-			{
-				Language.GetTranslateTable().put(((Block)NameTargets.get(Index)).getUnlocalizedName() + ".name", Names.get(Index));
-			}
-			else if(NameTargets.get(Index) instanceof ItemStack)
-			{
-				Language.GetTranslateTable().put(Item.itemsList[((ItemStack)NameTargets.get(Index)).itemID].getUnlocalizedName(((ItemStack)NameTargets.get(Index)))+ ".name", Names.get(Index));
-			}
-			else if(NameTargets.get(Index) instanceof String)
-			{
-				Language.GetTranslateTable().put(NameTargets.get(Index).toString(), Names.get(Index));
-			}
-			else System.out.println("You can't name that kind of object!");
-			Index++;
-		}
-	}
-	
-	public static void Name(Object target, String name) {
-		Names.add(name);
-		NameTargets.add(target);
+	public void handleConfigProperties(Map<String, String> propertyValues) {
+		this.disableHardcoreBouncing = Boolean.parseBoolean(propertyValues.get("DisablehardcoreBouncing"));
 	}
 
 	//Use to replace block ids
@@ -147,11 +122,6 @@ public class DecoManager extends AddonExt
 	public static void Register(Block target)
 	{
 		Item.itemsList[target.blockID] = new DecoItemBlockWithCustomSound(target.blockID - 256);
-	}
-	public static void Register(Block target, String name)
-	{
-		Register(target);
-		Name(target, name);
 	}
 	public static void Register(Block target, String[] names, String preTitle, String[] titles, String postTitle)
 	{

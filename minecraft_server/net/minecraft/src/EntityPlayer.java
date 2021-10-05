@@ -4,6 +4,8 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
+import net.minecraft.src.EntityPlayer.BeaconRespawnValidationResult.BeaconStatus;
+
 public abstract class EntityPlayer extends EntityLiving implements ICommandSender
 {
     /** Inventory of the player */
@@ -96,35 +98,14 @@ public abstract class EntityPlayer extends EntityLiving implements ICommandSende
      * An instance of a fishing rod's hook. If this isn't null, the icon image of the fishing rod is slightly different
      */
     public EntityFishHook fishEntity = null;
-    public ChunkCoordinates m_HardcoreSpawnChunk;
-    public long m_lTimeOfLastSpawnAssignment = 0L;
-    public long m_lTimeOfLastDimensionSwitch = 0L;
-    public long m_lRespawnAssignmentCooldownTimer = 0L;
-    public int m_iSpawnDimension = 0;
-    public int m_iTimesCraftedThisTick = 0;
-    public int m_iInGloomCounter = 0;
-    public int m_iAirRecoveryCountdown = 0;
-    public int m_iTicksSinceEmoteSound = 0;
-    protected float m_fCurrentMiningSpeedModifier = 1.0F;
-    public static final int m_iGloomCounterBetweenStateChanges = 1200;
-    private static final int m_iStongestMagneticPointForLocationIDataWatcherID = 22;
-    private static final int m_iStongestMagneticPointForLocationKDataWatcherID = 23;
-    private static final int m_iHasValidMagneticPointForLocationDataWatcherID = 24;
-    private static final int m_iGloomLevelDataWatcherID = 25;
-    private static final int m_iFatPenaltyLevelDataWatcherID = 26;
-    private static final int m_iHungerPenaltyLevelDataWatcherID = 27;
-    private static final int m_iHealthPenaltyLevelDataWatcherID = 28;
-    private static final int m_iSpawnChunksVisualizationLocationIDataWatcherID = 29;
-    private static final int m_iSpawnChunksVisualizationLocationJDataWatcherID = 30;
-    private static final int m_iSpawnChunksVisualizationLocationKDataWatcherID = 31;
-    private static final int m_iTicksBetweenEmoteSounds = 10;
-    public static final float m_fExhaustionJumping = 0.2F;
-    public static final float m_fExhaustionJumpingSprinting = 1.0F;
 
     public EntityPlayer(World par1World)
     {
         super(par1World);
-        this.inventoryContainer = new FCContainerPlayer(this.inventory, !par1World.isRemote, this);
+        // FCMOD: Changed
+        //this.inventoryContainer = new ContainerPlayer(this.inventory, !par1World.isRemote, this);
+        inventoryContainer = new FCContainerPlayer( inventory, !par1World.isRemote, this );
+        // END FCMOD
         this.openContainer = this.inventoryContainer;
         this.yOffset = 1.62F;
         ChunkCoordinates var2 = par1World.getSpawnPoint();
@@ -146,22 +127,28 @@ public abstract class EntityPlayer extends EntityLiving implements ICommandSende
         this.dataWatcher.addObject(16, Byte.valueOf((byte)0));
         this.dataWatcher.addObject(17, Byte.valueOf((byte)0));
         this.dataWatcher.addObject(18, Integer.valueOf(0));
-        this.dataWatcher.addObject(24, new Byte((byte)0));
-        this.dataWatcher.addObject(22, new Integer(0));
-        this.dataWatcher.addObject(23, new Integer(0));
-        this.dataWatcher.addObject(25, new Byte((byte)0));
-        this.dataWatcher.addObject(26, new Byte((byte)0));
-        this.dataWatcher.addObject(27, new Byte((byte)0));
-        this.dataWatcher.addObject(28, new Byte((byte)0));
-        this.dataWatcher.addObject(29, new Integer(0));
-        this.dataWatcher.addObject(30, new Integer(0));
-        this.dataWatcher.addObject(31, new Integer(0));
+        
+        // FCMOD: Added
+        dataWatcher.addObject( m_iHasValidMagneticPointForLocationDataWatcherID, new Byte( (byte)0 ) );
+        dataWatcher.addObject( m_iStongestMagneticPointForLocationIDataWatcherID, new Integer( 0 ) );
+        dataWatcher.addObject( m_iStongestMagneticPointForLocationKDataWatcherID, new Integer( 0 ) );
+        dataWatcher.addObject( m_iGloomLevelDataWatcherID, new Byte( (byte)0 ) );
+        dataWatcher.addObject( m_iFatPenaltyLevelDataWatcherID, new Byte( (byte)0 ) );
+        dataWatcher.addObject( m_iHungerPenaltyLevelDataWatcherID, new Byte( (byte)0 ) );
+        dataWatcher.addObject( m_iHealthPenaltyLevelDataWatcherID, new Byte( (byte)0 ) );
+        
+        dataWatcher.addObject( m_iSpawnChunksVisualizationLocationIDataWatcherID, new Integer( 0 ) );
+        dataWatcher.addObject( m_iSpawnChunksVisualizationLocationJDataWatcherID, new Integer( 0 ) );
+        dataWatcher.addObject( m_iSpawnChunksVisualizationLocationKDataWatcherID, new Integer( 0 ) );
+        // END FCMOD
     }
 
+    // FCMOD: Added (server only to match client)
     public int getItemInUseCount()
     {
         return this.itemInUseCount;
     }
+    // END FCMOD
 
     /**
      * Checks if the entity is currently using an item (e.g., bow, food, sword) by holding down the useItemButton
@@ -202,32 +189,43 @@ public abstract class EntityPlayer extends EntityLiving implements ICommandSende
      */
     public void onUpdate()
     {
-        this.m_iTimesCraftedThisTick = 0;
-        ++this.m_iTicksSinceEmoteSound;
-
+    	// FCMOD: Added
+    	m_iTimesCraftedThisTick = 0;
+        m_iTicksSinceEmoteSound++;
+    	// END FCMOD
+    	
         if (this.itemInUse != null)
         {
             ItemStack var1 = this.inventory.getCurrentItem();
 
-            if (var1 != this.itemInUse && (var1 == null || !this.itemInUse.getItem().IgnoreDamageWhenComparingDuringUse() || var1.itemID != this.itemInUse.itemID || !ItemStack.areItemStackTagsEqual(this.itemInUse, var1)))
+            // FCMOD: Changed
+            //if (var1 == this.itemInUse)
+            if ( var1 == this.itemInUse || 
+            	( var1 != null && itemInUse.getItem().IgnoreDamageWhenComparingDuringUse() && 
+        		var1.itemID == itemInUse.itemID && ItemStack.areItemStackTagsEqual( itemInUse, var1 ) ) )
+        	// END FCMOD
             {
-                this.clearItemInUse();
-            }
-            else
-            {
-                this.itemInUse = var1;
-
+            	// FCMOD: Added
+            	itemInUse = var1;
+            	// END FCMOD
+            	
                 if (this.itemInUseCount <= 25 && this.itemInUseCount % 4 == 0)
                 {
                     this.updateItemUse(var1, 5);
                 }
 
-                var1.getItem().UpdateUsingItem(var1, this.worldObj, this);
+                // FCMOD: Added
+        		var1.getItem().UpdateUsingItem( var1, this.worldObj, this );
+                // END FCMOD 
 
                 if (--this.itemInUseCount == 0 && !this.worldObj.isRemote)
                 {
                     this.onItemUseFinish();
                 }
+            }
+            else
+            {
+                this.clearItemInUse();
             }
         }
 
@@ -332,8 +330,10 @@ public abstract class EntityPlayer extends EntityLiving implements ICommandSende
         {
             this.foodStats.onUpdate(this);
         }
-
-        this.UpdateModStatusVariables();
+        
+        // FCMOD: Added
+        UpdateModStatusVariables();
+        // END FCMOD
     }
 
     /**
@@ -352,6 +352,10 @@ public abstract class EntityPlayer extends EntityLiving implements ICommandSende
         return 10;
     }
 
+    // FCMOD: Comment added
+    /**
+	/* the playSound function both plays the sound locally on the client, and plays it remotely on the server without it being sent again to the same player
+	 */ // END FCMOD
     public void playSound(String par1Str, float par2, float par3)
     {
         this.worldObj.playSoundToNearExcept(this, par1Str, par2, par3);
@@ -497,7 +501,9 @@ public abstract class EntityPlayer extends EntityLiving implements ICommandSende
         super.onLivingUpdate();
         this.landMovementFactor = this.capabilities.getWalkSpeed();
         this.jumpMovementFactor = this.speedInAir;
-        this.jumpMovementFactor *= this.GetJumpingHorizontalMovementModifier();
+        // FCMOD: Code added to apply move penalties to jumping
+        jumpMovementFactor *= GetJumpingHorizontalMovementModifier();        
+        // END FCMOD
 
         if (this.isSprinting())
         {
@@ -663,7 +669,7 @@ public abstract class EntityPlayer extends EntityLiving implements ICommandSende
         }
         else
         {
-            EntityItem var3 = new EntityItem(this.worldObj, this.posX, this.posY - 0.30000001192092896D + (double)this.getEyeHeight(), this.posZ, par1ItemStack);
+        	EntityItem var3 = (EntityItem) EntityList.createEntityOfType(EntityItem.class, this.worldObj, this.posX, this.posY - 0.30000001192092896D + (double)this.getEyeHeight(), this.posZ, par1ItemStack);
             var3.delayBeforeCanPickup = 40;
             float var4 = 0.1F;
             float var5;
@@ -675,7 +681,9 @@ public abstract class EntityPlayer extends EntityLiving implements ICommandSende
                 var3.motionX = (double)(-MathHelper.sin(var6) * var5);
                 var3.motionZ = (double)(MathHelper.cos(var6) * var5);
                 var3.motionY = 0.20000000298023224D;
-                var3.SetEntityItemAsDroppedOnPlayerDeath(this);
+                // FCMOD: Code added: par2 flag indicates that the item has been dropped on death
+                var3.SetEntityItemAsDroppedOnPlayerDeath( this );
+                // END FCMOD
             }
             else
             {
@@ -705,53 +713,86 @@ public abstract class EntityPlayer extends EntityLiving implements ICommandSende
         this.worldObj.spawnEntityInWorld(par1EntityItem);
     }
 
-    public float getCurrentPlayerStrVsBlock(Block var1, int var2, int var3, int var4)
+    /**
+     * Returns how strong the player is against the specified block at this moment
+     */
+    // FCMOD: Code change
+    /*
+    public float getCurrentPlayerStrVsBlock(Block par1Block, boolean par2)
+    */
+    public float getCurrentPlayerStrVsBlock(Block par1Block, int i, int j, int k)
+    // END FCMOD
     {
-        float var5 = this.inventory.getStrVsBlock(this.worldObj, var1, var2, var3, var4);
+        // FCMOD: Code change
+        /*
+        float var3 = this.inventory.getStrVsBlock(par1Block);
+        */
+        float var3 = this.inventory.getStrVsBlock(worldObj, par1Block, i, j, k);
+    	// END FCMOD
 
-        if (var5 > 1.0F)
+        if (var3 > 1.0F)
         {
-            int var6 = EnchantmentHelper.getEfficiencyModifier(this);
-            ItemStack var7 = this.inventory.getCurrentItem();
+            int var4 = EnchantmentHelper.getEfficiencyModifier(this);
+            ItemStack var5 = this.inventory.getCurrentItem();
 
-            if (var6 > 0 && var7 != null)
+            if (var4 > 0 && var5 != null)
             {
-                float var8 = (float)(var6 * var6 + 1);
+                float var6 = (float)(var4 * var4 + 1);
 
-                if (!var7.canHarvestBlock(this.worldObj, var1, var2, var3, var4) && var5 <= 1.0F)
+                // FCMOD: Code change
+                /*
+                if (!var5.canHarvestBlock(par1Block) && var3 <= 1.0F)
+                */
+                if (!var5.canHarvestBlock( worldObj, par1Block, i, j, k) && var3 <= 1.0F)
+                // END FCMOD
                 {
-                    var5 += var8 * 0.08F;
+                    var3 += var6 * 0.08F;
                 }
                 else
                 {
-                    var5 += var8;
+                    var3 += var6;
                 }
             }
         }
 
         if (this.isPotionActive(Potion.digSpeed))
         {
-            var5 *= 1.0F + (float)(this.getActivePotionEffect(Potion.digSpeed).getAmplifier() + 1) * 0.2F;
+            var3 *= 1.0F + (float)(this.getActivePotionEffect(Potion.digSpeed).getAmplifier() + 1) * 0.2F;
         }
 
         if (this.isPotionActive(Potion.digSlowdown))
         {
-            var5 *= 1.0F - (float)(this.getActivePotionEffect(Potion.digSlowdown).getAmplifier() + 1) * 0.2F;
+            var3 *= 1.0F - (float)(this.getActivePotionEffect(Potion.digSlowdown).getAmplifier() + 1) * 0.2F;
         }
 
         if (this.isInsideOfMaterial(Material.water) && !EnchantmentHelper.getAquaAffinityModifier(this))
         {
-            var5 /= 5.0F;
+            var3 /= 5.0F;
         }
 
         if (!this.onGround)
         {
-            var5 /= 5.0F;
+            var3 /= 5.0F;
         }
+        
+        // FCMOD: Added
+        var3 *= GetMiningSpeedModifier();
+        // END FCMOD        
 
-        var5 *= this.GetMiningSpeedModifier();
-        return var5;
+        return var3;
     }
+
+    /**
+     * Checks if the player has the ability to harvest a block (checks current inventory item for a tool if necessary)
+     */
+    // FCMOD: Code removed and replaced later
+    /*
+    public boolean canHarvestBlock(Block par1Block)
+    {
+        return this.inventory.canHarvestBlock(par1Block);
+    }
+    */
+    // END FCMOD
 
     /**
      * (abstract) Protected helper method to read subclass entity data from NBT.
@@ -789,8 +830,9 @@ public abstract class EntityPlayer extends EntityLiving implements ICommandSende
             NBTTagList var3 = par1NBTTagCompound.getTagList("EnderItems");
             this.theInventoryEnderChest.loadInventoryFromNBT(var3);
         }
-
-        this.ReadModDataFromNBT(par1NBTTagCompound);
+        // FCMOD: Code added
+        ReadModDataFromNBT( par1NBTTagCompound );
+        // END FCMOD
     }
 
     /**
@@ -819,7 +861,9 @@ public abstract class EntityPlayer extends EntityLiving implements ICommandSende
         this.foodStats.writeNBT(par1NBTTagCompound);
         this.capabilities.writeCapabilitiesToNBT(par1NBTTagCompound);
         par1NBTTagCompound.setTag("EnderItems", this.theInventoryEnderChest.saveInventoryToNBT());
-        this.WriteModDataToNBT(par1NBTTagCompound);
+        // FCMOD: Code added
+        WriteModDataToNBT( par1NBTTagCompound );
+        // END FCMOD
     }
 
     /**
@@ -921,16 +965,15 @@ public abstract class EntityPlayer extends EntityLiving implements ICommandSende
                     }
 
                     this.addStat(StatList.damageTakenStat, par2);
-
-                    if (!this.isDead && this.IsCarryingBlastingOil())
+                    // FCMOD: Code added
+                    if ( !isDead && IsCarryingBlastingOil() )
                     {
-                        this.DetonateCarriedBlastingOil();
-                        return false;
+                    	DetonateCarriedBlastingOil();
+                    	
+                    	return false;
                     }
-                    else
-                    {
-                        return super.attackEntityFrom(par1DamageSource, par2);
-                    }
+                    // END FCMOD
+                    return super.attackEntityFrom(par1DamageSource, par2);
                 }
             }
         }
@@ -949,9 +992,13 @@ public abstract class EntityPlayer extends EntityLiving implements ICommandSende
      */
     protected void alertWolves(EntityLiving par1EntityLiving, boolean par2)
     {
-        par2 = true;
-
+    	// FCMOD: Added to make sure that wolves don't attack if sitting
+    	par2 = true;
+    	// END FCMOD
+    	// FCMOD: Changed
+        //if (!(par1EntityLiving instanceof EntityCreeper) && !(par1EntityLiving instanceof EntityGhast))
         if (!(par1EntityLiving instanceof FCEntityCreeper) && !(par1EntityLiving instanceof FCEntityGhast))
+    	// END FCMOD
         {
             if (par1EntityLiving instanceof EntityWolf)
             {
@@ -1024,7 +1071,10 @@ public abstract class EntityPlayer extends EntityLiving implements ICommandSende
         {
             if (!par1DamageSource.isUnblockable() && this.isBlocking())
             {
-                this.OnBlockedDamage(par1DamageSource, par2);
+        		// FCMOD: Code added
+        		OnBlockedDamage( par1DamageSource, par2 );
+        		// END FCMOD
+        		
                 par2 = 1 + par2 >> 1;
             }
 
@@ -1131,142 +1181,149 @@ public abstract class EntityPlayer extends EntityLiving implements ICommandSende
      */
     public void attackTargetEntityWithCurrentItem(Entity par1Entity)
     {
-        if (par1Entity.canAttackWithItem() && !par1Entity.func_85031_j(this))
+        if (par1Entity.canAttackWithItem())
         {
-            int var2 = this.inventory.getDamageVsEntity(par1Entity);
-
-            if (this.isPotionActive(Potion.damageBoost))
+            if (!par1Entity.func_85031_j(this))
             {
-                var2 += 3 << this.getActivePotionEffect(Potion.damageBoost).getAmplifier();
-            }
+                int var2 = this.inventory.getDamageVsEntity(par1Entity);
 
-            if (this.isPotionActive(Potion.weakness))
-            {
-                var2 -= 2 << this.getActivePotionEffect(Potion.weakness).getAmplifier();
-            }
-
-            int var3 = 0;
-            int var4 = 0;
-
-            if (par1Entity instanceof EntityLiving)
-            {
-                var4 = EnchantmentHelper.getEnchantmentModifierLiving(this, (EntityLiving)par1Entity);
-                var3 += EnchantmentHelper.getKnockbackModifier(this, (EntityLiving)par1Entity);
-            }
-
-            if (this.isSprinting())
-            {
-                ++var3;
-            }
-
-            float var5 = this.GetMeleeDamageModifier();
-
-            if (var5 < 0.99F)
-            {
-                var2 = (int)((float)var2 * var5);
-            }
-
-            if (var2 <= 0 && var4 <= 0)
-            {
-                this.OnZeroDamageAttack();
-            }
-            else
-            {
-                boolean var6 = this.fallDistance > 0.0F && !this.onGround && !this.isOnLadder() && !this.isInWater() && !this.isPotionActive(Potion.blindness) && this.ridingEntity == null && par1Entity instanceof EntityLiving;
-
-                if (var6 && var2 > 0)
+                if (this.isPotionActive(Potion.damageBoost))
                 {
-                    var2 += this.rand.nextInt(var2 / 2 + 2);
+                    var2 += 3 << this.getActivePotionEffect(Potion.damageBoost).getAmplifier();
                 }
 
-                var2 += var4;
-                boolean var7 = false;
-                int var8 = EnchantmentHelper.getFireAspectModifier(this);
-
-                if (par1Entity instanceof EntityLiving && var8 > 0 && !par1Entity.isBurning())
+                if (this.isPotionActive(Potion.weakness))
                 {
-                    var7 = true;
-                    par1Entity.setFire(1);
+                    var2 -= 2 << this.getActivePotionEffect(Potion.weakness).getAmplifier();
                 }
 
-                boolean var9 = par1Entity.attackEntityFrom(DamageSource.causePlayerDamage(this), var2);
-
-                if (var9)
-                {
-                    if (var3 > 0)
-                    {
-                        par1Entity.addVelocity((double)(-MathHelper.sin(this.rotationYaw * (float)Math.PI / 180.0F) * (float)var3 * 0.5F), 0.1D, (double)(MathHelper.cos(this.rotationYaw * (float)Math.PI / 180.0F) * (float)var3 * 0.5F));
-                        this.motionX *= 0.6D;
-                        this.motionZ *= 0.6D;
-                        this.setSprinting(false);
-                    }
-
-                    if (var6)
-                    {
-                        this.onCriticalHit(par1Entity);
-                    }
-
-                    if (var4 > 0)
-                    {
-                        this.onEnchantmentCritical(par1Entity);
-                    }
-
-                    if (var2 >= 18)
-                    {
-                        this.triggerAchievement(AchievementList.overkill);
-                    }
-
-                    this.setLastAttackingEntity(par1Entity);
-
-                    if (par1Entity instanceof EntityLiving)
-                    {
-                        EnchantmentThorns.func_92096_a(this, (EntityLiving)par1Entity, this.rand);
-                    }
-                }
-
-                ItemStack var10 = this.getCurrentEquippedItem();
-                Object var11 = par1Entity;
-
-                if (par1Entity instanceof EntityDragonPart)
-                {
-                    IEntityMultiPart var12 = ((EntityDragonPart)par1Entity).entityDragonObj;
-
-                    if (var12 != null && var12 instanceof EntityLiving)
-                    {
-                        var11 = (EntityLiving)var12;
-                    }
-                }
-
-                if (var10 != null && var11 instanceof EntityLiving)
-                {
-                    var10.hitEntity((EntityLiving)var11, this);
-
-                    if (var10.stackSize <= 0)
-                    {
-                        this.destroyCurrentEquippedItem();
-                    }
-                }
+                int var3 = 0;
+                int var4 = 0;
 
                 if (par1Entity instanceof EntityLiving)
                 {
-                    if (par1Entity.isEntityAlive())
-                    {
-                        this.alertWolves((EntityLiving)par1Entity, true);
-                    }
-
-                    this.addStat(StatList.damageDealtStat, var2);
-
-                    if (var8 > 0 && var9)
-                    {
-                        par1Entity.setFire(var8 * 4);
-                    }
-                    else if (var7)
-                    {
-                        par1Entity.extinguish();
-                    }
+                    var4 = EnchantmentHelper.getEnchantmentModifierLiving(this, (EntityLiving)par1Entity);
+                    var3 += EnchantmentHelper.getKnockbackModifier(this, (EntityLiving)par1Entity);
                 }
 
-                this.addExhaustion(0.3F);
+                if (this.isSprinting())
+                {
+                    ++var3;
+                }
+
+                // FCMOD: Code added to modify player attack damage by health and exhaustion
+                float fModifier = GetMeleeDamageModifier();
+                
+                if ( fModifier < 0.99F )
+                {
+                	var2 = (int)((float)var2 * fModifier);                	
+                }
+                // END FCMOD
+
+                if (var2 > 0 || var4 > 0)
+                {
+                    boolean var5 = this.fallDistance > 0.0F && !this.onGround && !this.isOnLadder() && !this.isInWater() && !this.isPotionActive(Potion.blindness) && this.ridingEntity == null && par1Entity instanceof EntityLiving;
+
+                    if (var5 && var2 > 0)
+                    {
+                        var2 += this.rand.nextInt(var2 / 2 + 2);
+                    }
+
+                    var2 += var4;
+                    boolean var6 = false;
+                    int var7 = EnchantmentHelper.getFireAspectModifier(this);
+
+                    if (par1Entity instanceof EntityLiving && var7 > 0 && !par1Entity.isBurning())
+                    {
+                        var6 = true;
+                        par1Entity.setFire(1);
+                    }
+
+                    boolean var8 = par1Entity.attackEntityFrom(DamageSource.causePlayerDamage(this), var2);
+
+                    if (var8)
+                    {
+                        if (var3 > 0)
+                        {
+                            par1Entity.addVelocity((double)(-MathHelper.sin(this.rotationYaw * (float)Math.PI / 180.0F) * (float)var3 * 0.5F), 0.1D, (double)(MathHelper.cos(this.rotationYaw * (float)Math.PI / 180.0F) * (float)var3 * 0.5F));
+                            this.motionX *= 0.6D;
+                            this.motionZ *= 0.6D;
+                            this.setSprinting(false);
+                        }
+
+                        if (var5)
+                        {
+                            this.onCriticalHit(par1Entity);
+                        }
+
+                        if (var4 > 0)
+                        {
+                            this.onEnchantmentCritical(par1Entity);
+                        }
+
+                        if (var2 >= 18)
+                        {
+                            this.triggerAchievement(AchievementList.overkill);
+                        }
+
+                        this.setLastAttackingEntity(par1Entity);
+
+                        if (par1Entity instanceof EntityLiving)
+                        {
+                            EnchantmentThorns.func_92096_a(this, (EntityLiving)par1Entity, this.rand);
+                        }
+                    }
+
+                    ItemStack var9 = this.getCurrentEquippedItem();
+                    Object var10 = par1Entity;
+
+                    if (par1Entity instanceof EntityDragonPart)
+                    {
+                        IEntityMultiPart var11 = ((EntityDragonPart)par1Entity).entityDragonObj;
+
+                        if (var11 != null && var11 instanceof EntityLiving)
+                        {
+                            var10 = (EntityLiving)var11;
+                        }
+                    }
+
+                    if (var9 != null && var10 instanceof EntityLiving)
+                    {
+                        var9.hitEntity((EntityLiving)var10, this);
+
+                        if (var9.stackSize <= 0)
+                        {
+                            this.destroyCurrentEquippedItem();
+                        }
+                    }
+
+                    if (par1Entity instanceof EntityLiving)
+                    {
+                        if (par1Entity.isEntityAlive())
+                        {
+                            this.alertWolves((EntityLiving)par1Entity, true);
+                        }
+
+                        this.addStat(StatList.damageDealtStat, var2);
+
+                        if (var7 > 0 && var8)
+                        {
+                            par1Entity.setFire(var7 * 4);
+                        }
+                        else if (var6)
+                        {
+                            par1Entity.extinguish();
+                        }
+                    }
+
+                    this.addExhaustion(0.3F);
+                }
+                // FCMOD: Code added
+                else // else from "if (var2 > 0 || var4 > 0)" above, indicating zero damage attack
+                {
+            		OnZeroDamageAttack();
+                }
+                // END FCMOD
             }
         }
     }
@@ -1310,7 +1367,92 @@ public abstract class EntityPlayer extends EntityLiving implements ICommandSende
      */
     public EnumStatus sleepInBedAt(int par1, int par2, int par3)
     {
+    	// FCMOD: Code added
         return EnumStatus.OTHER_PROBLEM;
+        // END FCMOD
+    	// FCMOD: Code removed
+        /*
+        if (!this.worldObj.isRemote)
+        {
+            if (this.isPlayerSleeping() || !this.isEntityAlive())
+            {
+                return EnumStatus.OTHER_PROBLEM;
+            }
+
+            if (!this.worldObj.provider.isSurfaceWorld())
+            {
+                return EnumStatus.NOT_POSSIBLE_HERE;
+            }
+
+            if (this.worldObj.isDaytime())
+            {
+                return EnumStatus.NOT_POSSIBLE_NOW;
+            }
+
+            if (Math.abs(this.posX - (double)par1) > 3.0D || Math.abs(this.posY - (double)par2) > 2.0D || Math.abs(this.posZ - (double)par3) > 3.0D)
+            {
+                return EnumStatus.TOO_FAR_AWAY;
+            }
+
+            double var4 = 8.0D;
+            double var6 = 5.0D;
+            List var8 = this.worldObj.getEntitiesWithinAABB(EntityMob.class, AxisAlignedBB.getAABBPool().getAABB((double)par1 - var4, (double)par2 - var6, (double)par3 - var4, (double)par1 + var4, (double)par2 + var6, (double)par3 + var4));
+
+            if (!var8.isEmpty())
+            {
+                return EnumStatus.NOT_SAFE;
+            }
+        }
+
+        this.setSize(0.2F, 0.2F);
+        this.yOffset = 0.2F;
+
+        if (this.worldObj.blockExists(par1, par2, par3))
+        {
+            int var9 = this.worldObj.getBlockMetadata(par1, par2, par3);
+            int var5 = BlockBed.getDirection(var9);
+            float var10 = 0.5F;
+            float var7 = 0.5F;
+
+            switch (var5)
+            {
+                case 0:
+                    var7 = 0.9F;
+                    break;
+
+                case 1:
+                    var10 = 0.1F;
+                    break;
+
+                case 2:
+                    var7 = 0.1F;
+                    break;
+
+                case 3:
+                    var10 = 0.9F;
+            }
+
+            this.func_71013_b(var5);
+            this.setPosition((double)((float)par1 + var10), (double)((float)par2 + 0.9375F), (double)((float)par3 + var7));
+        }
+        else
+        {
+            this.setPosition((double)((float)par1 + 0.5F), (double)((float)par2 + 0.9375F), (double)((float)par3 + 0.5F));
+        }
+
+        this.sleeping = true;
+        this.sleepTimer = 0;
+        this.playerLocation = new ChunkCoordinates(par1, par2, par3);
+        this.motionX = this.motionZ = this.motionY = 0.0D;
+
+        if (!this.worldObj.isRemote)
+        {
+            this.worldObj.updateAllPlayersSleepingFlag();
+        }
+
+        return EnumStatus.OK;
+        */
+        // END FCMOD
     }
 
     private void func_71013_b(int par1)
@@ -1480,8 +1622,10 @@ public abstract class EntityPlayer extends EntityLiving implements ICommandSende
             this.spawnChunk = null;
             this.spawnForced = false;
         }
-
-        this.m_iSpawnDimension = 0;
+        
+        // FCMOD: Code added
+        m_iSpawnDimension = 0;
+        // END FCMOD
     }
 
     /**
@@ -1504,7 +1648,20 @@ public abstract class EntityPlayer extends EntityLiving implements ICommandSende
     {
         super.jump();
         this.addStat(StatList.jumpStat, 1);
-        this.AddExhaustionForJump();
+
+        // FCMOD: Changed
+        /*
+        if (this.isSprinting())
+        {
+            this.addExhaustion(0.8F);
+        }
+        else
+        {
+            this.addExhaustion(0.2F);
+        }
+        */
+        AddExhaustionForJump();
+        // END FCMOD
     }
 
     /**
@@ -1540,13 +1697,15 @@ public abstract class EntityPlayer extends EntityLiving implements ICommandSende
     {
         if (this.ridingEntity == null)
         {
-            if (this.isInWater() && par3 > 0.0D && this.CanSwim())
-            {
-                this.addExhaustion(0.025F);
-            }
-
             int var7;
 
+            // FCMOD: Added
+            if ( isInWater() && par3 > 0D && CanSwim() )
+            {
+                addExhaustion( 0.025F );
+            }
+            // END FCMOD
+            
             if (this.isInsideOfMaterial(Material.water))
             {
                 var7 = Math.round(MathHelper.sqrt_double(par1 * par1 + par3 * par3 + par5 * par5) * 100.0F);
@@ -1554,7 +1713,12 @@ public abstract class EntityPlayer extends EntityLiving implements ICommandSende
                 if (var7 > 0)
                 {
                     this.addStat(StatList.distanceDoveStat, var7);
+                    // FCMOD: Code change
+                    /*
+                    this.addExhaustion(0.015F * (float)var7 * 0.01F);
+                    */
                     this.AddExhaustionWithoutVisualFeedback(0.015F * (float)var7 * 0.01F);
+                    // END FCMOD
                 }
             }
             else if (this.isInWater())
@@ -1564,7 +1728,12 @@ public abstract class EntityPlayer extends EntityLiving implements ICommandSende
                 if (var7 > 0)
                 {
                     this.addStat(StatList.distanceSwumStat, var7);
+                    // FCMOD: Code change
+                    /*
+                    this.addExhaustion(0.015F * (float)var7 * 0.01F);
+                    */
                     this.AddExhaustionWithoutVisualFeedback(0.015F * (float)var7 * 0.01F);
+                    // END FCMOD
                 }
             }
             else if (this.isOnLadder())
@@ -1588,7 +1757,12 @@ public abstract class EntityPlayer extends EntityLiving implements ICommandSende
                     }
                     else
                     {
+                        // FCMOD: Code change
+                        /*
+                        this.addExhaustion(0.01F * (float)var7 * 0.01F);
+                        */
                         this.AddExhaustionWithoutVisualFeedback(0.01F * (float)var7 * 0.01F);
+                        // END FCMOD
                     }
                 }
             }
@@ -1748,10 +1922,15 @@ public abstract class EntityPlayer extends EntityLiving implements ICommandSende
      */
     public void addExhaustion(float par1)
     {
-        if (!this.capabilities.disableDamage && !this.worldObj.isRemote)
+        if (!this.capabilities.disableDamage)
         {
-            par1 *= this.GetArmorExhaustionModifier();
-            this.foodStats.addExhaustion(par1);
+            if (!this.worldObj.isRemote)
+            {
+            	// FCMOD: Code added        	
+            	par1 *= GetArmorExhaustionModifier();
+        		// END FCMOD
+                this.foodStats.addExhaustion(par1);
+            }
         }
     }
 
@@ -1765,7 +1944,13 @@ public abstract class EntityPlayer extends EntityLiving implements ICommandSende
 
     public boolean canEat(boolean par1)
     {
-        return this.isPotionActive(Potion.hunger) ? false : (par1 || this.foodStats.needFood()) && !this.capabilities.disableDamage;
+    	// FCMOD: Code added to prevent player from eating while having the hunger effect
+        if ( isPotionActive( Potion.hunger ) )
+        {
+        	return false;
+        }
+    	// END FCMOD
+        return (par1 || this.foodStats.needFood()) && !this.capabilities.disableDamage;
     }
 
     /**
@@ -1819,7 +2004,12 @@ public abstract class EntityPlayer extends EntityLiving implements ICommandSende
                 {
                     ItemStack var6 = this.getCurrentEquippedItem();
 
-                    if (var6.canHarvestBlock(this.worldObj, var5, par1, par2, par3) || var6.getStrVsBlock(this.worldObj, var5, par1, par2, par3) > 1.0F)
+                    // FCMOD: Code change
+                    /*
+                    if (var6.canHarvestBlock(var5) || var6.getStrVsBlock(var5) > 1.0F)
+                    */
+                    if (var6.canHarvestBlock(worldObj, var5, par1, par2, par3) || var6.getStrVsBlock(worldObj, var5, par1, par2, par3) > 1.0F)
+                	// END FCMOD
                     {
                         return true;
                     }
@@ -1832,6 +2022,14 @@ public abstract class EntityPlayer extends EntityLiving implements ICommandSende
 
     public boolean canPlayerEdit(int par1, int par2, int par3, int par4, ItemStack par5ItemStack)
     {
+    	// DecoMod
+    	// FCMOD: Code added to prevent the player from placing blocks while in mid air
+    	if ( !capabilities.isCreativeMode && !onGround && !inWater && !isOnLadder() && ridingEntity == null && !handleLavaMovement()  && !DecoManager.disableHardcoreBouncing)
+    	{
+    		return false;
+    	}
+    	// END FCMOD
+    	
         return this.capabilities.allowEdit ? true : (par5ItemStack != null ? par5ItemStack.func_82835_x() : false);
     }
 
@@ -2009,945 +2207,1096 @@ public abstract class EntityPlayer extends EntityLiving implements ICommandSende
         return ScorePlayerTeam.func_96667_a(this.getTeam(), this.username);
     }
 
-    protected void ReadModDataFromNBT(NBTTagCompound var1)
+    // FCMOD: Added New
+    public ChunkCoordinates m_HardcoreSpawnChunk;
+    
+    public long m_lTimeOfLastSpawnAssignment = 0;
+    public long m_lTimeOfLastDimensionSwitch = 0;
+    public long m_lRespawnAssignmentCooldownTimer = 0;
+    
+    public int m_iSpawnDimension = 0;
+    public int m_iTimesCraftedThisTick = 0;
+    public int m_iInGloomCounter = 0;
+    public int m_iAirRecoveryCountdown = 0;    
+    public int m_iTicksSinceEmoteSound = 0;
+    
+	protected float m_fCurrentMiningSpeedModifier = 1F;
+    
+    public static final int m_iGloomCounterBetweenStateChanges = 1200; // 1 minute
+    
+	private static final int m_iStongestMagneticPointForLocationIDataWatcherID = 22;
+	private static final int m_iStongestMagneticPointForLocationKDataWatcherID = 23;
+	private static final int m_iHasValidMagneticPointForLocationDataWatcherID = 24;
+	private static final int m_iGloomLevelDataWatcherID = 25;
+	private static final int m_iFatPenaltyLevelDataWatcherID = 26;
+	private static final int m_iHungerPenaltyLevelDataWatcherID = 27;
+	private static final int m_iHealthPenaltyLevelDataWatcherID = 28;
+    
+	private static final int m_iSpawnChunksVisualizationLocationIDataWatcherID = 29;
+	private static final int m_iSpawnChunksVisualizationLocationJDataWatcherID = 30;
+	private static final int m_iSpawnChunksVisualizationLocationKDataWatcherID = 31;
+	
+	private static final int m_iTicksBetweenEmoteSounds = 10;
+	
+	public static final float m_fExhaustionJumping = 0.2F;
+	public static final float m_fExhaustionJumpingSprinting = 1.0F;
+	
+    protected void ReadModDataFromNBT( NBTTagCompound tag )
     {
-        if (var1.hasKey("fcTimeOfLastSpawnAssignment"))
-        {
-            this.m_lTimeOfLastSpawnAssignment = var1.getLong("fcTimeOfLastSpawnAssignment");
-        }
-
-        if (var1.hasKey("fcTimeOfLastDimensionSwitch"))
-        {
-            this.m_lTimeOfLastDimensionSwitch = var1.getLong("fcTimeOfLastDimensionSwitch");
-        }
-
-        if (var1.hasKey("fcHCSpawnX") && var1.hasKey("fcHCSpawnY") && var1.hasKey("fcHCSpawnZ"))
-        {
-            this.m_HardcoreSpawnChunk = new ChunkCoordinates(var1.getInteger("fcHCSpawnX"), var1.getInteger("fcHCSpawnY"), var1.getInteger("fcHCSpawnZ"));
-        }
-
-        if (var1.hasKey("fcSpawnDimension"))
-        {
-            this.m_iSpawnDimension = var1.getInteger("fcSpawnDimension");
-        }
-
-        if (var1.hasKey("fcGloomLevel"))
-        {
-            this.SetGloomLevel(var1.getInteger("fcGloomLevel"));
-        }
-
-        if (var1.hasKey("fcGloomCounter"))
-        {
-            this.m_iInGloomCounter = var1.getInteger("fcGloomCounter");
-        }
+	    if ( tag.hasKey( "fcTimeOfLastSpawnAssignment" ) )
+	    {
+	    	m_lTimeOfLastSpawnAssignment = tag.getLong( "fcTimeOfLastSpawnAssignment" );
+	    }
+	    
+	    if ( tag.hasKey( "fcTimeOfLastDimensionSwitch" ) )
+	    {
+	    	m_lTimeOfLastDimensionSwitch = tag.getLong( "fcTimeOfLastDimensionSwitch" );
+	    }
+	    
+	    if ( tag.hasKey( "fcHCSpawnX" ) && tag.hasKey( "fcHCSpawnY" ) && tag.hasKey( "fcHCSpawnZ" ) )
+	    {
+	        m_HardcoreSpawnChunk = new ChunkCoordinates( tag.getInteger( "fcHCSpawnX" ), tag.getInteger( "fcHCSpawnY" ), tag.getInteger( "fcHCSpawnZ" ) );
+	    }
+	    
+	    if ( tag.hasKey( "fcSpawnDimension" ) )
+	    {
+	    	m_iSpawnDimension = tag.getInteger( "fcSpawnDimension" );
+	    }	    	    
+	    
+	    if ( tag.hasKey( "fcGloomLevel" ) )
+	    {
+	    	SetGloomLevel( tag.getInteger( "fcGloomLevel" ) );
+	    }
+	    
+	    if ( tag.hasKey( "fcGloomCounter" ) )
+	    {
+	    	m_iInGloomCounter = tag.getInteger( "fcGloomCounter" );
+	    }
     }
-
-    protected void WriteModDataToNBT(NBTTagCompound var1)
+    
+    protected void WriteModDataToNBT( NBTTagCompound tag )
     {
-        var1.setLong("fcTimeOfLastSpawnAssignment", this.m_lTimeOfLastSpawnAssignment);
-        var1.setLong("fcTimeOfLastDimensionSwitch", this.m_lTimeOfLastDimensionSwitch);
-
-        if (this.m_HardcoreSpawnChunk != null)
-        {
-            var1.setInteger("fcHCSpawnX", this.m_HardcoreSpawnChunk.posX);
-            var1.setInteger("fcHCSpawnY", this.m_HardcoreSpawnChunk.posY);
-            var1.setInteger("fcHCSpawnZ", this.m_HardcoreSpawnChunk.posZ);
-        }
-
-        var1.setInteger("fcSpawnDimension", this.m_iSpawnDimension);
-        var1.setInteger("fcGloomLevel", this.GetGloomLevel());
-        var1.setInteger("fcGloomCounter", this.m_iInGloomCounter);
+	 	tag.setLong( "fcTimeOfLastSpawnAssignment", m_lTimeOfLastSpawnAssignment );
+	 	
+	 	tag.setLong( "fcTimeOfLastDimensionSwitch", m_lTimeOfLastDimensionSwitch );
+	    
+	    if ( m_HardcoreSpawnChunk != null )
+	    {
+	        tag.setInteger( "fcHCSpawnX", m_HardcoreSpawnChunk.posX );
+	        tag.setInteger( "fcHCSpawnY", m_HardcoreSpawnChunk.posY );
+	        tag.setInteger( "fcHCSpawnZ", m_HardcoreSpawnChunk.posZ );
+	    }
+	    
+	 	tag.setInteger( "fcSpawnDimension", m_iSpawnDimension );
+	 	
+	 	tag.setInteger( "fcGloomLevel", GetGloomLevel() );
+	 	tag.setInteger( "fcGloomCounter", m_iInGloomCounter );
     }
-
-    /**
-     * Decrements the entity's air supply when underwater
-     */
-    protected int decreaseAirSupply(int var1)
+    
+    @Override
+    protected int decreaseAirSupply( int iAirSupply )
     {
-        this.m_iAirRecoveryCountdown = 20;
-        int var2 = EnchantmentHelper.getRespiration(this);
-
-        if (var2 > 0 && this.IsWearingSoulforgedHelm())
+        m_iAirRecoveryCountdown = 20;
+        
+        int iEnchantmentLevel = EnchantmentHelper.getRespiration(this);
+        
+        if ( iEnchantmentLevel > 0 && IsWearingSoulforgedHelm() )
         {
-            if (this.worldObj.getWorldTime() % 100L == 0L)
-            {
-                this.worldObj.playSoundAtEntity(this, "random.breath", 0.75F + this.rand.nextFloat() * 0.5F, 0.5F + this.rand.nextFloat() * 0.025F);
-            }
+    		if ( this.worldObj.getWorldTime() % 100 == 0 )
+    		{
+    			worldObj.playSoundAtEntity( this, 
+            		"random.breath", 
+            		0.75F + rand.nextFloat() * 0.5F, 
+            		0.5F + rand.nextFloat() * 0.025F );
+    		}    		
 
-            return this.rand.nextInt(var2 * var2 + 1) > 0 ? var1 : var1 - 1;
+        	if ( rand.nextInt( ( iEnchantmentLevel * iEnchantmentLevel + 1 ) ) > 0 )
+        	{
+        		return iAirSupply;
+        	}
+        	else
+        	{
+                return iAirSupply - 1;
+        	}        	
         }
         else
         {
-            return super.decreaseAirSupply(var1);
+        	return super.decreaseAirSupply( iAirSupply );
         }
     }
-
+    
+    @Override
     protected void RecoverAirSupply()
     {
-        if (this.m_iAirRecoveryCountdown > 0)
-        {
-            --this.m_iAirRecoveryCountdown;
-        }
-        else
-        {
-            int var1 = this.getAir();
-
-            if (var1 < 300)
-            {
-                var1 += 10;
-
-                if (var1 > 300)
-                {
-                    var1 = 300;
-                }
-
-                this.setAir(var1 + 1);
-            }
-            else
-            {
-                this.setAir(300);
-            }
-        }
+    	if ( m_iAirRecoveryCountdown > 0 )
+    	{
+    		m_iAirRecoveryCountdown--;
+    		
+    	}
+    	else
+    	{
+        	int iCurrentAir = getAir();
+        	
+        	if ( iCurrentAir < 300 )
+        	{
+        		iCurrentAir += 10;
+        		
+        		if ( iCurrentAir > 300 )
+        		{
+        			iCurrentAir = 300;
+        		}
+        		setAir( iCurrentAir + 1 );
+        	}
+        	else
+        	{
+        		setAir(300);
+        	}
+    	}
     }
-
-    /**
-     * returns true if this entity is by a ladder, false otherwise
-     */
+    
+	@Override
     public boolean isOnLadder()
     {
-        return this.GetHealthPenaltyLevel() < 4 && super.isOnLadder();
+		return GetHealthPenaltyLevel() < 4 && super.isOnLadder();
     }
-
+	
+	@Override
     public boolean CanJump()
-    {
-        return this.health > 4 && this.foodStats.getFoodLevel() > 12 && (int)this.foodStats.getSaturationLevel() < 18;
+    {		
+    	return health > 4 && foodStats.getFoodLevel() > 12 && (int)foodStats.getSaturationLevel() < 18;
     }
-
+	
+	@Override
     public boolean CanSwim()
-    {
-        return !this.isWeighted() && this.health > 4;
+    {		
+    	return !isWeighted() && health > 4;
     }
-
-    protected int GetWornArmorWeight()
-    {
-        int var1 = 0;
-
-        for (int var2 = 0; var2 < this.inventory.armorInventory.length; ++var2)
+	
+	@Override
+	protected int GetWornArmorWeight()
+	{
+		int iWeight = 0;
+		
+        for ( int iSlot = 0; iSlot < inventory.armorInventory.length; iSlot++ )
         {
-            ItemStack var3 = this.inventory.armorInventory[var2];
-
-            if (var3 != null)
+        	ItemStack tempStack = inventory.armorInventory[iSlot];
+        	
+            if ( tempStack != null )
             {
-                var1 += var3.getItem().GetWeightWhenWorn();
+                iWeight += tempStack.getItem().GetWeightWhenWorn();
             }
         }
-
-        return var1;
-    }
-
-    public float GetArmorExhaustionModifier()
-    {
-        float var1 = 1.0F;
-        int var2 = this.GetWornArmorWeight();
-
-        if (var2 > 0)
+        
+		return iWeight;
+	}
+	
+	public float GetArmorExhaustionModifier()
+	{
+		float fModifier = 1.0F;
+		
+		int iWeight = GetWornArmorWeight();
+		
+		if ( iWeight > 0 )
+		{
+			// set to cap at a 2 times modifier with full plate armor
+			
+			fModifier += (float)iWeight / 44F;
+		}
+		
+		return fModifier;
+	}
+	
+	
+	public boolean IsWearingFullSuitSoulforgedArmor()
+	{
+        for ( int iSlot = 0; iSlot < inventory.armorInventory.length; iSlot++ )
         {
-            var1 += (float)var2 / 44.0F;
-        }
-
-        return var1;
-    }
-
-    public boolean IsWearingFullSuitSoulforgedArmor()
-    {
-        for (int var1 = 0; var1 < this.inventory.armorInventory.length; ++var1)
-        {
-            if (this.inventory.armorInventory[var1] == null || !(this.inventory.armorInventory[var1].getItem() instanceof FCItemArmorRefined))
+            if ( inventory.armorInventory[iSlot] == null || !( inventory.armorInventory[iSlot].getItem() instanceof FCItemArmorRefined ) )
             {
                 return false;
             }
         }
-
-        return true;
-    }
-
+        
+		return true;
+	}
+	
     protected boolean IsWearingSoulforgedHelm()
-    {
-        return this.inventory.armorInventory[3] != null && this.inventory.armorInventory[3].getItem().itemID == FCBetterThanWolves.fcItemPlateHelm.itemID;
-    }
-
+	{
+        return inventory.armorInventory[3] != null && 
+        	inventory.armorInventory[3].getItem().itemID == 
+    		FCBetterThanWolves.fcItemPlateHelm.itemID;
+	}
+	
     protected boolean IsWearingSoulforgedBoots()
-    {
-        return this.inventory.armorInventory[0] != null && this.inventory.armorInventory[0].getItem().itemID == FCBetterThanWolves.fcItemPlateBoots.itemID;
-    }
-
+	{
+        return inventory.armorInventory[0] != null && 
+        	inventory.armorInventory[0].getItem().itemID == 
+    		FCBetterThanWolves.fcItemPlateBoots.itemID;
+	}
+    
     public boolean IsWearingEnderSpectacles()
     {
-        return this.inventory.armorInventory[3] != null && this.inventory.armorInventory[3].getItem().itemID == FCBetterThanWolves.fcItemEnderSpectacles.itemID;
+        return inventory.armorInventory[3] != null && 
+        	inventory.armorInventory[3].getItem().itemID == 
+    		FCBetterThanWolves.fcItemEnderSpectacles.itemID;
     }
-
-    /**
-     * Plays step sound at given x, y, z for the entity
-     */
-    protected void playStepSound(int var1, int var2, int var3, int var4)
+    
+	@Override
+    protected void playStepSound( int i, int j, int k, int iBlockID )
     {
-        float var5 = this.GetHealthAndExhaustionModifier();
+		float fHealthAndExhaustionModifier = GetHealthAndExhaustionModifier();
+		
+		if ( fHealthAndExhaustionModifier < 0.26F )
+		{
+			// play grunting along with step
+			
+			float fGruntVolume = ( 1F - fHealthAndExhaustionModifier ) * 0.75F;
+			
+			worldObj.playSoundAtEntity( this, 
+        		"random.classic_hurt", 0.5F, 
+        		1F + rand.nextFloat() * 0.1F);
+		}
+		
+		if ( IsWearingSoulforgedBoots() )
+		{
+	        int iBlockAboveID = worldObj.getBlockId( i, j + 1, k );
+	        Block blockAbove = Block.blocksList[iBlockAboveID];
+	        
+	        if ( blockAbove != null && blockAbove.IsGroundCover( ) )
+	        {
+	        	StepSound stepSound = blockAbove.stepSound;
+	            
+	            worldObj.playSoundAtEntity( this, stepSound.getStepSound(), stepSound.getVolume() * 0.3F, stepSound.getPitch() * 0.75F );
+	        }
+	        else if ( !Block.blocksList[iBlockID].blockMaterial.isLiquid() )
+	        {
+		        StepSound stepSound = Block.blocksList[iBlockID].GetStepSound( worldObj, i, j, k );    	
 
-        if (var5 < 0.26F)
-        {
-            float var6 = (1.0F - var5) * 0.75F;
-            this.worldObj.playSoundAtEntity(this, "random.classic_hurt", 0.5F, 1.0F + this.rand.nextFloat() * 0.1F);
-        }
-
-        if (this.IsWearingSoulforgedBoots())
-        {
-            int var9 = this.worldObj.getBlockId(var1, var2 + 1, var3);
-            Block var7 = Block.blocksList[var9];
-            StepSound var8;
-
-            if (var7 != null && var7.IsGroundCover())
-            {
-                var8 = var7.stepSound;
-                this.worldObj.playSoundAtEntity(this, var8.getStepSound(), var8.getVolume() * 0.3F, var8.getPitch() * 0.75F);
-            }
-            else if (!Block.blocksList[var4].blockMaterial.isLiquid())
-            {
-                var8 = Block.blocksList[var4].GetStepSound(this.worldObj, var1, var2, var3);
-                this.worldObj.playSoundAtEntity(this, var8.getStepSound(), var8.getVolume() * 0.3F, var8.getPitch() * 0.5F);
-            }
-        }
-        else
-        {
-            super.playStepSound(var1, var2, var3, var4);
-        }
+	            worldObj.playSoundAtEntity( this, stepSound.getStepSound(), stepSound.getVolume() * 0.3F, stepSound.getPitch() * 0.5F );
+	        }
+		}
+		else
+		{
+			super.playStepSound( i, j, k, iBlockID );
+		}
     }
 
+	@Override
     protected float GetHealthAndExhaustionModifier()
     {
-        float var1 = 1.0F;
-        int var2 = this.GetMaximumStatusPenaltyLevel();
+		float fModifier = 1.0F;
 
-        if (var2 >= 2)
-        {
-            if (var2 >= 3)
-            {
-                if (var2 >= 4)
-                {
-                    var1 = 0.25F;
-                }
-                else
-                {
-                    var1 = 0.5F;
-                }
-            }
-            else
-            {
-                var1 = 0.75F;
-            }
-        }
-
-        return var1;
+		int iPenaltyLevel = GetMaximumStatusPenaltyLevel();
+		
+		if ( iPenaltyLevel >= 2 )
+		{
+			if ( iPenaltyLevel >= 3 )
+			{
+				if ( iPenaltyLevel >= 4 )
+				{
+					fModifier = 0.25F;
+				}
+				else
+				{
+					fModifier = 0.5F;
+				}
+			} 
+			else
+			{
+				fModifier = 0.75F;
+			}
+		}
+		
+    	return fModifier;
     }
-
+    
     protected float GetHealthAndExhaustionModifierWithSightlessModifier()
     {
-        float var1 = this.GetHealthAndExhaustionModifier();
-
-        if (this.GetGloomLevel() > 0)
-        {
-            var1 *= 0.5F;
-        }
-
-        return var1;
+		float fModifier = GetHealthAndExhaustionModifier();
+		
+		if ( GetGloomLevel() > 0 )
+		{
+			fModifier *= 0.5F;
+		}
+		
+    	return fModifier;
     }
-
+    
+	@Override
     protected float GetSwimmingHorizontalModifier()
     {
-        return this.GetHealthAndExhaustionModifierWithSightlessModifier();
+		return GetHealthAndExhaustionModifierWithSightlessModifier();
     }
-
+    
+	@Override
     protected float GetLandMovementModifier()
     {
-        return this.GetHealthAndExhaustionModifierWithSightlessModifier();
+		return GetHealthAndExhaustionModifierWithSightlessModifier();
     }
-
+    
+	@Override
     protected float GetLadderVerticalMovementModifier()
     {
-        return this.GetHealthAndExhaustionModifierWithSightlessModifier();
-    }
-
-    protected float GetJumpingHorizontalMovementModifier()
+		return GetHealthAndExhaustionModifierWithSightlessModifier();
+    }    
+    
+	protected float GetJumpingHorizontalMovementModifier()        
     {
-        return this.GetHealthAndExhaustionModifierWithSightlessModifier();
+		return GetHealthAndExhaustionModifierWithSightlessModifier();
     }
-
-    protected void SetMiningSpeedModifier(float var1)
-    {
-        if (var1 > 1.0F)
-        {
-            var1 = 1.0F;
-        }
-
-        this.m_fCurrentMiningSpeedModifier = var1;
-    }
-
+    
+	protected void SetMiningSpeedModifier( float fModifier )
+	{
+		if ( fModifier > 1F )
+		{
+			// cap it just in case the client sends an invalid speed to the server
+			
+			fModifier = 1F;
+		}
+		
+		m_fCurrentMiningSpeedModifier = fModifier;
+	}
+	
     protected float GetMiningSpeedModifier()
     {
-        return this.m_fCurrentMiningSpeedModifier;
+		return m_fCurrentMiningSpeedModifier;
     }
-
+    
     protected float UpdateMiningSpeedModifier()
     {
-        this.m_fCurrentMiningSpeedModifier = this.GetHealthAndExhaustionModifierWithSightlessModifier();
-        return this.m_fCurrentMiningSpeedModifier;
+    	m_fCurrentMiningSpeedModifier = GetHealthAndExhaustionModifierWithSightlessModifier();
+    	
+    	return m_fCurrentMiningSpeedModifier;
     }
-
+    
     protected float GetMeleeDamageModifier()
     {
-        return this.GetHealthAndExhaustionModifierWithSightlessModifier();
+		return GetHealthAndExhaustionModifierWithSightlessModifier();
     }
-
+    
     public float GetBowPullStrengthModifier()
     {
-        return this.GetHealthAndExhaustionModifier();
+    	return GetHealthAndExhaustionModifier();
     }
-
-    public boolean HasStatusPenalty()
-    {
-        return this.getHealth() <= 10 || this.foodStats.getFoodLevel() <= 24 || (int)this.foodStats.getSaturationLevel() >= 12;
-    }
-
-    public int GetMaximumStatusPenaltyLevel()
-    {
-        int var1 = this.GetHealthPenaltyLevel();
-        int var2 = this.GetHungerPenaltyLevel();
-
-        if (var2 > var1)
-        {
-            var1 = var2;
-        }
-
-        int var3 = this.GetFatPenaltyLevel();
-
-        if (var3 > var1)
-        {
-            var1 = var3;
-        }
-
-        return var1;
-    }
-
+    
+	public boolean HasStatusPenalty()
+	{
+        return getHealth() <= 10 || foodStats.getFoodLevel() <= 24 || (int)foodStats.getSaturationLevel() >= 12;
+	}
+	
+	public int GetMaximumStatusPenaltyLevel()
+	{
+		int iMaximumPenaltyLevel = GetHealthPenaltyLevel();
+		int iHungerPenaltyLevel = GetHungerPenaltyLevel();
+		
+		if ( iHungerPenaltyLevel > iMaximumPenaltyLevel )
+		{
+			iMaximumPenaltyLevel = iHungerPenaltyLevel;
+		}
+		
+		int iFatPenaltyLevel = GetFatPenaltyLevel();
+		
+		if ( iFatPenaltyLevel > iMaximumPenaltyLevel )
+		{
+			iMaximumPenaltyLevel = iFatPenaltyLevel;
+		}
+		
+		return iMaximumPenaltyLevel;
+	}
+	
     protected boolean IsCarryingBlastingOil()
-    {
-        return this.inventory.hasItem(FCBetterThanWolves.fcItemBlastingOil.itemID);
+    {	
+    	return inventory.hasItem( FCBetterThanWolves.fcItemBlastingOil.itemID );
     }
-
-    protected void DetonateCarriedBlastingOil()
-    {
-        if (!this.worldObj.isRemote)
-        {
-            int var1 = FCUtilsInventory.CountItemsInInventory(this.inventory, FCBetterThanWolves.fcItemHellfireDust.itemID, -1);
-            float var2 = (float)var1 * 10.0F / 64.0F;
-            var2 += (float)FCUtilsInventory.CountItemsInInventory(this.inventory, Item.gunpowder.itemID, -1) * 10.0F / 64.0F;
-            var2 += (float)FCUtilsInventory.CountItemsInInventory(this.inventory, FCBetterThanWolves.fcItemBlastingOil.itemID, -1) * 10.0F / 64.0F;
-            int var3 = FCUtilsInventory.CountItemsInInventory(this.inventory, Block.tnt.blockID, -1);
-
-            if (var3 > 0)
-            {
-                if (var2 < 4.0F)
-                {
-                    var2 = 4.0F;
-                }
-
-                var2 += (float)FCUtilsInventory.CountItemsInInventory(this.inventory, Block.tnt.blockID, -1);
-            }
-
-            if (var2 < 1.5F)
-            {
-                var2 = 1.5F;
-            }
-            else if (var2 > 10.0F)
-            {
-                var2 = 10.0F;
-            }
-
-            FCUtilsInventory.ClearInventoryContents(this.inventory);
-            this.health = 0;
-            this.onDeath(DamageSource.generic);
-            this.worldObj.createExplosion((Entity)null, this.posX, this.posY, this.posZ, var2, true);
-        }
-    }
-
+    
+	protected void DetonateCarriedBlastingOil()
+	{
+		if ( !worldObj.isRemote )
+		{
+	    	int iHellfireCount = FCUtilsInventory.CountItemsInInventory( inventory, FCBetterThanWolves.fcItemHellfireDust.itemID, -1 );
+	    	
+	    	float fExplosionSize = ( iHellfireCount * 10.0F ) / 64.0F;
+	    	
+	    	fExplosionSize += ( FCUtilsInventory.CountItemsInInventory( inventory, Item.gunpowder.itemID, -1 ) * 10.0F ) / 64.0F;
+	    	
+	    	fExplosionSize += ( FCUtilsInventory.CountItemsInInventory( inventory, FCBetterThanWolves.fcItemBlastingOil.itemID, -1 ) * 10.0F ) / 64.0F;
+	    	
+	    	int iTNTCount = FCUtilsInventory.CountItemsInInventory( inventory, Block.tnt.blockID, -1 );
+	    	
+	    	if ( iTNTCount > 0 )
+	    	{
+	    		if ( fExplosionSize < 4.0F )
+	    		{
+	    			fExplosionSize = 4.0F;
+	    		}
+	    		
+	        	fExplosionSize += FCUtilsInventory.CountItemsInInventory( inventory, Block.tnt.blockID, -1 );
+	    	}
+	    	
+	    	if ( fExplosionSize < 1.5F )
+	    	{
+	    		fExplosionSize = 1.5F;
+	    	}
+	    	else if ( fExplosionSize > 10.0F )
+	    	{
+	    		fExplosionSize = 10.0F;
+	    	}
+	    	
+	    	FCUtilsInventory.ClearInventoryContents( inventory );
+	    	
+			health = 0;
+			
+			onDeath( DamageSource.generic );
+			
+	        worldObj.createExplosion( null, posX, posY, posZ, fExplosionSize, true );
+		}		
+	}
+	
+	@Override
     protected void dropHead()
     {
-        EntityItem var1 = this.entityDropItem(new ItemStack(Item.skull.itemID, 1, 3), 0.0F);
-
-        if (var1 != null)
+        EntityItem skullEntity = entityDropItem( new ItemStack( Item.skull.itemID, 1, 3 ), 0.0F );
+        
+        if ( skullEntity != null )
         {
-            ItemStack var2 = var1.getEntityItem();
-            NBTTagCompound var3 = var2.getTagCompound();
+        	// client
+        	ItemStack stack = skullEntity.getEntityItem();
+        	// server
+        	//ItemStack stack = skullEntity.func_92059_d();
+        	
+            NBTTagCompound tag = stack.getTagCompound();
 
-            if (var3 == null)
+            if ( tag == null)
             {
-                var3 = new NBTTagCompound();
-                var2.setTagCompound(var3);
+                tag = new NBTTagCompound();
+                
+                stack.setTagCompound( tag );
             }
 
-            var3.setString("SkullOwner", this.username);
+            tag.setString( "SkullOwner", username );
         }
     }
-
+    
     public boolean HasValidMagneticPointForLocation()
     {
-        return this.dataWatcher.getWatchableObjectByte(24) > 0;
+        return dataWatcher.getWatchableObjectByte( m_iHasValidMagneticPointForLocationDataWatcherID ) > 0;
     }
-
+    
     public int GetStongestMagneticPointForLocationI()
     {
-        return this.dataWatcher.getWatchableObjectInt(22);
+        return dataWatcher.getWatchableObjectInt( m_iStongestMagneticPointForLocationIDataWatcherID );
     }
-
+    
     public int GetStongestMagneticPointForLocationK()
     {
-        return this.dataWatcher.getWatchableObjectInt(23);
+        return dataWatcher.getWatchableObjectInt( m_iStongestMagneticPointForLocationKDataWatcherID );
     }
-
-    public void SetHasValidMagneticPointForLocation(boolean var1)
+    
+    public void SetHasValidMagneticPointForLocation( boolean bValid )
     {
-        byte var2 = 0;
-
-        if (var1)
-        {
-            var2 = 1;
-        }
-
-        this.dataWatcher.updateObject(24, Byte.valueOf(var2));
+    	byte bValidByte = 0;
+    	
+    	if ( bValid )
+    	{
+    		bValidByte = 1;
+    	}
+    	
+        dataWatcher.updateObject( m_iHasValidMagneticPointForLocationDataWatcherID, Byte.valueOf( bValidByte ) );
     }
-
-    public void SetStongestMagneticPointForLocationI(int var1)
+    
+    public void SetStongestMagneticPointForLocationI( int iLocationI )
     {
-        this.dataWatcher.updateObject(22, Integer.valueOf(var1));
+        dataWatcher.updateObject( m_iStongestMagneticPointForLocationIDataWatcherID, Integer.valueOf( iLocationI ) );
     }
-
-    public void SetStongestMagneticPointForLocationK(int var1)
+    
+    public void SetStongestMagneticPointForLocationK( int iLocationK )
     {
-        this.dataWatcher.updateObject(23, Integer.valueOf(var1));
+        dataWatcher.updateObject( m_iStongestMagneticPointForLocationKDataWatcherID, Integer.valueOf( iLocationK ) );
     }
-
+    
     public int GetGloomLevel()
     {
-        return this.dataWatcher.getWatchableObjectByte(25);
+        return dataWatcher.getWatchableObjectByte( m_iGloomLevelDataWatcherID );
     }
-
-    public void SetGloomLevel(int var1)
+    
+    public void SetGloomLevel( int iGloomLevel )
     {
-        this.dataWatcher.updateObject(25, Byte.valueOf((byte)var1));
+        dataWatcher.updateObject( m_iGloomLevelDataWatcherID, Byte.valueOf( (byte)iGloomLevel ) );
     }
-
+    
     public int GetFatPenaltyLevel()
     {
-        return this.dataWatcher.getWatchableObjectByte(26);
+        return dataWatcher.getWatchableObjectByte( m_iFatPenaltyLevelDataWatcherID );
     }
-
-    public void SetFatPenaltyLevel(int var1)
+    
+    public void SetFatPenaltyLevel( int iPenaltyLevel )
     {
-        this.dataWatcher.updateObject(26, Byte.valueOf((byte)var1));
+        dataWatcher.updateObject( m_iFatPenaltyLevelDataWatcherID, Byte.valueOf( (byte)iPenaltyLevel ) );
     }
-
+    
     public int GetHungerPenaltyLevel()
     {
-        return this.dataWatcher.getWatchableObjectByte(27);
+        return dataWatcher.getWatchableObjectByte( m_iHungerPenaltyLevelDataWatcherID );
     }
-
-    public void SetHungerPenaltyLevel(int var1)
+    
+    public void SetHungerPenaltyLevel( int iPenaltyLevel )
     {
-        this.dataWatcher.updateObject(27, Byte.valueOf((byte)var1));
+        dataWatcher.updateObject( m_iHungerPenaltyLevelDataWatcherID, Byte.valueOf( (byte)iPenaltyLevel ) );
     }
-
+    
     public int GetHealthPenaltyLevel()
     {
-        return this.dataWatcher.getWatchableObjectByte(28);
+        return dataWatcher.getWatchableObjectByte( m_iHealthPenaltyLevelDataWatcherID );
     }
-
-    public void SetHealthPenaltyLevel(int var1)
+    
+    public void SetHealthPenaltyLevel( int iPenaltyLevel )
     {
-        this.dataWatcher.updateObject(28, Byte.valueOf((byte)var1));
+        dataWatcher.updateObject( m_iHealthPenaltyLevelDataWatcherID, Byte.valueOf( (byte)iPenaltyLevel ) );
     }
-
+    
     public int GetSpawnChunksVisualizationLocationI()
     {
-        return this.dataWatcher.getWatchableObjectInt(29);
+        return dataWatcher.getWatchableObjectInt( m_iSpawnChunksVisualizationLocationIDataWatcherID );
     }
-
+    
     public int GetSpawnChunksVisualizationLocationJ()
     {
-        return this.dataWatcher.getWatchableObjectInt(30);
+        return dataWatcher.getWatchableObjectInt( m_iSpawnChunksVisualizationLocationJDataWatcherID );
     }
-
+    
     public int GetSpawnChunksVisualizationLocationK()
     {
-        return this.dataWatcher.getWatchableObjectInt(31);
+        return dataWatcher.getWatchableObjectInt( m_iSpawnChunksVisualizationLocationKDataWatcherID );
     }
-
-    public void SetSpawnChunksVisualization(int var1, int var2, int var3)
+    
+    public void SetSpawnChunksVisualization( int iLocationI, int iLocationJ, int iLocationK )
     {
-        this.dataWatcher.updateObject(29, Integer.valueOf(var1));
-        this.dataWatcher.updateObject(30, Integer.valueOf(var2));
-        this.dataWatcher.updateObject(31, Integer.valueOf(var3));
+        dataWatcher.updateObject( m_iSpawnChunksVisualizationLocationIDataWatcherID, 
+        	Integer.valueOf( iLocationI ) );
+        
+        dataWatcher.updateObject( m_iSpawnChunksVisualizationLocationJDataWatcherID, 
+        	Integer.valueOf( iLocationJ ) );
+        
+        dataWatcher.updateObject( m_iSpawnChunksVisualizationLocationKDataWatcherID, 
+        	Integer.valueOf( iLocationK ) );
     }
-
+    
     public boolean HasRespawnCoordinates()
     {
-        return this.spawnChunk != null;
+    	return spawnChunk != null;
     }
-
-    public int GetValidatedRespawnCoordinates(World var1, ChunkCoordinates var2)
+    
+    /*
+     * returns zero if a valid spawn location is found
+     * 1 = invalid forced spawn location
+     * 2 = missing beacon
+     * 3 = Beacon is out of range
+     * 4 = Area around beacon is obstructed
+     */
+    public int GetValidatedRespawnCoordinates( World newWorld, ChunkCoordinates respawnLocation )
     {
-        byte var3 = 0;
-        int var4 = this.dimension;
-        int var5 = this.m_iSpawnDimension;
-        IChunkProvider var6 = var1.getChunkProvider();
-        ChunkCoordinates var7 = null;
-        var6.loadChunk(this.spawnChunk.posX - 4 >> 4, this.spawnChunk.posZ - 4 >> 4);
-        var6.loadChunk(this.spawnChunk.posX + 4 >> 4, this.spawnChunk.posZ - 4 >> 4);
-        var6.loadChunk(this.spawnChunk.posX - 4 >> 4, this.spawnChunk.posZ + 4 >> 4);
-        var6.loadChunk(this.spawnChunk.posX + 4 >> 4, this.spawnChunk.posZ + 4 >> 4);
+    	int returnValue = 0;
+    	
+    	int oldDimension = dimension;
+    	int newDimension = m_iSpawnDimension;
+    	
+        IChunkProvider chunkProvider = newWorld.getChunkProvider();
+        
+        ChunkCoordinates validatedCoords = null;
+        
+        chunkProvider.loadChunk( spawnChunk.posX - 4 >> 4, spawnChunk.posZ - 4 >> 4 );
+        chunkProvider.loadChunk( spawnChunk.posX + 4 >> 4, spawnChunk.posZ - 4 >> 4 );
+        chunkProvider.loadChunk( spawnChunk.posX - 4 >> 4, spawnChunk.posZ + 4 >> 4 );
+        chunkProvider.loadChunk( spawnChunk.posX + 4 >> 4, spawnChunk.posZ + 4 >> 4 );
 
-        if (this.spawnForced)
+        if ( spawnForced )
         {
-            Material var8 = var1.getBlockMaterial(this.spawnChunk.posX, this.spawnChunk.posY, this.spawnChunk.posZ);
-            Material var9 = var1.getBlockMaterial(this.spawnChunk.posX, this.spawnChunk.posY + 1, this.spawnChunk.posZ);
-            boolean var10000;
-
-            if (!var8.isSolid() && !var8.isLiquid())
+            Material targetMaterial = newWorld.getBlockMaterial( spawnChunk.posX, spawnChunk.posY, spawnChunk.posZ );
+            Material aboveTargetMaterial = newWorld.getBlockMaterial( spawnChunk.posX, spawnChunk.posY + 1, spawnChunk.posZ );
+            
+            boolean bValidTarget = !targetMaterial.isSolid() && !targetMaterial.isLiquid();
+            boolean bValidAboveTarget = !aboveTargetMaterial.isSolid() && !aboveTargetMaterial.isLiquid();
+            
+            if ( IsValidRespawnLocation( newWorld, spawnChunk.posX, spawnChunk.posY, spawnChunk.posZ ) )
             {
-                var10000 = true;
+            	validatedCoords = spawnChunk;
             }
             else
             {
-                var10000 = false;
-            }
-
-            if (!var9.isSolid() && !var9.isLiquid())
-            {
-                var10000 = true;
-            }
-            else
-            {
-                var10000 = false;
-            }
-
-            if (this.IsValidRespawnLocation(var1, this.spawnChunk.posX, this.spawnChunk.posY, this.spawnChunk.posZ))
-            {
-                var7 = this.spawnChunk;
-            }
-            else
-            {
-                var3 = 1;
+            	returnValue = 1;
             }
         }
         else
         {
-            var3 = 2;
-
-            if (var1.getBlockId(this.spawnChunk.posX, this.spawnChunk.posY, this.spawnChunk.posZ) == Block.beacon.blockID)
+        	BeaconRespawnValidationResult validatedResult = validateBoundRespawnBeacon(newWorld, oldDimension, newDimension);
+        	returnValue = validatedResult.beaconStatus.id;
+        	
+            if( returnValue == 0)
             {
-                FCTileEntityBeacon var15 = (FCTileEntityBeacon)var1.getBlockTileEntity(this.spawnChunk.posX, this.spawnChunk.posY, this.spawnChunk.posZ);
-
-                if (var15 != null)
-                {
-                    int var16 = var15.getPrimaryEffect();
-
-                    if (var16 == 22223)
-                    {
-                        int var10 = var15.getLevels();
-
-                        if (var10 > 0)
-                        {
-                            var3 = 3;
-
-                            if (var10 >= 4 || var4 == var5)
-                            {
-                                boolean var11 = true;
-
-                                if (var10 < 3)
-                                {
-                                    short var12 = 160;
-
-                                    if (var10 == 2)
-                                    {
-                                        var12 = 2000;
-                                    }
-
-                                    int var13 = Math.abs((int)this.posX - this.spawnChunk.posX);
-
-                                    if (var13 > var12)
-                                    {
-                                        var11 = false;
-                                    }
-                                    else
-                                    {
-                                        int var14 = Math.abs((int)this.posZ - this.spawnChunk.posZ);
-
-                                        if (var14 > var12)
-                                        {
-                                            var11 = false;
-                                        }
-                                    }
-                                }
-
-                                if (var11)
-                                {
-                                    var7 = this.GetRandomValidSpawnAroundBeaconLocation(var1, this.spawnChunk.posX, this.spawnChunk.posY, this.spawnChunk.posZ, var10);
-
-                                    if (var7 != null)
-                                    {
-                                        var3 = 0;
-                                        var15.m_bPlayerRespawnedAtBeacon = true;
-                                    }
-                                    else
-                                    {
-                                        var3 = 4;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-
-            if (var7 != null)
-            {
-                var2.posX = var7.posX;
-                var2.posY = var7.posY;
-                var2.posZ = var7.posZ;
+            	respawnLocation.posX = validatedResult.coords.posX;
+            	respawnLocation.posY = validatedResult.coords.posY;
+            	respawnLocation.posZ = validatedResult.coords.posZ;
             }
         }
-
-        return var3;
+        
+        return returnValue;
     }
-
-    private boolean IsValidRespawnLocation(World var1, int var2, int var3, int var4)
-    {
-        Material var5 = var1.getBlockMaterial(var2, var3, var4);
-        Material var6 = var1.getBlockMaterial(var2, var3 + 1, var4);
-        boolean var7 = !var5.isSolid() && !var5.isLiquid();
-        boolean var8 = !var6.isSolid() && !var6.isLiquid();
-        return var7 && var8;
-    }
-
-    private ChunkCoordinates GetRandomValidSpawnAroundBeaconLocation(World var1, int var2, int var3, int var4, int var5)
-    {
-        for (int var6 = 0; var6 < 20; ++var6)
-        {
-            int var7 = this.rand.nextInt(var5) + 1;
-            int var8 = this.rand.nextInt(2) * var7;
-
-            if (this.rand.nextInt(2) == 0)
-            {
-                var8 = -var8;
-            }
-
-            int var9 = this.rand.nextInt(var5 * 2 + 1) - var5;
-            int var10 = var8;
-            int var11 = -(var7 - 1);
-            int var12 = var9;
-
-            if (this.rand.nextInt(2) == 0)
-            {
-                var10 = var9;
-                var12 = var8;
-            }
-
-            int var13 = var2 + var10;
-            int var14 = var3 + var11;
-            int var15 = var4 + var12;
-
-            if (var1.doesBlockHaveSolidTopSurface(var13, var14 - 1, var15) && this.IsValidRespawnLocation(var1, var13, var14, var15))
-            {
-                return new ChunkCoordinates(var13, var14, var15);
-            }
+    
+    // TODO: lots of hardcoded stuff in here
+    public BeaconRespawnValidationResult validateBoundRespawnBeacon(World world, int oldDimension, int newDimension) {
+    	BeaconRespawnValidationResult result = new BeaconRespawnValidationResult();
+    	result.beaconStatus = BeaconStatus.MISSING;
+		
+    	// Does the beacon exist
+        if ( spawnChunk != null && world.getBlockId(spawnChunk.posX, spawnChunk.posY, spawnChunk.posZ ) == Block.beacon.blockID) {
+        	FCTileEntityBeacon beaconEnt = (FCTileEntityBeacon) world.getBlockTileEntity(spawnChunk.posX, spawnChunk.posY, spawnChunk.posZ);
+        	
+        	if (beaconEnt != null) {
+        		int beaconEffect = beaconEnt.getPrimaryEffect();
+        		
+        		// Is the beacon a steel beacon
+        		if (beaconEffect == FCTileEntityBeacon.m_iEffectIDSpawnPoint) {
+        			int beaconPowerLevel = beaconEnt.getLevels();
+        			
+        			// Validate that the beacon is in fact powered
+        			if (beaconPowerLevel > 0) {
+        				result.beaconStatus = BeaconStatus.OUT_OF_RANGE;
+        				
+        				// Level 4 is across dimensions, otherwise must be the same dimension
+	        			if (beaconPowerLevel >= 4 || oldDimension == newDimension) {
+	        				boolean inRange = true;
+	        				
+	        				// Check range for level 1 and 2
+	        				// Level 3 and 4 have no range limit
+	        				if (beaconPowerLevel < 3) {
+	        					int maxRange = 160;
+	        					
+	        					if (beaconPowerLevel == 2) {
+	        						maxRange = 2000;
+	        					}
+	        					
+	        					int deltaX = Math.abs( (int)posX - spawnChunk.posX );
+	        					
+	        					if (deltaX > maxRange) {
+	        						inRange = false;
+	        					}
+	        					else {
+		        					int deltaZ = Math.abs( (int)posZ - spawnChunk.posZ );
+		        					
+		        					if (deltaZ > maxRange) {
+		        						inRange = false;
+		        					}
+	        					}
+	        				}
+	        				
+	        				if (inRange) {
+	        					result.coords = GetRandomValidSpawnAroundBeaconLocation( world, spawnChunk.posX, spawnChunk.posY, spawnChunk.posZ, beaconPowerLevel );
+	        					
+	        					if (result.coords != null) {
+	        						result.beaconStatus = BeaconStatus.VALID;
+	        						beaconEnt.m_bPlayerRespawnedAtBeacon = true;
+	        					}
+	        					else {
+	        						result.beaconStatus = BeaconStatus.OBSTRUCTED;
+	        					}
+	        				}
+	        			}
+        			}
+        		}
+        	}
         }
-
+        
+        return result;
+    }
+    
+    private boolean IsValidRespawnLocation( World world, int i, int j, int k )
+    {
+        Material targetMaterial = world.getBlockMaterial( i, j, k );
+        Material aboveTargetMaterial = world.getBlockMaterial( i, j + 1, k );
+        
+        boolean bValidTarget = !targetMaterial.isSolid() && !targetMaterial.isLiquid();
+        boolean bValidAboveTarget = !aboveTargetMaterial.isSolid() && !aboveTargetMaterial.isLiquid();
+        
+        return bValidTarget && bValidAboveTarget;
+	}
+    
+    private ChunkCoordinates GetRandomValidSpawnAroundBeaconLocation( World world, int i, int j, int k, int iBeaconLevel )
+    {
+    	for ( int iAttempt = 0; iAttempt < 20; iAttempt++ )
+    	{
+    		int iDistance = rand.nextInt( iBeaconLevel ) + 1;    		
+    		
+    		// generate a random point around the edge at the specified distance
+    		
+    		int iPrimaryOffset = rand.nextInt( 2 ) * iDistance;
+    		
+			if ( rand.nextInt( 2 ) == 0 )
+			{
+				iPrimaryOffset = -iPrimaryOffset;
+			}
+			
+    		int iSecondaryOffset = rand.nextInt( iBeaconLevel * 2 + 1 ) - iBeaconLevel;
+    		
+    		int iXOffset = iPrimaryOffset; 
+			int iYOffset = -( iDistance - 1 );
+    		int iZOffset = iSecondaryOffset;
+    		
+			if ( rand.nextInt( 2 ) == 0 )
+			{
+	    		iXOffset = iSecondaryOffset;
+	    		iZOffset = iPrimaryOffset;
+			}
+			
+			int iISpawn = i + iXOffset;
+			int iJSpawn = j + iYOffset;
+			int iKSpawn = k + iZOffset;
+			
+        	if ( world.doesBlockHaveSolidTopSurface( iISpawn, iJSpawn - 1, iKSpawn ) && IsValidRespawnLocation( world, iISpawn, iJSpawn, iKSpawn ) )
+        	{
+                return new ChunkCoordinates( iISpawn, iJSpawn, iKSpawn );
+            }
+    	}
+    	
         return null;
     }
 
-    public void setSpawnChunk(ChunkCoordinates var1, boolean var2, int var3)
+    // overloaded vanilla function with added dimension param
+    public void setSpawnChunk( ChunkCoordinates coords, boolean bForced, int iDimension )
     {
-        if (var1 != null)
+        if ( coords != null )
         {
-            this.spawnChunk = new ChunkCoordinates(var1);
-            this.spawnForced = var2;
-            this.m_iSpawnDimension = var3;
+            spawnChunk = new ChunkCoordinates(coords);
+            spawnForced = bForced;
+            m_iSpawnDimension = iDimension;
         }
         else
         {
-            this.spawnChunk = null;
-            this.spawnForced = false;
-            this.m_iSpawnDimension = 0;
-        }
+            spawnChunk = null;
+            spawnForced = false;
+            m_iSpawnDimension = 0;            
+        }        
     }
+    
+	public void AddRawChatMessage( String message )
+	{
+	}
+	
+	boolean IsCurrentToolEffectiveOnBlock( Block targetBlock, int i, int j, int k )
+	{
+        float var2 = 1.0F;
 
-    public void AddRawChatMessage(String var1) {}
-
-    boolean IsCurrentToolEffectiveOnBlock(Block var1, int var2, int var3, int var4)
-    {
-        float var5 = 1.0F;
-        ItemStack var6 = this.inventory.mainInventory[this.inventory.currentItem];
-        return var6 != null ? var6.getItem().IsEfficientVsBlock(var6, this.worldObj, var1, var2, var3, var4) : false;
-    }
-
-    public boolean canHarvestBlock(Block var1, int var2, int var3, int var4)
-    {
-        return this.inventory.canHarvestBlock(this.worldObj, var1, var2, var3, var4);
-    }
-
-    public boolean AddStackToCurrentHeldStackIfEmpty(ItemStack var1)
-    {
-        if (this.getCurrentEquippedItem() == null)
+        ItemStack currentItemStack = inventory.mainInventory[inventory.currentItem];
+        
+        if ( currentItemStack != null )
         {
-            this.inventory.setInventorySlotContents(this.inventory.currentItem, var1.copy());
-            return true;
+            return currentItemStack.getItem().IsEfficientVsBlock( currentItemStack, worldObj, targetBlock, i, j, k );
         }
-        else
-        {
-            return false;
-        }
-    }
 
+		return false;
+	}
+    
+    public boolean canHarvestBlock( Block par1Block, int i, int j, int k )
+    {
+        return this.inventory.canHarvestBlock( worldObj, par1Block, i, j, k );
+    }
+    
+    public boolean AddStackToCurrentHeldStackIfEmpty( ItemStack stack )
+    {
+    	if ( getCurrentEquippedItem() == null )
+    	{
+    		inventory.setInventorySlotContents( inventory.currentItem, stack.copy() );
+    		
+    		return true;
+    	}
+    	
+    	return false;
+    }    
+    	
     protected void UpdateModStatusVariables()
     {
-        this.UpdateGloomState();
-        this.UpdateHungerPenaltyLevel();
-        this.UpdateFatPenaltyLevel();
-        this.UpdateHealthPenaltyLevel();
+    	UpdateGloomState();
+    	
+    	UpdateHungerPenaltyLevel();
+    	
+    	UpdateFatPenaltyLevel();
+    	
+    	UpdateHealthPenaltyLevel();
     }
 
     protected void UpdateGloomState() {}
-
-    protected void UpdateHungerPenaltyLevel() {}
-
+    
+	protected void UpdateHungerPenaltyLevel() {}
+	
     protected void UpdateFatPenaltyLevel() {}
-
-    protected void UpdateHealthPenaltyLevel() {}
-
-    protected void OnBlockedDamage(DamageSource var1, int var2)
-    {
-        ItemStack var3 = this.inventory.mainInventory[this.inventory.currentItem];
-
-        if (var3 != null)
+	
+	protected void UpdateHealthPenaltyLevel() {}
+	
+	protected void OnBlockedDamage( DamageSource source, int iDamage )
+	{
+        ItemStack currentItemStack = inventory.mainInventory[inventory.currentItem];
+        
+        if ( currentItemStack != null )
         {
-            var3.damageItem(1, this);
+        	currentItemStack.damageItem( 1, this );
         }
-    }
-
-    /**
-     * Returns the Y offset from the entity's position for any entity riding this one.
-     */
+	}
+	
+    @Override
     public double getMountedYOffset()
     {
-        return (double)this.height * 0.025D;
+        return (double)height * 0.025D;
     }
-
-    public void AddExhaustionWithoutVisualFeedback(float var1)
+    
+    public void AddExhaustionWithoutVisualFeedback( float fAmount )
     {
-        this.addExhaustion(var1);
+        addExhaustion( fAmount );
     }
-
-    public void AddHarvestBlockExhaustion(int var1, int var2, int var3, int var4, int var5)
+    
+    public void AddHarvestBlockExhaustion( int iBlockID, int iBlockI, int iBlockJ, int iBlockK, int iBlockMetadata )
     {
-        float var6 = 0.025F;
-        ItemStack var7 = this.inventory.mainInventory[this.inventory.currentItem];
-
-        if (var7 != null)
+    	float fExhaustionConsumed = 0.025F; // default exhaustion amount
+    	
+        ItemStack currentItemStack = inventory.mainInventory[inventory.currentItem];
+        
+        if ( currentItemStack != null )
         {
-            var6 = var7.getItem().GetExhaustionOnUsedToHarvestBlock(var1, this.worldObj, var2, var3, var4, var5);
+        	fExhaustionConsumed = currentItemStack.getItem().GetExhaustionOnUsedToHarvestBlock( iBlockID, worldObj, iBlockI, iBlockJ, iBlockK, iBlockMetadata );
         }
-
-        if (var6 > 0.0F)
-        {
-            this.addExhaustion(var6);
-        }
+    	
+    	if ( fExhaustionConsumed > 0F )
+    	{
+    		addExhaustion( fExhaustionConsumed );
+    	}
     }
-
-    protected void OnZeroDamageAttack() {}
-
+    
+    protected void OnZeroDamageAttack()
+    {
+    }
+    
     protected boolean IsPlayerHoldingSail()
     {
-        ItemStack var1 = this.inventory.mainInventory[this.inventory.currentItem];
-        return var1 != null ? var1.itemID == FCBetterThanWolves.fcItemWindMillBlade.itemID : false;
-    }
-
-    public boolean AppliesConstantForceWhenRidingBoat()
-    {
-        return this.IsPlayerHoldingSail();
-    }
-
-    public double MovementModifierWhenRidingBoat()
-    {
-        double var1 = 0.35D;
-
-        if (this.IsPlayerHoldingSail())
+        ItemStack currentItemStack = inventory.mainInventory[inventory.currentItem];
+        
+        if ( currentItemStack != null )
         {
-            var1 = 1.0D;
+    		return currentItemStack.itemID == FCBetterThanWolves.fcItemWindMillBlade.itemID;
         }
-
-        return var1;
-    }
-
-    /**
-     * Called when a player unounts an entity.
-     */
-    public void unmountEntity(Entity var1)
-    {
-        double var2 = this.posX;
-        double var4 = this.posY;
-        double var6 = this.posZ;
-
-        if (var1 != null)
-        {
-            var2 = var1.posX;
-            var4 = var1.boundingBox.minY + (double)var1.height;
-            var6 = var1.posZ;
-        }
-
-        double var8 = (double)(-MathHelper.cos((this.rotationYaw - 90.0F) * (float)Math.PI / 180.0F));
-        double var10 = (double)(-MathHelper.sin((this.rotationYaw - 90.0F) * (float)Math.PI / 180.0F));
-        int var12 = 0;
-        double var13;
-        double var15;
-
-        for (var13 = 2.0D; var13 > 0.1D; var13 -= 0.5D)
-        {
-            var15 = var8 * var13;
-            double var17 = var10 * var13;
-            int var19 = this.GetDismountLocationSuitability(var15, var17);
-
-            if (var19 > var12)
-            {
-                var2 = this.posX + var15;
-                var4 = this.posY + 1.0D;
-                var6 = this.posZ + var17;
-                var12 = var19;
-            }
-        }
-
-        if (var12 <= 0)
-        {
-            for (var13 = -1.5D; var13 < 2.0D; ++var13)
-            {
-                for (var15 = -1.5D; var15 < 2.0D; ++var15)
-                {
-                    int var20 = this.GetDismountLocationSuitability(var13, var15);
-
-                    if (var20 > var12)
-                    {
-                        var2 = this.posX + var13;
-                        var4 = this.posY + 1.0D;
-                        var6 = this.posZ + var15;
-                        var12 = var20;
-                    }
-                }
-            }
-        }
-
-        this.setLocationAndAngles(var2, var4, var6, this.rotationYaw, this.rotationPitch);
-    }
-
-    private boolean IsSolidBlockToDismountOn(int var1, int var2, int var3)
-    {
-        return this.worldObj.doesBlockHaveSolidTopSurface(var1, var2, var3) || this.worldObj.getBlockMaterial(var1, var2, var3) == Material.ice;
-    }
-
-    private int GetDismountLocationSuitability(double var1, double var3)
-    {
-        int var5 = MathHelper.floor_double(this.posX + var1);
-        int var6 = MathHelper.floor_double(this.posY);
-        int var7 = MathHelper.floor_double(this.posZ + var3);
-        AxisAlignedBB var8 = this.boundingBox.getOffsetBoundingBox(var1, 1.0D, var3);
-
-        if (this.worldObj.getCollidingBlockBounds(var8).isEmpty())
-        {
-            if (this.IsSolidBlockToDismountOn(var5, var6, var7))
-            {
-                return 3;
-            }
-
-            if (this.IsSolidBlockToDismountOn(var5, var6 - 1, var7))
-            {
-                return 2;
-            }
-
-            if (this.worldObj.getBlockMaterial(var5, var6 - 1, var7) == Material.water)
-            {
-                return 1;
-            }
-        }
-
-        return 0;
-    }
-
-    public void AddExhaustionForJump()
-    {
-        if (this.isSprinting())
-        {
-            this.addExhaustion(1.0F);
-        }
-        else
-        {
-            this.addExhaustion(0.2F);
-        }
-    }
-
-    public void SetItemInUseCount(int var1)
-    {
-        this.itemInUseCount = var1;
-    }
-
-    public boolean GetCanBeHeadCrabbed(boolean var1)
-    {
-        return this.isEntityAlive() && !this.capabilities.disableDamage && this.riddenByEntity == null && this.ridingEntity == null;
-    }
-
-    public boolean IsValidOngoingAttackTargetForSquid()
-    {
-        return this.isEntityAlive();
-    }
-
-    public boolean IsImmuneToHeadCrabDamage()
-    {
-        return this.IsWearingSoulforgedHelm();
-    }
-
-    public boolean IsLocalPlayerAndHittingBlock()
-    {
+        
         return false;
     }
-
-    public void MountEntityRemote(Entity var1)
-    {
-        if (this.ridingEntity != var1)
+    
+    @Override
+	public boolean AppliesConstantForceWhenRidingBoat()
+	{
+		return IsPlayerHoldingSail();
+	}
+	
+    @Override
+	public double MovementModifierWhenRidingBoat()
+	{
+        double dModifier = 0.35D;
+        
+        if ( IsPlayerHoldingSail() )
         {
-            super.mountEntity(var1);
-        }
-    }
+			dModifier = 1.0D;
+    	}
+        
+		return dModifier;
+	}
 
+    @Override
+    public void unmountEntity( Entity riddenEntity )
+    {
+        double dUnmountX = posX;
+        double dUnmountY = posY;
+        double dUnmountZ = posZ;
+
+        if (riddenEntity != null)
+        {
+            dUnmountX = riddenEntity.posX;
+            dUnmountY = riddenEntity.boundingBox.minY + (double)riddenEntity.height;
+            dUnmountZ = riddenEntity.posZ;
+        }
+        
+        double dLookOffsetX = -MathHelper.cos( ( rotationYaw - 90 ) * (float)Math.PI / 180.0F );
+        double dLookOffsetZ = -MathHelper.sin( ( rotationYaw - 90 ) * (float)Math.PI / 180.0F );
+        
+        int iMaxSuitability = 0;
+        
+        for ( double dTempLookOffset = 2.0D; dTempLookOffset > 0.1D; dTempLookOffset -= 0.5D )
+        {
+        	double dTempXOffset = dLookOffsetX * dTempLookOffset;
+        	double dTempZOffset = dLookOffsetZ * dTempLookOffset;
+        	
+        	int iTempSuitability = GetDismountLocationSuitability( dTempXOffset, dTempZOffset );
+        	
+        	if (  iTempSuitability > iMaxSuitability )
+        	{
+                dUnmountX = posX + dTempXOffset;
+                dUnmountY = posY + 1.0D;
+                dUnmountZ = posZ + dTempZOffset;
+                
+                iMaxSuitability = iTempSuitability;
+        	}
+        }
+        
+        if ( iMaxSuitability <= 0 )
+        {
+	        for ( double dTempXOffset = -1.5D; dTempXOffset < 2.0D; ++dTempXOffset )
+	        {
+	            for ( double dTempZOffset = -1.5D; dTempZOffset < 2.0D; ++dTempZOffset )
+	            {
+	            	int iTempSuitability = GetDismountLocationSuitability( dTempXOffset, dTempZOffset );
+	            	
+	            	if (  iTempSuitability > iMaxSuitability )
+	            	{
+	                    dUnmountX = posX + dTempXOffset;
+	                    dUnmountY = posY + 1.0D;
+	                    dUnmountZ = posZ + dTempZOffset;
+	                    
+	                    iMaxSuitability = iTempSuitability;
+	            	}
+	            }
+	        }
+        }
+
+        setLocationAndAngles(dUnmountX, dUnmountY, dUnmountZ, this.rotationYaw, this.rotationPitch);
+    }
+    
+    private boolean IsSolidBlockToDismountOn( int i, int j, int k )
+    {
+    	return worldObj.doesBlockHaveSolidTopSurface( i , j, k )  || worldObj.getBlockMaterial( i, j, k ) == Material.ice;    
+	}
+    
+    /**
+     * Returns a value of zero or higher, with larger numbers indicating greater suitability
+     */
+    private int GetDismountLocationSuitability( double dPosOffsetX, double dPosOffsetZ )
+    {
+    	int i = MathHelper.floor_double( posX + dPosOffsetX );
+    	int j = MathHelper.floor_double( posY ); 
+    	int k = MathHelper.floor_double( posZ + dPosOffsetZ );
+    	
+        AxisAlignedBB dTempBoundingBox = boundingBox.getOffsetBoundingBox( dPosOffsetX, 1.0D, dPosOffsetZ );
+
+        if ( worldObj.getCollidingBlockBounds( dTempBoundingBox ).isEmpty() )
+        {
+	        if ( IsSolidBlockToDismountOn( i, j, k ) )
+	        {
+	            return 3;
+	        }
+	        else if ( IsSolidBlockToDismountOn( i, j - 1, k ) )
+	        {
+	            return 2;
+	            
+	        }
+	        else if ( worldObj.getBlockMaterial( i, j - 1, k ) == Material.water )
+	        {
+	        	return 1;
+	        }
+        }
+        
+        return 0;
+    }
+    
+    public void AddExhaustionForJump()
+    {
+	    if ( isSprinting() )
+	    {
+			addExhaustion( m_fExhaustionJumpingSprinting );
+	    }
+	    else
+	    {
+			addExhaustion( m_fExhaustionJumping );
+	    }
+    }
+    
+    public void SetItemInUseCount( int iCount )
+    {
+        itemInUseCount = iCount;
+    }
+    
+    @Override
+    public boolean GetCanBeHeadCrabbed( boolean bSquidInWater )
+    {
+    	return isEntityAlive() && !capabilities.disableDamage && 
+			riddenByEntity == null && ridingEntity == null;
+    }
+    
+    @Override
+    public boolean IsValidOngoingAttackTargetForSquid()
+    {
+    	return isEntityAlive();
+    }
+    
+    @Override
+	public boolean IsImmuneToHeadCrabDamage()
+	{
+		return IsWearingSoulforgedHelm();
+	}
+    
+    public boolean IsLocalPlayerAndHittingBlock()
+    {
+    	return false;
+    }
+	
+    @Override
+    public void MountEntityRemote( Entity entityToMount )
+    {
+    	// Fix described in MC-1291 for players dissapearing after riding boats in SMP
+    	// Bypasses toggle type behavior of mounting and dismounting if multiple packets
+    	// are received for a player.
+    	
+    	if ( ridingEntity != entityToMount )
+    	{
+    		super.mountEntity( entityToMount );
+    	}
+    }
+    
     public boolean CanDrink()
     {
-        return !this.isPotionActive(Potion.hunger);
+        return !isPotionActive( Potion.hunger );
     }
-
+    
     public void OnCantConsume()
     {
-        if (!this.worldObj.isRemote && this.m_iTicksSinceEmoteSound >= 10)
-        {
-            this.worldObj.playAuxSFX(2285, MathHelper.floor_double(this.posX), MathHelper.floor_double(this.posY), MathHelper.floor_double(this.posZ), 0);
-            this.m_iTicksSinceEmoteSound = 0;
-        }
+    	if ( !worldObj.isRemote && m_iTicksSinceEmoteSound >= m_iTicksBetweenEmoteSounds )    		
+    	{    		
+            worldObj.playAuxSFX( FCBetterThanWolves.m_iEatFailAuxFXID,           
+            	MathHelper.floor_double( posX ), 
+            	MathHelper.floor_double( posY ), 
+            	MathHelper.floor_double( posZ ), 0 );    
+            
+            m_iTicksSinceEmoteSound = 0;
+    	}
+    }
+    
+    static public boolean InstallationIntegrityTestPlayer()
+    {
+    	return true;
     }
 
-    public static boolean InstallationIntegrityTestPlayer()
-    {
-        return true;
+    public static class BeaconRespawnValidationResult {
+    	public BeaconStatus beaconStatus;
+
+    	public ChunkCoordinates coords;
+
+    	public void setCoords(ChunkCoordinates coords) {
+    		this.coords = coords;
+    	}
+
+    	public enum BeaconStatus {
+    		VALID(0),
+    		MISSING(2),
+    		OUT_OF_RANGE(3),
+    		OBSTRUCTED(4);
+
+    		public final int id;
+
+    		private BeaconStatus(int id) {
+    			this.id = id;
+    		}
+    	}
     }
+    // END FCMOD
 }

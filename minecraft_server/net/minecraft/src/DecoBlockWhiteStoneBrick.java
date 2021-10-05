@@ -3,6 +3,11 @@ package net.minecraft.src;
 import java.util.Random;
 
 public class DecoBlockWhiteStoneBrick extends Block {
+	public static final int typeDefault = 0;
+	public static final int typeMossy = 1;
+	public static final int typeCracked = 2;
+	public static final int typeChiseled = 3;
+	
 	public DecoBlockWhiteStoneBrick(int ID)
 	{
 		super(ID, Material.rock);

@@ -12,9 +12,6 @@ public class DecoBlockLogBlood extends Block {
         this.SetBuoyancy(1.0F);
         this.SetFurnaceBurnTime(4 * FCEnumFurnaceBurnTime.PLANKS_BLOOD.m_iBurnTime);
         this.SetFireProperties(FCEnumFlammability.EXTREME);
-        this.SetCanBeCookedByKiln(true);
-        this.SetItemIndexDroppedWhenCookedByKiln(Item.coal.itemID);
-        this.SetItemDamageDroppedWhenCookedByKiln(1);
         this.setStepSound(FCBetterThanWolves.fcStepSoundSquish);
         this.setUnlocalizedName("fcBlockBloodWood");
         this.setCreativeTab(CreativeTabs.tabBlock);
@@ -52,38 +49,6 @@ public class DecoBlockLogBlood extends Block {
 
 		return true;
 	}
-
-    public boolean OnBlockSawed(World var1, int var2, int var3, int var4)
-    {
-        int meta = var1.getBlockMetadata(var2, var3, var4);
-        
-        super.OnBlockSawed(var1, var2, var3, var4);
-        
-        for (int var5 = 0; var5 < 2; ++var5)
-        {
-            FCUtilsItem.EjectSingleItemWithRandomOffset(var1, var2, var3, var4, FCBetterThanWolves.fcItemSoulDust.itemID, 0);
-        }
-
-        if ((meta & 3) == 1)
-        	FCUtilsItem.EjectSingleItemWithRandomOffset(var1, var2, var3, var4, FCBetterThanWolves.fcItemBark.itemID, 4);
-        
-        return true;
-    }
-
-    public int GetItemIDDroppedOnSaw(World var1, int var2, int var3, int var4)
-    {
-        return Block.planks.blockID;
-    }
-
-    public int GetItemCountDroppedOnSaw(World var1, int var2, int var3, int var4)
-    {
-        return 4;
-    }
-
-    public int GetItemDamageDroppedOnSaw(World var1, int var2, int var3, int var4)
-    {
-        return 4;
-    }
 
     public boolean DropComponentItemsOnBadBreak(World var1, int var2, int var3, int var4, int var5, float var6)
     {

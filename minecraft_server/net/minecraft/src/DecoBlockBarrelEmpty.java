@@ -2,7 +2,7 @@ package net.minecraft.src;
 
 import java.util.List;
 
-public class DecoBlockBarrelEmpty extends AddonBlockDirectional {
+public class DecoBlockBarrelEmpty extends FCBlockDirectional {
 	
 	public DecoBlockBarrelEmpty(int id, String[] topTextures, String[] sideTextures) {
 		super(id, FCBetterThanWolves.fcMaterialPlanks, topTextures, sideTextures);

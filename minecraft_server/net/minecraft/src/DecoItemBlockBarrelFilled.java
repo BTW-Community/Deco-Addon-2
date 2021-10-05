@@ -12,12 +12,4 @@ public class DecoItemBlockBarrelFilled  extends ItemMultiTextureTile
         this.barrel = barrel;
         this.metadata = metadata;
     }
-
-	public void OnUsedInCrafting(int var1, EntityPlayer var2, ItemStack var3)
-    {
-        if (!var2.worldObj.isRemote)
-        {
-            FCUtilsItem.EjectStackWithRandomVelocity(var2.worldObj, var2.posX, var2.posY, var2.posZ, new ItemStack(barrel, 1, metadata));
-        }
-    }
 }

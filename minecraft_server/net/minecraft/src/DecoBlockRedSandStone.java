@@ -36,23 +36,6 @@ public class DecoBlockRedSandStone extends Block
         this.setCreativeTab(CreativeTabs.tabBlock);
         this.setTickRandomly(true);
     }
-
-    /**
-     * returns a list of blocks with the same ID, but different meta (eg: wood returns 4 blocks)
-     */
-    public void getSubBlocks(int par1, CreativeTabs par2CreativeTabs, List par3List)
-    {
-        par3List.add(new ItemStack(par1, 1, 0));
-        par3List.add(new ItemStack(par1, 1, 1));
-        par3List.add(new ItemStack(par1, 1, 2));
-        par3List.add(new ItemStack(par1, 1, 3));
-        par3List.add(new ItemStack(par1, 1, 4));
-        par3List.add(new ItemStack(par1, 1, 5));
-        par3List.add(new ItemStack(par1, 1, 6));
-        par3List.add(new ItemStack(par1, 1, 7));
-        par3List.add(new ItemStack(par1, 1, 8));
-        par3List.add(new ItemStack(par1, 1, 9));
-    }
 	
 	public void updateTick(World world, int x, int y, int z, Random rand)
     {

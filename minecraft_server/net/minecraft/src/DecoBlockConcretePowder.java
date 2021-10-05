@@ -51,7 +51,7 @@ public class DecoBlockConcretePowder extends FCBlockFallingFullBlock {
             {
                 if (!var1.isRemote)
                 {
-                	DecoEntityFallingConcrete var5 = new DecoEntityFallingConcrete(var1, (double)var2 + 0.5D, (double)var3 + 0.5D, (double)var4 + 0.5D, this.blockID, var1.getBlockMetadata(var2, var3, var4));
+                	DecoEntityFallingConcrete var5 = (DecoEntityFallingConcrete) EntityList.createEntityOfType(DecoEntityFallingConcrete.class, var1, (double)var2 + 0.5D, (double)var3 + 0.5D, (double)var4 + 0.5D, this.blockID, var1.getBlockMetadata(var2, var3, var4));
                     this.onStartFalling(var5);
                     var1.spawnEntityInWorld(var5);
                 }

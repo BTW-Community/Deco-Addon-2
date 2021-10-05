@@ -287,4 +287,19 @@ public class DecoUtilsBlock {
 		
 		return true;
 	}
+	
+	public static int getOppositeFacing(int facing) {
+		switch (facing) {
+		case 0:
+		case 2:
+		case 4:
+			return facing + 1;
+		case 1:
+		case 3:
+		case 5:
+			return facing - 1;
+		}
+		
+		return facing;
+	}
 }

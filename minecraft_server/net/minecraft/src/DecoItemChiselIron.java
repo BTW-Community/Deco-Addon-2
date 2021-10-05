@@ -23,10 +23,5 @@ public class DecoItemChiselIron extends FCItemChiselIron {
 				PlayStoneSplitSoundOnPlayer(player);
 			}
 		}
-
-		if (!player.worldObj.isRemote && stack.itemID == FCBetterThanWolves.fcBlockStoneBrickLoose.blockID)
-		{
-			FCUtilsItem.EjectStackWithRandomVelocity(player.worldObj, player.posX, player.posY, player.posZ, new ItemStack(FCBetterThanWolves.fcItemPileGravel, 2));
-		}
 	}
 }

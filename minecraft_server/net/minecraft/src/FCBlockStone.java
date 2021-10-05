@@ -329,30 +329,6 @@ public class FCBlockStone extends FCBlockFullBlock
 		return meta;
 	}
 
-	@Override
-    public boolean IsPistonPackable(ItemStack var1)
-    {
-        return !isSlate(var1.getItemDamage());
-    }
-
-	@Override
-    public int GetRequiredItemCountToPistonPack(ItemStack var1)
-    {
-        return 2;
-    }
-
-	@Override
-    public int GetResultingBlockIDOnPistonPack(ItemStack var1)
-    {
-        return this.blockID;
-    }
-
-	@Override
-    public int GetResultingBlockMetadataOnPistonPack(ItemStack var1)
-    {
-        return 3;
-    }
-
 	//------------- Class Specific Methods ------------//
 
 	/**

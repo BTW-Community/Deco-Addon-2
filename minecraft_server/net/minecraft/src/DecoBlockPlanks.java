@@ -11,7 +11,7 @@ public class DecoBlockPlanks extends FCBlockPlanks {
 
     public static int GetFurnaceBurnTimeByWoodType(int var0)
     {
-        return (var0 == 0 || var0 == 5 || var0 == 6) ? FCEnumFurnaceBurnTime.PLANKS_OAK.m_iBurnTime : (var0 == 1 ? FCEnumFurnaceBurnTime.PLANKS_SPRUCE.m_iBurnTime : (var0 == 2 ? FCEnumFurnaceBurnTime.PLANKS_BIRCH.m_iBurnTime : (var0 == 3 ? FCEnumFurnaceBurnTime.PLANKS_JUNGLE.m_iBurnTime : FCEnumFurnaceBurnTime.PLANKS_BLOOD.m_iBurnTime)));
+        return (var0 == 0) ? FCEnumFurnaceBurnTime.PLANKS_OAK.m_iBurnTime : (var0 == 1 || var0 == 5 ? FCEnumFurnaceBurnTime.PLANKS_SPRUCE.m_iBurnTime : (var0 == 2 || var0 == 6 ? FCEnumFurnaceBurnTime.PLANKS_BIRCH.m_iBurnTime : (var0 == 3 ? FCEnumFurnaceBurnTime.PLANKS_JUNGLE.m_iBurnTime : FCEnumFurnaceBurnTime.PLANKS_BLOOD.m_iBurnTime)));
     }
 
     /**

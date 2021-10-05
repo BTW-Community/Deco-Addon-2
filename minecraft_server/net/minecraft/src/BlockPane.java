@@ -46,6 +46,22 @@ public class BlockPane extends Block
     }
 
     /**
+     * If this block doesn't render as an ordinary block it will return False (examples: signs, buttons, stairs, etc)
+     */
+    public boolean renderAsNormalBlock()
+    {
+        return false;
+    }
+
+    /**
+     * The type of render function that is called for this block
+     */
+    public int getRenderType()
+    {
+        return 18;
+    }
+
+    /**
      * Adds all intersecting collision boxes to a list. (Be sure to only add boxes to the list if they intersect the
      * mask.) Parameters: World, X, Y, Z, mask, list, colliding entity
      */
@@ -152,6 +168,14 @@ public class BlockPane extends Block
         }
 
         this.setBlockBounds(var5, 0.0F, var7, var6, 1.0F, var8);
+    }
+
+    /**
+     * Returns the texture index of the thin side of the pane.
+     */
+    public Icon getSideTextureIndex()
+    {
+        return this.theIcon;
     }
 
     /**

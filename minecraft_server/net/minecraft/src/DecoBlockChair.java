@@ -82,4 +82,5 @@ public class DecoBlockChair extends Block {
         int var7 = FCUtilsMisc.ConvertOrientationToFlatBlockFacingReversed(var5);
         this.SetFacing(world, var2, var3, var4, var7);
 	}
+	//CLIENT ONLY
 }

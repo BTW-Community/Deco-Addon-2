@@ -261,4 +261,9 @@ public class DecoRecipeFireworksColor implements IRecipe
 	{
 		return false;
 	}
+
+	@Override
+	public ItemStack[] getSecondaryOutput(IInventory inventory) {
+		return null;
+	}
 }

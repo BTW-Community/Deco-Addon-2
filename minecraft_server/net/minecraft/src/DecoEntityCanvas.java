@@ -40,7 +40,7 @@ public class DecoEntityCanvas extends FCEntityCanvas {
                 return true;
             }
             
-            this.worldObj.spawnEntityInWorld(new EntityItem(this.worldObj, this.posX, this.posY, this.posZ, new ItemStack(FCBetterThanWolves.fcItemCanvas)));
+            this.worldObj.spawnEntityInWorld(EntityList.createEntityOfType(EntityItem.class, this.worldObj, this.posX, this.posY, this.posZ, new ItemStack(FCBetterThanWolves.fcItemCanvas)));
         }
 
         return true;

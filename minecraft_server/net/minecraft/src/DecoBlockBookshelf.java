@@ -44,4 +44,6 @@ public class DecoBlockBookshelf extends FCBlockBookshelf {
     	RACK_EMPTY,
     	RACK,
     }
+	
+	//CLIENT ONLY
 }

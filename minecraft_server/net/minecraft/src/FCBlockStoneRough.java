@@ -1,236 +1,303 @@
+// FCMOD
+
 package net.minecraft.src;
+
+import java.util.Random;
 
 public class FCBlockStoneRough extends FCBlockFullBlock
 {
     public static FCBlockStoneRough[] m_startaLevelBlockArray = new FCBlockStoneRough[4];
-    public int m_iStrataLevel;
-    private Icon m_iconBroken;
-    private Icon[] m_crackIcons;
-
-    public FCBlockStoneRough(int var1, int var2)
+    
+	public int m_iStrataLevel;
+	
+    public FCBlockStoneRough( int iBlockID, int iStrataLevel )
     {
-        super(var1, Material.rock);
-        this.m_iStrataLevel = var2;
-        m_startaLevelBlockArray[var2] = this;
+        super( iBlockID, Material.rock );
+        
+        m_iStrataLevel = iStrataLevel;
+        m_startaLevelBlockArray[iStrataLevel] = this;
+        
+        if ( iStrataLevel == 0 )
+        {
+            setHardness( 2.25F );
+            setResistance( 10F );
+        }
+        else if ( iStrataLevel == 1 )
+        {
+            setHardness( 3F );
+            setResistance( 13F );
+        }
+        else // 2
+        {
+            setHardness( 4.5F );
+            setResistance( 20F );
+        }
+        
+        SetPicksEffectiveOn();
+        SetChiselsEffectiveOn();
+        
+        setStepSound(soundStoneFootstep);
+        
+        setUnlocalizedName( "fcBlockStoneRough" );        
+    }
+    
+    @Override
+    public boolean CanConvertBlock( ItemStack stack, World world, int i, int j, int k )
+    {
+    	if ( m_iStrataLevel == 0 )
+    	{
+    		// special case for stone pick so that it harvests top strata stone, but as an improper tool
+    		
+        	if ( stack != null && stack.getItem() instanceof FCItemPickaxe )
+        	{
+    			int iToolLevel = ((FCItemTool)stack.getItem()).toolMaterial.getHarvestLevel();
+    			
+    			if ( iToolLevel <= 1 )
+    			{
+    				return false;
+    			}
+        	}
+    		
+    	}
 
-        if (var2 == 0)
-        {
-            this.setHardness(2.25F);
-            this.setResistance(10.0F);
-        }
-        else if (var2 == 1)
-        {
-            this.setHardness(3.0F);
-            this.setResistance(13.0F);
-        }
-        else
-        {
-            this.setHardness(4.5F);
-            this.setResistance(20.0F);
-        }
+    	return true;
+    }
+    
+    @Override
+    public boolean ConvertBlock( ItemStack stack, World world, int i, int j, int k, int iFromSide )
+    {
+    	int iMetadata = world.getBlockMetadata( i, j, k );
+    	
+    	if ( iMetadata < 15 )
+    	{
+    		iMetadata++;
+    		
+	    	if ( !world.isRemote && IsEffectiveItemConversionTool( stack, world, i, j, k ) )
+	    	{
+	        	if ( iMetadata <=  8 )
+	        	{
+	        		if ( ( iMetadata & 1 ) == 0 )
+	        		{
+	        	        world.playAuxSFX( FCBetterThanWolves.m_iStoneRippedOffAuxFXID, i, j, k, 0 );							        
+	        	        
+	    	            FCUtilsItem.EjectStackFromBlockTowardsFacing( world, i, j, k, 
+	    	            	new ItemStack( FCBetterThanWolves.fcItemStone, 1 ), iFromSide );
+	        		}
+	        		else if ( iMetadata <= 5 && IsUberItemConversionTool( stack, world, i, j, k ) )
+    				{
+        				// iron or better chisel on top two strata ejects bricks instead
+        				// of loose stones
+        				
+        				iMetadata += 3;
+        				
+	        	        world.playAuxSFX( FCBetterThanWolves.m_iStoneRippedOffAuxFXID, i, j, k, 0 );							        
+	        	        
+                        FCUtilsItem.EjectStackFromBlockTowardsFacing( world, i, j, k, 
+                        	new ItemStack( FCBetterThanWolves.fcItemStoneBrick ), iFromSide );
+    				}
+	        	}
+	        	else if ( iMetadata == 12 )
+	        	{
+        	        world.playAuxSFX( FCBetterThanWolves.m_iGravelRippedOffStoneAuxFXID, i, j, k, 0 );							        
+        	        
+	                FCUtilsItem.EjectStackFromBlockTowardsFacing( world, i, j, k, 
+	                	new ItemStack( FCBetterThanWolves.fcItemPileGravel, 1 ), iFromSide );
+	        	}
+	    	}
+	    	
+        	world.setBlockMetadataWithNotify( i, j, k, iMetadata );
 
-        this.SetPicksEffectiveOn();
-        this.SetChiselsEffectiveOn();
-        this.setStepSound(soundStoneFootstep);
-        this.setUnlocalizedName("fcBlockStoneRough");
+	    	return true;
+    	}
+    	else 
+    	{
+    		// final stage resulting in destruction
+    		
+    		if ( !world.isRemote && IsEffectiveItemConversionTool( stack, world, i, j, k ) )
+    		{
+		        world.playAuxSFX( FCBetterThanWolves.m_iGravelRippedOffStoneAuxFXID, i, j, k, 0 );    		
+		        
+	            FCUtilsItem.DropStackAsIfBlockHarvested( world, i, j, k, 
+	            	new ItemStack( FCBetterThanWolves.fcItemPileGravel, 1 ) );
+    		}
+        	
+        	return false;
+    	}    	
+    }
+    
+	@Override
+    public void dropBlockAsItemWithChance( World world, int i, int j, int k, int iMetadata, float fChance, int iFortuneModifier )
+    {
+        if ( !world.isRemote )
+        {
+        	int iItemIDDropped = FCBetterThanWolves.fcItemStone.itemID;
+        	int iNumDropped = 1;
+        	
+        	if ( iMetadata < 8 )
+        	{
+		        iNumDropped = 8 - ( iMetadata / 2 );		        
+        	}
+        	else
+        	{
+        		iItemIDDropped = FCBetterThanWolves.fcItemPileGravel.itemID;
+        		
+        		if ( iMetadata < 12 )
+        		{
+        			iNumDropped = 2;
+        		}
+        	}
+        	
+	        for( int iTempCount = 0; iTempCount < iNumDropped; iTempCount++ )
+	        {
+                dropBlockAsItem_do( world, i, j, k, new ItemStack( iItemIDDropped, 1, damageDropped( iMetadata ) ) );
+	        }
+        }
     }
 
-    public boolean CanConvertBlock(ItemStack var1, World var2, int var3, int var4, int var5)
+    @Override
+    public void OnBlockDestroyedWithImproperTool( World world, EntityPlayer player, int i, int j, int k, int iMetadata )
     {
-        if (this.m_iStrataLevel == 0 && var1 != null && var1.getItem() instanceof FCItemPickaxe)
-        {
-            int var6 = ((FCItemTool)var1.getItem()).toolMaterial.getHarvestLevel();
-
-            if (var6 <= 1)
-            {
-                return false;
-            }
-        }
-
-        return true;
+        world.playAuxSFX( FCBetterThanWolves.m_iGravelRippedOffStoneAuxFXID, i, j, k, 0 );
+        
+    	DropComponentItemsWithChance( world, i, j, k, iMetadata, 1F );
     }
-
-    public boolean ConvertBlock(ItemStack var1, World var2, int var3, int var4, int var5, int var6)
-    {
-        int var7 = var2.getBlockMetadata(var3, var4, var5);
-
-        if (var7 < 15)
-        {
-            ++var7;
-
-            if (!var2.isRemote && this.IsEffectiveItemConversionTool(var1, var2, var3, var4, var5))
-            {
-                if (var7 <= 8)
-                {
-                    if ((var7 & 1) == 0)
-                    {
-                        var2.playAuxSFX(2269, var3, var4, var5, 0);
-                        FCUtilsItem.EjectStackFromBlockTowardsFacing(var2, var3, var4, var5, new ItemStack(FCBetterThanWolves.fcItemStone, 1), var6);
-                    }
-                    else if (var7 <= 5 && this.IsUberItemConversionTool(var1, var2, var3, var4, var5))
-                    {
-                        var7 += 3;
-                        var2.playAuxSFX(2269, var3, var4, var5, 0);
-                        FCUtilsItem.EjectStackFromBlockTowardsFacing(var2, var3, var4, var5, new ItemStack(FCBetterThanWolves.fcItemStoneBrick), var6);
-                    }
-                }
-                else if (var7 == 12)
-                {
-                    var2.playAuxSFX(2270, var3, var4, var5, 0);
-                    FCUtilsItem.EjectStackFromBlockTowardsFacing(var2, var3, var4, var5, new ItemStack(FCBetterThanWolves.fcItemPileGravel, 1), var6);
-                }
-            }
-
-            var2.setBlockMetadataWithNotify(var3, var4, var5, var7);
-            return true;
-        }
-        else
-        {
-            if (!var2.isRemote && this.IsEffectiveItemConversionTool(var1, var2, var3, var4, var5))
-            {
-                var2.playAuxSFX(2270, var3, var4, var5, 0);
-                FCUtilsItem.DropStackAsIfBlockHarvested(var2, var3, var4, var5, new ItemStack(FCBetterThanWolves.fcItemPileGravel, 1));
-            }
-
-            return false;
-        }
-    }
-
-    /**
-     * Drops the block items with a specified chance of dropping the specified items
-     */
-    public void dropBlockAsItemWithChance(World var1, int var2, int var3, int var4, int var5, float var6, int var7)
-    {
-        if (!var1.isRemote)
-        {
-            int var8 = FCBetterThanWolves.fcItemStone.itemID;
-            int var9 = 1;
-
-            if (var5 < 8)
-            {
-                var9 = 8 - var5 / 2;
-            }
-            else
-            {
-                var8 = FCBetterThanWolves.fcItemPileGravel.itemID;
-
-                if (var5 < 12)
-                {
-                    var9 = 2;
-                }
-            }
-
-            for (int var10 = 0; var10 < var9; ++var10)
-            {
-                this.dropBlockAsItem_do(var1, var2, var3, var4, new ItemStack(var8, 1, this.damageDropped(var5)));
-            }
-        }
-    }
-
-    public void OnBlockDestroyedWithImproperTool(World var1, EntityPlayer var2, int var3, int var4, int var5, int var6)
-    {
-        var1.playAuxSFX(2270, var3, var4, var5, 0);
-        this.DropComponentItemsWithChance(var1, var3, var4, var5, var6, 1.0F);
-    }
-
-    /**
-     * Return whether this block can drop from an explosion.
-     */
-    public boolean canDropFromExplosion(Explosion var1)
+    
+	@Override
+    public boolean canDropFromExplosion( Explosion explosion )
     {
         return false;
     }
-
-    /**
-     * Called upon the block being destroyed by an explosion
-     */
-    public void onBlockDestroyedByExplosion(World var1, int var2, int var3, int var4, Explosion var5)
+    
+	@Override
+    public void onBlockDestroyedByExplosion( World world, int i, int j, int k, Explosion explosion )
     {
-        int var6 = var1.getBlockMetadata(var2, var3, var4);
-        float var7 = 1.0F;
-
-        if (var5 != null)
-        {
-            var7 = 1.0F / var5.explosionSize;
-        }
-
-        this.DropComponentItemsWithChance(var1, var2, var3, var4, var6, var7);
+		int iMetadata = world.getBlockMetadata( i, j, k );
+		
+		float fChanceOfPileDrop = 1.0F;
+		
+		if ( explosion != null )
+		{
+			fChanceOfPileDrop = 1.0F / explosion.explosionSize;
+		}
+		
+    	DropComponentItemsWithChance( world, i, j, k, iMetadata, fChanceOfPileDrop );
     }
-
-    public int GetHarvestToolLevel(IBlockAccess var1, int var2, int var3, int var4)
+	
+    @Override
+    public int GetHarvestToolLevel( IBlockAccess blockAccess, int i, int j, int k )
     {
-        return this.m_iStrataLevel > 1 ? this.m_iStrataLevel + 1 : 2;
+    	if ( m_iStrataLevel > 1 )
+    	{
+    		return m_iStrataLevel + 1;
+    	}
+    	
+    	return 2;
     }
-
-    public int GetEfficientToolLevel(IBlockAccess var1, int var2, int var3, int var4)
+    
+    @Override
+    public int GetEfficientToolLevel( IBlockAccess blockAccess, int i, int j, int k )
     {
-        return this.m_iStrataLevel > 0 ? this.m_iStrataLevel + 1 : 0;
+    	if ( m_iStrataLevel > 0 )
+    	{
+    		return m_iStrataLevel + 1;
+    	}
+    	
+    	return 0;
     }
-
-    public boolean AreChiselsEffectiveOn(World var1, int var2, int var3, int var4)
+    
+    @Override
+    public boolean AreChiselsEffectiveOn( World world, int i, int j, int k )
     {
-        return var1.getBlockMetadata(var2, var3, var4) >= 8 ? false : super.AreChiselsEffectiveOn(var1, var2, var3, var4);
+    	if ( world.getBlockMetadata( i, j, k ) >= 8 )
+    	{
+    		// chisels stop being effective once all the whole stone items are harvested, to make tunneling problematic
+    		
+    		return false;
+    	}
+    	
+    	return super.AreChiselsEffectiveOn( world, i, j, k );
     }
-
-    /**
-     * Return true if a player with Silk Touch can harvest this block directly, and not its normal drops.
-     */
+    
+	@Override
     protected boolean canSilkHarvest()
     {
         return false;
-    }
-
-    public boolean IsNaturalStone(IBlockAccess var1, int var2, int var3, int var4)
+    }    
+    
+    @Override
+    public boolean IsNaturalStone( IBlockAccess blockAccess, int i, int j, int k )
     {
-        return true;
+    	return true;
     }
-
-    public boolean IsEffectiveItemConversionTool(ItemStack var1, World var2, int var3, int var4, int var5)
+    
+    @Override
+    public ItemStack GetStackRetrievedByBlockDispenser( World world, int i, int j, int k ) {
+    	if (world.getBlockMetadata(i, j, k) != 0) {
+    		return null;
+    	}
+    	else {
+    		return super.GetStackRetrievedByBlockDispenser(world, i, j, k);
+    	}
+    }
+    
+    @Override
+    public void OnRemovedByBlockDispenser( World world, int i, int j, int k ) {
+    	int metadata = world.getBlockMetadata(i, j, k);
+    	
+    	if (metadata != 0) {
+    		this.dropBlockAsItem(world, i, j, k, metadata, 0);
+    	}
+    	
+    	super.OnRemovedByBlockDispenser(world, i, j, k);
+    }
+    
+    //------------- Class Specific Methods ------------//
+	
+    public boolean IsEffectiveItemConversionTool( ItemStack stack, World world, int i, int j, int k )
     {
-        if (var1 != null && var1.getItem() instanceof FCItemChisel)
-        {
-            int var6 = ((FCItemChisel)var1.getItem()).toolMaterial.getHarvestLevel();
-            return var6 >= this.GetEfficientToolLevel(var2, var3, var4, var5);
-        }
-        else
-        {
-            return false;
-        }
+    	if ( stack != null && stack.getItem() instanceof FCItemChisel )
+    	{
+			int iToolLevel = ((FCItemChisel)stack.getItem()).toolMaterial.getHarvestLevel();
+			
+			return iToolLevel >= GetEfficientToolLevel( world, i, j, k );
+    	}  
+    	
+    	return false;
     }
-
-    public boolean IsUberItemConversionTool(ItemStack var1, World var2, int var3, int var4, int var5)
+	
+    public boolean IsUberItemConversionTool( ItemStack stack, World world, int i, int j, int k )
     {
-        if (var1 != null && var1.getItem() instanceof FCItemChisel)
-        {
-            int var6 = ((FCItemChisel)var1.getItem()).toolMaterial.getHarvestLevel();
-            return var6 >= this.GetUberToolLevel(var2, var3, var4, var5);
-        }
-        else
-        {
-            return false;
-        }
+    	if ( stack != null && stack.getItem() instanceof FCItemChisel )
+    	{
+			int iToolLevel = ((FCItemChisel)stack.getItem()).toolMaterial.getHarvestLevel();
+			
+			return iToolLevel >= GetUberToolLevel( world, i, j, k );
+    	}  
+    	
+    	return false;
     }
-
-    public int GetUberToolLevel(IBlockAccess var1, int var2, int var3, int var4)
+    
+    public int GetUberToolLevel( IBlockAccess blockAccess, int i, int j, int k )
     {
-        return 2;
+    	return 2;
     }
-
-    private void DropComponentItemsWithChance(World var1, int var2, int var3, int var4, int var5, float var6)
-    {
-        if (var5 < 8)
-        {
-            int var7 = 4 - var5 / 2;
-            this.DropItemsIndividualy(var1, var2, var3, var4, FCBetterThanWolves.fcItemStone.itemID, var7, 0, var6);
-        }
-
-        byte var8 = 1;
-
-        if (var5 < 12)
-        {
-            var8 = 2;
-        }
-
-        this.DropItemsIndividualy(var1, var2, var3, var4, FCBetterThanWolves.fcItemPileGravel.itemID, var8, 0, var6);
-    }
+    
+	private void DropComponentItemsWithChance( World world, int i, int j, int k, int iMetadata, float fChanceOfItemDrop )
+	{
+    	if ( iMetadata < 8 )
+    	{
+    		int iNumStoneDropped = 4 - ( iMetadata / 2 );
+	        
+			DropItemsIndividualy( world, i, j, k, FCBetterThanWolves.fcItemStone.itemID, iNumStoneDropped, 0, fChanceOfItemDrop );
+    	}
+    	
+    	int iNumGravelDropped = 1;
+    	
+		if ( iMetadata < 12 )
+		{
+			iNumGravelDropped = 2;
+		}
+		
+		DropItemsIndividualy( world, i, j, k, FCBetterThanWolves.fcItemPileGravel.itemID, iNumGravelDropped, 0, fChanceOfItemDrop );
+	}
 }

@@ -28,53 +28,6 @@ public class DecoBlockPlanksPaintedSidingAndCornerAndDecorative extends DecoBloc
 		return super.DoesBenchHaveLeg(var1, var2, var3, var4);
 	}
 
-	public int GetItemIDDroppedOnSaw(World var1, int var2, int var3, int var4)
-	{
-		int metadata = var1.getBlockMetadata(var2, var3, var4);
-		int index = (this.blockID - DecoDefs.paintedPlanksSidingAndCorner[0].blockID)/3;
-
-		if (metadata == 12) {
-			return super.GetItemIDDroppedOnSaw(var1, var2, var3, var4);
-		}
-		else if (metadata == 14) {
-			return DecoDefs.paintedPlanksSidingAndCorner[index].blockID;
-		}
-		else if (this.GetIsCorner(var1, var2, var3, var4)) {
-			return FCBetterThanWolves.fcItemGear.itemID;
-		}
-		else {
-			return DecoDefs.paintedPlanksMouldingAndDecorative[index].blockID;
-		}
-
-		//return var5 == 12 ? super.GetItemIDDroppedOnSaw(var1, var2, var3, var4) : (var5 == 14 ? AddonDefs.paintedPlanksSidingAndCorner[var5].blockID : (this.GetIsCorner(var1, var2, var3, var4) ? FCBetterThanWolves.fcItemGear.itemID : AddonDefs.paintedPlanksMouldingAndDecorative[var5].blockID));
-	}
-
-	public int GetItemCountDroppedOnSaw(World var1, int var2, int var3, int var4)
-	{
-		if (this.IsDecorative(var1, var2, var3, var4))
-		{
-			int var5 = var1.getBlockMetadata(var2, var3, var4);
-			return var5 == 14 ? 2 : super.GetItemCountDroppedOnSaw(var1, var2, var3, var4);
-		}
-		else
-		{
-			return 2;
-		}
-	}
-
-	public int GetItemDamageDroppedOnSaw(World var1, int var2, int var3, int var4)
-	{
-		if (this.IsDecorative(var1, var2, var3, var4))
-		{
-			int var5 = var1.getBlockMetadata(var2, var3, var4);
-			return var5 == 14 ? 1 : super.GetItemDamageDroppedOnSaw(var1, var2, var3, var4);
-		}
-		else
-		{
-			return this.GetIsCorner(var1, var2, var3, var4) ? 0 : this.damageDropped(var1.getBlockMetadata(var2, var3, var4));
-		}
-	}
-
 	public int GetHarvestToolLevel(IBlockAccess var1, int var2, int var3, int var4)
 	{
 		return 2;

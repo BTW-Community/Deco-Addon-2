@@ -65,38 +65,6 @@ public class DecoBlockWoodSidingAndCornerAndDecorative extends DecoBlockSidingAn
         return super.DoesBenchHaveLeg(var1, var2, var3, var4);
     }
 
-    public int GetItemIDDroppedOnSaw(World var1, int var2, int var3, int var4)
-    {
-        int var5 = var1.getBlockMetadata(var2, var3, var4);
-        return var5 == 12 ? super.GetItemIDDroppedOnSaw(var1, var2, var3, var4) : (var5 == 14 ? FCBetterThanWolves.fcBlockWoodCornerItemStubID : (this.GetIsCorner(var1, var2, var3, var4) ? FCBetterThanWolves.fcItemGear.itemID : FCBetterThanWolves.fcBlockWoodMouldingItemStubID));
-    }
-
-    public int GetItemCountDroppedOnSaw(World var1, int var2, int var3, int var4)
-    {
-        if (this.IsDecorative(var1, var2, var3, var4))
-        {
-            int var5 = var1.getBlockMetadata(var2, var3, var4);
-            return var5 == 14 ? 2 : super.GetItemCountDroppedOnSaw(var1, var2, var3, var4);
-        }
-        else
-        {
-            return 2;
-        }
-    }
-
-    public int GetItemDamageDroppedOnSaw(World var1, int var2, int var3, int var4)
-    {
-        if (this.IsDecorative(var1, var2, var3, var4))
-        {
-            int var5 = var1.getBlockMetadata(var2, var3, var4);
-            return var5 == 14 ? this.GetWoodTypeFromBlockID() : super.GetItemDamageDroppedOnSaw(var1, var2, var3, var4);
-        }
-        else
-        {
-            return this.GetIsCorner(var1, var2, var3, var4) ? 0 : this.damageDropped(var1.getBlockMetadata(var2, var3, var4));
-        }
-    }
-
     public int GetHarvestToolLevel(IBlockAccess var1, int var2, int var3, int var4)
     {
         return 2;

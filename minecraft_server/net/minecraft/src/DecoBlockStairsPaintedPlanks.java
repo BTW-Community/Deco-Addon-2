@@ -17,22 +17,6 @@ public class DecoBlockStairsPaintedPlanks extends FCBlockStairs
     {
         return 2;
     }
-    
-    @Override
-    public boolean OnBlockSawed(World var1, int var2, int var3, int var4) {
-        super.OnBlockSawed(var1, var2, var3, var4);
-        
-        FCUtilsItem.EjectSingleItemWithRandomOffset(var1, var2, var3, var4, DecoDefs.paintedPlanksMouldingAndDecorative[sawedIndex].blockID, 0);
-        FCUtilsItem.EjectSingleItemWithRandomOffset(var1, var2, var3, var4, DecoDefs.paintedPlanksSidingAndCorner[sawedIndex].blockID, 0);
-    	
-    	return true;
-    }
-
-	@Override
-    public int GetItemIDDroppedOnSaw(World var1, int var2, int var3, int var4)
-    {
-		return 0;
-    }
 
     public boolean DropComponentItemsOnBadBreak(World var1, int var2, int var3, int var4, int var5, float var6)
     {

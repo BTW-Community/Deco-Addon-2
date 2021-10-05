@@ -9,7 +9,6 @@ public class DecoBlockSidingAndCornerDecorativeWall extends DecoBlockSidingAndCo
 	public DecoBlockSidingAndCornerDecorativeWall(int var1, Material var2, String var3, float var4, float var5, StepSound var6, String var7, String originalName)
 	{
 		super(var1, var2, var3, var4, var5, var6, var7);
-		DecoManager.Name(getUnlocalizedName() + ".fence" + ".name", originalName + " Wall");
 		wallBlocks.add(this);
 	}
 
@@ -232,7 +231,7 @@ public class DecoBlockSidingAndCornerDecorativeWall extends DecoBlockSidingAndCo
 				return true;
 		}
 
-		boolean airAbove = ((blockAccess instanceof World) && ((World) blockAccess).isAirBlock(x, y + 1, z)) || FCUtilsWorld.IsGroundCoverOnBlock(blockAccess, x, y, z);
+		boolean airAbove = blockAccess.getBlockId(x, y + 1, z) == 0 || FCUtilsWorld.IsGroundCoverOnBlock(blockAccess, x, y, z);
 		Block blockAbove = Block.blocksList[idAbove];
 		boolean solidSurface = blockAbove == null ? false : blockAbove.HasLargeCenterHardPointToFacing(blockAccess, x, y + 1, z, 0);
 		boolean paneAbove = blockAbove instanceof BlockPane;

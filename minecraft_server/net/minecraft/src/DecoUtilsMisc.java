@@ -7,6 +7,7 @@ public class DecoUtilsMisc {
 	private static Map<Integer, String> formatMap = new HashMap<Integer, String>();
 	
 	public final static String[] colorOrder = {"black", "red", "green", "brown", "blue", "purple", "cyan", "lightGray", "gray", "pink", "lime", "yellow", "lightBlue", "magenta", "orange", "white"};
+	public static final Map<String, Integer> colorToMetaMap = new HashMap();
 	
 	static {
 		formatMap.put(0, "0");
@@ -25,6 +26,10 @@ public class DecoUtilsMisc {
 		formatMap.put(13, "d");
 		formatMap.put(14, "6");
 		formatMap.put(15, "f");
+		
+		for (int i = 0; i < 16; i++) {
+			colorToMetaMap.put(colorOrder[i], i);
+		}
 	}
 	
 	public static String getFormatCodeFromDyeMetadata(int meta) {

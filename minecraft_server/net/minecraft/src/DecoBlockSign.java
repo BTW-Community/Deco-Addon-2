@@ -22,6 +22,7 @@ public class DecoBlockSign extends FCBlockSign {
 			if (tileEntity != null)
 			{
 				String[] text = tileEntity.signText;
+				tileEntity.setEditable(true);
 				
 				for (int i = 0; i < text.length; i++) {
 					if (text[i].length() > 0 && text[i].charAt(0) == '§')

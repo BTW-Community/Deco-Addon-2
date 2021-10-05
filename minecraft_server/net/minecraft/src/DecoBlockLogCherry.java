@@ -10,14 +10,16 @@ public class DecoBlockLogCherry extends Block {
 		this.SetAxesEffectiveOn();
 		this.SetChiselsEffectiveOn();
 		this.SetBuoyant();
-		this.SetCanBeCookedByKiln(true);
-		this.SetItemIndexDroppedWhenCookedByKiln(263);
-		this.SetItemDamageDroppedWhenCookedByKiln(1);
 		this.SetFireProperties(FCEnumFlammability.LOGS);
 		this.setStepSound(soundWoodFootstep);
 		this.setUnlocalizedName("decoBlockCherryLog");
 		this.setCreativeTab(CreativeTabs.tabBlock);
 	}
+
+    public int GetFurnaceBurnTime(int var1)
+    {
+        return DecoBlockPlanks.GetFurnaceBurnTimeByWoodType(5) * 4;
+    }
 
 	public boolean CanConvertBlock(ItemStack var1, World var2, int var3, int var4, int var5)
 	{
@@ -58,38 +60,6 @@ public class DecoBlockLogCherry extends Block {
         int var5 = FCBetterThanWolves.fcBlockLogSmouldering.SetIsStump(0, false);
         var1.setBlockAndMetadataWithNotify(var2, var3, var4, FCBetterThanWolves.fcBlockLogSmouldering.blockID, var5);
     }
-
-	public boolean OnBlockSawed(World var1, int var2, int var3, int var4)
-	{
-		int meta = var1.getBlockMetadata(var2, var3, var4);
-
-		super.OnBlockSawed(var1, var2, var3, var4);
-
-		for (int var5 = 0; var5 < 2; ++var5)
-		{
-			FCUtilsItem.EjectSingleItemWithRandomOffset(var1, var2, var3, var4, FCBetterThanWolves.fcItemSawDust.itemID, 0);
-		}
-
-		if ((meta & 3) == 0 || (meta & 3) == 2)
-			FCUtilsItem.EjectSingleItemWithRandomOffset(var1, var2, var3, var4, FCBetterThanWolves.fcItemBark.itemID, 5);
-
-		return true;
-	}
-
-	public int GetItemIDDroppedOnSaw(World var1, int var2, int var3, int var4)
-	{
-		return Block.planks.blockID;
-	}
-
-	public int GetItemCountDroppedOnSaw(World var1, int var2, int var3, int var4)
-	{
-		return 4;
-	}
-
-	public int GetItemDamageDroppedOnSaw(World var1, int var2, int var3, int var4)
-	{
-		return 5;
-	}
 
 	public boolean DropComponentItemsOnBadBreak(World var1, int var2, int var3, int var4, int var5, float var6)
 	{

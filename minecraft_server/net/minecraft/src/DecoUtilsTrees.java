@@ -273,7 +273,7 @@ public class DecoUtilsTrees {
 		int baseHeight = 4 + rand.nextInt(3);
 		
 		//Base tree
-		for(int i = 0; i < baseHeight + 4; i++) {
+		for(int i = 1; i < baseHeight + 4; i++) {
 			int blockID = world.getBlockId(x, y + i, z);
 
 			//Checks trunk space

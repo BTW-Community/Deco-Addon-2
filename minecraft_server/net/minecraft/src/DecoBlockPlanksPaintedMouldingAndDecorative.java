@@ -11,24 +11,6 @@ public class DecoBlockPlanksPaintedMouldingAndDecorative extends FCBlockMoulding
         this.SetFireProperties(5, 20);
     }
 
-    public int GetItemIDDroppedOnSaw(World var1, int var2, int var3, int var4)
-    {
-		int index = (this.blockID - DecoDefs.paintedPlanksSidingAndCorner[0].blockID)/3;
-		
-        return this.IsDecorative(var1, var2, var3, var4) ? super.GetItemIDDroppedOnSaw(var1, var2, var3, var4) : DecoDefs.paintedPlanksSidingAndCorner[index].blockID;
-    }
-
-    public int GetItemCountDroppedOnSaw(World var1, int var2, int var3, int var4)
-    {
-        return this.IsDecorative(var1, var2, var3, var4) ? super.GetItemCountDroppedOnSaw(var1, var2, var3, var4) : 2;
-    }
-
-    public int GetItemDamageDroppedOnSaw(World var1, int var2, int var3, int var4)
-    {
-        int var5 = var1.getBlockMetadata(var2, var3, var4);
-        return this.IsDecorative(var5) ? super.GetItemDamageDroppedOnSaw(var1, var2, var3, var4) : 1;
-    }
-
     public int GetHarvestToolLevel(IBlockAccess var1, int var2, int var3, int var4)
     {
         return 2;

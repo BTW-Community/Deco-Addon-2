@@ -223,7 +223,7 @@ public class DecoBlockWall extends FCBlockWall {
 				return true;
 		}
 
-		boolean airAbove = ((blockAccess instanceof World) && ((World) blockAccess).isAirBlock(x, y + 1, z)) || FCUtilsWorld.IsGroundCoverOnBlock(blockAccess, x, y, z);
+		boolean airAbove = blockAccess.getBlockId(x, y + 1, z) == 0 || FCUtilsWorld.IsGroundCoverOnBlock(blockAccess, x, y, z);
 		Block blockAbove = Block.blocksList[idAbove];
 		boolean solidSurface = blockAbove == null ? false : blockAbove.HasLargeCenterHardPointToFacing(blockAccess, x, y + 1, z, 0);
 		boolean paneAbove = blockAbove instanceof BlockPane;

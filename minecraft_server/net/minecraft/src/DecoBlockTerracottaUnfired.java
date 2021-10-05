@@ -19,8 +19,4 @@ public class DecoBlockTerracottaUnfired extends FCBlockFallingFullBlock
     public float GetMovementModifier(World var1, int var2, int var3, int var4) {
         return 0.8F;
     }
-
-    public int GetCookTimeMultiplierInKiln(IBlockAccess var1, int var2, int var3, int var4) {
-        return 4;
-    }
 }

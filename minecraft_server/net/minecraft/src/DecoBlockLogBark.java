@@ -22,38 +22,6 @@ public class DecoBlockLogBark extends FCBlockLog {
         return DecoDefs.barkLog.blockID;
     }
 
-	@Override
-    public int GetItemIDDroppedOnSaw(World var1, int var2, int var3, int var4)
-    {
-        return Block.planks.blockID;
-    }
-
-	@Override
-    public int GetItemDamageDroppedOnSaw(World var1, int var2, int var3, int var4)
-    {
-		int metadata = var1.getBlockMetadata(var2, var3, var4);
-        return this.limitToValidMetadata(metadata);
-    }
-
-	@Override
-    public int GetItemCountDroppedOnSaw(World var1, int var2, int var3, int var4)
-    {
-        return 4;
-    }
-
-	public boolean OnBlockSawed(World world, int x, int y, int z)
-	{
-		int metadata = world.getBlockMetadata(x, y, z);
-		
-		for (int i = 0; i < 2; ++i) {
-			FCUtilsItem.EjectSingleItemWithRandomOffset(world, x, y, z, FCBetterThanWolves.fcItemSawDust.itemID, 0);
-		}
-		
-		FCUtilsItem.EjectSingleItemWithRandomOffset(world, x, y, z, FCBetterThanWolves.fcItemBark.itemID, this.limitToValidMetadata(metadata));
-		
-		return super.OnBlockSawed(world, x, y, z);
-	}
-
     public boolean ConvertBlock(ItemStack var1, World var2, int var3, int var4, int var5, int var6)
     {
         int var7 = var2.getBlockMetadata(var3, var4, var5);
