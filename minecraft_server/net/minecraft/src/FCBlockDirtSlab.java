@@ -40,11 +40,8 @@ public class FCBlockDirtSlab extends FCBlockSlabAttached
     	
     	int iBlockAboveMaxNaturalLight = world.GetBlockNaturalLightValueMaximum( i, j + 1, k );
     	int iBlockAboveCurrentNaturalLight = iBlockAboveMaxNaturalLight - world.skylightSubtracted;
-    	
-        if ((iBlockAboveMaxNaturalLight < FCBlockGrass.m_iGrassSurviveMinimumLightLevel && iBlockAboveLight < FCBlockGrass.m_iGrassSurviveMinimumLightLevel) || 
-        		Block.lightOpacity[iBlockAboveID] > 2 ||
-        		(blockAbove != null && !blockAbove.GetCanGrassGrowUnderBlock( world, i, j + 1, k, false)))
-        {
+
+        if (Block.lightOpacity[iBlockAboveID] > 2 || (blockAbove != null && !blockAbove.GetCanGrassGrowUnderBlock( world, i, j + 1, k, false))) {
         	// convert back to dirt in low light
         	
         	SetSubtype( world, i, j, k, m_iSubtypeDirt );
