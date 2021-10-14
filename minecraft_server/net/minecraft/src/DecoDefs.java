@@ -1272,9 +1272,9 @@ public class DecoDefs {
 		bloodLog.setStepSound(stepSoundBloodLog);
 
 		cherryLog = new DecoBlockLogCherry(id_cherryLog);
-		DecoManager.Register(cherryLog, new String[] {"logCherry", "strippedLogCherry", "woodCherry", "strippedWoodCherry"});
+		DecoManager.Register(cherryLog, new String[] {"log", "stripped", "wood", "strippedWood"});
 		acaciaLog = new DecoBlockLogAcacia(id_acaciaLog);
-		DecoManager.Register(acaciaLog, new String[] {"logAcacia", "strippedLogAcacia", "woodAcacia", "strippedWoodAcacia"});
+		DecoManager.Register(acaciaLog, new String[] {"log", "stripped", "wood", "strippedWood"});
 
 		cherryStump = new DecoBlockLogCherryStump(id_cherryStump);
 		DecoManager.Register(cherryStump);

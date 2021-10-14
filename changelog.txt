@@ -4,6 +4,12 @@ Version 3.1.0
 [*]Changed crops (except hemp) to be able to grow without hydration. However, unhydrated crops will drop no items.
 [/list]
 
+Version 3.0.2
+[list]
+[*]Fixed an issue where the saw bug recently fixed in CE was persisting when deco was installed.
+[*]Fixed an issue where cherry and acacia logs were missing names.
+[/list]
+
 Version 3.0.1
 [list]
 [*]Fixed an issue where grass died in darkness, even though it was correctly living under only torch light.

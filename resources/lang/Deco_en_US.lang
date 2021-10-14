@@ -1456,12 +1456,12 @@ tile.decoBlockLogBarkStripped.spruce.name=Stripped Spruce Wood
 tile.decoBlockLogBarkStripped.birch.name=Stripped Birch Wood
 tile.decoBlockLogBarkStripped.jungle.name=Stripped Jungle Wood
 
-tile.decoBlockCherryLog.name=Cherry Log
+tile.decoBlockCherryLog.log.name=Cherry Log
 tile.decoBlockCherryLog.stripped.name=Stripped Cherry Log
 tile.decoBlockCherryLog.wood.name=Cherry Wood
 tile.decoBlockCherryLog.strippedWood.name=Stripped Cherry Wood
 
-tile.decoBlockAcaciaLog.name=Acacia Log
+tile.decoBlockAcaciaLog.log.name=Acacia Log
 tile.decoBlockAcaciaLog.stripped.name=Stripped Acacia Log
 tile.decoBlockAcaciaLog.wood.name=Acacia Wood
 tile.decoBlockAcaciaLog.strippedWood.name=Stripped Acacia Wood
