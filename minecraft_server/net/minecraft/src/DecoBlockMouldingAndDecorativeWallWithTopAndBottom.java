@@ -5,9 +5,9 @@ public class DecoBlockMouldingAndDecorativeWallWithTopAndBottom extends DecoBloc
     private Icon[] m_IconBySideArray = new Icon[6];
     private String[] textures;
 
-    protected DecoBlockMouldingAndDecorativeWallWithTopAndBottom(int var1, String[] textures, int sidingID, float hardness, float resistance, StepSound stepSound, String tag)
+    protected DecoBlockMouldingAndDecorativeWallWithTopAndBottom(int var1, Material material, String[] textures, int sidingID, float hardness, float resistance, StepSound stepSound, String tag)
     {
-        super(var1, Material.rock, textures[1], textures[3], sidingID, hardness, resistance, stepSound, tag);
+        super(var1, material, textures[1], textures[3], sidingID, hardness, resistance, stepSound, tag);
         this.SetPicksEffectiveOn();
         this.textures = textures;
     }
