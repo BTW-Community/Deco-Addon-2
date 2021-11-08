@@ -31,7 +31,7 @@ public class DecoEntitySquid extends FCEntitySquid {
         int numPrismarine = this.rand.nextInt(3 + lootingModifier) + 1;
 
         for (int i = 0; i < numPrismarine; ++i) {
-            entityDropItem(new ItemStack(DecoDefs.prismarine), 0F);
+            entityDropItem(new ItemStack(DecoDefs.prismarineShard), 0F);
         }
         
         if (rand.nextInt(8) - lootingModifier <= 0) {

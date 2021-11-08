@@ -419,7 +419,7 @@ public class FCBlockStone extends FCBlockFullBlock
 	}
 
 	public boolean canToolHarvestIntact(ItemStack stack) {
-		return (stack.getItem() instanceof FCItemPickaxe && ((FCItemPickaxe) stack.getItem()).toolMaterial.getHarvestLevel() >= EnumToolMaterial.EMERALD.getHarvestLevel()) || stack.itemID == DecoDefs.chiselDiamond.itemID;
+		return (stack.getItem() instanceof FCItemPickaxe && ((FCItemPickaxe) stack.getItem()).toolMaterial.getHarvestLevel() >= EnumToolMaterial.EMERALD.getHarvestLevel()) || stack.itemID == FCBetterThanWolves.fcItemChiselDiamond.itemID;
 	}
 
 	public boolean isBlockIsolated(World world, int x, int y, int z) {

@@ -1,7 +1,18 @@
-Version 3.1.0
+Version 3.0.3
+Note that this version removed several base class edits and as such requires a clean install.
 [list]
-[*]Added the ability to salt fields using nitre. This stops weeds from growing and freezes crop growth at its current stage. This, combined with the drop change below, allows for large aesthetic fields once again without affecting farming balance for functional purposes.
-[*]Changed crops (except hemp) to be able to grow without hydration. However, unhydrated crops will drop no items.
+[*]Updated to BTW CE 1.2.X.
+[*]Fixed an issue where squids would not drop prismarine unless they were saved and loaded.
+[*]Fixed an issue where squids dropped prismarine blocks instead of shards.
+[*]Fixed an issue where several piston packing recipes were not functioning.
+[*]Fixed an issue where the recipe for spider eye slabs only produced 1 slab.
+[*]Fixed an issue where better grass did not work with deco installed.
+[*]Fixed an issue where animals were still able to eat grass slabs without sunlight.
+[*]Fixed an issue where grass slabs did not change their texture to reflect the current natural light level.
+[*]Fixed an issue where the HC bouncing config option was not being loaded properly.
+[*]Fixed an issue where acacia tables would not connect to acacia fences.
+[*]Fixed an issue where cherry moulding used the acacia texture in inventory.
+[*]Fixed an issue where coal could not be used in ovens.
 [/list]
 
 Version 3.0.2

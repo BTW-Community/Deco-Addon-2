@@ -5,7 +5,7 @@ import java.util.Random;
 
 public class BlockPane extends Block
 {
-    static {new DecoManager();}
+    static {DecoManager.getInstance();}
     /**
      * Holds the texture index of the side of the pane (the thin lateral side)
      */
