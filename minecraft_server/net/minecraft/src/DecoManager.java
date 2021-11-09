@@ -67,7 +67,7 @@ public class DecoManager extends FCAddOn
 	public static final String decoPacketChannelRender = "Deco|Render";
 
 	private DecoManager() {
-		super("Deco Addon", "3.0.3", "Deco");
+		super("Deco Addon", "3.1.0", "Deco");
 	}
 
 	public static DecoManager getInstance() {
