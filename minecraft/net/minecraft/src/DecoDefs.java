@@ -790,6 +790,7 @@ public class DecoDefs {
 	}
 
 	private void addStoneDefs() {
+		Block.stone = Block.replaceBlock(Block.stone.blockID, DecoBlockStone.class, decoManager);
 		Item.itemsList[Block.stone.blockID] = new DecoItemBlockMulti(Block.stone, new String[] {"strata1", "strata2", "strata3", "slate", "rough1", "rough2", "rough3", "roughSlate"});
 		
 		cobblestoneSidingAndCorner = new DecoBlockSidingAndCornerDecorativeWall(id_cobblestoneSidingAndCorner, Material.rock, "stonebrick", 1.5F, 10.0F, Block.soundStoneFootstep, "decoBlockCobblestoneSiding", "Cobblestone").SetPicksEffectiveOn();
@@ -1167,8 +1168,15 @@ public class DecoDefs {
 		DecoManager.Register(Block.obsidian, new String[] {"obsidian", "infused"});
 		
 		//Slate
+		FCBlockStoneRough[] roughStoneStrataArray = new FCBlockStoneRough[4];
+		
+		for (int i = 0; i < 3; i++) {
+			roughStoneStrataArray[i] = FCBlockStoneRough.m_startaLevelBlockArray[i];
+		}
+		
+		FCBlockStoneRough.m_startaLevelBlockArray = roughStoneStrataArray;
+		
 		slateRough = new DecoBlockSlateRough(id_slateRough);
-		FCBlockStoneRough.m_startaLevelBlockArray[3] = (FCBlockStoneRough) slateRough;
 		DecoManager.Register(slateRough);
 		slateCobbleLoose = new DecoBlockSlateCobbleLoose(id_slateCobbleLoose);
 		slateBrickLoose = new DecoBlockSlateBrickLoose(id_slateBrickLoose);
