@@ -628,6 +628,8 @@ public class DecoRecipes {
 		FCRecipes.addPistonPackingRecipe(Block.stone, 3, new ItemStack(Block.stone, 1, 0));
 		FCRecipes.addPistonPackingRecipe(Block.stone, 3, new ItemStack(Block.stone, 1, 1));
 		FCRecipes.addPistonPackingRecipe(Block.stone, 3, new ItemStack(Block.stone, 1, 2));
+
+		FCRecipes.addPistonPackingRecipe(DecoDefs.slateCobbleLoose, new ItemStack(DecoDefs.slateStone, 8));
 		
         FCRecipes.AddShapelessRecipe(new ItemStack(DecoDefs.slateCobbleLoose), new Object[] {new ItemStack(DecoDefs.slateStone), new ItemStack(DecoDefs.slateStone), new ItemStack(DecoDefs.slateStone), new ItemStack(DecoDefs.slateStone), new ItemStack(DecoDefs.slateStone), new ItemStack(DecoDefs.slateStone), new ItemStack(DecoDefs.slateStone), new ItemStack(DecoDefs.slateStone)});
         FCRecipes.AddShapelessRecipe(new ItemStack(DecoDefs.stoneTypesLooseSlab, 1, 6), new Object[] {new ItemStack(DecoDefs.slateStone), new ItemStack(DecoDefs.slateStone), new ItemStack(DecoDefs.slateStone), new ItemStack(DecoDefs.slateStone)});
@@ -1446,6 +1448,9 @@ public class DecoRecipes {
 	private void addDecoRecipes() {
 		DecoManager.MakeStorage(FCBetterThanWolves.fcItemIngotDiamond, DecoDefs.blockDiamondium);
 
+		FCRecipes.addPistonPackingRecipe(DecoDefs.hayBale, new ItemStack(FCBetterThanWolves.fcItemWheat, 9));
+		FCRecipes.addPistonPackingRecipe(DecoDefs.thatch, new ItemStack(FCBetterThanWolves.fcItemStraw, 9));
+		
 		FCRecipes.AddShapelessRecipe(new ItemStack(FCBetterThanWolves.fcItemWheat, 9), new ItemStack[]{new ItemStack(DecoDefs.hayBale)});
 		FCRecipes.AddRecipe(new ItemStack(DecoDefs.hayBaleStairs, 8), new Object[] {"X  ", "XX ", "XXX", 'X', DecoDefs.hayBale});
 		FCRecipes.AddShapelessRecipe(new ItemStack(FCBetterThanWolves.fcItemStraw, 9), new ItemStack[]{new ItemStack(DecoDefs.thatch)});
@@ -1545,6 +1550,9 @@ public class DecoRecipes {
 		}
 
 		//Coal Block
+		FCRecipes.addPistonPackingRecipe(DecoDefs.coalBlock, new ItemStack(Item.coal, 9));
+		FCRecipes.addPistonPackingRecipe(DecoDefs.netherCoalBlock, new ItemStack(FCBetterThanWolves.fcItemNethercoal, 9));
+		
 		DecoManager.MakeStorage(Item.coal, DecoDefs.coalBlock);
 		DecoManager.MakeStorage(FCBetterThanWolves.fcItemNethercoal, DecoDefs.netherCoalBlock);
 
@@ -1627,7 +1635,8 @@ public class DecoRecipes {
        	DecoManager.MakeStorage(DecoDefs.chainItem, DecoDefs.chainCoil);
        	
        	//Spider eyes
-       	FCRecipes.AddRecipe(new ItemStack(DecoDefs.spiderEyeSlab), new Object[] {"###", '#', DecoDefs.spiderEyeBlock});
+       	FCRecipes.addPistonPackingRecipe(DecoDefs.spiderEyeBlock, new ItemStack(Item.spiderEye, 16));
+       	FCRecipes.AddRecipe(new ItemStack(DecoDefs.spiderEyeSlab, 6), new Object[] {"###", '#', DecoDefs.spiderEyeBlock});
        	FCRecipes.AddShapelessRecipe(new ItemStack(Item.spiderEye, 16), new ItemStack[] {new ItemStack(DecoDefs.spiderEyeBlock)});
        	FCRecipes.AddShapelessRecipe(new ItemStack(Item.spiderEye, 8), new ItemStack[] {new ItemStack(DecoDefs.spiderEyeSlab)});
        	

@@ -9,19 +9,4 @@ public class DecoItemSpiderEye extends ItemFood {
 		this.setPotionEffect(PotionHelper.goldenCarrotEffect);
 		this.setUnlocalizedName("spiderEye");
 	}
-
-    public boolean IsPistonPackable(ItemStack var1)
-    {
-        return true;
-    }
-
-    public int GetRequiredItemCountToPistonPack(ItemStack var1)
-    {
-        return 16;
-    }
-
-    public int GetResultingBlockIDOnPistonPack(ItemStack var1)
-    {
-        return DecoDefs.spiderEyeBlock.blockID;
-    }
 }

@@ -28,6 +28,7 @@ import net.minecraft.server.MinecraftServer;
 
 public class DecoManager extends FCAddOn
 {
+	private static DecoManager instance;
 	public static DecoDefs decoDefs;
 	public static DecoRecipes decoRecipes;
 
@@ -65,8 +66,16 @@ public class DecoManager extends FCAddOn
 
 	public static final String decoPacketChannelRender = "Deco|Render";
 
-	public DecoManager() {
-		super("Deco Addon", "3.0.2", "Deco");
+	private DecoManager() {
+		super("Deco Addon", "3.1.0", "Deco");
+	}
+
+	public static DecoManager getInstance() {
+		if (instance == null) {
+			instance = new DecoManager();
+		}
+
+		return instance;
 	}
 
 	@Override
@@ -94,7 +103,7 @@ public class DecoManager extends FCAddOn
 	}
 	
 	public void handleConfigProperties(Map<String, String> propertyValues) {
-		this.disableHardcoreBouncing = Boolean.parseBoolean(propertyValues.get("DisablehardcoreBouncing"));
+		this.disableHardcoreBouncing = Boolean.parseBoolean(propertyValues.get("DisableHardcoreBouncing"));
 	}
 
 	//Use to replace block ids

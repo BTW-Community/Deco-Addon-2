@@ -2021,17 +2021,19 @@ public abstract class EntityPlayer extends EntityLiving implements ICommandSende
     }
 
     public boolean canPlayerEdit(int par1, int par2, int par3, int par4, ItemStack par5ItemStack)
-    {
-    	// DecoMod
-    	// FCMOD: Code added to prevent the player from placing blocks while in mid air
-    	if ( !capabilities.isCreativeMode && !onGround && !inWater && !isOnLadder() && ridingEntity == null && !handleLavaMovement()  && !DecoManager.disableHardcoreBouncing)
-    	{
-    		return false;
-    	}
-    	// END FCMOD
-    	
-        return this.capabilities.allowEdit ? true : (par5ItemStack != null ? par5ItemStack.func_82835_x() : false);
-    }
+	{
+		// DecoMod
+		// FCMOD: Code added to prevent the player from placing blocks while in mid air
+		if (!DecoManager.disableHardcoreBouncing) {
+			if (!capabilities.isCreativeMode && !onGround && !inWater && !isOnLadder() && ridingEntity == null && !handleLavaMovement())
+			{
+				return false;
+			}
+		}
+		// END FCMOD
+
+		return this.capabilities.allowEdit ? true : (par5ItemStack != null ? par5ItemStack.func_82835_x() : false);
+	}
 
     /**
      * Get the experience points the entity currently has.
