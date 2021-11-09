@@ -14,7 +14,7 @@ public class DecoBlockPrismarine extends Block {
 		this.setUnlocalizedName("decoBlockPrismarine");
 		this.setCreativeTab(CreativeTabs.tabBlock);
 
-		DecoManager.Register(this, new String[] {"prismarine", "prismarineBrick", "prismarineDark"});
+		DecoManager.register(this, new String[] {"prismarine", "prismarineBrick", "prismarineDark"});
 	}
 
 	public int damageDropped(int meta)

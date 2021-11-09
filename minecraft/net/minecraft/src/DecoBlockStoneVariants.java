@@ -14,7 +14,7 @@ public class DecoBlockStoneVariants extends Block {
 		this.setUnlocalizedName("decoBlockStone");
 		this.setCreativeTab(CreativeTabs.tabBlock);
 
-		DecoManager.Register(this, new String[] {"granite", "andesite", "diorite"});
+		DecoManager.register(this, new String[] {"granite", "andesite", "diorite"});
 	}
 
 	public int damageDropped(int meta) {

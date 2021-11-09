@@ -90,8 +90,7 @@ public class DecoManager extends FCAddOn
 	}
 
 	@Override
-	public void Initialize()
-	{
+	public void Initialize() {
 		FCAddOnHandler.LogMessage("Deco Addon Initializing...");
 
 		decoDefs = DecoDefs.instance;
@@ -106,56 +105,21 @@ public class DecoManager extends FCAddOn
 		FCAddOnHandler.LogMessage("Deco Addon Initialization Complete.");
 	}
 
-	public String GetLanguageFilePrefix()
-	{
+	@Override
+	public String GetLanguageFilePrefix() {
 		return "Deco";
 	}
 	
+	@Override
 	public void handleConfigProperties(Map<String, String> propertyValues) {
 		this.disableHardcoreBouncing = Boolean.parseBoolean(propertyValues.get("DisableHardcoreBouncing"));
 	}
-
-	public static void MakeStorage(Item subItem, Block container)
-	{
-		FCRecipes.AddRecipe(new ItemStack(container), new Object[]{"XXX","XXX","XXX",'X',subItem});
-		FCRecipes.AddShapelessRecipe(new ItemStack(subItem, 9), new ItemStack[]{new ItemStack(container)});
-	}
-	public static void MakeStorage(Item subItem, Item container)
-	{
-		FCRecipes.AddRecipe(new ItemStack(container), new Object[]{"XXX","XXX","XXX",'X',subItem});
-		FCRecipes.AddShapelessRecipe(new ItemStack(subItem, 9), new ItemStack[]{new ItemStack(container)});
-	}
-	public static void MakeStorage(ItemStack subItem, ItemStack container)
-	{
-		FCRecipes.AddRecipe(container, new Object[]{"XXX","XXX","XXX",'X',subItem});
-		FCRecipes.AddShapelessRecipe(new ItemStack(subItem.itemID, 9,subItem.getItemDamage()), new ItemStack[]{container});
-	}
-	public static void Register(Block target)
-	{
+	
+	public static void register(Block target) {
 		Item.itemsList[target.blockID] = new DecoItemBlockWithCustomSound(target.blockID - 256);
 	}
-	public static void Register(Block target, String[] names, String preTitle, String[] titles, String postTitle)
-	{
-		Item.itemsList[target.blockID] = new DecoItemBlockMulti(target, names);
-	}
 
-	public static void Register(Block target, String[] names)
-	{
-		Item.itemsList[target.blockID] = new DecoItemBlockMulti(target, names);
-	}
-
-	public static void Register(Block target, String[] names, String[] titles)
-	{
-		Item.itemsList[target.blockID] = new DecoItemBlockMulti(target, names);
-	}
-
-	public static void Register(Block target, String[] names, String[] titles, String postTitle)
-	{
-		Item.itemsList[target.blockID] = new DecoItemBlockMulti(target, names);
-	}
-
-	public static void Register(Block target, String[] names, String preTitle, String[] titles)
-	{
+	public static void register(Block target, String[] names) {
 		Item.itemsList[target.blockID] = new DecoItemBlockMulti(target, names);
 	}
 

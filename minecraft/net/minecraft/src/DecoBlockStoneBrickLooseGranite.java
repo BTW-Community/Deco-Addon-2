@@ -15,7 +15,7 @@ public class DecoBlockStoneBrickLooseGranite extends FCBlockLavaReceiver
         this.setStepSound(soundStoneFootstep);
         this.setUnlocalizedName("decoBlockGraniteBrickLoose");
         this.setCreativeTab(CreativeTabs.tabBlock);
-        DecoManager.Register(this);
+        DecoManager.register(this);
     }
 
     public boolean OnMortarApplied(World world, int x, int y, int z)

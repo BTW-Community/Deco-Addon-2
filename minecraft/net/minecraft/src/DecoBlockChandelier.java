@@ -12,7 +12,7 @@ public class DecoBlockChandelier extends Block
 		setCreativeTab(CreativeTabs.tabDecorations);
 		setHardness(0.3F);
 		setLightValue(1F);
-		DecoManager.Register(this);
+		DecoManager.register(this);
 		this.SetPicksEffectiveOn(true);
 		this.InitBlockBounds(.25D,	0.125D,	.25D,		.75D,		1.0D,	.75D);
 	}

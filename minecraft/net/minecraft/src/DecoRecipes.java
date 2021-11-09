@@ -1801,7 +1801,7 @@ public class DecoRecipes {
 	}
 
 	private void addDecoRecipes() {
-		DecoManager.MakeStorage(FCBetterThanWolves.fcItemIngotDiamond, DecoDefs.blockDiamondium);
+		makeStorage(FCBetterThanWolves.fcItemIngotDiamond, DecoDefs.blockDiamondium);
 
 		FCRecipes.addPistonPackingRecipe(DecoDefs.hayBale, new ItemStack(FCBetterThanWolves.fcItemWheat, 9));
 		FCRecipes.addPistonPackingRecipe(DecoDefs.thatch, new ItemStack(FCBetterThanWolves.fcItemStraw, 9));
@@ -1908,8 +1908,8 @@ public class DecoRecipes {
 		FCRecipes.addPistonPackingRecipe(DecoDefs.coalBlock, new ItemStack(Item.coal, 9));
 		FCRecipes.addPistonPackingRecipe(DecoDefs.netherCoalBlock, new ItemStack(FCBetterThanWolves.fcItemNethercoal, 9));
 		
-		DecoManager.MakeStorage(Item.coal, DecoDefs.coalBlock);
-		DecoManager.MakeStorage(FCBetterThanWolves.fcItemNethercoal, DecoDefs.netherCoalBlock);
+		makeStorage(Item.coal, DecoDefs.coalBlock);
+		makeStorage(FCBetterThanWolves.fcItemNethercoal, DecoDefs.netherCoalBlock);
 
 		//Bone Pillars
 		FCRecipes.AddRecipe(new ItemStack(DecoDefs.bonePillar, 2), new Object[] {"X", "X", 'X', new ItemStack(FCBetterThanWolves.fcAestheticOpaque, 1, 15)});
@@ -1986,8 +1986,8 @@ public class DecoRecipes {
 		
 		//Rope and chain
        	FCRecipes.RemoveVanillaRecipe(new ItemStack(FCBetterThanWolves.fcAestheticOpaque, 1, 6), new Object[] {"###", "###", "###", '#', FCBetterThanWolves.fcItemRope});
-       	DecoManager.MakeStorage(FCBetterThanWolves.fcItemRope, DecoDefs.ropeCoil);
-       	DecoManager.MakeStorage(DecoDefs.chainItem, DecoDefs.chainCoil);
+       	makeStorage(FCBetterThanWolves.fcItemRope, DecoDefs.ropeCoil);
+       	makeStorage(DecoDefs.chainItem, DecoDefs.chainCoil);
        	
        	//Spider eyes
        	FCRecipes.addPistonPackingRecipe(DecoDefs.spiderEyeBlock, new ItemStack(Item.spiderEye, 16));
@@ -2271,5 +2271,20 @@ public class DecoRecipes {
 		//Fence
 		FCRecipes.addSawRecipe(new ItemStack(cornerItemID, 1, itemMetadata),
 				sidingAndCorner, FCBlockWoodSidingAndCornerAndDecorative.m_iSubtypeFence);
+	}
+
+	public static void makeStorage(Item subItem, Block container) {
+		FCRecipes.AddRecipe(new ItemStack(container), new Object[]{"XXX","XXX","XXX",'X',subItem});
+		FCRecipes.AddShapelessRecipe(new ItemStack(subItem, 9), new ItemStack[]{new ItemStack(container)});
+	}
+	
+	public static void makeStorage(Item subItem, Item container) {
+		FCRecipes.AddRecipe(new ItemStack(container), new Object[]{"XXX","XXX","XXX",'X',subItem});
+		FCRecipes.AddShapelessRecipe(new ItemStack(subItem, 9), new ItemStack[]{new ItemStack(container)});
+	}
+	
+	public static void makeStorage(ItemStack subItem, ItemStack container) {
+		FCRecipes.AddRecipe(container, new Object[]{"XXX","XXX","XXX",'X',subItem});
+		FCRecipes.AddShapelessRecipe(new ItemStack(subItem.itemID, 9,subItem.getItemDamage()), new ItemStack[]{container});
 	}
 }

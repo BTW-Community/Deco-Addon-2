@@ -641,9 +641,9 @@ public class DecoDefs {
 		terracotta = new DecoBlockTerracotta(id_terracotta).setHardness(1.0F).setResistance(5.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("decoBlockTerracotta").setCreativeTab(CreativeTabs.tabBlock);
 		stainedTerracotta = (new DecoBlockTerracottaStained(id_stainedTerracotta)).setHardness(1.0F).setResistance(5.0F).setStepSound(Block.soundStoneFootstep).setCreativeTab(CreativeTabs.tabBlock).setUnlocalizedName("decoBlockTerracottaStained");
 		unfiredTerracotta = new DecoBlockTerracottaUnfired(id_unfiredTerracotta).setUnlocalizedName("decoBlockTerracottaUnfired");
-		DecoManager.Register(terracotta);
+		DecoManager.register(terracotta);
 		Item.itemsList[stainedTerracotta.blockID] = new DecoItemBlockColored(stainedTerracotta.blockID - 256, stainedTerracotta);
-		DecoManager.Register(unfiredTerracotta);
+		DecoManager.register(unfiredTerracotta);
 
 		//Sub blocks
 		int start = id_clay_sub_start,
@@ -656,7 +656,7 @@ public class DecoDefs {
 
 		Item.itemsList[terracottaSidingAndCorner.blockID] = new FCItemBlockSidingAndCorner(terracottaSidingAndCorner.blockID - 256);
 		Item.itemsList[terracottaMouldingAndDecorative.blockID] = new FCItemBlockMouldingAndDecorative(terracottaMouldingAndDecorative.blockID - 256);
-		DecoManager.Register(terracottaStairs);
+		DecoManager.register(terracottaStairs);
 
 		stainedTerracottaSidingAndCorner = new Block[16];
 		stainedTerracottaMouldingAndDecorative = new Block[16];
@@ -669,7 +669,7 @@ public class DecoDefs {
 
 			Item.itemsList[stainedTerracottaSidingAndCorner[i].blockID] = new FCItemBlockSidingAndCorner(stainedTerracottaSidingAndCorner[i].blockID - 256);
 			Item.itemsList[stainedTerracottaMouldingAndDecorative[i].blockID] = new FCItemBlockMouldingAndDecorative(stainedTerracottaMouldingAndDecorative[i].blockID - 256);
-			DecoManager.Register(stainedTerracottaStairs[i]);
+			DecoManager.register(stainedTerracottaStairs[i]);
 			
 			i++;
 		}
@@ -677,7 +677,7 @@ public class DecoDefs {
 		//Shingles
 		shingles = new DecoBlockTerracotta(id_shingles).setHardness(1.0F).setResistance(5.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("decoBlockShingles").setCreativeTab(CreativeTabs.tabBlock);
 		shinglesColored = (new DecoBlockTerracottaStained(id_shinglesColored)).setHardness(1.0F).setResistance(5.0F).setStepSound(Block.soundStoneFootstep).setCreativeTab(CreativeTabs.tabBlock).setUnlocalizedName("decoBlockShinglesColored");
-		DecoManager.Register(shingles);
+		DecoManager.register(shingles);
 		Item.itemsList[shinglesColored.blockID] = new DecoItemBlockColored(shinglesColored.blockID - 256, shinglesColored);
 		
 		start = id_shingleSubStart;
@@ -691,7 +691,7 @@ public class DecoDefs {
 
 		Item.itemsList[shingleSidingAndCorner.blockID] = new FCItemBlockSidingAndCorner(shingleSidingAndCorner.blockID - 256);
 		Item.itemsList[shingleMouldingAndDecorative.blockID] = new FCItemBlockMouldingAndDecorative(shingleMouldingAndDecorative.blockID - 256);
-		DecoManager.Register(shingleStairs);
+		DecoManager.register(shingleStairs);
 
 		shingleColoredSidingAndCorner = new Block[16];
 		shingleColoredMouldingAndDecorative = new Block[16];
@@ -704,7 +704,7 @@ public class DecoDefs {
 
 			Item.itemsList[shingleColoredSidingAndCorner[i].blockID] = new FCItemBlockSidingAndCorner(shingleColoredSidingAndCorner[i].blockID - 256);
 			Item.itemsList[shingleColoredMouldingAndDecorative[i].blockID] = new FCItemBlockMouldingAndDecorative(shingleColoredMouldingAndDecorative[i].blockID - 256);
-			DecoManager.Register(shingleColoredStairs[i]);
+			DecoManager.register(shingleColoredStairs[i]);
 			
 			i++;
 		}
@@ -722,7 +722,7 @@ public class DecoDefs {
 		while(i < 16)
 		{
 			glazedTerracotta[i] = new DecoBlockTerracottaGlazed(start + i, i).setHardness(2.0F).setResistance(10.0F).setStepSound(Block.soundStoneFootstep).setCreativeTab(CreativeTabs.tabBlock).setUnlocalizedName("decoBlockGlazedTerracotta." + DecoUtilsMisc.colorOrder[i]);
-			DecoManager.Register(glazedTerracotta[i]);
+			DecoManager.register(glazedTerracotta[i]);
 			i++;
 		}
 
@@ -743,14 +743,14 @@ public class DecoDefs {
 	private void addGlassDefs() {
 		glassChunk = new Item(id_glassChunk).setCreativeTab(CreativeTabs.tabMaterials).SetFilterableProperties(2).setUnlocalizedName("decoItemGlassPiece");
 		glassStained = new DecoBlockGlassStained(id_glassStained);
-		DecoManager.Register(glassStained);
+		DecoManager.register(glassStained);
 		stainedGlassItem = (DecoItemGlassStained) new DecoItemGlassStained(id_glassStainedItem).setUnlocalizedName("decoItemStainedGlass");
 		
 		framedGlass = new DecoBlockFramedGlass(id_framedGlass, "decoBlockGlassFramed");
 		Item.itemsList[framedGlass.blockID] = new DecoItemBlockMulti(framedGlass, new String[] {"oak", "spruce", "birch", "jungle", "blood", "cherry", "acacia"});
 		
 		framedGlassIron = new DecoBlockFramedGlassIron(id_framedGlassIron);
-		DecoManager.Register(framedGlassIron);
+		DecoManager.register(framedGlassIron);
 	}
 
 	private void addWhiteStoneDefs() {
@@ -762,7 +762,7 @@ public class DecoDefs {
 		Item.itemsList[whiteStoneBrick.blockID] = new DecoItemBlockBrick(whiteStoneBrick.blockID - 256, whiteStoneBrick);
 		Item.itemsList[whiteBrickSidingAndCorner.blockID] = new FCItemBlockSidingAndCorner(whiteBrickSidingAndCorner.blockID - 256);
 		Item.itemsList[whiteBrickMouldingAndDecorative.blockID] = new FCItemBlockMouldingAndDecorative(whiteBrickMouldingAndDecorative.blockID - 256);
-		DecoManager.Register(whiteBrickStairs);
+		DecoManager.register(whiteBrickStairs);
 	}
 
 	private void addFlowerDefs() {
@@ -807,7 +807,7 @@ public class DecoDefs {
 		Item.itemsList[cobblestoneMouldingAndDecorative.blockID] = new FCItemBlockMouldingAndDecorative(cobblestoneMouldingAndDecorative.blockID - 256);
 		Item.itemsList[mossyCobblestoneSidingAndCorner.blockID] = new FCItemBlockSidingAndCorner(mossyCobblestoneSidingAndCorner.blockID - 256);
 		Item.itemsList[mossyCobblestoneMouldingAndDecorative.blockID] = new FCItemBlockMouldingAndDecorative(mossyCobblestoneMouldingAndDecorative.blockID - 256);
-		DecoManager.Register(mossyCobblestoneStairs);
+		DecoManager.register(mossyCobblestoneStairs);
 
 		stoneTypes = new DecoBlockStoneVariants(id_stoneType);
 		stoneTypesCobble = new DecoBlockStoneVariantCobble(id_stoneTypeCobble);
@@ -856,16 +856,16 @@ public class DecoDefs {
 
 			Item.itemsList[stoneTypesSidingAndCorner[i].blockID] = new FCItemBlockSidingAndCorner(stoneTypesSidingAndCorner[i].blockID - 256);
 			Item.itemsList[stoneTypesMouldingAndDecorative[i].blockID] = new FCItemBlockMouldingAndDecorative(stoneTypesMouldingAndDecorative[i].blockID - 256);
-			DecoManager.Register(stoneTypesStairs[i]);
+			DecoManager.register(stoneTypesStairs[i]);
 			Item.itemsList[stoneTypesSmoothSidingAndCorner[i].blockID] = new FCItemBlockSidingAndCorner(stoneTypesSmoothSidingAndCorner[i].blockID - 256);
 			Item.itemsList[stoneTypesSmoothMouldingAndDecorative[i].blockID] = new FCItemBlockMouldingAndDecorative(stoneTypesSmoothMouldingAndDecorative[i].blockID - 256);
-			DecoManager.Register(stoneTypesSmoothStairs[i]);
+			DecoManager.register(stoneTypesSmoothStairs[i]);
 			Item.itemsList[stoneTypesCobblestoneSidingAndCorner[i].blockID] = new FCItemBlockSidingAndCorner(stoneTypesCobblestoneSidingAndCorner[i].blockID - 256);
 			Item.itemsList[stoneTypesCobblestoneMouldingAndDecorative[i].blockID] = new FCItemBlockMouldingAndDecorative(stoneTypesCobblestoneMouldingAndDecorative[i].blockID - 256);
-			DecoManager.Register(stoneTypesCobblestoneStairs[i]);
+			DecoManager.register(stoneTypesCobblestoneStairs[i]);
 			Item.itemsList[stoneTypesStoneBrickSidingAndCorner[i].blockID] = new FCItemBlockSidingAndCorner(stoneTypesStoneBrickSidingAndCorner[i].blockID - 256);
 			Item.itemsList[stoneTypesStoneBrickMouldingAndDecorative[i].blockID] = new FCItemBlockMouldingAndDecorative(stoneTypesStoneBrickMouldingAndDecorative[i].blockID - 256);
-			DecoManager.Register(stoneTypesStoneBrickStairs[i]);
+			DecoManager.register(stoneTypesStoneBrickStairs[i]);
 		}
 
 		stoneTypesLooseStairs = new Block[6];
@@ -876,20 +876,20 @@ public class DecoDefs {
 		stoneTypesLooseStairs[4] = new DecoBlockStoneLooseStairs(id_andesiteStoneBrickLooseStairs, andesiteStoneBrickLoose, stoneTypesStoneBrickStairs[1]).setUnlocalizedName("decoBlockAndesiteBrickStairsLoose");
 		stoneTypesLooseStairs[5] = new DecoBlockStoneLooseStairs(id_dioriteStoneBrickLooseStairs, dioriteStoneBrickLoose, stoneTypesStoneBrickStairs[2]).setUnlocalizedName("decoBlockDioriteBrickStairsLoose");
 
-		DecoManager.Register(stoneTypesLooseStairs[0]);
-		DecoManager.Register(stoneTypesLooseStairs[1]);
-		DecoManager.Register(stoneTypesLooseStairs[2]);
-		DecoManager.Register(stoneTypesLooseStairs[3]);
-		DecoManager.Register(stoneTypesLooseStairs[4]);
-		DecoManager.Register(stoneTypesLooseStairs[5]);
+		DecoManager.register(stoneTypesLooseStairs[0]);
+		DecoManager.register(stoneTypesLooseStairs[1]);
+		DecoManager.register(stoneTypesLooseStairs[2]);
+		DecoManager.register(stoneTypesLooseStairs[3]);
+		DecoManager.register(stoneTypesLooseStairs[4]);
+		DecoManager.register(stoneTypesLooseStairs[5]);
 
 		polishedStone = new Block(id_polishedStone, Material.rock).setHardness(2.25F).setResistance(10.0F).SetPicksEffectiveOn().setUnlocalizedName("decoBlockPolishedStone").setStepSound(Block.soundStoneFootstep).setCreativeTab(CreativeTabs.tabBlock);
 		polishedStoneStairs = new FCBlockStairs(id_polishedStoneStairs, polishedStone, 0).setHardness(2.25F).setResistance(10.0F).SetPicksEffectiveOn().setUnlocalizedName("decoBlockPolishedStoneStairs").setStepSound(Block.soundStoneFootstep).setCreativeTab(CreativeTabs.tabBlock);
 		polishedStoneSidingAndCorner = new DecoBlockSidingAndCornerDecorativeWall(id_polishedStoneSidingAndCorner, Material.rock, "stoneslab_top", 2.25F, 10.0F, Block.soundStoneFootstep, "decoBlockPolishedStoneSiding", "Polished Stone").SetPicksEffectiveOn();
 		polishedStoneMouldingAndDecorative = new DecoBlockMouldingAndDecorativeWall(id_polishedStoneMouldingAndDecorative, Material.rock, "stoneslab_top", "decoBlockPolishedStoneColumn", polishedStoneSidingAndCorner.blockID, 2.25F, 10.0F, Block.soundStoneFootstep, "decoBlockPolishedStoneMoulding").SetPicksEffectiveOn();
 
-		DecoManager.Register(polishedStone);
-		DecoManager.Register(polishedStoneStairs);
+		DecoManager.register(polishedStone);
+		DecoManager.register(polishedStoneStairs);
 		Item.itemsList[polishedStoneSidingAndCorner.blockID] = new FCItemBlockSidingAndCorner(polishedStoneSidingAndCorner.blockID - 256);
 		Item.itemsList[polishedStoneMouldingAndDecorative.blockID] = new FCItemBlockMouldingAndDecorative(polishedStoneMouldingAndDecorative.blockID - 256);
 
@@ -900,8 +900,8 @@ public class DecoDefs {
 		stoneBrickCrackedSidingAndCorner = new DecoBlockSidingAndCornerDecorativeWall(id_stoneBrickCrackedSidingAndCorner, Material.rock, "stonebricksmooth_cracked", 2.25F, 10.0F, Block.soundStoneFootstep, "decoBlockStoneBrickCrackedSiding", "Cracked Stone Brick").SetPicksEffectiveOn();
 		stoneBrickCrackedMouldingAndDecorative = new DecoBlockMouldingAndDecorativeWall(id_stoneBrickCrackedMouldingAndDecorative, Material.rock, "stonebricksmooth_cracked", "decoBlockStoneBrickCrackedColumn", stoneBrickCrackedSidingAndCorner.blockID, 2.25F, 10.0F, Block.soundStoneFootstep, "decoBlockStoneBrickCrackedMoulding").SetPicksEffectiveOn();
 
-		DecoManager.Register(stoneBrickMossyStairs);
-		DecoManager.Register(stoneBrickCrackedStairs);
+		DecoManager.register(stoneBrickMossyStairs);
+		DecoManager.register(stoneBrickCrackedStairs);
 		Item.itemsList[stoneBrickMossySidingAndCorner.blockID] = new FCItemBlockSidingAndCorner(stoneBrickMossySidingAndCorner.blockID - 256);
 		Item.itemsList[stoneBrickMossyMouldingAndDecorative.blockID] = new FCItemBlockMouldingAndDecorative(stoneBrickMossyMouldingAndDecorative.blockID - 256);
 		Item.itemsList[stoneBrickCrackedSidingAndCorner.blockID] = new FCItemBlockSidingAndCorner(stoneBrickCrackedSidingAndCorner.blockID - 256);
@@ -939,18 +939,18 @@ public class DecoDefs {
 		redSandStoneBrickLargeCrackedSidingAndCorner = new DecoBlockSidingAndCornerDecorativeWallWithTopAndBottom(id_redSandstoneBrickLargeCrackedSidingAndCorner, Material.rock, new String[] {"decoBlockRedSandstoneBrickLargeCracked", "decoBlockRedSandstoneBrickLargeCracked", "decoBlockRedSandstoneBrickLargeCracked", "decoBlockRedSandstoneBrickLargeCrackedColumn"}, 0.8F, 1.34F, Block.soundStoneFootstep, "decoBlockRedSandstoneBrickLargeCrackedSiding", "Cracked Large Red Sandstone Brick");
 		redSandStoneBrickLargeCrackedMouldingAndDecorative = new DecoBlockMouldingAndDecorativeWallWithTopAndBottom(id_redSandstoneBrickLargeCrackedMouldingAndDecorative, Material.rock, new String[] {"decoBlockRedSandstoneBrickLargeCracked", "decoBlockRedSandstoneBrickLargeCracked", "decoBlockRedSandstoneBrickLargeCracked", "decoBlockRedSandstoneBrickLargeCrackedColumn"}, redSandStoneBrickLargeCrackedSidingAndCorner.blockID, 0.8F, 1.34F, Block.soundStoneFootstep, "decoBlockRedSandstoneBrickLargeCrackedMoulding");
 
-		DecoManager.Register(redSand);
-		DecoManager.Register(redSandSlab);
-		DecoManager.Register(redSandStone, ((DecoBlockRedSandStone) redSandStone).SAND_STONE_TYPES);
-		DecoManager.Register(redSandStoneStairs);
-		DecoManager.Register(redSandStoneSmoothStairs);
-		DecoManager.Register(redSandStonePolishedStairs);
-		DecoManager.Register(redSandStoneBrickStairs);
-		DecoManager.Register(redSandStoneMossyStairs);
-		DecoManager.Register(redSandStoneBrickLargeStairs);
-		DecoManager.Register(redSandStoneBrickLargeMossyStairs);
-		DecoManager.Register(redSandStoneCrackedStairs);
-		DecoManager.Register(redSandStoneBrickLargeCrackedStairs);
+		DecoManager.register(redSand);
+		DecoManager.register(redSandSlab);
+		DecoManager.register(redSandStone, ((DecoBlockRedSandStone) redSandStone).SAND_STONE_TYPES);
+		DecoManager.register(redSandStoneStairs);
+		DecoManager.register(redSandStoneSmoothStairs);
+		DecoManager.register(redSandStonePolishedStairs);
+		DecoManager.register(redSandStoneBrickStairs);
+		DecoManager.register(redSandStoneMossyStairs);
+		DecoManager.register(redSandStoneBrickLargeStairs);
+		DecoManager.register(redSandStoneBrickLargeMossyStairs);
+		DecoManager.register(redSandStoneCrackedStairs);
+		DecoManager.register(redSandStoneBrickLargeCrackedStairs);
 
 		Item.itemsList[redSandStoneSidingAndCorner.blockID] = new FCItemBlockSidingAndCorner(redSandStoneSidingAndCorner.blockID - 256);
 		Item.itemsList[redSandStoneMouldingAndDecorative.blockID] = new FCItemBlockMouldingAndDecorative(redSandStoneMouldingAndDecorative.blockID - 256);
@@ -973,7 +973,7 @@ public class DecoDefs {
 
 		pileRedSand = new DecoItemPileRedSand(id_pileRedSand);
 		Block.sandStone = Block.replaceBlock(Block.sandStone.blockID, DecoBlockSandStone.class);
-		DecoManager.Register(Block.sandStone, new String[] {"default", "chiseled", "smooth", "polished", "brick", "mossy", "largeBrick", "largeBrickMossy", "cracked", "largeBrickCracked"});
+		DecoManager.register(Block.sandStone, new String[] {"default", "chiseled", "smooth", "polished", "brick", "mossy", "largeBrick", "largeBrickMossy", "cracked", "largeBrickCracked"});
 		Block.stairsSandStone = Block.replaceBlock(Block.stairsSandStone.blockID, DecoBlockStairsSandStone.class, Block.sandStone, 0);
 
 		sandStoneSmoothStairs = new DecoBlockStairsSandStone(id_sandstoneSmoothStairs, Block.sandStone, 2).setUnlocalizedName("decoBlockStairsSandStoneSmooth");
@@ -1001,14 +1001,14 @@ public class DecoDefs {
 		sandStoneBrickLargeCrackedSidingAndCorner = new DecoBlockSidingAndCornerDecorativeWallWithTopAndBottom(id_sandstoneBrickLargeCrackedSidingAndCorner, Material.rock, new String[] {"decoBlockSandstoneBrickLargeCracked", "decoBlockSandstoneBrickLargeCracked", "decoBlockSandstoneBrickLargeCracked", "decoBlockSandstoneBrickLargeCrackedColumn"}, 0.8F, 1.34F, Block.soundStoneFootstep, "decoBlockSandstoneBrickLargeCrackedSiding", "Cracked Large Sandstone Brick");
 		sandStoneBrickLargeCrackedMouldingAndDecorative = new DecoBlockMouldingAndDecorativeWallWithTopAndBottom(id_sandstoneBrickLargeCrackedMouldingAndDecorative, Material.rock, new String[] {"decoBlockSandstoneBrickLargeCracked", "decoBlockSandstoneBrickLargeCracked", "decoBlockSandstoneBrickLargeCracked", "decoBlockSandstoneBrickLargeCrackedColumn"}, sandStoneBrickLargeCrackedSidingAndCorner.blockID, 0.8F, 1.34F, Block.soundStoneFootstep, "decoBlockSandstoneBrickLargeCrackedMoulding");
 
-		DecoManager.Register(sandStoneSmoothStairs);
-		DecoManager.Register(sandStonePolishedStairs);
-		DecoManager.Register(sandStoneBrickStairs);
-		DecoManager.Register(sandStoneMossyStairs);
-		DecoManager.Register(sandStoneBrickLargeStairs);
-		DecoManager.Register(sandStoneBrickLargeMossyStairs);
-		DecoManager.Register(sandStoneCrackedStairs);
-		DecoManager.Register(sandStoneBrickLargeCrackedStairs);
+		DecoManager.register(sandStoneSmoothStairs);
+		DecoManager.register(sandStonePolishedStairs);
+		DecoManager.register(sandStoneBrickStairs);
+		DecoManager.register(sandStoneMossyStairs);
+		DecoManager.register(sandStoneBrickLargeStairs);
+		DecoManager.register(sandStoneBrickLargeMossyStairs);
+		DecoManager.register(sandStoneCrackedStairs);
+		DecoManager.register(sandStoneBrickLargeCrackedStairs);
 
 		Item.itemsList[sandStoneSmoothSidingAndCorner.blockID] = new FCItemBlockSidingAndCorner(sandStoneSmoothSidingAndCorner.blockID - 256);
 		Item.itemsList[sandStoneSmoothMouldingAndDecorative.blockID] = new FCItemBlockMouldingAndDecorative(sandStoneSmoothMouldingAndDecorative.blockID - 256);
@@ -1030,7 +1030,7 @@ public class DecoDefs {
 		//Prismarine
 		prismarine = new DecoBlockPrismarine(id_prismarine);
 		prismarineLantern = new DecoBlockPrismarineLantern(id_prismarineLantern);
-		DecoManager.Register(prismarineLantern);
+		DecoManager.register(prismarineLantern);
 		FCTileEntityBeacon.AddBeaconEffect(prismarineLantern.blockID, Potion.nightVision.getId());
 
 		prismarineSidingAndCorner = new DecoBlockSidingAndCornerDecorativeWall(id_prismarineSidingAndCorner,  Material.rock, "decoBlockPrismarine", 1.5F, 10.0F, Block.soundStoneFootstep, "decoBlockPrismarineSiding", "Prismarine").SetPicksEffectiveOn();
@@ -1045,13 +1045,13 @@ public class DecoDefs {
 
 		Item.itemsList[prismarineSidingAndCorner.blockID] = new FCItemBlockSidingAndCorner(prismarineSidingAndCorner.blockID - 256);
 		Item.itemsList[prismarineMouldingAndDecorative.blockID] = new FCItemBlockMouldingAndDecorative(prismarineMouldingAndDecorative.blockID - 256);
-		DecoManager.Register(prismarineStairs);
+		DecoManager.register(prismarineStairs);
 		Item.itemsList[prismarineBrickSidingAndCorner.blockID] = new FCItemBlockSidingAndCorner(prismarineBrickSidingAndCorner.blockID - 256);
 		Item.itemsList[prismarineBrickMouldingAndDecorative.blockID] = new FCItemBlockMouldingAndDecorative(prismarineBrickMouldingAndDecorative.blockID - 256);
-		DecoManager.Register(prismarineBrickStairs);
+		DecoManager.register(prismarineBrickStairs);
 		Item.itemsList[prismarineDarkSidingAndCorner.blockID] = new FCItemBlockSidingAndCorner(prismarineDarkSidingAndCorner.blockID - 256);
 		Item.itemsList[prismarineDarkMouldingAndDecorative.blockID] = new FCItemBlockMouldingAndDecorative(prismarineDarkMouldingAndDecorative.blockID - 256);
-		DecoManager.Register(prismarineDarkStairs);
+		DecoManager.register(prismarineDarkStairs);
 
 		prismarineShard = new Item(id_prismarineShard).setUnlocalizedName("decoItemPrismarineShard").setCreativeTab(CreativeTabs.tabMaterials).SetFilterableProperties(4);
 		prismarineCrystal = new Item(id_prismarineCrystal).setUnlocalizedName("decoItemPrismarineCrystal").setCreativeTab(CreativeTabs.tabMaterials).SetFilterableProperties(4);
@@ -1065,10 +1065,10 @@ public class DecoDefs {
 		netherBrickRedSidingAndCorner = new DecoBlockSidingAndCornerDecorativeWall(id_netherBrickSidingAndCorner, FCBetterThanWolves.fcMaterialNetherRock, "decoBlockNetherBrickRed", 2.0F, 10.0F, Block.soundStoneFootstep, "decoBlockNetherBrickRedSiding", "Red Nether Brick");
 		netherBrickRedMouldingAndDecorative = new DecoBlockMouldingAndDecorativeWall(id_netherBrickMouldingAndDecorative, FCBetterThanWolves.fcMaterialNetherRock, "decoBlockNetherBrickRed", "decoBlockNetherBrickRedColumn", netherBrickRedSidingAndCorner.blockID, 2.0F, 10.0F, Block.soundStoneFootstep, "decoBlockNetherBrickRedMoulding");
 
-		DecoManager.Register(netherBrickRedStairs);
-		DecoManager.Register(netherBrickRedLoose);
-		DecoManager.Register(netherBrickRedLooseSlab);
-		DecoManager.Register(netherBrickRedLooseStairs);
+		DecoManager.register(netherBrickRedStairs);
+		DecoManager.register(netherBrickRedLoose);
+		DecoManager.register(netherBrickRedLooseSlab);
+		DecoManager.register(netherBrickRedLooseStairs);
 		Item.itemsList[netherBrickRedSidingAndCorner.blockID] = new FCItemBlockSidingAndCorner(netherBrickRedSidingAndCorner.blockID - 256);
 		Item.itemsList[netherBrickRedMouldingAndDecorative.blockID] = new FCItemBlockMouldingAndDecorative(netherBrickRedMouldingAndDecorative.blockID - 256);
 
@@ -1094,7 +1094,7 @@ public class DecoDefs {
 		//Netherrack
 		netherrackSuperheated = new DecoBlockNetherrackSuperheated(id_netherrackSuperheated);
 		magma = new DecoBlockMagma(id_magma);
-		DecoManager.Register(magma);
+		DecoManager.register(magma);
 
 		//Basalt
 		basalt = new FCBlockDirectional(id_basalt, FCBetterThanWolves.fcMaterialNetherRock, new String[] {"decoBlockBasalt_top", "decoBlockBasaltSmooth_top"}, new String[] {"decoBlockBasalt_side", "decoBlockBasaltSmooth_side"})
@@ -1103,7 +1103,7 @@ public class DecoDefs {
 				.setHardness(2.0F)
 				.setHardness(10.0F)
 				.setUnlocalizedName("decoBlockBasalt");
-		DecoManager.Register(basalt, new String[] {"basalt", "basaltSmooth"});
+		DecoManager.register(basalt, new String[] {"basalt", "basaltSmooth"});
 
 		Block.netherrack.setStepSound(stepSoundNetherrack);
 		Block.oreNetherQuartz.setStepSound(stepSoundNetherrack);
@@ -1123,16 +1123,16 @@ public class DecoDefs {
 		infusedStoneBrickMouldingAndDecorative = new DecoBlockMouldingAndDecorativeWall(id_infusedStoneBrickMouldingAndDecorative, Material.rock, "decoBlockInfusedStoneBrick", "decoBlockInfusedStoneBrickColumn", infusedStoneBrickSidingAndCorner.blockID, 2.0F, 10.0F, Block.soundStoneFootstep, "decoBlockInfusedStoneBrickMoulding").SetPicksEffectiveOn();
 		infusedStoneBrickStairs = new FCBlockStairs(id_infusedStoneBrickStairs, infusedStone, 2).setUnlocalizedName("decoBlockInfusedStoneBrickStairs");
 
-		DecoManager.Register(infusedStone, new String[] {"default", "smooth", "brick", "chiseled"});
+		DecoManager.register(infusedStone, new String[] {"default", "smooth", "brick", "chiseled"});
 		Item.itemsList[infusedStoneSidingAndCorner.blockID] = new FCItemBlockSidingAndCorner(infusedStoneSidingAndCorner.blockID - 256);
 		Item.itemsList[infusedStoneMouldingAndDecorative.blockID] = new FCItemBlockMouldingAndDecorative(infusedStoneMouldingAndDecorative.blockID - 256);
-		DecoManager.Register(infusedStoneStairs);
+		DecoManager.register(infusedStoneStairs);
 		Item.itemsList[infusedStoneSmoothSidingAndCorner.blockID] = new FCItemBlockSidingAndCorner(infusedStoneSmoothSidingAndCorner.blockID - 256);
 		Item.itemsList[infusedStoneSmoothMouldingAndDecorative.blockID] = new FCItemBlockMouldingAndDecorative(infusedStoneSmoothMouldingAndDecorative.blockID - 256);
-		DecoManager.Register(infusedStoneSmoothStairs);
+		DecoManager.register(infusedStoneSmoothStairs);
 		Item.itemsList[infusedStoneBrickSidingAndCorner.blockID] = new FCItemBlockSidingAndCorner(infusedStoneBrickSidingAndCorner.blockID - 256);
 		Item.itemsList[infusedStoneBrickMouldingAndDecorative.blockID] = new FCItemBlockMouldingAndDecorative(infusedStoneBrickMouldingAndDecorative.blockID - 256);
-		DecoManager.Register(infusedStoneBrickStairs);
+		DecoManager.register(infusedStoneBrickStairs);
 
 		//Concrete
 		concrete = new DecoBlockConcrete(id_concrete);
@@ -1153,7 +1153,7 @@ public class DecoDefs {
 
 			Item.itemsList[concreteSidingAndCorner[i].blockID] = new FCItemBlockSidingAndCorner(concreteSidingAndCorner[i].blockID - 256);
 			Item.itemsList[concreteMouldingAndDecorative[i].blockID] = new FCItemBlockMouldingAndDecorative(concreteMouldingAndDecorative[i].blockID - 256);
-			DecoManager.Register(concreteStairs[i]);
+			DecoManager.register(concreteStairs[i]);
 		}
 
 		//End Stone Brick
@@ -1162,14 +1162,14 @@ public class DecoDefs {
 		endStoneBrickSidingAndCorner = new DecoBlockSidingAndCornerDecorativeWall(id_endStoneBrickSidingAndCorner, Material.rock, "decoBlockEndStoneBrick", 3.0F, 15.0F, Block.soundStoneFootstep, "decoBlockEndStoneBrickSiding", "End Stone Brick").SetPicksEffectiveOn();
 		endStoneBrickMouldingAndDecorative = new DecoBlockMouldingAndDecorativeWall(id_endStoneBrickMouldingAndDecorative, Material.rock, "decoBlockEndStoneBrick", "decoBlockEndStoneBrickColumn", endStoneBrickSidingAndCorner.blockID, 3.0F, 15.0F, Block.soundStoneFootstep, "decoBlockEndStoneBrickMoulding").SetPicksEffectiveOn();
 
-		DecoManager.Register(endStoneBrick);
-		DecoManager.Register(endStoneBrickStairs);
+		DecoManager.register(endStoneBrick);
+		DecoManager.register(endStoneBrickStairs);
 		Item.itemsList[endStoneBrickSidingAndCorner.blockID] = new FCItemBlockSidingAndCorner(endStoneBrickSidingAndCorner.blockID - 256);
 		Item.itemsList[endStoneBrickMouldingAndDecorative.blockID] = new FCItemBlockMouldingAndDecorative(endStoneBrickMouldingAndDecorative.blockID - 256);
 
 		//Obsidian
 		Block.obsidian = Block.replaceBlock(Block.obsidian.blockID, DecoBlockObsidian.class);
-		DecoManager.Register(Block.obsidian, new String[] {"obsidian", "infused"});
+		DecoManager.register(Block.obsidian, new String[] {"obsidian", "infused"});
 		
 		//Slate
 		FCBlockStoneRough[] roughStoneStrataArray = new FCBlockStoneRough[4];
@@ -1181,7 +1181,7 @@ public class DecoDefs {
 		FCBlockStoneRough.m_startaLevelBlockArray = roughStoneStrataArray;
 		
 		slateRough = new DecoBlockSlateRough(id_slateRough);
-		DecoManager.Register(slateRough);
+		DecoManager.register(slateRough);
 		slateCobbleLoose = new DecoBlockSlateCobbleLoose(id_slateCobbleLoose);
 		slateBrickLoose = new DecoBlockSlateBrickLoose(id_slateBrickLoose);
 		
@@ -1194,13 +1194,13 @@ public class DecoDefs {
 		slateBrickLooseStairs = new DecoBlockStoneLooseStairs(id_slateBrickLooseStairs, slateCobbleLoose, slateBrickStairs).setUnlocalizedName("decoBlockSlateBrickStairsLoose");
 		slateCobbleLooseStairs = new DecoBlockStoneLooseStairs(id_slateCobbleLooseStairs, slateBrickLoose, slateCobbleStairs).setUnlocalizedName("decoBlockSlateCobblestoneStairsLoose");
 		
-		DecoManager.Register(slateStairs);
-		DecoManager.Register(slateSmoothStairs);
-		DecoManager.Register(slateBrickStairs);
-		DecoManager.Register(slateCobbleStairs);
-		DecoManager.Register(slateTilesStairs);
-		DecoManager.Register(slateBrickLooseStairs);
-		DecoManager.Register(slateCobbleLooseStairs);
+		DecoManager.register(slateStairs);
+		DecoManager.register(slateSmoothStairs);
+		DecoManager.register(slateBrickStairs);
+		DecoManager.register(slateCobbleStairs);
+		DecoManager.register(slateTilesStairs);
+		DecoManager.register(slateBrickLooseStairs);
+		DecoManager.register(slateCobbleLooseStairs);
 
 		slateSidingAndCorner = new DecoBlockSidingAndCornerDecorativeWallWithTopAndBottom(id_slateSidingAndCorner, Material.rock, new String[] {"decoBlockSlate_top", "decoBlockSlate_top", "decoBlockSlate_side"}, 2.0F, 15.0F, Block.soundStoneFootstep, "decoBlockSlateSiding", "Slate").SetPicksEffectiveOn();
 		slateMouldingAndDecorative = new DecoBlockMouldingAndDecorativeWallWithTopAndBottom(id_slateMouldingAndDecorative, Material.rock, new String[] {"decoBlockSlate_top", "decoBlockSlate_top", "decoBlockSlate_side", "decoBlockSlateColumn"}, slateSidingAndCorner.blockID, 2.0F, 15.0F, Block.soundStoneFootstep, "decoBlockSlateMoulding").SetPicksEffectiveOn();
@@ -1274,14 +1274,14 @@ public class DecoDefs {
 		Block.wood = Block.replaceBlock(Block.wood.blockID, 
 				DecoBlockLogReplace.class,
 				decoManager);
-		DecoManager.Register(Block.wood, new String[] {"oakLog", "spruceLog", "birchLog", "jungleLog"});
+		DecoManager.register(Block.wood, new String[] {"oakLog", "spruceLog", "birchLog", "jungleLog"});
 
 		strippedLog = new DecoBlockLogStripped(id_strippedLog);
-		DecoManager.Register(strippedLog, new String[] {"oak", "spruce", "birch", "jungle"});
+		DecoManager.register(strippedLog, new String[] {"oak", "spruce", "birch", "jungle"});
 		barkLog = new DecoBlockLogBark(id_barkLog);
-		DecoManager.Register(barkLog, new String[] {"oak", "spruce", "birch", "jungle"});
+		DecoManager.register(barkLog, new String[] {"oak", "spruce", "birch", "jungle"});
 		barkLogStripped = new DecoBlockLogBarkStripped(id_barkLogStripped);
-		DecoManager.Register(barkLogStripped, new String[] {"oak", "spruce", "birch", "jungle"});
+		DecoManager.register(barkLogStripped, new String[] {"oak", "spruce", "birch", "jungle"});
 
 		FCBetterThanWolves.fcBloodWood = Block.replaceBlock(FCBetterThanWolves.fcBloodWood.blockID,
 				DecoBlockLogBloodReplace.class,
@@ -1294,14 +1294,14 @@ public class DecoDefs {
 		bloodLog.setStepSound(stepSoundBloodLog);
 
 		cherryLog = new DecoBlockLogCherry(id_cherryLog);
-		DecoManager.Register(cherryLog, new String[] {"log", "stripped", "wood", "strippedWood"});
+		DecoManager.register(cherryLog, new String[] {"log", "stripped", "wood", "strippedWood"});
 		acaciaLog = new DecoBlockLogAcacia(id_acaciaLog);
-		DecoManager.Register(acaciaLog, new String[] {"log", "stripped", "wood", "strippedWood"});
+		DecoManager.register(acaciaLog, new String[] {"log", "stripped", "wood", "strippedWood"});
 
 		cherryStump = new DecoBlockLogCherryStump(id_cherryStump);
-		DecoManager.Register(cherryStump);
+		DecoManager.register(cherryStump);
 		acaciaStump = new DecoBlockLogAcaciaStump(id_acaciaStump);
-		DecoManager.Register(acaciaStump);
+		DecoManager.register(acaciaStump);
 		FCBetterThanWolves.fcBlockWorkStump = Block.replaceBlock(FCBetterThanWolves.fcBlockWorkStump.blockID, 
 				DecoBlockWorkStump.class, 
 				decoManager);
@@ -1317,12 +1317,12 @@ public class DecoDefs {
 		logDamagedBlood = new DecoBlockLogDamaged(id_logDamagedBlood, "decoBlockStrippedBlood_side", "decoBlockStrippedBlood_top", "decoBlockTrunkJungle_top").setUnlocalizedName("decoBlockChewedBlood");
 		logDamagedCherry = new DecoBlockLogDamaged(id_logDamagedCherry, "decoBlockStrippedCherry_side", "decoBlockStrippedCherry_top", "decoBlockTrunkCherry_top").setUnlocalizedName("decoBlockChewedCherry");
 		logDamagedAcacia = new DecoBlockLogDamaged(id_logDamagedAcacia, "decoBlockStrippedAcacia_side", "decoBlockStrippedAcacia_top", "decoBlockTrunkAcacia_top").setUnlocalizedName("decoBlockChewedAcacia");
-		DecoManager.Register(logDamagedSpruce);
-		DecoManager.Register(logDamagedBirch);
-		DecoManager.Register(logDamagedJungle);
-		DecoManager.Register(logDamagedBlood);
-		DecoManager.Register(logDamagedCherry);
-		DecoManager.Register(logDamagedAcacia);
+		DecoManager.register(logDamagedSpruce);
+		DecoManager.register(logDamagedBirch);
+		DecoManager.register(logDamagedJungle);
+		DecoManager.register(logDamagedBlood);
+		DecoManager.register(logDamagedCherry);
+		DecoManager.register(logDamagedAcacia);
 		
 		FCBetterThanWolves.fcBlockLogSpike = (FCBlockLogSpike) Block.replaceBlock(FCBetterThanWolves.fcBlockLogSpike.blockID, 
 				DecoBlockLogSpike.class, 
@@ -1335,18 +1335,18 @@ public class DecoDefs {
 		logSpikeBlood = new DecoBlockLogSpike(id_logSpikeBlood, "decoBlockStrippedBlood_side", "decoBlockStrippedBlood_top").setUnlocalizedName("decoBlockSpikeBlood");
 		logSpikeCherry = new DecoBlockLogSpike(id_logSpikeCherry, "decoBlockStrippedCherry_side", "decoBlockStrippedCherry_top").setUnlocalizedName("decoBlockSpikeCherry");
 		logSpikeAcacia = new DecoBlockLogSpike(id_logSpikeAcacia, "decoBlockStrippedAcacia_side", "decoBlockStrippedAcacia_top").setUnlocalizedName("decoBlockSpikeAcacia");
-		DecoManager.Register(logSpikeSpruce);
-		DecoManager.Register(logSpikeBirch);
-		DecoManager.Register(logSpikeJungle);
-		DecoManager.Register(logSpikeBlood);
-		DecoManager.Register(logSpikeCherry);
-		DecoManager.Register(logSpikeAcacia);
+		DecoManager.register(logSpikeSpruce);
+		DecoManager.register(logSpikeBirch);
+		DecoManager.register(logSpikeJungle);
+		DecoManager.register(logSpikeBlood);
+		DecoManager.register(logSpikeCherry);
+		DecoManager.register(logSpikeAcacia);
 
 		//Planks
 		Block.planks = Block.replaceBlock(Block.planks.blockID, 
 				DecoBlockPlanks.class, 
 				decoManager);
-		DecoManager.Register(Block.planks, new String[] {"oak", "spruce", "birch", "jungle", "blood", "cherry", "acacia"});
+		DecoManager.register(Block.planks, new String[] {"oak", "spruce", "birch", "jungle", "blood", "cherry", "acacia"});
 		Block.stairsWoodOak = Block.replaceBlock(Block.stairsWoodOak.blockID, 
 				FCBlockStairsWood.class, 
 				decoManager, 
@@ -1369,9 +1369,9 @@ public class DecoDefs {
 				Block.planks, 4);
 		
 		cherryStairs = new FCBlockStairsWood(id_cherryStairs, Block.planks, 5).setUnlocalizedName("decoBlockCherryStairs");
-		DecoManager.Register(cherryStairs);
+		DecoManager.register(cherryStairs);
 		acaciaStairs = new FCBlockStairsWood(id_acaciaStairs, Block.planks, 6).setUnlocalizedName("decoBlockAcaciaStairs");
-		DecoManager.Register(acaciaStairs);
+		DecoManager.register(acaciaStairs);
 
 		//Wood Sub Replace
 		Block.fence = Block.replaceBlock(Block.fence.blockID, 
@@ -1458,14 +1458,14 @@ public class DecoDefs {
 		
 		trapdoorIron = new DecoBlockTrapDoorIron(id_trapdoorIron); 
 
-		DecoManager.Register(trapdoorSpruce);
-		DecoManager.Register(trapdoorBirch);
-		DecoManager.Register(trapdoorJungle);
-		DecoManager.Register(trapdoorBlood);
-		DecoManager.Register(trapdoorCherry);
-		DecoManager.Register(trapdoorAcacia);
+		DecoManager.register(trapdoorSpruce);
+		DecoManager.register(trapdoorBirch);
+		DecoManager.register(trapdoorJungle);
+		DecoManager.register(trapdoorBlood);
+		DecoManager.register(trapdoorCherry);
+		DecoManager.register(trapdoorAcacia);
 		
-		DecoManager.Register(trapdoorIron);
+		DecoManager.register(trapdoorIron);
 
 		//Doors
 		Item.doorWood = Item.replaceItem(Item.doorWood.itemID, 
@@ -1509,12 +1509,12 @@ public class DecoDefs {
 				new String[] {"decoBlockDoorAcacia_lower", "decoBlockDoorAcacia_upper"}, itemDoorAcacia.itemID)
 				.setUnlocalizedName("decoBlockDoorAcacia");
 
-		DecoManager.Register(doorSpruce);
-		DecoManager.Register(doorBirch);
-		DecoManager.Register(doorJungle);
-		DecoManager.Register(doorBlood);
-		DecoManager.Register(doorCherry);
-		DecoManager.Register(doorAcacia);
+		DecoManager.register(doorSpruce);
+		DecoManager.register(doorBirch);
+		DecoManager.register(doorJungle);
+		DecoManager.register(doorBlood);
+		DecoManager.register(doorCherry);
+		DecoManager.register(doorAcacia);
 
 		//Fence gates
 		Block.fenceGate = Block.replaceBlock(Block.fenceGate.blockID, 
@@ -1528,12 +1528,12 @@ public class DecoDefs {
 		gateCherry = (BlockFenceGate) new DecoBlockFenceGate(id_gateCherry, "decoBlockGateCherry");
 		gateAcacia = (BlockFenceGate) new DecoBlockFenceGate(id_gateAcacia, "decoBlockGateAcacia");
 
-		DecoManager.Register(gateSpruce);
-		DecoManager.Register(gateBirch);
-		DecoManager.Register(gateJungle);
-		DecoManager.Register(gateBlood);
-		DecoManager.Register(gateCherry);
-		DecoManager.Register(gateAcacia);
+		DecoManager.register(gateSpruce);
+		DecoManager.register(gateBirch);
+		DecoManager.register(gateJungle);
+		DecoManager.register(gateBlood);
+		DecoManager.register(gateCherry);
+		DecoManager.register(gateAcacia);
 
 		//Chairs
 		oakWoodChair = new DecoBlockChairWood(id_oakWoodChair, "Oak");
@@ -1564,7 +1564,7 @@ public class DecoDefs {
 
 			Item.itemsList[paintedPlanksSidingAndCorner[i].blockID] = new FCItemBlockSidingAndCorner(paintedPlanksSidingAndCorner[i].blockID - 256);
 			Item.itemsList[paintedPlanksMouldingAndDecorative[i].blockID] = new FCItemBlockMouldingAndDecorative(paintedPlanksMouldingAndDecorative[i].blockID - 256);
-			DecoManager.Register(paintedPlanksStairs[i]);
+			DecoManager.register(paintedPlanksStairs[i]);
 		}
 
 		bottleHempOil = new Item(id_bottleHempOil).setUnlocalizedName("decoItemHempOil").setCreativeTab(CreativeTabs.tabMaterials).SetBuoyant();
@@ -1573,14 +1573,14 @@ public class DecoDefs {
 
 		//Pergola
 		pergola = new DecoBlockPergola(id_pergola);
-		DecoManager.Register(pergola);
+		DecoManager.register(pergola);
 
 		//Barrels
 		barrelEmpty = new DecoBlockBarrelEmpty(id_barrelEmpty, new String[] {"decoBlockBarrelOak_top", "decoBlockBarrelSpruce_top", "decoBlockBarrelBirch_top", "decoBlockBarrelJungle_top"},
 				new String[] {"decoBlockBarrelOak_side", "decoBlockBarrelSpruce_side", "decoBlockBarrelBirch_side", "decoBlockBarrelJungle_side"}).setUnlocalizedName("decoBlockBarrel1");
 		barrelEmpty2 = new DecoBlockBarrelEmpty(id_barrelEmpty2, new String[] {"decoBlockBarrelBlood_top", "decoBlockBarrelCherry_top", "decoBlockBarrelAcacia_top"}, new String[] {"decoBlockBarrelBlood_side", "decoBlockBarrelCherry_side", "decoBlockBarrelAcacia_side"}).setUnlocalizedName("decoBlockBarrel2");
-		DecoManager.Register(barrelEmpty, new String[] {"oak", "spruce", "birch", "jungle"});
-		DecoManager.Register(barrelEmpty2, new String[] {"blood", "cherry", "acacia"});
+		DecoManager.register(barrelEmpty, new String[] {"oak", "spruce", "birch", "jungle"});
+		DecoManager.register(barrelEmpty2, new String[] {"blood", "cherry", "acacia"});
 
 		barrelFullOak = new DecoBlockBarrelFilled(id_barrelFullOak, "decoBlockBarrelOak");
 		barrelFullSpruce = new DecoBlockBarrelFilled(id_barrelFullSpruce, "decoBlockBarrelSpruce");
@@ -1600,7 +1600,7 @@ public class DecoDefs {
 
 		//Crates
 		crate = new DecoBlockCrate(id_crate);
-		DecoManager.Register(crate, new String[] {"oak", "spruce", "birch", "jungle", "blood", "cherry", "acacia"});
+		DecoManager.register(crate, new String[] {"oak", "spruce", "birch", "jungle", "blood", "cherry", "acacia"});
 
 		//Signs
 		Block.signPost = Block.replaceBlock(Block.signPost.blockID, 
@@ -1681,15 +1681,15 @@ public class DecoDefs {
 		ladderAcacia = new DecoBlockLadder(id_ladderAcacia, id_ladderAcaciaOnFire).setUnlocalizedName("decoBlockLadderAcacia");
 		ladderAcaciaOnFire = new DecoBlockLadderOnFire(id_ladderAcaciaOnFire, id_ladderAcacia).setUnlocalizedName("decoBlockLadderAcacia");
 		
-		DecoManager.Register(ladderSpruce);
-		DecoManager.Register(ladderBirch);
-		DecoManager.Register(ladderJungle);
-		DecoManager.Register(ladderBlood);
-		DecoManager.Register(ladderCherry);
-		DecoManager.Register(ladderAcacia);
+		DecoManager.register(ladderSpruce);
+		DecoManager.register(ladderBirch);
+		DecoManager.register(ladderJungle);
+		DecoManager.register(ladderBlood);
+		DecoManager.register(ladderCherry);
+		DecoManager.register(ladderAcacia);
 		
 		ladderIron = new DecoBlockLadderIron(id_ladderIron);
-		DecoManager.Register(ladderIron);
+		DecoManager.register(ladderIron);
 
 		//Slabs
 		planksPaintedSlab = (DecoBlockWoodSlab) new DecoBlockWoodSlab(id_paintedPlanksSlab, new Block[] {planksPainted, planksPainted, planksPainted, planksPainted, planksPainted, planksPainted, planksPainted, planksPainted}, new int[] {0, 1, 2, 3, 4, 5, 6, 7},
@@ -1730,7 +1730,7 @@ public class DecoDefs {
 		Block.blockDiamond.setUnlocalizedName("decoBlockDiamond");
 		FCTileEntityBeacon.AddBeaconEffect(blockDiamondium.blockID, FCBetterThanWolves.potionFortune.getId());
 
-		DecoManager.Register(blockDiamondium);
+		DecoManager.register(blockDiamondium);
 
 		//Haybale and thatch
 		hayBale = new DecoBlockHayBale(id_hayBale);
@@ -1741,8 +1741,8 @@ public class DecoDefs {
 		//Lanterns
 		paperWall = new DecoBlockPaperWall(id_paperWall);
 		fenceSteel = new DecoBlockWroughtBars(id_fenceSteel);
-		DecoManager.Register(fenceSteel);
-		DecoManager.Register(paperWall);
+		DecoManager.register(fenceSteel);
+		DecoManager.register(paperWall);
 
 		lanternPaper = new DecoBlockLantern(id_lanternPaper,Material.wood,.3F,"Paper",true).SetAxesEffectiveOn(true);
 		lanternPaperBroken = new DecoBlockLantern(id_lanternPaperBroken,Material.wood,.3F,"PaperBroken",false).setLightValue(0).SetAxesEffectiveOn(true);
@@ -1751,17 +1751,17 @@ public class DecoDefs {
 
 		//Workbench
 		workbench = new DecoBlockWorkbench(id_workbench);
-		DecoManager.Register(workbench);
+		DecoManager.register(workbench);
 
 		//Coarse Dirt
 		coarseDirt = new DecoBlockDirtCoarse(id_coarseDirt);
-		DecoManager.Register(coarseDirt);
+		DecoManager.register(coarseDirt);
 		coarseDirtSlab = new DecoBlockDirtCoarseSlab(id_coarseDirtSlab);
-		DecoManager.Register(coarseDirtSlab);
+		DecoManager.register(coarseDirtSlab);
 
 		//Podzol
 		podzol = new DecoBlockPodzol(id_podzol);
-		DecoManager.Register(podzol);
+		DecoManager.register(podzol);
 		//podzolSlab = new AddonBlockDirtSlab(id_podzolSlab));
 
 		//Dirt Replace
@@ -1791,20 +1791,20 @@ public class DecoDefs {
 
 		//Pumpkins
 		pumpkin = new DecoBlockPumpkinCarved(id_pumpkin);
-		DecoManager.Register(pumpkin, new String[] {"0", "1", "2"});
+		DecoManager.register(pumpkin, new String[] {"0", "1", "2"});
 		pumpkinLit = new DecoBlockPumpkinLit(id_pumpkinLit);
-		DecoManager.Register(pumpkinLit, new String[] {"0", "1", "2"});
+		DecoManager.register(pumpkinLit, new String[] {"0", "1", "2"});
 		Item.itemsList[FCBetterThanWolves.fcBlockPumpkinFresh.blockID] = new DecoItemBlockPumpkinFresh(FCBetterThanWolves.fcBlockPumpkinFresh.blockID - 256);
 
 		//Carpets
 		carpet = new DecoBlockCarpet(id_carpet);
-		DecoManager.Register(carpet, DecoUtilsMisc.colorOrder);
+		DecoManager.register(carpet, DecoUtilsMisc.colorOrder);
 
 		//Coal block
 		coalBlock = new Block(id_coalBlock, Material.rock).setUnlocalizedName("decoBlockCoal").SetPicksEffectiveOn().SetFireProperties(FCEnumFlammability.EXTREME).setHardness(1.5F).setResistance(10.0F).setCreativeTab(CreativeTabs.tabBlock);
-		DecoManager.Register(coalBlock);
+		DecoManager.register(coalBlock);
 		netherCoalBlock = new DecoBlockNetherCoal(id_netherCoalBlock);
-		DecoManager.Register(netherCoalBlock);
+		DecoManager.register(netherCoalBlock);
 
 		//Fire
 		Block.fire = (BlockFire) Block.replaceBlock(Block.fire.blockID, 
@@ -1850,28 +1850,28 @@ public class DecoDefs {
 		buttonSandstone = new DecoBlockButtonStone(id_buttonSandstone, Block.sandStone, 3).setHardness(0.5F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("decoBlockButtonSandstone");
 		buttonRedSandstone = new DecoBlockButtonStone(id_buttonRedSandstone, redSandStone, 3).setHardness(0.5F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("decoBlockButtonRedSandstone");
 
-		DecoManager.Register(buttonSpruce);
-		DecoManager.Register(buttonBirch);
-		DecoManager.Register(buttonJungle);
-		DecoManager.Register(buttonBlood);
-		DecoManager.Register(buttonCherry);
+		DecoManager.register(buttonSpruce);
+		DecoManager.register(buttonBirch);
+		DecoManager.register(buttonJungle);
+		DecoManager.register(buttonBlood);
+		DecoManager.register(buttonCherry);
 
-		DecoManager.Register(buttonInfusedStone);
-		DecoManager.Register(buttonGranite);
-		DecoManager.Register(buttonAndesite);
-		DecoManager.Register(buttonDiorite);
-		DecoManager.Register(buttonSandstone);
-		DecoManager.Register(buttonRedSandstone);
+		DecoManager.register(buttonInfusedStone);
+		DecoManager.register(buttonGranite);
+		DecoManager.register(buttonAndesite);
+		DecoManager.register(buttonDiorite);
+		DecoManager.register(buttonSandstone);
+		DecoManager.register(buttonRedSandstone);
 
 		//Trees
 		cherrySapling = new DecoBlockSaplingCherry(id_cherrySapling);
-		DecoManager.Register(cherrySapling);
+		DecoManager.register(cherrySapling);
 		cherryLeaves = new DecoBlockLeavesCherry(id_cherryLeaves);
-		DecoManager.Register(cherryLeaves);
+		DecoManager.register(cherryLeaves);
 		acaciaSapling = new DecoBlockSaplingAcacia(id_acaciaSapling);
-		DecoManager.Register(acaciaSapling);
+		DecoManager.register(acaciaSapling);
 		acaciaLeaves = new DecoBlockLeavesAcacia(id_acaciaLeaves);
-		DecoManager.Register(acaciaLeaves);
+		DecoManager.register(acaciaLeaves);
 		
 		autumnLeaves = new DecoBlockLeavesAutumn(id_autumnLeaves);
 		Item.itemsList[autumnLeaves.blockID] = new DecoItemBlockMulti(autumnLeaves, DecoBlockLeavesAutumn.LEAF_TYPES);
@@ -1880,7 +1880,7 @@ public class DecoDefs {
 
 		//Hedge
 		hedge = (BlockLeaves) new DecoBlockHedge(id_hedge).setCreativeTab(CreativeTabs.tabDecorations).setUnlocalizedName("decoBlockHedge");
-		DecoManager.Register(hedge, new String[] {"oak", "spruce", "birch", "jungle"});
+		DecoManager.register(hedge, new String[] {"oak", "spruce", "birch", "jungle"});
 
 		hedgeOakStairs = new DecoBlockStairsHedge(id_hedgeOakStairs, hedge, 0, true).setUnlocalizedName("decoBlockHedgeOakStairs");
 		hedgeSpruceStairs = new DecoBlockStairsHedge(id_hedgeSpruceStairs, hedge, 1, true).setUnlocalizedName("decoBlockHedgeSpruceStairs");
@@ -1902,12 +1902,12 @@ public class DecoDefs {
 		hedgeCherrySidingAndCorner = new DecoBlockHedgeSidingAndCornerDecorativeWall(id_hedgeCherrySidingAndCorner, materialHedge, "decoBlockLeavesCherry", 0.2F, 0.2F, Block.soundGrassFootstep, "decoBlockHedgeCherrySiding", "Cherry Hedge", false, cherryLeaves, 0);
 		hedgeCherryMouldingAndDecorative = new DecoBlockHedgeMouldingAndDecorative(id_hedgeCherryMouldingAndDecorative, materialHedge, "decoBlockLeavesCherry", "decoBlockLeavesCherry", hedgeCherrySidingAndCorner.blockID, 0.2F, 0.2F, Block.soundGrassFootstep, "decoBlockHedgeCherryMoulding", false, cherryLeaves, 0);
 
-		DecoManager.Register(hedgeOakStairs);
-		DecoManager.Register(hedgeSpruceStairs);
-		DecoManager.Register(hedgeBirchStairs);
-		DecoManager.Register(hedgeJungleStairs);
-		DecoManager.Register(hedgeBloodStairs);
-		DecoManager.Register(hedgeCherryStairs);
+		DecoManager.register(hedgeOakStairs);
+		DecoManager.register(hedgeSpruceStairs);
+		DecoManager.register(hedgeBirchStairs);
+		DecoManager.register(hedgeJungleStairs);
+		DecoManager.register(hedgeBloodStairs);
+		DecoManager.register(hedgeCherryStairs);
 
 		Item.itemsList[hedgeOakSidingAndCorner.blockID] = new FCItemBlockSidingAndCorner(hedgeOakSidingAndCorner.blockID - 256);
 		Item.itemsList[hedgeOakMouldingAndDecorative.blockID] = new FCItemBlockMouldingAndDecorative(hedgeOakMouldingAndDecorative.blockID - 256);
@@ -1947,11 +1947,11 @@ public class DecoDefs {
 				.setStepSound(Block.soundGrassFootstep)
 				.setCreativeTab(CreativeTabs.tabBlock)
 				.setUnlocalizedName("decoBlockRopeCoil");
-		DecoManager.Register(ropeCoil);
+		DecoManager.register(ropeCoil);
 
 		//Chain
 		chain = new DecoBlockChain(id_chain);
-		DecoManager.Register(chain);
+		DecoManager.register(chain);
 		chainItem = new DecoItemChain(id_chainItem);
 		chainCoil = new FCBlockDirectional(id_chainCoil, Material.iron, new String[] {"decoBlockChainCoil_top"}, new String[] {"decoBlockChainCoil_side"})
 				.setHardness(2.0F)
@@ -1971,24 +1971,24 @@ public class DecoDefs {
 		//Spider eyes
 		Item.spiderEye = Item.replaceItem(Item.spiderEye.itemID, DecoItemSpiderEye.class);
 		spiderEyeBlock = new DecoBlockSpiderEye(id_spiderEyeBlock);
-		DecoManager.Register(spiderEyeBlock);
+		DecoManager.register(spiderEyeBlock);
 		spiderEyeSlab = new DecoBlockSpiderEyeSlab(id_spiderEyeSlab);
-		DecoManager.Register(spiderEyeSlab);
+		DecoManager.register(spiderEyeSlab);
 		
 		//Ash
 		materialAshBlock = new Material(MapColor.stoneColor).setRequiresTool().SetNetherMobsCanSpawnOn();
 		ashBlock = new DecoBlockAsh(id_ashBlock);
 		pumice = new Block(id_pumice, FCBetterThanWolves.fcMaterialNetherRock).setHardness(0.8F).setResistance(1.5F).setUnlocalizedName("decoBlockPumice").setCreativeTab(CreativeTabs.tabBlock);
 		
-		DecoManager.Register(ashBlock);
-		DecoManager.Register(pumice);
+		DecoManager.register(ashBlock);
+		DecoManager.register(pumice);
 		
 		//Amethyst
 		amethyst = new DecoBlockAmethyst(id_amethyst);
 		amethystShardBlock = new DecoBlockAmethystShard(id_amethystShardBlock);
 		
-		DecoManager.Register(amethyst);
-		DecoManager.Register(amethystShardBlock);
+		DecoManager.register(amethyst);
+		DecoManager.register(amethystShardBlock);
 		
 		amethystShard = new FCItemPlacesAsBlock(id_amethystShard, amethystShardBlock.blockID).setCreativeTab(CreativeTabs.tabMaterials).SetFilterableProperties(2).setUnlocalizedName("decoItemAmethystShard").setCreativeTab(CreativeTabs.tabMaterials);
 		
