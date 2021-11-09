@@ -13,6 +13,7 @@ Note that this version removed several base class edits and as such requires a c
 [*]Fixed an issue where acacia tables would not connect to acacia fences.
 [*]Fixed an issue where cherry moulding used the acacia texture in inventory.
 [*]Fixed an issue where coal could not be used in ovens.
+[*]Fixed an issue where player skins were not loading properly.
 [/list]
 
 Version 3.0.2
