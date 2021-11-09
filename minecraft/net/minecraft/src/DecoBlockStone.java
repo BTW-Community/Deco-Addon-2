@@ -208,8 +208,9 @@ public class DecoBlockStone extends FCBlockStone {
 	}
 
 	@Override
-	public boolean CanRotateOnTurntable(IBlockAccess access, int x, int y, int z) {
-		return access.getBlockMetadata(x,y,z) == 8 || access.getBlockMetadata(x,y,z) == 9;
+	public boolean CanRotateOnTurntable(IBlockAccess blockaccess, int x, int y, int z) {
+		int meta = blockaccess.getBlockMetadata(x, y, z);
+		return isSlate(meta) && meta != 3;
 	}
 
 	@Override
