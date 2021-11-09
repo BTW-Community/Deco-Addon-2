@@ -2,6 +2,7 @@ Version 3.1.0
 Note that this version removed several base class edits and as such requires a clean install.
 [list]
 [*]Added the mason villager.
+[*]Fixed an issue where item frames, paintings, and canvases were not using the updated item replacement hooks.
 [/list]
 
 Version 3.0.3

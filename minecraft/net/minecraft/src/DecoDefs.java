@@ -2090,20 +2090,25 @@ public class DecoDefs {
 		
 		FCEntityVillager.professionMap.put(id_masonProfession, DecoEntityVillagerMason.class);
 		
-		//Mobs
+		//Replaced mappings
 		EntityList.replaceExistingMappingSafe(DecoEntitySquid.class, "Squid");
 		EntityList.replaceExistingMappingSafe(DecoEntityOcelot.class, "Ozelot");
 
-		//Item frame
-		Item.itemFrame = Item.replaceItem(Item.itemFrame.itemID, DecoItemFrame.class).setUnlocalizedName("frame");
+		Item.itemFrame = Item.replaceItem(Item.itemFrame.itemID, 
+				DecoItemFrame.class,
+				decoManager)
+				.setUnlocalizedName("frame");
 		EntityList.replaceExistingMappingSafe(DecoEntityItemFrame.class, "ItemFrame");
 
-		//Painting
-		Item.painting = Item.replaceItem(Item.painting.itemID, DecoItemPainting.class).setUnlocalizedName("painting");
+		Item.painting = Item.replaceItem(Item.painting.itemID, 
+				DecoItemPainting.class,
+				decoManager)
+				.setUnlocalizedName("painting");
 		EntityList.replaceExistingMappingSafe(DecoEntityPainting.class, "Painting");
 
-		//Canvas
-		FCBetterThanWolves.fcItemCanvas = new DecoItemCanvas(FCBetterThanWolves.fcItemCanvas.itemID - 256);
+		FCBetterThanWolves.fcItemCanvas = Item.replaceItem(FCBetterThanWolves.fcItemCanvas.itemID, 
+				DecoItemCanvas.class, 
+				decoManager);
 		EntityList.replaceExistingMappingSafe(DecoEntityCanvas.class, "fcCanvas");
 	}
 }
