@@ -16,6 +16,7 @@ public class DecoRecipes {
 		addMortarRecipes();
 		addToolRecipes();
 		addCustomRecipeClasses();
+		addVillagerTrades();
 	}
 
 	private void addClayRecipes() {
@@ -1798,6 +1799,16 @@ public class DecoRecipes {
 
 	private void addCustomRecipeClasses() {
 		CraftingManager.getInstance().getRecipeList().add(new DecoRecipesLogChopping());
+	}
+	
+	private void addVillagerTrades() {
+		int mason = DecoDefs.id_masonProfession;
+		
+		// ------ Mason ------//
+		//Level 1
+		FCEntityVillager.addTradeToSellMultipleItems(mason, Block.stone.blockID, 8, 12, 1F, 1);
+		
+		
 	}
 
 	private void RemoveSubBlockRecipes(Block var0, int var1, int var2, Block var3, Block var4, boolean var5) {

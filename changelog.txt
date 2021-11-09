@@ -1,3 +1,9 @@
+Version 3.1.0
+Note that this version removed several base class edits and as such requires a clean install.
+[list]
+[*]Added the mason villager.
+[/list]
+
 Version 3.0.3
 Note that this version removed several base class edits and as such requires a clean install.
 [list]
