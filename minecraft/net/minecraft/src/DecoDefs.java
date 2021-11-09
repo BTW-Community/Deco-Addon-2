@@ -5,8 +5,6 @@ import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.List;
 
-import net.minecraft.client.Minecraft;
-
 public class DecoDefs {
 	public static final DecoDefs instance = new DecoDefs();
 
@@ -402,7 +400,11 @@ public class DecoDefs {
 		id_prismarineCrystal=30061;
 
 	private static final int
-		id_entityFallingConcrete=3000;
+		id_entityFallingConcrete=3000,
+		id_entityVillagerMason=3001;
+	
+	public static final int
+		id_masonProfession=30;
 
 	public static Material materialHedge;
 	public static Material materialHay;
@@ -1860,6 +1862,9 @@ public class DecoDefs {
 	private void addEntityDefs() {
 		//Custom entities
 		EntityList.AddMapping(DecoEntityFallingConcrete.class, "FallingConcrete", id_entityFallingConcrete);
+		EntityList.addMapping(DecoEntityVillagerMason.class, "DecoVillagerMason", id_entityVillagerMason, 12422002, 4802889);
+		
+		FCEntityVillager.professionMap.put(id_masonProfession, DecoEntityVillagerMason.class);
 		
 		//Mobs
 		EntityList.replaceExistingMappingSafe(DecoEntitySquid.class, "Squid");

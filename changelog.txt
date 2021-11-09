@@ -1,7 +1,6 @@
 Version 3.1.0
 [list]
-[*]Added the ability to salt fields using nitre. This stops weeds from growing and freezes crop growth at its current stage. This, combined with the drop change below, allows for large aesthetic fields once again without affecting farming balance for functional purposes.
-[*]Changed crops (except hemp) to be able to grow without hydration. However, unhydrated crops will drop no items.
+[*]Added the mason villager.
 [/list]
 
 Version 3.0.2
