@@ -268,7 +268,7 @@ public class DecoManager extends FCAddOn
 		DecoManager.installResource("random/doorOpen2");
 		DecoManager.installResource("random/doorOpen3");
 		DecoManager.installResource("random/doorOpen4");
-
+		/*
 		DecoManager.installResource("random/doorIronClose1");
 		DecoManager.installResource("random/doorIronClose2");
 		DecoManager.installResource("random/doorIronClose3");
@@ -277,7 +277,7 @@ public class DecoManager extends FCAddOn
 		DecoManager.installResource("random/doorIronOpen2");
 		DecoManager.installResource("random/doorIronOpen3");
 		DecoManager.installResource("random/doorIronOpen4");
-
+		*/
 		DecoManager.installResource("random/trapdoorClose1");
 		DecoManager.installResource("random/trapdoorClose2");
 		DecoManager.installResource("random/trapdoorClose3");
@@ -285,7 +285,7 @@ public class DecoManager extends FCAddOn
 		DecoManager.installResource("random/trapdoorOpen2");
 		DecoManager.installResource("random/trapdoorOpen3");
 		DecoManager.installResource("random/trapdoorOpen4");
-
+		/*
 		DecoManager.installResource("random/trapdoorIronClose1");
 		DecoManager.installResource("random/trapdoorIronClose2");
 		DecoManager.installResource("random/trapdoorIronClose3");
@@ -294,7 +294,7 @@ public class DecoManager extends FCAddOn
 		DecoManager.installResource("random/trapdoorIronOpen2");
 		DecoManager.installResource("random/trapdoorIronOpen3");
 		DecoManager.installResource("random/trapdoorIronOpen4");
-
+		*/
 		DecoManager.installResource("random/gateClose1");
 		DecoManager.installResource("random/gateClose2");
 		DecoManager.installResource("random/gateOpen1");
