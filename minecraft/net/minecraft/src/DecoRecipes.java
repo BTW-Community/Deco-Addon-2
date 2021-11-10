@@ -1,5 +1,8 @@
 package net.minecraft.src;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DecoRecipes {
 	public static final DecoRecipes instance = new DecoRecipes();
 
@@ -536,6 +539,16 @@ public class DecoRecipes {
 				new ItemStack(Item.dyePowder, 1, FCUtilsColor.RED.colorID), 
 				new ItemStack(Item.dyePowder, 1, FCUtilsColor.RED.colorID), 
 				new ItemStack(Item.dyePowder, 1, FCUtilsColor.WHITE.colorID + 16)});
+		
+		//Fireworks
+		List recipes = CraftingManager.getInstance().getRecipeList();
+		ArrayList<RecipeFireworks> fireworks = new ArrayList<RecipeFireworks>();
+		for(Object o: recipes)
+			if(o instanceof RecipeFireworks)
+				fireworks.add((RecipeFireworks)o);
+		for(RecipeFireworks rf: fireworks)
+			recipes.remove(rf);
+		recipes.add(new DecoRecipeFireworksColor());
 	}
 
 	private void addStoneRecipes() {
@@ -931,7 +944,8 @@ public class DecoRecipes {
 				new ItemStack(DecoDefs.whiteStoneBrick), 
 				new ItemStack(FCBetterThanWolves.fcItemChiselIron, 1, 32767)});
 
-		//------ Sandstone ------//
+		//------ Sand and Sandstone ------//
+		//Red sand
 		FCRecipes.addPistonPackingRecipe(DecoDefs.redSand, 
 				new ItemStack(DecoDefs.pileRedSand, 8)
 		);
@@ -940,52 +954,207 @@ public class DecoRecipes {
 				new ItemStack(DecoDefs.redSand, 2)
 		);
 		
-		FCRecipes.AddShapelessRecipe(new ItemStack(DecoDefs.redSand), new Object[] {FCBetterThanWolves.fcItemPileSand, FCBetterThanWolves.fcItemPileSand, FCBetterThanWolves.fcItemPileSand, FCBetterThanWolves.fcItemPileSand, FCBetterThanWolves.fcItemPileSand, FCBetterThanWolves.fcItemPileSand, FCBetterThanWolves.fcItemPileSand, FCBetterThanWolves.fcItemPileSand, FCBetterThanWolves.fcItemHellfireDust});
-		FCRecipes.AddRecipe(new ItemStack(DecoDefs.redSandSlab, 4), new Object[] {"XX", 'X', DecoDefs.redSand});
-		FCRecipes.AddRecipe(new ItemStack(DecoDefs.redSand), new Object[] {"X", "X", 'X', DecoDefs.redSandSlab});
-		FCRecipes.AddShapelessRecipe(new ItemStack(DecoDefs.redSand), new ItemStack[] {new ItemStack(DecoDefs.pileRedSand), new ItemStack(DecoDefs.pileRedSand), new ItemStack(DecoDefs.pileRedSand), new ItemStack(DecoDefs.pileRedSand), new ItemStack(DecoDefs.pileRedSand), new ItemStack(DecoDefs.pileRedSand), new ItemStack(DecoDefs.pileRedSand), new ItemStack(DecoDefs.pileRedSand)});
-		FCRecipes.AddShapelessRecipe(new ItemStack(DecoDefs.pileRedSand, 8), new ItemStack[] {new ItemStack(DecoDefs.redSand)});
-		FCRecipes.AddShapelessRecipe(new ItemStack(DecoDefs.redSandSlab), new ItemStack[] {new ItemStack(DecoDefs.pileRedSand), new ItemStack(DecoDefs.pileRedSand), new ItemStack(DecoDefs.pileRedSand), new ItemStack(DecoDefs.pileRedSand)});
-		FCRecipes.AddShapelessRecipe(new ItemStack(DecoDefs.pileRedSand, 4), new ItemStack[] {new ItemStack(DecoDefs.redSandSlab)});
-		FCRecipes.AddRecipe(new ItemStack(DecoDefs.redSandStone, 4, 2), new Object[] {"XX", "XX", 'X', new ItemStack(DecoDefs.redSandStone, 1, 0)});
+		FCRecipes.AddShapelessRecipe(new ItemStack(DecoDefs.redSand), new Object[] {
+				FCBetterThanWolves.fcItemPileSand, 
+				FCBetterThanWolves.fcItemPileSand, 
+				FCBetterThanWolves.fcItemPileSand, 
+				FCBetterThanWolves.fcItemPileSand, 
+				FCBetterThanWolves.fcItemPileSand, 
+				FCBetterThanWolves.fcItemPileSand, 
+				FCBetterThanWolves.fcItemPileSand, 
+				FCBetterThanWolves.fcItemPileSand, 
+				FCBetterThanWolves.fcItemHellfireDust});
+		
+		FCRecipes.AddRecipe(new ItemStack(DecoDefs.redSandSlab, 4), new Object[] {
+				"XX", 
+				'X', DecoDefs.redSand});
+		
+		FCRecipes.AddRecipe(new ItemStack(DecoDefs.redSand), new Object[] {
+				"X", 
+				"X", 
+				'X', DecoDefs.redSandSlab});
+		
+		FCRecipes.AddShapelessRecipe(new ItemStack(DecoDefs.redSand), new ItemStack[] {
+				new ItemStack(DecoDefs.pileRedSand), 
+				new ItemStack(DecoDefs.pileRedSand), 
+				new ItemStack(DecoDefs.pileRedSand), 
+				new ItemStack(DecoDefs.pileRedSand), 
+				new ItemStack(DecoDefs.pileRedSand), 
+				new ItemStack(DecoDefs.pileRedSand), 
+				new ItemStack(DecoDefs.pileRedSand), 
+				new ItemStack(DecoDefs.pileRedSand)});
+		
+		FCRecipes.AddShapelessRecipe(new ItemStack(DecoDefs.pileRedSand, 8), new ItemStack[] {
+				new ItemStack(DecoDefs.redSand)});
+		
+		FCRecipes.AddShapelessRecipe(new ItemStack(DecoDefs.redSandSlab), new ItemStack[] {
+				new ItemStack(DecoDefs.pileRedSand), 
+				new ItemStack(DecoDefs.pileRedSand), 
+				new ItemStack(DecoDefs.pileRedSand), 
+				new ItemStack(DecoDefs.pileRedSand)});
+		
+		FCRecipes.AddShapelessRecipe(new ItemStack(DecoDefs.pileRedSand, 4), 
+				new ItemStack[] {new ItemStack(DecoDefs.redSandSlab)});
 
-		FCRecipes.RemoveVanillaRecipe(new ItemStack(Block.sandStone, 4, 2), new Object[] {"##", "##", '#', Block.sandStone});
-		FCRecipes.AddRecipe(new ItemStack(Block.sandStone, 4, 2), new Object[] {"##", "##", '#', new ItemStack(Block.sandStone, 1, 0)});
-		FCRecipes.AddStokedCrucibleRecipe(new ItemStack(Block.sandStone, 1, 3), new ItemStack[] {new ItemStack(Block.sandStone, 1, 0)});
-		FCRecipes.AddStokedCrucibleRecipe(new ItemStack(DecoDefs.redSandStone, 1, 3), new ItemStack[] {new ItemStack(DecoDefs.redSandStone, 1, 0)});
-		FCRecipes.AddRecipe(new ItemStack(Block.sandStone, 4, 4), new Object[] {"XX", "XX", 'X', new ItemStack(Block.sandStone, 1, 3)});
-		FCRecipes.AddRecipe(new ItemStack(DecoDefs.redSandStone, 4, 4), new Object[] {"XX", "XX", 'X', new ItemStack(DecoDefs.redSandStone, 1, 3)});
-		FCRecipes.AddRecipe(new ItemStack(Block.sandStone, 4, 6), new Object[] {"XX", "XX", 'X', new ItemStack(Block.sandStone, 1, 2)});
-		FCRecipes.AddRecipe(new ItemStack(DecoDefs.redSandStone, 4, 6), new Object[] {"XX", "XX", 'X', new ItemStack(DecoDefs.redSandStone, 1, 2)});
+		//Sandstone
+		FCRecipes.RemoveVanillaRecipe(new ItemStack(Block.sandStone, 4, 2), new Object[] {
+				"##", 
+				"##", 
+				'#', Block.sandStone});
+		FCRecipes.AddRecipe(new ItemStack(Block.sandStone, 4, DecoBlockSandStone.typeSmooth), new Object[] {
+				"##", 
+				"##", 
+				'#', new ItemStack(Block.sandStone, 1, DecoBlockSandStone.typeDefault)});
 
-		FCRecipes.RemoveVanillaRecipe(new ItemStack(Block.stoneSingleSlab, 6, 1), new Object[] {"###", '#', Block.sandStone});
-		FCRecipes.AddRecipe(new ItemStack(Block.stoneSingleSlab, 6, 1), new Object[] {"XXX", 'X', new ItemStack(Block.sandStone, 1, 0)});
-		FCRecipes.AddRecipe(new ItemStack(DecoDefs.stoneSlab, 6, 0), new Object[] {"###", '#', new ItemStack(DecoDefs.redSandStone)});
-		FCRecipes.AddRecipe(new ItemStack(DecoDefs.stoneSlab4, 6, 0), new Object[] {"XXX", 'X', new ItemStack(Block.sandStone, 1, 2)});
-		FCRecipes.AddRecipe(new ItemStack(DecoDefs.stoneSlab4, 6, 1), new Object[] {"XXX", 'X', new ItemStack(Block.sandStone, 1, 3)});
-		FCRecipes.AddRecipe(new ItemStack(DecoDefs.stoneSlab4, 6, 2), new Object[] {"XXX", 'X', new ItemStack(Block.sandStone, 1, 4)});
-		FCRecipes.AddRecipe(new ItemStack(DecoDefs.stoneSlab4, 6, 3), new Object[] {"XXX", 'X', new ItemStack(DecoDefs.redSandStone, 1, 2)});
-		FCRecipes.AddRecipe(new ItemStack(DecoDefs.stoneSlab4, 6, 4), new Object[] {"XXX", 'X', new ItemStack(DecoDefs.redSandStone, 1, 3)});
-		FCRecipes.AddRecipe(new ItemStack(DecoDefs.stoneSlab4, 6, 5), new Object[] {"XXX", 'X', new ItemStack(DecoDefs.redSandStone, 1, 4)});
-		FCRecipes.AddRecipe(new ItemStack(DecoDefs.stoneSlab4, 6, 6), new Object[] {"XXX", 'X', new ItemStack(Block.sandStone, 1, 5)});
-		FCRecipes.AddRecipe(new ItemStack(DecoDefs.stoneSlab4, 6, 7), new Object[] {"XXX", 'X', new ItemStack(Block.sandStone, 1, 6)});
-		FCRecipes.AddRecipe(new ItemStack(DecoDefs.stoneSlab5, 6, 0), new Object[] {"XXX", 'X', new ItemStack(Block.sandStone, 1, 7)});
-		FCRecipes.AddRecipe(new ItemStack(DecoDefs.stoneSlab5, 6, 1), new Object[] {"XXX", 'X', new ItemStack(DecoDefs.redSandStone, 1, 5)});
-		FCRecipes.AddRecipe(new ItemStack(DecoDefs.stoneSlab5, 6, 2), new Object[] {"XXX", 'X', new ItemStack(DecoDefs.redSandStone, 1, 6)});
-		FCRecipes.AddRecipe(new ItemStack(DecoDefs.stoneSlab5, 6, 3), new Object[] {"XXX", 'X', new ItemStack(DecoDefs.redSandStone, 1, 7)});
-		FCRecipes.AddRecipe(new ItemStack(DecoDefs.stoneSlab5, 6, 4), new Object[] {"XXX", 'X', new ItemStack(Block.sandStone, 1, 8)});
-		FCRecipes.AddRecipe(new ItemStack(DecoDefs.stoneSlab5, 6, 5), new Object[] {"XXX", 'X', new ItemStack(Block.sandStone, 1, 9)});
-		FCRecipes.AddRecipe(new ItemStack(DecoDefs.stoneSlab5, 6, 6), new Object[] {"XXX", 'X', new ItemStack(DecoDefs.redSandStone, 1, 8)});
-		FCRecipes.AddRecipe(new ItemStack(DecoDefs.stoneSlab5, 6, 7), new Object[] {"XXX", 'X', new ItemStack(DecoDefs.redSandStone, 1, 9)});
+		FCRecipes.AddStokedCrucibleRecipe(new ItemStack(Block.sandStone, 1, DecoBlockSandStone.typePolished), new ItemStack[] {
+				new ItemStack(Block.sandStone, 1, DecoBlockSandStone.typeDefault)});
+		
+		FCRecipes.AddRecipe(new ItemStack(Block.sandStone, 4, DecoBlockSandStone.typeBrick), new Object[] {
+				"XX", 
+				"XX", 
+				'X', new ItemStack(Block.sandStone, 1, DecoBlockSandStone.typePolished)});
+		
+		FCRecipes.AddRecipe(new ItemStack(Block.sandStone, 4, DecoBlockSandStone.typeLargeBrick), new Object[] {
+				"XX", 
+				"XX", 
+				'X', new ItemStack(Block.sandStone, 1, DecoBlockSandStone.typeSmooth)});
+		
+		//Red Sandstone
+		FCRecipes.AddRecipe(new ItemStack(DecoDefs.redSandStone, 4, DecoBlockSandStone.typeSmooth), new Object[] {
+				"XX", 
+				"XX", 
+				'X', new ItemStack(DecoDefs.redSandStone, 1, DecoBlockSandStone.typeDefault)});
+		
+		FCRecipes.AddStokedCrucibleRecipe(new ItemStack(DecoDefs.redSandStone, 1, DecoBlockSandStone.typePolished), new ItemStack[] {
+				new ItemStack(DecoDefs.redSandStone, 1, DecoBlockSandStone.typeDefault)});
+		
+		FCRecipes.AddRecipe(new ItemStack(DecoDefs.redSandStone, 4, DecoBlockSandStone.typeBrick), new Object[] {
+				"XX", 
+				"XX", 
+				'X', new ItemStack(DecoDefs.redSandStone, 1, DecoBlockSandStone.typePolished)});
+		
+		FCRecipes.AddRecipe(new ItemStack(DecoDefs.redSandStone, 4, DecoBlockSandStone.typeLargeBrick), new Object[] {
+				"XX", 
+				"XX", 
+				'X', new ItemStack(DecoDefs.redSandStone, 1, DecoBlockSandStone.typeSmooth)});
 
-		FCRecipes.AddRecipe(new ItemStack(DecoDefs.redSandStone), new Object[] {"X", "X", 'X', new ItemStack(DecoDefs.stoneSlab, 1, 0)});
-		FCRecipes.AddRecipe(new ItemStack(Block.sandStone, 1, 2), new Object[] {"X", "X", 'X', new ItemStack(DecoDefs.stoneSlab4, 1, 0)});
-		FCRecipes.AddRecipe(new ItemStack(Block.sandStone, 1, 3), new Object[] {"X", "X", 'X', new ItemStack(DecoDefs.stoneSlab4, 1, 1)});
-		FCRecipes.AddRecipe(new ItemStack(Block.sandStone, 1, 4), new Object[] {"X", "X", 'X', new ItemStack(DecoDefs.stoneSlab4, 1, 2)});
-		FCRecipes.AddRecipe(new ItemStack(DecoDefs.redSandStone, 1, 2), new Object[] {"X", "X", 'X', new ItemStack(DecoDefs.stoneSlab4, 1, 3)});
-		FCRecipes.AddRecipe(new ItemStack(DecoDefs.redSandStone, 1, 3), new Object[] {"X", "X", 'X', new ItemStack(DecoDefs.stoneSlab4, 1, 4)});
-		FCRecipes.AddRecipe(new ItemStack(DecoDefs.redSandStone, 1, 4), new Object[] {"X", "X", 'X', new ItemStack(DecoDefs.stoneSlab4, 1, 5)});
-		FCRecipes.AddRecipe(new ItemStack(Block.sandStone, 1, 5), new Object[] {"X", "X", 'X', new ItemStack(DecoDefs.stoneSlab4, 1, 6)});
+		//Sandstone slabs
+		FCRecipes.RemoveVanillaRecipe(new ItemStack(Block.stoneSingleSlab, 6, 1), new Object[] {
+				"XXX", 
+				'X', Block.sandStone});
+		FCRecipes.AddRecipe(new ItemStack(Block.stoneSingleSlab, 6, 1), new Object[] {
+				"XXX", 
+				'X', new ItemStack(Block.sandStone, 1, DecoBlockSandStone.typeDefault)});
+		
+		FCRecipes.AddRecipe(new ItemStack(DecoDefs.stoneSlab4, 6, 0), new Object[] {
+				"XXX", 
+				'X', new ItemStack(Block.sandStone, 1, DecoBlockSandStone.typeSmooth)});
+		
+		FCRecipes.AddRecipe(new ItemStack(DecoDefs.stoneSlab4, 6, 1), new Object[] {
+				"XXX", 
+				'X', new ItemStack(Block.sandStone, 1, DecoBlockSandStone.typePolished)});
+		
+		FCRecipes.AddRecipe(new ItemStack(DecoDefs.stoneSlab4, 6, 2), new Object[] {
+				"XXX", 
+				'X', new ItemStack(Block.sandStone, 1, DecoBlockSandStone.typeBrick)});
+		
+		FCRecipes.AddRecipe(new ItemStack(DecoDefs.stoneSlab4, 6, 6), new Object[] {
+				"XXX", 
+				'X', new ItemStack(Block.sandStone, 1, DecoBlockSandStone.typeMossy)});
+		
+		FCRecipes.AddRecipe(new ItemStack(DecoDefs.stoneSlab4, 6, 7), new Object[] {
+				"XXX", 
+				'X', new ItemStack(Block.sandStone, 1, DecoBlockSandStone.typeLargeBrick)});
+		
+		FCRecipes.AddRecipe(new ItemStack(DecoDefs.stoneSlab5, 6, 0), new Object[] {
+				"XXX", 
+				'X', new ItemStack(Block.sandStone, 1, DecoBlockSandStone.typeLargeBrickMossy)});
+		
+		FCRecipes.AddRecipe(new ItemStack(DecoDefs.stoneSlab5, 6, 4), new Object[] {
+				"XXX", 
+				'X', new ItemStack(Block.sandStone, 1, DecoBlockSandStone.typeCracked)});
+		
+		FCRecipes.AddRecipe(new ItemStack(DecoDefs.stoneSlab5, 6, 5), new Object[] {
+				"XXX", 
+				'X', new ItemStack(Block.sandStone, 1, DecoBlockSandStone.typeLargeBrickCracked)});
+		
+		//Red sandstone slabs
+		FCRecipes.AddRecipe(new ItemStack(DecoDefs.stoneSlab, 6, 0), new Object[] {
+				"XXX", 
+				'X', new ItemStack(DecoDefs.redSandStone, 1, DecoBlockSandStone.typeDefault)});
+		
+		FCRecipes.AddRecipe(new ItemStack(DecoDefs.stoneSlab4, 6, 3), new Object[] {
+				"XXX", 
+				'X', new ItemStack(DecoDefs.redSandStone, 1, DecoBlockSandStone.typeSmooth)});
+		
+		FCRecipes.AddRecipe(new ItemStack(DecoDefs.stoneSlab4, 6, 4), new Object[] {
+				"XXX", 
+				'X', new ItemStack(DecoDefs.redSandStone, 1, DecoBlockSandStone.typePolished)});
+		
+		FCRecipes.AddRecipe(new ItemStack(DecoDefs.stoneSlab4, 6, 5), new Object[] {
+				"XXX", 
+				'X', new ItemStack(DecoDefs.redSandStone, 1, DecoBlockSandStone.typeBrick)});
+		
+		FCRecipes.AddRecipe(new ItemStack(DecoDefs.stoneSlab5, 6, 1), new Object[] {
+				"XXX", 
+				'X', new ItemStack(DecoDefs.redSandStone, 1, DecoBlockSandStone.typeMossy)});
+		
+		FCRecipes.AddRecipe(new ItemStack(DecoDefs.stoneSlab5, 6, 2), new Object[] {
+				"XXX", 
+				'X', new ItemStack(DecoDefs.redSandStone, 1, DecoBlockSandStone.typeLargeBrick)});
+		
+		FCRecipes.AddRecipe(new ItemStack(DecoDefs.stoneSlab5, 6, 3), new Object[] {
+				"XXX", 
+				'X', new ItemStack(DecoDefs.redSandStone, 1, DecoBlockSandStone.typeLargeBrickMossy)});
+		
+		FCRecipes.AddRecipe(new ItemStack(DecoDefs.stoneSlab5, 6, 6), new Object[] {
+				"XXX", 
+				'X', new ItemStack(DecoDefs.redSandStone, 1, DecoBlockSandStone.typeCracked)});
+		
+		FCRecipes.AddRecipe(new ItemStack(DecoDefs.stoneSlab5, 6, 7), new Object[] {
+				"XXX", 
+				'X', new ItemStack(DecoDefs.redSandStone, 1, DecoBlockSandStone.typeLargeBrickCracked)});
+
+		FCRecipes.AddRecipe(new ItemStack(DecoDefs.redSandStone), new Object[] {
+				"X", 
+				"X", 
+				'X', new ItemStack(DecoDefs.stoneSlab, 1, 0)});
+		
+		FCRecipes.AddRecipe(new ItemStack(Block.sandStone, 1, 2), new Object[] {
+				"X", 
+				"X", 
+				'X', new ItemStack(DecoDefs.stoneSlab4, 1, 0)});
+		
+		FCRecipes.AddRecipe(new ItemStack(Block.sandStone, 1, 3), new Object[] {
+				"X", 
+				"X", 
+				'X', new ItemStack(DecoDefs.stoneSlab4, 1, 1)});
+		
+		FCRecipes.AddRecipe(new ItemStack(Block.sandStone, 1, 4), new Object[] {
+				"X", 
+				"X", 
+				'X', new ItemStack(DecoDefs.stoneSlab4, 1, 2)});
+		
+		FCRecipes.AddRecipe(new ItemStack(DecoDefs.redSandStone, 1, 2), new Object[] {
+				"X", 
+				"X", 
+				'X', new ItemStack(DecoDefs.stoneSlab4, 1, 3)});
+		
+		FCRecipes.AddRecipe(new ItemStack(DecoDefs.redSandStone, 1, 3), new Object[] {
+				"X", 
+				"X", 
+				'X', new ItemStack(DecoDefs.stoneSlab4, 1, 4)});
+		
+		FCRecipes.AddRecipe(new ItemStack(DecoDefs.redSandStone, 1, 4), new Object[] {
+				"X", 
+				"X", 
+				'X', new ItemStack(DecoDefs.stoneSlab4, 1, 5)});
+		
+		FCRecipes.AddRecipe(new ItemStack(Block.sandStone, 1, 5), new Object[] {
+				"X", 
+				"X", 
+				'X', new ItemStack(DecoDefs.stoneSlab4, 1, 6)});
+		
 		FCRecipes.AddRecipe(new ItemStack(Block.sandStone, 1, 6), new Object[] {"X", "X", 'X', new ItemStack(DecoDefs.stoneSlab4, 1, 7)});
 		FCRecipes.AddRecipe(new ItemStack(Block.sandStone, 1, 7), new Object[] {"X", "X", 'X', new ItemStack(DecoDefs.stoneSlab5, 1, 0)});
 		FCRecipes.AddRecipe(new ItemStack(DecoDefs.redSandStone, 1, 5), new Object[] {"X", "X", 'X', new ItemStack(DecoDefs.stoneSlab5, 1, 1)});
