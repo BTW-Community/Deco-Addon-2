@@ -11,7 +11,7 @@ public class DecoBlockThatch extends Block
 		this.SetAxesEffectiveOn(true);
 		this.setHardness(0.5F);
 		this.setResistance(2.0F);
-		DecoManager.Register(this);
+		DecoManager.register(this);
 	}
 
     public boolean CanBePistonShoveled(World var1, int var2, int var3, int var4)

@@ -11,7 +11,7 @@ public class DecoBlockConcrete extends Block{
 		this.setCreativeTab(CreativeTabs.tabBlock);
 		this.setStepSound(Block.soundStoneFootstep);
 		this.setUnlocalizedName("decoBlockConcrete");
-		DecoManager.Register(this, DecoUtilsMisc.colorOrder);
+		DecoManager.register(this, DecoUtilsMisc.colorOrder);
 	}
 	
 	@Override

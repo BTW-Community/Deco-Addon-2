@@ -5,7 +5,7 @@ public class DecoBlockChair extends Block {
 		super(id, material);
 		this.setUnlocalizedName("decoBlockChair" + tag);
 		this.setCreativeTab(CreativeTabs.tabDecorations);
-		DecoManager.Register(this);
+		DecoManager.register(this);
 		this.InitBlockBounds(.0625F, 0, .0625F, 0.9375F, .625F, 0.9375F);
 	}
 
