@@ -14,7 +14,7 @@ public class DecoBlockLantern extends Block
 		setCreativeTab(CreativeTabs.tabDecorations);
 		setHardness(hardness);
 		setLightValue(1F);
-		DecoManager.Register(this);
+		DecoManager.register(this);
 		this.InitBlockBounds(.3125D,	0.0D,	.3125D,		.6875D,		.5D,	.6875D);
 		
 		if (material == Material.iron) {

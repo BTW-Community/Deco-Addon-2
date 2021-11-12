@@ -70,7 +70,7 @@ public class DecoManager extends FCAddOn
 	public static final String decoPacketChannelRender = "Deco|Render";
 
 	private DecoManager() {
-		super("Deco Addon", "3.0.3", "Deco");
+		super("Deco Addon", "3.0.4", "Deco");
 	}
 	
 	public static DecoManager getInstance() {
@@ -90,8 +90,7 @@ public class DecoManager extends FCAddOn
 	}
 
 	@Override
-	public void Initialize()
-	{
+	public void Initialize() {
 		FCAddOnHandler.LogMessage("Deco Addon Initializing...");
 
 		decoDefs = DecoDefs.instance;
@@ -106,56 +105,21 @@ public class DecoManager extends FCAddOn
 		FCAddOnHandler.LogMessage("Deco Addon Initialization Complete.");
 	}
 
-	public String GetLanguageFilePrefix()
-	{
+	@Override
+	public String GetLanguageFilePrefix() {
 		return "Deco";
 	}
 	
+	@Override
 	public void handleConfigProperties(Map<String, String> propertyValues) {
 		this.disableHardcoreBouncing = Boolean.parseBoolean(propertyValues.get("DisableHardcoreBouncing"));
 	}
-
-	public static void MakeStorage(Item subItem, Block container)
-	{
-		FCRecipes.AddRecipe(new ItemStack(container), new Object[]{"XXX","XXX","XXX",'X',subItem});
-		FCRecipes.AddShapelessRecipe(new ItemStack(subItem, 9), new ItemStack[]{new ItemStack(container)});
-	}
-	public static void MakeStorage(Item subItem, Item container)
-	{
-		FCRecipes.AddRecipe(new ItemStack(container), new Object[]{"XXX","XXX","XXX",'X',subItem});
-		FCRecipes.AddShapelessRecipe(new ItemStack(subItem, 9), new ItemStack[]{new ItemStack(container)});
-	}
-	public static void MakeStorage(ItemStack subItem, ItemStack container)
-	{
-		FCRecipes.AddRecipe(container, new Object[]{"XXX","XXX","XXX",'X',subItem});
-		FCRecipes.AddShapelessRecipe(new ItemStack(subItem.itemID, 9,subItem.getItemDamage()), new ItemStack[]{container});
-	}
-	public static void Register(Block target)
-	{
+	
+	public static void register(Block target) {
 		Item.itemsList[target.blockID] = new DecoItemBlockWithCustomSound(target.blockID - 256);
 	}
-	public static void Register(Block target, String[] names, String preTitle, String[] titles, String postTitle)
-	{
-		Item.itemsList[target.blockID] = new DecoItemBlockMulti(target, names);
-	}
 
-	public static void Register(Block target, String[] names)
-	{
-		Item.itemsList[target.blockID] = new DecoItemBlockMulti(target, names);
-	}
-
-	public static void Register(Block target, String[] names, String[] titles)
-	{
-		Item.itemsList[target.blockID] = new DecoItemBlockMulti(target, names);
-	}
-
-	public static void Register(Block target, String[] names, String[] titles, String postTitle)
-	{
-		Item.itemsList[target.blockID] = new DecoItemBlockMulti(target, names);
-	}
-
-	public static void Register(Block target, String[] names, String preTitle, String[] titles)
-	{
+	public static void register(Block target, String[] names) {
 		Item.itemsList[target.blockID] = new DecoItemBlockMulti(target, names);
 	}
 
@@ -304,7 +268,7 @@ public class DecoManager extends FCAddOn
 		DecoManager.installResource("random/doorOpen2");
 		DecoManager.installResource("random/doorOpen3");
 		DecoManager.installResource("random/doorOpen4");
-
+		/*
 		DecoManager.installResource("random/doorIronClose1");
 		DecoManager.installResource("random/doorIronClose2");
 		DecoManager.installResource("random/doorIronClose3");
@@ -313,7 +277,7 @@ public class DecoManager extends FCAddOn
 		DecoManager.installResource("random/doorIronOpen2");
 		DecoManager.installResource("random/doorIronOpen3");
 		DecoManager.installResource("random/doorIronOpen4");
-
+		*/
 		DecoManager.installResource("random/trapdoorClose1");
 		DecoManager.installResource("random/trapdoorClose2");
 		DecoManager.installResource("random/trapdoorClose3");
@@ -321,7 +285,7 @@ public class DecoManager extends FCAddOn
 		DecoManager.installResource("random/trapdoorOpen2");
 		DecoManager.installResource("random/trapdoorOpen3");
 		DecoManager.installResource("random/trapdoorOpen4");
-
+		/*
 		DecoManager.installResource("random/trapdoorIronClose1");
 		DecoManager.installResource("random/trapdoorIronClose2");
 		DecoManager.installResource("random/trapdoorIronClose3");
@@ -330,7 +294,7 @@ public class DecoManager extends FCAddOn
 		DecoManager.installResource("random/trapdoorIronOpen2");
 		DecoManager.installResource("random/trapdoorIronOpen3");
 		DecoManager.installResource("random/trapdoorIronOpen4");
-
+		*/
 		DecoManager.installResource("random/gateClose1");
 		DecoManager.installResource("random/gateClose2");
 		DecoManager.installResource("random/gateOpen1");

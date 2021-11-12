@@ -7,7 +7,7 @@ public class DecoBlockStairsThatch extends FCBlockStairs {
         this.setCreativeTab(CreativeTabs.tabBlock);
         this.setUnlocalizedName("decoBlockThatchStairs");
 		this.SetAxesEffectiveOn(true);
-		DecoManager.Register(this);
+		DecoManager.register(this);
     }
 
     public boolean DropComponentItemsOnBadBreak(World var1, int var2, int var3, int var4, int var5, float var6)

@@ -11,7 +11,7 @@ public class DecoBlockStoneVariantSmooth extends Block{
 		this.setUnlocalizedName("decoBlockStoneSmooth");
 		this.setCreativeTab(CreativeTabs.tabBlock);
 
-		DecoManager.Register(this, new String[] {"granite", "andesite", "diorite", "slate"});
+		DecoManager.register(this, new String[] {"granite", "andesite", "diorite", "slate"});
 	}
 
 	public int damageDropped(int Meta)

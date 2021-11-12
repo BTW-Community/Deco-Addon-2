@@ -11,7 +11,7 @@ public class DecoBlockConcretePowder extends FCBlockFallingFullBlock {
         this.setStepSound(soundSandFootstep);
         this.setCreativeTab(CreativeTabs.tabBlock);
 		this.setUnlocalizedName("decoBlockConcretePowder");
-		DecoManager.Register(this, DecoUtilsMisc.colorOrder);
+		DecoManager.register(this, DecoUtilsMisc.colorOrder);
 	}
 
     public boolean DropComponentItemsOnBadBreak(World var1, int var2, int var3, int var4, int var5, float var6)

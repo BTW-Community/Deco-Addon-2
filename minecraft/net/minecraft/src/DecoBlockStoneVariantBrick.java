@@ -12,7 +12,7 @@ public class DecoBlockStoneVariantBrick extends Block {
 		this.setUnlocalizedName("decoBlockStoneBricks");
 		this.setCreativeTab(CreativeTabs.tabBlock);
 
-		DecoManager.Register(this, new String[] {"granite", "andesite", "diorite", "slate", "slateTiles"});
+		DecoManager.register(this, new String[] {"granite", "andesite", "diorite", "slate", "slateTiles"});
 	}
 
     /**

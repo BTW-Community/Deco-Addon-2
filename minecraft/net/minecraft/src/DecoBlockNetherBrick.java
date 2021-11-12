@@ -16,7 +16,7 @@ public class DecoBlockNetherBrick extends Block {
         this.setStepSound(soundStoneFootstep);
         this.setUnlocalizedName("decoBlockNetherBrick");
         this.setCreativeTab(CreativeTabs.tabBlock);
-		DecoManager.Register(this, new String[] {"red",  "redChiseled", "chiseled"});
+		DecoManager.register(this, new String[] {"red",  "redChiseled", "chiseled"});
     }
 
     /**
