@@ -2086,9 +2086,9 @@ public class DecoDefs {
 	private void addEntityDefs() {
 		//Custom entities
 		EntityList.AddMapping(DecoEntityFallingConcrete.class, "FallingConcrete", id_entityFallingConcrete);
-		EntityList.addMapping(DecoEntityVillagerMason.class, "DecoVillagerMason", id_entityVillagerMason, 12422002, 4802889);
+		//EntityList.addMapping(DecoEntityVillagerMason.class, "DecoVillagerMason", id_entityVillagerMason, 12422002, 4802889);
 		
-		FCEntityVillager.professionMap.put(id_masonProfession, DecoEntityVillagerMason.class);
+		//FCEntityVillager.professionMap.put(id_masonProfession, DecoEntityVillagerMason.class);
 		
 		//Replaced mappings
 		EntityList.replaceExistingMappingSafe(DecoEntitySquid.class, "Squid");

@@ -1,7 +1,7 @@
-Version 3.1.0
+Version 3.0.4
 Note that this version removed several base class edits and as such requires a clean install.
 [list]
-[*]Added the mason villager.
+[*]Updated to BTW CE 1.2.3.
 [*]Fixed an issue where the recipe for shingles slabs only produced 1 slab.
 [*]Fixed an issue where chiseled white stone bricks could not be crafted.
 [*]Fixed an issue where item frames, paintings, and canvases were not using the updated item replacement hooks.
