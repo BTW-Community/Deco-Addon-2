@@ -4,18 +4,16 @@ import java.util.Random;
 
 import com.prupe.mcpatcher.mal.block.RenderBlocksUtils;
 
-public class DecoBlockGrass extends FCBlockGrass {
-    public static final int edibleMinimumLightLevel = 9;
-    
-	protected DecoBlockGrass(int id) {
-		super(id);
+public class DecoBlockGrassSlab extends FCBlockGrassSlab {
+	protected DecoBlockGrassSlab(int blockID) {
+		super(blockID);
 	}
 
 	@Override
 	public void updateTick(World world, int x, int y, int z, Random rand) {
 		if (!DecoBlockGrass.canGrassSurviveAtLocation(world, x, y, z)) {
 			// convert back to dirt in low light
-			world.setBlockWithNotify(x, y, z, Block.dirt.blockID);
+			this.revertToDirt(world, x, y, z);
 		}
 		else if (DecoBlockGrass.canGrassSpreadFromLocation(world, x, y, z)) {
 			DecoBlockGrass.checkForGrassSpreadFromLocation(world, x, y, z);
@@ -31,59 +29,13 @@ public class DecoBlockGrass extends FCBlockGrass {
     	World world = (World) blockAccess;
     	int skylight = world.GetBlockNaturalLightValueMaximum(x, y + 1, z);
     	
-        if (skylight >= edibleMinimumLightLevel) {
+        if (skylight >= DecoBlockGrass.edibleMinimumLightLevel) {
         	return super.CanBeGrazedOn(blockAccess, x, y, z, animal);
         }
         else {
         	return false;
         }
     }
-
-	//------ Class specific methods ------//
-
-	public static boolean canGrassSurviveAtLocation(World world, int x, int y, int z) {
-		int blockAboveID = world.getBlockId(x, y + 1, z);
-		Block blockAbove = Block.blocksList[blockAboveID];
-		
-		if (Block.lightOpacity[blockAboveID] > 2 || (blockAbove != null && !blockAbove.GetCanGrassGrowUnderBlock(world, x, y + 1, z, false)))
-		{
-			return false;
-		}
-
-		return true;
-	}
-
-	public static void checkForGrassSpreadFromLocation(World world, int x, int y, int z) {
-		if (world.provider.dimensionId != 1 && !FCBlockGroundCover.IsGroundCoverRestingOnBlock(world, x, y, z)) {
-			// check for grass spread
-
-			int i = x + world.rand.nextInt(3) - 1;
-			int j = y + world.rand.nextInt(4) - 2;
-			int k = z + world.rand.nextInt(3) - 1;
-
-			Block targetBlock = Block.blocksList[world.getBlockId(i, j, k)];
-
-			if (targetBlock != null) {
-				attempToSpreadGrassToLocation(world, i, j, k);
-			}
-		}
-	}
-
-	public static boolean attempToSpreadGrassToLocation(World world, int x, int y, int z) {
-		int targetBlockID = world.getBlockId(x, y, z);
-		Block targetBlock = Block.blocksList[targetBlockID];
-
-		if (canGrassSurviveAtLocation(world, x, y, z)) {
-			if (targetBlock.GetCanGrassSpreadToBlock(world, x, y, z) &&
-					Block.lightOpacity[world.getBlockId(x, y + 1, z)] <= 2 &&
-					!FCBlockGroundCover.IsGroundCoverRestingOnBlock(world, x, y, z))    		
-			{
-				return targetBlock.SpreadGrassToBlock(world, x, y, z);
-			}
-		}
-
-		return false;
-	}
     
     //----------- Client Side Functionality -----------//
     
@@ -122,7 +74,7 @@ public class DecoBlockGrass extends FCBlockGrass {
 		if (isSparse(blockAccess, x, y, z)) {
 			topIcon = iconGrassTopSparse;
 		}
-		else if (skylight >= this.edibleMinimumLightLevel) {
+		else if (skylight >= DecoBlockGrass.edibleMinimumLightLevel) {
 			topIcon = iconGrassTop;
 		}
 		else {

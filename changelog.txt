@@ -1,3 +1,12 @@
+Version 3.0.5
+[list]
+[*]Updated to BTW CE 1.3.0.
+[*]Changed the vanilla enchantment table to be able to detect bookshelves up to 1 block below and 2 blocks above the enchanting table. Note that 30 bookshelves is still the highest number of shelves which the table will count.
+[*]Fixed an issue where all addon logs sawed into a single plank instead of 4.
+[*]Fixed an issue where cherry and acacia slabs could not be sawed into moulding.
+[*]Fixed an issue where shears were not efficient against acacia or autumn leaves.
+[/list]
+
 Version 3.0.4
 Note that this version removed several base class edits and as such requires a clean install.
 [list]

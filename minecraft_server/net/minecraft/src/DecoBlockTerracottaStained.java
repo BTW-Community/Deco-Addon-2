@@ -26,19 +26,4 @@ public class DecoBlockTerracottaStained extends Block
         this.DropItemsIndividualy(var1, var2, var3, var4, DecoDefs.pileRedSand.itemID, 8, 0, var6);
         return true;
     }
-
-	@Override
-    public int getItemIDDroppedOnStonecutter(World world, int x, int y, int z) {
-		if (this.blockID == DecoDefs.stainedTerracotta.blockID) {
-			return DecoDefs.stainedTerracottaSidingAndCorner[world.getBlockMetadata(x, y, z)].blockID;
-		}
-		else {
-			return DecoDefs.shingleColoredSidingAndCorner[world.getBlockMetadata(x, y, z)].blockID;
-		}
-    }
-
-	@Override
-    public int getItemCountDroppedOnStonecutter(World world, int x, int y, int z) {
-        return 2;
-    }
 }

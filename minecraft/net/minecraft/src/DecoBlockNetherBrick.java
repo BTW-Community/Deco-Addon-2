@@ -53,23 +53,6 @@ public class DecoBlockNetherBrick extends Block {
     {
         return true;
     }
-
-	@Override
-    public int getItemIDDroppedOnStonecutter(World world, int x, int y, int z) {
-        int meta = world.getBlockMetadata(x, y, z);
-        
-        switch (meta) {
-        default:
-        	return DecoDefs.netherBrickRedSidingAndCorner.blockID;
-        case typeChiseled:
-        	return FCBetterThanWolves.fcBlockNetherBrickSidingAndCorner.blockID;
-        }
-    }
-
-	@Override
-    public int getItemCountDroppedOnStonecutter(World world, int x, int y, int z) {
-        return 2;
-    }
     
     //CLIENT ONLY
     private Icon[] icons;

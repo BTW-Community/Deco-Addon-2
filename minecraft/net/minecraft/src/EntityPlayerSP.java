@@ -455,6 +455,11 @@ public class EntityPlayerSP extends EntityPlayer
     {
         return this.movementInput.sneak && !this.sleeping;
     }
+    
+    @Override
+    public boolean isUsingSpecialKey() {
+    	return this.movementInput.special;
+    }
 
     /**
      * Updates health locally.

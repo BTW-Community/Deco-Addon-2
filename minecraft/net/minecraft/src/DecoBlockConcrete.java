@@ -18,16 +18,6 @@ public class DecoBlockConcrete extends Block{
 	public int damageDropped(int metadata){
 		return metadata;
 	}
-
-	@Override
-    public int getItemIDDroppedOnStonecutter(World world, int x, int y, int z) {
-        return DecoDefs.concreteSidingAndCorner[world.getBlockMetadata(x, y, z)].blockID;
-    }
-
-	@Override
-    public int getItemCountDroppedOnStonecutter(World world, int x, int y, int z) {
-        return 2;
-    }
 	
 	//CLIENT ONLY
 	@Override

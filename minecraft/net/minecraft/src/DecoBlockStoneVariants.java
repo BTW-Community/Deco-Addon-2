@@ -76,31 +76,6 @@ public class DecoBlockStoneVariants extends Block {
 		return true;
 	}
 
-	@Override
-    public int getItemIDDroppedOnStonecutter(World world, int x, int y, int z) {
-        int meta = world.getBlockMetadata(x, y, z);
-        
-        switch (meta) {
-        default:
-        case 0:
-        	return DecoDefs.stoneTypesSidingAndCorner[0].blockID;
-        case 1:
-        	return DecoDefs.stoneTypesSidingAndCorner[1].blockID;
-        case 2:
-        	return DecoDefs.stoneTypesSidingAndCorner[2].blockID;
-        }
-    }
-
-	@Override
-    public int getItemCountDroppedOnStonecutter(World world, int x, int y, int z) {
-        return 2;
-    }
-
-	@Override
-    public int getItemDamageDroppedOnStonecutter(World world, int x, int y, int z)  {
-        return 0;
-    }
-
 	//CLIENT ONLY METHODS
 	public static Icon[] Icons = new Icon[3];
 	public Icon getIcon(int Side, int Meta)

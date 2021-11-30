@@ -18,26 +18,6 @@ public class DecoBlockInfusedStone extends Block {
 	public int damageDropped(int meta) {
 		return meta;
 	}
-
-	@Override
-    public int getItemIDDroppedOnStonecutter(World world, int x, int y, int z) {
-        int meta = world.getBlockMetadata(x, y, z);
-        
-        switch (meta) {
-        default:
-        case typeDefault:
-        	return DecoDefs.infusedStoneSidingAndCorner.blockID;
-        case typeSmooth:
-        	return DecoDefs.infusedStoneSmoothSidingAndCorner.blockID;
-        case typeBrick:
-        	return DecoDefs.infusedStoneBrickSidingAndCorner.blockID;
-        }
-    }
-
-	@Override
-    public int getItemCountDroppedOnStonecutter(World world, int x, int y, int z) {
-        return 2;
-    }
     
     //CLIENT ONLY
     private Icon[] icons;

@@ -80,39 +80,6 @@ public class DecoBlockSandStone extends FCBlockSandStone {
         }
     }
 
-	@Override
-    public int getItemIDDroppedOnStonecutter(World world, int x, int y, int z) {
-        int meta = world.getBlockMetadata(x, y, z);
-        
-        switch (meta) {
-        default:
-        case typeDefault:
-        	return FCBetterThanWolves.fcBlockSandstoneSidingAndCorner.blockID;
-        case typeChiseled:
-        case typeSmooth:
-        	return DecoDefs.sandStoneSmoothSidingAndCorner.blockID;
-        case typePolished:
-        	return DecoDefs.sandStonePolishedSidingAndCorner.blockID;
-        case typeBrick:
-        	return DecoDefs.sandStoneBrickSidingAndCorner.blockID;
-        case typeMossy:
-        	return DecoDefs.sandStoneMossySidingAndCorner.blockID;
-        case typeLargeBrick:
-        	return DecoDefs.sandStoneBrickLargeSidingAndCorner.blockID;
-        case typeLargeBrickMossy:
-        	return DecoDefs.sandStoneBrickLargeMossySidingAndCorner.blockID;
-        case typeCracked:
-        	return DecoDefs.sandStoneCrackedSidingAndCorner.blockID;
-        case typeLargeBrickCracked:
-        	return DecoDefs.sandStoneBrickLargeCrackedSidingAndCorner.blockID;
-        }
-    }
-
-	@Override
-    public int getItemCountDroppedOnStonecutter(World world, int x, int y, int z) {
-        return 2;
-    }
-
     //CLIENT ONLY
     public static final String[] SAND_STONE_TYPES = new String[] {"default", "chiseled", "smooth", "polished", "brick", "mossy", "largeBrick", "largeBrickMossy", "cracked", "largeBrickCracked"};
     private static final String[] textures = new String[] {"sandstone_side", "sandstone_carved", "sandstone_smooth", "sandstone_top", "decoBlockSandstoneBrick", "decoBlockSandstoneMossy_side", "decoBlockSandstoneBrickLarge", "decoBlockSandstoneBrickLargeMossy", "sandstone_bottom", "decoBlockSandstoneBrickLargeCracked"};

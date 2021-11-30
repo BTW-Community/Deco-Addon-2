@@ -5,6 +5,8 @@ import com.prupe.mcpatcher.MCPatcherUtils;
 import net.minecraft.src.Block;
 import net.minecraft.src.FCBetterThanWolves;
 import net.minecraft.src.FCBlockDirtSlab;
+import net.minecraft.src.FCBlockGrass;
+import net.minecraft.src.FCBlockGrassSlab;
 import net.minecraft.src.IBlockAccess;
 import net.minecraft.src.Icon;
 import net.minecraft.client.Minecraft;
@@ -43,27 +45,14 @@ public class RenderBlocksUtils {
 			colorMultiplierType[3] = COLOR;
 			colorMultiplierType[4] = COLOR;
 			colorMultiplierType[5] = COLOR;
-		} else if (block == grassBlock) {
+		} else if (block == grassBlock && !FCBlockGrass.secondPass ||
+				block.blockID == FCBetterThanWolves.fcBlockGrassSlab.blockID && !FCBlockGrassSlab.secondPass) {
 			colorMultiplierType[0] = NONCOLOR;
-			if (enableBetterGrass) {
-				if (isSnowCovered(blockAccess, i, j, k)) {
-					colorMultiplierType[2] = NONCOLOR;
-					colorMultiplierType[3] = NONCOLOR;
-					colorMultiplierType[4] = NONCOLOR;
-					colorMultiplierType[5] = NONCOLOR;
-				} else {
-					j--;
-					colorMultiplierType[2] = block == BlockAPI.getBlockAt(blockAccess, i, j, k - 1) && !isSnowCovered(blockAccess, i, j, k - 1) ? COLOR : COLOR_AND_NONCOLOR;
-					colorMultiplierType[3] = block == BlockAPI.getBlockAt(blockAccess, i, j, k + 1) && !isSnowCovered(blockAccess, i, j, k + 1) ? COLOR : COLOR_AND_NONCOLOR;
-					colorMultiplierType[4] = block == BlockAPI.getBlockAt(blockAccess, i - 1, j, k) && !isSnowCovered(blockAccess, i - 1, j, k) ? COLOR : COLOR_AND_NONCOLOR;
-					colorMultiplierType[5] = block == BlockAPI.getBlockAt(blockAccess, i + 1, j, k) && !isSnowCovered(blockAccess, i + 1, j, k) ? COLOR : COLOR_AND_NONCOLOR;
-				}
-			} else {
-				colorMultiplierType[2] = COLOR_AND_NONCOLOR;
-				colorMultiplierType[3] = COLOR_AND_NONCOLOR;
-				colorMultiplierType[4] = COLOR_AND_NONCOLOR;
-				colorMultiplierType[5] = COLOR_AND_NONCOLOR;
-			}
+			colorMultiplierType[1] = NONCOLOR;
+			colorMultiplierType[2] = NONCOLOR;
+			colorMultiplierType[3] = NONCOLOR;
+			colorMultiplierType[4] = NONCOLOR;
+			colorMultiplierType[5] = NONCOLOR;
 		} else if (fcDirtSlab != null && block == fcDirtSlab) {
 			if (isSnowCovered(blockAccess, i, j, k)) {
 				colorMultiplierType[2] = NONCOLOR;
@@ -187,7 +176,8 @@ public class RenderBlocksUtils {
 		if (block == Block.grass && 
 				!(BlockAPI.getBlockAt(blockAccess, i, j - 1, k) == Block.grass || 
 					(BlockAPI.getBlockAt(blockAccess, i, j, k) == FCBetterThanWolves.fcBlockDirtSlab &&
-					FCBetterThanWolves.fcBlockDirtSlab.GetSubtype(BlockAPI.getMetadataAt(blockAccess, i, j, k)) == FCBlockDirtSlab.m_iSubtypeGrass))) {
+						FCBetterThanWolves.fcBlockDirtSlab.GetSubtype(BlockAPI.getMetadataAt(blockAccess, i, j, k)) == FCBlockDirtSlab.m_iSubtypeGrass) ||
+					BlockAPI.getBlockAt(blockAccess, i, j, k) == FCBetterThanWolves.fcBlockGrassSlab)) {
 			return null;
 		}
 		

@@ -21,24 +21,4 @@ public class DecoBlockPrismarine extends Block {
 	{
 		return meta;
 	}
-
-	@Override
-    public int getItemIDDroppedOnStonecutter(World world, int x, int y, int z) {
-        int meta = world.getBlockMetadata(x, y, z);
-        
-        switch (meta) {
-        default:
-        case typeDefault:
-        	return DecoDefs.prismarineSidingAndCorner.blockID;
-        case typeBrick:
-        	return DecoDefs.prismarineBrickSidingAndCorner.blockID;
-        case typeDark:
-        	return DecoDefs.prismarineDarkSidingAndCorner.blockID;
-        }
-    }
-
-	@Override
-    public int getItemCountDroppedOnStonecutter(World world, int x, int y, int z) {
-        return 2;
-    }
 }

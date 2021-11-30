@@ -116,39 +116,6 @@ public class DecoBlockRedSandStone extends Block
         return par1;
     }
 
-	@Override
-    public int getItemIDDroppedOnStonecutter(World world, int x, int y, int z) {
-        int meta = world.getBlockMetadata(x, y, z);
-        
-        switch (meta) {
-        default:
-        case typeDefault:
-        	return DecoDefs.redSandStoneSidingAndCorner.blockID;
-        case typeChiseled:
-        case typeSmooth:
-        	return DecoDefs.redSandStoneSmoothSidingAndCorner.blockID;
-        case typePolished:
-        	return DecoDefs.redSandStonePolishedSidingAndCorner.blockID;
-        case typeBrick:
-        	return DecoDefs.redSandStoneBrickSidingAndCorner.blockID;
-        case typeMossy:
-        	return DecoDefs.redSandStoneMossySidingAndCorner.blockID;
-        case typeLargeBrick:
-        	return DecoDefs.redSandStoneBrickLargeSidingAndCorner.blockID;
-        case typeLargeBrickMossy:
-        	return DecoDefs.redSandStoneBrickLargeMossySidingAndCorner.blockID;
-        case typeCracked:
-        	return DecoDefs.redSandStoneCrackedSidingAndCorner.blockID;
-        case typeLargeBrickCracked:
-        	return DecoDefs.redSandStoneBrickLargeCrackedSidingAndCorner.blockID;
-        }
-    }
-
-	@Override
-    public int getItemCountDroppedOnStonecutter(World world, int x, int y, int z) {
-        return 2;
-    }
-
     //CLIENT ONLY
     /**
      * From the specified side and block metadata retrieves the blocks texture. Args: side, metadata
