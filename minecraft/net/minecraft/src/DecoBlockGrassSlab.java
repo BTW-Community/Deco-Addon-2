@@ -18,7 +18,7 @@ public class DecoBlockGrassSlab extends FCBlockGrassSlab {
 		else if (DecoBlockGrass.canGrassSpreadFromLocation(world, x, y, z)) {
 			DecoBlockGrass.checkForGrassSpreadFromLocation(world, x, y, z);
 
-			if (isSparse(world, x, y, z) && rand.nextInt(4) == 0) {
+			if (isSparse(world, x, y, z) && rand.nextInt(DecoBlockGrass.SELF_GROWTH_CHANCE) == 0) {
 				this.setFullyGrown(world, x, y, z);
 			}
 		}
