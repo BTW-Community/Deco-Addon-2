@@ -975,11 +975,15 @@ public class DecoDefs {
 		//Flower pot
 		flowerPot = new DecoBlockFlowerPot(id_flowerPot);
 		TileEntity.addMapping(DecoTileEntityFlowerPot.class, "AddonFlowerPot");
-		Item.replaceItem(Item.flowerPot.itemID, DecoItemFlowerPot.class, decoManager);
+		Item.replaceItem(Item.flowerPot.itemID, 
+				DecoItemFlowerPot.class, 
+				decoManager);
 	}
 
 	private void addStoneDefs() {
-		Block.stone = Block.replaceBlock(Block.stone.blockID, DecoBlockStone.class, decoManager);
+		Block.stone = Block.replaceBlock(Block.stone.blockID, 
+				DecoBlockStone.class, 
+				decoManager);
 		Item.itemsList[Block.stone.blockID] = new DecoItemBlockMulti(Block.stone, new String[] {
 				"strata1", 
 				"strata2", 
@@ -1234,9 +1238,14 @@ public class DecoDefs {
 		Item.itemsList[redSandStoneBrickLargeCrackedMouldingAndDecorative.blockID] = new FCItemBlockMouldingAndDecorative(redSandStoneBrickLargeCrackedMouldingAndDecorative.blockID - 256);
 
 		pileRedSand = new DecoItemPileRedSand(id_pileRedSand);
-		Block.sandStone = Block.replaceBlock(Block.sandStone.blockID, DecoBlockSandStone.class);
+		Block.sandStone = Block.replaceBlock(Block.sandStone.blockID, 
+				DecoBlockSandStone.class, 
+				decoManager);
 		DecoManager.register(Block.sandStone, new String[] {"default", "chiseled", "smooth", "polished", "brick", "mossy", "largeBrick", "largeBrickMossy", "cracked", "largeBrickCracked"});
-		Block.stairsSandStone = Block.replaceBlock(Block.stairsSandStone.blockID, DecoBlockStairsSandStone.class, Block.sandStone, 0);
+		Block.stairsSandStone = Block.replaceBlock(Block.stairsSandStone.blockID, 
+				DecoBlockStairsSandStone.class, 
+				decoManager, 
+				Block.sandStone, 0);
 
 		sandStoneSmoothStairs = new DecoBlockStairsSandStone(id_sandstoneSmoothStairs, Block.sandStone, 2).setUnlocalizedName("decoBlockStairsSandStoneSmooth");
 		sandStoneSmoothSidingAndCorner = new DecoBlockSidingAndCornerDecorativeWallWithTopAndBottom(id_sandstoneSmoothSidingAndCorner, Material.rock, new String[] {"fcBlockDecorativeSandstone_top", "fcBlockDecorativeSandstone_top", "sandstone_smooth", "decoBlockSandstoneSmoothColumn"}, 0.8F, 1.34F, Block.soundStoneFootstep, "decoBlockSandstoneSmoothSiding", "Smooth Sandstone");
@@ -1430,7 +1439,9 @@ public class DecoDefs {
 		Item.itemsList[endStoneBrickMouldingAndDecorative.blockID] = new FCItemBlockMouldingAndDecorative(endStoneBrickMouldingAndDecorative.blockID - 256);
 
 		//Obsidian
-		Block.obsidian = Block.replaceBlock(Block.obsidian.blockID, DecoBlockObsidian.class);
+		Block.obsidian = Block.replaceBlock(Block.obsidian.blockID, 
+				DecoBlockObsidian.class, 
+				decoManager);
 		DecoManager.register(Block.obsidian, new String[] {"obsidian", "infused"});
 		
 		//Slate
@@ -1899,7 +1910,9 @@ public class DecoDefs {
 
 		//Trapdoors
 		//Forces oak trap doors to inherit texture rotations and better placement
-		Block.trapdoor = Block.replaceBlock(Block.trapdoor.blockID, DecoBlockTrapDoor.class, decoManager);
+		Block.trapdoor = Block.replaceBlock(Block.trapdoor.blockID, 
+				DecoBlockTrapDoor.class, 
+				decoManager);
 
 		trapdoorSpruce = (BlockTrapDoor) new DecoBlockTrapDoor(id_trapdoorSpruce).setUnlocalizedName("decoBlockTrapdoorSpruce");
 		trapdoorBirch = (BlockTrapDoor) new DecoBlockTrapDoor(id_trapdoorBirch).setUnlocalizedName("decoBlockTrapdoorBirch");
@@ -1938,7 +1951,7 @@ public class DecoDefs {
 		Block.doorWood = Block.replaceBlock(Block.doorWood.blockID, 
 				DecoBlockDoorWood.class, 
 				decoManager, 
-				null, new String[] {"doorWood_lower", "doorWood_upper"}, Item.doorWood.itemID);
+				new String[] {"doorWood_lower", "doorWood_upper"}, Item.doorWood.itemID);
 		Block.doorIron = Block.replaceBlock(Block.doorIron.blockID, 
 				DecoBlockDoorIron.class,
 				decoManager);
@@ -2232,6 +2245,9 @@ public class DecoDefs {
 		FCBetterThanWolves.fcBlockDirtSlab = (FCBlockDirtSlab) Block.replaceBlock(FCBetterThanWolves.fcBlockDirtSlab.blockID, 
 				DecoBlockDirtSlab.class, 
 				decoManager);
+		FCBetterThanWolves.fcBlockGrassSlab = (FCBlockGrassSlab) Block.replaceBlock(FCBetterThanWolves.fcBlockGrassSlab.blockID, 
+				DecoBlockGrassSlab.class, 
+				decoManager);
 
 		//Nether portal
 		Block.portal = (BlockPortal) Block.replaceBlock(Block.portal.blockID, 
@@ -2412,13 +2428,17 @@ public class DecoDefs {
 
 		//Cocoa
 		FCBetterThanWolves.fcItemCocoaBeans = new DecoItemCocoaBeans(FCBetterThanWolves.fcItemCocoaBeans.itemID - 256);
-		Block.cocoaPlant = Block.replaceBlock(Block.cocoaPlant.blockID, DecoBlockCocoa.class);
+		Block.cocoaPlant = Block.replaceBlock(Block.cocoaPlant.blockID, 
+				DecoBlockCocoa.class, 
+				decoManager);
 
 		//Lily pads
 		Item.itemsList[Block.waterlily.blockID] = new DecoItemBlockLilyPad(Block.waterlily.blockID - 256);
 		
 		//Spider eyes
-		Item.spiderEye = Item.replaceItem(Item.spiderEye.itemID, DecoItemSpiderEye.class);
+		Item.spiderEye = Item.replaceItem(Item.spiderEye.itemID, 
+				DecoItemSpiderEye.class, 
+				decoManager);
 		spiderEyeBlock = new DecoBlockSpiderEye(id_spiderEyeBlock);
 		DecoManager.register(spiderEyeBlock);
 		spiderEyeSlab = new DecoBlockSpiderEyeSlab(id_spiderEyeSlab);
@@ -2448,10 +2468,24 @@ public class DecoDefs {
 		//DecoManager.Register(farmlandSalted);
 
 		//Fluids
-		Block.waterStill = (BlockFluid) Block.replaceBlock(Block.waterStill.blockID, DecoBlockWaterStationary.class, Material.water).setLightOpacity(3);
-		Block.waterMoving = (BlockFluid) Block.replaceBlock(Block.waterMoving.blockID, DecoBlockWaterFlowing.class, Material.water).setLightOpacity(3);
-		Block.lavaStill = (BlockFluid) Block.replaceBlock(Block.lavaStill.blockID, DecoBlockLavaStationary.class, Material.lava);
-		Block.lavaMoving = (BlockFluid) Block.replaceBlock(Block.lavaMoving.blockID, DecoBlockLavaFlowing.class, Material.lava);
+		Block.waterStill = (BlockFluid) Block.replaceBlock(Block.waterStill.blockID, 
+				DecoBlockWaterStationary.class, 
+				decoManager, 
+				Material.water)
+				.setLightOpacity(3);
+		Block.waterMoving = (BlockFluid) Block.replaceBlock(Block.waterMoving.blockID, 
+				DecoBlockWaterFlowing.class, 
+				decoManager, 
+				Material.water)
+				.setLightOpacity(3);
+		Block.lavaStill = (BlockFluid) Block.replaceBlock(Block.lavaStill.blockID, 
+				DecoBlockLavaStationary.class,
+				decoManager, 
+				Material.lava);
+		Block.lavaMoving = (BlockFluid) Block.replaceBlock(Block.lavaMoving.blockID, 
+				DecoBlockLavaFlowing.class, 
+				decoManager, 
+				Material.lava);
 
 		//Extra sounds
 		Block.slowSand.setStepSound(stepSoundSoulSand);

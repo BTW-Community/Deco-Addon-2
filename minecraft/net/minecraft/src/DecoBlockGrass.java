@@ -5,7 +5,7 @@ import java.util.Random;
 import com.prupe.mcpatcher.mal.block.RenderBlocksUtils;
 
 public class DecoBlockGrass extends FCBlockGrass {
-    public static final int edibleMinimumLightLevel = 9;
+    public static final int EDIBLE_LIGHT_LEVEL = 9;
     
 	protected DecoBlockGrass(int id) {
 		super(id);
@@ -31,7 +31,7 @@ public class DecoBlockGrass extends FCBlockGrass {
     	World world = (World) blockAccess;
     	int skylight = world.GetBlockNaturalLightValueMaximum(x, y + 1, z);
     	
-        if (skylight >= edibleMinimumLightLevel) {
+        if (skylight >= EDIBLE_LIGHT_LEVEL) {
         	return super.CanBeGrazedOn(blockAccess, x, y, z, animal);
         }
         else {
@@ -122,7 +122,7 @@ public class DecoBlockGrass extends FCBlockGrass {
 		if (isSparse(blockAccess, x, y, z)) {
 			topIcon = iconGrassTopSparse;
 		}
-		else if (skylight >= this.edibleMinimumLightLevel) {
+		else if (skylight >= this.EDIBLE_LIGHT_LEVEL) {
 			topIcon = iconGrassTop;
 		}
 		else {

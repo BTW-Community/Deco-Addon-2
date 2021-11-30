@@ -14,7 +14,7 @@ public class DecoBlockDirtSlab extends FCBlockDirtSlab {
     	World world = (World) blockAccess;
     	int skylight = world.GetBlockNaturalLightValueMaximum(x, y + 1, z);
     	
-        if (skylight >= DecoBlockGrass.edibleMinimumLightLevel) {
+        if (skylight >= DecoBlockGrass.EDIBLE_LIGHT_LEVEL) {
         	return super.CanBeGrazedOn(blockAccess, x, y, z, animal);
         }
         else {
@@ -56,7 +56,7 @@ public class DecoBlockDirtSlab extends FCBlockDirtSlab {
 
 			Icon topIcon;
 
-			if (skylight >= DecoBlockGrass.edibleMinimumLightLevel) {
+			if (skylight >= DecoBlockGrass.EDIBLE_LIGHT_LEVEL) {
 				topIcon = this.iconGrassTop;
 			}
 			else {
