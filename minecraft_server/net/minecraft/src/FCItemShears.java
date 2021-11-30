@@ -84,6 +84,8 @@ public class FCItemShears extends ItemShears
     		block == FCBetterThanWolves.fcBlockHempCrop ||
     		block == DecoDefs.carpet || 
     		block== DecoDefs.cherryLeaves || 
+			block== DecoDefs.acaciaLeaves ||
+    	    block== DecoDefs.autumnLeaves ||
     		block instanceof DecoBlockHedgeMouldingAndDecorative ||
     		block instanceof DecoBlockHedgeSidingAndCornerDecorativeWall ||
     		block instanceof DecoBlockHedge)
