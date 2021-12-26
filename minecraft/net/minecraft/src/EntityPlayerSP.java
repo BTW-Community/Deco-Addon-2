@@ -29,22 +29,6 @@ public class EntityPlayerSP extends EntityPlayer
 
     /** The amount of time an entity has been in a Portal the previous tick */
     public float prevTimeInPortal;
-    private static final float m_fMinimumGloomCaveSoundChance = 0.01F;
-    private static final float m_fMaximumGloomCaveSoundChance = 0.05F;
-    private static final float m_fMinimumGloomCaveSoundVolume = 0.1F;
-    private static final float m_fMaximumGloomCaveSoundVolume = 4.0F;
-    private static final float m_fMinimumGloomGrowlSoundChance = 0.01F;
-    private static final float m_fMaximumGloomGrowlSoundChance = 0.05F;
-    private static final float m_fMinimumGloomGrowlSoundVolume = 0.1F;
-    private static final float m_fMaximumGloomGrowlSoundVolume = 4.0F;
-    private static final float m_fMaximumGloomFOVMultiplier = 1.5F;
-    private static final float m_fGloomFOVMultiplierTimeForTransitionIn = 10.0F;
-    private static final float m_fGloomFOVMultiplierTimeForTransitionOut = 2.0F;
-    private static final float m_fGloomFOVMultiplierDeltaInPerTick = 0.0025F;
-    private static final float m_fGloomFOVMultiplierDeltaOutPerTick = 0.0125F;
-    private float m_fCurrentGloomFOVMultiplier = 1.0F;
-    private int m_iPreviousGloomLevel = 0;
-    public boolean m_bExhaustionAddedSinceLastGuiUpdate = false;
 
     public EntityPlayerSP(Minecraft par1Minecraft, World par2World, Session par3Session, int par4)
     {
@@ -185,6 +169,8 @@ public class EntityPlayerSP extends EntityPlayer
             boolean var1 = this.movementInput.jump;
             float var2 = 0.8F;
             boolean var3 = this.movementInput.moveForward >= var2;
+            boolean wasHoldingSpecial = isUsingSpecialKey();
+            
             this.movementInput.updatePlayerMoveState();
 
             if (this.isUsingItem())
@@ -203,7 +189,14 @@ public class EntityPlayerSP extends EntityPlayer
             this.pushOutOfBlocks(this.posX - (double)this.width * 0.35D, this.boundingBox.minY + 0.5D, this.posZ - (double)this.width * 0.35D);
             this.pushOutOfBlocks(this.posX + (double)this.width * 0.35D, this.boundingBox.minY + 0.5D, this.posZ - (double)this.width * 0.35D);
             this.pushOutOfBlocks(this.posX + (double)this.width * 0.35D, this.boundingBox.minY + 0.5D, this.posZ + (double)this.width * 0.35D);
-            boolean var4 = !this.HasStatusPenalty() || this.capabilities.allowFlying;
+            // FCMOD: Code change so that sprinting takes into account hunger, health, and fat
+            /*
+            boolean var4 = (float)this.getFoodStats().getFoodLevel() > 6.0F || this.capabilities.allowFlying;
+            */
+            boolean var4 = !HasStatusPenalty() || this.capabilities.allowFlying;
+            // END FCMOD
+            boolean activatedSprint=false;
+
 
             if (this.onGround && !var3 && this.movementInput.moveForward >= var2 && !this.isSprinting() && var4 && !this.isUsingItem() && !this.isPotionActive(Potion.blindness))
             {
@@ -214,16 +207,26 @@ public class EntityPlayerSP extends EntityPlayer
                 else
                 {
                     this.setSprinting(true);
+                    activatedSprint=true;
                     this.sprintToggleTimer = 0;
                 }
             }
-
+            
+            if ( isUsingSpecialKey() && !wasHoldingSpecial && this.movementInput.moveForward >= var2 && !this.isSprinting() &&
+            		var4 && !this.isUsingItem() && !this.isPotionActive(Potion.blindness))
+            {
+                this.setSprinting(true);
+                activatedSprint=true;
+                this.sprintToggleTimer = 0;
+            }
+            
             if (this.isSneaking())
             {
                 this.sprintToggleTimer = 0;
             }
 
-            if (this.isSprinting() && (this.movementInput.moveForward < var2 || this.isCollidedHorizontally || !var4))
+            if (this.isSprinting() && (this.movementInput.moveForward < var2 || !var4 ||
+            		( isUsingSpecialKey() && !wasHoldingSpecial && !activatedSprint )))
             {
                 this.setSprinting(false);
             }
@@ -261,7 +264,7 @@ public class EntityPlayerSP extends EntityPlayer
             {
                 this.capabilities.isFlying = false;
                 this.sendPlayerAbilities();
-            }
+            }            
         }
     }
 
@@ -277,10 +280,22 @@ public class EntityPlayerSP extends EntityPlayer
             var1 *= 1.1F;
         }
 
+        // FCMOD: Changed the following so the view doesn't zoom in and out based on walking on different material types
+        /*
+        var1 *= (this.landMovementFactor * this.getSpeedModifier() / this.speedOnGround + 1.0F) / 2.0F;
+        */
         var1 *= (this.landMovementFactor * this.getFOVSpeedModifier() / this.speedOnGround + 1.0F) / 2.0F;
-        var1 *= this.UpdateGloomFOVMultiplier();
+        
+        var1 *= UpdateGloomFOVMultiplier();
+        // END FCMOD
 
-        if (this.isUsingItem() && (this.getItemInUse().itemID == Item.bow.itemID || this.getItemInUse().itemID == FCBetterThanWolves.fcItemCompositeBow.itemID))
+        // FCMOD: Changed the following to provide FOV change on composite bow
+		/*
+        if (this.isUsingItem() && this.getItemInUse().itemID == Item.bow.itemID)
+        */
+        if ( isUsingItem() && ( getItemInUse().itemID == Item.bow.itemID ||
+    		getItemInUse().itemID == FCBetterThanWolves.fcItemCompositeBow.itemID ) )        	
+    	// END FCMOD
         {
             int var2 = this.getItemInUseDuration();
             float var3 = (float)var2 / 20.0F;
@@ -302,7 +317,10 @@ public class EntityPlayerSP extends EntityPlayer
 
     public void updateCloak()
     {
-        this.cloakUrl = FCBetterThanWolves.fcPlayerCloakURL + StringUtils.stripControlCodes(this.username) + ".png";
+    	// FCMOD: Changed, client only        	
+        //this.cloakUrl = "http://skins.minecraft.net/MinecraftCloaks/" + StringUtils.stripControlCodes(this.username) + ".png";
+        this.cloakUrl = FCBetterThanWolves.fcPlayerCloakURL + fetchUuid(this.username);
+        // END FCMOD
     }
 
     /**
@@ -344,10 +362,12 @@ public class EntityPlayerSP extends EntityPlayer
         {
             this.mc.displayGuiScreen(new GuiScreenBook(this, par1ItemStack, true));
         }
-        else if (var2 == FCBetterThanWolves.fcItemAncientProphecy)
+        // FCMOD: Code added
+        else if ( var2 == FCBetterThanWolves.fcItemAncientProphecy )
         {
-            this.mc.displayGuiScreen(new GuiScreenBook(this, par1ItemStack, false));
+            mc.displayGuiScreen( new GuiScreenBook( this, par1ItemStack, false ) );
         }
+        // END FCMOD
     }
 
     /**
@@ -373,7 +393,10 @@ public class EntityPlayerSP extends EntityPlayer
      */
     public void displayGUIWorkbench(int par1, int par2, int par3)
     {
+    	// FCMOD: Changed (client only)    	
+        //this.mc.displayGuiScreen(new GuiCrafting(this.inventory, this.worldObj, par1, par2, par3));
         this.mc.displayGuiScreen(new FCClientGuiCraftingWorkbench(this.inventory, this.worldObj, par1, par2, par3));
+        // END FCMOD
     }
 
     public void displayGUIEnchantment(int par1, int par2, int par3, String par4Str)
@@ -650,28 +673,60 @@ public class EntityPlayerSP extends EntityPlayer
     {
         this.worldObj.playSound(this.posX, this.posY - (double)this.yOffset, this.posZ, par1Str, par2, par3, false);
     }
-
-    /**
-     * increases exhaustion level by supplied amount
-     */
-    public void addExhaustion(float var1)
+    
+    // FCMOD: Added (client only)
+    private static final float m_fMinimumGloomCaveSoundChance = 0.01F; // 1/5 seconds 
+    private static final float m_fMaximumGloomCaveSoundChance = 0.05F; // 1/second
+    private static final float m_fMinimumGloomCaveSoundVolume = 0.1F; 
+    private static final float m_fMaximumGloomCaveSoundVolume = 4.0F;
+    
+    private static final float m_fMinimumGloomGrowlSoundChance = 0.01F; // 1/5 seconds 
+    private static final float m_fMaximumGloomGrowlSoundChance = 0.05F; // 1/second
+    private static final float m_fMinimumGloomGrowlSoundVolume = 0.1F; 
+    private static final float m_fMaximumGloomGrowlSoundVolume = 4.0F;
+    
+    private static final float m_fMaximumGloomFOVMultiplier = 1.5F;
+    private static final float m_fGloomFOVMultiplierTimeForTransitionIn = 10.0F; // in seconds
+    private static final float m_fGloomFOVMultiplierTimeForTransitionOut = 2.0F; // in seconds
+    private static final float m_fGloomFOVMultiplierDeltaInPerTick = ( ( m_fMaximumGloomFOVMultiplier - 1.0F ) / 20F ) / m_fGloomFOVMultiplierTimeForTransitionIn; 
+    private static final float m_fGloomFOVMultiplierDeltaOutPerTick = ( ( m_fMaximumGloomFOVMultiplier - 1.0F ) / 20F ) / m_fGloomFOVMultiplierTimeForTransitionOut; 
+    
+    private float m_fCurrentGloomFOVMultiplier = 1F;
+    
+    private int m_iPreviousGloomLevel = 0;    
+    
+    public boolean m_bExhaustionAddedSinceLastGuiUpdate = false;
+    
+    @Override
+    public void addExhaustion( float fAmount )
     {
-        if (!this.capabilities.disableDamage)
+        if ( !capabilities.disableDamage )
         {
-            this.m_bExhaustionAddedSinceLastGuiUpdate = true;
+        	m_bExhaustionAddedSinceLastGuiUpdate = true;
         }
-
-        super.addExhaustion(var1);
+        
+        super.addExhaustion( fAmount );
     }
 
-    public void AddExhaustionWithoutVisualFeedback(float var1)
+    @Override
+    public void AddExhaustionWithoutVisualFeedback( float fAmount )
     {
-        super.addExhaustion(var1);
+        super.addExhaustion( fAmount );
     }
-
+    
     private float getFOVSpeedModifier()
     {
+    	// copy of original "getSpeedModifier()" code from EntityLiving to avoid view zooming in and out 
+    	// based on the material type you're walking on
+    	
         float var1 = 1.0F;
+
+        /*
+        if (this.isPotionActive(Potion.moveSpeed))
+        {
+            var1 *= 1.0F + 0.2F * (float)(this.getActivePotionEffect(Potion.moveSpeed).getAmplifier() + 1);
+        }
+        */
 
         if (this.isPotionActive(Potion.moveSlowdown))
         {
@@ -680,109 +735,125 @@ public class EntityPlayerSP extends EntityPlayer
 
         return var1;
     }
-
+    
     private float UpdateGloomFOVMultiplier()
     {
-        int var1 = this.GetGloomLevel();
-
-        if (var1 == 0)
-        {
-            this.m_fCurrentGloomFOVMultiplier -= 0.0125F;
-
-            if (this.m_fCurrentGloomFOVMultiplier < 1.0F)
-            {
-                this.m_fCurrentGloomFOVMultiplier = 1.0F;
-            }
-        }
-        else
-        {
-            this.m_fCurrentGloomFOVMultiplier += 0.0025F;
-
-            if (this.m_fCurrentGloomFOVMultiplier > 1.5F)
-            {
-                this.m_fCurrentGloomFOVMultiplier = 1.5F;
-            }
-        }
-
-        return this.m_fCurrentGloomFOVMultiplier;
+    	int iGloomLevel = GetGloomLevel();
+    	
+    	if ( iGloomLevel == 0 )
+    	{
+    		m_fCurrentGloomFOVMultiplier -= m_fGloomFOVMultiplierDeltaOutPerTick;
+    		
+    		if ( m_fCurrentGloomFOVMultiplier < 1F )
+    		{
+    			m_fCurrentGloomFOVMultiplier = 1F;
+    		}
+    	}
+    	else
+    	{
+    		m_fCurrentGloomFOVMultiplier += m_fGloomFOVMultiplierDeltaInPerTick;
+    		
+    		if ( m_fCurrentGloomFOVMultiplier > m_fMaximumGloomFOVMultiplier )
+    		{
+    			m_fCurrentGloomFOVMultiplier = m_fMaximumGloomFOVMultiplier;
+    		}
+    	}
+    	
+    	return m_fCurrentGloomFOVMultiplier;
     }
-
+    
+    @Override
     protected void UpdateGloomState()
     {
-        int var1 = this.GetGloomLevel();
+    	int iGloomLevel = GetGloomLevel();
 
-        if (this.m_iPreviousGloomLevel != this.GetGloomLevel())
-        {
-            this.m_iInGloomCounter = 0;
-            this.m_iPreviousGloomLevel = var1;
+		if ( m_iPreviousGloomLevel != GetGloomLevel() )
+		{
+			m_iInGloomCounter = 0;
+	    	m_iPreviousGloomLevel = iGloomLevel;
+	    	
+	    	if ( iGloomLevel == 3 )
+	    	{
+                playSound( "mob.endermen.stare", 1.0F, 1.0F );
+	    	}
+		}			
+    	
+    	if ( iGloomLevel > 0 )
+    	{
+    		m_iInGloomCounter++;
+    		
+    		float fCounterProgress = (float)m_iInGloomCounter / (float)m_iGloomCounterBetweenStateChanges;
+    		
+    		if ( fCounterProgress > 1.0F )
+    		{
+    			fCounterProgress = 1.0F;
+    		}
 
-            if (var1 == 3)
-            {
-                this.playSound("mob.endermen.stare", 1.0F, 1.0F);
-            }
-        }
+    		// general cave sounds
+    		
+    		float fCaveSoundChance = m_fMaximumGloomCaveSoundChance;
+    		float fCaveSoundVolume = m_fMaximumGloomCaveSoundVolume;
+    		
+    		if ( iGloomLevel > 1 )
+    		{
+    			// growls
+    			
+    			float fGrowlSoundChance = m_fMaximumGloomGrowlSoundChance;
+    			float fGrowlSoundVolume = m_fMaximumGloomGrowlSoundVolume;
 
-        if (var1 > 0)
-        {
-            ++this.m_iInGloomCounter;
-            float var2 = (float)this.m_iInGloomCounter / 1200.0F;
-
-            if (var2 > 1.0F)
-            {
-                var2 = 1.0F;
-            }
-
-            float var3 = 0.05F;
-            float var4 = 4.0F;
-
-            if (var1 > 1)
-            {
-                float var5 = 0.05F;
-                float var6 = 4.0F;
-
-                if (var1 <= 2)
-                {
-                    var5 = 0.01F + 0.04F * var2;
-                    var6 = 0.1F + 3.9F * var2;
-                }
-
-                if (this.rand.nextFloat() < var5)
-                {
-                    this.PlaySoundInRandomDirection("mob.wolf.growl", var6, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.05F + 0.55F, 5.0D);
-                }
-            }
-            else
-            {
-                var3 = 0.01F + 0.04F * var2;
-                var4 = 0.1F + 3.9F * var2;
-            }
-
-            if (this.rand.nextFloat() < var3)
-            {
-                this.PlaySoundInRandomDirection("ambient.cave.cave", var4, 0.5F + this.rand.nextFloat(), 5.0D);
-            }
-        }
+    			if ( iGloomLevel > 2 )
+    			{
+    				// insert effects here for when the player is getting bit
+    			}
+    			else
+    			{
+    				fGrowlSoundChance = m_fMinimumGloomGrowlSoundChance + ( m_fMaximumGloomGrowlSoundChance - m_fMinimumGloomGrowlSoundChance ) * fCounterProgress;
+    				fGrowlSoundVolume = m_fMinimumGloomGrowlSoundVolume + ( m_fMaximumGloomGrowlSoundVolume - m_fMinimumGloomGrowlSoundVolume ) * fCounterProgress;
+    			}
+	    		
+	    		if ( rand.nextFloat() < fGrowlSoundChance )
+	    		{
+	    	        PlaySoundInRandomDirection( "mob.wolf.growl", fGrowlSoundVolume, ( rand.nextFloat() - rand.nextFloat()) * 0.05F + 0.55F, 5D );
+	    		}
+    		}
+    		else
+    		{
+        		fCaveSoundChance = m_fMinimumGloomCaveSoundChance + ( m_fMaximumGloomCaveSoundChance - m_fMinimumGloomCaveSoundChance ) * fCounterProgress;        		
+        		fCaveSoundVolume = m_fMinimumGloomCaveSoundVolume + ( m_fMaximumGloomCaveSoundVolume - m_fMinimumGloomCaveSoundVolume ) * fCounterProgress;        		
+    		}
+    		
+    		if ( rand.nextFloat() < fCaveSoundChance )
+    		{
+                PlaySoundInRandomDirection( "ambient.cave.cave", fCaveSoundVolume, 0.5F + this.rand.nextFloat(), 5D );
+    		}    		
+    	}
     }
-
-    public void PlaySoundInRandomDirection(String var1, float var2, float var3, double var4)
+    
+    public void PlaySoundInRandomDirection( String sSoundName, float fVolume, float fPitch, double dDistance )
     {
-        double var6 = this.posX;
-        double var8 = this.posY;
-        double var10 = this.posZ;
-        double var12 = this.rand.nextDouble();
-        double var14 = (double)(-MathHelper.sin((float)(var12 * 360.0D))) * var4;
-        double var16 = (double)MathHelper.cos((float)(var12 * 360.0D)) * var4;
-        var6 += var14;
-        var10 += var16;
-        this.worldObj.playSound(var6, var8, var10, var1, var2, var3, false);
+    	double dXPos = posX;
+    	double dYPos = posY;
+    	double dZPos = posZ;
+    	
+    	double dRandomYaw = rand.nextDouble();
+    	
+        double dXOffset = (double)-MathHelper.sin( (float)( dRandomYaw * 360D  ) ) * dDistance; 
+        double dZOffset = (double)MathHelper.cos( (float)( dRandomYaw * 360D ) ) * dDistance;
+        
+        dXPos += dXOffset;
+        dZPos += dZOffset;
+        
+        worldObj.playSound( dXPos, dYPos, dZPos, sSoundName, fVolume, fPitch, false );
     }
-
+    
+    @Override
     public boolean IsLocalPlayerAndHittingBlock()
     {
-        return this.mc.playerController.IsHittingBlock();
+    	return mc.playerController.IsHittingBlock();
     }
     
     private boolean isClimbingFreestandingLadder() {
     	return this.isOnLadder() && this.movementInput.jump;
     }
+    // END FCMOD
 }

@@ -166,11 +166,18 @@ tile.decoBlockLeavesAutumn.red.name=Red Autumn Leaves
 tile.decoBlockLeavesAutumn.orange.name=Orange Autumn Leaves
 tile.decoBlockLeavesAutumn.yellow.name=Yellow Autumn Leaves
 
-tile.decoBlockSaplingCherry.name=Cherry Sapling
-tile.decoBlockSaplingAcacia.name=Acacia Sapling
+tile.decoBlockSaplingCherry.cherry.name=Cherry Sapling
+tile.decoBlockSaplingCherry.cherryMature.name=Mature Cherry Sapling
+
+tile.decoBlockSaplingAcacia.acacia.name=Acacia Sapling
+tile.decoBlockSaplingAcacia.acaciaMature.name=Mature Acacia Sapling
+
 tile.decoBlockSaplingAutumn.red.name=Red Autumn Sapling
 tile.decoBlockSaplingAutumn.orange.name=Orange Autumn Sapling
 tile.decoBlockSaplingAutumn.yellow.name=Yellow Autumn Sapling
+tile.decoBlockSaplingAutumn.redMature.name=Mature Red Autumn Sapling
+tile.decoBlockSaplingAutumn.orangeMature.name=Mature Orange Autumn Sapling
+tile.decoBlockSaplingAutumn.yellowMature.name=Mature Yellow Autumn Sapling
 
 tile.decoBlockHedgeOakStairs.name=Oak Hedge Stairs
 tile.decoBlockHedgeSpruceStairs.name=Spruce Hedge Stairs

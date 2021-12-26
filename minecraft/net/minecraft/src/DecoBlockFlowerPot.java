@@ -197,11 +197,8 @@ public class DecoBlockFlowerPot extends BlockContainer {
 		//Renders other blocks as crossed squares. Double checks validity
 		else if (potTile.isValidItemForPot(storedBlockID, storedBlockMetadata)) {
 			Block storedBlock = Block.blocksList[storedBlockID];
-			if (potTile.isSaplingForAltRender(storedBlock.blockID))
-				//Renders saplings as full growth stage
-				render.drawCrossedSquares(storedBlock, storedBlockMetadata + 12, potTile.xCoord, potTile.yCoord + .25, potTile.zCoord, 1.0F);
-			else
-				render.drawCrossedSquares(storedBlock, storedBlockMetadata, potTile.xCoord, potTile.yCoord + .25, potTile.zCoord, 1.0F);
+			
+			DecoClientUtilsRender.drawCrossedSquares(render, storedBlock, storedBlockMetadata, potTile.xCoord, potTile.yCoord + .25, potTile.zCoord, 1.0F, 1);
 		}
 		else {
 			return false;
