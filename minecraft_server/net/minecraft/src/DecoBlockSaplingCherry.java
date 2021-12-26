@@ -38,7 +38,7 @@ public class DecoBlockSaplingCherry extends DecoBlockSapling
 			//Block break sfx
 			world.playAuxSFX(2001, x, y - 1, z, FCBetterThanWolves.fcBlockPlanterSoil.blockID);
 
-			world.setBlockAndMetadata(x, y - 1, z, Block.wood.blockID, treeType | 12);
+			world.setBlockAndMetadata(x, y - 1, z, DecoDefs.cherryStump.blockID, 0);
     	}
     }
 }
