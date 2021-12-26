@@ -108,45 +108,4 @@ public abstract class DecoBlockSapling extends BlockFlower
     public boolean isSameSapling(World world, int x, int y, int z, int meta) {
         return world.getBlockId(x, y, z) == this.blockID && (world.getBlockMetadata(x, y, z) & 3) == meta;
     }
-    
-    //------Client Only Methods ------//
-    
-    private Icon[][] iconArray = new Icon[4][4];
-
-    /**
-     * When this method is called, your block should register all the icons it needs with the given IconRegister. This
-     * is the only chance you get to register icons.
-     */
-    @Override
-    public void registerIcons(IconRegister register) {
-        for (int i = 0; i < baseTextureNames.length; ++i) {
-            for (int j = 0; j < 4; ++j) {
-                this.iconArray[i][j] = register.registerIcon(baseTextureNames[i] + j);
-            }
-        }
-    }
-
-    /**
-     * From the specified side and block metadata retrieves the blocks texture. Args: side, metadata
-     */
-    @Override
-    public Icon getIcon(int side, int meta) {
-        int subtype = meta & 3;
-        int growthStage = (meta & -4) >> 2;
-        return this.iconArray[subtype][growthStage];
-    }
-
-	/**
-	 * returns a list of blocks with the same ID, but different meta (eg: wood returns 4 blocks)
-	 */
-	@Override
-	public void getSubBlocks(int id, CreativeTabs creativeTabs, List list) {
-		for (int i = 0; i < baseTextureNames.length; i++) {
-			list.add(new ItemStack(id, 1, i));
-		}
-
-		for (int i = 0; i < baseTextureNames.length; i++) {
-			list.add(new ItemStack(id, 1, 12 + i));
-		}
-	}
 }
