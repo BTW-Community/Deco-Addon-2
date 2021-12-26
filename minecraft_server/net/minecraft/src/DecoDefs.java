@@ -369,6 +369,10 @@ public class DecoDefs {
 		id_framedGlass=3592,
 		id_framedGlassIron=3593,
 		id_farmlandSalted=3594,
+		id_infestedGranite=3595,
+		id_infestedAndesite=3596,
+		id_infestedDiorite=3597,
+		id_infestedSlate=3598,
 	
 		maxID = 4095;
 
@@ -457,6 +461,7 @@ public class DecoDefs {
 
 	//Stone
 	public static Block stoneTypes;
+	public static Block infestedGranite, infestedAndesite, infestedDiorite, infestedSlate;
 	public static Block stoneTypesCobble;
 	public static Block graniteCobbleLoose, andesiteCobbleLoose, dioriteCobbleLoose;
 	public static Block stoneTypesStoneBrick;
@@ -994,6 +999,12 @@ public class DecoDefs {
 				"rough3", 
 				"roughSlate"});
 		
+		FCBetterThanWolves.fcBlockSmoothstoneStairs = blockDiamondium.replaceBlock(FCBetterThanWolves.fcBlockSmoothstoneStairs.blockID, FCBlockStairs.class, decoManager, Block.stone, 0);
+		
+		FCBetterThanWolves.fcBlockSilverfishStone = (FCBlockSilverfish) Block.replaceBlock(FCBetterThanWolves.fcBlockSilverfishStone.blockID, FCBlockSilverfish.class, decoManager, Block.stone, 0);
+		FCBetterThanWolves.fcBlockSilverfishStoneSecondStrata = (FCBlockSilverfish) Block.replaceBlock(FCBetterThanWolves.fcBlockSilverfishStoneSecondStrata.blockID, FCBlockSilverfish.class, decoManager, Block.stone, 1);
+		FCBetterThanWolves.fcBlockSilverfishStoneThirdStrata = (FCBlockSilverfish) Block.replaceBlock(FCBetterThanWolves.fcBlockSilverfishStoneThirdStrata.blockID, FCBlockSilverfish.class, decoManager, Block.stone, 2);
+		
 		cobblestoneSidingAndCorner = new DecoBlockSidingAndCornerDecorativeWall(id_cobblestoneSidingAndCorner, 
 				Material.rock, 
 				"stonebrick", 
@@ -1172,6 +1183,11 @@ public class DecoDefs {
 		Item.itemsList[stoneBrickMossyMouldingAndDecorative.blockID] = new FCItemBlockMouldingAndDecorative(stoneBrickMossyMouldingAndDecorative.blockID - 256);
 		Item.itemsList[stoneBrickCrackedSidingAndCorner.blockID] = new FCItemBlockSidingAndCorner(stoneBrickCrackedSidingAndCorner.blockID - 256);
 		Item.itemsList[stoneBrickCrackedMouldingAndDecorative.blockID] = new FCItemBlockMouldingAndDecorative(stoneBrickCrackedMouldingAndDecorative.blockID - 256);
+		
+		infestedGranite = new FCBlockSilverfish(id_infestedGranite, stoneTypes, 0);
+		infestedAndesite = new FCBlockSilverfish(id_infestedAndesite, stoneTypes, 1);
+		infestedDiorite = new FCBlockSilverfish(id_infestedDiorite, stoneTypes, 2);
+		infestedSlate = new FCBlockSilverfish(id_infestedSlate, Block.stone, 4);
 
 		//Sandstone
 		redSand = new DecoBlockRedSand(id_redSand);
@@ -2330,18 +2346,19 @@ public class DecoDefs {
 
 		//Trees
 		cherrySapling = new DecoBlockSaplingCherry(id_cherrySapling);
-		DecoManager.register(cherrySapling);
+		Item.itemsList[cherrySapling.blockID] = new ItemMultiTextureTile(id_cherrySapling - 256, cherrySapling, DecoBlockSaplingCherry.SAPLING_TYPES);
 		cherryLeaves = new DecoBlockLeavesCherry(id_cherryLeaves);
 		DecoManager.register(cherryLeaves);
+		
 		acaciaSapling = new DecoBlockSaplingAcacia(id_acaciaSapling);
-		DecoManager.register(acaciaSapling);
+		Item.itemsList[acaciaSapling.blockID] = new ItemMultiTextureTile(id_acaciaSapling - 256, acaciaSapling, DecoBlockSaplingAcacia.SAPLING_TYPES);
 		acaciaLeaves = new DecoBlockLeavesAcacia(id_acaciaLeaves);
 		DecoManager.register(acaciaLeaves);
 		
 		autumnLeaves = new DecoBlockLeavesAutumn(id_autumnLeaves);
 		Item.itemsList[autumnLeaves.blockID] = new DecoItemBlockMulti(autumnLeaves, DecoBlockLeavesAutumn.LEAF_TYPES);
 		autumnSapling = new DecoBlockSaplingAutumn(id_autumnSapling);
-		Item.itemsList[autumnSapling.blockID] = new DecoItemBlockMulti(autumnSapling, DecoBlockLeavesAutumn.LEAF_TYPES);
+		Item.itemsList[autumnSapling.blockID] = new ItemMultiTextureTile(id_autumnSapling - 256, autumnSapling, DecoBlockSaplingAutumn.SAPLING_TYPES);
 
 		//Hedge
 		hedge = (BlockLeaves) new DecoBlockHedge(id_hedge).setCreativeTab(CreativeTabs.tabDecorations).setUnlocalizedName("decoBlockHedge");
@@ -2486,6 +2503,9 @@ public class DecoDefs {
 				DecoBlockLavaFlowing.class, 
 				decoManager, 
 				Material.lava);
+		
+		//Enchanting table
+		Block.enchantmentTable = Block.replaceBlock(Block.enchantmentTable.blockID, DecoBlockEnchantmentTable.class, decoManager);
 
 		//Extra sounds
 		Block.slowSand.setStepSound(stepSoundSoulSand);

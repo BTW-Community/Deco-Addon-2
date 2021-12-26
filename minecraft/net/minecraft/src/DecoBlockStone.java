@@ -287,6 +287,16 @@ public class DecoBlockStone extends FCBlockStone {
 	public boolean GetIsCracked(int metadata) {
 		return (metadata & 4) != 0 && !isSlate(metadata);
 	}
+
+    @Override
+    public int getBlockIDOnInfest(EntityLiving entity, int metadata) {
+    	if (isSlate(metadata)) {
+    		return DecoDefs.infestedSlate.blockID;
+    	}
+    	else {
+    		return super.getBlockIDOnInfest(entity, metadata);
+    	}
+    }
     
     //------------- Class Specific Methods ------------//
 

@@ -68,10 +68,6 @@ public class DecoTileEntityFlowerPot extends TileEntity implements FCITileEntity
 		
 		return validItemList.contains(id);
 	}
-	
-	public boolean isSaplingForAltRender(int id) {
-		return id == Block.sapling.blockID || id == DecoDefs.cherrySapling.blockID;
-	}
 
 	public void placeItemInPot(int itemID, int metadata) {
 		hasItem = true;

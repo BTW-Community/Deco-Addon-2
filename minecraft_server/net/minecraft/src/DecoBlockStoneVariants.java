@@ -51,6 +51,25 @@ public class DecoBlockStoneVariants extends Block {
 		
 		return true;
 	}
+	
+	@Override
+    public boolean isBlockInfestable(EntityLiving entity, int metadata)
+    {
+		return (entity instanceof EntitySilverfish);
+    }
+
+    @Override
+    public int getBlockIDOnInfest(EntityLiving entity, int metadata)
+    {
+    	if (metadata == 1) {
+    		return DecoDefs.infestedAndesite.blockID;
+    	}
+    	else if (metadata == 2) {
+    		return DecoDefs.infestedDiorite.blockID;
+    	}
+
+    	return DecoDefs.infestedGranite.blockID;
+    }
 
 	/**
 	 * returns a list of blocks with the same ID, but different meta (eg: wood returns 4 blocks)
