@@ -20,13 +20,13 @@ public class DecoBlockStone extends FCBlockStone {
 
 	@Override
 	public void dropBlockAsItemWithChance(World world, int x, int y, int z, int metadata, float chance, int fortuneModifier) {
-		super.dropBlockAsItemWithChance(world, x, y, z, metadata, chance, fortuneModifier);
-
 		if (!world.isRemote) {
 			if (isSlate(metadata)) {
+				dropBlockAsItem_do(world, x, y, z, new ItemStack(DecoDefs.slateCobbleLoose));
 				dropBlockAsItem_do(world, x, y, z, new ItemStack(DecoDefs.slateStone));
 			}
 			else {
+				dropBlockAsItem_do(world, x, y, z, new ItemStack(FCBetterThanWolves.fcBlockCobblestoneLoose));
 				dropBlockAsItem_do(world, x, y, z, new ItemStack(FCBetterThanWolves.fcItemStone));
 			}
 

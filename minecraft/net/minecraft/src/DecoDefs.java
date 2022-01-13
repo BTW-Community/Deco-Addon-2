@@ -937,7 +937,7 @@ public class DecoDefs {
 		whiteBrickStairs = new FCBlockStairs(id_whiteBrickStairs, whiteStoneBrick, 0)
 				.setUnlocalizedName("decoBlockWhiteBricksStairs");
 
-		Item.itemsList[whiteStoneBrick.blockID] = new DecoItemBlockBrick(whiteStoneBrick.blockID - 256, whiteStoneBrick);
+		Item.itemsList[whiteStoneBrick.blockID] = new DecoItemBlockWhiteBrick(whiteStoneBrick.blockID - 256, whiteStoneBrick);
 		Item.itemsList[whiteBrickSidingAndCorner.blockID] = new FCItemBlockSidingAndCorner(whiteBrickSidingAndCorner.blockID - 256);
 		Item.itemsList[whiteBrickMouldingAndDecorative.blockID] = new FCItemBlockMouldingAndDecorative(whiteBrickMouldingAndDecorative.blockID - 256);
 		DecoManager.register(whiteBrickStairs);

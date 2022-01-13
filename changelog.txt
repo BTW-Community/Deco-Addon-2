@@ -1,3 +1,11 @@
+Version 3.1.0
+[list]
+[*]Added polished white stone, crafted from white stone in a crucible.
+[*]Changed white stone to be made from white cobble in a cobble generator in the same manner as other stone variants instead of in a crucible.
+[*]Fixed an issue where slate had the wrong drops, and normal stone would drop two stones and gravel piles instead of 1 each.
+[*]Fixed an issue where cherry and acacia slabs could not be sawed into moulding.
+[/list]
+
 Version 3.0.6
 [list]
 [*]Updated to BTW CE 1.3.4.

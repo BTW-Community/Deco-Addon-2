@@ -7,10 +7,10 @@ public class DecoBlockWhiteStoneBrick extends Block {
 	public static final int typeMossy = 1;
 	public static final int typeCracked = 2;
 	public static final int typeChiseled = 3;
+	public static final int typeSmooth = 4;
 	
-	public DecoBlockWhiteStoneBrick(int ID)
-	{
-		super(ID, Material.rock);
+	public DecoBlockWhiteStoneBrick(int id) {
+		super(id, Material.rock);
 		setHardness(1.5F);
 		setResistance(10.0F);
 		setStepSound(Block.soundStoneFootstep);
@@ -19,45 +19,47 @@ public class DecoBlockWhiteStoneBrick extends Block {
         this.setTickRandomly(true);
 	}
 	
-	public void updateTick(World var1, int var2, int var3, int var4, Random var5)
-    {
-        int var6 = var1.getBlockMetadata(var2, var3, var4);
+	@Override
+	public void updateTick(World world, int x, int y, int z, Random rand) {
+        int meta = world.getBlockMetadata(x, y, z);
 
-        if (var6 == 0 && !var1.getBlockMaterial(var2, var3 - 1, var4).blocksMovement())
-        {
-            int var7 = var1.getBlockId(var2, var3 + 1, var4);
-
-            if (var7 != Block.waterMoving.blockID && var7 != Block.waterStill.blockID)
-            {
-                if ((var7 == Block.lavaMoving.blockID || var7 == Block.lavaStill.blockID) && var5.nextInt(15) == 0)
-                {
-                    var1.setBlockMetadataWithNotify(var2, var3, var4, 2);
-                    var1.markBlockRangeForRenderUpdate(var2, var3, var4, var2, var3, var4);
-                }
-            }
-            else if (var5.nextInt(15) == 0)
-            {
-                var1.setBlockMetadataWithNotify(var2, var3, var4, 1);
-                var1.markBlockRangeForRenderUpdate(var2, var3, var4, var2, var3, var4);
+        if (meta == 0 && !world.getBlockMaterial(x, y - 1, z).blocksMovement()) {
+            int blockIDAbove = world.getBlockId(x, y + 1, z);
+            Block blockAbove = Block.blocksList[blockIDAbove];
+            
+            if (rand.nextInt(15) == 0 && blockAbove != null) {
+            	if (blockAbove.blockMaterial == Material.water) {
+            		world.setBlockMetadataWithNotify(x, y, z, 1);
+                    world.markBlockRangeForRenderUpdate(x, y, z, x, y, z);
+            	}
+            	else if (blockAbove.blockMaterial == Material.lava) {
+            		world.setBlockMetadataWithNotify(x, y, z, 2);
+                    world.markBlockRangeForRenderUpdate(x, y, z, x, y, z);
+            	}
             }
         }
     }
 	
-	public int damageDropped(int Meta)
-	{
-		return Meta;
+	@Override
+	public int damageDropped(int meta) {
+		return meta;
 	}
-//CLIENT ONLY
-	public static Icon[] Icons = new Icon[4];
-	public void registerIcons(IconRegister Register)
-	{
-		Icons[0] = Register.registerIcon("decoBlockWhiteBricks");
-		Icons[1] = Register.registerIcon("decoBlockWhiteBricksMossy");
-		Icons[2] = Register.registerIcon("decoBlockWhiteBricksCracked");
-		Icons[3] = Register.registerIcon("decoBlockWhiteBricksChiseled");
+	
+	//------ Client Only Methods ------//
+	
+	public static Icon[] icons = new Icon[5];
+	
+	@Override
+	public void registerIcons(IconRegister register) {
+		icons[0] = register.registerIcon("decoBlockWhiteBricks");
+		icons[1] = register.registerIcon("decoBlockWhiteBricksMossy");
+		icons[2] = register.registerIcon("decoBlockWhiteBricksCracked");
+		icons[3] = register.registerIcon("decoBlockWhiteBricksChiseled");
+		icons[4] = register.registerIcon("decoBlockWhiteStoneSmooth");
 	}
-	public Icon getIcon(int Side, int Meta)
-	{
-		return Icons[Meta];
+	
+	@Override
+	public Icon getIcon(int side, int meta) {
+		return icons[meta];
 	}
 }

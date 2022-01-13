@@ -1706,7 +1706,7 @@ public class DecoRecipes {
 		}
 		
 		//Cherry Sub
-		addSubBlockRecipesToSaw(Block.planks, 5, 
+		FCRecipes.addSubBlockRecipesToSaw(Block.planks, 5, 
 				DecoDefs.cherrySidingAndCorner, 
 				DecoDefs.cherryMouldingAndDecorative, 
 				FCBetterThanWolves.fcBlockWoodSidingItemStubID, 
@@ -1739,7 +1739,7 @@ public class DecoRecipes {
 		FCRecipes.AddShapelessRecipe(new ItemStack(Block.woodSingleSlab, 1, 5), new ItemStack[] {new ItemStack(DecoDefs.woodSlab, 1, 0)});
 		
 		//Acacia Sub
-		addSubBlockRecipesToSaw(Block.planks, 6, 
+		FCRecipes.addSubBlockRecipesToSaw(Block.planks, 6, 
 				DecoDefs.acaciaSidingAndCorner, 
 				DecoDefs.acaciaMouldingAndDecorative, 
 				FCBetterThanWolves.fcBlockWoodSidingItemStubID, 
@@ -1843,7 +1843,7 @@ public class DecoRecipes {
 			FCRecipes.AddCauldronRecipe(new ItemStack(Block.planks,  8), new ItemStack[] {new ItemStack(DecoDefs.woodBleach), new ItemStack(DecoDefs.planksPainted, 8, i)});
 
 			//Sub blocks
-			addSubBlockRecipesToSaw(DecoDefs.planksPainted, i, 
+			FCRecipes.addSubBlockRecipesToSaw(DecoDefs.planksPainted, i, 
 					DecoDefs.paintedPlanksSidingAndCorner[i],
 					DecoDefs.paintedPlanksMouldingAndDecorative[i]);
 			
@@ -1879,6 +1879,12 @@ public class DecoRecipes {
 		}
 		
 		//Wood slab saw recipes
+		FCRecipes.addSawRecipe(new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, 5), 
+				DecoDefs.woodSlab, 5);
+
+		FCRecipes.addSawRecipe(new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, 6), 
+				DecoDefs.woodSlab, 6);
+		
 		for (int i = 0; i < 8; i++) {
 			if (i < DecoDefs.woodSlab.sawedIDs.length) {
 				FCRecipes.addSawRecipe(new ItemStack(DecoDefs.woodSlab.sawedIDs[i], 1, DecoDefs.woodSlab.sawedMetas[i]), 
@@ -2429,92 +2435,6 @@ public class DecoRecipes {
 		
 		//level up trade
 		
-	}
-	
-	private static void addSubBlockRecipesToSaw(Block baseBlock, int baseMetadata, Block sidingAndCorner, Block moulding) {
-		//Base
-		FCRecipes.addSawRecipe(new ItemStack(sidingAndCorner, 2, 0),
-				baseBlock, baseMetadata);
-		
-		//Siding
-		//Shared block id with other types requires enumerating siding metadata
-		for (int i = 0; i < 16; i++) {
-			if (i != FCBlockWoodSidingAndCornerAndDecorative.m_iSubtypeBench &&
-					i != FCBlockWoodSidingAndCornerAndDecorative.m_iSubtypeFence &&
-					!((FCBlockSidingAndCorner) FCBetterThanWolves.fcBlockWoodOakSidingAndCorner).GetIsCorner(i))
-			{
-				FCRecipes.addSawRecipe(new ItemStack(moulding, 2, 0), 
-						sidingAndCorner, i);
-			}
-		}
-		
-		//Moulding
-		//Shared block id with other types requires enumerating moulding metadata
-		for (int i = 0; i < 16; i++) {
-			if (!((FCBlockWoodMouldingAndDecorative) FCBetterThanWolves.fcBlockWoodOakMouldingAndDecorative).IsDecorative(i)) {
-				FCRecipes.addSawRecipe(new ItemStack(sidingAndCorner, 2, 1),
-						moulding, i);
-			}
-		}
-		
-		//Corners
-		//Shared block id with other types requires enumerating corner metadata
-		for (int i = 0; i < 16; i++) {
-			if (i != FCBlockWoodSidingAndCornerAndDecorative.m_iSubtypeBench &&
-					i != FCBlockWoodSidingAndCornerAndDecorative.m_iSubtypeFence &&
-					((FCBlockSidingAndCorner) FCBetterThanWolves.fcBlockWoodOakSidingAndCorner).GetIsCorner(i))
-			{
-				FCRecipes.addSawRecipe(new ItemStack(FCBetterThanWolves.fcItemGear, 2, 0),
-						sidingAndCorner, i);
-			}
-		}
-		
-		//Fence
-		FCRecipes.addSawRecipe(new ItemStack(sidingAndCorner, 1, 1),
-				sidingAndCorner, FCBlockWoodSidingAndCornerAndDecorative.m_iSubtypeFence);
-	}
-	
-	private static void addSubBlockRecipesToSaw(Block baseBlock, int baseMetadata, Block sidingAndCorner, Block moulding, int sidingItemID, int mouldingItemID, int cornerItemID, int itemMetadata) {
-		//Base
-		FCRecipes.addSawRecipe(new ItemStack(sidingItemID, 2, itemMetadata),
-				baseBlock, baseMetadata);
-		
-		//Siding
-		//Shared block id with other types requires enumerating siding metadata
-		for (int i = 0; i < 16; i++) {
-			if (i != FCBlockWoodSidingAndCornerAndDecorative.m_iSubtypeBench &&
-					i != FCBlockWoodSidingAndCornerAndDecorative.m_iSubtypeFence &&
-					!((FCBlockSidingAndCorner) FCBetterThanWolves.fcBlockWoodOakSidingAndCorner).GetIsCorner(i))
-			{
-				FCRecipes.addSawRecipe(new ItemStack(mouldingItemID, 2, itemMetadata), 
-						sidingAndCorner, i);
-			}
-		}
-		
-		//Moulding
-		//Shared block id with other types requires enumerating moulding metadata
-		for (int i = 0; i < 16; i++) {
-			if (!((FCBlockWoodMouldingAndDecorative) FCBetterThanWolves.fcBlockWoodOakMouldingAndDecorative).IsDecorative(i)) {
-				FCRecipes.addSawRecipe(new ItemStack(cornerItemID, 2, itemMetadata),
-						moulding, i);
-			}
-		}
-		
-		//Corners
-		//Shared block id with other types requires enumerating corner metadata
-		for (int i = 0; i < 16; i++) {
-			if (i != FCBlockWoodSidingAndCornerAndDecorative.m_iSubtypeBench &&
-					i != FCBlockWoodSidingAndCornerAndDecorative.m_iSubtypeFence &&
-					((FCBlockSidingAndCorner) FCBetterThanWolves.fcBlockWoodOakSidingAndCorner).GetIsCorner(i))
-			{
-				FCRecipes.addSawRecipe(new ItemStack(FCBetterThanWolves.fcItemGear, 2, 0),
-						sidingAndCorner, i);
-			}
-		}
-		
-		//Fence
-		FCRecipes.addSawRecipe(new ItemStack(cornerItemID, 1, itemMetadata),
-				sidingAndCorner, FCBlockWoodSidingAndCornerAndDecorative.m_iSubtypeFence);
 	}
 
 	private void removeSubBlockRecipes(Block var0, int var1, int var2, Block var3, Block var4, boolean var5) {

@@ -22,17 +22,8 @@ public class DecoBlockStone extends FCBlockStone {
 	public void dropBlockAsItemWithChance(World world, int x, int y, int z, int metadata, float chance, int fortuneModifier) {
 		super.dropBlockAsItemWithChance(world, x, y, z, metadata, chance, fortuneModifier);
 
-		if (!world.isRemote) {
-			if (isSlate(metadata)) {
+		if (!world.isRemote && isSlate(metadata)) {
 				dropBlockAsItem_do(world, x, y, z, new ItemStack(DecoDefs.slateStone));
-			}
-			else {
-				dropBlockAsItem_do(world, x, y, z, new ItemStack(FCBetterThanWolves.fcItemStone));
-			}
-
-			if (!GetIsCracked(metadata)) {
-				dropBlockAsItem_do(world, x, y, z, new ItemStack(FCBetterThanWolves.fcItemPileGravel));
-			}
 		}
 	}
 
