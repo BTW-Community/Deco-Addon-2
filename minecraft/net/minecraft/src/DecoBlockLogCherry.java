@@ -52,10 +52,10 @@ public class DecoBlockLogCherry extends Block {
 
 	public void OnDestroyedByFire(World var1, int var2, int var3, int var4, int var5, boolean var6)
 	{
-		this.ConvertToSmouldering(var1, var2, var3, var4);
+		this.convertToSmouldering(var1, var2, var3, var4);
 	}
 
-    public void ConvertToSmouldering(World var1, int var2, int var3, int var4)
+    public void convertToSmouldering(World var1, int var2, int var3, int var4)
     {
         int var5 = FCBetterThanWolves.fcBlockLogSmouldering.SetIsStump(0, false);
         var1.setBlockAndMetadataWithNotify(var2, var3, var4, FCBetterThanWolves.fcBlockLogSmouldering.blockID, var5);

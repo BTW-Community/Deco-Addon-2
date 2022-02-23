@@ -2427,7 +2427,7 @@ public class DecoRecipes {
 	}
 	
 	private void addVillagerTrades() {
-		int mason = DecoDefs.id_masonProfession;
+		int mason = DecoDefsIDs.id_masonProfession;
 		
 		// ------ Mason ------//
 		//Level 1

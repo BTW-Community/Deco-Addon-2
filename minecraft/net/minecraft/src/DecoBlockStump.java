@@ -1,7 +1,12 @@
 package net.minecraft.src;
 
-public class DecoBlockLogCherryStump extends Block {
-	public DecoBlockLogCherryStump(int id) {
+public class DecoBlockStump extends Block {
+	public int logID;
+	public int logMeta;
+	public int workStumpID;
+	public int workStumpMeta;
+	
+	public DecoBlockStump(int id, int logID, int logMeta, int workStumpID, int workStumpMeta) {
 		super(id, FCBetterThanWolves.fcMaterialLog);
         this.setHardness(1.25F);
         this.setResistance(3.33F);
@@ -10,63 +15,56 @@ public class DecoBlockLogCherryStump extends Block {
         this.SetBuoyant();
         this.SetFireProperties(FCEnumFlammability.LOGS);
         this.setStepSound(soundWoodFootstep);
-        this.setUnlocalizedName("cherryLogStump");
+        
+        this.logID = logID;
+        this.logMeta = logMeta;
+        this.workStumpID = workStumpID;
+        this.workStumpMeta = workStumpMeta;
 	}
 
-    /**
-     * Return true if a player with Silk Touch can harvest this block directly, and not its normal drops.
-     */
-    protected boolean canSilkHarvest()
-    {
+    @Override
+    protected boolean canSilkHarvest() {
         return false;
     }
 
-    /**
-     * only called by clickMiddleMouseButton , and passed to inventory.setCurrentItem (along with isCreative)
-     */
-    public int idPicked(World par1World, int par2, int par3, int par4)
-    {
-        return DecoDefs.cherryLog.blockID;
-    }
-	
-	public ItemStack GetStackRetrievedByBlockDispenser(World var1, int var2, int var3, int var4)
-    {
-    	return new ItemStack(DecoDefs.cherryLog, 1, 0);
+    @Override
+	public ItemStack GetStackRetrievedByBlockDispenser(World world, int x, int y, int z) {
+    	return new ItemStack(this.logID, 1, this.logMeta);
     }
 
-	public boolean GetIsProblemToRemove(IBlockAccess var1, int var2, int var3, int var4)
-	{
+    @Override
+	public boolean GetIsProblemToRemove(IBlockAccess blockAccess, int x, int y, int z) {
 		return true;
 	}
 
-	public boolean GetDoesStumpRemoverWorkOnBlock(IBlockAccess var1, int var2, int var3, int var4)
-	{
+    @Override
+	public boolean GetDoesStumpRemoverWorkOnBlock(IBlockAccess blockAccess, int x, int y, int z) {
 		return true;
 	}
 
-	public boolean CanConvertBlock(ItemStack var1, World var2, int var3, int var4, int var5)
-	{
+    @Override
+	public boolean CanConvertBlock(ItemStack stack, World world, int x, int y, int z) {
 		return true;
 	}
 
-	public boolean ConvertBlock(ItemStack var1, World var2, int var3, int var4, int var5, int var6)
-	{
-		int var7 = var2.getBlockMetadata(var3, var4, var5);
-		byte var8 = 0;
+    @Override
+	public boolean ConvertBlock(ItemStack stack, World world, int x, int y, int z, int side) {
+		int metadata = world.getBlockMetadata(x, y, z);
 		int var10;
 		
-		if (this.isWorkStumpItemConversionTool(var1, var2, var3, var4, var5))
-		{
-			var2.playAuxSFX(2268, var3, var4, var5, 0);
-			var2.setBlockAndMetadataWithNotify(var3, var4, var5, FCBetterThanWolves.fcBlockWorkStump.blockID, 4);
+		if (this.isWorkStumpItemConversionTool(stack, world, x, y, z)) {
+			world.playAuxSFX(2268, x, y, z, 0);
+			world.setBlockAndMetadataWithNotify(x, y, z, FCBetterThanWolves.fcBlockWorkStump.blockID, 4);
 			return true;
 		}
+		else {
+			var10 = FCBetterThanWolves.fcBlockLogDamaged.SetIsStump(0);
 
-		var10 = FCBetterThanWolves.fcBlockLogDamaged.SetIsStump(var8);
-
-		return true;
+			return true;
+		}
 	}
 
+    @Override
     public boolean DropComponentItemsOnBadBreak(World var1, int var2, int var3, int var4, int var5, float var6)
     {
         this.DropItemsIndividualy(var1, var2, var3, var4, FCBetterThanWolves.fcItemSawDust.itemID, 6, 0, var6);
@@ -74,10 +72,13 @@ public class DecoBlockLogCherryStump extends Block {
         return true;
     }
 
+    @Override
     public void OnDestroyedByFire(World var1, int var2, int var3, int var4, int var5, boolean var6)
     {
         this.convertToSmouldering(var1, var2, var3, var4);
     }
+    
+    //------------- Class Specific Methods ------------//
 
     public void convertToSmouldering(World var1, int var2, int var3, int var4)
     {
@@ -98,7 +99,8 @@ public class DecoBlockLogCherryStump extends Block {
 		}
 	}
 	
-	//CLIENT ONLY
+	//------ Client side functionality ------//
+	
 	private Icon sideIcon;
 	private Icon topIcon;
 	
@@ -112,4 +114,9 @@ public class DecoBlockLogCherryStump extends Block {
 		sideIcon = register.registerIcon("decoBlockTrunkCherry_side");
 		topIcon = register.registerIcon("decoBlockTrunkCherry_top");
 	}
+
+    @Override
+    public int idPicked(World world, int x, int y, int z) {
+        return this.logID;
+    }
 }

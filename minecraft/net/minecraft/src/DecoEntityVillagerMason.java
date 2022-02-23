@@ -2,7 +2,7 @@ package net.minecraft.src;
 
 public class DecoEntityVillagerMason extends FCEntityVillager {
 	public DecoEntityVillagerMason(World world) {
-		super(world, DecoDefs.id_masonProfession);
+		super(world, DecoDefsIDs.id_masonProfession);
 	}
 	
 	//CLIENT ONLY

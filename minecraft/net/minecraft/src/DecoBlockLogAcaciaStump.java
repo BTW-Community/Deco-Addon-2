@@ -55,7 +55,7 @@ public class DecoBlockLogAcaciaStump extends Block {
 		byte var8 = 0;
 		int var10;
 		
-		if (this.IsWorkStumpItemConversionTool(var1, var2, var3, var4, var5))
+		if (this.isWorkStumpItemConversionTool(var1, var2, var3, var4, var5))
 		{
 			var2.playAuxSFX(2268, var3, var4, var5, 0);
 			var2.setBlockAndMetadataWithNotify(var3, var4, var5, FCBetterThanWolves.fcBlockWorkStump.blockID, 5);
@@ -76,16 +76,16 @@ public class DecoBlockLogAcaciaStump extends Block {
 
     public void OnDestroyedByFire(World var1, int var2, int var3, int var4, int var5, boolean var6)
     {
-        this.ConvertToSmouldering(var1, var2, var3, var4);
+        this.convertToSmouldering(var1, var2, var3, var4);
     }
 
-    public void ConvertToSmouldering(World var1, int var2, int var3, int var4)
+    public void convertToSmouldering(World var1, int var2, int var3, int var4)
     {
         int var5 = FCBetterThanWolves.fcBlockLogSmouldering.SetIsStump(0, true);
         var1.setBlockAndMetadataWithNotify(var2, var3, var4, FCBetterThanWolves.fcBlockLogSmouldering.blockID, var5);
     }
 
-	public boolean IsWorkStumpItemConversionTool(ItemStack var1, World var2, int var3, int var4, int var5)
+	public boolean isWorkStumpItemConversionTool(ItemStack var1, World var2, int var3, int var4, int var5)
 	{
 		if (var1 != null && var1.getItem() instanceof FCItemChisel)
 		{
