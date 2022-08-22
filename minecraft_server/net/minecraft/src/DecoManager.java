@@ -36,8 +36,6 @@ public class DecoManager extends FCAddOn
 	private static ArrayList<Object> NameTargets = new ArrayList<Object>();
 
 	private static boolean newSoundsInstalled = true;
-	
-	public static boolean disableHardcoreBouncing = true;
 
 	public static final int decoCustomBlockBreakAuxFXID = 3000;
 	public static final int decoCustomBlockConvertAuxFXID = 3001;
@@ -67,7 +65,7 @@ public class DecoManager extends FCAddOn
 	public static final String decoPacketChannelRender = "Deco|Render";
 
 	private DecoManager() {
-		super("Deco Addon", "3.0.5", "Deco");
+		super("Deco Addon", "3.0.7", "Deco");
 	}
 	
 	public static DecoManager getInstance() {
@@ -103,7 +101,7 @@ public class DecoManager extends FCAddOn
 	
 	@Override
 	public void handleConfigProperties(Map<String, String> propertyValues) {
-		this.disableHardcoreBouncing = Boolean.parseBoolean(propertyValues.get("DisableHardcoreBouncing"));
+		FCBetterThanWolves.allowPlaceWhileJumping = Boolean.parseBoolean(propertyValues.get("DisableHardcoreBouncing"));
 	}
 	
 	public static void register(Block target) {
