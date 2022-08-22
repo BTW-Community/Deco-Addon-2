@@ -1,8 +1,9 @@
 Version 3.0.7
 [list]
-[*]Updated to BTW CE 1.3.10.
+[*]Updated to BTW CE 1.4.1.
 [*]Fixed an issue where stone was dropping twice as many stone and gravel pile items.
 [*]Fixed an issue where wood subblocks still had their pick block functionality broken due to overrides which did not carry over the CE functionality.
+[*]Fixed an issue where cherry and acacia slabs in the upper half of the block would not saw into mouldings properly.
 [*]Removed base class edits to EntityPlayer.
 [/list]
 

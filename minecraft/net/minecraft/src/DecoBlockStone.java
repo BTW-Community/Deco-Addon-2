@@ -24,14 +24,13 @@ public class DecoBlockStone extends FCBlockStone {
 			if (isSlate(metadata)) {
 				dropBlockAsItem_do(world, x, y, z, new ItemStack(DecoDefs.slateStone));
 				dropBlockAsItem_do(world, x, y, z, new ItemStack(DecoDefs.slateCobbleLoose));
+
+				if (!GetIsCracked(metadata)) {
+					dropBlockAsItem_do(world, x, y, z, new ItemStack(FCBetterThanWolves.fcItemPileGravel));
+				}
 			}
 			else {
-				dropBlockAsItem_do(world, x, y, z, new ItemStack(FCBetterThanWolves.fcItemStone));
-				dropBlockAsItem_do(world, x, y, z, new ItemStack(FCBetterThanWolves.fcBlockCobblestoneLoose));
-			}
-
-			if (!GetIsCracked(metadata)) {
-				dropBlockAsItem_do(world, x, y, z, new ItemStack(FCBetterThanWolves.fcItemPileGravel));
+				super.dropBlockAsItemWithChance(world, x, y, z, metadata, chance, fortuneModifier);
 			}
 		}
 	}
@@ -68,16 +67,15 @@ public class DecoBlockStone extends FCBlockStone {
 	public boolean DropComponentItemsOnBadBreak(World world, int x, int y, int z, int metadata, float chanceOfDrop) {
 		if (isSlate(metadata) || isCrackedSlate(metadata)) {
 			DropItemsIndividualy(world, x, y, z, DecoDefs.slateStone.itemID, 5, 0, chanceOfDrop);
+
+			int numGravel = GetIsCracked(metadata) ? 2 : 3;
+			DropItemsIndividualy(world, x, y, z, FCBetterThanWolves.fcItemPileGravel.itemID, numGravel, 0, chanceOfDrop);
+
+			return true;
 		}
 		else {
-			DropItemsIndividualy(world, x, y, z, FCBetterThanWolves.fcItemStone.itemID, 5, 0, chanceOfDrop);
+			return super.DropComponentItemsOnBadBreak(world, x, y, z, metadata, chanceOfDrop);
 		}
-
-		int numGravel = GetIsCracked(metadata) ? 2 : 3;
-
-		DropItemsIndividualy(world, x, y, z, FCBetterThanWolves.fcItemPileGravel.itemID, numGravel, 0, chanceOfDrop);
-
-		return true;
 	}
 
 	@Override
@@ -97,7 +95,7 @@ public class DecoBlockStone extends FCBlockStone {
 					FCUtilsItem.EjectStackFromBlockTowardsFacing(world, x, y, z, new ItemStack(DecoDefs.slateStone, 1), fromSide);
 				}
 				else {
-					FCUtilsItem.EjectStackFromBlockTowardsFacing(world, x, y, z, new ItemStack(FCBetterThanWolves.fcItemStone, 1), fromSide);
+					FCUtilsItem.EjectStackFromBlockTowardsFacing(world, x, y, z, new ItemStack(FCBetterThanWolves.fcItemStone, 1, strata), fromSide);
 				}
 			}
 		}
@@ -114,7 +112,7 @@ public class DecoBlockStone extends FCBlockStone {
 						FCUtilsItem.EjectStackFromBlockTowardsFacing(world, x, y, z, new ItemStack(DecoDefs.slateStone, 3), fromSide);
 					}
 					else {
-						FCUtilsItem.EjectStackFromBlockTowardsFacing(world, x, y, z, new ItemStack(FCBetterThanWolves.fcItemStone, 3), fromSide);
+						FCUtilsItem.EjectStackFromBlockTowardsFacing(world, x, y, z, new ItemStack(FCBetterThanWolves.fcItemStone, 3, strata), fromSide);
 					}
 
 					FCUtilsItem.EjectStackFromBlockTowardsFacing(world, x, y, z, new ItemStack(FCBetterThanWolves.fcItemPileGravel, 1), fromSide);
@@ -132,7 +130,7 @@ public class DecoBlockStone extends FCBlockStone {
 						FCUtilsItem.EjectStackFromBlockTowardsFacing(world, x, y, z, new ItemStack(DecoDefs.slateBrickItem, 1), fromSide);
 					}
 					else {
-						FCUtilsItem.EjectStackFromBlockTowardsFacing(world, x, y, z, new ItemStack(FCBetterThanWolves.fcItemStoneBrick, 1), fromSide);
+						FCUtilsItem.EjectStackFromBlockTowardsFacing(world, x, y, z, new ItemStack(FCBetterThanWolves.fcItemStoneBrick, 1, strata), fromSide);
 					}
 					
 					FCUtilsItem.EjectStackFromBlockTowardsFacing(world, x, y, z, new ItemStack(FCBetterThanWolves.fcItemPileGravel, 1), fromSide);
@@ -160,7 +158,7 @@ public class DecoBlockStone extends FCBlockStone {
 							FCUtilsItem.EjectStackFromBlockTowardsFacing(world, x, y, z, new ItemStack(DecoDefs.slateBrickItem, 1), fromSide);
 						}
 						else {
-							FCUtilsItem.EjectStackFromBlockTowardsFacing(world, x, y, z, new ItemStack(FCBetterThanWolves.fcItemStoneBrick, 1), fromSide);
+							FCUtilsItem.EjectStackFromBlockTowardsFacing(world, x, y, z, new ItemStack(FCBetterThanWolves.fcItemStoneBrick, 1, strata), fromSide);
 						}
 						
 						FCUtilsItem.EjectStackFromBlockTowardsFacing(world, x, y, z, new ItemStack(FCBetterThanWolves.fcItemPileGravel, 1), fromSide);
