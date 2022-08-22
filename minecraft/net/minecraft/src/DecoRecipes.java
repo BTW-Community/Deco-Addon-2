@@ -1722,6 +1722,10 @@ public class DecoRecipes {
 				new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 2, 5),
 			}, 
 			Block.woodSingleSlab, 5);
+		FCRecipes.addSawRecipe(new ItemStack[] {
+				new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 2, 5),
+			}, 
+			Block.woodSingleSlab, 13);
 		
 		FCRecipes.AddRecipe(new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingDecorativeItemStubID, 6, FCItemBlockWoodMouldingDecorativeStub.GetItemDamageForType(5, 1)), new Object[] {" S ", "###", "###", '#', new ItemStack(Block.planks, 1, 5), 'S', new ItemStack(FCBetterThanWolves.fcBlockWoodSidingItemStubID, 1, 5)});
 		FCRecipes.AddRecipe(new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingDecorativeItemStubID, 1, FCItemBlockWoodMouldingDecorativeStub.GetItemDamageForType(5, 0)), new Object[] {"M", "M", "M", 'M', new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, 5)});
@@ -1755,6 +1759,10 @@ public class DecoRecipes {
 				new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 2, 6),
 			}, 
 			Block.woodSingleSlab, 6);
+		FCRecipes.addSawRecipe(new ItemStack[] {
+				new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 2, 6),
+			}, 
+			Block.woodSingleSlab, 14);
 		
 		FCRecipes.AddRecipe(new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingDecorativeItemStubID, 6, FCItemBlockWoodMouldingDecorativeStub.GetItemDamageForType(6, 1)), new Object[] {" S ", "###", "###", '#', new ItemStack(Block.planks, 1, 5), 'S', new ItemStack(FCBetterThanWolves.fcBlockWoodSidingItemStubID, 1, 6)});
 		FCRecipes.AddRecipe(new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingDecorativeItemStubID, 1, FCItemBlockWoodMouldingDecorativeStub.GetItemDamageForType(6, 0)), new Object[] {"M", "M", "M", 'M', new ItemStack(FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, 6)});
