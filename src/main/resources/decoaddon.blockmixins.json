@@ -1,0 +1,20 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "deco.block.mixins",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "BookshelfBlockMixin",
+    "LadderBlockFlamingMixin",
+    "PlanksBlockMixin",
+    "SidingAndCornerBlockMixin",
+    "WoodMouldingBlockMixin",
+    "WoodSidingAndCornerBlockMixin",
+    "WoodSlabMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
