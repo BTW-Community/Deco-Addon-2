@@ -20,6 +20,8 @@ public class WoodTypeHelper {
     public static final int MAHOGANY_WOOD_TYPE = 7;
     public static final int MANGROVE_WOOD_TYPE = 8;
     
+    public static final int MANGROVE_SLAB_TYPE = 0;
+    
     public static final int OAK_BARREL_ID = DecoBlockIDs.BARREL_ID;
     public static final int SPRUCE_BARREL_ID = DecoBlockIDs.BARREL_ID;
     public static final int BIRCH_BARREL_ID = DecoBlockIDs.BARREL_ID;

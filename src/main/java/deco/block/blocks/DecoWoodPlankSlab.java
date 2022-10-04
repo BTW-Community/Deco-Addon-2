@@ -8,9 +8,6 @@ import net.minecraft.src.Block;
 import net.minecraft.src.CreativeTabs;
 import net.minecraft.src.Icon;
 import net.minecraft.src.ItemStack;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.List;
 import java.util.Random;
@@ -72,7 +69,7 @@ public class DecoWoodPlankSlab extends WoodSlabBlock {
 	@Override
 	public void getSubBlocks(int blockID, CreativeTabs creativeTabs, List list) {
 		if (!isDoubleSlab) {
-			for (int i = 5; i < 8; i++) {
+			for (int i = 0; i < this.names.length; i++) {
 				list.add(new ItemStack(blockID, 1, i));
 			}
 		}

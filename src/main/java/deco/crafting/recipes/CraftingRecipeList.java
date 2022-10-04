@@ -197,6 +197,8 @@ public class CraftingRecipeList {
 		initBloodWoodRecipes();
 		initCherryWoodRecipes();
 		initAcaciaWoodRecipes();
+		initMahoganyWoodRecipes();
+		initMangroveWoodRecipes();
 	}
 	
 	private static void initOakWoodRecipes() {
@@ -2000,7 +2002,7 @@ public class CraftingRecipeList {
 		
 		// Subblocks
 		addWoodenSubBlockRecipes(WoodTypeHelper.MANGROVE_WOOD_TYPE, DecoBlocks.mangroveSidingAndCorner, DecoBlocks.mangroveMoulding, DecoBlocks.mangroveStairs,
-				Block.woodSingleSlab, WoodTypeHelper.MANGROVE_WOOD_TYPE);
+				DecoBlocks.woodSingleSlab, WoodTypeHelper.MANGROVE_SLAB_TYPE);
 		
 		// Trapdoor
 		RecipeManager.addRecipe(new ItemStack(DecoBlocks.mangroveTrapdoor),

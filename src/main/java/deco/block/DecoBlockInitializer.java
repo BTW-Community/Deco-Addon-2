@@ -153,7 +153,7 @@ public class DecoBlockInitializer {
 
         DecoBlocks.woodSingleSlab = new DecoWoodPlankSlab(DecoBlockIDs.WOOD_SINGLE_SLAB_ID,
                 new int[] {
-                        WoodTypeHelper.MAHOGANY_WOOD_TYPE
+                        WoodTypeHelper.MANGROVE_WOOD_TYPE
                 },
                 new String[] {
                         "mangrove"
@@ -161,7 +161,7 @@ public class DecoBlockInitializer {
                 .setUnlocalizedName("decoBlockVanillaWoodSlab");
         DecoBlocks.woodDoubleSlab = new DecoWoodPlankSlab(DecoBlockIDs.WOOD_DOUBLE_SLAB_ID, true, DecoBlockIDs.WOOD_SINGLE_SLAB_ID,
                 new int[] {
-                        WoodTypeHelper.MAHOGANY_WOOD_TYPE
+                        WoodTypeHelper.MANGROVE_WOOD_TYPE
                 },
                 new String[] {
                         "mangrove"
