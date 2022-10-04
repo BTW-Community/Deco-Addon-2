@@ -9,6 +9,8 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.src.*;
 
+import java.util.List;
+
 public class DecoLogBlock extends LogBlock {
     public static final int TYPE_LOG = 0;
     public static final int TYPE_STRIPPED = 1;
@@ -17,15 +19,27 @@ public class DecoLogBlock extends LogBlock {
     
     private String[] topTextures;
     private String[] sideTextures;
+    
+    private boolean[] isStripped;
 
-    public final int WOOD_TYPE;
-    public final int CHEWED_LOG_ID;
-
+    private int[] woodTypes;
+    public int[] chewedLogIDs;
+    
     public DecoLogBlock(int blockID, int woodType, int chewedLogID, String[] topTextures, String[] sideTextures) {
+        this(blockID,
+                new int[] {woodType, woodType, woodType,woodType},
+                new int[] {chewedLogID, chewedLogID, chewedLogID, chewedLogID},
+                new boolean[] {false, true, false, true},
+                topTextures, sideTextures);
+    }
+    
+    public DecoLogBlock(int blockID, int[] woodTypes, int[] chewedLogIDs, boolean[] isStripped, String[] topTextures, String[] sideTextures) {
         super(blockID);
 
-        this.WOOD_TYPE = woodType;
-        this.CHEWED_LOG_ID = chewedLogID;
+        this.woodTypes = woodTypes;
+        this.chewedLogIDs = chewedLogIDs;
+        
+        this.isStripped = isStripped;
 
         this.topTextures = topTextures;
         this.sideTextures = sideTextures;
@@ -34,15 +48,14 @@ public class DecoLogBlock extends LogBlock {
     @Override
     public boolean convertBlock(ItemStack stack, World world, int x, int y, int z, int side) {
         int oldMetadata = world.getBlockMetadata(x, y, z);
-        int newMetadata;
 
         int orientation = (oldMetadata >> 2) & 3;
-        newMetadata = BTWBlocks.oakChewedLog.setOrientation(oldMetadata, orientation);
+        int newMetadata = BTWBlocks.oakChewedLog.setOrientation(oldMetadata, orientation);
 
-        world.setBlockAndMetadataWithNotify(x, y, z, this.CHEWED_LOG_ID, newMetadata);
+        world.setBlockAndMetadataWithNotify(x, y, z, this.chewedLogIDs[oldMetadata & 3], newMetadata);
 
         if (!world.isRemote && !isStripped(oldMetadata)) {
-            ItemUtils.ejectStackFromBlockTowardsFacing(world, x, y, z, new ItemStack(BTWItems.bark, 1, WOOD_TYPE), side);
+            ItemUtils.ejectStackFromBlockTowardsFacing(world, x, y, z, new ItemStack(BTWItems.bark, 1, this.woodTypes[oldMetadata & 3]), side);
         }
 
         return true;
@@ -50,13 +63,16 @@ public class DecoLogBlock extends LogBlock {
 
     @Override
     public int getFurnaceBurnTime(int itemDamage) {
-        return PlanksBlock.getFurnaceBurnTimeByWoodType(WOOD_TYPE) * 4;
+        return PlanksBlock.getFurnaceBurnTimeByWoodType(this.woodTypes[itemDamage & 3]);
     }
 
     @Override
     public boolean dropComponentItemsOnBadBreak(World world, int x, int y, int z, int metadata, float chanceOfDrop) {
         dropItemsIndividually(world, x, y, z, BTWItems.sawDust.itemID, 6, 0, chanceOfDrop);
-        dropItemsIndividually(world, x, y, z, BTWItems.bark.itemID, 1, this.WOOD_TYPE, chanceOfDrop);
+        
+        if (this.isStripped(metadata)) {
+            dropItemsIndividually(world, x, y, z, BTWItems.bark.itemID, 1, this.woodTypes[metadata & 3], chanceOfDrop);
+        }
 
         return true;
     }
@@ -71,7 +87,7 @@ public class DecoLogBlock extends LogBlock {
     //------------- Class Specific Methods ------------//
 
     public boolean isStripped(int metadata) {
-        return (metadata & 1) == 1;
+        return this.isStripped[(metadata & 3)];
     }
 
     //----------- Client Side Functionality -----------//
@@ -81,8 +97,8 @@ public class DecoLogBlock extends LogBlock {
     @Environment(EnvType.CLIENT)
     public Icon[] sideIconArray;
 
-    @Override
     @Environment(EnvType.CLIENT)
+    @Override
     public Icon getIcon(int side, int metadata) {
         int facing = metadata >> 2 & 3;
 
@@ -99,8 +115,8 @@ public class DecoLogBlock extends LogBlock {
         return sideIconArray[metadata & 3];
     }
 
-    @Override
     @Environment(EnvType.CLIENT)
+    @Override
     public void registerIcons(IconRegister iconRegister) {
         topIconArray = new Icon[topTextures.length];
         sideIconArray = new Icon[sideTextures.length];
@@ -111,5 +127,13 @@ public class DecoLogBlock extends LogBlock {
         }
 
         super.registerIcons(iconRegister);
+    }
+    
+    @Environment(EnvType.CLIENT)
+    @Override
+    public void getSubBlocks(int blockID, CreativeTabs creativeTabs, List list) {
+        for (int i = 0; i < topTextures.length; i++) {
+            list.add(new ItemStack(blockID, 1, i));
+        }
     }
 }

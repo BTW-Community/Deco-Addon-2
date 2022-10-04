@@ -4,6 +4,7 @@
   "package": "deco.block.mixins",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
+    "BloodWoodLogMixin",
     "BookshelfBlockMixin",
     "LadderBlockFlamingMixin",
     "PlanksBlockMixin",

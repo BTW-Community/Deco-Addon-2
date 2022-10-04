@@ -3,7 +3,13 @@ package deco.block;
 import net.minecraft.src.Block;
 
 public class DecoBlocks {
+    
+    //------ General Blocks ------//
+    
+    //------ Stone Blocks ------//
+    
     //------ Wooden Blocks ------//
+    
     // General wooden blocks
     public static Block strippedLog;
     public static Block wood;

@@ -12,6 +12,10 @@ public class DecoBlockIDs {
     public static final int JUNGLE_CHAIR_ID = 3039;
     public static final int BLOOD_CHAIR_ID = 3040;
 
+    public static final int STRIPPED_LOG_ID = 3200;
+    public static final int WOOD_ID = 3201;
+    public static final int STRIPPED_WOOD_ID = 3202;
+    public static final int BLOOD_LOG_ID = 3203;
     public static final int CHERRY_LOG_ID = 3204;
     public static final int CHERRY_STUMP_ID = 3205;
     // IDs 3206-3208 occupied by BTW
@@ -46,6 +50,9 @@ public class DecoBlockIDs {
     public static final int FILLED_BIRCH_BARREL_ID = 3236;
     public static final int FILLED_JUNGLE_BARREL_ID = 3237;
     public static final int CRATE_ID = 3238;
+    
+    public static final int CHEWED_BLOOD_LOG_ID = 3243;
+    public static final int BLOOD_LOG_SPIKE_ID = 3244;
     
     public static final int SPRUCE_SIGN_ID = 3438;
     public static final int SPRUCE_WALL_SIGN_ID = 3439;

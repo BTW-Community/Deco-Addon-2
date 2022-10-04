@@ -21,8 +21,18 @@ public class DecoItemInitializer {
     }
     
     private static void initWoodItems() {
+        DecoItems.spruceDoor = new DecoItemDoor(DecoItemIDs.SPRUCE_DOOR_ID, DecoBlockIDs.SPRUCE_DOOR_ID)
+                .setUnlocalizedName("decoItemDoorSpruce");
+        DecoItems.birchDoor = new DecoItemDoor(DecoItemIDs.BIRCH_DOOR_ID, DecoBlockIDs.BIRCH_DOOR_ID)
+                .setUnlocalizedName("decoItemDoorBirch");
+        DecoItems.jungleDoor = new DecoItemDoor(DecoItemIDs.JUNGLE_DOOR_ID, DecoBlockIDs.JUNGLE_DOOR_ID)
+                .setUnlocalizedName("decoItemDoorJungle");
+        DecoItems.bloodDoor = new DecoItemDoor(DecoItemIDs.BLOOD_DOOR_ID, DecoBlockIDs.BLOOD_DOOR_ID)
+                .setUnlocalizedName("decoItemDoorBlood");
         DecoItems.cherryDoor = new DecoItemDoor(DecoItemIDs.CHERRY_DOOR_ID, DecoBlockIDs.CHERRY_DOOR_ID)
                 .setUnlocalizedName("decoItemDoorCherry");
+        DecoItems.acaciaDoor = new DecoItemDoor(DecoItemIDs.ACACIA_DOOR_ID, DecoBlockIDs.ACACIA_DOOR_ID)
+                .setUnlocalizedName("decoItemDoorAcacia");
     }
 
     private static void createDecoItemBlocks() {

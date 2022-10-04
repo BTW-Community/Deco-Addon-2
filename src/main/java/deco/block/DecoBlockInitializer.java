@@ -1,5 +1,6 @@
 package deco.block;
 
+import btw.block.BTWBlocks;
 import btw.block.blocks.*;
 import deco.block.blocks.*;
 import deco.block.util.BookshelfInterface;
@@ -20,6 +21,97 @@ public class DecoBlockInitializer {
     private static void initWoodTypes() {
         
         //------ General wooden blocks ------//
+        
+        Block.wood.setUnlocalizedName("log");
+        Item.itemsList[Block.wood.blockID] = new ItemMultiTextureTile(Block.wood.blockID - 256, Block.wood,
+                new String[] {"oakLog", "spruceLog", "birchLog", "jungleLog"});
+        DecoBlocks.strippedLog = new DecoLogBlock(DecoBlockIDs.STRIPPED_LOG_ID,
+                new int[] {
+                        WoodTypeHelper.OAK_WOOD_TYPE,
+                        WoodTypeHelper.SPRUCE_WOOD_TYPE,
+                        WoodTypeHelper.BIRCH_WOOD_TYPE,
+                        WoodTypeHelper.JUNGLE_WOOD_TYPE
+                },
+                new int[] {
+                        BTWBlocks.oakChewedLog.blockID,
+                        BTWBlocks.spruceChewedLog.blockID,
+                        BTWBlocks.birchChewedLog.blockID,
+                        BTWBlocks.jungleChewedLog.blockID
+                },
+                new boolean [] {true, true, true, true},
+                new String[] {
+                        "fcBlockLogStrippedOak_top",
+                        "fcBlockLogStrippedSpruce_top",
+                        "fcBlockLogStrippedBirch_top",
+                        "fcBlockLogStrippedJungle_top"
+                },
+                new String[] {
+                        "fcBlockLogStrippedOak_side",
+                        "fcBlockLogStrippedSpruce_side",
+                        "fcBlockLogStrippedBirch_side",
+                        "fcBlockLogStrippedJungle_side"
+                })
+                .setUnlocalizedName("decoBlockLogStripped");
+        Item.itemsList[DecoBlocks.strippedLog.blockID] = new ItemMultiTextureTile(DecoBlocks.strippedLog.blockID - 256, DecoBlocks.strippedLog,
+                new String[] {"oak", "spruce", "birch", "jungle"});
+        DecoBlocks.wood = new DecoLogBlock(DecoBlockIDs.WOOD_ID,
+                new int[] {
+                        WoodTypeHelper.OAK_WOOD_TYPE,
+                        WoodTypeHelper.SPRUCE_WOOD_TYPE,
+                        WoodTypeHelper.BIRCH_WOOD_TYPE,
+                        WoodTypeHelper.JUNGLE_WOOD_TYPE
+                },
+                new int[] {
+                        BTWBlocks.oakChewedLog.blockID,
+                        BTWBlocks.spruceChewedLog.blockID,
+                        BTWBlocks.birchChewedLog.blockID,
+                        BTWBlocks.jungleChewedLog.blockID
+                },
+                new boolean [] {false, false, false, false},
+                new String[] {
+                        "tree_side",
+                        "tree_spruce",
+                        "tree_birch",
+                        "tree_jungle"
+                },
+                new String[] {
+                        "tree_side",
+                        "tree_spruce",
+                        "tree_birch",
+                        "tree_jungle"
+                })
+                .setUnlocalizedName("decoBlockLogBark");
+        Item.itemsList[DecoBlocks.wood.blockID] = new ItemMultiTextureTile(DecoBlocks.wood.blockID - 256, DecoBlocks.wood,
+                new String[] {"oak", "spruce", "birch", "jungle"});
+        DecoBlocks.strippedWood = new DecoLogBlock(DecoBlockIDs.STRIPPED_WOOD_ID,
+                new int[] {
+                        WoodTypeHelper.OAK_WOOD_TYPE,
+                        WoodTypeHelper.SPRUCE_WOOD_TYPE,
+                        WoodTypeHelper.BIRCH_WOOD_TYPE,
+                        WoodTypeHelper.JUNGLE_WOOD_TYPE
+                },
+                new int[] {
+                        BTWBlocks.oakChewedLog.blockID,
+                        BTWBlocks.spruceChewedLog.blockID,
+                        BTWBlocks.birchChewedLog.blockID,
+                        BTWBlocks.jungleChewedLog.blockID
+                },
+                new boolean [] {true, true, true, true},
+                new String[] {
+                        "fcBlockLogStrippedOak_side",
+                        "fcBlockLogStrippedSpruce_side",
+                        "fcBlockLogStrippedBirch_side",
+                        "fcBlockLogStrippedJungle_side"
+                },
+                new String[] {
+                        "fcBlockLogStrippedOak_side",
+                        "fcBlockLogStrippedSpruce_side",
+                        "fcBlockLogStrippedBirch_side",
+                        "fcBlockLogStrippedJungle_side"
+                })
+                .setUnlocalizedName("decoBlockLogBarkStripped");
+        Item.itemsList[DecoBlocks.strippedWood.blockID] = new ItemMultiTextureTile(DecoBlocks.strippedWood.blockID - 256, DecoBlocks.strippedWood,
+                new String[] {"oak", "spruce", "birch", "jungle"});
         
         Item.itemsList[Block.planks.blockID] = new ItemMultiTextureTile(Block.planks.blockID - 256, Block.planks, new String[] {"oak", "spruce", "birch", "jungle", "blood", "cherry", "acacia"});
         
@@ -74,9 +166,9 @@ public class DecoBlockInitializer {
         DecoBlocks.flamingSpruceLadder = new DecoLadderBlockFlaming(DecoBlockIDs.FLAMING_SPRUCE_LADDER_ID, DecoBlockIDs.SPRUCE_LADDER_ID, "decoBlockLadderSpruce");
     
         DecoBlocks.spruceSign = new DecoSignBlock(DecoBlockIDs.SPRUCE_SIGN_ID, WoodTypeHelper.SPRUCE_WOOD_TYPE, true,
-                "/deco/signSpruce.png", "decoBlockPlanksSpruce");
+                "/deco/signSpruce.png", "wood_spruce");
         DecoBlocks.spruceWallSign = new DecoSignBlock(DecoBlockIDs.SPRUCE_WALL_SIGN_ID, WoodTypeHelper.SPRUCE_WOOD_TYPE, false,
-                "/deco/signSpruce.png", "decoBlockPlanksSpruce");
+                "/deco/signSpruce.png", "wood_spruce");
     
         //------ Birch Wood ------//
     
@@ -90,9 +182,9 @@ public class DecoBlockInitializer {
         DecoBlocks.flamingBirchLadder = new DecoLadderBlockFlaming(DecoBlockIDs.FLAMING_BIRCH_LADDER_ID, DecoBlockIDs.BIRCH_LADDER_ID, "decoBlockLadderBirch");
     
         DecoBlocks.birchSign = new DecoSignBlock(DecoBlockIDs.BIRCH_SIGN_ID, WoodTypeHelper.BIRCH_WOOD_TYPE, true,
-                "/deco/signBirch.png", "decoBlockPlanksBirch");
+                "/deco/signBirch.png", "wood_birch");
         DecoBlocks.birchWallSign = new DecoSignBlock(DecoBlockIDs.BIRCH_WALL_SIGN_ID, WoodTypeHelper.BIRCH_WOOD_TYPE, false,
-                "/deco/signBirch.png", "decoBlockPlanksBirch");
+                "/deco/signBirch.png", "wood_birch");
     
         //------ Jungle Wood ------//
     
@@ -106,12 +198,23 @@ public class DecoBlockInitializer {
         DecoBlocks.flamingJungleLadder = new DecoLadderBlockFlaming(DecoBlockIDs.FLAMING_JUNGLE_LADDER_ID, DecoBlockIDs.JUNGLE_LADDER_ID, "decoBlockLadderJungle");
     
         DecoBlocks.jungleSign = new DecoSignBlock(DecoBlockIDs.JUNGLE_SIGN_ID, WoodTypeHelper.JUNGLE_WOOD_TYPE, true,
-                "/deco/signJungle.png", "decoBlockPlanksJungle");
+                "/deco/signJungle.png", "wood_jungle");
         DecoBlocks.jungleWallSign = new DecoSignBlock(DecoBlockIDs.JUNGLE_WALL_SIGN_ID, WoodTypeHelper.JUNGLE_WOOD_TYPE, false,
-                "/deco/signJungle.png", "decoBlockPlanksJungle");
+                "/deco/signJungle.png", "wood_jungle");
     
         //------ Blood Wood ------//
     
+        DecoBlocks.bloodLog = new DecoBloodLogBlock(DecoBlockIDs.BLOOD_LOG_ID);
+        Item.itemsList[DecoBlocks.bloodLog.blockID] = new ItemMultiTextureTile(DecoBlocks.bloodLog.blockID - 256, DecoBlocks.bloodLog,
+                new String[] {"stripped", "wood", "strippedWood"});
+        DecoBlocks.bloodLogSpike = new LogSpikeBlock(DecoBlockIDs.BLOOD_LOG_SPIKE_ID,
+                "decoBlockStrippedBlood_top", "decoBlockStrippedBlood_side")
+                .setUnlocalizedName("decoBlockChewedBlood");
+        DecoBlocks.chewedBloodLog = new ChewedLogBlock(DecoBlockIDs.CHEWED_BLOOD_LOG_ID,
+                "decoBlockStrippedBlood_top", "decoBlockStrippedBlood_side", "decoBlockStrippedBlood_top",
+                DecoBlocks.bloodLogSpike)
+                .setUnlocalizedName("decoBlockSpikeBlood");
+        
         DecoBlocks.bloodGate = new DecoGateBlock(DecoBlockIDs.BLOOD_GATE_ID, "decoBlockGateBlood");
         DecoBlocks.bloodDoor = new DecoDoorBlockWood(DecoBlockIDs.BLOOD_DOOR_ID, DecoItemIDs.BLOOD_DOOR_ID, "decoBlockDoorBlood_upper", "decoBlockDoorBlood_lower");
         DecoBlocks.bloodTrapdoor = new DecoTrapDoorBlock(DecoBlockIDs.BLOOD_TRAPDOOR_ID, "decoBlockTrapdoorBlood");
@@ -122,9 +225,9 @@ public class DecoBlockInitializer {
         DecoBlocks.flamingBloodLadder = new DecoLadderBlockFlaming(DecoBlockIDs.FLAMING_BLOOD_LADDER_ID, DecoBlockIDs.BLOOD_LADDER_ID, "decoBlockLadderBlood");
     
         DecoBlocks.bloodSign = new DecoSignBlock(DecoBlockIDs.BLOOD_SIGN_ID, WoodTypeHelper.BLOOD_WOOD_TYPE, true,
-                "/deco/signBlood.png", "decoBlockPlanksBlood");
+                "/deco/signBlood.png", "fcBlockPlanks_blood");
         DecoBlocks.bloodWallSign = new DecoSignBlock(DecoBlockIDs.BLOOD_WALL_SIGN_ID, WoodTypeHelper.BLOOD_WOOD_TYPE, false,
-                "/deco/signBlood.png", "decoBlockPlanksBlood");
+                "/deco/signBlood.png", "fcBlockPlanks_blood");
         
         //------ Cherry Wood ------//
         
