@@ -121,4 +121,7 @@ public class DecoBlockIDs {
     public static final int FLAMING_MAHOGANY_LADDER_ID = 3614;
     public static final int MAHOGANY_SIGN_ID = 3615;
     public static final int MAHOGANY_WALL_SIGN_ID = 3616;
+    public static final int WOOD_SINGLE_SLAB_ID = 3617;
+    public static final int WOOD_DOUBLE_SLAB_ID = 3618;
+    public static final int BARREL_3_ID = 3619;
 }

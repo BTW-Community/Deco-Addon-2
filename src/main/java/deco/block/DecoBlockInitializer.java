@@ -9,9 +9,7 @@ import deco.block.util.WoodTypeHelper;
 import deco.item.DecoItemIDs;
 import deco.item.itemblocks.DecoLogItemBlock;
 import deco.item.itemblocks.EnchantedBookshelfItemBlock;
-import net.minecraft.src.Block;
-import net.minecraft.src.Item;
-import net.minecraft.src.ItemMultiTextureTile;
+import net.minecraft.src.*;
 
 public class DecoBlockInitializer {
     public static void initDecoBlocks() {
@@ -148,6 +146,27 @@ public class DecoBlockInitializer {
         ((BookshelfInterface) DecoBlocks.emptyBottleRack).setType(BookshelfType.RACK_EMPTY).setTexture("decoBlockBottleRackEmpty");
         Item.itemsList[DecoBlocks.emptyBottleRack.blockID] = new ItemMultiTextureTile(DecoBlocks.emptyBottleRack.blockID - 256, DecoBlocks.emptyBottleRack, new String[] {"oak", "spruce", "birch", "jungle", "blood", "cherry", "acacia", "mahogany"});
 
+        DecoBlocks.woodSingleSlab = new DecoWoodPlankSlab(DecoBlockIDs.WOOD_SINGLE_SLAB_ID,
+                new int[] {
+                        WoodTypeHelper.MAHOGANY_WOOD_TYPE
+                },
+                new String[] {
+                        "mangrove"
+                })
+                .setUnlocalizedName("decoBlockWoodSingleSlab");
+        DecoBlocks.woodDoubleSlab = new DecoWoodPlankSlab(DecoBlockIDs.WOOD_DOUBLE_SLAB_ID, true, DecoBlockIDs.WOOD_SINGLE_SLAB_ID,
+                new int[] {
+                        WoodTypeHelper.MAHOGANY_WOOD_TYPE
+                },
+                new String[] {
+                        "mangrove"
+                })
+                .setUnlocalizedName("decoBlockWoodDoubleSlab");
+        Item.itemsList[DecoBlocks.woodSingleSlab.blockID] = new ItemSlab(DecoBlocks.woodSingleSlab.blockID - 256, (BlockHalfSlab) DecoBlocks.woodSingleSlab,
+                (BlockHalfSlab) DecoBlocks.woodDoubleSlab, false);
+        Item.itemsList[DecoBlocks.woodDoubleSlab.blockID] = new ItemSlab(DecoBlocks.woodDoubleSlab.blockID - 256, (BlockHalfSlab) DecoBlocks.woodSingleSlab,
+                (BlockHalfSlab) DecoBlocks.woodDoubleSlab, true);
+        
         //------ Oak Wood ------//
         
         DecoBlocks.oakChair = new ChairBlock(DecoBlockIDs.OAK_CHAIR_ID, "Oak");

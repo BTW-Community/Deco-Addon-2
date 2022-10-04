@@ -46,6 +46,9 @@ public class DecoBlocks {
     public static Block emptyBottleRack;
 
     public static Block pergola;
+    
+    public static Block woodSingleSlab;
+    public static Block woodDoubleSlab;
 
     // Oak wood
     public static Block oakChair;
