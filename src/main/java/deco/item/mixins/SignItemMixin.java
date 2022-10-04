@@ -35,7 +35,8 @@ public class SignItemMixin extends ItemSign {
 				DecoBlockIDs.JUNGLE_SIGN_ID,
 				DecoBlockIDs.BLOOD_SIGN_ID,
 				DecoBlockIDs.CHERRY_SIGN_ID,
-				DecoBlockIDs.ACACIA_SIGN_ID
+				DecoBlockIDs.ACACIA_SIGN_ID,
+				DecoBlockIDs.MAHOGANY_SIGN_ID
 		};
 		
 		wallSigns = new int[] {
@@ -45,7 +46,8 @@ public class SignItemMixin extends ItemSign {
 				DecoBlockIDs.JUNGLE_WALL_SIGN_ID,
 				DecoBlockIDs.BLOOD_WALL_SIGN_ID,
 				DecoBlockIDs.CHERRY_WALL_SIGN_ID,
-				DecoBlockIDs.ACACIA_WALL_SIGN_ID
+				DecoBlockIDs.ACACIA_WALL_SIGN_ID,
+				DecoBlockIDs.MAHOGANY_WALL_SIGN_ID
 		};
 		
 		textures = new String[] {
@@ -55,7 +57,8 @@ public class SignItemMixin extends ItemSign {
 				"decoItemSignJungle",
 				"decoItemSignBlood",
 				"decoItemSignCherry",
-				"decoItemSignAcacia"
+				"decoItemSignAcacia",
+				"decoItemSignMahogany"
 		};
 	}
 	
@@ -79,6 +82,8 @@ public class SignItemMixin extends ItemSign {
 				return super.getUnlocalizedName(itemStack) + ".cherry";
 			case WoodTypeHelper.ACACIA_WOOD_TYPE:
 				return super.getUnlocalizedName(itemStack) + ".acacia";
+			case WoodTypeHelper.MAHOGANY_WOOD_TYPE:
+				return super.getUnlocalizedName(itemStack) + ".mahogany";
 		}
 	}
 	

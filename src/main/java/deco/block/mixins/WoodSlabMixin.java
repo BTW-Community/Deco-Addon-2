@@ -28,6 +28,9 @@ public abstract class WoodSlabMixin extends BlockHalfSlab {
             case WoodTypeHelper.ACACIA_WOOD_TYPE:
                 info.setReturnValue(this.getUnlocalizedName() + ".acacia");
                 break;
+            case WoodTypeHelper.MAHOGANY_WOOD_TYPE:
+                info.setReturnValue(this.getUnlocalizedName() + ".mahogany");
+                break;
         }
     }
 
@@ -36,9 +39,9 @@ public abstract class WoodSlabMixin extends BlockHalfSlab {
     @Environment(EnvType.CLIENT)
     @Inject(method = "getSubBlocks(ILnet/minecraft/src/CreativeTabs;Ljava/util/List;)V", at = @At("TAIL"))
     public void getSubBlocks(int blockID, CreativeTabs creativeTabs, List<ItemStack> list, CallbackInfo info) {
-        if (blockID == Block.woodSingleSlab.blockID) {
-            for (int i = 0; i < WoodTypeHelper.NUM_EXTRA_WOOD; i++) {
-                list.add(new ItemStack(blockID, 1, i + 5));
+        if (!isDoubleSlab) {
+            for (int i = 5; i < 8; i++) {
+                list.add(new ItemStack(blockID, 1, i));
             }
         }
     }

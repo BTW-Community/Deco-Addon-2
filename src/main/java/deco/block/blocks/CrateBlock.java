@@ -48,7 +48,7 @@ public class CrateBlock extends Block {
 	@Environment(EnvType.CLIENT)
 	@Override
 	public void registerIcons(IconRegister register) {
-		iconArray = new Icon[7];
+		iconArray = new Icon[8];
 		
 		iconArray[0] = register.registerIcon("decoBlockCrateOak");
 		iconArray[1] = register.registerIcon("decoBlockCrateSpruce");
@@ -57,6 +57,7 @@ public class CrateBlock extends Block {
 		iconArray[4] = register.registerIcon("decoBlockCrateBlood");
 		iconArray[5] = register.registerIcon("decoBlockCrateCherry");
 		iconArray[6] = register.registerIcon("decoBlockCrateAcacia");
+		iconArray[7] = register.registerIcon("decoBlockCrateMahogany");
 	}
 	
 	@Environment(EnvType.CLIENT)

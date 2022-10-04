@@ -33,6 +33,9 @@ public class WoodMouldingBlockMixin extends MouldingAndDecorativeBlock {
 			case DecoBlockIDs.ACACIA_MOULDING_ID:
 				info.setReturnValue(WoodTypeHelper.ACACIA_WOOD_TYPE);
 				break;
+			case DecoBlockIDs.MAHOGANY_MOULDING_ID:
+				info.setReturnValue(WoodTypeHelper.MAHOGANY_WOOD_TYPE);
+				break;
 		}
 	}
 	
@@ -56,6 +59,9 @@ public class WoodMouldingBlockMixin extends MouldingAndDecorativeBlock {
 					break;
 				case WoodTypeHelper.ACACIA_WOOD_TYPE:
 					woodTexture = DecoBlocks.acaciaMoulding.blockIcon;
+					break;
+				case WoodTypeHelper.MAHOGANY_WOOD_TYPE:
+					woodTexture = DecoBlocks.mahoganyMoulding.blockIcon;
 					break;
 			}
 			
@@ -84,6 +90,9 @@ public class WoodMouldingBlockMixin extends MouldingAndDecorativeBlock {
 						break;
 					case WoodTypeHelper.ACACIA_WOOD_TYPE:
 						block = DecoBlocks.acaciaSidingAndCorner;
+						break;
+					case WoodTypeHelper.MAHOGANY_WOOD_TYPE:
+						block = DecoBlocks.mahoganySidingAndCorner;
 						break;
 				}
 				

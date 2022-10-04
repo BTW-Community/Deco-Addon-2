@@ -215,4 +215,8 @@ public class TreeGenerator {
         
         if(size==3){par1World.setBlock(x, y, z, DecoBlocks.acaciaLog.blockID);}
     }
+    
+    public static boolean generateMahogany(World world, Random rand, int x, int y, int z) {
+        return false;
+    }
 }

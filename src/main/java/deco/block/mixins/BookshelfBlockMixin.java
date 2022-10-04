@@ -86,7 +86,7 @@ public abstract class BookshelfBlockMixin extends Block implements BookshelfInte
 	@Environment(EnvType.CLIENT)
 	@Override
 	public void registerIcons(IconRegister register) {
-		sideTextures = new Icon[7];
+		sideTextures = new Icon[8];
 		
 		sideTextures[0] = register.registerIcon(textureBase + "Oak");
 		sideTextures[1] = register.registerIcon(textureBase + "Spruce");
@@ -95,6 +95,7 @@ public abstract class BookshelfBlockMixin extends Block implements BookshelfInte
 		sideTextures[4] = register.registerIcon(textureBase + "Blood");
 		sideTextures[5] = register.registerIcon(textureBase + "Cherry");
 		sideTextures[6] = register.registerIcon(textureBase + "Acacia");
+		sideTextures[7] = register.registerIcon(textureBase + "Mahogany");
 	}
 	
 	@Environment(EnvType.CLIENT)

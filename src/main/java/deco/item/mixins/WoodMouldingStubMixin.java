@@ -25,6 +25,8 @@ public class WoodMouldingStubMixin extends ItemBlock {
 			case WoodTypeHelper.ACACIA_WOOD_TYPE:
 				info.setReturnValue(DecoBlocks.acaciaMoulding.blockID);
 				break;
+			case WoodTypeHelper.MAHOGANY_WOOD_TYPE:
+				info.setReturnValue(DecoBlocks.mahoganyMoulding.blockID);
 		}
 	}
 	
@@ -37,6 +39,8 @@ public class WoodMouldingStubMixin extends ItemBlock {
 			case WoodTypeHelper.ACACIA_WOOD_TYPE:
 				info.setReturnValue(super.getUnlocalizedName() + ".acacia");
 				break;
+			case WoodTypeHelper.MAHOGANY_WOOD_TYPE:
+				info.setReturnValue(super.getUnlocalizedName() + ".mahogany");
 		}
 	}
 }

@@ -30,6 +30,8 @@ public class BarkItemMixin extends Item {
             case WoodTypeHelper.ACACIA_WOOD_TYPE:
                 info.setReturnValue(super.getUnlocalizedName() + ".acacia");
                 break;
+            case WoodTypeHelper.MAHOGANY_WOOD_TYPE:
+                info.setReturnValue(this.getUnlocalizedName() + ".mahogany");
         }
     }
 
@@ -43,7 +45,7 @@ public class BarkItemMixin extends Item {
     @Environment(EnvType.CLIENT)
     @Inject(method = "registerIcons(Lnet/minecraft/src/IconRegister;)V", at = @At("TAIL"))
     public void registerIcons(IconRegister register, CallbackInfo info) {
-        extraTextures = new String[] {"decoItemBarkCherry", "decoItemBarkAcacia"};
+        extraTextures = new String[] {"decoItemBarkCherry", "decoItemBarkAcacia", "decoItemBarkMahogany"};
         extraIcons = new Icon[extraTextures.length];
 
         for (int i = 0; i < extraTextures.length; i++) {

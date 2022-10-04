@@ -6,6 +6,27 @@ public class DecoBlocks {
     
     //------ General Blocks ------//
     
+    //------ Light Source Blocks
+    
+    public static Block paperLantern;
+    public static Block ironLantern;
+    public static Block chandelier;
+    public static Block prismarineLantern;
+    
+    //------ Glass Blocks ------//
+    
+    public static Block stainedGlass;
+    public static Block woodFramedGlass;
+    public static Block ironFramedGlass;
+    
+    //------ Metal Blocks ------//
+    
+    public static Block ironLadder;
+    public static Block ironTrapdoor;
+    
+    public static Block chain;
+    public static Block chainCoil;
+    
     //------ Stone Blocks ------//
     
     //------ Wooden Blocks ------//
@@ -123,6 +144,29 @@ public class DecoBlocks {
     public static Block flamingAcaciaLadder;
     public static Block acaciaSign;
     public static Block acaciaWallSign;
+    
+    // Mahogany wood
+    public static Block mahoganyLog;
+    public static Block mahoganyStump;
+    public static Block chewedMahoganyLog;
+    public static Block mahoganyLogSpike;
+    
+    public static Block mahoganyLeaves;
+    public static Block mahoganySapling;
+    
+    public static Block mahoganyStairs;
+    public static Block mahoganySidingAndCorner;
+    public static Block mahoganyMoulding;
+    
+    public static Block mahoganyGate;
+    public static Block mahoganyTrapdoor;
+    public static Block mahoganyDoor;
+    public static Block mahoganyChair;
+    public static Block filledMahoganyBarrel;
+    public static Block mahoganyLadder;
+    public static Block flamingMahoganyLadder;
+    public static Block mahoganySign;
+    public static Block mahoganyWallSign;
 
     // Painted planks
     public static Block paintedPlanks;

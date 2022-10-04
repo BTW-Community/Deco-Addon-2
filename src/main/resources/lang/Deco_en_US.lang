@@ -102,9 +102,11 @@ tile.decoBlockChewedJungle.name=Chewed Jungle Log
 tile.decoBlockChewedBlood.name=Chewed Blood Wood Log
 tile.decoBlockChewedCherry.name=Chewed Cherry Log
 tile.decoBlockChewedAcacia.name=Chewed Acacia Log
+tile.decoBlockChewedMahogany.name=Chewed Mahogany Log
 
 tile.decoBlockCherryStairs.name=Cherry Stairs
 tile.decoBlockAcaciaStairs.name=Acacia Stairs
+tile.decoBlockMahoganyStairs.name=Mahogany Stairs
 
 tile.decoBlockTrapdoorSpruce.name=Spruce Trap Door
 tile.decoBlockTrapdoorBirch.name=Birch Trap Door
@@ -112,6 +114,7 @@ tile.decoBlockTrapdoorJungle.name=Jungle Trap Door
 tile.decoBlockTrapdoorBlood.name=Blood Wood Trap Door
 tile.decoBlockTrapdoorCherry.name=Cherry Trap Door
 tile.decoBlockTrapdoorAcacia.name=Acacia Trap Door
+tile.decoBlockTrapdoorMahogany.name=Mahogany Trap Door
 tile.decoBlockTrapdoorIron.name=Iron Trap Door
 
 tile.decoBlockDoorSpruce.name=Spruce Door
@@ -120,6 +123,7 @@ tile.decoBlockDoorJungle.name=Jungle Door
 tile.decoBlockDoorBlood.name=Blood Wood Door
 tile.decoBlockDoorCherry.name=Cherry Door
 tile.decoBlockDoorAcacia.name=Acacia Door
+tile.decoBlockDoorMahogany.name=Mahogany Door
 
 tile.decoBlockGateSpruce.name=Spruce Fence Gate
 tile.decoBlockGateBirch.name=Birch Fence Gate
@@ -127,6 +131,7 @@ tile.decoBlockGateJungle.name=Jungle Fence Gate
 tile.decoBlockGateBlood.name=Blood Wood Fence Gate
 tile.decoBlockGateCherry.name=Cherry Fence Gate
 tile.decoBlockGateAcacia.name=Acacia Fence Gate
+tile.decoBlockGateMahogany.name=Mahogany Fence Gate
 
 tile.decoBlockChairOak.name=Oak Chair
 tile.decoBlockChairSpruce.name=Spruce Chair
@@ -135,6 +140,7 @@ tile.decoBlockChairJungle.name=Jungle Chair
 tile.decoBlockChairBlood.name=Blood Wood Chair
 tile.decoBlockChairCherry.name=Cherry Chair
 tile.decoBlockChairAcacia.name=Acacia Chair
+tile.decoBlockChairMahogany.name=Mahogany Chair
 
 tile.decoBlockPergola.name=Pergola
 tile.decoBlockDiamond.name=Block of Diamond
@@ -165,12 +171,16 @@ tile.decoBlockLeavesAcacia.name=Acacia Leaves
 tile.decoBlockLeavesAutumn.red.name=Red Autumn Leaves
 tile.decoBlockLeavesAutumn.orange.name=Orange Autumn Leaves
 tile.decoBlockLeavesAutumn.yellow.name=Yellow Autumn Leaves
+tile.decoBlockLeavesMahogany.name=MahoganyLeaves
 
 tile.decoBlockSaplingCherry.cherry.name=Cherry Sapling
 tile.decoBlockSaplingCherry.cherryMature.name=Mature Cherry Sapling
 
 tile.decoBlockSaplingAcacia.acacia.name=Acacia Sapling
 tile.decoBlockSaplingAcacia.acaciaMature.name=Mature Acacia Sapling
+
+tile.decoBlockSaplingMahogany.mahogany=Mahogany Sapling
+tile.decoBlockSaplingMahogany.mahoganyMature=Mature Mahogany Sapling
 
 tile.decoBlockSaplingAutumn.red.name=Red Autumn Sapling
 tile.decoBlockSaplingAutumn.orange.name=Orange Autumn Sapling
@@ -185,6 +195,8 @@ tile.decoBlockHedgeBirchStairs.name=Birch Hedge Stairs
 tile.decoBlockHedgeJungleStairs.name=Jungle Hedge Stairs
 tile.decoBlockHedgeBloodStairs.name=Blood Wood Hedge Stairs
 tile.decoBlockHedgeCherryStairs.name=Cherry Hedge Stairs
+tile.decoBlockHedgeAcaciaStairs.name=Acacia Hedge Stairs
+tile.decoBlockHedgeMahoganyStairs.name=Mahogany Hedge Stairs
 
 tile.decoBlockRopeCoil.name=Coil of Rope
 tile.decoBlockChainCoil.name=Coil of Chain
@@ -207,6 +219,7 @@ tile.decoBlockLadderJungle.name=Jungle Ladder
 tile.decoBlockLadderBlood.name=Blood Wood Ladder
 tile.decoBlockLadderCherry.name=Cherry Ladder
 tile.decoBlockLadderAcacia.name=Acacia Ladder
+tile.decoBlockLadderMahogany.name=Mahogany Ladder
 tile.decoBlockLadderIron.name=Iron Ladder
 
 tile.decoBlockAsh.name=Ash
@@ -1473,6 +1486,11 @@ tile.decoBlockAcaciaLog.stripped.name=Stripped Acacia Log
 tile.decoBlockAcaciaLog.wood.name=Acacia Wood
 tile.decoBlockAcaciaLog.strippedWood.name=Stripped Acacia Wood
 
+tile.decoBlockMahoganyLog.log.name=Mahogany Log
+tile.decoBlockMahoganyLog.stripped.name=Stripped Mahogany Log
+tile.decoBlockMahoganyLog.wood.name=Mahogany Wood
+tile.decoBlockMahoganyLog.strippedWood.name=Stripped Mahogany Wood
+
 tile.decoBlockPlanksPainted.black.name=Black Painted Planks
 tile.decoBlockPlanksPainted.red.name=Red Painted Planks
 tile.decoBlockPlanksPainted.green.name=Green Painted Planks
@@ -1657,6 +1675,7 @@ tile.decoBlockBarrel1.jungle.name=Jungle Barrel
 tile.decoBlockBarrel2.blood.name=Blood Wood Barrel
 tile.decoBlockBarrel2.cherry.name=Cherry Barrel
 tile.decoBlockBarrel2.acacia.name=Acacia Barrel
+tile.decoBlockBarrel2.mahogany.name=Mahogany Barrel
 
 tile.decoBlockBarrelOak.wheat.name=Oak Barrel of Wheat
 tile.decoBlockBarrelOak.hemp.name=Oak Barrel of Hemp
@@ -1700,6 +1719,12 @@ tile.decoBlockBarrelAcacia.potato.name=Acacia Barrel of Potatoes
 tile.decoBlockBarrelAcacia.carrot.name=Acacia Barrel of Carrots
 tile.decoBlockBarrelAcacia.fish.name=Acacia Barrel of Fish
 
+tile.decoBlockBarrelMahogany.wheat.name=Mahogany Barrel of Wheat
+tile.decoBlockBarrelMahogany.hemp.name=Mahogany Barrel of Hemp
+tile.decoBlockBarrelMahogany.potato.name=Mahogany Barrel of Potatoes
+tile.decoBlockBarrelMahogany.carrot.name=Mahogany Barrel of Carrots
+tile.decoBlockBarrelMahogany.fish.name=Mahogany Barrel of Fish
+
 tile.decoBlockCrate.oak.name=Oak Crate
 tile.decoBlockCrate.spruce.name=Spruce Crate
 tile.decoBlockCrate.birch.name=Birch Crate
@@ -1707,6 +1732,7 @@ tile.decoBlockCrate.jungle.name=Jungle Crate
 tile.decoBlockCrate.blood.name=Blood Wood Crate
 tile.decoBlockCrate.cherry.name=Cherry Crate
 tile.decoBlockCrate.acacia.name=Acacia Crate
+tile.decoBlockCrate.mahogany.name=Mahogany Crate
 
 tile.decoBlockPlanksPaintedSlab.0.name=Black Painted Planks Slab
 tile.decoBlockPlanksPaintedSlab.1.name=Red Painted Planks Slab
@@ -1812,6 +1838,7 @@ tile.decoBlockBookshelf.jungle.name=Jungle Bookshelf
 tile.decoBlockBookshelf.blood.name=Blood Wood Bookshelf
 tile.decoBlockBookshelf.cherry.name=Cherry Bookshelf
 tile.decoBlockBookshelf.acacia.name=Acacia Bookshelf
+tile.decoBlockBookshelf.mahogany.name=Mahogany Bookshelf
 
 tile.decoBlockBookshelfEmpty.oak.name=Empty Oak Bookshelf
 tile.decoBlockBookshelfEmpty.spruce.name=Empty Spruce Bookshelf
@@ -1820,6 +1847,7 @@ tile.decoBlockBookshelfEmpty.jungle.name=Empty Jungle Bookshelf
 tile.decoBlockBookshelfEmpty.blood.name=Empty Blood Wood Bookshelf
 tile.decoBlockBookshelfEmpty.cherry.name=Empty Cherry Bookshelf
 tile.decoBlockBookshelfEmpty.acacia.name=Empty Acacia Bookshelf
+tile.decoBlockBookshelfEmpty.mahogany.name=Empty Mahogany Bookshelf
 
 tile.decoBlockBottleRack.oak.name=Oak Bottle Rack
 tile.decoBlockBottleRack.spruce.name=Spruce Bottle Rack
@@ -1828,6 +1856,7 @@ tile.decoBlockBottleRack.jungle.name=Jungle Bottle Rack
 tile.decoBlockBottleRack.blood.name=Blood Wood Bottle Rack
 tile.decoBlockBottleRack.cherry.name=Cherry Bottle Rack
 tile.decoBlockBottleRack.acacia.name=Acacia Bottle Rack
+tile.decoBlockBottleRack.mahogany.name=Mahogany Bottle Rack
 
 tile.decoBlockBottleRackEmpty.oak.name=Empty Oak Bottle Rack
 tile.decoBlockBottleRackEmpty.spruce.name=Empty Spruce Bottle Rack
@@ -1836,6 +1865,7 @@ tile.decoBlockBottleRackEmpty.jungle.name=Empty Jungle Bottle Rack
 tile.decoBlockBottleRackEmpty.blood.name=Empty Blood Wood Bottle Rack
 tile.decoBlockBottleRackEmpty.cherry.name=Empty Cherry Bottle Rack
 tile.decoBlockBottleRackEmpty.acacia.name=Empty Acacia Bottle Rack
+tile.decoBlockBottleRackEmpty.mahogany.name=Empty Mahogany Bottle Rack
 
 tile.decoBlockGlassFramed.oak.name=Oak Framed Glass
 tile.decoBlockGlassFramed.spruce.name=Spruce Framed Glass
@@ -1844,6 +1874,7 @@ tile.decoBlockGlassFramed.jungle.name=Jungle Framed Glass
 tile.decoBlockGlassFramed.blood.name=Blood Wood Framed Glass
 tile.decoBlockGlassFramed.cherry.name=Cherry Framed Glass
 tile.decoBlockGlassFramed.acacia.name=Acacia Framed Glass
+tile.decoBlockGlassFramed.mahogany.name=Mahogany Framed Glass
 tile.decoBlockGlassFramedIron.name=Iron Framed Glass
 
 # Vanilla/BTW Blocks Renamed
@@ -1888,6 +1919,7 @@ tile.wood.birch.name=Birch Planks
 tile.wood.jungle.name=Jungle Planks
 tile.wood.cherry.name=Cherry Planks
 tile.wood.acacia.name=Acacia Planks
+tile.wood.mahogany.name=Mahogany Planks
 tile.stairsWoodOak.name=Oak Stairs
 tile.stairsWoodSpruce.name=Spruce Stairs
 tile.stairsWoodBirch.name=Birch Stairs
@@ -1902,6 +1934,7 @@ tile.fcWoodSpruceSiding.jungle.name=Jungle Siding
 tile.fcWoodSpruceSiding.blood.name=Blood Wood Siding
 tile.fcWoodSpruceSiding.cherry.name=Cherry Siding
 tile.fcWoodSpruceSiding.acacia.name=Acacia Siding
+tile.fcWoodSpruceSiding.mahogany.name=Mahogany Siding
 
 tile.fcWoodSpruceMoulding.oak.name=Oak Moulding
 tile.fcWoodSpruceMoulding.spruce.name=Spruce Moulding
@@ -1910,6 +1943,7 @@ tile.fcWoodSpruceMoulding.jungle.name=Jungle Moulding
 tile.fcWoodSpruceMoulding.blood.name=Blood Wood Moulding
 tile.fcWoodSpruceMoulding.cherry.name=Cherry Moulding
 tile.fcWoodSpruceMoulding.acacia.name=Acacia Moulding
+tile.fcWoodSpruceMoulding.mahogany.name=Mahogany Moulding
 
 tile.fcWoodBirchSiding.oak.name=Oak Corner
 tile.fcWoodBirchSiding.spruce.name=Spruce Corner
@@ -1918,6 +1952,7 @@ tile.fcWoodBirchSiding.jungle.name=Jungle Corner
 tile.fcWoodBirchSiding.blood.name=Blood Wood Corner
 tile.fcWoodBirchSiding.cherry.name=Cherry Corner
 tile.fcWoodBirchSiding.acacia.name=Acacia Corner
+tile.fcWoodBirchSiding.mahogany.name=Mahogany Corner
 
 tile.fcWoodBirchMoulding.oak.pedestal.name=Oak Pedestal
 tile.fcWoodBirchMoulding.spruce.pedestal.name=Spruce Pedestal
@@ -1926,6 +1961,7 @@ tile.fcWoodBirchMoulding.jungle.pedestal.name=Jungle Pedestal
 tile.fcWoodBirchMoulding.blood.pedestal.name=Blood Wood Pedestal
 tile.fcWoodBirchMoulding.cherry.pedestal.name=Cherry Pedestal
 tile.fcWoodBirchMoulding.acacia.pedestal.name=Acacia Pedestal
+tile.fcWoodBirchMoulding.mahogany.pedestal.name=Mahogany Pedestal
 
 tile.fcWoodBirchMoulding.oak.column.name=Oak Column
 tile.fcWoodBirchMoulding.spruce.column.name=Spruce Column
@@ -1934,6 +1970,7 @@ tile.fcWoodBirchMoulding.jungle.column.name=Jungle Column
 tile.fcWoodBirchMoulding.blood.column.name=Blood Wood Column
 tile.fcWoodBirchMoulding.cherry.column.name=Cherry Column
 tile.fcWoodBirchMoulding.acacia.column.name=Acacia Column
+tile.fcWoodBirchMoulding.mahogany.column.name=Mahogany Column
 
 tile.fcWoodBirchMoulding.oak.table.name=Oak Table
 tile.fcWoodBirchMoulding.spruce.table.name=Spruce Table
@@ -1942,6 +1979,7 @@ tile.fcWoodBirchMoulding.jungle.table.name=Jungle Table
 tile.fcWoodBirchMoulding.blood.table.name=Blood Wood Table
 tile.fcWoodBirchMoulding.cherry.table.name=Cherry Table
 tile.fcWoodBirchMoulding.acacia.table.name=Acacia Table
+tile.fcWoodBirchMoulding.mahogany.table.name=Mahogany Table
 
 tile.fcWoodJungleSiding.oak.bench.name=Oak Bench
 tile.fcWoodJungleSiding.spruce.bench.name=Spruce Bench
@@ -1950,6 +1988,7 @@ tile.fcWoodJungleSiding.jungle.bench.name=Jungle Bench
 tile.fcWoodJungleSiding.blood.bench.name=Blood Wood Bench
 tile.fcWoodJungleSiding.cherry.bench.name=Cherry Bench
 tile.fcWoodJungleSiding.acacia.bench.name=Acacia Bench
+tile.fcWoodJungleSiding.mahogany.bench.name=Mahogany Bench
 
 tile.fcWoodJungleSiding.oak.fence.name=Oak Fence
 tile.fcWoodJungleSiding.spruce.fence.name=Spruce Fence
@@ -1958,6 +1997,7 @@ tile.fcWoodJungleSiding.jungle.fence.name=Jungle Fence
 tile.fcWoodJungleSiding.blood.fence.name=Blood Wood Fence
 tile.fcWoodJungleSiding.cherry.fence.name=Cherry Fence
 tile.fcWoodJungleSiding.acacia.fence.name=Acacia Fence
+tile.fcWoodJungleSiding.mahogany.fence.name=Mahogany Fence
 
 tile.trapdoor.name=Oak Trap Door
 tile.fenceGate.name=Oak Fence Gate
@@ -1970,6 +2010,7 @@ tile.woodSlab.jungle.name=Jungle Slab
 tile.woodSlab.blood.name=Blood Wood Slab
 tile.woodSlab.cherry.name=Cherry Slab
 tile.woodSlab.acacia.name=Acacia Slab
+tile.woodSlab.mahogany.name=Mahogany Slab
 
 tile.blockDiamond.name=Block of Diamondium
 
@@ -1993,6 +2034,7 @@ tile.bookshelf.jungle.name=Enchanted Jungle Bookshelf
 tile.bookshelf.blood.name=Enchanted Blood Wood Bookshelf
 tile.bookshelf.cherry.name=Enchanted Cherry Bookshelf
 tile.bookshelf.acacia.name=Enchanted Acacia Bookshelf
+tile.bookshelf.mahogany.name=Enchanted Mahogany Bookshelf
 
 tile.fcBlockLadder.name=Oak Ladder
 
@@ -2013,6 +2055,7 @@ item.decoItemDoorJungle.name=Jungle Door
 item.decoItemDoorBlood.name=Blood Wood Door
 item.decoItemDoorCherry.name=Cherry Door
 item.decoItemDoorAcacia.name=Acacia Door
+item.decoItemDoorMahogany.name=Mahogany Door
 
 item.decoItemChiselDiamond.name=Diamondium Chisel
 item.decoItemShearsDiamond.name=Diamondium Shears
@@ -2045,6 +2088,7 @@ item.decoItemStainedGlass.white.name=White Stained Glass
 
 item.fcItemBark.cherry.name=Cherry Bark
 item.fcItemBark.acacia.name=Acacia Bark
+item.fcItemBark.mahogany.name=Mahogany Bark
 item.dyePowder.black2.name=Black Dye
 item.dyePowder.blue2.name=Blue Dye
 item.dyePowder.white2.name=White Dye
@@ -2056,6 +2100,7 @@ item.sign.jungle.name=Jungle Sign
 item.sign.blood.name=Blood Wood Sign
 item.sign.cherry.name=Cherry Sign
 item.sign.acacia.name=Acacia Sign
+item.sign.mahogany.name=Mahogany Sign
 item.fcItemIngotDiamond.name=Diamondium Ingot
 item.pickaxeDiamond.name=Diamondium Pickaxe
 item.hatchetDiamond.name=Diamondium Axe

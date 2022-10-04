@@ -102,4 +102,23 @@ public class DecoBlockIDs {
     
     public static final int BOTTLE_RACK_ID = 3589;
     public static final int EMPTY_BOTTLE_RACK_ID = 3590;
+    
+    public static final int MAHOGANY_LOG_ID = 3599;
+    public static final int MAHOGANY_STUMP_ID = 3600;
+    public static final int CHEWED_MAHOGANY_LOG_ID = 3601;
+    public static final int MAHOGANY_LOG_SPIKE_ID = 3602;
+    public static final int MAHOGANY_LEAVES_ID = 3603;
+    public static final int MAHOGANY_SAPLING_ID = 3604;
+    public static final int MAHOGANY_STAIRS_ID = 3605;
+    public static final int MAHOGANY_SIDING_AND_CORNER_ID = 3606;
+    public static final int MAHOGANY_MOULDING_ID = 3607;
+    public static final int MAHOGANY_GATE_ID = 3608;
+    public static final int MAHOGANY_TRAPDOOR_ID = 3609;
+    public static final int MAHOGANY_DOOR_ID = 3610;
+    public static final int MAHOGANY_CHAIR_ID = 3611;
+    public static final int FILLED_MAHOGANY_BARREL_ID = 3612;
+    public static final int MAHOGANY_LADDER_ID = 3613;
+    public static final int FLAMING_MAHOGANY_LADDER_ID = 3614;
+    public static final int MAHOGANY_SIGN_ID = 3615;
+    public static final int MAHOGANY_WALL_SIGN_ID = 3616;
 }

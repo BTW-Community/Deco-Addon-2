@@ -9,4 +9,5 @@ public class DecoItemIDs {
 	public static final int BLOOD_DOOR_ID = 30023;
 	public static final int CHERRY_DOOR_ID = 30024;
 	public static final int ACACIA_DOOR_ID = 30025;
+	public static final int MAHOGANY_DOOR_ID = 30026;
 }

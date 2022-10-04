@@ -36,6 +36,9 @@ public class WoodSidingAndCornerBlockMixin extends SidingAndCornerAndDecorativeB
 			case DecoBlockIDs.ACACIA_SIDING_AND_CORNER_ID:
 				info.setReturnValue(WoodTypeHelper.ACACIA_WOOD_TYPE);
 				break;
+			case DecoBlockIDs.MAHOGANY_SIDING_AND_CORNER_ID:
+				info.setReturnValue(WoodTypeHelper.MAHOGANY_WOOD_TYPE);
+				break;
 		}
 	}
 	
@@ -59,6 +62,9 @@ public class WoodSidingAndCornerBlockMixin extends SidingAndCornerAndDecorativeB
 						break;
 					case WoodTypeHelper.ACACIA_WOOD_TYPE:
 						block = DecoBlocks.acaciaSidingAndCorner;
+						break;
+					case WoodTypeHelper.MAHOGANY_WOOD_TYPE:
+						block = DecoBlocks.mahoganySidingAndCorner;
 						break;
 				}
 				
@@ -88,6 +94,9 @@ public class WoodSidingAndCornerBlockMixin extends SidingAndCornerAndDecorativeB
 						break;
 					case WoodTypeHelper.ACACIA_WOOD_TYPE:
 						block = DecoBlocks.acaciaSidingAndCorner;
+						break;
+					case WoodTypeHelper.MAHOGANY_WOOD_TYPE:
+						block = DecoBlocks.mahoganySidingAndCorner;
 						break;
 				}
 				
