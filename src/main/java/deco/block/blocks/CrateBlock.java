@@ -48,16 +48,11 @@ public class CrateBlock extends Block {
 	@Environment(EnvType.CLIENT)
 	@Override
 	public void registerIcons(IconRegister register) {
-		iconArray = new Icon[8];
+		iconArray = new Icon[WoodTypeHelper.NUM_TOTAL_WOOD];
 		
-		iconArray[0] = register.registerIcon("decoBlockCrateOak");
-		iconArray[1] = register.registerIcon("decoBlockCrateSpruce");
-		iconArray[2] = register.registerIcon("decoBlockCrateBirch");
-		iconArray[3] = register.registerIcon("decoBlockCrateJungle");
-		iconArray[4] = register.registerIcon("decoBlockCrateBlood");
-		iconArray[5] = register.registerIcon("decoBlockCrateCherry");
-		iconArray[6] = register.registerIcon("decoBlockCrateAcacia");
-		iconArray[7] = register.registerIcon("decoBlockCrateMahogany");
+		for (int i = 0; i < iconArray.length; i++) {
+			iconArray[i] = register.registerIcon("decoBlockCrate" + WoodTypeHelper.woodNamesCapital[i]);
+		}
 	}
 	
 	@Environment(EnvType.CLIENT)

@@ -36,6 +36,9 @@ public class WoodMouldingBlockMixin extends MouldingAndDecorativeBlock {
 			case DecoBlockIDs.MAHOGANY_MOULDING_ID:
 				info.setReturnValue(WoodTypeHelper.MAHOGANY_WOOD_TYPE);
 				break;
+			case DecoBlockIDs.MANGROVE_MOULDING_ID:
+				info.setReturnValue(WoodTypeHelper.MANGROVE_WOOD_TYPE);
+				break;
 		}
 	}
 	
@@ -63,6 +66,9 @@ public class WoodMouldingBlockMixin extends MouldingAndDecorativeBlock {
 				case WoodTypeHelper.MAHOGANY_WOOD_TYPE:
 					woodTexture = DecoBlocks.mahoganyMoulding.blockIcon;
 					break;
+				case WoodTypeHelper.MANGROVE_WOOD_TYPE:
+					woodTexture = DecoBlocks.mangroveMoulding.blockIcon;
+					break;
 			}
 			
 			RenderUtils.renderInvBlockWithTexture(renderBlocks, this, -0.5F, -0.5F, -0.5F, woodTexture);
@@ -86,13 +92,16 @@ public class WoodMouldingBlockMixin extends MouldingAndDecorativeBlock {
 			if (woodType >= 5) {
 				switch (woodType) {
 					case WoodTypeHelper.CHERRY_WOOD_TYPE:
-						block = DecoBlocks.cherrySidingAndCorner;
+						block = DecoBlocks.cherryMoulding;
 						break;
 					case WoodTypeHelper.ACACIA_WOOD_TYPE:
-						block = DecoBlocks.acaciaSidingAndCorner;
+						block = DecoBlocks.acaciaMoulding;
 						break;
 					case WoodTypeHelper.MAHOGANY_WOOD_TYPE:
-						block = DecoBlocks.mahoganySidingAndCorner;
+						block = DecoBlocks.mahoganyMoulding;
+						break;
+					case WoodTypeHelper.MANGROVE_WOOD_TYPE:
+						block = DecoBlocks.mangroveMoulding;
 						break;
 				}
 				

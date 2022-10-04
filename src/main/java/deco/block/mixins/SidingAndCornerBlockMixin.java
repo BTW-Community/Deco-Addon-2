@@ -45,6 +45,9 @@ public class SidingAndCornerBlockMixin extends Block {
 				case WoodTypeHelper.MAHOGANY_WOOD_TYPE:
 					woodTexture = DecoBlocks.mahoganySidingAndCorner.blockIcon;
 					break;
+				case WoodTypeHelper.MANGROVE_WOOD_TYPE:
+					woodTexture = DecoBlocks.mangroveSidingAndCorner.blockIcon;
+					break;
 			}
 			
 			RenderUtils.renderInvBlockWithTexture(renderBlocks, this, -0.5F, -0.5F, -0.5F, woodTexture);

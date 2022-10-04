@@ -219,4 +219,8 @@ public class TreeGenerator {
     public static boolean generateMahogany(World world, Random rand, int x, int y, int z) {
         return false;
     }
+    
+    public static boolean generateMangrove(World world, Random rand, int x, int y, int z) {
+        return false;
+    }
 }

@@ -39,6 +39,9 @@ public class WoodSidingAndCornerBlockMixin extends SidingAndCornerAndDecorativeB
 			case DecoBlockIDs.MAHOGANY_SIDING_AND_CORNER_ID:
 				info.setReturnValue(WoodTypeHelper.MAHOGANY_WOOD_TYPE);
 				break;
+			case DecoBlockIDs.MANGROVE_SIDING_AND_CORNER_ID:
+				info.setReturnValue(WoodTypeHelper.MANGROVE_WOOD_TYPE);
+				break;
 		}
 	}
 	
@@ -65,6 +68,9 @@ public class WoodSidingAndCornerBlockMixin extends SidingAndCornerAndDecorativeB
 						break;
 					case WoodTypeHelper.MAHOGANY_WOOD_TYPE:
 						block = DecoBlocks.mahoganySidingAndCorner;
+						break;
+					case WoodTypeHelper.MANGROVE_WOOD_TYPE:
+						block = DecoBlocks.mangroveSidingAndCorner;
 						break;
 				}
 				
@@ -97,6 +103,9 @@ public class WoodSidingAndCornerBlockMixin extends SidingAndCornerAndDecorativeB
 						break;
 					case WoodTypeHelper.MAHOGANY_WOOD_TYPE:
 						block = DecoBlocks.mahoganySidingAndCorner;
+						break;
+					case WoodTypeHelper.MANGROVE_WOOD_TYPE:
+						block = DecoBlocks.mangroveSidingAndCorner;
 						break;
 				}
 				

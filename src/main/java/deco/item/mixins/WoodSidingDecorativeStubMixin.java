@@ -31,7 +31,27 @@ public class WoodSidingDecorativeStubMixin extends ItemBlock {
 			case WoodTypeHelper.MAHOGANY_WOOD_TYPE:
 				info.setReturnValue(DecoBlocks.mahoganySidingAndCorner.blockID);
 				break;
+			case WoodTypeHelper.MANGROVE_WOOD_TYPE:
+				info.setReturnValue(DecoBlocks.mangroveSidingAndCorner.blockID);
+				break;
 		}
+	}
+	
+	@Inject(method = "getWoodType", at = @At("HEAD"), cancellable = true, remap = false)
+	private static void getWoodType(int itemDamage, CallbackInfoReturnable<Integer> info) {
+		int lowerBits = itemDamage & 0b11;
+		int upperBits = (itemDamage & 0b110000) >> 2;
+		
+		info.setReturnValue(upperBits | lowerBits);
+	}
+	
+	@Inject(method = "getItemDamageForType", at = @At("HEAD"), cancellable = true, remap = false)
+	private static void getItemDamageForType(int woodType, int blockType, CallbackInfoReturnable<Integer> info) {
+		int lowerBits = woodType & 0b11;
+		int middleBits = (blockType & 0b11) << 2;
+		int upperBits = (woodType & 0b1100) << 2;
+		
+		info.setReturnValue(upperBits | middleBits | lowerBits);
 	}
 	
 	@Inject(method = "getUnlocalizedName(Lnet/minecraft/src/ItemStack;)Ljava/lang/String;", at = @At("HEAD"), cancellable = true)
@@ -52,6 +72,9 @@ public class WoodSidingDecorativeStubMixin extends ItemBlock {
 					break;
 				case WoodTypeHelper.MAHOGANY_WOOD_TYPE:
 					woodName = "mahogany";
+					break;
+				case WoodTypeHelper.MANGROVE_WOOD_TYPE:
+					woodName = "mangrove";
 					break;
 			}
 			

@@ -39,6 +39,7 @@ public class DecoBlocks {
     public static Block crate;
     public static Block barrel;
     public static Block barrel2;
+    public static Block barrel3;
     
     public static Block bookshelf;
     public static Block emptyBookshelf;
@@ -170,6 +171,29 @@ public class DecoBlocks {
     public static Block flamingMahoganyLadder;
     public static Block mahoganySign;
     public static Block mahoganyWallSign;
+    
+    // Mangrove wood
+    public static Block mangroveLog;
+    public static Block mangroveStump;
+    public static Block chewedMangroveLog;
+    public static Block mangroveLogSpike;
+    
+    public static Block mangroveLeaves;
+    public static Block mangroveSapling;
+    
+    public static Block mangroveStairs;
+    public static Block mangroveSidingAndCorner;
+    public static Block mangroveMoulding;
+    
+    public static Block mangroveGate;
+    public static Block mangroveTrapdoor;
+    public static Block mangroveDoor;
+    public static Block mangroveChair;
+    public static Block filledMangroveBarrel;
+    public static Block mangroveLadder;
+    public static Block flamingMangroveLadder;
+    public static Block mangroveSign;
+    public static Block mangroveWallSign;
 
     // Painted planks
     public static Block paintedPlanks;

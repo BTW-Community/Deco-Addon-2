@@ -70,7 +70,7 @@ public abstract class BookshelfBlockMixin extends Block implements BookshelfInte
 	//----------- Client Side Functionality -----------//
 	
 	@Environment(EnvType.CLIENT)
-	private Icon[] sideTextures;
+	private Icon[] sideIcons;
 	
 	@Environment(EnvType.CLIENT)
 	@Inject(method = "getIcon", at = @At("HEAD"), cancellable = true)
@@ -79,23 +79,18 @@ public abstract class BookshelfBlockMixin extends Block implements BookshelfInte
 			info.setReturnValue(Block.planks.getIcon(side, metadata));
 		}
 		else {
-			info.setReturnValue(sideTextures[metadata]);
+			info.setReturnValue(sideIcons[metadata]);
 		}
 	}
 	
 	@Environment(EnvType.CLIENT)
 	@Override
 	public void registerIcons(IconRegister register) {
-		sideTextures = new Icon[8];
+		sideIcons = new Icon[WoodTypeHelper.NUM_TOTAL_WOOD];
 		
-		sideTextures[0] = register.registerIcon(textureBase + "Oak");
-		sideTextures[1] = register.registerIcon(textureBase + "Spruce");
-		sideTextures[2] = register.registerIcon(textureBase + "Birch");
-		sideTextures[3] = register.registerIcon(textureBase + "Jungle");
-		sideTextures[4] = register.registerIcon(textureBase + "Blood");
-		sideTextures[5] = register.registerIcon(textureBase + "Cherry");
-		sideTextures[6] = register.registerIcon(textureBase + "Acacia");
-		sideTextures[7] = register.registerIcon(textureBase + "Mahogany");
+		for (int i = 0; i < sideIcons.length; i++) {
+			sideIcons[i] = register.registerIcon(textureBase + WoodTypeHelper.woodNamesCapital[i]);
+		}
 	}
 	
 	@Environment(EnvType.CLIENT)

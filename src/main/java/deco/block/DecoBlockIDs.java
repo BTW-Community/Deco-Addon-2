@@ -124,4 +124,22 @@ public class DecoBlockIDs {
     public static final int WOOD_SINGLE_SLAB_ID = 3617;
     public static final int WOOD_DOUBLE_SLAB_ID = 3618;
     public static final int BARREL_3_ID = 3619;
+    public static final int MANGROVE_LOG_ID = 3620;
+    public static final int MANGROVE_STUMP_ID = 3621;
+    public static final int CHEWED_MANGROVE_LOG_ID = 3622;
+    public static final int MANGROVE_LOG_SPIKE_ID = 3623;
+    public static final int MANGROVE_LEAVES_ID = 3624;
+    public static final int MANGROVE_SAPLING_ID = 3625;
+    public static final int MANGROVE_STAIRS_ID = 3626;
+    public static final int MANGROVE_SIDING_AND_CORNER_ID = 3627;
+    public static final int MANGROVE_MOULDING_ID = 3628;
+    public static final int MANGROVE_GATE_ID = 3629;
+    public static final int MANGROVE_TRAPDOOR_ID = 3630;
+    public static final int MANGROVE_DOOR_ID = 3631;
+    public static final int MANGROVE_CHAIR_ID = 3632;
+    public static final int FILLED_MANGROVE_BARREL_ID = 3633;
+    public static final int MANGROVE_LADDER_ID = 3634;
+    public static final int FLAMING_MANGROVE_LADDER_ID = 3635;
+    public static final int MANGROVE_SIGN_ID = 3636;
+    public static final int MANGROVE_WALL_SIGN_ID = 3637;
 }

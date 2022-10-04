@@ -10,6 +10,7 @@ public class DecoItems {
 	public static Item cherryDoor;
 	public static Item acaciaDoor;
 	public static Item mahoganyDoor;
+	public static Item mangroveDoor;
 	
 	public static Item plainBook;
 }

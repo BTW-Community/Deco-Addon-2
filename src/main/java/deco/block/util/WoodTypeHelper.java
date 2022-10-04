@@ -3,6 +3,9 @@ package deco.block.util;
 import deco.block.DecoBlockIDs;
 
 public class WoodTypeHelper {
+    public static String[] woodNames = new String[] {"oak", "spruce", "birch", "jungle", "blood", "cherry", "acacia", "mahogany", "mangrove"};
+    public static String[] woodNamesCapital = new String[] {"Oak", "Spruce", "Birch", "Jungle", "Blood", "Cherry", "Acacia", "Mahogany", "Mangrove"};
+    
     public static final int NUM_VANILLA_WOOD = 5;
     public static final int NUM_EXTRA_WOOD = 4;
     public static final int NUM_TOTAL_WOOD = NUM_VANILLA_WOOD + NUM_EXTRA_WOOD;

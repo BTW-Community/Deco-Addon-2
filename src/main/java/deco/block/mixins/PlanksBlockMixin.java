@@ -30,6 +30,7 @@ public class PlanksBlockMixin extends Block {
                 info.setReturnValue(FurnaceBurnTime.PLANKS_BIRCH.burnTime);
                 break;
             case WoodTypeHelper.MAHOGANY_WOOD_TYPE:
+            case WoodTypeHelper.MANGROVE_WOOD_TYPE:
                 info.setReturnValue(FurnaceBurnTime.PLANKS_JUNGLE.burnTime);
                 break;
         }
@@ -45,7 +46,7 @@ public class PlanksBlockMixin extends Block {
     @Environment(EnvType.CLIENT)
     @Inject(method = "registerIcons(Lnet/minecraft/src/IconRegister;)V", at = @At("TAIL"))
     public void registerIcons(IconRegister register, CallbackInfo info) {
-        extraTextures = new String[] {"decoBlockPlanksCherry", "decoBlockPlanksAcacia", "decoBlockPlanksMahogany"};
+        extraTextures = new String[] {"decoBlockPlanksCherry", "decoBlockPlanksAcacia", "decoBlockPlanksMahogany", "decoBlockPlanksMangrove"};
         extraIcons = new Icon[extraTextures.length];
 
         for (int i = 0; i < extraTextures.length; i++) {
