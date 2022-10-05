@@ -11,7 +11,8 @@
     "SidingAndCornerBlockMixin",
     "WoodMouldingBlockMixin",
     "WoodSidingAndCornerBlockMixin",
-    "WoodSlabMixin"
+    "WoodSlabMixin",
+    "WorkStumpBlockMixin"
   ],
   "client": [
   ],
