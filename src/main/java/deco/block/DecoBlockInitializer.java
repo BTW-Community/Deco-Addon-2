@@ -126,7 +126,7 @@ public class DecoBlockInitializer {
         DecoBlocks.barrel3 = new BarrelBlock(DecoBlockIDs.BARREL_3_ID,
                 new String[] {"decoBlockBarrelMangrove_top"},
                 new String[] {"decoBlockBarrelMangrove_side"})
-                .setUnlocalizedName("decoBlockBarrel2");
+                .setUnlocalizedName("decoBlockBarrel3");
         Item.itemsList[DecoBlocks.barrel3.blockID] = new ItemMultiTextureTile(DecoBlocks.barrel3.blockID - 256, DecoBlocks.barrel3, new String[] {"mangrove"});
         
         DecoBlocks.crate = new CrateBlock(DecoBlockIDs.CRATE_ID);
