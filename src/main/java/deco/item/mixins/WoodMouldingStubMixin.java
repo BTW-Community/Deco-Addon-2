@@ -18,37 +18,17 @@ public class WoodMouldingStubMixin extends ItemBlock {
 	
 	@Inject(method = "getBlockIDToPlace(IIFFF)I", at = @At("HEAD"), cancellable = true, remap = false)
 	public void getBlockIDToPlace(int itemDamage, int facing, float hitX, float hitY, float hitZ, CallbackInfoReturnable<Integer> info) {
-		switch (itemDamage) {
-			case WoodTypeHelper.CHERRY_WOOD_TYPE:
-				info.setReturnValue(DecoBlocks.cherryMoulding.blockID);
-				break;
-			case WoodTypeHelper.ACACIA_WOOD_TYPE:
-				info.setReturnValue(DecoBlocks.acaciaMoulding.blockID);
-				break;
-			case WoodTypeHelper.MAHOGANY_WOOD_TYPE:
-				info.setReturnValue(DecoBlocks.mahoganyMoulding.blockID);
-				break;
-			case WoodTypeHelper.MANGROVE_WOOD_TYPE:
-				info.setReturnValue(DecoBlocks.mangroveMoulding.blockID);
-				break;
+		if (itemDamage >= WoodTypeHelper.NUM_VANILLA_WOOD) {
+			info.setReturnValue(WoodTypeHelper.woodTypeToMouldingIDMap.get(itemDamage));
 		}
 	}
 	
 	@Inject(method = "getUnlocalizedName(Lnet/minecraft/src/ItemStack;)Ljava/lang/String;", at = @At("HEAD"), cancellable = true)
 	public void getUnlocalizedName(ItemStack itemStack, CallbackInfoReturnable<String> info) {
-		switch (itemStack.getItemDamage()) {
-			case WoodTypeHelper.CHERRY_WOOD_TYPE:
-				info.setReturnValue(super.getUnlocalizedName() + ".cherry");
-				break;
-			case WoodTypeHelper.ACACIA_WOOD_TYPE:
-				info.setReturnValue(super.getUnlocalizedName() + ".acacia");
-				break;
-			case WoodTypeHelper.MAHOGANY_WOOD_TYPE:
-				info.setReturnValue(super.getUnlocalizedName() + ".mahogany");
-				break;
-			case WoodTypeHelper.MANGROVE_WOOD_TYPE:
-				info.setReturnValue(super.getUnlocalizedName() + ".mangrove");
-				break;
+		int itemDamage = itemStack.getItemDamage();
+		
+		if (itemDamage >= WoodTypeHelper.NUM_VANILLA_WOOD) {
+			info.setReturnValue(this.getUnlocalizedName() + "." + WoodTypeHelper.woodNames[itemDamage]);
 		}
 	}
 }

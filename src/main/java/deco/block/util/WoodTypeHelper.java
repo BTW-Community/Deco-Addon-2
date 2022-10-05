@@ -1,6 +1,10 @@
 package deco.block.util;
 
+import btw.crafting.util.FurnaceBurnTime;
 import deco.block.DecoBlockIDs;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class WoodTypeHelper {
     public static String[] woodNames = new String[] {"oak", "spruce", "birch", "jungle", "blood", "cherry", "acacia", "mahogany", "mangrove"};
@@ -41,4 +45,28 @@ public class WoodTypeHelper {
     public static final int ACACIA_BARREL_TYPE = 2;
     public static final int MAHOGANY_BARREL_TYPE = 3;
     public static final int MANGROVE_BARREL_TYPE = 0;
+    
+    public static Map<Integer, Integer> woodTypeToSidingIDMap = new HashMap<>();
+    public static Map<Integer, Integer> woodTypeToMouldingIDMap = new HashMap<>();
+    
+    static {
+        woodTypeToSidingIDMap.put(CHERRY_WOOD_TYPE, DecoBlockIDs.CHERRY_SIDING_AND_CORNER_ID);
+        woodTypeToSidingIDMap.put(ACACIA_WOOD_TYPE, DecoBlockIDs.ACACIA_SIDING_AND_CORNER_ID);
+        woodTypeToSidingIDMap.put(MAHOGANY_WOOD_TYPE, DecoBlockIDs.MAHOGANY_SIDING_AND_CORNER_ID);
+        woodTypeToSidingIDMap.put(MANGROVE_WOOD_TYPE, DecoBlockIDs.MANGROVE_SIDING_AND_CORNER_ID);
+    
+        woodTypeToMouldingIDMap.put(CHERRY_WOOD_TYPE, DecoBlockIDs.CHERRY_MOULDING_ID);
+        woodTypeToMouldingIDMap.put(ACACIA_WOOD_TYPE, DecoBlockIDs.ACACIA_MOULDING_ID);
+        woodTypeToMouldingIDMap.put(MAHOGANY_WOOD_TYPE, DecoBlockIDs.MAHOGANY_MOULDING_ID);
+        woodTypeToMouldingIDMap.put(MANGROVE_WOOD_TYPE, DecoBlockIDs.MANGROVE_MOULDING_ID);
+    }
+    
+    public static Map<Integer, FurnaceBurnTime> furnaceBurnTimes = new HashMap<>();
+    
+    static {
+        furnaceBurnTimes.put(CHERRY_WOOD_TYPE, FurnaceBurnTime.PLANKS_SPRUCE);
+        furnaceBurnTimes.put(ACACIA_WOOD_TYPE, FurnaceBurnTime.PLANKS_BIRCH);
+        furnaceBurnTimes.put(MAHOGANY_WOOD_TYPE, FurnaceBurnTime.PLANKS_JUNGLE);
+        furnaceBurnTimes.put(MANGROVE_WOOD_TYPE, FurnaceBurnTime.PLANKS_JUNGLE);
+    }
 }

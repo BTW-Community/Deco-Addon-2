@@ -32,24 +32,8 @@ public class SidingAndCornerBlockMixin extends Block {
 					remap = false),
 			cancellable = true)
 	public void renderDecoWoodTexturesAsItem(RenderBlocks renderBlocks, int itemDamage, float brightness, CallbackInfo info) {
-		if (itemDamage >= 5) {
-			Icon woodTexture = this.blockIcon;
-			
-			switch (itemDamage) {
-				case WoodTypeHelper.CHERRY_WOOD_TYPE:
-					woodTexture = DecoBlocks.cherrySidingAndCorner.blockIcon;
-					break;
-				case WoodTypeHelper.ACACIA_WOOD_TYPE:
-					woodTexture = DecoBlocks.acaciaSidingAndCorner.blockIcon;
-					break;
-				case WoodTypeHelper.MAHOGANY_WOOD_TYPE:
-					woodTexture = DecoBlocks.mahoganySidingAndCorner.blockIcon;
-					break;
-				case WoodTypeHelper.MANGROVE_WOOD_TYPE:
-					woodTexture = DecoBlocks.mangroveSidingAndCorner.blockIcon;
-					break;
-			}
-			
+		if (itemDamage >= WoodTypeHelper.NUM_VANILLA_WOOD) {
+			Icon woodTexture = Block.blocksList[WoodTypeHelper.woodTypeToSidingIDMap.get(itemDamage)].blockIcon;
 			RenderUtils.renderInvBlockWithTexture(renderBlocks, this, -0.5F, -0.5F, -0.5F, woodTexture);
 			info.cancel();
 		}

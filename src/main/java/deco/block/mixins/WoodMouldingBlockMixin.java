@@ -17,6 +17,10 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 
+import java.util.Map;
+import java.util.Objects;
+import java.util.stream.Collectors;
+
 @Mixin(WoodMouldingAndDecorativeBlock.class)
 public class WoodMouldingBlockMixin extends MouldingAndDecorativeBlock {
 	public WoodMouldingBlockMixin(int iBlockID, Material material, String sTextureName, String sColumnSideTextureName, int iMatchingCornerBlockID,
@@ -26,20 +30,13 @@ public class WoodMouldingBlockMixin extends MouldingAndDecorativeBlock {
 	
 	@Inject(method = "getWoodTypeFromBlockID(I)I", at = @At("HEAD"), remap = false, cancellable = true)
 	public void getWoodTypeFromBlockID(int blockID, CallbackInfoReturnable<Integer> info) {
-		switch (blockID) {
-			case DecoBlockIDs.CHERRY_MOULDING_ID:
-				info.setReturnValue(WoodTypeHelper.CHERRY_WOOD_TYPE);
-				break;
-			case DecoBlockIDs.ACACIA_MOULDING_ID:
-				info.setReturnValue(WoodTypeHelper.ACACIA_WOOD_TYPE);
-				break;
-			case DecoBlockIDs.MAHOGANY_MOULDING_ID:
-				info.setReturnValue(WoodTypeHelper.MAHOGANY_WOOD_TYPE);
-				break;
-			case DecoBlockIDs.MANGROVE_MOULDING_ID:
-				info.setReturnValue(WoodTypeHelper.MANGROVE_WOOD_TYPE);
-				break;
-		}
+		// Reverse map lookup, returns first key to match value
+		info.setReturnValue(WoodTypeHelper.woodTypeToMouldingIDMap.entrySet()
+				.stream()
+				.filter(entry -> Objects.equals(entry.getValue(), blockID))
+				.map(Map.Entry::getKey)
+				.collect(Collectors.toList())
+				.get(0));
 	}
 	
 	//----------- Client Side Functionality -----------//
@@ -53,24 +50,8 @@ public class WoodMouldingBlockMixin extends MouldingAndDecorativeBlock {
 					remap = false),
 			cancellable = true)
 	public void renderDecoWoodTexturesAsItem(RenderBlocks renderBlocks, int itemDamage, float brightness, CallbackInfo info) {
-		if (itemDamage >= 5) {
-			Icon woodTexture = this.blockIcon;
-			
-			switch (itemDamage) {
-				case WoodTypeHelper.CHERRY_WOOD_TYPE:
-					woodTexture = DecoBlocks.cherryMoulding.blockIcon;
-					break;
-				case WoodTypeHelper.ACACIA_WOOD_TYPE:
-					woodTexture = DecoBlocks.acaciaMoulding.blockIcon;
-					break;
-				case WoodTypeHelper.MAHOGANY_WOOD_TYPE:
-					woodTexture = DecoBlocks.mahoganyMoulding.blockIcon;
-					break;
-				case WoodTypeHelper.MANGROVE_WOOD_TYPE:
-					woodTexture = DecoBlocks.mangroveMoulding.blockIcon;
-					break;
-			}
-			
+		if (itemDamage >= WoodTypeHelper.NUM_VANILLA_WOOD) {
+			Icon woodTexture = Block.blocksList[WoodTypeHelper.woodTypeToMouldingIDMap.get(itemDamage)].blockIcon;
 			RenderUtils.renderInvBlockWithTexture(renderBlocks, this, -0.5F, -0.5F, -0.5F, woodTexture);
 			info.cancel();
 		}
@@ -89,22 +70,8 @@ public class WoodMouldingBlockMixin extends MouldingAndDecorativeBlock {
 			CallbackInfo info,
 			Block block, int itemType, int woodType) {
 		if (blockID == BTWItems.woodMouldingDecorativeStubID) {
-			if (woodType >= 5) {
-				switch (woodType) {
-					case WoodTypeHelper.CHERRY_WOOD_TYPE:
-						block = DecoBlocks.cherryMoulding;
-						break;
-					case WoodTypeHelper.ACACIA_WOOD_TYPE:
-						block = DecoBlocks.acaciaMoulding;
-						break;
-					case WoodTypeHelper.MAHOGANY_WOOD_TYPE:
-						block = DecoBlocks.mahoganyMoulding;
-						break;
-					case WoodTypeHelper.MANGROVE_WOOD_TYPE:
-						block = DecoBlocks.mangroveMoulding;
-						break;
-				}
-				
+			if (woodType >= WoodTypeHelper.NUM_VANILLA_WOOD) {
+				block = Block.blocksList[WoodTypeHelper.woodTypeToMouldingIDMap.get(woodType)];
 				this.renderDecorativeInvBlock(render, block, itemDamage, brightness);
 				info.cancel();
 			}

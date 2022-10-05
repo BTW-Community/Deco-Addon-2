@@ -21,19 +21,8 @@ public class WoodSidingDecorativeStubMixin extends ItemBlock {
 	public void getBlockIDToPlace(int itemDamage, int facing, float hitX, float hitY, float hitZ, CallbackInfoReturnable<Integer> info) {
 		int woodType = WoodMouldingDecorativeStubBlockItem.getWoodType(itemDamage);
 		
-		switch (woodType) {
-			case WoodTypeHelper.CHERRY_WOOD_TYPE:
-				info.setReturnValue(DecoBlocks.cherrySidingAndCorner.blockID);
-				break;
-			case WoodTypeHelper.ACACIA_WOOD_TYPE:
-				info.setReturnValue(DecoBlocks.acaciaSidingAndCorner.blockID);
-				break;
-			case WoodTypeHelper.MAHOGANY_WOOD_TYPE:
-				info.setReturnValue(DecoBlocks.mahoganySidingAndCorner.blockID);
-				break;
-			case WoodTypeHelper.MANGROVE_WOOD_TYPE:
-				info.setReturnValue(DecoBlocks.mangroveSidingAndCorner.blockID);
-				break;
+		if (woodType >= WoodTypeHelper.NUM_VANILLA_WOOD) {
+			info.setReturnValue(WoodTypeHelper.woodTypeToSidingIDMap.get(woodType));
 		}
 	}
 	
@@ -60,23 +49,8 @@ public class WoodSidingDecorativeStubMixin extends ItemBlock {
 		int woodType = WoodMouldingDecorativeStubBlockItem.getWoodType(itemDamage);
 		int blockType = WoodMouldingDecorativeStubBlockItem.getBlockType(itemDamage);
 		
-		if (woodType >= 5) {
-			String woodName = "";
-			
-			switch (woodType) {
-				case WoodTypeHelper.CHERRY_WOOD_TYPE:
-					woodName = "cherry";
-					break;
-				case WoodTypeHelper.ACACIA_WOOD_TYPE:
-					woodName = "acacia";
-					break;
-				case WoodTypeHelper.MAHOGANY_WOOD_TYPE:
-					woodName = "mahogany";
-					break;
-				case WoodTypeHelper.MANGROVE_WOOD_TYPE:
-					woodName = "mangrove";
-					break;
-			}
+		if (woodType >= WoodTypeHelper.NUM_VANILLA_WOOD) {
+			String woodName = WoodTypeHelper.woodNames[itemDamage];
 			
 			String typeName = "";
 			

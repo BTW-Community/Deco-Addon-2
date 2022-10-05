@@ -20,6 +20,10 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 
+import java.util.Map;
+import java.util.Objects;
+import java.util.stream.Collectors;
+
 @Mixin(WoodSidingAndCornerAndDecorativeBlock.class)
 public class WoodSidingAndCornerBlockMixin extends SidingAndCornerAndDecorativeBlock {
 	public WoodSidingAndCornerBlockMixin(int blockID, Material material, String textureName, float hardness, float resistance, StepSound stepSound,
@@ -29,20 +33,13 @@ public class WoodSidingAndCornerBlockMixin extends SidingAndCornerAndDecorativeB
 	
 	@Inject(method = "getWoodTypeFromBlockID(I)I", at = @At("HEAD"), remap = false, cancellable = true)
 	public void getWoodTypeFromBlockID(int blockID, CallbackInfoReturnable<Integer> info) {
-		switch (blockID) {
-			case DecoBlockIDs.CHERRY_SIDING_AND_CORNER_ID:
-				info.setReturnValue(WoodTypeHelper.CHERRY_WOOD_TYPE);
-				break;
-			case DecoBlockIDs.ACACIA_SIDING_AND_CORNER_ID:
-				info.setReturnValue(WoodTypeHelper.ACACIA_WOOD_TYPE);
-				break;
-			case DecoBlockIDs.MAHOGANY_SIDING_AND_CORNER_ID:
-				info.setReturnValue(WoodTypeHelper.MAHOGANY_WOOD_TYPE);
-				break;
-			case DecoBlockIDs.MANGROVE_SIDING_AND_CORNER_ID:
-				info.setReturnValue(WoodTypeHelper.MANGROVE_WOOD_TYPE);
-				break;
-		}
+		// Reverse map lookup, returns first key to match value
+		info.setReturnValue(WoodTypeHelper.woodTypeToSidingIDMap.entrySet()
+				.stream()
+				.filter(entry -> Objects.equals(entry.getValue(), blockID))
+				.map(Map.Entry::getKey)
+				.collect(Collectors.toList())
+				.get(0));
 	}
 	
 	@Environment(EnvType.CLIENT)
@@ -58,22 +55,8 @@ public class WoodSidingAndCornerBlockMixin extends SidingAndCornerAndDecorativeB
 			CallbackInfo info,
 			int subtype, Block block, int itemType, int woodType) {
 		if (blockID == BTWItems.woodSidingDecorativeStubID) {
-			if (woodType >= 5) {
-				switch (woodType) {
-					case WoodTypeHelper.CHERRY_WOOD_TYPE:
-						block = DecoBlocks.cherrySidingAndCorner;
-						break;
-					case WoodTypeHelper.ACACIA_WOOD_TYPE:
-						block = DecoBlocks.acaciaSidingAndCorner;
-						break;
-					case WoodTypeHelper.MAHOGANY_WOOD_TYPE:
-						block = DecoBlocks.mahoganySidingAndCorner;
-						break;
-					case WoodTypeHelper.MANGROVE_WOOD_TYPE:
-						block = DecoBlocks.mangroveSidingAndCorner;
-						break;
-				}
-				
+			if (woodType >= WoodTypeHelper.NUM_VANILLA_WOOD) {
+				block = Block.blocksList[WoodTypeHelper.woodTypeToSidingIDMap.get(woodType)];
 				this.renderBenchInvBlock(render, block, SUBTYPE_BENCH);
 				info.cancel();
 			}
@@ -93,22 +76,8 @@ public class WoodSidingAndCornerBlockMixin extends SidingAndCornerAndDecorativeB
 			CallbackInfo info,
 			int subtype, Block block, int itemType, int woodType) {
 		if (blockID == BTWItems.woodSidingDecorativeStubID) {
-			if (woodType >= 5) {
-				switch (woodType) {
-					case WoodTypeHelper.CHERRY_WOOD_TYPE:
-						block = DecoBlocks.cherrySidingAndCorner;
-						break;
-					case WoodTypeHelper.ACACIA_WOOD_TYPE:
-						block = DecoBlocks.acaciaSidingAndCorner;
-						break;
-					case WoodTypeHelper.MAHOGANY_WOOD_TYPE:
-						block = DecoBlocks.mahoganySidingAndCorner;
-						break;
-					case WoodTypeHelper.MANGROVE_WOOD_TYPE:
-						block = DecoBlocks.mangroveSidingAndCorner;
-						break;
-				}
-				
+			if (woodType >= WoodTypeHelper.NUM_VANILLA_WOOD) {
+				block = Block.blocksList[WoodTypeHelper.woodTypeToSidingIDMap.get(woodType)];
 				this.renderFenceInvBlock(render, block, SUBTYPE_FENCE);
 				info.cancel();
 			}

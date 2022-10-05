@@ -22,51 +22,39 @@ public class PlanksBlockMixin extends Block {
 
     @Inject(method = "getFurnaceBurnTimeByWoodType(I)I", at = @At("RETURN"), remap = false, cancellable = true)
     private static void getFurnaceBurnTimeByWoodType(int woodType, CallbackInfoReturnable<Integer> info) {
-        switch (woodType) {
-            case WoodTypeHelper.CHERRY_WOOD_TYPE:
-                info.setReturnValue(FurnaceBurnTime.PLANKS_SPRUCE.burnTime);
-                break;
-            case WoodTypeHelper.ACACIA_WOOD_TYPE:
-                info.setReturnValue(FurnaceBurnTime.PLANKS_BIRCH.burnTime);
-                break;
-            case WoodTypeHelper.MAHOGANY_WOOD_TYPE:
-            case WoodTypeHelper.MANGROVE_WOOD_TYPE:
-                info.setReturnValue(FurnaceBurnTime.PLANKS_JUNGLE.burnTime);
-                break;
+        if (woodType >= WoodTypeHelper.NUM_VANILLA_WOOD) {
+            info.setReturnValue(WoodTypeHelper.furnaceBurnTimes.get(woodType).burnTime);
         }
     }
 
     //----------- Client Side Functionality -----------//
-
-    @Environment(EnvType.CLIENT)
-    public String[] extraTextures;
+    
     @Environment(EnvType.CLIENT)
     public Icon[] extraIcons;
 
     @Environment(EnvType.CLIENT)
     @Inject(method = "registerIcons(Lnet/minecraft/src/IconRegister;)V", at = @At("TAIL"))
     public void registerIcons(IconRegister register, CallbackInfo info) {
-        extraTextures = new String[] {"decoBlockPlanksCherry", "decoBlockPlanksAcacia", "decoBlockPlanksMahogany", "decoBlockPlanksMangrove"};
-        extraIcons = new Icon[extraTextures.length];
+        extraIcons = new Icon[WoodTypeHelper.NUM_EXTRA_WOOD];
 
-        for (int i = 0; i < extraTextures.length; i++) {
-            extraIcons[i] = register.registerIcon(extraTextures[i]);
+        for (int i = 0; i < extraIcons.length; i++) {
+            this.extraIcons[i] = register.registerIcon("decoBlockPlanks" + WoodTypeHelper.woodNamesCapital[i + WoodTypeHelper.NUM_VANILLA_WOOD]);
         }
     }
 
     @Environment(EnvType.CLIENT)
     @Inject(method = "getIcon(II)Lnet/minecraft/src/Icon;", at = @At("HEAD"), cancellable = true)
     public void getIcon(int side, int metadata, CallbackInfoReturnable<Icon> info) {
-        if (metadata >= 5) {
-            info.setReturnValue(extraIcons[metadata - 5]);
+        if (metadata >= WoodTypeHelper.NUM_VANILLA_WOOD) {
+            info.setReturnValue(this.extraIcons[metadata - WoodTypeHelper.NUM_VANILLA_WOOD]);
         }
     }
 
     @Environment(EnvType.CLIENT)
     @Inject(method = "getSubBlocks(ILnet/minecraft/src/CreativeTabs;Ljava/util/List;)V", at = @At("TAIL"))
     public void getSubBlocks(int blockID, CreativeTabs creativeTabs, List<ItemStack> list, CallbackInfo info) {
-        for (int i = 0; i < extraTextures.length; i++) {
-            list.add(new ItemStack(blockID, 1, i + 5));
+        for (int i = 0; i < WoodTypeHelper.NUM_EXTRA_WOOD; i++) {
+            list.add(new ItemStack(blockID, 1, i + WoodTypeHelper.NUM_VANILLA_WOOD));
         }
     }
 }
