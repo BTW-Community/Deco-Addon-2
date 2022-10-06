@@ -1,5 +1,6 @@
 package deco.block.util;
 
+import btw.block.BTWBlocks;
 import btw.crafting.util.FurnaceBurnTime;
 import deco.block.DecoBlockIDs;
 
@@ -45,6 +46,16 @@ public class WoodTypeHelper {
     public static final int ACACIA_BARREL_TYPE = 2;
     public static final int MAHOGANY_BARREL_TYPE = 3;
     public static final int MANGROVE_BARREL_TYPE = 0;
+    
+    public static final int CHERRY_WORK_STUMP_ID = BTWBlocks.workStump.blockID;
+    public static final int ACACIA_WORK_STUMP_ID = BTWBlocks.workStump.blockID;
+    public static final int MAHOGANY_WORK_STUMP_ID = BTWBlocks.workStump.blockID;
+    public static final int MANGROVE_WORK_STUMP_ID = BTWBlocks.workStump.blockID;
+    
+    public static final int CHERRY_WORK_STUMP_TYPE = 4;
+    public static final int ACACIA_WORK_STUMP_TYPE = 5;
+    public static final int MAHOGANY_WORK_STUMP_TYPE = 6;
+    public static final int MANGROVE_WORK_STUMP_TYPE = 7;
     
     public static Map<Integer, Integer> woodTypeToSidingIDMap = new HashMap<>();
     public static Map<Integer, Integer> woodTypeToMouldingIDMap = new HashMap<>();

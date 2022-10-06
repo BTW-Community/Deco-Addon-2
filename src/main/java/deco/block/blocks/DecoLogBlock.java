@@ -89,6 +89,10 @@ public class DecoLogBlock extends LogBlock {
     public boolean isStripped(int metadata) {
         return this.isStripped[(metadata & 3)];
     }
+    
+    public int getWoodType(int metadata) {
+        return this.woodTypes[metadata & 3];
+    }
 
     //----------- Client Side Functionality -----------//
 

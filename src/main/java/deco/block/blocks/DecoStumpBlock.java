@@ -10,13 +10,15 @@ import net.fabricmc.api.Environment;
 import net.minecraft.src.*;
 
 public class DecoStumpBlock extends Block {
-    public final int WOOD_TYPE;
-    public final int CHEWED_LOG_ID;
+    private int logID;
+    private int chewedLogID;
+    private int workStumpID;
+    private int workStumpMetadata;
 
     private String topTexture;
     private String sideTexture;
 
-    public DecoStumpBlock(int blockID, int woodType, int chewedLogID, String topTexture, String sideTexture) {
+    public DecoStumpBlock(int blockID, int logID, int chewedLogID, int workStumpID, int workStumpMeta, String topTexture, String sideTexture) {
         super(blockID, BTWBlocks.logMaterial);
 
         setHardness(1.25F);
@@ -29,8 +31,10 @@ public class DecoStumpBlock extends Block {
 
         setStepSound(soundWoodFootstep);
 
-        this.WOOD_TYPE = woodType;
-        this.CHEWED_LOG_ID = chewedLogID;
+        this.logID = logID;
+        this.chewedLogID = chewedLogID;
+        this.workStumpID = workStumpID;
+        this.workStumpMetadata = workStumpMeta;
 
         this.topTexture = topTexture;
         this.sideTexture = sideTexture;
@@ -48,12 +52,12 @@ public class DecoStumpBlock extends Block {
 
     @Override
     public int idPicked(World world, int x, int y, int z) {
-        return DecoBlocks.cherryLog.blockID;
+        return this.logID;
     }
 
     @Override
     public ItemStack getStackRetrievedByBlockDispenser(World world, int x, int y, int z) {
-        return new ItemStack(DecoBlocks.cherryLog);
+        return new ItemStack(Block.blocksList[this.logID]);
     }
 
     @Override
@@ -70,11 +74,11 @@ public class DecoStumpBlock extends Block {
     public boolean convertBlock(ItemStack toolStack, World world, int x, int y, int z, int side) {
         if (this.isWorkStumpItemConversionTool(toolStack)) {
             world.playAuxSFX(2268, x, y, z, 0);
-            world.setBlockAndMetadataWithNotify(x, y, z, BTWBlocks.workStump.blockID, (WOOD_TYPE - 1) | 8);
+            world.setBlockAndMetadataWithNotify(x, y, z, this.workStumpID, this.workStumpMetadata | 8);
         }
         else {
             int newMetadata = BTWBlocks.oakChewedLog.setIsStump(0);
-            world.setBlockMetadataWithNotify(x, y, z, CHEWED_LOG_ID, newMetadata);
+            world.setBlockMetadataWithNotify(x, y, z, this.chewedLogID, newMetadata);
         }
 
         return true;
@@ -83,7 +87,7 @@ public class DecoStumpBlock extends Block {
     @Override
     public boolean dropComponentItemsOnBadBreak(World world, int x, int y, int z, int fortuneModifier, float chanceOfDrop) {
         this.dropItemsIndividually(world, x, y, z, BTWItems.sawDust.itemID, 6, 0, chanceOfDrop);
-        this.dropItemsIndividually(world, x, y, z, BTWItems.bark.itemID, 1, WOOD_TYPE, chanceOfDrop);
+        this.dropItemsIndividually(world, x, y, z, BTWItems.bark.itemID, 1, ((DecoLogBlock) Block.blocksList[this.logID]).getWoodType(0), chanceOfDrop);
         return true;
     }
 

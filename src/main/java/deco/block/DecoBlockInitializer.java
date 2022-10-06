@@ -261,7 +261,8 @@ public class DecoBlockInitializer {
                 new String[] {"decoBlockLogCherry_side", "decoBlockStrippedCherry_side", "decoBlockLogCherry_side", "decoBlockStrippedCherry_side"})
                 .setUnlocalizedName("decoBlockCherryLog");
         Item.itemsList[DecoBlocks.cherryLog.blockID] = new DecoLogItemBlock(DecoBlocks.cherryLog.blockID - 256, DecoBlocks.cherryLog);
-        DecoBlocks.cherryStump = new DecoStumpBlock(DecoBlockIDs.CHERRY_STUMP_ID, WoodTypeHelper.CHERRY_WOOD_TYPE, DecoBlockIDs.CHEWED_CHERRY_LOG_ID,
+        DecoBlocks.cherryStump = new DecoStumpBlock(DecoBlockIDs.CHERRY_STUMP_ID, DecoBlockIDs.CHERRY_LOG_ID, DecoBlockIDs.CHEWED_CHERRY_LOG_ID,
+                WoodTypeHelper.CHERRY_WORK_STUMP_ID, WoodTypeHelper.CHERRY_WORK_STUMP_TYPE,
                 "decoBlockTrunkCherry_top", "decoBlockTrunkCherry_side")
                 .setUnlocalizedName("decoBlockCherryStump");
         DecoBlocks.cherryLogSpike = new LogSpikeBlock(DecoBlockIDs.CHERRY_LOG_SPIKE_ID,
@@ -310,7 +311,8 @@ public class DecoBlockInitializer {
                 new String[] {"decoBlockLogAcacia_side", "decoBlockStrippedAcacia_side", "decoBlockLogAcacia_side", "decoBlockStrippedAcacia_side"})
                 .setUnlocalizedName("decoBlockAcaciaLog");
         Item.itemsList[DecoBlocks.acaciaLog.blockID] = new DecoLogItemBlock(DecoBlocks.acaciaLog.blockID - 256, DecoBlocks.acaciaLog);
-        DecoBlocks.acaciaStump = new DecoStumpBlock(DecoBlockIDs.ACACIA_STUMP_ID, WoodTypeHelper.ACACIA_WOOD_TYPE, DecoBlockIDs.CHEWED_ACACIA_LOG_ID,
+        DecoBlocks.acaciaStump = new DecoStumpBlock(DecoBlockIDs.ACACIA_STUMP_ID, DecoBlockIDs.ACACIA_LOG_ID, DecoBlockIDs.CHEWED_ACACIA_LOG_ID,
+                WoodTypeHelper.ACACIA_WORK_STUMP_ID, WoodTypeHelper.ACACIA_WORK_STUMP_TYPE,
                 "decoBlockTrunkAcacia_top", "decoBlockTrunkAcacia_side")
                 .setUnlocalizedName("decoBlockAcaciaStump");
         DecoBlocks.acaciaLogSpike = new LogSpikeBlock(DecoBlockIDs.ACACIA_LOG_SPIKE_ID,
@@ -359,7 +361,8 @@ public class DecoBlockInitializer {
                 new String[] {"decoBlockLogMahogany_side", "decoBlockStrippedMahogany_side", "decoBlockLogMahogany_side", "decoBlockStrippedMahogany_side"})
                 .setUnlocalizedName("decoBlockMahoganyLog");
         Item.itemsList[DecoBlocks.mahoganyLog.blockID] = new DecoLogItemBlock(DecoBlocks.mahoganyLog.blockID - 256, DecoBlocks.mahoganyLog);
-        DecoBlocks.mahoganyStump = new DecoStumpBlock(DecoBlockIDs.MAHOGANY_STUMP_ID, WoodTypeHelper.MAHOGANY_WOOD_TYPE, DecoBlockIDs.CHEWED_MAHOGANY_LOG_ID,
+        DecoBlocks.mahoganyStump = new DecoStumpBlock(DecoBlockIDs.MAHOGANY_STUMP_ID, DecoBlockIDs.MAHOGANY_LOG_ID, DecoBlockIDs.CHEWED_MAHOGANY_LOG_ID,
+                WoodTypeHelper.MAHOGANY_WORK_STUMP_ID, WoodTypeHelper.MAHOGANY_WORK_STUMP_TYPE,
                 "decoBlockTrunkMahogany_top", "decoBlockTrunkMahogany_side")
                 .setUnlocalizedName("decoBlockMahoganyStump");
         DecoBlocks.mahoganyLogSpike = new LogSpikeBlock(DecoBlockIDs.MAHOGANY_LOG_SPIKE_ID,
@@ -408,7 +411,8 @@ public class DecoBlockInitializer {
                 new String[] {"decoBlockLogMangrove_side", "decoBlockStrippedMangrove_side", "decoBlockLogMangrove_side", "decoBlockStrippedMangrove_side"})
                 .setUnlocalizedName("decoBlockMangroveLog");
         Item.itemsList[DecoBlocks.mangroveLog.blockID] = new DecoLogItemBlock(DecoBlocks.mangroveLog.blockID - 256, DecoBlocks.mangroveLog);
-        DecoBlocks.mangroveStump = new DecoStumpBlock(DecoBlockIDs.MANGROVE_STUMP_ID, WoodTypeHelper.MANGROVE_WOOD_TYPE, DecoBlockIDs.CHEWED_MANGROVE_LOG_ID,
+        DecoBlocks.mangroveStump = new DecoStumpBlock(DecoBlockIDs.MANGROVE_STUMP_ID, DecoBlockIDs.MANGROVE_LOG_ID, DecoBlockIDs.CHEWED_MANGROVE_LOG_ID,
+                WoodTypeHelper.MANGROVE_WORK_STUMP_ID, WoodTypeHelper.MANGROVE_WORK_STUMP_TYPE,
                 "decoBlockTrunkMangrove_top", "decoBlockTrunkMangrove_side")
                 .setUnlocalizedName("decoBlockMangroveStump");
         DecoBlocks.mangroveLogSpike = new LogSpikeBlock(DecoBlockIDs.MANGROVE_LOG_SPIKE_ID,

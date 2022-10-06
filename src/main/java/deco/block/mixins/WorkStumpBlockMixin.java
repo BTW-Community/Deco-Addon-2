@@ -39,7 +39,7 @@ public class WorkStumpBlockMixin extends Block {
 		}
 	}
 	
-	@Shadow
+	@Shadow(remap = false)
 	private boolean isFinishedWorkStump(int metadata) {return false;}
 	
 	//----------- Client Side Functionality -----------//
@@ -50,7 +50,7 @@ public class WorkStumpBlockMixin extends Block {
 	public Icon[] extraTopIcons;
 	
 	@Environment(EnvType.CLIENT)
-	@Inject(method = "registerIcons(Lnet/minecraft/src/IconRegister;)V", at = @At("TAIL"))
+	@Inject(method = "registerIcons", at = @At("TAIL"))
 	public void registerIcons(IconRegister register, CallbackInfo info) {
 		// Cherry, acacia, mahogany, mangrove
 		extraSideIcons = new Icon[4];
@@ -63,14 +63,16 @@ public class WorkStumpBlockMixin extends Block {
 	}
 	
 	@Environment(EnvType.CLIENT)
-	@Inject(method = "getIcon(II)Lnet/minecraft/src/Icon;", at = @At("HEAD"), cancellable = true)
+	@Inject(method = "getIcon", at = @At("HEAD"), cancellable = true)
 	public void getIcon(int side, int metadata, CallbackInfoReturnable<Icon> info) {
-		if (metadata >= WoodTypeHelper.NUM_VANILLA_WOOD) {
+		int workStumpType = metadata & 7;
+		
+		if (workStumpType >= WoodTypeHelper.NUM_VANILLA_WOOD - 1) {
 			if (side > 1) {
-				info.setReturnValue(this.extraSideIcons[metadata - WoodTypeHelper.NUM_VANILLA_WOOD]);
+				info.setReturnValue(this.extraSideIcons[workStumpType - WoodTypeHelper.NUM_VANILLA_WOOD + 1]);
 			}
 			else if (side == 0 || !this.isFinishedWorkStump(metadata)) {
-				info.setReturnValue(this.extraTopIcons[metadata - WoodTypeHelper.NUM_VANILLA_WOOD]);
+				info.setReturnValue(this.extraTopIcons[workStumpType - WoodTypeHelper.NUM_VANILLA_WOOD + 1]);
 			}
 		}
 	}
