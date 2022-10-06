@@ -84,10 +84,10 @@ public class PergolaBlock extends Block {
 	public Icon getIcon(int side, int metadata) {
 		int facing = this.getFacing(metadata);
 		
-		if ((side == 0 && facing <= 3) || (side == 1 && facing > 4)) {
+		if ((side == 0 && facing <= 3) || (side == 1 && facing >= 4)) {
 			return icon_bottom;
 		}
-		else if ((side == 1 && facing <= 3) || (side == 0 && facing > 4)) {
+		else if ((side == 1 && facing <= 3) || (side == 0 && facing >= 4)) {
 			return icon_top;
 		}
 		else if (((side == 2 || side == 3) && facing <= 3) || ((side == 4 || side == 5) && facing >= 4)) {
