@@ -19,21 +19,21 @@ public class WorkStumpBlockMixin extends Block {
 		super(blockID, material);
 	}
 	
-	@Inject(method = "getStackRetrievedByBlockDispenser", at = @At("HEAD"))
+	@Inject(method = "getStackRetrievedByBlockDispenser", at = @At("HEAD"), cancellable = true)
 	public void getStackRetrievedByBlockDispenser(World world, int x, int y, int z, CallbackInfoReturnable<ItemStack> info) {
 		int metadata = world.getBlockMetadata(x, y, z);
 		
-		switch ((metadata & 7) + 1) {
-			case WoodTypeHelper.CHERRY_WOOD_TYPE:
+		switch (metadata & 7) {
+			case WoodTypeHelper.CHERRY_WORK_STUMP_TYPE:
 				info.setReturnValue(new ItemStack(DecoBlocks.cherryLog));
 				break;
-			case WoodTypeHelper.ACACIA_WOOD_TYPE:
+			case WoodTypeHelper.ACACIA_WORK_STUMP_TYPE:
 				info.setReturnValue(new ItemStack(DecoBlocks.acaciaLog));
 				break;
-			case WoodTypeHelper.MAHOGANY_WOOD_TYPE:
+			case WoodTypeHelper.MAHOGANY_WORK_STUMP_TYPE:
 				info.setReturnValue(new ItemStack(DecoBlocks.mahoganyLog));
 				break;
-			case WoodTypeHelper.MANGROVE_WOOD_TYPE:
+			case WoodTypeHelper.MANGROVE_WORK_STUMP_TYPE:
 				info.setReturnValue(new ItemStack(DecoBlocks.mangroveLog));
 				break;
 		}
