@@ -195,11 +195,18 @@ public class DecoBlocks {
     public static Block mangroveSign;
     public static Block mangroveWallSign;
 
-    // Painted planks
-    public static Block paintedPlanks;
-    public static Block[] paintedPlanksStairs;
-    public static Block[] paintedPlanksSidingAndCorner;
-    public static Block[] paintedPlanksMoulding;
-    public static Block paintedPlanksSlab;
-    public static Block paintedPlanksSlab2;
+    // Colored planks
+    public static Block pastelPlanks;
+    public static Block[] pastelPlanksStairs;
+    public static Block[] pastelPlanksSidingAndCorner;
+    public static Block[] pastelPlanksMoulding;
+    public static Block pastelPlanksSlab;
+    public static Block pastelPlanksSlab2;
+    
+    public static Block vibrantPlanks;
+    public static Block[] vibrantPlanksStairs;
+    public static Block[] vibrantPlanksSidingAndCorner;
+    public static Block[] vibrantPlanksMoulding;
+    public static Block vibrantPlanksSlab;
+    public static Block vibrantPlanksSlab2;
 }

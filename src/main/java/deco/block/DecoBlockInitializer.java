@@ -2,12 +2,17 @@ package deco.block;
 
 import btw.block.BTWBlocks;
 import btw.block.blocks.*;
+import btw.item.blockitems.MouldingBlockItem;
+import btw.item.blockitems.SidingAndCornerBlockItem;
+import btw.util.ColorUtils;
 import deco.block.blocks.*;
 import deco.block.util.BookshelfInterface;
 import deco.block.util.BookshelfType;
 import deco.block.util.WoodTypeHelper;
 import deco.item.DecoItemIDs;
+import deco.item.itemblocks.ColoredItemBlock;
 import deco.item.itemblocks.DecoLogItemBlock;
+import deco.item.itemblocks.DecoSlabItemBlock;
 import deco.item.itemblocks.EnchantedBookshelfItemBlock;
 import net.minecraft.src.*;
 
@@ -454,5 +459,62 @@ public class DecoBlockInitializer {
                 "/deco/signMangrove.png", "decoBlockPlanksMangrove");
         DecoBlocks.mangroveWallSign = new DecoSignBlock(DecoBlockIDs.MANGROVE_WALL_SIGN_ID, WoodTypeHelper.MANGROVE_WOOD_TYPE, false,
                 "/deco/signMangrove.png", "decoBlockPlanksMangrove");
+        
+        //------ Painted Planks ------//
+        
+        DecoBlocks.pastelPlanks = new ColoredPlanksBlock(DecoBlockIDs.PASTEL_PLANKS_ID, "decoBlockPlanksPainted");
+        Item.itemsList[DecoBlocks.pastelPlanks.blockID] = new ColoredItemBlock(DecoBlocks.pastelPlanks.blockID - 256, DecoBlocks.pastelPlanks);
+        
+        DecoBlocks.pastelPlanksSidingAndCorner = new Block[16];
+        DecoBlocks.pastelPlanksMoulding = new Block[16];
+        DecoBlocks.pastelPlanksStairs = new Block[16];
+        
+        int pastelSubID = DecoBlockIDs.PASTEL_PLANKS_SUB_START;
+        
+        for (int color = 0; color < 16; color++) {
+            DecoBlocks.pastelPlanksSidingAndCorner[color] = new DecoWoodSidingAndCornerAndDecorativeBlock(pastelSubID++,
+                    "decoBlockPlanksPainted_" + ColorUtils.colorOrder[color],
+                    "decoBlockPlanksPaintedSiding." + ColorUtils.colorOrder[color]);
+            Item.itemsList[DecoBlocks.pastelPlanksSidingAndCorner[color].blockID] = new SidingAndCornerBlockItem(DecoBlocks.pastelPlanksSidingAndCorner[color].blockID - 256);
+    
+            DecoBlocks.pastelPlanksMoulding[color] = new DecoWoodMouldingAndDecorativeBlock(pastelSubID++,
+                    "decoBlockPlanksPainted_" + ColorUtils.colorOrder[color],
+                    "decoBlockPlanksPaintedColumn_" + ColorUtils.colorOrder[color],
+                    DecoBlocks.pastelPlanksSidingAndCorner[color].blockID,
+                    "decoBlockPlanksPaintedMoulding." + ColorUtils.colorOrder[color]);
+            Item.itemsList[DecoBlocks.pastelPlanksMoulding[color].blockID] = new MouldingBlockItem(DecoBlocks.pastelPlanksMoulding[color].blockID - 256);
+            
+            DecoBlocks.pastelPlanksStairs[color] = new WoodStairsBlock(pastelSubID++, DecoBlocks.pastelPlanks, color)
+                    .setUnlocalizedName("decoBlockPlanksPaintedStairs." + ColorUtils.colorOrder[color]);
+        }
+        
+        DecoBlocks.pastelPlanksSlab = new DecoWoodSlabBlock(DecoBlockIDs.PASTEL_PLANKS_SLAB_ID,
+                new Block[] {
+                        DecoBlocks.pastelPlanks,
+                        DecoBlocks.pastelPlanks,
+                        DecoBlocks.pastelPlanks,
+                        DecoBlocks.pastelPlanks,
+                        DecoBlocks.pastelPlanks,
+                        DecoBlocks.pastelPlanks,
+                        DecoBlocks.pastelPlanks,
+                        DecoBlocks.pastelPlanks
+                },
+                new int[] {0, 1, 2, 3, 4, 5, 6, 7})
+                .setUnlocalizedName("decoBlockPlanksPaintedSlab");
+        Item.itemsList[DecoBlocks.pastelPlanksSlab.blockID] = new DecoSlabItemBlock(DecoBlocks.pastelPlanksSlab.blockID - 256);
+        DecoBlocks.pastelPlanksSlab2 = new DecoWoodSlabBlock(DecoBlockIDs.PASTEL_PLANKS_SLAB_2_ID,
+                new Block[] {
+                        DecoBlocks.pastelPlanks,
+                        DecoBlocks.pastelPlanks,
+                        DecoBlocks.pastelPlanks,
+                        DecoBlocks.pastelPlanks,
+                        DecoBlocks.pastelPlanks,
+                        DecoBlocks.pastelPlanks,
+                        DecoBlocks.pastelPlanks,
+                        DecoBlocks.pastelPlanks
+                },
+                new int[] {8, 9, 10, 11, 12, 13, 14, 15})
+                .setUnlocalizedName("decoBlockPlanksPaintedSlab2");
+        Item.itemsList[DecoBlocks.pastelPlanksSlab2.blockID] = new DecoSlabItemBlock(DecoBlocks.pastelPlanksSlab2.blockID - 256);
     }
 }

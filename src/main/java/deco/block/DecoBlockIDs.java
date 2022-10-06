@@ -11,6 +11,8 @@ public class DecoBlockIDs {
     public static final int BIRCH_CHAIR_ID = 3038;
     public static final int JUNGLE_CHAIR_ID = 3039;
     public static final int BLOOD_CHAIR_ID = 3040;
+    public static final int PASTEL_PLANKS_SLAB_ID = 3041;
+    public static final int PASTEL_PLANKS_SLAB_2_ID = 3042;
 
     public static final int STRIPPED_LOG_ID = 3200;
     public static final int WOOD_ID = 3201;
@@ -24,7 +26,6 @@ public class DecoBlockIDs {
     public static final int BARREL_2_ID = 3211;
     public static final int FILLED_BLOOD_BARREL_ID = 3212;
     public static final int FILLED_CHERRY_BARREL_ID = 3213;
-    
     public static final int CHERRY_STAIRS_ID = 3214;
     public static final int CHERRY_SIDING_AND_CORNER_ID = 3215;
     public static final int CHERRY_MOULDING_ID = 3216;
@@ -43,7 +44,7 @@ public class DecoBlockIDs {
     public static final int BIRCH_GATE_ID = 3229;
     public static final int JUNGLE_GATE_ID = 3230;
     public static final int BLOOD_GATE_ID = 3231;
-    
+    public static final int PASTEL_PLANKS_ID = 3232;
     public static final int BARREL_ID = 3233;
     public static final int FILLED_OAK_BARREL_ID = 3234;
     public static final int FILLED_SPRUCE_BARREL_ID = 3235;
@@ -55,6 +56,9 @@ public class DecoBlockIDs {
     
     public static final int CHEWED_BLOOD_LOG_ID = 3243;
     public static final int BLOOD_LOG_SPIKE_ID = 3244;
+    
+    public static final int PASTEL_PLANKS_SUB_START = 3248;
+    // IDs occupied through 3295
     
     public static final int SPRUCE_SIGN_ID = 3438;
     public static final int SPRUCE_WALL_SIGN_ID = 3439;
@@ -144,4 +148,9 @@ public class DecoBlockIDs {
     public static final int FLAMING_MANGROVE_LADDER_ID = 3635;
     public static final int MANGROVE_SIGN_ID = 3636;
     public static final int MANGROVE_WALL_SIGN_ID = 3637;
+    public static final int VIBRANT_PLANKS_ID = 3648;
+    public static final int VIBRANT_PLANKS_SLAB_ID = 3649;
+    public static final int VIBRANT_PLANKS_SLAB_2_ID = 3649;
+    public static final int VIBRANT_PLANKS_SUB_START = 3650;
+    // IDs occupied through 3697
 }
