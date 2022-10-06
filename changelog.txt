@@ -5,3 +5,4 @@
 - Changed the recipe for empty bottle racks to use an I shape instead of an X (high efficiency recipe uses siding on top and bottom and moulding everywhere else).
 - Fixed an issue where addon leaves would not properly decay until updated.
 - Fixed an issue where addon trees would generate two stumps when smashing a planter.
+- Fixed an issue where the top and bottom textures of pergolas would not properly rotate with the model.

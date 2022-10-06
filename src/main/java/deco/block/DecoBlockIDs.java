@@ -51,6 +51,8 @@ public class DecoBlockIDs {
     public static final int FILLED_JUNGLE_BARREL_ID = 3237;
     public static final int CRATE_ID = 3238;
     
+    public static final int PERGOLA_ID = 3240;
+    
     public static final int CHEWED_BLOOD_LOG_ID = 3243;
     public static final int BLOOD_LOG_SPIKE_ID = 3244;
     
