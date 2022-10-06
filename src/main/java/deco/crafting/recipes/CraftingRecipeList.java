@@ -202,6 +202,8 @@ public class CraftingRecipeList {
 		initAcaciaWoodRecipes();
 		initMahoganyWoodRecipes();
 		initMangroveWoodRecipes();
+		
+		initPaintedWoodRecipes();
 	}
 	
 	private static void initOakWoodRecipes() {
