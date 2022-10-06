@@ -1,8 +1,10 @@
 package deco.block.blocks;
 
 import btw.block.blocks.legacy.LegacySaplingBlock;
+import btw.util.ReflectionUtils;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
+import net.minecraft.src.EntityPlayer;
 import net.minecraft.src.Icon;
 import net.minecraft.src.IconRegister;
 import net.minecraft.src.World;
@@ -16,6 +18,16 @@ public abstract class DecoSaplingBlock extends LegacySaplingBlock {
         super(blockID);
 
         this.baseTextureNames = baseTextureNames;
+    }
+    
+    @Override
+    //Debug method
+    public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int side, float hitX, float hitY, float hitZ) {
+        if (!world.isRemote) {
+            attemptToGrow(world, x, y, z, world.rand);
+        }
+        
+        return true;
     }
 
     @Override

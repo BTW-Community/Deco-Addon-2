@@ -3,6 +3,7 @@ package deco.world.util;
 import btw.world.feature.TreeUtils;
 import deco.block.DecoBlocks;
 import net.minecraft.src.Block;
+import net.minecraft.src.Direction;
 import net.minecraft.src.World;
 
 import java.util.Random;
@@ -38,7 +39,7 @@ public class TreeGenerator {
                         if (var11 >= 0 && var11 < 256) {
                             var15 = world.getBlockId(var13, var11, var14);
 
-                            if (!world.isAirBlock(var13, var11, var14) && var15 != Block.leaves.blockID && var15 != Block.grass.blockID && var15 != Block.dirt.blockID && var15 != Block.wood.blockID && var15 != DecoBlocks.cherryLog.blockID && var15 != DecoBlocks.cherryLeaves.blockID) {
+                            if (!world.isAirBlock(var13, var11, var14) && var15 != DecoBlocks.mahoganyLeaves.blockID && var15 != Block.grass.blockID && var15 != Block.dirt.blockID && var15 != DecoBlocks.mahoganyLog.blockID && var15 != DecoBlocks.cherryLog.blockID && var15 != DecoBlocks.cherryLeaves.blockID) {
                                 var10 = false;
                             }
                         }
@@ -86,7 +87,7 @@ public class TreeGenerator {
                     for (var14 = 0; var14 < var9; ++var14) {
                         var15 = world.getBlockId(x, y + var14, z);
 
-                        if (world.isAirBlock(x, y + var14, z) || var15 == Block.leaves.blockID || var15 == DecoBlocks.cherryLeaves.blockID) {
+                        if (world.isAirBlock(x, y + var14, z) || var15 == DecoBlocks.mahoganyLeaves.blockID || var15 == DecoBlocks.cherryLeaves.blockID) {
                             world.setBlockAndMetadataWithNotify(x, y + var14, z, DecoBlocks.cherryLog.blockID, var6);
                         }
                     }
@@ -216,8 +217,232 @@ public class TreeGenerator {
         if(size==3){par1World.setBlock(x, y, z, DecoBlocks.acaciaLog.blockID);}
     }
     
-    public static boolean generateMahogany(World world, Random rand, int x, int y, int z) {
-        return false;
+    public static boolean generateMahogany(World par1World, Random par2Random, int par3, int par4, int par5)
+    {
+        int var6 = par2Random.nextInt(8) + 8;
+        boolean var7 = true;
+        
+        boolean vinesGrow = true;
+        
+        if (par4 >= 1 && par4 + var6 + 1 <= 256)
+        {
+            int var8;
+            byte var9;
+            int var11;
+            int var12;
+            
+            for (var8 = par4; var8 <= par4 + 1 + var6; ++var8)
+            {
+                var9 = 1;
+                
+                if (var8 == par4)
+                {
+                    var9 = 0;
+                }
+                
+                if (var8 >= par4 + 1 + var6 - 2)
+                {
+                    var9 = 2;
+                }
+                
+                for (int var10 = par3 - var9; var10 <= par3 + var9 && var7; ++var10)
+                {
+                    for (var11 = par5 - var9; var11 <= par5 + var9 && var7; ++var11)
+                    {
+                        if (var8 >= 0 && var8 < 256)
+                        {
+                            var12 = par1World.getBlockId(var10, var8, var11);
+                            
+                            if (var12 != 0 && var12 != DecoBlocks.mahoganyLeaves.blockID && var12 != Block.grass.blockID && var12 != Block.dirt.blockID && var12 != DecoBlocks.mahoganyLog.blockID)
+                            {
+                                var7 = false;
+                            }
+                        }
+                        else
+                        {
+                            var7 = false;
+                        }
+                    }
+                }
+            }
+            
+            if (!var7)
+                return false;
+            else
+            {
+                var8 = par1World.getBlockId(par3, par4 - 1, par5);
+                
+                if ((var8 == Block.grass.blockID || var8 == Block.dirt.blockID) && par4 < 256 - var6 - 1)
+                {
+                    par1World.setBlock(par3, par4 - 1, par5, Block.dirt.blockID);
+                    var9 = 3;
+                    byte var18 = 0;
+                    int var13;
+                    int var14;
+                    int var15;
+                    
+                    for (var11 = par4 - var9 + var6; var11 <= par4 + var6; ++var11)
+                    {
+                        var12 = var11 - (par4 + var6);
+                        var13 = var18 + 1 - var12;
+                        
+                        for (var14 = par3 - var13; var14 <= par3 + var13; ++var14)
+                        {
+                            var15 = var14 - par3;
+                            
+                            for (int var16 = par5 - var13; var16 <= par5 + var13; ++var16)
+                            {
+                                int var17 = var16 - par5;
+                                
+                                if ((Math.abs(var15) != var13 || Math.abs(var17) != var13 || par2Random.nextInt(2) != 0 && var12 != 0) && !Block.opaqueCubeLookup[par1World.getBlockId(var14, var11, var16)])
+                                {
+                                    par1World.setBlockAndMetadata(var14, var11, var16, DecoBlocks.mahoganyLeaves.blockID, 0);
+                                }
+                            }
+                        }
+                    }
+                    
+                    for (var11 = 0; var11 < var6; ++var11)
+                    {
+                        var12 = par1World.getBlockId(par3, par4 + var11, par5);
+                        
+                        if (var12 == 0 || var12 == DecoBlocks.mahoganyLeaves.blockID)
+                        {
+                            par1World.setBlockAndMetadata(par3, par4 + var11, par5, DecoBlocks.mahoganyLog.blockID, 0);
+                            par1World.setBlockAndMetadata(par3 - 3, par4 + (var6 - 3), par5, DecoBlocks.mahoganyLog.blockID, 4);
+                            par1World.setBlockAndMetadata(par3 + 3, par4 + (var6 - 3), par5, DecoBlocks.mahoganyLog.blockID, 4);
+                            par1World.setBlockAndMetadata(par3, par4 + (var6 - 3), par5 - 3, DecoBlocks.mahoganyLog.blockID, 8);
+                            par1World.setBlockAndMetadata(par3, par4 + (var6 - 3), par5 + 3, DecoBlocks.mahoganyLog.blockID, 8);
+                            par1World.setBlockAndMetadata(par3 - 2, par4 + (var6 - 4), par5, DecoBlocks.mahoganyLog.blockID, 0);
+                            par1World.setBlockAndMetadata(par3 + 2, par4 + (var6 - 4), par5, DecoBlocks.mahoganyLog.blockID, 0);
+                            par1World.setBlockAndMetadata(par3, par4 + (var6 - 4), par5 - 2, DecoBlocks.mahoganyLog.blockID, 0);
+                            par1World.setBlockAndMetadata(par3, par4 + (var6 - 4), par5 + 2, DecoBlocks.mahoganyLog.blockID, 0);
+                            par1World.setBlockAndMetadata(par3 - 2, par4 + (var6 - 5), par5, DecoBlocks.mahoganyLog.blockID, 0);
+                            par1World.setBlockAndMetadata(par3 + 2, par4 + (var6 - 5), par5, DecoBlocks.mahoganyLog.blockID, 0);
+                            par1World.setBlockAndMetadata(par3, par4 + (var6 - 5), par5 - 2, DecoBlocks.mahoganyLog.blockID, 0);
+                            par1World.setBlockAndMetadata(par3, par4 + (var6 - 5), par5 + 2, DecoBlocks.mahoganyLog.blockID, 0);
+                            par1World.setBlockAndMetadata(par3 - 1, par4 + (var6 - 6), par5, DecoBlocks.mahoganyLog.blockID, 4);
+                            par1World.setBlockAndMetadata(par3 + 1, par4 + (var6 - 6), par5, DecoBlocks.mahoganyLog.blockID, 4);
+                            par1World.setBlockAndMetadata(par3, par4 + (var6 - 6), par5 - 1, DecoBlocks.mahoganyLog.blockID, 8);
+                            par1World.setBlockAndMetadata(par3, par4 + (var6 - 6), par5 + 1, DecoBlocks.mahoganyLog.blockID, 8);
+                            par1World.setBlockAndMetadata(par3, par4 + (var6 - 3), par5, DecoBlocks.mahoganyLeaves.blockID, 0);
+                            par1World.setBlockAndMetadata(par3, par4 + (var6 - 2), par5, DecoBlocks.mahoganyLeaves.blockID, 0);
+                            par1World.setBlockAndMetadata(par3, par4 + (var6 - 1), par5, DecoBlocks.mahoganyLeaves.blockID, 0);
+                            par1World.setBlockAndMetadata(par3, par4 + (var6), par5, DecoBlocks.mahoganyLeaves.blockID, 0);
+                            par1World.setBlock(par3, par4 + (var6 - 4), par5, 0);
+                            par1World.setBlock(par3, par4 + (var6 - 5), par5, 0);
+                            par1World.setBlockAndMetadata(par3 - 1, par4 + (var6 - 3), par5, DecoBlocks.mahoganyLog.blockID, 4);
+                            par1World.setBlockAndMetadata(par3 + 1, par4 + (var6 - 3), par5, DecoBlocks.mahoganyLog.blockID, 4);
+                            par1World.setBlockAndMetadata(par3, par4 + (var6 - 3), par5 - 1, DecoBlocks.mahoganyLog.blockID, 8);
+                            par1World.setBlockAndMetadata(par3, par4 + (var6 - 3), par5 + 1, DecoBlocks.mahoganyLog.blockID, 8);
+                            par1World.setBlockAndMetadata(par3, par4 + (var6 - 2), par5, DecoBlocks.mahoganyLog.blockID, 0);
+                            
+                            if (vinesGrow && var11 > 0)
+                            {
+                                if (par2Random.nextInt(3) > 0 && par1World.isAirBlock(par3 - 1, par4 + var11, par5))
+                                {
+                                    par1World.setBlockAndMetadata(par3 - 1, par4 + var11, par5, Block.vine.blockID, 8);
+                                }
+                                
+                                if (par2Random.nextInt(3) > 0 && par1World.isAirBlock(par3 + 1, par4 + var11, par5))
+                                {
+                                    par1World.setBlockAndMetadata(par3 + 1, par4 + var11, par5, Block.vine.blockID, 2);
+                                }
+                                
+                                if (par2Random.nextInt(3) > 0 && par1World.isAirBlock(par3, par4 + var11, par5 - 1))
+                                {
+                                    par1World.setBlockAndMetadata(par3, par4 + var11, par5 - 1, Block.vine.blockID, 1);
+                                }
+                                
+                                if (par2Random.nextInt(3) > 0 && par1World.isAirBlock(par3, par4 + var11, par5 + 1))
+                                {
+                                    par1World.setBlockAndMetadata(par3, par4 + var11, par5 + 1, Block.vine.blockID, 4);
+                                }
+                            }
+                        }
+                    }
+                    
+                    par1World.setBlockMetadataWithClient(par3, par4, par5, 0 | 12); // place stump
+                    
+                    if (vinesGrow)
+                    {
+                        for (var11 = par4 - 3 + var6; var11 <= par4 + var6; ++var11)
+                        {
+                            var12 = var11 - (par4 + var6);
+                            var13 = 2 - var12 / 2;
+                            
+                            for (var14 = par3 - var13; var14 <= par3 + var13; ++var14)
+                            {
+                                for (var15 = par5 - var13; var15 <= par5 + var13; ++var15)
+                                {
+                                    if (par1World.getBlockId(var14, var11, var15) == DecoBlocks.mahoganyLeaves.blockID)
+                                    {
+                                        if (par2Random.nextInt(4) == 0 && par1World.getBlockId(var14 - 1, var11, var15) == 0)
+                                        {
+                                            growVines(par1World, var14 - 1, var11, var15, 8);
+                                        }
+                                        
+                                        if (par2Random.nextInt(4) == 0 && par1World.getBlockId(var14 + 1, var11, var15) == 0)
+                                        {
+                                            growVines(par1World, var14 + 1, var11, var15, 2);
+                                        }
+                                        
+                                        if (par2Random.nextInt(4) == 0 && par1World.getBlockId(var14, var11, var15 - 1) == 0)
+                                        {
+                                            growVines(par1World, var14, var11, var15 - 1, 1);
+                                        }
+                                        
+                                        if (par2Random.nextInt(4) == 0 && par1World.getBlockId(var14, var11, var15 + 1) == 0)
+                                        {
+                                            growVines(par1World, var14, var11, var15 + 1, 4);
+                                        }
+                                    }
+                                }
+                                
+                                if (par2Random.nextInt(5) == 0 && var6 > 5)
+                                {
+                                    for (int i = 0; i < 2; ++i)
+                                    {
+                                        for (int j = 0; j < 4; ++j)
+                                        {
+                                            if (par2Random.nextInt(4 - i) == 0)
+                                            {
+                                                var13 = par2Random.nextInt(3);
+                                                par1World.setBlockAndMetadata(par3 + Direction.offsetX[Direction.rotateOpposite[j]], par4 + var6 - 5 + i, par5 + Direction.offsetZ[Direction.rotateOpposite[j]], Block.cocoaPlant.blockID, var13 << 2 | j);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+                    return true;
+                } else
+                    return false;
+            }
+        } else
+            return false;
+    }
+    
+    /**
+     * Grows vines downward from the given block for a given length. Args: World, x, starty, z, vine-length
+     */
+    private static void growVines(World par1World, int par2, int par3, int par4, int par5)
+    {
+        par1World.setBlockAndMetadata(par2, par3, par4, Block.vine.blockID, par5);
+        int var6 = 4;
+        
+        while (true)
+        {
+            --par3;
+            
+            if (par1World.getBlockId(par2, par3, par4) != 0 || var6 <= 0)
+                return;
+            
+            par1World.setBlockAndMetadata(par2, par3, par4, Block.vine.blockID, par5);
+            --var6;
+        }
     }
     
     public static boolean generateMangrove(World world, Random rand, int x, int y, int z) {
