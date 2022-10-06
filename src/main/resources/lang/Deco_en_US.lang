@@ -186,11 +186,11 @@ tile.decoBlockSaplingCherry.cherryMature.name=Mature Cherry Sapling
 tile.decoBlockSaplingAcacia.acacia.name=Acacia Sapling
 tile.decoBlockSaplingAcacia.acaciaMature.name=Mature Acacia Sapling
 
-tile.decoBlockSaplingMahogany.mahogany=Mahogany Sapling
-tile.decoBlockSaplingMahogany.mahoganyMature=Mature Mahogany Sapling
+tile.decoBlockSaplingMahogany.mahogany.name=Mahogany Sapling
+tile.decoBlockSaplingMahogany.mahoganyMature.name=Mature Mahogany Sapling
 
-tile.decoBlockSaplingMangrove.mangrove=Mangrove Sapling
-tile.decoBlockSaplingMangrove.mangroveMature=Mature Mangrove Sapling
+tile.decoBlockSaplingMangrove.mangrove.name=Mangrove Sapling
+tile.decoBlockSaplingMangrove.mangroveMature.name=Mature Mangrove Sapling
 
 tile.decoBlockSaplingAutumn.red.name=Red Autumn Sapling
 tile.decoBlockSaplingAutumn.orange.name=Orange Autumn Sapling
