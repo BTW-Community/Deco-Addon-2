@@ -84,35 +84,8 @@ public class MahoganySaplingBlock extends DecoSaplingBlock {
 					for (int j = 0; j < treeHeight; ++j) {
 						int blockID = world.getBlockId(x, y + j, z);
 						
-						if (world.isAirBlock(x, y, z) || Block.blocksList[blockID].isLeafBlock(world, x, y, z)) {
+						if (world.isAirBlock(x, y + j, z) || (Block.blocksList[blockID] != null && Block.blocksList[blockID].isLeafBlock(world, x, y + j, z))) {
 							world.setBlockAndMetadata(x, y + j, z, DecoBlocks.mahoganyLog.blockID, 0);
-							world.setBlockAndMetadata(x - 3, y + (treeHeight - 3), z, DecoBlocks.mahoganyLog.blockID, 4);
-							world.setBlockAndMetadata(x + 3, y + (treeHeight - 3), z, DecoBlocks.mahoganyLog.blockID, 4);
-							world.setBlockAndMetadata(x, y + (treeHeight - 3), z - 3, DecoBlocks.mahoganyLog.blockID, 8);
-							world.setBlockAndMetadata(x, y + (treeHeight - 3), z + 3, DecoBlocks.mahoganyLog.blockID, 8);
-							world.setBlockAndMetadata(x - 2, y + (treeHeight - 4), z, DecoBlocks.mahoganyLog.blockID, 0);
-							world.setBlockAndMetadata(x + 2, y + (treeHeight - 4), z, DecoBlocks.mahoganyLog.blockID, 0);
-							world.setBlockAndMetadata(x, y + (treeHeight - 4), z - 2, DecoBlocks.mahoganyLog.blockID, 0);
-							world.setBlockAndMetadata(x, y + (treeHeight - 4), z + 2, DecoBlocks.mahoganyLog.blockID, 0);
-							world.setBlockAndMetadata(x - 2, y + (treeHeight - 5), z, DecoBlocks.mahoganyLog.blockID, 0);
-							world.setBlockAndMetadata(x + 2, y + (treeHeight - 5), z, DecoBlocks.mahoganyLog.blockID, 0);
-							world.setBlockAndMetadata(x, y + (treeHeight - 5), z - 2, DecoBlocks.mahoganyLog.blockID, 0);
-							world.setBlockAndMetadata(x, y + (treeHeight - 5), z + 2, DecoBlocks.mahoganyLog.blockID, 0);
-							world.setBlockAndMetadata(x - 1, y + (treeHeight - 6), z, DecoBlocks.mahoganyLog.blockID, 4);
-							world.setBlockAndMetadata(x + 1, y + (treeHeight - 6), z, DecoBlocks.mahoganyLog.blockID, 4);
-							world.setBlockAndMetadata(x, y + (treeHeight - 6), z - 1, DecoBlocks.mahoganyLog.blockID, 8);
-							world.setBlockAndMetadata(x, y + (treeHeight - 6), z + 1, DecoBlocks.mahoganyLog.blockID, 8);
-							world.setBlockAndMetadata(x, y + (treeHeight - 3), z, DecoBlocks.mahoganyLeaves.blockID, 0);
-							world.setBlockAndMetadata(x, y + (treeHeight - 2), z, DecoBlocks.mahoganyLeaves.blockID, 0);
-							world.setBlockAndMetadata(x, y + (treeHeight - 1), z, DecoBlocks.mahoganyLeaves.blockID, 0);
-							world.setBlockAndMetadata(x, y + (treeHeight), z, DecoBlocks.mahoganyLeaves.blockID, 0);
-							world.setBlock(x, y + (treeHeight - 4), z, 0);
-							world.setBlock(x, y + (treeHeight - 5), z, 0);
-							world.setBlockAndMetadata(x - 1, y + (treeHeight - 3), z, DecoBlocks.mahoganyLog.blockID, 4);
-							world.setBlockAndMetadata(x + 1, y + (treeHeight - 3), z, DecoBlocks.mahoganyLog.blockID, 4);
-							world.setBlockAndMetadata(x, y + (treeHeight - 3), z - 1, DecoBlocks.mahoganyLog.blockID, 8);
-							world.setBlockAndMetadata(x, y + (treeHeight - 3), z + 1, DecoBlocks.mahoganyLog.blockID, 8);
-							world.setBlockAndMetadata(x, y + (treeHeight - 2), z, DecoBlocks.mahoganyLog.blockID, 0);
 							
 							if (j > 0) {
 								if (rand.nextInt(3) > 0 && world.isAirBlock(x - 1, y + j, z)) {
@@ -133,6 +106,34 @@ public class MahoganySaplingBlock extends DecoSaplingBlock {
 							}
 						}
 					}
+					
+					world.setBlockAndMetadata(x - 3, y + (treeHeight - 3), z, DecoBlocks.mahoganyLog.blockID, 4);
+					world.setBlockAndMetadata(x + 3, y + (treeHeight - 3), z, DecoBlocks.mahoganyLog.blockID, 4);
+					world.setBlockAndMetadata(x, y + (treeHeight - 3), z - 3, DecoBlocks.mahoganyLog.blockID, 8);
+					world.setBlockAndMetadata(x, y + (treeHeight - 3), z + 3, DecoBlocks.mahoganyLog.blockID, 8);
+					world.setBlockAndMetadata(x - 2, y + (treeHeight - 4), z, DecoBlocks.mahoganyLog.blockID, 0);
+					world.setBlockAndMetadata(x + 2, y + (treeHeight - 4), z, DecoBlocks.mahoganyLog.blockID, 0);
+					world.setBlockAndMetadata(x, y + (treeHeight - 4), z - 2, DecoBlocks.mahoganyLog.blockID, 0);
+					world.setBlockAndMetadata(x, y + (treeHeight - 4), z + 2, DecoBlocks.mahoganyLog.blockID, 0);
+					world.setBlockAndMetadata(x - 2, y + (treeHeight - 5), z, DecoBlocks.mahoganyLog.blockID, 0);
+					world.setBlockAndMetadata(x + 2, y + (treeHeight - 5), z, DecoBlocks.mahoganyLog.blockID, 0);
+					world.setBlockAndMetadata(x, y + (treeHeight - 5), z - 2, DecoBlocks.mahoganyLog.blockID, 0);
+					world.setBlockAndMetadata(x, y + (treeHeight - 5), z + 2, DecoBlocks.mahoganyLog.blockID, 0);
+					world.setBlockAndMetadata(x - 1, y + (treeHeight - 6), z, DecoBlocks.mahoganyLog.blockID, 4);
+					world.setBlockAndMetadata(x + 1, y + (treeHeight - 6), z, DecoBlocks.mahoganyLog.blockID, 4);
+					world.setBlockAndMetadata(x, y + (treeHeight - 6), z - 1, DecoBlocks.mahoganyLog.blockID, 8);
+					world.setBlockAndMetadata(x, y + (treeHeight - 6), z + 1, DecoBlocks.mahoganyLog.blockID, 8);
+					world.setBlockAndMetadata(x, y + (treeHeight - 3), z, DecoBlocks.mahoganyLeaves.blockID, 0);
+					world.setBlockAndMetadata(x, y + (treeHeight - 2), z, DecoBlocks.mahoganyLeaves.blockID, 0);
+					world.setBlockAndMetadata(x, y + (treeHeight - 1), z, DecoBlocks.mahoganyLeaves.blockID, 0);
+					world.setBlockAndMetadata(x, y + (treeHeight), z, DecoBlocks.mahoganyLeaves.blockID, 0);
+					world.setBlock(x, y + (treeHeight - 4), z, 0);
+					world.setBlock(x, y + (treeHeight - 5), z, 0);
+					world.setBlockAndMetadata(x - 1, y + (treeHeight - 3), z, DecoBlocks.mahoganyLog.blockID, 4);
+					world.setBlockAndMetadata(x + 1, y + (treeHeight - 3), z, DecoBlocks.mahoganyLog.blockID, 4);
+					world.setBlockAndMetadata(x, y + (treeHeight - 3), z - 1, DecoBlocks.mahoganyLog.blockID, 8);
+					world.setBlockAndMetadata(x, y + (treeHeight - 3), z + 1, DecoBlocks.mahoganyLog.blockID, 8);
+					world.setBlockAndMetadata(x, y + (treeHeight - 2), z, DecoBlocks.mahoganyLog.blockID, 0);
 					
 					world.setBlock(x, y, z, DecoBlocks.mahoganyStump.blockID);
 					
