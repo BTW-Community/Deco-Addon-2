@@ -2,6 +2,9 @@ package deco.crafting.recipes;
 
 import btw.block.BTWBlocks;
 import btw.block.blocks.AestheticOpaqueBlock;
+import btw.block.blocks.MouldingAndDecorativeBlock;
+import btw.block.blocks.SidingAndCornerAndDecorativeBlock;
+import btw.block.blocks.SidingAndCornerBlock;
 import btw.crafting.recipe.RecipeManager;
 import btw.inventory.util.InventoryUtils;
 import btw.item.BTWItems;
@@ -2194,6 +2197,131 @@ public class CraftingRecipeList {
 				});
 	}
 	
+	private static void initPaintedWoodRecipes() {
+		
+		//------ Pastel Planks ------//
+		
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(BTWItems.potash),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.pastelPlanks, 6, InventoryUtils.IGNORE_METADATA)
+				});
+		
+		for (int color = 0; color < 16; color++) {
+			RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.pastelPlanks, 8, color),
+					new ItemStack[] {
+							new ItemStack(Block.planks, 8, InventoryUtils.IGNORE_METADATA),
+							new ItemStack(Item.dyePowder, 1, color)
+					});
+			RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.pastelPlanks, 8, color),
+					new ItemStack[] {
+							new ItemStack(Block.planks, 8, InventoryUtils.IGNORE_METADATA),
+							new ItemStack(Item.dyePowder, 1, color + 16)
+					});
+			
+			// Sub Blocks
+			RecipeManager.addSubBlockRecipesToSaw(DecoBlocks.pastelPlanks, color,
+					DecoBlocks.pastelPlanksSidingAndCorner[color],
+					DecoBlocks.pastelPlanksMoulding[color]);
+			
+			// Combining
+			RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.pastelPlanks, 1, color),
+					new ItemStack[] {
+							new ItemStack(DecoBlocks.pastelPlanksSidingAndCorner[color]),
+							new ItemStack(DecoBlocks.pastelPlanksSidingAndCorner[color])
+					});
+			RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.pastelPlanksSidingAndCorner[color]),
+					new ItemStack[] {
+							new ItemStack(DecoBlocks.pastelPlanksMoulding[color]),
+							new ItemStack(DecoBlocks.pastelPlanksMoulding[color])
+					});
+			RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.pastelPlanksMoulding[color]),
+					new ItemStack[] {
+							new ItemStack(DecoBlocks.pastelPlanksSidingAndCorner[color], 1, 1), // corner
+							new ItemStack(DecoBlocks.pastelPlanksSidingAndCorner[color], 1, 1)  // corner
+					});
+			
+			Block slabBlock = color < 8 ? DecoBlocks.pastelPlanksSlab : DecoBlocks.pastelPlanksSlab2;
+			
+			RecipeManager.addRecipe(new ItemStack(DecoBlocks.pastelPlanks, 1, color),
+					new Object[] {
+							"S",
+							"S",
+							'S', new ItemStack(slabBlock, 1, color % 8)
+					});
+			
+			// Stairs and slabs
+			RecipeManager.addRecipe(new ItemStack(DecoBlocks.pastelPlanksStairs[color], 6),
+					new Object[] {
+							"F  ",
+							"FF ",
+							"FFF",
+							'F', new ItemStack(DecoBlocks.pastelPlanks, 1, color)
+					});
+			RecipeManager.addRecipe(new ItemStack(DecoBlocks.pastelPlanksStairs[color], 1),
+					new Object[] {
+							"M ",
+							"MM",
+							'M', new ItemStack(DecoBlocks.pastelPlanksMoulding[color])
+					});
+			
+			RecipeManager.addRecipe(new ItemStack(slabBlock, 6, color % 8),
+					new Object[] {
+							"FFF",
+							'F', new ItemStack(DecoBlocks.pastelPlanks, 1, color)
+					});
+			
+			// Decorative
+			RecipeManager.addRecipe(
+					new ItemStack(DecoBlocks.pastelPlanksMoulding[color], 6, MouldingAndDecorativeBlock.SUBTYPE_PEDESTAL_UP),
+					new Object[] {
+							" S ",
+							"FFF",
+							"FFF",
+							'S', new ItemStack(DecoBlocks.pastelPlanksMoulding[color]),
+							'F', new ItemStack(DecoBlocks.pastelPlanks, 1, color)
+					});
+			RecipeManager.addRecipe(
+					new ItemStack(DecoBlocks.pastelPlanksMoulding[color], 1, MouldingAndDecorativeBlock.SUBTYPE_COLUMN),
+					new Object[] {
+							"M",
+							"M",
+							"M",
+							'M', new ItemStack(DecoBlocks.pastelPlanksMoulding[color])
+					});
+			RecipeManager.addRecipe(
+					new ItemStack(DecoBlocks.pastelPlanksMoulding[color], 4, MouldingAndDecorativeBlock.SUBTYPE_TABLE),
+					new Object[] {
+							"SSS",
+							" M ",
+							" M ",
+							'S', new ItemStack(DecoBlocks.pastelPlanksSidingAndCorner[color]),
+							'M', new ItemStack(DecoBlocks.pastelPlanksMoulding[color])
+					});
+			
+			RecipeManager.addRecipe(
+					new ItemStack(DecoBlocks.pastelPlanksSidingAndCorner[color], 4, SidingAndCornerAndDecorativeBlock.SUBTYPE_BENCH),
+					new Object[] {
+							"SSS",
+							" M ",
+							'S', new ItemStack(DecoBlocks.pastelPlanksSidingAndCorner[color]),
+							'M', new ItemStack(DecoBlocks.pastelPlanksMoulding[color])
+					});
+			RecipeManager.addRecipe(
+					new ItemStack(DecoBlocks.pastelPlanksSidingAndCorner[color], 6, SidingAndCornerAndDecorativeBlock.SUBTYPE_FENCE),
+					new Object[] {
+							"FFF",
+							"FFF",
+							'F', new ItemStack(DecoBlocks.pastelPlanks, 1, color)
+					});
+			RecipeManager.addRecipe(
+					new ItemStack(DecoBlocks.pastelPlanksSidingAndCorner[color], 2, SidingAndCornerAndDecorativeBlock.SUBTYPE_FENCE),
+					new Object[] {
+							"MMM",
+							'M', new ItemStack(DecoBlocks.pastelPlanksMoulding[color])
+					});
+		}
+	}
+	
 	private static void addWoodenSubBlockRecipes(int woodType, Block sidingAndCorner, Block moulding, Block stairs, Block slab, int slabMetadata) {
 		// Base sub blocks
 		RecipeManager.addSubBlockRecipesToSaw(Block.planks, woodType,
@@ -2249,7 +2377,7 @@ public class CraftingRecipeList {
 						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, woodType)
 				});
 		
-		RecipeManager.addRecipe(new ItemStack(Block.woodSingleSlab, 1, 6),
+		RecipeManager.addRecipe(new ItemStack(Block.woodSingleSlab, 6, woodType),
 				new Object[] {
 						"FFF",
 						'F', new ItemStack(Block.planks, 1, woodType)
