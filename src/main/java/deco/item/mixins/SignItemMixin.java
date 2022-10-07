@@ -37,7 +37,8 @@ public class SignItemMixin extends ItemSign {
 				DecoBlockIDs.CHERRY_SIGN_ID,
 				DecoBlockIDs.ACACIA_SIGN_ID,
 				DecoBlockIDs.MAHOGANY_SIGN_ID,
-				DecoBlockIDs.MANGROVE_SIGN_ID
+				DecoBlockIDs.MANGROVE_SIGN_ID,
+				DecoBlockIDs.HAZEL_SIGN_ID
 		};
 		
 		wallSigns = new int[] {
@@ -49,7 +50,8 @@ public class SignItemMixin extends ItemSign {
 				DecoBlockIDs.CHERRY_WALL_SIGN_ID,
 				DecoBlockIDs.ACACIA_WALL_SIGN_ID,
 				DecoBlockIDs.MAHOGANY_WALL_SIGN_ID,
-				DecoBlockIDs.MANGROVE_WALL_SIGN_ID
+				DecoBlockIDs.MANGROVE_WALL_SIGN_ID,
+				DecoBlockIDs.HAZEL_WALL_SIGN_ID
 		};
 		
 		textures = new String[] {
@@ -61,35 +63,15 @@ public class SignItemMixin extends ItemSign {
 				"decoItemSignCherry",
 				"decoItemSignAcacia",
 				"decoItemSignMahogany",
-				"decoItemSignMangrove"
+				"decoItemSignMangrove",
+				"decoItemSignHazel"
 		};
 	}
 	
 	@Override
 	public String getUnlocalizedName(ItemStack itemStack) {
 		int itemType = MathHelper.clamp_int(itemStack.getItemDamage(), 0, textures.length - 1);
-		
-		switch (itemType) {
-			default:
-			case WoodTypeHelper.OAK_WOOD_TYPE:
-				return super.getUnlocalizedName(itemStack) + ".oak";
-			case WoodTypeHelper.SPRUCE_WOOD_TYPE:
-				return super.getUnlocalizedName(itemStack) + ".spruce";
-			case WoodTypeHelper.BIRCH_WOOD_TYPE:
-				return super.getUnlocalizedName(itemStack) + ".birch";
-			case WoodTypeHelper.JUNGLE_WOOD_TYPE:
-				return super.getUnlocalizedName(itemStack) + ".jungle";
-			case WoodTypeHelper.BLOOD_WOOD_TYPE:
-				return super.getUnlocalizedName(itemStack) + ".blood";
-			case WoodTypeHelper.CHERRY_WOOD_TYPE:
-				return super.getUnlocalizedName(itemStack) + ".cherry";
-			case WoodTypeHelper.ACACIA_WOOD_TYPE:
-				return super.getUnlocalizedName(itemStack) + ".acacia";
-			case WoodTypeHelper.MAHOGANY_WOOD_TYPE:
-				return super.getUnlocalizedName(itemStack) + ".mahogany";
-			case WoodTypeHelper.MANGROVE_WOOD_TYPE:
-				return super.getUnlocalizedName(itemStack) + ".mangrove";
-		}
+		return this.getUnlocalizedName() + "." + WoodTypeHelper.woodNames[itemType];
 	}
 	
 	@Inject(method = "onItemUse(Lnet/minecraft/src/ItemStack;Lnet/minecraft/src/EntityPlayer;Lnet/minecraft/src/World;IIIIFFF)Z",

@@ -37,6 +37,8 @@ public class DecoItemInitializer {
                 .setUnlocalizedName("decoItemDoorMahogany");
         DecoItems.mangroveDoor = new DecoItemDoor(DecoItemIDs.MANGROVE_DOOR_ID, DecoBlockIDs.MANGROVE_DOOR_ID)
                 .setUnlocalizedName("decoItemDoorMangrove");
+        DecoItems.hazelDoor = new DecoItemDoor(DecoItemIDs.HAZEL_DOOR_ID, DecoBlockIDs.HAZEL_DOOR_ID)
+                .setUnlocalizedName("decoItemDoorHazel");
     }
 
     private static void createDecoItemBlocks() {

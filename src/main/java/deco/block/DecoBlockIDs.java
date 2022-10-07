@@ -148,9 +148,24 @@ public class DecoBlockIDs {
     public static final int FLAMING_MANGROVE_LADDER_ID = 3635;
     public static final int MANGROVE_SIGN_ID = 3636;
     public static final int MANGROVE_WALL_SIGN_ID = 3637;
-    public static final int VIBRANT_PLANKS_ID = 3648;
-    public static final int VIBRANT_PLANKS_SLAB_ID = 3649;
-    public static final int VIBRANT_PLANKS_SLAB_2_ID = 3649;
-    public static final int VIBRANT_PLANKS_SUB_START = 3650;
-    // IDs occupied through 3697
+    
+    public static final int WORK_STUMP_ID = 3698;
+    public static final int HAZEL_LOG_ID = 3699;
+    public static final int HAZEL_STUMP_ID = 3700;
+    public static final int CHEWED_HAZEL_LOG_ID = 3701;
+    public static final int HAZEL_LOG_SPIKE_ID = 3702;
+    public static final int HAZEL_LEAVES_ID = 3703;
+    public static final int HAZEL_SAPLING_ID = 3704;
+    public static final int HAZEL_STAIRS_ID = 3705;
+    public static final int HAZEL_SIDING_AND_CORNER_ID = 3706;
+    public static final int HAZEL_MOULDING_ID = 3707;
+    public static final int HAZEL_GATE_ID = 3708;
+    public static final int HAZEL_TRAPDOOR_ID = 3709;
+    public static final int HAZEL_DOOR_ID = 3710;
+    public static final int HAZEL_CHAIR_ID = 3711;
+    public static final int FILLED_HAZEL_BARREL_ID = 3712;
+    public static final int HAZEL_LADDER_ID = 3713;
+    public static final int FLAMING_HAZEL_LADDER_ID = 3714;
+    public static final int HAZEL_SIGN_ID = 3715;
+    public static final int HAZEL_WALL_SIGN_ID = 3716;
 }

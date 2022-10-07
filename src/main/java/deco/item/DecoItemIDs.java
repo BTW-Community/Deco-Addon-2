@@ -11,4 +11,6 @@ public class DecoItemIDs {
 	public static final int ACACIA_DOOR_ID = 30025;
 	public static final int MAHOGANY_DOOR_ID = 30026;
 	public static final int MANGROVE_DOOR_ID = 30027;
+	public static final int HAZEL_DOOR_ID = 30028;
+	public static final int WALNUT_DOOR_ID = 30029;
 }

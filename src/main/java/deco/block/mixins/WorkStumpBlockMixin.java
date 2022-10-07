@@ -1,6 +1,10 @@
 package deco.block.mixins;
 
+import btw.block.BTWBlocks;
 import btw.block.blocks.WorkStumpBlock;
+import btw.client.fx.BTWEffectManager;
+import btw.item.BTWItems;
+import btw.item.util.ItemUtils;
 import deco.block.DecoBlocks;
 import deco.block.util.WoodTypeHelper;
 import net.fabricmc.api.EnvType;
@@ -17,6 +21,29 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class WorkStumpBlockMixin extends Block {
 	protected WorkStumpBlockMixin(int blockID, Material material) {
 		super(blockID, material);
+	}
+	
+	@Inject(method = "convertBlock", at = @At("HEAD"), cancellable = true, remap = false)
+	public void convertBlock(ItemStack stack, World world, int x, int y, int z, int side, CallbackInfoReturnable<Boolean> info) {
+		int metadata = world.getBlockMetadata(x, y, z);
+		
+		if (!isFinishedWorkStump(metadata) && isWorkStumpItemConversionTool(stack, world, x, y, z)) {
+			world.playAuxSFX(BTWEffectManager.SHAFT_RIPPED_OFF_EFFECT_ID, x, y, z, 0);
+			world.setBlockMetadataWithNotify(x, y, z, metadata & 7);
+			info.setReturnValue(true);
+		}
+		
+		int newMetadata = BTWBlocks.oakChewedLog.setIsStump(0);
+		
+		world.setBlockAndMetadataWithNotify(x, y, z, BTWBlocks.oakChewedLog.blockID, newMetadata);
+		
+		int barkItemDamage = metadata >= 4 ? (metadata - 1) & 7 : metadata & 7;
+		
+		if (!world.isRemote) {
+			ItemUtils.ejectStackFromBlockTowardsFacing(world, x, y, z, new ItemStack(BTWItems.bark, 1, barkItemDamage), side);
+		}
+		
+		info.setReturnValue(true);
 	}
 	
 	@Inject(method = "getStackRetrievedByBlockDispenser", at = @At("HEAD"), cancellable = true)
@@ -38,6 +65,9 @@ public class WorkStumpBlockMixin extends Block {
 				break;
 		}
 	}
+	
+	@Shadow(remap = false)
+	public boolean isWorkStumpItemConversionTool(ItemStack stack, World world, int x, int y, int z) {return false;}
 	
 	@Shadow(remap = false)
 	private boolean isFinishedWorkStump(int metadata) {return false;}

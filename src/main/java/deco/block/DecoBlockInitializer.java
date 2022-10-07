@@ -157,6 +157,11 @@ public class DecoBlockInitializer {
         Item.itemsList[DecoBlocks.emptyBottleRack.blockID] = new ItemMultiTextureTile(DecoBlocks.emptyBottleRack.blockID - 256, DecoBlocks.emptyBottleRack, WoodTypeHelper.woodNames);
         
         DecoBlocks.pergola = new PergolaBlock(DecoBlockIDs.PERGOLA_ID);
+        
+        DecoBlocks.workStump = new DecoWorkStumpBlock(DecoBlockIDs.WORK_STUMP_ID,
+                new int[] {WoodTypeHelper.HAZEL_WOOD_TYPE},
+                new int[] {DecoBlockIDs.HAZEL_LOG_ID},
+                new int[] {DecoBlockIDs.CHEWED_HAZEL_LOG_ID});
 
         DecoBlocks.woodSingleSlab = new DecoWoodPlankSlab(DecoBlockIDs.WOOD_SINGLE_SLAB_ID,
                 new int[] {
@@ -459,6 +464,56 @@ public class DecoBlockInitializer {
                 "/deco/signMangrove.png", "decoBlockPlanksMangrove");
         DecoBlocks.mangroveWallSign = new DecoSignBlock(DecoBlockIDs.MANGROVE_WALL_SIGN_ID, WoodTypeHelper.MANGROVE_WOOD_TYPE, false,
                 "/deco/signMangrove.png", "decoBlockPlanksMangrove");
+    
+        //------ Hazel Wood ------//
+    
+        // Tree blocks
+        DecoBlocks.hazelLog = new DecoLogBlock(DecoBlockIDs.HAZEL_LOG_ID, WoodTypeHelper.HAZEL_WOOD_TYPE, DecoBlockIDs.CHEWED_HAZEL_LOG_ID,
+                new String[] {"decoBlockLogHazel_top", "decoBlockStrippedHazel_top", "decoBlockLogHazel_side", "decoBlockStrippedHazel_side"},
+                new String[] {"decoBlockLogHazel_side", "decoBlockStrippedHazel_side", "decoBlockLogHazel_side", "decoBlockStrippedHazel_side"})
+                .setUnlocalizedName("decoBlockHazelLog");
+        Item.itemsList[DecoBlocks.hazelLog.blockID] = new DecoLogItemBlock(DecoBlocks.hazelLog.blockID - 256, DecoBlocks.hazelLog);
+        DecoBlocks.hazelStump = new DecoStumpBlock(DecoBlockIDs.HAZEL_STUMP_ID, DecoBlockIDs.HAZEL_LOG_ID, DecoBlockIDs.CHEWED_HAZEL_LOG_ID,
+                WoodTypeHelper.HAZEL_WORK_STUMP_ID, WoodTypeHelper.HAZEL_WORK_STUMP_TYPE,
+                "decoBlockTrunkHazel_top", "decoBlockTrunkHazel_side")
+                .setUnlocalizedName("decoBlockHazelStump");
+        DecoBlocks.hazelLogSpike = new LogSpikeBlock(DecoBlockIDs.HAZEL_LOG_SPIKE_ID,
+                "decoBlockStrippedHazel_top", "decoBlockStrippedHazel_side")
+                .setUnlocalizedName("decoBlockChewedHazel");
+        DecoBlocks.chewedHazelLog = new ChewedLogBlock(DecoBlockIDs.CHEWED_HAZEL_LOG_ID,
+                "decoBlockStrippedHazel_top", "decoBlockStrippedHazel_side", "decoBlockTrunkHazel_top",
+                DecoBlocks.hazelLogSpike)
+                .setUnlocalizedName("decoBlockSpikeHazel");
+    
+        DecoBlocks.hazelLeaves = new DecoLeavesBlock(DecoBlockIDs.HAZEL_LEAVES_ID, DecoBlockIDs.HAZEL_SAPLING_ID, "decoBlockLeavesHazel")
+                .setUnlocalizedName("decoBlockLeavesHazel");
+        DecoBlocks.hazelSapling = new HazelSaplingBlock(DecoBlockIDs.HAZEL_SAPLING_ID);
+        Item.itemsList[DecoBlocks.hazelSapling.blockID] = new ItemMultiTextureTile(DecoBlocks.hazelSapling.blockID - 256, DecoBlocks.hazelSapling, HazelSaplingBlock.saplingTypes);
+    
+        // Sub blocks
+        DecoBlocks.hazelStairs = new WoodStairsBlock(DecoBlockIDs.HAZEL_STAIRS_ID, Block.planks, WoodTypeHelper.HAZEL_WOOD_TYPE)
+                .setUnlocalizedName("decoBlockHazelStairs");
+        DecoBlocks.hazelSidingAndCorner = new WoodSidingAndCornerAndDecorativeBlock(DecoBlockIDs.HAZEL_SIDING_AND_CORNER_ID,
+                "decoBlockPlanksHazel", "decoBlockHazelSiding");
+        DecoBlocks.hazelMoulding = new WoodMouldingAndDecorativeBlock(DecoBlockIDs.HAZEL_MOULDING_ID,
+                "decoBlockPlanksHazel", "decoBlockPlanksHazelColumn",
+                DecoBlockIDs.HAZEL_SIDING_AND_CORNER_ID,
+                "decoBlockHazelMoulding");
+    
+        // Decorative blocks
+        DecoBlocks.hazelGate = new DecoGateBlock(DecoBlockIDs.HAZEL_GATE_ID, "decoBlockGateHazel");
+        DecoBlocks.hazelDoor = new DecoDoorBlockWood(DecoBlockIDs.HAZEL_DOOR_ID, DecoItemIDs.HAZEL_DOOR_ID, "decoBlockDoorHazel_upper", "decoBlockDoorHazel_lower");
+        DecoBlocks.hazelTrapdoor = new DecoTrapDoorBlock(DecoBlockIDs.HAZEL_TRAPDOOR_ID, "decoBlockTrapdoorHazel");
+        DecoBlocks.hazelChair = new ChairBlock(DecoBlockIDs.HAZEL_CHAIR_ID, "Hazel");
+        DecoBlocks.filledHazelBarrel = new FilledBarrelBlock(DecoBlockIDs.FILLED_HAZEL_BARREL_ID, "decoBlockBarrelHazel");
+        Item.itemsList[DecoBlocks.filledHazelBarrel.blockID] = new ItemMultiTextureTile(DecoBlocks.filledHazelBarrel.blockID - 256, DecoBlocks.filledHazelBarrel, FilledBarrelBlock.typeTags);
+        DecoBlocks.hazelLadder = new DecoLadderBlock(DecoBlockIDs.HAZEL_LADDER_ID, DecoBlockIDs.FLAMING_HAZEL_LADDER_ID, "decoBlockLadderHazel");
+        DecoBlocks.flamingHazelLadder = new DecoLadderBlockFlaming(DecoBlockIDs.FLAMING_HAZEL_LADDER_ID, DecoBlockIDs.HAZEL_LADDER_ID, "decoBlockLadderHazel");
+    
+        DecoBlocks.hazelSign = new DecoSignBlock(DecoBlockIDs.HAZEL_SIGN_ID, WoodTypeHelper.HAZEL_WOOD_TYPE, true,
+                "/deco/signHazel.png", "decoBlockPlanksHazel");
+        DecoBlocks.hazelWallSign = new DecoSignBlock(DecoBlockIDs.HAZEL_WALL_SIGN_ID, WoodTypeHelper.HAZEL_WOOD_TYPE, false,
+                "/deco/signHazel.png", "decoBlockPlanksHazel");
         
         //------ Painted Planks ------//
         

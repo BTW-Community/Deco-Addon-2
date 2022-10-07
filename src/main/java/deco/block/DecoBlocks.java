@@ -51,6 +51,8 @@ public class DecoBlocks {
     public static Block woodSingleSlab;
     public static Block woodDoubleSlab;
 
+    public static Block workStump;
+    
     // Oak wood
     public static Block oakChair;
     public static Block filledOakBarrel;
@@ -194,6 +196,29 @@ public class DecoBlocks {
     public static Block flamingMangroveLadder;
     public static Block mangroveSign;
     public static Block mangroveWallSign;
+    
+    // Hazel wood
+    public static Block hazelLog;
+    public static Block hazelStump;
+    public static Block chewedHazelLog;
+    public static Block hazelLogSpike;
+    
+    public static Block hazelLeaves;
+    public static Block hazelSapling;
+    
+    public static Block hazelStairs;
+    public static Block hazelSidingAndCorner;
+    public static Block hazelMoulding;
+    
+    public static Block hazelGate;
+    public static Block hazelTrapdoor;
+    public static Block hazelDoor;
+    public static Block hazelChair;
+    public static Block filledHazelBarrel;
+    public static Block hazelLadder;
+    public static Block flamingHazelLadder;
+    public static Block hazelSign;
+    public static Block hazelWallSign;
 
     // Colored planks
     public static Block pastelPlanks;
