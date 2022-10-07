@@ -6,6 +6,17 @@ public class DecoBlocks {
     
     //------ General Blocks ------//
     
+    //------ Soil Blocks ------//
+    
+    public static Block coarseDirt;
+    public static Block podzol;
+    
+    public static Block mud;
+    public static Block packedMud;
+    public static Block packedMudBrick;
+    
+    public static Block legacyRedSand;
+    
     //------ Plant Blocks ------//
     
     public static Block flower;

@@ -66,6 +66,8 @@ public class DecoBlockIDs {
     public static final int PASTEL_PLANKS_SUB_START = 3248;
     // IDs occupied through 3295
     
+    public static final int LEGACY_RED_SAND_ID = 3310;
+    
     public static final int SPRUCE_SIGN_ID = 3438;
     public static final int SPRUCE_WALL_SIGN_ID = 3439;
     public static final int BIRCH_SIGN_ID = 3440;

@@ -17,4 +17,6 @@ public class DecoItems {
 	public static Item plainBook;
 	
 	public static Item fertilizer;
+	
+	public static Item legacyRedSandPile;
 }

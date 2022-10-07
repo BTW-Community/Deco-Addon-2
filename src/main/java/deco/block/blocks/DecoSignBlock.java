@@ -1,7 +1,7 @@
 package deco.block.blocks;
 
 import btw.block.blocks.SignBlock;
-import deco.util.MiscUtil;
+import deco.util.DecoMiscUtils;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.src.*;
@@ -52,7 +52,7 @@ public class DecoSignBlock extends SignBlock {
 			
 			if (tileEntity != null) {
 				String[] text = tileEntity.signText;
-				String formatCode = MiscUtil.getFormatCodeFromDyeMetadata(player.getCurrentEquippedItem().getItemDamage());
+				String formatCode = DecoMiscUtils.getFormatCodeFromDyeMetadata(player.getCurrentEquippedItem().getItemDamage());
 				
 				for (int i = 0; i < text.length; i++) {
 					if (text[i].length() > 0 && text[i].charAt(0) == '§') {

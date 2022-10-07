@@ -14,6 +14,7 @@ import btw.util.ColorUtils;
 import deco.block.DecoBlocks;
 import deco.block.blocks.DecoLogBlock;
 import deco.block.blocks.FilledBarrelBlock;
+import deco.block.util.SandHelper;
 import deco.block.util.WoodTypeHelper;
 import deco.item.DecoItems;
 import net.minecraft.src.Block;
@@ -23,6 +24,7 @@ import net.minecraft.src.ItemStack;
 public class CraftingRecipeList {
 	public static void initRecipes() {
 		initGeneralRecipes();
+		initSoilRecipes();
 		initPlantRecipes();
 		initWoodTypeRecipes();
 	}
@@ -38,6 +40,27 @@ public class CraftingRecipeList {
 						new ItemStack(Item.dyePowder, 1, ColorUtils.WHITE.colorID),
 						new ItemStack(BTWItems.potash)
 				});
+	}
+	
+	private static void initSoilRecipes() {
+		RecipeManager.addShapelessRecipe(new ItemStack(Block.sand, 8, SandHelper.RED_SAND_TYPE),
+				new ItemStack[] {
+						new ItemStack(Block.sand),
+						new ItemStack(Block.sand),
+						new ItemStack(Block.sand),
+						new ItemStack(Block.sand),
+						new ItemStack(Block.sand),
+						new ItemStack(Block.sand),
+						new ItemStack(Block.sand),
+						new ItemStack(Block.sand),
+						new ItemStack(Item.dyePowder, 1, ColorUtils.RED.colorID)
+				});
+		
+		RecipeManager.addPistonPackingRecipe(Block.sand, SandHelper.RED_SAND_TYPE,
+				new ItemStack(BTWItems.sandPile, 8, SandHelper.RED_SAND_TYPE));
+		
+		RecipeManager.addShapelessRecipe(new ItemStack(Block.sand, 1, SandHelper.RED_SAND_TYPE), new ItemStack[] {new ItemStack(DecoBlocks.legacyRedSand)});
+		RecipeManager.addShapelessRecipe(new ItemStack(BTWItems.sandPile, 1, SandHelper.RED_SAND_TYPE), new ItemStack[] {new ItemStack(DecoItems.legacyRedSandPile)});
 	}
 	
 	private static void initPlantRecipes() {

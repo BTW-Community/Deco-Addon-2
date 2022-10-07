@@ -1,5 +1,5 @@
 ## Version 4.0.0 ##
-- Rewrote the addon from scratch as a fabric mod. Note that data is stored in the same way and thus it is save compatible (it is still a good idea to back up your worlds before updating).
+- Rewrote the addon from scratch as a fabric mod. Note that data is stored in the same way, and thus it is save-compatible (it is still a good idea to back up your worlds before updating).
 - Added new wood types: mahogany, mangrove, hazel
 - Changed sapling recipes:
     - All sapling recipes can use either dung or fertilizer
@@ -8,9 +8,11 @@
     - Mahogany saplings require a jungle sapling, red dye, and a fertilizer
     - Mangrove saplings require a jungle sapling, orange dye, and a fertilizer
     - Hazel saplings require an oak sapling, brown dye, and a fertilizer
+- Changed red sand (blocks and piles) to be a subtype of regular sand. Old red sand may be converted into new red sand in a crafting grid.
+- Changed red sand to be crafted with 8 sand and 1 red dye.
 - Removed the ability to play custom sounds. This will return in a future release, but for now the code was too messy to carry over through the rewrite.
 - Removed wood bleach and wood stain.
-- Changed the recipe for empty bottle racks to use an I shape instead of an X (high efficiency recipe uses siding on top and bottom and moulding everywhere else).
+- Changed the recipe for empty bottle racks to use an 'I' shape instead of an 'X' (high efficiency recipe uses siding on top and bottom and moulding everywhere else).
 - Changed the names of flower textures to be more descriptive.
 - Fixed an issue where addon leaves would not properly decay until updated.
 - Fixed an issue where addon trees would generate two stumps when smashing a planter.

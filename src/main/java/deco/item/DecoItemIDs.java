@@ -7,8 +7,8 @@ public class DecoItemIDs {
 	// IDs 30005 and 30006 occupied by BTW
 	
 	public static final int STAINED_GLASS_ITEM_ID = 30008;
-	public static final int OLD_SLATE_STONE_ID = 30009;
-	public static final int OLD_SLATE_BRICK_ID = 30010;
+	public static final int LEGACY_SLATE_STONE_ID = 30009;
+	public static final int LEGACY_SLATE_BRICK_ID = 30010;
 	public static final int PLAIN_BOOK_ID = 30011;
 	public static final int AMETHYST_SHARD_ID = 300012;
 	
@@ -25,7 +25,7 @@ public class DecoItemIDs {
 	
 	// ID 30050 occupied by BTW
 	
-	public static final int OLD_RED_SAND_PILE_ID = 30052;
+	public static final int LEGACY_RED_SAND_PILE_ID = 30052;
 	
 	public static final int PRISMARINE_SHARD_ID = 30060;
 	public static final int PRISMARINE_CRYSTAL_ID = 300061;

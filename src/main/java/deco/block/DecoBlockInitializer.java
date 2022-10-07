@@ -4,22 +4,35 @@ import btw.block.BTWBlocks;
 import btw.block.blocks.*;
 import btw.item.blockitems.MouldingBlockItem;
 import btw.item.blockitems.SidingAndCornerBlockItem;
+import btw.item.blockitems.legacy.LegacySubstitutionBlockItem;
 import btw.util.ColorUtils;
 import deco.block.blocks.*;
+import deco.block.blocks.legacy.LegacyRedSandBlock;
 import deco.block.util.BookshelfInterface;
 import deco.block.util.BookshelfType;
+import deco.block.util.SandHelper;
 import deco.block.util.WoodTypeHelper;
 import deco.item.DecoItemIDs;
 import deco.item.itemblocks.ColoredItemBlock;
 import deco.item.itemblocks.DecoLogItemBlock;
 import deco.item.itemblocks.DecoSlabItemBlock;
 import deco.item.itemblocks.EnchantedBookshelfItemBlock;
+import deco.item.util.LegacySubstitutionBlockItemInterface;
 import net.minecraft.src.*;
 
 public class DecoBlockInitializer {
     public static void initDecoBlocks() {
+        initSoil();
         initPlants();
         initWoodTypes();
+    }
+    
+    private static void initSoil() {
+        DecoBlocks.legacyRedSand = new LegacyRedSandBlock(DecoBlockIDs.LEGACY_RED_SAND_ID);
+        Item.itemsList[DecoBlocks.legacyRedSand.blockID] = new LegacySubstitutionBlockItem(DecoBlocks.legacyRedSand.blockID - 256, Block.sand.blockID);
+        ((LegacySubstitutionBlockItemInterface) Item.itemsList[DecoBlocks.legacyRedSand.blockID]).setMetadataToPlace(SandHelper.RED_SAND_TYPE);
+        
+        Item.itemsList[Block.sand.blockID] = new ItemMultiTextureTile(Block.sand.blockID - 256, Block.sand, SandHelper.names);
     }
     
     private static void initPlants() {

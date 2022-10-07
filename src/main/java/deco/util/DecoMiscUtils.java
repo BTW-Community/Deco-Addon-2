@@ -3,7 +3,7 @@ package deco.util;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MiscUtil {
+public class DecoMiscUtils {
 	private static Map<Integer, String> formatMap = new HashMap<Integer, String>();
 	
 	public static String getFormatCodeFromDyeMetadata(int meta) {

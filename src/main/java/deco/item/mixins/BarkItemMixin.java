@@ -23,40 +23,28 @@ public class BarkItemMixin extends Item {
     public void getUnlocalizedName(ItemStack stack, CallbackInfoReturnable<String> info) {
         int itemDamage = stack.getItemDamage();
 
-        switch (itemDamage) {
-            case WoodTypeHelper.CHERRY_WOOD_TYPE:
-                info.setReturnValue(super.getUnlocalizedName() + ".cherry");
-                break;
-            case WoodTypeHelper.ACACIA_WOOD_TYPE:
-                info.setReturnValue(super.getUnlocalizedName() + ".acacia");
-                break;
-            case WoodTypeHelper.MAHOGANY_WOOD_TYPE:
-                info.setReturnValue(this.getUnlocalizedName() + ".mahogany");
-        }
+        info.setReturnValue(this.getUnlocalizedName() + "." + WoodTypeHelper.woodNames[itemDamage]);
     }
 
     //----------- Client Side Functionality -----------//
 
-    @Environment(EnvType.CLIENT)
-    public String[] extraTextures;
     @Environment(EnvType.CLIENT)
     public Icon[] extraIcons;
 
     @Environment(EnvType.CLIENT)
     @Inject(method = "registerIcons(Lnet/minecraft/src/IconRegister;)V", at = @At("TAIL"))
     public void registerIcons(IconRegister register, CallbackInfo info) {
-        extraTextures = new String[] {"decoItemBarkCherry", "decoItemBarkAcacia", "decoItemBarkMahogany"};
-        extraIcons = new Icon[extraTextures.length];
+        extraIcons = new Icon[WoodTypeHelper.NUM_EXTRA_WOOD];
 
-        for (int i = 0; i < extraTextures.length; i++) {
-            extraIcons[i] = register.registerIcon(extraTextures[i]);
+        for (int i = 0; i < WoodTypeHelper.NUM_EXTRA_WOOD; i++) {
+            extraIcons[i] = register.registerIcon("decoItemBark" + WoodTypeHelper.woodNamesCapital[i + WoodTypeHelper.NUM_VANILLA_WOOD]);
         }
     }
 
     @Environment(EnvType.CLIENT)
     @Inject(method = "getIconFromDamage(I)Lnet/minecraft/src/Icon;", at = @At("HEAD"), cancellable = true)
     public void getIconFromDamage(int itemDamage, CallbackInfoReturnable<Icon> info) {
-        if (itemDamage >= 5) {
+        if (itemDamage >= WoodTypeHelper.NUM_VANILLA_WOOD) {
             info.setReturnValue(extraIcons[itemDamage - 5]);
         }
     }
@@ -64,8 +52,8 @@ public class BarkItemMixin extends Item {
     @Environment(EnvType.CLIENT)
     @Inject(method = "getSubItems(ILnet/minecraft/src/CreativeTabs;Ljava/util/List;)V", at = @At("TAIL"))
     public void getSubItems(int itemID, CreativeTabs creativeTabs, List<ItemStack> list, CallbackInfo info) {
-        for (int i = 0; i < extraTextures.length; i++) {
-            list.add(new ItemStack(itemID, 1, i + 5));
+        for (int i = 0; i < WoodTypeHelper.NUM_EXTRA_WOOD; i++) {
+            list.add(new ItemStack(itemID, 1, i + WoodTypeHelper.NUM_VANILLA_WOOD));
         }
     }
 }

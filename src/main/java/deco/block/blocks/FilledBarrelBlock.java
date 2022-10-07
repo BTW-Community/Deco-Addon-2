@@ -30,6 +30,11 @@ public class FilledBarrelBlock extends Block {
 	}
 	
 	@Override
+	public int damageDropped(int metadata) {
+		return metadata;
+	}
+	
+	@Override
 	public int getHarvestToolLevel(IBlockAccess blockAccess, int x, int y, int z) {
 		return 2;
 	}

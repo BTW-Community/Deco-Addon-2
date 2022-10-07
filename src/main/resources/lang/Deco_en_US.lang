@@ -2153,11 +2153,14 @@ tile.bookshelf.hazel.name=Enchanted Hazel Bookshelf
 
 tile.fcBlockLadder.name=Oak Ladder
 
+tile.sand.sand.name=Sand
+tile.sand.red.name=Red Sand
+
 # Deco Items
 
 item.decoItemGlassPiece.name=Piece of Glass
 item.decoItemFertilizer.name=Fertilizer
-item.decoItemPileRedSand.name=Red Sand Pile
+item.decoItemPileRedSand.name=Old Red Sand Pile
 item.decoItemPrismarineShard.name=Prismarine Shard
 item.decoItemPrismarineCrystal.name=Prismarine Crystal
 item.decoItemHempOil.name=Hemp Oil
@@ -2208,10 +2211,16 @@ item.fcItemBark.acacia.name=Acacia Bark
 item.fcItemBark.mahogany.name=Mahogany Bark
 item.fcItemBark.mangrove.name=Mangrove Bark
 item.fcItemBark.hazel.name=Hazel Bark
+
+item.fcItemPileSand.sand.name=Sand Pile
+item.fcItemPileSand.red.name=Red Sand Pile
+
 item.dyePowder.black2.name=Black Dye
 item.dyePowder.blue2.name=Blue Dye
 item.dyePowder.white2.name=White Dye
+
 item.doorWood.name=Oak Door
+
 item.sign.oak.name=Oak Sign
 item.sign.spruce.name=Spruce Sign
 item.sign.birch.name=Birch Sign
@@ -2222,6 +2231,7 @@ item.sign.acacia.name=Acacia Sign
 item.sign.mahogany.name=Mahogany Sign
 item.sign.mangrove.name=Mangrove Sign
 item.sign.hazel.name=Hazel Sign
+
 item.fcItemIngotDiamond.name=Diamondium Ingot
 item.pickaxeDiamond.name=Diamondium Pickaxe
 item.hatchetDiamond.name=Diamondium Axe

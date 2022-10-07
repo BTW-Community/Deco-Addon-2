@@ -6,6 +6,7 @@ import deco.item.items.DecoItemDoor;
 import deco.item.items.FertilizerItem;
 import deco.item.util.BookInterface;
 import net.minecraft.src.Block;
+import net.minecraft.src.CreativeTabs;
 import net.minecraft.src.Item;
 import net.minecraft.src.ItemBlock;
 
@@ -21,6 +22,11 @@ public class DecoItemInitializer {
         DecoItems.plainBook = new BookItem(DecoItemIDs.PLAIN_BOOK_ID);
         
         DecoItems.fertilizer = new FertilizerItem(DecoItemIDs.FERTILIZER_ID);
+        
+        DecoItems.legacyRedSandPile = new Item(DecoItemIDs.LEGACY_RED_SAND_PILE_ID)
+                .setBellowsBlowDistance(2)
+                .setFilterableProperties(Item.FILTERABLE_FINE)
+                .setUnlocalizedName("decoItemPileRedSand");
     }
     
     private static void initWoodItems() {
