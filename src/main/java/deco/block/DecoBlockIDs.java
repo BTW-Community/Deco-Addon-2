@@ -1,6 +1,12 @@
 package deco.block;
 
 public class DecoBlockIDs {
+    public static final int FLOWER_ID = 3002;
+    
+    public static final int TULIP_ID = 3006;
+    
+    public static final int FLOWER_2_ID = 3017;
+    
     public static final int CHERRY_SAPLING_ID = 3021;
     public static final int CHERRY_LEAVES_ID = 3022;
 

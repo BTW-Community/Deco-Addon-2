@@ -15,4 +15,6 @@ public class DecoItems {
 	public static Item walnutDoor;
 	
 	public static Item plainBook;
+	
+	public static Item fertilizer;
 }

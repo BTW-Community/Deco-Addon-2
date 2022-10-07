@@ -6,7 +6,13 @@ public class DecoBlocks {
     
     //------ General Blocks ------//
     
-    //------ Light Source Blocks
+    //------ Plant Blocks ------//
+    
+    public static Block flower;
+    public static Block flower2;
+    public static Block tulip;
+    
+    //------ Light Source Blocks ------//
     
     public static Block paperLantern;
     public static Block ironLantern;

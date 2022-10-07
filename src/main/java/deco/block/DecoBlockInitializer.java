@@ -18,7 +18,54 @@ import net.minecraft.src.*;
 
 public class DecoBlockInitializer {
     public static void initDecoBlocks() {
+        initPlants();
         initWoodTypes();
+    }
+    
+    private static void initPlants() {
+        DecoBlocks.flower = new DecoFlowerBlock(DecoBlockIDs.FLOWER_ID, "decoBlockFlower",
+                new String[] {
+                        "yucca",
+                        "hyacinth",
+                        "birdsParadise",
+                        "azalea",
+                        "cornflower",
+                        "lavender",
+                        "honeysuckle",
+                        "allium",
+                        "orchidBlue",
+                        "poppy",
+                        "azureBluet",
+                        "daisy",
+                        "peony",
+                        "lilac",
+                        "rosebush",
+                        "roseBlue"
+                })
+                .setUnlocalizedName("decoBlockFlower");
+        Item.itemsList[DecoBlocks.flower.blockID] = new ItemMultiTextureTile(DecoBlocks.flower.blockID - 256, DecoBlocks.flower,
+                ((DecoFlowerBlock) DecoBlocks.flower).getNames());
+    
+        DecoBlocks.flower2 = new DecoFlowerBlock(DecoBlockIDs.FLOWER_2_ID, "decoBlockFlower",
+                new String[] {
+                        "blackRose",
+                        "lilyOfTheValley"
+                })
+                .setUnlocalizedName("decoBlockFlower2");
+        Item.itemsList[DecoBlocks.flower2.blockID] = new ItemMultiTextureTile(DecoBlocks.flower2.blockID - 256, DecoBlocks.flower2,
+                ((DecoFlowerBlock) DecoBlocks.flower2).getNames());
+    
+        DecoBlocks.tulip = new DecoFlowerBlock(DecoBlockIDs.TULIP_ID, "decoBlockTulip",
+                new String[] {
+                        "red",
+                        "pink",
+                        "orange",
+                        "white",
+                        "blue"
+                })
+                .setUnlocalizedName("decoBlockTulip");
+        Item.itemsList[DecoBlocks.tulip.blockID] = new ItemMultiTextureTile(DecoBlocks.tulip.blockID - 256, DecoBlocks.tulip,
+                ((DecoFlowerBlock) DecoBlocks.tulip).getNames());
     }
 
     private static void initWoodTypes() {

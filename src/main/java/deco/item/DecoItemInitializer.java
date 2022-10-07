@@ -3,6 +3,7 @@ package deco.item;
 import btw.item.items.BookItem;
 import deco.block.DecoBlockIDs;
 import deco.item.items.DecoItemDoor;
+import deco.item.items.FertilizerItem;
 import deco.item.util.BookInterface;
 import net.minecraft.src.Block;
 import net.minecraft.src.Item;
@@ -18,6 +19,8 @@ public class DecoItemInitializer {
     private static void initGeneralItems() {
         ((BookInterface) Item.book).setEnchanted(true).setUnlocalizedName("decoItemBookEnchanted");
         DecoItems.plainBook = new BookItem(DecoItemIDs.PLAIN_BOOK_ID);
+        
+        DecoItems.fertilizer = new FertilizerItem(DecoItemIDs.FERTILIZER_ID);
     }
     
     private static void initWoodItems() {

@@ -1,6 +1,8 @@
 package deco.item;
 
 public class DecoItemIDs {
+	public static final int FERTILIZER_ID = 30003;
+	
 	public static final int PLAIN_BOOK_ID = 30011;
 	
 	public static final int SPRUCE_DOOR_ID = 30020;

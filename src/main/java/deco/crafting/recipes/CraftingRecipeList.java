@@ -10,6 +10,7 @@ import btw.inventory.util.InventoryUtils;
 import btw.item.BTWItems;
 import btw.item.blockitems.WoodMouldingDecorativeStubBlockItem;
 import btw.item.blockitems.WoodSidingDecorativeStubBlockItem;
+import btw.util.ColorUtils;
 import deco.block.DecoBlocks;
 import deco.block.blocks.DecoLogBlock;
 import deco.block.blocks.FilledBarrelBlock;
@@ -22,6 +23,7 @@ import net.minecraft.src.ItemStack;
 public class CraftingRecipeList {
 	public static void initRecipes() {
 		initGeneralRecipes();
+		initPlantRecipes();
 		initWoodTypeRecipes();
 	}
 	
@@ -32,8 +34,85 @@ public class CraftingRecipeList {
 				});
 	}
 	
+	private static void initPlantRecipes() {
+		
+		//------ Sapling recipes ------//
+		
+		// Cherry
+		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.cherrySapling),
+				new ItemStack[] {
+						new ItemStack(Block.sapling, 1, WoodTypeHelper.OAK_WOOD_TYPE),
+						new ItemStack(Item.dyePowder, 1, ColorUtils.PINK.colorID),
+						new ItemStack(BTWItems.dung)
+				});
+		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.cherrySapling),
+				new ItemStack[] {
+						new ItemStack(Block.sapling, 1, WoodTypeHelper.OAK_WOOD_TYPE),
+						new ItemStack(Item.dyePowder, 1, ColorUtils.PINK.colorID),
+						new ItemStack(DecoItems.fertilizer)
+				});
+		
+		// Acacia
+		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.acaciaSapling),
+				new ItemStack[] {
+						new ItemStack(Block.sapling, 1, WoodTypeHelper.BIRCH_WOOD_TYPE),
+						new ItemStack(Item.dyePowder, 1, ColorUtils.ORANGE.colorID),
+						new ItemStack(BTWItems.dung)
+				});
+		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.acaciaSapling),
+				new ItemStack[] {
+						new ItemStack(Block.sapling, 1, WoodTypeHelper.BIRCH_WOOD_TYPE),
+						new ItemStack(Item.dyePowder, 1, ColorUtils.ORANGE.colorID),
+						new ItemStack(DecoItems.fertilizer)
+				});
+		
+		// Mahogany
+		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.mahoganySapling),
+				new ItemStack[] {
+						new ItemStack(Block.sapling, 1, WoodTypeHelper.JUNGLE_WOOD_TYPE),
+						new ItemStack(Item.dyePowder, 1, ColorUtils.RED.colorID),
+						new ItemStack(BTWItems.dung)
+				});
+		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.mahoganySapling),
+				new ItemStack[] {
+						new ItemStack(Block.sapling, 1, WoodTypeHelper.JUNGLE_WOOD_TYPE),
+						new ItemStack(Item.dyePowder, 1, ColorUtils.RED.colorID),
+						new ItemStack(DecoItems.fertilizer)
+				});
+		
+		// Mangrove
+		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.mangroveSapling),
+				new ItemStack[] {
+						new ItemStack(Block.sapling, 1, WoodTypeHelper.JUNGLE_WOOD_TYPE),
+						new ItemStack(Item.dyePowder, 1, ColorUtils.ORANGE.colorID),
+						new ItemStack(BTWItems.dung)
+				});
+		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.mangroveSapling),
+				new ItemStack[] {
+						new ItemStack(Block.sapling, 1, WoodTypeHelper.JUNGLE_WOOD_TYPE),
+						new ItemStack(Item.dyePowder, 1, ColorUtils.ORANGE.colorID),
+						new ItemStack(DecoItems.fertilizer)
+				});
+		
+		// Hazel
+		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.hazelSapling),
+				new ItemStack[] {
+						new ItemStack(Block.sapling, 1, WoodTypeHelper.OAK_WOOD_TYPE),
+						new ItemStack(Item.dyePowder, 1, ColorUtils.BROWN.colorID),
+						new ItemStack(BTWItems.dung)
+				});
+		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.hazelSapling),
+				new ItemStack[] {
+						new ItemStack(Block.sapling, 1, WoodTypeHelper.OAK_WOOD_TYPE),
+						new ItemStack(Item.dyePowder, 1, ColorUtils.BROWN.colorID),
+						new ItemStack(DecoItems.fertilizer)
+				});
+	}
+	
 	private static void initWoodTypeRecipes() {
+		
 		//------ General Wood ------//
+		
 		// Trapdoors
 		RecipeManager.removeVanillaRecipe(new ItemStack(Block.trapdoor),
 				new Object[] {
@@ -192,6 +271,8 @@ public class CraftingRecipeList {
 							'S', new ItemStack(BTWItems.woodSidingStubID, 1, woodType)
 					});
 		}
+		
+		//------ Wood type recipes ------//
 		
 		initOakWoodRecipes();
 		initSpruceWoodRecipes();
