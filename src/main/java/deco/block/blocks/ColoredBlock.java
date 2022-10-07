@@ -10,7 +10,7 @@ import java.util.List;
 public class ColoredBlock extends Block {
 	protected String name;
 	
-	protected ColoredBlock(int blockID, Material material, String name) {
+	public ColoredBlock(int blockID, Material material, String name) {
 		super(blockID, material);
 		
 		this.setUnlocalizedName(name);

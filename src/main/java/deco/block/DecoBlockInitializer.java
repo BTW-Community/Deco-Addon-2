@@ -22,9 +22,77 @@ import net.minecraft.src.*;
 
 public class DecoBlockInitializer {
     public static void initDecoBlocks() {
+        initConcrete();
         initSoil();
         initPlants();
         initWoodTypes();
+    }
+    
+    private static void initConcrete() {
+        DecoBlocks.concrete = new ColoredBlock(DecoBlockIDs.CONCRETE_ID, Material.rock, "decoBlockConcrete")
+                .setHardness(1.5F)
+                .setPicksEffectiveOn()
+                .setCreativeTab(CreativeTabs.tabBlock)
+                .setStepSound(Block.soundStoneFootstep)
+                .setUnlocalizedName("decoBlockConcrete");
+        Item.itemsList[DecoBlocks.concrete.blockID] = new ColoredItemBlock(DecoBlocks.concrete);
+        
+        DecoBlocks.concretePowder = new ConcretePowderBlock(DecoBlockIDs.CONCRETE_POWDER_ID);
+        Item.itemsList[DecoBlocks.concretePowder.blockID] = new ColoredItemBlock(DecoBlocks.concretePowder);
+    
+        DecoBlocks.concreteSidingAndCorner = new Block[16];
+        DecoBlocks.concreteMoulding = new Block[16];
+        DecoBlocks.concreteStairs = new Block[16];
+    
+        int concreteSubID = DecoBlockIDs.CONCRETE_SUB_START;
+    
+        for (int color = 0; color < 16; color++) {
+            DecoBlocks.concreteSidingAndCorner[color] = new SidingAndCornerAndDecorativeWallBlock(concreteSubID++, Material.rock,
+                    "decoBlockConcrete_" + ColorUtils.colorOrder[color],
+                    DecoBlocks.concrete.blockHardness, DecoBlocks.concrete.blockResistance, Block.soundStoneFootstep,
+                    "decoBlockConcreteSiding." + ColorUtils.colorOrder[color]);
+            Item.itemsList[DecoBlocks.concreteSidingAndCorner[color].blockID] = new SidingAndCornerBlockItem(DecoBlocks.concreteSidingAndCorner[color].blockID - 256);
+        
+            DecoBlocks.concreteMoulding[color] = new MouldingAndDecorativeWallBlock(concreteSubID++, Material.rock,
+                    "decoBlockConcrete_" + ColorUtils.colorOrder[color],
+                    "decoBlockConcreteColumn_" + ColorUtils.colorOrder[color],
+                    DecoBlocks.concreteSidingAndCorner[color].blockID,
+                    DecoBlocks.concrete.blockHardness, DecoBlocks.concrete.blockResistance, Block.soundStoneFootstep,
+                    "decoBlockConcreteMoulding." + ColorUtils.colorOrder[color]);
+            Item.itemsList[DecoBlocks.concreteMoulding[color].blockID] = new MouldingBlockItem(DecoBlocks.concreteMoulding[color].blockID - 256);
+        
+            DecoBlocks.concreteStairs[color] = new StairsBlock(concreteSubID++, DecoBlocks.concrete, color)
+                    .setUnlocalizedName("decoBlockConcreteStairs." + ColorUtils.colorOrder[color]);
+        }
+    
+        DecoBlocks.concreteSlab = new DecoSlabBlock(DecoBlockIDs.CONCRETE_SLAB_ID, Material.rock,
+                new Block[] {
+                        DecoBlocks.concrete,
+                        DecoBlocks.concrete,
+                        DecoBlocks.concrete,
+                        DecoBlocks.concrete,
+                        DecoBlocks.concrete,
+                        DecoBlocks.concrete,
+                        DecoBlocks.concrete,
+                        DecoBlocks.concrete
+                },
+                new int[] {0, 1, 2, 3, 4, 5, 6, 7})
+                .setUnlocalizedName("decoBlockConcreteSlab");
+        Item.itemsList[DecoBlocks.concreteSlab.blockID] = new DecoSlabItemBlock(DecoBlocks.concreteSlab.blockID - 256);
+        DecoBlocks.concreteSlab2 = new DecoSlabBlock(DecoBlockIDs.CONCRETE_SLAB_2_ID, Material.rock,
+                new Block[] {
+                        DecoBlocks.concrete,
+                        DecoBlocks.concrete,
+                        DecoBlocks.concrete,
+                        DecoBlocks.concrete,
+                        DecoBlocks.concrete,
+                        DecoBlocks.concrete,
+                        DecoBlocks.concrete,
+                        DecoBlocks.concrete
+                },
+                new int[] {8, 9, 10, 11, 12, 13, 14, 15})
+                .setUnlocalizedName("decoBlockConcreteSlab2");
+        Item.itemsList[DecoBlocks.concreteSlab2.blockID] = new DecoSlabItemBlock(DecoBlocks.concreteSlab2.blockID - 256);
     }
     
     private static void initSoil() {
@@ -578,7 +646,7 @@ public class DecoBlockInitializer {
         //------ Painted Planks ------//
         
         DecoBlocks.pastelPlanks = new ColoredPlanksBlock(DecoBlockIDs.PASTEL_PLANKS_ID, "decoBlockPlanksPainted");
-        Item.itemsList[DecoBlocks.pastelPlanks.blockID] = new ColoredItemBlock(DecoBlocks.pastelPlanks.blockID - 256, DecoBlocks.pastelPlanks);
+        Item.itemsList[DecoBlocks.pastelPlanks.blockID] = new ColoredItemBlock(DecoBlocks.pastelPlanks);
         
         DecoBlocks.pastelPlanksSidingAndCorner = new Block[16];
         DecoBlocks.pastelPlanksMoulding = new Block[16];

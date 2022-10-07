@@ -6,6 +6,8 @@ public class DecoBlockIDs {
     public static final int TULIP_ID = 3006;
     
     public static final int FLOWER_2_ID = 3017;
+    public static final int CONCRETE_ID = 3018;
+    public static final int CONCRETE_POWDER_ID = 3019;
     
     public static final int CHERRY_SAPLING_ID = 3021;
     public static final int CHERRY_LEAVES_ID = 3022;
@@ -67,6 +69,12 @@ public class DecoBlockIDs {
     // IDs occupied through 3295
     
     public static final int LEGACY_RED_SAND_ID = 3310;
+    
+    public static final int CONCRETE_SUB_START = 3383;
+    // IDs occupied through 3430
+    
+    public static final int CONCRETE_SLAB_ID = 3432;
+    public static final int CONCRETE_SLAB_2_ID = 3433;
     
     public static final int SPRUCE_SIGN_ID = 3438;
     public static final int SPRUCE_WALL_SIGN_ID = 3439;
@@ -156,8 +164,8 @@ public class DecoBlockIDs {
     public static final int FLAMING_MANGROVE_LADDER_ID = 3635;
     public static final int MANGROVE_SIGN_ID = 3636;
     public static final int MANGROVE_WALL_SIGN_ID = 3637;
+    public static final int WORK_STUMP_ID = 3638;
     
-    public static final int WORK_STUMP_ID = 3698;
     public static final int HAZEL_LOG_ID = 3699;
     public static final int HAZEL_STUMP_ID = 3700;
     public static final int CHEWED_HAZEL_LOG_ID = 3701;

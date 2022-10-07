@@ -6,6 +6,20 @@ public class DecoBlocks {
     
     //------ General Blocks ------//
     
+    //------ Stone Blocks ------//
+    
+    //------ Concrete Blocks ------//
+    
+    public static Block concrete;
+    public static Block concretePowder;
+    public static Block[] concreteSidingAndCorner;
+    public static Block[] concreteMoulding;
+    public static Block[] concreteStairs;
+    public static Block concreteSlab;
+    public static Block concreteSlab2;
+    
+    //------ Terracotta Blocks ------//
+    
     //------ Soil Blocks ------//
     
     public static Block coarseDirt;

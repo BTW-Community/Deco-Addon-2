@@ -24,6 +24,7 @@ import net.minecraft.src.ItemStack;
 public class CraftingRecipeList {
 	public static void initRecipes() {
 		initGeneralRecipes();
+		initConcreteRecipes();
 		initSoilRecipes();
 		initPlantRecipes();
 		initWoodTypeRecipes();
@@ -40,6 +41,73 @@ public class CraftingRecipeList {
 						new ItemStack(Item.dyePowder, 1, ColorUtils.WHITE.colorID),
 						new ItemStack(BTWItems.potash)
 				});
+	}
+	
+	private static void initConcreteRecipes() {
+		for (int color = 0; color < 16; color++) {
+			RecipeManager.addStokedCrucibleRecipe(new ItemStack(DecoBlocks.concretePowder, 8, color),
+					new ItemStack[] {
+							new ItemStack(Block.sand, 4, InventoryUtils.IGNORE_METADATA),
+							new ItemStack(Block.gravel, 4),
+							new ItemStack(Item.dyePowder, 1, color)
+					});
+			RecipeManager.addStokedCrucibleRecipe(new ItemStack(DecoBlocks.concretePowder, 8, color),
+					new ItemStack[] {
+							new ItemStack(Block.sand, 4, InventoryUtils.IGNORE_METADATA),
+							new ItemStack(Block.gravel, 4),
+							new ItemStack(Item.dyePowder, 1, color + 16)
+					});
+			
+			btw.crafting.recipe.CraftingRecipeList.addSubBlockRecipesOfType(DecoBlocks.concrete, color, DecoBlocks.concreteSidingAndCorner[color],
+					DecoBlocks.concreteMoulding[color], true);
+			
+			RecipeManager.addRecipe(new ItemStack(DecoBlocks.concreteStairs[color], 6),
+					new Object[] {
+							"F  ",
+							"FF ",
+							"FFF",
+							'F', new ItemStack(DecoBlocks.concrete, 1, color)
+					});
+			RecipeManager.addRecipe(new ItemStack(DecoBlocks.concreteStairs[color], 1),
+					new Object[] {
+							"M ",
+							"MM",
+							'M', new ItemStack(DecoBlocks.concreteMoulding[color])
+					});
+		}
+		
+		RecipeManager.addStokedCrucibleRecipe(new ItemStack(DecoBlocks.concretePowder, 8, ColorUtils.BROWN.colorID),
+				new ItemStack[] {
+						new ItemStack(Block.sand, 4, InventoryUtils.IGNORE_METADATA),
+						new ItemStack(Block.gravel, 4),
+						new ItemStack(BTWItems.dung)
+				});
+		
+		for (int color = 0; color < 8; color++) {
+			RecipeManager.addRecipe(new ItemStack(DecoBlocks.concreteSlab, 6, color),
+					new Object[] {
+							"CCC",
+							'C', new ItemStack(DecoBlocks.concrete, 1, color)
+					});
+			RecipeManager.addRecipe(new ItemStack(DecoBlocks.concreteSlab2, 6, color),
+					new Object[] {
+							"CCC",
+							'C', new ItemStack(DecoBlocks.concrete, 1, color + 8)
+					});
+			
+			RecipeManager.addRecipe(new ItemStack(DecoBlocks.concrete, 1, color),
+					new Object[] {
+							"S",
+							"S",
+							'S', new ItemStack(DecoBlocks.concreteSlab, 1, color)
+					});
+			RecipeManager.addRecipe(new ItemStack(DecoBlocks.concrete, 1, color + 8),
+					new Object[] {
+							"S",
+							"S",
+							'S', new ItemStack(DecoBlocks.concreteSlab2, 1, color)
+					});
+		}
 	}
 	
 	private static void initSoilRecipes() {
