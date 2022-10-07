@@ -4,6 +4,7 @@ import btw.AddonHandler;
 import btw.BTWAddon;
 import deco.block.DecoBlockInitializer;
 import deco.crafting.recipes.CraftingRecipeList;
+import deco.entity.DecoEntityManager;
 import deco.item.DecoItemInitializer;
 import net.fabricmc.loader.api.entrypoint.PreLaunchEntrypoint;
 
@@ -20,6 +21,7 @@ public class DecoAddon extends BTWAddon {
 
         DecoBlockInitializer.initDecoBlocks();
         DecoItemInitializer.initDecoItems();
+        DecoEntityManager.initEntities();
     }
 
     @Override

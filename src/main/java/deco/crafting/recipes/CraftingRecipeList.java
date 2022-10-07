@@ -32,6 +32,12 @@ public class CraftingRecipeList {
 				new ItemStack[] {
 						new ItemStack(Item.paper)
 				});
+		
+		RecipeManager.addCauldronRecipe(new ItemStack(DecoItems.fertilizer, 2),
+				new ItemStack[] {
+						new ItemStack(Item.dyePowder, 1, ColorUtils.WHITE.colorID),
+						new ItemStack(BTWItems.potash)
+				});
 	}
 	
 	private static void initPlantRecipes() {
