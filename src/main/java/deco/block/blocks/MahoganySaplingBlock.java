@@ -1,11 +1,7 @@
 package deco.block.blocks;
 
-import btw.block.BTWBlocks;
-import btw.block.blocks.PlanterBlockBase;
 import deco.block.DecoBlocks;
-import deco.world.util.TreeGenerator;
 import net.minecraft.src.Block;
-import net.minecraft.src.Direction;
 import net.minecraft.src.World;
 
 import java.util.Random;
