@@ -244,6 +244,36 @@ public class CraftingRecipeList {
 						'L', new ItemStack(DecoBlocks.strippedLog, 1, WoodTypeHelper.OAK_WOOD_TYPE)
 				});
 		
+		RecipeManager.addLogChoppingRecipe(new ItemStack(Block.planks, 2, WoodTypeHelper.OAK_WOOD_TYPE),
+				new ItemStack[] {
+						new ItemStack(BTWItems.sawDust, 2)
+				},
+				new ItemStack(Item.stick, 2),
+				new ItemStack[] {
+						new ItemStack(BTWItems.sawDust, 4)
+				},
+				new ItemStack(DecoBlocks.strippedLog, 1, WoodTypeHelper.OAK_WOOD_TYPE));
+		RecipeManager.addLogChoppingRecipe(new ItemStack(Block.planks, 2, WoodTypeHelper.OAK_WOOD_TYPE),
+				new ItemStack[] {
+						new ItemStack(BTWItems.sawDust, 2),
+						new ItemStack(BTWItems.bark, 1, WoodTypeHelper.OAK_WOOD_TYPE)
+				},
+				new ItemStack(Item.stick, 2),
+				new ItemStack[] {
+						new ItemStack(BTWItems.sawDust, 4),
+						new ItemStack(BTWItems.bark, 1, WoodTypeHelper.OAK_WOOD_TYPE)
+				},
+				new ItemStack(DecoBlocks.wood, 1, WoodTypeHelper.OAK_WOOD_TYPE));
+		RecipeManager.addLogChoppingRecipe(new ItemStack(Block.planks, 2, WoodTypeHelper.OAK_WOOD_TYPE),
+				new ItemStack[] {
+						new ItemStack(BTWItems.sawDust, 2)
+				},
+				new ItemStack(Item.stick, 2),
+				new ItemStack[] {
+						new ItemStack(BTWItems.sawDust, 4)
+				},
+				new ItemStack(DecoBlocks.strippedWood, 1, WoodTypeHelper.OAK_WOOD_TYPE));
+		
 		for (int direction = 0; direction <= 8; direction += 4) {
 			RecipeManager.addSawRecipe(
 					new ItemStack[] {
@@ -478,6 +508,36 @@ public class CraftingRecipeList {
 						"LL",
 						'L', new ItemStack(DecoBlocks.strippedLog, 1, WoodTypeHelper.SPRUCE_WOOD_TYPE)
 				});
+		
+		RecipeManager.addLogChoppingRecipe(new ItemStack(Block.planks, 2, WoodTypeHelper.SPRUCE_WOOD_TYPE),
+				new ItemStack[] {
+						new ItemStack(BTWItems.sawDust, 2)
+				},
+				new ItemStack(Item.stick, 2),
+				new ItemStack[] {
+						new ItemStack(BTWItems.sawDust, 4)
+				},
+				new ItemStack(DecoBlocks.strippedLog, 1, WoodTypeHelper.SPRUCE_WOOD_TYPE));
+		RecipeManager.addLogChoppingRecipe(new ItemStack(Block.planks, 2, WoodTypeHelper.SPRUCE_WOOD_TYPE),
+				new ItemStack[] {
+						new ItemStack(BTWItems.sawDust, 2),
+						new ItemStack(BTWItems.bark, 1, WoodTypeHelper.SPRUCE_WOOD_TYPE)
+				},
+				new ItemStack(Item.stick, 2),
+				new ItemStack[] {
+						new ItemStack(BTWItems.sawDust, 4),
+						new ItemStack(BTWItems.bark, 1, WoodTypeHelper.SPRUCE_WOOD_TYPE)
+				},
+				new ItemStack(DecoBlocks.wood, 1, WoodTypeHelper.SPRUCE_WOOD_TYPE));
+		RecipeManager.addLogChoppingRecipe(new ItemStack(Block.planks, 2, WoodTypeHelper.SPRUCE_WOOD_TYPE),
+				new ItemStack[] {
+						new ItemStack(BTWItems.sawDust, 2)
+				},
+				new ItemStack(Item.stick, 2),
+				new ItemStack[] {
+						new ItemStack(BTWItems.sawDust, 4)
+				},
+				new ItemStack(DecoBlocks.strippedWood, 1, WoodTypeHelper.SPRUCE_WOOD_TYPE));
 		
 		for (int direction = 0; direction <= 8; direction += 4) {
 			RecipeManager.addSawRecipe(
@@ -714,6 +774,36 @@ public class CraftingRecipeList {
 						'L', new ItemStack(DecoBlocks.strippedLog, 1, WoodTypeHelper.BIRCH_WOOD_TYPE)
 				});
 		
+		RecipeManager.addLogChoppingRecipe(new ItemStack(Block.planks, 2, WoodTypeHelper.BIRCH_WOOD_TYPE),
+				new ItemStack[] {
+						new ItemStack(BTWItems.sawDust, 2)
+				},
+				new ItemStack(Item.stick, 2),
+				new ItemStack[] {
+						new ItemStack(BTWItems.sawDust, 4)
+				},
+				new ItemStack(DecoBlocks.strippedLog, 1, WoodTypeHelper.BIRCH_WOOD_TYPE));
+		RecipeManager.addLogChoppingRecipe(new ItemStack(Block.planks, 2, WoodTypeHelper.BIRCH_WOOD_TYPE),
+				new ItemStack[] {
+						new ItemStack(BTWItems.sawDust, 2),
+						new ItemStack(BTWItems.bark, 1, WoodTypeHelper.BIRCH_WOOD_TYPE)
+				},
+				new ItemStack(Item.stick, 2),
+				new ItemStack[] {
+						new ItemStack(BTWItems.sawDust, 4),
+						new ItemStack(BTWItems.bark, 1, WoodTypeHelper.BIRCH_WOOD_TYPE)
+				},
+				new ItemStack(DecoBlocks.wood, 1, WoodTypeHelper.BIRCH_WOOD_TYPE));
+		RecipeManager.addLogChoppingRecipe(new ItemStack(Block.planks, 2, WoodTypeHelper.BIRCH_WOOD_TYPE),
+				new ItemStack[] {
+						new ItemStack(BTWItems.sawDust, 2)
+				},
+				new ItemStack(Item.stick, 2),
+				new ItemStack[] {
+						new ItemStack(BTWItems.sawDust, 4)
+				},
+				new ItemStack(DecoBlocks.strippedWood, 1, WoodTypeHelper.BIRCH_WOOD_TYPE));
+		
 		for (int direction = 0; direction <= 8; direction += 4) {
 			RecipeManager.addSawRecipe(
 					new ItemStack[] {
@@ -949,6 +1039,36 @@ public class CraftingRecipeList {
 						'L', new ItemStack(DecoBlocks.strippedLog, 1, WoodTypeHelper.JUNGLE_WOOD_TYPE)
 				});
 		
+		RecipeManager.addLogChoppingRecipe(new ItemStack(Block.planks, 2, WoodTypeHelper.JUNGLE_WOOD_TYPE),
+				new ItemStack[] {
+						new ItemStack(BTWItems.sawDust, 2)
+				},
+				new ItemStack(Item.stick, 2),
+				new ItemStack[] {
+						new ItemStack(BTWItems.sawDust, 4)
+				},
+				new ItemStack(DecoBlocks.strippedLog, 1, WoodTypeHelper.JUNGLE_WOOD_TYPE));
+		RecipeManager.addLogChoppingRecipe(new ItemStack(Block.planks, 2, WoodTypeHelper.JUNGLE_WOOD_TYPE),
+				new ItemStack[] {
+						new ItemStack(BTWItems.sawDust, 2),
+						new ItemStack(BTWItems.bark, 1, WoodTypeHelper.JUNGLE_WOOD_TYPE)
+				},
+				new ItemStack(Item.stick, 2),
+				new ItemStack[] {
+						new ItemStack(BTWItems.sawDust, 4),
+						new ItemStack(BTWItems.bark, 1, WoodTypeHelper.JUNGLE_WOOD_TYPE)
+				},
+				new ItemStack(DecoBlocks.wood, 1, WoodTypeHelper.JUNGLE_WOOD_TYPE));
+		RecipeManager.addLogChoppingRecipe(new ItemStack(Block.planks, 2, WoodTypeHelper.JUNGLE_WOOD_TYPE),
+				new ItemStack[] {
+						new ItemStack(BTWItems.sawDust, 2)
+				},
+				new ItemStack(Item.stick, 2),
+				new ItemStack[] {
+						new ItemStack(BTWItems.sawDust, 4)
+				},
+				new ItemStack(DecoBlocks.strippedWood, 1, WoodTypeHelper.JUNGLE_WOOD_TYPE));
+		
 		for (int direction = 0; direction <= 8; direction += 4) {
 			RecipeManager.addSawRecipe(
 					new ItemStack[] {
@@ -1170,6 +1290,36 @@ public class CraftingRecipeList {
 						new ItemStack(DecoBlocks.bloodLog, 1, 1),
 						new ItemStack(BTWItems.diamondChisel, 1, InventoryUtils.IGNORE_METADATA)
 				});
+		
+		RecipeManager.addLogChoppingRecipe(new ItemStack(Block.planks, 2, WoodTypeHelper.BLOOD_WOOD_TYPE),
+				new ItemStack[] {
+						new ItemStack(BTWItems.sawDust, 2)
+				},
+				new ItemStack(Item.stick, 2),
+				new ItemStack[] {
+						new ItemStack(BTWItems.sawDust, 4)
+				},
+				new ItemStack(DecoBlocks.bloodLog, 1, 0));
+		RecipeManager.addLogChoppingRecipe(new ItemStack(Block.planks, 2, WoodTypeHelper.BLOOD_WOOD_TYPE),
+				new ItemStack[] {
+						new ItemStack(BTWItems.sawDust, 2),
+						new ItemStack(BTWItems.bark, 1, WoodTypeHelper.BLOOD_WOOD_TYPE)
+				},
+				new ItemStack(Item.stick, 2),
+				new ItemStack[] {
+						new ItemStack(BTWItems.sawDust, 4),
+						new ItemStack(BTWItems.bark, 1, WoodTypeHelper.BLOOD_WOOD_TYPE)
+				},
+				new ItemStack(DecoBlocks.bloodLog, 1, 1));
+		RecipeManager.addLogChoppingRecipe(new ItemStack(Block.planks, 2, WoodTypeHelper.BLOOD_WOOD_TYPE),
+				new ItemStack[] {
+						new ItemStack(BTWItems.sawDust, 2)
+				},
+				new ItemStack(Item.stick, 2),
+				new ItemStack[] {
+						new ItemStack(BTWItems.sawDust, 4)
+				},
+				new ItemStack(DecoBlocks.bloodLog, 1, 2));
 		
 		RecipeManager.addRecipe(new ItemStack(DecoBlocks.bloodLog, 4, 1),
 				new Object[] {
