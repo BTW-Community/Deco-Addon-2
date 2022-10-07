@@ -28,8 +28,8 @@ public class WoodTypeHelper {
     public static final int WALNUT_WOOD_TYPE = 10;
     
     public static final int MANGROVE_SLAB_TYPE = 0;
-    public static final int HAZEL_SLAB_TYPE = 0;
-    public static final int WALNUT_SLAB_TYPE = 0;
+    public static final int HAZEL_SLAB_TYPE = 1;
+    public static final int WALNUT_SLAB_TYPE = 2;
     
     public static final int OAK_BARREL_ID = DecoBlockIDs.BARREL_ID;
     public static final int SPRUCE_BARREL_ID = DecoBlockIDs.BARREL_ID;
