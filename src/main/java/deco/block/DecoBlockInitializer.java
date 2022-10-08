@@ -96,11 +96,21 @@ public class DecoBlockInitializer {
     }
     
     private static void initSoil() {
+        Item.itemsList[Block.sand.blockID] = new ItemMultiTextureTile(Block.sand.blockID - 256, Block.sand, SandHelper.names);
+        
         DecoBlocks.legacyRedSand = new LegacyRedSandBlock(DecoBlockIDs.LEGACY_RED_SAND_ID);
         Item.itemsList[DecoBlocks.legacyRedSand.blockID] = new LegacySubstitutionBlockItem(DecoBlocks.legacyRedSand.blockID - 256, Block.sand.blockID);
         ((LegacySubstitutionBlockItemInterface) Item.itemsList[DecoBlocks.legacyRedSand.blockID]).setMetadataToPlace(SandHelper.RED_SAND_TYPE);
         
-        Item.itemsList[Block.sand.blockID] = new ItemMultiTextureTile(Block.sand.blockID - 256, Block.sand, SandHelper.names);
+        DecoBlocks.redSandSlab = new RedSandSlabBlock(DecoBlockIDs.RED_SAND_SLAB_ID);
+        Item.itemsList[DecoBlocks.redSandSlab.blockID] = new DecoSlabItemBlock(DecoBlocks.redSandSlab.blockID - 256);
+        
+        DecoBlocks.coarseDirt = new CoarseDirtBlock(DecoBlockIDs.COARSE_DIRT_ID);
+        
+        DecoBlocks.coarseDirtSlab = new CoarseDirtSlabBlock(DecoBlockIDs.COARSE_DIRT_SLAB_ID);
+        Item.itemsList[DecoBlocks.coarseDirtSlab.blockID] = new DecoSlabItemBlock(DecoBlocks.coarseDirtSlab.blockID - 256);
+        
+        DecoBlocks.podzol = new PodzolBlock(DecoBlockIDs.PODZOL_ID);
     }
     
     private static void initPlants() {

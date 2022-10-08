@@ -23,13 +23,17 @@ public class DecoBlocks {
     //------ Soil Blocks ------//
     
     public static Block coarseDirt;
+    public static Block coarseDirtSlab;
+    
     public static Block podzol;
+    public static Block podzolSlab;
     
     public static Block mud;
     public static Block packedMud;
     public static Block packedMudBrick;
     
     public static Block legacyRedSand;
+    public static Block redSandSlab;
     
     //------ Plant Blocks ------//
     

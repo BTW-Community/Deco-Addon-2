@@ -1,7 +1,7 @@
 package deco.item.itemblocks;
 
 import btw.item.blockitems.SlabBlockItem;
-import deco.block.blocks.DecoSlabBlock;
+import deco.block.blocks.SlabInterface;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.src.*;
@@ -29,15 +29,15 @@ public class DecoSlabItemBlock extends SlabBlockItem {
 			int blockID = world.getBlockId(x, y, z);
 			Block block = Block.blocksList[blockID];
 			
-			DecoSlabBlock slabBlock = (DecoSlabBlock) block;
+			SlabInterface slabBlock = (SlabInterface) block;
 			boolean isUpsideDown = slabBlock.getIsUpsideDown(world, x, y, z);
 			
 			if (!var8 || side == 1 && !isUpsideDown || side == 0 && isUpsideDown) {
 				if (world.checkNoEntityCollision(Block.getFullBlockBoundingBoxFromPool(world, x, y, z)) && this.convertToFullBlock(world, x, y, z)) {
 					world.playSoundEffect(x + 0.5F, y + 0.5F, z + 0.5F,
-							slabBlock.stepSound.getStepSound(),
-							(slabBlock.stepSound.getVolume() + 1.0F) / 2.0F,
-							slabBlock.stepSound.getPitch() * 0.8F);
+							block.stepSound.getPlaceSound(),
+							(block.stepSound.getPlaceVolume() + 1.0F) / 2.0F,
+							block.stepSound.getPlacePitch() * 0.8F);
 					
 					itemStack.stackSize--;
 					Block newBlockID = Block.blocksList[world.getBlockId(x, y, z)];
@@ -61,7 +61,7 @@ public class DecoSlabItemBlock extends SlabBlockItem {
 		if (blockID == this.getBlockID()) {
 			Block block = Block.blocksList[blockID];
 			
-			int bottomHalfMeta = ((DecoSlabBlock) block).setIsUpsideDown(world.getBlockMetadata(x, y, z), false);
+			int bottomHalfMeta = ((SlabInterface) block).setIsUpsideDown(world.getBlockMetadata(x, y, z), false);
 			
 			if (bottomHalfMeta == metadata) {
 				return true;
@@ -76,7 +76,7 @@ public class DecoSlabItemBlock extends SlabBlockItem {
 	@Environment(EnvType.CLIENT)
 	@Override
 	public void getSubItems(int itemID, CreativeTabs creativeTabs, List list) {
-		for (int i = 0; i < ((DecoSlabBlock) Block.blocksList[itemID]).blockTypes.length; ++i) {
+		for (int i = 0; i < ((SlabInterface) Block.blocksList[itemID]).getNumTypes(); ++i) {
 			list.add(new ItemStack(this, 1, i));
 		}
 	}

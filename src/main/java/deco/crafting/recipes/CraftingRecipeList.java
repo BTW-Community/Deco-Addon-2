@@ -111,6 +111,9 @@ public class CraftingRecipeList {
 	}
 	
 	private static void initSoilRecipes() {
+		
+		//------ Red Sand ------//
+		
 		RecipeManager.addShapelessRecipe(new ItemStack(Block.sand, 8, SandHelper.RED_SAND_TYPE),
 				new ItemStack[] {
 						new ItemStack(Block.sand),
@@ -127,8 +130,84 @@ public class CraftingRecipeList {
 		RecipeManager.addPistonPackingRecipe(Block.sand, SandHelper.RED_SAND_TYPE,
 				new ItemStack(BTWItems.sandPile, 8, SandHelper.RED_SAND_TYPE));
 		
+		RecipeManager.addShapelessRecipe(new ItemStack(Block.sand, 1, SandHelper.RED_SAND_TYPE),
+				new ItemStack[] {
+						new ItemStack(BTWItems.sandPile, 1, SandHelper.RED_SAND_TYPE),
+						new ItemStack(BTWItems.sandPile, 1, SandHelper.RED_SAND_TYPE),
+						new ItemStack(BTWItems.sandPile, 1, SandHelper.RED_SAND_TYPE),
+						new ItemStack(BTWItems.sandPile, 1, SandHelper.RED_SAND_TYPE),
+						new ItemStack(BTWItems.sandPile, 1, SandHelper.RED_SAND_TYPE),
+						new ItemStack(BTWItems.sandPile, 1, SandHelper.RED_SAND_TYPE),
+						new ItemStack(BTWItems.sandPile, 1, SandHelper.RED_SAND_TYPE),
+						new ItemStack(BTWItems.sandPile, 1, SandHelper.RED_SAND_TYPE)
+				});
+		
+		RecipeManager.addShapelessRecipe(new ItemStack(BTWItems.sandPile, 8, SandHelper.RED_SAND_TYPE),
+				new ItemStack[] {
+						new ItemStack(Block.sand, 1, SandHelper.RED_SAND_TYPE)
+				});
+		RecipeManager.addShapelessRecipe(new ItemStack(BTWItems.sandPile, 4, SandHelper.RED_SAND_TYPE),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.redSandSlab)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.redSandSlab, 4),
+				new Object[] {
+						"FF",
+						'F', new ItemStack(Block.sand, 1, SandHelper.RED_SAND_TYPE)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.redSandSlab, 4),
+				new Object[] {
+						"PP",
+						"PP",
+						'P', new ItemStack(BTWItems.sandPile, 1, SandHelper.RED_SAND_TYPE)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(Block.sand, 1, SandHelper.RED_SAND_TYPE),
+				new Object[] {
+						"S",
+						"S",
+						'S', new ItemStack(DecoBlocks.redSandSlab)
+				});
+		
 		RecipeManager.addShapelessRecipe(new ItemStack(Block.sand, 1, SandHelper.RED_SAND_TYPE), new ItemStack[] {new ItemStack(DecoBlocks.legacyRedSand)});
 		RecipeManager.addShapelessRecipe(new ItemStack(BTWItems.sandPile, 1, SandHelper.RED_SAND_TYPE), new ItemStack[] {new ItemStack(DecoItems.legacyRedSandPile)});
+		
+		//------ Coarse Dirt ------//
+		
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.coarseDirt, 2),
+				new ItemStack[] {
+						new ItemStack(Block.dirt),
+						new ItemStack(Block.gravel)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.coarseDirtSlab, 4),
+				new Object[] {
+						"FF",
+						'F', new ItemStack(DecoBlocks.coarseDirt)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.coarseDirt),
+				new Object[] {
+						"S",
+						"S",
+						'S', new ItemStack(DecoBlocks.coarseDirtSlab)
+				});
+		
+		//------ Podzol ------//
+		
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.podzol, 8),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.coarseDirt),
+						new ItemStack(DecoBlocks.coarseDirt),
+						new ItemStack(DecoBlocks.coarseDirt),
+						new ItemStack(DecoBlocks.coarseDirt),
+						new ItemStack(DecoBlocks.coarseDirt),
+						new ItemStack(DecoBlocks.coarseDirt),
+						new ItemStack(DecoBlocks.coarseDirt),
+						new ItemStack(DecoBlocks.coarseDirt),
+						new ItemStack(Block.leaves, 1, WoodTypeHelper.SPRUCE_WOOD_TYPE)
+				});
 	}
 	
 	private static void initPlantRecipes() {

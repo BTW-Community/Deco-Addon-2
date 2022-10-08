@@ -56,7 +56,7 @@ tile.decoBlockStoneBrickMossyStairs.name=Mossy Stone Brick Stairs
 tile.decoBlockStoneBrickCrackedStairs.name=Cracked Stone Brick Stairs
 
 tile.decoBlockRedSand.name=Red Sand
-tile.decoBlockRedSandSlab.name=Red Sand Slab
+tile.decoBlockRedSandSlab.0.name=Red Sand Slab
 tile.decoBlockRedSandStoneStairs.name=Red Sandstone Stairs
 tile.decoBlockRedSandStoneSmoothStairs.name=Cut Red Sandstone Stairs
 tile.decoBlockRedSandStoneStairsPolished.name=Polished Red Sandstone Stairs
@@ -223,7 +223,7 @@ tile.decoBlockRopeCoil.name=Coil of Rope
 tile.decoBlockChainCoil.name=Coil of Chain
 
 tile.decoBlockCoarseDirt.name=Coarse Dirt
-tile.decoBlockCoarseDirtSlab.name=Coarse Dirt Slab
+tile.decoBlockCoarseDirtSlab.0.name=Coarse Dirt Slab
 
 tile.decoBlockLanternPaper.name=Paper Lantern
 tile.decoBlockLanternPaperBroken.name=Broken Paper Lantern
@@ -246,6 +246,8 @@ tile.decoBlockLadderIron.name=Iron Ladder
 tile.decoBlockAsh.name=Ash
 tile.decoBlockPumice.name=Pumice
 tile.decoBlockAmethyst.name=Amethyst
+
+tile.decoBlockPodzol.name=Podzol
 
 # Deco Complex Blocks
 

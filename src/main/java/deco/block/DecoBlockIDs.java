@@ -68,7 +68,13 @@ public class DecoBlockIDs {
     public static final int PASTEL_PLANKS_SUB_START = 3248;
     // IDs occupied through 3295
     
+    public static final int COARSE_DIRT_ID = 3300;
+    public static final int COARSE_DIRT_SLAB_ID = 3301;
+    public static final int PODZOL_ID = 3302;
+    public static final int PODZOL_SLAB_ID = 3303;
+    
     public static final int LEGACY_RED_SAND_ID = 3310;
+    public static final int RED_SAND_SLAB_ID = 3311;
     
     public static final int CONCRETE_SUB_START = 3383;
     // IDs occupied through 3430

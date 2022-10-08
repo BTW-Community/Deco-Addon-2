@@ -9,7 +9,7 @@ import net.minecraft.src.*;
 
 import java.util.List;
 
-public class DecoSlabBlock extends SlabBlock {
+public class DecoSlabBlock extends SlabBlock implements SlabInterface {
 	public final Block[] blockTypes;
 	public final int[] typeMetas;
 	
@@ -71,6 +71,11 @@ public class DecoSlabBlock extends SlabBlock {
 	@Override
 	public int getDamageValue(World world, int x, int y, int z) {
 		return world.getBlockMetadata(x, y, z) & 7;
+	}
+	
+	@Override
+	public int getNumTypes() {
+		return this.blockTypes.length;
 	}
 	
 	//----------- Client Side Functionality -----------//
