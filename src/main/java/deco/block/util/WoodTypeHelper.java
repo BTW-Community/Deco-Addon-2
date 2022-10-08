@@ -3,6 +3,7 @@ package deco.block.util;
 import btw.block.BTWBlocks;
 import btw.crafting.util.FurnaceBurnTime;
 import deco.block.DecoBlockIDs;
+import net.minecraft.src.Block;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -94,5 +95,22 @@ public class WoodTypeHelper {
         furnaceBurnTimes.put(MAHOGANY_WOOD_TYPE, FurnaceBurnTime.PLANKS_JUNGLE);
         furnaceBurnTimes.put(MANGROVE_WOOD_TYPE, FurnaceBurnTime.PLANKS_JUNGLE);
         furnaceBurnTimes.put(HAZEL_WOOD_TYPE, FurnaceBurnTime.PLANKS_OAK);
+    }
+    
+    public static int getBarkCountForTanning(int woodType) {
+        FurnaceBurnTime burnTime = furnaceBurnTimes.get(woodType);
+        
+        switch (burnTime) {
+            case PLANKS_OAK:
+                return 5;
+            case PLANKS_SPRUCE:
+                return 3;
+            case PLANKS_BIRCH:
+                return 8;
+            case PLANKS_JUNGLE:
+                return 2;
+        }
+        
+        return 0;
     }
 }

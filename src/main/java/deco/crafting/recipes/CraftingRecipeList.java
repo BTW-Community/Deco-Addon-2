@@ -716,6 +716,22 @@ public class CraftingRecipeList {
 					});
 		}
 		
+		// Tanning
+		for (int woodType = WoodTypeHelper.NUM_VANILLA_WOOD; woodType < WoodTypeHelper.NUM_TOTAL_WOOD; woodType++) {
+			RecipeManager.addCauldronRecipe(new ItemStack(BTWItems.tannedLeather),
+					new ItemStack[] {
+							new ItemStack(BTWItems.scouredLeather),
+							new ItemStack(BTWItems.dung),
+							new ItemStack(BTWItems.bark, WoodTypeHelper.getBarkCountForTanning(woodType), woodType)
+					});
+			RecipeManager.addCauldronRecipe(new ItemStack(BTWItems.cutTannedLeather, 2),
+					new ItemStack[] {
+							new ItemStack(BTWItems.cutScouredLeather, 2),
+							new ItemStack(BTWItems.dung),
+							new ItemStack(BTWItems.bark, WoodTypeHelper.getBarkCountForTanning(woodType), woodType)
+					});
+		}
+		
 		//------ Wood type recipes ------//
 		
 		initOakWoodRecipes();
@@ -2321,20 +2337,6 @@ public class CraftingRecipeList {
 						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.CHERRY_WOOD_TYPE),
 						'F', Item.silk
 				});
-		
-		// Bark
-		RecipeManager.addCauldronRecipe(new ItemStack(BTWItems.tannedLeather),
-				new ItemStack[] {
-						new ItemStack(BTWItems.scouredLeather),
-						new ItemStack(BTWItems.dung),
-						new ItemStack(BTWItems.bark, 3, WoodTypeHelper.CHERRY_WOOD_TYPE)
-				});
-		RecipeManager.addCauldronRecipe(new ItemStack(BTWItems.cutTannedLeather, 2),
-				new ItemStack[] {
-						new ItemStack(BTWItems.cutScouredLeather, 2),
-						new ItemStack(BTWItems.dung),
-						new ItemStack(BTWItems.bark, 3, WoodTypeHelper.CHERRY_WOOD_TYPE)
-				});
 	}
 	
 	private static void initAcaciaWoodRecipes() {
@@ -2597,20 +2599,6 @@ public class CraftingRecipeList {
 						"M M",
 						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.ACACIA_WOOD_TYPE),
 						'F', Item.silk
-				});
-		
-		// Bark
-		RecipeManager.addCauldronRecipe(new ItemStack(BTWItems.tannedLeather),
-				new ItemStack[] {
-						new ItemStack(BTWItems.scouredLeather),
-						new ItemStack(BTWItems.dung),
-						new ItemStack(BTWItems.bark, 8, WoodTypeHelper.ACACIA_WOOD_TYPE)
-				});
-		RecipeManager.addCauldronRecipe(new ItemStack(BTWItems.cutTannedLeather, 2),
-				new ItemStack[] {
-						new ItemStack(BTWItems.cutScouredLeather, 2),
-						new ItemStack(BTWItems.dung),
-						new ItemStack(BTWItems.bark, 8, WoodTypeHelper.ACACIA_WOOD_TYPE)
 				});
 	}
 	
@@ -2875,20 +2863,6 @@ public class CraftingRecipeList {
 						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.MAHOGANY_WOOD_TYPE),
 						'F', Item.silk
 				});
-		
-		// Bark
-		RecipeManager.addCauldronRecipe(new ItemStack(BTWItems.tannedLeather),
-				new ItemStack[] {
-						new ItemStack(BTWItems.scouredLeather),
-						new ItemStack(BTWItems.dung),
-						new ItemStack(BTWItems.bark, 8, WoodTypeHelper.MAHOGANY_WOOD_TYPE)
-				});
-		RecipeManager.addCauldronRecipe(new ItemStack(BTWItems.cutTannedLeather, 2),
-				new ItemStack[] {
-						new ItemStack(BTWItems.cutScouredLeather, 2),
-						new ItemStack(BTWItems.dung),
-						new ItemStack(BTWItems.bark, 8, WoodTypeHelper.MAHOGANY_WOOD_TYPE)
-				});
 	}
 	
 	private static void initMangroveWoodRecipes() {
@@ -3152,20 +3126,6 @@ public class CraftingRecipeList {
 						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.MANGROVE_WOOD_TYPE),
 						'F', Item.silk
 				});
-		
-		// Bark
-		RecipeManager.addCauldronRecipe(new ItemStack(BTWItems.tannedLeather),
-				new ItemStack[] {
-						new ItemStack(BTWItems.scouredLeather),
-						new ItemStack(BTWItems.dung),
-						new ItemStack(BTWItems.bark, 8, WoodTypeHelper.MANGROVE_WOOD_TYPE)
-				});
-		RecipeManager.addCauldronRecipe(new ItemStack(BTWItems.cutTannedLeather, 2),
-				new ItemStack[] {
-						new ItemStack(BTWItems.cutScouredLeather, 2),
-						new ItemStack(BTWItems.dung),
-						new ItemStack(BTWItems.bark, 8, WoodTypeHelper.MANGROVE_WOOD_TYPE)
-				});
 	}
 	
 	private static void initHazelWoodRecipes() {
@@ -3428,20 +3388,6 @@ public class CraftingRecipeList {
 						"M M",
 						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.HAZEL_WOOD_TYPE),
 						'F', Item.silk
-				});
-		
-		// Bark
-		RecipeManager.addCauldronRecipe(new ItemStack(BTWItems.tannedLeather),
-				new ItemStack[] {
-						new ItemStack(BTWItems.scouredLeather),
-						new ItemStack(BTWItems.dung),
-						new ItemStack(BTWItems.bark, 8, WoodTypeHelper.HAZEL_WOOD_TYPE)
-				});
-		RecipeManager.addCauldronRecipe(new ItemStack(BTWItems.cutTannedLeather, 2),
-				new ItemStack[] {
-						new ItemStack(BTWItems.cutScouredLeather, 2),
-						new ItemStack(BTWItems.dung),
-						new ItemStack(BTWItems.bark, 8, WoodTypeHelper.HAZEL_WOOD_TYPE)
 				});
 	}
 	

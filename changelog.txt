@@ -10,6 +10,9 @@ Some textures in this release have been used or modified from the following sour
 - Added glazed terracotta pillars, crafted with two glazed terracotta in a vertical line.
 - Changed unfired terracotta to be crafted with full blocks instead of 8 piles for convenience.
 - Added new wood types: mahogany, mangrove, hazel
+    - For the purposes of smelting and tanning:
+        - Mahogany and mangrove are equivalent to jungle
+        - Hazel is equivalent to oak
 - Changed sapling recipes:
     - All sapling recipes can use either dung or fertilizer
     - Cherry saplings now require an oak sapling, pink dye, and a fertilizer
@@ -21,11 +24,11 @@ Some textures in this release have been used or modified from the following sour
 - Changed red sand to be crafted with 8 sand and 1 red dye.
 - Changed the recipe for coarse dirt to produce 2.
 - Changed the recipe for podzol to be 8 coarse dirt and a spruce leaf block to make 8.
-- Removed the ability to play custom sounds. This will return in a future release, but for now the code was too messy to carry over through the rewrite.
-- Removed wood bleach and wood stain.
 - Changed the recipe for empty bottle racks to use an 'I' shape instead of an 'X' (high efficiency recipe uses siding on top and bottom and moulding everywhere else).
 - Changed the names of flower textures to be more descriptive.
+- Removed the ability to play custom sounds. This will return in a future release, but for now the code was too messy to carry over through the rewrite.
+- Removed wood bleach and wood stain.
 - Fixed an issue where addon leaves would not properly decay until updated.
 - Fixed an issue where addon trees would generate two stumps when smashing a planter.
 - Fixed an issue where the top and bottom textures of pergolas would not properly rotate with the model.
-- Fixed an issue where saplings could not grow on coarse dirt.
+- Fixed an issue where saplings could not grow on coarse dirt or podzol.
