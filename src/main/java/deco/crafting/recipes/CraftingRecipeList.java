@@ -18,6 +18,7 @@ import deco.block.util.SandHelper;
 import deco.block.util.WoodTypeHelper;
 import deco.item.DecoItems;
 import net.minecraft.src.Block;
+import net.minecraft.src.BlockCloth;
 import net.minecraft.src.Item;
 import net.minecraft.src.ItemStack;
 
@@ -551,6 +552,213 @@ public class CraftingRecipeList {
 						new ItemStack(Item.dyePowder, 1, ColorUtils.BROWN.colorID),
 						new ItemStack(DecoItems.fertilizer)
 				});
+		
+		//------ Flower Recipes ------//
+		
+		RecipeManager.removeVanillaRecipe(new ItemStack(Item.flowerPot, 1), new Object[] {
+				"# #",
+				" # ",
+				'#', Item.brick});
+		
+		RecipeManager.addShapelessRecipe(new ItemStack(Item.flowerPot, 1), new ItemStack[]{
+				new ItemStack(BTWItems.dirtPile),
+				new ItemStack(BTWItems.urn)});
+		
+		
+		// Yucca
+		RecipeManager.addMillStoneRecipe(new ItemStack(Item.dyePowder, 2, ColorUtils.LIME.colorID),
+				new ItemStack(DecoBlocks.flower, 1, 0));
+		
+		// Hyacinth
+		RecipeManager.addMillStoneRecipe(new ItemStack(Item.dyePowder, 2, ColorUtils.LIGHT_BLUE.colorID),
+				new ItemStack(DecoBlocks.flower, 1, 1));
+		
+		// Birds of Paradise
+		RecipeManager.addMillStoneRecipe(new ItemStack(Item.dyePowder, 2, ColorUtils.ORANGE.colorID),
+				new ItemStack(DecoBlocks.flower, 1, 2));
+		
+		// Azalea
+		RecipeManager.addMillStoneRecipe(new ItemStack(Item.dyePowder, 2, ColorUtils.PINK.colorID),
+				new ItemStack(DecoBlocks.flower, 1, 3));
+		
+		// Cornflower
+		RecipeManager.addMillStoneRecipe(new ItemStack(Item.dyePowder, 2, ColorUtils.BLUE.colorID + 16),
+				new ItemStack(DecoBlocks.flower, 1, 4));
+		
+		// Lavender
+		RecipeManager.addMillStoneRecipe(new ItemStack(Item.dyePowder, 2, ColorUtils.PURPLE.colorID),
+				new ItemStack(DecoBlocks.flower, 1, 5));
+		
+		// Honeysuckle
+		RecipeManager.addMillStoneRecipe(new ItemStack[]{
+						new ItemStack(Item.dyePowder, 1, ColorUtils.WHITE.colorID + 16),
+						new ItemStack(Item.dyePowder, 1, ColorUtils.YELLOW.colorID)
+				},
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.flower, 1, 6)
+				});
+		
+		// Allium
+		RecipeManager.addMillStoneRecipe(new ItemStack(Item.dyePowder, 2, ColorUtils.MAGENTA.colorID),
+				new ItemStack(DecoBlocks.flower, 1, 7));
+		
+		// Blue Orchid
+		RecipeManager.addMillStoneRecipe(new ItemStack(Item.dyePowder, 2, ColorUtils.LIGHT_BLUE.colorID),
+				new ItemStack(DecoBlocks.flower, 1, 8));
+		
+		// Poppy
+		RecipeManager.addMillStoneRecipe(new ItemStack(Item.dyePowder, 2, ColorUtils.RED.colorID),
+				new ItemStack(DecoBlocks.flower, 1, 9));
+		
+		// Azure Bluet
+		RecipeManager.addMillStoneRecipe(new ItemStack[] {
+						new ItemStack(Item.dyePowder, 1, ColorUtils.WHITE.colorID + 16),
+						new ItemStack(Item.dyePowder, 1, ColorUtils.YELLOW.colorID)
+				},
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.flower, 1, 10)
+				});
+		
+		// Daisy
+		RecipeManager.addMillStoneRecipe(new ItemStack[] {
+						new ItemStack(Item.dyePowder, 1, ColorUtils.WHITE.colorID + 16),
+						new ItemStack(Item.dyePowder, 1, ColorUtils.YELLOW.colorID)
+				},
+				new ItemStack[]{
+						new ItemStack(DecoBlocks.flower, 1, 11)
+				});
+		
+		// Peony
+		RecipeManager.addMillStoneRecipe(new ItemStack(Item.dyePowder, 2, ColorUtils.MAGENTA.colorID),
+				new ItemStack(DecoBlocks.flower, 1, 12));
+		
+		// Lilac
+		RecipeManager.addMillStoneRecipe(new ItemStack(Item.dyePowder, 2, ColorUtils.MAGENTA.colorID),
+				new ItemStack(DecoBlocks.flower, 1, 13));
+		
+		// Rose Bush
+		RecipeManager.addMillStoneRecipe(new ItemStack(Item.dyePowder, 3, ColorUtils.RED.colorID),
+				new ItemStack(DecoBlocks.flower, 1, 14));
+		
+		// Blue Rose
+		RecipeManager.addMillStoneRecipe(new ItemStack(Item.dyePowder, 2, ColorUtils.BLUE.colorID + 16),
+				new ItemStack(DecoBlocks.flower, 1, 15));
+		
+		//Black Rose
+		RecipeManager.addMillStoneRecipe(new ItemStack(Item.dyePowder, 2, ColorUtils.BLACK.colorID + 16),
+				new ItemStack(DecoBlocks.flower2, 1, 0));
+		
+		//Lily of the valley
+		RecipeManager.addMillStoneRecipe(new ItemStack(Item.dyePowder, 2, ColorUtils.WHITE.colorID + 16),
+				new ItemStack(DecoBlocks.flower2, 1, 1));
+		
+		// Tulips
+		RecipeManager.addMillStoneRecipe(new ItemStack[] {
+						new ItemStack(Item.dyePowder, 1, ColorUtils.ORANGE.colorID),
+						new ItemStack(Item.dyePowder, 1, ColorUtils.RED.colorID)
+				},
+				new ItemStack[]{
+						new ItemStack(DecoBlocks.tulip, 1, 0)
+				});
+		
+		RecipeManager.addMillStoneRecipe(new ItemStack(Item.dyePowder, 2, ColorUtils.PINK.colorID),
+				new ItemStack(DecoBlocks.tulip, 1, 1));
+		
+		RecipeManager.addMillStoneRecipe(new ItemStack(Item.dyePowder, 2, ColorUtils.ORANGE.colorID),
+				new ItemStack(DecoBlocks.tulip, 1, 2));
+		
+		RecipeManager.addMillStoneRecipe(new ItemStack(Item.dyePowder, 2, ColorUtils.WHITE.colorID + 16),
+				new ItemStack(DecoBlocks.tulip, 1, 3));
+		
+		RecipeManager.addMillStoneRecipe(new ItemStack(Item.dyePowder, 2, ColorUtils.BLUE.colorID + 16),
+				new ItemStack(DecoBlocks.tulip, 1, 4));
+		
+		//Cooking with dyes
+		for (int color = 0; color < 16; color++) {
+			RecipeManager.addCauldronRecipe(new ItemStack(Block.cloth, 1, BlockCloth.getDyeFromBlock(color)),
+					new ItemStack[] {
+							new ItemStack(Item.dyePowder, 1, color + 16),
+							new ItemStack(Item.itemsList[Block.cloth.blockID], 1, 0)
+					});
+		}
+		
+		//Mixing dyes
+		RecipeManager.addShapelessRecipe(new ItemStack(Item.dyePowder, 2, ColorUtils.LIME.colorID), new Object[] {
+				new ItemStack(Item.dyePowder, 1, ColorUtils.GREEN.colorID),
+				new ItemStack(Item.dyePowder, 1, ColorUtils.WHITE.colorID + 15)});
+		
+		RecipeManager.addShapelessRecipe(new ItemStack(Item.dyePowder, 2, ColorUtils.PINK.colorID), new Object[] {
+				new ItemStack(Item.dyePowder, 1, ColorUtils.RED.colorID),
+				new ItemStack(Item.dyePowder, 1, ColorUtils.WHITE.colorID + 16)});
+		
+		RecipeManager.addShapelessRecipe(new ItemStack(Item.dyePowder, 2, ColorUtils.CYAN.colorID), new Object[] {
+				new ItemStack(Item.dyePowder, 1, ColorUtils.BLUE.colorID + 16),
+				new ItemStack(Item.dyePowder, 1, ColorUtils.GREEN.colorID)});
+		
+		RecipeManager.addShapelessRecipe(new ItemStack(Item.dyePowder, 2, ColorUtils.PURPLE.colorID), new Object[] {
+				new ItemStack(Item.dyePowder, 1, ColorUtils.BLUE.colorID + 16),
+				new ItemStack(Item.dyePowder, 1, ColorUtils.RED.colorID)});
+		
+		RecipeManager.addShapelessRecipe(new ItemStack(Item.dyePowder, 2, ColorUtils.LIGHT_BLUE.colorID), new Object[] {
+				new ItemStack(Item.dyePowder, 1, ColorUtils.BLUE.colorID + 16),
+				new ItemStack(Item.dyePowder, 1, ColorUtils.WHITE.colorID)});
+		RecipeManager.addShapelessRecipe(new ItemStack(Item.dyePowder, 2, ColorUtils.LIGHT_BLUE.colorID), new Object[] {
+				new ItemStack(Item.dyePowder, 1, ColorUtils.BLUE.colorID + 16),
+				new ItemStack(Item.dyePowder, 1, ColorUtils.WHITE.colorID + 16)});
+		
+		RecipeManager.addShapelessRecipe(new ItemStack(Item.dyePowder, 2, ColorUtils.LIGHT_GRAY.colorID), new Object[] {
+				new ItemStack(Item.dyePowder, 1, ColorUtils.GRAY.colorID),
+				new ItemStack(Item.dyePowder, 1, ColorUtils.WHITE.colorID + 16)});
+		RecipeManager.addShapelessRecipe(new ItemStack(Item.dyePowder, 3, ColorUtils.LIGHT_GRAY.colorID), new Object[] {
+				new ItemStack(Item.dyePowder, 1, ColorUtils.BLACK.colorID),
+				new ItemStack(Item.dyePowder, 1, ColorUtils.WHITE.colorID + 16),
+				new ItemStack(Item.dyePowder, 1, ColorUtils.WHITE.colorID)});
+		RecipeManager.addShapelessRecipe(new ItemStack(Item.dyePowder, 3, ColorUtils.LIGHT_GRAY.colorID), new Object[] {
+				new ItemStack(Item.dyePowder, 1, ColorUtils.BLACK.colorID),
+				new ItemStack(Item.dyePowder, 1, ColorUtils.WHITE.colorID + 16),
+				new ItemStack(Item.dyePowder, 1, ColorUtils.WHITE.colorID + 16)});
+		RecipeManager.addShapelessRecipe(new ItemStack(Item.dyePowder, 3, ColorUtils.LIGHT_GRAY.colorID), new Object[] {
+				new ItemStack(Item.dyePowder, 1, ColorUtils.BLACK.colorID + 16),
+				new ItemStack(Item.dyePowder, 1, ColorUtils.WHITE.colorID),
+				new ItemStack(Item.dyePowder, 1, ColorUtils.WHITE.colorID)});
+		RecipeManager.addShapelessRecipe(new ItemStack(Item.dyePowder, 3, ColorUtils.LIGHT_GRAY.colorID), new Object[] {
+				new ItemStack(Item.dyePowder, 1, ColorUtils.BLACK.colorID + 16),
+				new ItemStack(Item.dyePowder, 1, ColorUtils.WHITE.colorID + 16),
+				new ItemStack(Item.dyePowder, 1, ColorUtils.WHITE.colorID)});
+		RecipeManager.addShapelessRecipe(new ItemStack(Item.dyePowder, 3, ColorUtils.LIGHT_GRAY.colorID), new Object[] {
+				new ItemStack(Item.dyePowder, 1, ColorUtils.BLACK.colorID + 16),
+				new ItemStack(Item.dyePowder, 1, ColorUtils.WHITE.colorID + 16),
+				new ItemStack(Item.dyePowder, 1, ColorUtils.WHITE.colorID + 16)});
+		
+		RecipeManager.addShapelessRecipe(new ItemStack(Item.dyePowder, 2, ColorUtils.GRAY.colorID), new Object[] {
+				new ItemStack(Item.dyePowder, 1, ColorUtils.BLACK.colorID),
+				new ItemStack(Item.dyePowder, 1, ColorUtils.WHITE.colorID + 16)});
+		RecipeManager.addShapelessRecipe(new ItemStack(Item.dyePowder, 2, ColorUtils.GRAY.colorID), new Object[] {
+				new ItemStack(Item.dyePowder, 1, ColorUtils.BLACK.colorID + 16),
+				new ItemStack(Item.dyePowder, 1, ColorUtils.WHITE.colorID + 16)});
+		RecipeManager.addShapelessRecipe(new ItemStack(Item.dyePowder, 2, ColorUtils.GRAY.colorID), new Object[] {
+				new ItemStack(Item.dyePowder, 1, ColorUtils.BLACK.colorID + 16),
+				new ItemStack(Item.dyePowder, 1, ColorUtils.WHITE.colorID)});
+		
+		RecipeManager.addShapelessRecipe(new ItemStack(Item.dyePowder, 3, ColorUtils.MAGENTA.colorID), new Object[] {
+				new ItemStack(Item.dyePowder, 1, ColorUtils.BLUE.colorID + 16),
+				new ItemStack(Item.dyePowder, 1, ColorUtils.RED.colorID),
+				new ItemStack(Item.dyePowder, 1, ColorUtils.PINK.colorID)});
+		RecipeManager.addShapelessRecipe(new ItemStack(Item.dyePowder, 4, ColorUtils.MAGENTA.colorID), new Object[] {
+				new ItemStack(Item.dyePowder, 1, ColorUtils.BLUE.colorID + 16),
+				new ItemStack(Item.dyePowder, 1, ColorUtils.RED.colorID),
+				new ItemStack(Item.dyePowder, 1, ColorUtils.RED.colorID),
+				new ItemStack(Item.dyePowder, 1, ColorUtils.WHITE.colorID)});
+		RecipeManager.addShapelessRecipe(new ItemStack(Item.dyePowder, 4, ColorUtils.MAGENTA.colorID), new Object[] {
+				new ItemStack(Item.dyePowder, 1, ColorUtils.BLUE.colorID + 16),
+				new ItemStack(Item.dyePowder, 1, ColorUtils.RED.colorID),
+				new ItemStack(Item.dyePowder, 1, ColorUtils.RED.colorID),
+				new ItemStack(Item.dyePowder, 1, ColorUtils.WHITE.colorID + 16)});
+		RecipeManager.addShapelessRecipe(new ItemStack(Item.dyePowder, 4, ColorUtils.MAGENTA.colorID), new Object[] {
+				new ItemStack(Item.dyePowder, 1, ColorUtils.BLUE.colorID),
+				new ItemStack(Item.dyePowder, 1, ColorUtils.RED.colorID),
+				new ItemStack(Item.dyePowder, 1, ColorUtils.RED.colorID),
+				new ItemStack(Item.dyePowder, 1, ColorUtils.WHITE.colorID + 16)});
 	}
 	
 	private static void initWoodTypeRecipes() {
