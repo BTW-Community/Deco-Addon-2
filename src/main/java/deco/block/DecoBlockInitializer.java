@@ -22,11 +22,54 @@ import net.minecraft.src.*;
 
 public class DecoBlockInitializer {
     public static void initDecoBlocks() {
+        initStone();
         initTerracotta();
         initConcrete();
         initSoil();
         initPlants();
         initWoodTypes();
+    }
+    
+    private static void initStone() {
+        
+        //------ Stone Variants ------//
+    
+        // General
+        
+        // Granite
+    
+        // Andesite
+        
+        // Diorite
+        
+        // Slate
+    
+        //------ White Stone ------//
+    
+    
+    
+        //------ Prismarine ------//
+    
+        //------ Misc Stone ------//
+    
+        // Misc
+        
+        // Extra sub blocks
+        
+        // Slabs
+        
+    }
+    
+    private static void initSandstone() {
+    
+    }
+    
+    private static void initNether() {
+    
+    }
+    
+    private static void initEnd() {
+    
     }
     
     private static void initTerracotta() {
