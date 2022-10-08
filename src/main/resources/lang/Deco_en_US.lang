@@ -454,6 +454,23 @@ tile.decoBlockGlazedTerracotta.magenta.name=Magenta Glazed Terracotta
 tile.decoBlockGlazedTerracotta.orange.name=Orange Glazed Terracotta
 tile.decoBlockGlazedTerracotta.white.name=White Glazed Terracotta
 
+tile.decoBlockGlazedTerracottaPillar.black.name=Black Glazed Terracotta Pillar
+tile.decoBlockGlazedTerracottaPillar.red.name=Red Glazed Terracotta Pillar
+tile.decoBlockGlazedTerracottaPillar.green.name=Green Glazed Terracotta Pillar
+tile.decoBlockGlazedTerracottaPillar.brown.name=Brown Glazed Terracotta Pillar
+tile.decoBlockGlazedTerracottaPillar.blue.name=Blue Glazed Terracotta Pillar
+tile.decoBlockGlazedTerracottaPillar.purple.name=Purple Glazed Terracotta Pillar
+tile.decoBlockGlazedTerracottaPillar.cyan.name=Cyan Glazed Terracotta Pillar
+tile.decoBlockGlazedTerracottaPillar.lightGray.name=Light Gray Glazed Terracotta Pillar
+tile.decoBlockGlazedTerracottaPillar.gray.name=Gray Glazed Terracotta Pillar
+tile.decoBlockGlazedTerracottaPillar.pink.name=Pink Glazed Terracotta Pillar
+tile.decoBlockGlazedTerracottaPillar.lime.name=Lime Glazed Terracotta Pillar
+tile.decoBlockGlazedTerracottaPillar.yellow.name=Yellow Glazed Terracotta Pillar
+tile.decoBlockGlazedTerracottaPillar.lightBlue.name=Light Blue Glazed Terracotta Pillar
+tile.decoBlockGlazedTerracottaPillar.magenta.name=Magenta Glazed Terracotta Pillar
+tile.decoBlockGlazedTerracottaPillar.orange.name=Orange Glazed Terracotta Pillar
+tile.decoBlockGlazedTerracottaPillar.white.name=White Glazed Terracotta Pillar
+
 tile.decoBlockShinglesColored.black.name=Black Shingles
 tile.decoBlockShinglesColored.red.name=Red Shingles
 tile.decoBlockShinglesColored.green.name=Green Shingles

@@ -20,6 +20,35 @@ public class DecoBlocks {
     
     //------ Terracotta Blocks ------//
     
+    public static Block unfiredTerracotta;
+    
+    public static Block terracotta;
+    public static Block terracottaSidingAndCorner;
+    public static Block terracottaMoulding;
+    public static Block terracottaStairs;
+    
+    public static Block stainedTerracotta;
+    public static Block[] stainedTerracottaSidingAndCorner;
+    public static Block[] stainedTerracottaMoulding;
+    public static Block[] stainedTerracottaStairs;
+    public static Block stainedTerracottaSlab;
+    public static Block stainedTerracottaSlab2;
+    
+    public static Block shingles;
+    public static Block shinglesSidingAndCorner;
+    public static Block shinglesMoulding;
+    public static Block shinglesStairs;
+    
+    public static Block coloredShingles;
+    public static Block[] coloredShinglesSidingAndCorner;
+    public static Block[] coloredShinglesMoulding;
+    public static Block[] coloredShinglesStairs;
+    public static Block coloredShinglesSlab;
+    public static Block coloredShinglesSlab2;
+    
+    public static Block[] glazedTerracotta;
+    public static Block[] glazedTerracottaPillars;
+    
     //------ Soil Blocks ------//
     
     public static Block coarseDirt;

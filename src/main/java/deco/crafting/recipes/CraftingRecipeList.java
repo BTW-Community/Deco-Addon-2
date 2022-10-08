@@ -24,6 +24,7 @@ import net.minecraft.src.ItemStack;
 public class CraftingRecipeList {
 	public static void initRecipes() {
 		initGeneralRecipes();
+		initTerracottaRecipes();
 		initConcreteRecipes();
 		initSoilRecipes();
 		initPlantRecipes();
@@ -41,6 +42,273 @@ public class CraftingRecipeList {
 						new ItemStack(Item.dyePowder, 1, ColorUtils.WHITE.colorID),
 						new ItemStack(BTWItems.potash)
 				});
+	}
+	
+	private static void initTerracottaRecipes() {
+		
+		//------ Terracotta ------//
+		
+		// Unfired terracotta
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.unfiredTerracotta),
+				new ItemStack[] {
+						new ItemStack(Block.sand, 1, InventoryUtils.IGNORE_METADATA),
+						new ItemStack(Item.clay)
+				});
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.unfiredTerracotta),
+				new ItemStack[] {
+						new ItemStack(Block.sand, 1, InventoryUtils.IGNORE_METADATA),
+						new ItemStack(BTWItems.netherSludge)
+				});
+		
+		// Terracotta
+		
+		RecipeManager.addKilnRecipe(new ItemStack(DecoBlocks.terracotta), DecoBlocks.unfiredTerracotta);
+		
+		btw.crafting.recipe.CraftingRecipeList.addSubBlockRecipesOfType(DecoBlocks.terracotta, 0, DecoBlocks.terracottaSidingAndCorner,
+				DecoBlocks.terracottaMoulding, true);
+		
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.terracottaStairs, 6),
+				new Object[] {
+						"F  ",
+						"FF ",
+						"FFF",
+						'F', new ItemStack(DecoBlocks.terracotta)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.terracottaStairs, 1),
+				new Object[] {
+						"M ",
+						"MM",
+						'M', new ItemStack(DecoBlocks.terracottaMoulding)
+				});
+		
+		// TODO: Add slab recipe
+		
+		// Stained terracotta
+		for (int color = 0; color < 16; color++) {
+			RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.stainedTerracotta, 8, color),
+					new ItemStack[] {
+							new ItemStack(DecoBlocks.terracotta),
+							new ItemStack(DecoBlocks.terracotta),
+							new ItemStack(DecoBlocks.terracotta),
+							new ItemStack(DecoBlocks.terracotta),
+							new ItemStack(DecoBlocks.terracotta),
+							new ItemStack(DecoBlocks.terracotta),
+							new ItemStack(DecoBlocks.terracotta),
+							new ItemStack(DecoBlocks.terracotta),
+							new ItemStack(Item.dyePowder, 1, color)
+					});
+			RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.stainedTerracotta, 8, color),
+					new ItemStack[] {
+							new ItemStack(DecoBlocks.terracotta),
+							new ItemStack(DecoBlocks.terracotta),
+							new ItemStack(DecoBlocks.terracotta),
+							new ItemStack(DecoBlocks.terracotta),
+							new ItemStack(DecoBlocks.terracotta),
+							new ItemStack(DecoBlocks.terracotta),
+							new ItemStack(DecoBlocks.terracotta),
+							new ItemStack(DecoBlocks.terracotta),
+							new ItemStack(Item.dyePowder, 1, color + 16)
+					});
+			
+			btw.crafting.recipe.CraftingRecipeList.addSubBlockRecipesOfType(DecoBlocks.stainedTerracotta, color, DecoBlocks.stainedTerracottaSidingAndCorner[color],
+					DecoBlocks.stainedTerracottaMoulding[color], true);
+			
+			RecipeManager.addRecipe(new ItemStack(DecoBlocks.stainedTerracottaStairs[color], 6),
+					new Object[] {
+							"F  ",
+							"FF ",
+							"FFF",
+							'F', new ItemStack(DecoBlocks.stainedTerracotta, 1, color)
+					});
+			RecipeManager.addRecipe(new ItemStack(DecoBlocks.stainedTerracottaStairs[color], 1),
+					new Object[] {
+							"M ",
+							"MM",
+							'M', new ItemStack(DecoBlocks.stainedTerracottaMoulding[color])
+					});
+		}
+		
+		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.stainedTerracotta, 8, ColorUtils.BROWN.colorID),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.terracotta),
+						new ItemStack(DecoBlocks.terracotta),
+						new ItemStack(DecoBlocks.terracotta),
+						new ItemStack(DecoBlocks.terracotta),
+						new ItemStack(DecoBlocks.terracotta),
+						new ItemStack(DecoBlocks.terracotta),
+						new ItemStack(DecoBlocks.terracotta),
+						new ItemStack(DecoBlocks.terracotta),
+						new ItemStack(BTWItems.dung)
+				});
+		
+		for (int color = 0; color < 8; color++) {
+			RecipeManager.addRecipe(new ItemStack(DecoBlocks.stainedTerracottaSlab, 6, color),
+					new Object[] {
+							"CCC",
+							'C', new ItemStack(DecoBlocks.stainedTerracotta, 1, color)
+					});
+			RecipeManager.addRecipe(new ItemStack(DecoBlocks.stainedTerracottaSlab2, 6, color),
+					new Object[] {
+							"CCC",
+							'C', new ItemStack(DecoBlocks.stainedTerracotta, 1, color + 8)
+					});
+			
+			RecipeManager.addRecipe(new ItemStack(DecoBlocks.stainedTerracotta, 1, color),
+					new Object[] {
+							"S",
+							"S",
+							'S', new ItemStack(DecoBlocks.stainedTerracottaSlab, 1, color)
+					});
+			RecipeManager.addRecipe(new ItemStack(DecoBlocks.stainedTerracotta, 1, color + 8),
+					new Object[] {
+							"S",
+							"S",
+							'S', new ItemStack(DecoBlocks.stainedTerracottaSlab2, 1, color)
+					});
+		}
+		
+		//------ Shingles ------//
+		
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.shingles),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.terracotta),
+						new ItemStack(BTWItems.ironChisel, 1, InventoryUtils.IGNORE_METADATA)
+				});
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.shingles),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.terracotta),
+						new ItemStack(BTWItems.diamondChisel, 1, InventoryUtils.IGNORE_METADATA)
+				});
+		
+		btw.crafting.recipe.CraftingRecipeList.addSubBlockRecipesOfType(DecoBlocks.shingles, 0, DecoBlocks.shinglesSidingAndCorner,
+				DecoBlocks.shinglesMoulding, true);
+		
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.shinglesStairs, 6),
+				new Object[] {
+						"F  ",
+						"FF ",
+						"FFF",
+						'F', new ItemStack(DecoBlocks.shingles)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.shinglesStairs, 1),
+				new Object[] {
+						"M ",
+						"MM",
+						'M', new ItemStack(DecoBlocks.shinglesMoulding)
+				});
+		
+		// TODO: Add slab recipe
+		
+		// Colored shingles
+		for (int color = 0; color < 16; color++) {
+			RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.coloredShingles, 8, color),
+					new ItemStack[] {
+							new ItemStack(DecoBlocks.shingles),
+							new ItemStack(DecoBlocks.shingles),
+							new ItemStack(DecoBlocks.shingles),
+							new ItemStack(DecoBlocks.shingles),
+							new ItemStack(DecoBlocks.shingles),
+							new ItemStack(DecoBlocks.shingles),
+							new ItemStack(DecoBlocks.shingles),
+							new ItemStack(DecoBlocks.shingles),
+							new ItemStack(Item.dyePowder, 1, color)
+					});
+			RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.coloredShingles, 8, color),
+					new ItemStack[] {
+							new ItemStack(DecoBlocks.shingles),
+							new ItemStack(DecoBlocks.shingles),
+							new ItemStack(DecoBlocks.shingles),
+							new ItemStack(DecoBlocks.shingles),
+							new ItemStack(DecoBlocks.shingles),
+							new ItemStack(DecoBlocks.shingles),
+							new ItemStack(DecoBlocks.shingles),
+							new ItemStack(DecoBlocks.shingles),
+							new ItemStack(Item.dyePowder, 1, color + 16)
+					});
+			
+			RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.coloredShingles, 1, color),
+					new ItemStack[] {
+							new ItemStack(DecoBlocks.stainedTerracotta, 1, color),
+							new ItemStack(BTWItems.ironChisel, 1, InventoryUtils.IGNORE_METADATA)
+					});
+			RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.coloredShingles, 1, color),
+					new ItemStack[] {
+							new ItemStack(DecoBlocks.stainedTerracotta, 1, color),
+							new ItemStack(BTWItems.diamondChisel, 1, InventoryUtils.IGNORE_METADATA)
+					});
+			
+			btw.crafting.recipe.CraftingRecipeList.addSubBlockRecipesOfType(DecoBlocks.coloredShingles, color, DecoBlocks.coloredShinglesSidingAndCorner[color],
+					DecoBlocks.coloredShinglesMoulding[color], true);
+			
+			RecipeManager.addRecipe(new ItemStack(DecoBlocks.coloredShinglesStairs[color], 6),
+					new Object[] {
+							"F  ",
+							"FF ",
+							"FFF",
+							'F', new ItemStack(DecoBlocks.coloredShingles, 1, color)
+					});
+			RecipeManager.addRecipe(new ItemStack(DecoBlocks.coloredShinglesStairs[color], 1),
+					new Object[] {
+							"M ",
+							"MM",
+							'M', new ItemStack(DecoBlocks.coloredShinglesMoulding[color])
+					});
+		}
+		
+		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.coloredShingles, 8, ColorUtils.BROWN.colorID),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.shingles),
+						new ItemStack(DecoBlocks.shingles),
+						new ItemStack(DecoBlocks.shingles),
+						new ItemStack(DecoBlocks.shingles),
+						new ItemStack(DecoBlocks.shingles),
+						new ItemStack(DecoBlocks.shingles),
+						new ItemStack(DecoBlocks.shingles),
+						new ItemStack(DecoBlocks.shingles),
+						new ItemStack(BTWItems.dung)
+				});
+		
+		for (int color = 0; color < 8; color++) {
+			RecipeManager.addRecipe(new ItemStack(DecoBlocks.coloredShinglesSlab, 6, color),
+					new Object[] {
+							"CCC",
+							'C', new ItemStack(DecoBlocks.coloredShingles, 1, color)
+					});
+			RecipeManager.addRecipe(new ItemStack(DecoBlocks.coloredShinglesSlab2, 6, color),
+					new Object[] {
+							"CCC",
+							'C', new ItemStack(DecoBlocks.coloredShingles, 1, color + 8)
+					});
+			
+			RecipeManager.addRecipe(new ItemStack(DecoBlocks.coloredShingles, 1, color),
+					new Object[] {
+							"S",
+							"S",
+							'S', new ItemStack(DecoBlocks.coloredShinglesSlab, 1, color)
+					});
+			RecipeManager.addRecipe(new ItemStack(DecoBlocks.coloredShingles, 1, color + 8),
+					new Object[] {
+							"S",
+							"S",
+							'S', new ItemStack(DecoBlocks.coloredShinglesSlab2, 1, color)
+					});
+		}
+		
+		//------ Glazed Terracotta ------//
+		
+		for (int color = 0; color < 16; color++) {
+			RecipeManager.addStokedCrucibleRecipe(new ItemStack(DecoBlocks.glazedTerracotta[color]),
+					new ItemStack[] {
+							new ItemStack(DecoBlocks.stainedTerracotta, 1, color)
+					});
+			
+			RecipeManager.addRecipe(new ItemStack(DecoBlocks.glazedTerracottaPillars[color]),
+					new Object[] {
+							"G",
+							"G",
+							'G', DecoBlocks.glazedTerracotta[color]
+					});
+		}
 	}
 	
 	private static void initConcreteRecipes() {

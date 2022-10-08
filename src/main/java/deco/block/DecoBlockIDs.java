@@ -22,6 +22,16 @@ public class DecoBlockIDs {
     public static final int PASTEL_PLANKS_SLAB_ID = 3041;
     public static final int PASTEL_PLANKS_SLAB_2_ID = 3042;
 
+    public static final int TERRACOTTA_ID = 3044;
+    public static final int STAINED_TERRACOTTA_ID = 3045;
+    public static final int UNFIRED_TERRACOTTA = 3046;
+    
+    public static final int TERRACOTTA_SUB_START = 3049;
+    // IDs occupied through 3099
+    
+    public static final int GLAZED_TERRACOTTA_START = 3134;
+    //IDs occupied through 3149
+    
     public static final int STRIPPED_LOG_ID = 3200;
     public static final int WOOD_ID = 3201;
     public static final int STRIPPED_WOOD_ID = 3202;
@@ -67,6 +77,9 @@ public class DecoBlockIDs {
     
     public static final int PASTEL_PLANKS_SUB_START = 3248;
     // IDs occupied through 3295
+    
+    public static final int STAINED_TERRACOTTA_SLAB_ID = 3297;
+    public static final int STAINED_TERRACOTTA_SLAB_2_ID = 3298;
     
     public static final int COARSE_DIRT_ID = 3300;
     public static final int COARSE_DIRT_SLAB_ID = 3301;
@@ -128,6 +141,12 @@ public class DecoBlockIDs {
     public static final int ACACIA_LADDER_ID = 3531;
     public static final int FLAMING_ACACIA_LADDER_ID = 3532;
     
+    public static final int SHINGLES_ID = 3534;
+    public static final int COLORED_SHINGLES_ID = 3535;
+    public static final int SHINGLES_SUB_START = 3536;
+    // IDs occupied through 3586
+    public static final int COLORED_SHINGLES_SLAB_ID = 3587;
+    public static final int COLORED_SHINGLES_SLAB_2_ID = 3588;
     public static final int BOTTLE_RACK_ID = 3589;
     public static final int EMPTY_BOTTLE_RACK_ID = 3590;
     
@@ -171,6 +190,8 @@ public class DecoBlockIDs {
     public static final int MANGROVE_SIGN_ID = 3636;
     public static final int MANGROVE_WALL_SIGN_ID = 3637;
     public static final int WORK_STUMP_ID = 3638;
+    public static final int GLAZED_TERRACOTTA_PILLARS_START = 3639;
+    //IDs occupied through 3654
     
     public static final int HAZEL_LOG_ID = 3699;
     public static final int HAZEL_STUMP_ID = 3700;

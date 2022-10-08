@@ -22,10 +22,184 @@ import net.minecraft.src.*;
 
 public class DecoBlockInitializer {
     public static void initDecoBlocks() {
+        initTerracotta();
         initConcrete();
         initSoil();
         initPlants();
         initWoodTypes();
+    }
+    
+    private static void initTerracotta() {
+        
+        //------ Terracotta ------//
+        
+        DecoBlocks.unfiredTerracotta = new UnfiredTerracottaBlock(DecoBlockIDs.UNFIRED_TERRACOTTA);
+        
+        DecoBlocks.terracotta = new TerracottaBlock(DecoBlockIDs.TERRACOTTA_ID, "decoBlockTerracotta");
+        DecoBlocks.stainedTerracotta = new ColoredTerracottaBlock(DecoBlockIDs.STAINED_TERRACOTTA_ID, "decoBlockTerracottaStained");
+        Item.itemsList[DecoBlocks.stainedTerracotta.blockID] = new ColoredItemBlock(DecoBlocks.stainedTerracotta);
+        
+        int terracottaSubID = DecoBlockIDs.TERRACOTTA_SUB_START;
+        
+        DecoBlocks.terracottaSidingAndCorner = new SidingAndCornerAndDecorativeWallBlock(terracottaSubID++, Material.rock,
+                "decoBlockTerracotta",
+                DecoBlocks.terracotta.blockHardness, DecoBlocks.terracotta.blockResistance, Block.soundStoneFootstep,
+                "decoBlockTerracottaSiding");
+        Item.itemsList[DecoBlocks.terracottaSidingAndCorner.blockID] = new SidingAndCornerBlockItem(DecoBlocks.terracottaSidingAndCorner.blockID - 256);
+        DecoBlocks.terracottaMoulding = new MouldingAndDecorativeWallBlock(terracottaSubID++, Material.rock,
+                "decoBlockTerracotta", "decoBlockTerracottaColumn",
+                DecoBlocks.terracottaSidingAndCorner.blockID,
+                DecoBlocks.terracotta.blockHardness, DecoBlocks.terracotta.blockResistance, Block.soundStoneFootstep,
+                "decoBlockTerracottaMoulding");
+        Item.itemsList[DecoBlocks.terracottaSidingAndCorner.blockID] = new SidingAndCornerBlockItem(DecoBlocks.terracottaSidingAndCorner.blockID - 256);
+        DecoBlocks.terracottaStairs = new StairsBlock(terracottaSubID++, DecoBlocks.terracotta, 0)
+                .setUnlocalizedName("decoBlockTerracottaStairs");
+        
+        DecoBlocks.stainedTerracottaSidingAndCorner = new Block[16];
+        DecoBlocks.stainedTerracottaMoulding = new Block[16];
+        DecoBlocks.stainedTerracottaStairs = new Block[16];
+        
+        for (int color = 0; color < 16; color++) {
+            DecoBlocks.stainedTerracottaSidingAndCorner[color] = new SidingAndCornerAndDecorativeWallBlock(terracottaSubID++, Material.rock,
+                    "decoBlockTerracottaStained_" + ColorUtils.colorOrder[color],
+                    DecoBlocks.terracotta.blockHardness, DecoBlocks.terracotta.blockResistance, Block.soundStoneFootstep,
+                    "decoBlockTerracottaStainedSiding." + ColorUtils.colorOrder[color]);
+            Item.itemsList[DecoBlocks.stainedTerracottaSidingAndCorner[color].blockID] =
+                    new SidingAndCornerBlockItem(DecoBlocks.stainedTerracottaSidingAndCorner[color].blockID - 256);
+            DecoBlocks.stainedTerracottaMoulding[color] = new MouldingAndDecorativeWallBlock(terracottaSubID++, Material.rock,
+                    "decoBlockTerracottaStained_" + ColorUtils.colorOrder[color], "decoBlockTerracottaStainedColumn_" + ColorUtils.colorOrder[color],
+                    DecoBlocks.stainedTerracottaSidingAndCorner[color].blockID,
+                    DecoBlocks.terracotta.blockHardness, DecoBlocks.terracotta.blockResistance, Block.soundStoneFootstep,
+                    "decoBlockTerracottaStainedMoulding." + ColorUtils.colorOrder[color]);
+            Item.itemsList[DecoBlocks.stainedTerracottaMoulding[color].blockID] =
+                    new SidingAndCornerBlockItem(DecoBlocks.stainedTerracottaMoulding[color].blockID - 256);
+            DecoBlocks.stainedTerracottaStairs[color] = new StairsBlock(terracottaSubID++, DecoBlocks.stainedTerracotta, color)
+                    .setUnlocalizedName("decoBlockTerracottaStainedStairs." + ColorUtils.colorOrder[color]);
+        }
+    
+        DecoBlocks.stainedTerracottaSlab = new DecoSlabBlock(DecoBlockIDs.STAINED_TERRACOTTA_SLAB_ID, Material.rock,
+                new Block[] {
+                        DecoBlocks.stainedTerracotta,
+                        DecoBlocks.stainedTerracotta,
+                        DecoBlocks.stainedTerracotta,
+                        DecoBlocks.stainedTerracotta,
+                        DecoBlocks.stainedTerracotta,
+                        DecoBlocks.stainedTerracotta,
+                        DecoBlocks.stainedTerracotta,
+                        DecoBlocks.stainedTerracotta
+                },
+                new int[] {0, 1, 2, 3, 4, 5, 6, 7})
+                .setUnlocalizedName("decoBlockTerracottaStainedSlab");
+        Item.itemsList[DecoBlocks.stainedTerracottaSlab.blockID] = new DecoSlabItemBlock(DecoBlocks.stainedTerracottaSlab.blockID - 256);
+        DecoBlocks.stainedTerracottaSlab2 = new DecoSlabBlock(DecoBlockIDs.STAINED_TERRACOTTA_SLAB_2_ID, Material.rock,
+                new Block[] {
+                        DecoBlocks.stainedTerracotta,
+                        DecoBlocks.stainedTerracotta,
+                        DecoBlocks.stainedTerracotta,
+                        DecoBlocks.stainedTerracotta,
+                        DecoBlocks.stainedTerracotta,
+                        DecoBlocks.stainedTerracotta,
+                        DecoBlocks.stainedTerracotta,
+                        DecoBlocks.stainedTerracotta
+                },
+                new int[] {8, 9, 10, 11, 12, 13, 14, 15})
+                .setUnlocalizedName("decoBlockTerracottaSlabStained2");
+        Item.itemsList[DecoBlocks.stainedTerracottaSlab2.blockID] = new DecoSlabItemBlock(DecoBlocks.stainedTerracottaSlab2.blockID - 256);
+    
+        //------ Shingles ------//
+    
+        DecoBlocks.shingles = new TerracottaBlock(DecoBlockIDs.SHINGLES_ID, "decoBlockShingles");
+        DecoBlocks.coloredShingles = new ColoredTerracottaBlock(DecoBlockIDs.COLORED_SHINGLES_ID, "decoBlockShinglesColored");
+        Item.itemsList[DecoBlocks.coloredShingles.blockID] = new ColoredItemBlock(DecoBlocks.coloredShingles);
+    
+        int shinglesSubID = DecoBlockIDs.SHINGLES_SUB_START;
+    
+        DecoBlocks.shinglesSidingAndCorner = new SidingAndCornerAndDecorativeWallBlock(shinglesSubID++, Material.rock,
+                "decoBlockShingles",
+                DecoBlocks.shingles.blockHardness, DecoBlocks.shingles.blockResistance, Block.soundStoneFootstep,
+                "decoBlockShinglesSiding");
+        Item.itemsList[DecoBlocks.shinglesSidingAndCorner.blockID] = new SidingAndCornerBlockItem(DecoBlocks.shinglesSidingAndCorner.blockID - 256);
+        DecoBlocks.shinglesMoulding = new MouldingAndDecorativeWallBlock(shinglesSubID++, Material.rock,
+                "decoBlockShingles", "decoBlockShinglesColumn",
+                DecoBlocks.shinglesSidingAndCorner.blockID,
+                DecoBlocks.shingles.blockHardness, DecoBlocks.shingles.blockResistance, Block.soundStoneFootstep,
+                "decoBlockShinglesMoulding");
+        Item.itemsList[DecoBlocks.shinglesSidingAndCorner.blockID] = new SidingAndCornerBlockItem(DecoBlocks.shinglesSidingAndCorner.blockID - 256);
+        DecoBlocks.shinglesStairs = new StairsBlock(shinglesSubID++, DecoBlocks.shingles, 0)
+                .setUnlocalizedName("decoBlockShinglesStairs");
+    
+        DecoBlocks.coloredShinglesSidingAndCorner = new Block[16];
+        DecoBlocks.coloredShinglesMoulding = new Block[16];
+        DecoBlocks.coloredShinglesStairs = new Block[16];
+        
+        for (int color = 0; color < 16; color++) {
+            DecoBlocks.coloredShinglesSidingAndCorner[color] = new SidingAndCornerAndDecorativeWallBlock(shinglesSubID++, Material.rock,
+                    "decoBlockShinglesColored_" + ColorUtils.colorOrder[color],
+                    DecoBlocks.terracotta.blockHardness, DecoBlocks.terracotta.blockResistance, Block.soundStoneFootstep,
+                    "decoBlockShinglesColoredSiding." + ColorUtils.colorOrder[color]);
+            Item.itemsList[DecoBlocks.coloredShinglesSidingAndCorner[color].blockID] =
+                    new SidingAndCornerBlockItem(DecoBlocks.coloredShinglesSidingAndCorner[color].blockID - 256);
+            DecoBlocks.coloredShinglesMoulding[color] = new MouldingAndDecorativeWallBlock(shinglesSubID++, Material.rock,
+                    "decoBlockShinglesColored_" + ColorUtils.colorOrder[color], "decoBlockShinglesColoredColumn_" + ColorUtils.colorOrder[color],
+                    DecoBlocks.coloredShinglesSidingAndCorner[color].blockID,
+                    DecoBlocks.terracotta.blockHardness, DecoBlocks.terracotta.blockResistance, Block.soundStoneFootstep,
+                    "decoBlockShinglesColoredMoulding." + ColorUtils.colorOrder[color]);
+            Item.itemsList[DecoBlocks.coloredShinglesMoulding[color].blockID] =
+                    new SidingAndCornerBlockItem(DecoBlocks.coloredShinglesMoulding[color].blockID - 256);
+            DecoBlocks.coloredShinglesStairs[color] = new StairsBlock(shinglesSubID++, DecoBlocks.coloredShingles, color)
+                    .setUnlocalizedName("decoBlockShinglesColoredStairs." + ColorUtils.colorOrder[color]);
+        }
+    
+        DecoBlocks.coloredShinglesSlab = new DecoSlabBlock(DecoBlockIDs.COLORED_SHINGLES_SLAB_ID, Material.rock,
+                new Block[] {
+                        DecoBlocks.coloredShingles,
+                        DecoBlocks.coloredShingles,
+                        DecoBlocks.coloredShingles,
+                        DecoBlocks.coloredShingles,
+                        DecoBlocks.coloredShingles,
+                        DecoBlocks.coloredShingles,
+                        DecoBlocks.coloredShingles,
+                        DecoBlocks.coloredShingles
+                },
+                new int[] {0, 1, 2, 3, 4, 5, 6, 7})
+                .setUnlocalizedName("decoBlockShinglesColoredSlab");
+        Item.itemsList[DecoBlocks.coloredShinglesSlab.blockID] = new DecoSlabItemBlock(DecoBlocks.coloredShinglesSlab.blockID - 256);
+        DecoBlocks.coloredShinglesSlab2 = new DecoSlabBlock(DecoBlockIDs.COLORED_SHINGLES_SLAB_2_ID, Material.rock,
+                new Block[] {
+                        DecoBlocks.coloredShingles,
+                        DecoBlocks.coloredShingles,
+                        DecoBlocks.coloredShingles,
+                        DecoBlocks.coloredShingles,
+                        DecoBlocks.coloredShingles,
+                        DecoBlocks.coloredShingles,
+                        DecoBlocks.coloredShingles,
+                        DecoBlocks.coloredShingles
+                },
+                new int[] {8, 9, 10, 11, 12, 13, 14, 15})
+                .setUnlocalizedName("decoBlockShinglesSlabColored2");
+        Item.itemsList[DecoBlocks.coloredShinglesSlab2.blockID] = new DecoSlabItemBlock(DecoBlocks.coloredShinglesSlab2.blockID - 256);
+        
+        //------ Glazed Terracotta ------//
+        
+        DecoBlocks.glazedTerracotta = new Block[16];
+        DecoBlocks.glazedTerracottaPillars = new Block[16];
+        
+        int glazedTerracottaID = DecoBlockIDs.GLAZED_TERRACOTTA_START;
+        int glazedTerracottaPillarID = DecoBlockIDs.GLAZED_TERRACOTTA_PILLARS_START;
+        
+        for (int color = 0; color < 16; color++) {
+            DecoBlocks.glazedTerracotta[color] = new GlazedTerracottaBlock(glazedTerracottaID++,
+                    "decoBlockGlazedTerracotta." + ColorUtils.colorOrder[color],
+                    "decoBlockGlazedTerracotta_" + ColorUtils.colorOrder[color]);
+            
+            DecoBlocks.glazedTerracottaPillars[color] = new DecoPillarBlock(glazedTerracottaPillarID++, Material.rock,
+                    new String[] {"decoBlockGlazedTerracottaPillar_" + ColorUtils.colorOrder[color] + "_top"},
+                    new String[] {"decoBlockGlazedTerracottaPillar_" + ColorUtils.colorOrder[color] + "_side"})
+                    .setHardness(1.0F)
+                    .setResistance(5.0F)
+                    .setCreativeTab(CreativeTabs.tabBlock)
+                    .setUnlocalizedName("decoBlockGlazedTerracottaPillar." + ColorUtils.colorOrder[color]);
+        }
     }
     
     private static void initConcrete() {

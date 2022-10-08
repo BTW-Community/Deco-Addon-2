@@ -1,5 +1,14 @@
 ## Version 4.0.0 ##
+Deco as of 4.0.0 is now a fabric mod, without any base class edits, and as such can simply be placed in the mods folder to isntall.
+
+Some textures in this release have been used or modified from the following sources according to their license:
+- Blockus
+- Terra Incognita
+- Quark
+
 - Rewrote the addon from scratch as a fabric mod. Note that data is stored in the same way, and thus it is save-compatible (it is still a good idea to back up your worlds before updating).
+- Added glazed terracotta pillars, crafted with two glazed terracotta in a vertical line.
+- Changed unfired terracotta to be crafted with full blocks instead of 8 piles for convenience.
 - Added new wood types: mahogany, mangrove, hazel
 - Changed sapling recipes:
     - All sapling recipes can use either dung or fertilizer
