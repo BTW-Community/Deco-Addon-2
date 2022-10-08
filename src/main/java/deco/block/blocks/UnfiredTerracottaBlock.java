@@ -15,6 +15,7 @@ public class UnfiredTerracottaBlock extends FallingFullBlock {
 		this.setFilterableProperties(8);
 		this.setStepSound(soundSandFootstep);
 		this.setCreativeTab(CreativeTabs.tabBlock);
+		this.setUnlocalizedName("decoBlockTerracottaUnfired");
 	}
 	
 	@Override

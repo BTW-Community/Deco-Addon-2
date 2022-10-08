@@ -6,6 +6,8 @@
   "mixins": [
     "BloodWoodLogMixin",
     "BookshelfBlockMixin",
+    "GrassBlockMixin",
+    "GrassSlabBlockMixin",
     "LadderBlockFlamingMixin",
     "PlanksBlockMixin",
     "SandBlockMixin",
