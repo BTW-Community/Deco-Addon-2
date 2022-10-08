@@ -291,11 +291,4 @@ public class DecoBlocks {
     public static Block[] pastelPlanksMoulding;
     public static Block pastelPlanksSlab;
     public static Block pastelPlanksSlab2;
-    
-    public static Block vibrantPlanks;
-    public static Block[] vibrantPlanksStairs;
-    public static Block[] vibrantPlanksSidingAndCorner;
-    public static Block[] vibrantPlanksMoulding;
-    public static Block vibrantPlanksSlab;
-    public static Block vibrantPlanksSlab2;
 }
