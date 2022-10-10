@@ -412,7 +412,12 @@ public class DecoBlockInitializer {
     }
     
     private static void initEnd() {
-    
+        DecoBlocks.endStoneBrick = new DecoBlock(DecoBlockIDs.END_STONE_ID, Material.rock)
+                .setHardness(3.0F)
+                .setResistance(15.0F)
+                .setStepSound(Block.soundStoneFootstep)
+                .setUnlocalizedName("decoBlockEndStoneBrick")
+                .setCreativeTab(CreativeTabs.tabBlock);
     }
     
     private static void initTerracotta() {
@@ -664,7 +669,9 @@ public class DecoBlockInitializer {
                         DecoBlocks.looseDioriteCobblestone,
                         DecoBlocks.looseGraniteBrick,
                         DecoBlocks.looseAndesiteBrick,
-                        DecoBlocks.looseDioriteBrick
+                        DecoBlocks.looseDioriteBrick,
+                        DecoBlocks.looseSlateCobblestone,
+                        DecoBlocks.looseSlateBrick
                 },
                 new int[] {
                         StoneHelper.GRANITE_COBBLESTONE_SLAB_ID,
@@ -672,7 +679,9 @@ public class DecoBlockInitializer {
                         StoneHelper.DIORITE_COBBLESTONE_SLAB_ID,
                         StoneHelper.GRANITE_BRICK_SLAB_ID,
                         StoneHelper.ANDESITE_BRICK_SLAB_ID,
-                        StoneHelper.DIORITE_BRICK_SLAB_ID
+                        StoneHelper.DIORITE_BRICK_SLAB_ID,
+                        StoneHelper.SLATE_COBBLESTONE_SLAB_ID,
+                        StoneHelper.SLATE_BRICK_SLAB_ID
                 },
                 new int[] {
                         StoneHelper.GRANITE_COBBLESTONE_SLAB_TYPE,
@@ -681,6 +690,8 @@ public class DecoBlockInitializer {
                         StoneHelper.GRANITE_BRICK_SLAB_TYPE,
                         StoneHelper.ANDESITE_BRICK_SLAB_TYPE,
                         StoneHelper.DIORITE_BRICK_SLAB_TYPE,
+                        StoneHelper.SLATE_COBBLESTONE_SLAB_TYPE,
+                        StoneHelper.SLATE_BRICK_SLAB_TYPE
                 });
         
         DecoBlocks.stoneSlab2 = new StoneSlabBlock(DecoBlockIDs.STONE_SLAB_2_ID,
@@ -706,8 +717,7 @@ public class DecoBlockInitializer {
                 },
                 new boolean[] {
                         false, false, false, false, false, false,
-                        true,
-                        true
+                        true, true
                 },
                 new Block[] {
                         null, null, null, null, null, null,
@@ -716,8 +726,8 @@ public class DecoBlockInitializer {
                 },
                 new int[] {
                         0, 0, 0, 0, 0, 0,
-                        StoneVariantsBlock.GRANITE_TYPE,
-                        StoneVariantsBlock.ANDESITE_TYPE
+                        StoneHelper.LOOSE_GRANITE_COBBLESTONE_SLAB_TYPE,
+                        StoneHelper.LOOSE_ANDESITE_COBBLESTONE_SLAB_TYPE,
                 });
         
         DecoBlocks.stoneSlab3 = new StoneSlabBlock(DecoBlockIDs.STONE_SLAB_3_ID,
@@ -734,10 +744,7 @@ public class DecoBlockInitializer {
                         StoneVariantsBlock.DIORITE_TYPE,
                 },
                 new boolean[] {
-                        true,
-                        true,
-                        true,
-                        true
+                        true, true, true, true
                 },
                 new Block[] {
                         DecoBlocks.looseStoneSlab,
@@ -746,10 +753,68 @@ public class DecoBlockInitializer {
                         DecoBlocks.looseStoneSlab
                 },
                 new int[] {
-                        StoneVariantsBlock.DIORITE_TYPE,
-                        StoneVariantsBlock.GRANITE_TYPE,
-                        StoneVariantsBlock.ANDESITE_TYPE,
-                        StoneVariantsBlock.DIORITE_TYPE
+                        StoneHelper.LOOSE_DIORITE_COBBLESTONE_SLAB_TYPE,
+                        StoneHelper.LOOSE_GRANITE_BRICK_SLAB_TYPE,
+                        StoneHelper.LOOSE_ANDESITE_BRICK_SLAB_TYPE,
+                        StoneHelper.LOOSE_DIORITE_BRICK_SLAB_TYPE,
+                });
+        
+        DecoBlocks.stoneSlab6 = new StoneSlabBlock(DecoBlockIDs.STONE_SLAB_6_ID,
+                new Block[] {
+                        Block.stoneBrick,
+                        Block.stoneBrick,
+                        DecoBlocks.endStoneBrick,
+                        DecoBlocks.terracotta,
+                        DecoBlocks.slate,
+                        DecoBlocks.polishedStoneVariants,
+                        DecoBlocks.cobblestoneVariants,
+                        DecoBlocks.stoneBrickVariants
+                },
+                new int [] {
+                        1, // Mossy
+                        2, // Cracked
+                        0, 0, 0,
+                        StoneVariantsBlock.SLATE_TYPE,
+                        StoneVariantsBlock.SLATE_TYPE,
+                        StoneVariantsBlock.SLATE_TYPE
+                },
+                new boolean[] {
+                        true, true,
+                        false, false, false, false,
+                        true, true
+                },
+                new Block[] {
+                        BTWBlocks.looseStoneBrickSlab,
+                        BTWBlocks.looseStoneBrickSlab,
+                        null, null, null, null,
+                        DecoBlocks.looseStoneSlab,
+                        DecoBlocks.looseStoneSlab
+                },
+                new int[] {
+                        0, 0, 0, 0, 0, 0,
+                        StoneHelper.LOOSE_SLATE_COBBLESTONE_SLAB_TYPE,
+                        StoneHelper.LOOSE_SLATE_BRICK_SLAB_TYPE
+                });
+        
+        DecoBlocks.stoneSlab7 = new StoneSlabBlock(DecoBlockIDs.STONE_SLAB_7_ID,
+                new Block[] {
+                        DecoBlocks.slateTiles,
+                        DecoBlocks.shingles
+                },
+                new int [] {
+                        0, 0
+                },
+                new boolean[] {
+                        true,
+                        false
+                },
+                new Block[] {
+                        DecoBlocks.looseStoneSlab,
+                        null
+                },
+                new int[] {
+                        StoneHelper.LOOSE_SLATE_BRICK_SLAB_TYPE,
+                        0
                 });
     }
     

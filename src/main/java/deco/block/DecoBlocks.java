@@ -196,7 +196,29 @@ public class DecoBlocks {
     
     //------ Nether Blocks ------//
     
+    public static Block infusedStone;
+    public static Block polishedInfusedStone;
+    public static Block infusedStoneBrick;
+    
+    public static Block infusedStoneSidingAndCorner;
+    public static Block infusedStoneMoulding;
+    public static Block infusedStoneStairs;
+    
+    public static Block polishedInfusedStoneSidingAndCorner;
+    public static Block polishedInfusedStoneMoulding;
+    public static Block polishedInfusedStoneStairs;
+    
+    public static Block infusedStoneBrickSidingAndCorner;
+    public static Block infusedStoneBrickMoulding;
+    public static Block infusedStoneBrickStairs;
+    
     //------ End Blocks ------//
+    
+    public static Block endStoneBrick;
+    
+    public static Block endStoneBrickSidingAndCorner;
+    public static Block endStoneBrickMoulding;
+    public static Block endStoneBrickStairs;
     
     //------ Concrete Blocks ------//
     

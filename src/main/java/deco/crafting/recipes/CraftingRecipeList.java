@@ -1189,7 +1189,17 @@ public class CraftingRecipeList {
 						'M', new ItemStack(DecoBlocks.terracottaMoulding)
 				});
 		
-		// TODO: Add slab recipe
+		RecipeManager.addRecipe(new ItemStack(StoneHelper.TERRACOTTA_SLAB_ID, 6, StoneHelper.TERRACOTTA_SLAB_TYPE),
+				new Object[] {
+						"FFF",
+						'F', new ItemStack(DecoBlocks.terracotta)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.terracotta),
+				new Object[] {
+						"S",
+						"S",
+						'S', new ItemStack(StoneHelper.TERRACOTTA_SLAB_ID, 1, StoneHelper.TERRACOTTA_SLAB_TYPE)
+				});
 		
 		// Stained terracotta
 		for (int color = 0; color < 16; color++) {
@@ -1305,7 +1315,17 @@ public class CraftingRecipeList {
 						'M', new ItemStack(DecoBlocks.shinglesMoulding)
 				});
 		
-		// TODO: Add slab recipe
+		RecipeManager.addRecipe(new ItemStack(StoneHelper.SHINGLES_SLAB_ID, 6, StoneHelper.SHINGLES_SLAB_TYPE),
+				new Object[] {
+						"FFF",
+						'F', new ItemStack(DecoBlocks.shingles)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.shingles),
+				new Object[] {
+						"S",
+						"S",
+						'S', new ItemStack(StoneHelper.SHINGLES_SLAB_ID, 1, StoneHelper.SHINGLES_SLAB_TYPE)
+				});
 		
 		// Colored shingles
 		for (int color = 0; color < 16; color++) {

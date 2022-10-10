@@ -93,6 +93,8 @@ public class DecoBlockIDs {
     public static final int LOOSE_DIORITE_BRICK_STAIRS_ID = 3191;
     public static final int LOOSE_STONE_VARIANTS_SLAB_ID = 3192;
     
+    public static final int STONE_SLAB_4_ID = 3198;
+    public static final int STONE_SLAB_5_ID = 3199;
     public static final int STRIPPED_LOG_ID = 3200;
     public static final int WOOD_ID = 3201;
     public static final int STRIPPED_WOOD_ID = 3202;
@@ -149,12 +151,17 @@ public class DecoBlockIDs {
     public static final int LEGACY_RED_SAND_ID = 3310;
     public static final int RED_SAND_SLAB_ID = 3311;
     
+    public static final int STONE_SLAB_6_ID = 3377;
+    
     public static final int CONCRETE_SUB_START = 3383;
     // IDs occupied through 3430
     
     public static final int CONCRETE_SLAB_ID = 3432;
     public static final int CONCRETE_SLAB_2_ID = 3433;
-    
+    public static final int END_STONE_ID = 3434;
+    public static final int END_STONE_STAIRS_ID = 3435;
+    public static final int END_STONE_SIDING_AND_CORNER_ID = 3436;
+    public static final int END_STONE_MOULDING_ID = 3437;
     public static final int SPRUCE_SIGN_ID = 3438;
     public static final int SPRUCE_WALL_SIGN_ID = 3439;
     public static final int BIRCH_SIGN_ID = 3440;
@@ -194,6 +201,7 @@ public class DecoBlockIDs {
     public static final int ACACIA_SIGN_ID = 3503;
     public static final int ACACIA_WALL_SIGN_ID = 3504;
     public static final int FILLED_ACACIA_BARREL_ID = 3505;
+    public static final int STONE_SLAB_7_ID = 3506;
     
     public static final int BOOKSHELF_ID = 3507;
     public static final int EMPTY_BOOKSHELF_ID = 3508;
