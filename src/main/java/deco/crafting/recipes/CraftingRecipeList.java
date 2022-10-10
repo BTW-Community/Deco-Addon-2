@@ -14,6 +14,7 @@ import btw.util.ColorUtils;
 import deco.block.DecoBlocks;
 import deco.block.blocks.DecoLogBlock;
 import deco.block.blocks.FilledBarrelBlock;
+import deco.block.blocks.InfusedStoneBlock;
 import deco.block.blocks.StoneVariantsBlock;
 import deco.block.util.SandHelper;
 import deco.block.util.StoneHelper;
@@ -28,6 +29,9 @@ public class CraftingRecipeList {
 	public static void initRecipes() {
 		initGeneralRecipes();
 		initStoneRecipes();
+		initSandstoneRecipes();
+		initNetherRecipes();
+		initEndRecipes();
 		initTerracottaRecipes();
 		initConcreteRecipes();
 		initSoilRecipes();
@@ -1540,6 +1544,186 @@ public class CraftingRecipeList {
 						"S",
 						"S",
 						'S', new ItemStack(StoneHelper.SLATE_TILES_SLAB_ID, 1, StoneHelper.SLATE_TILES_SLAB_TYPE)
+				});
+	}
+	
+	private static void initSandstoneRecipes() {
+	
+	}
+	
+	private static void initNetherRecipes() {
+		
+		//------ General Nether Recipes ------//
+		
+		RecipeManager.addKilnRecipe(new ItemStack(DecoBlocks.magma), Block.netherrack);
+		RecipeManager.addKilnRecipe(new ItemStack(DecoBlocks.magma), BTWBlocks.fallingNetherrack);
+		
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.basalt, 2, 1), // Polished
+				new Object[] {
+						"B",
+						"B",
+						'B', new ItemStack(DecoBlocks.basalt, 1, 0) // Regular
+				});
+		
+		//------ Nether Brick ------//
+		
+		
+		
+		//------ Infused Stone ------//
+		
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.infusedStone),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.basalt),
+						new ItemStack(BTWItems.soulFlux)
+				});
+		
+		RecipeManager.addStokedCrucibleRecipe(new ItemStack(DecoBlocks.infusedStone, 1, InfusedStoneBlock.TYPE_SMOOTH),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.infusedStone, 1, InfusedStoneBlock.TYPE_DEFAULT)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.infusedStone, 1, InfusedStoneBlock.TYPE_BRICK),
+				new Object[] {
+						"FF",
+						"FF",
+						'F', new ItemStack(DecoBlocks.infusedStone, 1, InfusedStoneBlock.TYPE_DEFAULT)
+				});
+		
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.infusedStone, 1, InfusedStoneBlock.TYPE_CHISELED),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.infusedStone, 1, InfusedStoneBlock.TYPE_BRICK),
+						new ItemStack(BTWItems.ironChisel, 1, InventoryUtils.IGNORE_METADATA)
+				});
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.infusedStone, 1, InfusedStoneBlock.TYPE_CHISELED),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.infusedStone, 1, InfusedStoneBlock.TYPE_BRICK),
+						new ItemStack(BTWItems.diamondChisel, 1, InventoryUtils.IGNORE_METADATA)
+				});
+		
+		// Sub blocks
+		btw.crafting.recipe.CraftingRecipeList.addSubBlockRecipesOfType(DecoBlocks.infusedStone, InfusedStoneBlock.TYPE_DEFAULT,
+				DecoBlocks.infusedStoneSidingAndCorner, DecoBlocks.infusedStoneMoulding, true);
+		
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.infusedStoneStairs, 6),
+				new Object[] {
+						"F  ",
+						"FF ",
+						"FFF",
+						'F', new ItemStack(DecoBlocks.infusedStone, 1, InfusedStoneBlock.TYPE_DEFAULT)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.infusedStoneStairs, 1),
+				new Object[] {
+						"M ",
+						"MM",
+						'M', new ItemStack(DecoBlocks.infusedStoneMoulding)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(StoneHelper.INFUSED_STONE_SLAB_ID, 6, StoneHelper.INFUSED_STONE_SLAB_TYPE),
+				new Object[] {
+						"FFF",
+						'F', new ItemStack(DecoBlocks.infusedStone, 1, InfusedStoneBlock.TYPE_DEFAULT)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.infusedStone, 1, InfusedStoneBlock.TYPE_DEFAULT),
+				new Object[] {
+						"S",
+						"S",
+						'S', new ItemStack(StoneHelper.INFUSED_STONE_SLAB_ID, 1, StoneHelper.INFUSED_STONE_SLAB_TYPE)
+				});
+		
+		btw.crafting.recipe.CraftingRecipeList.addSubBlockRecipesOfType(DecoBlocks.infusedStone, InfusedStoneBlock.TYPE_SMOOTH,
+				DecoBlocks.polishedInfusedStoneSidingAndCorner, DecoBlocks.polishedInfusedStoneMoulding, true);
+		
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.polishedInfusedStoneStairs, 6),
+				new Object[] {
+						"F  ",
+						"FF ",
+						"FFF",
+						'F', new ItemStack(DecoBlocks.infusedStone, 1, InfusedStoneBlock.TYPE_BRICK)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.polishedInfusedStoneStairs, 1),
+				new Object[] {
+						"M ",
+						"MM",
+						'M', new ItemStack(DecoBlocks.infusedStoneMoulding)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(StoneHelper.POLISHED_INFUSED_STONE_SLAB_ID, 6, StoneHelper.POLISHED_INFUSED_STONE_SLAB_TYPE),
+				new Object[] {
+						"FFF",
+						'F', new ItemStack(DecoBlocks.infusedStone, 1, InfusedStoneBlock.TYPE_BRICK)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.infusedStone, 1, InfusedStoneBlock.TYPE_BRICK),
+				new Object[] {
+						"S",
+						"S",
+						'S', new ItemStack(StoneHelper.POLISHED_INFUSED_STONE_SLAB_ID, 1, StoneHelper.POLISHED_INFUSED_STONE_SLAB_TYPE)
+				});
+		
+		btw.crafting.recipe.CraftingRecipeList.addSubBlockRecipesOfType(DecoBlocks.infusedStone, InfusedStoneBlock.TYPE_BRICK,
+				DecoBlocks.infusedStoneBrickSidingAndCorner, DecoBlocks.infusedStoneBrickMoulding, true);
+		
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.infusedStoneBrickStairs, 6),
+				new Object[] {
+						"F  ",
+						"FF ",
+						"FFF",
+						'F', new ItemStack(DecoBlocks.infusedStone, 1, InfusedStoneBlock.TYPE_BRICK)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.infusedStoneBrickStairs, 1),
+				new Object[] {
+						"M ",
+						"MM",
+						'M', new ItemStack(DecoBlocks.infusedStoneBrickMoulding)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(StoneHelper.INFUSED_STONE_BRICK_SLAB_ID, 6, StoneHelper.INFUSED_STONE_BRICK_SLAB_TYPE),
+				new Object[] {
+						"FFF",
+						'F', new ItemStack(DecoBlocks.infusedStone, 1, InfusedStoneBlock.TYPE_BRICK)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.infusedStone, 1, InfusedStoneBlock.TYPE_BRICK),
+				new Object[] {
+						"S",
+						"S",
+						'S', new ItemStack(StoneHelper.INFUSED_STONE_BRICK_SLAB_ID, 1, StoneHelper.INFUSED_STONE_BRICK_SLAB_TYPE)
+				});
+	}
+	
+	private static void initEndRecipes() {
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.endStoneBrick, 4),
+				new Object[] {
+						"EE",
+						"EE",
+						'E', new ItemStack(Block.whiteStone)
+				});
+		
+		btw.crafting.recipe.CraftingRecipeList.addSubBlockRecipesOfType(DecoBlocks.endStoneBrick, 0, DecoBlocks.endStoneBrickSidingAndCorner,
+				DecoBlocks.endStoneBrickMoulding, true);
+		
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.endStoneBrickStairs, 6),
+				new Object[] {
+						"F  ",
+						"FF ",
+						"FFF",
+						'F', new ItemStack(DecoBlocks.endStoneBrick)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.endStoneBrickStairs, 1),
+				new Object[] {
+						"M ",
+						"MM",
+						'M', new ItemStack(DecoBlocks.endStoneBrickMoulding)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(StoneHelper.END_STONE_BRICK_SLAB_ID, 6, StoneHelper.END_STONE_BRICK_SLAB_TYPE),
+				new Object[] {
+						"FFF",
+						'F', new ItemStack(DecoBlocks.endStoneBrick)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.endStoneBrick),
+				new Object[] {
+						"S",
+						"S",
+						'S', new ItemStack(StoneHelper.END_STONE_BRICK_SLAB_ID, 1, StoneHelper.END_STONE_BRICK_SLAB_TYPE)
 				});
 	}
 	

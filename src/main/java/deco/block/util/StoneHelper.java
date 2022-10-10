@@ -37,6 +37,14 @@ public class StoneHelper {
 	public static final int LOOSE_SLATE_BRICK_SLAB_ID = DecoBlockIDs.LOOSE_STONE_VARIANTS_SLAB_ID;
 	public static final int SLATE_TILES_SLAB_ID = DecoBlockIDs.STONE_SLAB_7_ID;
 	
+	// Nether
+	public static final int INFUSED_STONE_SLAB_ID = DecoBlockIDs.STONE_SLAB_3_ID;
+	public static final int POLISHED_INFUSED_STONE_SLAB_ID = DecoBlockIDs.STONE_SLAB_3_ID;
+	public static final int INFUSED_STONE_BRICK_SLAB_ID = DecoBlockIDs.STONE_SLAB_3_ID;
+	
+	// End
+	public static final int END_STONE_BRICK_SLAB_ID = DecoBlockIDs.STONE_SLAB_6_ID;
+	
 	// Other
 	public static final int TERRACOTTA_SLAB_ID = DecoBlockIDs.STONE_SLAB_6_ID;
 	
@@ -73,6 +81,14 @@ public class StoneHelper {
 	public static final int SLATE_TILES_SLAB_TYPE = 0;
 	public static final int LOOSE_SLATE_COBBLESTONE_SLAB_TYPE = 6;
 	public static final int LOOSE_SLATE_BRICK_SLAB_TYPE = 7;
+	
+	// Nether
+	public static final int INFUSED_STONE_SLAB_TYPE = 4;
+	public static final int POLISHED_INFUSED_STONE_SLAB_TYPE = 5;
+	public static final int INFUSED_STONE_BRICK_SLAB_TYPE = 6;
+	
+	// End
+	public static final int END_STONE_BRICK_SLAB_TYPE = 2;
 	
 	// Other
 	public static final int TERRACOTTA_SLAB_TYPE = 3;

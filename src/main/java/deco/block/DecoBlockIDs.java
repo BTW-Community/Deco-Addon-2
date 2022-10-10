@@ -46,7 +46,20 @@ public class DecoBlockIDs {
     public static final int MOSSY_COBBLESTONE_STAIRS = 3115;
     public static final int STONE_SLAB_2_ID = 3116;
     public static final int STONE_SLAB_3_ID = 3117;
+    public static final int LEGACY_NETHER_BRICK_ID = 3118;
     
+    public static final int INFUSED_STONE_ID = 3120;
+    public static final int BASALT_ID = 3121;
+    
+    public static final int INFUSED_STONE_STAIRS_ID = 3125;
+    public static final int INFUSED_STONE_SIDING_AND_CORNER_ID = 3126;
+    public static final int INFUSED_STONE_MOULDING_ID = 3127;
+    public static final int POLISHED_INFUSED_STONE_STAIRS_ID = 3128;
+    public static final int POLISHED_INFUSED_STONE_SIDING_AND_CORNER_ID = 3129;
+    public static final int POLISHED_INFUSED_STONE_MOULDING_ID = 3130;
+    public static final int INFUSED_STONE_BRICK_STAIRS_ID = 3131;
+    public static final int INFUSED_STONE_BRICK_SIDING_AND_CORNER_ID = 3132;
+    public static final int INFUSED_STONE_BRICK_MOULDING_ID = 3133;
     public static final int GLAZED_TERRACOTTA_START = 3134;
     //IDs occupied through 3149
     public static final int GRANITE_SIDING_AND_CORNER_ID = 3150;
@@ -93,6 +106,8 @@ public class DecoBlockIDs {
     public static final int LOOSE_DIORITE_BRICK_STAIRS_ID = 3191;
     public static final int LOOSE_STONE_VARIANTS_SLAB_ID = 3192;
     
+    public static final int MAGMA_ID = 3196;
+    
     public static final int STONE_SLAB_4_ID = 3198;
     public static final int STONE_SLAB_5_ID = 3199;
     public static final int STRIPPED_LOG_ID = 3200;
@@ -103,7 +118,7 @@ public class DecoBlockIDs {
     public static final int CHERRY_STUMP_ID = 3205;
     // IDs 3206-3208 occupied by BTW
     public static final int CHEWED_CHERRY_LOG_ID = 3209;
-    
+    public static final int WORKBENCH_ID = 3210;
     public static final int BARREL_2_ID = 3211;
     public static final int FILLED_BLOOD_BARREL_ID = 3212;
     public static final int FILLED_CHERRY_BARREL_ID = 3213;
@@ -158,10 +173,10 @@ public class DecoBlockIDs {
     
     public static final int CONCRETE_SLAB_ID = 3432;
     public static final int CONCRETE_SLAB_2_ID = 3433;
-    public static final int END_STONE_ID = 3434;
-    public static final int END_STONE_STAIRS_ID = 3435;
-    public static final int END_STONE_SIDING_AND_CORNER_ID = 3436;
-    public static final int END_STONE_MOULDING_ID = 3437;
+    public static final int END_STONE_BRICK_ID = 3434;
+    public static final int END_STONE_BRICK_STAIRS_ID = 3435;
+    public static final int END_STONE_BRICK_SIDING_AND_CORNER_ID = 3436;
+    public static final int END_STONE_BRICK_MOULDING_ID = 3437;
     public static final int SPRUCE_SIGN_ID = 3438;
     public static final int SPRUCE_WALL_SIGN_ID = 3439;
     public static final int BIRCH_SIGN_ID = 3440;

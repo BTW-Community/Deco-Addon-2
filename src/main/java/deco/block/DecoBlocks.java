@@ -196,9 +196,11 @@ public class DecoBlocks {
     
     //------ Nether Blocks ------//
     
+    public static Block basalt;
+    public static Block magma;
+    
+    // Infused Stone
     public static Block infusedStone;
-    public static Block polishedInfusedStone;
-    public static Block infusedStoneBrick;
     
     public static Block infusedStoneSidingAndCorner;
     public static Block infusedStoneMoulding;
@@ -267,7 +269,6 @@ public class DecoBlocks {
     public static Block coarseDirtSlab;
     
     public static Block podzol;
-    public static Block podzolSlab;
     
     public static Block mud;
     public static Block packedMud;

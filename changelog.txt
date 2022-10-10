@@ -21,12 +21,16 @@ Some textures in this release have been used or modified from the following sour
     - Mahogany saplings require a jungle sapling, red dye, and a fertilizer.
     - Mangrove saplings require a jungle sapling, orange dye, and a fertilizer.
     - Hazel saplings require an oak sapling, brown dye, and a fertilizer.
+- Changed deco stone variants to behave consistently with BTW stone.
+    - Granite, andesite, and diorite are all considered first strata.
+    - Slate is considered third strata.
 - Changed red sand (blocks and piles) to be a subtype of regular sand. Old red sand may be converted into new red sand in a crafting grid.
 - Changed red sand to be crafted with 8 sand and 1 red dye to make 8.
 - Changed the recipe for coarse dirt to produce 2.
 - Changed the recipe for podzol to be 8 coarse dirt and a spruce leaf block to make 8.
 - Changed the recipe for empty bottle racks to use an 'I' shape instead of an 'X' (high efficiency recipe uses siding on top and bottom and moulding everywhere else).
 - Changed the names of flower textures to be more descriptive.
+- Changed magma to be made by heating netherrack in a kiln, and removed superheated netherrack.
 - Removed the ability to play custom sounds. This will return in a future release, but for now the code was too messy to carry over through the rewrite.
 - Removed wood bleach and wood stain.
 - Fixed an issue where addon leaves would not properly decay until updated.
