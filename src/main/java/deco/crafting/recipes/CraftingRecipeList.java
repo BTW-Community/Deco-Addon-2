@@ -14,7 +14,9 @@ import btw.util.ColorUtils;
 import deco.block.DecoBlocks;
 import deco.block.blocks.DecoLogBlock;
 import deco.block.blocks.FilledBarrelBlock;
+import deco.block.blocks.StoneVariantsBlock;
 import deco.block.util.SandHelper;
+import deco.block.util.StoneHelper;
 import deco.block.util.WoodTypeHelper;
 import deco.item.DecoItems;
 import net.minecraft.src.Block;
@@ -54,19 +56,1100 @@ public class CraftingRecipeList {
 	}
 	
 	private static void initGraniteRecipes() {
-	
+		RecipeManager.addStokedCrucibleRecipe(new ItemStack(DecoBlocks.looseGraniteCobblestone, 16),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.looseDioriteCobblestone, 16),
+						new ItemStack(Item.netherQuartz)
+				});
+		
+		RecipeManager.addStokedCrucibleRecipe(new ItemStack(DecoBlocks.polishedStoneVariants, 1, StoneVariantsBlock.GRANITE_TYPE),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.stoneVariants, 1, StoneVariantsBlock.GRANITE_TYPE)
+				});
+		
+		//------ Loose ------//
+		
+		// Blocks - Stone
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.looseGraniteCobblestone),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.stoneVariants, 1, StoneVariantsBlock.GRANITE_TYPE),
+						new ItemStack(BTWItems.ironChisel, 1, InventoryUtils.IGNORE_METADATA)
+				});
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.looseGraniteCobblestone),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.stoneVariants, 1, StoneVariantsBlock.GRANITE_TYPE),
+						new ItemStack(BTWItems.diamondChisel, 1, InventoryUtils.IGNORE_METADATA)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(StoneHelper.LOOSE_GRANITE_COBBLESTONE_SLAB_ID, 4, StoneHelper.LOOSE_GRANITE_COBBLESTONE_SLAB_TYPE),
+				new Object[] {
+						"FF",
+						'F', new ItemStack(DecoBlocks.looseGraniteCobblestone)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.looseGraniteCobblestone, 1),
+				new Object[] {
+						"S",
+						"S",
+						'S', new ItemStack(StoneHelper.LOOSE_GRANITE_COBBLESTONE_SLAB_ID, 1, StoneHelper.LOOSE_GRANITE_COBBLESTONE_SLAB_TYPE)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.looseGraniteCobblestoneStairs, 4),
+				new Object[] {
+						"F ",
+						"FF",
+						'F', new ItemStack(DecoBlocks.looseGraniteCobblestone)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.looseGraniteCobblestoneStairs, 2),
+				new Object[] {
+						"S ",
+						"SS",
+						'S', new ItemStack(StoneHelper.LOOSE_GRANITE_COBBLESTONE_SLAB_ID, 1, StoneHelper.LOOSE_GRANITE_COBBLESTONE_SLAB_TYPE)
+				});
+		
+		// Items - Stone
+		RecipeManager.addShapelessRecipe(new ItemStack(BTWItems.stone, 8, StoneVariantsBlock.GRANITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+				new ItemStack[] {new ItemStack(DecoBlocks.looseGraniteCobblestone)});
+		RecipeManager.addShapelessRecipe(new ItemStack(BTWItems.stone, 6, StoneVariantsBlock.GRANITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+				new ItemStack[] {new ItemStack(DecoBlocks.looseGraniteCobblestoneStairs)});
+		RecipeManager.addShapelessRecipe(new ItemStack(BTWItems.stone, 4, StoneVariantsBlock.GRANITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+				new ItemStack[] {new ItemStack(StoneHelper.LOOSE_GRANITE_COBBLESTONE_SLAB_ID, 1, StoneHelper.LOOSE_GRANITE_COBBLESTONE_SLAB_TYPE)});
+		
+		RecipeManager.addShapelessRecipe(new ItemStack(StoneHelper.LOOSE_GRANITE_COBBLESTONE_SLAB_ID, 1, StoneHelper.LOOSE_GRANITE_COBBLESTONE_SLAB_TYPE),
+				new ItemStack[] {
+						new ItemStack(BTWItems.stone, 1, StoneVariantsBlock.GRANITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stone, 1, StoneVariantsBlock.GRANITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stone, 1, StoneVariantsBlock.GRANITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stone, 1, StoneVariantsBlock.GRANITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES)
+				});
+		
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.looseGraniteCobblestone),
+				new ItemStack[] {
+						new ItemStack(BTWItems.stone, 1, StoneVariantsBlock.GRANITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stone, 1, StoneVariantsBlock.GRANITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stone, 1, StoneVariantsBlock.GRANITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stone, 1, StoneVariantsBlock.GRANITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stone, 1, StoneVariantsBlock.GRANITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stone, 1, StoneVariantsBlock.GRANITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stone, 1, StoneVariantsBlock.GRANITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stone, 1, StoneVariantsBlock.GRANITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES)
+				});
+		
+		// Blocks - Stone Brick
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.looseGraniteBrick),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.polishedStoneVariants, 1, StoneVariantsBlock.GRANITE_TYPE),
+						new ItemStack(BTWItems.ironChisel, 1, InventoryUtils.IGNORE_METADATA)
+				});
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.looseGraniteBrick),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.polishedStoneVariants, 1, StoneVariantsBlock.GRANITE_TYPE),
+						new ItemStack(BTWItems.diamondChisel, 1, InventoryUtils.IGNORE_METADATA)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(StoneHelper.LOOSE_GRANITE_BRICK_SLAB_ID, 4, StoneHelper.LOOSE_GRANITE_BRICK_SLAB_TYPE),
+				new Object[] {
+						"FF",
+						'F', new ItemStack(DecoBlocks.looseGraniteBrick)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.looseGraniteBrick, 1),
+				new Object[] {
+						"S",
+						"S",
+						'S', new ItemStack(StoneHelper.LOOSE_GRANITE_BRICK_SLAB_ID, 1, StoneHelper.LOOSE_GRANITE_BRICK_SLAB_TYPE)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.looseGraniteBrickStairs, 4),
+				new Object[] {
+						"F ",
+						"FF",
+						'F', new ItemStack(DecoBlocks.looseGraniteBrick)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.looseGraniteBrickStairs, 2),
+				new Object[] {
+						"S ",
+						"SS",
+						'S', new ItemStack(StoneHelper.LOOSE_GRANITE_BRICK_SLAB_ID, 1, StoneHelper.LOOSE_GRANITE_BRICK_SLAB_TYPE)
+				});
+		
+		// Items - Stone brick
+		RecipeManager.addShapelessRecipe(new ItemStack(BTWItems.stoneBrick, 8, StoneVariantsBlock.GRANITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+				new ItemStack[] {new ItemStack(DecoBlocks.looseGraniteBrick)});
+		RecipeManager.addShapelessRecipe(new ItemStack(BTWItems.stoneBrick, 6, StoneVariantsBlock.GRANITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+				new ItemStack[] {new ItemStack(DecoBlocks.looseGraniteBrickStairs)});
+		RecipeManager.addShapelessRecipe(new ItemStack(BTWItems.stoneBrick, 4, StoneVariantsBlock.GRANITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+				new ItemStack[] {new ItemStack(StoneHelper.LOOSE_GRANITE_BRICK_SLAB_ID, 1, StoneHelper.LOOSE_GRANITE_BRICK_SLAB_TYPE)});
+		
+		RecipeManager.addShapelessRecipe(new ItemStack(StoneHelper.LOOSE_GRANITE_BRICK_SLAB_ID, 1, StoneHelper.LOOSE_GRANITE_BRICK_SLAB_TYPE),
+				new ItemStack[] {
+						new ItemStack(BTWItems.stoneBrick, 1, StoneVariantsBlock.GRANITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stoneBrick, 1, StoneVariantsBlock.GRANITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stoneBrick, 1, StoneVariantsBlock.GRANITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stoneBrick, 1, StoneVariantsBlock.GRANITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES)
+				});
+		
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.looseGraniteBrick),
+				new ItemStack[] {
+						new ItemStack(BTWItems.stoneBrick, 1, StoneVariantsBlock.GRANITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stoneBrick, 1, StoneVariantsBlock.GRANITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stoneBrick, 1, StoneVariantsBlock.GRANITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stoneBrick, 1, StoneVariantsBlock.GRANITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stoneBrick, 1, StoneVariantsBlock.GRANITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stoneBrick, 1, StoneVariantsBlock.GRANITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stoneBrick, 1, StoneVariantsBlock.GRANITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stoneBrick, 1, StoneVariantsBlock.GRANITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES)
+				});
+		
+		//------ Mortar ------//
+		
+		// Clay
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(DecoBlocks.cobblestoneVariants, 1, StoneVariantsBlock.GRANITE_TYPE),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.looseGraniteCobblestone),
+						new ItemStack(Item.clay)
+				});
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(DecoBlocks.graniteCobblestoneStairs),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.looseGraniteCobblestoneStairs),
+						new ItemStack(Item.clay)
+				});
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(StoneHelper.GRANITE_COBBLESTONE_SLAB_ID, 1, StoneHelper.GRANITE_COBBLESTONE_SLAB_TYPE),
+				new ItemStack[] {
+						new ItemStack(StoneHelper.LOOSE_GRANITE_COBBLESTONE_SLAB_ID, 1, StoneHelper.LOOSE_GRANITE_COBBLESTONE_SLAB_TYPE),
+						new ItemStack(Item.clay)
+				});
+		
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(DecoBlocks.stoneBrickVariants, 1, StoneVariantsBlock.GRANITE_TYPE),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.looseGraniteBrick),
+						new ItemStack(Item.clay)
+				});
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(DecoBlocks.graniteBrickStairs),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.looseGraniteBrickStairs),
+						new ItemStack(Item.clay)
+				});
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(StoneHelper.GRANITE_BRICK_SLAB_ID, 1, StoneHelper.GRANITE_BRICK_SLAB_TYPE),
+				new ItemStack[] {
+						new ItemStack(StoneHelper.LOOSE_GRANITE_BRICK_SLAB_ID, 1, StoneHelper.LOOSE_GRANITE_BRICK_SLAB_TYPE),
+						new ItemStack(Item.clay)
+				});
+		
+		// Slime
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(DecoBlocks.cobblestoneVariants, 1, StoneVariantsBlock.GRANITE_TYPE),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.looseGraniteCobblestone),
+						new ItemStack(Item.slimeBall)
+				});
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(DecoBlocks.graniteCobblestoneStairs),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.looseGraniteCobblestoneStairs),
+						new ItemStack(Item.slimeBall)
+				});
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(StoneHelper.GRANITE_COBBLESTONE_SLAB_ID, 1, StoneHelper.GRANITE_COBBLESTONE_SLAB_TYPE),
+				new ItemStack[] {
+						new ItemStack(StoneHelper.LOOSE_GRANITE_COBBLESTONE_SLAB_ID, 1, StoneHelper.LOOSE_GRANITE_COBBLESTONE_SLAB_TYPE),
+						new ItemStack(Item.slimeBall)
+				});
+		
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(DecoBlocks.stoneBrickVariants, 1, StoneVariantsBlock.GRANITE_TYPE),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.looseGraniteBrick),
+						new ItemStack(Item.slimeBall)
+				});
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(DecoBlocks.graniteBrickStairs),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.looseGraniteBrickStairs),
+						new ItemStack(Item.slimeBall)
+				});
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(StoneHelper.GRANITE_BRICK_SLAB_ID, 1, StoneHelper.GRANITE_BRICK_SLAB_TYPE),
+				new ItemStack[] {
+						new ItemStack(StoneHelper.LOOSE_GRANITE_BRICK_SLAB_ID, 1, StoneHelper.LOOSE_GRANITE_BRICK_SLAB_TYPE),
+						new ItemStack(Item.slimeBall)
+				});
+		
+		// Nether Sludge
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(DecoBlocks.cobblestoneVariants, 1, StoneVariantsBlock.GRANITE_TYPE),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.looseGraniteCobblestone),
+						new ItemStack(BTWItems.netherSludge)
+				});
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(DecoBlocks.graniteCobblestoneStairs),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.looseGraniteCobblestoneStairs),
+						new ItemStack(BTWItems.netherSludge)
+				});
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(StoneHelper.GRANITE_COBBLESTONE_SLAB_ID, 1, StoneHelper.GRANITE_COBBLESTONE_SLAB_TYPE),
+				new ItemStack[] {
+						new ItemStack(StoneHelper.LOOSE_GRANITE_COBBLESTONE_SLAB_ID, 1, StoneHelper.LOOSE_GRANITE_COBBLESTONE_SLAB_TYPE),
+						new ItemStack(BTWItems.netherSludge)
+				});
+		
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(DecoBlocks.stoneBrickVariants, 1, StoneVariantsBlock.GRANITE_TYPE),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.looseGraniteBrick),
+						new ItemStack(BTWItems.netherSludge)
+				});
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(DecoBlocks.graniteBrickStairs),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.looseGraniteBrickStairs),
+						new ItemStack(BTWItems.netherSludge)
+				});
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(StoneHelper.GRANITE_BRICK_SLAB_ID, 1, StoneHelper.GRANITE_BRICK_SLAB_TYPE),
+				new ItemStack[] {
+						new ItemStack(StoneHelper.LOOSE_GRANITE_BRICK_SLAB_ID, 1, StoneHelper.LOOSE_GRANITE_BRICK_SLAB_TYPE),
+						new ItemStack(BTWItems.netherSludge)
+				});
+		
+		//------ Sub blocks ------//
+		
+		// Sub blocks
+		btw.crafting.recipe.CraftingRecipeList.addSubBlockRecipesOfType(DecoBlocks.stoneVariants, StoneVariantsBlock.GRANITE_TYPE,
+				DecoBlocks.graniteSidingAndCorner, DecoBlocks.graniteMoulding, true);
+		btw.crafting.recipe.CraftingRecipeList.addSubBlockRecipesOfType(DecoBlocks.polishedStoneVariants, StoneVariantsBlock.GRANITE_TYPE,
+				DecoBlocks.polishedGraniteSidingAndCorner, DecoBlocks.polishedGraniteMoulding, true);
+		btw.crafting.recipe.CraftingRecipeList.addSubBlockRecipesOfType(DecoBlocks.cobblestoneVariants, StoneVariantsBlock.GRANITE_TYPE,
+				DecoBlocks.graniteCobblestoneSidingAndCorner, DecoBlocks.graniteCobblestoneMoulding, true);
+		btw.crafting.recipe.CraftingRecipeList.addSubBlockRecipesOfType(DecoBlocks.stoneBrickVariants, StoneVariantsBlock.GRANITE_TYPE,
+				DecoBlocks.graniteBrickSidingAndCorner, DecoBlocks.graniteBrickMoulding, true);
+		
+		// Stairs
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.graniteStairs, 6),
+				new Object[] {
+						"F  ",
+						"FF ",
+						"FFF",
+						'F', new ItemStack(DecoBlocks.stoneVariants, 1, StoneVariantsBlock.GRANITE_TYPE)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.graniteStairs, 1),
+				new Object[] {
+						"M ",
+						"MM",
+						'M', new ItemStack(DecoBlocks.graniteMoulding)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.polishedGraniteStairs, 6),
+				new Object[] {
+						"F  ",
+						"FF ",
+						"FFF",
+						'F', new ItemStack(DecoBlocks.polishedStoneVariants, 1, StoneVariantsBlock.GRANITE_TYPE)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.polishedGraniteStairs, 1),
+				new Object[] {
+						"M ",
+						"MM",
+						'M', new ItemStack(DecoBlocks.polishedGraniteMoulding)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.graniteCobblestoneStairs, 6),
+				new Object[] {
+						"F  ",
+						"FF ",
+						"FFF",
+						'F', new ItemStack(DecoBlocks.cobblestoneVariants, 1, StoneVariantsBlock.GRANITE_TYPE)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.graniteCobblestoneStairs, 1),
+				new Object[] {
+						"M ",
+						"MM",
+						'M', new ItemStack(DecoBlocks.graniteCobblestoneMoulding)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.graniteBrickStairs, 6),
+				new Object[] {
+						"F  ",
+						"FF ",
+						"FFF",
+						'F', new ItemStack(DecoBlocks.stoneBrickVariants, 1, StoneVariantsBlock.GRANITE_TYPE)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.graniteBrickStairs, 1),
+				new Object[] {
+						"M ",
+						"MM",
+						'M', new ItemStack(DecoBlocks.graniteBrickMoulding)
+				});
+		
+		// Slabs
+		RecipeManager.addRecipe(new ItemStack(StoneHelper.GRANITE_SLAB_ID, 6, StoneHelper.GRANITE_SLAB_TYPE),
+				new Object[] {
+						"FFF",
+						'F', new ItemStack(DecoBlocks.stoneVariants, 1, StoneVariantsBlock.GRANITE_TYPE)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.stoneVariants, 1, StoneVariantsBlock.GRANITE_TYPE),
+				new Object[] {
+						"S",
+						"S",
+						'S', new ItemStack(StoneHelper.GRANITE_SLAB_ID, 1, StoneHelper.GRANITE_SLAB_TYPE)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(StoneHelper.POLISHED_GRANITE_SLAB_ID, 6, StoneHelper.POLISHED_GRANITE_SLAB_TYPE),
+				new Object[] {
+						"FFF",
+						'F', new ItemStack(DecoBlocks.polishedStoneVariants, 1, StoneVariantsBlock.GRANITE_TYPE)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.polishedStoneVariants, 1, StoneVariantsBlock.GRANITE_TYPE),
+				new Object[] {
+						"S",
+						"S",
+						'S', new ItemStack(StoneHelper.POLISHED_GRANITE_SLAB_ID, 1, StoneHelper.POLISHED_GRANITE_SLAB_TYPE)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(StoneHelper.GRANITE_COBBLESTONE_SLAB_ID, 6, StoneHelper.GRANITE_COBBLESTONE_SLAB_TYPE),
+				new Object[] {
+						"FFF",
+						'F', new ItemStack(DecoBlocks.cobblestoneVariants, 1, StoneVariantsBlock.GRANITE_TYPE)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.cobblestoneVariants, 1, StoneVariantsBlock.GRANITE_TYPE),
+				new Object[] {
+						"S",
+						"S",
+						'S', new ItemStack(StoneHelper.GRANITE_COBBLESTONE_SLAB_ID, 1, StoneHelper.GRANITE_COBBLESTONE_SLAB_TYPE)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(StoneHelper.GRANITE_BRICK_SLAB_ID, 6, StoneHelper.GRANITE_BRICK_SLAB_TYPE),
+				new Object[] {
+						"FFF",
+						'F', new ItemStack(DecoBlocks.stoneBrickVariants, 1, StoneVariantsBlock.GRANITE_TYPE)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.stoneBrickVariants, 1, StoneVariantsBlock.GRANITE_TYPE),
+				new Object[] {
+						"S",
+						"S",
+						'S', new ItemStack(StoneHelper.GRANITE_BRICK_SLAB_ID, 1, StoneHelper.GRANITE_BRICK_SLAB_TYPE)
+				});
 	}
 	
 	private static void initAndesiteRecipes() {
-	
+		RecipeManager.addStokedCrucibleRecipe(new ItemStack(DecoBlocks.looseAndesiteCobblestone, 16),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.looseDioriteCobblestone, 16),
+						new ItemStack(BTWBlocks.looseCobblestone, 1)
+				});
+		
+		RecipeManager.addStokedCrucibleRecipe(new ItemStack(DecoBlocks.polishedStoneVariants, 1, StoneVariantsBlock.ANDESITE_TYPE),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.stoneVariants, 1, StoneVariantsBlock.ANDESITE_TYPE)
+				});
+		
+		//------ Loose ------//
+		
+		// Blocks - Stone
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.looseAndesiteCobblestone),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.stoneVariants, 1, StoneVariantsBlock.ANDESITE_TYPE),
+						new ItemStack(BTWItems.ironChisel, 1, InventoryUtils.IGNORE_METADATA)
+				});
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.looseAndesiteCobblestone),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.stoneVariants, 1, StoneVariantsBlock.ANDESITE_TYPE),
+						new ItemStack(BTWItems.diamondChisel, 1, InventoryUtils.IGNORE_METADATA)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(StoneHelper.LOOSE_ANDESITE_COBBLESTONE_SLAB_ID, 4, StoneHelper.LOOSE_ANDESITE_COBBLESTONE_SLAB_TYPE),
+				new Object[] {
+						"FF",
+						'F', new ItemStack(DecoBlocks.looseAndesiteCobblestone)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.looseAndesiteCobblestone, 1),
+				new Object[] {
+						"S",
+						"S",
+						'S', new ItemStack(StoneHelper.LOOSE_ANDESITE_COBBLESTONE_SLAB_ID, 1, StoneHelper.LOOSE_ANDESITE_COBBLESTONE_SLAB_TYPE)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.looseAndesiteCobblestoneStairs, 4),
+				new Object[] {
+						"F ",
+						"FF",
+						'F', new ItemStack(DecoBlocks.looseAndesiteCobblestone)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.looseAndesiteCobblestoneStairs, 2),
+				new Object[] {
+						"S ",
+						"SS",
+						'S', new ItemStack(StoneHelper.LOOSE_ANDESITE_COBBLESTONE_SLAB_ID, 1, StoneHelper.LOOSE_ANDESITE_COBBLESTONE_SLAB_TYPE)
+				});
+		
+		// Items - Stone
+		RecipeManager.addShapelessRecipe(new ItemStack(BTWItems.stone, 8, StoneVariantsBlock.ANDESITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+				new ItemStack[] {new ItemStack(DecoBlocks.looseAndesiteCobblestone)});
+		RecipeManager.addShapelessRecipe(new ItemStack(BTWItems.stone, 6, StoneVariantsBlock.ANDESITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+				new ItemStack[] {new ItemStack(DecoBlocks.looseAndesiteCobblestoneStairs)});
+		RecipeManager.addShapelessRecipe(new ItemStack(BTWItems.stone, 4, StoneVariantsBlock.ANDESITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+				new ItemStack[] {new ItemStack(StoneHelper.LOOSE_ANDESITE_COBBLESTONE_SLAB_ID, 1, StoneHelper.LOOSE_ANDESITE_COBBLESTONE_SLAB_TYPE)});
+		
+		RecipeManager.addShapelessRecipe(new ItemStack(StoneHelper.LOOSE_ANDESITE_COBBLESTONE_SLAB_ID, 1, StoneHelper.LOOSE_ANDESITE_COBBLESTONE_SLAB_TYPE),
+				new ItemStack[] {
+						new ItemStack(BTWItems.stone, 1, StoneVariantsBlock.ANDESITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stone, 1, StoneVariantsBlock.ANDESITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stone, 1, StoneVariantsBlock.ANDESITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stone, 1, StoneVariantsBlock.ANDESITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES)
+				});
+		
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.looseAndesiteCobblestone),
+				new ItemStack[] {
+						new ItemStack(BTWItems.stone, 1, StoneVariantsBlock.ANDESITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stone, 1, StoneVariantsBlock.ANDESITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stone, 1, StoneVariantsBlock.ANDESITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stone, 1, StoneVariantsBlock.ANDESITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stone, 1, StoneVariantsBlock.ANDESITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stone, 1, StoneVariantsBlock.ANDESITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stone, 1, StoneVariantsBlock.ANDESITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stone, 1, StoneVariantsBlock.ANDESITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES)
+				});
+		
+		// Blocks - Stone Brick
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.looseAndesiteBrick),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.polishedStoneVariants, 1, StoneVariantsBlock.ANDESITE_TYPE),
+						new ItemStack(BTWItems.ironChisel, 1, InventoryUtils.IGNORE_METADATA)
+				});
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.looseAndesiteBrick),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.polishedStoneVariants, 1, StoneVariantsBlock.ANDESITE_TYPE),
+						new ItemStack(BTWItems.diamondChisel, 1, InventoryUtils.IGNORE_METADATA)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(StoneHelper.LOOSE_ANDESITE_BRICK_SLAB_ID, 4, StoneHelper.LOOSE_ANDESITE_BRICK_SLAB_TYPE),
+				new Object[] {
+						"FF",
+						'F', new ItemStack(DecoBlocks.looseAndesiteBrick)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.looseAndesiteBrick, 1),
+				new Object[] {
+						"S",
+						"S",
+						'S', new ItemStack(StoneHelper.LOOSE_ANDESITE_BRICK_SLAB_ID, 1, StoneHelper.LOOSE_ANDESITE_BRICK_SLAB_TYPE)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.looseAndesiteBrickStairs, 4),
+				new Object[] {
+						"F ",
+						"FF",
+						'F', new ItemStack(DecoBlocks.looseAndesiteBrick)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.looseAndesiteBrickStairs, 2),
+				new Object[] {
+						"S ",
+						"SS",
+						'S', new ItemStack(StoneHelper.LOOSE_ANDESITE_BRICK_SLAB_ID, 1, StoneHelper.LOOSE_ANDESITE_BRICK_SLAB_TYPE)
+				});
+		
+		// Items - Stone brick
+		RecipeManager.addShapelessRecipe(new ItemStack(BTWItems.stoneBrick, 8, StoneVariantsBlock.ANDESITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+				new ItemStack[] {new ItemStack(DecoBlocks.looseAndesiteBrick)});
+		RecipeManager.addShapelessRecipe(new ItemStack(BTWItems.stoneBrick, 6, StoneVariantsBlock.ANDESITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+				new ItemStack[] {new ItemStack(DecoBlocks.looseAndesiteBrickStairs)});
+		RecipeManager.addShapelessRecipe(new ItemStack(BTWItems.stoneBrick, 4, StoneVariantsBlock.ANDESITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+				new ItemStack[] {new ItemStack(StoneHelper.LOOSE_ANDESITE_BRICK_SLAB_ID, 1, StoneHelper.LOOSE_ANDESITE_BRICK_SLAB_TYPE)});
+		
+		RecipeManager.addShapelessRecipe(new ItemStack(StoneHelper.LOOSE_ANDESITE_BRICK_SLAB_ID, 1, StoneHelper.LOOSE_ANDESITE_BRICK_SLAB_TYPE),
+				new ItemStack[] {
+						new ItemStack(BTWItems.stoneBrick, 1, StoneVariantsBlock.ANDESITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stoneBrick, 1, StoneVariantsBlock.ANDESITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stoneBrick, 1, StoneVariantsBlock.ANDESITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stoneBrick, 1, StoneVariantsBlock.ANDESITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES)
+				});
+		
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.looseAndesiteBrick),
+				new ItemStack[] {
+						new ItemStack(BTWItems.stoneBrick, 1, StoneVariantsBlock.ANDESITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stoneBrick, 1, StoneVariantsBlock.ANDESITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stoneBrick, 1, StoneVariantsBlock.ANDESITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stoneBrick, 1, StoneVariantsBlock.ANDESITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stoneBrick, 1, StoneVariantsBlock.ANDESITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stoneBrick, 1, StoneVariantsBlock.ANDESITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stoneBrick, 1, StoneVariantsBlock.ANDESITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stoneBrick, 1, StoneVariantsBlock.ANDESITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES)
+				});
+		
+		//------ Mortar ------//
+		
+		// Clay
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(DecoBlocks.cobblestoneVariants, 1, StoneVariantsBlock.ANDESITE_TYPE),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.looseAndesiteCobblestone),
+						new ItemStack(Item.clay)
+				});
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(DecoBlocks.andesiteCobblestoneStairs),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.looseAndesiteCobblestoneStairs),
+						new ItemStack(Item.clay)
+				});
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(StoneHelper.ANDESITE_COBBLESTONE_SLAB_ID, 1, StoneHelper.ANDESITE_COBBLESTONE_SLAB_TYPE),
+				new ItemStack[] {
+						new ItemStack(StoneHelper.LOOSE_ANDESITE_COBBLESTONE_SLAB_ID, 1, StoneHelper.LOOSE_ANDESITE_COBBLESTONE_SLAB_TYPE),
+						new ItemStack(Item.clay)
+				});
+		
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(DecoBlocks.stoneBrickVariants, 1, StoneVariantsBlock.ANDESITE_TYPE),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.looseAndesiteBrick),
+						new ItemStack(Item.clay)
+				});
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(DecoBlocks.andesiteBrickStairs),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.looseAndesiteBrickStairs),
+						new ItemStack(Item.clay)
+				});
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(StoneHelper.ANDESITE_BRICK_SLAB_ID, 1, StoneHelper.ANDESITE_BRICK_SLAB_TYPE),
+				new ItemStack[] {
+						new ItemStack(StoneHelper.LOOSE_ANDESITE_BRICK_SLAB_ID, 1, StoneHelper.LOOSE_ANDESITE_BRICK_SLAB_TYPE),
+						new ItemStack(Item.clay)
+				});
+		
+		// Slime
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(DecoBlocks.cobblestoneVariants, 1, StoneVariantsBlock.ANDESITE_TYPE),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.looseAndesiteCobblestone),
+						new ItemStack(Item.slimeBall)
+				});
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(DecoBlocks.andesiteCobblestoneStairs),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.looseAndesiteCobblestoneStairs),
+						new ItemStack(Item.slimeBall)
+				});
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(StoneHelper.ANDESITE_COBBLESTONE_SLAB_ID, 1, StoneHelper.ANDESITE_COBBLESTONE_SLAB_TYPE),
+				new ItemStack[] {
+						new ItemStack(StoneHelper.LOOSE_ANDESITE_COBBLESTONE_SLAB_ID, 1, StoneHelper.LOOSE_ANDESITE_COBBLESTONE_SLAB_TYPE),
+						new ItemStack(Item.slimeBall)
+				});
+		
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(DecoBlocks.stoneBrickVariants, 1, StoneVariantsBlock.ANDESITE_TYPE),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.looseAndesiteBrick),
+						new ItemStack(Item.slimeBall)
+				});
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(DecoBlocks.andesiteBrickStairs),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.looseAndesiteBrickStairs),
+						new ItemStack(Item.slimeBall)
+				});
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(StoneHelper.ANDESITE_BRICK_SLAB_ID, 1, StoneHelper.ANDESITE_BRICK_SLAB_TYPE),
+				new ItemStack[] {
+						new ItemStack(StoneHelper.LOOSE_ANDESITE_BRICK_SLAB_ID, 1, StoneHelper.LOOSE_ANDESITE_BRICK_SLAB_TYPE),
+						new ItemStack(Item.slimeBall)
+				});
+		
+		// Nether Sludge
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(DecoBlocks.cobblestoneVariants, 1, StoneVariantsBlock.ANDESITE_TYPE),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.looseAndesiteCobblestone),
+						new ItemStack(BTWItems.netherSludge)
+				});
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(DecoBlocks.andesiteCobblestoneStairs),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.looseAndesiteCobblestoneStairs),
+						new ItemStack(BTWItems.netherSludge)
+				});
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(StoneHelper.ANDESITE_COBBLESTONE_SLAB_ID, 1, StoneHelper.ANDESITE_COBBLESTONE_SLAB_TYPE),
+				new ItemStack[] {
+						new ItemStack(StoneHelper.LOOSE_ANDESITE_COBBLESTONE_SLAB_ID, 1, StoneHelper.LOOSE_ANDESITE_COBBLESTONE_SLAB_TYPE),
+						new ItemStack(BTWItems.netherSludge)
+				});
+		
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(DecoBlocks.stoneBrickVariants, 1, StoneVariantsBlock.ANDESITE_TYPE),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.looseAndesiteBrick),
+						new ItemStack(BTWItems.netherSludge)
+				});
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(DecoBlocks.andesiteBrickStairs),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.looseAndesiteBrickStairs),
+						new ItemStack(BTWItems.netherSludge)
+				});
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(StoneHelper.ANDESITE_BRICK_SLAB_ID, 1, StoneHelper.ANDESITE_BRICK_SLAB_TYPE),
+				new ItemStack[] {
+						new ItemStack(StoneHelper.LOOSE_ANDESITE_BRICK_SLAB_ID, 1, StoneHelper.LOOSE_ANDESITE_BRICK_SLAB_TYPE),
+						new ItemStack(BTWItems.netherSludge)
+				});
+		
+		//------ Sub blocks ------//
+		
+		// Sub blocks
+		btw.crafting.recipe.CraftingRecipeList.addSubBlockRecipesOfType(DecoBlocks.stoneVariants, StoneVariantsBlock.ANDESITE_TYPE,
+				DecoBlocks.andesiteSidingAndCorner, DecoBlocks.andesiteMoulding, true);
+		btw.crafting.recipe.CraftingRecipeList.addSubBlockRecipesOfType(DecoBlocks.polishedStoneVariants, StoneVariantsBlock.ANDESITE_TYPE,
+				DecoBlocks.polishedAndesiteSidingAndCorner, DecoBlocks.polishedAndesiteMoulding, true);
+		btw.crafting.recipe.CraftingRecipeList.addSubBlockRecipesOfType(DecoBlocks.cobblestoneVariants, StoneVariantsBlock.ANDESITE_TYPE,
+				DecoBlocks.andesiteCobblestoneSidingAndCorner, DecoBlocks.andesiteCobblestoneMoulding, true);
+		btw.crafting.recipe.CraftingRecipeList.addSubBlockRecipesOfType(DecoBlocks.stoneBrickVariants, StoneVariantsBlock.ANDESITE_TYPE,
+				DecoBlocks.andesiteBrickSidingAndCorner, DecoBlocks.andesiteBrickMoulding, true);
+		
+		// Stairs
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.andesiteStairs, 6),
+				new Object[] {
+						"F  ",
+						"FF ",
+						"FFF",
+						'F', new ItemStack(DecoBlocks.stoneVariants, 1, StoneVariantsBlock.ANDESITE_TYPE)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.andesiteStairs, 1),
+				new Object[] {
+						"M ",
+						"MM",
+						'M', new ItemStack(DecoBlocks.andesiteMoulding)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.polishedAndesiteStairs, 6),
+				new Object[] {
+						"F  ",
+						"FF ",
+						"FFF",
+						'F', new ItemStack(DecoBlocks.polishedStoneVariants, 1, StoneVariantsBlock.ANDESITE_TYPE)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.polishedAndesiteStairs, 1),
+				new Object[] {
+						"M ",
+						"MM",
+						'M', new ItemStack(DecoBlocks.polishedAndesiteMoulding)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.andesiteCobblestoneStairs, 6),
+				new Object[] {
+						"F  ",
+						"FF ",
+						"FFF",
+						'F', new ItemStack(DecoBlocks.cobblestoneVariants, 1, StoneVariantsBlock.ANDESITE_TYPE)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.andesiteCobblestoneStairs, 1),
+				new Object[] {
+						"M ",
+						"MM",
+						'M', new ItemStack(DecoBlocks.andesiteCobblestoneMoulding)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.andesiteBrickStairs, 6),
+				new Object[] {
+						"F  ",
+						"FF ",
+						"FFF",
+						'F', new ItemStack(DecoBlocks.stoneBrickVariants, 1, StoneVariantsBlock.ANDESITE_TYPE)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.andesiteBrickStairs, 1),
+				new Object[] {
+						"M ",
+						"MM",
+						'M', new ItemStack(DecoBlocks.andesiteBrickMoulding)
+				});
+		
+		// Slabs
+		RecipeManager.addRecipe(new ItemStack(StoneHelper.ANDESITE_SLAB_ID, 6, StoneHelper.ANDESITE_SLAB_TYPE),
+				new Object[] {
+						"FFF",
+						'F', new ItemStack(DecoBlocks.stoneVariants, 1, StoneVariantsBlock.ANDESITE_TYPE)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.stoneVariants, 1, StoneVariantsBlock.ANDESITE_TYPE),
+				new Object[] {
+						"S",
+						"S",
+						'S', new ItemStack(StoneHelper.ANDESITE_SLAB_ID, 1, StoneHelper.ANDESITE_SLAB_TYPE)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(StoneHelper.POLISHED_ANDESITE_SLAB_ID, 6, StoneHelper.POLISHED_ANDESITE_SLAB_TYPE),
+				new Object[] {
+						"FFF",
+						'F', new ItemStack(DecoBlocks.polishedStoneVariants, 1, StoneVariantsBlock.ANDESITE_TYPE)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.polishedStoneVariants, 1, StoneVariantsBlock.ANDESITE_TYPE),
+				new Object[] {
+						"S",
+						"S",
+						'S', new ItemStack(StoneHelper.POLISHED_ANDESITE_SLAB_ID, 1, StoneHelper.POLISHED_ANDESITE_SLAB_TYPE)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(StoneHelper.ANDESITE_COBBLESTONE_SLAB_ID, 6, StoneHelper.ANDESITE_COBBLESTONE_SLAB_TYPE),
+				new Object[] {
+						"FFF",
+						'F', new ItemStack(DecoBlocks.cobblestoneVariants, 1, StoneVariantsBlock.ANDESITE_TYPE)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.cobblestoneVariants, 1, StoneVariantsBlock.ANDESITE_TYPE),
+				new Object[] {
+						"S",
+						"S",
+						'S', new ItemStack(StoneHelper.ANDESITE_COBBLESTONE_SLAB_ID, 1, StoneHelper.ANDESITE_COBBLESTONE_SLAB_TYPE)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(StoneHelper.ANDESITE_BRICK_SLAB_ID, 6, StoneHelper.ANDESITE_BRICK_SLAB_TYPE),
+				new Object[] {
+						"FFF",
+						'F', new ItemStack(DecoBlocks.stoneBrickVariants, 1, StoneVariantsBlock.ANDESITE_TYPE)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.stoneBrickVariants, 1, StoneVariantsBlock.ANDESITE_TYPE),
+				new Object[] {
+						"S",
+						"S",
+						'S', new ItemStack(StoneHelper.ANDESITE_BRICK_SLAB_ID, 1, StoneHelper.ANDESITE_BRICK_SLAB_TYPE)
+				});
 	}
 	
 	private static void initDioriteRecipes() {
-	
+		RecipeManager.addStokedCrucibleRecipe(new ItemStack(DecoBlocks.looseDioriteCobblestone, 16),
+				new ItemStack[] {
+						new ItemStack(BTWBlocks.looseCobblestone, 16),
+						new ItemStack(Item.netherQuartz)
+				});
+		
+		RecipeManager.addStokedCrucibleRecipe(new ItemStack(DecoBlocks.polishedStoneVariants, 1, StoneVariantsBlock.DIORITE_TYPE),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.stoneVariants, 1, StoneVariantsBlock.DIORITE_TYPE)
+				});
+		
+		//------ Loose ------//
+		
+		// Blocks - Stone
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.looseDioriteCobblestone),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.stoneVariants, 1, StoneVariantsBlock.DIORITE_TYPE),
+						new ItemStack(BTWItems.ironChisel, 1, InventoryUtils.IGNORE_METADATA)
+				});
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.looseDioriteCobblestone),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.stoneVariants, 1, StoneVariantsBlock.DIORITE_TYPE),
+						new ItemStack(BTWItems.diamondChisel, 1, InventoryUtils.IGNORE_METADATA)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(StoneHelper.LOOSE_DIORITE_COBBLESTONE_SLAB_ID, 4, StoneHelper.LOOSE_DIORITE_COBBLESTONE_SLAB_TYPE),
+				new Object[] {
+						"FF",
+						'F', new ItemStack(DecoBlocks.looseDioriteCobblestone)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.looseDioriteCobblestone, 1),
+				new Object[] {
+						"S",
+						"S",
+						'S', new ItemStack(StoneHelper.LOOSE_DIORITE_COBBLESTONE_SLAB_ID, 1, StoneHelper.LOOSE_DIORITE_COBBLESTONE_SLAB_TYPE)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.looseDioriteCobblestoneStairs, 4),
+				new Object[] {
+						"F ",
+						"FF",
+						'F', new ItemStack(DecoBlocks.looseDioriteCobblestone)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.looseDioriteCobblestoneStairs, 2),
+				new Object[] {
+						"S ",
+						"SS",
+						'S', new ItemStack(StoneHelper.LOOSE_DIORITE_COBBLESTONE_SLAB_ID, 1, StoneHelper.LOOSE_DIORITE_COBBLESTONE_SLAB_TYPE)
+				});
+		
+		// Items - Stone
+		RecipeManager.addShapelessRecipe(new ItemStack(BTWItems.stone, 8, StoneVariantsBlock.DIORITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+				new ItemStack[] {new ItemStack(DecoBlocks.looseDioriteCobblestone)});
+		RecipeManager.addShapelessRecipe(new ItemStack(BTWItems.stone, 6, StoneVariantsBlock.DIORITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+				new ItemStack[] {new ItemStack(DecoBlocks.looseDioriteCobblestoneStairs)});
+		RecipeManager.addShapelessRecipe(new ItemStack(BTWItems.stone, 4, StoneVariantsBlock.DIORITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+				new ItemStack[] {new ItemStack(StoneHelper.LOOSE_DIORITE_COBBLESTONE_SLAB_ID, 1, StoneHelper.LOOSE_DIORITE_COBBLESTONE_SLAB_TYPE)});
+		
+		RecipeManager.addShapelessRecipe(new ItemStack(StoneHelper.LOOSE_DIORITE_COBBLESTONE_SLAB_ID, 1, StoneHelper.LOOSE_DIORITE_COBBLESTONE_SLAB_TYPE),
+				new ItemStack[] {
+						new ItemStack(BTWItems.stone, 1, StoneVariantsBlock.DIORITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stone, 1, StoneVariantsBlock.DIORITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stone, 1, StoneVariantsBlock.DIORITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stone, 1, StoneVariantsBlock.DIORITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES)
+				});
+		
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.looseDioriteCobblestone),
+				new ItemStack[] {
+						new ItemStack(BTWItems.stone, 1, StoneVariantsBlock.DIORITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stone, 1, StoneVariantsBlock.DIORITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stone, 1, StoneVariantsBlock.DIORITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stone, 1, StoneVariantsBlock.DIORITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stone, 1, StoneVariantsBlock.DIORITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stone, 1, StoneVariantsBlock.DIORITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stone, 1, StoneVariantsBlock.DIORITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stone, 1, StoneVariantsBlock.DIORITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES)
+				});
+		
+		// Blocks - Stone Brick
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.looseDioriteBrick),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.polishedStoneVariants, 1, StoneVariantsBlock.DIORITE_TYPE),
+						new ItemStack(BTWItems.ironChisel, 1, InventoryUtils.IGNORE_METADATA)
+				});
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.looseDioriteBrick),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.polishedStoneVariants, 1, StoneVariantsBlock.DIORITE_TYPE),
+						new ItemStack(BTWItems.diamondChisel, 1, InventoryUtils.IGNORE_METADATA)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(StoneHelper.LOOSE_DIORITE_BRICK_SLAB_ID, 4, StoneHelper.LOOSE_DIORITE_BRICK_SLAB_TYPE),
+				new Object[] {
+						"FF",
+						'F', new ItemStack(DecoBlocks.looseDioriteBrick)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.looseDioriteBrick, 1),
+				new Object[] {
+						"S",
+						"S",
+						'S', new ItemStack(StoneHelper.LOOSE_DIORITE_BRICK_SLAB_ID, 1, StoneHelper.LOOSE_DIORITE_BRICK_SLAB_TYPE)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.looseDioriteBrickStairs, 4),
+				new Object[] {
+						"F ",
+						"FF",
+						'F', new ItemStack(DecoBlocks.looseDioriteBrick)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.looseDioriteBrickStairs, 2),
+				new Object[] {
+						"S ",
+						"SS",
+						'S', new ItemStack(StoneHelper.LOOSE_DIORITE_BRICK_SLAB_ID, 1, StoneHelper.LOOSE_DIORITE_BRICK_SLAB_TYPE)
+				});
+		
+		// Items - Stone brick
+		RecipeManager.addShapelessRecipe(new ItemStack(BTWItems.stoneBrick, 8, StoneVariantsBlock.DIORITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+				new ItemStack[] {new ItemStack(DecoBlocks.looseDioriteBrick)});
+		RecipeManager.addShapelessRecipe(new ItemStack(BTWItems.stoneBrick, 6, StoneVariantsBlock.DIORITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+				new ItemStack[] {new ItemStack(DecoBlocks.looseDioriteBrickStairs)});
+		RecipeManager.addShapelessRecipe(new ItemStack(BTWItems.stoneBrick, 4, StoneVariantsBlock.DIORITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+				new ItemStack[] {new ItemStack(StoneHelper.LOOSE_DIORITE_BRICK_SLAB_ID, 1, StoneHelper.LOOSE_DIORITE_BRICK_SLAB_TYPE)});
+		
+		RecipeManager.addShapelessRecipe(new ItemStack(StoneHelper.LOOSE_DIORITE_BRICK_SLAB_ID, 1, StoneHelper.LOOSE_DIORITE_BRICK_SLAB_TYPE),
+				new ItemStack[] {
+						new ItemStack(BTWItems.stoneBrick, 1, StoneVariantsBlock.DIORITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stoneBrick, 1, StoneVariantsBlock.DIORITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stoneBrick, 1, StoneVariantsBlock.DIORITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stoneBrick, 1, StoneVariantsBlock.DIORITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES)
+				});
+		
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.looseDioriteBrick),
+				new ItemStack[] {
+						new ItemStack(BTWItems.stoneBrick, 1, StoneVariantsBlock.DIORITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stoneBrick, 1, StoneVariantsBlock.DIORITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stoneBrick, 1, StoneVariantsBlock.DIORITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stoneBrick, 1, StoneVariantsBlock.DIORITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stoneBrick, 1, StoneVariantsBlock.DIORITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stoneBrick, 1, StoneVariantsBlock.DIORITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stoneBrick, 1, StoneVariantsBlock.DIORITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stoneBrick, 1, StoneVariantsBlock.DIORITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES)
+				});
+		
+		//------ Mortar ------//
+		
+		// Clay
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(DecoBlocks.cobblestoneVariants, 1, StoneVariantsBlock.DIORITE_TYPE),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.looseDioriteCobblestone),
+						new ItemStack(Item.clay)
+				});
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(DecoBlocks.dioriteCobblestoneStairs),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.looseDioriteCobblestoneStairs),
+						new ItemStack(Item.clay)
+				});
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(StoneHelper.DIORITE_COBBLESTONE_SLAB_ID, 1, StoneHelper.DIORITE_COBBLESTONE_SLAB_TYPE),
+				new ItemStack[] {
+						new ItemStack(StoneHelper.LOOSE_DIORITE_COBBLESTONE_SLAB_ID, 1, StoneHelper.LOOSE_DIORITE_COBBLESTONE_SLAB_TYPE),
+						new ItemStack(Item.clay)
+				});
+		
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(DecoBlocks.stoneBrickVariants, 1, StoneVariantsBlock.DIORITE_TYPE),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.looseDioriteBrick),
+						new ItemStack(Item.clay)
+				});
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(DecoBlocks.dioriteBrickStairs),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.looseDioriteBrickStairs),
+						new ItemStack(Item.clay)
+				});
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(StoneHelper.DIORITE_BRICK_SLAB_ID, 1, StoneHelper.DIORITE_BRICK_SLAB_TYPE),
+				new ItemStack[] {
+						new ItemStack(StoneHelper.LOOSE_DIORITE_BRICK_SLAB_ID, 1, StoneHelper.LOOSE_DIORITE_BRICK_SLAB_TYPE),
+						new ItemStack(Item.clay)
+				});
+		
+		// Slime
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(DecoBlocks.cobblestoneVariants, 1, StoneVariantsBlock.DIORITE_TYPE),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.looseDioriteCobblestone),
+						new ItemStack(Item.slimeBall)
+				});
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(DecoBlocks.dioriteCobblestoneStairs),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.looseDioriteCobblestoneStairs),
+						new ItemStack(Item.slimeBall)
+				});
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(StoneHelper.DIORITE_COBBLESTONE_SLAB_ID, 1, StoneHelper.DIORITE_COBBLESTONE_SLAB_TYPE),
+				new ItemStack[] {
+						new ItemStack(StoneHelper.LOOSE_DIORITE_COBBLESTONE_SLAB_ID, 1, StoneHelper.LOOSE_DIORITE_COBBLESTONE_SLAB_TYPE),
+						new ItemStack(Item.slimeBall)
+				});
+		
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(DecoBlocks.stoneBrickVariants, 1, StoneVariantsBlock.DIORITE_TYPE),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.looseDioriteBrick),
+						new ItemStack(Item.slimeBall)
+				});
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(DecoBlocks.dioriteBrickStairs),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.looseDioriteBrickStairs),
+						new ItemStack(Item.slimeBall)
+				});
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(StoneHelper.DIORITE_BRICK_SLAB_ID, 1, StoneHelper.DIORITE_BRICK_SLAB_TYPE),
+				new ItemStack[] {
+						new ItemStack(StoneHelper.LOOSE_DIORITE_BRICK_SLAB_ID, 1, StoneHelper.LOOSE_DIORITE_BRICK_SLAB_TYPE),
+						new ItemStack(Item.slimeBall)
+				});
+		
+		// Nether Sludge
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(DecoBlocks.cobblestoneVariants, 1, StoneVariantsBlock.DIORITE_TYPE),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.looseDioriteCobblestone),
+						new ItemStack(BTWItems.netherSludge)
+				});
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(DecoBlocks.dioriteCobblestoneStairs),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.looseDioriteCobblestoneStairs),
+						new ItemStack(BTWItems.netherSludge)
+				});
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(StoneHelper.DIORITE_COBBLESTONE_SLAB_ID, 1, StoneHelper.DIORITE_COBBLESTONE_SLAB_TYPE),
+				new ItemStack[] {
+						new ItemStack(StoneHelper.LOOSE_DIORITE_COBBLESTONE_SLAB_ID, 1, StoneHelper.LOOSE_DIORITE_COBBLESTONE_SLAB_TYPE),
+						new ItemStack(BTWItems.netherSludge)
+				});
+		
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(DecoBlocks.stoneBrickVariants, 1, StoneVariantsBlock.DIORITE_TYPE),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.looseDioriteBrick),
+						new ItemStack(BTWItems.netherSludge)
+				});
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(DecoBlocks.dioriteBrickStairs),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.looseDioriteBrickStairs),
+						new ItemStack(BTWItems.netherSludge)
+				});
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(StoneHelper.DIORITE_BRICK_SLAB_ID, 1, StoneHelper.DIORITE_BRICK_SLAB_TYPE),
+				new ItemStack[] {
+						new ItemStack(StoneHelper.LOOSE_DIORITE_BRICK_SLAB_ID, 1, StoneHelper.LOOSE_DIORITE_BRICK_SLAB_TYPE),
+						new ItemStack(BTWItems.netherSludge)
+				});
+		
+		//------ Sub blocks ------//
+		
+		// Sub blocks
+		btw.crafting.recipe.CraftingRecipeList.addSubBlockRecipesOfType(DecoBlocks.stoneVariants, StoneVariantsBlock.DIORITE_TYPE,
+				DecoBlocks.dioriteSidingAndCorner, DecoBlocks.dioriteMoulding, true);
+		btw.crafting.recipe.CraftingRecipeList.addSubBlockRecipesOfType(DecoBlocks.polishedStoneVariants, StoneVariantsBlock.DIORITE_TYPE,
+				DecoBlocks.polishedDioriteSidingAndCorner, DecoBlocks.polishedDioriteMoulding, true);
+		btw.crafting.recipe.CraftingRecipeList.addSubBlockRecipesOfType(DecoBlocks.cobblestoneVariants, StoneVariantsBlock.DIORITE_TYPE,
+				DecoBlocks.dioriteCobblestoneSidingAndCorner, DecoBlocks.dioriteCobblestoneMoulding, true);
+		btw.crafting.recipe.CraftingRecipeList.addSubBlockRecipesOfType(DecoBlocks.stoneBrickVariants, StoneVariantsBlock.DIORITE_TYPE,
+				DecoBlocks.dioriteBrickSidingAndCorner, DecoBlocks.dioriteBrickMoulding, true);
+		
+		// Stairs
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.dioriteStairs, 6),
+				new Object[] {
+						"F  ",
+						"FF ",
+						"FFF",
+						'F', new ItemStack(DecoBlocks.stoneVariants, 1, StoneVariantsBlock.DIORITE_TYPE)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.dioriteStairs, 1),
+				new Object[] {
+						"M ",
+						"MM",
+						'M', new ItemStack(DecoBlocks.dioriteMoulding)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.polishedDioriteStairs, 6),
+				new Object[] {
+						"F  ",
+						"FF ",
+						"FFF",
+						'F', new ItemStack(DecoBlocks.polishedStoneVariants, 1, StoneVariantsBlock.DIORITE_TYPE)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.polishedDioriteStairs, 1),
+				new Object[] {
+						"M ",
+						"MM",
+						'M', new ItemStack(DecoBlocks.polishedDioriteMoulding)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.dioriteCobblestoneStairs, 6),
+				new Object[] {
+						"F  ",
+						"FF ",
+						"FFF",
+						'F', new ItemStack(DecoBlocks.cobblestoneVariants, 1, StoneVariantsBlock.DIORITE_TYPE)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.dioriteCobblestoneStairs, 1),
+				new Object[] {
+						"M ",
+						"MM",
+						'M', new ItemStack(DecoBlocks.dioriteCobblestoneMoulding)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.dioriteBrickStairs, 6),
+				new Object[] {
+						"F  ",
+						"FF ",
+						"FFF",
+						'F', new ItemStack(DecoBlocks.stoneBrickVariants, 1, StoneVariantsBlock.DIORITE_TYPE)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.dioriteBrickStairs, 1),
+				new Object[] {
+						"M ",
+						"MM",
+						'M', new ItemStack(DecoBlocks.dioriteBrickMoulding)
+				});
+		
+		// Slabs
+		RecipeManager.addRecipe(new ItemStack(StoneHelper.DIORITE_SLAB_ID, 6, StoneHelper.DIORITE_SLAB_TYPE),
+				new Object[] {
+						"FFF",
+						'F', new ItemStack(DecoBlocks.stoneVariants, 1, StoneVariantsBlock.DIORITE_TYPE)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.stoneVariants, 1, StoneVariantsBlock.DIORITE_TYPE),
+				new Object[] {
+						"S",
+						"S",
+						'S', new ItemStack(StoneHelper.DIORITE_SLAB_ID, 1, StoneHelper.DIORITE_SLAB_TYPE)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(StoneHelper.POLISHED_DIORITE_SLAB_ID, 6, StoneHelper.POLISHED_DIORITE_SLAB_TYPE),
+				new Object[] {
+						"FFF",
+						'F', new ItemStack(DecoBlocks.polishedStoneVariants, 1, StoneVariantsBlock.DIORITE_TYPE)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.polishedStoneVariants, 1, StoneVariantsBlock.DIORITE_TYPE),
+				new Object[] {
+						"S",
+						"S",
+						'S', new ItemStack(StoneHelper.POLISHED_DIORITE_SLAB_ID, 1, StoneHelper.POLISHED_DIORITE_SLAB_TYPE)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(StoneHelper.DIORITE_COBBLESTONE_SLAB_ID, 6, StoneHelper.DIORITE_COBBLESTONE_SLAB_TYPE),
+				new Object[] {
+						"FFF",
+						'F', new ItemStack(DecoBlocks.cobblestoneVariants, 1, StoneVariantsBlock.DIORITE_TYPE)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.cobblestoneVariants, 1, StoneVariantsBlock.DIORITE_TYPE),
+				new Object[] {
+						"S",
+						"S",
+						'S', new ItemStack(StoneHelper.DIORITE_COBBLESTONE_SLAB_ID, 1, StoneHelper.DIORITE_COBBLESTONE_SLAB_TYPE)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(StoneHelper.DIORITE_BRICK_SLAB_ID, 6, StoneHelper.DIORITE_BRICK_SLAB_TYPE),
+				new Object[] {
+						"FFF",
+						'F', new ItemStack(DecoBlocks.stoneBrickVariants, 1, StoneVariantsBlock.DIORITE_TYPE)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.stoneBrickVariants, 1, StoneVariantsBlock.DIORITE_TYPE),
+				new Object[] {
+						"S",
+						"S",
+						'S', new ItemStack(StoneHelper.DIORITE_BRICK_SLAB_ID, 1, StoneHelper.DIORITE_BRICK_SLAB_TYPE)
+				});
 	}
 	
 	private static void initSlateRecipes() {
-	
+		RecipeManager.addPistonPackingRecipe(DecoBlocks.slate,
+				new ItemStack(Block.stone, 2, InventoryUtils.IGNORE_METADATA));
 	}
 	
 	private static void initTerracottaRecipes() {

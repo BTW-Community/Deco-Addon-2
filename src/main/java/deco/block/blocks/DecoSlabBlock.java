@@ -102,14 +102,4 @@ public class DecoSlabBlock extends SlabBlock implements SlabInterface {
 		this.blockIcon = register.registerIcon("stoneslab_top");
 		this.whiteStoneIcon = register.registerIcon("fcBlockWhiteStone");
 	}
-	
-	@Environment(EnvType.CLIENT)
-	@Override
-	public void getSubBlocks(int blockID, CreativeTabs creativeTabs, List list) {
-		for (int var4 = 0; var4 <= blockTypes.length; ++var4) {
-			if (var4 != 2) {
-				list.add(new ItemStack(blockID, 1, var4));
-			}
-		}
-	}
 }

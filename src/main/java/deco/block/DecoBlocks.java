@@ -36,19 +36,19 @@ public class DecoBlocks {
     public static Block looseGraniteBrickStairs;
     
     public static Block graniteSidingAndCorner;
-    public static Block graniteMouldingAndDecorative;
+    public static Block graniteMoulding;
     public static Block graniteStairs;
     
     public static Block graniteCobblestoneSidingAndCorner;
-    public static Block graniteCobblestoneMouldingAndDecorative;
+    public static Block graniteCobblestoneMoulding;
     public static Block graniteCobblestoneStairs;
     
     public static Block graniteBrickSidingAndCorner;
-    public static Block graniteBrickMouldingAndDecorative;
+    public static Block graniteBrickMoulding;
     public static Block graniteBrickStairs;
     
     public static Block polishedGraniteSidingAndCorner;
-    public static Block polishedGraniteMouldingAndDecorative;
+    public static Block polishedGraniteMoulding;
     public static Block polishedGraniteStairs;
     
     public static Block infestedGranite;
@@ -63,19 +63,19 @@ public class DecoBlocks {
     public static Block looseAndesiteBrickStairs;
     
     public static Block andesiteSidingAndCorner;
-    public static Block andesiteMouldingAndDecorative;
+    public static Block andesiteMoulding;
     public static Block andesiteStairs;
     
     public static Block andesiteCobblestoneSidingAndCorner;
-    public static Block andesiteCobblestoneMouldingAndDecorative;
+    public static Block andesiteCobblestoneMoulding;
     public static Block andesiteCobblestoneStairs;
     
     public static Block andesiteBrickSidingAndCorner;
-    public static Block andesiteBrickMouldingAndDecorative;
+    public static Block andesiteBrickMoulding;
     public static Block andesiteBrickStairs;
     
     public static Block polishedAndesiteSidingAndCorner;
-    public static Block polishedAndesiteMouldingAndDecorative;
+    public static Block polishedAndesiteMoulding;
     public static Block polishedAndesiteStairs;
     
     public static Block infestedAndesite;
@@ -90,19 +90,19 @@ public class DecoBlocks {
     public static Block looseDioriteBrickStairs;
     
     public static Block dioriteSidingAndCorner;
-    public static Block dioriteMouldingAndDecorative;
+    public static Block dioriteMoulding;
     public static Block dioriteStairs;
     
     public static Block dioriteCobblestoneSidingAndCorner;
-    public static Block dioriteCobblestoneMouldingAndDecorative;
+    public static Block dioriteCobblestoneMoulding;
     public static Block dioriteCobblestoneStairs;
     
     public static Block dioriteBrickSidingAndCorner;
-    public static Block dioriteBrickMouldingAndDecorative;
+    public static Block dioriteBrickMoulding;
     public static Block dioriteBrickStairs;
     
     public static Block polishedDioriteSidingAndCorner;
-    public static Block polishedDioriteMouldingAndDecorative;
+    public static Block polishedDioriteMoulding;
     public static Block polishedDioriteStairs;
     
     public static Block infestedDiorite;
@@ -120,23 +120,23 @@ public class DecoBlocks {
     public static Block looseSlateBrickStairs;
     
     public static Block slateSidingAndCorner;
-    public static Block slateMouldingAndDecorative;
+    public static Block slateMoulding;
     public static Block slateStairs;
     
     public static Block slateCobblestoneSidingAndCorner;
-    public static Block slateCobblestoneMouldingAndDecorative;
+    public static Block slateCobblestoneMoulding;
     public static Block slateCobblestoneStairs;
     
     public static Block slateBrickSidingAndCorner;
-    public static Block slateBrickMouldingAndDecorative;
+    public static Block slateBrickMoulding;
     public static Block slateBrickStairs;
     
     public static Block polishedSlateSidingAndCorner;
-    public static Block polishedSlateMouldingAndDecorative;
+    public static Block polishedSlateMoulding;
     public static Block polishedSlateStairs;
     
     public static Block slateTilesSidingAndCorner;
-    public static Block slateTilesMouldingAndDecorative;
+    public static Block slateTilesMoulding;
     public static Block slateTilesStairs;
     
     public static Block infestedSlate;
@@ -156,40 +156,40 @@ public class DecoBlocks {
     // Extra Sub Blocks
     
     public static Block cobblestoneSidingAndCorner;
-    public static Block cobblestoneMouldingAndDecorative;
+    public static Block cobblestoneMoulding;
     public static Block cobblestoneSidingAndCornerMidStrata;
-    public static Block cobblestoneMouldingAndDecorativeMidStrata;
+    public static Block cobblestoneMouldingMidStrata;
     public static Block cobblestoneSidingAndCornerDeepStrata;
-    public static Block cobblestoneMouldingAndDecorativeDeepStrata;
+    public static Block cobblestoneMouldingDeepStrata;
     
     public static Block mossyCobblestoneSidingAndCorner;
-    public static Block mossyCobblestoneMouldingAndDecorative;
+    public static Block mossyCobblestoneMoulding;
     public static Block mossyCobblestoneStairs;
     public static Block mossyCobblestoneSidingAndCornerMidStrata;
-    public static Block mossyCobblestoneMouldingAndDecorativeMidStrata;
+    public static Block mossyCobblestoneMouldingMidStrata;
     public static Block mossyCobblestoneStairsMidStrata;
     public static Block mossyCobblestoneSidingAndCornerDeepStrata;
-    public static Block mossyCobblestoneMouldingAndDecorativeDeepStrata;
+    public static Block mossyCobblestoneMouldingDeepStrata;
     public static Block mossyCobblestoneStairsDeepStrata;
     
     public static Block mossyStoneBrickSidingAndCorner;
-    public static Block mossyStoneBrickMouldingAndDecorative;
+    public static Block mossyStoneBrickMoulding;
     public static Block mossyStoneBrickStairs;
     public static Block mossyStoneBrickSidingAndCornerMidStrata;
-    public static Block mossyStoneBrickMouldingAndDecorativeMidStrata;
+    public static Block mossyStoneBrickMouldingMidStrata;
     public static Block mossyStoneBrickStairsMidStrata;
     public static Block mossyStoneBrickSidingAndCornerDeepStrata;
-    public static Block mossyStoneBrickMouldingAndDecorativeDeepStrata;
+    public static Block mossyStoneBrickMouldingDeepStrata;
     public static Block mossyStoneBrickStairsDeepStrata;
     
     public static Block crackedStoneBrickSidingAndCorner;
-    public static Block crackedStoneBrickMouldingAndDecorative;
+    public static Block crackedStoneBrickMoulding;
     public static Block crackedStoneBrickStairs;
     public static Block crackedStoneBrickSidingAndCornerMidStrata;
-    public static Block crackedStoneBrickMouldingAndDecorativeMidStrata;
+    public static Block crackedStoneBrickMouldingMidStrata;
     public static Block crackedStoneBrickStairsMidStrata;
     public static Block crackedStoneBrickSidingAndCornerDeepStrata;
-    public static Block crackedStoneBrickMouldingAndDecorativeDeepStrata;
+    public static Block crackedStoneBrickMouldingDeepStrata;
     public static Block crackedStoneBrickStairsDeepStrata;
     
     //------ Sandstone Blocks ------//
