@@ -112,6 +112,8 @@ public class DecoBlocks {
     public static Block slate;
     public static Block roughSlate;
     
+    public static Block slateTiles;
+    
     public static Block looseSlateCobblestone;
     public static Block looseSlateCobblestoneStairs;
     public static Block looseSlateBrick;
@@ -132,6 +134,10 @@ public class DecoBlocks {
     public static Block polishedSlateSidingAndCorner;
     public static Block polishedSlateMouldingAndDecorative;
     public static Block polishedSlateStairs;
+    
+    public static Block slateTilesSidingAndCorner;
+    public static Block slateTilesMouldingAndDecorative;
+    public static Block slateTilesStairs;
     
     public static Block infestedSlate;
     

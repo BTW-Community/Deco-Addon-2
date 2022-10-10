@@ -31,8 +31,8 @@ public class DecoBlockIDs {
     public static final int STONE_VARIANTS_ID = 3100;
     public static final int COBBLESTONE_VARIANTS_ID = 3101;
     public static final int LOOSE_GRANITE_COBBLESTONE_ID = 3102;
-    public static final int LOOSE_ANDESITE_COBBLESTONE_ID = 3203;
-    public static final int LOOSE_DIORITE_COBBLESTONE_ID = 3204;
+    public static final int LOOSE_ANDESITE_COBBLESTONE_ID = 3103;
+    public static final int LOOSE_DIORITE_COBBLESTONE_ID = 3104;
     public static final int STONE_BRICK_VARIANTS_ID = 3105;
     public static final int LOOSE_GRANITE_BRICK_ID = 3106;
     public static final int LOOSE_ANDESITE_BRICK_ID = 3107;
@@ -200,9 +200,9 @@ public class DecoBlockIDs {
     public static final int EMPTY_BOOKSHELF_ID = 3508;
     
     public static final int SLATE_SIDING_AND_CORNER_ID = 3511;
-    public static final int POLISHED_SLATE_MOULDING_ID = 3512;
+    public static final int SLATE_MOULDING_ID = 3512;
     public static final int POLISHED_SLATE_SIDING_AND_CORNER_ID = 3513;
-    public static final int SLATE_MOULDING_ID = 3514;
+    public static final int POLISHED_SLATE_MOULDING_ID = 3514;
     public static final int SLATE_COBBLESTONE_SIDING_AND_CORNER_ID = 3515;
     public static final int SLATE_COBBLESTONE_MOULDING_ID = 3516;
     public static final int SLATE_BRICK_SIDING_AND_CORNER_ID = 3517;
@@ -282,6 +282,7 @@ public class DecoBlockIDs {
     public static final int ROUGH_ANDESITE_ID = 3657;
     public static final int ROUGH_DIORITE_ID = 3658;
     public static final int SLATE_ID = 3659;
+    public static final int SLATE_TILES_ID = 3660;
     
     public static final int HAZEL_LOG_ID = 3699;
     public static final int HAZEL_STUMP_ID = 3700;

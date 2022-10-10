@@ -249,6 +249,8 @@ tile.decoBlockAmethyst.name=Amethyst
 
 tile.decoBlockPodzol.name=Podzol
 
+tile.decoBlockSlate.name=Slate
+
 # Deco Complex Blocks
 
 tile.decoBlockTerracottaStained.black.name=Black Stained Terracotta
@@ -1992,15 +1994,6 @@ tile.decoBlockVanillaWoodSlab.mangrove.name=Mangrove Slab
 tile.decoBlockVanillaWoodSlab.hazel.name=Hazel Slab
 
 # Vanilla/BTW Blocks Renamed
-
-tile.stone.strata1.name=Smooth Stone
-tile.stone.strata2.name=Smooth Stone
-tile.stone.strata3.name=Smooth Stone
-tile.stone.slate.name=Slate
-tile.stone.rough1.name=Cracked Stone
-tile.stone.rough2.name=Cracked Stone
-tile.stone.rough3.name=Cracked Stone
-tile.stone.roughSlate.name=Cracked Slate
 
 tile.fcBlockStoneRough.name=Rough Stone
 tile.rose.name=Red Rose
