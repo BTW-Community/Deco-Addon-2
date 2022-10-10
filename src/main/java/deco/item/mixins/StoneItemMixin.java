@@ -37,7 +37,7 @@ public class StoneItemMixin extends Item {
 	@Environment(EnvType.CLIENT)
 	@Inject(method = "getIconFromDamage(I)Lnet/minecraft/src/Icon;", at = @At("HEAD"), cancellable = true)
 	public void getIconFromDamage(int itemDamage, CallbackInfoReturnable<Icon> info) {
-		if (itemDamage >= StoneVariantsBlock.NUM_TYPES) {
+		if (itemDamage >= StoneVariantsBlock.NUM_VANILLA_TYPES) {
 			info.setReturnValue(extraIcons[itemDamage - StoneVariantsBlock.NUM_VANILLA_TYPES]);
 		}
 	}

@@ -45,8 +45,12 @@ public class DecoBlockInitializer {
         DecoBlocks.roughGranite = new RoughStoneVariantBlock(DecoBlockIDs.ROUGH_GRANITE_ID, StoneVariantsBlock.GRANITE_STRATA, StoneVariantsBlock.GRANITE_TYPE);
     
         // Andesite
+    
+        DecoBlocks.roughAndesite = new RoughStoneVariantBlock(DecoBlockIDs.ROUGH_ANDESITE_ID, StoneVariantsBlock.ANDESITE_STRATA, StoneVariantsBlock.ANDESITE_TYPE);
         
         // Diorite
+    
+        DecoBlocks.roughDiorite = new RoughStoneVariantBlock(DecoBlockIDs.ROUGH_DIORITE_ID, StoneVariantsBlock.DIORITE_STRATA, StoneVariantsBlock.DIORITE_TYPE);
         
         // Slate
     
