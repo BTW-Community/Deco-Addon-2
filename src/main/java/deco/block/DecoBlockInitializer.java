@@ -65,9 +65,11 @@ public class DecoBlockInitializer {
                 .setUnlocalizedName("decoBlockGraniteBrickLoose");
         
         DecoBlocks.looseGraniteCobblestoneStairs = new LooseStoneVariantStairsBlock(DecoBlockIDs.LOOSE_GRANITE_COBBLESTONE_STAIRS_ID,
-                DecoBlocks.cobblestoneVariants, StoneVariantsBlock.GRANITE_TYPE, DecoBlockIDs.GRANITE_COBBLESTONE_STAIRS_ID);
+                DecoBlocks.cobblestoneVariants, StoneVariantsBlock.GRANITE_TYPE, DecoBlockIDs.GRANITE_COBBLESTONE_STAIRS_ID)
+                .setUnlocalizedName("decoBlockGraniteCobbleLooseStairs");
         DecoBlocks.looseGraniteBrickStairs = new LooseStoneVariantStairsBlock(DecoBlockIDs.LOOSE_GRANITE_BRICK_STAIRS_ID,
-                DecoBlocks.stoneBrickVariants, StoneVariantsBlock.GRANITE_TYPE, DecoBlockIDs.GRANITE_BRICK_STAIRS_ID);
+                DecoBlocks.stoneBrickVariants, StoneVariantsBlock.GRANITE_TYPE, DecoBlockIDs.GRANITE_BRICK_STAIRS_ID)
+                .setUnlocalizedName("decoBlockGraniteBrickLooseStairs");
     
         DecoBlocks.graniteSidingAndCorner = new SidingAndCornerAndDecorativeWallBlock(DecoBlockIDs.GRANITE_SIDING_AND_CORNER_ID, Material.rock,
                 "decoBlockGranite",
@@ -140,9 +142,11 @@ public class DecoBlockInitializer {
                 .setUnlocalizedName("decoBlockAndesiteBrickLoose");
     
         DecoBlocks.looseAndesiteCobblestoneStairs = new LooseStoneVariantStairsBlock(DecoBlockIDs.LOOSE_ANDESITE_COBBLESTONE_STAIRS_ID,
-                DecoBlocks.cobblestoneVariants, StoneVariantsBlock.ANDESITE_TYPE, DecoBlockIDs.ANDESITE_COBBLESTONE_STAIRS_ID);
+                DecoBlocks.cobblestoneVariants, StoneVariantsBlock.ANDESITE_TYPE, DecoBlockIDs.ANDESITE_COBBLESTONE_STAIRS_ID)
+                .setUnlocalizedName("decoBlockAndesiteCobbleLooseStairs");
         DecoBlocks.looseAndesiteBrickStairs = new LooseStoneVariantStairsBlock(DecoBlockIDs.LOOSE_ANDESITE_BRICK_STAIRS_ID,
-                DecoBlocks.stoneBrickVariants, StoneVariantsBlock.ANDESITE_TYPE, DecoBlockIDs.ANDESITE_BRICK_STAIRS_ID);
+                DecoBlocks.stoneBrickVariants, StoneVariantsBlock.ANDESITE_TYPE, DecoBlockIDs.ANDESITE_BRICK_STAIRS_ID)
+                .setUnlocalizedName("decoBlockAndesiteBrickLooseStairs");
     
         DecoBlocks.andesiteSidingAndCorner = new SidingAndCornerAndDecorativeWallBlock(DecoBlockIDs.ANDESITE_SIDING_AND_CORNER_ID, Material.rock,
                 "decoBlockAndesite",
@@ -215,9 +219,11 @@ public class DecoBlockInitializer {
                 .setUnlocalizedName("decoBlockDioriteBrickLoose");
     
         DecoBlocks.looseDioriteCobblestoneStairs = new LooseStoneVariantStairsBlock(DecoBlockIDs.LOOSE_DIORITE_COBBLESTONE_STAIRS_ID,
-                DecoBlocks.cobblestoneVariants, StoneVariantsBlock.DIORITE_TYPE, DecoBlockIDs.DIORITE_COBBLESTONE_STAIRS_ID);
+                DecoBlocks.cobblestoneVariants, StoneVariantsBlock.DIORITE_TYPE, DecoBlockIDs.DIORITE_COBBLESTONE_STAIRS_ID)
+                .setUnlocalizedName("decoBlockDioriteCobbleLooseStairs");
         DecoBlocks.looseDioriteBrickStairs = new LooseStoneVariantStairsBlock(DecoBlockIDs.LOOSE_DIORITE_BRICK_STAIRS_ID,
-                DecoBlocks.stoneBrickVariants, StoneVariantsBlock.DIORITE_TYPE, DecoBlockIDs.DIORITE_BRICK_STAIRS_ID);
+                DecoBlocks.stoneBrickVariants, StoneVariantsBlock.DIORITE_TYPE, DecoBlockIDs.DIORITE_BRICK_STAIRS_ID)
+                .setUnlocalizedName("decoBlockDioriteBrickLooseStairs");
     
         DecoBlocks.dioriteSidingAndCorner = new SidingAndCornerAndDecorativeWallBlock(DecoBlockIDs.DIORITE_SIDING_AND_CORNER_ID, Material.rock,
                 "decoBlockDiorite",
@@ -289,9 +295,11 @@ public class DecoBlockInitializer {
         DecoBlocks.looseSlateBrick = new LooseSlateBrickBlock(DecoBlockIDs.LOOSE_SLATE_BRICK_ID);
     
         DecoBlocks.looseSlateCobblestoneStairs = new LooseStoneVariantStairsBlock(DecoBlockIDs.LOOSE_SLATE_COBBLESTONE_STAIRS_ID,
-                DecoBlocks.cobblestoneVariants, StoneVariantsBlock.SLATE_TYPE, DecoBlockIDs.SLATE_COBBLESTONE_STAIRS_ID);
+                DecoBlocks.cobblestoneVariants, StoneVariantsBlock.SLATE_TYPE, DecoBlockIDs.SLATE_COBBLESTONE_STAIRS_ID)
+                .setUnlocalizedName("decoBlockSlateCobbleLooseStairs");
         DecoBlocks.looseSlateBrickStairs = new LooseStoneVariantStairsBlock(DecoBlockIDs.LOOSE_SLATE_BRICK_STAIRS_ID,
-                DecoBlocks.stoneBrickVariants, StoneVariantsBlock.SLATE_TYPE, DecoBlockIDs.SLATE_BRICK_STAIRS_ID);
+                DecoBlocks.stoneBrickVariants, StoneVariantsBlock.SLATE_TYPE, DecoBlockIDs.SLATE_BRICK_STAIRS_ID)
+                .setUnlocalizedName("decoBlockSlateBrickLooseStairs");
     
         DecoBlocks.slateSidingAndCorner = new SidingCornerWallTopAndBottomBlock(DecoBlockIDs.SLATE_SIDING_AND_CORNER_ID, Material.rock,
                 "decoBlockSlate_top", "decoBlockSlate_side",
