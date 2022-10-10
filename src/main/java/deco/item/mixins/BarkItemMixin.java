@@ -45,7 +45,7 @@ public class BarkItemMixin extends Item {
     @Inject(method = "getIconFromDamage(I)Lnet/minecraft/src/Icon;", at = @At("HEAD"), cancellable = true)
     public void getIconFromDamage(int itemDamage, CallbackInfoReturnable<Icon> info) {
         if (itemDamage >= WoodTypeHelper.NUM_VANILLA_WOOD) {
-            info.setReturnValue(extraIcons[itemDamage - 5]);
+            info.setReturnValue(extraIcons[itemDamage - WoodTypeHelper.NUM_VANILLA_WOOD]);
         }
     }
 

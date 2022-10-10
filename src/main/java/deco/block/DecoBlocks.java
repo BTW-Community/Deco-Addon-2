@@ -11,6 +11,7 @@ public class DecoBlocks {
     // General
     
     public static Block stoneVariants;
+    public static Block crackedStoneVariants;
     public static Block cobblestoneVariants;
     public static Block stoneBrickVariants;
     public static Block polishedStoneVariants;
@@ -26,6 +27,8 @@ public class DecoBlocks {
     public static Block stoneSlab7;
     
     // Granite
+    
+    public static Block roughGranite;
     
     public static Block looseGraniteCobblestone;
     public static Block looseGraniteCobblestoneStairs;
@@ -52,6 +55,8 @@ public class DecoBlocks {
     
     // Andesite
     
+    public static Block roughAndesite;
+    
     public static Block looseAndesiteCobblestone;
     public static Block looseAndesiteCobblestoneStairs;
     public static Block looseAndesiteBrick;
@@ -76,6 +81,8 @@ public class DecoBlocks {
     public static Block infestedAndesite;
     
     // Diorite
+    
+    public static Block roughDiorite;
     
     public static Block looseDioriteCobblestone;
     public static Block looseDioriteCobblestoneStairs;
@@ -102,6 +109,8 @@ public class DecoBlocks {
     
     // Slate
     
+    public static Block roughSlate;
+    
     public static Block looseSlateCobblestone;
     public static Block looseSlateCobblestoneStairs;
     public static Block looseSlateBrick;
@@ -124,6 +133,14 @@ public class DecoBlocks {
     public static Block polishedSlateStairs;
     
     public static Block infestedSlate;
+    
+    // Calcite
+    
+    // Tuff
+    
+    // Jasper
+    
+    // Limestone
     
     // White Stone
     

@@ -7,6 +7,7 @@ Some textures in this release have been used or modified from the following sour
 - Quark
 
 - Rewrote the addon from scratch as a fabric mod. Note that data is stored in the same way, and thus it is save-compatible (it is still a good idea to back up your worlds before updating).
+- Added a config option, disabled by default, to allow diamond pickaxes to always pick up stone intact instead of requiring isolation.
 - Added glazed terracotta pillars, crafted with two glazed terracotta in a vertical line.
 - Changed unfired terracotta to be crafted with full blocks instead of 8 piles for convenience.
 - Added new wood types: mahogany, mangrove, hazel

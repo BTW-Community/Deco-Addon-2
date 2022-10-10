@@ -10,6 +10,8 @@
     "LegacySubstitutionBlockItemMixin",
     "SandPileItemMixin",
     "SignItemMixin",
+    "StoneBrickItemMixin",
+    "StoneItemMixin",
     "WoodCornerStubMixin",
     "WoodMouldingStubMixin",
     "WoodMouldingDecorativeStubMixin",

@@ -253,6 +253,10 @@ public class DecoBlockIDs {
     public static final int WORK_STUMP_ID = 3638;
     public static final int GLAZED_TERRACOTTA_PILLARS_START = 3639;
     //IDs occupied through 3654
+    public static final int CRACKED_STONE_VARIANTS_ID = 3655;
+    public static final int ROUGH_GRANITE_ID = 3656;
+    public static final int ROUGH_ANDESITE_ID = 3657;
+    public static final int ROUGH_DIORITE_ID = 3658;
     
     public static final int HAZEL_LOG_ID = 3699;
     public static final int HAZEL_STUMP_ID = 3700;

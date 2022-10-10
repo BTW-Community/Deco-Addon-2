@@ -36,13 +36,26 @@ public class DecoBlockInitializer {
     
         // General
         
+        DecoBlocks.stoneVariants = new StoneVariantsBlock(DecoBlockIDs.STONE_VARIANTS_ID, false);
+        register(DecoBlocks.stoneVariants, StoneVariantsBlock.names);
+        DecoBlocks.crackedStoneVariants = new StoneVariantsBlock(DecoBlockIDs.CRACKED_STONE_VARIANTS_ID, true);
+        
         // Granite
+        
+        DecoBlocks.roughGranite = new RoughStoneVariantBlock(DecoBlockIDs.ROUGH_GRANITE_ID, StoneVariantsBlock.GRANITE_STRATA, StoneVariantsBlock.GRANITE_TYPE);
     
         // Andesite
         
         // Diorite
         
         // Slate
+    
+        // Replace references as otherwise they would get messed up
+        RoughStoneBlock.strataLevelBlockArray = new RoughStoneBlock[] {
+                (RoughStoneBlock) BTWBlocks.upperStrataRoughStone,
+                (RoughStoneBlock) BTWBlocks.midStrataRoughStone,
+                (RoughStoneBlock) BTWBlocks.deepStrataRoughStone
+        };
     
         //------ White Stone ------//
     
@@ -926,5 +939,9 @@ public class DecoBlockInitializer {
                 new int[] {8, 9, 10, 11, 12, 13, 14, 15})
                 .setUnlocalizedName("decoBlockPlanksPaintedSlab2");
         Item.itemsList[DecoBlocks.pastelPlanksSlab2.blockID] = new DecoSlabItemBlock(DecoBlocks.pastelPlanksSlab2.blockID - 256);
+    }
+
+    private static void register(Block block, String[]names) {
+        Item.itemsList[block.blockID] = new ItemMultiTextureTile(block.blockID - 256, block, names);
     }
 }

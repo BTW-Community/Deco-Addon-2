@@ -12,6 +12,8 @@
     "PlanksBlockMixin",
     "SandBlockMixin",
     "SidingAndCornerBlockMixin",
+    "StoneBlockInvoker",
+    "StoneBlockMixin",
     "WoodMouldingBlockMixin",
     "WoodSidingAndCornerBlockMixin",
     "WoodSlabMixin",
