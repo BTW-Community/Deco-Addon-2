@@ -4,6 +4,7 @@ import btw.block.blocks.RoughStoneBlock;
 import btw.client.fx.BTWEffectManager;
 import btw.item.BTWItems;
 import btw.item.util.ItemUtils;
+import deco.block.DecoBlockIDs;
 import net.minecraft.src.EntityPlayer;
 import net.minecraft.src.Explosion;
 import net.minecraft.src.ItemStack;
@@ -11,12 +12,18 @@ import net.minecraft.src.World;
 
 public class RoughStoneVariantBlock extends RoughStoneBlock {
 	private final int stoneType;
+	private int stoneBlockID;
 	public static RoughStoneBlock[] stoneTypeBlockArray = new RoughStoneBlock[StoneVariantsBlock.NUM_TYPES];
 	
-	public RoughStoneVariantBlock(int blockID, int strataLevel, int stoneType) {
-		super(blockID, strataLevel);
+	public RoughStoneVariantBlock(int blockID, int stoneType) {
+		this(blockID, stoneType, DecoBlockIDs.STONE_VARIANTS_ID);
+	}
+	
+	public RoughStoneVariantBlock(int blockID, int stoneType, int stoneBlockID) {
+		super(blockID, StoneVariantsBlock.strataByType.get(stoneType));
 		
 		this.stoneType = stoneType;
+		this.stoneBlockID = stoneBlockID;
 		stoneTypeBlockArray[stoneType] = this;
 		
 		this.setUnlocalizedName("decoBlock" + StoneVariantsBlock.namesCapital[stoneType] + "Rough");
@@ -34,7 +41,7 @@ public class RoughStoneVariantBlock extends RoughStoneBlock {
 					if ((metadata & 1) == 0) {
 						world.playAuxSFX(BTWEffectManager.STONE_RIPPED_OFF_EFFECT_ID, x, y, z, 0);
 						ItemUtils.ejectStackFromBlockTowardsFacing(world, x, y, z,
-								new ItemStack(BTWItems.stone, 1, StoneVariantsBlock.getStoneItemMetadataForDrop(this.stoneType)), side);
+								new ItemStack(BTWItems.stone, 1, StoneVariantsBlock.getStoneItemMetadataForDrop(this.stoneBlockID, this.stoneType)), side);
 					}
 					else if (metadata <= 5 && isUberItemConversionTool(stack, world, x, y, z)) {
 						// iron or better chisel on top two strata ejects bricks instead
@@ -42,7 +49,7 @@ public class RoughStoneVariantBlock extends RoughStoneBlock {
 						metadata += 3;
 						world.playAuxSFX(BTWEffectManager.STONE_RIPPED_OFF_EFFECT_ID, x, y, z, 0);
 						ItemUtils.ejectStackFromBlockTowardsFacing(world, x, y, z,
-								new ItemStack(BTWItems.stoneBrick, 1, StoneVariantsBlock.getStoneItemMetadataForDrop(this.stoneType)), side);
+								new ItemStack(BTWItems.stoneBrick, 1, StoneVariantsBlock.getStoneItemMetadataForDrop(this.stoneBlockID, this.stoneType)), side);
 					}
 				}
 				else if (metadata == 12) {
@@ -70,7 +77,7 @@ public class RoughStoneVariantBlock extends RoughStoneBlock {
 		if (!world.isRemote) {
 			int itemIDDropped = BTWItems.stone.itemID;
 			int numDropped = 1;
-			int metadataDropped = StoneVariantsBlock.getStoneItemMetadataForDrop(this.stoneType);
+			int metadataDropped = StoneVariantsBlock.getStoneItemMetadataForDrop(this.stoneBlockID, this.stoneType);
 			
 			if (metadata < 8) {
 				numDropped = 8 - (metadata / 2);
@@ -113,7 +120,7 @@ public class RoughStoneVariantBlock extends RoughStoneBlock {
 	protected void dropComponentItemsWithChance(World world, int x, int y, int z, int metadata, float chanceOfItemDrop) {
 		if (metadata < 8) {
 			int numStoneDropped = 4 - (metadata / 2);
-			dropItemsIndividually(world, x, y, z, BTWItems.stone.itemID, numStoneDropped, StoneVariantsBlock.getStoneItemMetadataForDrop(this.stoneType),
+			dropItemsIndividually(world, x, y, z, BTWItems.stone.itemID, numStoneDropped, StoneVariantsBlock.getStoneItemMetadataForDrop(this.stoneBlockID, this.stoneType),
 					chanceOfItemDrop);
 		}
 		

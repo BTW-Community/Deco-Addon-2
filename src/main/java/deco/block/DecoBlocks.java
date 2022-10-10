@@ -109,6 +109,7 @@ public class DecoBlocks {
     
     // Slate
     
+    public static Block slate;
     public static Block roughSlate;
     
     public static Block looseSlateCobblestone;

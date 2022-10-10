@@ -42,24 +42,20 @@ public class DecoBlockInitializer {
         
         // Granite
         
-        DecoBlocks.roughGranite = new RoughStoneVariantBlock(DecoBlockIDs.ROUGH_GRANITE_ID, StoneVariantsBlock.GRANITE_STRATA, StoneVariantsBlock.GRANITE_TYPE);
+        DecoBlocks.roughGranite = new RoughStoneVariantBlock(DecoBlockIDs.ROUGH_GRANITE_ID, StoneVariantsBlock.GRANITE_TYPE);
     
         // Andesite
     
-        DecoBlocks.roughAndesite = new RoughStoneVariantBlock(DecoBlockIDs.ROUGH_ANDESITE_ID, StoneVariantsBlock.ANDESITE_STRATA, StoneVariantsBlock.ANDESITE_TYPE);
+        DecoBlocks.roughAndesite = new RoughStoneVariantBlock(DecoBlockIDs.ROUGH_ANDESITE_ID, StoneVariantsBlock.ANDESITE_TYPE);
         
         // Diorite
     
-        DecoBlocks.roughDiorite = new RoughStoneVariantBlock(DecoBlockIDs.ROUGH_DIORITE_ID, StoneVariantsBlock.DIORITE_STRATA, StoneVariantsBlock.DIORITE_TYPE);
+        DecoBlocks.roughDiorite = new RoughStoneVariantBlock(DecoBlockIDs.ROUGH_DIORITE_ID, StoneVariantsBlock.DIORITE_TYPE);
         
         // Slate
-    
-        // Replace references as otherwise they would get messed up
-        RoughStoneBlock.strataLevelBlockArray = new RoughStoneBlock[] {
-                (RoughStoneBlock) BTWBlocks.upperStrataRoughStone,
-                (RoughStoneBlock) BTWBlocks.midStrataRoughStone,
-                (RoughStoneBlock) BTWBlocks.deepStrataRoughStone
-        };
+        
+        DecoBlocks.slate = new SlateBlock(DecoBlockIDs.SLATE_ID);
+        DecoBlocks.roughSlate = new RoughStoneVariantBlock(DecoBlockIDs.ROUGH_SLATE_ID, StoneVariantsBlock.SLATE_TYPE, DecoBlockIDs.SLATE_ID);
     
         //------ White Stone ------//
     
@@ -74,7 +70,14 @@ public class DecoBlockInitializer {
         // Extra sub blocks
         
         // Slabs
-        
+    
+    
+        // Replace references as otherwise they would get messed up
+        RoughStoneBlock.strataLevelBlockArray = new RoughStoneBlock[] {
+                (RoughStoneBlock) BTWBlocks.upperStrataRoughStone,
+                (RoughStoneBlock) BTWBlocks.midStrataRoughStone,
+                (RoughStoneBlock) BTWBlocks.deepStrataRoughStone
+        };
     }
     
     private static void initSandstone() {
@@ -947,5 +950,9 @@ public class DecoBlockInitializer {
 
     private static void register(Block block, String[]names) {
         Item.itemsList[block.blockID] = new ItemMultiTextureTile(block.blockID - 256, block, names);
+    }
+    
+    private static void register(ItemBlock blockItem) {
+        Item.itemsList[blockItem.itemID] = blockItem;
     }
 }

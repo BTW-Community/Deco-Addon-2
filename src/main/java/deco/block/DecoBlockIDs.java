@@ -168,6 +168,16 @@ public class DecoBlockIDs {
     public static final int CHERRY_SIGN_ID = 3447;
     public static final int CHERRY_WALL_SIGN_ID = 3448;
     
+    public static final int ROUGH_SLATE_ID = 3478;
+    public static final int LOOSE_SLATE_COBBLESTONE_ID = 3479;
+    public static final int LOOSE_SLATE_BRICK_ID = 3480;
+    public static final int SLATE_STAIRS_ID = 3481;
+    public static final int POLISHED_SLATE_STAIRS_ID = 3482;
+    public static final int SLATE_BRICK_STAIRS_ID = 3483;
+    public static final int SLATE_COBBLESTONE_STAIRS_ID = 3484;
+    public static final int SLATE_TILES_STAIRS_ID = 3485;
+    public static final int LOOSE_SLATE_BRICK_STAIRS_ID = 3486;
+    public static final int LOOSE_SLATE_COBBLESTONE_STAIRS_ID = 3487;
     public static final int ACACIA_LOG_ID = 3488;
     public static final int ACACIA_STUMP_ID = 3489;
     public static final int ACACIA_LEAVES_ID = 3490;
@@ -189,6 +199,16 @@ public class DecoBlockIDs {
     public static final int BOOKSHELF_ID = 3507;
     public static final int EMPTY_BOOKSHELF_ID = 3508;
     
+    public static final int SLATE_SIDING_AND_CORNER_ID = 3511;
+    public static final int POLISHED_SLATE_MOULDING_ID = 3512;
+    public static final int POLISHED_SLATE_SIDING_AND_CORNER_ID = 3513;
+    public static final int SLATE_MOULDING_ID = 3514;
+    public static final int SLATE_COBBLESTONE_SIDING_AND_CORNER_ID = 3515;
+    public static final int SLATE_COBBLESTONE_MOULDING_ID = 3516;
+    public static final int SLATE_BRICK_SIDING_AND_CORNER_ID = 3517;
+    public static final int SLATE_BRICK_MOULDING_ID = 3518;
+    public static final int SLATE_TILES_SIDING_AND_CORNER_ID = 3519;
+    public static final int SLATE_TILES_MOULDING_ID = 3520;
     public static final int SPRUCE_LADDER_ID = 3521;
     public static final int FLAMING_SPRUCE_LADDER_ID = 3522;
     public static final int BIRCH_LADDER_ID = 3523;
@@ -211,6 +231,10 @@ public class DecoBlockIDs {
     public static final int BOTTLE_RACK_ID = 3589;
     public static final int EMPTY_BOTTLE_RACK_ID = 3590;
     
+    public static final int INFESTED_GRANITE_ID = 3595;
+    public static final int INFESTED_ANDESITE_ID = 3596;
+    public static final int INFESTED_DIORITE_ID = 3597;
+    public static final int INFESTED_SLATE_ID = 3598;
     public static final int MAHOGANY_LOG_ID = 3599;
     public static final int MAHOGANY_STUMP_ID = 3600;
     public static final int CHEWED_MAHOGANY_LOG_ID = 3601;
@@ -257,6 +281,7 @@ public class DecoBlockIDs {
     public static final int ROUGH_GRANITE_ID = 3656;
     public static final int ROUGH_ANDESITE_ID = 3657;
     public static final int ROUGH_DIORITE_ID = 3658;
+    public static final int SLATE_ID = 3659;
     
     public static final int HAZEL_LOG_ID = 3699;
     public static final int HAZEL_STUMP_ID = 3700;
