@@ -56,6 +56,8 @@ public class DecoBlockInitializer {
         // Granite
         
         DecoBlocks.roughGranite = new RoughStoneVariantBlock(DecoBlockIDs.ROUGH_GRANITE_ID, StoneVariantsBlock.GRANITE_TYPE);
+    
+        DecoBlocks.infestedGranite = new SilverfishBlock(DecoBlockIDs.INFESTED_GRANITE_ID, DecoBlocks.stoneVariants, StoneVariantsBlock.GRANITE_TYPE);
         
         DecoBlocks.looseGraniteCobblestone = new LooseCobblestoneVariantsBlock(DecoBlockIDs.LOOSE_GRANITE_COBBLESTONE_ID, StoneVariantsBlock.GRANITE_TYPE,
                 "decoOverlayGraniteCobbleLava")
@@ -134,6 +136,8 @@ public class DecoBlockInitializer {
     
         DecoBlocks.roughAndesite = new RoughStoneVariantBlock(DecoBlockIDs.ROUGH_ANDESITE_ID, StoneVariantsBlock.ANDESITE_TYPE);
     
+        DecoBlocks.infestedAndesite = new SilverfishBlock(DecoBlockIDs.INFESTED_ANDESITE_ID, DecoBlocks.stoneVariants, StoneVariantsBlock.ANDESITE_TYPE);
+    
         DecoBlocks.looseAndesiteCobblestone = new LooseCobblestoneVariantsBlock(DecoBlockIDs.LOOSE_ANDESITE_COBBLESTONE_ID, StoneVariantsBlock.ANDESITE_TYPE,
                 "decoOverlayAndesiteCobbleLava")
                 .setUnlocalizedName("decoBlockAndesiteCobbleLoose");
@@ -210,6 +214,8 @@ public class DecoBlockInitializer {
         // Diorite
     
         DecoBlocks.roughDiorite = new RoughStoneVariantBlock(DecoBlockIDs.ROUGH_DIORITE_ID, StoneVariantsBlock.DIORITE_TYPE);
+    
+        DecoBlocks.infestedDiorite = new SilverfishBlock(DecoBlockIDs.INFESTED_DIORITE_ID, DecoBlocks.stoneVariants, StoneVariantsBlock.DIORITE_TYPE);
     
         DecoBlocks.looseDioriteCobblestone = new LooseCobblestoneVariantsBlock(DecoBlockIDs.LOOSE_DIORITE_COBBLESTONE_ID, StoneVariantsBlock.DIORITE_TYPE,
                 "decoOverlayDioriteCobbleLava")
@@ -288,6 +294,8 @@ public class DecoBlockInitializer {
         
         DecoBlocks.slate = new SlateBlock(DecoBlockIDs.SLATE_ID);
         DecoBlocks.roughSlate = new RoughStoneVariantBlock(DecoBlockIDs.ROUGH_SLATE_ID, StoneVariantsBlock.SLATE_TYPE, DecoBlockIDs.SLATE_ID);
+        
+        DecoBlocks.infestedSlate = new SilverfishBlock(DecoBlockIDs.INFESTED_SLATE_ID, DecoBlocks.slate, 0);
         
         DecoBlocks.slateTiles = new SlateTilesBlock(DecoBlockIDs.SLATE_TILES_ID);
     
