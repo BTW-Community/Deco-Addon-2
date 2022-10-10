@@ -25,6 +25,7 @@ import net.minecraft.src.ItemStack;
 public class CraftingRecipeList {
 	public static void initRecipes() {
 		initGeneralRecipes();
+		initStoneRecipes();
 		initTerracottaRecipes();
 		initConcreteRecipes();
 		initSoilRecipes();
@@ -43,6 +44,29 @@ public class CraftingRecipeList {
 						new ItemStack(Item.dyePowder, 1, ColorUtils.WHITE.colorID),
 						new ItemStack(BTWItems.potash)
 				});
+	}
+	
+	private static void initStoneRecipes() {
+		initGraniteRecipes();
+		initAndesiteRecipes();
+		initDioriteRecipes();
+		initSlateRecipes();
+	}
+	
+	private static void initGraniteRecipes() {
+	
+	}
+	
+	private static void initAndesiteRecipes() {
+	
+	}
+	
+	private static void initDioriteRecipes() {
+	
+	}
+	
+	private static void initSlateRecipes() {
+	
 	}
 	
 	private static void initTerracottaRecipes() {
