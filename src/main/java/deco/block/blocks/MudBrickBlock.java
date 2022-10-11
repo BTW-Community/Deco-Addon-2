@@ -2,6 +2,7 @@ package deco.block.blocks;
 
 import btw.item.BTWItems;
 import net.minecraft.src.Block;
+import net.minecraft.src.CreativeTabs;
 import net.minecraft.src.Material;
 import net.minecraft.src.World;
 
@@ -13,6 +14,7 @@ public class MudBrickBlock extends Block {
 		this.setPicksEffectiveOn();
 		this.setStepSound(soundGravelFootstep);
 		this.setUnlocalizedName("decoBlockMudBrick");
+		this.setCreativeTab(CreativeTabs.tabBlock);
 	}
 	
 	@Override

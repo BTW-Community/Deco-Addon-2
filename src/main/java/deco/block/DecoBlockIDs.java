@@ -5,7 +5,7 @@ public class DecoBlockIDs {
     public static final int WROUGHT_IRON_BARS_ID = 3001;
     public static final int FLOWER_ID = 3002;
     public static final int STAINED_GLASS_ID = 3003;
-    
+    public static final int STONE_SLAB_8_ID = 3004;
     public static final int COAL_BLOCK_ID = 3005;
     public static final int TULIP_ID = 3006;
     public static final int DIAMONDIUM_BLOCK = 3007;
@@ -14,9 +14,9 @@ public class DecoBlockIDs {
     public static final int WHITE_STONE_BRICK_MOULDING_ID = 3010;
     public static final int WHITE_STONE_BRICK_STAIRS_ID = 3011;
     public static final int POLISHED_STONE = 3012;
-    public static final int POLISHED_STONE_STAIRS_ID = 3013;
-    public static final int POLISHED_STONE_SIDING_AND_CORNER_ID = 3014;
-    public static final int POLISHED_STONE_MOULDING_ID = 3015;
+    public static final int POLISHED_STONE_STAIRS_UPPER_STRATA_ID = 3013;
+    public static final int POLISHED_STONE_SIDING_AND_CORNER_UPPER_STRATA_ID = 3014;
+    public static final int POLISHED_STONE_MOULDING_UPPER_STRATA_ID = 3015;
     public static final int BONE_PILLAR_ID = 3016;
     public static final int FLOWER_2_ID = 3017;
     public static final int CONCRETE_ID = 3018;
@@ -464,6 +464,12 @@ public class DecoBlockIDs {
     public static final int CRACKED_STONE_BRICK_STAIRS_DEEP_STRATA_ID = 3686;
     public static final int CRACKED_STONE_BRICK_SIDING_AND_CORNER_DEEP_STRATA_ID = 3687;
     public static final int CRACKED_STONE_BRICK_MOULDING_DEEP_STRATA_ID = 3688;
+    public static final int POLISHED_STONE_STAIRS_MID_STRATA_ID = 3689;
+    public static final int POLISHED_STONE_SIDING_AND_CORNER_MID_STRATA_ID = 3690;
+    public static final int POLISHED_STONE_MOULDING_MID_STRATA_ID = 3691;
+    public static final int POLISHED_STONE_STAIRS_DEEP_STRATA_ID = 3692;
+    public static final int POLISHED_STONE_SIDING_AND_CORNER_DEEP_STRATA_ID = 3693;
+    public static final int POLISHED_STONE_MOULDING_DEEP_STRATA_ID = 3694;
     
     public static final int HAZEL_LOG_ID = 3699;
     public static final int HAZEL_STUMP_ID = 3700;

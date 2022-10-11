@@ -13,7 +13,7 @@ public class SlateTilesBlock extends Block {
 		this.setPicksEffectiveOn();
 		this.setChiselsEffectiveOn();
 		this.setStepSound(soundStoneFootstep);
-		this.setUnlocalizedName("decoBlockStoneBricks");
+		this.setUnlocalizedName("decoBlockSlateTiles");
 		this.setCreativeTab(CreativeTabs.tabBlock);
 	}
 	

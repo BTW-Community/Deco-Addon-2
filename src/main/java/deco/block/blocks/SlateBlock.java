@@ -6,6 +6,7 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.src.*;
 
+import java.util.List;
 import java.util.Random;
 
 public class SlateBlock extends StoneVariantsBlock {
@@ -143,5 +144,11 @@ public class SlateBlock extends StoneVariantsBlock {
 		render.renderStandardBlock(this, x, y, z);
 		render.clearUVRotation();
 		return true;
+	}
+	
+	@Environment(EnvType.CLIENT)
+	@Override
+	public void getSubBlocks(int blockID, CreativeTabs creativeTabs, List list) {
+		list.add(new ItemStack(blockID, 1, 0));
 	}
 }

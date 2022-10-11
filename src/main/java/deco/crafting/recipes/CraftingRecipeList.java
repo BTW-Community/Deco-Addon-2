@@ -15,6 +15,7 @@ import deco.block.DecoBlocks;
 import deco.block.blocks.*;
 import deco.block.util.SandHelper;
 import deco.block.util.SlabHelper;
+import deco.block.util.StoneHelper;
 import deco.block.util.WoodTypeHelper;
 import deco.item.DecoItems;
 import net.minecraft.src.Block;
@@ -52,6 +53,112 @@ public class CraftingRecipeList {
 	}
 	
 	private static void initStoneRecipes() {
+		
+		//------ Stone ------//
+		
+		RecipeManager.addRecipe(new ItemStack(SlabHelper.STONE_SLAB_UPPER_STRATA_ID, 6, SlabHelper.STONE_SLAB_UPPER_STRATA_TYPE),
+				new Object[] {
+						"FFF",
+						'F', new ItemStack(Block.stone, 1, PolishedStoneBlock.UPPER_STRATA_TYPE)
+				});
+		RecipeManager.addRecipe(new ItemStack(Block.stone, 1, PolishedStoneBlock.UPPER_STRATA_TYPE),
+				new Object[] {
+						"S",
+						"S",
+						'S', new ItemStack(SlabHelper.STONE_SLAB_UPPER_STRATA_ID, 6, SlabHelper.STONE_SLAB_UPPER_STRATA_TYPE)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(SlabHelper.STONE_SLAB_MID_STRATA_ID, 6, SlabHelper.STONE_SLAB_MID_STRATA_TYPE),
+				new Object[] {
+						"FFF",
+						'F', new ItemStack(Block.stone, 1, PolishedStoneBlock.MID_STRATA_TYPE)
+				});
+		RecipeManager.addRecipe(new ItemStack(Block.stone, 1, PolishedStoneBlock.MID_STRATA_TYPE),
+				new Object[] {
+						"S",
+						"S",
+						'S', new ItemStack(SlabHelper.STONE_SLAB_MID_STRATA_ID, 6, SlabHelper.STONE_SLAB_MID_STRATA_TYPE)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(SlabHelper.STONE_SLAB_DEEP_STRATA_ID, 6, SlabHelper.STONE_SLAB_DEEP_STRATA_TYPE),
+				new Object[] {
+						"FFF",
+						'F', new ItemStack(Block.stone, 1, PolishedStoneBlock.DEEP_STRATA_TYPE)
+				});
+		RecipeManager.addRecipe(new ItemStack(Block.stone, 1, PolishedStoneBlock.DEEP_STRATA_TYPE),
+				new Object[] {
+						"S",
+						"S",
+						'S', new ItemStack(SlabHelper.STONE_SLAB_DEEP_STRATA_ID, 6, SlabHelper.STONE_SLAB_DEEP_STRATA_TYPE)
+				});
+		
+		//------ Polished Stone ------//
+		
+		RecipeManager.addStokedCrucibleRecipe(new ItemStack(DecoBlocks.polishedStone, 1, PolishedStoneBlock.UPPER_STRATA_TYPE),
+				new ItemStack[] {
+						new ItemStack(Block.stone, 1, PolishedStoneBlock.UPPER_STRATA_TYPE)
+				});
+		
+		RecipeManager.addStokedCrucibleRecipe(new ItemStack(DecoBlocks.polishedStone, 1, PolishedStoneBlock.MID_STRATA_TYPE),
+				new ItemStack[] {
+						new ItemStack(Block.stone, 1, PolishedStoneBlock.MID_STRATA_TYPE)
+				});
+		
+		RecipeManager.addStokedCrucibleRecipe(new ItemStack(DecoBlocks.polishedStone, 1, PolishedStoneBlock.DEEP_STRATA_TYPE),
+				new ItemStack[] {
+						new ItemStack(Block.stone, 1, PolishedStoneBlock.DEEP_STRATA_TYPE)
+				});
+		
+		addSubBlockRecipes(DecoBlocks.polishedStone, PolishedStoneBlock.UPPER_STRATA_TYPE, DecoBlocks.polishedStoneSidingAndCornerUpperStrata,
+				DecoBlocks.polishedStoneMouldingUpperStrata, DecoBlocks.polishedStoneStairsUpperStrata, BTWBlocks.stoneSlab, PolishedStoneBlock.UPPER_STRATA_TYPE);
+		
+		addSubBlockRecipes(DecoBlocks.polishedStone, PolishedStoneBlock.MID_STRATA_TYPE, DecoBlocks.polishedStoneSidingAndCornerMidStrata,
+				DecoBlocks.polishedStoneMouldingMidStrata, DecoBlocks.polishedStoneStairsMidStrata, BTWBlocks.stoneSlab, PolishedStoneBlock.MID_STRATA_TYPE);
+		
+		addSubBlockRecipes(DecoBlocks.polishedStone, PolishedStoneBlock.DEEP_STRATA_TYPE, DecoBlocks.polishedStoneSidingAndCornerDeepStrata,
+				DecoBlocks.polishedStoneMouldingDeepStrata, DecoBlocks.polishedStoneStairsDeepStrata, BTWBlocks.stoneSlab, PolishedStoneBlock.DEEP_STRATA_TYPE);
+		
+		//------ Cobblestone ------//
+		
+		btw.crafting.recipe.CraftingRecipeList.addSubBlockRecipesOfType(Block.cobblestone, StoneHelper.COBBLESTONE_UPPER_STRATA_TYPE,
+				DecoBlocks.cobblestoneSidingAndCornerUpperStrata, DecoBlocks.cobblestoneMouldingUpperStrata, false);
+		btw.crafting.recipe.CraftingRecipeList.addSubBlockRecipesOfType(Block.cobblestone, StoneHelper.COBBLESTONE_MID_STRATA_TYPE,
+				DecoBlocks.cobblestoneSidingAndCornerMidStrata, DecoBlocks.cobblestoneMouldingMidStrata, false);
+		btw.crafting.recipe.CraftingRecipeList.addSubBlockRecipesOfType(Block.cobblestone, StoneHelper.COBBLESTONE_DEEP_STRATA_TYPE,
+				DecoBlocks.cobblestoneSidingAndCornerDeepStrata, DecoBlocks.cobblestoneMouldingDeepStrata, false);
+		
+		addSubBlockRecipes(Block.cobblestoneMossy, StoneHelper.MOSSY_COBBLESTONE_UPPER_STRATA_TYPE, DecoBlocks.mossyCobblestoneSidingAndCornerUpperStrata,
+				DecoBlocks.mossyCobblestoneMouldingUpperStrata, DecoBlocks.mossyCobblestoneStairsUpperStrata, SlabHelper.MOSSY_COBBLESTONE_UPPER_STRATA_SLAB_ID,
+				SlabHelper.MOSSY_COBBLESTONE_UPPER_STRATA_SLAB_TYPE, false);
+		addSubBlockRecipes(Block.cobblestoneMossy, StoneHelper.MOSSY_COBBLESTONE_MID_STRATA_TYPE, DecoBlocks.mossyCobblestoneSidingAndCornerMidStrata,
+				DecoBlocks.mossyCobblestoneMouldingMidStrata, DecoBlocks.mossyCobblestoneStairsMidStrata, SlabHelper.MOSSY_COBBLESTONE_MID_STRATA_SLAB_ID,
+				SlabHelper.MOSSY_COBBLESTONE_MID_STRATA_SLAB_TYPE, false);
+		addSubBlockRecipes(Block.cobblestoneMossy, StoneHelper.MOSSY_COBBLESTONE_DEEP_STRATA_TYPE, DecoBlocks.mossyCobblestoneSidingAndCornerDeepStrata,
+				DecoBlocks.mossyCobblestoneMouldingDeepStrata, DecoBlocks.mossyCobblestoneStairsDeepStrata, SlabHelper.MOSSY_COBBLESTONE_DEEP_STRATA_SLAB_ID,
+				SlabHelper.MOSSY_COBBLESTONE_DEEP_STRATA_SLAB_TYPE, false);
+		
+		//------ Stone Brick ------//
+		
+		addSubBlockRecipes(Block.stoneBrick, StoneHelper.MOSSY_STONE_BRICK_UPPER_STRATA_TYPE, DecoBlocks.mossyStoneBrickSidingAndCornerUpperStrata,
+				DecoBlocks.mossyStoneBrickMouldingUpperStrata, DecoBlocks.mossyStoneBrickStairsUpperStrata, SlabHelper.MOSSY_STONE_BRICK_UPPER_STRATA_SLAB_ID,
+				SlabHelper.MOSSY_STONE_BRICK_UPPER_STRATA_SLAB_TYPE);
+		addSubBlockRecipes(Block.stoneBrick, StoneHelper.MOSSY_STONE_BRICK_MID_STRATA_TYPE, DecoBlocks.mossyStoneBrickSidingAndCornerMidStrata,
+				DecoBlocks.mossyStoneBrickMouldingMidStrata, DecoBlocks.mossyStoneBrickStairsMidStrata, SlabHelper.MOSSY_STONE_BRICK_MID_STRATA_SLAB_ID,
+				SlabHelper.MOSSY_STONE_BRICK_MID_STRATA_SLAB_TYPE);
+		addSubBlockRecipes(Block.stoneBrick, StoneHelper.MOSSY_STONE_BRICK_DEEP_STRATA_TYPE, DecoBlocks.mossyStoneBrickSidingAndCornerDeepStrata,
+				DecoBlocks.mossyStoneBrickMouldingDeepStrata, DecoBlocks.mossyStoneBrickStairsDeepStrata, SlabHelper.MOSSY_STONE_BRICK_DEEP_STRATA_SLAB_ID,
+				SlabHelper.MOSSY_STONE_BRICK_DEEP_STRATA_SLAB_TYPE);
+		
+		addSubBlockRecipes(Block.stoneBrick, StoneHelper.CRACKED_STONE_BRICK_UPPER_STRATA_TYPE, DecoBlocks.crackedStoneBrickSidingAndCornerUpperStrata,
+				DecoBlocks.crackedStoneBrickMouldingUpperStrata, DecoBlocks.crackedStoneBrickStairsUpperStrata, SlabHelper.CRACKED_STONE_BRICK_UPPER_STRATA_SLAB_ID,
+				SlabHelper.CRACKED_STONE_BRICK_UPPER_STRATA_SLAB_TYPE);
+		addSubBlockRecipes(Block.stoneBrick, StoneHelper.CRACKED_STONE_BRICK_MID_STRATA_TYPE, DecoBlocks.crackedStoneBrickSidingAndCornerMidStrata,
+				DecoBlocks.crackedStoneBrickMouldingMidStrata, DecoBlocks.crackedStoneBrickStairsMidStrata, SlabHelper.CRACKED_STONE_BRICK_MID_STRATA_SLAB_ID,
+				SlabHelper.CRACKED_STONE_BRICK_MID_STRATA_SLAB_TYPE);
+		addSubBlockRecipes(Block.stoneBrick, StoneHelper.CRACKED_STONE_BRICK_DEEP_STRATA_TYPE, DecoBlocks.crackedStoneBrickSidingAndCornerDeepStrata,
+				DecoBlocks.crackedStoneBrickMouldingDeepStrata, DecoBlocks.crackedStoneBrickStairsDeepStrata, SlabHelper.CRACKED_STONE_BRICK_DEEP_STRATA_SLAB_ID,
+				SlabHelper.CRACKED_STONE_BRICK_DEEP_STRATA_SLAB_TYPE);
+		
 		initGraniteRecipes();
 		initAndesiteRecipes();
 		initDioriteRecipes();
@@ -5889,10 +5996,22 @@ public class CraftingRecipeList {
 	}
 	
 	private static void addSubBlockRecipes(Block baseBlock, int baseMetadata, Block sidingAndCorner, Block moulding, Block stairs, int slab, int slabMetadata) {
-		addSubBlockRecipes(baseBlock, baseMetadata, sidingAndCorner, moulding, stairs, Block.blocksList[slab], slabMetadata);
+		addSubBlockRecipes(baseBlock, baseMetadata, sidingAndCorner, moulding, stairs, Block.blocksList[slab], slabMetadata, true);
 	}
 	
 	private static void addSubBlockRecipes(Block baseBlock, int baseMetadata, Block sidingAndCorner, Block moulding, Block stairs, Block slab, int slabMetadata) {
+		addSubBlockRecipes(baseBlock, baseMetadata, sidingAndCorner, moulding, stairs, slab, slabMetadata, true);
+	}
+	
+	private static void addSubBlockRecipes(Block baseBlock, int baseMetadata, Block sidingAndCorner, Block moulding, Block stairs, int slab, int slabMetadata,
+			boolean includeFence)
+	{
+		addSubBlockRecipes(baseBlock, baseMetadata, sidingAndCorner, moulding, stairs, Block.blocksList[slab], slabMetadata, includeFence);
+	}
+	
+	private static void addSubBlockRecipes(Block baseBlock, int baseMetadata, Block sidingAndCorner, Block moulding, Block stairs, Block slab, int slabMetadata,
+			boolean includeFence)
+	{
 		btw.crafting.recipe.CraftingRecipeList.addSubBlockRecipesOfType(baseBlock, baseMetadata, sidingAndCorner, moulding, true);
 		
 		RecipeManager.addRecipe(new ItemStack(stairs, 6),

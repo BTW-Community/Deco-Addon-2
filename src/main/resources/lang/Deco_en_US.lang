@@ -49,7 +49,9 @@ tile.decoBlockAndesiteBrickStairsLoose.name=Loose Andesite Brick Stairs
 tile.decoBlockDioriteBrickStairsLoose.name=Loose Diorite Brick Stairs
 tile.decoBlockSlateBrickStairsLoose.name=Loose Slate Brick Stairs
 
-tile.decoBlockPolishedStone.name=Polished Stone
+tile.decoBlockPolishedStone.upper.name=Polished Stone
+tile.decoBlockPolishedStone.mid.name=Polished Stone
+tile.decoBlockPolishedStone.deep.name=Polished Stone
 tile.decoBlockPolishedStoneStairs.name=Polished Stone Stairs
 
 tile.decoBlockStoneBrickMossyStairs.name=Mossy Stone Brick Stairs
@@ -1502,6 +1504,13 @@ tile.decoBlockStoneSlab6.7.name=Slate Cobblestone Slab
 tile.decoBlockStoneSlab7.0.name=Slate Tile Slab
 tile.decoBlockStoneSlab7.1.name=Shingles Slab
 tile.decoBlockStoneSlab7.2.name=Mud Brick Slab
+tile.decoBlockStoneSlab7.3.name=Mossy Cobblestone Slab
+tile.decoBlockStoneSlab7.4.name=Mossy Cobblestone Slab
+tile.decoBlockStoneSlab7.5.name=Mossy Stone Brick Slab
+tile.decoBlockStoneSlab7.6.name=Mossy Stone Brick Slab
+tile.decoBlockStoneSlab7.7.name=Cracked Stone Brick Slab
+
+tile.decoBlockStoneSlab8.0.name=Cracked Stone Brick Slab
 
 tile.decoBlockConcreteSlab.0.name=Black Concrete Slab
 tile.decoBlockConcreteSlab.1.name=Red Concrete Slab

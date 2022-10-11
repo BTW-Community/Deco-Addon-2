@@ -2,6 +2,7 @@ package deco.block.blocks;
 
 import btw.block.blocks.FallingFullBlock;
 import btw.item.BTWItems;
+import net.minecraft.src.CreativeTabs;
 import net.minecraft.src.Material;
 import net.minecraft.src.World;
 
@@ -12,6 +13,7 @@ public class MudBlock extends FallingFullBlock {
 		this.setShovelsEffectiveOn();
 		this.setStepSound(soundGravelFootstep);
 		this.setUnlocalizedName("decoBlockMud");
+		this.setCreativeTab(CreativeTabs.tabBlock);
 	}
 	
 	@Override

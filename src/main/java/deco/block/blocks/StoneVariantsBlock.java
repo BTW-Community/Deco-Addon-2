@@ -225,12 +225,14 @@ public class StoneVariantsBlock extends StoneBlock {
 	@Override
 	@Environment(EnvType.CLIENT)
 	public void getSubBlocks(int blockID, CreativeTabs creativeTabs, List list) {
-		for (int i = 0; i < NUM_TYPES; i++) {
-			if (i == SLATE_TYPE && !this.isCracked) {
-				continue;
+		if (!this.isCracked) {
+			for (int i = 0; i < NUM_TYPES; i++) {
+				if (i == SLATE_TYPE) {
+					continue;
+				}
+				
+				list.add(new ItemStack(blockID, 1, i));
 			}
-			
-			list.add(new ItemStack(blockID, 1, i));
 		}
 	}
 	
@@ -247,10 +249,10 @@ public class StoneVariantsBlock extends StoneBlock {
 			}
 			
 			if (this.isCracked) {
-				iconArray[i] = register.registerIcon(baseTexture + names[i] + "Cracked");
+				iconArray[i] = register.registerIcon(baseTexture + namesCapital[i] + "Cracked");
 			}
 			else {
-				iconArray[i] = register.registerIcon(baseTexture + names[i]);
+				iconArray[i] = register.registerIcon(baseTexture + namesCapital[i]);
 			}
 		}
 	}

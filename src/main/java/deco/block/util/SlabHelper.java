@@ -36,6 +36,22 @@ public class SlabHelper {
 	public static final int LOOSE_SLATE_BRICK_SLAB_ID = DecoBlockIDs.LOOSE_STONE_SLAB_ID;
 	public static final int SLATE_TILES_SLAB_ID = DecoBlockIDs.STONE_SLAB_7_ID;
 	
+	public static final int STONE_SLAB_UPPER_STRATA_ID = DecoBlockIDs.STONE_SLAB_3_ID;
+	public static final int STONE_SLAB_MID_STRATA_ID = DecoBlockIDs.STONE_SLAB_8_ID;
+	public static final int STONE_SLAB_DEEP_STRATA_ID = DecoBlockIDs.STONE_SLAB_8_ID;
+	
+	public static final int MOSSY_COBBLESTONE_UPPER_STRATA_SLAB_ID = DecoBlockIDs.STONE_SLAB_ID;
+	public static final int MOSSY_COBBLESTONE_MID_STRATA_SLAB_ID = DecoBlockIDs.STONE_SLAB_7_ID;
+	public static final int MOSSY_COBBLESTONE_DEEP_STRATA_SLAB_ID = DecoBlockIDs.STONE_SLAB_7_ID;
+	
+	public static final int MOSSY_STONE_BRICK_UPPER_STRATA_SLAB_ID = DecoBlockIDs.STONE_SLAB_6_ID;
+	public static final int MOSSY_STONE_BRICK_MID_STRATA_SLAB_ID = DecoBlockIDs.STONE_SLAB_7_ID;
+	public static final int MOSSY_STONE_BRICK_DEEP_STRATA_SLAB_ID = DecoBlockIDs.STONE_SLAB_7_ID;
+	
+	public static final int CRACKED_STONE_BRICK_UPPER_STRATA_SLAB_ID = DecoBlockIDs.STONE_SLAB_6_ID;
+	public static final int CRACKED_STONE_BRICK_MID_STRATA_SLAB_ID = DecoBlockIDs.STONE_SLAB_7_ID;
+	public static final int CRACKED_STONE_BRICK_DEEP_STRATA_SLAB_ID = DecoBlockIDs.STONE_SLAB_8_ID;
+	
 	// White Stone
 	public static final int WHITE_STONE_SLAB_ID = DecoBlockIDs.STONE_SLAB_ID;
 	public static final int WHITE_STONE_BRICK_SLAB_ID = DecoBlockIDs.STONE_SLAB_ID;
@@ -113,6 +129,22 @@ public class SlabHelper {
 	public static final int SLATE_TILES_SLAB_TYPE = 0;
 	public static final int LOOSE_SLATE_COBBLESTONE_SLAB_TYPE = 6;
 	public static final int LOOSE_SLATE_BRICK_SLAB_TYPE = 7;
+	
+	public static final int STONE_SLAB_UPPER_STRATA_TYPE = 7;
+	public static final int STONE_SLAB_MID_STRATA_TYPE = 1;
+	public static final int STONE_SLAB_DEEP_STRATA_TYPE = 2;
+	
+	public static final int MOSSY_COBBLESTONE_UPPER_STRATA_SLAB_TYPE = 6;
+	public static final int MOSSY_COBBLESTONE_MID_STRATA_SLAB_TYPE = 3;
+	public static final int MOSSY_COBBLESTONE_DEEP_STRATA_SLAB_TYPE = 4;
+	
+	public static final int MOSSY_STONE_BRICK_UPPER_STRATA_SLAB_TYPE = 0;
+	public static final int MOSSY_STONE_BRICK_MID_STRATA_SLAB_TYPE = 5;
+	public static final int MOSSY_STONE_BRICK_DEEP_STRATA_SLAB_TYPE = 6;
+	
+	public static final int CRACKED_STONE_BRICK_UPPER_STRATA_SLAB_TYPE = 1;
+	public static final int CRACKED_STONE_BRICK_MID_STRATA_SLAB_TYPE = 7;
+	public static final int CRACKED_STONE_BRICK_DEEP_STRATA_SLAB_TYPE = 0;
 	
 	// White Stone
 	public static final int WHITE_STONE_SLAB_TYPE = 4;

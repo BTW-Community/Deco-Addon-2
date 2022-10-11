@@ -28,6 +28,7 @@ public class DecoBlocks {
     public static Block stoneSlab5;
     public static Block stoneSlab6;
     public static Block stoneSlab7;
+    public static Block stoneSlab8;
     
     // Granite
     
@@ -155,9 +156,18 @@ public class DecoBlocks {
     // Misc
     
     public static Block polishedStone;
-    public static Block polishedStoneSidingAndCorner;
-    public static Block polishedStoneMoulding;
-    public static Block polishedStoneStairs;
+    
+    public static Block polishedStoneSidingAndCornerUpperStrata;
+    public static Block polishedStoneMouldingUpperStrata;
+    public static Block polishedStoneStairsUpperStrata;
+    
+    public static Block polishedStoneSidingAndCornerMidStrata;
+    public static Block polishedStoneMouldingMidStrata;
+    public static Block polishedStoneStairsMidStrata;
+    
+    public static Block polishedStoneSidingAndCornerDeepStrata;
+    public static Block polishedStoneMouldingDeepStrata;
+    public static Block polishedStoneStairsDeepStrata;
     
     // Extra Sub Blocks
     
