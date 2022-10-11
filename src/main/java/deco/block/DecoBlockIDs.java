@@ -169,6 +169,18 @@ public class DecoBlockIDs {
     public static final int LEGACY_RED_SAND_ID = 3310;
     public static final int RED_SAND_SLAB_ID = 3311;
     
+    public static final int PRISMARINE_ID = 3321;
+    public static final int PRISMARINE_LANTERN_ID = 3322;
+    public static final int PRISMARINE_SIDING_AND_CORNER_ID = 3323;
+    public static final int PRISMARINE_MOULDING_ID = 3324;
+    public static final int PRISMARINE_STAIRS_ID = 3325;
+    public static final int PRISMARINE_BRICK_SIDING_AND_CORNER_ID = 3326;
+    public static final int PRISMARINE_BRICK_MOULDING_ID = 3327;
+    public static final int PRISMARINE_BRICK_STAIRS_ID = 3328;
+    public static final int DARK_PRISMARINE_SIDING_AND_CORNER_ID = 3329;
+    public static final int DARK_PRISMARINE_MOULDING_ID = 3330;
+    public static final int DARK_PRISMARINE_STAIRS_ID = 3331;
+    
     public static final int STONE_SLAB_6_ID = 3377;
     
     public static final int CONCRETE_SUB_START = 3383;

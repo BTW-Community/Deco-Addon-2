@@ -18,5 +18,8 @@ public class DecoItems {
 	
 	public static Item fertilizer;
 	
+	public static Item prismarineShard;
+	public static Item prismarineCrystal;
+	
 	public static Item legacyRedSandPile;
 }

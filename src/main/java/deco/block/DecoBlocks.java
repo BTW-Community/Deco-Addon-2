@@ -152,8 +152,6 @@ public class DecoBlocks {
     
     // White Stone
     
-    // Prismarine
-    
     // Extra Sub Blocks
     
     public static Block cobblestoneSidingAndCorner;
@@ -192,6 +190,23 @@ public class DecoBlocks {
     public static Block crackedStoneBrickSidingAndCornerDeepStrata;
     public static Block crackedStoneBrickMouldingDeepStrata;
     public static Block crackedStoneBrickStairsDeepStrata;
+    
+    //------ Prismarine ------//
+    
+    public static Block prismarine;
+    public static Block prismarineLantern;
+    
+    public static Block prismarineSidingAndCorner;
+    public static Block prismarineMoulding;
+    public static Block prismarineStairs;
+    
+    public static Block prismarineBrickSidingAndCorner;
+    public static Block prismarineBrickMoulding;
+    public static Block prismarineBrickStairs;
+    
+    public static Block darkPrismarineSidingAndCorner;
+    public static Block darkPrismarineMoulding;
+    public static Block darkPrismarineStairs;
     
     //------ Sandstone Blocks ------//
     
@@ -300,7 +315,6 @@ public class DecoBlocks {
     public static Block paperLantern;
     public static Block ironLantern;
     public static Block chandelier;
-    public static Block prismarineLantern;
     
     //------ Glass Blocks ------//
     

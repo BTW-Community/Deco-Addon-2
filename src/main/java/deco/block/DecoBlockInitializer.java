@@ -20,6 +20,7 @@ import net.minecraft.src.*;
 public class DecoBlockInitializer {
     public static void initDecoBlocks() {
         initStone();
+        initPrismarine();
         initSandstone();
         initNether();
         initEnd();
@@ -399,6 +400,62 @@ public class DecoBlockInitializer {
                 (RoughStoneBlock) BTWBlocks.midStrataRoughStone,
                 (RoughStoneBlock) BTWBlocks.deepStrataRoughStone
         };
+    }
+    
+    private static void initPrismarine() {
+        DecoBlocks.prismarine = new PrismarineBlock(DecoBlockIDs.PRISMARINE_ID);
+        register(DecoBlocks.prismarine, new String[] {"prismarine", "prismarineBrick", "prismarineDark"});
+        
+        DecoBlocks.prismarineLantern = new DecoBlock(DecoBlockIDs.PRISMARINE_LANTERN_ID, Material.glass)
+                .setHardness(0.6F)
+                .setResistance(0.5F)
+                .setPicksEffectiveOn()
+                .setLightValue(1.0F)
+                .setStepSound(Block.soundGlassFootstep)
+                .setUnlocalizedName("decoBlockPrismarineLantern")
+                .setCreativeTab(CreativeTabs.tabBlock);
+        
+        DecoBlocks.prismarineSidingAndCorner = new SidingAndCornerAndDecorativeWallBlock(DecoBlockIDs.PRISMARINE_SIDING_AND_CORNER_ID, Material.rock,
+                "decoBlockPrismarine",
+                DecoBlocks.prismarine.blockHardness, DecoBlocks.prismarine.blockResistance, Block.soundStoneFootstep,
+                "decoBlockPrismarineSiding");
+        register(new SidingAndCornerBlockItem(DecoBlocks.prismarineSidingAndCorner.blockID - 256));
+        DecoBlocks.prismarineMoulding = new MouldingAndDecorativeWallBlock(DecoBlockIDs.PRISMARINE_MOULDING_ID, Material.rock,
+                "decoBlockPrismarine", "decoBlockPrismarineColumn",
+                DecoBlockIDs.PRISMARINE_SIDING_AND_CORNER_ID,
+                DecoBlocks.prismarine.blockHardness, DecoBlocks.prismarine.blockResistance, Block.soundStoneFootstep,
+                "decoBlockPrismarineMoulding");
+        register(new MouldingBlockItem(DecoBlocks.prismarineMoulding.blockID - 256));
+        DecoBlocks.prismarineStairs = new StairsBlock(DecoBlockIDs.PRISMARINE_STAIRS_ID, DecoBlocks.prismarine, PrismarineBlock.DEFAULT_TYPE)
+                .setUnlocalizedName("decoBlockPrismarineStairs");
+    
+        DecoBlocks.prismarineBrickSidingAndCorner = new SidingAndCornerAndDecorativeWallBlock(DecoBlockIDs.PRISMARINE_BRICK_SIDING_AND_CORNER_ID, Material.rock,
+                "decoBlockPrismarineBrick",
+                DecoBlocks.prismarine.blockHardness, DecoBlocks.prismarine.blockResistance, Block.soundStoneFootstep,
+                "decoBlockPrismarineBrickSiding");
+        register(new SidingAndCornerBlockItem(DecoBlocks.prismarineBrickSidingAndCorner.blockID - 256));
+        DecoBlocks.prismarineBrickMoulding = new MouldingAndDecorativeWallBlock(DecoBlockIDs.PRISMARINE_BRICK_MOULDING_ID, Material.rock,
+                "decoBlockPrismarineBrick", "decoBlockPrismarineBrickColumn",
+                DecoBlockIDs.PRISMARINE_BRICK_SIDING_AND_CORNER_ID,
+                DecoBlocks.prismarine.blockHardness, DecoBlocks.prismarine.blockResistance, Block.soundStoneFootstep,
+                "decoBlockPrismarineBrickMoulding");
+        register(new MouldingBlockItem(DecoBlocks.prismarineBrickMoulding.blockID - 256));
+        DecoBlocks.prismarineBrickStairs = new StairsBlock(DecoBlockIDs.PRISMARINE_BRICK_STAIRS_ID, DecoBlocks.prismarine, PrismarineBlock.BRICK_TYPE)
+                .setUnlocalizedName("decoBlockPrismarineBrickStairs");
+    
+        DecoBlocks.darkPrismarineSidingAndCorner = new SidingAndCornerAndDecorativeWallBlock(DecoBlockIDs.DARK_PRISMARINE_SIDING_AND_CORNER_ID, Material.rock,
+                "decoBlockDarkPrismarine",
+                DecoBlocks.prismarine.blockHardness, DecoBlocks.prismarine.blockResistance, Block.soundStoneFootstep,
+                "decoBlockPrismarineDarkSiding");
+        register(new SidingAndCornerBlockItem(DecoBlocks.darkPrismarineSidingAndCorner.blockID - 256));
+        DecoBlocks.darkPrismarineMoulding = new MouldingAndDecorativeWallBlock(DecoBlockIDs.DARK_PRISMARINE_MOULDING_ID, Material.rock,
+                "decoBlockDarkPrismarine", "decoBlockDarkPrismarineColumn",
+                DecoBlockIDs.DARK_PRISMARINE_SIDING_AND_CORNER_ID,
+                DecoBlocks.prismarine.blockHardness, DecoBlocks.prismarine.blockResistance, Block.soundStoneFootstep,
+                "decoBlockPrismarineDarkMoulding");
+        register(new MouldingBlockItem(DecoBlocks.darkPrismarineMoulding.blockID - 256));
+        DecoBlocks.darkPrismarineStairs = new StairsBlock(DecoBlockIDs.DARK_PRISMARINE_STAIRS_ID, DecoBlocks.prismarine, PrismarineBlock.DARK_TYPE)
+                .setUnlocalizedName("decoBlockPrismarineDarkStairs");
     }
     
     private static void initSandstone() {

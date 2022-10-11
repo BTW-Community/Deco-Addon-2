@@ -27,6 +27,15 @@ public class DecoItemInitializer {
                 .setBellowsBlowDistance(2)
                 .setFilterableProperties(Item.FILTERABLE_FINE)
                 .setUnlocalizedName("decoItemPileRedSand");
+    
+        DecoItems.prismarineShard = new Item(DecoItemIDs.PRISMARINE_SHARD_ID)
+                .setUnlocalizedName("decoItemPrismarineShard")
+                .setCreativeTab(CreativeTabs.tabMaterials)
+                .setFilterableProperties(Item.FILTERABLE_NARROW);
+        DecoItems.prismarineCrystal = new Item(DecoItemIDs.PRISMARINE_CRYSTAL_ID)
+                .setUnlocalizedName("decoItemPrismarineCrystal")
+                .setCreativeTab(CreativeTabs.tabMaterials)
+                .setFilterableProperties(Item.FILTERABLE_NARROW);
     }
     
     private static void initWoodItems() {
