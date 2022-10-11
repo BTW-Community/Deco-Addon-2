@@ -382,14 +382,6 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.LOOSE_SLATE_BRICK_STAIRS_ID)
                 .setUnlocalizedName("decoBlockSlateTileStairs");
     
-        //------ White Stone ------//
-    
-    
-    
-        //------ Prismarine ------//
-        
-        
-    
         //------ Misc Stone ------//
     
         // Misc
@@ -1335,27 +1327,31 @@ public class DecoBlockInitializer {
         DecoBlocks.stoneSlab7 = new TerracottaBlock.StoneSlabBlock(DecoBlockIDs.STONE_SLAB_7_ID,
                 new Block[] {
                         DecoBlocks.slateTiles,
-                        DecoBlocks.shingles
+                        DecoBlocks.shingles,
+                        DecoBlocks.mudBrick
                 },
                 new int [] {
-                        0, 0
+                        0, 0, 0
                 },
                 new boolean[] {
                         true,
-                        false
+                        false, false
                 },
                 new Block[] {
                         DecoBlocks.looseStoneSlab,
-                        null
+                        null, null
                 },
                 new int[] {
                         SlabHelper.LOOSE_SLATE_BRICK_SLAB_TYPE,
-                        0
+                        0, 0
                 })
                 .setUnlocalizedName("decoBlockStoneSlab7");
     }
     
     private static void initSoil() {
+        
+        //------ Red Sands ------//
+        
         Item.itemsList[Block.sand.blockID] = new ItemMultiTextureTile(Block.sand.blockID - 256, Block.sand, SandHelper.sandNames);
         
         DecoBlocks.legacyRedSand = new LegacyRedSandBlock(DecoBlockIDs.LEGACY_RED_SAND_ID);
@@ -1364,6 +1360,34 @@ public class DecoBlockInitializer {
         
         DecoBlocks.redSandSlab = new RedSandSlabBlock(DecoBlockIDs.RED_SAND_SLAB_ID);
         Item.itemsList[DecoBlocks.redSandSlab.blockID] = new DecoSlabItemBlock(DecoBlocks.redSandSlab.blockID - 256);
+        
+        //------ Mud ------//
+        
+        DecoBlocks.mud = new MudBlock(DecoBlockIDs.MUD_ID);
+        DecoBlocks.packedMud = new PackedMudBlock(DecoBlockIDs.PACKED_MUD_ID);
+        DecoBlocks.mudBrick = new MudBrickBlock(DecoBlockIDs.MUD_BRICK_ID);
+        
+        DecoBlocks.mudBrickSidingAndCorner = new SidingAndCornerAndDecorativeWallBlock(DecoBlockIDs.MUD_BRICK_SIDING_AND_CORNER_ID, Material.ground,
+                "decoBlockMudBrick",
+                DecoBlocks.mudBrick.blockResistance, DecoBlocks.mudBrick.blockResistance, Block.soundGravelFootstep,
+                "decoBlockMudBrickSiding")
+                .setShovelsEffectiveOn()
+                .setPicksEffectiveOn();
+        register(new SidingAndCornerBlockItem(DecoBlocks.mudBrickSidingAndCorner.blockID - 256));
+        DecoBlocks.mudBrickMoulding = new MouldingAndDecorativeWallBlock(DecoBlockIDs.MUD_BRICK_MOULDING_ID, Material.ground,
+                "decoBlockMudBrick", "decoBlockMudBrick",
+                DecoBlockIDs.MUD_BRICK_SIDING_AND_CORNER_ID,
+                DecoBlocks.mudBrick.blockResistance, DecoBlocks.mudBrick.blockResistance, Block.soundGravelFootstep,
+                "decoBlockMudBrickMoulding")
+                .setShovelsEffectiveOn()
+                .setPicksEffectiveOn();
+        register(new MouldingBlockItem(DecoBlocks.mudBrickMoulding.blockID - 256));
+        DecoBlocks.mudBrickStairs = new StairsBlock(DecoBlockIDs.MUD_BRICK_STAIRS_ID, DecoBlocks.mudBrick, 0)
+                .setUnlocalizedName("decoBlockMudBrickStairs")
+                .setShovelsEffectiveOn()
+                .setPicksEffectiveOn();
+        
+        //------ Coarse Dirt ------//
         
         DecoBlocks.coarseDirt = new CoarseDirtBlock(DecoBlockIDs.COARSE_DIRT_ID);
         

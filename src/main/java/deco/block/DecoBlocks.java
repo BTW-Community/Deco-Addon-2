@@ -377,7 +377,11 @@ public class DecoBlocks {
     
     public static Block mud;
     public static Block packedMud;
-    public static Block packedMudBrick;
+    public static Block mudBrick;
+    
+    public static Block mudBrickSidingAndCorner;
+    public static Block mudBrickMoulding;
+    public static Block mudBrickStairs;
     
     public static Block legacyRedSand;
     public static Block redSandSlab;

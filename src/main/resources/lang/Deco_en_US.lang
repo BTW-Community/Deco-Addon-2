@@ -250,6 +250,21 @@ tile.decoBlockPodzol.name=Podzol
 
 tile.decoBlockSlate.name=Slate
 
+tile.decoBlockMud.name=Mud
+tile.decoBlockPackedMud.name=Packed Mud
+tile.decoBlockMudBrick.name=Mud Bricks
+
+tile.decoBlockMudBrickStairs.name=Mud Brick Stairs
+
+tile.decoBlockMudBrickSiding.bench.name=Mud Brick Bench
+tile.decoBlockMudBrickSiding.fence.name=Mud Brick Wall
+tile.decoBlockMudBrickSiding.siding.name=Mud Brick Siding
+tile.decoBlockMudBrickSiding.corner.name=Mud Brick Corner
+tile.decoBlockMudBrickMoulding.column.name=Mud Brick Column
+tile.decoBlockMudBrickMoulding.pedestal.name=Mud Brick Pedestal
+tile.decoBlockMudBrickMoulding.moulding.name=Mud Brick Moulding
+tile.decoBlockMudBrickMoulding.table.name=Mud Brick Table
+
 # Deco Complex Blocks
 
 tile.decoBlockTerracottaStained.black.name=Black Stained Terracotta
@@ -1486,6 +1501,7 @@ tile.decoBlockStoneSlab6.7.name=Slate Cobblestone Slab
 
 tile.decoBlockStoneSlab7.0.name=Slate Tile Slab
 tile.decoBlockStoneSlab7.1.name=Shingles Slab
+tile.decoBlockStoneSlab7.2.name=Mud Brick Slab
 
 tile.decoBlockConcreteSlab.0.name=Black Concrete Slab
 tile.decoBlockConcreteSlab.1.name=Red Concrete Slab

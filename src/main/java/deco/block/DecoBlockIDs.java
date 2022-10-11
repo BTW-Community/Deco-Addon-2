@@ -375,6 +375,12 @@ public class DecoBlockIDs {
     public static final int ROUGH_DIORITE_ID = 3658;
     public static final int SLATE_ID = 3659;
     public static final int SLATE_TILES_ID = 3660;
+    public static final int MUD_ID = 3661;
+    public static final int PACKED_MUD_ID = 3662;
+    public static final int MUD_BRICK_ID = 3663;
+    public static final int MUD_BRICK_SIDING_AND_CORNER_ID = 3664;
+    public static final int MUD_BRICK_MOULDING_ID = 3665;
+    public static final int MUD_BRICK_STAIRS_ID = 3666;
     
     public static final int HAZEL_LOG_ID = 3699;
     public static final int HAZEL_STUMP_ID = 3700;

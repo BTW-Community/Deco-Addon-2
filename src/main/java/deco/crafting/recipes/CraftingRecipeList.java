@@ -2557,6 +2557,21 @@ public class CraftingRecipeList {
 		RecipeManager.addShapelessRecipe(new ItemStack(Block.sand, 1, SandHelper.RED_SAND_TYPE), new ItemStack[] {new ItemStack(DecoBlocks.legacyRedSand)});
 		RecipeManager.addShapelessRecipe(new ItemStack(BTWItems.sandPile, 1, SandHelper.RED_SAND_TYPE), new ItemStack[] {new ItemStack(DecoItems.legacyRedSandPile)});
 		
+		//------ Mud ------//
+		
+		RecipeManager.addPistonPackingRecipe(DecoBlocks.packedMud,
+				new ItemStack(DecoBlocks.mud, 2));
+		
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.mudBrick, 4),
+				new Object[] {
+						"FF",
+						"FF",
+						'F', new ItemStack(DecoBlocks.packedMud)
+				});
+		
+		addSubBlockRecipes(DecoBlocks.mudBrick, 0, DecoBlocks.mudBrickSidingAndCorner, DecoBlocks.mudBrickMoulding, DecoBlocks.mudBrickStairs,
+				SlabHelper.MUD_BRICK_SLAB_ID, SlabHelper.MUD_BRICK_SLAB_TYPE);
+		
 		//------ Coarse Dirt ------//
 		
 		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.coarseDirt, 2),

@@ -80,6 +80,7 @@ public class SlabHelper {
 	// Other
 	public static final int TERRACOTTA_SLAB_ID = DecoBlockIDs.STONE_SLAB_6_ID;
 	public static final int SHINGLES_SLAB_ID = DecoBlockIDs.STONE_SLAB_7_ID;
+	public static final int MUD_BRICK_SLAB_ID = DecoBlockIDs.STONE_SLAB_7_ID;
 	
 	//------ Slab Metadata ------//
 	
@@ -157,4 +158,5 @@ public class SlabHelper {
 	// Other
 	public static final int TERRACOTTA_SLAB_TYPE = 3;
 	public static final int SHINGLES_SLAB_TYPE = 1;
+	public static final int MUD_BRICK_SLAB_TYPE = 2;
 }
