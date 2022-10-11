@@ -10,6 +10,9 @@ Some textures in this release have been used or modified from the following sour
 - Added a config option, disabled by default, to allow diamond pickaxes to always pick up stone intact instead of requiring isolation.
 - Added glazed terracotta pillars, crafted with two glazed terracotta in a vertical line.
 - Changed unfired terracotta to be crafted with full blocks instead of 8 piles for convenience.
+- Added mud, created by leaving loose dirt underwater.
+- Added packed mud, created by piston packing two mud blocks.
+- Added mud brick, created with 4 packed mud in a crafting grid, along with associated sub blocks.
 - Added new wood types: mahogany, mangrove, hazel
     - For the purposes of smelting and tanning:
         - Mahogany and mangrove are equivalent to jungle
