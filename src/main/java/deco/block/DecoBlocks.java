@@ -8,6 +8,11 @@ public class DecoBlocks {
     
     public static Block carpet;
     
+    public static Block coalBlock;
+    public static Block netherCoalBlock;
+    
+    public static Block diamondiumBlock;
+    
     //------ Stone Blocks ------//
     
     // General

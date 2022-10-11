@@ -3,6 +3,7 @@ package deco.block;
 import btw.block.BTWBlocks;
 import btw.block.blocks.*;
 import btw.block.tileentity.beacon.BeaconTileEntity;
+import btw.block.util.Flammability;
 import btw.item.blockitems.MouldingBlockItem;
 import btw.item.blockitems.SidingAndCornerBlockItem;
 import btw.item.blockitems.legacy.LegacySubstitutionBlockItem;
@@ -20,6 +21,7 @@ import net.minecraft.src.*;
 
 public class DecoBlockInitializer {
     public static void initDecoBlocks() {
+        initGeneralBlocks();
         initStone();
         initWhiteStone();
         initPrismarine();
@@ -32,6 +34,17 @@ public class DecoBlockInitializer {
         initPlants();
         initWoodTypes();
         initStoneSlabs();
+    }
+    
+    private static void initGeneralBlocks() {
+        DecoBlocks.coalBlock = new DecoBlock(DecoBlockIDs.COAL_BLOCK_ID, Material.rock)
+                .setUnlocalizedName("decoBlockCoal")
+                .setPicksEffectiveOn()
+                .setFireProperties(Flammability.EXTREME)
+                .setHardness(1.5F)
+                .setResistance(10.0F)
+                .setCreativeTab(CreativeTabs.tabBlock);
+        DecoBlocks.netherCoalBlock = new NetherCoalBlock(DecoBlockIDs.NETHER_COAL_BLOCK_ID);
     }
     
     private static void initStone() {

@@ -50,6 +50,9 @@ public class CraftingRecipeList {
 						new ItemStack(Item.dyePowder, 1, ColorUtils.WHITE.colorID),
 						new ItemStack(BTWItems.potash)
 				});
+		
+		addStorage(new ItemStack(DecoBlocks.coalBlock), new ItemStack(Item.coal, 1, 0));
+		addStorage(new ItemStack(DecoBlocks.netherCoalBlock), new ItemStack(BTWItems.nethercoal));
 	}
 	
 	private static void initStoneRecipes() {
@@ -6005,6 +6008,21 @@ public class CraftingRecipeList {
 							'M', new ItemStack(DecoBlocks.pastelPlanksMoulding[color])
 					});
 		}
+	}
+	
+	private static void addStorage(ItemStack block, ItemStack item) {
+		RecipeManager.addRecipe(block,
+				new Object[] {
+						"III",
+						"III",
+						"III",
+						'I', item
+				});
+		
+		RecipeManager.addShapelessRecipe(new ItemStack(item.itemID, 9, item.getItemDamage()),
+				new ItemStack[] {
+						block
+				});
 	}
 	
 	private static void addMortaringRecipe(ItemStack output, ItemStack input) {
