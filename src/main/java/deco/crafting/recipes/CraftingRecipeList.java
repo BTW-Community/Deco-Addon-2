@@ -1640,9 +1640,7 @@ public class CraftingRecipeList {
 						'M', new ItemStack(DecoBlocks.redNetherBrickMoulding)
 				});
 		
-		// TODO: Re-enable once stone slab 1 has been init
-		/*
-		RecipeManager.addRecipe(new ItemStack(StoneHelper.RED_NETHER_BRICK_SLAB_ID, 6, StoneHelper.RED_NETHER_BRICK_SLAB_TYPE),
+		RecipeManager.addRecipe(new ItemStack(SlabHelper.RED_NETHER_BRICK_SLAB_ID, 6, SlabHelper.RED_NETHER_BRICK_SLAB_TYPE),
 				new Object[] {
 						"FFF",
 						'F', new ItemStack(DecoBlocks.netherBrick, 1, DecoNetherBrickBlock.RED_TYPE)
@@ -1651,9 +1649,8 @@ public class CraftingRecipeList {
 				new Object[] {
 						"S",
 						"S",
-						'S', new ItemStack(StoneHelper.RED_NETHER_BRICK_SLAB_ID, 1, StoneHelper.RED_NETHER_BRICK_SLAB_TYPE)
+						'S', new ItemStack(SlabHelper.RED_NETHER_BRICK_SLAB_ID, 1, SlabHelper.RED_NETHER_BRICK_SLAB_TYPE)
 				});
-		*/
 		
 		// Loose
 		RecipeManager.addRecipe(new ItemStack(SlabHelper.LOOSE_RED_NETHER_BRICK_SLAB_ID, 4, SlabHelper.LOOSE_RED_NETHER_BRICK_SLAB_TYPE),
@@ -1710,13 +1707,11 @@ public class CraftingRecipeList {
 						new ItemStack(BTWBlocks.looseNetherBrickSlab),
 						new ItemStack(Item.clay)
 				});
-		/* TODO: Enable
-		RecipeManager.addStokedCauldronRecipe(new ItemStack(StoneHelper.LOOSE_RED_NETHER_BRICK_SLAB_ID, 1, StoneHelper.LOOSE_RED_NETHER_BRICK_SLAB_TYPE),
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(SlabHelper.LOOSE_RED_NETHER_BRICK_SLAB_ID, 1, SlabHelper.LOOSE_RED_NETHER_BRICK_SLAB_TYPE),
 				new ItemStack[] {
-						new ItemStack(StoneHelper.RED_NETHER_BRICK_SLAB_ID, 1, StoneHelper.RED_NETHER_BRICK_SLAB_TYPE),
+						new ItemStack(SlabHelper.RED_NETHER_BRICK_SLAB_ID, 1, SlabHelper.RED_NETHER_BRICK_SLAB_TYPE),
 						new ItemStack(Item.clay)
 				});
-		 */
 		
 		// Slime
 		RecipeManager.addStokedCauldronRecipe(new ItemStack(Block.netherBrick),
@@ -1746,13 +1741,11 @@ public class CraftingRecipeList {
 						new ItemStack(BTWBlocks.looseNetherBrickSlab),
 						new ItemStack(Item.slimeBall)
 				});
-		/* TODO: Enable
-		RecipeManager.addStokedCauldronRecipe(new ItemStack(StoneHelper.LOOSE_RED_NETHER_BRICK_SLAB_ID, 1, StoneHelper.LOOSE_RED_NETHER_BRICK_SLAB_TYPE),
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(SlabHelper.LOOSE_RED_NETHER_BRICK_SLAB_ID, 1, SlabHelper.LOOSE_RED_NETHER_BRICK_SLAB_TYPE),
 				new ItemStack[] {
-						new ItemStack(StoneHelper.RED_NETHER_BRICK_SLAB_ID, 1, StoneHelper.RED_NETHER_BRICK_SLAB_TYPE),
+						new ItemStack(SlabHelper.RED_NETHER_BRICK_SLAB_ID, 1, SlabHelper.RED_NETHER_BRICK_SLAB_TYPE),
 						new ItemStack(Item.slimeBall)
 				});
-		 */
 		
 		// Nether sludge
 		RecipeManager.addStokedCauldronRecipe(new ItemStack(Block.netherBrick),
@@ -1782,13 +1775,11 @@ public class CraftingRecipeList {
 						new ItemStack(BTWBlocks.looseNetherBrickSlab),
 						new ItemStack(BTWItems.netherSludge)
 				});
-		/* TODO: Enable
-		RecipeManager.addStokedCauldronRecipe(new ItemStack(StoneHelper.LOOSE_RED_NETHER_BRICK_SLAB_ID, 1, StoneHelper.LOOSE_RED_NETHER_BRICK_SLAB_TYPE),
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(SlabHelper.LOOSE_RED_NETHER_BRICK_SLAB_ID, 1, SlabHelper.LOOSE_RED_NETHER_BRICK_SLAB_TYPE),
 				new ItemStack[] {
-						new ItemStack(StoneHelper.RED_NETHER_BRICK_SLAB_ID, 1, StoneHelper.RED_NETHER_BRICK_SLAB_TYPE),
+						new ItemStack(SlabHelper.RED_NETHER_BRICK_SLAB_ID, 1, SlabHelper.RED_NETHER_BRICK_SLAB_TYPE),
 						new ItemStack(BTWItems.netherSludge)
 				});
-		 */
 		
 		//------ Infused Stone ------//
 		
@@ -5645,6 +5636,26 @@ public class CraftingRecipeList {
 							'M', new ItemStack(DecoBlocks.pastelPlanksMoulding[color])
 					});
 		}
+	}
+	
+	private static void addMortaringRecipe(ItemStack output, ItemStack input) {
+		RecipeManager.addStokedCauldronRecipe(output,
+				new ItemStack[] {
+						input,
+						new ItemStack(Item.clay)
+				});
+		
+		RecipeManager.addStokedCauldronRecipe(output,
+				new ItemStack[] {
+						input,
+						new ItemStack(Item.slimeBall)
+				});
+		
+		RecipeManager.addStokedCauldronRecipe(output,
+				new ItemStack[] {
+						input,
+						new ItemStack(BTWItems.netherSludge)
+				});
 	}
 	
 	private static void addSubBlockRecipes(Block baseBlock, int baseMetadata, Block sidingAndCorner, Block moulding, Block stairs, Block slab, int slabMetadata) {
