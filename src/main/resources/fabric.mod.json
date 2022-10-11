@@ -21,6 +21,7 @@
   },
   "mixins": [
     "decoaddon.blockmixins.json",
+    "decoaddon.entitymixins.json",
     "decoaddon.itemmixins.json"
   ],
 

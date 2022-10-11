@@ -28,5 +28,5 @@ public class DecoItemIDs {
 	public static final int LEGACY_RED_SAND_PILE_ID = 30052;
 	
 	public static final int PRISMARINE_SHARD_ID = 30060;
-	public static final int PRISMARINE_CRYSTAL_ID = 300061;
+	public static final int PRISMARINE_CRYSTAL_ID = 30061;
 }
