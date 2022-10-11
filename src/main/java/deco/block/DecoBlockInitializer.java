@@ -21,6 +21,7 @@ import net.minecraft.src.*;
 public class DecoBlockInitializer {
     public static void initDecoBlocks() {
         initStone();
+        initWhiteStone();
         initPrismarine();
         initSandstone();
         initNether();
@@ -414,7 +415,7 @@ public class DecoBlockInitializer {
         register(new SidingAndCornerBlockItem(DecoBlocks.whiteStoneBrickSidingAndCorner.blockID - 256));
         DecoBlocks.whiteStoneBrickMoulding = new MouldingAndDecorativeWallBlock(DecoBlockIDs.WHITE_STONE_BRICK_MOULDING_ID, Material.rock,
                 "decoBlockWhiteBricks", "decoBlockWhiteBricks",
-                DecoBlockIDs.WHITE_STONE_BRICK_SIDING_AND_CORNER_ID
+                DecoBlockIDs.WHITE_STONE_BRICK_SIDING_AND_CORNER_ID,
                 DecoBlocks.whiteStoneBricks.blockHardness, DecoBlocks.whiteStoneBricks.blockResistance, Block.soundStoneFootstep,
                 "decoBlockWhiteBricksMoulding");
         register(new MouldingBlockItem(DecoBlocks.whiteStoneBrickMoulding.blockID - 256));
@@ -1134,6 +1135,40 @@ public class DecoBlockInitializer {
                         SlabHelper.LOOSE_RED_NETHER_BRICK_SLAB_TYPE
                 })
                 .setUnlocalizedName("decoBlockStoneSlabLoose2");
+    
+        DecoBlocks.stoneSlab = new TerracottaBlock.StoneSlabBlock(DecoBlockIDs.STONE_SLAB_ID,
+                new Block[] {
+                        DecoBlocks.redSandstone,
+                        DecoBlocks.prismarine,
+                        DecoBlocks.prismarine,
+                        DecoBlocks.prismarine,
+                        BTWBlocks.aestheticOpaque,
+                        DecoBlocks.whiteStoneBricks,
+                        Block.cobblestoneMossy,
+                        DecoBlocks.netherBrick
+                },
+                new int [] {
+                        SandHelper.SANDSTONE_TYPE_DEFAULT,
+                        PrismarineBlock.DEFAULT_TYPE,
+                        PrismarineBlock.BRICK_TYPE,
+                        PrismarineBlock.DARK_TYPE,
+                        AestheticOpaqueBlock.SUBTYPE_WHITE_STONE,
+                        0, 0,
+                        DecoNetherBrickBlock.RED_TYPE
+                },
+                new boolean[] {
+                        false, false, false, false, false, false, false,
+                        true
+                },
+                new Block[] {
+                        null, null, null, null, null, null, null,
+                        DecoBlocks.looseStoneSlab2
+                },
+                new int[] {
+                        0, 0, 0, 0, 0, 0, 0,
+                        SlabHelper.LOOSE_RED_NETHER_BRICK_SLAB_TYPE,
+                })
+                .setUnlocalizedName("decoBlockStoneSlab");
         
         DecoBlocks.stoneSlab2 = new TerracottaBlock.StoneSlabBlock(DecoBlockIDs.STONE_SLAB_2_ID,
                 new Block[] {
@@ -1212,6 +1247,52 @@ public class DecoBlockInitializer {
                         0, 0, 0, 0
                 })
                 .setUnlocalizedName("decoBlockStoneSlab3");
+    
+        DecoBlocks.stoneSlab4 = new TerracottaBlock.StoneSlabBlock(DecoBlockIDs.STONE_SLAB_4_ID,
+                new Block[] {
+                        Block.sandStone,
+                        Block.sandStone,
+                        Block.sandStone,
+                        DecoBlocks.redSandstone,
+                        DecoBlocks.redSandstone,
+                        DecoBlocks.redSandstone,
+                        Block.sandStone,
+                        Block.sandStone
+                },
+                new int [] {
+                        SandHelper.SANDSTONE_TYPE_CUT,
+                        SandHelper.SANDSTONE_TYPE_POLISHED,
+                        SandHelper.SANDSTONE_TYPE_BRICK,
+                        SandHelper.SANDSTONE_TYPE_CUT,
+                        SandHelper.SANDSTONE_TYPE_POLISHED,
+                        SandHelper.SANDSTONE_TYPE_BRICK,
+                        SandHelper.SANDSTONE_TYPE_MOSSY,
+                        SandHelper.SANDSTONE_TYPE_LARGE_BRICK
+                })
+                .setUnlocalizedName("decoBlockStoneSlab4");
+    
+        DecoBlocks.stoneSlab5 = new TerracottaBlock.StoneSlabBlock(DecoBlockIDs.STONE_SLAB_5_ID,
+                new Block[] {
+                        Block.sandStone,
+                        DecoBlocks.redSandstone,
+                        DecoBlocks.redSandstone,
+                        DecoBlocks.redSandstone,
+                        Block.sandStone,
+                        Block.sandStone,
+                        DecoBlocks.redSandstone,
+                        DecoBlocks.redSandstone
+                },
+                new int [] {
+                        SandHelper.SANDSTONE_TYPE_LARGE_BRICK_MOSSY,
+                        SandHelper.SANDSTONE_TYPE_MOSSY,
+                        SandHelper.SANDSTONE_TYPE_LARGE_BRICK,
+                        SandHelper.SANDSTONE_TYPE_LARGE_BRICK_MOSSY,
+                        SandHelper.SANDSTONE_TYPE_CRACKED,
+                        SandHelper.SANDSTONE_TYPE_LARGE_BRICK_CRACKED,
+                        SandHelper.SANDSTONE_TYPE_CRACKED,
+                        SandHelper.SANDSTONE_TYPE_LARGE_BRICK_CRACKED
+                })
+                .setUnlocalizedName("decoBlockStoneSlab5");
         
         DecoBlocks.stoneSlab6 = new TerracottaBlock.StoneSlabBlock(DecoBlockIDs.STONE_SLAB_6_ID,
                 new Block[] {
