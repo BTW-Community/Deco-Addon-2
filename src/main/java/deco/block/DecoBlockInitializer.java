@@ -461,7 +461,9 @@ public class DecoBlockInitializer {
     }
     
     private static void initSandstone() {
-    
+        DecoBlocks.redSandstone = new RedSandstoneBlock(DecoBlockIDs.RED_SANDSTONE_ID);
+        register(DecoBlocks.redSandstone, SandHelper.sandstoneNames);
+        register(Block.sandStone, SandHelper.sandstoneNames);
     }
     
     private static void initNether() {

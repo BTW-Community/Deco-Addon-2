@@ -168,6 +168,7 @@ public class DecoBlockIDs {
     
     public static final int LEGACY_RED_SAND_ID = 3310;
     public static final int RED_SAND_SLAB_ID = 3311;
+    public static final int RED_SANDSTONE_ID = 3312;
     
     public static final int PRISMARINE_ID = 3321;
     public static final int PRISMARINE_LANTERN_ID = 3322;

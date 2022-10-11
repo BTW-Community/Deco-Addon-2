@@ -210,6 +210,8 @@ public class DecoBlocks {
     
     //------ Sandstone Blocks ------//
     
+    public static Block redSandstone;
+    
     //------ Nether Blocks ------//
     
     public static Block basalt;
