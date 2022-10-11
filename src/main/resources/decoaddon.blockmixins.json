@@ -11,6 +11,7 @@
     "LadderBlockFlamingMixin",
     "PlanksBlockMixin",
     "SandBlockMixin",
+    "SandstoneBlockMixin",
     "SidingAndCornerBlockMixin",
     "StoneBlockInvoker",
     "StoneBlockMixin",

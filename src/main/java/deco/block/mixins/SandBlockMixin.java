@@ -53,7 +53,7 @@ public class SandBlockMixin extends FallingFullBlock {
 		extraIcons = new Icon[SandHelper.NUM_EXTRA_SAND_TYPES];
 		
 		for (int i = 0; i < SandHelper.NUM_EXTRA_SAND_TYPES; i++) {
-			extraIcons[i] = register.registerIcon("decoBlock" + SandHelper.namesCapital[i + 1] + "Sand");
+			extraIcons[i] = register.registerIcon("decoBlock" + SandHelper.sandNamesCapital[i + 1] + "Sand");
 		}
 		
 		super.registerIcons(register);

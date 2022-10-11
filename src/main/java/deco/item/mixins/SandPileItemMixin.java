@@ -25,7 +25,7 @@ public class SandPileItemMixin extends Item {
 	
 	@Override
 	public String getUnlocalizedName(ItemStack stack) {
-		return this.getUnlocalizedName() + "." + SandHelper.names[stack.getItemDamage()];
+		return this.getUnlocalizedName() + "." + SandHelper.sandNames[stack.getItemDamage()];
 	}
 	
 	//------------ Client Side Functionality ----------//
@@ -50,7 +50,7 @@ public class SandPileItemMixin extends Item {
 		extraIcons = new Icon[SandHelper.NUM_EXTRA_SAND_TYPES];
 		
 		for (int i = 0; i < SandHelper.NUM_EXTRA_SAND_TYPES; i++) {
-			extraIcons[i] = register.registerIcon("decoItemPile" + SandHelper.namesCapital[i + 1] + "Sand");
+			extraIcons[i] = register.registerIcon("decoItemPile" + SandHelper.sandNamesCapital[i + 1] + "Sand");
 		}
 		
 		super.registerIcons(register);

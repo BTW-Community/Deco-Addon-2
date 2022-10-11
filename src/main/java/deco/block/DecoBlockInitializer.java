@@ -2,6 +2,7 @@ package deco.block;
 
 import btw.block.BTWBlocks;
 import btw.block.blocks.*;
+import btw.block.tileentity.beacon.BeaconTileEntity;
 import btw.item.blockitems.MouldingBlockItem;
 import btw.item.blockitems.SidingAndCornerBlockItem;
 import btw.item.blockitems.legacy.LegacySubstitutionBlockItem;
@@ -414,6 +415,7 @@ public class DecoBlockInitializer {
                 .setStepSound(Block.soundGlassFootstep)
                 .setUnlocalizedName("decoBlockPrismarineLantern")
                 .setCreativeTab(CreativeTabs.tabBlock);
+        BeaconTileEntity.addBeaconEffect(DecoBlocks.prismarineLantern.blockID, BeaconTileEntity.NIGHT_VISION_EFFECT);
         
         DecoBlocks.prismarineSidingAndCorner = new SidingAndCornerAndDecorativeWallBlock(DecoBlockIDs.PRISMARINE_SIDING_AND_CORNER_ID, Material.rock,
                 "decoBlockPrismarine",
@@ -1008,7 +1010,7 @@ public class DecoBlockInitializer {
     }
     
     private static void initSoil() {
-        Item.itemsList[Block.sand.blockID] = new ItemMultiTextureTile(Block.sand.blockID - 256, Block.sand, SandHelper.names);
+        Item.itemsList[Block.sand.blockID] = new ItemMultiTextureTile(Block.sand.blockID - 256, Block.sand, SandHelper.sandNames);
         
         DecoBlocks.legacyRedSand = new LegacyRedSandBlock(DecoBlockIDs.LEGACY_RED_SAND_ID);
         Item.itemsList[DecoBlocks.legacyRedSand.blockID] = new LegacySubstitutionBlockItem(DecoBlocks.legacyRedSand.blockID - 256, Block.sand.blockID);

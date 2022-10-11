@@ -27,6 +27,7 @@ public class CraftingRecipeList {
 	public static void initRecipes() {
 		initGeneralRecipes();
 		initStoneRecipes();
+		initPrismarineRecipes();
 		initSandstoneRecipes();
 		initNetherRecipes();
 		initEndRecipes();
@@ -1543,6 +1544,10 @@ public class CraftingRecipeList {
 						"S",
 						'S', new ItemStack(StoneHelper.SLATE_TILES_SLAB_ID, 1, StoneHelper.SLATE_TILES_SLAB_TYPE)
 				});
+	}
+	
+	private static void initPrismarineRecipes() {
+	
 	}
 	
 	private static void initSandstoneRecipes() {
