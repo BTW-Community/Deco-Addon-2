@@ -5,6 +5,11 @@ public class DecoBlockIDs {
     
     public static final int TULIP_ID = 3006;
     
+    public static final int WHITE_STONE_BRICKS_ID = 3008;
+    public static final int WHITE_STONE_BRICK_SIDING_AND_CORNER_ID = 3009;
+    public static final int WHITE_STONE_BRICK_MOULDING_ID = 3010;
+    public static final int WHITE_STONE_BRICK_STAIRS_ID = 3011;
+    
     public static final int FLOWER_2_ID = 3017;
     public static final int CONCRETE_ID = 3018;
     public static final int CONCRETE_POWDER_ID = 3019;

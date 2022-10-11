@@ -711,14 +711,14 @@ tile.decoBlockStainedGlass.magenta.name=Magenta Stained Glass
 tile.decoBlockStainedGlass.orange.name=Orange Stained Glass
 tile.decoBlockStainedGlass.white.name=White Stained Glass
 
-tile.decoBlockWhiteBricks.name=White Stone Bricks
+tile.decoBlockWhiteBricks.default.name=White Stone Bricks
 tile.decoBlockWhiteBricks.mossy.name=Mossy White Stone Bricks
 tile.decoBlockWhiteBricks.cracked.name=Cracked White Stone Bricks
 tile.decoBlockWhiteBricks.chiseled.name=Chiseled White Stone Bricks
 
 tile.decoBlockWhiteBricksSiding.bench.name=White Stone Brick Bench
 tile.decoBlockWhiteBrickSiding.fence.name=White Stone Brick Wall
-tile.decoBlockWhiteBrickSiding.siding.name=White stone Brick Siding
+tile.decoBlockWhiteBrickSiding.siding.name=White Stone Brick Siding
 tile.decoBlockWhiteBrickSiding.corner.name=White Stone Brick Corner
 tile.decoBlockWhiteBrickSMoulding.column.name=White Stone Brick Column
 tile.decoBlockWhiteBrickSMoulding.pedestal.name=White Stone Brick Pedestal
@@ -782,12 +782,13 @@ tile.decoBlockStoneBricks.granite.name=Granite Bricks
 tile.decoBlockStoneBricks.andesite.name=Andesite Bricks
 tile.decoBlockStoneBricks.diorite.name=Diorite Bricks
 tile.decoBlockStoneBricks.slate.name=Slate Bricks
-tile.decoBlockStoneBricks.slateTiles.name=Slate Tiles
 
 tile.decoBlockStoneSmooth.granite.name=Polished Granite
 tile.decoBlockStoneSmooth.andesite.name=Polished Andesite
 tile.decoBlockStoneSmooth.diorite.name=Polished Diorite
 tile.decoBlockStoneSmooth.slate.name=Polished Slate
+
+tile.decoBlockSlateTiles.name=Slate Tiles
 
 tile.decoBlockGraniteSiding.bench.name=Granite Bench
 tile.decoBlockGraniteSiding.fence.name=Granite Wall

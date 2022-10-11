@@ -150,8 +150,6 @@ public class DecoBlocks {
     
     // Limestone
     
-    // White Stone
-    
     // Extra Sub Blocks
     
     public static Block cobblestoneSidingAndCorner;
@@ -190,6 +188,14 @@ public class DecoBlocks {
     public static Block crackedStoneBrickSidingAndCornerDeepStrata;
     public static Block crackedStoneBrickMouldingDeepStrata;
     public static Block crackedStoneBrickStairsDeepStrata;
+    
+    //------ White Stone ------//
+    
+    public static Block whiteStoneBricks;
+    
+    public static Block whiteStoneBrickSidingAndCorner;
+    public static Block whiteStoneBrickMoulding;
+    public static Block whiteStoneBrickStairs;
     
     //------ Prismarine ------//
     

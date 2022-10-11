@@ -403,6 +403,25 @@ public class DecoBlockInitializer {
         };
     }
     
+    private static void initWhiteStone() {
+        DecoBlocks.whiteStoneBricks = new WhiteStoneBrickBlock(DecoBlockIDs.WHITE_STONE_BRICKS_ID);
+        register(DecoBlocks.whiteStoneBricks, new String[] {"default", "mossy", "cracked", "chiseled"});
+        
+        DecoBlocks.whiteStoneBrickSidingAndCorner = new SidingAndCornerAndDecorativeWallBlock(DecoBlockIDs.WHITE_STONE_BRICK_SIDING_AND_CORNER_ID, Material.rock,
+                "decoBlockWhiteBricks",
+                DecoBlocks.whiteStoneBricks.blockHardness, DecoBlocks.whiteStoneBricks.blockResistance, Block.soundStoneFootstep,
+                "decoBlockWhiteBricksSiding");
+        register(new SidingAndCornerBlockItem(DecoBlocks.whiteStoneBrickSidingAndCorner.blockID - 256));
+        DecoBlocks.whiteStoneBrickMoulding = new MouldingAndDecorativeWallBlock(DecoBlockIDs.WHITE_STONE_BRICK_MOULDING_ID, Material.rock,
+                "decoBlockWhiteBricks", "decoBlockWhiteBricks",
+                DecoBlockIDs.WHITE_STONE_BRICK_SIDING_AND_CORNER_ID
+                DecoBlocks.whiteStoneBricks.blockHardness, DecoBlocks.whiteStoneBricks.blockResistance, Block.soundStoneFootstep,
+                "decoBlockWhiteBricksMoulding");
+        register(new MouldingBlockItem(DecoBlocks.whiteStoneBrickMoulding.blockID - 256));
+        DecoBlocks.whiteStoneBrickStairs = new StairsBlock(DecoBlockIDs.WHITE_STONE_BRICK_STAIRS_ID, DecoBlocks.whiteStoneBricks, WhiteStoneBrickBlock.TYPE_DEFAULT)
+                .setUnlocalizedName("decoBlockWhiteBricksStairs");
+    }
+    
     private static void initPrismarine() {
         DecoBlocks.prismarine = new PrismarineBlock(DecoBlockIDs.PRISMARINE_ID);
         register(DecoBlocks.prismarine, new String[] {"prismarine", "prismarineBrick", "prismarineDark"});
@@ -1083,24 +1102,24 @@ public class DecoBlockInitializer {
                         DecoBlocks.looseSlateBrick
                 },
                 new int[] {
-                        StoneHelper.GRANITE_COBBLESTONE_SLAB_ID,
-                        StoneHelper.ANDESITE_COBBLESTONE_SLAB_ID,
-                        StoneHelper.DIORITE_COBBLESTONE_SLAB_ID,
-                        StoneHelper.GRANITE_BRICK_SLAB_ID,
-                        StoneHelper.ANDESITE_BRICK_SLAB_ID,
-                        StoneHelper.DIORITE_BRICK_SLAB_ID,
-                        StoneHelper.SLATE_COBBLESTONE_SLAB_ID,
-                        StoneHelper.SLATE_BRICK_SLAB_ID
+                        SlabHelper.GRANITE_COBBLESTONE_SLAB_ID,
+                        SlabHelper.ANDESITE_COBBLESTONE_SLAB_ID,
+                        SlabHelper.DIORITE_COBBLESTONE_SLAB_ID,
+                        SlabHelper.GRANITE_BRICK_SLAB_ID,
+                        SlabHelper.ANDESITE_BRICK_SLAB_ID,
+                        SlabHelper.DIORITE_BRICK_SLAB_ID,
+                        SlabHelper.SLATE_COBBLESTONE_SLAB_ID,
+                        SlabHelper.SLATE_BRICK_SLAB_ID
                 },
                 new int[] {
-                        StoneHelper.GRANITE_COBBLESTONE_SLAB_TYPE,
-                        StoneHelper.ANDESITE_COBBLESTONE_SLAB_TYPE,
-                        StoneHelper.DIORITE_COBBLESTONE_SLAB_TYPE,
-                        StoneHelper.GRANITE_BRICK_SLAB_TYPE,
-                        StoneHelper.ANDESITE_BRICK_SLAB_TYPE,
-                        StoneHelper.DIORITE_BRICK_SLAB_TYPE,
-                        StoneHelper.SLATE_COBBLESTONE_SLAB_TYPE,
-                        StoneHelper.SLATE_BRICK_SLAB_TYPE
+                        SlabHelper.GRANITE_COBBLESTONE_SLAB_TYPE,
+                        SlabHelper.ANDESITE_COBBLESTONE_SLAB_TYPE,
+                        SlabHelper.DIORITE_COBBLESTONE_SLAB_TYPE,
+                        SlabHelper.GRANITE_BRICK_SLAB_TYPE,
+                        SlabHelper.ANDESITE_BRICK_SLAB_TYPE,
+                        SlabHelper.DIORITE_BRICK_SLAB_TYPE,
+                        SlabHelper.SLATE_COBBLESTONE_SLAB_TYPE,
+                        SlabHelper.SLATE_BRICK_SLAB_TYPE
                 })
                 .setUnlocalizedName("decoBlockStoneSlabLoose");
     
@@ -1109,10 +1128,10 @@ public class DecoBlockInitializer {
                         DecoBlocks.looseRedNetherBrick
                 },
                 new int[] {
-                        StoneHelper.LOOSE_RED_NETHER_BRICK_SLAB_ID
+                        SlabHelper.LOOSE_RED_NETHER_BRICK_SLAB_ID
                 },
                 new int[] {
-                        StoneHelper.LOOSE_RED_NETHER_BRICK_SLAB_TYPE
+                        SlabHelper.LOOSE_RED_NETHER_BRICK_SLAB_TYPE
                 })
                 .setUnlocalizedName("decoBlockStoneSlabLoose2");
         
@@ -1148,8 +1167,8 @@ public class DecoBlockInitializer {
                 },
                 new int[] {
                         0, 0, 0, 0, 0, 0,
-                        StoneHelper.LOOSE_GRANITE_COBBLESTONE_SLAB_TYPE,
-                        StoneHelper.LOOSE_ANDESITE_COBBLESTONE_SLAB_TYPE,
+                        SlabHelper.LOOSE_GRANITE_COBBLESTONE_SLAB_TYPE,
+                        SlabHelper.LOOSE_ANDESITE_COBBLESTONE_SLAB_TYPE,
                 })
                 .setUnlocalizedName("decoBlockStoneSlab2");
         
@@ -1186,10 +1205,10 @@ public class DecoBlockInitializer {
                         null, null, null, null
                 },
                 new int[] {
-                        StoneHelper.LOOSE_DIORITE_COBBLESTONE_SLAB_TYPE,
-                        StoneHelper.LOOSE_GRANITE_BRICK_SLAB_TYPE,
-                        StoneHelper.LOOSE_ANDESITE_BRICK_SLAB_TYPE,
-                        StoneHelper.LOOSE_DIORITE_BRICK_SLAB_TYPE,
+                        SlabHelper.LOOSE_DIORITE_COBBLESTONE_SLAB_TYPE,
+                        SlabHelper.LOOSE_GRANITE_BRICK_SLAB_TYPE,
+                        SlabHelper.LOOSE_ANDESITE_BRICK_SLAB_TYPE,
+                        SlabHelper.LOOSE_DIORITE_BRICK_SLAB_TYPE,
                         0, 0, 0, 0
                 })
                 .setUnlocalizedName("decoBlockStoneSlab3");
@@ -1227,8 +1246,8 @@ public class DecoBlockInitializer {
                 },
                 new int[] {
                         0, 0, 0, 0, 0, 0,
-                        StoneHelper.LOOSE_SLATE_COBBLESTONE_SLAB_TYPE,
-                        StoneHelper.LOOSE_SLATE_BRICK_SLAB_TYPE
+                        SlabHelper.LOOSE_SLATE_COBBLESTONE_SLAB_TYPE,
+                        SlabHelper.LOOSE_SLATE_BRICK_SLAB_TYPE
                 })
                 .setUnlocalizedName("decoBlockStoneSlab6");
         
@@ -1249,7 +1268,7 @@ public class DecoBlockInitializer {
                         null
                 },
                 new int[] {
-                        StoneHelper.LOOSE_SLATE_BRICK_SLAB_TYPE,
+                        SlabHelper.LOOSE_SLATE_BRICK_SLAB_TYPE,
                         0
                 })
                 .setUnlocalizedName("decoBlockStoneSlab7");

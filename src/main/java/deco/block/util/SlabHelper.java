@@ -2,7 +2,7 @@ package deco.block.util;
 
 import deco.block.DecoBlockIDs;
 
-public class StoneHelper {
+public class SlabHelper {
 	
 	//------ Slab IDs ------//
 	
@@ -35,6 +35,10 @@ public class StoneHelper {
 	public static final int LOOSE_SLATE_COBBLESTONE_SLAB_ID = DecoBlockIDs.LOOSE_STONE_SLAB_ID;
 	public static final int LOOSE_SLATE_BRICK_SLAB_ID = DecoBlockIDs.LOOSE_STONE_SLAB_ID;
 	public static final int SLATE_TILES_SLAB_ID = DecoBlockIDs.STONE_SLAB_7_ID;
+	
+	// Prismarine
+	
+	// Sandstone
 	
 	// Nether
 	public static final int RED_NETHER_BRICK_SLAB_ID = DecoBlockIDs.STONE_SLAB_ID;
@@ -83,6 +87,10 @@ public class StoneHelper {
 	public static final int SLATE_TILES_SLAB_TYPE = 0;
 	public static final int LOOSE_SLATE_COBBLESTONE_SLAB_TYPE = 6;
 	public static final int LOOSE_SLATE_BRICK_SLAB_TYPE = 7;
+	
+	// Prismarine
+	
+	// Sandstone
 	
 	// Nether
 	public static final int RED_NETHER_BRICK_SLAB_TYPE = 7;
