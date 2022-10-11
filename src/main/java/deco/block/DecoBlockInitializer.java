@@ -45,6 +45,15 @@ public class DecoBlockInitializer {
                 .setResistance(10.0F)
                 .setCreativeTab(CreativeTabs.tabBlock);
         DecoBlocks.netherCoalBlock = new NetherCoalBlock(DecoBlockIDs.NETHER_COAL_BLOCK_ID);
+    
+        DecoBlocks.diamondiumBlock = new DecoBlock(DecoBlockIDs.DIAMONDIUM_BLOCK, Material.iron)
+                .setHardness(10.0F)
+                .setResistance(2000.0F)
+                .setStepSound(Block.soundMetalFootstep)
+                .setUnlocalizedName("blockDiamond")
+                .setCreativeTab(CreativeTabs.tabBlock);
+        Block.blockDiamond.setUnlocalizedName("decoBlockDiamond");
+        BeaconTileEntity.addBeaconEffect(DecoBlocks.diamondiumBlock.blockID, BeaconTileEntity.FORTUNE_EFFECT);
     }
     
     private static void initStone() {

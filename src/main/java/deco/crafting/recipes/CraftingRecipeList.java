@@ -53,6 +53,8 @@ public class CraftingRecipeList {
 		
 		addStorage(new ItemStack(DecoBlocks.coalBlock), new ItemStack(Item.coal, 1, 0));
 		addStorage(new ItemStack(DecoBlocks.netherCoalBlock), new ItemStack(BTWItems.nethercoal));
+		
+		addStorage(new ItemStack(DecoBlocks.diamondiumBlock), new ItemStack(BTWItems.diamondIngot));
 	}
 	
 	private static void initStoneRecipes() {
