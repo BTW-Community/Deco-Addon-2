@@ -65,6 +65,35 @@ public class DecoBlockInitializer {
         
         DecoBlocks.carpet = new CarpetBlock(DecoBlockIDs.CARPET_ID);
         register(new ColoredItemBlock(DecoBlocks.carpet));
+    
+        DecoBlocks.bonePillar = new DecoPillarBlock(DecoBlockIDs.BONE_PILLAR_ID, BTWBlocks.miscMaterial,
+                new String[] {"decoBlockBonePillar_top"},
+                new String[] {"decoBlockBonePillar_side"})
+                .setHardness(2.0F)
+                .setPicksEffectiveOn()
+                .setBuoyancy(1.0F)
+                .setStepSound(Block.soundStoneFootstep)
+                .setCreativeTab(CreativeTabs.tabBlock)
+                .setUnlocalizedName("decoBlockBonePillar");
+    
+        DecoBlocks.ropeCoil = new DecoPillarBlock(DecoBlockIDs.ROPE_COIL_ID, BTWBlocks.miscMaterial,
+                new String[] {"fcBlockRope_top"},
+                new String[] {"fcBlockRope_side"})
+                .setHardness(2.0F)
+                .setAxesEffectiveOn()
+                .setStepSound(Block.soundGrassFootstep)
+                .setCreativeTab(CreativeTabs.tabBlock)
+                .setUnlocalizedName("decoBlockRopeCoil");
+        
+        DecoBlocks.chain = new ChainBlock(DecoBlockIDs.CHAIN_ID);
+        DecoBlocks.chainCoil = new DecoPillarBlock(DecoBlockIDs.CHAIN_COIL_ID, Material.iron,
+                new String[] {"decoBlockChainCoil_top"},
+                new String[] {"decoBlockChainCoil_side"})
+                .setHardness(2.0F)
+                .setPicksEffectiveOn()
+                .setStepSound(Block.soundMetalFootstep)
+                .setCreativeTab(CreativeTabs.tabBlock)
+                .setUnlocalizedName("decoBlockChainCoil");
     }
     
     private static void initStone() {

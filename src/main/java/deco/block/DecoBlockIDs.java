@@ -31,7 +31,7 @@ public class DecoBlockIDs {
     public static final int PAPER_LANTERN_ID = 3027;
     public static final int CHANDELIER_ID = 3028;
     public static final int IRON_LANTERN_ID = 3029;
-    public static final int CHAIN_ID =3030;
+    public static final int CHAIN_ID = 3030;
     // IDs 3031-3033 occupied by BTW
     public static final int CHERRY_LOG_SPIKE_ID = 3034;
     public static final int CHERRY_CHAIR_ID = 3035;

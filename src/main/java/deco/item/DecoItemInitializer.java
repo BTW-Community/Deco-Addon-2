@@ -1,7 +1,9 @@
 package deco.item;
 
 import btw.item.items.BookItem;
+import btw.item.items.PlaceAsBlockItem;
 import deco.block.DecoBlockIDs;
+import deco.block.DecoBlocks;
 import deco.item.items.DecoItemDoor;
 import deco.item.items.FertilizerItem;
 import deco.item.util.BookInterface;
@@ -36,6 +38,10 @@ public class DecoItemInitializer {
                 .setUnlocalizedName("decoItemPrismarineCrystal")
                 .setCreativeTab(CreativeTabs.tabMaterials)
                 .setFilterableProperties(Item.FILTERABLE_NARROW);
+        
+        DecoItems.chain = new PlaceAsBlockItem(DecoItemIDs.CHAIN_ITEM_ID, DecoBlockIDs.CHAIN_ID)
+                .setCreativeTab(CreativeTabs.tabDecorations)
+                .setUnlocalizedName("decoItemChain");
     }
     
     private static void initWoodItems() {

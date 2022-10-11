@@ -51,6 +51,35 @@ public class CraftingRecipeList {
 						new ItemStack(BTWItems.potash)
 				});
 		
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.bonePillar),
+				new Object[] {
+						"B",
+						"B",
+						'B', new ItemStack(BTWBlocks.aestheticOpaque, 1, AestheticOpaqueBlock.SUBTYPE_BONE)
+				});
+		RecipeManager.addShapelessRecipe(new ItemStack(Item.bone, 9),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.bonePillar)
+				});
+		
+		RecipeManager.removeVanillaRecipe(new ItemStack(BTWBlocks.aestheticOpaque, 1, AestheticOpaqueBlock.SUBTYPE_ROPE),
+				new Object[] {
+						"RRR",
+						"RRR",
+						"RRR",
+						'R', BTWItems.rope
+				});
+		addStorage(new ItemStack(DecoBlocks.ropeCoil), new ItemStack(BTWItems.rope));
+		
+		RecipeManager.addRecipe(new ItemStack(DecoItems.chain),
+				new Object[] {
+						"N",
+						"N",
+						"N",
+						'N', BTWItems.ironNugget
+				});
+		addStorage(new ItemStack(DecoBlocks.chainCoil), new ItemStack(DecoItems.chain));
+		
 		//------ Carpets ------//
 		
 		addStorage(new ItemStack(DecoBlocks.coalBlock), new ItemStack(Item.coal, 1, 0));

@@ -18,6 +18,10 @@ public class DecoBlocks {
     
     public static Block diamondiumBlock;
     
+    public static Block bonePillar;
+    
+    public static Block ropeCoil;
+    
     //------ Stone Blocks ------//
     
     // General

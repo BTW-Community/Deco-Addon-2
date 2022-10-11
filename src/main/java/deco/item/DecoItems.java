@@ -14,6 +14,10 @@ public class DecoItems {
 	public static Item hazelDoor;
 	public static Item walnutDoor;
 	
+	public static Item amethystShard;
+	
+	public static Item chain;
+	
 	public static Item plainBook;
 	
 	public static Item fertilizer;
