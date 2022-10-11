@@ -8,7 +8,6 @@ import btw.item.blockitems.legacy.LegacySubstitutionBlockItem;
 import btw.util.ColorUtils;
 import deco.block.blocks.*;
 import deco.block.blocks.legacy.LegacyRedSandBlock;
-import deco.block.mixins.StoneSlabBlock;
 import deco.block.util.*;
 import deco.item.DecoItemIDs;
 import deco.item.itemblocks.ColoredItemBlock;
@@ -430,6 +429,30 @@ public class DecoBlockInitializer {
         
         //------ Nether Brick ------//
     
+        DecoBlocks.netherBrick = new DecoNetherBrickBlock(DecoBlockIDs.NETHER_BRICKS_ID);
+        register(DecoBlocks.netherBrick, new String[] {"red", "redChiseled", "chiseled"});
+        
+        DecoBlocks.redNetherBrickSidingAndCorner = new SidingAndCornerAndDecorativeBlock(DecoBlockIDs.RED_NETHER_BRICK_SIDING_AND_CORNER_ID,
+                BTWBlocks.netherRockMaterial,
+                "decoBlockNetherBricksRed",
+                DecoBlocks.netherBrick.blockHardness, DecoBlocks.netherBrick.blockResistance, Block.soundStoneFootstep,
+                "decoBlockNetherBrickRedSiding");
+        register(new SidingAndCornerBlockItem(DecoBlocks.redNetherBrickSidingAndCorner.blockID - 256));
+        DecoBlocks.redNetherBrickMoulding = new MouldingAndDecorativeWallBlock(DecoBlockIDs.RED_NETHER_BRICK_MOULDING_ID,
+                BTWBlocks.netherRockMaterial,
+                "decoBlockNetherBricksRed", "decoBlockNetherBrickRedColumn",
+                DecoBlockIDs.RED_NETHER_BRICK_SIDING_AND_CORNER_ID,
+                DecoBlocks.netherBrick.blockHardness, DecoBlocks.netherBrick.blockResistance, Block.soundStoneFootstep,
+                "decoBlockNetherBrickRedMoulding");
+        register(new MouldingBlockItem(DecoBlocks.redNetherBrickMoulding.blockID - 256));
+        DecoBlocks.redNetherBrickStairs = new StairsBlock(DecoBlockIDs.RED_NETHER_BRICK_STAIRS_ID, DecoBlocks.netherBrick, DecoNetherBrickBlock.RED_TYPE)
+                .setUnlocalizedName("decoBlockNetherBrickRedStairs");
+        
+        DecoBlocks.looseRedNetherBrick = new LooseRedNetherBrickBlock(DecoBlockIDs.LOOSE_RED_NETHER_BRICKS_ID);
+        DecoBlocks.looseRedNetherBrickStairs = new LooseStoneVariantStairsBlock(DecoBlockIDs.LOOSE_RED_NETHER_BRICK_STAIRS_ID, DecoBlocks.looseRedNetherBrick,
+                0, DecoBlockIDs.RED_NETHER_BRICK_STAIRS_ID)
+                .setUnlocalizedName("decoBlockNetherBrickRedStairsLoose");
+        
         //------ Infused Stone ------//
         
         DecoBlocks.infusedStone = new InfusedStoneBlock(DecoBlockIDs.INFUSED_STONE_ID);
@@ -439,13 +462,13 @@ public class DecoBlockInitializer {
                 "decoBlockInfusedStone",
                 DecoBlocks.infusedStone.blockHardness, DecoBlocks.infusedStone.blockResistance, Block.soundStoneFootstep,
                 "decoBlockInfusedStoneSiding");
-        register(new SidingAndCornerBlockItem(DecoBlocks.infusedStoneSidingAndCorner.blockID));
+        register(new SidingAndCornerBlockItem(DecoBlocks.infusedStoneSidingAndCorner.blockID - 256));
         DecoBlocks.infusedStoneMoulding = new MouldingAndDecorativeWallBlock(DecoBlockIDs.INFUSED_STONE_MOULDING_ID, Material.rock,
                 "decoBlockInfusedStone", "decoBlockInfusedStoneColumn",
                 DecoBlockIDs.INFUSED_STONE_SIDING_AND_CORNER_ID,
                 DecoBlocks.infusedStone.blockHardness, DecoBlocks.infusedStone.blockResistance, Block.soundStoneFootstep,
                 "decoBlockInfusedStoneMoulding");
-        register(new MouldingBlockItem(DecoBlocks.infusedStoneMoulding.blockID));
+        register(new MouldingBlockItem(DecoBlocks.infusedStoneMoulding.blockID - 256));
         DecoBlocks.infusedStoneStairs = new StairsBlock(DecoBlockIDs.INFUSED_STONE_STAIRS_ID, DecoBlocks.infusedStone, InfusedStoneBlock.TYPE_DEFAULT)
                 .setUnlocalizedName("decoBlockInfusedStoneStairs");
     
@@ -453,13 +476,13 @@ public class DecoBlockInitializer {
                 "decoBlockInfusedStoneSmooth",
                 DecoBlocks.infusedStone.blockHardness, DecoBlocks.infusedStone.blockResistance, Block.soundStoneFootstep,
                 "decoBlockInfusedStoneSmoothSiding");
-        register(new SidingAndCornerBlockItem(DecoBlocks.polishedInfusedStoneSidingAndCorner.blockID));
+        register(new SidingAndCornerBlockItem(DecoBlocks.polishedInfusedStoneSidingAndCorner.blockID - 256));
         DecoBlocks.polishedInfusedStoneMoulding = new MouldingAndDecorativeWallBlock(DecoBlockIDs.POLISHED_INFUSED_STONE_MOULDING_ID, Material.rock,
                 "decoBlockInfusedStoneSmooth", "decoBlockInfusedStoneSmoothColumn",
                 DecoBlockIDs.POLISHED_INFUSED_STONE_SIDING_AND_CORNER_ID,
                 DecoBlocks.infusedStone.blockHardness, DecoBlocks.infusedStone.blockResistance, Block.soundStoneFootstep,
                 "decoBlockInfusedStoneSmoothMoulding");
-        register(new MouldingBlockItem(DecoBlocks.polishedInfusedStoneMoulding.blockID));
+        register(new MouldingBlockItem(DecoBlocks.polishedInfusedStoneMoulding.blockID - 256));
         DecoBlocks.polishedInfusedStoneStairs = new StairsBlock(DecoBlockIDs.POLISHED_INFUSED_STONE_STAIRS_ID, DecoBlocks.infusedStone, InfusedStoneBlock.TYPE_SMOOTH)
                 .setUnlocalizedName("decoBlockInfusedStoneSmoothStairs");
     
@@ -467,13 +490,13 @@ public class DecoBlockInitializer {
                 "decoBlockInfusedStoneBrick",
                 DecoBlocks.infusedStone.blockHardness, DecoBlocks.infusedStone.blockResistance, Block.soundStoneFootstep,
                 "decoBlockInfusedStoneSiding");
-        register(new SidingAndCornerBlockItem(DecoBlocks.infusedStoneBrickSidingAndCorner.blockID));
+        register(new SidingAndCornerBlockItem(DecoBlocks.infusedStoneBrickSidingAndCorner.blockID - 256));
         DecoBlocks.infusedStoneBrickMoulding = new MouldingAndDecorativeWallBlock(DecoBlockIDs.INFUSED_STONE_BRICK_MOULDING_ID, Material.rock,
                 "decoBlockInfusedStoneBrick", "decoBlockInfusedStoneBrickColumn",
                 DecoBlockIDs.INFUSED_STONE_BRICK_SIDING_AND_CORNER_ID,
                 DecoBlocks.infusedStone.blockHardness, DecoBlocks.infusedStone.blockResistance, Block.soundStoneFootstep,
                 "decoBlockInfusedStoneMoulding");
-        register(new MouldingBlockItem(DecoBlocks.infusedStoneBrickMoulding.blockID));
+        register(new MouldingBlockItem(DecoBlocks.infusedStoneBrickMoulding.blockID - 256));
         DecoBlocks.infusedStoneBrickStairs = new StairsBlock(DecoBlockIDs.INFUSED_STONE_BRICK_STAIRS_ID, DecoBlocks.infusedStone, InfusedStoneBlock.TYPE_BRICK)
                 .setUnlocalizedName("decoBlockInfusedStoneBrickStairs");
     }
@@ -490,13 +513,13 @@ public class DecoBlockInitializer {
                 "decoBlockEndStoneBrick",
                 DecoBlocks.endStoneBrick.blockHardness, DecoBlocks.endStoneBrick.blockResistance, Block.soundStoneFootstep,
                 "decoBlockEndStoneSiding");
-        register(new SidingAndCornerBlockItem(DecoBlocks.endStoneBrickSidingAndCorner.blockID));
+        register(new SidingAndCornerBlockItem(DecoBlocks.endStoneBrickSidingAndCorner.blockID - 256));
         DecoBlocks.endStoneBrickMoulding = new MouldingAndDecorativeWallBlock(DecoBlockIDs.END_STONE_BRICK_MOULDING_ID, Material.rock,
                 "decoBlockEndStoneBrick", "decoBlockEndStoneBrickColumn",
                 DecoBlockIDs.END_STONE_BRICK_SIDING_AND_CORNER_ID,
                 DecoBlocks.endStoneBrick.blockHardness, DecoBlocks.endStoneBrick.blockResistance, Block.soundStoneFootstep,
                 "decoBlockEndStoneMoulding");
-        register(new MouldingBlockItem(DecoBlocks.endStoneBrickMoulding.blockID));
+        register(new MouldingBlockItem(DecoBlocks.endStoneBrickMoulding.blockID - 256));
         DecoBlocks.endStoneBrickStairs = new StairsBlock(DecoBlockIDs.END_STONE_BRICK_STAIRS_ID, DecoBlocks.endStoneBrick, 0)
                 .setUnlocalizedName("decoBlockEndStoneBrickStairs");
     }
@@ -743,7 +766,7 @@ public class DecoBlockInitializer {
     
     // Done as its own method since it needs to be done after all referenced blocks are declared
     private static void initStoneSlabs() {
-        DecoBlocks.looseStoneSlab = new LooseStoneSlabBlock(DecoBlockIDs.LOOSE_STONE_VARIANTS_SLAB_ID,
+        DecoBlocks.looseStoneSlab = new LooseStoneSlabBlock(DecoBlockIDs.LOOSE_STONE_SLAB_ID,
                 new Block[] {
                         DecoBlocks.looseGraniteCobblestone,
                         DecoBlocks.looseAndesiteCobblestone,
@@ -774,8 +797,19 @@ public class DecoBlockInitializer {
                         StoneHelper.SLATE_COBBLESTONE_SLAB_TYPE,
                         StoneHelper.SLATE_BRICK_SLAB_TYPE
                 });
+    
+        DecoBlocks.looseStoneSlab2 = new LooseStoneSlabBlock(DecoBlockIDs.LOOSE_STONE_SLAB_2_ID,
+                new Block[] {
+                        DecoBlocks.looseRedNetherBrick
+                },
+                new int[] {
+                        StoneHelper.LOOSE_RED_NETHER_BRICK_SLAB_ID
+                },
+                new int[] {
+                        StoneHelper.LOOSE_RED_NETHER_BRICK_SLAB_TYPE
+                });
         
-        DecoBlocks.stoneSlab2 = new StoneSlabBlock(DecoBlockIDs.STONE_SLAB_2_ID,
+        DecoBlocks.stoneSlab2 = new TerracottaBlock.StoneSlabBlock(DecoBlockIDs.STONE_SLAB_2_ID,
                 new Block[] {
                         DecoBlocks.stoneVariants,
                         DecoBlocks.stoneVariants,
@@ -811,7 +845,7 @@ public class DecoBlockInitializer {
                         StoneHelper.LOOSE_ANDESITE_COBBLESTONE_SLAB_TYPE,
                 });
         
-        DecoBlocks.stoneSlab3 = new StoneSlabBlock(DecoBlockIDs.STONE_SLAB_3_ID,
+        DecoBlocks.stoneSlab3 = new TerracottaBlock.StoneSlabBlock(DecoBlockIDs.STONE_SLAB_3_ID,
                 new Block[] {
                         DecoBlocks.cobblestoneVariants,
                         DecoBlocks.stoneBrickVariants,
@@ -851,7 +885,7 @@ public class DecoBlockInitializer {
                         0, 0, 0, 0
                 });
         
-        DecoBlocks.stoneSlab6 = new StoneSlabBlock(DecoBlockIDs.STONE_SLAB_6_ID,
+        DecoBlocks.stoneSlab6 = new TerracottaBlock.StoneSlabBlock(DecoBlockIDs.STONE_SLAB_6_ID,
                 new Block[] {
                         Block.stoneBrick,
                         Block.stoneBrick,
@@ -888,7 +922,7 @@ public class DecoBlockInitializer {
                         StoneHelper.LOOSE_SLATE_BRICK_SLAB_TYPE
                 });
         
-        DecoBlocks.stoneSlab7 = new StoneSlabBlock(DecoBlockIDs.STONE_SLAB_7_ID,
+        DecoBlocks.stoneSlab7 = new TerracottaBlock.StoneSlabBlock(DecoBlockIDs.STONE_SLAB_7_ID,
                 new Block[] {
                         DecoBlocks.slateTiles,
                         DecoBlocks.shingles
@@ -1531,6 +1565,6 @@ public class DecoBlockInitializer {
     }
     
     private static void register(ItemBlock blockItem) {
-        Item.itemsList[blockItem.itemID + 256] = blockItem;
+        Item.itemsList[blockItem.itemID] = blockItem;
     }
 }

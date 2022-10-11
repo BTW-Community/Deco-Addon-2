@@ -11,11 +11,9 @@ import btw.item.BTWItems;
 import btw.item.blockitems.WoodMouldingDecorativeStubBlockItem;
 import btw.item.blockitems.WoodSidingDecorativeStubBlockItem;
 import btw.util.ColorUtils;
+import deco.block.DecoBlockIDs;
 import deco.block.DecoBlocks;
-import deco.block.blocks.DecoLogBlock;
-import deco.block.blocks.FilledBarrelBlock;
-import deco.block.blocks.InfusedStoneBlock;
-import deco.block.blocks.StoneVariantsBlock;
+import deco.block.blocks.*;
 import deco.block.util.SandHelper;
 import deco.block.util.StoneHelper;
 import deco.block.util.WoodTypeHelper;
@@ -1567,7 +1565,227 @@ public class CraftingRecipeList {
 		
 		//------ Nether Brick ------//
 		
+		RecipeManager.addKilnRecipe(new ItemStack(BTWBlocks.looseBrick), Block.netherBrick);
+		RecipeManager.addKilnRecipe(new ItemStack(BTWBlocks.looseBrick), DecoBlocks.netherBrick, InventoryUtils.IGNORE_METADATA);
+		RecipeManager.addKilnRecipe(new ItemStack(BTWBlocks.looseBrick), BTWBlocks.looseNetherBrick);
+		RecipeManager.addKilnRecipe(new ItemStack(BTWBlocks.looseBrick), DecoBlocks.looseRedNetherBrick);
 		
+		// Red
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.netherBrick, 8, DecoNetherBrickBlock.RED_TYPE),
+				new ItemStack[] {
+						new ItemStack(Block.netherBrick),
+						new ItemStack(Block.netherBrick),
+						new ItemStack(Block.netherBrick),
+						new ItemStack(Block.netherBrick),
+						new ItemStack(Block.netherBrick),
+						new ItemStack(Block.netherBrick),
+						new ItemStack(Block.netherBrick),
+						new ItemStack(Block.netherBrick),
+						new ItemStack(BTWItems.hellfireDust)
+				});
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.looseRedNetherBrick, 8),
+				new ItemStack[] {
+						new ItemStack(BTWBlocks.looseNetherBrick),
+						new ItemStack(BTWBlocks.looseNetherBrick),
+						new ItemStack(BTWBlocks.looseNetherBrick),
+						new ItemStack(BTWBlocks.looseNetherBrick),
+						new ItemStack(BTWBlocks.looseNetherBrick),
+						new ItemStack(BTWBlocks.looseNetherBrick),
+						new ItemStack(BTWBlocks.looseNetherBrick),
+						new ItemStack(BTWBlocks.looseNetherBrick),
+						new ItemStack(BTWItems.hellfireDust)
+				});
+		
+		// Chiseled
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.netherBrick, 1, DecoNetherBrickBlock.CHISELED_TYPE),
+				new ItemStack[] {
+						new ItemStack(Block.netherBrick),
+						new ItemStack(BTWItems.ironChisel, 1, InventoryUtils.IGNORE_METADATA)
+				});
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.netherBrick, 1, DecoNetherBrickBlock.CHISELED_TYPE),
+				new ItemStack[] {
+						new ItemStack(Block.netherBrick),
+						new ItemStack(BTWItems.diamondChisel, 1, InventoryUtils.IGNORE_METADATA)
+				});
+		
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.netherBrick, 1, DecoNetherBrickBlock.RED_CHISELED_TYPE),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.netherBrick, 1, DecoNetherBrickBlock.RED_TYPE),
+						new ItemStack(BTWItems.ironChisel, 1, InventoryUtils.IGNORE_METADATA)
+				});
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.netherBrick, 1, DecoNetherBrickBlock.RED_CHISELED_TYPE),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.netherBrick, 1, DecoNetherBrickBlock.RED_TYPE),
+						new ItemStack(BTWItems.diamondChisel, 1, InventoryUtils.IGNORE_METADATA)
+				});
+		
+		// Sub blocks
+		btw.crafting.recipe.CraftingRecipeList.addSubBlockRecipesOfType(DecoBlocks.netherBrick, DecoNetherBrickBlock.RED_TYPE,
+				DecoBlocks.redNetherBrickSidingAndCorner, DecoBlocks.redNetherBrickMoulding, true);
+		
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.redNetherBrickStairs, 6),
+				new Object[] {
+						"F  ",
+						"FF ",
+						"FFF",
+						'F', new ItemStack(DecoBlocks.netherBrick, 1, DecoNetherBrickBlock.RED_TYPE)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.redNetherBrickStairs, 1),
+				new Object[] {
+						"M ",
+						"MM",
+						'M', new ItemStack(DecoBlocks.redNetherBrickMoulding)
+				});
+		
+		// TODO: Re-enable once stone slab 1 has been init
+		/*
+		RecipeManager.addRecipe(new ItemStack(StoneHelper.RED_NETHER_BRICK_SLAB_ID, 6, StoneHelper.RED_NETHER_BRICK_SLAB_TYPE),
+				new Object[] {
+						"FFF",
+						'F', new ItemStack(DecoBlocks.netherBrick, 1, DecoNetherBrickBlock.RED_TYPE)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.netherBrick, 1, DecoNetherBrickBlock.RED_TYPE),
+				new Object[] {
+						"S",
+						"S",
+						'S', new ItemStack(StoneHelper.RED_NETHER_BRICK_SLAB_ID, 1, StoneHelper.RED_NETHER_BRICK_SLAB_TYPE)
+				});
+		*/
+		
+		// Loose
+		RecipeManager.addRecipe(new ItemStack(StoneHelper.LOOSE_RED_NETHER_BRICK_SLAB_ID, 4, StoneHelper.LOOSE_RED_NETHER_BRICK_SLAB_TYPE),
+				new Object[] {
+						"FF",
+						'F', new ItemStack(DecoBlocks.looseRedNetherBrick)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.looseRedNetherBrick, 1),
+				new Object[] {
+						"S",
+						"S",
+						'S', new ItemStack(StoneHelper.LOOSE_RED_NETHER_BRICK_SLAB_ID, 1, StoneHelper.LOOSE_RED_NETHER_BRICK_SLAB_TYPE)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.looseRedNetherBrickStairs, 4),
+				new Object[] {
+						"F ",
+						"FF",
+						'F', new ItemStack(DecoBlocks.looseRedNetherBrick)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.looseRedNetherBrickStairs, 2),
+				new Object[] {
+						"S ",
+						"SS",
+						'S', new ItemStack(StoneHelper.LOOSE_RED_NETHER_BRICK_SLAB_ID, 1, StoneHelper.LOOSE_RED_NETHER_BRICK_SLAB_TYPE)
+				});
+		
+		// Mortaring
+		// Clay
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(Block.netherBrick),
+				new ItemStack[] {
+						new ItemStack(BTWBlocks.looseNetherBrick),
+						new ItemStack(Item.clay)
+				});
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(DecoBlocks.netherBrick, 1, DecoNetherBrickBlock.RED_TYPE),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.looseRedNetherBrick),
+						new ItemStack(Item.clay)
+				});
+		
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(Block.stairsNetherBrick),
+				new ItemStack[] {
+						new ItemStack(BTWBlocks.looseNEtherBrickStairs),
+						new ItemStack(Item.clay)
+				});
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(DecoBlocks.redNetherBrickStairs),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.looseRedNetherBrickStairs),
+						new ItemStack(Item.clay)
+				});
+		
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(Block.stoneDoubleSlab, 1, 6), // Nether brick slab
+				new ItemStack[] {
+						new ItemStack(BTWBlocks.looseNetherBrickSlab),
+						new ItemStack(Item.clay)
+				});
+		/* TODO: Enable
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(StoneHelper.LOOSE_RED_NETHER_BRICK_SLAB_ID, 1, StoneHelper.LOOSE_RED_NETHER_BRICK_SLAB_TYPE),
+				new ItemStack[] {
+						new ItemStack(StoneHelper.RED_NETHER_BRICK_SLAB_ID, 1, StoneHelper.RED_NETHER_BRICK_SLAB_TYPE),
+						new ItemStack(Item.clay)
+				});
+		 */
+		
+		// Slime
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(Block.netherBrick),
+				new ItemStack[] {
+						new ItemStack(BTWBlocks.looseNetherBrick),
+						new ItemStack(Item.slimeBall)
+				});
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(DecoBlocks.netherBrick, 1, DecoNetherBrickBlock.RED_TYPE),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.looseRedNetherBrick),
+						new ItemStack(Item.slimeBall)
+				});
+		
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(Block.stairsNetherBrick),
+				new ItemStack[] {
+						new ItemStack(BTWBlocks.looseNEtherBrickStairs),
+						new ItemStack(Item.slimeBall)
+				});
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(DecoBlocks.redNetherBrickStairs),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.looseRedNetherBrickStairs),
+						new ItemStack(Item.slimeBall)
+				});
+		
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(Block.stoneDoubleSlab, 1, 6), // Nether brick slab
+				new ItemStack[] {
+						new ItemStack(BTWBlocks.looseNetherBrickSlab),
+						new ItemStack(Item.slimeBall)
+				});
+		/* TODO: Enable
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(StoneHelper.LOOSE_RED_NETHER_BRICK_SLAB_ID, 1, StoneHelper.LOOSE_RED_NETHER_BRICK_SLAB_TYPE),
+				new ItemStack[] {
+						new ItemStack(StoneHelper.RED_NETHER_BRICK_SLAB_ID, 1, StoneHelper.RED_NETHER_BRICK_SLAB_TYPE),
+						new ItemStack(Item.slimeBall)
+				});
+		 */
+		
+		// Nether sludge
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(Block.netherBrick),
+				new ItemStack[] {
+						new ItemStack(BTWBlocks.looseNetherBrick),
+						new ItemStack(BTWItems.netherSludge)
+				});
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(DecoBlocks.netherBrick, 1, DecoNetherBrickBlock.RED_TYPE),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.looseRedNetherBrick),
+						new ItemStack(BTWItems.netherSludge)
+				});
+		
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(Block.stairsNetherBrick),
+				new ItemStack[] {
+						new ItemStack(BTWBlocks.looseNEtherBrickStairs),
+						new ItemStack(BTWItems.netherSludge)
+				});
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(DecoBlocks.redNetherBrickStairs),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.looseRedNetherBrickStairs),
+						new ItemStack(BTWItems.netherSludge)
+				});
+		
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(Block.stoneDoubleSlab, 1, 6), // Nether brick slab
+				new ItemStack[] {
+						new ItemStack(BTWBlocks.looseNetherBrickSlab),
+						new ItemStack(BTWItems.netherSludge)
+				});
+		/* TODO: Enable
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(StoneHelper.LOOSE_RED_NETHER_BRICK_SLAB_ID, 1, StoneHelper.LOOSE_RED_NETHER_BRICK_SLAB_TYPE),
+				new ItemStack[] {
+						new ItemStack(StoneHelper.RED_NETHER_BRICK_SLAB_ID, 1, StoneHelper.RED_NETHER_BRICK_SLAB_TYPE),
+						new ItemStack(BTWItems.netherSludge)
+				});
+		 */
 		
 		//------ Infused Stone ------//
 		

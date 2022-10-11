@@ -17,6 +17,7 @@ public class DecoBlocks {
     public static Block polishedStoneVariants;
     
     public static Block looseStoneSlab;
+    public static Block looseStoneSlab2;
     
     public static Block stoneSlab;
     public static Block stoneSlab2;
@@ -198,6 +199,17 @@ public class DecoBlocks {
     
     public static Block basalt;
     public static Block magma;
+    
+    // Nether Brick
+    
+    public static Block netherBrick;
+    
+    public static Block looseRedNetherBrick;
+    public static Block looseRedNetherBrickStairs;
+    
+    public static Block redNetherBrickSidingAndCorner;
+    public static Block redNetherBrickMoulding;
+    public static Block redNetherBrickStairs;
     
     // Infused Stone
     public static Block infusedStone;

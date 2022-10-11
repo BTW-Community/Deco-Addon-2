@@ -46,11 +46,13 @@ public class DecoBlockIDs {
     public static final int MOSSY_COBBLESTONE_STAIRS = 3115;
     public static final int STONE_SLAB_2_ID = 3116;
     public static final int STONE_SLAB_3_ID = 3117;
-    public static final int LEGACY_NETHER_BRICK_ID = 3118;
-    
+    public static final int NETHER_BRICKS_ID = 3118;
+    public static final int LOOSE_RED_NETHER_BRICKS_ID = 3119;
     public static final int INFUSED_STONE_ID = 3120;
     public static final int BASALT_ID = 3121;
-    
+    public static final int RED_NETHER_BRICK_STAIRS_ID = 3122;
+    public static final int RED_NETHER_BRICK_SIDING_AND_CORNER_ID = 3123;
+    public static final int RED_NETHER_BRICK_MOULDING_ID = 3124;
     public static final int INFUSED_STONE_STAIRS_ID = 3125;
     public static final int INFUSED_STONE_SIDING_AND_CORNER_ID = 3126;
     public static final int INFUSED_STONE_MOULDING_ID = 3127;
@@ -104,8 +106,9 @@ public class DecoBlockIDs {
     public static final int LOOSE_GRANITE_BRICK_STAIRS_ID = 3189;
     public static final int LOOSE_ANDESITE_BRICK_STAIRS_ID = 3190;
     public static final int LOOSE_DIORITE_BRICK_STAIRS_ID = 3191;
-    public static final int LOOSE_STONE_VARIANTS_SLAB_ID = 3192;
-    
+    public static final int LOOSE_STONE_SLAB_ID = 3192;
+    public static final int LOOSE_RED_NETHER_BRICK_STAIRS_ID = 3193;
+    public static final int LOOSE_STONE_SLAB_2_ID = 3194;
     public static final int MAGMA_ID = 3196;
     
     public static final int STONE_SLAB_4_ID = 3198;
