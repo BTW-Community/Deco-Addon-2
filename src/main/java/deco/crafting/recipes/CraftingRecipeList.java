@@ -1574,7 +1574,60 @@ public class CraftingRecipeList {
 	}
 	
 	private static void initPrismarineRecipes() {
-	
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.prismarine, 1, PrismarineBlock.DEFAULT_TYPE),
+				new Object[] {
+						"SS",
+						"SS",
+						'S', DecoItems.prismarineShard
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.prismarine, 4, PrismarineBlock.BRICK_TYPE),
+				new Object[] {
+						"PP",
+						"PP",
+						'P', new ItemStack(DecoBlocks.prismarine, 1, PrismarineBlock.DEFAULT_TYPE)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.prismarine, 1, PrismarineBlock.DEFAULT_TYPE),
+				new Object[] {
+						"SSS",
+						"SDS",
+						"SSS",
+						'S', DecoItems.prismarineShard,
+						'D', new ItemStack(Item.dyePowder, 1, ColorUtils.BLACK.colorID)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.prismarine, 1, PrismarineBlock.DEFAULT_TYPE),
+				new Object[] {
+						"SSS",
+						"SDS",
+						"SSS",
+						'S', DecoItems.prismarineShard,
+						'D', new ItemStack(Item.dyePowder, 1, ColorUtils.BLACK.colorID + 16)
+				});
+		
+		RecipeManager.addStokedCrucibleRecipe(new ItemStack(DecoItems.prismarineCrystal),
+				new ItemStack[] {
+						new ItemStack(DecoItems.prismarineShard),
+						new ItemStack(Item.lightStoneDust)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.prismarineLantern),
+				new Object[] {
+						"SSS",
+						"SCS",
+						"SSS",
+						'S', DecoItems.prismarineShard,
+						'C', DecoItems.prismarineCrystal
+				});
+		
+		addSubBlockRecipes(DecoBlocks.prismarine, PrismarineBlock.DEFAULT_TYPE, DecoBlocks.prismarineSidingAndCorner, DecoBlocks.prismarineMoulding,
+				DecoBlocks.prismarineStairs, SlabHelper.PRISMARINE_SLAB_ID, SlabHelper.PRISMARINE_SLAB_TYPE);
+		
+		addSubBlockRecipes(DecoBlocks.prismarine, PrismarineBlock.BRICK_TYPE, DecoBlocks.prismarineBrickSidingAndCorner, DecoBlocks.prismarineBrickMoulding,
+				DecoBlocks.prismarineBrickStairs, SlabHelper.PRISMARINE_BRICK_SLAB_ID, SlabHelper.PRISMARINE_BRICK_SLAB_TYPE);
+		
+		addSubBlockRecipes(DecoBlocks.prismarine, PrismarineBlock.DARK_TYPE, DecoBlocks.darkPrismarineSidingAndCorner, DecoBlocks.darkPrismarineMoulding,
+				DecoBlocks.darkPrismarineStairs, SlabHelper.DARK_PRISMARINE_SLAB_ID, SlabHelper.DARK_PRISMARINE_SLAB_TYPE);
 	}
 	
 	private static void initSandstoneRecipes() {
