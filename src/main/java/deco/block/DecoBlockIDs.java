@@ -1,22 +1,38 @@
 package deco.block;
 
 public class DecoBlockIDs {
+    public static final int PAPER_WALL_ID = 3000;
+    public static final int WROUGHT_IRON_BARS_ID = 3001;
     public static final int FLOWER_ID = 3002;
+    public static final int STAINED_GLASS_ID = 3003;
     
+    public static final int COAL_BLOCK_ID = 3005;
     public static final int TULIP_ID = 3006;
-    
+    public static final int DIAMONDIUM_BLOCK = 3007;
     public static final int WHITE_STONE_BRICKS_ID = 3008;
     public static final int WHITE_STONE_BRICK_SIDING_AND_CORNER_ID = 3009;
     public static final int WHITE_STONE_BRICK_MOULDING_ID = 3010;
     public static final int WHITE_STONE_BRICK_STAIRS_ID = 3011;
-    
+    public static final int POLISHED_STONE = 3012;
+    public static final int POLISHED_STONE_STAIRS = 3013;
+    public static final int POLISHED_STONE_SIDING_AND_CORNER_ID = 3014;
+    public static final int POLISHED_STONE_MOULDING_ID = 3015;
+    public static final int POLISHED_STONE_STAIRS_ID = 3016;
     public static final int FLOWER_2_ID = 3017;
     public static final int CONCRETE_ID = 3018;
     public static final int CONCRETE_POWDER_ID = 3019;
-    
+    public static final int NETHER_COAL_BLOCK_ID = 3020;
     public static final int CHERRY_SAPLING_ID = 3021;
     public static final int CHERRY_LEAVES_ID = 3022;
-
+    public static final int THATCH_ID = 3023;
+    public static final int THATCH_STAIRS_ID = 3024;
+    public static final int HAY_BALE_ID = 3025;
+    public static final int HAY_BALE_STAIRS_ID = 3026;
+    public static final int PAPER_LANTERN_ID = 3027;
+    public static final int CHANDELIER_ID = 3028;
+    public static final int IRON_LANTERN_ID = 3029;
+    public static final int CHAIN_ID =3030;
+    // IDs 3031-3033 occupied by BTW
     public static final int CHERRY_LOG_SPIKE_ID = 3034;
     public static final int CHERRY_CHAIR_ID = 3035;
     public static final int OAK_CHAIR_ID = 3036;
@@ -155,22 +171,29 @@ public class DecoBlockIDs {
     public static final int FILLED_BIRCH_BARREL_ID = 3236;
     public static final int FILLED_JUNGLE_BARREL_ID = 3237;
     public static final int CRATE_ID = 3238;
-    
+    public static final int FLOWER_POT_ID = 3239;
     public static final int PERGOLA_ID = 3240;
     
     public static final int CHEWED_BLOOD_LOG_ID = 3243;
     public static final int BLOOD_LOG_SPIKE_ID = 3244;
-    
+    public static final int ROPE_COIL_ID = 3245;
+    public static final int CHAIN_COIL_ID = 3246;
+    public static final int IRON_TRAPDOOR_ID = 3247;
     public static final int PASTEL_PLANKS_SUB_START = 3248;
     // IDs occupied through 3295
     
     public static final int STAINED_TERRACOTTA_SLAB_ID = 3297;
     public static final int STAINED_TERRACOTTA_SLAB_2_ID = 3298;
-    
+    public static final int ASH_BLOCK_ID = 3299;
     public static final int COARSE_DIRT_ID = 3300;
     public static final int COARSE_DIRT_SLAB_ID = 3301;
     public static final int PODZOL_ID = 3302;
     
+    public static final int HEDGE_ID = 3304;
+    public static final int CARVED_PUMPKIN_ID = 3305;
+    public static final int JACK_O_LANTERN_ID = 3306;
+    // IDs 3307 and 3308 occupied by BTW
+    public static final int PUMICE_ID = 3311;
     public static final int LEGACY_RED_SAND_ID = 3310;
     public static final int RED_SAND_SLAB_ID = 3311;
     public static final int RED_SANDSTONE_ID = 3312;
@@ -239,7 +262,12 @@ public class DecoBlockIDs {
     public static final int CRACKED_LARGE_RED_SANDSTONE_BRICK_SIDING_AND_CORNER_ID = 3375;
     public static final int CRACKED_LARGE_RED_SANDSTONE_BRICK_MOULDING_ID = 3376;
     public static final int STONE_SLAB_6_ID = 3377;
-    
+    public static final int MOSSY_STONE_BRICK_STAIRS_ID = 3378;
+    public static final int MOSSY_STONE_BRICK_SIDING_AND_CORNER_ID = 3379;
+    public static final int MOSSY_STONE_BRICK_MOULDING_ID = 3380;
+    public static final int CRACKED_STONE_BRICK_STAIRS_ID = 3381;
+    public static final int CRACKED_STONE_BRICK_SIDING_AND_CORNER_ID = 3382;
+    public static final int CRACKED_STONE_BRICK_MOULDING_ID = 3383;
     public static final int CONCRETE_SUB_START = 3384;
     // IDs occupied through 3431
     public static final int CONCRETE_SLAB_ID = 3432;
@@ -259,7 +287,35 @@ public class DecoBlockIDs {
     public static final int BLOOD_WALL_SIGN_ID = 3446;
     public static final int CHERRY_SIGN_ID = 3447;
     public static final int CHERRY_WALL_SIGN_ID = 3448;
-    
+    public static final int OAK_HEDGE_STAIRS_ID = 3449;
+    public static final int OAK_HEDGE_SIDING_AND_CORNER_ID = 3450;
+    public static final int OAK_HEDGE_MOULDING_ID = 3451;
+    public static final int SPRUCE_HEDGE_STAIRS_ID = 3452;
+    public static final int SPRUCE_HEDGE_SIDING_AND_CORNER_ID = 3453;
+    public static final int SPRUCE_HEDGE_MOULDING_ID = 3454;
+    public static final int BIRCH_HEDGE_STAIRS_ID = 3455;
+    public static final int BIRCH_HEDGE_SIDING_AND_CORNER_ID = 3456;
+    public static final int BIRCH_HEDGE_MOULDING_ID = 3457;
+    public static final int JUNGLE_HEDGE_STAIRS_ID = 3458;
+    public static final int JUNGLE_HEDGE_SIDING_AND_CORNER_ID = 3459;
+    public static final int JUNGLE_HEDGE_MOULDING_ID = 3460;
+    public static final int BLOOD_HEDGE_STAIRS_ID = 3461;
+    public static final int BLOOD_HEDGE_SIDING_AND_CORNER_ID = 3462;
+    public static final int BLOOD_HEDGE_MOULDING_ID = 3463;
+    public static final int CHERRY_HEDGE_STAIRS_ID = 3464;
+    public static final int CHERRY_HEDGE_SIDING_AND_CORNER_ID = 3465;
+    public static final int CHERRY_HEDGE_MOULDING_ID = 3466;
+    public static final int SPRUCE_BUTTON_ID = 3467;
+    public static final int BIRCH_BUTTON_ID = 3468;
+    public static final int JUNGLE_BUTTON_ID = 3469;
+    public static final int BLOOD_BUTTON_ID = 3470;
+    public static final int CHERRY_BUTTON_ID = 3471;
+    public static final int INFUSED_STONE_BUTTON_ID = 3472;
+    public static final int GRANITE_BUTTON_ID = 3473;
+    public static final int ANDESITE_BUTTON_ID = 3474;
+    public static final int DIORITE_BUTTON_ID = 3475;
+    public static final int SANDSTONE_BUTTON_ID = 3476;
+    public static final int RED_SANDSTONE_BUTTON_ID = 3477;
     public static final int ROUGH_SLATE_ID = 3478;
     public static final int LOOSE_SLATE_COBBLESTONE_ID = 3479;
     public static final int LOOSE_SLATE_BRICK_ID = 3480;
@@ -279,7 +335,8 @@ public class DecoBlockIDs {
     public static final int ACACIA_MOULDING_ID = 3494;
     public static final int ACACIA_STAIRS_ID = 3495;
     public static final int ACACIA_GATE_ID = 3496;
-    
+    public static final int AUTUMN_LEAVES_ID = 3497;
+    public static final int AUTUMN_SAPLING_ID = 3498;
     public static final int ACACIA_SAPLING_ID = 3499;
     public static final int ACACIA_TRAPDOOR_ID = 3500;
     public static final int ACACIA_DOOR_ID = 3501;
@@ -290,7 +347,8 @@ public class DecoBlockIDs {
     public static final int STONE_SLAB_7_ID = 3506;
     public static final int BOOKSHELF_ID = 3507;
     public static final int EMPTY_BOOKSHELF_ID = 3508;
-    
+    public static final int AMETHYST_ID = 3509;
+    public static final int BROKEN_PAPER_LANTERN_ID = 3510;
     public static final int SLATE_SIDING_AND_CORNER_ID = 3511;
     public static final int SLATE_MOULDING_ID = 3512;
     public static final int POLISHED_SLATE_SIDING_AND_CORNER_ID = 3513;
@@ -313,7 +371,7 @@ public class DecoBlockIDs {
     public static final int FLAMING_CHERRY_LADDER_ID = 3530;
     public static final int ACACIA_LADDER_ID = 3531;
     public static final int FLAMING_ACACIA_LADDER_ID = 3532;
-    
+    public static final int IRON_LADDER_ID = 3533;
     public static final int SHINGLES_ID = 3534;
     public static final int COLORED_SHINGLES_ID = 3535;
     public static final int SHINGLES_SUB_START = 3536;
@@ -322,6 +380,9 @@ public class DecoBlockIDs {
     public static final int COLORED_SHINGLES_SLAB_2_ID = 3588;
     public static final int BOTTLE_RACK_ID = 3589;
     public static final int EMPTY_BOTTLE_RACK_ID = 3590;
+    public static final int AMETHYST_SHARD_ID = 3591;
+    public static final int FRAMED_GLASS_ID = 3592;
+    public static final int IRON_FRAMED_GLASS_ID = 3593;
     
     public static final int INFESTED_GRANITE_ID = 3595;
     public static final int INFESTED_ANDESITE_ID = 3596;

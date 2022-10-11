@@ -6,6 +6,8 @@ public class DecoBlocks {
     
     //------ General Blocks ------//
     
+    public static Block carpet;
+    
     //------ Stone Blocks ------//
     
     // General
