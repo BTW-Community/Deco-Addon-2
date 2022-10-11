@@ -83,7 +83,6 @@ tile.decoBlockStairsPrismarineDark.name=Dark Prismarine Stairs
 
 tile.decoBlockNetherBrickRedStairs.name=Red Nether Brick Stairs
 tile.decoBlockNetherBrickRedLoose.name=Loose Red Nether Brick
-tile.decoBlockNetherBrickRedSlabLoose.name=Loose Red Nether Brick Slab
 tile.decoBlockNetherBrickRedStairsLoose.name=Loose Red Nether Brick Stairs
 
 tile.decoBlockMagma.name=Magma Block
@@ -1427,6 +1426,8 @@ tile.decoBlockStoneSlabLoose.4.name=Loose Andesite Brick Slab
 tile.decoBlockStoneSlabLoose.5.name=Loose Diorite Brick Slab
 tile.decoBlockStoneSlabLoose.6.name=Loose Slate Cobblestone Slab
 tile.decoBlockStoneSlabLoose.7.name=Loose Slate Brick Slab
+
+tile.decoBlockStoneSlabLoose2.0.name=Loose Red Nether Brick Slab
 
 tile.decoBlockStoneSlab.0.name=Red Sandstone Slab
 tile.decoBlockStoneSlab.1.name=Prismarine Slab

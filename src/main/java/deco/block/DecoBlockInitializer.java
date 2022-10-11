@@ -796,7 +796,8 @@ public class DecoBlockInitializer {
                         StoneHelper.DIORITE_BRICK_SLAB_TYPE,
                         StoneHelper.SLATE_COBBLESTONE_SLAB_TYPE,
                         StoneHelper.SLATE_BRICK_SLAB_TYPE
-                });
+                })
+                .setUnlocalizedName("decoBlockStoneSlabLoose");
     
         DecoBlocks.looseStoneSlab2 = new LooseStoneSlabBlock(DecoBlockIDs.LOOSE_STONE_SLAB_2_ID,
                 new Block[] {
@@ -807,7 +808,8 @@ public class DecoBlockInitializer {
                 },
                 new int[] {
                         StoneHelper.LOOSE_RED_NETHER_BRICK_SLAB_TYPE
-                });
+                })
+                .setUnlocalizedName("decoBlockStoneSlabLoose2");
         
         DecoBlocks.stoneSlab2 = new TerracottaBlock.StoneSlabBlock(DecoBlockIDs.STONE_SLAB_2_ID,
                 new Block[] {
@@ -843,7 +845,8 @@ public class DecoBlockInitializer {
                         0, 0, 0, 0, 0, 0,
                         StoneHelper.LOOSE_GRANITE_COBBLESTONE_SLAB_TYPE,
                         StoneHelper.LOOSE_ANDESITE_COBBLESTONE_SLAB_TYPE,
-                });
+                })
+                .setUnlocalizedName("decoBlockStoneSlab2");
         
         DecoBlocks.stoneSlab3 = new TerracottaBlock.StoneSlabBlock(DecoBlockIDs.STONE_SLAB_3_ID,
                 new Block[] {
@@ -883,7 +886,8 @@ public class DecoBlockInitializer {
                         StoneHelper.LOOSE_ANDESITE_BRICK_SLAB_TYPE,
                         StoneHelper.LOOSE_DIORITE_BRICK_SLAB_TYPE,
                         0, 0, 0, 0
-                });
+                })
+                .setUnlocalizedName("decoBlockStoneSlab3");
         
         DecoBlocks.stoneSlab6 = new TerracottaBlock.StoneSlabBlock(DecoBlockIDs.STONE_SLAB_6_ID,
                 new Block[] {
@@ -920,7 +924,8 @@ public class DecoBlockInitializer {
                         0, 0, 0, 0, 0, 0,
                         StoneHelper.LOOSE_SLATE_COBBLESTONE_SLAB_TYPE,
                         StoneHelper.LOOSE_SLATE_BRICK_SLAB_TYPE
-                });
+                })
+                .setUnlocalizedName("decoBlockStoneSlab6");
         
         DecoBlocks.stoneSlab7 = new TerracottaBlock.StoneSlabBlock(DecoBlockIDs.STONE_SLAB_7_ID,
                 new Block[] {
@@ -941,7 +946,8 @@ public class DecoBlockInitializer {
                 new int[] {
                         StoneHelper.LOOSE_SLATE_BRICK_SLAB_TYPE,
                         0
-                });
+                })
+                .setUnlocalizedName("decoBlockStoneSlab7");
     }
     
     private static void initSoil() {
