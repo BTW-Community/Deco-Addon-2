@@ -152,18 +152,25 @@ public class DecoBlocks {
     
     // Limestone
     
+    // Misc
+    
+    public static Block polishedStone;
+    public static Block polishedStoneSidingAndCorner;
+    public static Block polishedStoneMoulding;
+    public static Block polishedStoneStairs;
+    
     // Extra Sub Blocks
     
-    public static Block cobblestoneSidingAndCorner;
-    public static Block cobblestoneMoulding;
+    public static Block cobblestoneSidingAndCornerUpperStrata;
+    public static Block cobblestoneMouldingUpperStrata;
     public static Block cobblestoneSidingAndCornerMidStrata;
     public static Block cobblestoneMouldingMidStrata;
     public static Block cobblestoneSidingAndCornerDeepStrata;
     public static Block cobblestoneMouldingDeepStrata;
     
-    public static Block mossyCobblestoneSidingAndCorner;
-    public static Block mossyCobblestoneMoulding;
-    public static Block mossyCobblestoneStairs;
+    public static Block mossyCobblestoneSidingAndCornerUpperStrata;
+    public static Block mossyCobblestoneMouldingUpperStrata;
+    public static Block mossyCobblestoneStairsUpperStrata;
     public static Block mossyCobblestoneSidingAndCornerMidStrata;
     public static Block mossyCobblestoneMouldingMidStrata;
     public static Block mossyCobblestoneStairsMidStrata;
@@ -171,9 +178,9 @@ public class DecoBlocks {
     public static Block mossyCobblestoneMouldingDeepStrata;
     public static Block mossyCobblestoneStairsDeepStrata;
     
-    public static Block mossyStoneBrickSidingAndCorner;
-    public static Block mossyStoneBrickMoulding;
-    public static Block mossyStoneBrickStairs;
+    public static Block mossyStoneBrickSidingAndCornerUpperStrata;
+    public static Block mossyStoneBrickMouldingUpperStrata;
+    public static Block mossyStoneBrickStairsUpperStrata;
     public static Block mossyStoneBrickSidingAndCornerMidStrata;
     public static Block mossyStoneBrickMouldingMidStrata;
     public static Block mossyStoneBrickStairsMidStrata;
@@ -181,9 +188,9 @@ public class DecoBlocks {
     public static Block mossyStoneBrickMouldingDeepStrata;
     public static Block mossyStoneBrickStairsDeepStrata;
     
-    public static Block crackedStoneBrickSidingAndCorner;
-    public static Block crackedStoneBrickMoulding;
-    public static Block crackedStoneBrickStairs;
+    public static Block crackedStoneBrickSidingAndCornerUpperStrata;
+    public static Block crackedStoneBrickMouldingUpperStrata;
+    public static Block crackedStoneBrickStairsUpperStrata;
     public static Block crackedStoneBrickSidingAndCornerMidStrata;
     public static Block crackedStoneBrickMouldingMidStrata;
     public static Block crackedStoneBrickStairsMidStrata;

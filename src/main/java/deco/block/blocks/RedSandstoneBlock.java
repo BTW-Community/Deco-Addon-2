@@ -131,8 +131,6 @@ public class RedSandstoneBlock extends Block {
 		
 		this.mossyTopIcon = register.registerIcon("decoBlockRedSandstoneMossy_top");
 		this.mossyBottomIcon = register.registerIcon("decoBlockRedSandstoneMossy_bottom");
-		
-		super.registerIcons(register);
 	}
 	
 	@Environment(EnvType.CLIENT)

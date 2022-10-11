@@ -384,9 +384,227 @@ public class DecoBlockInitializer {
     
         //------ Misc Stone ------//
     
-        // Misc
+        // Polished Stone
+        DecoBlocks.polishedStone = new DecoBlock(DecoBlockIDs.POLISHED_STONE, Material.rock)
+                .setHardness(2.25F)
+                .setResistance(10.0F)
+                .setPicksEffectiveOn()
+                .setUnlocalizedName("decoBlockPolishedStone")
+                .setStepSound(Block.soundStoneFootstep)
+                .setCreativeTab(CreativeTabs.tabBlock);
         
-        // Extra sub blocks
+        DecoBlocks.polishedStoneSidingAndCorner = new SidingAndCornerAndDecorativeWallBlock(DecoBlockIDs.POLISHED_STONE_SIDING_AND_CORNER_ID, Material.rock,
+                "decoBlockPolishedStone",
+                DecoBlocks.polishedStone.blockHardness, DecoBlocks.polishedStone.blockResistance, Block.soundStoneFootstep,
+                "decoBlockPolishedStoneSiding");
+        register(new SidingAndCornerBlockItem(DecoBlocks.polishedStoneSidingAndCorner.blockID - 256));
+        DecoBlocks.polishedStoneMoulding = new MouldingAndDecorativeWallBlock(DecoBlockIDs.POLISHED_STONE_MOULDING_ID, Material.rock,
+                "decoBlockPolishedStone", "decoBlockPolishedStoneColumn",
+                DecoBlockIDs.POLISHED_STONE_SIDING_AND_CORNER_ID,
+                DecoBlocks.polishedStone.blockHardness, DecoBlocks.polishedStone.blockResistance, Block.soundStoneFootstep,
+                "decoBlockPolishedStoneMoulding");
+        register(new SidingAndCornerBlockItem(DecoBlocks.polishedStoneMoulding.blockID - 256));
+        DecoBlocks.polishedStoneStairs = new StairsBlock(DecoBlockIDs.POLISHED_STONE_STAIRS_ID, DecoBlocks.polishedStone, 0)
+                .setUnlocalizedName("decoBlockPolishedStoneStairs");
+        
+        // Cobblestone and Stone Brick
+        // Upper strata
+        DecoBlocks.cobblestoneSidingAndCornerUpperStrata = new SidingAndCornerAndDecorativeWallBlock(DecoBlockIDs.COBBLESTONE_SIDING_AND_CORNER_UPPER_STRATA_ID,
+                Material.rock,
+                "stonebrick",
+                Block.cobblestone.blockHardness, Block.cobblestone.blockResistance, Block.soundStoneFootstep,
+                "decoBlockCobblestoneSiding");
+        register(new SidingAndCornerBlockItem(DecoBlocks.cobblestoneSidingAndCornerUpperStrata.blockID - 256));
+        DecoBlocks.cobblestoneMouldingUpperStrata = new MouldingAndDecorativeWallBlock(DecoBlockIDs.COBBLESTONE_MOULDING_UPPER_STRATA_ID,
+                Material.rock,
+                "stonebrick", "stonebrick",
+                DecoBlockIDs.COBBLESTONE_SIDING_AND_CORNER_UPPER_STRATA_ID,
+                Block.cobblestone.blockHardness, Block.cobblestone.blockResistance, Block.soundStoneFootstep,
+                "decoBlockCobblestoneMoulding");
+        register(new MouldingBlockItem(DecoBlocks.cobblestoneMouldingUpperStrata.blockID - 256));
+    
+        DecoBlocks.mossyCobblestoneSidingAndCornerUpperStrata = new SidingAndCornerAndDecorativeWallBlock(DecoBlockIDs.MOSSY_COBBLESTONE_SIDING_AND_CORNER_UPPER_STRATA_ID,
+                Material.rock,
+                "stoneMoss",
+                Block.cobblestoneMossy.blockHardness, Block.cobblestoneMossy.blockResistance, Block.soundStoneFootstep,
+                "decoBlockMossyCobbleSiding");
+        register(new SidingAndCornerBlockItem(DecoBlocks.mossyCobblestoneSidingAndCornerUpperStrata.blockID - 256));
+        DecoBlocks.mossyCobblestoneMouldingUpperStrata = new MouldingAndDecorativeWallBlock(DecoBlockIDs.MOSSY_COBBLESTONE_MOULDING_UPPER_STRATA_ID,
+                Material.rock,
+                "stoneMoss", "stoneMoss",
+                DecoBlockIDs.MOSSY_COBBLESTONE_SIDING_AND_CORNER_UPPER_STRATA_ID,
+                Block.cobblestoneMossy.blockHardness, Block.cobblestoneMossy.blockResistance, Block.soundStoneFootstep,
+                "decoBlockMossyCobbleMoulding");
+        register(new MouldingBlockItem(DecoBlocks.mossyCobblestoneMouldingUpperStrata.blockID - 256));
+        DecoBlocks.mossyCobblestoneStairsUpperStrata = new StairsBlock(DecoBlockIDs.MOSSY_COBBLESTONE_STAIRS_UPPER_STRATA_ID, Block.cobblestoneMossy,
+                StoneHelper.MOSSY_COBBLESTONE_UPPER_STRATA_TYPE)
+                .setUnlocalizedName("decoBlockMossyCobbleStairs");
+    
+        DecoBlocks.mossyStoneBrickSidingAndCornerUpperStrata = new SidingAndCornerAndDecorativeWallBlock(DecoBlockIDs.MOSSY_STONE_BRICK_SIDING_AND_CORNER_UPPER_STRATA_ID,
+                Material.rock,
+                "stoneMoss",
+                Block.stoneBrick.blockHardness, Block.stoneBrick.blockResistance, Block.soundStoneFootstep,
+                "decoBlockStoneBrickMossySiding");
+        register(new SidingAndCornerBlockItem(DecoBlocks.mossyStoneBrickSidingAndCornerUpperStrata.blockID - 256));
+        DecoBlocks.mossyStoneBrickMouldingUpperStrata = new MouldingAndDecorativeWallBlock(DecoBlockIDs.MOSSY_STONE_BRICK_MOULDING_UPPER_STRATA_ID,
+                Material.rock,
+                "stoneMoss", "stoneMoss",
+                DecoBlockIDs.MOSSY_STONE_BRICK_SIDING_AND_CORNER_UPPER_STRATA_ID,
+                Block.stoneBrick.blockHardness, Block.stoneBrick.blockResistance, Block.soundStoneFootstep,
+                "decoBlockStoneBrickMossyMoulding");
+        register(new MouldingBlockItem(DecoBlocks.mossyStoneBrickMouldingUpperStrata.blockID - 256));
+        DecoBlocks.mossyStoneBrickStairsUpperStrata = new StairsBlock(DecoBlockIDs.MOSSY_STONE_BRICK_STAIRS_UPPER_STRATA_ID, Block.stoneBrick,
+                StoneHelper.MOSSY_STONE_BRICK_UPPER_STRATA_TYPE)
+                .setUnlocalizedName("decoBlockStoneBrickMossyStairs");
+    
+        DecoBlocks.crackedStoneBrickSidingAndCornerUpperStrata = new SidingAndCornerAndDecorativeWallBlock(DecoBlockIDs.CRACKED_STONE_BRICK_SIDING_AND_CORNER_UPPER_STRATA_ID,
+                Material.rock,
+                "stoneMoss",
+                Block.stoneBrick.blockHardness, Block.stoneBrick.blockResistance, Block.soundStoneFootstep,
+                "decoBlockStoneBrickCrackedSiding");
+        register(new SidingAndCornerBlockItem(DecoBlocks.crackedStoneBrickSidingAndCornerUpperStrata.blockID - 256));
+        DecoBlocks.crackedStoneBrickMouldingUpperStrata = new MouldingAndDecorativeWallBlock(DecoBlockIDs.CRACKED_STONE_BRICK_MOULDING_UPPER_STRATA_ID,
+                Material.rock,
+                "stoneMoss", "stoneMoss",
+                DecoBlockIDs.CRACKED_STONE_BRICK_SIDING_AND_CORNER_UPPER_STRATA_ID,
+                Block.stoneBrick.blockHardness, Block.stoneBrick.blockResistance, Block.soundStoneFootstep,
+                "decoBlockStoneBrickCrackedMoulding");
+        register(new MouldingBlockItem(DecoBlocks.crackedStoneBrickMouldingUpperStrata.blockID - 256));
+        DecoBlocks.crackedStoneBrickStairsUpperStrata = new StairsBlock(DecoBlockIDs.CRACKED_STONE_BRICK_STAIRS_UPPER_STRATA_ID, Block.stoneBrick,
+                StoneHelper.CRACKED_STONE_BRICK_UPPER_STRATA_TYPE)
+                .setUnlocalizedName("decoBlockStoneBrickCrackedStairs");
+    
+        // Mid strata
+        DecoBlocks.cobblestoneSidingAndCornerMidStrata = new SidingAndCornerAndDecorativeWallBlock(DecoBlockIDs.COBBLESTONE_SIDING_AND_CORNER_MID_STRATA_ID,
+                Material.rock,
+                "stonebrick",
+                Block.cobblestone.blockHardness, Block.cobblestone.blockResistance, Block.soundStoneFootstep,
+                "decoBlockCobblestoneSiding");
+        register(new SidingAndCornerBlockItem(DecoBlocks.cobblestoneSidingAndCornerMidStrata.blockID - 256));
+        DecoBlocks.cobblestoneMouldingMidStrata = new MouldingAndDecorativeWallBlock(DecoBlockIDs.COBBLESTONE_MOULDING_MID_STRATA_ID,
+                Material.rock,
+                "stonebrick", "stonebrick",
+                DecoBlockIDs.COBBLESTONE_SIDING_AND_CORNER_MID_STRATA_ID,
+                Block.cobblestone.blockHardness, Block.cobblestone.blockResistance, Block.soundStoneFootstep,
+                "decoBlockCobblestoneMoulding");
+        register(new MouldingBlockItem(DecoBlocks.cobblestoneMouldingMidStrata.blockID - 256));
+    
+        DecoBlocks.mossyCobblestoneSidingAndCornerMidStrata = new SidingAndCornerAndDecorativeWallBlock(DecoBlockIDs.MOSSY_COBBLESTONE_SIDING_AND_CORNER_MID_STRATA_ID,
+                Material.rock,
+                "stoneMoss",
+                Block.cobblestoneMossy.blockHardness, Block.cobblestoneMossy.blockResistance, Block.soundStoneFootstep,
+                "decoBlockMossyCobbleSiding");
+        register(new SidingAndCornerBlockItem(DecoBlocks.mossyCobblestoneSidingAndCornerMidStrata.blockID - 256));
+        DecoBlocks.mossyCobblestoneMouldingMidStrata = new MouldingAndDecorativeWallBlock(DecoBlockIDs.MOSSY_COBBLESTONE_MOULDING_MID_STRATA_ID,
+                Material.rock,
+                "stoneMoss", "stoneMoss",
+                DecoBlockIDs.MOSSY_COBBLESTONE_SIDING_AND_CORNER_MID_STRATA_ID,
+                Block.cobblestoneMossy.blockHardness, Block.cobblestoneMossy.blockResistance, Block.soundStoneFootstep,
+                "decoBlockMossyCobbleMoulding");
+        register(new MouldingBlockItem(DecoBlocks.mossyCobblestoneMouldingMidStrata.blockID - 256));
+        DecoBlocks.mossyCobblestoneStairsMidStrata = new StairsBlock(DecoBlockIDs.MOSSY_COBBLESTONE_STAIRS_MID_STRATA_ID, Block.cobblestoneMossy,
+                StoneHelper.MOSSY_COBBLESTONE_MID_STRATA_TYPE)
+                .setUnlocalizedName("decoBlockMossyCobbleStairs");
+    
+        DecoBlocks.mossyStoneBrickSidingAndCornerMidStrata = new SidingAndCornerAndDecorativeWallBlock(DecoBlockIDs.MOSSY_STONE_BRICK_SIDING_AND_CORNER_MID_STRATA_ID,
+                Material.rock,
+                "stoneMoss",
+                Block.stoneBrick.blockHardness, Block.stoneBrick.blockResistance, Block.soundStoneFootstep,
+                "decoBlockStoneBrickMossySiding");
+        register(new SidingAndCornerBlockItem(DecoBlocks.mossyStoneBrickSidingAndCornerMidStrata.blockID - 256));
+        DecoBlocks.mossyStoneBrickMouldingMidStrata = new MouldingAndDecorativeWallBlock(DecoBlockIDs.MOSSY_STONE_BRICK_MOULDING_MID_STRATA_ID,
+                Material.rock,
+                "stoneMoss", "stoneMoss",
+                DecoBlockIDs.MOSSY_STONE_BRICK_SIDING_AND_CORNER_MID_STRATA_ID,
+                Block.stoneBrick.blockHardness, Block.stoneBrick.blockResistance, Block.soundStoneFootstep,
+                "decoBlockStoneBrickMossyMoulding");
+        register(new MouldingBlockItem(DecoBlocks.mossyStoneBrickMouldingMidStrata.blockID - 256));
+        DecoBlocks.mossyStoneBrickStairsMidStrata = new StairsBlock(DecoBlockIDs.MOSSY_STONE_BRICK_STAIRS_MID_STRATA_ID, Block.stoneBrick,
+                StoneHelper.MOSSY_STONE_BRICK_MID_STRATA_TYPE)
+                .setUnlocalizedName("decoBlockStoneBrickMossyStairs");
+    
+        DecoBlocks.crackedStoneBrickSidingAndCornerMidStrata = new SidingAndCornerAndDecorativeWallBlock(DecoBlockIDs.CRACKED_STONE_BRICK_SIDING_AND_CORNER_MID_STRATA_ID,
+                Material.rock,
+                "stoneMoss",
+                Block.stoneBrick.blockHardness, Block.stoneBrick.blockResistance, Block.soundStoneFootstep,
+                "decoBlockStoneBrickCrackedSiding");
+        register(new SidingAndCornerBlockItem(DecoBlocks.crackedStoneBrickSidingAndCornerMidStrata.blockID - 256));
+        DecoBlocks.crackedStoneBrickMouldingMidStrata = new MouldingAndDecorativeWallBlock(DecoBlockIDs.CRACKED_STONE_BRICK_MOULDING_MID_STRATA_ID,
+                Material.rock,
+                "stoneMoss", "stoneMoss",
+                DecoBlockIDs.CRACKED_STONE_BRICK_SIDING_AND_CORNER_MID_STRATA_ID,
+                Block.stoneBrick.blockHardness, Block.stoneBrick.blockResistance, Block.soundStoneFootstep,
+                "decoBlockStoneBrickCrackedMoulding");
+        register(new MouldingBlockItem(DecoBlocks.crackedStoneBrickMouldingMidStrata.blockID - 256));
+        DecoBlocks.crackedStoneBrickStairsMidStrata = new StairsBlock(DecoBlockIDs.CRACKED_STONE_BRICK_STAIRS_MID_STRATA_ID, Block.stoneBrick,
+                StoneHelper.CRACKED_STONE_BRICK_MID_STRATA_TYPE)
+                .setUnlocalizedName("decoBlockStoneBrickCrackedStairs");
+    
+        // Deep strata
+        DecoBlocks.cobblestoneSidingAndCornerDeepStrata = new SidingAndCornerAndDecorativeWallBlock(DecoBlockIDs.COBBLESTONE_SIDING_AND_CORNER_DEEP_STRATA_ID,
+                Material.rock,
+                "stonebrick",
+                Block.cobblestone.blockHardness, Block.cobblestone.blockResistance, Block.soundStoneFootstep,
+                "decoBlockCobblestoneSiding");
+        register(new SidingAndCornerBlockItem(DecoBlocks.cobblestoneSidingAndCornerDeepStrata.blockID - 256));
+        DecoBlocks.cobblestoneMouldingDeepStrata = new MouldingAndDecorativeWallBlock(DecoBlockIDs.COBBLESTONE_MOULDING_DEEP_STRATA_ID,
+                Material.rock,
+                "stonebrick", "stonebrick",
+                DecoBlockIDs.COBBLESTONE_SIDING_AND_CORNER_DEEP_STRATA_ID,
+                Block.cobblestone.blockHardness, Block.cobblestone.blockResistance, Block.soundStoneFootstep,
+                "decoBlockCobblestoneMoulding");
+        register(new MouldingBlockItem(DecoBlocks.cobblestoneMouldingDeepStrata.blockID - 256));
+    
+        DecoBlocks.mossyCobblestoneSidingAndCornerDeepStrata = new SidingAndCornerAndDecorativeWallBlock(DecoBlockIDs.MOSSY_COBBLESTONE_SIDING_AND_CORNER_DEEP_STRATA_ID,
+                Material.rock,
+                "stoneMoss",
+                Block.cobblestoneMossy.blockHardness, Block.cobblestoneMossy.blockResistance, Block.soundStoneFootstep,
+                "decoBlockMossyCobbleSiding");
+        register(new SidingAndCornerBlockItem(DecoBlocks.mossyCobblestoneSidingAndCornerDeepStrata.blockID - 256));
+        DecoBlocks.mossyCobblestoneMouldingDeepStrata = new MouldingAndDecorativeWallBlock(DecoBlockIDs.MOSSY_COBBLESTONE_MOULDING_DEEP_STRATA_ID,
+                Material.rock,
+                "stoneMoss", "stoneMoss",
+                DecoBlockIDs.MOSSY_COBBLESTONE_SIDING_AND_CORNER_DEEP_STRATA_ID,
+                Block.cobblestoneMossy.blockHardness, Block.cobblestoneMossy.blockResistance, Block.soundStoneFootstep,
+                "decoBlockMossyCobbleMoulding");
+        register(new MouldingBlockItem(DecoBlocks.mossyCobblestoneMouldingDeepStrata.blockID - 256));
+        DecoBlocks.mossyCobblestoneStairsDeepStrata = new StairsBlock(DecoBlockIDs.MOSSY_COBBLESTONE_STAIRS_DEEP_STRATA_ID, Block.cobblestoneMossy,
+                StoneHelper.MOSSY_COBBLESTONE_DEEP_STRATA_TYPE)
+                .setUnlocalizedName("decoBlockMossyCobbleStairs");
+    
+        DecoBlocks.mossyStoneBrickSidingAndCornerDeepStrata = new SidingAndCornerAndDecorativeWallBlock(DecoBlockIDs.MOSSY_STONE_BRICK_SIDING_AND_CORNER_DEEP_STRATA_ID,
+                Material.rock,
+                "stoneMoss",
+                Block.stoneBrick.blockHardness, Block.stoneBrick.blockResistance, Block.soundStoneFootstep,
+                "decoBlockStoneBrickMossySiding");
+        register(new SidingAndCornerBlockItem(DecoBlocks.mossyStoneBrickSidingAndCornerDeepStrata.blockID - 256));
+        DecoBlocks.mossyStoneBrickMouldingDeepStrata = new MouldingAndDecorativeWallBlock(DecoBlockIDs.MOSSY_STONE_BRICK_MOULDING_DEEP_STRATA_ID,
+                Material.rock,
+                "stoneMoss", "stoneMoss",
+                DecoBlockIDs.MOSSY_STONE_BRICK_SIDING_AND_CORNER_DEEP_STRATA_ID,
+                Block.stoneBrick.blockHardness, Block.stoneBrick.blockResistance, Block.soundStoneFootstep,
+                "decoBlockStoneBrickMossyMoulding");
+        register(new MouldingBlockItem(DecoBlocks.mossyStoneBrickMouldingDeepStrata.blockID - 256));
+        DecoBlocks.mossyStoneBrickStairsDeepStrata = new StairsBlock(DecoBlockIDs.MOSSY_STONE_BRICK_STAIRS_DEEP_STRATA_ID, Block.stoneBrick,
+                StoneHelper.MOSSY_STONE_BRICK_DEEP_STRATA_TYPE)
+                .setUnlocalizedName("decoBlockStoneBrickMossyStairs");
+    
+        DecoBlocks.crackedStoneBrickSidingAndCornerDeepStrata = new SidingAndCornerAndDecorativeWallBlock(DecoBlockIDs.CRACKED_STONE_BRICK_SIDING_AND_CORNER_DEEP_STRATA_ID,
+                Material.rock,
+                "stoneMoss",
+                Block.stoneBrick.blockHardness, Block.stoneBrick.blockResistance, Block.soundStoneFootstep,
+                "decoBlockStoneBrickCrackedSiding");
+        register(new SidingAndCornerBlockItem(DecoBlocks.crackedStoneBrickSidingAndCornerDeepStrata.blockID - 256));
+        DecoBlocks.crackedStoneBrickMouldingDeepStrata = new MouldingAndDecorativeWallBlock(DecoBlockIDs.CRACKED_STONE_BRICK_MOULDING_DEEP_STRATA_ID,
+                Material.rock,
+                "stoneMoss", "stoneMoss",
+                DecoBlockIDs.CRACKED_STONE_BRICK_SIDING_AND_CORNER_DEEP_STRATA_ID,
+                Block.stoneBrick.blockHardness, Block.stoneBrick.blockResistance, Block.soundStoneFootstep,
+                "decoBlockStoneBrickCrackedMoulding");
+        register(new MouldingBlockItem(DecoBlocks.crackedStoneBrickMouldingDeepStrata.blockID - 256));
+        DecoBlocks.crackedStoneBrickStairsDeepStrata = new StairsBlock(DecoBlockIDs.CRACKED_STONE_BRICK_STAIRS_DEEP_STRATA_ID, Block.stoneBrick,
+                StoneHelper.CRACKED_STONE_BRICK_DEEP_STRATA_TYPE)
+                .setUnlocalizedName("decoBlockStoneBrickCrackedStairs");
     
         // Replace references as otherwise they would get messed up
         RoughStoneBlock.strataLevelBlockArray = new RoughStoneBlock[] {
