@@ -25,6 +25,7 @@ public class CraftingRecipeList {
 	public static void initRecipes() {
 		initGeneralRecipes();
 		initStoneRecipes();
+		initWhiteStoneRecipes();
 		initPrismarineRecipes();
 		initSandstoneRecipes();
 		initNetherRecipes();
@@ -1542,6 +1543,10 @@ public class CraftingRecipeList {
 						"S",
 						'S', new ItemStack(SlabHelper.SLATE_TILES_SLAB_ID, 1, SlabHelper.SLATE_TILES_SLAB_TYPE)
 				});
+	}
+	
+	private static void initWhiteStoneRecipes() {
+	
 	}
 	
 	private static void initPrismarineRecipes() {
