@@ -159,6 +159,52 @@ public class CraftingRecipeList {
 				DecoBlocks.crackedStoneBrickMouldingDeepStrata, DecoBlocks.crackedStoneBrickStairsDeepStrata, SlabHelper.CRACKED_STONE_BRICK_DEEP_STRATA_SLAB_ID,
 				SlabHelper.CRACKED_STONE_BRICK_DEEP_STRATA_SLAB_TYPE);
 		
+		//------ Mortaring ------//
+		
+		// Cobblestone
+		addMortaringRecipe(new ItemStack(Block.cobblestone, 1, StoneHelper.COBBLESTONE_UPPER_STRATA_TYPE),
+				new ItemStack(BTWBlocks.looseCobblestone, 1, StoneHelper.LOOSE_COBBLESTONE_UPPER_STRATA_TYPE));
+		addMortaringRecipe(new ItemStack(Block.stairsCobblestone),
+				new ItemStack(BTWBlocks.looseCobblestoneStairs));
+		addMortaringRecipe(new ItemStack(BTWBlocks.cobblestoneSlab, 1, StoneHelper.COBBLESTONE_UPPER_STRATA_TYPE),
+				new ItemStack(BTWBlocks.looseCobblestoneSlab, 1, StoneHelper.LOOSE_COBBLESTONE_UPPER_STRATA_TYPE));
+		
+		addMortaringRecipe(new ItemStack(Block.cobblestone, 1, StoneHelper.COBBLESTONE_MID_STRATA_TYPE),
+				new ItemStack(BTWBlocks.looseCobblestone, 1, StoneHelper.LOOSE_COBBLESTONE_MID_STRATA_TYPE));
+		addMortaringRecipe(new ItemStack(BTWBlocks.midStrataCobblestoneStairs),
+				new ItemStack(BTWBlocks.looseMidStrataCobblestoneStairs));
+		addMortaringRecipe(new ItemStack(BTWBlocks.cobblestoneSlab, 1, StoneHelper.COBBLESTONE_MID_STRATA_TYPE),
+				new ItemStack(BTWBlocks.looseCobblestoneSlab, 1, StoneHelper.LOOSE_COBBLESTONE_MID_STRATA_TYPE));
+		
+		addMortaringRecipe(new ItemStack(Block.cobblestone, 1, StoneHelper.COBBLESTONE_DEEP_STRATA_TYPE),
+				new ItemStack(BTWBlocks.looseCobblestone, 1, StoneHelper.LOOSE_COBBLESTONE_DEEP_STRATA_TYPE));
+		addMortaringRecipe(new ItemStack(BTWBlocks.deepStrataCobblestoneStairs),
+				new ItemStack(BTWBlocks.looseDeepStrataCobblestoneStairs));
+		addMortaringRecipe(new ItemStack(BTWBlocks.cobblestoneSlab, 1, StoneHelper.COBBLESTONE_DEEP_STRATA_TYPE),
+				new ItemStack(BTWBlocks.looseCobblestoneSlab, 1, StoneHelper.LOOSE_COBBLESTONE_DEEP_STRATA_TYPE));
+		
+		// StoneBrick
+		addMortaringRecipe(new ItemStack(Block.stoneBrick, 1, StoneHelper.STONE_BRICK_UPPER_STRATA_TYPE),
+				new ItemStack(BTWBlocks.looseStoneBrick, 1, StoneHelper.LOOSE_STONE_BRICK_UPPER_STRATA_TYPE));
+		addMortaringRecipe(new ItemStack(Block.stairsStoneBrick),
+				new ItemStack(BTWBlocks.looseStoneBrickStairs));
+		addMortaringRecipe(new ItemStack(BTWBlocks.stoneBrickSlab, 1, StoneHelper.STONE_BRICK_UPPER_STRATA_TYPE),
+				new ItemStack(BTWBlocks.looseStoneBrickSlab, 1, StoneHelper.LOOSE_STONE_BRICK_UPPER_STRATA_TYPE));
+		
+		addMortaringRecipe(new ItemStack(Block.stoneBrick, 1, StoneHelper.STONE_BRICK_MID_STRATA_TYPE),
+				new ItemStack(BTWBlocks.looseStoneBrick, 1, StoneHelper.LOOSE_STONE_BRICK_MID_STRATA_TYPE));
+		addMortaringRecipe(new ItemStack(BTWBlocks.midStrataStoneBrickStairs),
+				new ItemStack(BTWBlocks.looseMidStrataStoneBrickStairs));
+		addMortaringRecipe(new ItemStack(BTWBlocks.stoneBrickSlab, 1, StoneHelper.STONE_BRICK_MID_STRATA_TYPE),
+				new ItemStack(BTWBlocks.looseStoneBrickSlab, 1, StoneHelper.LOOSE_STONE_BRICK_MID_STRATA_TYPE));
+		
+		addMortaringRecipe(new ItemStack(Block.stoneBrick, 1, StoneHelper.STONE_BRICK_DEEP_STRATA_TYPE),
+				new ItemStack(BTWBlocks.looseStoneBrick, 1, StoneHelper.LOOSE_STONE_BRICK_DEEP_STRATA_TYPE));
+		addMortaringRecipe(new ItemStack(BTWBlocks.deepStrataStoneBrickStairs),
+				new ItemStack(BTWBlocks.looseDeepStrataStoneBrickStairs));
+		addMortaringRecipe(new ItemStack(BTWBlocks.stoneBrickSlab, 1, StoneHelper.STONE_BRICK_DEEP_STRATA_TYPE),
+				new ItemStack(BTWBlocks.looseStoneBrickSlab, 1, StoneHelper.LOOSE_STONE_BRICK_DEEP_STRATA_TYPE));
+		
 		initGraniteRecipes();
 		initAndesiteRecipes();
 		initDioriteRecipes();
