@@ -21,7 +21,7 @@ public class SandHelper {
 	
 	public static final int SANDSTONE_TYPE_DEFAULT = 0;
 	public static final int SANDSTONE_TYPE_CHISELED = 1;
-	public static final int SANDSTONE_TYPE_SMOOTH = 2;
+	public static final int SANDSTONE_TYPE_CUT = 2;
 	public static final int SANDSTONE_TYPE_POLISHED = 3;
 	public static final int SANDSTONE_TYPE_BRICK = 4;
 	public static final int SANDSTONE_TYPE_MOSSY = 5;

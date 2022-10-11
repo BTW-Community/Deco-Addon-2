@@ -89,7 +89,7 @@ public class RedSandstoneBlock extends Block {
 	@Override
 	public Icon getIcon(int side, int metadata) {
 		if (metadata == SandHelper.SANDSTONE_TYPE_DEFAULT ||
-				metadata == SandHelper.SANDSTONE_TYPE_SMOOTH ||
+				metadata == SandHelper.SANDSTONE_TYPE_CUT ||
 				metadata == SandHelper.SANDSTONE_TYPE_CHISELED)
 		{
 			if (side == 0 && metadata == SandHelper.SANDSTONE_TYPE_DEFAULT) {

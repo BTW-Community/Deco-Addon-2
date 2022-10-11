@@ -59,22 +59,22 @@ tile.decoBlockRedSand.name=Red Sand
 tile.decoBlockRedSandSlab.0.name=Red Sand Slab
 tile.decoBlockRedSandStoneStairs.name=Red Sandstone Stairs
 tile.decoBlockRedSandStoneSmoothStairs.name=Cut Red Sandstone Stairs
-tile.decoBlockRedSandStoneStairsPolished.name=Polished Red Sandstone Stairs
+tile.decoBlockRedSandStonePolishedStairs.name=Polished Red Sandstone Stairs
 tile.decoBlockRedSandStoneBrickStairs.name=Red Sandstone Brick Stairs
 tile.decoBlockRedSandStoneMossyStairs.name=Mossy Red Sandstone Stairs
 tile.decoBlockRedSandStoneBrickLargeStairs.name=Large Red Sandstone Brick Stairs
 tile.decoBlockRedSandStoneBrickLargeMossyStairs.name=Large Mossy Red Sandstone Brick Stairs
 tile.decoBlockRedSandStoneCrackedStairs.name=Cracked Red Sandstone Stairs
-tile.decoBlockRedSandStoneBrickLargeCrackedStairs.name=Larged Cracked Red Sandstone Stairs
+tile.decoBlockRedSandStoneBrickLargeCrackedStairs.name=Large Cracked Red Sandstone Stairs
 
 tile.decoBlockSandStoneSmoothStairs.name=Cut Sandstone Stairs
-tile.decoBlockSandStoneStairsPolished.name=Polished Sandstone Stairs
+tile.decoBlockSandStonePolishedStairs.name=Polished Sandstone Stairs
 tile.decoBlockSandStoneBrickStairs.name=Sandstone Brick Stairs
 tile.decoBlockSandStoneMossyStairs.name=Mossy Sandstone Stairs
 tile.decoBlockSandStoneBrickLargeStairs.name=Large Sandstone Brick Stairs
 tile.decoBlockSandStoneBrickLargeMossyStairs.name=Large Mossy Sandstone Brick Stairs
 tile.decoBlockSandStoneCrackedStairs.name=Cracked Sandstone Stairs
-tile.decoBlockSandStoneBrickLargeCrackedStairs.name=Larged Cracked Sandstone Stairs
+tile.decoBlockSandStoneBrickLargeCrackedStairs.name=Large Cracked Sandstone Stairs
 
 tile.decoBlockPrismarineLantern.name=Prismarine Lantern
 tile.decoBlockStairsPrismarine.name=Prismarine Stairs

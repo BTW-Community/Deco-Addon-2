@@ -461,9 +461,253 @@ public class DecoBlockInitializer {
     }
     
     private static void initSandstone() {
+        
+        //------ Sandstone ------//
+        
+        register(Block.sandStone, SandHelper.sandstoneNames);
+        
+        DecoBlocks.cutSandstoneSiding = new SidingCornerWallTopAndBottomBlock(DecoBlockIDs.CUT_SANDSTONE_SIDING_AND_CORNER_ID, Material.rock,
+                "sandstone_top", "sandstone_smooth", "sandstone_bottom",
+                Block.sandStone.blockHardness, Block.sandStone.blockResistance, Block.soundStoneFootstep,
+                "decoBlockSandstoneSmoothSiding");
+        register(new SidingAndCornerBlockItem(DecoBlocks.cutSandstoneSiding.blockID - 256));
+        DecoBlocks.cutSandstoneMoulding = new MouldingWallTopAndBottomBlock(DecoBlockIDs.CUT_SANDSTONE_MOULDING_ID, Material.rock,
+                "sandstone_top", "sandstone_smooth", "sandstone_bottom", "decoBlockSandstoneSmoothColumn",
+                DecoBlockIDs.CUT_SANDSTONE_SIDING_AND_CORNER_ID,
+                Block.sandStone.blockHardness, Block.sandStone.blockResistance, Block.soundStoneFootstep,
+                "decoBlockSandstoneSmoothMoulding");
+        register(new MouldingBlockItem(DecoBlocks.cutSandstoneMoulding.blockID - 256));
+        DecoBlocks.cutSandstoneStairs = new StairsBlock(DecoBlockIDs.CUT_SANDSTONE_STAIRS_ID, Block.sandStone, SandHelper.SANDSTONE_TYPE_CUT)
+                .setUnlocalizedName("decoBlockSandStoneSmoothStairs");
+    
+        DecoBlocks.polishedSandstoneSiding = new SidingCornerWallTopAndBottomBlock(DecoBlockIDs.POLISHED_SANDSTONE_SIDING_AND_CORNER_ID, Material.rock,
+                "sandstone_top", "sandstone_top", "sandstone_top",
+                Block.sandStone.blockHardness, Block.sandStone.blockResistance, Block.soundStoneFootstep,
+                "decoBlockSandstonePolishedSiding");
+        register(new SidingAndCornerBlockItem(DecoBlocks.polishedSandstoneSiding.blockID - 256));
+        DecoBlocks.polishedSandstoneMoulding = new MouldingWallTopAndBottomBlock(DecoBlockIDs.POLISHED_SANDSTONE_MOULDING_ID, Material.rock,
+                "sandstone_top", "sandstone_top", "sandstone_top", "sandstone_top",
+                DecoBlockIDs.POLISHED_SANDSTONE_SIDING_AND_CORNER_ID,
+                Block.sandStone.blockHardness, Block.sandStone.blockResistance, Block.soundStoneFootstep,
+                "decoBlockSandstonePolishedMoulding");
+        register(new MouldingBlockItem(DecoBlocks.polishedSandstoneMoulding.blockID - 256));
+        DecoBlocks.polishedSandstoneStairs = new StairsBlock(DecoBlockIDs.POLISHED_SANDSTONE_STAIRS_ID, Block.sandStone, SandHelper.SANDSTONE_TYPE_POLISHED)
+                .setUnlocalizedName("decoBlockSandStonePolishedStairs");
+    
+        DecoBlocks.sandstoneBrickSiding = new SidingCornerWallTopAndBottomBlock(DecoBlockIDs.SANDSTONE_BRICK_SIDING_AND_CORNER_ID, Material.rock,
+                "decoBlockSandstoneBrick", "decoBlockSandstoneBrick", "decoBlockSandstoneBrick",
+                Block.sandStone.blockHardness, Block.sandStone.blockResistance, Block.soundStoneFootstep,
+                "decoBlockSandstoneBrickSiding");
+        register(new SidingAndCornerBlockItem(DecoBlocks.sandstoneBrickSiding.blockID - 256));
+        DecoBlocks.sandstoneBrickMoulding = new MouldingWallTopAndBottomBlock(DecoBlockIDs.SANDSTONE_BRICK_MOULDING_ID, Material.rock,
+                "decoBlockSandstoneBrick", "decoBlockSandstoneBrick", "decoBlockSandstoneBrick", "decoBlockSandstoneBrick",
+                DecoBlockIDs.SANDSTONE_BRICK_SIDING_AND_CORNER_ID,
+                Block.sandStone.blockHardness, Block.sandStone.blockResistance, Block.soundStoneFootstep,
+                "decoBlockSandstoneBrickMoulding");
+        register(new MouldingBlockItem(DecoBlocks.sandstoneBrickMoulding.blockID - 256));
+        DecoBlocks.sandstoneBrickStairs = new StairsBlock(DecoBlockIDs.SANDSTONE_BRICK_STAIRS_ID, Block.sandStone, SandHelper.SANDSTONE_TYPE_BRICK)
+                .setUnlocalizedName("decoBlockSandStoneBrickStairs");
+    
+        DecoBlocks.mossySandstoneSiding = new SidingCornerWallTopAndBottomBlock(DecoBlockIDs.MOSSY_SANDSTONE_SIDING_AND_CORNER_ID, Material.rock,
+                "decoBlockSandstoneMossy_top", "decoBlockSandstoneMossy_side", "decoBlockSandstoneMossy_bottom",
+                Block.sandStone.blockHardness, Block.sandStone.blockResistance, Block.soundStoneFootstep,
+                "decoBlockSandstoneMossySiding");
+        register(new SidingAndCornerBlockItem(DecoBlocks.mossySandstoneSiding.blockID - 256));
+        DecoBlocks.mossySandstoneMoulding = new MouldingWallTopAndBottomBlock(DecoBlockIDs.MOSSY_SANDSTONE_MOULDING_ID, Material.rock,
+                "decoBlockSandstoneMossy_top", "decoBlockSandstoneMossy_side", "decoBlockSandstoneMossy_bottom", "decoBlockSandstoneMossy_side",
+                DecoBlockIDs.MOSSY_SANDSTONE_SIDING_AND_CORNER_ID,
+                Block.sandStone.blockHardness, Block.sandStone.blockResistance, Block.soundStoneFootstep,
+                "decoBlockSandstoneMossyMoulding");
+        register(new MouldingBlockItem(DecoBlocks.mossySandstoneMoulding.blockID - 256));
+        DecoBlocks.mossySandstoneStairs = new StairsBlock(DecoBlockIDs.MOSSY_SANDSTONE_STAIRS_ID, Block.sandStone, SandHelper.SANDSTONE_TYPE_MOSSY)
+                .setUnlocalizedName("decoBlockSandStoneMossyStairs");
+    
+        DecoBlocks.largeSandstoneBrickSiding = new SidingCornerWallTopAndBottomBlock(DecoBlockIDs.LARGE_SANDSTONE_BRICK_SIDING_AND_CORNER_ID, Material.rock,
+                "decoBlockSandstoneBrickLarge", "decoBlockSandstoneBrickLarge", "decoBlockSandstoneBrickLarge",
+                Block.sandStone.blockHardness, Block.sandStone.blockResistance, Block.soundStoneFootstep,
+                "decoBlockSandstoneBrickLargeSiding");
+        register(new SidingAndCornerBlockItem(DecoBlocks.largeSandstoneBrickSiding.blockID - 256));
+        DecoBlocks.largeSandstoneBrickMoulding = new MouldingWallTopAndBottomBlock(DecoBlockIDs.LARGE_SANDSTONE_BRICK_MOULDING_ID, Material.rock,
+                "decoBlockSandstoneBrickLarge", "decoBlockSandstoneBrickLarge", "decoBlockSandstoneBrickLarge", "decoBlockSandstoneBrickLarge",
+                DecoBlockIDs.LARGE_SANDSTONE_BRICK_SIDING_AND_CORNER_ID,
+                Block.sandStone.blockHardness, Block.sandStone.blockResistance, Block.soundStoneFootstep,
+                "decoBlockSandstoneBrickLargeMoulding");
+        register(new MouldingBlockItem(DecoBlocks.largeSandstoneBrickMoulding.blockID - 256));
+        DecoBlocks.largeSandstoneBrickStairs = new StairsBlock(DecoBlockIDs.LARGE_SANDSTONE_BRICK_STAIRS_ID, Block.sandStone, SandHelper.SANDSTONE_TYPE_LARGE_BRICK)
+                .setUnlocalizedName("decoBlockSandStoneBrickLargeStairs");
+    
+        DecoBlocks.mossyLargeSandstoneBrickSiding = new SidingCornerWallTopAndBottomBlock(DecoBlockIDs.MOSSY_LARGE_SANDSTONE_BRICK_SIDING_AND_CORNER_ID, Material.rock,
+                "decoBlockSandstoneBrickLargeMossy", "decoBlockSandstoneBrickLargeMossy", "decoBlockSandstoneBrickLargeMossy",
+                Block.sandStone.blockHardness, Block.sandStone.blockResistance, Block.soundStoneFootstep,
+                "decoBlockSandstoneBrickLargeMossySiding");
+        register(new SidingAndCornerBlockItem(DecoBlocks.mossyLargeSandstoneBrickSiding.blockID - 256));
+        DecoBlocks.mossyLargeSandstoneBrickMoulding = new MouldingWallTopAndBottomBlock(DecoBlockIDs.MOSSY_LARGE_SANDSTONE_BRICK_MOULDING_ID, Material.rock,
+                "decoBlockSandstoneBrickLargeMossy", "decoBlockSandstoneBrickLargeMossy", "decoBlockSandstoneBrickLargeMossy", "decoBlockSandstoneBrickLargeMossy",
+                DecoBlockIDs.MOSSY_LARGE_SANDSTONE_BRICK_MOULDING_ID,
+                Block.sandStone.blockHardness, Block.sandStone.blockResistance, Block.soundStoneFootstep,
+                "decoBlockSandstoneBrickLargeMossyMoulding");
+        register(new MouldingBlockItem(DecoBlocks.mossyLargeSandstoneBrickMoulding.blockID - 256));
+        DecoBlocks.mossyLargeSandstoneBrickStairs = new StairsBlock(DecoBlockIDs.MOSSY_LARGE_SANDSTONE_BRICK_STAIRS_ID, Block.sandStone, SandHelper.SANDSTONE_TYPE_LARGE_BRICK_MOSSY)
+                .setUnlocalizedName("decoBlockSandStoneBrickLargeMossyStairs");
+    
+        DecoBlocks.crackedSandstoneSiding = new SidingCornerWallTopAndBottomBlock(DecoBlockIDs.CRACKED_SANDSTONE_SIDING_AND_CORNER_ID, Material.rock,
+                "sandstone_top", "sandstone_top", "sandstone_top",
+                Block.sandStone.blockHardness, Block.sandStone.blockResistance, Block.soundStoneFootstep,
+                "decoBlockSandstoneCrackedSiding");
+        register(new SidingAndCornerBlockItem(DecoBlocks.crackedSandstoneSiding.blockID - 256));
+        DecoBlocks.crackedSandstoneMoulding = new MouldingWallTopAndBottomBlock(DecoBlockIDs.CRACKED_SANDSTONE_MOULDING_ID, Material.rock,
+                "sandstone_top", "sandstone_top", "sandstone_top", "sandstone_top",
+                DecoBlockIDs.CRACKED_SANDSTONE_SIDING_AND_CORNER_ID,
+                Block.sandStone.blockHardness, Block.sandStone.blockResistance, Block.soundStoneFootstep,
+                "decoBlockSandstoneCrackedMoulding");
+        register(new MouldingBlockItem(DecoBlocks.crackedSandstoneMoulding.blockID - 256));
+        DecoBlocks.crackedSandstoneStairs = new StairsBlock(DecoBlockIDs.CRACKED_SANDSTONE_STAIRS_ID, Block.sandStone, SandHelper.SANDSTONE_TYPE_CRACKED)
+                .setUnlocalizedName("decoBlockSandStoneCrackedStairs");
+    
+        DecoBlocks.crackedLargeSandstoneBrickSiding = new SidingCornerWallTopAndBottomBlock(DecoBlockIDs.CRACKED_LARGE_SANDSTONE_BRICK_SIDING_AND_CORNER_ID, Material.rock,
+                "decoBlockSandstoneBrickLargeCracked", "decoBlockSandstoneBrickLargeCracked", "decoBlockSandstoneBrickLargeCracked",
+                Block.sandStone.blockHardness, Block.sandStone.blockResistance, Block.soundStoneFootstep,
+                "decoBlockSandstoneBrickLargeCrackedSiding");
+        register(new SidingAndCornerBlockItem(DecoBlocks.crackedLargeSandstoneBrickSiding.blockID - 256));
+        DecoBlocks.crackedLargeSandstoneBrickMoulding = new MouldingWallTopAndBottomBlock(DecoBlockIDs.CRACKED_LARGE_SANDSTONE_BRICK_MOULDING_ID, Material.rock,
+                "decoBlockSandstoneBrickLargeCracked", "decoBlockSandstoneBrickLargeCracked", "decoBlockSandstoneBrickLargeCracked", "decoBlockSandstoneBrickLargeCracked",
+                DecoBlockIDs.CRACKED_LARGE_SANDSTONE_BRICK_MOULDING_ID,
+                Block.sandStone.blockHardness, Block.sandStone.blockResistance, Block.soundStoneFootstep,
+                "decoBlockSandstoneBrickLargeCrackedMoulding");
+        register(new MouldingBlockItem(DecoBlocks.crackedLargeSandstoneBrickMoulding.blockID - 256));
+        DecoBlocks.crackedLargeSandstoneBrickStairs = new StairsBlock(DecoBlockIDs.CRACKED_LARGE_SANDSTONE_BRICK_STAIRS_ID, Block.sandStone, SandHelper.SANDSTONE_TYPE_LARGE_BRICK_CRACKED)
+                .setUnlocalizedName("decoBlockSandStoneBrickLargeCrackedStairs");
+        
+        //------ Red Sandstone ------//
+        
         DecoBlocks.redSandstone = new RedSandstoneBlock(DecoBlockIDs.RED_SANDSTONE_ID);
         register(DecoBlocks.redSandstone, SandHelper.sandstoneNames);
-        register(Block.sandStone, SandHelper.sandstoneNames);
+    
+        DecoBlocks.redSandstoneSiding = new SidingCornerWallTopAndBottomBlock(DecoBlockIDs.RED_SANDSTONE_SIDING_AND_CORNER_ID, Material.rock,
+                "decoBlockRedSandstone_top", "decoBlockRedSandstone_side", "decoBlockRedSandstone_bottom",
+                DecoBlocks.redSandstone.blockHardness, DecoBlocks.redSandstone.blockResistance, Block.soundStoneFootstep,
+                "decoBlockRedSandstoneSiding");
+        register(new SidingAndCornerBlockItem(DecoBlocks.redSandstoneSiding.blockID - 256));
+        DecoBlocks.redSandstoneMoulding = new MouldingWallTopAndBottomBlock(DecoBlockIDs.RED_SANDSTONE_MOULDING_ID, Material.rock,
+                "decoBlockRedSandstone_top", "decoBlockRedSandstone_side", "decoBlockRedSandstone_bottom", "decoBlockRedSandstone_side",
+                DecoBlockIDs.RED_SANDSTONE_SIDING_AND_CORNER_ID,
+                DecoBlocks.redSandstone.blockHardness, DecoBlocks.redSandstone.blockResistance, Block.soundStoneFootstep,
+                "decoBlockRedSandstoneMoulding");
+        register(new MouldingBlockItem(DecoBlocks.redSandstoneMoulding.blockID - 256));
+        DecoBlocks.redSandstoneStairs = new StairsBlock(DecoBlockIDs.RED_SANDSTONE_STAIRS_ID, DecoBlocks.redSandstone, SandHelper.SANDSTONE_TYPE_DEFAULT)
+                .setUnlocalizedName("decoBlockRedSandStoneStairs");
+    
+        DecoBlocks.cutRedSandstoneSiding = new SidingCornerWallTopAndBottomBlock(DecoBlockIDs.CUT_RED_SANDSTONE_SIDING_AND_CORNER_ID, Material.rock,
+                "decoBlockRedSandstone_top", "decoBlockRedSandstoneSmooth", "decoBlockRedSandstone_top",
+                DecoBlocks.redSandstone.blockHardness, DecoBlocks.redSandstone.blockResistance, Block.soundStoneFootstep,
+                "decoBlockRedSandstoneSmoothSiding");
+        register(new SidingAndCornerBlockItem(DecoBlocks.cutRedSandstoneSiding.blockID - 256));
+        DecoBlocks.cutRedSandstoneMoulding = new MouldingWallTopAndBottomBlock(DecoBlockIDs.CUT_RED_SANDSTONE_MOULDING_ID, Material.rock,
+                "decoBlockRedSandstone_top", "decoBlockRedSandstoneSmooth", "decoBlockRedSandstone_top", "decoBlockRedSandstoneSmoothColumn",
+                DecoBlockIDs.CUT_RED_SANDSTONE_SIDING_AND_CORNER_ID,
+                DecoBlocks.redSandstone.blockHardness, DecoBlocks.redSandstone.blockResistance, Block.soundStoneFootstep,
+                "decoBlockRedSandstoneSmoothMoulding");
+        register(new MouldingBlockItem(DecoBlocks.cutRedSandstoneMoulding.blockID - 256));
+        DecoBlocks.cutRedSandstoneStairs = new StairsBlock(DecoBlockIDs.CUT_RED_SANDSTONE_STAIRS_ID, DecoBlocks.redSandstone, SandHelper.SANDSTONE_TYPE_CUT)
+                .setUnlocalizedName("decoBlockRedSandStoneSmoothStairs");
+    
+        DecoBlocks.polishedRedSandstoneSiding = new SidingCornerWallTopAndBottomBlock(DecoBlockIDs.POLISHED_RED_SANDSTONE_SIDING_AND_CORNER_ID, Material.rock,
+                "decoBlockRedSandstone_top", "decoBlockRedSandstone_top", "decoBlockRedSandstone_top",
+                DecoBlocks.redSandstone.blockHardness, DecoBlocks.redSandstone.blockResistance, Block.soundStoneFootstep,
+                "decoBlockRedSandstonePolishedSiding");
+        register(new SidingAndCornerBlockItem(DecoBlocks.polishedRedSandstoneSiding.blockID - 256));
+        DecoBlocks.polishedRedSandstoneMoulding = new MouldingWallTopAndBottomBlock(DecoBlockIDs.POLISHED_RED_SANDSTONE_MOULDING_ID, Material.rock,
+                "redSandstone_top", "redSandstone_top", "redSandstone_top", "redSandstone_top",
+                DecoBlockIDs.POLISHED_RED_SANDSTONE_SIDING_AND_CORNER_ID,
+                DecoBlocks.redSandstone.blockHardness, DecoBlocks.redSandstone.blockResistance, Block.soundStoneFootstep,
+                "decoBlockRedSandstonePolishedMoulding");
+        register(new MouldingBlockItem(DecoBlocks.polishedRedSandstoneMoulding.blockID - 256));
+        DecoBlocks.polishedRedSandstoneStairs = new StairsBlock(DecoBlockIDs.POLISHED_RED_SANDSTONE_STAIRS_ID, DecoBlocks.redSandstone, SandHelper.SANDSTONE_TYPE_POLISHED)
+                .setUnlocalizedName("decoBlockRedSandStonePolishedStairs");
+    
+        DecoBlocks.redSandstoneBrickSiding = new SidingCornerWallTopAndBottomBlock(DecoBlockIDs.RED_SANDSTONE_BRICK_SIDING_AND_CORNER_ID, Material.rock,
+                "decoBlockRedSandstoneBrick", "decoBlockRedSandstoneBrick", "decoBlockRedSandstoneBrick",
+                DecoBlocks.redSandstone.blockHardness, DecoBlocks.redSandstone.blockResistance, Block.soundStoneFootstep,
+                "decoBlockRedSandstoneBrickSiding");
+        register(new SidingAndCornerBlockItem(DecoBlocks.redSandstoneBrickSiding.blockID - 256));
+        DecoBlocks.redSandstoneBrickMoulding = new MouldingWallTopAndBottomBlock(DecoBlockIDs.RED_SANDSTONE_BRICK_MOULDING_ID, Material.rock,
+                "decoBlockRedSandstoneBrick", "decoBlockRedSandstoneBrick", "decoBlockRedSandstoneBrick", "decoBlockRedSandstoneBrick",
+                DecoBlockIDs.RED_SANDSTONE_BRICK_SIDING_AND_CORNER_ID,
+                DecoBlocks.redSandstone.blockHardness, DecoBlocks.redSandstone.blockResistance, Block.soundStoneFootstep,
+                "decoBlockRedSandstoneBrickMoulding");
+        register(new MouldingBlockItem(DecoBlocks.redSandstoneBrickMoulding.blockID - 256));
+        DecoBlocks.redSandstoneBrickStairs = new StairsBlock(DecoBlockIDs.RED_SANDSTONE_BRICK_STAIRS_ID, DecoBlocks.redSandstone, SandHelper.SANDSTONE_TYPE_BRICK)
+                .setUnlocalizedName("decoBlockRedSandStoneBrickStairs");
+    
+        DecoBlocks.mossyRedSandstoneSiding = new SidingCornerWallTopAndBottomBlock(DecoBlockIDs.MOSSY_RED_SANDSTONE_SIDING_AND_CORNER_ID, Material.rock,
+                "decoBlockRedSandstoneMossy_top", "decoBlockRedSandstoneMossy_side", "decoBlockRedSandstoneMossy_bottom",
+                DecoBlocks.redSandstone.blockHardness, DecoBlocks.redSandstone.blockResistance, Block.soundStoneFootstep,
+                "decoBlockRedSandstoneMossySiding");
+        register(new SidingAndCornerBlockItem(DecoBlocks.mossyRedSandstoneSiding.blockID - 256));
+        DecoBlocks.mossyRedSandstoneMoulding = new MouldingWallTopAndBottomBlock(DecoBlockIDs.MOSSY_RED_SANDSTONE_MOULDING_ID, Material.rock,
+                "decoBlockRedSandstoneMossy_top", "decoBlockRedSandstoneMossy_side", "decoBlockRedSandstoneMossy_bottom", "decoBlockRedSandstoneMossy_side",
+                DecoBlockIDs.MOSSY_RED_SANDSTONE_SIDING_AND_CORNER_ID,
+                DecoBlocks.redSandstone.blockHardness, DecoBlocks.redSandstone.blockResistance, Block.soundStoneFootstep,
+                "decoBlockRedSandstoneMossyMoulding");
+        register(new MouldingBlockItem(DecoBlocks.mossyRedSandstoneMoulding.blockID - 256));
+        DecoBlocks.mossyRedSandstoneStairs = new StairsBlock(DecoBlockIDs.MOSSY_RED_SANDSTONE_STAIRS_ID, DecoBlocks.redSandstone, SandHelper.SANDSTONE_TYPE_MOSSY)
+                .setUnlocalizedName("decoBlockRedSandStoneMossyStairs");
+    
+        DecoBlocks.largeRedSandstoneBrickSiding = new SidingCornerWallTopAndBottomBlock(DecoBlockIDs.LARGE_RED_SANDSTONE_BRICK_SIDING_AND_CORNER_ID, Material.rock,
+                "decoBlockRedSandstoneBrickLarge", "decoBlockRedSandstoneBrickLarge", "decoBlockRedSandstoneBrickLarge",
+                DecoBlocks.redSandstone.blockHardness, DecoBlocks.redSandstone.blockResistance, Block.soundStoneFootstep,
+                "decoBlockRedSandstoneBrickLargeSiding");
+        register(new SidingAndCornerBlockItem(DecoBlocks.largeRedSandstoneBrickSiding.blockID - 256));
+        DecoBlocks.largeRedSandstoneBrickMoulding = new MouldingWallTopAndBottomBlock(DecoBlockIDs.LARGE_RED_SANDSTONE_BRICK_MOULDING_ID, Material.rock,
+                "decoBlockRedSandstoneBrickLarge", "decoBlockRedSandstoneBrickLarge", "decoBlockRedSandstoneBrickLarge", "decoBlockRedSandstoneBrickLarge",
+                DecoBlockIDs.LARGE_RED_SANDSTONE_BRICK_SIDING_AND_CORNER_ID,
+                DecoBlocks.redSandstone.blockHardness, DecoBlocks.redSandstone.blockResistance, Block.soundStoneFootstep,
+                "decoBlockRedSandstoneBrickLargeMoulding");
+        register(new MouldingBlockItem(DecoBlocks.largeRedSandstoneBrickMoulding.blockID - 256));
+        DecoBlocks.largeRedSandstoneBrickStairs = new StairsBlock(DecoBlockIDs.LARGE_RED_SANDSTONE_BRICK_STAIRS_ID, DecoBlocks.redSandstone, SandHelper.SANDSTONE_TYPE_LARGE_BRICK)
+                .setUnlocalizedName("decoBlockRedSandStoneBrickLargeStairs");
+    
+        DecoBlocks.mossyLargeRedSandstoneBrickSiding = new SidingCornerWallTopAndBottomBlock(DecoBlockIDs.MOSSY_LARGE_RED_SANDSTONE_BRICK_SIDING_AND_CORNER_ID, Material.rock,
+                "decoBlockRedSandstoneBrickLargeMossy", "decoBlockRedSandstoneBrickLargeMossy", "decoBlockRedSandstoneBrickLargeMossy",
+                DecoBlocks.redSandstone.blockHardness, DecoBlocks.redSandstone.blockResistance, Block.soundStoneFootstep,
+                "decoBlockRedSandstoneBrickLargeMossySiding");
+        register(new SidingAndCornerBlockItem(DecoBlocks.mossyLargeRedSandstoneBrickSiding.blockID - 256));
+        DecoBlocks.mossyLargeRedSandstoneBrickMoulding = new MouldingWallTopAndBottomBlock(DecoBlockIDs.MOSSY_LARGE_RED_SANDSTONE_BRICK_MOULDING_ID, Material.rock,
+                "decoBlockRedSandstoneBrickLargeMossy", "decoBlockRedSandstoneBrickLargeMossy", "decoBlockRedSandstoneBrickLargeMossy", "decoBlockRedSandstoneBrickLargeMossy",
+                DecoBlockIDs.MOSSY_LARGE_RED_SANDSTONE_BRICK_MOULDING_ID,
+                DecoBlocks.redSandstone.blockHardness, DecoBlocks.redSandstone.blockResistance, Block.soundStoneFootstep,
+                "decoBlockRedSandstoneBrickLargeMossyMoulding");
+        register(new MouldingBlockItem(DecoBlocks.mossyLargeRedSandstoneBrickMoulding.blockID - 256));
+        DecoBlocks.mossyLargeRedSandstoneBrickStairs = new StairsBlock(DecoBlockIDs.MOSSY_LARGE_RED_SANDSTONE_BRICK_STAIRS_ID, DecoBlocks.redSandstone, SandHelper.SANDSTONE_TYPE_LARGE_BRICK_MOSSY)
+                .setUnlocalizedName("decoBlockRedSandStoneBrickLargeMossyStairs");
+    
+        DecoBlocks.crackedRedSandstoneSiding = new SidingCornerWallTopAndBottomBlock(DecoBlockIDs.CRACKED_RED_SANDSTONE_SIDING_AND_CORNER_ID, Material.rock,
+                "redSandstone_top", "redSandstone_top", "redSandstone_top",
+                DecoBlocks.redSandstone.blockHardness, DecoBlocks.redSandstone.blockResistance, Block.soundStoneFootstep,
+                "decoBlockRedSandstoneCrackedSiding");
+        register(new SidingAndCornerBlockItem(DecoBlocks.crackedRedSandstoneSiding.blockID - 256));
+        DecoBlocks.crackedRedSandstoneMoulding = new MouldingWallTopAndBottomBlock(DecoBlockIDs.CRACKED_RED_SANDSTONE_MOULDING_ID, Material.rock,
+                "redSandstone_top", "redSandstone_top", "redSandstone_top", "redSandstone_top",
+                DecoBlockIDs.CRACKED_RED_SANDSTONE_SIDING_AND_CORNER_ID,
+                DecoBlocks.redSandstone.blockHardness, DecoBlocks.redSandstone.blockResistance, Block.soundStoneFootstep,
+                "decoBlockRedSandstoneCrackedMoulding");
+        register(new MouldingBlockItem(DecoBlocks.crackedRedSandstoneMoulding.blockID - 256));
+        DecoBlocks.crackedRedSandstoneStairs = new StairsBlock(DecoBlockIDs.CRACKED_RED_SANDSTONE_STAIRS_ID, DecoBlocks.redSandstone, SandHelper.SANDSTONE_TYPE_CRACKED)
+                .setUnlocalizedName("decoBlockRedSandStoneCrackedStairs");
+    
+        DecoBlocks.crackedLargeRedSandstoneBrickSiding = new SidingCornerWallTopAndBottomBlock(DecoBlockIDs.CRACKED_LARGE_RED_SANDSTONE_BRICK_SIDING_AND_CORNER_ID, Material.rock,
+                "decoBlockRedSandstoneBrickLargeCracked", "decoBlockRedSandstoneBrickLargeCracked", "decoBlockRedSandstoneBrickLargeCracked",
+                DecoBlocks.redSandstone.blockHardness, DecoBlocks.redSandstone.blockResistance, Block.soundStoneFootstep,
+                "decoBlockRedSandstoneBrickLargeCrackedSiding");
+        register(new SidingAndCornerBlockItem(DecoBlocks.crackedLargeRedSandstoneBrickSiding.blockID - 256));
+        DecoBlocks.crackedLargeRedSandstoneBrickMoulding = new MouldingWallTopAndBottomBlock(DecoBlockIDs.CRACKED_LARGE_RED_SANDSTONE_BRICK_MOULDING_ID, Material.rock,
+                "decoBlockRedSandstoneBrickLargeCracked", "decoBlockRedSandstoneBrickLargeCracked", "decoBlockRedSandstoneBrickLargeCracked", "decoBlockRedSandstoneBrickLargeCracked",
+                DecoBlockIDs.CRACKED_LARGE_RED_SANDSTONE_BRICK_MOULDING_ID,
+                DecoBlocks.redSandstone.blockHardness, DecoBlocks.redSandstone.blockResistance, Block.soundStoneFootstep,
+                "decoBlockRedSandstoneBrickLargeCrackedMoulding");
+        register(new MouldingBlockItem(DecoBlocks.crackedLargeRedSandstoneBrickMoulding.blockID - 256));
+        DecoBlocks.crackedLargeRedSandstoneBrickStairs = new StairsBlock(DecoBlockIDs.CRACKED_LARGE_RED_SANDSTONE_BRICK_STAIRS_ID, DecoBlocks.redSandstone, SandHelper.SANDSTONE_TYPE_LARGE_BRICK_CRACKED)
+                .setUnlocalizedName("decoBlockRedSandStoneBrickLargeCrackedStairs");
     }
     
     private static void initNether() {

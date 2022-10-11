@@ -210,7 +210,77 @@ public class DecoBlocks {
     
     //------ Sandstone Blocks ------//
     
+    // Sandstone
+    public static Block cutSandstoneSiding;
+    public static Block cutSandstoneMoulding;
+    public static Block cutSandstoneStairs;
+    
+    public static Block polishedSandstoneSiding;
+    public static Block polishedSandstoneMoulding;
+    public static Block polishedSandstoneStairs;
+    
+    public static Block sandstoneBrickSiding;
+    public static Block sandstoneBrickMoulding;
+    public static Block sandstoneBrickStairs;
+    
+    public static Block mossySandstoneSiding;
+    public static Block mossySandstoneMoulding;
+    public static Block mossySandstoneStairs;
+    
+    public static Block largeSandstoneBrickSiding;
+    public static Block largeSandstoneBrickMoulding;
+    public static Block largeSandstoneBrickStairs;
+    
+    public static Block mossyLargeSandstoneBrickSiding;
+    public static Block mossyLargeSandstoneBrickMoulding;
+    public static Block mossyLargeSandstoneBrickStairs;
+    
+    public static Block crackedSandstoneSiding;
+    public static Block crackedSandstoneMoulding;
+    public static Block crackedSandstoneStairs;
+    
+    public static Block crackedLargeSandstoneBrickSiding;
+    public static Block crackedLargeSandstoneBrickMoulding;
+    public static Block crackedLargeSandstoneBrickStairs;
+    
+    // Red Sandstone
     public static Block redSandstone;
+    
+    public static Block redSandstoneSiding;
+    public static Block redSandstoneMoulding;
+    public static Block redSandstoneStairs;
+    
+    public static Block cutRedSandstoneSiding;
+    public static Block cutRedSandstoneMoulding;
+    public static Block cutRedSandstoneStairs;
+    
+    public static Block polishedRedSandstoneSiding;
+    public static Block polishedRedSandstoneMoulding;
+    public static Block polishedRedSandstoneStairs;
+    
+    public static Block redSandstoneBrickSiding;
+    public static Block redSandstoneBrickMoulding;
+    public static Block redSandstoneBrickStairs;
+    
+    public static Block mossyRedSandstoneSiding;
+    public static Block mossyRedSandstoneMoulding;
+    public static Block mossyRedSandstoneStairs;
+    
+    public static Block largeRedSandstoneBrickSiding;
+    public static Block largeRedSandstoneBrickMoulding;
+    public static Block largeRedSandstoneBrickStairs;
+    
+    public static Block mossyLargeRedSandstoneBrickSiding;
+    public static Block mossyLargeRedSandstoneBrickMoulding;
+    public static Block mossyLargeRedSandstoneBrickStairs;
+    
+    public static Block crackedRedSandstoneSiding;
+    public static Block crackedRedSandstoneMoulding;
+    public static Block crackedRedSandstoneStairs;
+    
+    public static Block crackedLargeRedSandstoneBrickSiding;
+    public static Block crackedLargeRedSandstoneBrickMoulding;
+    public static Block crackedLargeRedSandstoneBrickStairs;
     
     //------ Nether Blocks ------//
     

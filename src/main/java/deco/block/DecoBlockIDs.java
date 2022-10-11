@@ -170,6 +170,13 @@ public class DecoBlockIDs {
     public static final int RED_SAND_SLAB_ID = 3311;
     public static final int RED_SANDSTONE_ID = 3312;
     
+    public static final int RED_SANDSTONE_STAIRS_ID = 3314;
+    public static final int RED_SANDSTONE_SIDING_AND_CORNER_ID = 3315;
+    public static final int RED_SANDSTONE_MOULDING_ID = 3316;
+    public static final int CUT_RED_SANDSTONE_SIDING_AND_CORNER_ID = 3317;
+    public static final int CUT_RED_SANDSTONE_MOULDING_ID = 3318;
+    public static final int CUT_SANDSTONE_SIDING_AND_CORNER_ID = 3319;
+    public static final int CUT_SANDSTONE_MOULDING_ID = 3320;
     public static final int PRISMARINE_ID = 3321;
     public static final int PRISMARINE_LANTERN_ID = 3322;
     public static final int PRISMARINE_SIDING_AND_CORNER_ID = 3323;
@@ -181,12 +188,55 @@ public class DecoBlockIDs {
     public static final int DARK_PRISMARINE_SIDING_AND_CORNER_ID = 3329;
     public static final int DARK_PRISMARINE_MOULDING_ID = 3330;
     public static final int DARK_PRISMARINE_STAIRS_ID = 3331;
-    
+    public static final int CARPET_ID = 3332;
+    public static final int POLISHED_SANDSTONE_STAIRS_ID = 3333;
+    public static final int POLISHED_SANDSTONE_SIDING_AND_CORNER_ID = 3334;
+    public static final int POLISHED_SANDSTONE_MOULDING_ID = 3335;
+    public static final int POLISHED_RED_SANDSTONE_STAIRS_ID = 3336;
+    public static final int POLISHED_RED_SANDSTONE_SIDING_AND_CORNER_ID = 3337;
+    public static final int POLISHED_RED_SANDSTONE_MOULDING_ID = 3338;
+    public static final int SANDSTONE_BRICK_STAIRS_ID = 3339;
+    public static final int SANDSTONE_BRICK_SIDING_AND_CORNER_ID = 3340;
+    public static final int SANDSTONE_BRICK_MOULDING_ID = 3341;
+    public static final int RED_SANDSTONE_BRICK_STAIRS_ID = 3342;
+    public static final int RED_SANDSTONE_BRICK_SIDING_AND_CORNER_ID = 3343;
+    public static final int RED_SANDSTONE_BRICK_MOULDING_ID = 3344;
+    public static final int CUT_SANDSTONE_STAIRS_ID = 3345;
+    public static final int CUT_RED_SANDSTONE_STAIRS_ID = 3346;
+    public static final int MOSSY_SANDSTONE_STAIRS_ID = 3347;
+    public static final int MOSSY_SANDSTONE_SIDING_AND_CORNER_ID = 3348;
+    public static final int MOSSY_SANDSTONE_MOULDING_ID = 3349;
+    public static final int LARGE_SANDSTONE_BRICK_STAIRS_ID = 3350;
+    public static final int LARGE_SANDSTONE_BRICK_SIDING_AND_CORNER_ID = 3351;
+    public static final int LARGE_SANDSTONE_BRICK_MOULDING_ID = 3352;
+    public static final int MOSSY_LARGE_SANDSTONE_BRICK_STAIRS_ID = 3353;
+    public static final int MOSSY_LARGE_SANDSTONE_BRICK_SIDING_AND_CORNER_ID = 3354;
+    public static final int MOSSY_LARGE_SANDSTONE_BRICK_MOULDING_ID = 3355;
+    public static final int MOSSY_RED_SANDSTONE_STAIRS_ID = 3356;
+    public static final int MOSSY_RED_SANDSTONE_SIDING_AND_CORNER_ID = 3357;
+    public static final int MOSSY_RED_SANDSTONE_MOULDING_ID = 3358;
+    public static final int LARGE_RED_SANDSTONE_BRICK_STAIRS_ID = 3359;
+    public static final int LARGE_RED_SANDSTONE_BRICK_SIDING_AND_CORNER_ID = 3360;
+    public static final int LARGE_RED_SANDSTONE_BRICK_MOULDING_ID = 3361;
+    public static final int MOSSY_LARGE_RED_SANDSTONE_BRICK_STAIRS_ID = 3362;
+    public static final int MOSSY_LARGE_RED_SANDSTONE_BRICK_SIDING_AND_CORNER_ID = 3363;
+    public static final int MOSSY_LARGE_RED_SANDSTONE_BRICK_MOULDING_ID = 3364;
+    public static final int CRACKED_SANDSTONE_STAIRS_ID = 3365;
+    public static final int CRACKED_SANDSTONE_SIDING_AND_CORNER_ID = 3366;
+    public static final int CRACKED_SANDSTONE_MOULDING_ID = 3367;
+    public static final int CRACKED_LARGE_SANDSTONE_BRICK_STAIRS_ID = 3368;
+    public static final int CRACKED_LARGE_SANDSTONE_BRICK_SIDING_AND_CORNER_ID = 3369;
+    public static final int CRACKED_LARGE_SANDSTONE_BRICK_MOULDING_ID = 3370;
+    public static final int CRACKED_RED_SANDSTONE_STAIRS_ID = 3371;
+    public static final int CRACKED_RED_SANDSTONE_SIDING_AND_CORNER_ID = 3372;
+    public static final int CRACKED_RED_SANDSTONE_MOULDING_ID = 3373;
+    public static final int CRACKED_LARGE_RED_SANDSTONE_BRICK_STAIRS_ID = 3374;
+    public static final int CRACKED_LARGE_RED_SANDSTONE_BRICK_SIDING_AND_CORNER_ID = 3375;
+    public static final int CRACKED_LARGE_RED_SANDSTONE_BRICK_MOULDING_ID = 3376;
     public static final int STONE_SLAB_6_ID = 3377;
     
-    public static final int CONCRETE_SUB_START = 3383;
-    // IDs occupied through 3430
-    
+    public static final int CONCRETE_SUB_START = 3384;
+    // IDs occupied through 3431
     public static final int CONCRETE_SLAB_ID = 3432;
     public static final int CONCRETE_SLAB_2_ID = 3433;
     public static final int END_STONE_BRICK_ID = 3434;
