@@ -21,6 +21,7 @@ import net.minecraft.src.*;
 
 public class DecoBlockInitializer {
     public static void initDecoBlocks() {
+        initMaterials();
         initGeneralBlocks();
         initStone();
         initWhiteStone();
@@ -34,6 +35,13 @@ public class DecoBlockInitializer {
         initPlants();
         initWoodTypes();
         initStoneSlabs();
+    }
+    
+    private static void initMaterials() {
+        DecoBlocks.carpetMaterial = new Material(MapColor.clothColor)
+                .setBurning()
+                .setAxesEfficientOn()
+                .setRequiresTool();
     }
     
     private static void initGeneralBlocks() {
@@ -54,6 +62,9 @@ public class DecoBlockInitializer {
                 .setCreativeTab(CreativeTabs.tabBlock);
         Block.blockDiamond.setUnlocalizedName("decoBlockDiamond");
         BeaconTileEntity.addBeaconEffect(DecoBlocks.diamondiumBlock.blockID, BeaconTileEntity.FORTUNE_EFFECT);
+        
+        DecoBlocks.carpet = new CarpetBlock(DecoBlockIDs.CARPET_ID);
+        register(new ColoredItemBlock(DecoBlocks.carpet));
     }
     
     private static void initStone() {

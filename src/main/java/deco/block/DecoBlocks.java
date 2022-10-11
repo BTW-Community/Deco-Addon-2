@@ -1,8 +1,13 @@
 package deco.block;
 
 import net.minecraft.src.Block;
+import net.minecraft.src.Material;
 
 public class DecoBlocks {
+    
+    //------ Materials ------//
+    
+    public static Material carpetMaterial;
     
     //------ General Blocks ------//
     

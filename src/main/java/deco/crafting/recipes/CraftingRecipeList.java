@@ -51,10 +51,59 @@ public class CraftingRecipeList {
 						new ItemStack(BTWItems.potash)
 				});
 		
+		//------ Carpets ------//
+		
 		addStorage(new ItemStack(DecoBlocks.coalBlock), new ItemStack(Item.coal, 1, 0));
 		addStorage(new ItemStack(DecoBlocks.netherCoalBlock), new ItemStack(BTWItems.nethercoal));
 		
 		addStorage(new ItemStack(DecoBlocks.diamondiumBlock), new ItemStack(BTWItems.diamondIngot));
+		
+		for (int color = 0; color < 16; color++) {
+			RecipeManager.addRecipe(new ItemStack(DecoBlocks.carpet, 1, color),
+					new Object[] {
+							"WWW",
+							'W', new ItemStack(BTWItems.wool, 1, color)
+					});
+			
+			RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.carpet, 12, color),
+					new ItemStack[] {
+							new ItemStack(DecoBlocks.carpet, 12, ColorUtils.WHITE.colorID),
+							new ItemStack(Item.dyePowder, 1, color)
+					});
+			RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.carpet, 12, color),
+					new ItemStack[] {
+							new ItemStack(DecoBlocks.carpet, 12, ColorUtils.WHITE.colorID),
+							new ItemStack(Item.dyePowder, 1, color + 16)
+					});
+			
+			RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.carpet, 1, color),
+					new ItemStack[] {
+							new ItemStack(DecoBlocks.carpet, 1, ColorUtils.WHITE.colorID),
+							new ItemStack(Item.dyePowder, 1, color)
+					});
+			RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.carpet, 1, color),
+					new ItemStack[] {
+							new ItemStack(DecoBlocks.carpet, 1, ColorUtils.WHITE.colorID),
+							new ItemStack(Item.dyePowder, 1, color + 16)
+					});
+		}
+		
+		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.carpet, 12, ColorUtils.BROWN.colorID),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.carpet, 12, ColorUtils.WHITE.colorID),
+						new ItemStack(BTWItems.dung)
+				});
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.carpet, 1, ColorUtils.BROWN.colorID),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.carpet, 1, ColorUtils.WHITE.colorID),
+						new ItemStack(BTWItems.dung)
+				});
+		
+		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.carpet, 12, ColorUtils.WHITE.colorID),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.carpet, 12, InventoryUtils.IGNORE_METADATA),
+						new ItemStack(BTWItems.soap)
+				});
 	}
 	
 	private static void initStoneRecipes() {
@@ -2961,12 +3010,26 @@ public class CraftingRecipeList {
 		RecipeManager.addMillStoneRecipe(new ItemStack(Item.dyePowder, 2, ColorUtils.BLUE.colorID + 16),
 				new ItemStack(DecoBlocks.tulip, 1, 4));
 		
-		//Cooking with dyes
+		// Vanilla Dyeing
 		for (int color = 0; color < 16; color++) {
-			RecipeManager.addCauldronRecipe(new ItemStack(Block.cloth, 1, BlockCloth.getDyeFromBlock(color)),
+			if (color != ColorUtils.WHITE.colorID) {
+				RecipeManager.addCauldronRecipe(new ItemStack(Block.cloth, 8, BlockCloth.getDyeFromBlock(color)),
+						new ItemStack[] {
+								new ItemStack(Item.dyePowder, 1, color + 16),
+								new ItemStack(Block.cloth, 8, ColorUtils.WHITE.colorID)
+						});
+				
+				RecipeManager.addCauldronRecipe(new ItemStack(BTWItems.wool, 32, color),
+						new ItemStack[] {
+								new ItemStack(Item.dyePowder, 1, color + 16),
+								new ItemStack(BTWItems.wool, 32, ColorUtils.WHITE.colorID)
+						});
+			}
+			
+			RecipeManager.addShapelessRecipe(new ItemStack(BTWItems.candle, 1, color),
 					new ItemStack[] {
 							new ItemStack(Item.dyePowder, 1, color + 16),
-							new ItemStack(Item.itemsList[Block.cloth.blockID], 1, 0)
+							new ItemStack(BTWItems.candle, 1, 16) // Plain candle
 					});
 		}
 		
