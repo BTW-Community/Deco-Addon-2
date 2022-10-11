@@ -39,6 +39,24 @@ public class SlabHelper {
 	// Prismarine
 	
 	// Sandstone
+	public static final int CUT_SANDSTONE_SLAB_ID = DecoBlockIDs.STONE_SLAB_4_ID;
+	public static final int POLISHED_SANDSTONE_SLAB_ID = DecoBlockIDs.STONE_SLAB_4_ID;
+	public static final int SANDSTONE_BRICK_SLAB_ID = DecoBlockIDs.STONE_SLAB_4_ID;
+	public static final int MOSSY_SANDSTONE_SLAB_ID = DecoBlockIDs.STONE_SLAB_4_ID;
+	public static final int LARGE_SANDSTONE_BRICK_SLAB_ID = DecoBlockIDs.STONE_SLAB_4_ID;
+	public static final int MOSSY_LARGE_SANDSTONE_BRICK_SLAB_ID = DecoBlockIDs.STONE_SLAB_5_ID;
+	public static final int CRACKED_SANDSTONE_SLAB_ID = DecoBlockIDs.STONE_SLAB_5_ID;
+	public static final int CRACKED_LARGE_SANDSTONE_BRICK_SLAB_ID = DecoBlockIDs.STONE_SLAB_5_ID;
+	
+	public static final int RED_SANDSTONE_SLAB_ID = DecoBlockIDs.STONE_SLAB_ID;
+	public static final int CUT_RED_SANDSTONE_SLAB_ID = DecoBlockIDs.STONE_SLAB_4_ID;
+	public static final int POLISHED_RED_SANDSTONE_SLAB_ID = DecoBlockIDs.STONE_SLAB_4_ID;
+	public static final int RED_SANDSTONE_BRICK_SLAB_ID = DecoBlockIDs.STONE_SLAB_4_ID;
+	public static final int MOSSY_RED_SANDSTONE_SLAB_ID = DecoBlockIDs.STONE_SLAB_5_ID;
+	public static final int LARGE_RED_SANDSTONE_BRICK_SLAB_ID = DecoBlockIDs.STONE_SLAB_5_ID;
+	public static final int MOSSY_LARGE_RED_SANDSTONE_BRICK_SLAB_ID = DecoBlockIDs.STONE_SLAB_5_ID;
+	public static final int CRACKED_RED_SANDSTONE_SLAB_ID = DecoBlockIDs.STONE_SLAB_5_ID;
+	public static final int CRACKED_LARGE_RED_SANDSTONE_BRICK_SLAB_ID = DecoBlockIDs.STONE_SLAB_5_ID;
 	
 	// Nether
 	public static final int RED_NETHER_BRICK_SLAB_ID = DecoBlockIDs.STONE_SLAB_ID;
@@ -91,6 +109,24 @@ public class SlabHelper {
 	// Prismarine
 	
 	// Sandstone
+	public static final int CUT_SANDSTONE_SLAB_TYPE = 0;
+	public static final int POLISHED_SANDSTONE_SLAB_TYPE = 1;
+	public static final int SANDSTONE_BRICK_SLAB_TYPE = 2;
+	public static final int MOSSY_SANDSTONE_SLAB_TYPE = 6;
+	public static final int LARGE_SANDSTONE_BRICK_SLAB_TYPE = 7;
+	public static final int MOSSY_LARGE_SANDSTONE_BRICK_SLAB_TYPE = 0;
+	public static final int CRACKED_SANDSTONE_SLAB_TYPE = 4;
+	public static final int CRACKED_LARGE_SANDSTONE_BRICK_SLAB_TYPE = 5;
+	
+	public static final int RED_SANDSTONE_SLAB_TYPE = 0;
+	public static final int CUT_RED_SANDSTONE_SLAB_TYPE = 3;
+	public static final int POLISHED_RED_SANDSTONE_SLAB_TYPE = 4;
+	public static final int RED_SANDSTONE_BRICK_SLAB_TYPE = 5;
+	public static final int MOSSY_RED_SANDSTONE_SLAB_TYPE = 1;
+	public static final int LARGE_RED_SANDSTONE_BRICK_SLAB_TYPE = 2;
+	public static final int MOSSY_LARGE_RED_SANDSTONE_BRICK_SLAB_TYPE = 3;
+	public static final int CRACKED_RED_SANDSTONE_SLAB_TYPE = 6;
+	public static final int CRACKED_LARGE_RED_SANDSTONE_BRICK_SLAB_TYPE = 7;
 	
 	// Nether
 	public static final int RED_NETHER_BRICK_SLAB_TYPE = 7;

@@ -3,6 +3,7 @@ package deco.crafting.recipes;
 import btw.block.BTWBlocks;
 import btw.block.blocks.AestheticOpaqueBlock;
 import btw.block.blocks.MouldingAndDecorativeBlock;
+import btw.block.blocks.SandstoneBlock;
 import btw.block.blocks.SidingAndCornerAndDecorativeBlock;
 import btw.crafting.recipe.RecipeManager;
 import btw.inventory.util.InventoryUtils;
@@ -1554,7 +1555,126 @@ public class CraftingRecipeList {
 	}
 	
 	private static void initSandstoneRecipes() {
+		
+		//------ Sandstone ------//
 	
+		RecipeManager.removeVanillaRecipe(new ItemStack(Block.sandStone, 4, SandHelper.SANDSTONE_TYPE_CUT), new Object[] {
+				"##",
+				"##",
+				'#', Block.sandStone});
+		RecipeManager.addRecipe(new ItemStack(Block.sandStone, 4, SandHelper.SANDSTONE_TYPE_CUT), new Object[] {
+				"##",
+				"##",
+				'#', new ItemStack(Block.sandStone, 1, SandHelper.SANDSTONE_TYPE_DEFAULT)});
+		
+		RecipeManager.addStokedCrucibleRecipe(new ItemStack(Block.sandStone, 1, SandHelper.SANDSTONE_TYPE_POLISHED),
+				new ItemStack[] {
+					new ItemStack(Block.sandStone, 1, SandHelper.SANDSTONE_TYPE_DEFAULT)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(Block.sandStone, 4, SandHelper.SANDSTONE_TYPE_BRICK), new Object[] {
+				"XX",
+				"XX",
+				'X', new ItemStack(Block.sandStone, 1, SandHelper.SANDSTONE_TYPE_POLISHED)});
+		
+		RecipeManager.addRecipe(new ItemStack(Block.sandStone, 4, SandHelper.SANDSTONE_TYPE_LARGE_BRICK), new Object[] {
+				"XX",
+				"XX",
+				'X', new ItemStack(Block.sandStone, 1, SandHelper.SANDSTONE_TYPE_CUT)});
+		
+		addChiselingRecipe(new ItemStack(Block.sandStone, 1, SandHelper.SANDSTONE_TYPE_CHISELED),
+				new ItemStack(Block.sandStone, 1, SandHelper.SANDSTONE_TYPE_DEFAULT));
+		
+		// Sub blocks
+		RecipeManager.removeVanillaRecipe(new ItemStack(Block.stoneSingleSlab, 6, 1), new Object[] {
+				"XXX",
+				'X', Block.sandStone});
+		RecipeManager.addRecipe(new ItemStack(Block.stoneSingleSlab, 6, 1), new Object[] {
+				"XXX",
+				'X', new ItemStack(Block.sandStone, 1, SandHelper.SANDSTONE_TYPE_DEFAULT)});
+		
+		removeSubBlockRecipes(Block.sandStone, SandHelper.SANDSTONE_TYPE_CUT, SandHelper.SANDSTONE_TYPE_DEFAULT, BTWBlocks.sandstoneSidingAndCorner,
+				BTWBlocks.sandstoneMouldingAndDecorative, true);
+		
+		addSubBlockRecipes(Block.sandStone, SandHelper.SANDSTONE_TYPE_CUT, DecoBlocks.cutSandstoneSiding, DecoBlocks.cutSandstoneMoulding,
+				DecoBlocks.cutSandstoneStairs, Block.blocksList[SlabHelper.CUT_SANDSTONE_SLAB_ID], SlabHelper.CUT_SANDSTONE_SLAB_TYPE);
+		
+		addSubBlockRecipes(Block.sandStone, SandHelper.SANDSTONE_TYPE_POLISHED, DecoBlocks.polishedSandstoneSiding, DecoBlocks.polishedSandstoneMoulding,
+				DecoBlocks.polishedSandstoneStairs, Block.blocksList[SlabHelper.POLISHED_SANDSTONE_SLAB_ID], SlabHelper.POLISHED_SANDSTONE_SLAB_TYPE);
+		
+		addSubBlockRecipes(Block.sandStone, SandHelper.SANDSTONE_TYPE_BRICK, DecoBlocks.sandstoneBrickSiding, DecoBlocks.sandstoneBrickMoulding,
+				DecoBlocks.sandstoneBrickStairs, Block.blocksList[SlabHelper.SANDSTONE_BRICK_SLAB_ID], SlabHelper.SANDSTONE_BRICK_SLAB_TYPE);
+		
+		addSubBlockRecipes(Block.sandStone, SandHelper.SANDSTONE_TYPE_MOSSY, DecoBlocks.mossySandstoneSiding, DecoBlocks.mossySandstoneMoulding,
+				DecoBlocks.mossySandstoneStairs, Block.blocksList[SlabHelper.MOSSY_SANDSTONE_SLAB_ID], SlabHelper.MOSSY_SANDSTONE_SLAB_TYPE);
+		
+		addSubBlockRecipes(Block.sandStone, SandHelper.SANDSTONE_TYPE_LARGE_BRICK, DecoBlocks.largeSandstoneBrickSiding, DecoBlocks.largeSandstoneBrickMoulding,
+				DecoBlocks.largeSandstoneBrickStairs, Block.blocksList[SlabHelper.LARGE_SANDSTONE_BRICK_SLAB_ID], SlabHelper.LARGE_SANDSTONE_BRICK_SLAB_TYPE);
+		
+		addSubBlockRecipes(Block.sandStone, SandHelper.SANDSTONE_TYPE_LARGE_BRICK_MOSSY, DecoBlocks.mossyLargeSandstoneBrickSiding, DecoBlocks.mossyLargeSandstoneBrickMoulding,
+				DecoBlocks.mossyLargeSandstoneBrickStairs, Block.blocksList[SlabHelper.MOSSY_LARGE_SANDSTONE_BRICK_SLAB_ID], SlabHelper.MOSSY_LARGE_SANDSTONE_BRICK_SLAB_TYPE);
+		
+		addSubBlockRecipes(Block.sandStone, SandHelper.SANDSTONE_TYPE_CRACKED, DecoBlocks.crackedSandstoneSiding, DecoBlocks.crackedSandstoneMoulding,
+				DecoBlocks.crackedSandstoneStairs, Block.blocksList[SlabHelper.CRACKED_SANDSTONE_SLAB_ID], SlabHelper.CRACKED_SANDSTONE_SLAB_TYPE);
+		
+		addSubBlockRecipes(Block.sandStone, SandHelper.SANDSTONE_TYPE_LARGE_BRICK_CRACKED, DecoBlocks.crackedLargeSandstoneBrickSiding, DecoBlocks.crackedLargeSandstoneBrickMoulding,
+				DecoBlocks.crackedLargeSandstoneBrickStairs, Block.blocksList[SlabHelper.CRACKED_LARGE_SANDSTONE_BRICK_SLAB_ID], SlabHelper.CRACKED_LARGE_SANDSTONE_BRICK_SLAB_TYPE);
+		
+		//------ Red Sandstone ------//
+		
+		RecipeManager.addPistonPackingRecipe(DecoBlocks.redSandstone,
+				new ItemStack(Block.sand, 2, SandHelper.RED_SAND_TYPE));
+		
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.redSandstone, 4, SandHelper.SANDSTONE_TYPE_CUT), new Object[] {
+				"##",
+				"##",
+				'#', new ItemStack(DecoBlocks.redSandstone, 1, SandHelper.SANDSTONE_TYPE_DEFAULT)});
+		
+		RecipeManager.addStokedCrucibleRecipe(new ItemStack(DecoBlocks.redSandstone, 1, SandHelper.SANDSTONE_TYPE_POLISHED),
+				new ItemStack[] {
+					new ItemStack(DecoBlocks.redSandstone, 1, SandHelper.SANDSTONE_TYPE_DEFAULT)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.redSandstone, 4, SandHelper.SANDSTONE_TYPE_BRICK), new Object[] {
+				"XX",
+				"XX",
+				'X', new ItemStack(DecoBlocks.redSandstone, 1, SandHelper.SANDSTONE_TYPE_POLISHED)});
+		
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.redSandstone, 4, SandHelper.SANDSTONE_TYPE_LARGE_BRICK), new Object[] {
+				"XX",
+				"XX",
+				'X', new ItemStack(DecoBlocks.redSandstone, 1, SandHelper.SANDSTONE_TYPE_CUT)});
+		
+		addChiselingRecipe(new ItemStack(DecoBlocks.redSandstone, 1, SandHelper.SANDSTONE_TYPE_CHISELED),
+				new ItemStack(DecoBlocks.redSandstone, 1, SandHelper.SANDSTONE_TYPE_DEFAULT));
+		
+		// Sub blocks
+		addSubBlockRecipes(DecoBlocks.redSandstone, SandHelper.SANDSTONE_TYPE_DEFAULT, DecoBlocks.redSandstoneSiding, DecoBlocks.redSandstoneMoulding,
+				DecoBlocks.redSandstoneStairs, Block.blocksList[SlabHelper.RED_SANDSTONE_SLAB_ID], SlabHelper.RED_SANDSTONE_SLAB_TYPE);
+		
+		addSubBlockRecipes(DecoBlocks.redSandstone, SandHelper.SANDSTONE_TYPE_CUT, DecoBlocks.cutRedSandstoneSiding, DecoBlocks.cutRedSandstoneMoulding,
+				DecoBlocks.cutRedSandstoneStairs, Block.blocksList[SlabHelper.CUT_RED_SANDSTONE_SLAB_ID], SlabHelper.CUT_RED_SANDSTONE_SLAB_TYPE);
+		
+		addSubBlockRecipes(DecoBlocks.redSandstone, SandHelper.SANDSTONE_TYPE_POLISHED, DecoBlocks.polishedRedSandstoneSiding, DecoBlocks.polishedRedSandstoneMoulding,
+				DecoBlocks.polishedRedSandstoneStairs, Block.blocksList[SlabHelper.POLISHED_RED_SANDSTONE_SLAB_ID], SlabHelper.POLISHED_RED_SANDSTONE_SLAB_TYPE);
+		
+		addSubBlockRecipes(DecoBlocks.redSandstone, SandHelper.SANDSTONE_TYPE_BRICK, DecoBlocks.redSandstoneBrickSiding, DecoBlocks.redSandstoneBrickMoulding,
+				DecoBlocks.redSandstoneBrickStairs, Block.blocksList[SlabHelper.RED_SANDSTONE_BRICK_SLAB_ID], SlabHelper.RED_SANDSTONE_BRICK_SLAB_TYPE);
+		
+		addSubBlockRecipes(DecoBlocks.redSandstone, SandHelper.SANDSTONE_TYPE_MOSSY, DecoBlocks.mossyRedSandstoneSiding, DecoBlocks.mossyRedSandstoneMoulding,
+				DecoBlocks.mossyRedSandstoneStairs, Block.blocksList[SlabHelper.MOSSY_RED_SANDSTONE_SLAB_ID], SlabHelper.MOSSY_RED_SANDSTONE_SLAB_TYPE);
+		
+		addSubBlockRecipes(DecoBlocks.redSandstone, SandHelper.SANDSTONE_TYPE_LARGE_BRICK, DecoBlocks.largeRedSandstoneBrickSiding, DecoBlocks.largeRedSandstoneBrickMoulding,
+				DecoBlocks.largeRedSandstoneBrickStairs, Block.blocksList[SlabHelper.LARGE_RED_SANDSTONE_BRICK_SLAB_ID], SlabHelper.LARGE_RED_SANDSTONE_BRICK_SLAB_TYPE);
+		
+		addSubBlockRecipes(DecoBlocks.redSandstone, SandHelper.SANDSTONE_TYPE_LARGE_BRICK_MOSSY, DecoBlocks.mossyLargeRedSandstoneBrickSiding, DecoBlocks.mossyLargeRedSandstoneBrickMoulding,
+				DecoBlocks.mossyLargeRedSandstoneBrickStairs, Block.blocksList[SlabHelper.MOSSY_LARGE_RED_SANDSTONE_BRICK_SLAB_ID], SlabHelper.MOSSY_LARGE_RED_SANDSTONE_BRICK_SLAB_TYPE);
+		
+		addSubBlockRecipes(DecoBlocks.redSandstone, SandHelper.SANDSTONE_TYPE_CRACKED, DecoBlocks.crackedRedSandstoneSiding, DecoBlocks.crackedRedSandstoneMoulding,
+				DecoBlocks.crackedRedSandstoneStairs, Block.blocksList[SlabHelper.CRACKED_RED_SANDSTONE_SLAB_ID], SlabHelper.CRACKED_RED_SANDSTONE_SLAB_TYPE);
+		
+		addSubBlockRecipes(DecoBlocks.redSandstone, SandHelper.SANDSTONE_TYPE_LARGE_BRICK_CRACKED, DecoBlocks.crackedLargeRedSandstoneBrickSiding, DecoBlocks.crackedLargeRedSandstoneBrickMoulding,
+				DecoBlocks.crackedLargeRedSandstoneBrickStairs, Block.blocksList[SlabHelper.CRACKED_LARGE_RED_SANDSTONE_BRICK_SLAB_ID], SlabHelper.CRACKED_LARGE_RED_SANDSTONE_BRICK_SLAB_TYPE);
 	}
 	
 	private static void initNetherRecipes() {
@@ -5663,6 +5783,20 @@ public class CraftingRecipeList {
 				});
 	}
 	
+	private static void addChiselingRecipe(ItemStack input, ItemStack output) {
+		RecipeManager.addShapelessRecipe(input,
+				new ItemStack[] {
+						output,
+						new ItemStack(BTWItems.ironChisel, 1, InventoryUtils.IGNORE_METADATA)
+				});
+		
+		RecipeManager.addShapelessRecipe(input,
+				new ItemStack[] {
+						output,
+						new ItemStack(BTWItems.diamondChisel, 1, InventoryUtils.IGNORE_METADATA)
+				});
+	}
+	
 	private static void addSubBlockRecipes(Block baseBlock, int baseMetadata, Block sidingAndCorner, Block moulding, Block stairs, Block slab, int slabMetadata) {
 		btw.crafting.recipe.CraftingRecipeList.addSubBlockRecipesOfType(baseBlock, baseMetadata, sidingAndCorner, moulding, true);
 		
@@ -5809,5 +5943,24 @@ public class CraftingRecipeList {
 						"MMM",
 						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, woodType)
 				});
+	}
+	
+	private static void removeSubBlockRecipes(Block baseBlock, int inputMetadata, int outputMetadata, Block sidingAndCorner, Block moulding, boolean useFence) {
+		RecipeManager.removeSoulforgeRecipe(new ItemStack(sidingAndCorner, 8, 0), new Object[] {"####", '#', new ItemStack(baseBlock, 1, inputMetadata)});
+		RecipeManager.removeSoulforgeRecipe(new ItemStack(moulding, 8, 0), new Object[] {"####", '#', new ItemStack(sidingAndCorner, 1, 0)});
+		RecipeManager.removeSoulforgeRecipe(new ItemStack(sidingAndCorner, 8, 1), new Object[] {"####", '#', new ItemStack(moulding, 1, 0)});
+		RecipeManager.removeVanillaRecipe(new ItemStack(moulding, 1, 12), new Object[] {"M", "M", "M", 'M', new ItemStack(moulding, 1, 0)});
+		RecipeManager.removeVanillaRecipe(new ItemStack(moulding, 6, 13), new Object[] {" S ", "###", "###", '#', new ItemStack(baseBlock, 1, inputMetadata), 'S', new ItemStack(sidingAndCorner, 8, 0)});
+		RecipeManager.removeVanillaRecipe(new ItemStack(moulding, 4, 15), new Object[] {"###", " X ", " X ", '#', new ItemStack(sidingAndCorner, 1, 0), 'X', new ItemStack(moulding, 1, 0)});
+		RecipeManager.removeVanillaRecipe(new ItemStack(sidingAndCorner, 4, 12), new Object[] {"###", " X ", '#', new ItemStack(sidingAndCorner, 1, 0), 'X', new ItemStack(moulding, 1, 0)});
+		
+		if (useFence) {
+			RecipeManager.removeVanillaRecipe(new ItemStack(sidingAndCorner, 6, 14), new Object[] {"###", "###", '#', new ItemStack(baseBlock, 1, inputMetadata)});
+			RecipeManager.removeVanillaRecipe(new ItemStack(sidingAndCorner, 2, 14), new Object[] {"###", '#', new ItemStack(moulding, 1, 0)});
+		}
+		
+		RecipeManager.removeVanillaShapelessRecipe(new ItemStack(baseBlock, 1, outputMetadata), new Object[] {new ItemStack(sidingAndCorner, 1, 0), new ItemStack(sidingAndCorner, 1, 0)});
+		RecipeManager.removeVanillaShapelessRecipe(new ItemStack(sidingAndCorner, 1, 0), new Object[] {new ItemStack(moulding, 1, 0), new ItemStack(moulding, 1, 0)});
+		RecipeManager.removeVanillaShapelessRecipe(new ItemStack(moulding, 1, 0), new Object[] {new ItemStack(sidingAndCorner, 1, 1), new ItemStack(sidingAndCorner, 1, 1)});
 	}
 }
