@@ -9,6 +9,7 @@
     "GrassBlockMixin",
     "GrassSlabBlockMixin",
     "LadderBlockFlamingMixin",
+    "LooseDirtBlockMixin",
     "PlanksBlockMixin",
     "SandBlockMixin",
     "SandstoneBlockMixin",
