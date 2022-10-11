@@ -288,7 +288,6 @@ public class DecoBlockIDs {
     public static final int ACACIA_WALL_SIGN_ID = 3504;
     public static final int FILLED_ACACIA_BARREL_ID = 3505;
     public static final int STONE_SLAB_7_ID = 3506;
-    
     public static final int BOOKSHELF_ID = 3507;
     public static final int EMPTY_BOOKSHELF_ID = 3508;
     

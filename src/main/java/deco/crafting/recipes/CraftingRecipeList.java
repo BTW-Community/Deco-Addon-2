@@ -1547,7 +1547,30 @@ public class CraftingRecipeList {
 	}
 	
 	private static void initWhiteStoneRecipes() {
-	
+		RecipeManager.addRecipe(new ItemStack(SlabHelper.WHITE_STONE_SLAB_ID, 6, SlabHelper.WHITE_STONE_SLAB_TYPE),
+				new Object[] {
+						"FFF",
+						'F', new ItemStack(BTWBlocks.aestheticOpaque, 1, AestheticOpaqueBlock.SUBTYPE_WHITE_STONE)
+				});
+		RecipeManager.addRecipe(new ItemStack(BTWBlocks.aestheticOpaque, 1, AestheticOpaqueBlock.SUBTYPE_WHITE_STONE),
+				new Object[] {
+						"S",
+						"S",
+						'S', new ItemStack(SlabHelper.WHITE_STONE_SLAB_ID, 6, SlabHelper.WHITE_STONE_SLAB_TYPE)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.whiteStoneBricks, 4),
+				new Object[] {
+						"FF",
+						"FF",
+						'F', new ItemStack(BTWBlocks.aestheticOpaque, 1, AestheticOpaqueBlock.SUBTYPE_WHITE_STONE)
+				});
+		
+		addChiselingRecipe(new ItemStack(DecoBlocks.whiteStoneBricks, 1, WhiteStoneBrickBlock.TYPE_CHISELED),
+				new ItemStack(DecoBlocks.whiteStoneBricks, 1, WhiteStoneBrickBlock.TYPE_DEFAULT));
+		
+		addSubBlockRecipes(DecoBlocks.whiteStoneBricks, WhiteStoneBrickBlock.TYPE_DEFAULT, DecoBlocks.whiteStoneBrickSidingAndCorner,
+				DecoBlocks.whiteStoneBrickMoulding, DecoBlocks.whiteStoneBrickStairs, SlabHelper.WHITE_STONE_BRICK_SLAB_ID, SlabHelper.WHITE_STONE_BRICK_SLAB_TYPE);
 	}
 	
 	private static void initPrismarineRecipes() {
@@ -5795,6 +5818,10 @@ public class CraftingRecipeList {
 						output,
 						new ItemStack(BTWItems.diamondChisel, 1, InventoryUtils.IGNORE_METADATA)
 				});
+	}
+	
+	private static void addSubBlockRecipes(Block baseBlock, int baseMetadata, Block sidingAndCorner, Block moulding, Block stairs, int slab, int slabMetadata) {
+		addSubBlockRecipes(baseBlock, baseMetadata, sidingAndCorner, moulding, stairs, Block.blocksList[slab], slabMetadata);
 	}
 	
 	private static void addSubBlockRecipes(Block baseBlock, int baseMetadata, Block sidingAndCorner, Block moulding, Block stairs, Block slab, int slabMetadata) {

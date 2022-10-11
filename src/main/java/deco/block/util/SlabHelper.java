@@ -36,7 +36,14 @@ public class SlabHelper {
 	public static final int LOOSE_SLATE_BRICK_SLAB_ID = DecoBlockIDs.LOOSE_STONE_SLAB_ID;
 	public static final int SLATE_TILES_SLAB_ID = DecoBlockIDs.STONE_SLAB_7_ID;
 	
+	// White Stone
+	public static final int WHITE_STONE_SLAB_ID = DecoBlockIDs.STONE_SLAB_ID;
+	public static final int WHITE_STONE_BRICK_SLAB_ID = DecoBlockIDs.STONE_SLAB_ID;
+	
 	// Prismarine
+	public static final int PRISMARINE_SLAB_ID = DecoBlockIDs.STONE_SLAB_ID;
+	public static final int PRISMARINE_BRICK_SLAB_ID = DecoBlockIDs.STONE_SLAB_ID;
+	public static final int DARK_PRISMARINE_SLAB_ID = DecoBlockIDs.STONE_SLAB_ID;
 	
 	// Sandstone
 	public static final int CUT_SANDSTONE_SLAB_ID = DecoBlockIDs.STONE_SLAB_4_ID;
@@ -106,7 +113,14 @@ public class SlabHelper {
 	public static final int LOOSE_SLATE_COBBLESTONE_SLAB_TYPE = 6;
 	public static final int LOOSE_SLATE_BRICK_SLAB_TYPE = 7;
 	
+	// White Stone
+	public static final int WHITE_STONE_SLAB_TYPE = 4;
+	public static final int WHITE_STONE_BRICK_SLAB_TYPE = 5;
+	
 	// Prismarine
+	public static final int PRISMARINE_SLAB_TYPE = 1;
+	public static final int PRISMARINE_BRICK_SLAB_TYPE = 2;
+	public static final int DARK_PRISMARINE_SLAB_TYPE = 3;
 	
 	// Sandstone
 	public static final int CUT_SANDSTONE_SLAB_TYPE = 0;
