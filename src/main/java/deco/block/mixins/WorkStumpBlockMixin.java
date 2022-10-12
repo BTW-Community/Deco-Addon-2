@@ -31,6 +31,7 @@ public class WorkStumpBlockMixin extends Block {
 			world.playAuxSFX(BTWEffectManager.SHAFT_RIPPED_OFF_EFFECT_ID, x, y, z, 0);
 			world.setBlockMetadataWithNotify(x, y, z, metadata & 7);
 			info.setReturnValue(true);
+			return;
 		}
 		
 		int newMetadata = BTWBlocks.oakChewedLog.setIsStump(0);

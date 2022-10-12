@@ -27,7 +27,7 @@ public class DecoLogBlock extends LogBlock {
     
     public DecoLogBlock(int blockID, int woodType, int chewedLogID, String[] topTextures, String[] sideTextures) {
         this(blockID,
-                new int[] {woodType, woodType, woodType,woodType},
+                new int[] {woodType, woodType, woodType, woodType},
                 new int[] {chewedLogID, chewedLogID, chewedLogID, chewedLogID},
                 new boolean[] {false, true, false, true},
                 topTextures, sideTextures);

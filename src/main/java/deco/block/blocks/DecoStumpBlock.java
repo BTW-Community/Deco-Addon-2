@@ -21,10 +21,10 @@ public class DecoStumpBlock extends Block {
     public DecoStumpBlock(int blockID, int logID, int chewedLogID, int workStumpID, int workStumpMeta, String topTexture, String sideTexture) {
         super(blockID, BTWBlocks.logMaterial);
 
-        setHardness(1.25F);
-        setResistance(3.33F);
-        setAxesEffectiveOn(false);
-        setChiselsEffectiveOn(false);
+        setHardness(1.25F * 3); // Log values multiplied by 3 for stump
+        setResistance(3.33F * 3);
+        setAxesEffectiveOn();
+        setChiselsEffectiveOn();
 
         setBuoyant();
         setFireProperties(Flammability.LOGS);
@@ -42,7 +42,7 @@ public class DecoStumpBlock extends Block {
 
     @Override
     public boolean getIsProblemToRemove(ItemStack toolStack, IBlockAccess blockAccess, int x, int y, int z) {
-        return true;
+        return !isWorkStumpItemConversionTool(toolStack);
     }
 
     @Override
