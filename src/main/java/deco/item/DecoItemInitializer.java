@@ -5,6 +5,7 @@ import btw.item.items.PlaceAsBlockItem;
 import deco.block.DecoBlockIDs;
 import deco.item.items.DecoItemDoor;
 import deco.item.items.FertilizerItem;
+import deco.item.items.StainedGlassItem;
 import deco.item.util.BookInterface;
 import net.minecraft.src.Block;
 import net.minecraft.src.CreativeTabs;
@@ -51,6 +52,12 @@ public class DecoItemInitializer {
         DecoItems.brokenPaperLantern = new PlaceAsBlockItem(DecoItemIDs.BROKEN_PAPER_LANTERN_ID, DecoBlockIDs.BROKEN_PAPER_LANTERN_ID)
                 .setCreativeTab(CreativeTabs.tabDecorations)
                 .setUnlocalizedName("decoItemLanternPaperBroken");
+        
+        DecoItems.stainedGlass = new StainedGlassItem(DecoItemIDs.STAINED_GLASS_ITEM_ID, DecoBlockIDs.STAINED_GLASS_ID, "decoItemStainedGlass");
+        DecoItems.glassShard = new Item(DecoItemIDs.GLASS_SHARD_ID)
+                .setCreativeTab(CreativeTabs.tabMaterials)
+                .setFilterableProperties(Item.FILTERABLE_SMALL)
+                .setUnlocalizedName("decoItemGlassPiece");
     }
     
     private static void initWoodItems() {

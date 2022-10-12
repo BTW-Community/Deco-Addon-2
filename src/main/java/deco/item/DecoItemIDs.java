@@ -1,7 +1,7 @@
 package deco.item;
 
 public class DecoItemIDs {
-	public static final int GLASS_CHUNK_ID = 30002;
+	public static final int GLASS_SHARD_ID = 30002;
 	public static final int FERTILIZER_ID = 30003;
 	public static final int CHAIN_ITEM_ID = 30004;
 	// IDs 30005 and 30006 occupied by BTW

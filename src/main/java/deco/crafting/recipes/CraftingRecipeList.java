@@ -5,6 +5,7 @@ import btw.block.blocks.AestheticOpaqueBlock;
 import btw.block.blocks.MouldingAndDecorativeBlock;
 import btw.block.blocks.SidingAndCornerAndDecorativeBlock;
 import btw.crafting.manager.CrucibleCraftingManager;
+import btw.crafting.manager.CrucibleStokedCraftingManager;
 import btw.crafting.recipe.RecipeManager;
 import btw.inventory.util.InventoryUtils;
 import btw.item.BTWItems;
@@ -225,6 +226,76 @@ public class CraftingRecipeList {
 				new ItemStack[] {
 						new ItemStack(DecoBlocks.lantern)
 				});
+		
+		RecipeManager.addSoulforgeRecipe(new ItemStack(DecoBlocks.chandelier,2),
+				new Object[]{
+						" ss ",
+						" gg ",
+						"cggc",
+						"cggc",
+						's',Block.stone,
+						'g',Item.goldNugget,
+						'c', new ItemStack(BTWItems.candle, 1, InventoryUtils.IGNORE_METADATA)
+				});
+		
+		//------ Glass ------//
+		
+		RecipeManager.addStokedCrucibleRecipe(new ItemStack(Block.glass, 1), new ItemStack[] {
+				new ItemStack(DecoItems.glassShard, 4)});
+		
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoItems.glassShard, 4), new Object[] {
+				new ItemStack(Block.glass, 1)});
+		
+		RecipeManager.removeVanillaRecipe(new ItemStack(Item.glassBottle, 3), new Object[] {
+				"# #",
+				" # ",
+				'#', Block.glass});
+		
+		RecipeManager.addRecipe(new ItemStack(Item.glassBottle, 6), new Object[] {
+				" # ",
+				"# #",
+				"###",
+				'#', DecoItems.glassShard});
+		
+		RecipeManager.addStokedCrucibleRecipe(new ItemStack(DecoItems.glassShard, 1), new ItemStack[] {
+				new ItemStack(Item.glassBottle, 1)});
+		
+		for (int color = 0; color < 16; color++) {
+			RecipeManager.addCauldronRecipe(new ItemStack(DecoItems.stainedGlass, 8, color), new ItemStack[] {
+					new ItemStack(Block.glass, 8),
+					new ItemStack(Item.dyePowder, 1, color)});
+			RecipeManager.addCauldronRecipe(new ItemStack(DecoItems.stainedGlass, 8, color), new ItemStack[] {
+					new ItemStack(Block.glass, 8),
+					new ItemStack(Item.dyePowder, 1, color + 16)});
+		}
+		
+		RecipeManager.addCauldronRecipe(new ItemStack(DecoItems.stainedGlass, 8, ColorUtils.BROWN.colorID), new ItemStack[] {
+				new ItemStack(Block.glass, 8),
+				new ItemStack(BTWItems.dung)});
+		
+		CrucibleStokedCraftingManager.getInstance().removeRecipe(new ItemStack(Block.glass, 4), new ItemStack[] {
+				new ItemStack(Block.sand, 8),
+				new ItemStack(Item.netherQuartz)});
+		
+		RecipeManager.addStokedCrucibleRecipe(new ItemStack(Block.glass, 16), new ItemStack[] {
+				new ItemStack(Block.sand, 16),
+				new ItemStack(Item.netherQuartz)});
+		
+		for (int color = 0; color < WoodTypeHelper.NUM_TOTAL_WOOD; color++) {
+			RecipeManager.addRecipe(new ItemStack(DecoBlocks.woodFramedGlass, 4, color), new Object[] {
+					"WGW",
+					"GWG",
+					"WGW",
+					'W', new ItemStack(BTWItems.woodMouldingStubID, 1, color),
+					'G', DecoItems.glassShard});
+		}
+		
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.ironFramedGlass, 4), new Object[] {
+				"IGI",
+				"GIG",
+				"IGI",
+				'I', BTWItems.ironNugget,
+				'G', DecoItems.glassShard});
 		
 		//------ Carpets ------//
 		

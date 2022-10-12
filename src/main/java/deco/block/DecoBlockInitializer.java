@@ -4,7 +4,6 @@ import btw.block.BTWBlocks;
 import btw.block.blocks.*;
 import btw.block.tileentity.beacon.BeaconTileEntity;
 import btw.block.util.Flammability;
-import btw.item.BTWItems;
 import btw.item.blockitems.MouldingBlockItem;
 import btw.item.blockitems.SidingAndCornerBlockItem;
 import btw.item.blockitems.legacy.LegacySubstitutionBlockItem;
@@ -119,10 +118,17 @@ public class DecoBlockInitializer {
         DecoBlocks.brokenPaperLantern = new LanternBlock(DecoBlockIDs.BROKEN_PAPER_LANTERN_ID, Material.wood, "PaperBroken", DecoItemIDs.BROKEN_PAPER_LANTERN_ID + 256)
                 .setLightValue(0);
         
+        DecoBlocks.chandelier = new ChandelierBlock(DecoBlockIDs.CHANDELIER_ID);
+        
         DecoBlocks.hayBale = new HayBaleBlock(DecoBlockIDs.HAY_BALE_ID).setUnlocalizedName("decoBlockHayBale");
         DecoBlocks.hayStairs = new StairsBlock(DecoBlockIDs.HAY_BALE_STAIRS_ID, DecoBlocks.hayBale, 0);
         DecoBlocks.thatch = new HayBaleBlock(DecoBlockIDs.THATCH_ID).setUnlocalizedName("decoBlockThatch");
         DecoBlocks.thatchStairs = new StairsBlock(DecoBlockIDs.THATCH_STAIRS_ID, DecoBlocks.thatch, 0);
+        
+        DecoBlocks.stainedGlass = new StainedGlassBlock(DecoBlockIDs.STAINED_GLASS_ID, "decoBlockStainedGlass", DecoItemIDs.STAINED_GLASS_ITEM_ID);
+        DecoBlocks.woodFramedGlass = new WoodFramedGlassBlock(DecoBlockIDs.WOOD_FRAMED_GLASS_ID, "decoBlockGlassFramed");
+        register(DecoBlocks.woodFramedGlass, WoodTypeHelper.woodNames);
+        DecoBlocks.ironFramedGlass = new DecoGlassBlock(DecoBlockIDs.IRON_FRAMED_GLASS_ID, "decoBlockGlassFramedIron");
     }
     
     private static void initStone() {

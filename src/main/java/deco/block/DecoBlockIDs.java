@@ -382,7 +382,7 @@ public class DecoBlockIDs {
     public static final int BOTTLE_RACK_ID = 3589;
     public static final int EMPTY_BOTTLE_RACK_ID = 3590;
     public static final int AMETHYST_SHARD_ID = 3591;
-    public static final int FRAMED_GLASS_ID = 3592;
+    public static final int WOOD_FRAMED_GLASS_ID = 3592;
     public static final int IRON_FRAMED_GLASS_ID = 3593;
     public static final int STONE_SLAB_8_ID = 3594;
     public static final int INFESTED_GRANITE_ID = 3595;
@@ -471,6 +471,9 @@ public class DecoBlockIDs {
     public static final int POLISHED_STONE_STAIRS_DEEP_STRATA_ID = 3692;
     public static final int POLISHED_STONE_SIDING_AND_CORNER_DEEP_STRATA_ID = 3693;
     public static final int POLISHED_STONE_MOULDING_DEEP_STRATA_ID = 3694;
+    public static final int ACACIA_HEDGE_STAIRS_ID = 3695;
+    public static final int ACACIA_HEDGE_SIDING_AND_CORNER_ID = 3696;
+    public static final int ACACIA_HEDGE_MOULDING_ID = 3697;
     
     public static final int HAZEL_LOG_ID = 3699;
     public static final int HAZEL_STUMP_ID = 3700;
@@ -491,4 +494,13 @@ public class DecoBlockIDs {
     public static final int HAZEL_SIGN_ID = 3715;
     public static final int HAZEL_WALL_SIGN_ID = 3716;
     public static final int HAZEL_BUTTON_ID = 3717;
+    public static final int HAZEL_HEDGE_STAIRS_ID = 3718;
+    public static final int HAZEL_HEDGE_SIDING_AND_CORNER_ID = 3719;
+    public static final int HAZEL_HEDGE_MOULDING_ID = 3720;
+    public static final int MAHOGANY_HEDGE_STAIRS_ID = 3721;
+    public static final int MAHOGANY_HEDGE_SIDING_AND_CORNER_ID = 3722;
+    public static final int MAHOGANY_HEDGE_MOULDING_ID = 3723;
+    public static final int MANGROVE_HEDGE_STAIRS_ID = 3724;
+    public static final int MANGROVE_HEDGE_SIDING_AND_CORNER_ID = 3725;
+    public static final int MANGROVE_HEDGE_MOULDING_ID = 3726;
 }

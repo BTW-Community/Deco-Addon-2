@@ -16,6 +16,9 @@ public class DecoItems {
 	
 	public static Item amethystShard;
 	
+	public static Item stainedGlass;
+	public static Item glassShard;
+	
 	public static Item chain;
 	public static Item lantern;
 	public static Item paperLantern;
