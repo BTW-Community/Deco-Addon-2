@@ -58,6 +58,8 @@ public class DecoBlockInitializer {
     }
     
     private static void initGeneralBlocks() {
+        register(Block.obsidian, new String[] {"obsidian", "infused"});
+        
         DecoBlocks.coalBlock = new DecoBlock(DecoBlockIDs.COAL_BLOCK_ID, Material.rock)
                 .setUnlocalizedName("decoBlockCoal")
                 .setPicksEffectiveOn()

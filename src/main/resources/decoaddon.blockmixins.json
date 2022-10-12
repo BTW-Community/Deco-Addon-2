@@ -10,6 +10,7 @@
     "GrassSlabBlockMixin",
     "LadderBlockFlamingMixin",
     "LooseDirtBlockMixin",
+    "ObsidianBlockMixin",
     "PlanksBlockMixin",
     "SandBlockMixin",
     "SandstoneBlockMixin",

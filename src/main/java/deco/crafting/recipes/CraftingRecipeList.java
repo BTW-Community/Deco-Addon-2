@@ -90,6 +90,12 @@ public class CraftingRecipeList {
 						new ItemStack(DecoBlocks.bonePillar)
 				});
 		
+		RecipeManager.addShapelessRecipe(new ItemStack(Block.obsidian, 1, 1),
+				new ItemStack[] {
+						new ItemStack(Block.obsidian, 1, 0),
+						new ItemStack(BTWItems.soulFlux)
+				});
+		
 		RecipeManager.removeVanillaRecipe(new ItemStack(BTWBlocks.aestheticOpaque, 1, AestheticOpaqueBlock.SUBTYPE_ROPE),
 				new Object[] {
 						"RRR",
