@@ -10,7 +10,10 @@ public class DecoItemIDs {
 	public static final int LEGACY_SLATE_STONE_ID = 30009;
 	public static final int LEGACY_SLATE_BRICK_ID = 30010;
 	public static final int PLAIN_BOOK_ID = 30011;
-	public static final int AMETHYST_SHARD_ID = 300012;
+	public static final int AMETHYST_SHARD_ID = 30012;
+	public static final int LANTERN_ID = 30013;
+	public static final int PAPER_LANTERN_ID = 30014;
+	public static final int BROKEN_PAPER_LANTERN_ID = 30015;
 	
 	public static final int SPRUCE_DOOR_ID = 30020;
 	public static final int BIRCH_DOOR_ID = 30021;

@@ -94,6 +94,24 @@ public class DecoBlockInitializer {
                 .setStepSound(Block.soundMetalFootstep)
                 .setCreativeTab(CreativeTabs.tabBlock)
                 .setUnlocalizedName("decoBlockChainCoil");
+        
+        DecoBlocks.paperWall = new PaneBlock(DecoBlockIDs.PAPER_WALL_ID, "decoBlockPaperWall", "decoBlockPaperWall_top", Material.wood, true)
+                .setHardness(0.3F)
+                .setResistance(1.0F)
+                .setStepSound(Block.soundWoodFootstep)
+                .setUnlocalizedName("decoBlockPaperWall")
+                .setCreativeTab(CreativeTabs.tabDecorations);
+        DecoBlocks.wroughtIronBars = new PaneBlock(DecoBlockIDs.WROUGHT_IRON_BARS_ID, "decoBlockWroughtIronBars", "decoBlockWroughtIronBars_top", Material.iron, true)
+                .setHardness(2.5F)
+                .setResistance(10.0F)
+                .setStepSound(Block.soundMetalFootstep)
+                .setUnlocalizedName("decoBlockWroughtIronBars")
+                .setCreativeTab(CreativeTabs.tabDecorations);
+        
+        DecoBlocks.lantern = new LanternBlock(DecoBlockIDs.LANTERN_ID, Material.iron, "Iron", DecoItemIDs.LANTERN_ID + 256);
+        DecoBlocks.paperLantern = new LanternBlock(DecoBlockIDs.PAPER_LANTERN_ID, Material.wood, "Paper", DecoItemIDs.PAPER_LANTERN_ID + 256);
+        DecoBlocks.brokenPaperLantern = new LanternBlock(DecoBlockIDs.BROKEN_PAPER_LANTERN_ID, Material.wood, "PaperBroken", DecoItemIDs.BROKEN_PAPER_LANTERN_ID + 256)
+                .setLightValue(0);
     }
     
     private static void initStone() {

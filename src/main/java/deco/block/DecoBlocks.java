@@ -22,6 +22,8 @@ public class DecoBlocks {
     
     public static Block ropeCoil;
     
+    public static Block paperWall;
+    
     //------ Stone Blocks ------//
     
     // General
@@ -441,8 +443,9 @@ public class DecoBlocks {
     
     //------ Light Source Blocks ------//
     
+    public static Block lantern;
     public static Block paperLantern;
-    public static Block ironLantern;
+    public static Block brokenPaperLantern;
     public static Block chandelier;
     
     //------ Glass Blocks ------//
@@ -458,6 +461,8 @@ public class DecoBlocks {
     
     public static Block chain;
     public static Block chainCoil;
+    
+    public static Block wroughtIronBars;
     
     //------ Stone Blocks ------//
     

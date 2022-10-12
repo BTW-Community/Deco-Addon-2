@@ -27,6 +27,9 @@ Some textures in this release have been used or modified from the following sour
 - Changed deco stone variants to behave consistently with BTW stone.
     - Granite, andesite, and diorite are all considered first strata.
     - Slate is considered third strata.
+- Changed how lanterns render, and added item equivalents. The old blocks may be converted into items in a crafting grid.
+- Changed lanterns to break when underwater.
+- Changed wrought iron bars and paper walls to output more when crafting.
 - Changed red sand (blocks and piles) to be a subtype of regular sand. Old red sand may be converted into new red sand in a crafting grid.
 - Changed red sand to be crafted with 8 sand and 1 red dye to make 8.
 - Changed the recipe for coarse dirt to produce 2.

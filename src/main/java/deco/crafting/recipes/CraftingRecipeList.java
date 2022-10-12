@@ -79,6 +79,74 @@ public class CraftingRecipeList {
 				});
 		addStorage(new ItemStack(DecoBlocks.chainCoil), new ItemStack(DecoItems.chain));
 		
+		RecipeManager.addSoulforgeRecipe(new ItemStack(DecoBlocks.wroughtIronBars, 20),
+				new Object[] {
+						"i i ",
+						"iiii",
+						"i i ",
+						"i i ",
+						'i', Item.ingotIron
+				});
+		RecipeManager.addStokedCrucibleRecipe(new ItemStack(BTWItems.ironNugget, 3),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.wroughtIronBars)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.paperWall, 8),
+				new Object[] {
+						"ppp",
+						"pmp",
+						"ppp",
+						'p', Item.paper,
+						'm', new ItemStack(BTWItems.woodMouldingStubID, 1, InventoryUtils.IGNORE_METADATA)
+				});
+		
+		//------ Lanterns ------//
+		
+		RecipeManager.addRecipe(new ItemStack(DecoItems.paperLantern),
+				new Object[] {
+						"pwp",
+						"wcw",
+						"pwp",
+						'p', Item.paper,
+						'w', DecoBlocks.paperWall,
+						'c', new ItemStack(BTWItems.candle, 1, InventoryUtils.IGNORE_METADATA)
+				});
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoItems.paperLantern),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.paperLantern)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(DecoItems.brokenPaperLantern),
+				new Object[] {
+						"pwp",
+						"w w",
+						"pwp",
+						'p', Item.paper,
+						'w', DecoBlocks.paperWall
+				});
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoItems.brokenPaperLantern),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.brokenPaperLantern)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(DecoItems.lantern),
+				new Object[] {
+						"NNN",
+						"NTN",
+						"NNN",
+						'N', BTWItems.ironNugget,
+						'T', BTWBlocks.infiniteBurningTorch
+				});
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoItems.lantern),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.lantern)
+				});
+		RecipeManager.addStokedCrucibleRecipe(new ItemStack(BTWItems.ironNugget, 5),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.lantern)
+				});
+		
 		//------ Carpets ------//
 		
 		addStorage(new ItemStack(DecoBlocks.coalBlock), new ItemStack(Item.coal, 1, 0));

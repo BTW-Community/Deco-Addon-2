@@ -3,7 +3,6 @@ package deco.item;
 import btw.item.items.BookItem;
 import btw.item.items.PlaceAsBlockItem;
 import deco.block.DecoBlockIDs;
-import deco.block.DecoBlocks;
 import deco.item.items.DecoItemDoor;
 import deco.item.items.FertilizerItem;
 import deco.item.util.BookInterface;
@@ -42,6 +41,16 @@ public class DecoItemInitializer {
         DecoItems.chain = new PlaceAsBlockItem(DecoItemIDs.CHAIN_ITEM_ID, DecoBlockIDs.CHAIN_ID)
                 .setCreativeTab(CreativeTabs.tabDecorations)
                 .setUnlocalizedName("decoItemChain");
+        
+        DecoItems.lantern = new PlaceAsBlockItem(DecoItemIDs.LANTERN_ID, DecoBlockIDs.LANTERN_ID)
+                .setCreativeTab(CreativeTabs.tabDecorations)
+                .setUnlocalizedName("decoItemLantern");
+        DecoItems.paperLantern = new PlaceAsBlockItem(DecoItemIDs.PAPER_LANTERN_ID, DecoBlockIDs.PAPER_LANTERN_ID)
+                .setCreativeTab(CreativeTabs.tabDecorations)
+                .setUnlocalizedName("decoItemLanternPaper");
+        DecoItems.brokenPaperLantern = new PlaceAsBlockItem(DecoItemIDs.BROKEN_PAPER_LANTERN_ID, DecoBlockIDs.BROKEN_PAPER_LANTERN_ID)
+                .setCreativeTab(CreativeTabs.tabDecorations)
+                .setUnlocalizedName("decoItemLanternPaperBroken");
     }
     
     private static void initWoodItems() {

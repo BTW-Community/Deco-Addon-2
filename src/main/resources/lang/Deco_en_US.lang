@@ -231,9 +231,9 @@ tile.decoBlockChainCoil.name=Coil of Chain
 tile.decoBlockCoarseDirt.name=Coarse Dirt
 tile.decoBlockCoarseDirtSlab.0.name=Coarse Dirt Slab
 
-tile.decoBlockLanternPaper.name=Paper Lantern
-tile.decoBlockLanternPaperBroken.name=Broken Paper Lantern
-tile.decoBlockLanternIron.name=Wrought Iron Lantern
+tile.decoBlockLanternPaper.name=Old Paper Lantern
+tile.decoBlockLanternPaperBroken.name=Old Broken Paper Lantern
+tile.decoBlockLanternIron.name=Old Lantern
 
 tile.decoBlockSpiderEye.name=Block of Spider Eyes
 tile.decoBlockSpiderEyeSlab.name=Spider Eye Slab
@@ -2228,6 +2228,12 @@ item.decoItemSlateStone.name=Slate Stone
 item.decoItemSlateBrick.name=Slate Brick
 item.decoItemAmethystShard.name=Amethyst Shard
 item.decoItemBookEnchanted.name=Enchanted Book
+
+item.decoItemLantern.name=Lantern
+item.decoItemLanternPaper.name=Paper Lantern
+item.decoItemLanternPaperBroken.name=Broken Paper Lantern
+
+item.decoItemChain.name=Chain
 
 # Deco Complex Items
 

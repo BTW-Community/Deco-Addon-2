@@ -10,7 +10,7 @@ import net.minecraft.src.*;
 import java.util.Random;
 
 public class ChainBlock extends Block {
-	private final BlockModel blockModel = new ChainBlockModel();
+	public final BlockModel blockModel = new ChainBlockModel();
 	
 	public ChainBlock(int blockID) {
 		super(blockID, Material.iron);
