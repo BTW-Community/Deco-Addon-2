@@ -4,6 +4,7 @@ import btw.block.BTWBlocks;
 import btw.block.blocks.AestheticOpaqueBlock;
 import btw.block.blocks.MouldingAndDecorativeBlock;
 import btw.block.blocks.SidingAndCornerAndDecorativeBlock;
+import btw.crafting.manager.CrucibleCraftingManager;
 import btw.crafting.recipe.RecipeManager;
 import btw.inventory.util.InventoryUtils;
 import btw.item.BTWItems;
@@ -3457,6 +3458,45 @@ public class CraftingRecipeList {
 					});
 		}
 		
+		//Note block
+		RecipeManager.removeVanillaRecipe(new ItemStack(Block.music, 1),
+				new Object[] {
+						"###",
+						"#X#",
+						"###",
+						'#', new ItemStack(BTWItems.woodSidingStubID, 1, InventoryUtils.IGNORE_METADATA),
+						'X', BTWItems.redstoneLatch
+				});
+		RecipeManager.removeVanillaRecipe(new ItemStack(Block.music, 1),
+				new Object[] {
+						"###",
+						"#X#",
+						"###",
+						'#', Block.planks,
+						'X', BTWItems.redstoneLatch
+				});
+		
+		CrucibleCraftingManager.getInstance().removeRecipe(new ItemStack(Item.goldNugget, 2),
+				new ItemStack[] {
+						new ItemStack(Block.music)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(Block.music, 1),
+				new Object[] {
+						"###",
+						"#X#",
+						"###",
+						'#', new ItemStack(BTWItems.woodSidingStubID, 1, InventoryUtils.IGNORE_METADATA),
+						'X', Item.redstone
+				});
+		RecipeManager.addRecipe(new ItemStack(Block.music, 1),
+				new Object[] {
+						"###",
+						"#X#",
+						"###",
+						'#', Block.planks,
+						'X', Item.redstone});
+		
 		// Tanning
 		for (int woodType = WoodTypeHelper.NUM_VANILLA_WOOD; woodType < WoodTypeHelper.NUM_TOTAL_WOOD; woodType++) {
 			RecipeManager.addCauldronRecipe(new ItemStack(BTWItems.tannedLeather),
@@ -3586,7 +3626,7 @@ public class CraftingRecipeList {
 						'S', Item.stick,
 						'P', new ItemStack(Block.planks, 1, WoodTypeHelper.OAK_WOOD_TYPE)
 				});
-		RecipeManager.addRecipe(new ItemStack(Block.trapdoor),
+		RecipeManager.addRecipe(new ItemStack(Block.trapdoor, 2),
 				new Object[] {
 						"SPP",
 						"SPP",
@@ -3867,7 +3907,7 @@ public class CraftingRecipeList {
 						'S', Item.stick,
 						'P', new ItemStack(Block.planks, 1, WoodTypeHelper.SPRUCE_WOOD_TYPE)
 				});
-		RecipeManager.addRecipe(new ItemStack(DecoBlocks.spruceTrapdoor),
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.spruceTrapdoor, 2),
 				new Object[] {
 						"SPP",
 						"SPP",
@@ -4141,7 +4181,7 @@ public class CraftingRecipeList {
 						'S', Item.stick,
 						'P', new ItemStack(Block.planks, 1, WoodTypeHelper.BIRCH_WOOD_TYPE)
 				});
-		RecipeManager.addRecipe(new ItemStack(DecoBlocks.birchTrapdoor),
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.birchTrapdoor, 2),
 				new Object[] {
 						"SPP",
 						"SPP",
@@ -4415,7 +4455,7 @@ public class CraftingRecipeList {
 						'S', Item.stick,
 						'P', new ItemStack(Block.planks, 1, WoodTypeHelper.JUNGLE_WOOD_TYPE)
 				});
-		RecipeManager.addRecipe(new ItemStack(DecoBlocks.jungleTrapdoor),
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.jungleTrapdoor, 2),
 				new Object[] {
 						"SPP",
 						"SPP",
@@ -4692,7 +4732,7 @@ public class CraftingRecipeList {
 						'S', Item.stick,
 						'P', new ItemStack(Block.planks, 1, WoodTypeHelper.BLOOD_WOOD_TYPE)
 				});
-		RecipeManager.addRecipe(new ItemStack(DecoBlocks.bloodTrapdoor),
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.bloodTrapdoor, 2),
 				new Object[] {
 						"SPP",
 						"SPP",
@@ -4964,7 +5004,7 @@ public class CraftingRecipeList {
 						'S', Item.stick,
 						'P', new ItemStack(Block.planks, 1, WoodTypeHelper.CHERRY_WOOD_TYPE)
 				});
-		RecipeManager.addRecipe(new ItemStack(DecoBlocks.cherryTrapdoor),
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.cherryTrapdoor, 2),
 				new Object[] {
 						"SPP",
 						"SPP",
@@ -5236,7 +5276,7 @@ public class CraftingRecipeList {
 						'S', Item.stick,
 						'P', new ItemStack(Block.planks, 1, WoodTypeHelper.ACACIA_WOOD_TYPE)
 				});
-		RecipeManager.addRecipe(new ItemStack(DecoBlocks.acaciaTrapdoor),
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.acaciaTrapdoor, 2),
 				new Object[] {
 						"SPP",
 						"SPP",
@@ -5508,7 +5548,7 @@ public class CraftingRecipeList {
 						'S', Item.stick,
 						'P', new ItemStack(Block.planks, 1, WoodTypeHelper.MAHOGANY_WOOD_TYPE)
 				});
-		RecipeManager.addRecipe(new ItemStack(DecoBlocks.mahoganyTrapdoor),
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.mahoganyTrapdoor, 2),
 				new Object[] {
 						"SPP",
 						"SPP",
@@ -5780,7 +5820,7 @@ public class CraftingRecipeList {
 						'S', Item.stick,
 						'P', new ItemStack(Block.planks, 1, WoodTypeHelper.MANGROVE_WOOD_TYPE)
 				});
-		RecipeManager.addRecipe(new ItemStack(DecoBlocks.mangroveTrapdoor),
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.mangroveTrapdoor, 2),
 				new Object[] {
 						"SPP",
 						"SPP",
@@ -6052,7 +6092,7 @@ public class CraftingRecipeList {
 						'S', Item.stick,
 						'P', new ItemStack(Block.planks, 1, WoodTypeHelper.HAZEL_WOOD_TYPE)
 				});
-		RecipeManager.addRecipe(new ItemStack(DecoBlocks.hazelTrapdoor),
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.hazelTrapdoor, 2),
 				new Object[] {
 						"SPP",
 						"SPP",
