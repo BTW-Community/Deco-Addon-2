@@ -1,6 +1,7 @@
 package deco.block.util;
 
 import deco.block.DecoBlockIDs;
+import net.minecraft.src.Block;
 
 public class SlabHelper {
 	
@@ -62,6 +63,7 @@ public class SlabHelper {
 	public static final int DARK_PRISMARINE_SLAB_ID = DecoBlockIDs.STONE_SLAB_ID;
 	
 	// Sandstone
+	public static final int SANDSTONE_SLAB_ID = 43; // Vanilla stone single slab
 	public static final int CUT_SANDSTONE_SLAB_ID = DecoBlockIDs.STONE_SLAB_4_ID;
 	public static final int POLISHED_SANDSTONE_SLAB_ID = DecoBlockIDs.STONE_SLAB_4_ID;
 	public static final int SANDSTONE_BRICK_SLAB_ID = DecoBlockIDs.STONE_SLAB_4_ID;
@@ -156,6 +158,7 @@ public class SlabHelper {
 	public static final int DARK_PRISMARINE_SLAB_TYPE = 3;
 	
 	// Sandstone
+	public static final int SANDSTONE_SLAB_TYPE = 1;
 	public static final int CUT_SANDSTONE_SLAB_TYPE = 0;
 	public static final int POLISHED_SANDSTONE_SLAB_TYPE = 1;
 	public static final int SANDSTONE_BRICK_SLAB_TYPE = 2;

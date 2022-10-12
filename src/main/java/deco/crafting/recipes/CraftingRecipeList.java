@@ -45,6 +45,15 @@ public class CraftingRecipeList {
 						new ItemStack(Item.paper)
 				});
 		
+		RecipeManager.addSoulforgeRecipe(new ItemStack(BTWItems.wickerPane, 2),
+				new Object[] {
+						"X X ",
+						" X X",
+						"X X ",
+						" X X",
+						'X', Item.reed
+				});
+		
 		RecipeManager.removeVanillaRecipe(new ItemStack(Item.painting, 1),
 				new Object[] {
 						"###",
@@ -2026,8 +2035,11 @@ public class CraftingRecipeList {
 				"XXX",
 				'X', new ItemStack(Block.sandStone, 1, SandHelper.SANDSTONE_TYPE_DEFAULT)});
 		
-		removeSubBlockRecipes(Block.sandStone, SandHelper.SANDSTONE_TYPE_CUT, SandHelper.SANDSTONE_TYPE_DEFAULT, BTWBlocks.sandstoneSidingAndCorner,
+		removeSubBlockRecipes(Block.sandStone, InventoryUtils.IGNORE_METADATA, SandHelper.SANDSTONE_TYPE_DEFAULT, BTWBlocks.sandstoneSidingAndCorner,
 				BTWBlocks.sandstoneMouldingAndDecorative, true);
+		
+		addSubBlockRecipes(Block.sandStone, SandHelper.SANDSTONE_TYPE_DEFAULT, BTWBlocks.sandstoneSidingAndCorner, BTWBlocks.sandstoneMouldingAndDecorative,
+				Block.stairsSandStone, SlabHelper.SANDSTONE_SLAB_ID, SlabHelper.SANDSTONE_SLAB_TYPE);
 		
 		addSubBlockRecipes(Block.sandStone, SandHelper.SANDSTONE_TYPE_CUT, DecoBlocks.cutSandstoneSiding, DecoBlocks.cutSandstoneMoulding,
 				DecoBlocks.cutSandstoneStairs, Block.blocksList[SlabHelper.CUT_SANDSTONE_SLAB_ID], SlabHelper.CUT_SANDSTONE_SLAB_TYPE);
