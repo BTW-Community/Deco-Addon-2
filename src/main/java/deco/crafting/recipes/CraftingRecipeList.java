@@ -6478,7 +6478,7 @@ public class CraftingRecipeList {
 				});
 	}
 	
-	private static void addChiselingRecipe(ItemStack input, ItemStack output) {
+	private static void addChiselingRecipe(ItemStack output, ItemStack input) {
 		RecipeManager.addShapelessRecipe(input,
 				new ItemStack[] {
 						output,
