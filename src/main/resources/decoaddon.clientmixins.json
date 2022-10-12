@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "deco.client.mixins",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+  ],
+  "client": [
+    "GuiRepairMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

@@ -11,6 +11,7 @@ import btw.util.ColorUtils;
 import deco.block.blocks.*;
 import deco.block.blocks.CarvedPumpkinBlock;
 import deco.block.blocks.FlowerPotBlock;
+import deco.block.blocks.WorkbenchBlock;
 import deco.block.blocks.legacy.LegacyRedSandBlock;
 import deco.block.tileentity.FlowerPotTileEntity;
 import deco.block.util.*;
@@ -2069,6 +2070,8 @@ public class DecoBlockInitializer {
                 (BlockHalfSlab) DecoBlocks.woodDoubleSlab, false);
         Item.itemsList[DecoBlocks.woodDoubleSlab.blockID] = new ItemSlab(DecoBlocks.woodDoubleSlab.blockID - 256, (BlockHalfSlab) DecoBlocks.woodSingleSlab,
                 (BlockHalfSlab) DecoBlocks.woodDoubleSlab, true);
+        
+        DecoBlocks.workbench = new WorkbenchBlock(DecoBlockIDs.WORKBENCH_ID);
         
         //------ Oak Wood ------//
         

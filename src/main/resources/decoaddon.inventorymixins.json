@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "deco.inventory.mixins",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "ContainerRepairInvoker",
+    "SlotRepairMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

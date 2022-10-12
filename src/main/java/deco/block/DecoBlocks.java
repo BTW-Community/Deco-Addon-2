@@ -511,6 +511,8 @@ public class DecoBlocks {
 
     public static Block workStump;
     
+    public static Block workbench;
+    
     // Oak wood
     public static Block oakChair;
     public static Block filledOakBarrel;
