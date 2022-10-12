@@ -138,11 +138,10 @@ public class DecoBlockInitializer {
         DecoBlocks.ironTrapdoor = new IronTrapDoorBlock(DecoBlockIDs.IRON_TRAPDOOR_ID);
         DecoBlocks.ironLadder = new IronLadderBlock(DecoBlockIDs.IRON_LADDER_ID);
     
-        DecoBlocks.amethyst = new DecoBlock(DecoBlockIDs.AMETHYST_ID, Material.glass)
+        DecoBlocks.amethyst = new DecoBlock(DecoBlockIDs.AMETHYST_ID, Material.rock)
                 .setHardness(0.3F)
                 .setStepSound(Block.soundGlassFootstep)
                 .setUnlocalizedName("decoBlockAmethyst")
-                .setPicksEffectiveOn()
                 .setCreativeTab(CreativeTabs.tabDecorations);
         DecoBlocks.amethystShard = new AmethystShardBlock(DecoBlockIDs.AMETHYST_SHARD_ID);
     
@@ -1835,6 +1834,20 @@ public class DecoBlockInitializer {
     }
     
     private static void initPlants() {
+        DecoBlocks.autumnSapling = new AutumnSapling(DecoBlockIDs.AUTUMN_SAPLING_ID);
+        register(DecoBlocks.autumnSapling, AutumnSapling.saplingTypes);
+        DecoBlocks.autumnLeaves = new DecoLeavesBlock(DecoBlockIDs.AUTUMN_LEAVES_ID, DecoBlockIDs.AUTUMN_SAPLING_ID,
+                new int[] {
+                        0, 1, 2
+                },
+                new String[] {
+                        "decoBlockLeavesAutumnRed",
+                        "decoBlockLeavesAutumnOrange",
+                        "decoBlockLeavesAutumnYellow"
+                })
+                .setUnlocalizedName("decoBlockLeavesAutumn");
+        register(DecoBlocks.autumnLeaves, AutumnSapling.names);
+        
         DecoBlocks.flower = new DecoFlowerBlock(DecoBlockIDs.FLOWER_ID, "decoBlockFlower",
                 new String[] {
                         "yucca",

@@ -3233,6 +3233,46 @@ public class CraftingRecipeList {
 		
 		//------ Sapling recipes ------//
 		
+		// Autumn
+		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.autumnSapling, 1, AutumnSapling.RED_TYPE),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.cherrySapling),
+						new ItemStack(Item.dyePowder, 1, ColorUtils.RED.colorID),
+						new ItemStack(BTWItems.dung)
+				});
+		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.autumnSapling, 1, AutumnSapling.RED_TYPE),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.cherrySapling),
+						new ItemStack(Item.dyePowder, 1, ColorUtils.RED.colorID),
+						new ItemStack(DecoItems.fertilizer)
+				});
+		
+		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.autumnSapling, 1, AutumnSapling.ORANGE_TYPE),
+				new ItemStack[] {
+						new ItemStack(Block.sapling, 1, WoodTypeHelper.OAK_WOOD_TYPE),
+						new ItemStack(Item.dyePowder, 1, ColorUtils.ORANGE.colorID),
+						new ItemStack(BTWItems.dung)
+				});
+		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.autumnSapling, 1, AutumnSapling.ORANGE_TYPE),
+				new ItemStack[] {
+						new ItemStack(Block.sapling, 1, WoodTypeHelper.OAK_WOOD_TYPE),
+						new ItemStack(Item.dyePowder, 1, ColorUtils.ORANGE.colorID),
+						new ItemStack(DecoItems.fertilizer)
+				});
+		
+		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.autumnSapling, 1, AutumnSapling.YELLOW_TYPE),
+				new ItemStack[] {
+						new ItemStack(Block.sapling, 1, WoodTypeHelper.BIRCH_WOOD_TYPE),
+						new ItemStack(Item.dyePowder, 1, ColorUtils.YELLOW.colorID),
+						new ItemStack(BTWItems.dung)
+				});
+		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.autumnSapling, 1, AutumnSapling.YELLOW_TYPE),
+				new ItemStack[] {
+						new ItemStack(Block.sapling, 1, WoodTypeHelper.BIRCH_WOOD_TYPE),
+						new ItemStack(Item.dyePowder, 1, ColorUtils.YELLOW.colorID),
+						new ItemStack(DecoItems.fertilizer)
+				});
+		
 		// Cherry
 		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.cherrySapling),
 				new ItemStack[] {

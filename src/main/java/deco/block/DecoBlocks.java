@@ -457,6 +457,9 @@ public class DecoBlocks {
     public static Block flower2;
     public static Block tulip;
     
+    public static Block autumnSapling;
+    public static Block autumnLeaves;
+    
     //------ Light Source Blocks ------//
     
     public static Block lantern;

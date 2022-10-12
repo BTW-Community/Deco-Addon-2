@@ -17,13 +17,17 @@ Some textures in this release have been used or modified from the following sour
     - For the purposes of smelting and tanning:
         - Mahogany and mangrove are equivalent to jungle
         - Hazel is equivalent to oak
+- Changed autumn saplings to produce different wood types depending on color.
 - Changed sapling recipes:
     - All sapling recipes can use either dung or fertilizer, and are performed in a cauldron.
-    - Cherry saplings now require an oak sapling, pink dye, and a fertilizer.
-    - Acacia saplings now require a birch sapling, orange dye, and a fertilizer.
+    - Cherry saplings require an oak sapling, pink dye, and a fertilizer.
+    - Acacia saplings require a birch sapling, orange dye, and a fertilizer.
     - Mahogany saplings require a jungle sapling, red dye, and a fertilizer.
     - Mangrove saplings require a jungle sapling, orange dye, and a fertilizer.
     - Hazel saplings require an oak sapling, brown dye, and a fertilizer.
+    - Red autumn saplings require a cherry sapling, red dye, and a fertilizer.
+    - Orange autumn saplings require an oak sapling, orange dye, and a fertilizer.
+    - Yellow autumn saplings require a birch sapling, yellow dye, and a fertilizer.
 - Changed deco stone variants to behave consistently with BTW stone.
     - Granite, andesite, and diorite are all considered first strata.
     - Slate is considered third strata.

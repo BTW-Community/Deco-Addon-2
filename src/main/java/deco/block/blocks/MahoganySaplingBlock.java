@@ -16,7 +16,7 @@ public class MahoganySaplingBlock extends DecoSaplingBlock {
 	}
 	
 	@Override
-	public boolean generateTree(World world, Random rand, int x, int y, int z) {
+	public boolean generateTree(World world, Random rand, int x, int y, int z, int treeType) {
 		int treeHeight = rand.nextInt(8) + 8;
 		boolean hasRoom = true;
 		
@@ -173,12 +173,12 @@ public class MahoganySaplingBlock extends DecoSaplingBlock {
 	}
 	
 	@Override
-	public int getLogID() {
+	public int getLogID(int type) {
 		return DecoBlocks.mahoganyLog.blockID;
 	}
 	
 	@Override
-	public int getStumpID() {
+	public int getStumpID(int type) {
 		return DecoBlocks.mahoganyStump.blockID;
 	}
 	

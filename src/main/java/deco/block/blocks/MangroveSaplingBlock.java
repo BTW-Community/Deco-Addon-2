@@ -19,17 +19,17 @@ public class MangroveSaplingBlock extends DecoSaplingBlock {
 	}
 	
 	@Override
-	public boolean generateTree(World world, Random rand, int x, int y, int z) {
+	public boolean generateTree(World world, Random rand, int x, int y, int z, int treeType) {
 		return false;
 	}
 	
 	@Override
-	public int getLogID() {
+	public int getLogID(int type) {
 		return DecoBlocks.mangroveLog.blockID;
 	}
 	
 	@Override
-	public int getStumpID() {
+	public int getStumpID(int type) {
 		return DecoBlocks.mangroveStump.blockID;
 	}
 }

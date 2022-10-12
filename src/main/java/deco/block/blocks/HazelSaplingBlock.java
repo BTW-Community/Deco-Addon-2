@@ -19,17 +19,17 @@ public class HazelSaplingBlock extends DecoSaplingBlock {
 	}
 	
 	@Override
-	public boolean generateTree(World world, Random rand, int x, int y, int z) {
+	public boolean generateTree(World world, Random rand, int x, int y, int z, int treeType) {
 		return false;
 	}
 	
 	@Override
-	public int getLogID() {
+	public int getLogID(int type) {
 		return DecoBlockIDs.HAZEL_LOG_ID;
 	}
 	
 	@Override
-	public int getStumpID() {
+	public int getStumpID(int type) {
 		return DecoBlockIDs.HAZEL_STUMP_ID;
 	}
 }
