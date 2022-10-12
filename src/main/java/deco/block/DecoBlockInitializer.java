@@ -48,6 +48,10 @@ public class DecoBlockInitializer {
                 .setBurning()
                 .setAxesEfficientOn()
                 .setMobsCantSpawnOn();
+        
+        DecoBlocks.ashMaterial = new Material(MapColor.stoneColor)
+                .setRequiresTool()
+                .setNetherMobsCanSpawnOn();
     }
     
     private static void initGeneralBlocks() {
@@ -141,6 +145,13 @@ public class DecoBlockInitializer {
                 .setPicksEffectiveOn()
                 .setCreativeTab(CreativeTabs.tabDecorations);
         DecoBlocks.amethystShard = new AmethystShardBlock(DecoBlockIDs.AMETHYST_SHARD_ID);
+    
+        DecoBlocks.ash = new AshBlock(DecoBlockIDs.ASH_BLOCK_ID);
+        DecoBlocks.pumice = new DecoBlock(DecoBlockIDs.PUMICE_ID, BTWBlocks.netherRockMaterial)
+                .setHardness(0.8F)
+                .setResistance(1.5F)
+                .setUnlocalizedName("decoBlockPumice")
+                .setCreativeTab(CreativeTabs.tabBlock);
     }
     
     private static void initStone() {

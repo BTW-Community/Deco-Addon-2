@@ -183,6 +183,16 @@ public class CraftingRecipeList {
 						new ItemStack(DecoBlocks.amethyst)
 				});
 		
+		RecipeManager.addPistonPackingRecipe(DecoBlocks.ash,
+				new ItemStack(BTWItems.potash, 8));
+		RecipeManager.addShapelessRecipe(new ItemStack(BTWItems.potash, 8),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.ash)
+				});
+		
+		RecipeManager.addPistonPackingRecipe(DecoBlocks.pumice,
+				new ItemStack(DecoBlocks.ash, 2));
+		
 		//------ Hay Bales ------//
 		
 		RecipeManager.addPistonPackingRecipe(DecoBlocks.hayBale,

@@ -9,6 +9,7 @@ public class DecoBlocks {
     
     public static Material carpetMaterial;
     public static Material hayMaterial;
+    public static Material ashMaterial;
     
     //------ General Blocks ------//
     
@@ -35,6 +36,9 @@ public class DecoBlocks {
     
     public static Block amethyst;
     public static Block amethystShard;
+    
+    public static Block ash;
+    public static Block pumice;
     
     //------ Stone Blocks ------//
     
