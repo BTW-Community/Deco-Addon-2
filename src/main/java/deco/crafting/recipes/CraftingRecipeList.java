@@ -2171,11 +2171,9 @@ public class CraftingRecipeList {
 		RecipeManager.addKilnRecipe(new ItemStack(DecoBlocks.magma), Block.netherrack);
 		RecipeManager.addKilnRecipe(new ItemStack(DecoBlocks.magma), BTWBlocks.fallingNetherrack);
 		
-		RecipeManager.addRecipe(new ItemStack(DecoBlocks.basalt, 2, 1), // Polished
-				new Object[] {
-						"B",
-						"B",
-						'B', new ItemStack(DecoBlocks.basalt, 1, 0) // Regular
+		RecipeManager.addStokedCrucibleRecipe(new ItemStack(DecoBlocks.basalt, 1, 1), // Polished
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.basalt, 1, 0) // Regular
 				});
 		
 		RecipeManager.removeVanillaRecipe(new ItemStack(Block.blockNetherQuartz, 1, 1),
@@ -2416,7 +2414,7 @@ public class CraftingRecipeList {
 						new ItemStack(BTWItems.soulFlux)
 				});
 		
-		RecipeManager.addStokedCrucibleRecipe(new ItemStack(DecoBlocks.infusedStone, 1, InfusedStoneBlock.TYPE_SMOOTH),
+		RecipeManager.addStokedCrucibleRecipe(new ItemStack(DecoBlocks.infusedStone, 1, InfusedStoneBlock.TYPE_POLISHED),
 				new ItemStack[] {
 						new ItemStack(DecoBlocks.infusedStone, 1, InfusedStoneBlock.TYPE_DEFAULT)
 				});
@@ -2469,7 +2467,7 @@ public class CraftingRecipeList {
 						'S', new ItemStack(SlabHelper.INFUSED_STONE_SLAB_ID, 1, SlabHelper.INFUSED_STONE_SLAB_TYPE)
 				});
 		
-		btw.crafting.recipe.CraftingRecipeList.addSubBlockRecipesOfType(DecoBlocks.infusedStone, InfusedStoneBlock.TYPE_SMOOTH,
+		btw.crafting.recipe.CraftingRecipeList.addSubBlockRecipesOfType(DecoBlocks.infusedStone, InfusedStoneBlock.TYPE_POLISHED,
 				DecoBlocks.polishedInfusedStoneSidingAndCorner, DecoBlocks.polishedInfusedStoneMoulding, true);
 		
 		RecipeManager.addRecipe(new ItemStack(DecoBlocks.polishedInfusedStoneStairs, 6),

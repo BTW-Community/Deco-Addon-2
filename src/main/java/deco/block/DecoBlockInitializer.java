@@ -1145,7 +1145,7 @@ public class DecoBlockInitializer {
                 DecoBlocks.infusedStone.blockHardness, DecoBlocks.infusedStone.blockResistance, Block.soundStoneFootstep,
                 "decoBlockInfusedStoneSmoothMoulding");
         register(new MouldingBlockItem(DecoBlocks.polishedInfusedStoneMoulding.blockID - 256));
-        DecoBlocks.polishedInfusedStoneStairs = new StairsBlock(DecoBlockIDs.POLISHED_INFUSED_STONE_STAIRS_ID, DecoBlocks.infusedStone, InfusedStoneBlock.TYPE_SMOOTH)
+        DecoBlocks.polishedInfusedStoneStairs = new StairsBlock(DecoBlockIDs.POLISHED_INFUSED_STONE_STAIRS_ID, DecoBlocks.infusedStone, InfusedStoneBlock.TYPE_POLISHED)
                 .setUnlocalizedName("decoBlockInfusedStoneSmoothStairs");
     
         DecoBlocks.infusedStoneBrickSidingAndCorner = new SidingAndCornerAndDecorativeWallBlock(DecoBlockIDs.INFUSED_STONE_BRICK_SIDING_AND_CORNER_ID, Material.rock,
@@ -1565,7 +1565,7 @@ public class DecoBlockInitializer {
                         StoneVariantsBlock.ANDESITE_TYPE,
                         StoneVariantsBlock.DIORITE_TYPE,
                         InfusedStoneBlock.TYPE_DEFAULT,
-                        InfusedStoneBlock.TYPE_SMOOTH,
+                        InfusedStoneBlock.TYPE_POLISHED,
                         InfusedStoneBlock.TYPE_BRICK,
                         0
                 },

@@ -6,7 +6,7 @@ import net.minecraft.src.*;
 
 public class InfusedStoneBlock extends Block {
 	public static final int TYPE_DEFAULT = 0;
-	public static final int TYPE_SMOOTH = 1;
+	public static final int TYPE_POLISHED = 1;
 	public static final int TYPE_BRICK = 2;
 	public static final int TYPE_CHISELED = 3;
 	
