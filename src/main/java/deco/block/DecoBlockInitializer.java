@@ -129,6 +129,9 @@ public class DecoBlockInitializer {
         DecoBlocks.woodFramedGlass = new WoodFramedGlassBlock(DecoBlockIDs.WOOD_FRAMED_GLASS_ID, "decoBlockGlassFramed");
         register(DecoBlocks.woodFramedGlass, WoodTypeHelper.woodNames);
         DecoBlocks.ironFramedGlass = new DecoGlassBlock(DecoBlockIDs.IRON_FRAMED_GLASS_ID, "decoBlockGlassFramedIron");
+        
+        DecoBlocks.ironTrapdoor = new IronTrapDoorBlock(DecoBlockIDs.IRON_TRAPDOOR_ID);
+        DecoBlocks.ironLadder = new IronLadderBlock(DecoBlockIDs.IRON_LADDER_ID);
     }
     
     private static void initStone() {

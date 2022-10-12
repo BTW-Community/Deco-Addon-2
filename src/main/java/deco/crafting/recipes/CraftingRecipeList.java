@@ -129,6 +129,34 @@ public class CraftingRecipeList {
 						'm', new ItemStack(BTWItems.woodMouldingStubID, 1, InventoryUtils.IGNORE_METADATA)
 				});
 		
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.ironTrapdoor, 2),
+				new Object[] {
+						"LII",
+						"LII",
+						'L', BTWItems.redstoneLatch,
+						'I', Item.ingotIron
+				});
+		RecipeManager.addStokedCrucibleRecipe(
+				new ItemStack[] {
+						new ItemStack(BTWItems.ironNugget, 12),
+						new ItemStack(Item.goldNugget, 2)
+				},
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.ironTrapdoor)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.ironLadder, 7),
+				new Object[] {
+						"# #",
+						"###",
+						"# #",
+						'#', new ItemStack(Item.ingotIron)
+				});
+		RecipeManager.addStokedCrucibleRecipe(new ItemStack(BTWItems.ironNugget, 6),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.ironLadder)
+				});
+		
 		//------ Hay Bales ------//
 		
 		RecipeManager.addPistonPackingRecipe(DecoBlocks.hayBale,
