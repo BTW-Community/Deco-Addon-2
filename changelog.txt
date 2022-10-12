@@ -38,6 +38,7 @@ Some textures in this release have been used or modified from the following sour
 - Changed the names of flower textures to be more descriptive.
 - Changed magma to be made by heating netherrack in a kiln, and removed superheated netherrack.
 - Changed nether brick to turn into brick in a kiln, and removed superheated nether brick.
+- Changed hay bales and thatch to be made of 8 items instead of 9, and added the ability to decraft stairs into items.
 - Removed the ability to play custom sounds. This will return in a future release, but for now the code was too messy to carry over through the rewrite.
 - Removed wood bleach and wood stain.
 - Fixed an issue where addon leaves would not properly decay until updated.

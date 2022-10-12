@@ -128,6 +128,58 @@ public class CraftingRecipeList {
 						'm', new ItemStack(BTWItems.woodMouldingStubID, 1, InventoryUtils.IGNORE_METADATA)
 				});
 		
+		//------ Hay Bales ------//
+		
+		RecipeManager.addPistonPackingRecipe(DecoBlocks.hayBale,
+				new ItemStack(BTWItems.wheat, 8));
+		RecipeManager.addShapelessRecipe(new ItemStack(BTWItems.wheat, 8),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.hayBale)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.hayStairs, 8),
+				new Object[] {
+						"H  ",
+						"HH ",
+						"HHH",
+						'H', DecoBlocks.hayBale
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.hayStairs, 4),
+				new Object[] {
+						"H ",
+						"HH",
+						'H', DecoBlocks.hayBale
+				});
+		RecipeManager.addShapelessRecipe(new ItemStack(BTWItems.wheat, 6),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.hayStairs)
+				});
+		
+		RecipeManager.addPistonPackingRecipe(DecoBlocks.thatch,
+				new ItemStack(BTWItems.straw, 8));
+		RecipeManager.addShapelessRecipe(new ItemStack(BTWItems.straw, 8),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.thatch)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.thatchStairs, 8),
+				new Object[] {
+						"H  ",
+						"HH ",
+						"HHH",
+						'H', DecoBlocks.thatch
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.thatchStairs, 4),
+				new Object[] {
+						"H ",
+						"HH",
+						'H', DecoBlocks.thatch
+				});
+		RecipeManager.addShapelessRecipe(new ItemStack(BTWItems.straw, 6),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.thatchStairs)
+				});
+		
 		//------ Lanterns ------//
 		
 		RecipeManager.addRecipe(new ItemStack(DecoItems.paperLantern),

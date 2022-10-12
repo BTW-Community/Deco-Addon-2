@@ -4,6 +4,7 @@ import btw.block.BTWBlocks;
 import btw.block.blocks.*;
 import btw.block.tileentity.beacon.BeaconTileEntity;
 import btw.block.util.Flammability;
+import btw.item.BTWItems;
 import btw.item.blockitems.MouldingBlockItem;
 import btw.item.blockitems.SidingAndCornerBlockItem;
 import btw.item.blockitems.legacy.LegacySubstitutionBlockItem;
@@ -42,6 +43,11 @@ public class DecoBlockInitializer {
                 .setBurning()
                 .setAxesEfficientOn()
                 .setRequiresTool();
+        
+        DecoBlocks.hayMaterial = new Material(MapColor.clothColor)
+                .setBurning()
+                .setAxesEfficientOn()
+                .setMobsCantSpawnOn();
     }
     
     private static void initGeneralBlocks() {
@@ -112,6 +118,11 @@ public class DecoBlockInitializer {
         DecoBlocks.paperLantern = new LanternBlock(DecoBlockIDs.PAPER_LANTERN_ID, Material.wood, "Paper", DecoItemIDs.PAPER_LANTERN_ID + 256);
         DecoBlocks.brokenPaperLantern = new LanternBlock(DecoBlockIDs.BROKEN_PAPER_LANTERN_ID, Material.wood, "PaperBroken", DecoItemIDs.BROKEN_PAPER_LANTERN_ID + 256)
                 .setLightValue(0);
+        
+        DecoBlocks.hayBale = new HayBaleBlock(DecoBlockIDs.HAY_BALE_ID).setUnlocalizedName("decoBlockHayBale");
+        DecoBlocks.hayStairs = new StairsBlock(DecoBlockIDs.HAY_BALE_STAIRS_ID, DecoBlocks.hayBale, 0);
+        DecoBlocks.thatch = new HayBaleBlock(DecoBlockIDs.THATCH_ID).setUnlocalizedName("decoBlockThatch");
+        DecoBlocks.thatchStairs = new StairsBlock(DecoBlockIDs.THATCH_STAIRS_ID, DecoBlocks.thatch, 0);
     }
     
     private static void initStone() {

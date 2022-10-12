@@ -8,6 +8,7 @@ public class DecoBlocks {
     //------ Materials ------//
     
     public static Material carpetMaterial;
+    public static Material hayMaterial;
     
     //------ General Blocks ------//
     
@@ -23,6 +24,11 @@ public class DecoBlocks {
     public static Block ropeCoil;
     
     public static Block paperWall;
+    
+    public static Block hayBale;
+    public static Block hayStairs;
+    public static Block thatch;
+    public static Block thatchStairs;
     
     //------ Stone Blocks ------//
     
