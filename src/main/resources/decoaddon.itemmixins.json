@@ -9,6 +9,7 @@
     "DoorItemMixin",
     "DyeItemMixin",
     "LegacySubstitutionBlockItemMixin",
+    "PlaceAsBlockItemAccessor",
     "SandPileItemMixin",
     "SignItemMixin",
     "ShearsItemMixin",

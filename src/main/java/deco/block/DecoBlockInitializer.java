@@ -10,13 +10,16 @@ import btw.item.blockitems.legacy.LegacySubstitutionBlockItem;
 import btw.util.ColorUtils;
 import deco.block.blocks.*;
 import deco.block.blocks.CarvedPumpkinBlock;
+import deco.block.blocks.FlowerPotBlock;
 import deco.block.blocks.legacy.LegacyRedSandBlock;
+import deco.block.tileentity.FlowerPotTileEntity;
 import deco.block.util.*;
 import deco.item.DecoItemIDs;
 import deco.item.itemblocks.ColoredItemBlock;
 import deco.item.itemblocks.DecoLogItemBlock;
 import deco.item.itemblocks.DecoSlabItemBlock;
 import deco.item.itemblocks.EnchantedBookshelfItemBlock;
+import deco.item.mixins.PlaceAsBlockItemAccessor;
 import deco.item.util.LegacySubstitutionBlockItemInterface;
 import net.minecraft.src.*;
 
@@ -151,6 +154,10 @@ public class DecoBlockInitializer {
                 .setResistance(1.5F)
                 .setUnlocalizedName("decoBlockPumice")
                 .setCreativeTab(CreativeTabs.tabBlock);
+        
+        DecoBlocks.flowerPot = new FlowerPotBlock(DecoBlockIDs.FLOWER_POT_ID);
+        TileEntity.addMapping(FlowerPotTileEntity.class, "AddonFlowerPot");
+        ((PlaceAsBlockItemAccessor) Item.flowerPot).setBlockID(DecoBlockIDs.FLOWER_POT_ID);
     }
     
     private static void initStone() {

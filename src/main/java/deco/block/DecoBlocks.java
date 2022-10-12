@@ -460,6 +460,8 @@ public class DecoBlocks {
     public static Block autumnSapling;
     public static Block autumnLeaves;
     
+    public static Block flowerPot;
+    
     //------ Light Source Blocks ------//
     
     public static Block lantern;
