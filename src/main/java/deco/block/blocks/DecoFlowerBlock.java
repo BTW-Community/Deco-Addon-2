@@ -3,9 +3,9 @@ package deco.block.blocks;
 import btw.block.blocks.FlowerBlock;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.minecraft.src.Icon;
-import net.minecraft.src.IconRegister;
-import net.minecraft.src.World;
+import net.minecraft.src.*;
+
+import java.util.List;
 
 public class DecoFlowerBlock extends FlowerBlock {
 	private String baseTexture;
@@ -51,6 +51,14 @@ public class DecoFlowerBlock extends FlowerBlock {
 		
 		for (int i = 0; i < names.length; i++) {
 			icons[i] = register.registerIcon(baseTexture + "_" + names[i]);
+		}
+	}
+	
+	@Environment(EnvType.CLIENT)
+	@Override
+	public void getSubBlocks(int blockID, CreativeTabs creativeTabs, List list) {
+		for (int i = 0; i < names.length; i++) {
+			list.add(new ItemStack(blockID, 1, i));
 		}
 	}
 }
