@@ -189,7 +189,7 @@ public class CraftingRecipeList {
 						"wcw",
 						"pwp",
 						'p', Item.paper,
-						'w', DecoBlocks.paperWall,
+						'w', new ItemStack(BTWItems.woodMouldingStubID, 1, InventoryUtils.IGNORE_METADATA),
 						'c', new ItemStack(BTWItems.candle, 1, InventoryUtils.IGNORE_METADATA)
 				});
 		RecipeManager.addShapelessRecipe(new ItemStack(DecoItems.paperLantern),
@@ -203,7 +203,7 @@ public class CraftingRecipeList {
 						"w w",
 						"pwp",
 						'p', Item.paper,
-						'w', DecoBlocks.paperWall
+						'w', new ItemStack(BTWItems.woodMouldingStubID, 1, InventoryUtils.IGNORE_METADATA)
 				});
 		RecipeManager.addShapelessRecipe(new ItemStack(DecoItems.brokenPaperLantern),
 				new ItemStack[] {
