@@ -44,6 +44,23 @@ public class CraftingRecipeList {
 						new ItemStack(Item.paper)
 				});
 		
+		RecipeManager.removeVanillaRecipe(new ItemStack(Item.painting, 1),
+				new Object[] {
+						"###",
+						"#X#",
+						"###",
+						'#', Item.stick,
+						'X', Block.cloth
+				});
+		RecipeManager.addRecipe(new ItemStack(Item.painting, 1),
+				new Object[] {
+						"###",
+						"#X#",
+						"###",
+						'#', Item.stick,
+						'X', new ItemStack(BTWItems.wool, 1, InventoryUtils.IGNORE_METADATA)
+				});
+		
 		RecipeManager.addCauldronRecipe(new ItemStack(DecoItems.fertilizer, 2),
 				new ItemStack[] {
 						new ItemStack(Item.dyePowder, 1, ColorUtils.WHITE.colorID),
@@ -3182,6 +3199,12 @@ public class CraftingRecipeList {
 						new ItemStack[] {
 								new ItemStack(Item.dyePowder, 1, color + 16),
 								new ItemStack(BTWItems.wool, 32, ColorUtils.WHITE.colorID)
+						});
+				
+				RecipeManager.addShapelessRecipe(new ItemStack(BTWBlocks.vase, 1, color),
+						new ItemStack[] {
+								new ItemStack(Item.dyePowder, 1, color + 16),
+								new ItemStack(BTWBlocks.vase, 1, ColorUtils.WHITE.colorID)
 						});
 			}
 			
