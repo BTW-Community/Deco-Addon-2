@@ -3892,6 +3892,14 @@ public class CraftingRecipeList {
 						'#', Block.planks,
 						'X', Item.redstone});
 		
+		// Workbench
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.workbench),
+				new Object[] {
+						"pp",
+						"pp",
+						'p', new ItemStack(Block.planks, 1, InventoryUtils.IGNORE_METADATA)
+				});
+		
 		// Tanning
 		for (int woodType = WoodTypeHelper.NUM_VANILLA_WOOD; woodType < WoodTypeHelper.NUM_TOTAL_WOOD; woodType++) {
 			RecipeManager.addCauldronRecipe(new ItemStack(BTWItems.tannedLeather),
