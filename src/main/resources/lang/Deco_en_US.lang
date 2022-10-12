@@ -171,6 +171,11 @@ tile.decoBlockButtonBirch.name=Birch Button
 tile.decoBlockButtonJungle.name=Jungle Button
 tile.decoBlockButtonBlood.name=Blood Wood Button
 tile.decoBlockButtonCherry.name=Cherry Button
+tile.decoBlockButtonAcacia.name=Acacia Button
+tile.decoBlockButtonMahogany.name=Mahogany Button
+tile.decoBlockButtonMangrove.name=Mangrove Button
+tile.decoBlockButtonHazel.name=Hazel Button
+
 tile.decoBlockButtonInfusedStone.name=Infused Stone Button
 tile.decoBlockButtonGranite.name=Granite Button
 tile.decoBlockButtonAndesite.name=Andesite Button

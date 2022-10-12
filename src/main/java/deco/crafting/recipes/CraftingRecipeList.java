@@ -3,7 +3,6 @@ package deco.crafting.recipes;
 import btw.block.BTWBlocks;
 import btw.block.blocks.AestheticOpaqueBlock;
 import btw.block.blocks.MouldingAndDecorativeBlock;
-import btw.block.blocks.SandstoneBlock;
 import btw.block.blocks.SidingAndCornerAndDecorativeBlock;
 import btw.crafting.recipe.RecipeManager;
 import btw.inventory.util.InventoryUtils;
@@ -656,6 +655,15 @@ public class CraftingRecipeList {
 						"S",
 						'S', new ItemStack(SlabHelper.GRANITE_BRICK_SLAB_ID, 1, SlabHelper.GRANITE_BRICK_SLAB_TYPE)
 				});
+		
+		// Button
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.graniteButton),
+				new Object[] {
+						"C",
+						"R",
+						'C', new ItemStack(DecoBlocks.stoneVariants, 1, StoneVariantsBlock.GRANITE_TYPE),
+						'R', Item.redstone
+				});
 	}
 	
 	private static void initAndesiteRecipes() {
@@ -1020,6 +1028,15 @@ public class CraftingRecipeList {
 						"S",
 						'S', new ItemStack(SlabHelper.ANDESITE_BRICK_SLAB_ID, 1, SlabHelper.ANDESITE_BRICK_SLAB_TYPE)
 				});
+		
+		// Button
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.andesiteButton),
+				new Object[] {
+						"C",
+						"R",
+						'C', new ItemStack(DecoBlocks.stoneVariants, 1, StoneVariantsBlock.ANDESITE_TYPE),
+						'R', Item.redstone
+				});
 	}
 	
 	private static void initDioriteRecipes() {
@@ -1383,6 +1400,15 @@ public class CraftingRecipeList {
 						"S",
 						"S",
 						'S', new ItemStack(SlabHelper.DIORITE_BRICK_SLAB_ID, 1, SlabHelper.DIORITE_BRICK_SLAB_TYPE)
+				});
+		
+		// Button
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.dioriteButton),
+				new Object[] {
+						"C",
+						"R",
+						'C', new ItemStack(DecoBlocks.stoneVariants, 1, StoneVariantsBlock.DIORITE_TYPE),
+						'R', Item.redstone
 				});
 	}
 	
@@ -1780,6 +1806,15 @@ public class CraftingRecipeList {
 						"S",
 						'S', new ItemStack(SlabHelper.SLATE_TILES_SLAB_ID, 1, SlabHelper.SLATE_TILES_SLAB_TYPE)
 				});
+		
+		// Button
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.slateButton),
+				new Object[] {
+						"C",
+						"R",
+						'C', DecoBlocks.slate,
+						'R', Item.redstone
+				});
 	}
 	
 	private static void initWhiteStoneRecipes() {
@@ -1932,6 +1967,15 @@ public class CraftingRecipeList {
 		addSubBlockRecipes(Block.sandStone, SandHelper.SANDSTONE_TYPE_LARGE_BRICK_CRACKED, DecoBlocks.crackedLargeSandstoneBrickSiding, DecoBlocks.crackedLargeSandstoneBrickMoulding,
 				DecoBlocks.crackedLargeSandstoneBrickStairs, Block.blocksList[SlabHelper.CRACKED_LARGE_SANDSTONE_BRICK_SLAB_ID], SlabHelper.CRACKED_LARGE_SANDSTONE_BRICK_SLAB_TYPE);
 		
+		// Button
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.sandstoneButton),
+				new Object[] {
+						"C",
+						"R",
+						'C', new ItemStack(Block.sandStone, 1, InventoryUtils.IGNORE_METADATA),
+						'R', Item.redstone
+				});
+		
 		//------ Red Sandstone ------//
 		
 		RecipeManager.addPistonPackingRecipe(DecoBlocks.redSandstone,
@@ -1987,6 +2031,15 @@ public class CraftingRecipeList {
 		
 		addSubBlockRecipes(DecoBlocks.redSandstone, SandHelper.SANDSTONE_TYPE_LARGE_BRICK_CRACKED, DecoBlocks.crackedLargeRedSandstoneBrickSiding, DecoBlocks.crackedLargeRedSandstoneBrickMoulding,
 				DecoBlocks.crackedLargeRedSandstoneBrickStairs, Block.blocksList[SlabHelper.CRACKED_LARGE_RED_SANDSTONE_BRICK_SLAB_ID], SlabHelper.CRACKED_LARGE_RED_SANDSTONE_BRICK_SLAB_TYPE);
+		
+		// Button
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.redSandstoneButton),
+				new Object[] {
+						"C",
+						"R",
+						'C', new ItemStack(DecoBlocks.redSandstone, 1, InventoryUtils.IGNORE_METADATA),
+						'R', Item.redstone
+				});
 	}
 	
 	private static void initNetherRecipes() {
@@ -2335,6 +2388,15 @@ public class CraftingRecipeList {
 						"S",
 						"S",
 						'S', new ItemStack(SlabHelper.INFUSED_STONE_BRICK_SLAB_ID, 1, SlabHelper.INFUSED_STONE_BRICK_SLAB_TYPE)
+				});
+		
+		// Button
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.infusedStoneButton),
+				new Object[] {
+						"C",
+						"R",
+						'C', new ItemStack(DecoBlocks.infusedStone, 1, InventoryUtils.IGNORE_METADATA),
+						'R', Item.redstone
 				});
 	}
 	
@@ -3599,6 +3661,22 @@ public class CraftingRecipeList {
 						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.OAK_WOOD_TYPE),
 						'F', Item.silk
 				});
+		
+		// Button
+		RecipeManager.removeVanillaRecipe(new ItemStack(Block.woodenButton),
+				new Object[] {
+						"C",
+						"R",
+						'C', new ItemStack(BTWItems.woodCornerStubID, 1, InventoryUtils.IGNORE_METADATA),
+						'R', Item.redstone
+				});
+		RecipeManager.addRecipe(new ItemStack(Block.woodenButton),
+				new Object[] {
+						"C",
+						"R",
+						'C', new ItemStack(BTWItems.woodCornerStubID, 1, WoodTypeHelper.OAK_WOOD_TYPE),
+						'R', Item.redstone
+				});
 	}
 	
 	private static void initSpruceWoodRecipes() {
@@ -3863,6 +3941,15 @@ public class CraftingRecipeList {
 						"M M",
 						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.SPRUCE_WOOD_TYPE),
 						'F', Item.silk
+				});
+		
+		// Button
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.spruceButton),
+				new Object[] {
+						"C",
+						"R",
+						'C', new ItemStack(BTWItems.woodCornerStubID, 1, WoodTypeHelper.SPRUCE_WOOD_TYPE),
+						'R', Item.redstone
 				});
 	}
 	
@@ -4129,6 +4216,15 @@ public class CraftingRecipeList {
 						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.BIRCH_WOOD_TYPE),
 						'F', Item.silk
 				});
+		
+		// Button
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.birchButton),
+				new Object[] {
+						"C",
+						"R",
+						'C', new ItemStack(BTWItems.woodCornerStubID, 1, WoodTypeHelper.BIRCH_WOOD_TYPE),
+						'R', Item.redstone
+				});
 	}
 	
 	private static void initJungleWoodRecipes() {
@@ -4393,6 +4489,15 @@ public class CraftingRecipeList {
 						"M M",
 						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.JUNGLE_WOOD_TYPE),
 						'F', Item.silk
+				});
+		
+		// Button
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.jungleButton),
+				new Object[] {
+						"C",
+						"R",
+						'C', new ItemStack(BTWItems.woodCornerStubID, 1, WoodTypeHelper.JUNGLE_WOOD_TYPE),
+						'R', Item.redstone
 				});
 	}
 	
@@ -4662,6 +4767,15 @@ public class CraftingRecipeList {
 						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.BLOOD_WOOD_TYPE),
 						'F', Item.silk
 				});
+		
+		// Button
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.bloodButton),
+				new Object[] {
+						"C",
+						"R",
+						'C', new ItemStack(BTWItems.woodCornerStubID, 1, WoodTypeHelper.BLOOD_WOOD_TYPE),
+						'R', Item.redstone
+				});
 	}
 	
 	private static void initCherryWoodRecipes() {
@@ -4924,6 +5038,15 @@ public class CraftingRecipeList {
 						"M M",
 						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.CHERRY_WOOD_TYPE),
 						'F', Item.silk
+				});
+		
+		// Button
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.cherryButton),
+				new Object[] {
+						"C",
+						"R",
+						'C', new ItemStack(BTWItems.woodCornerStubID, 1, WoodTypeHelper.CHERRY_WOOD_TYPE),
+						'R', Item.redstone
 				});
 	}
 	
@@ -5188,6 +5311,15 @@ public class CraftingRecipeList {
 						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.ACACIA_WOOD_TYPE),
 						'F', Item.silk
 				});
+		
+		// Button
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.acaciaButton),
+				new Object[] {
+						"C",
+						"R",
+						'C', new ItemStack(BTWItems.woodCornerStubID, 1, WoodTypeHelper.ACACIA_WOOD_TYPE),
+						'R', Item.redstone
+				});
 	}
 	
 	private static void initMahoganyWoodRecipes() {
@@ -5450,6 +5582,15 @@ public class CraftingRecipeList {
 						"M M",
 						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.MAHOGANY_WOOD_TYPE),
 						'F', Item.silk
+				});
+		
+		// Button
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.mahoganyButton),
+				new Object[] {
+						"C",
+						"R",
+						'C', new ItemStack(BTWItems.woodCornerStubID, 1, WoodTypeHelper.MAHOGANY_WOOD_TYPE),
+						'R', Item.redstone
 				});
 	}
 	
@@ -5714,6 +5855,15 @@ public class CraftingRecipeList {
 						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.MANGROVE_WOOD_TYPE),
 						'F', Item.silk
 				});
+		
+		// Button
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.mangroveButton),
+				new Object[] {
+						"C",
+						"R",
+						'C', new ItemStack(BTWItems.woodCornerStubID, 1, WoodTypeHelper.MANGROVE_WOOD_TYPE),
+						'R', Item.redstone
+				});
 	}
 	
 	private static void initHazelWoodRecipes() {
@@ -5976,6 +6126,15 @@ public class CraftingRecipeList {
 						"M M",
 						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.HAZEL_WOOD_TYPE),
 						'F', Item.silk
+				});
+		
+		// Button
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.hazelButton),
+				new Object[] {
+						"C",
+						"R",
+						'C', new ItemStack(BTWItems.woodCornerStubID, 1, WoodTypeHelper.HAZEL_WOOD_TYPE),
+						'R', Item.redstone
 				});
 	}
 	

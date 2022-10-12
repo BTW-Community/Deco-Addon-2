@@ -5,7 +5,7 @@ public class DecoBlockIDs {
     public static final int WROUGHT_IRON_BARS_ID = 3001;
     public static final int FLOWER_ID = 3002;
     public static final int STAINED_GLASS_ID = 3003;
-    public static final int STONE_SLAB_8_ID = 3004;
+    public static final int ACACIA_BUTTON_ID = 3004;
     public static final int COAL_BLOCK_ID = 3005;
     public static final int TULIP_ID = 3006;
     public static final int DIAMONDIUM_BLOCK = 3007;
@@ -42,11 +42,12 @@ public class DecoBlockIDs {
     public static final int BLOOD_CHAIR_ID = 3040;
     public static final int PASTEL_PLANKS_SLAB_ID = 3041;
     public static final int PASTEL_PLANKS_SLAB_2_ID = 3042;
-
+    public static final int MAHOGANY_BUTTON_ID = 3043;
     public static final int TERRACOTTA_ID = 3044;
     public static final int STAINED_TERRACOTTA_ID = 3045;
     public static final int UNFIRED_TERRACOTTA = 3046;
-    
+    public static final int MANGROVE_BUTTON_ID = 3047;
+    public static final int SLATE_BUTTON_ID = 3048;
     public static final int TERRACOTTA_SUB_START = 3049;
     // IDs occupied through 3099
     public static final int STONE_VARIANTS_ID = 3100;
@@ -383,7 +384,7 @@ public class DecoBlockIDs {
     public static final int AMETHYST_SHARD_ID = 3591;
     public static final int FRAMED_GLASS_ID = 3592;
     public static final int IRON_FRAMED_GLASS_ID = 3593;
-    
+    public static final int STONE_SLAB_8_ID = 3594;
     public static final int INFESTED_GRANITE_ID = 3595;
     public static final int INFESTED_ANDESITE_ID = 3596;
     public static final int INFESTED_DIORITE_ID = 3597;
@@ -489,4 +490,5 @@ public class DecoBlockIDs {
     public static final int FLAMING_HAZEL_LADDER_ID = 3714;
     public static final int HAZEL_SIGN_ID = 3715;
     public static final int HAZEL_WALL_SIGN_ID = 3716;
+    public static final int HAZEL_BUTTON_ID = 3717;
 }

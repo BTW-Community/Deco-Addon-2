@@ -71,6 +71,8 @@ public class DecoBlocks {
     
     public static Block infestedGranite;
     
+    public static Block graniteButton;
+    
     // Andesite
     
     public static Block roughAndesite;
@@ -98,6 +100,8 @@ public class DecoBlocks {
     
     public static Block infestedAndesite;
     
+    public static Block andesiteButton;
+    
     // Diorite
     
     public static Block roughDiorite;
@@ -124,6 +128,8 @@ public class DecoBlocks {
     public static Block polishedDioriteStairs;
     
     public static Block infestedDiorite;
+    
+    public static Block dioriteButton;
     
     // Slate
     
@@ -158,6 +164,8 @@ public class DecoBlocks {
     public static Block slateTilesStairs;
     
     public static Block infestedSlate;
+    
+    public static Block slateButton;
     
     // Calcite
     
@@ -282,6 +290,8 @@ public class DecoBlocks {
     public static Block crackedLargeSandstoneBrickMoulding;
     public static Block crackedLargeSandstoneBrickStairs;
     
+    public static Block sandstoneButton;
+    
     // Red Sandstone
     public static Block redSandstone;
     
@@ -321,6 +331,8 @@ public class DecoBlocks {
     public static Block crackedLargeRedSandstoneBrickMoulding;
     public static Block crackedLargeRedSandstoneBrickStairs;
     
+    public static Block redSandstoneButton;
+    
     //------ Nether Blocks ------//
     
     public static Block basalt;
@@ -351,6 +363,8 @@ public class DecoBlocks {
     public static Block infusedStoneBrickSidingAndCorner;
     public static Block infusedStoneBrickMoulding;
     public static Block infusedStoneBrickStairs;
+    
+    public static Block infusedStoneButton;
     
     //------ End Blocks ------//
     
@@ -485,6 +499,8 @@ public class DecoBlocks {
     public static Block flamingSpruceLadder;
     public static Block spruceSign;
     public static Block spruceWallSign;
+    
+    public static Block spruceButton;
 
     // Birch wood
     public static Block birchGate;
@@ -496,6 +512,8 @@ public class DecoBlocks {
     public static Block flamingBirchLadder;
     public static Block birchSign;
     public static Block birchWallSign;
+    
+    public static Block birchButton;
 
     // Jungle wood
     public static Block jungleGate;
@@ -507,6 +525,8 @@ public class DecoBlocks {
     public static Block flamingJungleLadder;
     public static Block jungleSign;
     public static Block jungleWallSign;
+    
+    public static Block jungleButton;
 
     // Blood wood
     public static Block bloodLog;
@@ -522,6 +542,8 @@ public class DecoBlocks {
     public static Block flamingBloodLadder;
     public static Block bloodSign;
     public static Block bloodWallSign;
+    
+    public static Block bloodButton;
 
     // Cherry wood
     public static Block cherryLog;
@@ -545,6 +567,8 @@ public class DecoBlocks {
     public static Block flamingCherryLadder;
     public static Block cherrySign;
     public static Block cherryWallSign;
+    
+    public static Block cherryButton;
 
     // Acacia wood
     public static Block acaciaLog;
@@ -569,6 +593,8 @@ public class DecoBlocks {
     public static Block acaciaSign;
     public static Block acaciaWallSign;
     
+    public static Block acaciaButton;
+    
     // Mahogany wood
     public static Block mahoganyLog;
     public static Block mahoganyStump;
@@ -591,6 +617,8 @@ public class DecoBlocks {
     public static Block flamingMahoganyLadder;
     public static Block mahoganySign;
     public static Block mahoganyWallSign;
+    
+    public static Block mahoganyButton;
     
     // Mangrove wood
     public static Block mangroveLog;
@@ -615,6 +643,8 @@ public class DecoBlocks {
     public static Block mangroveSign;
     public static Block mangroveWallSign;
     
+    public static Block mangroveButton;
+    
     // Hazel wood
     public static Block hazelLog;
     public static Block hazelStump;
@@ -637,6 +667,8 @@ public class DecoBlocks {
     public static Block flamingHazelLadder;
     public static Block hazelSign;
     public static Block hazelWallSign;
+    
+    public static Block hazelButton;
 
     // Colored planks
     public static Block pastelPlanks;

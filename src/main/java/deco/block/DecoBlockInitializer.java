@@ -121,6 +121,9 @@ public class DecoBlockInitializer {
     
         DecoBlocks.infestedGranite = new SilverfishBlock(DecoBlockIDs.INFESTED_GRANITE_ID, DecoBlocks.stoneVariants, StoneVariantsBlock.GRANITE_TYPE);
         
+        DecoBlocks.graniteButton = new DecoButtonBlock(DecoBlockIDs.GRANITE_BUTTON_ID, false, DecoBlocks.stoneVariants, StoneVariantsBlock.GRANITE_TYPE)
+                .setUnlocalizedName("decoBlockButtonGranite");
+        
         DecoBlocks.looseGraniteCobblestone = new LooseCobblestoneVariantsBlock(DecoBlockIDs.LOOSE_GRANITE_COBBLESTONE_ID, StoneVariantsBlock.GRANITE_TYPE,
                 "decoOverlayGraniteCobbleLava")
                 .setUnlocalizedName("decoBlockGraniteCobbleLoose");
@@ -199,6 +202,9 @@ public class DecoBlockInitializer {
         DecoBlocks.roughAndesite = new RoughStoneVariantBlock(DecoBlockIDs.ROUGH_ANDESITE_ID, StoneVariantsBlock.ANDESITE_TYPE);
     
         DecoBlocks.infestedAndesite = new SilverfishBlock(DecoBlockIDs.INFESTED_ANDESITE_ID, DecoBlocks.stoneVariants, StoneVariantsBlock.ANDESITE_TYPE);
+    
+        DecoBlocks.andesiteButton = new DecoButtonBlock(DecoBlockIDs.ANDESITE_BUTTON_ID, false, DecoBlocks.stoneVariants, StoneVariantsBlock.ANDESITE_TYPE)
+                .setUnlocalizedName("decoBlockButtonAndesite");
     
         DecoBlocks.looseAndesiteCobblestone = new LooseCobblestoneVariantsBlock(DecoBlockIDs.LOOSE_ANDESITE_COBBLESTONE_ID, StoneVariantsBlock.ANDESITE_TYPE,
                 "decoOverlayAndesiteCobbleLava")
@@ -279,6 +285,9 @@ public class DecoBlockInitializer {
     
         DecoBlocks.infestedDiorite = new SilverfishBlock(DecoBlockIDs.INFESTED_DIORITE_ID, DecoBlocks.stoneVariants, StoneVariantsBlock.DIORITE_TYPE);
     
+        DecoBlocks.dioriteButton = new DecoButtonBlock(DecoBlockIDs.DIORITE_BUTTON_ID, false, DecoBlocks.stoneVariants, StoneVariantsBlock.DIORITE_TYPE)
+                .setUnlocalizedName("decoBlockButtonDiorite");
+    
         DecoBlocks.looseDioriteCobblestone = new LooseCobblestoneVariantsBlock(DecoBlockIDs.LOOSE_DIORITE_COBBLESTONE_ID, StoneVariantsBlock.DIORITE_TYPE,
                 "decoOverlayDioriteCobbleLava")
                 .setUnlocalizedName("decoBlockDioriteCobbleLoose");
@@ -358,6 +367,9 @@ public class DecoBlockInitializer {
         DecoBlocks.roughSlate = new RoughStoneVariantBlock(DecoBlockIDs.ROUGH_SLATE_ID, StoneVariantsBlock.SLATE_TYPE, DecoBlockIDs.SLATE_ID);
         
         DecoBlocks.infestedSlate = new SilverfishBlock(DecoBlockIDs.INFESTED_SLATE_ID, DecoBlocks.slate, 0);
+    
+        DecoBlocks.slateButton = new DecoButtonBlock(DecoBlockIDs.SLATE_BUTTON_ID, false, DecoBlocks.slate, 0)
+                .setUnlocalizedName("decoBlockButtonSlate");
         
         DecoBlocks.slateTiles = new SlateTilesBlock(DecoBlockIDs.SLATE_TILES_ID);
     
@@ -783,6 +795,9 @@ public class DecoBlockInitializer {
         //------ Sandstone ------//
         
         register(Block.sandStone, SandHelper.sandstoneNames);
+    
+        DecoBlocks.sandstoneButton = new DecoButtonBlock(DecoBlockIDs.SANDSTONE_BUTTON_ID, false, Block.sandStone, SandHelper.SANDSTONE_TYPE_DEFAULT)
+                .setUnlocalizedName("decoBlockButtonSandstone");
         
         DecoBlocks.cutSandstoneSiding = new SidingCornerWallTopAndBottomBlock(DecoBlockIDs.CUT_SANDSTONE_SIDING_AND_CORNER_ID, Material.rock,
                 "sandstone_top", "sandstone_smooth", "sandstone_bottom",
@@ -900,6 +915,9 @@ public class DecoBlockInitializer {
         
         DecoBlocks.redSandstone = new RedSandstoneBlock(DecoBlockIDs.RED_SANDSTONE_ID);
         register(DecoBlocks.redSandstone, SandHelper.sandstoneNames);
+    
+        DecoBlocks.redSandstoneButton = new DecoButtonBlock(DecoBlockIDs.RED_SANDSTONE_BUTTON_ID, false, DecoBlocks.redSandstone, SandHelper.SANDSTONE_TYPE_DEFAULT)
+                .setUnlocalizedName("decoBlockButtonRedSandstone");
     
         DecoBlocks.redSandstoneSiding = new SidingCornerWallTopAndBottomBlock(DecoBlockIDs.RED_SANDSTONE_SIDING_AND_CORNER_ID, Material.rock,
                 "decoBlockRedSandstone_top", "decoBlockRedSandstone_side", "decoBlockRedSandstone_bottom",
@@ -1080,6 +1098,9 @@ public class DecoBlockInitializer {
         
         DecoBlocks.infusedStone = new InfusedStoneBlock(DecoBlockIDs.INFUSED_STONE_ID);
         register(DecoBlocks.infusedStone, new String[] {"default", "smooth", "brick", "chiseled"});
+        
+        DecoBlocks.infusedStoneButton = new DecoButtonBlock(DecoBlockIDs.INFUSED_STONE_BUTTON_ID, false, DecoBlocks.infusedStone, InfusedStoneBlock.TYPE_DEFAULT)
+                .setUnlocalizedName("decoBlockButtonInfusedStone");
     
         DecoBlocks.infusedStoneSidingAndCorner = new SidingAndCornerAndDecorativeWallBlock(DecoBlockIDs.INFUSED_STONE_SIDING_AND_CORNER_ID, Material.rock,
                 "decoBlockInfusedStone",
@@ -1986,6 +2007,9 @@ public class DecoBlockInitializer {
         DecoBlocks.spruceWallSign = new DecoSignBlock(DecoBlockIDs.SPRUCE_WALL_SIGN_ID, WoodTypeHelper.SPRUCE_WOOD_TYPE, false,
                 "/deco/signSpruce.png", "wood_spruce");
     
+        DecoBlocks.spruceButton = new DecoButtonBlock(DecoBlockIDs.SPRUCE_BUTTON_ID, true, Block.planks, WoodTypeHelper.SPRUCE_WOOD_TYPE)
+                .setUnlocalizedName("decoBlockButtonSpruce");
+    
         //------ Birch Wood ------//
     
         DecoBlocks.birchGate = new DecoGateBlock(DecoBlockIDs.BIRCH_GATE_ID, "decoBlockGateBirch");
@@ -2002,6 +2026,9 @@ public class DecoBlockInitializer {
         DecoBlocks.birchWallSign = new DecoSignBlock(DecoBlockIDs.BIRCH_WALL_SIGN_ID, WoodTypeHelper.BIRCH_WOOD_TYPE, false,
                 "/deco/signBirch.png", "wood_birch");
     
+        DecoBlocks.birchButton = new DecoButtonBlock(DecoBlockIDs.BIRCH_BUTTON_ID, true, Block.planks, WoodTypeHelper.BIRCH_WOOD_TYPE)
+                .setUnlocalizedName("decoBlockButtonBirch");
+    
         //------ Jungle Wood ------//
     
         DecoBlocks.jungleGate = new DecoGateBlock(DecoBlockIDs.JUNGLE_GATE_ID, "decoBlockGateJungle");
@@ -2017,6 +2044,9 @@ public class DecoBlockInitializer {
                 "/deco/signJungle.png", "wood_jungle");
         DecoBlocks.jungleWallSign = new DecoSignBlock(DecoBlockIDs.JUNGLE_WALL_SIGN_ID, WoodTypeHelper.JUNGLE_WOOD_TYPE, false,
                 "/deco/signJungle.png", "wood_jungle");
+    
+        DecoBlocks.jungleButton = new DecoButtonBlock(DecoBlockIDs.JUNGLE_BUTTON_ID, true, Block.planks, WoodTypeHelper.JUNGLE_WOOD_TYPE)
+                .setUnlocalizedName("decoBlockButtonJungle");
     
         //------ Blood Wood ------//
     
@@ -2044,6 +2074,9 @@ public class DecoBlockInitializer {
                 "/deco/signBlood.png", "fcBlockPlanks_blood");
         DecoBlocks.bloodWallSign = new DecoSignBlock(DecoBlockIDs.BLOOD_WALL_SIGN_ID, WoodTypeHelper.BLOOD_WOOD_TYPE, false,
                 "/deco/signBlood.png", "fcBlockPlanks_blood");
+    
+        DecoBlocks.bloodButton = new DecoButtonBlock(DecoBlockIDs.BLOOD_BUTTON_ID, true, Block.planks, WoodTypeHelper.BLOOD_WOOD_TYPE)
+                .setUnlocalizedName("decoBlockButtonBlood");
         
         //------ Cherry Wood ------//
         
@@ -2095,6 +2128,9 @@ public class DecoBlockInitializer {
         DecoBlocks.cherryWallSign = new DecoSignBlock(DecoBlockIDs.CHERRY_WALL_SIGN_ID, WoodTypeHelper.CHERRY_WOOD_TYPE, false,
                 "/deco/signCherry.png", "decoBlockPlanksCherry");
     
+        DecoBlocks.cherryButton = new DecoButtonBlock(DecoBlockIDs.CHERRY_BUTTON_ID, true, Block.planks, WoodTypeHelper.CHERRY_WOOD_TYPE)
+                .setUnlocalizedName("decoBlockButtonCherry");
+    
         //------ Acacia Wood ------//
     
         // Tree blocks
@@ -2144,6 +2180,9 @@ public class DecoBlockInitializer {
                 "/deco/signAcacia.png", "decoBlockPlanksAcacia");
         DecoBlocks.acaciaWallSign = new DecoSignBlock(DecoBlockIDs.ACACIA_WALL_SIGN_ID, WoodTypeHelper.ACACIA_WOOD_TYPE, false,
                 "/deco/signAcacia.png", "decoBlockPlanksAcacia");
+    
+        DecoBlocks.acaciaButton = new DecoButtonBlock(DecoBlockIDs.ACACIA_BUTTON_ID, true, Block.planks, WoodTypeHelper.ACACIA_WOOD_TYPE)
+                .setUnlocalizedName("decoBlockButtonAcacia");
     
         //------ Mahogany Wood ------//
     
@@ -2195,6 +2234,9 @@ public class DecoBlockInitializer {
         DecoBlocks.mahoganyWallSign = new DecoSignBlock(DecoBlockIDs.MAHOGANY_WALL_SIGN_ID, WoodTypeHelper.MAHOGANY_WOOD_TYPE, false,
                 "/deco/signMahogany.png", "decoBlockPlanksMahogany");
     
+        DecoBlocks.mahoganyButton = new DecoButtonBlock(DecoBlockIDs.MAHOGANY_BUTTON_ID, true, Block.planks, WoodTypeHelper.MAHOGANY_WOOD_TYPE)
+                .setUnlocalizedName("decoBlockButtonMahogany");
+    
         //------ Mangrove Wood ------//
     
         // Tree blocks
@@ -2245,6 +2287,9 @@ public class DecoBlockInitializer {
         DecoBlocks.mangroveWallSign = new DecoSignBlock(DecoBlockIDs.MANGROVE_WALL_SIGN_ID, WoodTypeHelper.MANGROVE_WOOD_TYPE, false,
                 "/deco/signMangrove.png", "decoBlockPlanksMangrove");
     
+        DecoBlocks.mangroveButton = new DecoButtonBlock(DecoBlockIDs.MANGROVE_BUTTON_ID, true, Block.planks, WoodTypeHelper.MANGROVE_WOOD_TYPE)
+                .setUnlocalizedName("decoBlockButtonMangrove");
+    
         //------ Hazel Wood ------//
     
         // Tree blocks
@@ -2294,6 +2339,9 @@ public class DecoBlockInitializer {
                 "/deco/signHazel.png", "decoBlockPlanksHazel");
         DecoBlocks.hazelWallSign = new DecoSignBlock(DecoBlockIDs.HAZEL_WALL_SIGN_ID, WoodTypeHelper.HAZEL_WOOD_TYPE, false,
                 "/deco/signHazel.png", "decoBlockPlanksHazel");
+    
+        DecoBlocks.hazelButton = new DecoButtonBlock(DecoBlockIDs.HAZEL_BUTTON_ID, true, Block.planks, WoodTypeHelper.HAZEL_WOOD_TYPE)
+                .setUnlocalizedName("decoBlockButtonHazel");
         
         //------ Painted Planks ------//
         
