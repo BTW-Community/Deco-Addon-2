@@ -133,6 +133,14 @@ public class DecoBlockInitializer {
         
         DecoBlocks.ironTrapdoor = new IronTrapDoorBlock(DecoBlockIDs.IRON_TRAPDOOR_ID);
         DecoBlocks.ironLadder = new IronLadderBlock(DecoBlockIDs.IRON_LADDER_ID);
+    
+        DecoBlocks.amethyst = new DecoBlock(DecoBlockIDs.AMETHYST_ID, Material.glass)
+                .setHardness(0.3F)
+                .setStepSound(Block.soundGlassFootstep)
+                .setUnlocalizedName("decoBlockAmethyst")
+                .setPicksEffectiveOn()
+                .setCreativeTab(CreativeTabs.tabDecorations);
+        DecoBlocks.amethystShard = new AmethystShardBlock(DecoBlockIDs.AMETHYST_SHARD_ID);
     }
     
     private static void initStone() {

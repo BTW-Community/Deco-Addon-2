@@ -50,7 +50,7 @@ public class WoodFramedGlassBlock extends DecoGlassBlock {
 	@Override
 	public void registerIcons(IconRegister register) {
 		for (int woodType = 0; woodType < WoodTypeHelper.NUM_TOTAL_WOOD; woodType++) {
-			this.icons[woodType] = register.registerIcon(name + WoodTypeHelper.woodNames[woodType]);
+			this.icons[woodType] = register.registerIcon(name + WoodTypeHelper.woodNamesCapital[woodType]);
 		}
 	}
 }

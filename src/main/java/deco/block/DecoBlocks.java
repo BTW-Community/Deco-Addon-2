@@ -33,6 +33,9 @@ public class DecoBlocks {
     public static Block carvedPumpkin;
     public static Block jackOLantern;
     
+    public static Block amethyst;
+    public static Block amethystShard;
+    
     //------ Stone Blocks ------//
     
     // General

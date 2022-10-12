@@ -3,6 +3,7 @@ package deco.item;
 import btw.item.items.BookItem;
 import btw.item.items.PlaceAsBlockItem;
 import deco.block.DecoBlockIDs;
+import deco.block.DecoBlocks;
 import deco.item.items.DecoItemDoor;
 import deco.item.items.FertilizerItem;
 import deco.item.items.StainedGlassItem;
@@ -58,6 +59,12 @@ public class DecoItemInitializer {
                 .setCreativeTab(CreativeTabs.tabMaterials)
                 .setFilterableProperties(Item.FILTERABLE_SMALL)
                 .setUnlocalizedName("decoItemGlassPiece");
+        
+        DecoItems.amethystShard = new PlaceAsBlockItem(DecoItemIDs.AMETHYST_SHARD_ID, DecoBlockIDs.AMETHYST_SHARD_ID)
+                .setCreativeTab(CreativeTabs.tabMaterials)
+                .setFilterableProperties(Item.FILTERABLE_SMALL)
+                .setUnlocalizedName("decoItemAmethystShard")
+                .setCreativeTab(CreativeTabs.tabMaterials);
     }
     
     private static void initWoodItems() {

@@ -18,6 +18,7 @@ import deco.block.util.SandHelper;
 import deco.block.util.SlabHelper;
 import deco.block.util.StoneHelper;
 import deco.block.util.WoodTypeHelper;
+import deco.item.DecoItemIDs;
 import deco.item.DecoItems;
 import net.minecraft.src.Block;
 import net.minecraft.src.BlockCloth;
@@ -155,6 +156,31 @@ public class CraftingRecipeList {
 		RecipeManager.addStokedCrucibleRecipe(new ItemStack(BTWItems.ironNugget, 6),
 				new ItemStack[] {
 						new ItemStack(DecoBlocks.ironLadder)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(DecoItems.amethystShard, 4),
+				new Object[] {
+						" q ",
+						"qdq",
+						" q ",
+						'q', Item.netherQuartz,
+						'd', new ItemStack(Item.dyePowder, 1, ColorUtils.PURPLE.colorID)
+				});
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.amethyst, 4),
+				new ItemStack[] {
+						new ItemStack(Block.blockNetherQuartz),
+						new ItemStack(Item.dyePowder, 1, ColorUtils.PURPLE.colorID)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.amethyst),
+				new Object[] {
+						"ss",
+						"ss",
+						's', DecoItems.amethystShard
+				});
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoItems.amethystShard, 4),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.amethyst)
 				});
 		
 		//------ Hay Bales ------//
