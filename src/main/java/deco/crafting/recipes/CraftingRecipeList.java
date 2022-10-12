@@ -316,6 +316,17 @@ public class CraftingRecipeList {
 		
 		//------ Stone Brick ------//
 		
+		RecipeManager.removeSoulforgeRecipe(new ItemStack(Block.stoneBrick, 12, 3),
+				new Object[] {
+						"####",
+						"#  #",
+						"#  #",
+						"####",
+						'#', Block.stoneBrick
+				});
+		
+		addChiselingRecipe(new ItemStack(Block.stoneBrick, 1, 3), new ItemStack(Block.stoneBrick, 1, 0));
+		
 		addSubBlockRecipes(Block.stoneBrick, StoneHelper.MOSSY_STONE_BRICK_UPPER_STRATA_TYPE, DecoBlocks.mossyStoneBrickSidingAndCornerUpperStrata,
 				DecoBlocks.mossyStoneBrickMouldingUpperStrata, DecoBlocks.mossyStoneBrickStairsUpperStrata, SlabHelper.MOSSY_STONE_BRICK_UPPER_STRATA_SLAB_ID,
 				SlabHelper.MOSSY_STONE_BRICK_UPPER_STRATA_SLAB_TYPE);
@@ -2024,6 +2035,19 @@ public class CraftingRecipeList {
 				"XX",
 				'X', new ItemStack(Block.sandStone, 1, SandHelper.SANDSTONE_TYPE_CUT)});
 		
+		RecipeManager.removeVanillaRecipe(new ItemStack(Block.sandStone, 1, SandHelper.SANDSTONE_TYPE_CHISELED),
+				new Object[] {
+						"#",
+						"#",
+						'#', new ItemStack(Block.stoneSingleSlab, 1, SlabHelper.SANDSTONE_SLAB_TYPE)
+				});
+		RecipeManager.addRecipe(new ItemStack(Block.sandStone),
+				new Object[] {
+						"#",
+						"#",
+						'#', new ItemStack(Block.stoneSingleSlab, 1, SlabHelper.SANDSTONE_SLAB_TYPE)
+				});
+		
 		addChiselingRecipe(new ItemStack(Block.sandStone, 1, SandHelper.SANDSTONE_TYPE_CHISELED),
 				new ItemStack(Block.sandStone, 1, SandHelper.SANDSTONE_TYPE_DEFAULT));
 		
@@ -2153,6 +2177,21 @@ public class CraftingRecipeList {
 						"B",
 						'B', new ItemStack(DecoBlocks.basalt, 1, 0) // Regular
 				});
+		
+		RecipeManager.removeVanillaRecipe(new ItemStack(Block.blockNetherQuartz, 1, 1),
+				new Object[] {
+						"#",
+						"#",
+						'#', new ItemStack(Block.stoneSingleSlab, 1, 7)
+				});
+		RecipeManager.addRecipe(new ItemStack(Block.blockNetherQuartz),
+				new Object[] {
+						"#",
+						"#",
+						'#', new ItemStack(Block.stoneSingleSlab, 1, 7)
+				});
+		
+		addChiselingRecipe(new ItemStack(Block.blockNetherQuartz, 1, 1), new ItemStack(Block.blockNetherQuartz, 1, 0));
 		
 		//------ Nether Brick ------//
 		
