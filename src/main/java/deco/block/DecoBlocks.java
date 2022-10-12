@@ -30,6 +30,9 @@ public class DecoBlocks {
     public static Block thatch;
     public static Block thatchStairs;
     
+    public static Block carvedPumpkin;
+    public static Block jackOLantern;
+    
     //------ Stone Blocks ------//
     
     // General

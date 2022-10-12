@@ -9,6 +9,7 @@ import btw.item.blockitems.SidingAndCornerBlockItem;
 import btw.item.blockitems.legacy.LegacySubstitutionBlockItem;
 import btw.util.ColorUtils;
 import deco.block.blocks.*;
+import deco.block.blocks.CarvedPumpkinBlock;
 import deco.block.blocks.legacy.LegacyRedSandBlock;
 import deco.block.util.*;
 import deco.item.DecoItemIDs;
@@ -1858,6 +1859,11 @@ public class DecoBlockInitializer {
                 .setUnlocalizedName("decoBlockTulip");
         Item.itemsList[DecoBlocks.tulip.blockID] = new ItemMultiTextureTile(DecoBlocks.tulip.blockID - 256, DecoBlocks.tulip,
                 ((DecoFlowerBlock) DecoBlocks.tulip).getNames());
+        
+        DecoBlocks.carvedPumpkin = new CarvedPumpkinBlock(DecoBlockIDs.CARVED_PUMPKIN_ID);
+        register(DecoBlocks.carvedPumpkin, new String[] {"0", "1", "2"});
+        DecoBlocks.jackOLantern = new JackOLanternBlock(DecoBlockIDs.JACK_O_LANTERN_ID);
+        register(DecoBlocks.jackOLantern, new String[] {"0", "1", "2"});
     }
 
     private static void initWoodTypes() {

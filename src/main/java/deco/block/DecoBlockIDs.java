@@ -194,7 +194,7 @@ public class DecoBlockIDs {
     public static final int CARVED_PUMPKIN_ID = 3305;
     public static final int JACK_O_LANTERN_ID = 3306;
     // IDs 3307 and 3308 occupied by BTW
-    public static final int PUMICE_ID = 3311;
+    public static final int PUMICE_ID = 3309;
     public static final int LEGACY_RED_SAND_ID = 3310;
     public static final int RED_SAND_SLAB_ID = 3311;
     public static final int RED_SANDSTONE_ID = 3312;

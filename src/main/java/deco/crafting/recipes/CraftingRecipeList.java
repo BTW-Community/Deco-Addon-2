@@ -3493,6 +3493,119 @@ public class CraftingRecipeList {
 				new ItemStack(Item.dyePowder, 1, ColorUtils.RED.colorID),
 				new ItemStack(Item.dyePowder, 1, ColorUtils.RED.colorID),
 				new ItemStack(Item.dyePowder, 1, ColorUtils.WHITE.colorID + 16)});
+		
+		//------ Pumpkins ------//
+		
+		// Carving
+		RecipeManager.removeVanillaShapelessRecipe(new ItemStack(Block.pumpkin),
+				new Object[] {
+						new ItemStack(BTWBlocks.freshPumpkin)
+				});
+		
+		RecipeManager.addShapelessRecipeWithSecondaryOutputIndicator(new ItemStack(Block.pumpkin),
+				new ItemStack(Item.pumpkinSeeds, 4),
+				new ItemStack[] {
+						new ItemStack(BTWBlocks.freshPumpkin),
+						new ItemStack(BTWItems.pointyStick)
+				});
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.carvedPumpkin, 1, 0),
+				new ItemStack[] {
+						new ItemStack(Block.pumpkin),
+						new ItemStack(BTWItems.pointyStick)
+				});
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.carvedPumpkin, 1, 1),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.carvedPumpkin, 1, 0),
+						new ItemStack(BTWItems.pointyStick)
+				});
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.carvedPumpkin, 1, 2),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.carvedPumpkin, 1, 1),
+						new ItemStack(BTWItems.pointyStick)
+				});
+		
+		RecipeManager.addShapelessRecipeWithSecondaryOutputIndicator(new ItemStack(Block.pumpkin),
+				new ItemStack(Item.pumpkinSeeds, 4),
+				new ItemStack[] {
+						new ItemStack(BTWBlocks.freshPumpkin),
+						new ItemStack(BTWItems.sharpStone)
+				});
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.carvedPumpkin, 1, 0),
+				new ItemStack[] {
+						new ItemStack(Block.pumpkin),
+						new ItemStack(BTWItems.sharpStone)
+				});
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.carvedPumpkin, 1, 1),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.carvedPumpkin, 1, 0),
+						new ItemStack(BTWItems.sharpStone)
+				});
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.carvedPumpkin, 1, 2),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.carvedPumpkin, 1, 1),
+						new ItemStack(BTWItems.sharpStone)
+				});
+		
+		RecipeManager.addShapelessRecipeWithSecondaryOutputIndicator(new ItemStack(Block.pumpkin),
+				new ItemStack(Item.pumpkinSeeds, 4),
+				new ItemStack[] {
+						new ItemStack(BTWBlocks.freshPumpkin),
+						new ItemStack(BTWItems.ironChisel)
+				});
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.carvedPumpkin, 1, 0),
+				new ItemStack[] {
+						new ItemStack(Block.pumpkin),
+						new ItemStack(BTWItems.ironChisel)
+				});
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.carvedPumpkin, 1, 1),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.carvedPumpkin, 1, 0),
+						new ItemStack(BTWItems.ironChisel)
+				});
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.carvedPumpkin, 1, 2),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.carvedPumpkin, 1, 1),
+						new ItemStack(BTWItems.ironChisel)
+				});
+		
+		RecipeManager.addShapelessRecipeWithSecondaryOutputIndicator(new ItemStack(Block.pumpkin),
+				new ItemStack(Item.pumpkinSeeds, 4),
+				new ItemStack[] {
+						new ItemStack(BTWBlocks.freshPumpkin),
+						new ItemStack(BTWItems.diamondChisel)
+				});
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.carvedPumpkin, 1, 0),
+				new ItemStack[] {
+						new ItemStack(Block.pumpkin),
+						new ItemStack(BTWItems.diamondChisel)
+				});
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.carvedPumpkin, 1, 1),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.carvedPumpkin, 1, 0),
+						new ItemStack(BTWItems.diamondChisel)
+				});
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.carvedPumpkin, 1, 2),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.carvedPumpkin, 1, 1),
+						new ItemStack(BTWItems.diamondChisel)
+				});
+		
+		// Jack o Lanterns
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.jackOLantern, 1 , 0),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.carvedPumpkin, 1, 0),
+						new ItemStack(BTWItems.candle, 1, InventoryUtils.IGNORE_METADATA)
+				});
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.jackOLantern, 1 , 1),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.carvedPumpkin, 1, 1),
+						new ItemStack(BTWItems.candle, 1, InventoryUtils.IGNORE_METADATA)
+				});
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.jackOLantern, 1 , 2),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.carvedPumpkin, 1, 2),
+						new ItemStack(BTWItems.candle, 1, InventoryUtils.IGNORE_METADATA)
+				});
 	}
 	
 	private static void initWoodTypeRecipes() {
