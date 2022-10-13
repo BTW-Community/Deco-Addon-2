@@ -503,4 +503,23 @@ public class DecoBlockIDs {
     public static final int MANGROVE_HEDGE_STAIRS_ID = 3724;
     public static final int MANGROVE_HEDGE_SIDING_AND_CORNER_ID = 3725;
     public static final int MANGROVE_HEDGE_MOULDING_ID = 3726;
+    public static final int ROUGH_CALCITE_ID = 3727;
+    public static final int LOOSE_CALCITE_COBBLESTONE_ID = 3728;
+    public static final int LOOSE_CALCITE_COBBLESTONE_STAIRS_ID = 3729;
+    public static final int LOOSE_CALCITE_BRICK_ID = 3730;
+    public static final int LOOSE_CALCITE_BRICK_STAIRS_ID = 3731;
+    public static final int CALCITE_SIDING_AND_CORNER_ID = 3732;
+    public static final int CALCITE_MOULDING_ID = 3733;
+    public static final int CALCITE_STAIRS_ID = 3734;
+    public static final int POLISHED_CALCITE_SIDING_AND_CORNER_ID = 3735;
+    public static final int POLISHED_CALCITE_MOULDING_ID = 3736;
+    public static final int POLISHED_CALCITE_STAIRS_ID = 3737;
+    public static final int CALCITE_COBBLESTONE_SIDING_AND_CORNER_ID = 3738;
+    public static final int CALCITE_COBBLESTONE_MOULDING_ID = 3739;
+    public static final int CALCITE_COBBLESTONE_STAIRS_ID = 3740;
+    public static final int CALCITE_BRICK_SIDING_AND_CORNER_ID = 3741;
+    public static final int CALCITE_BRICK_MOULDING_ID = 3742;
+    public static final int CALCITE_BRICK_STAIRS_ID = 3743;
+    public static final int INFESTED_CALCITE_ID = 3744;
+    public static final int CALCITE_BUTTON_ID = 3745;
 }
