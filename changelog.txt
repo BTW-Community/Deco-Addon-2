@@ -28,8 +28,9 @@ Some textures in this release have been used or modified from the following sour
     - Red autumn saplings require a cherry sapling, red dye, and a fertilizer.
     - Orange autumn saplings require an oak sapling, orange dye, and a fertilizer.
     - Yellow autumn saplings require a birch sapling, yellow dye, and a fertilizer.
+- Added calcite - loose calcite cobblestone can be crated by combining loose diorite cobblestone with bonemeal in a crucible
 - Changed deco stone variants to behave consistently with BTW stone.
-    - Granite, andesite, and diorite are all considered first strata.
+    - Granite, andesite, diorite, and calcite are all considered first strata.
     - Slate is considered third strata.
 - Changed how lanterns render, and added item equivalents. The old blocks may be converted into items in a crafting grid.
 - Changed lanterns to break when underwater.

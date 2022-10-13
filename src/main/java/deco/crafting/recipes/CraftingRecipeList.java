@@ -603,7 +603,7 @@ public class CraftingRecipeList {
 	private static void initGraniteRecipes() {
 		RecipeManager.addStokedCrucibleRecipe(new ItemStack(DecoBlocks.looseGraniteCobblestone, 16),
 				new ItemStack[] {
-						new ItemStack(DecoBlocks.looseDioriteCobblestone, 16),
+						new ItemStack(DecoBlocks.looseAndesiteCobblestone, 16),
 						new ItemStack(Item.netherQuartz)
 				});
 		
@@ -2127,8 +2127,8 @@ public class CraftingRecipeList {
 	private static void initCalciteRecipes() {
 		RecipeManager.addStokedCrucibleRecipe(new ItemStack(DecoBlocks.looseCalciteCobblestone, 16),
 				new ItemStack[] {
-						new ItemStack(BTWBlocks.looseCobblestone, 16),
-						new ItemStack(Item.netherQuartz)
+						new ItemStack(DecoBlocks.looseCalciteCobblestone, 16),
+						new ItemStack(Item.dyePowder, 1, ColorUtils.WHITE.colorID)
 				});
 		
 		RecipeManager.addStokedCrucibleRecipe(new ItemStack(DecoBlocks.polishedStoneVariants, 1, StoneVariantsBlock.CALCITE_TYPE),
