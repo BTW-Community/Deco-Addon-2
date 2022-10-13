@@ -51,14 +51,17 @@ public class MangroveSaplingBlock extends DecoSaplingBlock {
 		return true;
 	}
 	
+	// Both methods here are designed for use in smashing planters when fertilized
+	// ID 0 means planter just gets broken, since this tree doesn't have a trunk where the sapling was
+	
 	@Override
 	public int getLogID(int type) {
-		return DecoBlocks.mangroveLog.blockID;
+		return 0;
 	}
 	
 	@Override
 	public int getStumpID(int type) {
-		return DecoBlocks.mangroveStump.blockID;
+		return 0;
 	}
 	
 	//------------- Class Specific Methods ------------//
