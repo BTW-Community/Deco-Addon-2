@@ -1,6 +1,7 @@
 package deco.block.blocks;
 
 import deco.block.DecoBlockIDs;
+import deco.block.DecoBlocks;
 import net.minecraft.src.World;
 
 import java.util.Random;
@@ -20,7 +21,7 @@ public class HazelSaplingBlock extends DecoSaplingBlock {
 	
 	@Override
 	public boolean generateTree(World world, Random rand, int x, int y, int z, int treeType) {
-		return false;
+		return this.generateStandardTree(world, rand, x, y, z, DecoBlocks.hazelLog.blockID, DecoBlocks.hazelStump.blockID, DecoBlocks.hazelLeaves.blockID);
 	}
 	
 	@Override
