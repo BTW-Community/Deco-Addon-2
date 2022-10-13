@@ -64,7 +64,7 @@ public class MangroveSaplingBlock extends DecoSaplingBlock {
 	//------------- Class Specific Methods ------------//
 	
 	private void createSwampRoots(World world, Random rand, int x, int y, int z) {
-		int offset1 = rand.nextInt(5);
+		int offset1 = 2 + rand.nextInt(5);
 		
 		for (int var7 = offset1; var7 < 8; ++var7) {
 			world.setBlock(x, y + var7, z, DecoBlocks.mangroveLog.blockID);
@@ -78,7 +78,7 @@ public class MangroveSaplingBlock extends DecoSaplingBlock {
 		world.setBlock(x - 3, y + offset1 - 3, z, DecoBlocks.mangroveLog.blockID);
 		
 		int rootLength = 0;
-		int maxRootLength = 9;
+		int maxRootLength = 7;
 		int j;
 		
 		for (j = y + offset1 - 3; j > 50; --j) {
@@ -89,7 +89,7 @@ public class MangroveSaplingBlock extends DecoSaplingBlock {
 			}
 			rootLength++;
 			
-			if (rootLength > maxRootLength)
+			if (rootLength > maxRootLength + offset1)
 				break;
 			
 			world.setBlock(x - 3, j, z, DecoBlocks.mangroveLog.blockID);
@@ -120,7 +120,7 @@ public class MangroveSaplingBlock extends DecoSaplingBlock {
 			}
 			rootLength++;
 			
-			if (rootLength > maxRootLength)
+			if (rootLength > maxRootLength + offset2)
 				break;
 			
 			world.setBlock(x + 3, j, z, DecoBlocks.mangroveLog.blockID);
@@ -151,7 +151,7 @@ public class MangroveSaplingBlock extends DecoSaplingBlock {
 			}
 			rootLength++;
 			
-			if (rootLength > maxRootLength)
+			if (rootLength > maxRootLength + offset3)
 				break;
 			
 			world.setBlock(x, j, z - 3, DecoBlocks.mangroveLog.blockID);
@@ -182,7 +182,7 @@ public class MangroveSaplingBlock extends DecoSaplingBlock {
 			}
 			rootLength++;
 			
-			if (rootLength > maxRootLength)
+			if (rootLength > maxRootLength + offset4)
 				break;
 			
 			world.setBlock(x, j, z + 3, DecoBlocks.mangroveLog.blockID);
