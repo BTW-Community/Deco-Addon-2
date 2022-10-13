@@ -10,6 +10,7 @@ public class DecoBlocks {
     public static Material carpetMaterial;
     public static Material hayMaterial;
     public static Material ashMaterial;
+    public static Material hedgeMaterial;
     
     //------ General Blocks ------//
     
@@ -513,9 +514,15 @@ public class DecoBlocks {
     
     public static Block workbench;
     
+    public static Block hedge;
+    
     // Oak wood
     public static Block oakChair;
     public static Block filledOakBarrel;
+    
+    public static Block oakHedgeSidingAndCorner;
+    public static Block oakHedgeMoulding;
+    public static Block oakHedgeStairs;
 
     // Spruce wood
     public static Block spruceGate;
@@ -529,6 +536,10 @@ public class DecoBlocks {
     public static Block spruceWallSign;
     
     public static Block spruceButton;
+    
+    public static Block spruceHedgeSidingAndCorner;
+    public static Block spruceHedgeMoulding;
+    public static Block spruceHedgeStairs;
 
     // Birch wood
     public static Block birchGate;
@@ -542,6 +553,10 @@ public class DecoBlocks {
     public static Block birchWallSign;
     
     public static Block birchButton;
+    
+    public static Block birchHedgeSidingAndCorner;
+    public static Block birchHedgeMoulding;
+    public static Block birchHedgeStairs;
 
     // Jungle wood
     public static Block jungleGate;
@@ -555,6 +570,10 @@ public class DecoBlocks {
     public static Block jungleWallSign;
     
     public static Block jungleButton;
+    
+    public static Block jungleHedgeSidingAndCorner;
+    public static Block jungleHedgeMoulding;
+    public static Block jungleHedgeStairs;
 
     // Blood wood
     public static Block bloodLog;
@@ -572,6 +591,10 @@ public class DecoBlocks {
     public static Block bloodWallSign;
     
     public static Block bloodButton;
+    
+    public static Block bloodHedgeSidingAndCorner;
+    public static Block bloodHedgeMoulding;
+    public static Block bloodHedgeStairs;
 
     // Cherry wood
     public static Block cherryLog;
@@ -597,6 +620,10 @@ public class DecoBlocks {
     public static Block cherryWallSign;
     
     public static Block cherryButton;
+    
+    public static Block cherryHedgeSidingAndCorner;
+    public static Block cherryHedgeMoulding;
+    public static Block cherryHedgeStairs;
 
     // Acacia wood
     public static Block acaciaLog;
@@ -623,6 +650,10 @@ public class DecoBlocks {
     
     public static Block acaciaButton;
     
+    public static Block acaciaHedgeSidingAndCorner;
+    public static Block acaciaHedgeMoulding;
+    public static Block acaciaHedgeStairs;
+    
     // Mahogany wood
     public static Block mahoganyLog;
     public static Block mahoganyStump;
@@ -647,6 +678,10 @@ public class DecoBlocks {
     public static Block mahoganyWallSign;
     
     public static Block mahoganyButton;
+    
+    public static Block mahoganyHedgeSidingAndCorner;
+    public static Block mahoganyHedgeMoulding;
+    public static Block mahoganyHedgeStairs;
     
     // Mangrove wood
     public static Block mangroveLog;
@@ -673,6 +708,10 @@ public class DecoBlocks {
     
     public static Block mangroveButton;
     
+    public static Block mangroveHedgeSidingAndCorner;
+    public static Block mangroveHedgeMoulding;
+    public static Block mangroveHedgeStairs;
+    
     // Hazel wood
     public static Block hazelLog;
     public static Block hazelStump;
@@ -697,6 +736,10 @@ public class DecoBlocks {
     public static Block hazelWallSign;
     
     public static Block hazelButton;
+    
+    public static Block hazelHedgeSidingAndCorner;
+    public static Block hazelHedgeMoulding;
+    public static Block hazelHedgeStairs;
 
     // Colored planks
     public static Block pastelPlanks;

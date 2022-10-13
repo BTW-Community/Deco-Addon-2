@@ -56,6 +56,14 @@ public class DecoBlockInitializer {
         DecoBlocks.ashMaterial = new Material(MapColor.stoneColor)
                 .setRequiresTool()
                 .setNetherMobsCanSpawnOn();
+        
+        DecoBlocks.hedgeMaterial = new Material(MapColor.foliageColor)
+                .setBurning()
+                .setTranslucent()
+                .setNoPushMobility()
+                .setAxesEfficientOn()
+                .setAxesTreatAsVegetation()
+                .setMobsCantSpawnOn();
     }
     
     private static void initGeneralBlocks() {
@@ -2073,11 +2081,28 @@ public class DecoBlockInitializer {
         
         DecoBlocks.workbench = new WorkbenchBlock(DecoBlockIDs.WORKBENCH_ID);
         
+        DecoBlocks.hedge = new HedgeBlock(DecoBlockIDs.HEDGE_ID);
+        register(DecoBlocks.hedge, WoodTypeHelper.woodNames);
+        
         //------ Oak Wood ------//
         
         DecoBlocks.oakChair = new ChairBlock(DecoBlockIDs.OAK_CHAIR_ID, "Oak");
         DecoBlocks.filledOakBarrel = new FilledBarrelBlock(DecoBlockIDs.FILLED_OAK_BARREL_ID, "decoBlockBarrelOak");
         Item.itemsList[DecoBlocks.filledOakBarrel.blockID] = new ItemMultiTextureTile(DecoBlocks.filledOakBarrel.blockID - 256, DecoBlocks.filledOakBarrel, FilledBarrelBlock.typeTags);
+        
+        // Hedge
+        DecoBlocks.oakHedgeSidingAndCorner = new HedgeSidingAndCornerBlock(DecoBlockIDs.OAK_HEDGE_SIDING_AND_CORNER_ID,
+                "leaves", DecoBlocks.hedge, WoodTypeHelper.OAK_WOOD_TYPE,
+                "decoBlockHedgeOakSiding", true);
+        register(new SidingAndCornerBlockItem(DecoBlocks.oakHedgeSidingAndCorner.blockID - 256));
+        DecoBlocks.oakHedgeMoulding = new HedgeMouldingBlock(DecoBlockIDs.OAK_HEDGE_MOULDING_ID,
+                "leaves", "leaves",
+                DecoBlockIDs.OAK_HEDGE_SIDING_AND_CORNER_ID,
+                DecoBlocks.hedge, WoodTypeHelper.OAK_WOOD_TYPE,
+                "decoBlockHedgeOakMoulding", true);
+        register(new MouldingBlockItem(DecoBlocks.oakHedgeMoulding.blockID - 256));
+        DecoBlocks.oakHedgeStairs = new HedgeStairsBlock(DecoBlockIDs.OAK_HEDGE_STAIRS_ID, DecoBlocks.hedge, WoodTypeHelper.OAK_WOOD_TYPE, true)
+                .setUnlocalizedName("decoBlockHedgeOakStairs");
     
         //------ Spruce Wood ------//
     
@@ -2098,6 +2123,20 @@ public class DecoBlockInitializer {
         DecoBlocks.spruceButton = new DecoButtonBlock(DecoBlockIDs.SPRUCE_BUTTON_ID, true, Block.planks, WoodTypeHelper.SPRUCE_WOOD_TYPE)
                 .setUnlocalizedName("decoBlockButtonSpruce");
     
+        // Hedge
+        DecoBlocks.spruceHedgeSidingAndCorner = new HedgeSidingAndCornerBlock(DecoBlockIDs.SPRUCE_HEDGE_SIDING_AND_CORNER_ID,
+                "leaves_spruce", DecoBlocks.hedge, WoodTypeHelper.SPRUCE_WOOD_TYPE,
+                "decoBlockHedgeSpruceSiding", true);
+        register(new SidingAndCornerBlockItem(DecoBlocks.spruceHedgeSidingAndCorner.blockID - 256));
+        DecoBlocks.spruceHedgeMoulding = new HedgeMouldingBlock(DecoBlockIDs.SPRUCE_HEDGE_MOULDING_ID,
+                "leaves_spruce", "leaves_spruce",
+                DecoBlockIDs.SPRUCE_HEDGE_SIDING_AND_CORNER_ID,
+                DecoBlocks.hedge, WoodTypeHelper.SPRUCE_WOOD_TYPE,
+                "decoBlockHedgeSpruceMoulding", true);
+        register(new MouldingBlockItem(DecoBlocks.spruceHedgeMoulding.blockID - 256));
+        DecoBlocks.spruceHedgeStairs = new HedgeStairsBlock(DecoBlockIDs.SPRUCE_HEDGE_STAIRS_ID, DecoBlocks.hedge, WoodTypeHelper.SPRUCE_WOOD_TYPE, true)
+                .setUnlocalizedName("decoBlockHedgeSpruceStairs");
+    
         //------ Birch Wood ------//
     
         DecoBlocks.birchGate = new DecoGateBlock(DecoBlockIDs.BIRCH_GATE_ID, "decoBlockGateBirch");
@@ -2117,6 +2156,20 @@ public class DecoBlockInitializer {
         DecoBlocks.birchButton = new DecoButtonBlock(DecoBlockIDs.BIRCH_BUTTON_ID, true, Block.planks, WoodTypeHelper.BIRCH_WOOD_TYPE)
                 .setUnlocalizedName("decoBlockButtonBirch");
     
+        // Hedge
+        DecoBlocks.birchHedgeSidingAndCorner = new HedgeSidingAndCornerBlock(DecoBlockIDs.BIRCH_HEDGE_SIDING_AND_CORNER_ID,
+                "leaves_birch", DecoBlocks.hedge, WoodTypeHelper.BIRCH_WOOD_TYPE,
+                "decoBlockHedgeBirchSiding", true);
+        register(new SidingAndCornerBlockItem(DecoBlocks.birchHedgeSidingAndCorner.blockID - 256));
+        DecoBlocks.birchHedgeMoulding = new HedgeMouldingBlock(DecoBlockIDs.BIRCH_HEDGE_MOULDING_ID,
+                "leaves_birch", "leaves_birch",
+                DecoBlockIDs.BIRCH_HEDGE_SIDING_AND_CORNER_ID,
+                DecoBlocks.hedge, WoodTypeHelper.BIRCH_WOOD_TYPE,
+                "decoBlockHedgeBirchMoulding", true);
+        register(new MouldingBlockItem(DecoBlocks.birchHedgeMoulding.blockID - 256));
+        DecoBlocks.birchHedgeStairs = new HedgeStairsBlock(DecoBlockIDs.BIRCH_HEDGE_STAIRS_ID, DecoBlocks.hedge, WoodTypeHelper.BIRCH_WOOD_TYPE, true)
+                .setUnlocalizedName("decoBlockHedgeBirchStairs");
+    
         //------ Jungle Wood ------//
     
         DecoBlocks.jungleGate = new DecoGateBlock(DecoBlockIDs.JUNGLE_GATE_ID, "decoBlockGateJungle");
@@ -2135,6 +2188,20 @@ public class DecoBlockInitializer {
     
         DecoBlocks.jungleButton = new DecoButtonBlock(DecoBlockIDs.JUNGLE_BUTTON_ID, true, Block.planks, WoodTypeHelper.JUNGLE_WOOD_TYPE)
                 .setUnlocalizedName("decoBlockButtonJungle");
+    
+        // Hedge
+        DecoBlocks.jungleHedgeSidingAndCorner = new HedgeSidingAndCornerBlock(DecoBlockIDs.JUNGLE_HEDGE_SIDING_AND_CORNER_ID,
+                "leaves_jungle", DecoBlocks.hedge, WoodTypeHelper.JUNGLE_WOOD_TYPE,
+                "decoBlockHedgeJungleSiding", true);
+        register(new SidingAndCornerBlockItem(DecoBlocks.jungleHedgeSidingAndCorner.blockID - 256));
+        DecoBlocks.jungleHedgeMoulding = new HedgeMouldingBlock(DecoBlockIDs.JUNGLE_HEDGE_MOULDING_ID,
+                "leaves_jungle", "leaves_jungle",
+                DecoBlockIDs.JUNGLE_HEDGE_SIDING_AND_CORNER_ID,
+                DecoBlocks.hedge, WoodTypeHelper.JUNGLE_WOOD_TYPE,
+                "decoBlockHedgeJungleMoulding", true);
+        register(new MouldingBlockItem(DecoBlocks.jungleHedgeMoulding.blockID - 256));
+        DecoBlocks.jungleHedgeStairs = new HedgeStairsBlock(DecoBlockIDs.JUNGLE_HEDGE_STAIRS_ID, DecoBlocks.hedge, WoodTypeHelper.JUNGLE_WOOD_TYPE, true)
+                .setUnlocalizedName("decoBlockHedgeJungleStairs");
     
         //------ Blood Wood ------//
     
@@ -2165,6 +2232,20 @@ public class DecoBlockInitializer {
     
         DecoBlocks.bloodButton = new DecoButtonBlock(DecoBlockIDs.BLOOD_BUTTON_ID, true, Block.planks, WoodTypeHelper.BLOOD_WOOD_TYPE)
                 .setUnlocalizedName("decoBlockButtonBlood");
+    
+        // Hedge
+        DecoBlocks.bloodHedgeSidingAndCorner = new HedgeSidingAndCornerBlock(DecoBlockIDs.BLOOD_HEDGE_SIDING_AND_CORNER_ID,
+                "leaves", BTWBlocks.bloodWoodLeaves, 0,
+                "decoBlockHedgeBloodSiding", true);
+        register(new SidingAndCornerBlockItem(DecoBlocks.bloodHedgeSidingAndCorner.blockID - 256));
+        DecoBlocks.bloodHedgeMoulding = new HedgeMouldingBlock(DecoBlockIDs.BLOOD_HEDGE_MOULDING_ID,
+                "leaves", "leaves",
+                DecoBlockIDs.BLOOD_HEDGE_SIDING_AND_CORNER_ID,
+                BTWBlocks.bloodWoodLeaves, 0,
+                "decoBlockHedgeBloodMoulding", true);
+        register(new MouldingBlockItem(DecoBlocks.bloodHedgeMoulding.blockID - 256));
+        DecoBlocks.bloodHedgeStairs = new HedgeStairsBlock(DecoBlockIDs.BLOOD_HEDGE_STAIRS_ID, BTWBlocks.bloodWoodLeaves, 0, true)
+                .setUnlocalizedName("decoBlockHedgeBloodStairs");
         
         //------ Cherry Wood ------//
         
@@ -2219,6 +2300,20 @@ public class DecoBlockInitializer {
         DecoBlocks.cherryButton = new DecoButtonBlock(DecoBlockIDs.CHERRY_BUTTON_ID, true, Block.planks, WoodTypeHelper.CHERRY_WOOD_TYPE)
                 .setUnlocalizedName("decoBlockButtonCherry");
     
+        // Hedge
+        DecoBlocks.cherryHedgeSidingAndCorner = new HedgeSidingAndCornerBlock(DecoBlockIDs.CHERRY_HEDGE_SIDING_AND_CORNER_ID,
+                "decoBlockLeavesCherry", DecoBlocks.cherryLeaves, 0,
+                "decoBlockHedgeCherrySiding", false);
+        register(new SidingAndCornerBlockItem(DecoBlocks.cherryHedgeSidingAndCorner.blockID - 256));
+        DecoBlocks.cherryHedgeMoulding = new HedgeMouldingBlock(DecoBlockIDs.CHERRY_HEDGE_MOULDING_ID,
+                "decoBlockLeavesCherry", "decoBlockLeavesCherry",
+                DecoBlockIDs.CHERRY_HEDGE_SIDING_AND_CORNER_ID,
+                DecoBlocks.cherryLeaves, 0,
+                "decoBlockHedgeCherryMoulding", false);
+        register(new MouldingBlockItem(DecoBlocks.cherryHedgeMoulding.blockID - 256));
+        DecoBlocks.cherryHedgeStairs = new HedgeStairsBlock(DecoBlockIDs.CHERRY_HEDGE_STAIRS_ID, DecoBlocks.cherryLeaves, 0, false)
+                .setUnlocalizedName("decoBlockHedgeCherryStairs");
+    
         //------ Acacia Wood ------//
     
         // Tree blocks
@@ -2271,6 +2366,20 @@ public class DecoBlockInitializer {
     
         DecoBlocks.acaciaButton = new DecoButtonBlock(DecoBlockIDs.ACACIA_BUTTON_ID, true, Block.planks, WoodTypeHelper.ACACIA_WOOD_TYPE)
                 .setUnlocalizedName("decoBlockButtonAcacia");
+    
+        // Hedge
+        DecoBlocks.acaciaHedgeSidingAndCorner = new HedgeSidingAndCornerBlock(DecoBlockIDs.ACACIA_HEDGE_SIDING_AND_CORNER_ID,
+                "decoBlockLeavesAcacia", DecoBlocks.acaciaLeaves, 0,
+                "decoBlockHedgeAcaciaSiding", false);
+        register(new SidingAndCornerBlockItem(DecoBlocks.acaciaHedgeSidingAndCorner.blockID - 256));
+        DecoBlocks.acaciaHedgeMoulding = new HedgeMouldingBlock(DecoBlockIDs.ACACIA_HEDGE_MOULDING_ID,
+                "decoBlockLeavesAcacia", "decoBlockLeavesAcacia",
+                DecoBlockIDs.ACACIA_HEDGE_SIDING_AND_CORNER_ID,
+                DecoBlocks.acaciaLeaves, 0,
+                "decoBlockHedgeAcaciaMoulding", false);
+        register(new MouldingBlockItem(DecoBlocks.acaciaHedgeMoulding.blockID - 256));
+        DecoBlocks.acaciaHedgeStairs = new HedgeStairsBlock(DecoBlockIDs.ACACIA_HEDGE_STAIRS_ID, DecoBlocks.acaciaLeaves, 0, false)
+                .setUnlocalizedName("decoBlockHedgeAcaciaStairs");
     
         //------ Mahogany Wood ------//
     
@@ -2325,6 +2434,20 @@ public class DecoBlockInitializer {
         DecoBlocks.mahoganyButton = new DecoButtonBlock(DecoBlockIDs.MAHOGANY_BUTTON_ID, true, Block.planks, WoodTypeHelper.MAHOGANY_WOOD_TYPE)
                 .setUnlocalizedName("decoBlockButtonMahogany");
     
+        // Hedge
+        DecoBlocks.mahoganyHedgeSidingAndCorner = new HedgeSidingAndCornerBlock(DecoBlockIDs.MAHOGANY_HEDGE_SIDING_AND_CORNER_ID,
+                "decoBlockLeavesMahogany", DecoBlocks.mahoganyLeaves, 0,
+                "decoBlockHedgeMahoganySiding", false);
+        register(new SidingAndCornerBlockItem(DecoBlocks.mahoganyHedgeSidingAndCorner.blockID - 256));
+        DecoBlocks.mahoganyHedgeMoulding = new HedgeMouldingBlock(DecoBlockIDs.MAHOGANY_HEDGE_MOULDING_ID,
+                "decoBlockLeavesMahogany", "decoBlockLeavesMahogany",
+                DecoBlockIDs.MAHOGANY_HEDGE_SIDING_AND_CORNER_ID,
+                DecoBlocks.mahoganyLeaves, 0,
+                "decoBlockHedgeMahoganyMoulding", false);
+        register(new MouldingBlockItem(DecoBlocks.mahoganyHedgeMoulding.blockID - 256));
+        DecoBlocks.mahoganyHedgeStairs = new HedgeStairsBlock(DecoBlockIDs.MAHOGANY_HEDGE_STAIRS_ID, DecoBlocks.mahoganyLeaves, 0, false)
+                .setUnlocalizedName("decoBlockHedgeMahoganyStairs");
+    
         //------ Mangrove Wood ------//
     
         // Tree blocks
@@ -2378,6 +2501,20 @@ public class DecoBlockInitializer {
         DecoBlocks.mangroveButton = new DecoButtonBlock(DecoBlockIDs.MANGROVE_BUTTON_ID, true, Block.planks, WoodTypeHelper.MANGROVE_WOOD_TYPE)
                 .setUnlocalizedName("decoBlockButtonMangrove");
     
+        // Hedge
+        DecoBlocks.mangroveHedgeSidingAndCorner = new HedgeSidingAndCornerBlock(DecoBlockIDs.MANGROVE_HEDGE_SIDING_AND_CORNER_ID,
+                "decoBlockLeavesMangrove", DecoBlocks.mangroveLeaves, 0,
+                "decoBlockHedgeMangroveSiding", false);
+        register(new SidingAndCornerBlockItem(DecoBlocks.mangroveHedgeSidingAndCorner.blockID - 256));
+        DecoBlocks.mangroveHedgeMoulding = new HedgeMouldingBlock(DecoBlockIDs.MANGROVE_HEDGE_MOULDING_ID,
+                "decoBlockLeavesMangrove", "decoBlockLeavesMangrove",
+                DecoBlockIDs.MANGROVE_HEDGE_SIDING_AND_CORNER_ID,
+                DecoBlocks.mangroveLeaves, 0,
+                "decoBlockHedgeMangroveMoulding", false);
+        register(new MouldingBlockItem(DecoBlocks.mangroveHedgeMoulding.blockID - 256));
+        DecoBlocks.mangroveHedgeStairs = new HedgeStairsBlock(DecoBlockIDs.MANGROVE_HEDGE_STAIRS_ID, DecoBlocks.mangroveLeaves, 0, false)
+                .setUnlocalizedName("decoBlockHedgeMangroveStairs");
+    
         //------ Hazel Wood ------//
     
         // Tree blocks
@@ -2430,6 +2567,20 @@ public class DecoBlockInitializer {
     
         DecoBlocks.hazelButton = new DecoButtonBlock(DecoBlockIDs.HAZEL_BUTTON_ID, true, Block.planks, WoodTypeHelper.HAZEL_WOOD_TYPE)
                 .setUnlocalizedName("decoBlockButtonHazel");
+    
+        // Hedge
+        DecoBlocks.hazelHedgeSidingAndCorner = new HedgeSidingAndCornerBlock(DecoBlockIDs.HAZEL_HEDGE_SIDING_AND_CORNER_ID,
+                "decoBlockLeavesHazel", DecoBlocks.hazelLeaves, 0,
+                "decoBlockHedgeHazelSiding", false);
+        register(new SidingAndCornerBlockItem(DecoBlocks.hazelHedgeSidingAndCorner.blockID - 256));
+        DecoBlocks.hazelHedgeMoulding = new HedgeMouldingBlock(DecoBlockIDs.HAZEL_HEDGE_MOULDING_ID,
+                "decoBlockLeavesHazel", "decoBlockLeavesHazel",
+                DecoBlockIDs.HAZEL_HEDGE_SIDING_AND_CORNER_ID,
+                DecoBlocks.hazelLeaves, 0,
+                "decoBlockHedgeHazelMoulding", false);
+        register(new MouldingBlockItem(DecoBlocks.hazelHedgeMoulding.blockID - 256));
+        DecoBlocks.hazelHedgeStairs = new HedgeStairsBlock(DecoBlockIDs.HAZEL_HEDGE_STAIRS_ID, DecoBlocks.hazelLeaves, 0, false)
+                .setUnlocalizedName("decoBlockHedgeHazelStairs");
         
         //------ Painted Planks ------//
         

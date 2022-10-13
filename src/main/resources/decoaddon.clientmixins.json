@@ -6,7 +6,7 @@
   "mixins": [
   ],
   "client": [
-    "GuiRepairMixin"
+
   ],
   "injectors": {
     "defaultRequire": 1

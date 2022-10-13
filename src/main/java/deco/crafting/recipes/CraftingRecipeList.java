@@ -3900,6 +3900,14 @@ public class CraftingRecipeList {
 						'p', new ItemStack(Block.planks, 1, InventoryUtils.IGNORE_METADATA)
 				});
 		
+		// Hedge
+		for (int woodType = 0; woodType < 4; woodType++) {
+			RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.hedge, 1, woodType),
+					new ItemStack[] {
+							new ItemStack(Block.leaves, 1, woodType)
+					});
+		}
+		
 		// Tanning
 		for (int woodType = WoodTypeHelper.NUM_VANILLA_WOOD; woodType < WoodTypeHelper.NUM_TOTAL_WOOD; woodType++) {
 			RecipeManager.addCauldronRecipe(new ItemStack(BTWItems.tannedLeather),
@@ -4211,6 +4219,24 @@ public class CraftingRecipeList {
 						'C', new ItemStack(BTWItems.woodCornerStubID, 1, WoodTypeHelper.OAK_WOOD_TYPE),
 						'R', Item.redstone
 				});
+		
+		// Hedge
+		btw.crafting.recipe.CraftingRecipeList.addSubBlockRecipesOfType(DecoBlocks.hedge, WoodTypeHelper.OAK_WOOD_TYPE, DecoBlocks.oakHedgeSidingAndCorner,
+				DecoBlocks.oakHedgeMoulding, true);
+		
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.oakHedgeStairs, 6),
+				new Object[] {
+						"F  ",
+						"FF ",
+						"FFF",
+						'F', new ItemStack(DecoBlocks.hedge, 1, WoodTypeHelper.OAK_WOOD_TYPE)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.oakHedgeStairs, 1),
+				new Object[] {
+						"M ",
+						"MM",
+						'M', new ItemStack(DecoBlocks.oakHedgeMoulding)
+				});
 	}
 	
 	private static void initSpruceWoodRecipes() {
@@ -4484,6 +4510,24 @@ public class CraftingRecipeList {
 						"R",
 						'C', new ItemStack(BTWItems.woodCornerStubID, 1, WoodTypeHelper.SPRUCE_WOOD_TYPE),
 						'R', Item.redstone
+				});
+		
+		// Hedge
+		btw.crafting.recipe.CraftingRecipeList.addSubBlockRecipesOfType(DecoBlocks.hedge, WoodTypeHelper.SPRUCE_WOOD_TYPE, DecoBlocks.spruceHedgeSidingAndCorner,
+				DecoBlocks.spruceHedgeMoulding, true);
+		
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.spruceHedgeStairs, 6),
+				new Object[] {
+						"F  ",
+						"FF ",
+						"FFF",
+						'F', new ItemStack(DecoBlocks.hedge, 1, WoodTypeHelper.SPRUCE_WOOD_TYPE)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.spruceHedgeStairs, 1),
+				new Object[] {
+						"M ",
+						"MM",
+						'M', new ItemStack(DecoBlocks.birchHedgeMoulding)
 				});
 	}
 	
@@ -4759,6 +4803,24 @@ public class CraftingRecipeList {
 						'C', new ItemStack(BTWItems.woodCornerStubID, 1, WoodTypeHelper.BIRCH_WOOD_TYPE),
 						'R', Item.redstone
 				});
+		
+		// Hedge
+		btw.crafting.recipe.CraftingRecipeList.addSubBlockRecipesOfType(DecoBlocks.hedge, WoodTypeHelper.BIRCH_WOOD_TYPE, DecoBlocks.birchHedgeSidingAndCorner,
+				DecoBlocks.birchHedgeMoulding, true);
+		
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.birchHedgeStairs, 6),
+				new Object[] {
+						"F  ",
+						"FF ",
+						"FFF",
+						'F', new ItemStack(DecoBlocks.hedge, 1, WoodTypeHelper.BIRCH_WOOD_TYPE)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.birchHedgeStairs, 1),
+				new Object[] {
+						"M ",
+						"MM",
+						'M', new ItemStack(DecoBlocks.birchHedgeMoulding)
+				});
 	}
 	
 	private static void initJungleWoodRecipes() {
@@ -5032,6 +5094,24 @@ public class CraftingRecipeList {
 						"R",
 						'C', new ItemStack(BTWItems.woodCornerStubID, 1, WoodTypeHelper.JUNGLE_WOOD_TYPE),
 						'R', Item.redstone
+				});
+		
+		// Hedge
+		btw.crafting.recipe.CraftingRecipeList.addSubBlockRecipesOfType(DecoBlocks.hedge, WoodTypeHelper.JUNGLE_WOOD_TYPE, DecoBlocks.jungleHedgeSidingAndCorner,
+				DecoBlocks.jungleHedgeMoulding, true);
+		
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.jungleHedgeStairs, 6),
+				new Object[] {
+						"F  ",
+						"FF ",
+						"FFF",
+						'F', new ItemStack(DecoBlocks.hedge, 1, WoodTypeHelper.JUNGLE_WOOD_TYPE)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.jungleHedgeStairs, 1),
+				new Object[] {
+						"M ",
+						"MM",
+						'M', new ItemStack(DecoBlocks.jungleHedgeMoulding)
 				});
 	}
 	
@@ -5310,6 +5390,24 @@ public class CraftingRecipeList {
 						'C', new ItemStack(BTWItems.woodCornerStubID, 1, WoodTypeHelper.BLOOD_WOOD_TYPE),
 						'R', Item.redstone
 				});
+		
+		// Hedge
+		btw.crafting.recipe.CraftingRecipeList.addSubBlockRecipesOfType(BTWBlocks.bloodWoodLeaves, 0, DecoBlocks.bloodHedgeSidingAndCorner,
+				DecoBlocks.bloodHedgeMoulding, true);
+		
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.bloodHedgeStairs, 6),
+				new Object[] {
+						"F  ",
+						"FF ",
+						"FFF",
+						'F', new ItemStack(BTWBlocks.bloodWoodLeaves)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.bloodHedgeStairs, 1),
+				new Object[] {
+						"M ",
+						"MM",
+						'M', new ItemStack(DecoBlocks.bloodHedgeMoulding)
+				});
 	}
 	
 	private static void initCherryWoodRecipes() {
@@ -5581,6 +5679,24 @@ public class CraftingRecipeList {
 						"R",
 						'C', new ItemStack(BTWItems.woodCornerStubID, 1, WoodTypeHelper.CHERRY_WOOD_TYPE),
 						'R', Item.redstone
+				});
+		
+		// Hedge
+		btw.crafting.recipe.CraftingRecipeList.addSubBlockRecipesOfType(DecoBlocks.cherryLeaves, 0, DecoBlocks.cherryHedgeSidingAndCorner,
+				DecoBlocks.cherryHedgeMoulding, true);
+		
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.cherryHedgeStairs, 6),
+				new Object[] {
+						"F  ",
+						"FF ",
+						"FFF",
+						'F', new ItemStack(DecoBlocks.cherryLeaves)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.cherryHedgeStairs, 1),
+				new Object[] {
+						"M ",
+						"MM",
+						'M', new ItemStack(DecoBlocks.cherryHedgeMoulding)
 				});
 	}
 	
@@ -5854,6 +5970,24 @@ public class CraftingRecipeList {
 						'C', new ItemStack(BTWItems.woodCornerStubID, 1, WoodTypeHelper.ACACIA_WOOD_TYPE),
 						'R', Item.redstone
 				});
+		
+		// Hedge
+		btw.crafting.recipe.CraftingRecipeList.addSubBlockRecipesOfType(DecoBlocks.acaciaLeaves, 0, DecoBlocks.acaciaHedgeSidingAndCorner,
+				DecoBlocks.acaciaHedgeMoulding, true);
+		
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.acaciaHedgeStairs, 6),
+				new Object[] {
+						"F  ",
+						"FF ",
+						"FFF",
+						'F', new ItemStack(DecoBlocks.acaciaLeaves)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.acaciaHedgeStairs, 1),
+				new Object[] {
+						"M ",
+						"MM",
+						'M', new ItemStack(DecoBlocks.acaciaHedgeMoulding)
+				});
 	}
 	
 	private static void initMahoganyWoodRecipes() {
@@ -6125,6 +6259,24 @@ public class CraftingRecipeList {
 						"R",
 						'C', new ItemStack(BTWItems.woodCornerStubID, 1, WoodTypeHelper.MAHOGANY_WOOD_TYPE),
 						'R', Item.redstone
+				});
+		
+		// Hedge
+		btw.crafting.recipe.CraftingRecipeList.addSubBlockRecipesOfType(DecoBlocks.mahoganyLeaves, 0, DecoBlocks.mahoganyHedgeSidingAndCorner,
+				DecoBlocks.mahoganyHedgeMoulding, true);
+		
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.mahoganyHedgeStairs, 6),
+				new Object[] {
+						"F  ",
+						"FF ",
+						"FFF",
+						'F', new ItemStack(DecoBlocks.mahoganyLeaves)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.mahoganyHedgeStairs, 1),
+				new Object[] {
+						"M ",
+						"MM",
+						'M', new ItemStack(DecoBlocks.mahoganyHedgeMoulding)
 				});
 	}
 	
@@ -6398,6 +6550,24 @@ public class CraftingRecipeList {
 						'C', new ItemStack(BTWItems.woodCornerStubID, 1, WoodTypeHelper.MANGROVE_WOOD_TYPE),
 						'R', Item.redstone
 				});
+		
+		// Hedge
+		btw.crafting.recipe.CraftingRecipeList.addSubBlockRecipesOfType(DecoBlocks.mangroveLeaves, 0, DecoBlocks.mangroveHedgeSidingAndCorner,
+				DecoBlocks.mangroveHedgeMoulding, true);
+		
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.mangroveHedgeStairs, 6),
+				new Object[] {
+						"F  ",
+						"FF ",
+						"FFF",
+						'F', new ItemStack(DecoBlocks.mangroveLeaves)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.mangroveHedgeStairs, 1),
+				new Object[] {
+						"M ",
+						"MM",
+						'M', new ItemStack(DecoBlocks.mangroveHedgeMoulding)
+				});
 	}
 	
 	private static void initHazelWoodRecipes() {
@@ -6669,6 +6839,24 @@ public class CraftingRecipeList {
 						"R",
 						'C', new ItemStack(BTWItems.woodCornerStubID, 1, WoodTypeHelper.HAZEL_WOOD_TYPE),
 						'R', Item.redstone
+				});
+		
+		// Hedge
+		btw.crafting.recipe.CraftingRecipeList.addSubBlockRecipesOfType(DecoBlocks.hazelLeaves, 0, DecoBlocks.hazelHedgeSidingAndCorner,
+				DecoBlocks.hazelHedgeMoulding, true);
+		
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.hazelHedgeStairs, 6),
+				new Object[] {
+						"F  ",
+						"FF ",
+						"FFF",
+						'F', new ItemStack(DecoBlocks.hazelLeaves)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.hazelHedgeStairs, 1),
+				new Object[] {
+						"M ",
+						"MM",
+						'M', new ItemStack(DecoBlocks.hazelHedgeMoulding)
 				});
 	}
 	
