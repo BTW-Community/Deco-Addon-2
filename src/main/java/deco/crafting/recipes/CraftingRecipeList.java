@@ -586,6 +586,14 @@ public class CraftingRecipeList {
 		addMortaringRecipe(new ItemStack(BTWBlocks.stoneBrickSlab, 1, StoneHelper.STONE_BRICK_DEEP_STRATA_TYPE),
 				new ItemStack(BTWBlocks.looseStoneBrickSlab, 1, StoneHelper.LOOSE_STONE_BRICK_DEEP_STRATA_TYPE));
 		
+		//------ Misc Stone Recipes ------//
+		
+		RecipeManager.addShapelessRecipe(new ItemStack(Block.obsidian, 1, 1),
+				new ItemStack[] {
+						new ItemStack(Block.obsidian, 1, 0),
+						new ItemStack(BTWItems.soulFlux)
+				});
+		
 		initGraniteRecipes();
 		initAndesiteRecipes();
 		initDioriteRecipes();
