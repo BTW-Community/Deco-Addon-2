@@ -851,12 +851,12 @@ public class DecoBlockInitializer {
                 .setUnlocalizedName("decoBlockPrismarineBrickStairs");
     
         DecoBlocks.darkPrismarineSidingAndCorner = new SidingAndCornerAndDecorativeWallBlock(DecoBlockIDs.DARK_PRISMARINE_SIDING_AND_CORNER_ID, Material.rock,
-                "decoBlockDarkPrismarine",
+                "decoBlockPrismarineDark",
                 DecoBlocks.prismarine.blockHardness, DecoBlocks.prismarine.blockResistance, Block.soundStoneFootstep,
                 "decoBlockPrismarineDarkSiding");
         register(new SidingAndCornerBlockItem(DecoBlocks.darkPrismarineSidingAndCorner.blockID - 256));
         DecoBlocks.darkPrismarineMoulding = new MouldingAndDecorativeWallBlock(DecoBlockIDs.DARK_PRISMARINE_MOULDING_ID, Material.rock,
-                "decoBlockDarkPrismarine", "decoBlockDarkPrismarineColumn",
+                "decoBlockPrismarineDark", "decoBlockPrismarineDarkColumn",
                 DecoBlockIDs.DARK_PRISMARINE_SIDING_AND_CORNER_ID,
                 DecoBlocks.prismarine.blockHardness, DecoBlocks.prismarine.blockResistance, Block.soundStoneFootstep,
                 "decoBlockPrismarineDarkMoulding");
@@ -959,12 +959,12 @@ public class DecoBlockInitializer {
                 .setUnlocalizedName("decoBlockSandStoneBrickLargeMossyStairs");
     
         DecoBlocks.crackedSandstoneSiding = new SidingCornerWallTopAndBottomBlock(DecoBlockIDs.CRACKED_SANDSTONE_SIDING_AND_CORNER_ID, Material.rock,
-                "sandstone_top", "sandstone_top", "sandstone_top",
+                "sandstone_bottom", "sandstone_bottom", "sandstone_bottom",
                 Block.sandStone.blockHardness, Block.sandStone.blockResistance, Block.soundStoneFootstep,
                 "decoBlockSandstoneCrackedSiding");
         register(new SidingAndCornerBlockItem(DecoBlocks.crackedSandstoneSiding.blockID - 256));
         DecoBlocks.crackedSandstoneMoulding = new MouldingWallTopAndBottomBlock(DecoBlockIDs.CRACKED_SANDSTONE_MOULDING_ID, Material.rock,
-                "sandstone_top", "sandstone_top", "sandstone_top", "sandstone_top",
+                "sandstone_bottom", "sandstone_bottom", "sandstone_bottom", "sandstone_bottom",
                 DecoBlockIDs.CRACKED_SANDSTONE_SIDING_AND_CORNER_ID,
                 Block.sandStone.blockHardness, Block.sandStone.blockResistance, Block.soundStoneFootstep,
                 "decoBlockSandstoneCrackedMoulding");
@@ -1028,7 +1028,7 @@ public class DecoBlockInitializer {
                 "decoBlockRedSandstonePolishedSiding");
         register(new SidingAndCornerBlockItem(DecoBlocks.polishedRedSandstoneSiding.blockID - 256));
         DecoBlocks.polishedRedSandstoneMoulding = new MouldingWallTopAndBottomBlock(DecoBlockIDs.POLISHED_RED_SANDSTONE_MOULDING_ID, Material.rock,
-                "redSandstone_top", "redSandstone_top", "redSandstone_top", "redSandstone_top",
+                "decoBlockRedSandstone_top", "decoBlockRedSandstone_top", "decoBlockRedSandstone_top", "decoBlockRedSandstone_top",
                 DecoBlockIDs.POLISHED_RED_SANDSTONE_SIDING_AND_CORNER_ID,
                 DecoBlocks.redSandstone.blockHardness, DecoBlocks.redSandstone.blockResistance, Block.soundStoneFootstep,
                 "decoBlockRedSandstonePolishedMoulding");
@@ -1093,12 +1093,12 @@ public class DecoBlockInitializer {
                 .setUnlocalizedName("decoBlockRedSandStoneBrickLargeMossyStairs");
     
         DecoBlocks.crackedRedSandstoneSiding = new SidingCornerWallTopAndBottomBlock(DecoBlockIDs.CRACKED_RED_SANDSTONE_SIDING_AND_CORNER_ID, Material.rock,
-                "redSandstone_top", "redSandstone_top", "redSandstone_top",
+                "decoBlockRedSandstone_bottom", "decoBlockRedSandstone_bottom", "decoBlockRedSandstone_bottom",
                 DecoBlocks.redSandstone.blockHardness, DecoBlocks.redSandstone.blockResistance, Block.soundStoneFootstep,
                 "decoBlockRedSandstoneCrackedSiding");
         register(new SidingAndCornerBlockItem(DecoBlocks.crackedRedSandstoneSiding.blockID - 256));
         DecoBlocks.crackedRedSandstoneMoulding = new MouldingWallTopAndBottomBlock(DecoBlockIDs.CRACKED_RED_SANDSTONE_MOULDING_ID, Material.rock,
-                "redSandstone_top", "redSandstone_top", "redSandstone_top", "redSandstone_top",
+                "decoBlockRedSandstone_bottom", "decoBlockRedSandstone_bottom", "decoBlockRedSandstone_bottom", "decoBlockRedSandstone_bottom",
                 DecoBlockIDs.CRACKED_RED_SANDSTONE_SIDING_AND_CORNER_ID,
                 DecoBlocks.redSandstone.blockHardness, DecoBlocks.redSandstone.blockResistance, Block.soundStoneFootstep,
                 "decoBlockRedSandstoneCrackedMoulding");
@@ -1150,13 +1150,13 @@ public class DecoBlockInitializer {
         
         DecoBlocks.redNetherBrickSidingAndCorner = new SidingAndCornerAndDecorativeBlock(DecoBlockIDs.RED_NETHER_BRICK_SIDING_AND_CORNER_ID,
                 BTWBlocks.netherRockMaterial,
-                "decoBlockNetherBricksRed",
+                "decoBlockNetherBrickRed",
                 DecoBlocks.netherBrick.blockHardness, DecoBlocks.netherBrick.blockResistance, Block.soundStoneFootstep,
                 "decoBlockNetherBrickRedSiding");
         register(new SidingAndCornerBlockItem(DecoBlocks.redNetherBrickSidingAndCorner.blockID - 256));
         DecoBlocks.redNetherBrickMoulding = new MouldingAndDecorativeWallBlock(DecoBlockIDs.RED_NETHER_BRICK_MOULDING_ID,
                 BTWBlocks.netherRockMaterial,
-                "decoBlockNetherBricksRed", "decoBlockNetherBrickRedColumn",
+                "decoBlockNetherBrickRed", "decoBlockNetherBrickRedColumn",
                 DecoBlockIDs.RED_NETHER_BRICK_SIDING_AND_CORNER_ID,
                 DecoBlocks.netherBrick.blockHardness, DecoBlocks.netherBrick.blockResistance, Block.soundStoneFootstep,
                 "decoBlockNetherBrickRedMoulding");
@@ -2158,11 +2158,11 @@ public class DecoBlockInitializer {
     
         // Hedge
         DecoBlocks.birchHedgeSidingAndCorner = new HedgeSidingAndCornerBlock(DecoBlockIDs.BIRCH_HEDGE_SIDING_AND_CORNER_ID,
-                "leaves_birch", DecoBlocks.hedge, WoodTypeHelper.BIRCH_WOOD_TYPE,
+                "leaves", DecoBlocks.hedge, WoodTypeHelper.BIRCH_WOOD_TYPE,
                 "decoBlockHedgeBirchSiding", true);
         register(new SidingAndCornerBlockItem(DecoBlocks.birchHedgeSidingAndCorner.blockID - 256));
         DecoBlocks.birchHedgeMoulding = new HedgeMouldingBlock(DecoBlockIDs.BIRCH_HEDGE_MOULDING_ID,
-                "leaves_birch", "leaves_birch",
+                "leaves", "leaves",
                 DecoBlockIDs.BIRCH_HEDGE_SIDING_AND_CORNER_ID,
                 DecoBlocks.hedge, WoodTypeHelper.BIRCH_WOOD_TYPE,
                 "decoBlockHedgeBirchMoulding", true);
