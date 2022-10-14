@@ -12,7 +12,7 @@ import btw.util.ColorUtils;
 import deco.block.blocks.*;
 import deco.block.blocks.CarvedPumpkinBlock;
 import deco.block.blocks.FlowerPotBlock;
-import deco.block.blocks.TallGrassBlock;
+import deco.block.blocks.DoubleTallGrassBlock;
 import deco.block.blocks.WorkbenchBlock;
 import deco.block.blocks.legacy.LegacyRedSandBlock;
 import deco.block.tileentity.FlowerPotTileEntity;
@@ -2829,7 +2829,7 @@ public class DecoBlockInitializer {
     
     public static void initAddonOverlapBlocks() {
         if (!AddonHandler.isModInstalled("Sock's Crops")) {
-            DecoBlocks.tallGrass = new TallGrassBlock(DecoBlockIDs.TALL_GRASS_ID);
+            DecoBlocks.tallGrass = new DoubleTallGrassBlock(DecoBlockIDs.TALL_GRASS_ID);
             register(DecoBlocks.tallGrass, ((TallPlantBlock) DecoBlocks.tallGrass).getNames());
         }
     }

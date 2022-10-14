@@ -20,8 +20,10 @@ public class FertilizerItem extends Item {
 		if (player != null && player.canPlayerEdit(x, y, z, side, stack)) {
 			int id = world.getBlockId(x, y, z);
 			
-			if ((id == Block.tilledField.blockID || id == BTWBlocks.farmland.blockID || id == BTWBlocks.planterWithSoil.blockID) && this.applyBoneMeal(world, x, y, z)) {
-				--stack.stackSize;
+			if ((id == Block.tilledField.blockID || id == BTWBlocks.farmland.blockID || id == BTWBlocks.planterWithSoil.blockID || id == Block.tallGrass.blockID)
+					&& this.applyBoneMeal(world, x, y, z))
+			{
+				stack.stackSize--;
 				return true;
 			}
 			else if (id == Block.grass.blockID && this.growTallGrassAndFlowers(world, x, y, z)) {

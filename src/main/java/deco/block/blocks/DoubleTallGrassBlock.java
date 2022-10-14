@@ -8,8 +8,11 @@ import net.minecraft.src.*;
 
 import java.util.Random;
 
-public class TallGrassBlock extends TallPlantBlock {
-	public TallGrassBlock(int blockID) {
+public class DoubleTallGrassBlock extends TallPlantBlock {
+	public static final int GRASS_TYPE = 0;
+	public static final int FERN_TYPE = 1;
+	
+	public DoubleTallGrassBlock(int blockID) {
 		super(blockID, "decoBlockGrass",
 				new String [] {
 						"grass",
