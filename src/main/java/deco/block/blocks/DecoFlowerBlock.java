@@ -13,13 +13,9 @@ public class DecoFlowerBlock extends FlowerBlock {
 	
 	public DecoFlowerBlock(int blockID, String baseTexture, String[] names) {
 		super(blockID);
+		this.setUnlocalizedName(baseTexture);
 		this.baseTexture = baseTexture;
 		this.names = names;
-	}
-	
-	@Override
-	public boolean canPlaceBlockAt(World world, int x, int y, int z) {
-		return this.canPlaceBlockAt(world, x, y, z);
 	}
 	
 	@Override

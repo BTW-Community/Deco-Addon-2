@@ -7,7 +7,6 @@ import deco.block.DecoBlockInitializer;
 import deco.crafting.recipes.CraftingRecipeList;
 import deco.entity.DecoEntityManager;
 import deco.item.DecoItemInitializer;
-import net.fabricmc.loader.api.entrypoint.PreLaunchEntrypoint;
 
 import java.util.Map;
 
@@ -37,6 +36,7 @@ public class DecoAddon extends BTWAddon {
 
     @Override
     public void postInitialize() {
+        DecoBlockInitializer.initAddonOverlapBlocks();
         CraftingRecipeList.initRecipes();
     }
     

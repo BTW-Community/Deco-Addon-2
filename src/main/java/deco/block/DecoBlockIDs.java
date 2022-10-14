@@ -1,6 +1,10 @@
 package deco.block;
 
 public class DecoBlockIDs {
+    // Overlaps with Sock's Crops
+    // Only instantiated if SC is not installed
+    public static final int TALL_GRASS_ID = 2657;
+    
     public static final int PAPER_WALL_ID = 3000;
     public static final int WROUGHT_IRON_BARS_ID = 3001;
     public static final int FLOWER_ID = 3002;

@@ -485,6 +485,10 @@ public class DecoBlocks {
     public static Block flower2;
     public static Block tulip;
     
+    public static Block tallFlower;
+    
+    public static Block tallGrass;
+    
     public static Block autumnSapling;
     public static Block autumnLeaves;
     

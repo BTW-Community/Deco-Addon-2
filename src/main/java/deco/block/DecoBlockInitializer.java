@@ -1,5 +1,6 @@
 package deco.block;
 
+import btw.AddonHandler;
 import btw.block.BTWBlocks;
 import btw.block.blocks.*;
 import btw.block.tileentity.beacon.BeaconTileEntity;
@@ -11,6 +12,7 @@ import btw.util.ColorUtils;
 import deco.block.blocks.*;
 import deco.block.blocks.CarvedPumpkinBlock;
 import deco.block.blocks.FlowerPotBlock;
+import deco.block.blocks.TallGrassBlock;
 import deco.block.blocks.WorkbenchBlock;
 import deco.block.blocks.legacy.LegacyRedSandBlock;
 import deco.block.tileentity.FlowerPotTileEntity;
@@ -2823,6 +2825,13 @@ public class DecoBlockInitializer {
                 new int[] {8, 9, 10, 11, 12, 13, 14, 15})
                 .setUnlocalizedName("decoBlockPlanksPaintedSlab2");
         Item.itemsList[DecoBlocks.pastelPlanksSlab2.blockID] = new DecoSlabItemBlock(DecoBlocks.pastelPlanksSlab2.blockID - 256);
+    }
+    
+    public static void initAddonOverlapBlocks() {
+        if (!AddonHandler.isModInstalled("Sock's Crops")) {
+            DecoBlocks.tallGrass = new TallGrassBlock(DecoBlockIDs.TALL_GRASS_ID);
+            register(DecoBlocks.tallGrass, ((TallPlantBlock) DecoBlocks.tallGrass).getNames());
+        }
     }
 
     private static void register(Block block, String[]names) {
