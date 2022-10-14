@@ -21,12 +21,6 @@ public class MangroveSaplingBlock extends DecoSaplingBlock {
 	
 	@Override
 	public boolean generateTree(World world, Random rand, int x, int y, int z, int treeType) {
-		int blockIDBelow = world.getBlockId(x, y - 1, z);
-		
-		if (blockIDBelow != Block.grass.blockID && blockIDBelow != Block.waterMoving.blockID && blockIDBelow != Block.waterStill.blockID) {
-			return false;
-		}
-		
 		int var7 = 9 + rand.nextInt(5);
 		
 		for (int j = 6; j < var7; ++j) {
@@ -67,7 +61,7 @@ public class MangroveSaplingBlock extends DecoSaplingBlock {
 	//------------- Class Specific Methods ------------//
 	
 	private void createSwampRoots(World world, Random rand, int x, int y, int z) {
-		int offset1 = 2 + rand.nextInt(5);
+		int offset1 = 3 + rand.nextInt(4);
 		
 		for (int var7 = offset1; var7 < 8; ++var7) {
 			world.setBlock(x, y + var7, z, DecoBlocks.mangroveLog.blockID);
@@ -81,15 +75,24 @@ public class MangroveSaplingBlock extends DecoSaplingBlock {
 		world.setBlock(x - 3, y + offset1 - 3, z, DecoBlocks.mangroveLog.blockID);
 		
 		int rootLength = 0;
-		int maxRootLength = 7;
+		int maxRootLength = 10;
 		int j;
 		
 		for (j = y + offset1 - 3; j > 50; --j) {
 			int blockID = world.getBlockId(x - 3, j - 1, z);
 			
-			if (blockID != 0 && blockID != Block.grass.blockID && blockID != Block.waterMoving.blockID && blockID != Block.waterStill.blockID && blockID != DecoBlocks.mangroveLeaves.blockID && blockID != DecoBlocks.mangroveLog.blockID && blockID != Block.vine.blockID && blockID != Block.tallGrass.blockID) {
+			if (blockID != 0 &&
+					blockID != Block.grass.blockID &&
+					blockID != Block.waterMoving.blockID &&
+					blockID != Block.waterStill.blockID &&
+					blockID != DecoBlocks.mangroveLeaves.blockID &&
+					blockID != DecoBlocks.mangroveLog.blockID &&
+					blockID != Block.vine.blockID &&
+					blockID != Block.tallGrass.blockID)
+			{
 				break;
 			}
+			
 			rootLength++;
 			
 			if (rootLength > maxRootLength + offset1)
@@ -98,9 +101,14 @@ public class MangroveSaplingBlock extends DecoSaplingBlock {
 			world.setBlock(x - 3, j, z, DecoBlocks.mangroveLog.blockID);
 		}
 		
-		world.setBlock(x - 3, j + 1, z, DecoBlocks.mangroveStump.blockID);
+		if (world.getBlockId(x - 3, j, z) == Block.waterMoving.blockID) {
+			world.setBlock(x - 3, j, z, DecoBlocks.mangroveStump.blockID);
+		}
+		else {
+			world.setBlock(x - 3, j + 1, z, DecoBlocks.mangroveStump.blockID);
+		}
 		
-		int offset2 = 2 + rand.nextInt(5);
+		int offset2 = 3 + rand.nextInt(4);
 		
 		for (j = offset2; j < 8; ++j) {
 			world.setBlock(x, y + j, z, DecoBlocks.mangroveLog.blockID);
@@ -129,9 +137,14 @@ public class MangroveSaplingBlock extends DecoSaplingBlock {
 			world.setBlock(x + 3, j, z, DecoBlocks.mangroveLog.blockID);
 		}
 		
-		world.setBlock(x + 3, j + 1, z, DecoBlocks.mangroveStump.blockID);
+		if (world.getBlockId(x + 3, j, z) == Block.waterMoving.blockID) {
+			world.setBlock(x + 3, j, z, DecoBlocks.mangroveStump.blockID);
+		}
+		else {
+			world.setBlock(x + 3, j + 1, z, DecoBlocks.mangroveStump.blockID);
+		}
 		
-		int offset3 = 2 + rand.nextInt(5);
+		int offset3 = 3 + rand.nextInt(4);
 		
 		for (j = offset3; j < 8; ++j) {
 			world.setBlock(x, y + j, z, DecoBlocks.mangroveLog.blockID);
@@ -160,9 +173,14 @@ public class MangroveSaplingBlock extends DecoSaplingBlock {
 			world.setBlock(x, j, z - 3, DecoBlocks.mangroveLog.blockID);
 		}
 		
-		world.setBlock(x, j + 1, z - 3, DecoBlocks.mangroveStump.blockID);
+		if (world.getBlockId(x, j, z - 3) == Block.waterMoving.blockID) {
+			world.setBlock(x, j, z - 3, DecoBlocks.mangroveStump.blockID);
+		}
+		else {
+			world.setBlock(x, j + 1, z - 3, DecoBlocks.mangroveStump.blockID);
+		}
 		
-		int offset4 = 2 + rand.nextInt(5);
+		int offset4 = 3 + rand.nextInt(4);
 		
 		for (j = offset4; j < 8; ++j) {
 			world.setBlock(x, y + j, z, DecoBlocks.mangroveLog.blockID);
@@ -191,7 +209,12 @@ public class MangroveSaplingBlock extends DecoSaplingBlock {
 			world.setBlock(x, j, z + 3, DecoBlocks.mangroveLog.blockID);
 		}
 		
-		world.setBlock(x, j + 1, z + 3, DecoBlocks.mangroveStump.blockID);
+		if (world.getBlockId(x, j, z + 3) == Block.waterMoving.blockID) {
+			world.setBlock(x, j, z + 3, DecoBlocks.mangroveStump.blockID);
+		}
+		else {
+			world.setBlock(x, j + 1, z + 3, DecoBlocks.mangroveStump.blockID);
+		}
 	}
 	
 	private void createRainForestBranch(World world, Random rand, int x, int y, int z) {

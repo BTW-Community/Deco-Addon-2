@@ -531,6 +531,88 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.LOOSE_SLATE_BRICK_STAIRS_ID)
                 .setUnlocalizedName("decoBlockSlateTileStairs");
     
+        // Calcite
+    
+        DecoBlocks.roughCalcite = new RoughStoneVariantBlock(DecoBlockIDs.ROUGH_CALCITE_ID, StoneVariantsBlock.CALCITE_TYPE);
+    
+        DecoBlocks.infestedCalcite = new SilverfishBlock(DecoBlockIDs.INFESTED_CALCITE_ID, DecoBlocks.stoneVariants, StoneVariantsBlock.CALCITE_TYPE);
+    
+        DecoBlocks.calciteButton = new DecoButtonBlock(DecoBlockIDs.CALCITE_BUTTON_ID, false, DecoBlocks.stoneVariants, StoneVariantsBlock.CALCITE_TYPE)
+                .setUnlocalizedName("decoBlockButtonCalcite");
+    
+        DecoBlocks.looseCalciteCobblestone = new LooseCobblestoneVariantsBlock(DecoBlockIDs.LOOSE_CALCITE_COBBLESTONE_ID, StoneVariantsBlock.CALCITE_TYPE,
+                "decoOverlayCalciteCobbleLava")
+                .setUnlocalizedName("decoBlockCalciteCobbleLoose");
+        DecoBlocks.looseCalciteBrick = new LooseStoneBrickVariantsBlock(DecoBlockIDs.LOOSE_CALCITE_BRICK_ID, StoneVariantsBlock.CALCITE_TYPE,
+                "decoOverlayCalciteBrickLava")
+                .setUnlocalizedName("decoBlockCalciteBrickLoose");
+    
+        DecoBlocks.looseCalciteCobblestoneStairs = new LooseStoneVariantStairsBlock(DecoBlockIDs.LOOSE_CALCITE_COBBLESTONE_STAIRS_ID,
+                DecoBlocks.cobblestoneVariants, StoneVariantsBlock.CALCITE_TYPE, DecoBlockIDs.CALCITE_COBBLESTONE_STAIRS_ID)
+                .setUnlocalizedName("decoBlockCalciteCobbleLooseStairs");
+        DecoBlocks.looseCalciteBrickStairs = new LooseStoneVariantStairsBlock(DecoBlockIDs.LOOSE_CALCITE_BRICK_STAIRS_ID,
+                DecoBlocks.stoneBrickVariants, StoneVariantsBlock.CALCITE_TYPE, DecoBlockIDs.CALCITE_BRICK_STAIRS_ID)
+                .setUnlocalizedName("decoBlockCalciteBrickLooseStairs");
+    
+        DecoBlocks.calciteSidingAndCorner = new SidingAndCornerAndDecorativeWallBlock(DecoBlockIDs.CALCITE_SIDING_AND_CORNER_ID, Material.rock,
+                "decoBlockCalcite",
+                DecoBlocks.stoneVariants.blockHardness, DecoBlocks.stoneVariants.blockResistance, Block.soundStoneFootstep,
+                "decoBlockCalciteSiding");
+        register(new SidingAndCornerBlockItem(DecoBlocks.calciteSidingAndCorner.blockID - 256));
+        DecoBlocks.calciteMoulding = new MouldingAndDecorativeWallBlock(DecoBlockIDs.CALCITE_MOULDING_ID, Material.rock,
+                "decoBlockCalcite", "decoBlockCalcite",
+                DecoBlockIDs.CALCITE_SIDING_AND_CORNER_ID,
+                DecoBlocks.stoneVariants.blockHardness, DecoBlocks.stoneVariants.blockResistance, Block.soundStoneFootstep,
+                "decoBlockCalciteMoulding");
+        register(new MouldingBlockItem(DecoBlocks.calciteMoulding.blockID - 256));
+        DecoBlocks.calciteStairs = new StairsBlock(DecoBlockIDs.CALCITE_STAIRS_ID, DecoBlocks.stoneVariants, StoneVariantsBlock.CALCITE_TYPE)
+                .setUnlocalizedName("decoBlockCalciteStairs");
+    
+        DecoBlocks.calciteCobblestoneSidingAndCorner = new SidingAndCornerAndDecorativeWallBlock(DecoBlockIDs.CALCITE_COBBLESTONE_SIDING_AND_CORNER_ID, Material.rock,
+                "decoBlockCalciteCobble",
+                DecoBlocks.cobblestoneVariants.blockHardness, DecoBlocks.cobblestoneVariants.blockResistance, Block.soundStoneFootstep,
+                "decoBlockCalciteCobbleSiding");
+        register(new SidingAndCornerBlockItem(DecoBlocks.calciteCobblestoneSidingAndCorner.blockID - 256));
+        DecoBlocks.calciteCobblestoneMoulding = new MouldingAndDecorativeWallBlock(DecoBlockIDs.CALCITE_COBBLESTONE_MOULDING_ID, Material.rock,
+                "decoBlockCalciteCobble", "decoBlockCalciteCobble",
+                DecoBlockIDs.CALCITE_COBBLESTONE_SIDING_AND_CORNER_ID,
+                DecoBlocks.cobblestoneVariants.blockHardness, DecoBlocks.cobblestoneVariants.blockResistance, Block.soundStoneFootstep,
+                "decoBlockCalciteCobbleMoulding");
+        register(new MouldingBlockItem(DecoBlocks.calciteCobblestoneMoulding.blockID - 256));
+        DecoBlocks.calciteCobblestoneStairs = new MortaredStairsBlock(DecoBlockIDs.CALCITE_COBBLESTONE_STAIRS_ID, DecoBlocks.cobblestoneVariants,
+                StoneVariantsBlock.CALCITE_TYPE, DecoBlockIDs.LOOSE_CALCITE_COBBLESTONE_STAIRS_ID)
+                .setUnlocalizedName("decoBlockCalciteCobbleStairs");
+    
+        DecoBlocks.calciteBrickSidingAndCorner = new SidingAndCornerAndDecorativeWallBlock(DecoBlockIDs.CALCITE_BRICK_SIDING_AND_CORNER_ID, Material.rock,
+                "decoBlockCalciteBrick",
+                DecoBlocks.stoneBrickVariants.blockHardness, DecoBlocks.stoneBrickVariants.blockResistance, Block.soundStoneFootstep,
+                "decoBlockCalciteBrickSiding");
+        register(new SidingAndCornerBlockItem(DecoBlocks.calciteBrickSidingAndCorner.blockID - 256));
+        DecoBlocks.calciteBrickMoulding = new MouldingAndDecorativeWallBlock(DecoBlockIDs.CALCITE_BRICK_MOULDING_ID, Material.rock,
+                "decoBlockCalciteBrick", "decoBlockCalciteBrick",
+                DecoBlockIDs.CALCITE_BRICK_SIDING_AND_CORNER_ID,
+                DecoBlocks.stoneBrickVariants.blockHardness, DecoBlocks.stoneBrickVariants.blockResistance, Block.soundStoneFootstep,
+                "decoBlockCalciteBrickMoulding");
+        register(new MouldingBlockItem(DecoBlocks.calciteBrickMoulding.blockID - 256));
+        DecoBlocks.calciteBrickStairs = new MortaredStairsBlock(DecoBlockIDs.CALCITE_BRICK_STAIRS_ID, DecoBlocks.stoneBrickVariants,
+                StoneVariantsBlock.CALCITE_TYPE, DecoBlockIDs.LOOSE_CALCITE_BRICK_STAIRS_ID)
+                .setUnlocalizedName("decoBlockCalciteBrickStairs");
+    
+        DecoBlocks.polishedCalciteSidingAndCorner = new SidingAndCornerAndDecorativeWallBlock(DecoBlockIDs.POLISHED_CALCITE_SIDING_AND_CORNER_ID, Material.rock,
+                "decoBlockCalciteSmooth",
+                DecoBlocks.polishedStoneVariants.blockHardness, DecoBlocks.polishedStoneVariants.blockResistance, Block.soundStoneFootstep,
+                "decoBlockCalciteSmoothSiding");
+        register(new SidingAndCornerBlockItem(DecoBlocks.polishedCalciteSidingAndCorner.blockID - 256));
+        DecoBlocks.polishedCalciteMoulding = new MouldingAndDecorativeWallBlock(DecoBlockIDs.POLISHED_CALCITE_MOULDING_ID, Material.rock,
+                "decoBlockCalciteSmooth", "decoBlockCalciteSmoothColumn",
+                DecoBlockIDs.CALCITE_SIDING_AND_CORNER_ID,
+                DecoBlocks.polishedStoneVariants.blockHardness, DecoBlocks.polishedStoneVariants.blockResistance, Block.soundStoneFootstep,
+                "decoBlockCalciteSmoothMoulding");
+        register(new MouldingBlockItem(DecoBlocks.polishedCalciteMoulding.blockID - 256));
+        DecoBlocks.polishedCalciteStairs = new StairsBlock(DecoBlockIDs.POLISHED_CALCITE_STAIRS_ID, DecoBlocks.polishedStoneVariants,
+                StoneVariantsBlock.CALCITE_TYPE)
+                .setUnlocalizedName("decoBlockCalciteSmoothStairs");
+    
         //------ Misc Stone ------//
     
         // Polished Stone
@@ -1521,13 +1603,19 @@ public class DecoBlockInitializer {
     
         DecoBlocks.looseStoneSlab2 = new LooseStoneSlabBlock(DecoBlockIDs.LOOSE_STONE_SLAB_2_ID,
                 new Block[] {
-                        DecoBlocks.looseRedNetherBrick
+                        DecoBlocks.looseRedNetherBrick,
+                        DecoBlocks.looseCalciteCobblestone,
+                        DecoBlocks.looseCalciteBrick
                 },
                 new int[] {
-                        SlabHelper.LOOSE_RED_NETHER_BRICK_SLAB_ID
+                        SlabHelper.RED_NETHER_BRICK_SLAB_ID,
+                        SlabHelper.CALCITE_COBBLESTONE_SLAB_ID,
+                        SlabHelper.CALCITE_BRICK_SLAB_ID
                 },
                 new int[] {
-                        SlabHelper.LOOSE_RED_NETHER_BRICK_SLAB_TYPE
+                        SlabHelper.RED_NETHER_BRICK_SLAB_TYPE,
+                        SlabHelper.CALCITE_COBBLESTONE_SLAB_TYPE,
+                        SlabHelper.CALCITE_BRICK_SLAB_TYPE
                 })
                 .setUnlocalizedName("decoBlockStoneSlabLoose2");
         register(new DecoSlabItemBlock(DecoBlocks.looseStoneSlab2.blockID - 256));
@@ -1779,24 +1867,37 @@ public class DecoBlockInitializer {
                 new Block[] {
                         Block.stoneBrick,
                         Block.stone,
-                        Block.stone
+                        Block.stone,
+                        DecoBlocks.stoneVariants,
+                        DecoBlocks.polishedStoneVariants,
+                        DecoBlocks.cobblestoneVariants,
+                        DecoBlocks.stoneBrickVariants
                 },
                 new int [] {
                         StoneHelper.CRACKED_STONE_BRICK_DEEP_STRATA_TYPE,
                         1, // Mid strata
                         2, // Deep strata
+                        StoneVariantsBlock.CALCITE_TYPE,
+                        StoneVariantsBlock.CALCITE_TYPE,
+                        StoneVariantsBlock.CALCITE_TYPE,
+                        StoneVariantsBlock.CALCITE_TYPE
                 },
                 new boolean[] {
                         true,
-                        false, false
+                        false, false, false, false,
+                        true, true
                 },
                 new Block[] {
                         BTWBlocks.looseStoneBrickSlab,
-                        null, null
+                        null, null, null, null,
+                        DecoBlocks.looseStoneSlab2,
+                        DecoBlocks.looseStoneSlab2
                 },
                 new int[] {
                         StoneHelper.STONE_BRICK_DEEP_STRATA_TYPE,
-                        0, 0
+                        0, 0, 0, 0,
+                        SlabHelper.LOOSE_CALCITE_COBBLESTONE_SLAB_TYPE,
+                        SlabHelper.LOOSE_CALCITE_BRICK_SLAB_TYPE
                 })
                 .setUnlocalizedName("decoBlockStoneSlab8");
         register(new DecoSlabItemBlock(DecoBlocks.stoneSlab8.blockID - 256));

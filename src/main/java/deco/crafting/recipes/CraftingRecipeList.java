@@ -586,6 +586,14 @@ public class CraftingRecipeList {
 		addMortaringRecipe(new ItemStack(BTWBlocks.stoneBrickSlab, 1, StoneHelper.STONE_BRICK_DEEP_STRATA_TYPE),
 				new ItemStack(BTWBlocks.looseStoneBrickSlab, 1, StoneHelper.LOOSE_STONE_BRICK_DEEP_STRATA_TYPE));
 		
+		//------ Misc Stone Recipes ------//
+		
+		RecipeManager.addShapelessRecipe(new ItemStack(Block.obsidian, 1, 1),
+				new ItemStack[] {
+						new ItemStack(Block.obsidian, 1, 0),
+						new ItemStack(BTWItems.soulFlux)
+				});
+		
 		initGraniteRecipes();
 		initAndesiteRecipes();
 		initDioriteRecipes();
@@ -595,7 +603,7 @@ public class CraftingRecipeList {
 	private static void initGraniteRecipes() {
 		RecipeManager.addStokedCrucibleRecipe(new ItemStack(DecoBlocks.looseGraniteCobblestone, 16),
 				new ItemStack[] {
-						new ItemStack(DecoBlocks.looseDioriteCobblestone, 16),
+						new ItemStack(DecoBlocks.looseAndesiteCobblestone, 16),
 						new ItemStack(Item.netherQuartz)
 				});
 		
@@ -2112,6 +2120,379 @@ public class CraftingRecipeList {
 						"C",
 						"R",
 						'C', DecoBlocks.slate,
+						'R', Item.redstone
+				});
+	}
+	
+	private static void initCalciteRecipes() {
+		RecipeManager.addStokedCrucibleRecipe(new ItemStack(DecoBlocks.looseCalciteCobblestone, 16),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.looseCalciteCobblestone, 16),
+						new ItemStack(Item.dyePowder, 1, ColorUtils.WHITE.colorID)
+				});
+		
+		RecipeManager.addStokedCrucibleRecipe(new ItemStack(DecoBlocks.polishedStoneVariants, 1, StoneVariantsBlock.CALCITE_TYPE),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.stoneVariants, 1, StoneVariantsBlock.CALCITE_TYPE)
+				});
+		
+		//------ Loose ------//
+		
+		// Blocks - Stone
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.looseCalciteCobblestone),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.stoneVariants, 1, StoneVariantsBlock.CALCITE_TYPE),
+						new ItemStack(BTWItems.ironChisel, 1, InventoryUtils.IGNORE_METADATA)
+				});
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.looseCalciteCobblestone),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.stoneVariants, 1, StoneVariantsBlock.CALCITE_TYPE),
+						new ItemStack(BTWItems.diamondChisel, 1, InventoryUtils.IGNORE_METADATA)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(SlabHelper.LOOSE_CALCITE_COBBLESTONE_SLAB_ID, 4, SlabHelper.LOOSE_CALCITE_COBBLESTONE_SLAB_TYPE),
+				new Object[] {
+						"FF",
+						'F', new ItemStack(DecoBlocks.looseCalciteCobblestone)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.looseCalciteCobblestone, 1),
+				new Object[] {
+						"S",
+						"S",
+						'S', new ItemStack(SlabHelper.LOOSE_CALCITE_COBBLESTONE_SLAB_ID, 1, SlabHelper.LOOSE_CALCITE_COBBLESTONE_SLAB_TYPE)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.looseCalciteCobblestoneStairs, 4),
+				new Object[] {
+						"F ",
+						"FF",
+						'F', new ItemStack(DecoBlocks.looseCalciteCobblestone)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.looseCalciteCobblestoneStairs, 2),
+				new Object[] {
+						"S ",
+						"SS",
+						'S', new ItemStack(SlabHelper.LOOSE_CALCITE_COBBLESTONE_SLAB_ID, 1, SlabHelper.LOOSE_CALCITE_COBBLESTONE_SLAB_TYPE)
+				});
+		
+		// Items - Stone
+		RecipeManager.addShapelessRecipe(new ItemStack(BTWItems.stone, 8, StoneVariantsBlock.CALCITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+				new ItemStack[] {new ItemStack(DecoBlocks.looseCalciteCobblestone)});
+		RecipeManager.addShapelessRecipe(new ItemStack(BTWItems.stone, 6, StoneVariantsBlock.CALCITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+				new ItemStack[] {new ItemStack(DecoBlocks.looseCalciteCobblestoneStairs)});
+		RecipeManager.addShapelessRecipe(new ItemStack(BTWItems.stone, 4, StoneVariantsBlock.CALCITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+				new ItemStack[] {new ItemStack(SlabHelper.LOOSE_CALCITE_COBBLESTONE_SLAB_ID, 1, SlabHelper.LOOSE_CALCITE_COBBLESTONE_SLAB_TYPE)});
+		
+		RecipeManager.addShapelessRecipe(new ItemStack(SlabHelper.LOOSE_CALCITE_COBBLESTONE_SLAB_ID, 1, SlabHelper.LOOSE_CALCITE_COBBLESTONE_SLAB_TYPE),
+				new ItemStack[] {
+						new ItemStack(BTWItems.stone, 1, StoneVariantsBlock.CALCITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stone, 1, StoneVariantsBlock.CALCITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stone, 1, StoneVariantsBlock.CALCITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stone, 1, StoneVariantsBlock.CALCITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES)
+				});
+		
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.looseCalciteCobblestone),
+				new ItemStack[] {
+						new ItemStack(BTWItems.stone, 1, StoneVariantsBlock.CALCITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stone, 1, StoneVariantsBlock.CALCITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stone, 1, StoneVariantsBlock.CALCITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stone, 1, StoneVariantsBlock.CALCITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stone, 1, StoneVariantsBlock.CALCITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stone, 1, StoneVariantsBlock.CALCITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stone, 1, StoneVariantsBlock.CALCITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stone, 1, StoneVariantsBlock.CALCITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES)
+				});
+		
+		// Blocks - Stone Brick
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.looseCalciteBrick),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.polishedStoneVariants, 1, StoneVariantsBlock.CALCITE_TYPE),
+						new ItemStack(BTWItems.ironChisel, 1, InventoryUtils.IGNORE_METADATA)
+				});
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.looseCalciteBrick),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.polishedStoneVariants, 1, StoneVariantsBlock.CALCITE_TYPE),
+						new ItemStack(BTWItems.diamondChisel, 1, InventoryUtils.IGNORE_METADATA)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(SlabHelper.LOOSE_CALCITE_BRICK_SLAB_ID, 4, SlabHelper.LOOSE_CALCITE_BRICK_SLAB_TYPE),
+				new Object[] {
+						"FF",
+						'F', new ItemStack(DecoBlocks.looseCalciteBrick)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.looseCalciteBrick, 1),
+				new Object[] {
+						"S",
+						"S",
+						'S', new ItemStack(SlabHelper.LOOSE_CALCITE_BRICK_SLAB_ID, 1, SlabHelper.LOOSE_CALCITE_BRICK_SLAB_TYPE)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.looseCalciteBrickStairs, 4),
+				new Object[] {
+						"F ",
+						"FF",
+						'F', new ItemStack(DecoBlocks.looseCalciteBrick)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.looseCalciteBrickStairs, 2),
+				new Object[] {
+						"S ",
+						"SS",
+						'S', new ItemStack(SlabHelper.LOOSE_CALCITE_BRICK_SLAB_ID, 1, SlabHelper.LOOSE_CALCITE_BRICK_SLAB_TYPE)
+				});
+		
+		// Items - Stone brick
+		RecipeManager.addShapelessRecipe(new ItemStack(BTWItems.stoneBrick, 8, StoneVariantsBlock.CALCITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+				new ItemStack[] {new ItemStack(DecoBlocks.looseCalciteBrick)});
+		RecipeManager.addShapelessRecipe(new ItemStack(BTWItems.stoneBrick, 6, StoneVariantsBlock.CALCITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+				new ItemStack[] {new ItemStack(DecoBlocks.looseCalciteBrickStairs)});
+		RecipeManager.addShapelessRecipe(new ItemStack(BTWItems.stoneBrick, 4, StoneVariantsBlock.CALCITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+				new ItemStack[] {new ItemStack(SlabHelper.LOOSE_CALCITE_BRICK_SLAB_ID, 1, SlabHelper.LOOSE_CALCITE_BRICK_SLAB_TYPE)});
+		
+		RecipeManager.addShapelessRecipe(new ItemStack(SlabHelper.LOOSE_CALCITE_BRICK_SLAB_ID, 1, SlabHelper.LOOSE_CALCITE_BRICK_SLAB_TYPE),
+				new ItemStack[] {
+						new ItemStack(BTWItems.stoneBrick, 1, StoneVariantsBlock.CALCITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stoneBrick, 1, StoneVariantsBlock.CALCITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stoneBrick, 1, StoneVariantsBlock.CALCITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stoneBrick, 1, StoneVariantsBlock.CALCITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES)
+				});
+		
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.looseCalciteBrick),
+				new ItemStack[] {
+						new ItemStack(BTWItems.stoneBrick, 1, StoneVariantsBlock.CALCITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stoneBrick, 1, StoneVariantsBlock.CALCITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stoneBrick, 1, StoneVariantsBlock.CALCITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stoneBrick, 1, StoneVariantsBlock.CALCITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stoneBrick, 1, StoneVariantsBlock.CALCITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stoneBrick, 1, StoneVariantsBlock.CALCITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stoneBrick, 1, StoneVariantsBlock.CALCITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES),
+						new ItemStack(BTWItems.stoneBrick, 1, StoneVariantsBlock.CALCITE_TYPE + StoneVariantsBlock.NUM_VANILLA_TYPES)
+				});
+		
+		//------ Mortar ------//
+		
+		// Clay
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(DecoBlocks.cobblestoneVariants, 1, StoneVariantsBlock.CALCITE_TYPE),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.looseCalciteCobblestone),
+						new ItemStack(Item.clay)
+				});
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(DecoBlocks.calciteCobblestoneStairs),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.looseCalciteCobblestoneStairs),
+						new ItemStack(Item.clay)
+				});
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(SlabHelper.CALCITE_COBBLESTONE_SLAB_ID, 1, SlabHelper.CALCITE_COBBLESTONE_SLAB_TYPE),
+				new ItemStack[] {
+						new ItemStack(SlabHelper.LOOSE_CALCITE_COBBLESTONE_SLAB_ID, 1, SlabHelper.LOOSE_CALCITE_COBBLESTONE_SLAB_TYPE),
+						new ItemStack(Item.clay)
+				});
+		
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(DecoBlocks.stoneBrickVariants, 1, StoneVariantsBlock.CALCITE_TYPE),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.looseCalciteBrick),
+						new ItemStack(Item.clay)
+				});
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(DecoBlocks.calciteBrickStairs),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.looseCalciteBrickStairs),
+						new ItemStack(Item.clay)
+				});
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(SlabHelper.CALCITE_BRICK_SLAB_ID, 1, SlabHelper.CALCITE_BRICK_SLAB_TYPE),
+				new ItemStack[] {
+						new ItemStack(SlabHelper.LOOSE_CALCITE_BRICK_SLAB_ID, 1, SlabHelper.LOOSE_CALCITE_BRICK_SLAB_TYPE),
+						new ItemStack(Item.clay)
+				});
+		
+		// Slime
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(DecoBlocks.cobblestoneVariants, 1, StoneVariantsBlock.CALCITE_TYPE),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.looseCalciteCobblestone),
+						new ItemStack(Item.slimeBall)
+				});
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(DecoBlocks.calciteCobblestoneStairs),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.looseCalciteCobblestoneStairs),
+						new ItemStack(Item.slimeBall)
+				});
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(SlabHelper.CALCITE_COBBLESTONE_SLAB_ID, 1, SlabHelper.CALCITE_COBBLESTONE_SLAB_TYPE),
+				new ItemStack[] {
+						new ItemStack(SlabHelper.LOOSE_CALCITE_COBBLESTONE_SLAB_ID, 1, SlabHelper.LOOSE_CALCITE_COBBLESTONE_SLAB_TYPE),
+						new ItemStack(Item.slimeBall)
+				});
+		
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(DecoBlocks.stoneBrickVariants, 1, StoneVariantsBlock.CALCITE_TYPE),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.looseCalciteBrick),
+						new ItemStack(Item.slimeBall)
+				});
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(DecoBlocks.calciteBrickStairs),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.looseCalciteBrickStairs),
+						new ItemStack(Item.slimeBall)
+				});
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(SlabHelper.CALCITE_BRICK_SLAB_ID, 1, SlabHelper.CALCITE_BRICK_SLAB_TYPE),
+				new ItemStack[] {
+						new ItemStack(SlabHelper.LOOSE_CALCITE_BRICK_SLAB_ID, 1, SlabHelper.LOOSE_CALCITE_BRICK_SLAB_TYPE),
+						new ItemStack(Item.slimeBall)
+				});
+		
+		// Nether Sludge
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(DecoBlocks.cobblestoneVariants, 1, StoneVariantsBlock.CALCITE_TYPE),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.looseCalciteCobblestone),
+						new ItemStack(BTWItems.netherSludge)
+				});
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(DecoBlocks.calciteCobblestoneStairs),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.looseCalciteCobblestoneStairs),
+						new ItemStack(BTWItems.netherSludge)
+				});
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(SlabHelper.CALCITE_COBBLESTONE_SLAB_ID, 1, SlabHelper.CALCITE_COBBLESTONE_SLAB_TYPE),
+				new ItemStack[] {
+						new ItemStack(SlabHelper.LOOSE_CALCITE_COBBLESTONE_SLAB_ID, 1, SlabHelper.LOOSE_CALCITE_COBBLESTONE_SLAB_TYPE),
+						new ItemStack(BTWItems.netherSludge)
+				});
+		
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(DecoBlocks.stoneBrickVariants, 1, StoneVariantsBlock.CALCITE_TYPE),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.looseCalciteBrick),
+						new ItemStack(BTWItems.netherSludge)
+				});
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(DecoBlocks.calciteBrickStairs),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.looseCalciteBrickStairs),
+						new ItemStack(BTWItems.netherSludge)
+				});
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(SlabHelper.CALCITE_BRICK_SLAB_ID, 1, SlabHelper.CALCITE_BRICK_SLAB_TYPE),
+				new ItemStack[] {
+						new ItemStack(SlabHelper.LOOSE_CALCITE_BRICK_SLAB_ID, 1, SlabHelper.LOOSE_CALCITE_BRICK_SLAB_TYPE),
+						new ItemStack(BTWItems.netherSludge)
+				});
+		
+		//------ Sub blocks ------//
+		
+		// Sub blocks
+		btw.crafting.recipe.CraftingRecipeList.addSubBlockRecipesOfType(DecoBlocks.stoneVariants, StoneVariantsBlock.CALCITE_TYPE,
+				DecoBlocks.calciteSidingAndCorner, DecoBlocks.calciteMoulding, true);
+		btw.crafting.recipe.CraftingRecipeList.addSubBlockRecipesOfType(DecoBlocks.polishedStoneVariants, StoneVariantsBlock.CALCITE_TYPE,
+				DecoBlocks.polishedCalciteSidingAndCorner, DecoBlocks.polishedCalciteMoulding, true);
+		btw.crafting.recipe.CraftingRecipeList.addSubBlockRecipesOfType(DecoBlocks.cobblestoneVariants, StoneVariantsBlock.CALCITE_TYPE,
+				DecoBlocks.calciteCobblestoneSidingAndCorner, DecoBlocks.calciteCobblestoneMoulding, true);
+		btw.crafting.recipe.CraftingRecipeList.addSubBlockRecipesOfType(DecoBlocks.stoneBrickVariants, StoneVariantsBlock.CALCITE_TYPE,
+				DecoBlocks.calciteBrickSidingAndCorner, DecoBlocks.calciteBrickMoulding, true);
+		
+		// Stairs
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.calciteStairs, 6),
+				new Object[] {
+						"F  ",
+						"FF ",
+						"FFF",
+						'F', new ItemStack(DecoBlocks.stoneVariants, 1, StoneVariantsBlock.CALCITE_TYPE)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.calciteStairs, 1),
+				new Object[] {
+						"M ",
+						"MM",
+						'M', new ItemStack(DecoBlocks.calciteMoulding)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.polishedCalciteStairs, 6),
+				new Object[] {
+						"F  ",
+						"FF ",
+						"FFF",
+						'F', new ItemStack(DecoBlocks.polishedStoneVariants, 1, StoneVariantsBlock.CALCITE_TYPE)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.polishedCalciteStairs, 1),
+				new Object[] {
+						"M ",
+						"MM",
+						'M', new ItemStack(DecoBlocks.polishedCalciteMoulding)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.calciteCobblestoneStairs, 6),
+				new Object[] {
+						"F  ",
+						"FF ",
+						"FFF",
+						'F', new ItemStack(DecoBlocks.cobblestoneVariants, 1, StoneVariantsBlock.CALCITE_TYPE)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.calciteCobblestoneStairs, 1),
+				new Object[] {
+						"M ",
+						"MM",
+						'M', new ItemStack(DecoBlocks.calciteCobblestoneMoulding)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.calciteBrickStairs, 6),
+				new Object[] {
+						"F  ",
+						"FF ",
+						"FFF",
+						'F', new ItemStack(DecoBlocks.stoneBrickVariants, 1, StoneVariantsBlock.CALCITE_TYPE)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.calciteBrickStairs, 1),
+				new Object[] {
+						"M ",
+						"MM",
+						'M', new ItemStack(DecoBlocks.calciteBrickMoulding)
+				});
+		
+		// Slabs
+		RecipeManager.addRecipe(new ItemStack(SlabHelper.CALCITE_SLAB_ID, 6, SlabHelper.CALCITE_SLAB_TYPE),
+				new Object[] {
+						"FFF",
+						'F', new ItemStack(DecoBlocks.stoneVariants, 1, StoneVariantsBlock.CALCITE_TYPE)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.stoneVariants, 1, StoneVariantsBlock.CALCITE_TYPE),
+				new Object[] {
+						"S",
+						"S",
+						'S', new ItemStack(SlabHelper.CALCITE_SLAB_ID, 1, SlabHelper.CALCITE_SLAB_TYPE)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(SlabHelper.POLISHED_CALCITE_SLAB_ID, 6, SlabHelper.POLISHED_CALCITE_SLAB_TYPE),
+				new Object[] {
+						"FFF",
+						'F', new ItemStack(DecoBlocks.polishedStoneVariants, 1, StoneVariantsBlock.CALCITE_TYPE)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.polishedStoneVariants, 1, StoneVariantsBlock.CALCITE_TYPE),
+				new Object[] {
+						"S",
+						"S",
+						'S', new ItemStack(SlabHelper.POLISHED_CALCITE_SLAB_ID, 1, SlabHelper.POLISHED_CALCITE_SLAB_TYPE)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(SlabHelper.CALCITE_COBBLESTONE_SLAB_ID, 6, SlabHelper.CALCITE_COBBLESTONE_SLAB_TYPE),
+				new Object[] {
+						"FFF",
+						'F', new ItemStack(DecoBlocks.cobblestoneVariants, 1, StoneVariantsBlock.CALCITE_TYPE)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.cobblestoneVariants, 1, StoneVariantsBlock.CALCITE_TYPE),
+				new Object[] {
+						"S",
+						"S",
+						'S', new ItemStack(SlabHelper.CALCITE_COBBLESTONE_SLAB_ID, 1, SlabHelper.CALCITE_COBBLESTONE_SLAB_TYPE)
+				});
+		
+		RecipeManager.addRecipe(new ItemStack(SlabHelper.CALCITE_BRICK_SLAB_ID, 6, SlabHelper.CALCITE_BRICK_SLAB_TYPE),
+				new Object[] {
+						"FFF",
+						'F', new ItemStack(DecoBlocks.stoneBrickVariants, 1, StoneVariantsBlock.CALCITE_TYPE)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.stoneBrickVariants, 1, StoneVariantsBlock.CALCITE_TYPE),
+				new Object[] {
+						"S",
+						"S",
+						'S', new ItemStack(SlabHelper.CALCITE_BRICK_SLAB_ID, 1, SlabHelper.CALCITE_BRICK_SLAB_TYPE)
+				});
+		
+		// Button
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.calciteButton),
+				new Object[] {
+						"C",
+						"R",
+						'C', new ItemStack(DecoBlocks.stoneVariants, 1, StoneVariantsBlock.CALCITE_TYPE),
 						'R', Item.redstone
 				});
 	}

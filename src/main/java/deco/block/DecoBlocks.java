@@ -188,6 +188,33 @@ public class DecoBlocks {
     
     // Calcite
     
+    public static Block roughCalcite;
+    
+    public static Block looseCalciteCobblestone;
+    public static Block looseCalciteCobblestoneStairs;
+    public static Block looseCalciteBrick;
+    public static Block looseCalciteBrickStairs;
+    
+    public static Block calciteSidingAndCorner;
+    public static Block calciteMoulding;
+    public static Block calciteStairs;
+    
+    public static Block calciteCobblestoneSidingAndCorner;
+    public static Block calciteCobblestoneMoulding;
+    public static Block calciteCobblestoneStairs;
+    
+    public static Block calciteBrickSidingAndCorner;
+    public static Block calciteBrickMoulding;
+    public static Block calciteBrickStairs;
+    
+    public static Block polishedCalciteSidingAndCorner;
+    public static Block polishedCalciteMoulding;
+    public static Block polishedCalciteStairs;
+    
+    public static Block infestedCalcite;
+    
+    public static Block calciteButton;
+    
     // Tuff
     
     // Jasper
