@@ -224,15 +224,15 @@ public class MangroveSaplingBlock extends DecoSaplingBlock {
 		if (rand.nextInt(4) == 0) {
 			world.setBlock(x + 1, y, z, DecoBlocks.mangroveLog.blockID);
 			world.setBlock(x + 2, y + 1, z, DecoBlocks.mangroveLog.blockID);
-			var6 = rand.nextInt(4) + 1;
-			this.createRainForestLeaves(world, rand, x + 2, y - 1 + var6, z, 1);
-			this.createRainForestLeaves(world, rand, x + 2, y + 0 + var6, z, 2);
-			this.createRainForestLeaves(world, rand, x + 2, y + 1 + var6, z, 3);
-			this.createRainForestLeaves(world, rand, x + 2, y + 2 + var6, z, 3);
-			this.createRainForestLeaves(world, rand, x + 2, y + 3 + var6, z, 3);
-			this.createRainForestLeaves(world, rand, x + 2, y + 4 + var6, z, 3);
-			this.createRainForestLeaves(world, rand, x + 2, y + 5 + var6, z, 2);
-			this.createRainForestLeaves(world, rand, x + 2, y + 6 + var6, z, 1);
+			var6 = rand.nextInt(4) + 4;
+			this.createRainForestLeaves(world, rand, x + 2, y - 5 + var6, z, 1);
+			this.createRainForestLeaves(world, rand, x + 2, y - 4 + var6, z, 2);
+			this.createRainForestLeaves(world, rand, x + 2, y - 3 + var6, z, 3);
+			this.createRainForestLeaves(world, rand, x + 2, y - 2 + var6, z, 3);
+			this.createRainForestLeaves(world, rand, x + 2, y - 1 + var6, z, 3);
+			this.createRainForestLeaves(world, rand, x + 2, y + 0 + var6, z, 3);
+			this.createRainForestLeaves(world, rand, x + 2, y + 1 + var6, z, 2);
+			this.createRainForestLeaves(world, rand, x + 2, y + 2 + var6, z, 1);
 			
 			for (var7 = 0; var7 <= var6; ++var7) {
 				world.setBlock(x + 2, y + 2 + var7, z, DecoBlocks.mangroveLog.blockID);
@@ -242,15 +242,15 @@ public class MangroveSaplingBlock extends DecoSaplingBlock {
 		if (rand.nextInt(4) == 0) {
 			world.setBlock(x - 1, y, z, DecoBlocks.mangroveLog.blockID);
 			world.setBlock(x - 2, y + 1, z, DecoBlocks.mangroveLog.blockID);
-			var6 = rand.nextInt(4) + 1;
-			this.createRainForestLeaves(world, rand, x - 2, y - 1 + var6, z, 1);
-			this.createRainForestLeaves(world, rand, x - 2, y + 0 + var6, z, 2);
-			this.createRainForestLeaves(world, rand, x - 2, y + 1 + var6, z, 3);
-			this.createRainForestLeaves(world, rand, x - 2, y + 2 + var6, z, 3);
-			this.createRainForestLeaves(world, rand, x - 2, y + 3 + var6, z, 3);
-			this.createRainForestLeaves(world, rand, x - 2, y + 4 + var6, z, 3);
-			this.createRainForestLeaves(world, rand, x - 2, y + 5 + var6, z, 2);
-			this.createRainForestLeaves(world, rand, x - 2, y + 6 + var6, z, 1);
+			var6 = rand.nextInt(4) + 4;
+			this.createRainForestLeaves(world, rand, x - 2, y - 5 + var6, z, 1);
+			this.createRainForestLeaves(world, rand, x - 2, y - 4 + var6, z, 2);
+			this.createRainForestLeaves(world, rand, x - 2, y - 3 + var6, z, 3);
+			this.createRainForestLeaves(world, rand, x - 2, y - 2 + var6, z, 3);
+			this.createRainForestLeaves(world, rand, x - 2, y - 1 + var6, z, 3);
+			this.createRainForestLeaves(world, rand, x - 2, y + 0 + var6, z, 3);
+			this.createRainForestLeaves(world, rand, x - 2, y + 1 + var6, z, 2);
+			this.createRainForestLeaves(world, rand, x - 2, y + 2 + var6, z, 1);
 			
 			for (var7 = 0; var7 <= var6; ++var7)
 			{
@@ -261,15 +261,15 @@ public class MangroveSaplingBlock extends DecoSaplingBlock {
 		if (rand.nextInt(4) == 0) {
 			world.setBlock(x, y, z + 1, DecoBlocks.mangroveLog.blockID);
 			world.setBlock(x, y + 1, z + 2, DecoBlocks.mangroveLog.blockID);
-			var6 = rand.nextInt(4) + 1;
-			this.createRainForestLeaves(world, rand, x, y - 1 + var6, z + 2, 1);
-			this.createRainForestLeaves(world, rand, x, y + 0 + var6, z + 2, 2);
-			this.createRainForestLeaves(world, rand, x, y + 1 + var6, z + 2, 3);
-			this.createRainForestLeaves(world, rand, x, y + 2 + var6, z + 2, 3);
-			this.createRainForestLeaves(world, rand, x, y + 3 + var6, z + 2, 3);
-			this.createRainForestLeaves(world, rand, x, y + 4 + var6, z + 2, 3);
-			this.createRainForestLeaves(world, rand, x, y + 5 + var6, z + 2, 2);
-			this.createRainForestLeaves(world, rand, x, y + 6 + var6, z + 2, 1);
+			var6 = rand.nextInt(4) + 4;
+			this.createRainForestLeaves(world, rand, x, y - 5 + var6, z + 2, 1);
+			this.createRainForestLeaves(world, rand, x, y - 4 + var6, z + 2, 2);
+			this.createRainForestLeaves(world, rand, x, y - 3 + var6, z + 2, 3);
+			this.createRainForestLeaves(world, rand, x, y - 2 + var6, z + 2, 3);
+			this.createRainForestLeaves(world, rand, x, y - 1 + var6, z + 2, 3);
+			this.createRainForestLeaves(world, rand, x, y + 0 + var6, z + 2, 3);
+			this.createRainForestLeaves(world, rand, x, y + 1 + var6, z + 2, 2);
+			this.createRainForestLeaves(world, rand, x, y + 2 + var6, z + 2, 1);
 			
 			for (var7 = 0; var7 <= var6; ++var7) {
 				world.setBlock(x, y + 2 + var7, z + 2, DecoBlocks.mangroveLog.blockID);
@@ -279,15 +279,15 @@ public class MangroveSaplingBlock extends DecoSaplingBlock {
 		if (rand.nextInt(4) == 0) {
 			world.setBlock(x, y, z - 1, DecoBlocks.mangroveLog.blockID);
 			world.setBlock(x, y + 1, z - 2, DecoBlocks.mangroveLog.blockID);
-			var6 = rand.nextInt(4) + 1;
-			this.createRainForestLeaves(world, rand, x, y - 1 + var6, z - 2, 1);
-			this.createRainForestLeaves(world, rand, x, y + 0 + var6, z - 2, 2);
-			this.createRainForestLeaves(world, rand, x, y + 1 + var6, z - 2, 3);
-			this.createRainForestLeaves(world, rand, x, y + 2 + var6, z - 2, 3);
-			this.createRainForestLeaves(world, rand, x, y + 3 + var6, z - 2, 3);
-			this.createRainForestLeaves(world, rand, x, y + 4 + var6, z - 2, 3);
-			this.createRainForestLeaves(world, rand, x, y + 5 + var6, z - 2, 2);
-			this.createRainForestLeaves(world, rand, x, y + 6 + var6, z - 2, 1);
+			var6 = rand.nextInt(4) + 4;
+			this.createRainForestLeaves(world, rand, x, y - 5 + var6, z - 2, 1);
+			this.createRainForestLeaves(world, rand, x, y - 4 + var6, z - 2, 2);
+			this.createRainForestLeaves(world, rand, x, y - 3 + var6, z - 2, 3);
+			this.createRainForestLeaves(world, rand, x, y - 2 + var6, z - 2, 3);
+			this.createRainForestLeaves(world, rand, x, y - 1 + var6, z - 2, 3);
+			this.createRainForestLeaves(world, rand, x, y + 0 + var6, z - 2, 3);
+			this.createRainForestLeaves(world, rand, x, y + 1 + var6, z - 2, 2);
+			this.createRainForestLeaves(world, rand, x, y + 2 + var6, z - 2, 1);
 			
 			for (var7 = 0; var7 <= var6; ++var7) {
 				world.setBlock(x, y + 2 + var7, z - 2, DecoBlocks.mangroveLog.blockID);

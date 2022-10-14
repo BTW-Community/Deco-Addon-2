@@ -17,7 +17,7 @@ public class MahoganySaplingBlock extends DecoSaplingBlock {
 	
 	@Override
 	public boolean generateTree(World world, Random rand, int x, int y, int z, int treeType) {
-		int treeHeight = rand.nextInt(8) + 8;
+		int treeHeight = rand.nextInt(6) + 12;
 		boolean hasRoom = true;
 		
 		if (y >= 1 && y + treeHeight + 1 <= 256) {
