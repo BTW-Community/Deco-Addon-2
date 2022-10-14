@@ -4,7 +4,7 @@ import btw.block.BTWBlocks;
 import btw.block.blocks.PlanterBlockBase;
 import btw.block.blocks.legacy.LegacySaplingBlock;
 import btw.world.feature.TreeUtils;
-import deco.block.DecoBlocks;
+import btw.world.util.BlockPos;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.src.*;
@@ -34,28 +34,131 @@ public abstract class DecoSaplingBlock extends LegacySaplingBlock {
     @Override
     public void growTree(World world, int x, int y, int z, Random rand) {
         int treeType = world.getBlockMetadata(x, y, z) & 3;
-        boolean planter = Block.blocksList[world.getBlockId(x, y - 1, z)] instanceof PlanterBlockBase;
         
-        world.setBlock(x, y, z, 0);
+        GrowthResult result = this.checkFor2x2(world, x, y, z, treeType);
         
-        boolean success = this.generateTree(world, rand, x, y, z, treeType);
-        
-        if (!success) {
-            world.setBlockAndMetadataWithNotify(x, y, z, this.blockID, treeType | 3 << 2);
+        if (this.canGrow2x2(treeType) && result.result != GrowthResult.NOT_2X2) {
+            if (result.result == GrowthResult.FULLY_GROWN_2X2) {
+                attemptGrowth2x2(world, result.loc.x, result.loc.y, result.loc.z, treeType, rand);
+            }
         }
-        else if (planter) {
-            world.setBlockAndMetadata(x, y, z, this.getLogID(treeType), this.getLogMetadata(treeType));
-            
-            //Block break sfx
-            world.playAuxSFX(2001, x, y - 1, z, BTWBlocks.planterWithSoil.blockID);
-    
-            world.setBlockAndMetadata(x, y - 1, z, this.getStumpID(treeType), this.getStumpMetadata(treeType));
+        else {
+            attemptGrowth(world, x, y, x, treeType, rand);
         }
     }
     
     //------------- Class Specific Methods ------------//
     
+    public void attemptGrowth(World world, int x, int y, int z, int treeType, Random rand) {
+        boolean planter = Block.blocksList[world.getBlockId(x, y - 1, z)] instanceof PlanterBlockBase;
+    
+        world.setBlock(x, y, z, 0);
+    
+        boolean success = this.generateTree(world, rand, x, y, z, treeType);
+        System.out.println("1x1 success: " + success);
+    
+        if (!success) {
+            world.setBlockAndMetadataWithNotify(x, y, z, this.blockID, treeType | 3 << 2);
+        }
+        else if (planter) {
+            world.setBlockAndMetadata(x, y, z, this.getLogID(treeType), this.getLogMetadata(treeType));
+            //Block break sfx
+            world.playAuxSFX(2001, x, y - 1, z, BTWBlocks.planterWithSoil.blockID);
+            world.setBlockAndMetadata(x, y - 1, z, this.getStumpID(treeType), this.getStumpMetadata(treeType));
+        }
+    }
+    
+    public void attemptGrowth2x2(World world, int x, int y, int z, int treeType, Random rand) {
+        world.setBlock(x, y, z, 0);
+        world.setBlock(x + 1, y, z, 0);
+        world.setBlock(x, y, z + 1, 0);
+        world.setBlock(x + 1, y, z + 1, 0);
+    
+        boolean success = this.generateTree2x2(world, rand, x, y, z, treeType);
+    
+        if (!success) {
+            world.setBlockAndMetadataWithNotify(x, y, z, this.blockID, treeType | 3 << 2);
+            world.setBlockAndMetadataWithNotify(x + 1, y, z, this.blockID, treeType | 3 << 2);
+            world.setBlockAndMetadataWithNotify(x, y, z + 1, this.blockID, treeType | 3 << 2);
+            world.setBlockAndMetadataWithNotify(x + 1, y, z + 1, this.blockID, treeType | 3 << 2);
+        }
+    }
+    
+    public boolean canGrow2x2(int treeType) {
+        return false;
+    }
+    
+    public GrowthResult checkFor2x2(World world, int x, int y, int z, int treeType) {
+        int xOffset = 1;
+    
+        while (xOffset >= -1) {
+            int zOffset = 1;
+        
+            while (zOffset >= -1) {
+                if (isSameSapling(world, x + xOffset, y, z + zOffset, treeType) &&
+                        isSameSapling(world, x + xOffset + 1, y, z + zOffset, treeType) &&
+                        isSameSapling(world, x + xOffset, y, z + zOffset + 1, treeType) &&
+                        isSameSapling(world, x + xOffset + 1, y, z + zOffset + 1, treeType))
+                {
+                    if (getSaplingGrowthStage(world, x + xOffset, y, z + zOffset) == 3 && getSaplingGrowthStage(world, x + xOffset + 1, y, z + zOffset) == 3 &&
+                            getSaplingGrowthStage(world, x + xOffset, y, z + zOffset + 1) == 3 &&
+                            getSaplingGrowthStage(world, x + xOffset + 1, y, z + zOffset + 1) == 3)
+                    {
+                        return new GrowthResult(new BlockPos(x + xOffset + 1, y, z + zOffset + 1));
+                    }
+                    else {
+                        // we have 4 saplings, but they aren't all fully grown.  Bomb out entirely
+                        return new GrowthResult(GrowthResult.NOT_ALL_GROWN_FOR_2X2);
+                    }
+                }
+            
+                zOffset--;
+            }
+        
+            xOffset--;
+        }
+        
+        return new GrowthResult(GrowthResult.NOT_2X2);
+    }
+    
     public abstract boolean generateTree(World world, Random rand, int x, int y, int z, int treeType);
+    
+    public boolean generateTree2x2(World world, Random rand, int x, int y, int z, int treeType) {
+        return false;
+    }
+    
+    public abstract int getLogID(int type);
+    
+    public int getLogMetadata(int type) {
+        return 0;
+    }
+    
+    public abstract int getStumpID(int type);
+    
+    public int getStumpMetadata(int type) {
+        return 0;
+    }
+    
+    private static class GrowthResult {
+        static final int NOT_2X2 = 0;
+        static final int NOT_ALL_GROWN_FOR_2X2 = 1;
+        static final int FULLY_GROWN_2X2 = 2;
+        
+        int result;
+        
+        BlockPos loc;
+        
+        GrowthResult(int result) {
+            this.result = result;
+        }
+        
+        GrowthResult(BlockPos loc) {
+            this.result = FULLY_GROWN_2X2;
+            this.loc = loc;
+        }
+    }
+    
+    //------------- Built In Generators ------------//
     
     public boolean generateStandardTree(World world, Random rand, int x, int y, int z, int logID, int stumpID, int leafID) {
         return this.generateStandardTree(world, rand, x, y, z, logID, 0, stumpID, 0, leafID, 0, 5);
@@ -165,18 +268,6 @@ public abstract class DecoSaplingBlock extends LegacySaplingBlock {
         else {
             return false;
         }
-    }
-    
-    public abstract int getLogID(int type);
-    
-    public int getLogMetadata(int type) {
-        return 0;
-    }
-    
-    public abstract int getStumpID(int type);
-    
-    public int getStumpMetadata(int type) {
-        return 0;
     }
 
     //----------- Client Side Functionality -----------//
