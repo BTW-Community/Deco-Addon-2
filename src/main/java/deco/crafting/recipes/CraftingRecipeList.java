@@ -3730,6 +3730,33 @@ public class CraftingRecipeList {
 						new ItemStack(DecoItems.fertilizer)
 				});
 		
+		// Fir
+		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.firSapling),
+				new ItemStack[] {
+						new ItemStack(Block.sapling, 1, WoodTypeHelper.SPRUCE_WOOD_TYPE),
+						new ItemStack(Item.dyePowder, 1, ColorUtils.WHITE.colorID),
+						new ItemStack(BTWItems.dung)
+				});
+		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.firSapling),
+				new ItemStack[] {
+						new ItemStack(Block.sapling, 1, WoodTypeHelper.SPRUCE_WOOD_TYPE),
+						new ItemStack(Item.dyePowder, 1, ColorUtils.WHITE.colorID),
+						new ItemStack(DecoItems.fertilizer)
+				});
+		
+		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.firSapling),
+				new ItemStack[] {
+						new ItemStack(Block.sapling, 1, WoodTypeHelper.SPRUCE_WOOD_TYPE),
+						new ItemStack(Item.dyePowder, 1, ColorUtils.WHITE.colorID + 16),
+						new ItemStack(BTWItems.dung)
+				});
+		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.firSapling),
+				new ItemStack[] {
+						new ItemStack(Block.sapling, 1, WoodTypeHelper.SPRUCE_WOOD_TYPE),
+						new ItemStack(Item.dyePowder, 1, ColorUtils.WHITE.colorID + 16),
+						new ItemStack(DecoItems.fertilizer)
+				});
+		
 		//------ Flower Recipes ------//
 		
 		RecipeManager.removeVanillaRecipe(new ItemStack(Item.flowerPot, 1), new Object[] {

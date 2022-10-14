@@ -13,10 +13,11 @@ Some textures in this release have been used or modified from the following sour
 - Added mud, created by leaving loose dirt underwater.
 - Added packed mud, created by piston packing two mud blocks.
 - Added mud brick, created with 4 packed mud in a crafting grid, along with associated sub blocks.
-- Added new wood types: mahogany, mangrove, hazel
+- Added new wood types: mahogany, mangrove, hazel, fir
     - For the purposes of smelting and tanning:
         - Mahogany and mangrove are equivalent to jungle
         - Hazel is equivalent to oak
+        - Fir is equivalent to birch
 - Changed autumn saplings to produce different wood types depending on color.
 - Changed sapling recipes:
     - All sapling recipes can use either dung or fertilizer, and are performed in a cauldron.
@@ -25,6 +26,7 @@ Some textures in this release have been used or modified from the following sour
     - Mahogany saplings require a jungle sapling, red dye, and a fertilizer.
     - Mangrove saplings require a jungle sapling, orange dye, and a fertilizer.
     - Hazel saplings require an oak sapling, brown dye, and a fertilizer.
+    - Fir saplings require a spruce sapling, white dye (or bonemeal), and a fertilizer.
     - Red autumn saplings require a cherry sapling, red dye, and a fertilizer.
     - Orange autumn saplings require an oak sapling, orange dye, and a fertilizer.
     - Yellow autumn saplings require a birch sapling, yellow dye, and a fertilizer.
