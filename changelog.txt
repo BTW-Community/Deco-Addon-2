@@ -40,6 +40,7 @@ Some textures in this release have been used or modified from the following sour
 - Changed red sand (blocks and piles) to be a subtype of regular sand. Old red sand may be converted into new red sand in a crafting grid.
 - Changed red sand to be crafted with 8 sand and 1 red dye to make 8.
 - Changed the recipe for coarse dirt to produce 2.
+- Added the ability to filter coarse dirt through a wicker filter in a hopper to separate it into dirt and gravel.
 - Changed the recipe for podzol to be 8 coarse dirt and a spruce leaf block to make 8.
 - Changed the recipe for empty bottle racks to use an 'I' shape instead of an 'X' (high efficiency recipe uses siding on top and bottom and moulding everywhere else).
 - Changed the names of flower textures to be more descriptive.

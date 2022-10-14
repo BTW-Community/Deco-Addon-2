@@ -3600,6 +3600,11 @@ public class CraftingRecipeList {
 						'S', new ItemStack(DecoBlocks.coarseDirtSlab)
 				});
 		
+		RecipeManager.addHopperFilteringRecipe(new ItemStack(BTWItems.dirtPile, 4),
+				new ItemStack(BTWItems.gravelPile, 4),
+				new ItemStack(DecoBlocks.coarseDirt),
+				new ItemStack(BTWBlocks.wickerPane));
+		
 		//------ Podzol ------//
 		
 		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.podzol, 8),
