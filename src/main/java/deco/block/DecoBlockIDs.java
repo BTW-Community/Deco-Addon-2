@@ -503,4 +503,26 @@ public class DecoBlockIDs {
     public static final int MANGROVE_HEDGE_STAIRS_ID = 3724;
     public static final int MANGROVE_HEDGE_SIDING_AND_CORNER_ID = 3725;
     public static final int MANGROVE_HEDGE_MOULDING_ID = 3726;
+    public static final int FIR_LOG_ID = 3727;
+    public static final int FIR_STUMP_ID = 3728;
+    public static final int CHEWED_FIR_LOG_ID = 3729;
+    public static final int FIR_LOG_SPIKE_ID = 3730;
+    public static final int FIR_LEAVES_ID = 3731;
+    public static final int FIR_SAPLING_ID = 3732;
+    public static final int FIR_STAIRS_ID = 3733;
+    public static final int FIR_SIDING_AND_CORNER_ID = 3734;
+    public static final int FIR_MOULDING_ID = 3735;
+    public static final int FIR_GATE_ID = 3736;
+    public static final int FIR_TRAPDOOR_ID = 3737;
+    public static final int FIR_DOOR_ID = 3738;
+    public static final int FIR_CHAIR_ID = 3739;
+    public static final int FILLED_FIR_BARREL_ID = 3740;
+    public static final int FIR_LADDER_ID = 3741;
+    public static final int FLAMING_FIR_LADDER_ID = 3742;
+    public static final int FIR_SIGN_ID = 3743;
+    public static final int FIR_WALL_SIGN_ID = 3744;
+    public static final int FIR_BUTTON_ID = 3745;
+    public static final int FIR_HEDGE_STAIRS_ID = 3746;
+    public static final int FIR_HEDGE_SIDING_AND_CORNER_ID = 3747;
+    public static final int FIR_HEDGE_MOULDING_ID = 3748;
 }

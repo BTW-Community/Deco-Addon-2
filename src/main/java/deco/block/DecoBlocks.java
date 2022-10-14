@@ -740,6 +740,35 @@ public class DecoBlocks {
     public static Block hazelHedgeSidingAndCorner;
     public static Block hazelHedgeMoulding;
     public static Block hazelHedgeStairs;
+    
+    // Fir wood
+    public static Block firLog;
+    public static Block firStump;
+    public static Block chewedFirLog;
+    public static Block firLogSpike;
+    
+    public static Block firLeaves;
+    public static Block firSapling;
+    
+    public static Block firStairs;
+    public static Block firSidingAndCorner;
+    public static Block firMoulding;
+    
+    public static Block firGate;
+    public static Block firTrapdoor;
+    public static Block firDoor;
+    public static Block firChair;
+    public static Block filledFirBarrel;
+    public static Block firLadder;
+    public static Block flamingFirLadder;
+    public static Block firSign;
+    public static Block firWallSign;
+    
+    public static Block firButton;
+    
+    public static Block firHedgeSidingAndCorner;
+    public static Block firHedgeMoulding;
+    public static Block firHedgeStairs;
 
     // Colored planks
     public static Block pastelPlanks;

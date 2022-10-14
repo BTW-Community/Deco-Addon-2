@@ -2024,10 +2024,10 @@ public class DecoBlockInitializer {
                 .setUnlocalizedName("decoBlockBarrel2");
         Item.itemsList[DecoBlocks.barrel2.blockID] = new ItemMultiTextureTile(DecoBlocks.barrel2.blockID - 256, DecoBlocks.barrel2, new String[] {"blood", "cherry", "acacia", "mahogany"});
         DecoBlocks.barrel3 = new BarrelBlock(DecoBlockIDs.BARREL_3_ID,
-                new String[] {"decoBlockBarrelMangrove_top"},
-                new String[] {"decoBlockBarrelMangrove_side"})
+                new String[] {"decoBlockBarrelMangrove_top", "decoBlockBarrelHazel_top", "decoBlockBarrelFir_top"},
+                new String[] {"decoBlockBarrelMangrove_side", "decoBlockBarrelHazel_side", "decoBlockBarrelFir_side"})
                 .setUnlocalizedName("decoBlockBarrel3");
-        Item.itemsList[DecoBlocks.barrel3.blockID] = new ItemMultiTextureTile(DecoBlocks.barrel3.blockID - 256, DecoBlocks.barrel3, new String[] {"mangrove"});
+        Item.itemsList[DecoBlocks.barrel3.blockID] = new ItemMultiTextureTile(DecoBlocks.barrel3.blockID - 256, DecoBlocks.barrel3, new String[] {"mangrove", "hazel", "fir"});
         
         DecoBlocks.crate = new CrateBlock(DecoBlockIDs.CRATE_ID);
         Item.itemsList[DecoBlocks.crate.blockID] = new ItemMultiTextureTile(DecoBlocks.crate.blockID - 256, DecoBlocks.crate, WoodTypeHelper.woodNames);
@@ -2054,24 +2054,41 @@ public class DecoBlockInitializer {
         DecoBlocks.pergola = new PergolaBlock(DecoBlockIDs.PERGOLA_ID);
         
         DecoBlocks.workStump = new DecoWorkStumpBlock(DecoBlockIDs.WORK_STUMP_ID,
-                new int[] {WoodTypeHelper.HAZEL_WOOD_TYPE},
-                new int[] {DecoBlockIDs.HAZEL_LOG_ID},
-                new int[] {DecoBlockIDs.CHEWED_HAZEL_LOG_ID});
+                new int[] {
+                        WoodTypeHelper.HAZEL_WOOD_TYPE,
+                        WoodTypeHelper.FIR_WOOD_TYPE
+                },
+                new int[] {
+                        DecoBlockIDs.HAZEL_LOG_ID,
+                        DecoBlockIDs.FIR_LOG_ID
+                },
+                new int[] {
+                        DecoBlockIDs.CHEWED_HAZEL_LOG_ID,
+                        DecoBlockIDs.CHEWED_FIR_LOG_ID
+                });
 
         DecoBlocks.woodSingleSlab = new DecoWoodPlankSlab(DecoBlockIDs.WOOD_SINGLE_SLAB_ID,
                 new int[] {
-                        WoodTypeHelper.MANGROVE_WOOD_TYPE
+                        WoodTypeHelper.MANGROVE_WOOD_TYPE,
+                        WoodTypeHelper.HAZEL_WOOD_TYPE,
+                        WoodTypeHelper.FIR_WOOD_TYPE
                 },
                 new String[] {
-                        "mangrove"
+                        "mangrove",
+                        "hazel",
+                        "fir"
                 })
                 .setUnlocalizedName("decoBlockVanillaWoodSlab");
         DecoBlocks.woodDoubleSlab = new DecoWoodPlankSlab(DecoBlockIDs.WOOD_DOUBLE_SLAB_ID, true, DecoBlockIDs.WOOD_SINGLE_SLAB_ID,
                 new int[] {
-                        WoodTypeHelper.MANGROVE_WOOD_TYPE
+                        WoodTypeHelper.MANGROVE_WOOD_TYPE,
+                        WoodTypeHelper.HAZEL_WOOD_TYPE,
+                        WoodTypeHelper.FIR_WOOD_TYPE
                 },
                 new String[] {
-                        "mangrove"
+                        "mangrove",
+                        "hazel",
+                        "fir"
                 })
                 .setUnlocalizedName("decoBlockVanillaWoodSlab");
         Item.itemsList[DecoBlocks.woodSingleSlab.blockID] = new ItemSlab(DecoBlocks.woodSingleSlab.blockID - 256, (BlockHalfSlab) DecoBlocks.woodSingleSlab,
@@ -2581,6 +2598,73 @@ public class DecoBlockInitializer {
         register(new MouldingBlockItem(DecoBlocks.hazelHedgeMoulding.blockID - 256));
         DecoBlocks.hazelHedgeStairs = new HedgeStairsBlock(DecoBlockIDs.HAZEL_HEDGE_STAIRS_ID, DecoBlocks.hazelLeaves, 0, false)
                 .setUnlocalizedName("decoBlockHedgeHazelStairs");
+    
+        //------ Fir Wood ------//
+    
+        // Tree blocks
+        DecoBlocks.firLog = new DecoLogBlock(DecoBlockIDs.FIR_LOG_ID, WoodTypeHelper.FIR_WOOD_TYPE, DecoBlockIDs.CHEWED_FIR_LOG_ID,
+                new String[] {"decoBlockLogFir_top", "decoBlockStrippedFir_top", "decoBlockLogFir_side", "decoBlockStrippedFir_side"},
+                new String[] {"decoBlockLogFir_side", "decoBlockStrippedFir_side", "decoBlockLogFir_side", "decoBlockStrippedFir_side"})
+                .setUnlocalizedName("decoBlockFirLog");
+        Item.itemsList[DecoBlocks.firLog.blockID] = new DecoLogItemBlock(DecoBlocks.firLog.blockID - 256, DecoBlocks.firLog);
+        DecoBlocks.firStump = new DecoStumpBlock(DecoBlockIDs.FIR_STUMP_ID, DecoBlockIDs.FIR_LOG_ID, DecoBlockIDs.CHEWED_FIR_LOG_ID,
+                WoodTypeHelper.FIR_WORK_STUMP_ID, WoodTypeHelper.FIR_WORK_STUMP_TYPE,
+                "decoBlockTrunkFir_top", "decoBlockTrunkFir_side")
+                .setUnlocalizedName("decoBlockFirStump");
+        DecoBlocks.firLogSpike = new LogSpikeBlock(DecoBlockIDs.FIR_LOG_SPIKE_ID,
+                "decoBlockStrippedFir_top", "decoBlockStrippedFir_side")
+                .setUnlocalizedName("decoBlockChewedFir");
+        DecoBlocks.chewedFirLog = new ChewedLogBlock(DecoBlockIDs.CHEWED_FIR_LOG_ID,
+                "decoBlockStrippedFir_top", "decoBlockStrippedFir_side", "decoBlockTrunkFir_top",
+                DecoBlocks.firLogSpike)
+                .setUnlocalizedName("decoBlockSpikeFir");
+    
+        DecoBlocks.firLeaves = new DecoLeavesBlock(DecoBlockIDs.FIR_LEAVES_ID, DecoBlockIDs.FIR_SAPLING_ID, "decoBlockLeavesFir")
+                .setUnlocalizedName("decoBlockLeavesFir");
+        DecoBlocks.firSapling = new FirSaplingBlock(DecoBlockIDs.FIR_SAPLING_ID);
+        Item.itemsList[DecoBlocks.firSapling.blockID] = new ItemMultiTextureTile(DecoBlocks.firSapling.blockID - 256, DecoBlocks.firSapling, FirSaplingBlock.saplingTypes);
+    
+        // Sub blocks
+        DecoBlocks.firStairs = new WoodStairsBlock(DecoBlockIDs.FIR_STAIRS_ID, Block.planks, WoodTypeHelper.FIR_WOOD_TYPE)
+                .setUnlocalizedName("decoBlockFirStairs");
+        DecoBlocks.firSidingAndCorner = new WoodSidingAndCornerAndDecorativeBlock(DecoBlockIDs.FIR_SIDING_AND_CORNER_ID,
+                "decoBlockPlanksFir", "decoBlockFirSiding");
+        DecoBlocks.firMoulding = new WoodMouldingAndDecorativeBlock(DecoBlockIDs.FIR_MOULDING_ID,
+                "decoBlockPlanksFir", "decoBlockPlanksFirColumn",
+                DecoBlockIDs.FIR_SIDING_AND_CORNER_ID,
+                "decoBlockFirMoulding");
+    
+        // Decorative blocks
+        DecoBlocks.firGate = new DecoGateBlock(DecoBlockIDs.FIR_GATE_ID, "decoBlockGateFir");
+        DecoBlocks.firDoor = new DecoDoorBlockWood(DecoBlockIDs.FIR_DOOR_ID, DecoItemIDs.FIR_DOOR_ID, "decoBlockDoorFir_upper", "decoBlockDoorFir_lower");
+        DecoBlocks.firTrapdoor = new DecoTrapDoorBlock(DecoBlockIDs.FIR_TRAPDOOR_ID, "decoBlockTrapdoorFir");
+        DecoBlocks.firChair = new ChairBlock(DecoBlockIDs.FIR_CHAIR_ID, "Fir");
+        DecoBlocks.filledFirBarrel = new FilledBarrelBlock(DecoBlockIDs.FILLED_FIR_BARREL_ID, "decoBlockBarrelFir");
+        Item.itemsList[DecoBlocks.filledFirBarrel.blockID] = new ItemMultiTextureTile(DecoBlocks.filledFirBarrel.blockID - 256, DecoBlocks.filledFirBarrel, FilledBarrelBlock.typeTags);
+        DecoBlocks.firLadder = new DecoLadderBlock(DecoBlockIDs.FIR_LADDER_ID, DecoBlockIDs.FLAMING_FIR_LADDER_ID, "decoBlockLadderFir");
+        DecoBlocks.flamingFirLadder = new DecoLadderBlockFlaming(DecoBlockIDs.FLAMING_FIR_LADDER_ID, DecoBlockIDs.FIR_LADDER_ID, "decoBlockLadderFir");
+    
+        DecoBlocks.firSign = new DecoSignBlock(DecoBlockIDs.FIR_SIGN_ID, WoodTypeHelper.FIR_WOOD_TYPE, true,
+                "/deco/signFir.png", "decoBlockPlanksFir");
+        DecoBlocks.firWallSign = new DecoSignBlock(DecoBlockIDs.FIR_WALL_SIGN_ID, WoodTypeHelper.FIR_WOOD_TYPE, false,
+                "/deco/signFir.png", "decoBlockPlanksFir");
+    
+        DecoBlocks.firButton = new DecoButtonBlock(DecoBlockIDs.FIR_BUTTON_ID, true, Block.planks, WoodTypeHelper.FIR_WOOD_TYPE)
+                .setUnlocalizedName("decoBlockButtonFir");
+    
+        // Hedge
+        DecoBlocks.firHedgeSidingAndCorner = new HedgeSidingAndCornerBlock(DecoBlockIDs.FIR_HEDGE_SIDING_AND_CORNER_ID,
+                "decoBlockLeavesFir", DecoBlocks.firLeaves, 0,
+                "decoBlockHedgeFirSiding", false);
+        register(new SidingAndCornerBlockItem(DecoBlocks.firHedgeSidingAndCorner.blockID - 256));
+        DecoBlocks.firHedgeMoulding = new HedgeMouldingBlock(DecoBlockIDs.FIR_HEDGE_MOULDING_ID,
+                "decoBlockLeavesFir", "decoBlockLeavesFir",
+                DecoBlockIDs.FIR_HEDGE_SIDING_AND_CORNER_ID,
+                DecoBlocks.firLeaves, 0,
+                "decoBlockHedgeFirMoulding", false);
+        register(new MouldingBlockItem(DecoBlocks.firHedgeMoulding.blockID - 256));
+        DecoBlocks.firHedgeStairs = new HedgeStairsBlock(DecoBlockIDs.FIR_HEDGE_STAIRS_ID, DecoBlocks.firLeaves, 0, false)
+                .setUnlocalizedName("decoBlockHedgeFirStairs");
         
         //------ Painted Planks ------//
         

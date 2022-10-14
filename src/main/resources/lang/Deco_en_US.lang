@@ -37,6 +37,7 @@ tile.decoBlockGraniteBrickStairs.name=Granite Brick Stairs
 tile.decoBlockAndesiteBrickStairs.name=Andesite Brick Stairs
 tile.decoBlockDioriteBrickStairs.name=Diorite Brick Stairs
 tile.decoBlockSlateBrickStairs.name=Slate Brick Stairs
+
 tile.decoBlockSlateTilesStairs.name=Slate Tile Stairs
 
 tile.decoBlockGraniteCobblestoneStairsLoose.name=Loose Granite Cobblestone Stairs
@@ -96,22 +97,20 @@ tile.decoBlockInfusedStoneBrickStairs.name=Infused Stone Brick Stairs
 tile.decoBlockEndStoneBrick.name=End Stone Brick
 tile.decoBlockEndStoneBrickStairs.name=End Stone Brick Stairs
 
-tile.decoBlockChewedOak.name=Chewed Oak Log
-tile.decoBlockChewedSpruce.name=Chewed Spruce Log
-tile.decoBlockChewedBirch.name=Chewed Birch Log
-tile.decoBlockChewedJungle.name=Chewed Jungle Log
 tile.decoBlockChewedBlood.name=Chewed Blood Wood Log
 tile.decoBlockChewedCherry.name=Chewed Cherry Log
 tile.decoBlockChewedAcacia.name=Chewed Acacia Log
 tile.decoBlockChewedMahogany.name=Chewed Mahogany Log
 tile.decoBlockChewedMangrove.name=Chewed Mangrove Log
 tile.decoBlockChewedHazel.name=Chewed Hazel Log
+tile.decoBlockChewedFir.name=Chewed Fir Log
 
 tile.decoBlockCherryStairs.name=Cherry Stairs
 tile.decoBlockAcaciaStairs.name=Acacia Stairs
 tile.decoBlockMahoganyStairs.name=Mahogany Stairs
 tile.decoBlockMangroveStairs.name=Mangrove Stairs
 tile.decoBlockHazelStairs.name=Hazel Stairs
+tile.decoBlockFirStairs.name=Fir Stairs
 
 tile.decoBlockTrapdoorSpruce.name=Spruce Trap Door
 tile.decoBlockTrapdoorBirch.name=Birch Trap Door
@@ -122,6 +121,7 @@ tile.decoBlockTrapdoorAcacia.name=Acacia Trap Door
 tile.decoBlockTrapdoorMahogany.name=Mahogany Trap Door
 tile.decoBlockTrapdoorMangrove.name=Mangrove Trap Door
 tile.decoBlockTrapdoorHazel.name=Hazel Trap Door
+tile.decoBlockTrapdoorFir.name=Fir Trap Door
 tile.decoBlockTrapdoorIron.name=Iron Trap Door
 
 tile.decoBlockDoorSpruce.name=Spruce Door
@@ -133,6 +133,7 @@ tile.decoBlockDoorAcacia.name=Acacia Door
 tile.decoBlockDoorMahogany.name=Mahogany Door
 tile.decoBlockDoorMangrove.name=Mangrove Door
 tile.decoBlockDoorHazel.name=Hazel Door
+tile.decoBlockDoorFir.name=Fir Door
 
 tile.decoBlockGateSpruce.name=Spruce Fence Gate
 tile.decoBlockGateBirch.name=Birch Fence Gate
@@ -143,6 +144,7 @@ tile.decoBlockGateAcacia.name=Acacia Fence Gate
 tile.decoBlockGateMahogany.name=Mahogany Fence Gate
 tile.decoBlockGateMangrove.name=Mangrove Fence Gate
 tile.decoBlockGateHazel.name=Hazel Fence Gate
+tile.decoBlockGateFir.name=Fir Fence Gate
 
 tile.decoBlockChairOak.name=Oak Chair
 tile.decoBlockChairSpruce.name=Spruce Chair
@@ -153,6 +155,7 @@ tile.decoBlockChairCherry.name=Cherry Chair
 tile.decoBlockChairAcacia.name=Acacia Chair
 tile.decoBlockChairMahogany.name=Mahogany Chair
 tile.decoBlockChairHazel.name=Hazel Chair
+tile.decoBlockChairFir.name=Fir Chair
 
 tile.decoBlockPergola.name=Pergola
 tile.decoBlockDiamond.name=Block of Diamond
@@ -175,6 +178,7 @@ tile.decoBlockButtonAcacia.name=Acacia Button
 tile.decoBlockButtonMahogany.name=Mahogany Button
 tile.decoBlockButtonMangrove.name=Mangrove Button
 tile.decoBlockButtonHazel.name=Hazel Button
+tile.decoBlockButtonFir.name=Fir Button
 
 tile.decoBlockButtonInfusedStone.name=Infused Stone Button
 tile.decoBlockButtonGranite.name=Granite Button
@@ -191,6 +195,7 @@ tile.decoBlockLeavesAutumn.yellow.name=Yellow Autumn Leaves
 tile.decoBlockLeavesMahogany.name=Mahogany Leaves
 tile.decoBlockLeavesMangrove.name=Mangrove Leaves
 tile.decoBlockLeavesHazel.name=Hazel Leaves
+tile.decoBlockLeavesFir.name=Fir Leaves
 
 tile.decoBlockSaplingCherry.cherry.name=Cherry Sapling
 tile.decoBlockSaplingCherry.cherryMature.name=Mature Cherry Sapling
@@ -205,7 +210,10 @@ tile.decoBlockSaplingMangrove.mangrove.name=Mangrove Sapling
 tile.decoBlockSaplingMangrove.mangroveMature.name=Mature Mangrove Sapling
 
 tile.decoBlockSaplingHazel.hazel.name=Hazel Sapling
-tile.decoBlockSaplingHazel.hazelMature.name=Mature Hazel Sapling
+tile.decoBlockSaplingHazel.hazelMature.name=Mature Hazel 
+
+tile.decoBlockSaplingFir.fir.name=Fir Sapling
+tile.decoBlockSaplingFir.firMature.name=Mature Fir Sapling
 
 tile.decoBlockSaplingAutumn.red.name=Red Autumn Sapling
 tile.decoBlockSaplingAutumn.orange.name=Orange Autumn Sapling
@@ -224,6 +232,7 @@ tile.decoBlockHedgeAcaciaStairs.name=Acacia Hedge Stairs
 tile.decoBlockHedgeMahoganyStairs.name=Mahogany Hedge Stairs
 tile.decoBlockHedgeMangroveStairs.name=Mangrove Hedge Stairs
 tile.decoBlockHedgeHazelStairs.name=Hazel Hedge Stairs
+tile.decoBlockHedgeFirStairs.name=Fir Hedge Stairs
 
 tile.decoBlockRopeCoil.name=Coil of Rope
 tile.decoBlockChainCoil.name=Coil of Chain
@@ -1575,6 +1584,11 @@ tile.decoBlockHazelLog.stripped.name=Stripped Hazel Log
 tile.decoBlockHazelLog.wood.name=Hazel Wood
 tile.decoBlockHazelLog.strippedWood.name=Stripped Hazel Wood
 
+tile.decoBlockFirLog.log.name=Fir Log
+tile.decoBlockFirLog.stripped.name=Stripped Fir Log
+tile.decoBlockFirLog.wood.name=Fir Wood
+tile.decoBlockFirLog.strippedWood.name=Stripped Fir Wood
+
 tile.decoBlockPlanksPainted.black.name=Black Pastel Planks
 tile.decoBlockPlanksPainted.red.name=Red Pastel Planks
 tile.decoBlockPlanksPainted.green.name=Green Pastel Planks
@@ -1762,6 +1776,7 @@ tile.decoBlockBarrel2.acacia.name=Acacia Barrel
 tile.decoBlockBarrel2.mahogany.name=Mahogany Barrel
 tile.decoBlockBarrel3.mangrove.name=Mangrove Barrel
 tile.decoBlockBarrel3.hazel.name=Hazel Barrel
+tile.decoBlockBarrel3.fir.name=Fir Barrel
 
 tile.decoBlockBarrelOak.wheat.name=Oak Barrel of Wheat
 tile.decoBlockBarrelOak.hemp.name=Oak Barrel of Hemp
@@ -1822,6 +1837,12 @@ tile.decoBlockBarrelHazel.hemp.name=Hazel Barrel of Hemp
 tile.decoBlockBarrelHazel.potato.name=Hazel Barrel of Potatoes
 tile.decoBlockBarrelHazel.carrot.name=Hazel Barrel of Carrots
 tile.decoBlockBarrelHazel.fish.name=Hazel Barrel of Fish
+
+tile.decoBlockBarrelFir.wheat.name=Fir Barrel of Wheat
+tile.decoBlockBarrelFir.hemp.name=Fir Barrel of Hemp
+tile.decoBlockBarrelFir.potato.name=Fir Barrel of Potatoes
+tile.decoBlockBarrelFir.carrot.name=Fir Barrel of Carrots
+tile.decoBlockBarrelFir.fish.name=Fir Barrel of Fish
 
 tile.decoBlockCrate.oak.name=Oak Crate
 tile.decoBlockCrate.spruce.name=Spruce Crate
@@ -1941,6 +1962,15 @@ tile.decoBlockHedgeHazelMoulding.pedestal.name=Hazel Hedge Pedestal
 tile.decoBlockHedgeHazelMoulding.moulding.name=Hazel Hedge Moulding
 tile.decoBlockHedgeHazelMoulding.table.name=Hazel Hedge Table
 
+tile.decoBlockHedgeFirSiding.bench.name=Fir Hedge Bench
+tile.decoBlockHedgeFirSiding.fence.name=Fir Hedge Wall
+tile.decoBlockHedgeFirSiding.siding.name=Fir Hedge Siding
+tile.decoBlockHedgeFirSiding.corner.name=Fir Hedge Corner
+tile.decoBlockHedgeFirMoulding.column.name=Fir Hedge Column
+tile.decoBlockHedgeFirMoulding.pedestal.name=Fir Hedge Pedestal
+tile.decoBlockHedgeFirMoulding.moulding.name=Fir Hedge Moulding
+tile.decoBlockHedgeFirMoulding.table.name=Fir Hedge Table
+
 tile.decoBlockWoodSlab.0.name=Old Cherry Slab
 tile.decoBlockWoodSlab.1.name=Old Acacia Slab
 
@@ -1976,6 +2006,7 @@ tile.decoBlockBookshelf.acacia.name=Acacia Bookshelf
 tile.decoBlockBookshelf.mahogany.name=Mahogany Bookshelf
 tile.decoBlockBookshelf.mangrove.name=Mangrove Bookshelf
 tile.decoBlockBookshelf.hazel.name=Hazel Bookshelf
+tile.decoBlockBookshelf.fir.name=Fir Bookshelf
 
 tile.decoBlockBookshelfEmpty.oak.name=Empty Oak Bookshelf
 tile.decoBlockBookshelfEmpty.spruce.name=Empty Spruce Bookshelf
@@ -1987,6 +2018,7 @@ tile.decoBlockBookshelfEmpty.acacia.name=Empty Acacia Bookshelf
 tile.decoBlockBookshelfEmpty.mahogany.name=Empty Mahogany Bookshelf
 tile.decoBlockBookshelfEmpty.mangrove.name=Empty Mangrove Bookshelf
 tile.decoBlockBookshelfEmpty.hazel.name=Empty Hazel Bookshelf
+tile.decoBlockBookshelfEmpty.fir.name=Empty Fir Bookshelf
 
 tile.decoBlockBottleRack.oak.name=Oak Bottle Rack
 tile.decoBlockBottleRack.spruce.name=Spruce Bottle Rack
@@ -1998,6 +2030,7 @@ tile.decoBlockBottleRack.acacia.name=Acacia Bottle Rack
 tile.decoBlockBottleRack.mahogany.name=Mahogany Bottle Rack
 tile.decoBlockBottleRack.mangrove.name=Mangrove Bottle Rack
 tile.decoBlockBottleRack.hazel.name=Hazel Bottle Rack
+tile.decoBlockBottleRack.fir.name=Fir Bottle Rack
 
 tile.decoBlockBottleRackEmpty.oak.name=Empty Oak Bottle Rack
 tile.decoBlockBottleRackEmpty.spruce.name=Empty Spruce Bottle Rack
@@ -2009,6 +2042,7 @@ tile.decoBlockBottleRackEmpty.acacia.name=Empty Acacia Bottle Rack
 tile.decoBlockBottleRackEmpty.mahogany.name=Empty Mahogany Bottle Rack
 tile.decoBlockBottleRackEmpty.mangrove.name=Empty Mangrove Bottle Rack
 tile.decoBlockBottleRackEmpty.hazel.name=Empty Hazel Bottle Rack
+tile.decoBlockBottleRackEmpty.fir.name=Empty Fir Bottle Rack
 
 tile.decoBlockGlassFramed.oak.name=Oak Framed Glass
 tile.decoBlockGlassFramed.spruce.name=Spruce Framed Glass
@@ -2020,10 +2054,12 @@ tile.decoBlockGlassFramed.acacia.name=Acacia Framed Glass
 tile.decoBlockGlassFramed.mahogany.name=Mahogany Framed Glass
 tile.decoBlockGlassFramed.mangrove.name=Mangrove Framed Glass
 tile.decoBlockGlassFramed.hazel.name=Hazel Framed Glass
+tile.decoBlockGlassFramed.fir.name=Fir Framed Glass
 tile.decoBlockGlassFramedIron.name=Iron Framed Glass
 
 tile.decoBlockVanillaWoodSlab.mangrove.name=Mangrove Slab
 tile.decoBlockVanillaWoodSlab.hazel.name=Hazel Slab
+tile.decoBlockVanillaWoodSlab.fir.name=Fir Slab
 
 # Vanilla/BTW Blocks Renamed
 
@@ -2061,6 +2097,7 @@ tile.wood.acacia.name=Acacia Planks
 tile.wood.mahogany.name=Mahogany Planks
 tile.wood.mangrove.name=Mangrove Planks
 tile.wood.hazel.name=Hazel Planks
+tile.wood.fir.name=Fir Planks
 tile.stairsWoodOak.name=Oak Stairs
 tile.stairsWoodSpruce.name=Spruce Stairs
 tile.stairsWoodBirch.name=Birch Stairs
@@ -2078,6 +2115,7 @@ tile.fcWoodSpruceSiding.acacia.name=Acacia Siding
 tile.fcWoodSpruceSiding.mahogany.name=Mahogany Siding
 tile.fcWoodSpruceSiding.mangrove.name=Mangrove Siding
 tile.fcWoodSpruceSiding.hazel.name=Hazel Siding
+tile.fcWoodSpruceSiding.fir.name=Fir Siding
 
 tile.fcWoodSpruceMoulding.oak.name=Oak Moulding
 tile.fcWoodSpruceMoulding.spruce.name=Spruce Moulding
@@ -2089,6 +2127,7 @@ tile.fcWoodSpruceMoulding.acacia.name=Acacia Moulding
 tile.fcWoodSpruceMoulding.mahogany.name=Mahogany Moulding
 tile.fcWoodSpruceMoulding.mangrove.name=Mangrove Moulding
 tile.fcWoodSpruceMoulding.hazel.name=Hazel Moulding
+tile.fcWoodSpruceMoulding.fir.name=Fir Moulding
 
 tile.fcWoodBirchSiding.oak.name=Oak Corner
 tile.fcWoodBirchSiding.spruce.name=Spruce Corner
@@ -2100,6 +2139,7 @@ tile.fcWoodBirchSiding.acacia.name=Acacia Corner
 tile.fcWoodBirchSiding.mahogany.name=Mahogany Corner
 tile.fcWoodBirchSiding.mangrove.name=Mangrove Corner
 tile.fcWoodBirchSiding.hazel.name=Hazel Corner
+tile.fcWoodBirchSiding.fir.name=Fir Corner
 
 tile.fcWoodBirchMoulding.oak.pedestal.name=Oak Pedestal
 tile.fcWoodBirchMoulding.spruce.pedestal.name=Spruce Pedestal
@@ -2111,6 +2151,7 @@ tile.fcWoodBirchMoulding.acacia.pedestal.name=Acacia Pedestal
 tile.fcWoodBirchMoulding.mahogany.pedestal.name=Mahogany Pedestal
 tile.fcWoodBirchMoulding.mangrove.pedestal.name=Mangrove Pedestal
 tile.fcWoodBirchMoulding.hazel.pedestal.name=Hazel Pedestal
+tile.fcWoodBirchMoulding.fir.pedestal.name=Fir Pedestal
 
 tile.fcWoodBirchMoulding.oak.column.name=Oak Column
 tile.fcWoodBirchMoulding.spruce.column.name=Spruce Column
@@ -2122,6 +2163,7 @@ tile.fcWoodBirchMoulding.acacia.column.name=Acacia Column
 tile.fcWoodBirchMoulding.mahogany.column.name=Mahogany Column
 tile.fcWoodBirchMoulding.mangrove.column.name=Mangrove Column
 tile.fcWoodBirchMoulding.hazel.column.name=Hazel Column
+tile.fcWoodBirchMoulding.fir.column.name=Fir Column
 
 tile.fcWoodBirchMoulding.oak.table.name=Oak Table
 tile.fcWoodBirchMoulding.spruce.table.name=Spruce Table
@@ -2133,6 +2175,7 @@ tile.fcWoodBirchMoulding.acacia.table.name=Acacia Table
 tile.fcWoodBirchMoulding.mahogany.table.name=Mahogany Table
 tile.fcWoodBirchMoulding.mangrove.table.name=Mangrove Table
 tile.fcWoodBirchMoulding.hazel.table.name=Hazel Table
+tile.fcWoodBirchMoulding.fir.table.name=Fir Table
 
 tile.fcWoodJungleSiding.oak.bench.name=Oak Bench
 tile.fcWoodJungleSiding.spruce.bench.name=Spruce Bench
@@ -2144,6 +2187,7 @@ tile.fcWoodJungleSiding.acacia.bench.name=Acacia Bench
 tile.fcWoodJungleSiding.mahogany.bench.name=Mahogany Bench
 tile.fcWoodJungleSiding.mangrove.bench.name=Mangrove Bench
 tile.fcWoodJungleSiding.hazel.bench.name=Hazel Bench
+tile.fcWoodJungleSiding.fir.bench.name=Fir Bench
 
 tile.fcWoodJungleSiding.oak.fence.name=Oak Fence
 tile.fcWoodJungleSiding.spruce.fence.name=Spruce Fence
@@ -2155,6 +2199,7 @@ tile.fcWoodJungleSiding.acacia.fence.name=Acacia Fence
 tile.fcWoodJungleSiding.mahogany.fence.name=Mahogany Fence
 tile.fcWoodJungleSiding.mangrove.fence.name=Mangrove Fence
 tile.fcWoodJungleSiding.hazel.fence.name=Hazel Fence
+tile.fcWoodJungleSiding.fir.fence.name=Fir Fence
 
 tile.trapdoor.name=Oak Trap Door
 tile.fenceGate.name=Oak Fence Gate
@@ -2194,6 +2239,7 @@ tile.bookshelf.acacia.name=Enchanted Acacia Bookshelf
 tile.bookshelf.mahogany.name=Enchanted Mahogany Bookshelf
 tile.bookshelf.mangrove.name=Enchanted Mangrove Bookshelf
 tile.bookshelf.hazel.name=Enchanted Hazel Bookshelf
+tile.bookshelf.fir.name=Enchanted Fir Bookshelf
 
 tile.fcBlockLadder.name=Oak Ladder
 
@@ -2220,6 +2266,7 @@ item.decoItemDoorAcacia.name=Acacia Door
 item.decoItemDoorMahogany.name=Mahogany Door
 item.decoItemDoorMangrove.name=Mangrove Door
 item.decoItemDoorHazel.name=Hazel Door
+item.decoItemDoorFir.name=Fir Door
 
 item.decoItemChiselDiamond.name=Diamondium Chisel
 item.decoItemShearsDiamond.name=Diamondium Shears
@@ -2261,6 +2308,7 @@ item.fcItemBark.acacia.name=Acacia Bark
 item.fcItemBark.mahogany.name=Mahogany Bark
 item.fcItemBark.mangrove.name=Mangrove Bark
 item.fcItemBark.hazel.name=Hazel Bark
+item.fcItemBark.fir.name=Fir Bark
 
 item.fcItemPileSand.sand.name=Sand Pile
 item.fcItemPileSand.red.name=Red Sand Pile
@@ -2281,6 +2329,7 @@ item.sign.acacia.name=Acacia Sign
 item.sign.mahogany.name=Mahogany Sign
 item.sign.mangrove.name=Mangrove Sign
 item.sign.hazel.name=Hazel Sign
+item.sign.fir.name=Fir Sign
 
 item.fcItemIngotDiamond.name=Diamondium Ingot
 item.pickaxeDiamond.name=Diamondium Pickaxe

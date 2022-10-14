@@ -15,8 +15,8 @@ public class CherrySaplingBlock extends DecoSaplingBlock {
             "cherryMature", "", "",  ""
     };
 
-    public CherrySaplingBlock(int id) {
-        super(id, new String[] {"decoBlockSaplingCherry_0"});
+    public CherrySaplingBlock(int blockID) {
+        super(blockID, new String[] {"decoBlockSaplingCherry_0"});
         this.setUnlocalizedName("decoBlockSaplingCherry");
     }
     

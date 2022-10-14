@@ -38,7 +38,8 @@ public class SignItemMixin extends ItemSign {
 				DecoBlockIDs.ACACIA_SIGN_ID,
 				DecoBlockIDs.MAHOGANY_SIGN_ID,
 				DecoBlockIDs.MANGROVE_SIGN_ID,
-				DecoBlockIDs.HAZEL_SIGN_ID
+				DecoBlockIDs.HAZEL_SIGN_ID,
+				DecoBlockIDs.FIR_SIGN_ID
 		};
 		
 		wallSigns = new int[] {
@@ -51,7 +52,8 @@ public class SignItemMixin extends ItemSign {
 				DecoBlockIDs.ACACIA_WALL_SIGN_ID,
 				DecoBlockIDs.MAHOGANY_WALL_SIGN_ID,
 				DecoBlockIDs.MANGROVE_WALL_SIGN_ID,
-				DecoBlockIDs.HAZEL_WALL_SIGN_ID
+				DecoBlockIDs.HAZEL_WALL_SIGN_ID,
+				DecoBlockIDs.FIR_WALL_SIGN_ID
 		};
 		
 		textures = new String[] {
@@ -64,7 +66,8 @@ public class SignItemMixin extends ItemSign {
 				"decoItemSignAcacia",
 				"decoItemSignMahogany",
 				"decoItemSignMangrove",
-				"decoItemSignHazel"
+				"decoItemSignHazel",
+				"decoItemSignFir"
 		};
 	}
 	

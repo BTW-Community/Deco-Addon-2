@@ -12,7 +12,7 @@ public class DecoItems {
 	public static Item mahoganyDoor;
 	public static Item mangroveDoor;
 	public static Item hazelDoor;
-	public static Item walnutDoor;
+	public static Item firDoor;
 	
 	public static Item amethystShard;
 	
@@ -23,7 +23,6 @@ public class DecoItems {
 	public static Item lantern;
 	public static Item paperLantern;
 	public static Item brokenPaperLantern;
-	public static Item chandelier;
 	
 	public static Item plainBook;
 	
