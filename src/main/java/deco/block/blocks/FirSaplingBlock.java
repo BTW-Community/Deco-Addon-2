@@ -16,7 +16,6 @@ public class FirSaplingBlock extends DecoSaplingBlock {
 	
 	@Override
 	public boolean generateTree(World world, Random rand, int x, int y, int z, int treeType) {
-		System.out.println("generate");
 		return this.generateFir1(world, rand, x, y, z);
 		/*
 		if (rand.nextBoolean()) {

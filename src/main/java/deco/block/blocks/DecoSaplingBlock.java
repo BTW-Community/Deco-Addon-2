@@ -43,30 +43,25 @@ public abstract class DecoSaplingBlock extends LegacySaplingBlock {
             }
         }
         else {
-            attemptGrowth(world, x, y, x, treeType, rand);
+            boolean planter = Block.blocksList[world.getBlockId(x, y - 1, z)] instanceof PlanterBlockBase;
+    
+            world.setBlock(x, y, z, 0);
+    
+            boolean success = this.generateTree(world, rand, x, y, z, treeType);
+    
+            if (!success) {
+                world.setBlockAndMetadataWithNotify(x, y, z, this.blockID, treeType | 3 << 2);
+            }
+            else if (planter) {
+                world.setBlockAndMetadata(x, y, z, this.getLogID(treeType), this.getLogMetadata(treeType));
+                //Block break sfx
+                world.playAuxSFX(2001, x, y - 1, z, BTWBlocks.planterWithSoil.blockID);
+                world.setBlockAndMetadata(x, y - 1, z, this.getStumpID(treeType), this.getStumpMetadata(treeType));
+            }
         }
     }
     
     //------------- Class Specific Methods ------------//
-    
-    public void attemptGrowth(World world, int x, int y, int z, int treeType, Random rand) {
-        boolean planter = Block.blocksList[world.getBlockId(x, y - 1, z)] instanceof PlanterBlockBase;
-    
-        world.setBlock(x, y, z, 0);
-    
-        boolean success = this.generateTree(world, rand, x, y, z, treeType);
-        System.out.println("1x1 success: " + success);
-    
-        if (!success) {
-            world.setBlockAndMetadataWithNotify(x, y, z, this.blockID, treeType | 3 << 2);
-        }
-        else if (planter) {
-            world.setBlockAndMetadata(x, y, z, this.getLogID(treeType), this.getLogMetadata(treeType));
-            //Block break sfx
-            world.playAuxSFX(2001, x, y - 1, z, BTWBlocks.planterWithSoil.blockID);
-            world.setBlockAndMetadata(x, y - 1, z, this.getStumpID(treeType), this.getStumpMetadata(treeType));
-        }
-    }
     
     public void attemptGrowth2x2(World world, int x, int y, int z, int treeType, Random rand) {
         world.setBlock(x, y, z, 0);
