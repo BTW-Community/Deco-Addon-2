@@ -33,6 +33,8 @@ public class FlowerHelper {
 	public static final int RHODODENDRON_ID = DecoBlockIDs.TALL_FLOWER_ID;
 	public static final int SAGE_ID = DecoBlockIDs.TALL_FLOWER_ID;
 	public static final int FIREWEED_ID = DecoBlockIDs.TALL_FLOWER_ID;
+	public static final int MARIGOLD_ID = DecoBlockIDs.TALL_FLOWER_ID;
+	public static final int BLACK_THISTLE_ID = DecoBlockIDs.TALL_FLOWER_ID;
 	
 	// Types
 	public static final int YUCCA_TYPE = 0;
@@ -64,4 +66,6 @@ public class FlowerHelper {
 	public static final int RHODODENDRON_TYPE = 3;
 	public static final int SAGE_TYPE = 4;
 	public static final int FIREWEED_TYPE = 5;
+	public static final int MARIGOLD_TYPE = 6;
+	public static final int BLACK_THISTLE_TYPE = 7;
 }

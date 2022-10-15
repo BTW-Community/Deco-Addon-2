@@ -3912,6 +3912,14 @@ public class CraftingRecipeList {
 		RecipeManager.addMillStoneRecipe(new ItemStack(Item.dyePowder, 4, ColorUtils.PINK.colorID),
 				new ItemStack(FlowerHelper.FIREWEED_ID, 1, FlowerHelper.FIREWEED_TYPE));
 		
+		// Marigold
+		RecipeManager.addMillStoneRecipe(new ItemStack(Item.dyePowder, 4, ColorUtils.ORANGE.colorID),
+				new ItemStack(FlowerHelper.MARIGOLD_ID, 1, FlowerHelper.MARIGOLD_TYPE));
+		
+		// Black Thistle
+		RecipeManager.addMillStoneRecipe(new ItemStack(Item.dyePowder, 4, ColorUtils.BLACK.colorID),
+				new ItemStack(FlowerHelper.BLACK_THISTLE_ID, 1, FlowerHelper.BLACK_THISTLE_TYPE));
+		
 		//------ Dyeing ------//
 		
 		for (int color = 0; color < 16; color++) {

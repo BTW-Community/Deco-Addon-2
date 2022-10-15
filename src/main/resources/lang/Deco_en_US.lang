@@ -788,6 +788,8 @@ tile.decoBlockFlowerTall.rosebush.name=Rose Bush
 tile.decoBlockFlowerTall.rhododendron.name=White Rhododendron
 tile.decoBlockFlowerTall.sage.name=Sage
 tile.decoBlockFlowerTall.fireweed.name=Fireweed
+tile.decoBlockFlowerTall.marigold.name=Marigold
+tile.decoBlockFlowerTall.blackThistle.name=Black Thistle
 
 tile.decoBlockCobblestoneSiding.bench.name=Cobblestone Bench
 tile.decoBlockCobblestoneSiding.fence.name=Cobblestone Wall

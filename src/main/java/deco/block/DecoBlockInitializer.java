@@ -2024,7 +2024,9 @@ public class DecoBlockInitializer {
                         "rosebush",
                         "rhododendron",
                         "sage",
-                        "fireweed"
+                        "fireweed",
+                        "marigold",
+                        "blackThistle"
                 });
         register(DecoBlocks.tallFlower, ((TallPlantBlock) DecoBlocks.tallFlower).getNames());
         
