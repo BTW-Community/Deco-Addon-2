@@ -6,6 +6,7 @@
   "mixins": [
     "BarkItemMixin",
     "BookItemMixin",
+    "CocoaBeanItemMixin",
     "DoorItemMixin",
     "DyeItemMixin",
     "LegacySubstitutionBlockItemMixin",

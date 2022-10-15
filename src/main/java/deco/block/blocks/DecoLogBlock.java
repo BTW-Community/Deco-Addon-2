@@ -5,13 +5,15 @@ import btw.block.blocks.LogBlock;
 import btw.block.blocks.PlanksBlock;
 import btw.item.BTWItems;
 import btw.item.util.ItemUtils;
+import deco.block.util.BlockInterface;
+import deco.block.util.WoodTypeHelper;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.src.*;
 
 import java.util.List;
 
-public class DecoLogBlock extends LogBlock {
+public class DecoLogBlock extends LogBlock implements BlockInterface {
     public static final int TYPE_LOG = 0;
     public static final int TYPE_STRIPPED = 1;
     public static final int TYPE_WOOD = 2;
@@ -75,6 +77,14 @@ public class DecoLogBlock extends LogBlock {
         }
 
         return true;
+    }
+    
+    @Override
+    public boolean canCocoaBeansGrowOnBlock(IBlockAccess blockAccess, int x, int y, int z) {
+        int logType = blockAccess.getBlockMetadata(x, y, z) & 3;
+        int woodType = this.woodTypes[logType];
+        
+        return WoodTypeHelper.canWoodTypeGrowCocoa(woodType);
     }
 
     //------------- Log Override Methods ------------//

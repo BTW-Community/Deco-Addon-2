@@ -116,4 +116,8 @@ public class WoodTypeHelper {
         
         return 0;
     }
+    
+    public static boolean canWoodTypeGrowCocoa(int woodType) {
+        return woodType == JUNGLE_WOOD_TYPE || woodType == MAHOGANY_WOOD_TYPE || woodType == MANGROVE_WOOD_TYPE;
+    }
 }

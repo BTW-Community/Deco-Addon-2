@@ -38,6 +38,7 @@ Some textures in this release have been used or modified from the following sour
     - Red autumn saplings require a cherry sapling, red dye, and a fertilizer.
     - Orange autumn saplings require an oak sapling, orange dye, and a fertilizer.
     - Yellow autumn saplings require a birch sapling, yellow dye, and a fertilizer.
+- Added the ability for cocoa beans to grow on mangrove and mahogany logs.
 - Added calcite - loose calcite cobblestone can be crated by combining loose diorite cobblestone with bonemeal in a crucible
 - Changed deco stone variants to behave consistently with BTW stone.
     - Granite, andesite, diorite, and calcite are all considered first strata.
