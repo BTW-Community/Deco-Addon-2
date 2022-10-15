@@ -3616,6 +3616,18 @@ public class CraftingRecipeList {
 						new ItemStack(DecoBlocks.coarseDirt),
 						new ItemStack(Block.leaves, 1, WoodTypeHelper.SPRUCE_WOOD_TYPE)
 				});
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.podzol, 8),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.coarseDirt),
+						new ItemStack(DecoBlocks.coarseDirt),
+						new ItemStack(DecoBlocks.coarseDirt),
+						new ItemStack(DecoBlocks.coarseDirt),
+						new ItemStack(DecoBlocks.coarseDirt),
+						new ItemStack(DecoBlocks.coarseDirt),
+						new ItemStack(DecoBlocks.coarseDirt),
+						new ItemStack(DecoBlocks.coarseDirt),
+						new ItemStack(DecoBlocks.firLeaves)
+				});
 	}
 	
 	private static void initPlantRecipes() {
