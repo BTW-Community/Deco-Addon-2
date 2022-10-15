@@ -51,6 +51,11 @@ public class DoubleTallGrassBlock extends TallPlantBlock {
 	}
 	
 	@Override
+	public int getHerbivoreItemFoodValue(int itemDamage) {
+		return Item.BASE_HERBIVORE_ITEM_FOOD_VALUE / 2;
+	}
+	
+	@Override
 	public float getHalfWidth() {
 		return 0.4F;
 	}
