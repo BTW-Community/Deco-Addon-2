@@ -1,9 +1,9 @@
 Thanks to the following people who have contributed to the deco addon!
-- Khaos
-- Yhetti
-- jorgebonafe
-- Sockthing
-- Hiracho
+- Khaos - Original Deco Author
+- Yhetti - Revived Deco Author
+- jorgebonafe - code
+- Sockthing - textures
+- Hiracho - qa/testing
 
 Textures have been used or modified from the following sources according to their respective licenses:
 - Vanilla Tweaks: https://vanillatweaks.net/
