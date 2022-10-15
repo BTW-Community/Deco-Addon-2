@@ -9,7 +9,7 @@ public class DecoBlockIDs {
     public static final int WROUGHT_IRON_BARS_ID = 3001;
     public static final int FLOWER_ID = 3002;
     public static final int STAINED_GLASS_ID = 3003;
-    public static final int ACACIA_BUTTON_ID = 3004;
+    public static final int TALL_FLOWER_ID = 3004;
     public static final int COAL_BLOCK_ID = 3005;
     public static final int TULIP_ID = 3006;
     public static final int DIAMONDIUM_BLOCK = 3007;
@@ -287,7 +287,7 @@ public class DecoBlockIDs {
     public static final int BIRCH_WALL_SIGN_ID = 3441;
     public static final int JUNGLE_SIGN_ID = 3442;
     public static final int JUNGLE_WALL_SIGN_ID = 3443;
-    
+    public static final int ACACIA_BUTTON_ID = 3444;
     public static final int BLOOD_SIGN_ID = 3445;
     public static final int BLOOD_WALL_SIGN_ID = 3446;
     public static final int CHERRY_SIGN_ID = 3447;

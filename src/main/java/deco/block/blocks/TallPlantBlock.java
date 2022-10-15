@@ -6,6 +6,7 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.src.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -112,16 +113,26 @@ public class TallPlantBlock extends FlowerBlock {
 	
 	//------------- Class Specific Methods ------------//
 	
+	public String[] getNames() {
+		return names;
+	}
+	
+	public ArrayList<Integer> getSpawnableList() {
+		ArrayList<Integer> spawnableList = new ArrayList<>();
+		
+		for (int i = 0; i < this.names.length; i++) {
+			spawnableList.add(i);
+		}
+		
+		return spawnableList;
+	}
+	
 	public float getHalfWidth() {
 		return 0.2F;
 	}
 	
 	public float getHeight() {
 		return 0.6F;
-	}
-	
-	public String[] getNames() {
-		return names;
 	}
 	
 	public boolean isTopBlock(IBlockAccess blockAccess, int x, int y, int z) {

@@ -5,17 +5,34 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.src.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class DecoFlowerBlock extends FlowerBlock {
 	private String baseTexture;
 	private String[] names;
+	private boolean[] canBeSpawned;
 	
 	public DecoFlowerBlock(int blockID, String baseTexture, String[] names) {
+		this(blockID, baseTexture, names, null);
+	}
+	
+	public DecoFlowerBlock(int blockID, String baseTexture, String[] names, boolean[] canBeSpawned) {
 		super(blockID);
 		this.setUnlocalizedName(baseTexture);
 		this.baseTexture = baseTexture;
 		this.names = names;
+		
+		if (canBeSpawned == null) {
+			this.canBeSpawned = new boolean[names.length];
+			
+			for (int i = 0; i < names.length; i++) {
+				this.canBeSpawned[i] = true;
+			}
+		}
+		else {
+			this.canBeSpawned = canBeSpawned;
+		}
 	}
 	
 	@Override
@@ -27,6 +44,18 @@ public class DecoFlowerBlock extends FlowerBlock {
 	
 	public String[] getNames() {
 		return names;
+	}
+	
+	public ArrayList<Integer> getSpawnableList() {
+		ArrayList<Integer> spawnableList = new ArrayList<>();
+		
+		for (int i = 0; i < this.canBeSpawned.length; i++) {
+			if (this.canBeSpawned[i]) {
+				spawnableList.add(i);
+			}
+		}
+		
+		return spawnableList;
 	}
 	
 	//----------- Client Side Functionality -----------//

@@ -1,10 +1,15 @@
 package deco.item.items;
 
+import btw.AddonHandler;
 import btw.block.BTWBlocks;
 import btw.item.BTWItems;
 import btw.world.util.BlockPos;
 import deco.block.DecoBlocks;
+import deco.block.blocks.DecoFlowerBlock;
+import deco.block.blocks.TallPlantBlock;
 import net.minecraft.src.*;
+
+import java.util.ArrayList;
 
 public class FertilizerItem extends Item {
 	public FertilizerItem(int itemID) {
@@ -50,6 +55,15 @@ public class FertilizerItem extends Item {
 				boolean test = true;
 				int j = 0;
 				
+				// Set up values for flower spawning before entering loop
+				ArrayList<Integer> spawnableFlowers = ((DecoFlowerBlock) DecoBlocks.flower).getSpawnableList();
+				ArrayList<Integer> spawnableFlowers2 = ((DecoFlowerBlock) DecoBlocks.flower2).getSpawnableList();
+				ArrayList<Integer> spawnableTulips = ((DecoFlowerBlock) DecoBlocks.tulip).getSpawnableList();
+				ArrayList<Integer> spawnableTallFlowers = ((TallPlantBlock) DecoBlocks.tallFlower).getSpawnableList();
+				
+				// +2 is for vanilla flowers
+				int totalSpawnableFlowerCount = spawnableFlowers.size() + spawnableFlowers2.size() + spawnableTulips.size() + spawnableTallFlowers.size() + 2;
+				
 				while (true) {
 					if (j < i / 16) {
 						newX += itemRand.nextInt(3) - 1;
@@ -65,49 +79,63 @@ public class FertilizerItem extends Item {
 					}
 					
 					if (test && world.getBlockId(newX, newY, newZ) == 0) {
-						if (itemRand.nextInt(5) == 0 && Block.tallGrass.canBlockStay(world, newX, newY, newZ)) {
-							world.setBlockAndMetadataWithNotify(newX, newY, newZ, Block.tallGrass.blockID, itemRand.nextInt(1) + 1);
+						if (itemRand.nextInt(3) == 0 && Block.tallGrass.canBlockStay(world, newX, newY, newZ)) {
+							int grassType = 0;
+							
+							if (itemRand.nextInt(4) == 0) {
+								grassType = 1; // Fern
+							}
+							
+							if (!AddonHandler.isModInstalled("Sock's Crops") && itemRand.nextInt(4) == 0 && world.getBlockId(newX, newY + 1, newZ) == 0) {
+								world.setBlockAndMetadataWithNotify(newX, newY, newZ, DecoBlocks.tallGrass.blockID, grassType);
+								world.setBlockAndMetadataWithNotify(newX, newY + 1, newZ, DecoBlocks.tallGrass.blockID,
+										((TallPlantBlock) DecoBlocks.tallGrass).setTopBlock(grassType, true));
+							}
+							else {
+								world.setBlockAndMetadataWithNotify(newX, newY, newZ, Block.tallGrass.blockID, grassType + 1);
+							}
 						}
 						else if (itemRand.nextInt(2) == 0 && Block.plantYellow.canBlockStay(world, newX, newY, newZ)) {
-							int meta = itemRand.nextInt(24);
+							int flowerIndex = itemRand.nextInt(totalSpawnableFlowerCount);
 							
-							switch (meta) {
-								case 0:
-								case 1:
-								case 2:
-								case 3:
-								case 4:
-								case 5:
-								case 6:
-								case 7:
-								case 8:
-								case 9:
-								case 10:
-								case 11:
-								case 12:
-								case 13:
-								case 14:
-								case 15:
-									world.setBlockAndMetadataWithNotify(newX, newY, newZ, DecoBlocks.flower.blockID, meta);
-									break;
-								case 16:
-									world.setBlockWithNotify(newX, newY, newZ, Block.plantYellow.blockID);
-									break;
-								case 17:
+							if (flowerIndex < spawnableFlowers.size()) {
+								world.setBlockAndMetadataWithNotify(newX, newY, newZ, DecoBlocks.flower.blockID, spawnableFlowers.get(flowerIndex));
+							}
+							else {
+								flowerIndex -= spawnableFlowers.size();
+								
+								if (flowerIndex == 0) {
 									world.setBlockWithNotify(newX, newY, newZ, Block.plantRed.blockID);
-									break;
-								case 18:
-								case 19:
-								case 20:
-								case 21:
-									world.setBlockAndMetadataWithNotify(newX, newY, newZ, DecoBlocks.tulip.blockID, meta - 18);
-									break;
-								case 22:
-								case 23:
-									world.setBlockAndMetadataWithNotify(newX, newY, newZ, DecoBlocks.flower2.blockID, meta - 22);
-									break;
-								default:
-									break;
+								}
+								else if (flowerIndex == 1) {
+									world.setBlockWithNotify(newX, newY, newZ, Block.plantYellow.blockID);
+								}
+								else {
+									flowerIndex -= 2;
+									
+									if (flowerIndex < spawnableFlowers2.size()) {
+										world.setBlockAndMetadataWithNotify(newX, newY, newZ, DecoBlocks.flower2.blockID, spawnableFlowers2.get(flowerIndex));
+									}
+									else {
+										flowerIndex -= spawnableFlowers2.size();
+										
+										if (flowerIndex < spawnableTulips.size()) {
+											world.setBlockAndMetadataWithNotify(newX, newY, newZ, DecoBlocks.tulip.blockID, spawnableTulips.get(flowerIndex));
+										}
+										else {
+											flowerIndex -= spawnableTulips.size();
+											
+											if (flowerIndex < spawnableTallFlowers.size()) {
+												if (world.getBlockId(newX, newY + 1, newZ) == 0) {
+													world.setBlockAndMetadataWithNotify(newX, newY, newZ, DecoBlocks.tallFlower.blockID,
+															spawnableTallFlowers.get(flowerIndex));
+													world.setBlockAndMetadataWithNotify(newX, newY + 1, newZ, DecoBlocks.tallFlower.blockID,
+															((TallPlantBlock) DecoBlocks.tallFlower).setTopBlock(spawnableTallFlowers.get(flowerIndex), true));
+												}
+											}
+										}
+									}
+								}
 							}
 						}
 					}

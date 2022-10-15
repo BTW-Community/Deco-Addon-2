@@ -1973,9 +1973,9 @@ public class DecoBlockInitializer {
                 new String[] {
                         "yucca",
                         "hyacinth",
-                        "birdsParadise",
-                        "azalea",
-                        "cornflower",
+                        "snapdragon",
+                        "pinkAlpine",
+                        "chicory",
                         "lavender",
                         "honeysuckle",
                         "allium",
@@ -1987,8 +1987,14 @@ public class DecoBlockInitializer {
                         "lilac",
                         "rosebush",
                         "roseBlue"
-                })
-                .setUnlocalizedName("decoBlockFlower");
+                },
+                new boolean[] {
+                        true, true, true, true, true, true, true, true, true, true, true, true,
+                        false, // Peony
+                        false, // Lilac
+                        false, // Rosebush
+                        true
+                });
         Item.itemsList[DecoBlocks.flower.blockID] = new ItemMultiTextureTile(DecoBlocks.flower.blockID - 256, DecoBlocks.flower,
                 ((DecoFlowerBlock) DecoBlocks.flower).getNames());
     
@@ -1996,8 +2002,7 @@ public class DecoBlockInitializer {
                 new String[] {
                         "blackRose",
                         "lilyOfTheValley"
-                })
-                .setUnlocalizedName("decoBlockFlower2");
+                });
         Item.itemsList[DecoBlocks.flower2.blockID] = new ItemMultiTextureTile(DecoBlocks.flower2.blockID - 256, DecoBlocks.flower2,
                 ((DecoFlowerBlock) DecoBlocks.flower2).getNames());
     
@@ -2008,10 +2013,20 @@ public class DecoBlockInitializer {
                         "orange",
                         "white",
                         "blue"
-                })
-                .setUnlocalizedName("decoBlockTulip");
+                });
         Item.itemsList[DecoBlocks.tulip.blockID] = new ItemMultiTextureTile(DecoBlocks.tulip.blockID - 256, DecoBlocks.tulip,
                 ((DecoFlowerBlock) DecoBlocks.tulip).getNames());
+        
+        DecoBlocks.tallFlower = new TallPlantBlock(DecoBlockIDs.TALL_FLOWER_ID, "decoBlockFlowerTall",
+                new String[] {
+                        "peony",
+                        "lilac",
+                        "rosebush",
+                        "rhododendron",
+                        "sage",
+                        "fireweed"
+                });
+        register(DecoBlocks.tallFlower, ((TallPlantBlock) DecoBlocks.tallFlower).getNames());
         
         DecoBlocks.carvedPumpkin = new CarvedPumpkinBlock(DecoBlockIDs.CARVED_PUMPKIN_ID);
         register(DecoBlocks.carvedPumpkin, new String[] {"0", "1", "2"});

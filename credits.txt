@@ -1,0 +1,15 @@
+Thanks to the following people who have contributed to the deco addon!
+- Khaos
+- Yhetti
+- jorgebonafe
+- Sockthing
+- Hiracho
+
+Textures have been used or modified from the following sources according to their respective licenses:
+- Vanilla Tweaks: https://vanillatweaks.net/
+- Quark: https://quark.vazkii.net/
+- Blockus: https://www.curseforge.com/minecraft/mc-mods/blockus
+- Biome Makeover: https://www.curseforge.com/minecraft/mc-mods/biome-makeover
+- Compat Makeover: https://www.curseforge.com/minecraft/mc-mods/compat-makeover
+- Terra Incognita: https://www.curseforge.com/minecraft/mc-mods/terraincognita
+- Wild Nature: https://www.curseforge.com/minecraft/mc-mods/wildnature

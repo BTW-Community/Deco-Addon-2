@@ -14,10 +14,7 @@ import btw.item.blockitems.WoodSidingDecorativeStubBlockItem;
 import btw.util.ColorUtils;
 import deco.block.DecoBlocks;
 import deco.block.blocks.*;
-import deco.block.util.SandHelper;
-import deco.block.util.SlabHelper;
-import deco.block.util.StoneHelper;
-import deco.block.util.WoodTypeHelper;
+import deco.block.util.*;
 import deco.item.DecoItemIDs;
 import deco.item.DecoItems;
 import net.minecraft.src.Block;
@@ -3776,27 +3773,33 @@ public class CraftingRecipeList {
 		
 		// Yucca
 		RecipeManager.addMillStoneRecipe(new ItemStack(Item.dyePowder, 2, ColorUtils.LIME.colorID),
-				new ItemStack(DecoBlocks.flower, 1, 0));
+				new ItemStack(FlowerHelper.YUCCA_ID, 1, FlowerHelper.YUCCA_TYPE));
 		
 		// Hyacinth
 		RecipeManager.addMillStoneRecipe(new ItemStack(Item.dyePowder, 2, ColorUtils.LIGHT_BLUE.colorID),
-				new ItemStack(DecoBlocks.flower, 1, 1));
+				new ItemStack(FlowerHelper.HYACINTH_ID, 1, FlowerHelper.HYACINTH_TYPE));
 		
-		// Birds of Paradise
-		RecipeManager.addMillStoneRecipe(new ItemStack(Item.dyePowder, 2, ColorUtils.ORANGE.colorID),
-				new ItemStack(DecoBlocks.flower, 1, 2));
+		// Snapdragon
+		RecipeManager.addMillStoneRecipe(
+				new ItemStack[] {
+						new ItemStack(Item.dyePowder, 1, ColorUtils.ORANGE.colorID),
+						new ItemStack(Item.dyePowder, 1, ColorUtils.YELLOW.colorID)
+				},
+				new ItemStack[] {
+						new ItemStack(FlowerHelper.SNAPDRAGON_ID, 1, FlowerHelper.SNAPDRAGON_TYPE)
+				});
 		
-		// Azalea
+		// Pink Alpine
 		RecipeManager.addMillStoneRecipe(new ItemStack(Item.dyePowder, 2, ColorUtils.PINK.colorID),
-				new ItemStack(DecoBlocks.flower, 1, 3));
+				new ItemStack(FlowerHelper.PINK_ALPINE_ID, 1, FlowerHelper.PINK_ALPINE_TYPE));
 		
-		// Cornflower
+		// Chicory
 		RecipeManager.addMillStoneRecipe(new ItemStack(Item.dyePowder, 2, ColorUtils.BLUE.colorID + 16),
-				new ItemStack(DecoBlocks.flower, 1, 4));
+				new ItemStack(FlowerHelper.CHICORY_ID, 1, FlowerHelper.CHICORY_TYPE));
 		
 		// Lavender
 		RecipeManager.addMillStoneRecipe(new ItemStack(Item.dyePowder, 2, ColorUtils.PURPLE.colorID),
-				new ItemStack(DecoBlocks.flower, 1, 5));
+				new ItemStack(FlowerHelper.LAVENDER_ID, 1, FlowerHelper.LAVENDER_TYPE));
 		
 		// Honeysuckle
 		RecipeManager.addMillStoneRecipe(new ItemStack[]{
@@ -3804,20 +3807,20 @@ public class CraftingRecipeList {
 						new ItemStack(Item.dyePowder, 1, ColorUtils.YELLOW.colorID)
 				},
 				new ItemStack[] {
-						new ItemStack(DecoBlocks.flower, 1, 6)
+						new ItemStack(FlowerHelper.HONEYSUCKLE_ID, 1, FlowerHelper.HONEYSUCKLE_TYPE)
 				});
 		
 		// Allium
 		RecipeManager.addMillStoneRecipe(new ItemStack(Item.dyePowder, 2, ColorUtils.MAGENTA.colorID),
-				new ItemStack(DecoBlocks.flower, 1, 7));
+				new ItemStack(FlowerHelper.ALLIUM_ID, 1, FlowerHelper.ALLIUM_TYPE));
 		
 		// Blue Orchid
 		RecipeManager.addMillStoneRecipe(new ItemStack(Item.dyePowder, 2, ColorUtils.LIGHT_BLUE.colorID),
-				new ItemStack(DecoBlocks.flower, 1, 8));
+				new ItemStack(FlowerHelper.BLUE_ORCHID_ID, 1, FlowerHelper.BLUE_ORCHTYPE_TYPE));
 		
 		// Poppy
 		RecipeManager.addMillStoneRecipe(new ItemStack(Item.dyePowder, 2, ColorUtils.RED.colorID),
-				new ItemStack(DecoBlocks.flower, 1, 9));
+				new ItemStack(FlowerHelper.POPPY_ID, 1, FlowerHelper.POPPY_TYPE));
 		
 		// Azure Bluet
 		RecipeManager.addMillStoneRecipe(new ItemStack[] {
@@ -3825,7 +3828,7 @@ public class CraftingRecipeList {
 						new ItemStack(Item.dyePowder, 1, ColorUtils.YELLOW.colorID)
 				},
 				new ItemStack[] {
-						new ItemStack(DecoBlocks.flower, 1, 10)
+						new ItemStack(FlowerHelper.AZURE_BLUET_ID, 1, FlowerHelper.AZURE_BLUET_TYPE)
 				});
 		
 		// Daisy
@@ -3834,55 +3837,83 @@ public class CraftingRecipeList {
 						new ItemStack(Item.dyePowder, 1, ColorUtils.YELLOW.colorID)
 				},
 				new ItemStack[]{
-						new ItemStack(DecoBlocks.flower, 1, 11)
+						new ItemStack(FlowerHelper.DAISY_ID, 1, FlowerHelper.DAISY_TYPE)
 				});
-		
-		// Peony
-		RecipeManager.addMillStoneRecipe(new ItemStack(Item.dyePowder, 2, ColorUtils.MAGENTA.colorID),
-				new ItemStack(DecoBlocks.flower, 1, 12));
-		
-		// Lilac
-		RecipeManager.addMillStoneRecipe(new ItemStack(Item.dyePowder, 2, ColorUtils.MAGENTA.colorID),
-				new ItemStack(DecoBlocks.flower, 1, 13));
-		
-		// Rose Bush
-		RecipeManager.addMillStoneRecipe(new ItemStack(Item.dyePowder, 3, ColorUtils.RED.colorID),
-				new ItemStack(DecoBlocks.flower, 1, 14));
 		
 		// Blue Rose
 		RecipeManager.addMillStoneRecipe(new ItemStack(Item.dyePowder, 2, ColorUtils.BLUE.colorID + 16),
-				new ItemStack(DecoBlocks.flower, 1, 15));
+				new ItemStack(FlowerHelper.BLUE_ROSE_ID, 1, FlowerHelper.BLUE_ROSE_TYPE));
 		
 		//Black Rose
 		RecipeManager.addMillStoneRecipe(new ItemStack(Item.dyePowder, 2, ColorUtils.BLACK.colorID + 16),
-				new ItemStack(DecoBlocks.flower2, 1, 0));
+				new ItemStack(FlowerHelper.BLACK_ROSE_ID, 1, FlowerHelper.BLACK_ROSE_TYPE));
 		
 		//Lily of the valley
 		RecipeManager.addMillStoneRecipe(new ItemStack(Item.dyePowder, 2, ColorUtils.WHITE.colorID + 16),
-				new ItemStack(DecoBlocks.flower2, 1, 1));
+				new ItemStack(FlowerHelper.LILY_ID, 1, FlowerHelper.LILY_TYPE));
 		
-		// Tulips
+		//------ Tulips ------//
+		
 		RecipeManager.addMillStoneRecipe(new ItemStack[] {
 						new ItemStack(Item.dyePowder, 1, ColorUtils.ORANGE.colorID),
 						new ItemStack(Item.dyePowder, 1, ColorUtils.RED.colorID)
 				},
 				new ItemStack[]{
-						new ItemStack(DecoBlocks.tulip, 1, 0)
+						new ItemStack(FlowerHelper.RED_TULIP_ID, 1, FlowerHelper.RED_TULIP_TYPE)
 				});
 		
 		RecipeManager.addMillStoneRecipe(new ItemStack(Item.dyePowder, 2, ColorUtils.PINK.colorID),
-				new ItemStack(DecoBlocks.tulip, 1, 1));
+				new ItemStack(FlowerHelper.PINK_TULIP_ID, 1, FlowerHelper.PINK_TULIP_TYPE));
 		
 		RecipeManager.addMillStoneRecipe(new ItemStack(Item.dyePowder, 2, ColorUtils.ORANGE.colorID),
-				new ItemStack(DecoBlocks.tulip, 1, 2));
+				new ItemStack(FlowerHelper.ORANGE_TULIP_ID, 1, FlowerHelper.ORANGE_TULIP_TYPE));
 		
 		RecipeManager.addMillStoneRecipe(new ItemStack(Item.dyePowder, 2, ColorUtils.WHITE.colorID + 16),
-				new ItemStack(DecoBlocks.tulip, 1, 3));
+				new ItemStack(FlowerHelper.WHITE_TULIP_ID, 1, FlowerHelper.WHITE_TULIP_TYPE));
 		
 		RecipeManager.addMillStoneRecipe(new ItemStack(Item.dyePowder, 2, ColorUtils.BLUE.colorID + 16),
-				new ItemStack(DecoBlocks.tulip, 1, 4));
+				new ItemStack(FlowerHelper.BLUE_TULIP_ID, 1, FlowerHelper.BLUE_TULIP_TYPE));
 		
-		// Vanilla Dyeing
+		//------ Tall Flowers ------//
+		
+		// Peony
+		RecipeManager.addMillStoneRecipe(new ItemStack(Item.dyePowder, 4, ColorUtils.MAGENTA.colorID),
+				new ItemStack(FlowerHelper.PEONY_ID, 1, FlowerHelper.PEONY_TYPE));
+		RecipeManager.addShapelessRecipe(new ItemStack(FlowerHelper.PEONY_ID, 1, FlowerHelper.PEONY_TYPE),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.flower.blockID, 1, 12)
+				});
+		
+		// Lilac
+		RecipeManager.addMillStoneRecipe(new ItemStack(Item.dyePowder, 4, ColorUtils.MAGENTA.colorID),
+				new ItemStack(FlowerHelper.LILAC_ID, 1, FlowerHelper.LILAC_TYPE));
+		RecipeManager.addShapelessRecipe(new ItemStack(FlowerHelper.LILAC_ID, 1, FlowerHelper.LILAC_TYPE),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.flower.blockID, 1, 13)
+				});
+		
+		// Rose Bush
+		RecipeManager.addMillStoneRecipe(new ItemStack(Item.dyePowder, 4, ColorUtils.RED.colorID),
+				new ItemStack(FlowerHelper.ROSE_BUSH_ID, 1, FlowerHelper.ROSE_BUSH_TYPE));
+		RecipeManager.addShapelessRecipe(new ItemStack(FlowerHelper.ROSE_BUSH_ID, 1, FlowerHelper.ROSE_BUSH_TYPE),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.flower.blockID, 1, 14)
+				});
+		
+		// Rhododendron
+		RecipeManager.addMillStoneRecipe(new ItemStack(Item.dyePowder, 4, ColorUtils.WHITE.colorID + 16),
+				new ItemStack(FlowerHelper.RHODODENDRON_ID, 1, FlowerHelper.RHODODENDRON_TYPE));
+		
+		// Sage
+		RecipeManager.addMillStoneRecipe(new ItemStack(Item.dyePowder, 4, ColorUtils.PURPLE.colorID),
+				new ItemStack(FlowerHelper.SAGE_ID, 1, FlowerHelper.SAGE_TYPE));
+		
+		// Fireweed
+		RecipeManager.addMillStoneRecipe(new ItemStack(Item.dyePowder, 4, ColorUtils.PINK.colorID),
+				new ItemStack(FlowerHelper.FIREWEED_ID, 1, FlowerHelper.FIREWEED_TYPE));
+		
+		//------ Dyeing ------//
+		
 		for (int color = 0; color < 16; color++) {
 			if (color != ColorUtils.WHITE.colorID) {
 				RecipeManager.addCauldronRecipe(new ItemStack(Block.cloth, 8, BlockCloth.getDyeFromBlock(color)),
@@ -3911,7 +3942,8 @@ public class CraftingRecipeList {
 					});
 		}
 		
-		//Mixing dyes
+		//------ Mixing Dyes ------//
+		
 		RecipeManager.addShapelessRecipe(new ItemStack(Item.dyePowder, 2, ColorUtils.LIME.colorID), new Object[] {
 				new ItemStack(Item.dyePowder, 1, ColorUtils.GREEN.colorID),
 				new ItemStack(Item.dyePowder, 1, ColorUtils.WHITE.colorID + 15)});

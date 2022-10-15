@@ -758,9 +758,9 @@ tile.decoBlockWhiteBrickSMoulding.table.name=White Stone Brick Table
 
 tile.decoBlockFlower.yucca.name=Yucca
 tile.decoBlockFlower.hyacinth.name=Hyacinth
-tile.decoBlockFlower.birdsParadise.name=Birds of Paradise
-tile.decoBlockFlower.azalea.name=Azalea
-tile.decoBlockFlower.cornflower.name=Cornflower
+tile.decoBlockFlower.snapdragon.name=Snapdragon
+tile.decoBlockFlower.pinkAlpine.name=Pink Alpine
+tile.decoBlockFlower.chicory.name=Chicory
 tile.decoBlockFlower.lavender.name=Lavender
 tile.decoBlockFlower.honeysuckle.name=Honeysuckle
 tile.decoBlockFlower.allium.name=Allium
@@ -768,9 +768,9 @@ tile.decoBlockFlower.orchidBlue.name=Blue Orchid
 tile.decoBlockFlower.poppy.name=Poppy
 tile.decoBlockFlower.azureBluet.name=Azure Bluet
 tile.decoBlockFlower.daisy.name=Daisy
-tile.decoBlockFlower.peony.name=Peony
-tile.decoBlockFlower.lilac.name=Lilac
-tile.decoBlockFlower.rosebush.name=Rose Bush
+tile.decoBlockFlower.peony.name=Old Peony
+tile.decoBlockFlower.lilac.name=Old Lilac
+tile.decoBlockFlower.rosebush.name=Old Rose Bush
 tile.decoBlockFlower.roseBlue.name=Blue Rose
 
 tile.decoBlockFlower2.blackRose.name=Black Rose
@@ -781,6 +781,13 @@ tile.decoBlockTulip.pink.name=Pink Tulip
 tile.decoBlockTulip.orange.name=Orange Tulip
 tile.decoBlockTulip.white.name=White Tulip
 tile.decoBlockTulip.blue.name=Blue Tulip
+
+tile.decoBlockFlowerTall.peony.name=Peony
+tile.decoBlockFlowerTall.lilac.name=Lilac
+tile.decoBlockFlowerTall.rosebush.name=Rose Bush
+tile.decoBlockFlowerTall.rhododendron.name=White Rhododendron
+tile.decoBlockFlowerTall.sage.name=Sage
+tile.decoBlockFlowerTall.fireweed.name=Fireweed
 
 tile.decoBlockCobblestoneSiding.bench.name=Cobblestone Bench
 tile.decoBlockCobblestoneSiding.fence.name=Cobblestone Wall
