@@ -3794,7 +3794,7 @@ public class CraftingRecipeList {
 				new ItemStack(FlowerHelper.PINK_ALPINE_ID, 1, FlowerHelper.PINK_ALPINE_TYPE));
 		
 		// Chicory
-		RecipeManager.addMillStoneRecipe(new ItemStack(Item.dyePowder, 2, ColorUtils.BLUE.colorID + 16),
+		RecipeManager.addMillStoneRecipe(new ItemStack(Item.dyePowder, 2, ColorUtils.LIGHT_BLUE.colorID + 16),
 				new ItemStack(FlowerHelper.CHICORY_ID, 1, FlowerHelper.CHICORY_TYPE));
 		
 		// Lavender
