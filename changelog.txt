@@ -63,3 +63,4 @@ Some textures in this release have been used or modified from the following sour
 - Fixed an issue where addon trees would generate two stumps when smashing a fertilized planter.
 - Fixed an issue where the top and bottom textures of pergolas would not properly rotate with the model.
 - Fixed an issue where saplings could not grow on coarse dirt or podzol.
+- Fixed an issue where climbing a ladder by holding space would climb too fast.
