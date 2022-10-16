@@ -478,7 +478,7 @@ public class DecoBlockIDs {
     public static final int ACACIA_HEDGE_STAIRS_ID = 3695;
     public static final int ACACIA_HEDGE_SIDING_AND_CORNER_ID = 3696;
     public static final int ACACIA_HEDGE_MOULDING_ID = 3697;
-    
+    public static final int STONE_SLAB_9_ID = 3698;
     public static final int HAZEL_LOG_ID = 3699;
     public static final int HAZEL_STUMP_ID = 3700;
     public static final int CHEWED_HAZEL_LOG_ID = 3701;
@@ -548,4 +548,23 @@ public class DecoBlockIDs {
     public static final int CALCITE_BRICK_STAIRS_ID = 3765;
     public static final int INFESTED_CALCITE_ID = 3766;
     public static final int CALCITE_BUTTON_ID = 3767;
+    public static final int ROUGH_TUFF_ID = 3768;
+    public static final int LOOSE_TUFF_COBBLESTONE_ID = 3769;
+    public static final int LOOSE_TUFF_COBBLESTONE_STAIRS_ID = 3770;
+    public static final int LOOSE_TUFF_BRICK_ID = 3771;
+    public static final int LOOSE_TUFF_BRICK_STAIRS_ID = 3772;
+    public static final int TUFF_SIDING_AND_CORNER_ID = 3773;
+    public static final int TUFF_MOULDING_ID = 3774;
+    public static final int TUFF_STAIRS_ID = 3775;
+    public static final int POLISHED_TUFF_SIDING_AND_CORNER_ID = 3776;
+    public static final int POLISHED_TUFF_MOULDING_ID = 3777;
+    public static final int POLISHED_TUFF_STAIRS_ID = 3778;
+    public static final int TUFF_COBBLESTONE_SIDING_AND_CORNER_ID = 3779;
+    public static final int TUFF_COBBLESTONE_MOULDING_ID = 3780;
+    public static final int TUFF_COBBLESTONE_STAIRS_ID = 3781;
+    public static final int TUFF_BRICK_SIDING_AND_CORNER_ID = 3782;
+    public static final int TUFF_BRICK_MOULDING_ID = 3783;
+    public static final int TUFF_BRICK_STAIRS_ID = 3784;
+    public static final int INFESTED_TUFF_ID = 3785;
+    public static final int TUFF_BUTTON_ID = 3786;
 }

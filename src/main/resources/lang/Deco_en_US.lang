@@ -12,31 +12,43 @@ tile.decoBlockGraniteCobbleLoose.name=Loose Granite Cobblestone
 tile.decoBlockAndesiteCobbleLoose.name=Loose Andesite Cobblestone
 tile.decoBlockDioriteCobbleLoose.name=Loose Diorite Cobblestone
 tile.decoBlockSlateCobbleLoose.name=Loose Slate Cobblestone
+tile.decoBlockCalciteCobbleLoose.name=Loose Calcite Cobblestone
+tile.decoBlockTuffCobbleLoose.name=Loose Tuff Cobblestone
 
 tile.decoBlockGraniteBrickLoose.name=Loose Granite Bricks
 tile.decoBlockAndesiteBrickLoose.name=Loose Andesite Bricks
 tile.decoBlockDioriteBrickLoose.name=Loose Diorite Bricks
 tile.decoBlockSlateBrickLoose.name=Loose Slate Bricks
+tile.decoBlockCalciteBrickLoose.name=Loose Calcite Bricks
+tile.decoBlockTuffBrickLoose.name=Loose Tuff Bricks
 
 tile.decoBlockGraniteStairs.name=Granite Stairs
 tile.decoBlockAndesiteStairs.name=Andesite Stairs
 tile.decoBlockDioriteStairs.name=Diorite Stairs
 tile.decoBlockSlateStairs.name=Slate Stairs
+tile.decoBlockCalciteStairs.name=Calcite Stairs
+tile.decoBlockTuffStairs.name=Tuff Stairs
 
 tile.decoBlockGraniteSmoothStairs.name=Polished Granite Stairs
 tile.decoBlockAndesiteSmoothStairs.name=Polished Andesite Stairs
 tile.decoBlockDioriteSmoothStairs.name=Polished Diorite Stairs
 tile.decoBlockSlateSmoothStairs.name=Polished Slate Stairs
+tile.decoBlockCalciteSmoothStairs.name=Polished Calcite Stairs
+tile.decoBlockTuffSmoothStairs.name=Polished Tuff Stairs
 
 tile.decoBlockGraniteCobbleStairs.name=Granite Cobblestone Stairs
 tile.decoBlockAndesiteCobbleStairs.name=Andesite Cobblestone Stairs
 tile.decoBlockDioriteCobbleStairs.name=Diorite Cobblestone Stairs
 tile.decoBlockSlateCobblestoneStairs.name=Slate Cobblestone Stairs
+tile.decoBlockCalciteCobbleStairs.name=Calcite Cobblestone Stairs
+tile.decoBlockTuffCobbleStairs.name=Tuff Cobblestone Stairs
 
 tile.decoBlockGraniteBrickStairs.name=Granite Brick Stairs
 tile.decoBlockAndesiteBrickStairs.name=Andesite Brick Stairs
 tile.decoBlockDioriteBrickStairs.name=Diorite Brick Stairs
 tile.decoBlockSlateBrickStairs.name=Slate Brick Stairs
+tile.decoBlockCalciteBrickStairs.name=Calcite Brick Stairs
+tile.decoBlockTuffBrickStairs.name=Tuff Brick Stairs
 
 tile.decoBlockSlateTilesStairs.name=Slate Tile Stairs
 
@@ -44,11 +56,15 @@ tile.decoBlockGraniteCobblestoneStairsLoose.name=Loose Granite Cobblestone Stair
 tile.decoBlockAndesiteCobblestoneStairsLoose.name=Loose Andesite Cobblestone Stairs
 tile.decoBlockDioriteCobblestoneStairsLoose.name=Loose Diorite Cobblestone Stairs
 tile.decoBlockSlateCobblestoneStairsLoose.name=Loose Slate Cobblestone Stairs
+tile.decoBlockCalciteCobblestoneStairsLoose.name=Loose Calcite Cobblestone Stairs
+tile.decoBlockTuffCobblestoneStairsLoose.name=Loose Tuff Cobblestone Stairs
 
 tile.decoBlockGraniteBrickStairsLoose.name=Loose Granite Brick Stairs
 tile.decoBlockAndesiteBrickStairsLoose.name=Loose Andesite Brick Stairs
 tile.decoBlockDioriteBrickStairsLoose.name=Loose Diorite Brick Stairs
 tile.decoBlockSlateBrickStairsLoose.name=Loose Slate Brick Stairs
+tile.decoBlockCalciteBrickStairsLoose.name=Loose Calcite Brick Stairs
+tile.decoBlockTuffBrickStairsLoose.name=Loose Tuff Brick Stairs
 
 tile.decoBlockPolishedStone.upper.name=Polished Stone
 tile.decoBlockPolishedStone.mid.name=Polished Stone
@@ -184,6 +200,9 @@ tile.decoBlockButtonInfusedStone.name=Infused Stone Button
 tile.decoBlockButtonGranite.name=Granite Button
 tile.decoBlockButtonAndesite.name=Andesite Button
 tile.decoBlockButtonDiorite.name=Diorite Button
+tile.decoBlockButtonSlate.name=Slate Button
+tile.decoBlockButtonCalcite.name=Calcite Button
+tile.decoBlockButtonTuff.name=Tuff Button
 tile.decoBlockButtonSandstone.name=Sandstone Button
 tile.decoBlockButtonRedSandstone.name=Red Sandstone Button
 
@@ -812,21 +831,29 @@ tile.decoBlockMossyCobbleMoulding.table.name=Mossy Cobblestone Table
 tile.decoBlockStone.granite.name=Granite
 tile.decoBlockStone.andesite.name=Andesite
 tile.decoBlockStone.diorite.name=Diorite
+tile.decoBlockStone.calcite.name=Calcite
+tile.decoBlockStone.tuff.name=Tuff
 
 tile.decoBlockCobblestone.granite.name=Granite Cobblestone
 tile.decoBlockCobblestone.andesite.name=Andesite Cobblestone
 tile.decoBlockCobblestone.diorite.name=Diorite Cobblestone
 tile.decoBlockCobblestone.slate.name=Slate Cobblestone
+tile.decoBlockCobblestone.calcite.name=Calcite Cobblestone
+tile.decoBlockCobblestone.tuff.name=Tuff Cobblestone
 
 tile.decoBlockStoneBricks.granite.name=Granite Bricks
 tile.decoBlockStoneBricks.andesite.name=Andesite Bricks
 tile.decoBlockStoneBricks.diorite.name=Diorite Bricks
-tile.decoBlockStoneBricks.slate.name=Slate Bricks
+tile.decoBlockStoneBricks.slate.name=Slate
+tile.decoBlockStoneBricks.calcite.name=Calcite Bricks
+tile.decoBlockStoneBricks.tuff.name=Tuff Bricks
 
 tile.decoBlockStoneSmooth.granite.name=Polished Granite
 tile.decoBlockStoneSmooth.andesite.name=Polished Andesite
 tile.decoBlockStoneSmooth.diorite.name=Polished Diorite
 tile.decoBlockStoneSmooth.slate.name=Polished Slate
+tile.decoBlockStoneSmooth.calcite.name=Polished Calcite
+tile.decoBlockStoneSmooth.tuff.name=Polished Tuff
 
 tile.decoBlockSlateTiles.name=Slate Tiles
 
@@ -866,6 +893,24 @@ tile.decoBlockSlateMoulding.pedestal.name=Slate Pedestal
 tile.decoBlockSlateMoulding.moulding.name=Slate Moulding
 tile.decoBlockSlateMoulding.table.name=Slate Table
 
+tile.decoBlockCalciteSiding.bench.name=Calcite Bench
+tile.decoBlockCalciteSiding.fence.name=Calcite Wall
+tile.decoBlockCalciteSiding.siding.name=Calcite Siding
+tile.decoBlockCalciteSiding.corner.name=Calcite Corner
+tile.decoBlockCalciteMoulding.column.name=Calcite Column
+tile.decoBlockCalciteMoulding.pedestal.name=Calcite Pedestal
+tile.decoBlockCalciteMoulding.moulding.name=Calcite Moulding
+tile.decoBlockCalciteMoulding.table.name=Calcite Table
+
+tile.decoBlockTuffSiding.bench.name=Tuff Bench
+tile.decoBlockTuffSiding.fence.name=Tuff Wall
+tile.decoBlockTuffSiding.siding.name=Tuff Siding
+tile.decoBlockTuffSiding.corner.name=Tuff Corner
+tile.decoBlockTuffMoulding.column.name=Tuff Column
+tile.decoBlockTuffMoulding.pedestal.name=Tuff Pedestal
+tile.decoBlockTuffMoulding.moulding.name=Tuff Moulding
+tile.decoBlockTuffMoulding.table.name=Tuff Table
+
 tile.decoBlockGraniteSmoothSiding.bench.name=Polished Granite Bench
 tile.decoBlockGraniteSmoothSiding.fence.name=Polished Granite Wall
 tile.decoBlockGraniteSmoothSiding.siding.name=Polished Granite Siding
@@ -902,6 +947,24 @@ tile.decoBlockSlateSmoothMoulding.pedestal.name=Polished Slate Pedestal
 tile.decoBlockSlateSmoothMoulding.moulding.name=Polished Slate Moulding
 tile.decoBlockSlateSmoothMoulding.table.name=Polished Slate Table
 
+tile.decoBlockCalciteSmoothSiding.bench.name=Polished Calcite Bench
+tile.decoBlockCalciteSmoothSiding.fence.name=Polished Calcite Wall
+tile.decoBlockCalciteSmoothSiding.siding.name=Polished Calcite Siding
+tile.decoBlockCalciteSmoothSiding.corner.name=Polished Calcite Corner
+tile.decoBlockCalciteSmoothMoulding.column.name=Polished Calcite Column
+tile.decoBlockCalciteSmoothMoulding.pedestal.name=Polished Calcite Pedestal
+tile.decoBlockCalciteSmoothMoulding.moulding.name=Polished Calcite Moulding
+tile.decoBlockCalciteSmoothMoulding.table.name=Polished Calcite Table
+
+tile.decoBlockTuffSmoothSiding.bench.name=Polished Tuff Bench
+tile.decoBlockTuffSmoothSiding.fence.name=Polished Tuff Wall
+tile.decoBlockTuffSmoothSiding.siding.name=Polished Tuff Siding
+tile.decoBlockTuffSmoothSiding.corner.name=Polished Tuff Corner
+tile.decoBlockTuffSmoothMoulding.column.name=Polished Tuff Column
+tile.decoBlockTuffSmoothMoulding.pedestal.name=Polished Tuff Pedestal
+tile.decoBlockTuffSmoothMoulding.moulding.name=Polished Tuff Moulding
+tile.decoBlockTuffSmoothMoulding.table.name=Polished Tuff Table
+
 tile.decoBlockGraniteCobbleSiding.bench.name=Granite Cobblestone Bench
 tile.decoBlockGraniteCobbleSiding.fence.name=Granite Cobblestone Wall
 tile.decoBlockGraniteCobbleSiding.siding.name=Granite Cobblestone Siding
@@ -937,6 +1000,24 @@ tile.decoBlockSlateCobbleMoulding.column.name=Slate Cobblestone Column
 tile.decoBlockSlateCobbleMoulding.pedestal.name=Slate Cobblestone Pedestal
 tile.decoBlockSlateCobbleMoulding.moulding.name=Slate Cobblestone Moulding
 tile.decoBlockSlateCobbleMoulding.table.name=Slate Cobblestone Table
+
+tile.decoBlockCalciteCobbleSiding.bench.name=Calcite Cobblestone Bench
+tile.decoBlockCalciteCobbleSiding.fence.name=Calcite Cobblestone Wall
+tile.decoBlockCalciteCobbleSiding.siding.name=Calcite Cobblestone Siding
+tile.decoBlockCalciteCobbleSiding.corner.name=Calcite Cobblestone Corner
+tile.decoBlockCalciteCobbleMoulding.column.name=Calcite Cobblestone Column
+tile.decoBlockCalciteCobbleMoulding.pedestal.name=Calcite Cobblestone Pedestal
+tile.decoBlockCalciteCobbleMoulding.moulding.name=Calcite Cobblestone Moulding
+tile.decoBlockCalciteCobbleMoulding.table.name=Calcite Cobblestone Table
+
+tile.decoBlockTuffCobbleSiding.bench.name=Tuff Cobblestone Bench
+tile.decoBlockTuffCobbleSiding.fence.name=Tuff Cobblestone Wall
+tile.decoBlockTuffCobbleSiding.siding.name=Tuff Cobblestone Siding
+tile.decoBlockTuffCobbleSiding.corner.name=Tuff Cobblestone Corner
+tile.decoBlockTuffCobbleMoulding.column.name=Tuff Cobblestone Column
+tile.decoBlockTuffCobbleMoulding.pedestal.name=Tuff Cobblestone Pedestal
+tile.decoBlockTuffCobbleMoulding.moulding.name=Tuff Cobblestone Moulding
+tile.decoBlockTuffCobbleMoulding.table.name=Tuff Cobblestone Table
 
 tile.decoBlockGraniteBrickSiding.bench.name=Granite Brick Bench
 tile.decoBlockGraniteBrickSiding.fence.name=Granite Brick Wall
@@ -982,6 +1063,24 @@ tile.decoBlockSlateTilesMoulding.column.name=Slate Tile Column
 tile.decoBlockSlateTilesMoulding.pedestal.name=Slate Tile Pedestal
 tile.decoBlockSlateTilesMoulding.moulding.name=Slate Tile Moulding
 tile.decoBlockSlateTilesMoulding.table.name=Slate Tile Table
+
+tile.decoBlockCalciteBrickSiding.bench.name=Calcite Brick Bench
+tile.decoBlockCalciteBrickSiding.fence.name=Calcite Brick Wall
+tile.decoBlockCalciteBrickSiding.siding.name=Calcite Brick Siding
+tile.decoBlockCalciteBrickSiding.corner.name=Calcite Brick Corner
+tile.decoBlockCalciteBrickMoulding.column.name=Calcite Brick Column
+tile.decoBlockCalciteBrickMoulding.pedestal.name=Calcite Brick Pedestal
+tile.decoBlockCalciteBrickMoulding.moulding.name=Calcite Brick Moulding
+tile.decoBlockCalciteBrickMoulding.table.name=Calcite Brick Table
+
+tile.decoBlockTuffBrickSiding.bench.name=Tuff Brick Bench
+tile.decoBlockTuffBrickSiding.fence.name=Tuff Brick Wall
+tile.decoBlockTuffBrickSiding.siding.name=Tuff Brick Siding
+tile.decoBlockTuffBrickSiding.corner.name=Tuff Brick Corner
+tile.decoBlockTuffBrickMoulding.column.name=Tuff Brick Column
+tile.decoBlockTuffBrickMoulding.pedestal.name=Tuff Brick Pedestal
+tile.decoBlockTuffBrickMoulding.moulding.name=Tuff Brick Moulding
+tile.decoBlockTuffBrickMoulding.table.name=Tuff Brick Table
 
 tile.decoBlockPolishedStoneSiding.bench.name=Polished Stone Bench
 tile.decoBlockPolishedStoneSiding.fence.name=Polished Stone Wall
@@ -1469,6 +1568,10 @@ tile.decoBlockStoneSlabLoose.6.name=Loose Slate Cobblestone Slab
 tile.decoBlockStoneSlabLoose.7.name=Loose Slate Brick Slab
 
 tile.decoBlockStoneSlabLoose2.0.name=Loose Red Nether Brick Slab
+tile.decoBlockStoneSlabLoose2.1.name=Loose Calcite Cobblestone Slab
+tile.decoBlockStoneSlabLoose2.2.name=Loose Calcite Brick Slab
+tile.decoBlockStoneSlabLoose2.3.name=Loose Tuff Cobblestone Slab
+tile.decoBlockStoneSlabLoose2.4.name=Loose Tuff Brick Slab
 
 tile.decoBlockStoneSlab.0.name=Red Sandstone Slab
 tile.decoBlockStoneSlab.1.name=Prismarine Slab
@@ -1534,6 +1637,17 @@ tile.decoBlockStoneSlab7.6.name=Mossy Stone Brick Slab
 tile.decoBlockStoneSlab7.7.name=Cracked Stone Brick Slab
 
 tile.decoBlockStoneSlab8.0.name=Cracked Stone Brick Slab
+tile.decoBlockStoneSlab8.1.name=Stone Slab
+tile.decoBlockStoneSlab8.2.name=Stone Slab
+tile.decoBlockStoneSlab8.3.name=Calcite Slab
+tile.decoBlockStoneSlab8.4.name=Polished Calcite Slab
+tile.decoBlockStoneSlab8.5.name=Calcite Cobblestone Slab
+tile.decoBlockStoneSlab8.6.name=Calcite Brick Slab
+tile.decoBlockStoneSlab8.7.name=Tuff Slab
+
+tile.decoBlockStoneSlab9.0.name=Polished Tuff Slab
+tile.decoBlockStoneSlab9.1.name=Tuff Cobblestone Slab
+tile.decoBlockStoneSlab9.2.name=Tuff Brick Slab
 
 tile.decoBlockConcreteSlab.0.name=Black Concrete Slab
 tile.decoBlockConcreteSlab.1.name=Red Concrete Slab

@@ -62,6 +62,7 @@ public class DecoBlocks {
     public static Block stoneSlab6;
     public static Block stoneSlab7;
     public static Block stoneSlab8;
+    public static Block stoneSlab9;
     
     // Granite
     
@@ -216,6 +217,33 @@ public class DecoBlocks {
     public static Block calciteButton;
     
     // Tuff
+    
+    public static Block roughTuff;
+    
+    public static Block looseTuffCobblestone;
+    public static Block looseTuffCobblestoneStairs;
+    public static Block looseTuffBrick;
+    public static Block looseTuffBrickStairs;
+    
+    public static Block tuffSidingAndCorner;
+    public static Block tuffMoulding;
+    public static Block tuffStairs;
+    
+    public static Block tuffCobblestoneSidingAndCorner;
+    public static Block tuffCobblestoneMoulding;
+    public static Block tuffCobblestoneStairs;
+    
+    public static Block tuffBrickSidingAndCorner;
+    public static Block tuffBrickMoulding;
+    public static Block tuffBrickStairs;
+    
+    public static Block polishedTuffSidingAndCorner;
+    public static Block polishedTuffMoulding;
+    public static Block polishedTuffStairs;
+    
+    public static Block infestedTuff;
+    
+    public static Block tuffButton;
     
     // Jasper
     

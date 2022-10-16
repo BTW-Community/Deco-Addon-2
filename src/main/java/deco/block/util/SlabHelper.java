@@ -1,7 +1,6 @@
 package deco.block.util;
 
 import deco.block.DecoBlockIDs;
-import net.minecraft.src.Block;
 
 public class SlabHelper {
 	
@@ -43,6 +42,13 @@ public class SlabHelper {
 	public static final int CALCITE_BRICK_SLAB_ID = DecoBlockIDs.STONE_SLAB_8_ID;
 	public static final int LOOSE_CALCITE_COBBLESTONE_SLAB_ID = DecoBlockIDs.LOOSE_STONE_SLAB_2_ID;
 	public static final int LOOSE_CALCITE_BRICK_SLAB_ID = DecoBlockIDs.LOOSE_STONE_SLAB_2_ID;
+	
+	public static final int TUFF_SLAB_ID = DecoBlockIDs.STONE_SLAB_8_ID;
+	public static final int POLISHED_TUFF_SLAB_ID = DecoBlockIDs.STONE_SLAB_9_ID;
+	public static final int TUFF_COBBLESTONE_SLAB_ID = DecoBlockIDs.STONE_SLAB_9_ID;
+	public static final int TUFF_BRICK_SLAB_ID = DecoBlockIDs.STONE_SLAB_9_ID;
+	public static final int LOOSE_TUFF_COBBLESTONE_SLAB_ID = DecoBlockIDs.LOOSE_STONE_SLAB_2_ID;
+	public static final int LOOSE_TUFF_BRICK_SLAB_ID = DecoBlockIDs.LOOSE_STONE_SLAB_2_ID;
 	
 	public static final int STONE_SLAB_UPPER_STRATA_ID = DecoBlockIDs.STONE_SLAB_3_ID;
 	public static final int STONE_SLAB_MID_STRATA_ID = DecoBlockIDs.STONE_SLAB_8_ID;
@@ -145,6 +151,13 @@ public class SlabHelper {
 	public static final int CALCITE_BRICK_SLAB_TYPE = 6;
 	public static final int LOOSE_CALCITE_COBBLESTONE_SLAB_TYPE = 1;
 	public static final int LOOSE_CALCITE_BRICK_SLAB_TYPE = 2;
+	
+	public static final int TUFF_SLAB_TYPE = 7;
+	public static final int POLISHED_TUFF_SLAB_TYPE = 0;
+	public static final int TUFF_COBBLESTONE_SLAB_TYPE = 1;
+	public static final int TUFF_BRICK_SLAB_TYPE = 2;
+	public static final int LOOSE_TUFF_COBBLESTONE_SLAB_TYPE = 3;
+	public static final int LOOSE_TUFF_BRICK_SLAB_TYPE = 4;
 	
 	public static final int STONE_SLAB_UPPER_STRATA_TYPE = 7;
 	public static final int STONE_SLAB_MID_STRATA_TYPE = 1;

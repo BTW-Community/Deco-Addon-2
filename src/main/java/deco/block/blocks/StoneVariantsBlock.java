@@ -20,7 +20,7 @@ import java.util.Random;
 
 public class StoneVariantsBlock extends StoneBlock {
 	public static final int NUM_VANILLA_TYPES = 3;
-	public static final int NUM_TYPES = 5;
+	public static final int NUM_TYPES = 6;
 	
 	public static final int GRANITE_TYPE = 0;
 	public static final int ANDESITE_TYPE = 1;
@@ -53,9 +53,9 @@ public class StoneVariantsBlock extends StoneBlock {
 		strataByType.put(LIMESTONE_TYPE, LIMESTONE_STRATA);
 	}
 	
-	public static final String[] names = new String[]{"granite", "andesite", "diorite", "slate", "calcite"};
+	public static final String[] names = new String[]{"granite", "andesite", "diorite", "slate", "calcite", "tuff"};
 	
-	public static final String[] namesCapital = new String[]{"Granite", "Andesite", "Diorite", "Slate", "Calcite"};
+	public static final String[] namesCapital = new String[]{"Granite", "Andesite", "Diorite", "Slate", "Calcite", "Tuff"};
 	
 	protected boolean isCracked;
 	

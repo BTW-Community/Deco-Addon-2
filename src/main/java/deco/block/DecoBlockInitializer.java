@@ -615,6 +615,88 @@ public class DecoBlockInitializer {
                 StoneVariantsBlock.CALCITE_TYPE)
                 .setUnlocalizedName("decoBlockCalciteSmoothStairs");
     
+        // Tuff
+    
+        DecoBlocks.roughTuff = new RoughStoneVariantBlock(DecoBlockIDs.ROUGH_TUFF_ID, StoneVariantsBlock.TUFF_TYPE);
+    
+        DecoBlocks.infestedTuff = new SilverfishBlock(DecoBlockIDs.INFESTED_TUFF_ID, DecoBlocks.stoneVariants, StoneVariantsBlock.TUFF_TYPE);
+    
+        DecoBlocks.tuffButton = new DecoButtonBlock(DecoBlockIDs.TUFF_BUTTON_ID, false, DecoBlocks.stoneVariants, StoneVariantsBlock.TUFF_TYPE)
+                .setUnlocalizedName("decoBlockButtonTuff");
+    
+        DecoBlocks.looseTuffCobblestone = new LooseCobblestoneVariantsBlock(DecoBlockIDs.LOOSE_TUFF_COBBLESTONE_ID, StoneVariantsBlock.TUFF_TYPE,
+                "decoOverlayTuffCobbleLava")
+                .setUnlocalizedName("decoBlockTuffCobbleLoose");
+        DecoBlocks.looseTuffBrick = new LooseStoneBrickVariantsBlock(DecoBlockIDs.LOOSE_TUFF_BRICK_ID, StoneVariantsBlock.TUFF_TYPE,
+                "decoOverlayTuffBrickLava")
+                .setUnlocalizedName("decoBlockTuffBrickLoose");
+    
+        DecoBlocks.looseTuffCobblestoneStairs = new LooseStoneVariantStairsBlock(DecoBlockIDs.LOOSE_TUFF_COBBLESTONE_STAIRS_ID,
+                DecoBlocks.cobblestoneVariants, StoneVariantsBlock.TUFF_TYPE, DecoBlockIDs.TUFF_COBBLESTONE_STAIRS_ID)
+                .setUnlocalizedName("decoBlockTuffCobbleLooseStairs");
+        DecoBlocks.looseTuffBrickStairs = new LooseStoneVariantStairsBlock(DecoBlockIDs.LOOSE_TUFF_BRICK_STAIRS_ID,
+                DecoBlocks.stoneBrickVariants, StoneVariantsBlock.TUFF_TYPE, DecoBlockIDs.TUFF_BRICK_STAIRS_ID)
+                .setUnlocalizedName("decoBlockTuffBrickLooseStairs");
+    
+        DecoBlocks.tuffSidingAndCorner = new SidingAndCornerAndDecorativeWallBlock(DecoBlockIDs.TUFF_SIDING_AND_CORNER_ID, Material.rock,
+                "decoBlockTuff",
+                DecoBlocks.stoneVariants.blockHardness, DecoBlocks.stoneVariants.blockResistance, Block.soundStoneFootstep,
+                "decoBlockTuffSiding");
+        register(new SidingAndCornerBlockItem(DecoBlocks.tuffSidingAndCorner.blockID - 256));
+        DecoBlocks.tuffMoulding = new MouldingAndDecorativeWallBlock(DecoBlockIDs.TUFF_MOULDING_ID, Material.rock,
+                "decoBlockTuff", "decoBlockTuff",
+                DecoBlockIDs.TUFF_SIDING_AND_CORNER_ID,
+                DecoBlocks.stoneVariants.blockHardness, DecoBlocks.stoneVariants.blockResistance, Block.soundStoneFootstep,
+                "decoBlockTuffMoulding");
+        register(new MouldingBlockItem(DecoBlocks.tuffMoulding.blockID - 256));
+        DecoBlocks.tuffStairs = new StairsBlock(DecoBlockIDs.TUFF_STAIRS_ID, DecoBlocks.stoneVariants, StoneVariantsBlock.TUFF_TYPE)
+                .setUnlocalizedName("decoBlockTuffStairs");
+    
+        DecoBlocks.tuffCobblestoneSidingAndCorner = new SidingAndCornerAndDecorativeWallBlock(DecoBlockIDs.TUFF_COBBLESTONE_SIDING_AND_CORNER_ID, Material.rock,
+                "decoBlockTuffCobble",
+                DecoBlocks.cobblestoneVariants.blockHardness, DecoBlocks.cobblestoneVariants.blockResistance, Block.soundStoneFootstep,
+                "decoBlockTuffCobbleSiding");
+        register(new SidingAndCornerBlockItem(DecoBlocks.tuffCobblestoneSidingAndCorner.blockID - 256));
+        DecoBlocks.tuffCobblestoneMoulding = new MouldingAndDecorativeWallBlock(DecoBlockIDs.TUFF_COBBLESTONE_MOULDING_ID, Material.rock,
+                "decoBlockTuffCobble", "decoBlockTuffCobble",
+                DecoBlockIDs.TUFF_COBBLESTONE_SIDING_AND_CORNER_ID,
+                DecoBlocks.cobblestoneVariants.blockHardness, DecoBlocks.cobblestoneVariants.blockResistance, Block.soundStoneFootstep,
+                "decoBlockTuffCobbleMoulding");
+        register(new MouldingBlockItem(DecoBlocks.tuffCobblestoneMoulding.blockID - 256));
+        DecoBlocks.tuffCobblestoneStairs = new MortaredStairsBlock(DecoBlockIDs.TUFF_COBBLESTONE_STAIRS_ID, DecoBlocks.cobblestoneVariants,
+                StoneVariantsBlock.TUFF_TYPE, DecoBlockIDs.LOOSE_TUFF_COBBLESTONE_STAIRS_ID)
+                .setUnlocalizedName("decoBlockTuffCobbleStairs");
+    
+        DecoBlocks.tuffBrickSidingAndCorner = new SidingAndCornerAndDecorativeWallBlock(DecoBlockIDs.TUFF_BRICK_SIDING_AND_CORNER_ID, Material.rock,
+                "decoBlockTuffBrick",
+                DecoBlocks.stoneBrickVariants.blockHardness, DecoBlocks.stoneBrickVariants.blockResistance, Block.soundStoneFootstep,
+                "decoBlockTuffBrickSiding");
+        register(new SidingAndCornerBlockItem(DecoBlocks.tuffBrickSidingAndCorner.blockID - 256));
+        DecoBlocks.tuffBrickMoulding = new MouldingAndDecorativeWallBlock(DecoBlockIDs.TUFF_BRICK_MOULDING_ID, Material.rock,
+                "decoBlockTuffBrick", "decoBlockTuffBrick",
+                DecoBlockIDs.TUFF_BRICK_SIDING_AND_CORNER_ID,
+                DecoBlocks.stoneBrickVariants.blockHardness, DecoBlocks.stoneBrickVariants.blockResistance, Block.soundStoneFootstep,
+                "decoBlockTuffBrickMoulding");
+        register(new MouldingBlockItem(DecoBlocks.tuffBrickMoulding.blockID - 256));
+        DecoBlocks.tuffBrickStairs = new MortaredStairsBlock(DecoBlockIDs.TUFF_BRICK_STAIRS_ID, DecoBlocks.stoneBrickVariants,
+                StoneVariantsBlock.TUFF_TYPE, DecoBlockIDs.LOOSE_TUFF_BRICK_STAIRS_ID)
+                .setUnlocalizedName("decoBlockTuffBrickStairs");
+    
+        DecoBlocks.polishedTuffSidingAndCorner = new SidingAndCornerAndDecorativeWallBlock(DecoBlockIDs.POLISHED_TUFF_SIDING_AND_CORNER_ID, Material.rock,
+                "decoBlockTuffSmooth",
+                DecoBlocks.polishedStoneVariants.blockHardness, DecoBlocks.polishedStoneVariants.blockResistance, Block.soundStoneFootstep,
+                "decoBlockTuffSmoothSiding");
+        register(new SidingAndCornerBlockItem(DecoBlocks.polishedTuffSidingAndCorner.blockID - 256));
+        DecoBlocks.polishedTuffMoulding = new MouldingAndDecorativeWallBlock(DecoBlockIDs.POLISHED_TUFF_MOULDING_ID, Material.rock,
+                "decoBlockTuffSmooth", "decoBlockTuffSmoothColumn",
+                DecoBlockIDs.TUFF_SIDING_AND_CORNER_ID,
+                DecoBlocks.polishedStoneVariants.blockHardness, DecoBlocks.polishedStoneVariants.blockResistance, Block.soundStoneFootstep,
+                "decoBlockTuffSmoothMoulding");
+        register(new MouldingBlockItem(DecoBlocks.polishedTuffMoulding.blockID - 256));
+        DecoBlocks.polishedTuffStairs = new StairsBlock(DecoBlockIDs.POLISHED_TUFF_STAIRS_ID, DecoBlocks.polishedStoneVariants,
+                StoneVariantsBlock.TUFF_TYPE)
+                .setUnlocalizedName("decoBlockTuffSmoothStairs");
+    
         //------ Misc Stone ------//
     
         // Polished Stone
@@ -1607,17 +1689,23 @@ public class DecoBlockInitializer {
                 new Block[] {
                         DecoBlocks.looseRedNetherBrick,
                         DecoBlocks.looseCalciteCobblestone,
-                        DecoBlocks.looseCalciteBrick
+                        DecoBlocks.looseCalciteBrick,
+                        DecoBlocks.looseTuffCobblestone,
+                        DecoBlocks.looseTuffBrick
                 },
                 new int[] {
                         SlabHelper.RED_NETHER_BRICK_SLAB_ID,
                         SlabHelper.CALCITE_COBBLESTONE_SLAB_ID,
-                        SlabHelper.CALCITE_BRICK_SLAB_ID
+                        SlabHelper.CALCITE_BRICK_SLAB_ID,
+                        SlabHelper.TUFF_COBBLESTONE_SLAB_ID,
+                        SlabHelper.TUFF_BRICK_SLAB_ID
                 },
                 new int[] {
                         SlabHelper.RED_NETHER_BRICK_SLAB_TYPE,
                         SlabHelper.CALCITE_COBBLESTONE_SLAB_TYPE,
-                        SlabHelper.CALCITE_BRICK_SLAB_TYPE
+                        SlabHelper.CALCITE_BRICK_SLAB_TYPE,
+                        SlabHelper.TUFF_COBBLESTONE_SLAB_TYPE,
+                        SlabHelper.TUFF_BRICK_SLAB_TYPE
                 })
                 .setUnlocalizedName("decoBlockStoneSlabLoose2");
         register(new DecoSlabItemBlock(DecoBlocks.looseStoneSlab2.blockID - 256));
@@ -1873,7 +1961,8 @@ public class DecoBlockInitializer {
                         DecoBlocks.stoneVariants,
                         DecoBlocks.polishedStoneVariants,
                         DecoBlocks.cobblestoneVariants,
-                        DecoBlocks.stoneBrickVariants
+                        DecoBlocks.stoneBrickVariants,
+                        DecoBlocks.stoneVariants
                 },
                 new int [] {
                         StoneHelper.CRACKED_STONE_BRICK_DEEP_STRATA_TYPE,
@@ -1882,27 +1971,59 @@ public class DecoBlockInitializer {
                         StoneVariantsBlock.CALCITE_TYPE,
                         StoneVariantsBlock.CALCITE_TYPE,
                         StoneVariantsBlock.CALCITE_TYPE,
-                        StoneVariantsBlock.CALCITE_TYPE
+                        StoneVariantsBlock.CALCITE_TYPE,
+                        StoneVariantsBlock.TUFF_TYPE
                 },
                 new boolean[] {
                         true,
                         false, false, false, false,
-                        true, true
+                        true, true,
+                        false
                 },
                 new Block[] {
                         BTWBlocks.looseStoneBrickSlab,
                         null, null, null, null,
                         DecoBlocks.looseStoneSlab2,
-                        DecoBlocks.looseStoneSlab2
+                        DecoBlocks.looseStoneSlab2,
+                        null
                 },
                 new int[] {
                         StoneHelper.STONE_BRICK_DEEP_STRATA_TYPE,
                         0, 0, 0, 0,
                         SlabHelper.LOOSE_CALCITE_COBBLESTONE_SLAB_TYPE,
-                        SlabHelper.LOOSE_CALCITE_BRICK_SLAB_TYPE
+                        SlabHelper.LOOSE_CALCITE_BRICK_SLAB_TYPE,
+                        0
                 })
                 .setUnlocalizedName("decoBlockStoneSlab8");
         register(new DecoSlabItemBlock(DecoBlocks.stoneSlab8.blockID - 256));
+    
+        DecoBlocks.stoneSlab9 = new StoneSlabBlock(DecoBlockIDs.STONE_SLAB_9_ID,
+                new Block[] {
+                        DecoBlocks.polishedStoneVariants,
+                        DecoBlocks.cobblestoneVariants,
+                        DecoBlocks.stoneBrickVariants,
+                },
+                new int [] {
+                        StoneVariantsBlock.TUFF_TYPE,
+                        StoneVariantsBlock.TUFF_TYPE,
+                        StoneVariantsBlock.TUFF_TYPE
+                },
+                new boolean[] {
+                        false,
+                        true, true
+                },
+                new Block[] {
+                        null,
+                        DecoBlocks.looseStoneSlab2,
+                        DecoBlocks.looseStoneSlab2
+                },
+                new int[] {
+                        0,
+                        SlabHelper.LOOSE_TUFF_COBBLESTONE_SLAB_TYPE,
+                        SlabHelper.LOOSE_TUFF_BRICK_SLAB_TYPE,
+                })
+                .setUnlocalizedName("decoBlockStoneSlab9");
+        register(new DecoSlabItemBlock(DecoBlocks.stoneSlab9.blockID - 256));
     }
     
     private static void initSoil() {
