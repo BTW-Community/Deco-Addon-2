@@ -1348,7 +1348,7 @@ public class CraftingRecipeList {
 	private static void initDioriteRecipes() {
 		RecipeManager.addStokedCrucibleRecipe(new ItemStack(DecoBlocks.looseDioriteCobblestone, 16),
 				new ItemStack[] {
-						new ItemStack(BTWBlocks.looseCobblestone, 16),
+						new ItemStack(BTWBlocks.looseCobblestone, 16, InventoryUtils.IGNORE_METADATA),
 						new ItemStack(Item.netherQuartz)
 				});
 		
@@ -2499,8 +2499,8 @@ public class CraftingRecipeList {
 	private static void initTuffRecipes() {
 		RecipeManager.addStokedCrucibleRecipe(new ItemStack(DecoBlocks.looseTuffCobblestone, 16),
 				new ItemStack[] {
-						new ItemStack(DecoBlocks.looseTuffCobblestone, 16),
-						new ItemStack(Item.dyePowder, 1, ColorUtils.WHITE.colorID)
+						new ItemStack(BTWBlocks.looseCobblestone, 16, InventoryUtils.IGNORE_METADATA),
+						new ItemStack(DecoBlocks.pumice)
 				});
 		
 		RecipeManager.addStokedCrucibleRecipe(new ItemStack(DecoBlocks.polishedStoneVariants, 1, StoneVariantsBlock.TUFF_TYPE),

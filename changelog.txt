@@ -40,6 +40,7 @@ Some textures in this release have been used or modified from the following sour
     - Yellow autumn saplings require a birch sapling, yellow dye, and a fertilizer.
 - Added the ability for cocoa beans to grow on mangrove and mahogany logs.
 - Added calcite - loose calcite cobblestone can be crated by combining loose diorite cobblestone with bonemeal in a crucible
+- Added tuff - loose tuff cobblestone can be crated by combining loose cobblestone with pumice in a crucible
 - Changed deco stone variants to behave consistently with BTW stone.
     - Granite, andesite, diorite, and calcite are all considered first strata.
     - Slate is considered third strata.

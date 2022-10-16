@@ -39,17 +39,20 @@ public class TallPlantBlock extends FlowerBlock {
 	@Override
 	public AxisAlignedBB getBlockBoundsFromPoolBasedOnState(IBlockAccess blockAccess, int x, int y, int z) {
 		int metadata = blockAccess.getBlockMetadata(x, y, z);
-		float height;
+		float minHeight;
+		float maxHeight;
 		
 		if (this.isTopBlock(metadata)) {
-			height = this.getHeight();
+			minHeight = -1F;
+			maxHeight = this.getHeight();
 		}
 		else {
-			height = 1;
+			minHeight = 0F;
+			maxHeight = 1 + this.getHeight();
 		}
 		
-		return AxisAlignedBB.getBoundingBox(0.5F - this.getHalfWidth(), 0, 0.5F - this.getHalfWidth(),
-				0.5F + this.getHalfWidth(), height, 0.5F + this.getHalfWidth());
+		return AxisAlignedBB.getBoundingBox(0.5F - this.getHalfWidth(), minHeight, 0.5F - this.getHalfWidth(),
+				0.5F + this.getHalfWidth(), maxHeight, 0.5F + this.getHalfWidth());
 	}
 	
 	@Override
@@ -128,11 +131,11 @@ public class TallPlantBlock extends FlowerBlock {
 	}
 	
 	public float getHalfWidth() {
-		return 0.2F;
+		return 0.4F;
 	}
 	
 	public float getHeight() {
-		return 0.6F;
+		return 0.8F;
 	}
 	
 	public boolean isTopBlock(IBlockAccess blockAccess, int x, int y, int z) {
