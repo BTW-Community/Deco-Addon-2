@@ -1,14 +1,15 @@
 package deco.block.blocks;
 
 import btw.block.BTWBlocks;
-import btw.block.blocks.RoughStoneBlock;
 import btw.block.blocks.StoneBlock;
 import btw.client.fx.BTWEffectManager;
 import btw.item.BTWItems;
+import btw.item.items.ChiselItem;
+import btw.item.items.PickaxeItem;
+import btw.item.items.ToolItem;
 import btw.item.util.ItemUtils;
 import deco.block.DecoBlockIDs;
 import deco.block.DecoBlocks;
-import deco.block.mixins.StoneBlockInvoker;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.src.*;
@@ -125,7 +126,7 @@ public class StoneVariantsBlock extends StoneBlock {
 	public boolean convertBlock(ItemStack stack, World world, int x, int y, int z, int side) {
 		int metadata = world.getBlockMetadata(x, y, z);
 		
-		int toolLevel = ((StoneBlockInvoker) this).getConversionLevelForToolAccessor(stack, world, x, y, z);
+		int toolLevel = this.getConversionLevelForTool(stack, world, x, y, z);
 		
 		if (getIsCracked(metadata)) {
 			world.setBlockAndMetadataWithNotify(x, y, z, RoughStoneVariantBlock.stoneTypeBlockArray[getType(this.blockID, metadata)].blockID, 0);
@@ -198,6 +199,31 @@ public class StoneVariantsBlock extends StoneBlock {
 	}
 	
 	//------------- Class Specific Methods ------------//
+	
+	protected int getConversionLevelForTool(ItemStack stack, World world, int x, int y, int z) {
+		if (stack != null) {
+			if (stack.getItem() instanceof PickaxeItem) {
+				int toolLevel = ((ToolItem) stack.getItem()).toolMaterial.getHarvestLevel();
+				
+				if (toolLevel >= getEfficientToolLevel(world, x, y, z)) {
+					return 2;
+				}
+			}
+			else if (stack.getItem() instanceof ChiselItem) {
+				int toolLevel = ((ToolItem) stack.getItem()).toolMaterial.getHarvestLevel();
+				
+				if (toolLevel >= getEfficientToolLevel(world, x, y, z)) {
+					if (toolLevel >= getUberToolLevel(world, x, y, z)) {
+						return 3;
+					}
+					
+					return 1;
+				}
+			}
+		}
+		
+		return 0;
+	}
 	
 	public static int getType(int blockID, int metadata) {
 		return ((StoneVariantsBlock) Block.blocksList[blockID]).getType(metadata);

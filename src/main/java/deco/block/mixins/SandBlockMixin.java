@@ -25,7 +25,7 @@ public class SandBlockMixin extends FallingFullBlock {
 		return metadata;
 	}
 	
-	@Inject(method = "dropComponentItemsOnBadBreak", at = @At("HEAD"), cancellable = true)
+	@Inject(method = "dropComponentItemsOnBadBreak", at = @At("HEAD"), cancellable = true, remap = false)
 	public void dropComponentItemsOnBadBreak(World world, int x, int y, int z, int metadata, float chanceOfDrop, CallbackInfoReturnable<Boolean> cir) {
 		this.dropItemsIndividually(world, x, y, z, BTWItems.sandPile.itemID, 6, metadata, chanceOfDrop);
 		cir.setReturnValue(true);
