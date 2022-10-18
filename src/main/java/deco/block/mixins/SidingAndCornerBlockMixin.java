@@ -28,8 +28,8 @@ public class SidingAndCornerBlockMixin extends Block {
 			at = @At(
 					value = "INVOKE",
 					target = "Lbtw/client/render/util/RenderUtils;" +
-							"renderInvBlockWithTexture(Lnet/minecraft/src/RenderBlocks;Lnet/minecraft/src/Block;FFFLnet/minecraft/src/Icon;)V",
-					remap = false),
+							"renderInvBlockWithTexture(Lnet/minecraft/src/RenderBlocks;Lnet/minecraft/src/Block;FFFLnet/minecraft/src/Icon;)V"
+			),
 			cancellable = true)
 	public void renderDecoWoodTexturesAsItem(RenderBlocks renderBlocks, int itemDamage, float brightness, CallbackInfo info) {
 		if (itemDamage >= WoodTypeHelper.NUM_VANILLA_WOOD) {

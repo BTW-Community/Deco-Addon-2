@@ -47,8 +47,8 @@ public class WoodSidingAndCornerBlockMixin extends SidingAndCornerAndDecorativeB
 			at = @At(
 					value = "INVOKE",
 					target = "Lbtw/block/blocks/WoodSidingAndCornerAndDecorativeBlock;" +
-							"renderBenchInvBlock(Lnet/minecraft/src/RenderBlocks;Lnet/minecraft/src/Block;I)V",
-					remap = false),
+							"renderBenchInvBlock(Lnet/minecraft/src/RenderBlocks;Lnet/minecraft/src/Block;I)V"
+			),
 			locals = LocalCapture.CAPTURE_FAILHARD,
 			cancellable = true)
 	public void renderDecoBench(RenderBlocks render, int itemDamage, float brightness,
@@ -68,8 +68,8 @@ public class WoodSidingAndCornerBlockMixin extends SidingAndCornerAndDecorativeB
 			at = @At(
 					value = "INVOKE",
 					target = "Lbtw/block/blocks/WoodSidingAndCornerAndDecorativeBlock;" +
-							"renderFenceInvBlock(Lnet/minecraft/src/RenderBlocks;Lnet/minecraft/src/Block;I)V",
-					remap = false),
+							"renderFenceInvBlock(Lnet/minecraft/src/RenderBlocks;Lnet/minecraft/src/Block;I)V"
+			),
 			locals = LocalCapture.CAPTURE_FAILHARD,
 			cancellable = true)
 	public void renderDecoFence(RenderBlocks render, int itemDamage, float brightness,

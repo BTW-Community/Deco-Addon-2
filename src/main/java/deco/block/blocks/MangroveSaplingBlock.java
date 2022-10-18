@@ -100,7 +100,7 @@ public class MangroveSaplingBlock extends DecoSaplingBlock {
 			world.setBlock(x - 3, j, z, DecoBlocks.mangroveLog.blockID);
 		}
 		
-		world.setBlock(x - 3, j + 1, z, DecoBlocks.mangroveStump.blockID);
+		world.setBlock(x - 3, j, z, DecoBlocks.mangroveStump.blockID);
 		
 		int offset2 = 3 + rand.nextInt(4);
 		
@@ -131,7 +131,7 @@ public class MangroveSaplingBlock extends DecoSaplingBlock {
 			world.setBlock(x + 3, j, z, DecoBlocks.mangroveLog.blockID);
 		}
 		
-		world.setBlock(x + 3, j + 1, z, DecoBlocks.mangroveStump.blockID);
+		world.setBlock(x + 3, j, z, DecoBlocks.mangroveStump.blockID);
 		
 		int offset3 = 3 + rand.nextInt(4);
 		
@@ -162,7 +162,7 @@ public class MangroveSaplingBlock extends DecoSaplingBlock {
 			world.setBlock(x, j, z - 3, DecoBlocks.mangroveLog.blockID);
 		}
 		
-		world.setBlock(x, j + 1, z - 3, DecoBlocks.mangroveStump.blockID);
+		world.setBlock(x, j, z - 3, DecoBlocks.mangroveStump.blockID);
 		
 		int offset4 = 3 + rand.nextInt(4);
 		
@@ -193,7 +193,7 @@ public class MangroveSaplingBlock extends DecoSaplingBlock {
 			world.setBlock(x, j, z + 3, DecoBlocks.mangroveLog.blockID);
 		}
 		
-		world.setBlock(x, j + 1, z + 3, DecoBlocks.mangroveStump.blockID);
+		world.setBlock(x, j, z + 3, DecoBlocks.mangroveStump.blockID);
 	}
 	
 	private void createRainForestBranch(World world, Random rand, int x, int y, int z) {
