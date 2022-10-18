@@ -17,7 +17,8 @@ public abstract class DecoSaplingBlock extends LegacySaplingBlock {
 
     public DecoSaplingBlock(int blockID, String[] baseTextureNames) {
         super(blockID);
-
+        this.setStepSound(soundGrassFootstep);
+        
         this.baseTextureNames = baseTextureNames;
     }
     
