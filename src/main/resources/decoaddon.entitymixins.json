@@ -4,6 +4,7 @@
   "package": "deco.entity.mixins",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
+    "JungleSpiderEntityMixin",
     "SquidEntityMixin"
   ],
   "client": [
