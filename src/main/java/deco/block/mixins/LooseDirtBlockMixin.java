@@ -34,5 +34,7 @@ public class LooseDirtBlockMixin extends FallingFullBlock {
 				world.markBlockRangeForRenderUpdate(x, y, z, x, y, z);
 			}
 		}
+		
+		checkForFall(world, x, y, z);
 	}
 }

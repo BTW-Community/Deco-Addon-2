@@ -793,7 +793,7 @@ tile.decoBlockFlower.rosebush.name=Old Rose Bush
 tile.decoBlockFlower.roseBlue.name=Blue Rose
 
 tile.decoBlockFlower2.blackRose.name=Black Rose
-tile.decoBlockFlower2.lilyOfTheValley.name=Lily of the Valley
+tile.decoBlockFlower2.lily.name=Lily of the Valley
 
 tile.decoBlockTulip.red.name=Red Tulip
 tile.decoBlockTulip.pink.name=Pink Tulip

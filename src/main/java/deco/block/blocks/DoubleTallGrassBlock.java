@@ -18,6 +18,8 @@ public class DoubleTallGrassBlock extends TallPlantBlock {
 						"grass",
 						"fern"
 				});
+		
+		this.blockMaterial = Material.vine;
 	}
 	
 	@Override
