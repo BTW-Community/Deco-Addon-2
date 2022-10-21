@@ -2,6 +2,7 @@ package deco.block.blocks;
 
 import btw.block.blocks.LeavesBlock;
 import btw.item.items.ShearsItem;
+import deco.block.DecoBlocks;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.src.*;
@@ -57,6 +58,26 @@ public class DecoLeavesBlock extends LeavesBlock {
         else {
             super.harvestBlock(world, player, x, y, z, metadata);
         }
+    }
+    
+    @Override
+    public boolean canMobsSpawnOn(World world, int x, int y, int k) {
+        if (this.blockMaterial == DecoBlocks.hedgeMaterial) {
+            return false;
+        }
+        else {
+            return super.canMobsSpawnOn(world, x, y, k);
+        }
+    }
+    
+    //------------- Class Specific Methods ------------//
+    
+    public boolean spawnsJungleSpiders = false;
+    
+    public Block setSpawnsJungleSpiders() {
+        this.blockMaterial = Material.leaves;
+        this.spawnsJungleSpiders = true;
+        return this;
     }
 
     //----------- Client Side Functionality -----------//

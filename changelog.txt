@@ -26,6 +26,7 @@ Some textures in this release have been used or modified from the following sour
         - Mahogany and mangrove are equivalent to jungle
         - Hazel is equivalent to oak
         - Fir is equivalent to birch
+    - Jungle spiders can spawn on mangrove and mahogany leaves
 - Changed autumn saplings to produce different wood types depending on color.
 - Changed sapling recipes:
     - All sapling recipes can use either dung or fertilizer, and are performed in a cauldron.

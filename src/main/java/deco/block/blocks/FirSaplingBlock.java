@@ -132,7 +132,7 @@ public class FirSaplingBlock extends DecoSaplingBlock {
 					for (int var16 = 0; var16 < treeHeight - var15; ++var16) {
 						int var17 = world.getBlockId(x, y + var16, z);
 						
-						if (var17 == 0 || var17 == Block.leaves.blockID) {
+						if (var17 == 0 || var17 == DecoBlocks.firLeaves.blockID) {
 							world.setBlockAndMetadata(x, y + var16, z, DecoBlocks.firLog.blockID, 0);
 						}
 					}
@@ -256,7 +256,7 @@ public class FirSaplingBlock extends DecoSaplingBlock {
 					{
 						var17 = world.getBlockId(x, y + var16, z);
 						
-						if (var17 == 0 || var17 == Block.leaves.blockID)
+						if (var17 == 0 || var17 == DecoBlocks.firLeaves.blockID)
 						{
 							world.setBlockAndMetadata(x, y + var16, z, DecoBlocks.firLog.blockID, 0);
 						}
@@ -377,7 +377,7 @@ public class FirSaplingBlock extends DecoSaplingBlock {
 					{
 						var17 = world.getBlockId(x, y + var16, z);
 						
-						if (var17 == 0 || var17 == Block.leaves.blockID)
+						if (var17 == 0 || var17 == DecoBlocks.firLeaves.blockID)
 						{
 							world.setBlockAndMetadata(x, y + var16, z, DecoBlocks.firLog.blockID, 0);
 						}

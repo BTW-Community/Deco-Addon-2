@@ -40,8 +40,8 @@ public class WoodMouldingBlockMixin extends MouldingAndDecorativeBlock {
 			at = @At(
 					value = "INVOKE",
 					target = "Lbtw/client/render/util/RenderUtils;" +
-							"renderInvBlockWithTexture(Lnet/minecraft/src/RenderBlocks;Lnet/minecraft/src/Block;FFFLnet/minecraft/src/Icon;)V",
-					remap = false),
+							"renderInvBlockWithTexture(Lnet/minecraft/src/RenderBlocks;Lnet/minecraft/src/Block;FFFLnet/minecraft/src/Icon;)V"
+			),
 			cancellable = true)
 	public void renderDecoWoodTexturesAsItem(RenderBlocks renderBlocks, int itemDamage, float brightness, CallbackInfo info) {
 		if (itemDamage >= WoodTypeHelper.NUM_VANILLA_WOOD) {
@@ -56,8 +56,8 @@ public class WoodMouldingBlockMixin extends MouldingAndDecorativeBlock {
 			at = @At(
 					value = "INVOKE",
 					target = "Lbtw/block/blocks/WoodMouldingAndDecorativeBlock;" +
-							"renderDecorativeInvBlock(Lnet/minecraft/src/RenderBlocks;Lnet/minecraft/src/Block;IF)V",
-					remap = false),
+							"renderDecorativeInvBlock(Lnet/minecraft/src/RenderBlocks;Lnet/minecraft/src/Block;IF)V"
+			),
 			locals = LocalCapture.CAPTURE_FAILHARD,
 			cancellable = true)
 	public void renderDecoMouldingDecorative(RenderBlocks render, int itemDamage, float brightness,

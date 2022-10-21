@@ -12,6 +12,7 @@ import net.fabricmc.api.Environment;
 import net.minecraft.src.*;
 
 import java.util.List;
+import java.util.Random;
 
 public class DecoLogBlock extends LogBlock implements BlockInterface {
     public static final int TYPE_LOG = 0;
@@ -45,6 +46,11 @@ public class DecoLogBlock extends LogBlock implements BlockInterface {
 
         this.topTextures = topTextures;
         this.sideTextures = sideTextures;
+    }
+    
+    @Override
+    public int idDropped(int metadata, Random rand, int fortuneModifier) {
+        return this.blockID;
     }
 
     @Override

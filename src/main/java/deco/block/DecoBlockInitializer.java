@@ -2660,6 +2660,7 @@ public class DecoBlockInitializer {
                 .setUnlocalizedName("decoBlockSpikeMahogany");
     
         DecoBlocks.mahoganyLeaves = new DecoLeavesBlock(DecoBlockIDs.MAHOGANY_LEAVES_ID, DecoBlockIDs.MAHOGANY_SAPLING_ID, "decoBlockLeavesMahogany")
+                .setSpawnsJungleSpiders()
                 .setUnlocalizedName("decoBlockLeavesMahogany");
         DecoBlocks.mahoganySapling = new MahoganySaplingBlock(DecoBlockIDs.MAHOGANY_SAPLING_ID);
         Item.itemsList[DecoBlocks.mahoganySapling.blockID] = new ItemMultiTextureTile(DecoBlocks.mahoganySapling.blockID - 256, DecoBlocks.mahoganySapling, MahoganySaplingBlock.saplingTypes);
@@ -2727,6 +2728,7 @@ public class DecoBlockInitializer {
                 .setUnlocalizedName("decoBlockSpikeMangrove");
     
         DecoBlocks.mangroveLeaves = new DecoLeavesBlock(DecoBlockIDs.MANGROVE_LEAVES_ID, DecoBlockIDs.MANGROVE_SAPLING_ID, "decoBlockLeavesMangrove")
+                .setSpawnsJungleSpiders()
                 .setUnlocalizedName("decoBlockLeavesMangrove");
         DecoBlocks.mangroveSapling = new MangroveSaplingBlock(DecoBlockIDs.MANGROVE_SAPLING_ID);
         Item.itemsList[DecoBlocks.mangroveSapling.blockID] = new ItemMultiTextureTile(DecoBlocks.mangroveSapling.blockID - 256, DecoBlocks.mangroveSapling, MangroveSaplingBlock.saplingTypes);
