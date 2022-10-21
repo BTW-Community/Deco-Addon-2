@@ -30,13 +30,7 @@ public class WoodMouldingBlockMixin extends MouldingAndDecorativeBlock {
 	
 	@Inject(method = "getWoodTypeFromBlockID(I)I", at = @At("HEAD"), remap = false, cancellable = true)
 	public void getWoodTypeFromBlockID(int blockID, CallbackInfoReturnable<Integer> info) {
-		// Reverse map lookup, returns first key to match value
-		info.setReturnValue(WoodTypeHelper.woodTypeToMouldingIDMap.entrySet()
-				.stream()
-				.filter(entry -> Objects.equals(entry.getValue(), blockID))
-				.map(Map.Entry::getKey)
-				.collect(Collectors.toList())
-				.get(0));
+		info.setReturnValue(WoodTypeHelper.mouldingIDToWoodTypeMap.get(blockID));
 	}
 	
 	//----------- Client Side Functionality -----------//

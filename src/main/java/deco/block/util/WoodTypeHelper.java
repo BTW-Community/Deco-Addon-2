@@ -71,22 +71,26 @@ public class WoodTypeHelper {
     public static final int FIR_WORK_STUMP_TYPE = 1;
     
     public static Map<Integer, Integer> woodTypeToSidingIDMap = new HashMap<>();
+    public static Map<Integer, Integer> sidingIDToWoodTypeMap = new HashMap<>();
+    
     public static Map<Integer, Integer> woodTypeToMouldingIDMap = new HashMap<>();
+    public static Map<Integer, Integer> mouldingIDToWoodTypeMap = new HashMap<>();
     
     static {
-        woodTypeToSidingIDMap.put(CHERRY_WOOD_TYPE, DecoBlockIDs.CHERRY_SIDING_AND_CORNER_ID);
-        woodTypeToSidingIDMap.put(ACACIA_WOOD_TYPE, DecoBlockIDs.ACACIA_SIDING_AND_CORNER_ID);
-        woodTypeToSidingIDMap.put(MAHOGANY_WOOD_TYPE, DecoBlockIDs.MAHOGANY_SIDING_AND_CORNER_ID);
-        woodTypeToSidingIDMap.put(MANGROVE_WOOD_TYPE, DecoBlockIDs.MANGROVE_SIDING_AND_CORNER_ID);
-        woodTypeToSidingIDMap.put(HAZEL_WOOD_TYPE, DecoBlockIDs.HAZEL_SIDING_AND_CORNER_ID);
-        woodTypeToSidingIDMap.put(FIR_WOOD_TYPE, DecoBlockIDs.HAZEL_SIDING_AND_CORNER_ID);
+        addWoodType(CHERRY_WOOD_TYPE, DecoBlockIDs.CHERRY_SIDING_AND_CORNER_ID, DecoBlockIDs.CHERRY_MOULDING_ID);
+        addWoodType(ACACIA_WOOD_TYPE, DecoBlockIDs.ACACIA_SIDING_AND_CORNER_ID, DecoBlockIDs.ACACIA_MOULDING_ID);
+        addWoodType(MAHOGANY_WOOD_TYPE, DecoBlockIDs.MAHOGANY_SIDING_AND_CORNER_ID, DecoBlockIDs.MAHOGANY_MOULDING_ID);
+        addWoodType(MANGROVE_WOOD_TYPE, DecoBlockIDs.MANGROVE_SIDING_AND_CORNER_ID, DecoBlockIDs.MANGROVE_MOULDING_ID);
+        addWoodType(HAZEL_WOOD_TYPE, DecoBlockIDs.HAZEL_SIDING_AND_CORNER_ID, DecoBlockIDs.HAZEL_MOULDING_ID);
+        addWoodType(FIR_WOOD_TYPE, DecoBlockIDs.HAZEL_SIDING_AND_CORNER_ID, DecoBlockIDs.HAZEL_MOULDING_ID);
+    }
     
-        woodTypeToMouldingIDMap.put(CHERRY_WOOD_TYPE, DecoBlockIDs.CHERRY_MOULDING_ID);
-        woodTypeToMouldingIDMap.put(ACACIA_WOOD_TYPE, DecoBlockIDs.ACACIA_MOULDING_ID);
-        woodTypeToMouldingIDMap.put(MAHOGANY_WOOD_TYPE, DecoBlockIDs.MAHOGANY_MOULDING_ID);
-        woodTypeToMouldingIDMap.put(MANGROVE_WOOD_TYPE, DecoBlockIDs.MANGROVE_MOULDING_ID);
-        woodTypeToMouldingIDMap.put(HAZEL_WOOD_TYPE, DecoBlockIDs.HAZEL_MOULDING_ID);
-        woodTypeToMouldingIDMap.put(FIR_WOOD_TYPE, DecoBlockIDs.HAZEL_MOULDING_ID);
+    private static void addWoodType(int woodType, int sidingID, int mouldingID) {
+        woodTypeToSidingIDMap.put(woodType, sidingID);
+        sidingIDToWoodTypeMap.put(sidingID, woodType);
+    
+        woodTypeToSidingIDMap.put(woodType, mouldingID);
+        mouldingIDToWoodTypeMap.put(mouldingID, woodType);
     }
     
     public static Map<Integer, FurnaceBurnTime> furnaceBurnTimes = new HashMap<>();

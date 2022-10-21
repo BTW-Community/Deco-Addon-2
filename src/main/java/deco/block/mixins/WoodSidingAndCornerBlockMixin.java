@@ -33,13 +33,7 @@ public class WoodSidingAndCornerBlockMixin extends SidingAndCornerAndDecorativeB
 	
 	@Inject(method = "getWoodTypeFromBlockID(I)I", at = @At("HEAD"), remap = false, cancellable = true)
 	public void getWoodTypeFromBlockID(int blockID, CallbackInfoReturnable<Integer> info) {
-		// Reverse map lookup, returns first key to match value
-		info.setReturnValue(WoodTypeHelper.woodTypeToSidingIDMap.entrySet()
-				.stream()
-				.filter(entry -> Objects.equals(entry.getValue(), blockID))
-				.map(Map.Entry::getKey)
-				.collect(Collectors.toList())
-				.get(0));
+		info.setReturnValue(WoodTypeHelper.sidingIDToWoodTypeMap.get(blockID));
 	}
 	
 	@Environment(EnvType.CLIENT)
