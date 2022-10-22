@@ -5028,19 +5028,19 @@ public class CraftingRecipeList {
 				});
 		
 		// Ladders
-		RecipeManager.addRecipe(new ItemStack(BTWBlocks.ladder, 1, 3),
+		RecipeManager.addRecipe(new ItemStack(BTWBlocks.ladder, 3),
 				new Object[] {
-						"M M",
 						"MFM",
-						"M M",
+						"MMM",
+						"MFM",
 						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.OAK_WOOD_TYPE),
 						'F', BTWItems.hempFibers
 				});
-		RecipeManager.addRecipe(new ItemStack(BTWBlocks.ladder, 1, 3),
+		RecipeManager.addRecipe(new ItemStack(BTWBlocks.ladder, 3),
 				new Object[] {
-						"M M",
 						"MFM",
-						"M M",
+						"MMM",
+						"MFM",
 						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.OAK_WOOD_TYPE),
 						'F', Item.silk
 				});
@@ -5327,19 +5327,19 @@ public class CraftingRecipeList {
 				});
 		
 		// Ladders
-		RecipeManager.addRecipe(new ItemStack(DecoBlocks.spruceLadder, 1, 3),
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.spruceLadder, 3),
 				new Object[] {
-						"M M",
 						"MFM",
-						"M M",
+						"MMM",
+						"MFM",
 						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.SPRUCE_WOOD_TYPE),
 						'F', BTWItems.hempFibers
 				});
-		RecipeManager.addRecipe(new ItemStack(DecoBlocks.spruceLadder, 1, 3),
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.spruceLadder, 3),
 				new Object[] {
-						"M M",
 						"MFM",
-						"M M",
+						"MMM",
+						"MFM",
 						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.SPRUCE_WOOD_TYPE),
 						'F', Item.silk
 				});
@@ -5619,19 +5619,19 @@ public class CraftingRecipeList {
 				});
 		
 		// Ladders
-		RecipeManager.addRecipe(new ItemStack(DecoBlocks.birchLadder, 1, 3),
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.birchLadder, 3),
 				new Object[] {
-						"M M",
 						"MFM",
-						"M M",
+						"MMM",
+						"MFM",
 						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.BIRCH_WOOD_TYPE),
 						'F', BTWItems.hempFibers
 				});
-		RecipeManager.addRecipe(new ItemStack(DecoBlocks.birchLadder, 1, 3),
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.birchLadder, 3),
 				new Object[] {
-						"M M",
 						"MFM",
-						"M M",
+						"MMM",
+						"MFM",
 						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.BIRCH_WOOD_TYPE),
 						'F', Item.silk
 				});
@@ -5911,19 +5911,19 @@ public class CraftingRecipeList {
 				});
 		
 		// Ladders
-		RecipeManager.addRecipe(new ItemStack(DecoBlocks.jungleLadder, 1, 3),
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.jungleLadder, 3),
 				new Object[] {
-						"M M",
 						"MFM",
-						"M M",
+						"MMM",
+						"MFM",
 						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.JUNGLE_WOOD_TYPE),
 						'F', BTWItems.hempFibers
 				});
-		RecipeManager.addRecipe(new ItemStack(DecoBlocks.jungleLadder, 1, 3),
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.jungleLadder, 3),
 				new Object[] {
-						"M M",
 						"MFM",
-						"M M",
+						"MMM",
+						"MFM",
 						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.JUNGLE_WOOD_TYPE),
 						'F', Item.silk
 				});
@@ -6206,19 +6206,19 @@ public class CraftingRecipeList {
 				});
 		
 		// Ladders
-		RecipeManager.addRecipe(new ItemStack(DecoBlocks.bloodLadder, 1, 3),
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.bloodLadder, 3),
 				new Object[] {
-						"M M",
 						"MFM",
-						"M M",
+						"MMM",
+						"MFM",
 						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.BLOOD_WOOD_TYPE),
 						'F', BTWItems.hempFibers
 				});
-		RecipeManager.addRecipe(new ItemStack(DecoBlocks.bloodLadder, 1, 3),
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.bloodLadder, 3),
 				new Object[] {
-						"M M",
 						"MFM",
-						"M M",
+						"MMM",
+						"MFM",
 						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.BLOOD_WOOD_TYPE),
 						'F', Item.silk
 				});
@@ -6496,19 +6496,19 @@ public class CraftingRecipeList {
 				});
 		
 		// Ladders
-		RecipeManager.addRecipe(new ItemStack(DecoBlocks.cherryLadder, 1, 3),
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.cherryLadder, 3),
 				new Object[] {
-						"M M",
 						"MFM",
-						"M M",
+						"MMM",
+						"MFM",
 						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.CHERRY_WOOD_TYPE),
 						'F', BTWItems.hempFibers
 				});
-		RecipeManager.addRecipe(new ItemStack(DecoBlocks.cherryLadder, 1, 3),
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.cherryLadder, 3),
 				new Object[] {
-						"M M",
 						"MFM",
-						"M M",
+						"MMM",
+						"MFM",
 						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.CHERRY_WOOD_TYPE),
 						'F', Item.silk
 				});
@@ -6786,19 +6786,19 @@ public class CraftingRecipeList {
 				});
 		
 		// Ladders
-		RecipeManager.addRecipe(new ItemStack(DecoBlocks.acaciaLadder, 1, 3),
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.acaciaLadder, 3),
 				new Object[] {
-						"M M",
 						"MFM",
-						"M M",
+						"MMM",
+						"MFM",
 						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.ACACIA_WOOD_TYPE),
 						'F', BTWItems.hempFibers
 				});
-		RecipeManager.addRecipe(new ItemStack(DecoBlocks.acaciaLadder, 1, 3),
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.acaciaLadder, 3),
 				new Object[] {
-						"M M",
 						"MFM",
-						"M M",
+						"MMM",
+						"MFM",
 						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.ACACIA_WOOD_TYPE),
 						'F', Item.silk
 				});
@@ -7076,19 +7076,19 @@ public class CraftingRecipeList {
 				});
 		
 		// Ladders
-		RecipeManager.addRecipe(new ItemStack(DecoBlocks.mahoganyLadder, 1, 3),
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.mahoganyLadder, 3),
 				new Object[] {
-						"M M",
 						"MFM",
-						"M M",
+						"MMM",
+						"MFM",
 						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.MAHOGANY_WOOD_TYPE),
 						'F', BTWItems.hempFibers
 				});
-		RecipeManager.addRecipe(new ItemStack(DecoBlocks.mahoganyLadder, 1, 3),
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.mahoganyLadder, 3),
 				new Object[] {
-						"M M",
 						"MFM",
-						"M M",
+						"MMM",
+						"MFM",
 						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.MAHOGANY_WOOD_TYPE),
 						'F', Item.silk
 				});
@@ -7366,19 +7366,19 @@ public class CraftingRecipeList {
 				});
 		
 		// Ladders
-		RecipeManager.addRecipe(new ItemStack(DecoBlocks.mangroveLadder, 1, 3),
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.mangroveLadder, 3),
 				new Object[] {
-						"M M",
 						"MFM",
-						"M M",
+						"MMM",
+						"MFM",
 						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.MANGROVE_WOOD_TYPE),
 						'F', BTWItems.hempFibers
 				});
-		RecipeManager.addRecipe(new ItemStack(DecoBlocks.mangroveLadder, 1, 3),
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.mangroveLadder, 3),
 				new Object[] {
-						"M M",
 						"MFM",
-						"M M",
+						"MMM",
+						"MFM",
 						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.MANGROVE_WOOD_TYPE),
 						'F', Item.silk
 				});
@@ -7656,19 +7656,19 @@ public class CraftingRecipeList {
 				});
 		
 		// Ladders
-		RecipeManager.addRecipe(new ItemStack(DecoBlocks.hazelLadder, 1, 3),
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.hazelLadder, 3),
 				new Object[] {
-						"M M",
 						"MFM",
-						"M M",
+						"MMM",
+						"MFM",
 						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.HAZEL_WOOD_TYPE),
 						'F', BTWItems.hempFibers
 				});
-		RecipeManager.addRecipe(new ItemStack(DecoBlocks.hazelLadder, 1, 3),
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.hazelLadder, 3),
 				new Object[] {
-						"M M",
 						"MFM",
-						"M M",
+						"MMM",
+						"MFM",
 						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.HAZEL_WOOD_TYPE),
 						'F', Item.silk
 				});
@@ -7946,19 +7946,19 @@ public class CraftingRecipeList {
 				});
 		
 		// Ladders
-		RecipeManager.addRecipe(new ItemStack(DecoBlocks.firLadder, 1, 3),
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.firLadder, 3),
 				new Object[] {
-						"M M",
 						"MFM",
-						"M M",
+						"MMM",
+						"MFM",
 						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.FIR_WOOD_TYPE),
 						'F', BTWItems.hempFibers
 				});
-		RecipeManager.addRecipe(new ItemStack(DecoBlocks.firLadder, 1, 3),
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.firLadder, 3),
 				new Object[] {
-						"M M",
 						"MFM",
-						"M M",
+						"MMM",
+						"MFM",
 						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.FIR_WOOD_TYPE),
 						'F', Item.silk
 				});

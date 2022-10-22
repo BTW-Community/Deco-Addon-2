@@ -275,6 +275,9 @@ tile.decoBlockLadderBlood.name=Blood Wood Ladder
 tile.decoBlockLadderCherry.name=Cherry Ladder
 tile.decoBlockLadderAcacia.name=Acacia Ladder
 tile.decoBlockLadderMahogany.name=Mahogany Ladder
+tile.decoBlockLadderMangrove.name=Mangrove Ladder
+tile.decoBlockLadderHazel.name=Hazel Ladder
+tile.decoBlockLadderFir.name=Fir Ladder
 tile.decoBlockLadderIron.name=Iron Ladder
 
 tile.decoBlockAsh.name=Ash
