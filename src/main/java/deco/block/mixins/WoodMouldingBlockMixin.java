@@ -22,7 +22,7 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 
 @Mixin(WoodMouldingAndDecorativeBlock.class)
-public class WoodMouldingBlockMixin extends MouldingAndDecorativeBlock {
+public abstract class WoodMouldingBlockMixin extends MouldingAndDecorativeBlock {
 	public WoodMouldingBlockMixin(int iBlockID, Material material, String sTextureName, String sColumnSideTextureName, int iMatchingCornerBlockID,
 			float fHardness, float fResistance, StepSound stepSound, String name) {
 		super(iBlockID, material, sTextureName, sColumnSideTextureName, iMatchingCornerBlockID, fHardness, fResistance, stepSound, name);
@@ -30,7 +30,9 @@ public class WoodMouldingBlockMixin extends MouldingAndDecorativeBlock {
 	
 	@Inject(method = "getWoodTypeFromBlockID(I)I", at = @At("HEAD"), remap = false, cancellable = true)
 	public void getWoodTypeFromBlockID(int blockID, CallbackInfoReturnable<Integer> info) {
-		info.setReturnValue(WoodTypeHelper.mouldingIDToWoodTypeMap.get(blockID));
+		if (WoodTypeHelper.mouldingIDToWoodTypeMap.containsKey(blockID)) {
+			info.setReturnValue(WoodTypeHelper.mouldingIDToWoodTypeMap.get(blockID));
+		}
 	}
 	
 	//----------- Client Side Functionality -----------//

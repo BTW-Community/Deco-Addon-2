@@ -6,7 +6,7 @@ import net.minecraft.src.*;
 import org.spongepowered.asm.mixin.Mixin;
 
 @Mixin(CocoaPlantBlock.class)
-public class CocoaPlantBlockMixin extends BlockCocoa {
+public abstract class CocoaPlantBlockMixin extends BlockCocoa {
 	public CocoaPlantBlockMixin(int blockID) {
 		super(blockID);
 	}

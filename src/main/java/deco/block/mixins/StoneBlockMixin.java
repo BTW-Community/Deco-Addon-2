@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.gen.Invoker;
 
 @Mixin(StoneBlock.class)
-public class StoneBlockMixin extends Block {
+public abstract class StoneBlockMixin extends Block {
 	public StoneBlockMixin(int blockID) {
 		super(blockID, Material.rock);
 	}

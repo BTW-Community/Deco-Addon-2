@@ -18,7 +18,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(WorkStumpBlock.class)
-public class WorkStumpBlockMixin extends Block {
+public abstract class WorkStumpBlockMixin extends Block {
 	protected WorkStumpBlockMixin(int blockID, Material material) {
 		super(blockID, material);
 	}

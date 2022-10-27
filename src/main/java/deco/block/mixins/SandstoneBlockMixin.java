@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Random;
 
 @Mixin(SandstoneBlock.class)
-public class SandstoneBlockMixin extends BlockSandStone {
+public abstract class SandstoneBlockMixin extends BlockSandStone {
 	public SandstoneBlockMixin(int blockID) {
 		super(blockID);
 	}

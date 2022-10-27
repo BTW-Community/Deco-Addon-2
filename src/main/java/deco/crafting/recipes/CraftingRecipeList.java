@@ -4535,17 +4535,17 @@ public class CraftingRecipeList {
 		//------ General Wood ------//
 		
 		// Trapdoors
-		RecipeManager.removeVanillaRecipe(new ItemStack(Block.trapdoor),
+		RecipeManager.removeVanillaRecipe(new ItemStack(Block.trapdoor, 1),
 				new Object[] {
-						"SPP",
-						"SPP",
+						"PPS",
+						"PPS",
 						'S', Item.stick,
 						'P', Block.planks
 				});
 		RecipeManager.removeVanillaRecipe(new ItemStack(Block.trapdoor, 2),
 				new Object[] {
-						"SPP",
-						"SPP",
+						"PPS",
+						"PPS",
 						'S', Item.stick,
 						'P', new ItemStack(BTWItems.woodSidingStubID, 1, InventoryUtils.IGNORE_METADATA)
 				});

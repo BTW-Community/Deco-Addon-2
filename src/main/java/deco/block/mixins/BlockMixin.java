@@ -6,5 +6,5 @@ import net.minecraft.src.IBlockAccess;
 import org.spongepowered.asm.mixin.Mixin;
 
 @Mixin(Block.class)
-public class BlockMixin implements BlockInterface {
+public abstract class BlockMixin implements BlockInterface {
 }

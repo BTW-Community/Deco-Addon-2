@@ -16,7 +16,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import java.util.List;
 
 @Mixin(SignItem.class)
-public class SignItemMixin extends ItemSign {
+public abstract class SignItemMixin extends ItemSign {
 	private int[] floorSigns;
 	private int[] wallSigns;
 	

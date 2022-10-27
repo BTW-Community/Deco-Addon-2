@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import java.util.List;
 
 @Mixin(PlanksBlock.class)
-public class PlanksBlockMixin extends Block {
+public abstract class PlanksBlockMixin extends Block {
     protected PlanksBlockMixin(int blockID, Material material) {
         super(blockID, material);
     }

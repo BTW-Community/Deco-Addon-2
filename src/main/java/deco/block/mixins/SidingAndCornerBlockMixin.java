@@ -16,7 +16,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(SidingAndCornerBlock.class)
-public class SidingAndCornerBlockMixin extends Block {
+public abstract class SidingAndCornerBlockMixin extends Block {
 	protected SidingAndCornerBlockMixin(int blockID, Material metadata) {
 		super(blockID, metadata);
 	}

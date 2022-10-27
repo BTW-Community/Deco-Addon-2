@@ -25,7 +25,7 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 
 @Mixin(WoodSidingAndCornerAndDecorativeBlock.class)
-public class WoodSidingAndCornerBlockMixin extends SidingAndCornerAndDecorativeBlock {
+public abstract class WoodSidingAndCornerBlockMixin extends SidingAndCornerAndDecorativeBlock {
 	public WoodSidingAndCornerBlockMixin(int blockID, Material material, String textureName, float hardness, float resistance, StepSound stepSound,
 			String name) {
 		super(blockID, material, textureName, hardness, resistance, stepSound, name);
@@ -33,8 +33,12 @@ public class WoodSidingAndCornerBlockMixin extends SidingAndCornerAndDecorativeB
 	
 	@Inject(method = "getWoodTypeFromBlockID(I)I", at = @At("HEAD"), remap = false, cancellable = true)
 	public void getWoodTypeFromBlockID(int blockID, CallbackInfoReturnable<Integer> info) {
-		info.setReturnValue(WoodTypeHelper.sidingIDToWoodTypeMap.get(blockID));
+		if (WoodTypeHelper.sidingIDToWoodTypeMap.containsKey(blockID)) {
+			info.setReturnValue(WoodTypeHelper.sidingIDToWoodTypeMap.get(blockID));
+		}
 	}
+	
+	//----------- Client Side Functionality -----------//
 	
 	@Environment(EnvType.CLIENT)
 	@Inject(method = "renderBlockAsItem(Lnet/minecraft/src/RenderBlocks;IF)V",

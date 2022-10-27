@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(WoodMouldingStubBlockItem.class)
-public class WoodMouldingStubMixin extends ItemBlock {
+public abstract class WoodMouldingStubMixin extends ItemBlock {
 	public WoodMouldingStubMixin(int itemID) {
 		super(itemID);
 	}

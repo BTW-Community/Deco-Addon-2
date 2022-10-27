@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(CocoaBeanItem.class)
-public class CocoaBeanItemMixin extends FoodItem {
+public abstract class CocoaBeanItemMixin extends FoodItem {
 	public CocoaBeanItemMixin(int itemID, int hungerHealed, float saturationModifier, boolean isWolfMeat, String itemName) {
 		super(itemID, hungerHealed, saturationModifier, isWolfMeat, itemName);
 	}

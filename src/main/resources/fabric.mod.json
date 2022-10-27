@@ -20,11 +20,11 @@
   "entrypoints": {
   },
   "mixins": [
-    "decoaddon.blockmixins.json",
-    "decoaddon.clientmixins.json",
-    "decoaddon.entitymixins.json",
-    "decoaddon.inventorymixins.json",
-    "decoaddon.itemmixins.json"
+    "decoaddon.block.mixins.json",
+    "decoaddon.client.mixins.json",
+    "decoaddon.entity.mixins.json",
+    "decoaddon.inventory.mixins.json",
+    "decoaddon.item.mixins.json"
   ],
 
   "depends": {

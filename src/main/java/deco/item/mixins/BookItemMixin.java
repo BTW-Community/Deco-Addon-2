@@ -10,7 +10,7 @@ import net.minecraft.src.ItemStack;
 import org.spongepowered.asm.mixin.Mixin;
 
 @Mixin(BookItem.class)
-public class BookItemMixin extends Item implements BookInterface {
+public abstract class BookItemMixin extends Item implements BookInterface {
 	public BookItemMixin(int itemID) {
 		super(itemID);
 	}

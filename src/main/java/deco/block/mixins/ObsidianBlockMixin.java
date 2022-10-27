@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import java.util.List;
 
 @Mixin(ObsidianBlock.class)
-public class ObsidianBlockMixin extends BlockObsidian {
+public abstract class ObsidianBlockMixin extends BlockObsidian {
 	public ObsidianBlockMixin(int blockID) {
 		super(blockID);
 	}

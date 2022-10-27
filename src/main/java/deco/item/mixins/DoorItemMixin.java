@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(DoorItem.class)
-public class DoorItemMixin extends Item {
+public abstract class DoorItemMixin extends Item {
 	public DoorItemMixin(int itemID) {
 		super(itemID);
 	}

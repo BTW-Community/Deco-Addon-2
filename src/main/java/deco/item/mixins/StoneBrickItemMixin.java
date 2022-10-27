@@ -14,9 +14,20 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import java.util.List;
 
 @Mixin(StoneBrickItem.class)
-public class StoneBrickItemMixin extends Item {
+public abstract class StoneBrickItemMixin extends Item {
 	public StoneBrickItemMixin(int itemID) {
 		super(itemID);
+	}
+	
+	@Override
+	public String getUnlocalizedName(ItemStack itemStack) {
+		int itemDamage = itemStack.getItemDamage();
+		
+		if (itemDamage >= StoneVariantsBlock.NUM_VANILLA_TYPES) {
+			return this.getUnlocalizedName() + "." + StoneVariantsBlock.names[itemDamage - StoneVariantsBlock.NUM_VANILLA_TYPES];
+		}
+		
+		return super.getUnlocalizedName(itemStack);
 	}
 	
 	//----------- Client Side Functionality -----------//

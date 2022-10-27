@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import java.util.List;
 
 @Mixin(BarkItem.class)
-public class BarkItemMixin extends Item {
+public abstract class BarkItemMixin extends Item {
     public BarkItemMixin(int itemID) {
         super(itemID);
     }

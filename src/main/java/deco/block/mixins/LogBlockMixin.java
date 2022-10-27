@@ -8,7 +8,7 @@ import net.minecraft.src.IBlockAccess;
 import org.spongepowered.asm.mixin.Mixin;
 
 @Mixin(LogBlock.class)
-public class LogBlockMixin extends BlockLog implements BlockInterface {
+public abstract class LogBlockMixin extends BlockLog implements BlockInterface {
 	protected LogBlockMixin(int blockID) {
 		super(blockID);
 	}

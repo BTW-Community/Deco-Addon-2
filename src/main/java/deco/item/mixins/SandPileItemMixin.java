@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import java.util.List;
 
 @Mixin(SandPileItem.class)
-public class SandPileItemMixin extends Item {
+public abstract class SandPileItemMixin extends Item {
 	public SandPileItemMixin(int itemID) {
 		super(itemID);
 	}

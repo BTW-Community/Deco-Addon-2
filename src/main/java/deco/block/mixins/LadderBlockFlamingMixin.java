@@ -1,6 +1,5 @@
 package deco.block.mixins;
 
-import btw.block.BTWBlocks;
 import btw.block.blocks.LadderBlock;
 import btw.block.blocks.LadderBlockBase;
 import btw.block.blocks.LadderBlockFlaming;
@@ -12,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(LadderBlockFlaming.class)
-public class LadderBlockFlamingMixin extends LadderBlockBase {
+public abstract class LadderBlockFlamingMixin extends LadderBlockBase {
 	protected LadderBlockFlamingMixin(int blockID) {
 		super(blockID);
 	}

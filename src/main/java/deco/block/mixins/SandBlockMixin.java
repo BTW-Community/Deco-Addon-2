@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import java.util.List;
 
 @Mixin(SandBlock.class)
-public class SandBlockMixin extends FallingFullBlock {
+public abstract class SandBlockMixin extends FallingFullBlock {
 	public SandBlockMixin(int blockID, Material material) {
 		super(blockID, material);
 	}

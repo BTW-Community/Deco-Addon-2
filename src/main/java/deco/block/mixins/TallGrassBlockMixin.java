@@ -11,7 +11,7 @@ import net.minecraft.src.World;
 import org.spongepowered.asm.mixin.Mixin;
 
 @Mixin(TallGrassBlock.class)
-public class TallGrassBlockMixin extends BlockTallGrass {
+public abstract class TallGrassBlockMixin extends BlockTallGrass {
 	protected TallGrassBlockMixin(int blockID) {
 		super(blockID);
 	}

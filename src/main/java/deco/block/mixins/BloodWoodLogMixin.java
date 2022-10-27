@@ -17,7 +17,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(BloodWoodLogBlock.class)
-public class BloodWoodLogMixin extends Block {
+public abstract class BloodWoodLogMixin extends Block {
 	protected BloodWoodLogMixin(int blockID, Material material) {
 		super(blockID, material);
 	}

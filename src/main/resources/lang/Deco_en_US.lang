@@ -50,7 +50,7 @@ tile.decoBlockSlateBrickStairs.name=Slate Brick Stairs
 tile.decoBlockCalciteBrickStairs.name=Calcite Brick Stairs
 tile.decoBlockTuffBrickStairs.name=Tuff Brick Stairs
 
-tile.decoBlockSlateTilesStairs.name=Slate Tile Stairs
+tile.decoBlockSlateTileStairs.name=Slate Tile Stairs
 
 tile.decoBlockGraniteCobblestoneStairsLoose.name=Loose Granite Cobblestone Stairs
 tile.decoBlockAndesiteCobblestoneStairsLoose.name=Loose Andesite Cobblestone Stairs
@@ -847,7 +847,7 @@ tile.decoBlockCobblestone.tuff.name=Tuff Cobblestone
 tile.decoBlockStoneBricks.granite.name=Granite Bricks
 tile.decoBlockStoneBricks.andesite.name=Andesite Bricks
 tile.decoBlockStoneBricks.diorite.name=Diorite Bricks
-tile.decoBlockStoneBricks.slate.name=Slate
+tile.decoBlockStoneBricks.slate.name=Slate Bricks
 tile.decoBlockStoneBricks.calcite.name=Calcite Bricks
 tile.decoBlockStoneBricks.tuff.name=Tuff Bricks
 
@@ -2470,6 +2470,22 @@ item.helmetDiamond.name=Diamondium Helmet
 item.chestplateDiamond.name=Diamondium Chestplate
 item.leggingsDiamond.name=Diamondium Leggings
 item.bootsDiamond.name=Diamondium Boots
+item.fcItemChiselDiamond.name=Diamondium Chisel
+item.fcItemShearsDiamond.name=Diamondium Shears
+
+item.fcItemStone.granite.name=Loose Granite Stone
+item.fcItemStone.andesite.name=Loose Andesite Stone
+item.fcItemStone.diorite.name=Loose Diorite Stone
+item.fcItemStone.slate.name=Loose Slate Stone
+item.fcItemStone.calcite.name=Loose Calcite Stone
+item.fcItemStone.tuff.name=Loose Tuff Stone
+
+item.fcItemBrickStone.granite.name=Granite Brick
+item.fcItemBrickStone.andesite.name=Andesite Brick
+item.fcItemBrickStone.diorite.name=Diorite Brick
+item.fcItemBrickStone.slate.name=Slate Brick
+item.fcItemBrickStone.calcite.name=Calcite Brick
+item.fcItemBrickStone.tuff.name=Tuff Brick
 
 # Container
 

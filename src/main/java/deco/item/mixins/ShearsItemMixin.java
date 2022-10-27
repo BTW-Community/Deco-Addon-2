@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import java.util.ArrayList;
 
 @Mixin(ShearsItem.class)
-public class ShearsItemMixin extends ItemShears {
+public abstract class ShearsItemMixin extends ItemShears {
 	private static ArrayList<Integer> harvestableBlocks = new ArrayList<>();
 	private static ArrayList<Integer> efficientBlocks = new ArrayList<>();
 	
