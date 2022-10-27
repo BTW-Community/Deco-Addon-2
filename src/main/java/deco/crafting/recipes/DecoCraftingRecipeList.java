@@ -15,14 +15,13 @@ import btw.util.ColorUtils;
 import deco.block.DecoBlocks;
 import deco.block.blocks.*;
 import deco.block.util.*;
-import deco.item.DecoItemIDs;
 import deco.item.DecoItems;
 import net.minecraft.src.Block;
 import net.minecraft.src.BlockCloth;
 import net.minecraft.src.Item;
 import net.minecraft.src.ItemStack;
 
-public class CraftingRecipeList {
+public class DecoCraftingRecipeList {
 	public static void initRecipes() {
 		initGeneralRecipes();
 		initStoneRecipes();

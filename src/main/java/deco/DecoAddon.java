@@ -4,7 +4,7 @@ import btw.AddonHandler;
 import btw.BTWAddon;
 import btw.BTWMod;
 import deco.block.DecoBlockInitializer;
-import deco.crafting.recipes.CraftingRecipeList;
+import deco.crafting.recipes.DecoCraftingRecipeList;
 import deco.entity.DecoEntityManager;
 import deco.item.DecoItemInitializer;
 
@@ -37,7 +37,7 @@ public class DecoAddon extends BTWAddon {
     @Override
     public void postInitialize() {
         DecoBlockInitializer.initAddonOverlapBlocks();
-        CraftingRecipeList.initRecipes();
+        DecoCraftingRecipeList.initRecipes();
     }
     
     @Override
