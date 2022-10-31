@@ -16,12 +16,23 @@ public abstract class JungleSpiderEntityMixin extends SpiderEntity {
 		super(world);
 	}
 	
-	@Inject(method = "canSpawnOnBlock", at = @At("HEAD"), remap = false, cancellable = true)
+	@Inject(method = "canSpawnOnBlock", at = @At("HEAD"), cancellable = true)
 	public void canSpawnOnBlock(int blockID, CallbackInfoReturnable<Boolean> cir) {
 		Block block = Block.blocksList[blockID];
 		
 		if (block instanceof DecoLeavesBlock) {
 			cir.setReturnValue(((DecoLeavesBlock) block).spawnsJungleSpiders);
+		}
+	}
+	
+	@Inject(method = "getBlockPathWeight", at = @At("HEAD"), cancellable = true)
+	public void getBlockPathWeight(int x, int y, int z, CallbackInfoReturnable<Float> cir) {
+		int blockID = this.worldObj.getBlockId(x, y, z);
+		Block block = Block.blocksList[blockID];
+		
+		if (block instanceof DecoLeavesBlock && ((DecoLeavesBlock) block).spawnsJungleSpiders) {
+			System.out.println("Leaf me alone!");
+			cir.setReturnValue(10F);
 		}
 	}
 }
