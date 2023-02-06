@@ -7,7 +7,7 @@ public class DecoTreeGrowers {
 	//------ Oak ------//
 	
 	public static final AbstractTreeGrower BRANCHING_OAK_TREE = null;
-	public static final AbstractTreeGrower HUGE_OAK_TREE = null;
+	public static final AbstractTreeGrower HUGE_OAK_TREE = new HugeTreeGrower("deco:huge_oak", TreeGrowers.OAK_WOOD_TYPE);
 	
 	//------ Spruce ------//
 	

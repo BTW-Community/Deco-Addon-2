@@ -14,55 +14,12 @@ public class WoodTypeHelper {
     public static String[] woodNames = new String[] {"oak", "spruce", "birch", "jungle", "blood", "cherry", "acacia", "mahogany", "mangrove", "hazel", "fir"};
     public static String[] woodNamesCapital = new String[] {"Oak", "Spruce", "Birch", "Jungle", "Blood", "Cherry", "Acacia", "Mahogany", "Mangrove", "Hazel", "Fir"};
     
-    public static final TreeGrowers.TreeWoodType CHERRY_TREE_WOOD_TYPE = new TreeGrowers.TreeWoodType(
-            DecoBlocks.cherryLog.blockID, 0,
-            DecoBlocks.cherryStump.blockID, 0,
-            DecoBlocks.cherryLeaves.blockID, 0);
-    
-    public static final TreeGrowers.TreeWoodType ACACIA_TREE_WOOD_TYPE = new TreeGrowers.TreeWoodType(
-            DecoBlocks.acaciaLog.blockID, 0,
-            DecoBlocks.acaciaStump.blockID, 0,
-            DecoBlocks.acaciaLeaves.blockID, 0);
-    
-    public static final TreeGrowers.TreeWoodType MAHOGANY_TREE_WOOD_TYPE = new TreeGrowers.TreeWoodType(
-            DecoBlocks.mahoganyLog.blockID, 0,
-            DecoBlocks.mahoganyStump.blockID, 0,
-            DecoBlocks.mahoganyLeaves.blockID, 0);
-    
-    public static final TreeGrowers.TreeWoodType MANGROVE_TREE_WOOD_TYPE = new TreeGrowers.TreeWoodType(
-            DecoBlocks.mangroveLog.blockID, 0,
-            DecoBlocks.mangroveStump.blockID, 0,
-            DecoBlocks.mangroveLeaves.blockID, 0);
-    
-    public static final TreeGrowers.TreeWoodType HAZEL_TREE_WOOD_TYPE = new TreeGrowers.TreeWoodType(
-            DecoBlocks.hazelLog.blockID, 0,
-            DecoBlocks.hazelStump.blockID, 0,
-            DecoBlocks.hazelLeaves.blockID, 0);
-    
-    public static final TreeGrowers.TreeWoodType FIR_TREE_WOOD_TYPE = new TreeGrowers.TreeWoodType(
-            DecoBlocks.firLog.blockID, 0,
-            DecoBlocks.firStump.blockID, 0,
-            DecoBlocks.firLeaves.blockID, 0);
-    
-    public static final TreeGrowers.TreeWoodType RED_TREE_AUTUMN_WOOD_TYPE = new TreeGrowers.TreeWoodType(
-            DecoBlocks.cherryLog.blockID, 0,
-            DecoBlocks.cherryStump.blockID, 0,
-            DecoBlocks.autumnLeaves.blockID, 0);
-    
-    public static final TreeGrowers.TreeWoodType ORANGE_TREE_AUTUMN_WOOD_TYPE = new TreeGrowers.TreeWoodType(
-            Block.wood.blockID, 0,
-            Block.wood.blockID, 12,
-            DecoBlocks.autumnLeaves.blockID, 1);
-    
-    public static final TreeGrowers.TreeWoodType YELLOW_TREE_AUTUMN_WOOD_TYPE = new TreeGrowers.TreeWoodType(
-            Block.wood.blockID, 2,
-            Block.wood.blockID, 14,
-            DecoBlocks.autumnLeaves.blockID, 2);
+    public static final int VANILLA_LOG_ID = 17;
     
     public static final int NUM_VANILLA_WOOD = 5;
     public static final int NUM_EXTRA_WOOD = 6;
     public static final int NUM_TOTAL_WOOD = NUM_VANILLA_WOOD + NUM_EXTRA_WOOD;
-
+    
     public static final int OAK_WOOD_TYPE = 0;
     public static final int SPRUCE_WOOD_TYPE = 1;
     public static final int BIRCH_WOOD_TYPE = 2;
@@ -74,6 +31,10 @@ public class WoodTypeHelper {
     public static final int MANGROVE_WOOD_TYPE = 8;
     public static final int HAZEL_WOOD_TYPE = 9;
     public static final int FIR_WOOD_TYPE = 10;
+    
+    public static final int RED_AUTUMN_TYPE = 0;
+    public static final int ORANGE_AUTUMN_TYPE = 1;
+    public static final int YELLOW_AUTUMN_TYPE = 2;
     
     public static final int MANGROVE_SLAB_TYPE = 0;
     public static final int HAZEL_SLAB_TYPE = 1;
@@ -171,4 +132,49 @@ public class WoodTypeHelper {
     public static boolean canWoodTypeGrowCocoa(int woodType) {
         return woodType == JUNGLE_WOOD_TYPE || woodType == MAHOGANY_WOOD_TYPE || woodType == MANGROVE_WOOD_TYPE;
     }
+    
+    public static final TreeGrowers.TreeWoodType CHERRY_TREE_WOOD_TYPE = new TreeGrowers.TreeWoodType(
+            DecoBlockIDs.CHERRY_LOG_ID, 0,
+            DecoBlockIDs.CHERRY_STUMP_ID, 0,
+            DecoBlockIDs.CHERRY_LEAVES_ID, 0);
+    
+    public static final TreeGrowers.TreeWoodType ACACIA_TREE_WOOD_TYPE = new TreeGrowers.TreeWoodType(
+            DecoBlockIDs.ACACIA_LOG_ID, 0,
+            DecoBlockIDs.ACACIA_STUMP_ID, 0,
+            DecoBlockIDs.ACACIA_LEAVES_ID, 0);
+    
+    public static final TreeGrowers.TreeWoodType MAHOGANY_TREE_WOOD_TYPE = new TreeGrowers.TreeWoodType(
+            DecoBlockIDs.MAHOGANY_LOG_ID, 0,
+            DecoBlockIDs.MAHOGANY_STUMP_ID, 0,
+            DecoBlockIDs.MAHOGANY_LEAVES_ID, 0);
+    
+    public static final TreeGrowers.TreeWoodType MANGROVE_TREE_WOOD_TYPE = new TreeGrowers.TreeWoodType(
+            DecoBlockIDs.MANGROVE_LOG_ID, 0,
+            DecoBlockIDs.MANGROVE_STUMP_ID, 0,
+            DecoBlockIDs.MANGROVE_LEAVES_ID, 0);
+    
+    public static final TreeGrowers.TreeWoodType HAZEL_TREE_WOOD_TYPE = new TreeGrowers.TreeWoodType(
+            DecoBlockIDs.HAZEL_LOG_ID, 0,
+            DecoBlockIDs.HAZEL_STUMP_ID, 0,
+            DecoBlockIDs.HAZEL_LEAVES_ID, 0);
+    
+    public static final TreeGrowers.TreeWoodType FIR_TREE_WOOD_TYPE = new TreeGrowers.TreeWoodType(
+            DecoBlockIDs.FIR_LOG_ID, 0,
+            DecoBlockIDs.FIR_STUMP_ID, 0,
+            DecoBlockIDs.FIR_LEAVES_ID, 0);
+    
+    public static final TreeGrowers.TreeWoodType RED_TREE_AUTUMN_WOOD_TYPE = new TreeGrowers.TreeWoodType(
+            DecoBlockIDs.CHERRY_LOG_ID, 0,
+            DecoBlockIDs.CHERRY_STUMP_ID, 0,
+            DecoBlockIDs.AUTUMN_LEAVES_ID, RED_AUTUMN_TYPE);
+    
+    public static final TreeGrowers.TreeWoodType ORANGE_TREE_AUTUMN_WOOD_TYPE = new TreeGrowers.TreeWoodType(
+            VANILLA_LOG_ID, OAK_WOOD_TYPE,
+            VANILLA_LOG_ID, OAK_WOOD_TYPE | 12,
+            DecoBlockIDs.AUTUMN_LEAVES_ID, ORANGE_AUTUMN_TYPE);
+    
+    public static final TreeGrowers.TreeWoodType YELLOW_TREE_AUTUMN_WOOD_TYPE = new TreeGrowers.TreeWoodType(
+            VANILLA_LOG_ID, BIRCH_WOOD_TYPE,
+            VANILLA_LOG_ID, BIRCH_WOOD_TYPE | 12,
+            DecoBlockIDs.AUTUMN_LEAVES_ID, YELLOW_AUTUMN_TYPE);
 }

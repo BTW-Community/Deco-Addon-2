@@ -2349,6 +2349,8 @@ public class DecoBlockInitializer {
         DecoBlocks.oakChair = new ChairBlock(DecoBlockIDs.OAK_CHAIR_ID, "Oak");
         DecoBlocks.filledOakBarrel = new FilledBarrelBlock(DecoBlockIDs.FILLED_OAK_BARREL_ID, "decoBlockBarrelOak");
         Item.itemsList[DecoBlocks.filledOakBarrel.blockID] = new ItemMultiTextureTile(DecoBlocks.filledOakBarrel.blockID - 256, DecoBlocks.filledOakBarrel, FilledBarrelBlock.typeTags);
+    
+        ((SaplingBlock) BTWBlocks.oakSapling).add2x2TreeGrower(DecoTreeGrowers.HUGE_OAK_TREE, 10);
         
         // Hedge
         DecoBlocks.oakHedgeSidingAndCorner = new HedgeSidingAndCornerBlock(DecoBlockIDs.OAK_HEDGE_SIDING_AND_CORNER_ID,
