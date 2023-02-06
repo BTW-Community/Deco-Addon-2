@@ -1,11 +1,11 @@
-package deco.block.blocks;
+package deco.block.blocks.legacy;
 
 import deco.block.DecoBlocks;
 import net.minecraft.src.World;
 
 import java.util.Random;
 
-public class AcaciaSaplingBlock extends DecoSaplingBlock {
+public class LegacyAcaciaSaplingBlock extends LegacyDecoSaplingBlock {
 	public static final String[] saplingTypes = new String[] {
 			"acacia", "", "", "",
 			"acacia", "", "", "",
@@ -13,9 +13,9 @@ public class AcaciaSaplingBlock extends DecoSaplingBlock {
 			"acaciaMature", "", "",  ""
 	};
 	
-	public AcaciaSaplingBlock(int blockID) {
+	public LegacyAcaciaSaplingBlock(int blockID) {
 		super(blockID, new String[] {"decoBlockSaplingAcacia_0"});
-		this.setUnlocalizedName("decoBlockSaplingAcacia");
+		this.setUnlocalizedName("decoBlockSaplingAcaciaOld");
 	}
 	
 	@Override

@@ -1,3 +1,9 @@
+## Version 4.0.1 ##
+- Updated to BTW CE v2.0.2
+- Updated saplings to the new daily growth system
+- Added the ability for cherry, hazel, birch, and autumn trees to grow into big variants like oak trees can.
+- Added the ability for oak, cherry, hazel, birch, and autumn trees to grow into huge variants when placed in a 2x2.
+
 ## Version 4.0.0 ##
 Deco as of 4.0.0 is now a fabric mod, without any base class edits, and as such can simply be placed in the mods folder to install.
 

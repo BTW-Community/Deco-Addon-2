@@ -1,13 +1,11 @@
-package deco.block.blocks;
+package deco.block.blocks.legacy;
 
-import btw.world.feature.TreeUtils;
 import deco.block.DecoBlocks;
-import net.minecraft.src.Block;
 import net.minecraft.src.World;
 
 import java.util.Random;
 
-public class CherrySaplingBlock extends DecoSaplingBlock {
+public class LegacyCherrySaplingBlock extends LegacyDecoSaplingBlock {
     public static final String[] saplingTypes = new String[] {
             "cherry", "", "", "",
             "cherry", "", "", "",
@@ -15,9 +13,9 @@ public class CherrySaplingBlock extends DecoSaplingBlock {
             "cherryMature", "", "",  ""
     };
 
-    public CherrySaplingBlock(int blockID) {
+    public LegacyCherrySaplingBlock(int blockID) {
         super(blockID, new String[] {"decoBlockSaplingCherry_0"});
-        this.setUnlocalizedName("decoBlockSaplingCherry");
+        this.setUnlocalizedName("decoBlockSaplingCherryOld");
     }
     
     @Override

@@ -6,6 +6,7 @@ import btw.block.blocks.*;
 import btw.block.tileentity.beacon.BeaconTileEntity;
 import btw.block.util.Flammability;
 import btw.item.blockitems.MouldingBlockItem;
+import btw.item.blockitems.SaplingBlockItem;
 import btw.item.blockitems.SidingAndCornerBlockItem;
 import btw.item.blockitems.legacy.LegacySubstitutionBlockItem;
 import btw.util.ColorUtils;
@@ -14,7 +15,7 @@ import deco.block.blocks.CarvedPumpkinBlock;
 import deco.block.blocks.FlowerPotBlock;
 import deco.block.blocks.DoubleTallGrassBlock;
 import deco.block.blocks.WorkbenchBlock;
-import deco.block.blocks.legacy.LegacyRedSandBlock;
+import deco.block.blocks.legacy.*;
 import deco.block.tileentity.FlowerPotTileEntity;
 import deco.block.util.*;
 import deco.item.DecoItemIDs;
@@ -24,6 +25,7 @@ import deco.item.itemblocks.DecoSlabItemBlock;
 import deco.item.itemblocks.EnchantedBookshelfItemBlock;
 import deco.item.mixins.PlaceAsBlockItemAccessor;
 import deco.item.util.LegacySubstitutionBlockItemInterface;
+import deco.world.feature.trees.grower.DecoTreeGrowers;
 import net.minecraft.src.*;
 
 public class DecoBlockInitializer {
@@ -2076,9 +2078,9 @@ public class DecoBlockInitializer {
     }
     
     private static void initPlants() {
-        DecoBlocks.autumnSapling = new AutumnSapling(DecoBlockIDs.AUTUMN_SAPLING_ID);
-        register(DecoBlocks.autumnSapling, AutumnSapling.saplingTypes);
-        DecoBlocks.autumnLeaves = new DecoLeavesBlock(DecoBlockIDs.AUTUMN_LEAVES_ID, DecoBlockIDs.AUTUMN_SAPLING_ID,
+        DecoBlocks.legacyAutumnSapling = new LegacyAutumnSapling(DecoBlockIDs.LEGACY_AUTUMN_SAPLING_ID);
+        register(DecoBlocks.legacyAutumnSapling, LegacyAutumnSapling.saplingTypes);
+        DecoBlocks.autumnLeaves = new DecoLeavesBlock(DecoBlockIDs.AUTUMN_LEAVES_ID, DecoBlockIDs.LEGACY_AUTUMN_SAPLING_ID,
                 new int[] {
                         0, 1, 2
                 },
@@ -2088,7 +2090,7 @@ public class DecoBlockInitializer {
                         "decoBlockLeavesAutumnYellow"
                 })
                 .setUnlocalizedName("decoBlockLeavesAutumn");
-        register(DecoBlocks.autumnLeaves, AutumnSapling.names);
+        register(DecoBlocks.autumnLeaves, LegacyAutumnSapling.names);
         
         DecoBlocks.flower = new DecoFlowerBlock(DecoBlockIDs.FLOWER_ID, "decoBlockFlower",
                 new String[] {
@@ -2525,10 +2527,14 @@ public class DecoBlockInitializer {
                 DecoBlocks.cherryLogSpike)
                 .setUnlocalizedName("decoBlockSpikeCherry");
 
-        DecoBlocks.cherryLeaves = new DecoLeavesBlock(DecoBlockIDs.CHERRY_LEAVES_ID, DecoBlockIDs.CHERRY_SAPLING_ID, "decoBlockLeavesCherry")
+        DecoBlocks.cherryLeaves = new DecoLeavesBlock(DecoBlockIDs.CHERRY_LEAVES_ID, DecoBlockIDs.LEGACY_CHERRY_SAPLING_ID, "decoBlockLeavesCherry")
                 .setUnlocalizedName("decoBlockLeavesCherry");
-        DecoBlocks.cherrySapling = new CherrySaplingBlock(DecoBlockIDs.CHERRY_SAPLING_ID);
-        Item.itemsList[DecoBlocks.cherrySapling.blockID] = new ItemMultiTextureTile(DecoBlocks.cherrySapling.blockID - 256, DecoBlocks.cherrySapling, CherrySaplingBlock.saplingTypes);
+        DecoBlocks.legacyCherrySapling = new LegacyCherrySaplingBlock(DecoBlockIDs.LEGACY_CHERRY_SAPLING_ID);
+        Item.itemsList[DecoBlocks.legacyCherrySapling.blockID] = new ItemMultiTextureTile(DecoBlocks.legacyCherrySapling.blockID - 256, DecoBlocks.legacyCherrySapling, LegacyCherrySaplingBlock.saplingTypes);
+        DecoBlocks.cherrySapling = new SaplingBlock(DecoBlockIDs.CHERRY_SAPLING_ID, "decoBlockSaplingCherry", "decoBlockSaplingCherry_0")
+                .addTreeGrower(DecoTreeGrowers.CHERRY_TREE, 9)
+                .addTreeGrower(DecoTreeGrowers.BIG_CHERRY_TREE, 1);
+        register(new SaplingBlockItem(DecoBlocks.cherrySapling.blockID - 256, DecoBlocks.cherrySapling));
 
         // Sub blocks
         DecoBlocks.cherryStairs = new WoodStairsBlock(DecoBlockIDs.CHERRY_STAIRS_ID, Block.planks, WoodTypeHelper.CHERRY_WOOD_TYPE)
@@ -2592,10 +2598,12 @@ public class DecoBlockInitializer {
                 DecoBlocks.acaciaLogSpike)
                 .setUnlocalizedName("decoBlockSpikeAcacia");
     
-        DecoBlocks.acaciaLeaves = new DecoLeavesBlock(DecoBlockIDs.ACACIA_LEAVES_ID, DecoBlockIDs.ACACIA_SAPLING_ID, "decoBlockLeavesAcacia")
+        DecoBlocks.acaciaLeaves = new DecoLeavesBlock(DecoBlockIDs.ACACIA_LEAVES_ID, DecoBlockIDs.LEGACY_ACACIA_SAPLING_ID, "decoBlockLeavesAcacia")
                 .setUnlocalizedName("decoBlockLeavesAcacia");
-        DecoBlocks.acaciaSapling = new AcaciaSaplingBlock(DecoBlockIDs.ACACIA_SAPLING_ID);
-        Item.itemsList[DecoBlocks.acaciaSapling.blockID] = new ItemMultiTextureTile(DecoBlocks.acaciaSapling.blockID - 256, DecoBlocks.acaciaSapling, AcaciaSaplingBlock.saplingTypes);
+        DecoBlocks.legacyAcaciaSapling = new LegacyAcaciaSaplingBlock(DecoBlockIDs.LEGACY_ACACIA_SAPLING_ID);
+        Item.itemsList[DecoBlocks.legacyAcaciaSapling.blockID] = new ItemMultiTextureTile(DecoBlocks.legacyAcaciaSapling.blockID - 256, DecoBlocks.legacyAcaciaSapling, LegacyAcaciaSaplingBlock.saplingTypes);
+        DecoBlocks.acaciaSapling = new SaplingBlock(DecoBlockIDs.ACACIA_SAPLING_ID, "decoBlockSaplingAcacia", "decoBlockSaplingAcacia_0");
+        register(new SaplingBlockItem(DecoBlocks.acaciaSapling.blockID - 256, DecoBlocks.acaciaSapling));
     
         // Sub blocks
         DecoBlocks.acaciaStairs = new WoodStairsBlock(DecoBlockIDs.ACACIA_STAIRS_ID, Block.planks, WoodTypeHelper.ACACIA_WOOD_TYPE)
@@ -2659,11 +2667,13 @@ public class DecoBlockInitializer {
                 DecoBlocks.mahoganyLogSpike)
                 .setUnlocalizedName("decoBlockSpikeMahogany");
     
-        DecoBlocks.mahoganyLeaves = new DecoLeavesBlock(DecoBlockIDs.MAHOGANY_LEAVES_ID, DecoBlockIDs.MAHOGANY_SAPLING_ID, "decoBlockLeavesMahogany")
+        DecoBlocks.mahoganyLeaves = new DecoLeavesBlock(DecoBlockIDs.MAHOGANY_LEAVES_ID, DecoBlockIDs.LEGACY_MAHOGANY_SAPLING_ID, "decoBlockLeavesMahogany")
                 .setSpawnsJungleSpiders()
                 .setUnlocalizedName("decoBlockLeavesMahogany");
-        DecoBlocks.mahoganySapling = new MahoganySaplingBlock(DecoBlockIDs.MAHOGANY_SAPLING_ID);
-        Item.itemsList[DecoBlocks.mahoganySapling.blockID] = new ItemMultiTextureTile(DecoBlocks.mahoganySapling.blockID - 256, DecoBlocks.mahoganySapling, MahoganySaplingBlock.saplingTypes);
+        DecoBlocks.legacyMahoganySapling = new LegacyMahoganySaplingBlock(DecoBlockIDs.LEGACY_MAHOGANY_SAPLING_ID);
+        Item.itemsList[DecoBlocks.legacyMahoganySapling.blockID] = new ItemMultiTextureTile(DecoBlocks.legacyMahoganySapling.blockID - 256, DecoBlocks.legacyMahoganySapling, LegacyMahoganySaplingBlock.saplingTypes);
+        DecoBlocks.mahoganySapling = new SaplingBlock(DecoBlockIDs.MAHOGANY_SAPLING_ID, "decoBlockSaplingMahogany", "decoBlockSaplingMahogany_0");
+        register(new SaplingBlockItem(DecoBlocks.mahoganySapling.blockID - 256, DecoBlocks.mahoganySapling));
     
         // Sub blocks
         DecoBlocks.mahoganyStairs = new WoodStairsBlock(DecoBlockIDs.MAHOGANY_STAIRS_ID, Block.planks, WoodTypeHelper.MAHOGANY_WOOD_TYPE)
@@ -2727,11 +2737,13 @@ public class DecoBlockInitializer {
                 DecoBlocks.mangroveLogSpike)
                 .setUnlocalizedName("decoBlockSpikeMangrove");
     
-        DecoBlocks.mangroveLeaves = new DecoLeavesBlock(DecoBlockIDs.MANGROVE_LEAVES_ID, DecoBlockIDs.MANGROVE_SAPLING_ID, "decoBlockLeavesMangrove")
+        DecoBlocks.mangroveLeaves = new DecoLeavesBlock(DecoBlockIDs.MANGROVE_LEAVES_ID, DecoBlockIDs.LEGACY_MANGROVE_SAPLING_ID, "decoBlockLeavesMangrove")
                 .setSpawnsJungleSpiders()
                 .setUnlocalizedName("decoBlockLeavesMangrove");
-        DecoBlocks.mangroveSapling = new MangroveSaplingBlock(DecoBlockIDs.MANGROVE_SAPLING_ID);
-        Item.itemsList[DecoBlocks.mangroveSapling.blockID] = new ItemMultiTextureTile(DecoBlocks.mangroveSapling.blockID - 256, DecoBlocks.mangroveSapling, MangroveSaplingBlock.saplingTypes);
+        DecoBlocks.legacyMangroveSapling = new LegacyMangroveSaplingBlock(DecoBlockIDs.LEGACY_MANGROVE_SAPLING_ID);
+        Item.itemsList[DecoBlocks.legacyMangroveSapling.blockID] = new ItemMultiTextureTile(DecoBlocks.legacyMangroveSapling.blockID - 256, DecoBlocks.legacyMangroveSapling, LegacyMangroveSaplingBlock.saplingTypes);
+        DecoBlocks.mangroveSapling = new SaplingBlock(DecoBlockIDs.MANGROVE_SAPLING_ID, "decoBlockSaplingMangrove", "decoBlockSaplingMangrove_0");
+        register(new SaplingBlockItem(DecoBlocks.mangroveSapling.blockID - 256, DecoBlocks.mangroveSapling));
     
         // Sub blocks
         DecoBlocks.mangroveStairs = new WoodStairsBlock(DecoBlockIDs.MANGROVE_STAIRS_ID, Block.planks, WoodTypeHelper.MANGROVE_WOOD_TYPE)
@@ -2795,10 +2807,14 @@ public class DecoBlockInitializer {
                 DecoBlocks.hazelLogSpike)
                 .setUnlocalizedName("decoBlockSpikeHazel");
     
-        DecoBlocks.hazelLeaves = new DecoLeavesBlock(DecoBlockIDs.HAZEL_LEAVES_ID, DecoBlockIDs.HAZEL_SAPLING_ID, "decoBlockLeavesHazel")
+        DecoBlocks.hazelLeaves = new DecoLeavesBlock(DecoBlockIDs.HAZEL_LEAVES_ID, DecoBlockIDs.LEGACY_HAZEL_SAPLING_ID, "decoBlockLeavesHazel")
                 .setUnlocalizedName("decoBlockLeavesHazel");
-        DecoBlocks.hazelSapling = new HazelSaplingBlock(DecoBlockIDs.HAZEL_SAPLING_ID);
-        Item.itemsList[DecoBlocks.hazelSapling.blockID] = new ItemMultiTextureTile(DecoBlocks.hazelSapling.blockID - 256, DecoBlocks.hazelSapling, HazelSaplingBlock.saplingTypes);
+        DecoBlocks.legacyHazelSapling = new LegacyHazelSaplingBlock(DecoBlockIDs.LEGACY_HAZEL_SAPLING_ID);
+        Item.itemsList[DecoBlocks.legacyHazelSapling.blockID] = new ItemMultiTextureTile(DecoBlocks.legacyHazelSapling.blockID - 256, DecoBlocks.legacyHazelSapling, LegacyHazelSaplingBlock.saplingTypes);
+        DecoBlocks.hazelSapling = new SaplingBlock(DecoBlockIDs.HAZEL_SAPLING_ID, "decoBlockSaplingHazel", "decoBlockSaplingHazel_0")
+                .addTreeGrower(DecoTreeGrowers.HAZEL_TREE, 9)
+                .addTreeGrower(DecoTreeGrowers.BIG_HAZEL_TREE, 1);
+        register(new SaplingBlockItem(DecoBlocks.hazelSapling.blockID - 256, DecoBlocks.hazelSapling));
     
         // Sub blocks
         DecoBlocks.hazelStairs = new WoodStairsBlock(DecoBlockIDs.HAZEL_STAIRS_ID, Block.planks, WoodTypeHelper.HAZEL_WOOD_TYPE)
@@ -2862,10 +2878,13 @@ public class DecoBlockInitializer {
                 DecoBlocks.firLogSpike)
                 .setUnlocalizedName("decoBlockSpikeFir");
     
-        DecoBlocks.firLeaves = new DecoLeavesBlock(DecoBlockIDs.FIR_LEAVES_ID, DecoBlockIDs.FIR_SAPLING_ID, "decoBlockLeavesFir")
+        DecoBlocks.firLeaves = new DecoLeavesBlock(DecoBlockIDs.FIR_LEAVES_ID, DecoBlockIDs.LEGACY_FIR_SAPLING_ID, "decoBlockLeavesFir")
                 .setUnlocalizedName("decoBlockLeavesFir");
-        DecoBlocks.firSapling = new FirSaplingBlock(DecoBlockIDs.FIR_SAPLING_ID);
-        Item.itemsList[DecoBlocks.firSapling.blockID] = new ItemMultiTextureTile(DecoBlocks.firSapling.blockID - 256, DecoBlocks.firSapling, FirSaplingBlock.saplingTypes);
+        DecoBlocks.legacyFirSapling = new LegacyFirSaplingBlock(DecoBlockIDs.LEGACY_FIR_SAPLING_ID);
+        Item.itemsList[DecoBlocks.legacyFirSapling.blockID] = new ItemMultiTextureTile(DecoBlocks.legacyFirSapling.blockID - 256, DecoBlocks.legacyFirSapling, LegacyFirSaplingBlock.saplingTypes);
+        DecoBlocks.firSapling = new SaplingBlock(DecoBlockIDs.FIR_SAPLING_ID, "decoBlockSaplingFir", "decoBlockSaplingFir_0")
+                .addTreeGrower(DecoTreeGrowers.FIR_TREE, 10);
+        register(new SaplingBlockItem(DecoBlocks.firSapling.blockID - 256, DecoBlocks.firSapling));
     
         // Sub blocks
         DecoBlocks.firStairs = new WoodStairsBlock(DecoBlockIDs.FIR_STAIRS_ID, Block.planks, WoodTypeHelper.FIR_WOOD_TYPE)

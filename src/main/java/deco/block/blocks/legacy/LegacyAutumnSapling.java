@@ -1,4 +1,4 @@
-package deco.block.blocks;
+package deco.block.blocks.legacy;
 
 import deco.block.DecoBlocks;
 import deco.block.util.WoodTypeHelper;
@@ -7,7 +7,7 @@ import net.minecraft.src.World;
 
 import java.util.Random;
 
-public class AutumnSapling extends DecoSaplingBlock {
+public class LegacyAutumnSapling extends LegacyDecoSaplingBlock {
 	public static final int RED_TYPE = 0;
 	public static final int ORANGE_TYPE = 1;
 	public static final int YELLOW_TYPE = 2;
@@ -21,13 +21,13 @@ public class AutumnSapling extends DecoSaplingBlock {
 	
 	public static String[] names = new String[] {"red", "orange", "yellow"};
 	
-	public AutumnSapling(int blockID) {
+	public LegacyAutumnSapling(int blockID) {
 		super(blockID, new String[] {
 				"decoBlockSaplingAutumnRed_0",
 				"decoBlockSaplingAutumnOrange_0",
 				"decoBlockSaplingAutumnYellow_0"
 		});
-		this.setUnlocalizedName("decoBlockSaplingAutumn");
+		this.setUnlocalizedName("decoBlockSaplingAutumnOld");
 	}
 	
 	@Override

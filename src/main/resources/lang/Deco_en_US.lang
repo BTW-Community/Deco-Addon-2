@@ -216,30 +216,51 @@ tile.decoBlockLeavesMangrove.name=Mangrove Leaves
 tile.decoBlockLeavesHazel.name=Hazel Leaves
 tile.decoBlockLeavesFir.name=Fir Leaves
 
-tile.decoBlockSaplingCherry.cherry.name=Cherry Sapling
-tile.decoBlockSaplingCherry.cherryMature.name=Mature Cherry Sapling
+tile.decoBlockSaplingCherryOld.cherry.name=Old Cherry Sapling
+tile.decoBlockSaplingCherryOld.cherryMature.name=Old Mature Cherry Sapling
+tile.decoBlockSaplingCherry.name=Cherry Sapling
+tile.decoBlockSaplingCherry.mature.name=Mature Cherry Sapling
 
-tile.decoBlockSaplingAcacia.acacia.name=Acacia Sapling
-tile.decoBlockSaplingAcacia.acaciaMature.name=Mature Acacia Sapling
+tile.decoBlockSaplingAcaciaOld.acacia.name=Old Acacia Sapling
+tile.decoBlockSaplingAcaciaOld.acaciaMature.name=Old Mature Acacia Sapling
+tile.decoBlockSaplingAcacia.name=Acacia Sapling
+tile.decoBlockSaplingAcacia.mature.name=Mature Acacia Sapling
 
-tile.decoBlockSaplingMahogany.mahogany.name=Mahogany Sapling
-tile.decoBlockSaplingMahogany.mahoganyMature.name=Mature Mahogany Sapling
+tile.decoBlockSaplingMahoganyOld.mahogany.name=Old Mahogany Sapling
+tile.decoBlockSaplingMahoganyOld.mahoganyMature.name=Old Mature Mahogany Sapling
+tile.decoBlockSaplingMahogany.name=Mahogany Sapling
+tile.decoBlockSaplingMahogany.mature.name=Mature Mahogany Sapling
 
-tile.decoBlockSaplingMangrove.mangrove.name=Mangrove Sapling
-tile.decoBlockSaplingMangrove.mangroveMature.name=Mature Mangrove Sapling
+tile.decoBlockSaplingMangroveOld.mangrove.name=Old Mangrove Sapling
+tile.decoBlockSaplingMangroveOld.mangroveMature.name=Old Mature Mangrove Sapling
+tile.decoBlockSaplingMangrove.name=Mangrove Sapling
+tile.decoBlockSaplingMangrove.mature.name=Mature Mangrove Sapling
 
-tile.decoBlockSaplingHazel.hazel.name=Hazel Sapling
-tile.decoBlockSaplingHazel.hazelMature.name=Mature Hazel 
+tile.decoBlockSaplingHazelOld.hazel.name=Old Hazel Sapling
+tile.decoBlockSaplingHazelOld.hazelMature.name=Old Mature Hazel Sapling
+tile.decoBlockSaplingHazel.name=Hazel Sapling
+tile.decoBlockSaplingHazel.mature.name=Mature Hazel Sapling
 
-tile.decoBlockSaplingFir.fir.name=Fir Sapling
-tile.decoBlockSaplingFir.firMature.name=Mature Fir Sapling
+tile.decoBlockSaplingFirOld.fir.name=Old Fir Sapling
+tile.decoBlockSaplingFirOld.firMature.name=Old Mature Fir Sapling
+tile.decoBlockSaplingFir.name=Fir Sapling
+tile.decoBlockSaplingFir.mature.name=Mature Fir Sapling
 
-tile.decoBlockSaplingAutumn.red.name=Red Autumn Sapling
-tile.decoBlockSaplingAutumn.orange.name=Orange Autumn Sapling
-tile.decoBlockSaplingAutumn.yellow.name=Yellow Autumn Sapling
-tile.decoBlockSaplingAutumn.redMature.name=Mature Red Autumn Sapling
-tile.decoBlockSaplingAutumn.orangeMature.name=Mature Orange Autumn Sapling
-tile.decoBlockSaplingAutumn.yellowMature.name=Mature Yellow Autumn Sapling
+tile.decoBlockSaplingAutumnOld.red.name=Old Red Autumn Sapling
+tile.decoBlockSaplingAutumnOld.orange.name=Old Orange Autumn Sapling
+tile.decoBlockSaplingAutumnOld.yellow.name=Old Yellow Autumn Sapling
+tile.decoBlockSaplingAutumnOld.redMature.name=Old Mature Red Autumn Sapling
+tile.decoBlockSaplingAutumnOld.orangeMature.name=Old Mature Orange Autumn Sapling
+tile.decoBlockSaplingAutumnOld.yellowMature.name=Old Mature Yellow Autumn Sapling
+
+tile.decoBlockSaplingAutumnRed.name=Red Autumn Sapling
+tile.decoBlockSaplingAutumnRed.mature.name=Mature Red Autumn Sapling
+
+tile.decoBlockSaplingAutumnOrange.name=Orange Autumn Sapling
+tile.decoBlockSaplingAutumnOrange.mature.name=Mature Orange Autumn Sapling
+
+tile.decoBlockSaplingAutumnYellow.name=Yellow Autumn Sapling
+tile.decoBlockSaplingAutumnYellow.mature.name=Mature Yellow Autumn Sapling
 
 tile.decoBlockHedgeOakStairs.name=Oak Hedge Stairs
 tile.decoBlockHedgeSpruceStairs.name=Spruce Hedge Stairs

@@ -517,7 +517,10 @@ public class DecoBlocks {
     
     public static Block tallGrass;
     
-    public static Block autumnSapling;
+    public static Block legacyAutumnSapling;
+    public static Block redAutumnSapling;
+    public static Block orangeAutumnSapling;
+    public static Block yellowAutumnSapling;
     public static Block autumnLeaves;
     
     public static Block flowerPot;
@@ -662,6 +665,7 @@ public class DecoBlocks {
     public static Block cherryLogSpike;
 
     public static Block cherryLeaves;
+    public static Block legacyCherrySapling;
     public static Block cherrySapling;
 
     public static Block cherryStairs;
@@ -691,8 +695,9 @@ public class DecoBlocks {
     public static Block acaciaLogSpike;
 
     public static Block acaciaLeaves;
+    public static Block legacyAcaciaSapling;
     public static Block acaciaSapling;
-
+    
     public static Block acaciaStairs;
     public static Block acaciaSidingAndCorner;
     public static Block acaciaMoulding;
@@ -720,6 +725,7 @@ public class DecoBlocks {
     public static Block mahoganyLogSpike;
     
     public static Block mahoganyLeaves;
+    public static Block legacyMahoganySapling;
     public static Block mahoganySapling;
     
     public static Block mahoganyStairs;
@@ -749,6 +755,7 @@ public class DecoBlocks {
     public static Block mangroveLogSpike;
     
     public static Block mangroveLeaves;
+    public static Block legacyMangroveSapling;
     public static Block mangroveSapling;
     
     public static Block mangroveStairs;
@@ -778,6 +785,7 @@ public class DecoBlocks {
     public static Block hazelLogSpike;
     
     public static Block hazelLeaves;
+    public static Block legacyHazelSapling;
     public static Block hazelSapling;
     
     public static Block hazelStairs;
@@ -807,6 +815,7 @@ public class DecoBlocks {
     public static Block firLogSpike;
     
     public static Block firLeaves;
+    public static Block legacyFirSapling;
     public static Block firSapling;
     
     public static Block firStairs;

@@ -1,4 +1,4 @@
-package deco.block.blocks;
+package deco.block.blocks.legacy;
 
 import deco.block.DecoBlocks;
 import net.minecraft.src.Block;
@@ -6,13 +6,13 @@ import net.minecraft.src.World;
 
 import java.util.Random;
 
-public class MahoganySaplingBlock extends DecoSaplingBlock {
+public class LegacyMahoganySaplingBlock extends LegacyDecoSaplingBlock {
 	public static final String[] saplingTypes =
 			new String[]{"mahogany", "", "", "", "mahogany", "", "", "", "mahogany", "", "", "", "mahoganyMature", "", "", ""};
 	
-	public MahoganySaplingBlock(int blockID) {
+	public LegacyMahoganySaplingBlock(int blockID) {
 		super(blockID, new String[]{"decoBlockSaplingMahogany_0"});
-		this.setUnlocalizedName("decoBlockSaplingMahogany");
+		this.setUnlocalizedName("decoBlockSaplingMahoganyOld");
 	}
 	
 	@Override

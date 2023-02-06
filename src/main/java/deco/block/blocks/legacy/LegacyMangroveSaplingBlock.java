@@ -1,4 +1,4 @@
-package deco.block.blocks;
+package deco.block.blocks.legacy;
 
 import deco.block.DecoBlocks;
 import net.minecraft.src.Block;
@@ -6,7 +6,7 @@ import net.minecraft.src.World;
 
 import java.util.Random;
 
-public class MangroveSaplingBlock extends DecoSaplingBlock {
+public class LegacyMangroveSaplingBlock extends LegacyDecoSaplingBlock {
 	public static final String[] saplingTypes = new String[] {
 			"mangrove", "", "", "",
 			"mangrove", "", "", "",
@@ -14,9 +14,9 @@ public class MangroveSaplingBlock extends DecoSaplingBlock {
 			"mangroveMature", "", "",  ""
 	};
 	
-	public MangroveSaplingBlock(int blockID) {
+	public LegacyMangroveSaplingBlock(int blockID) {
 		super(blockID, new String[] {"decoBlockSaplingMangrove_0"});
-		this.setUnlocalizedName("decoBlockSaplingMangrove");
+		this.setUnlocalizedName("decoBlockSaplingMangroveOld");
 	}
 	
 	@Override

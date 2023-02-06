@@ -26,7 +26,7 @@ public class DecoBlockIDs {
     public static final int CONCRETE_ID = 3018;
     public static final int CONCRETE_POWDER_ID = 3019;
     public static final int NETHER_COAL_BLOCK_ID = 3020;
-    public static final int CHERRY_SAPLING_ID = 3021;
+    public static final int LEGACY_CHERRY_SAPLING_ID = 3021;
     public static final int CHERRY_LEAVES_ID = 3022;
     public static final int THATCH_ID = 3023;
     public static final int THATCH_STAIRS_ID = 3024;
@@ -136,7 +136,7 @@ public class DecoBlockIDs {
     public static final int LOOSE_RED_NETHER_BRICK_STAIRS_ID = 3193;
     public static final int LOOSE_STONE_SLAB_2_ID = 3194;
     public static final int MAGMA_ID = 3196;
-    
+    public static final int CHERRY_SAPLING_ID = 3197;
     public static final int STONE_SLAB_4_ID = 3198;
     public static final int STONE_SLAB_5_ID = 3199;
     public static final int STRIPPED_LOG_ID = 3200;
@@ -178,7 +178,7 @@ public class DecoBlockIDs {
     public static final int CRATE_ID = 3238;
     public static final int FLOWER_POT_ID = 3239;
     public static final int PERGOLA_ID = 3240;
-    
+    public static final int ACACIA_SAPLING_ID = 3241;
     public static final int CHEWED_BLOOD_LOG_ID = 3243;
     public static final int BLOOD_LOG_SPIKE_ID = 3244;
     public static final int ROPE_COIL_ID = 3245;
@@ -186,14 +186,14 @@ public class DecoBlockIDs {
     public static final int IRON_TRAPDOOR_ID = 3247;
     public static final int PASTEL_PLANKS_SUB_START = 3248;
     // IDs occupied through 3295
-    
+    public static final int MAHOGANY_SAPLING_ID = 3296;
     public static final int STAINED_TERRACOTTA_SLAB_ID = 3297;
     public static final int STAINED_TERRACOTTA_SLAB_2_ID = 3298;
     public static final int ASH_BLOCK_ID = 3299;
     public static final int COARSE_DIRT_ID = 3300;
     public static final int COARSE_DIRT_SLAB_ID = 3301;
     public static final int PODZOL_ID = 3302;
-    
+    public static final int MANGROVE_SAPLING_ID = 3303;
     public static final int HEDGE_ID = 3304;
     public static final int CARVED_PUMPKIN_ID = 3305;
     public static final int JACK_O_LANTERN_ID = 3306;
@@ -202,7 +202,7 @@ public class DecoBlockIDs {
     public static final int LEGACY_RED_SAND_ID = 3310;
     public static final int RED_SAND_SLAB_ID = 3311;
     public static final int RED_SANDSTONE_ID = 3312;
-    
+    public static final int HAZEL_SAPLING_ID = 3313;
     public static final int RED_SANDSTONE_STAIRS_ID = 3314;
     public static final int RED_SANDSTONE_SIDING_AND_CORNER_ID = 3315;
     public static final int RED_SANDSTONE_MOULDING_ID = 3316;
@@ -341,8 +341,8 @@ public class DecoBlockIDs {
     public static final int ACACIA_STAIRS_ID = 3495;
     public static final int ACACIA_GATE_ID = 3496;
     public static final int AUTUMN_LEAVES_ID = 3497;
-    public static final int AUTUMN_SAPLING_ID = 3498;
-    public static final int ACACIA_SAPLING_ID = 3499;
+    public static final int LEGACY_AUTUMN_SAPLING_ID = 3498;
+    public static final int LEGACY_ACACIA_SAPLING_ID = 3499;
     public static final int ACACIA_TRAPDOOR_ID = 3500;
     public static final int ACACIA_DOOR_ID = 3501;
     public static final int ACACIA_CHAIR_ID = 3502;
@@ -398,7 +398,7 @@ public class DecoBlockIDs {
     public static final int CHEWED_MAHOGANY_LOG_ID = 3601;
     public static final int MAHOGANY_LOG_SPIKE_ID = 3602;
     public static final int MAHOGANY_LEAVES_ID = 3603;
-    public static final int MAHOGANY_SAPLING_ID = 3604;
+    public static final int LEGACY_MAHOGANY_SAPLING_ID = 3604;
     public static final int MAHOGANY_STAIRS_ID = 3605;
     public static final int MAHOGANY_SIDING_AND_CORNER_ID = 3606;
     public static final int MAHOGANY_MOULDING_ID = 3607;
@@ -419,7 +419,7 @@ public class DecoBlockIDs {
     public static final int CHEWED_MANGROVE_LOG_ID = 3622;
     public static final int MANGROVE_LOG_SPIKE_ID = 3623;
     public static final int MANGROVE_LEAVES_ID = 3624;
-    public static final int MANGROVE_SAPLING_ID = 3625;
+    public static final int LEGACY_MANGROVE_SAPLING_ID = 3625;
     public static final int MANGROVE_STAIRS_ID = 3626;
     public static final int MANGROVE_SIDING_AND_CORNER_ID = 3627;
     public static final int MANGROVE_MOULDING_ID = 3628;
@@ -484,7 +484,7 @@ public class DecoBlockIDs {
     public static final int CHEWED_HAZEL_LOG_ID = 3701;
     public static final int HAZEL_LOG_SPIKE_ID = 3702;
     public static final int HAZEL_LEAVES_ID = 3703;
-    public static final int HAZEL_SAPLING_ID = 3704;
+    public static final int LEGACY_HAZEL_SAPLING_ID = 3704;
     public static final int HAZEL_STAIRS_ID = 3705;
     public static final int HAZEL_SIDING_AND_CORNER_ID = 3706;
     public static final int HAZEL_MOULDING_ID = 3707;
@@ -512,7 +512,7 @@ public class DecoBlockIDs {
     public static final int CHEWED_FIR_LOG_ID = 3729;
     public static final int FIR_LOG_SPIKE_ID = 3730;
     public static final int FIR_LEAVES_ID = 3731;
-    public static final int FIR_SAPLING_ID = 3732;
+    public static final int LEGACY_FIR_SAPLING_ID = 3732;
     public static final int FIR_STAIRS_ID = 3733;
     public static final int FIR_SIDING_AND_CORNER_ID = 3734;
     public static final int FIR_MOULDING_ID = 3735;
@@ -567,4 +567,5 @@ public class DecoBlockIDs {
     public static final int TUFF_BRICK_STAIRS_ID = 3784;
     public static final int INFESTED_TUFF_ID = 3785;
     public static final int TUFF_BUTTON_ID = 3786;
+    public static final int FIR_SAPLING_ID = 3787;
 }

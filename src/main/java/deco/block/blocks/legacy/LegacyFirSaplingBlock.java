@@ -1,4 +1,4 @@
-package deco.block.blocks;
+package deco.block.blocks.legacy;
 
 import deco.block.DecoBlocks;
 import net.minecraft.src.Block;
@@ -6,12 +6,12 @@ import net.minecraft.src.World;
 
 import java.util.Random;
 
-public class FirSaplingBlock extends DecoSaplingBlock {
+public class LegacyFirSaplingBlock extends LegacyDecoSaplingBlock {
 	public static final String[] saplingTypes = new String[]{"fir", "", "", "", "fir", "", "", "", "fir", "", "", "", "firMature", "", "", ""};
 	
-	public FirSaplingBlock(int blockID) {
+	public LegacyFirSaplingBlock(int blockID) {
 		super(blockID, new String[]{"decoBlockSaplingFir_0"});
-		this.setUnlocalizedName("decoBlockSaplingFir");
+		this.setUnlocalizedName("decoBlockSaplingFirOld");
 	}
 	
 	@Override

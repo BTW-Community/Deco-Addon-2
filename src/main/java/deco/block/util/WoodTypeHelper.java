@@ -2,7 +2,9 @@ package deco.block.util;
 
 import btw.block.BTWBlocks;
 import btw.crafting.util.FurnaceBurnTime;
+import btw.world.feature.trees.grower.TreeGrowers;
 import deco.block.DecoBlockIDs;
+import deco.block.DecoBlocks;
 import net.minecraft.src.Block;
 
 import java.util.HashMap;
@@ -11,6 +13,51 @@ import java.util.Map;
 public class WoodTypeHelper {
     public static String[] woodNames = new String[] {"oak", "spruce", "birch", "jungle", "blood", "cherry", "acacia", "mahogany", "mangrove", "hazel", "fir"};
     public static String[] woodNamesCapital = new String[] {"Oak", "Spruce", "Birch", "Jungle", "Blood", "Cherry", "Acacia", "Mahogany", "Mangrove", "Hazel", "Fir"};
+    
+    public static final TreeGrowers.TreeWoodType CHERRY_TREE_WOOD_TYPE = new TreeGrowers.TreeWoodType(
+            DecoBlocks.cherryLog.blockID, 0,
+            DecoBlocks.cherryStump.blockID, 0,
+            DecoBlocks.cherryLeaves.blockID, 0);
+    
+    public static final TreeGrowers.TreeWoodType ACACIA_TREE_WOOD_TYPE = new TreeGrowers.TreeWoodType(
+            DecoBlocks.acaciaLog.blockID, 0,
+            DecoBlocks.acaciaStump.blockID, 0,
+            DecoBlocks.acaciaLeaves.blockID, 0);
+    
+    public static final TreeGrowers.TreeWoodType MAHOGANY_TREE_WOOD_TYPE = new TreeGrowers.TreeWoodType(
+            DecoBlocks.mahoganyLog.blockID, 0,
+            DecoBlocks.mahoganyStump.blockID, 0,
+            DecoBlocks.mahoganyLeaves.blockID, 0);
+    
+    public static final TreeGrowers.TreeWoodType MANGROVE_TREE_WOOD_TYPE = new TreeGrowers.TreeWoodType(
+            DecoBlocks.mangroveLog.blockID, 0,
+            DecoBlocks.mangroveStump.blockID, 0,
+            DecoBlocks.mangroveLeaves.blockID, 0);
+    
+    public static final TreeGrowers.TreeWoodType HAZEL_TREE_WOOD_TYPE = new TreeGrowers.TreeWoodType(
+            DecoBlocks.hazelLog.blockID, 0,
+            DecoBlocks.hazelStump.blockID, 0,
+            DecoBlocks.hazelLeaves.blockID, 0);
+    
+    public static final TreeGrowers.TreeWoodType FIR_TREE_WOOD_TYPE = new TreeGrowers.TreeWoodType(
+            DecoBlocks.firLog.blockID, 0,
+            DecoBlocks.firStump.blockID, 0,
+            DecoBlocks.firLeaves.blockID, 0);
+    
+    public static final TreeGrowers.TreeWoodType RED_TREE_AUTUMN_WOOD_TYPE = new TreeGrowers.TreeWoodType(
+            DecoBlocks.cherryLog.blockID, 0,
+            DecoBlocks.cherryStump.blockID, 0,
+            DecoBlocks.autumnLeaves.blockID, 0);
+    
+    public static final TreeGrowers.TreeWoodType ORANGE_TREE_AUTUMN_WOOD_TYPE = new TreeGrowers.TreeWoodType(
+            Block.wood.blockID, 0,
+            Block.wood.blockID, 12,
+            DecoBlocks.autumnLeaves.blockID, 1);
+    
+    public static final TreeGrowers.TreeWoodType YELLOW_TREE_AUTUMN_WOOD_TYPE = new TreeGrowers.TreeWoodType(
+            Block.wood.blockID, 2,
+            Block.wood.blockID, 14,
+            DecoBlocks.autumnLeaves.blockID, 2);
     
     public static final int NUM_VANILLA_WOOD = 5;
     public static final int NUM_EXTRA_WOOD = 6;

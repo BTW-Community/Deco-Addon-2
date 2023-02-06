@@ -1,9 +1,9 @@
-package deco.block.blocks;
+package deco.block.blocks.legacy;
 
 import btw.block.BTWBlocks;
 import btw.block.blocks.PlanterBlockBase;
 import btw.block.blocks.legacy.LegacySaplingBlock;
-import btw.world.feature.TreeUtils;
+import btw.world.feature.trees.TreeUtils;
 import btw.world.util.BlockPos;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -12,10 +12,10 @@ import net.minecraft.src.*;
 import java.util.List;
 import java.util.Random;
 
-public abstract class DecoSaplingBlock extends LegacySaplingBlock {
+public abstract class LegacyDecoSaplingBlock extends LegacySaplingBlock {
     private String[] baseTextureNames;
 
-    public DecoSaplingBlock(int blockID, String[] baseTextureNames) {
+    public LegacyDecoSaplingBlock(int blockID, String[] baseTextureNames) {
         super(blockID);
         this.setStepSound(soundGrassFootstep);
         
