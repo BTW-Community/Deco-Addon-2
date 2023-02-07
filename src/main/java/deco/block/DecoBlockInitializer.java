@@ -2086,14 +2086,17 @@ public class DecoBlockInitializer {
                 .addTreeGrower(DecoTreeGrowers.RED_AUTUMN_TREE, 9)
                 .addTreeGrower(DecoTreeGrowers.BIG_RED_AUTUMN_TREE, 1)
                 .add2x2TreeGrower(DecoTreeGrowers.HUGE_RED_AUTUMN_TREE, 10);
+        register(new SaplingBlockItem(DecoBlocks.redAutumnSapling.blockID - 256, DecoBlocks.redAutumnSapling));
         DecoBlocks.orangeAutumnSapling = new SaplingBlock(DecoBlockIDs.ORANGE_AUTUMN_SAPLING_ID, "decoBlockSaplingAutumnOrange", "decoBlockSaplingAutumnOrange_0")
                 .addTreeGrower(DecoTreeGrowers.ORANGE_AUTUMN_TREE, 9)
                 .addTreeGrower(DecoTreeGrowers.BIG_ORANGE_AUTUMN_TREE, 1)
                 .add2x2TreeGrower(DecoTreeGrowers.HUGE_ORANGE_AUTUMN_TREE, 10);
+        register(new SaplingBlockItem(DecoBlocks.orangeAutumnSapling.blockID - 256, DecoBlocks.orangeAutumnSapling));
         DecoBlocks.yellowAutumnSapling = new SaplingBlock(DecoBlockIDs.YELLOW_AUTUMN_SAPLING_ID, "decoBlockSaplingAutumnYellow", "decoBlockSaplingAutumnYellow_0")
                 .addTreeGrower(DecoTreeGrowers.YELLOW_AUTUMN_TREE, 9)
                 .addTreeGrower(DecoTreeGrowers.BIG_YELLOW_AUTUMN_TREE, 1)
                 .add2x2TreeGrower(DecoTreeGrowers.HUGE_YELLOW_AUTUMN_TREE, 10);
+        register(new SaplingBlockItem(DecoBlocks.yellowAutumnSapling.blockID - 256, DecoBlocks.yellowAutumnSapling));
         
         DecoBlocks.autumnLeaves = new DecoLeavesBlock(DecoBlockIDs.AUTUMN_LEAVES_ID,
                 new int[] {

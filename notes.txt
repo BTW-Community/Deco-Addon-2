@@ -1,0 +1,9 @@
+//========================//
+//------ Wood types ------//
+//========================//
+
+Oh the Biomes You'll Go texture use:
+- Aspen
+- Cypress -> Willow
+- Jacaranda -> Cherry
+- Zelkova -> Redwood

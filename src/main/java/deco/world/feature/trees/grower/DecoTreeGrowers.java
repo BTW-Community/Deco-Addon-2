@@ -52,7 +52,7 @@ public class DecoTreeGrowers {
 	
 	//------ Aspen ------//
 	
-	public static final AbstractTreeGrower ASPEN_TREE = null;
+	public static final AbstractTreeGrower ASPEN_TREE = new AspenTreeGrower("deco:aspen", WoodTypeHelper.ASPEN_TREE_WOOD_TYPE);
 	
 	//------ Willow ------//
 	
