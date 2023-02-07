@@ -642,7 +642,7 @@ public class DecoBlockIDs {
     public static final int CHEWED_REDWOOD_LOG_ID = 3859;
     public static final int REDWOOD_LOG_SPIKE_ID = 3860;
     public static final int REDWOOD_LEAVES_ID = 3861;
-    public static final int REDWOOD_SAPLING_ID = 3861;
+    public static final int REDWOOD_SAPLING_ID = 3862;
     public static final int REDWOOD_STAIRS_ID = 3863;
     public static final int REDWOOD_SIDING_AND_CORNER_ID = 3864;
     public static final int REDWOOD_MOULDING_ID = 3865;

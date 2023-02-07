@@ -239,16 +239,16 @@ item.sign.bloodWood.name=Blood Wood Sign
 # Dark Oak
 
 tile.decoBlockDarkOakLog.log.name=Dark Oak Log
-tile.decoBlockDarkOakLog.stripped.name=Stripped DarkOak Log
+tile.decoBlockDarkOakLog.stripped.name=Stripped Dark Oak Log
 tile.decoBlockDarkOakLog.wood.name=Dark Oak Wood
-tile.decoBlockDarkOakLog.strippedWood.name=Stripped DarkOak Wood
-tile.decoBlockChewedDarkOak.name=Chewed DarkOak Log
+tile.decoBlockDarkOakLog.strippedWood.name=Stripped Dark Oak Wood
+tile.decoBlockChewedDarkOak.name=Chewed Dark Oak Log
 
 tile.decoBlockLeavesDarkOak.name=Dark Oak Leaves
-tile.decoBlockSaplingDarkOakOld.darkOak.name=Old DarkOak Sapling
-tile.decoBlockSaplingDarkOakOld.darkOakMature.name=Old Mature DarkOak Sapling
+tile.decoBlockSaplingDarkOakOld.darkOak.name=Old Dark Oak Sapling
+tile.decoBlockSaplingDarkOakOld.darkOakMature.name=Old Mature Dark Oak Sapling
 tile.decoBlockSaplingDarkOak.name=Dark Oak Sapling
-tile.decoBlockSaplingDarkOak.mature.name=Mature DarkOak Sapling
+tile.decoBlockSaplingDarkOak.mature.name=Mature Dark Oak Sapling
 
 tile.wood.darkOak.name=Dark Oak Planks
 tile.decoBlockDarkOakStairs.name=Dark Oak Stairs
@@ -275,11 +275,11 @@ tile.fcWoodBirchMoulding.darkOak.table.name=Dark Oak Table
 tile.fcWoodJungleSiding.darkOak.bench.name=Dark Oak Bench
 tile.fcWoodJungleSiding.darkOak.fence.name=Dark Oak Fence
 
-tile.bookshelf.darkOak.name=Enchanted DarkOak Bookshelf
+tile.bookshelf.darkOak.name=Enchanted Dark Oak Bookshelf
 tile.decoBlockBookshelf.darkOak.name=Dark Oak Bookshelf
-tile.decoBlockBookshelfEmpty.darkOak.name=Empty DarkOak Bookshelf
+tile.decoBlockBookshelfEmpty.darkOak.name=Empty Dark Oak Bookshelf
 tile.decoBlockBottleRack.darkOak.name=Dark Oak Bottle Rack
-tile.decoBlockBottleRackEmpty.darkOak.name=Empty DarkOak Bottle Rack
+tile.decoBlockBottleRackEmpty.darkOak.name=Empty Dark Oak Bottle Rack
 
 tile.decoBlockHedgeDarkOakStairs.name=Dark Oak Hedge Stairs
 tile.decoBlockHedgeDarkOakSiding.bench.name=Dark Oak Hedge Bench

@@ -1,5 +1,6 @@
 package deco.block.util;
 
+import btw.BTWMod;
 import btw.block.BTWBlocks;
 import btw.crafting.util.FurnaceBurnTime;
 import btw.world.feature.trees.grower.TreeGrowers;
@@ -16,6 +17,8 @@ public class WoodTypeHelper {
             "Fir", "Aspen", "Willow", "Cherry", "Redwood"};
     
     public static final int VANILLA_LOG_ID = 17;
+    public static final int OAK_SIGN_ID = 63;
+    public static final int OAK_WALL_SIGN_ID = 68;
     
     public static final int NUM_VANILLA_WOOD = 5;
     public static final int NUM_EXTRA_WOOD = 10;
@@ -82,10 +85,13 @@ public class WoodTypeHelper {
     public static final int CHERRY_BARREL_TYPE = 1;
     public static final int REDWOOD_BARREL_TYPE = 2;
     
-    public static final int DARK_OAK_WORK_STUMP_ID = BTWBlocks.workStump.blockID;
-    public static final int ACACIA_WORK_STUMP_ID = BTWBlocks.workStump.blockID;
-    public static final int MAHOGANY_WORK_STUMP_ID = BTWBlocks.workStump.blockID;
-    public static final int MANGROVE_WORK_STUMP_ID = BTWBlocks.workStump.blockID;
+    // Hard coded to prevent null pointer
+    public static final int BTW_WORK_STUMP_ID = 1030;
+    
+    public static final int DARK_OAK_WORK_STUMP_ID = BTW_WORK_STUMP_ID;
+    public static final int ACACIA_WORK_STUMP_ID = BTW_WORK_STUMP_ID;
+    public static final int MAHOGANY_WORK_STUMP_ID = BTW_WORK_STUMP_ID;
+    public static final int MANGROVE_WORK_STUMP_ID = BTW_WORK_STUMP_ID;
     public static final int HAZEL_WORK_STUMP_ID = DecoBlockIDs.WORK_STUMP_ID;
     public static final int FIR_WORK_STUMP_ID = DecoBlockIDs.WORK_STUMP_ID;
     public static final int ASPEN_WORK_STUMP_ID = DecoBlockIDs.WORK_STUMP_ID;
@@ -165,7 +171,7 @@ public class WoodTypeHelper {
     
     public static int[] getSignBlockIDs() {
         return new int[] {
-                Block.signPost.blockID,
+                OAK_SIGN_ID,
                 DecoBlockIDs.SPRUCE_SIGN_ID,
                 DecoBlockIDs.BIRCH_SIGN_ID,
                 DecoBlockIDs.JUNGLE_SIGN_ID,
@@ -185,7 +191,7 @@ public class WoodTypeHelper {
     
     public static int[] getWallSignBlockIDs() {
         return new int[] {
-                Block.signWall.blockID,
+                OAK_WALL_SIGN_ID,
                 DecoBlockIDs.SPRUCE_WALL_SIGN_ID,
                 DecoBlockIDs.BIRCH_WALL_SIGN_ID,
                 DecoBlockIDs.JUNGLE_WALL_SIGN_ID,
