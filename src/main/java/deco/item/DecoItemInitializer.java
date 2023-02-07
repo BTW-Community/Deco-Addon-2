@@ -88,6 +88,14 @@ public class DecoItemInitializer {
                 .setUnlocalizedName("decoItemDoorHazel");
         DecoItems.firDoor = new DecoItemDoor(DecoItemIDs.FIR_DOOR_ID, DecoBlockIDs.FIR_DOOR_ID)
                 .setUnlocalizedName("decoItemDoorFir");
+        DecoItems.aspenDoor = new DecoItemDoor(DecoItemIDs.ASPEN_DOOR_ID, DecoBlockIDs.ASPEN_DOOR_ID)
+                .setUnlocalizedName("decoItemDoorAspen");
+        DecoItems.willowDoor = new DecoItemDoor(DecoItemIDs.WILLOW_DOOR_ID, DecoBlockIDs.WILLOW_DOOR_ID)
+                .setUnlocalizedName("decoItemDoorWillow");
+        DecoItems.darkOakDoor = new DecoItemDoor(DecoItemIDs.DARK_OAK_DOOR_ID, DecoBlockIDs.DARK_OAK_DOOR_ID)
+                .setUnlocalizedName("decoItemDoorDarkOak");
+        DecoItems.redwoodDoor = new DecoItemDoor(DecoItemIDs.REDWOOD_DOOR_ID, DecoBlockIDs.REDWOOD_DOOR_ID)
+                .setUnlocalizedName("decoItemDoorRedwood");
     }
 
     private static void createDecoItemBlocks() {

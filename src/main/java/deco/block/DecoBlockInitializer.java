@@ -2538,7 +2538,7 @@ public class DecoBlockInitializer {
                 DecoBlocks.cherryLogSpike)
                 .setUnlocalizedName("decoBlockSpikeCherry");
 
-        DecoBlocks.cherryLeaves = new DecoLeavesBlock(DecoBlockIDs.CHERRY_LEAVES_ID, DecoBlockIDs.LEGACY_CHERRY_SAPLING_ID, "decoBlockLeavesCherry")
+        DecoBlocks.cherryLeaves = new DecoLeavesBlock(DecoBlockIDs.CHERRY_LEAVES_ID, DecoBlockIDs.CHERRY_SAPLING_ID, "decoBlockLeavesCherry")
                 .setUnlocalizedName("decoBlockLeavesCherry");
         DecoBlocks.legacyCherrySapling = new LegacyCherrySaplingBlock(DecoBlockIDs.LEGACY_CHERRY_SAPLING_ID);
         Item.itemsList[DecoBlocks.legacyCherrySapling.blockID] = new ItemMultiTextureTile(DecoBlocks.legacyCherrySapling.blockID - 256, DecoBlocks.legacyCherrySapling, LegacyCherrySaplingBlock.saplingTypes);
@@ -2610,7 +2610,7 @@ public class DecoBlockInitializer {
                 DecoBlocks.acaciaLogSpike)
                 .setUnlocalizedName("decoBlockSpikeAcacia");
     
-        DecoBlocks.acaciaLeaves = new DecoLeavesBlock(DecoBlockIDs.ACACIA_LEAVES_ID, DecoBlockIDs.LEGACY_ACACIA_SAPLING_ID, "decoBlockLeavesAcacia")
+        DecoBlocks.acaciaLeaves = new DecoLeavesBlock(DecoBlockIDs.ACACIA_LEAVES_ID, DecoBlockIDs.ACACIA_SAPLING_ID, "decoBlockLeavesAcacia")
                 .setUnlocalizedName("decoBlockLeavesAcacia");
         DecoBlocks.legacyAcaciaSapling = new LegacyAcaciaSaplingBlock(DecoBlockIDs.LEGACY_ACACIA_SAPLING_ID);
         Item.itemsList[DecoBlocks.legacyAcaciaSapling.blockID] = new ItemMultiTextureTile(DecoBlocks.legacyAcaciaSapling.blockID - 256, DecoBlocks.legacyAcaciaSapling, LegacyAcaciaSaplingBlock.saplingTypes);
@@ -2680,7 +2680,7 @@ public class DecoBlockInitializer {
                 DecoBlocks.mahoganyLogSpike)
                 .setUnlocalizedName("decoBlockSpikeMahogany");
     
-        DecoBlocks.mahoganyLeaves = new DecoLeavesBlock(DecoBlockIDs.MAHOGANY_LEAVES_ID, DecoBlockIDs.LEGACY_MAHOGANY_SAPLING_ID, "decoBlockLeavesMahogany")
+        DecoBlocks.mahoganyLeaves = new DecoLeavesBlock(DecoBlockIDs.MAHOGANY_LEAVES_ID, DecoBlockIDs.MAHOGANY_SAPLING_ID, "decoBlockLeavesMahogany")
                 .setSpawnsJungleSpiders()
                 .setUnlocalizedName("decoBlockLeavesMahogany");
         DecoBlocks.legacyMahoganySapling = new LegacyMahoganySaplingBlock(DecoBlockIDs.LEGACY_MAHOGANY_SAPLING_ID);
@@ -2751,7 +2751,7 @@ public class DecoBlockInitializer {
                 DecoBlocks.mangroveLogSpike)
                 .setUnlocalizedName("decoBlockSpikeMangrove");
     
-        DecoBlocks.mangroveLeaves = new DecoLeavesBlock(DecoBlockIDs.MANGROVE_LEAVES_ID, DecoBlockIDs.LEGACY_MANGROVE_SAPLING_ID, "decoBlockLeavesMangrove")
+        DecoBlocks.mangroveLeaves = new DecoLeavesBlock(DecoBlockIDs.MANGROVE_LEAVES_ID, DecoBlockIDs.MANGROVE_SAPLING_ID, "decoBlockLeavesMangrove")
                 .setSpawnsJungleSpiders()
                 .setUnlocalizedName("decoBlockLeavesMangrove");
         DecoBlocks.legacyMangroveSapling = new LegacyMangroveSaplingBlock(DecoBlockIDs.LEGACY_MANGROVE_SAPLING_ID);
@@ -2822,7 +2822,7 @@ public class DecoBlockInitializer {
                 DecoBlocks.hazelLogSpike)
                 .setUnlocalizedName("decoBlockSpikeHazel");
     
-        DecoBlocks.hazelLeaves = new DecoLeavesBlock(DecoBlockIDs.HAZEL_LEAVES_ID, DecoBlockIDs.LEGACY_HAZEL_SAPLING_ID, "decoBlockLeavesHazel")
+        DecoBlocks.hazelLeaves = new DecoLeavesBlock(DecoBlockIDs.HAZEL_LEAVES_ID, DecoBlockIDs.HAZEL_SAPLING_ID, "decoBlockLeavesHazel")
                 .setUnlocalizedName("decoBlockLeavesHazel");
         DecoBlocks.legacyHazelSapling = new LegacyHazelSaplingBlock(DecoBlockIDs.LEGACY_HAZEL_SAPLING_ID);
         Item.itemsList[DecoBlocks.legacyHazelSapling.blockID] = new ItemMultiTextureTile(DecoBlocks.legacyHazelSapling.blockID - 256, DecoBlocks.legacyHazelSapling, LegacyHazelSaplingBlock.saplingTypes);
@@ -2894,7 +2894,7 @@ public class DecoBlockInitializer {
                 DecoBlocks.firLogSpike)
                 .setUnlocalizedName("decoBlockSpikeFir");
     
-        DecoBlocks.firLeaves = new DecoLeavesBlock(DecoBlockIDs.FIR_LEAVES_ID, DecoBlockIDs.LEGACY_FIR_SAPLING_ID, "decoBlockLeavesFir")
+        DecoBlocks.firLeaves = new DecoLeavesBlock(DecoBlockIDs.FIR_LEAVES_ID, DecoBlockIDs.FIR_SAPLING_ID, "decoBlockLeavesFir")
                 .setUnlocalizedName("decoBlockLeavesFir");
         DecoBlocks.legacyFirSapling = new LegacyFirSaplingBlock(DecoBlockIDs.LEGACY_FIR_SAPLING_ID);
         Item.itemsList[DecoBlocks.legacyFirSapling.blockID] = new ItemMultiTextureTile(DecoBlocks.legacyFirSapling.blockID - 256, DecoBlocks.legacyFirSapling, LegacyFirSaplingBlock.saplingTypes);
@@ -2944,6 +2944,281 @@ public class DecoBlockInitializer {
         register(new MouldingBlockItem(DecoBlocks.firHedgeMoulding.blockID - 256));
         DecoBlocks.firHedgeStairs = new HedgeStairsBlock(DecoBlockIDs.FIR_HEDGE_STAIRS_ID, DecoBlocks.firLeaves, 0, false)
                 .setUnlocalizedName("decoBlockHedgeFirStairs");
+    
+        //------ Aspen Wood ------//
+    
+        // Tree blocks
+        DecoBlocks.aspenLog = new DecoLogBlock(DecoBlockIDs.ASPEN_LOG_ID, WoodTypeHelper.ASPEN_WOOD_TYPE, DecoBlockIDs.CHEWED_ASPEN_LOG_ID,
+                new String[] {"decoBlockLogAspen_top", "decoBlockStrippedAspen_top", "decoBlockLogAspen_side", "decoBlockStrippedAspen_side"},
+                new String[] {"decoBlockLogAspen_side", "decoBlockStrippedAspen_side", "decoBlockLogAspen_side", "decoBlockStrippedAspen_side"})
+                .setUnlocalizedName("decoBlockAspenLog");
+        Item.itemsList[DecoBlocks.aspenLog.blockID] = new DecoLogItemBlock(DecoBlocks.aspenLog.blockID - 256, DecoBlocks.aspenLog);
+        DecoBlocks.aspenStump = new DecoStumpBlock(DecoBlockIDs.ASPEN_STUMP_ID, DecoBlockIDs.ASPEN_LOG_ID, DecoBlockIDs.CHEWED_ASPEN_LOG_ID,
+                WoodTypeHelper.ASPEN_WORK_STUMP_ID, WoodTypeHelper.ASPEN_WORK_STUMP_TYPE,
+                "decoBlockTrunkAspen_top", "decoBlockTrunkAspen_side")
+                .setUnlocalizedName("decoBlockAspenStump");
+        DecoBlocks.aspenLogSpike = new LogSpikeBlock(DecoBlockIDs.ASPEN_LOG_SPIKE_ID,
+                "decoBlockStrippedAspen_top", "decoBlockStrippedAspen_side")
+                .setUnlocalizedName("decoBlockChewedAspen");
+        DecoBlocks.chewedAspenLog = new ChewedLogBlock(DecoBlockIDs.CHEWED_ASPEN_LOG_ID,
+                "decoBlockStrippedAspen_top", "decoBlockStrippedAspen_side", "decoBlockTrunkAspen_top",
+                DecoBlocks.aspenLogSpike)
+                .setUnlocalizedName("decoBlockSpikeAspen");
+    
+        DecoBlocks.aspenLeaves = new DecoLeavesBlock(DecoBlockIDs.ASPEN_LEAVES_ID, DecoBlockIDs.ASPEN_SAPLING_ID, "decoBlockLeavesAspen")
+                .setUnlocalizedName("decoBlockLeavesAspen");
+        DecoBlocks.aspenSapling = new SaplingBlock(DecoBlockIDs.ASPEN_SAPLING_ID, "decoBlockSaplingAspen", "decoBlockSaplingAspen_0")
+                .addTreeGrower(DecoTreeGrowers.ASPEN_TREE, 10);
+        register(new SaplingBlockItem(DecoBlocks.aspenSapling.blockID - 256, DecoBlocks.aspenSapling));
+    
+        // Sub blocks
+        DecoBlocks.aspenStairs = new WoodStairsBlock(DecoBlockIDs.ASPEN_STAIRS_ID, Block.planks, WoodTypeHelper.ASPEN_WOOD_TYPE)
+                .setUnlocalizedName("decoBlockAspenStairs");
+        DecoBlocks.aspenSidingAndCorner = new WoodSidingAndCornerAndDecorativeBlock(DecoBlockIDs.ASPEN_SIDING_AND_CORNER_ID,
+                "decoBlockPlanksAspen", "decoBlockAspenSiding");
+        DecoBlocks.aspenMoulding = new WoodMouldingAndDecorativeBlock(DecoBlockIDs.ASPEN_MOULDING_ID,
+                "decoBlockPlanksAspen", "decoBlockPlanksAspenColumn",
+                DecoBlockIDs.ASPEN_SIDING_AND_CORNER_ID,
+                "decoBlockAspenMoulding");
+    
+        // Decorative blocks
+        DecoBlocks.aspenGate = new DecoGateBlock(DecoBlockIDs.ASPEN_GATE_ID, "decoBlockGateAspen");
+        DecoBlocks.aspenDoor = new DecoDoorBlockWood(DecoBlockIDs.ASPEN_DOOR_ID, DecoItemIDs.ASPEN_DOOR_ID, "decoBlockDoorAspen_upper", "decoBlockDoorAspen_lower");
+        DecoBlocks.aspenTrapdoor = new DecoTrapDoorBlock(DecoBlockIDs.ASPEN_TRAPDOOR_ID, "decoBlockTrapdoorAspen");
+        DecoBlocks.aspenChair = new ChairBlock(DecoBlockIDs.ASPEN_CHAIR_ID, "Aspen");
+        DecoBlocks.filledAspenBarrel = new FilledBarrelBlock(DecoBlockIDs.FILLED_ASPEN_BARREL_ID, "decoBlockBarrelAspen");
+        Item.itemsList[DecoBlocks.filledAspenBarrel.blockID] = new ItemMultiTextureTile(DecoBlocks.filledAspenBarrel.blockID - 256, DecoBlocks.filledAspenBarrel, FilledBarrelBlock.typeTags);
+        DecoBlocks.aspenLadder = new DecoLadderBlock(DecoBlockIDs.ASPEN_LADDER_ID, DecoBlockIDs.FLAMING_ASPEN_LADDER_ID, "decoBlockLadderAspen");
+        DecoBlocks.flamingAspenLadder = new DecoLadderBlockFlaming(DecoBlockIDs.FLAMING_ASPEN_LADDER_ID, DecoBlockIDs.ASPEN_LADDER_ID, "decoBlockLadderAspen");
+    
+        DecoBlocks.aspenSign = new DecoSignBlock(DecoBlockIDs.ASPEN_SIGN_ID, WoodTypeHelper.ASPEN_WOOD_TYPE, true,
+                "/deco/signAspen.png", "decoBlockPlanksAspen");
+        DecoBlocks.aspenWallSign = new DecoSignBlock(DecoBlockIDs.ASPEN_WALL_SIGN_ID, WoodTypeHelper.ASPEN_WOOD_TYPE, false,
+                "/deco/signAspen.png", "decoBlockPlanksAspen");
+    
+        DecoBlocks.aspenButton = new DecoButtonBlock(DecoBlockIDs.ASPEN_BUTTON_ID, true, Block.planks, WoodTypeHelper.ASPEN_WOOD_TYPE)
+                .setUnlocalizedName("decoBlockButtonAspen");
+    
+        // Hedge
+        DecoBlocks.aspenHedgeSidingAndCorner = new HedgeSidingAndCornerBlock(DecoBlockIDs.ASPEN_HEDGE_SIDING_AND_CORNER_ID,
+                "decoBlockLeavesAspen", DecoBlocks.aspenLeaves, 0,
+                "decoBlockHedgeAspenSiding", false);
+        register(new SidingAndCornerBlockItem(DecoBlocks.aspenHedgeSidingAndCorner.blockID - 256));
+        DecoBlocks.aspenHedgeMoulding = new HedgeMouldingBlock(DecoBlockIDs.ASPEN_HEDGE_MOULDING_ID,
+                "decoBlockLeavesAspen", "decoBlockLeavesAspen",
+                DecoBlockIDs.ASPEN_HEDGE_SIDING_AND_CORNER_ID,
+                DecoBlocks.aspenLeaves, 0,
+                "decoBlockHedgeAspenMoulding", false);
+        register(new MouldingBlockItem(DecoBlocks.aspenHedgeMoulding.blockID - 256));
+        DecoBlocks.aspenHedgeStairs = new HedgeStairsBlock(DecoBlockIDs.ASPEN_HEDGE_STAIRS_ID, DecoBlocks.aspenLeaves, 0, false)
+                .setUnlocalizedName("decoBlockHedgeAspenStairs");
+    
+        //------ Willow Wood ------//
+    
+        // Tree blocks
+        DecoBlocks.willowLog = new DecoLogBlock(DecoBlockIDs.WILLOW_LOG_ID, WoodTypeHelper.WILLOW_WOOD_TYPE, DecoBlockIDs.CHEWED_WILLOW_LOG_ID,
+                new String[] {"decoBlockLogWillow_top", "decoBlockStrippedWillow_top", "decoBlockLogWillow_side", "decoBlockStrippedWillow_side"},
+                new String[] {"decoBlockLogWillow_side", "decoBlockStrippedWillow_side", "decoBlockLogWillow_side", "decoBlockStrippedWillow_side"})
+                .setUnlocalizedName("decoBlockWillowLog");
+        Item.itemsList[DecoBlocks.willowLog.blockID] = new DecoLogItemBlock(DecoBlocks.willowLog.blockID - 256, DecoBlocks.willowLog);
+        DecoBlocks.willowStump = new DecoStumpBlock(DecoBlockIDs.WILLOW_STUMP_ID, DecoBlockIDs.WILLOW_LOG_ID, DecoBlockIDs.CHEWED_WILLOW_LOG_ID,
+                WoodTypeHelper.WILLOW_WORK_STUMP_ID, WoodTypeHelper.WILLOW_WORK_STUMP_TYPE,
+                "decoBlockTrunkWillow_top", "decoBlockTrunkWillow_side")
+                .setUnlocalizedName("decoBlockWillowStump");
+        DecoBlocks.willowLogSpike = new LogSpikeBlock(DecoBlockIDs.WILLOW_LOG_SPIKE_ID,
+                "decoBlockStrippedWillow_top", "decoBlockStrippedWillow_side")
+                .setUnlocalizedName("decoBlockChewedWillow");
+        DecoBlocks.chewedWillowLog = new ChewedLogBlock(DecoBlockIDs.CHEWED_WILLOW_LOG_ID,
+                "decoBlockStrippedWillow_top", "decoBlockStrippedWillow_side", "decoBlockTrunkWillow_top",
+                DecoBlocks.willowLogSpike)
+                .setUnlocalizedName("decoBlockSpikeWillow");
+    
+        DecoBlocks.willowLeaves = new DecoLeavesBlock(DecoBlockIDs.WILLOW_LEAVES_ID, DecoBlockIDs.WILLOW_SAPLING_ID, "decoBlockLeavesWillow")
+                .setUnlocalizedName("decoBlockLeavesWillow");
+        DecoBlocks.willowSapling = new SaplingBlock(DecoBlockIDs.WILLOW_SAPLING_ID, "decoBlockSaplingWillow", "decoBlockSaplingWillow_0")
+                .addTreeGrower(DecoTreeGrowers.WILLOW_TREE, 10)
+                .add2x2TreeGrower(DecoTreeGrowers.HUGE_WILLOW_TREE, 10);
+        register(new SaplingBlockItem(DecoBlocks.willowSapling.blockID - 256, DecoBlocks.willowSapling));
+    
+        // Sub blocks
+        DecoBlocks.willowStairs = new WoodStairsBlock(DecoBlockIDs.WILLOW_STAIRS_ID, Block.planks, WoodTypeHelper.WILLOW_WOOD_TYPE)
+                .setUnlocalizedName("decoBlockWillowStairs");
+        DecoBlocks.willowSidingAndCorner = new WoodSidingAndCornerAndDecorativeBlock(DecoBlockIDs.WILLOW_SIDING_AND_CORNER_ID,
+                "decoBlockPlanksWillow", "decoBlockWillowSiding");
+        DecoBlocks.willowMoulding = new WoodMouldingAndDecorativeBlock(DecoBlockIDs.WILLOW_MOULDING_ID,
+                "decoBlockPlanksWillow", "decoBlockPlanksWillowColumn",
+                DecoBlockIDs.WILLOW_SIDING_AND_CORNER_ID,
+                "decoBlockWillowMoulding");
+    
+        // Decorative blocks
+        DecoBlocks.willowGate = new DecoGateBlock(DecoBlockIDs.WILLOW_GATE_ID, "decoBlockGateWillow");
+        DecoBlocks.willowDoor = new DecoDoorBlockWood(DecoBlockIDs.WILLOW_DOOR_ID, DecoItemIDs.WILLOW_DOOR_ID, "decoBlockDoorWillow_upper", "decoBlockDoorWillow_lower");
+        DecoBlocks.willowTrapdoor = new DecoTrapDoorBlock(DecoBlockIDs.WILLOW_TRAPDOOR_ID, "decoBlockTrapdoorWillow");
+        DecoBlocks.willowChair = new ChairBlock(DecoBlockIDs.WILLOW_CHAIR_ID, "Willow");
+        DecoBlocks.filledWillowBarrel = new FilledBarrelBlock(DecoBlockIDs.FILLED_WILLOW_BARREL_ID, "decoBlockBarrelWillow");
+        Item.itemsList[DecoBlocks.filledWillowBarrel.blockID] = new ItemMultiTextureTile(DecoBlocks.filledWillowBarrel.blockID - 256, DecoBlocks.filledWillowBarrel, FilledBarrelBlock.typeTags);
+        DecoBlocks.willowLadder = new DecoLadderBlock(DecoBlockIDs.WILLOW_LADDER_ID, DecoBlockIDs.FLAMING_WILLOW_LADDER_ID, "decoBlockLadderWillow");
+        DecoBlocks.flamingWillowLadder = new DecoLadderBlockFlaming(DecoBlockIDs.FLAMING_WILLOW_LADDER_ID, DecoBlockIDs.WILLOW_LADDER_ID, "decoBlockLadderWillow");
+    
+        DecoBlocks.willowSign = new DecoSignBlock(DecoBlockIDs.WILLOW_SIGN_ID, WoodTypeHelper.WILLOW_WOOD_TYPE, true,
+                "/deco/signWillow.png", "decoBlockPlanksWillow");
+        DecoBlocks.willowWallSign = new DecoSignBlock(DecoBlockIDs.WILLOW_WALL_SIGN_ID, WoodTypeHelper.WILLOW_WOOD_TYPE, false,
+                "/deco/signWillow.png", "decoBlockPlanksWillow");
+    
+        DecoBlocks.willowButton = new DecoButtonBlock(DecoBlockIDs.WILLOW_BUTTON_ID, true, Block.planks, WoodTypeHelper.WILLOW_WOOD_TYPE)
+                .setUnlocalizedName("decoBlockButtonWillow");
+    
+        // Hedge
+        DecoBlocks.willowHedgeSidingAndCorner = new HedgeSidingAndCornerBlock(DecoBlockIDs.WILLOW_HEDGE_SIDING_AND_CORNER_ID,
+                "decoBlockLeavesWillow", DecoBlocks.willowLeaves, 0,
+                "decoBlockHedgeWillowSiding", false);
+        register(new SidingAndCornerBlockItem(DecoBlocks.willowHedgeSidingAndCorner.blockID - 256));
+        DecoBlocks.willowHedgeMoulding = new HedgeMouldingBlock(DecoBlockIDs.WILLOW_HEDGE_MOULDING_ID,
+                "decoBlockLeavesWillow", "decoBlockLeavesWillow",
+                DecoBlockIDs.WILLOW_HEDGE_SIDING_AND_CORNER_ID,
+                DecoBlocks.willowLeaves, 0,
+                "decoBlockHedgeWillowMoulding", false);
+        register(new MouldingBlockItem(DecoBlocks.willowHedgeMoulding.blockID - 256));
+        DecoBlocks.willowHedgeStairs = new HedgeStairsBlock(DecoBlockIDs.WILLOW_HEDGE_STAIRS_ID, DecoBlocks.willowLeaves, 0, false)
+                .setUnlocalizedName("decoBlockHedgeWillowStairs");
+    
+        //------ DarkOak Wood ------//
+    
+        // Tree blocks
+        DecoBlocks.darkOakLog = new DecoLogBlock(DecoBlockIDs.DARK_OAK_LOG_ID, WoodTypeHelper.DARK_OAK_WOOD_TYPE, DecoBlockIDs.CHEWED_DARK_OAK_LOG_ID,
+                new String[] {"decoBlockLogDarkOak_top", "decoBlockStrippedDarkOak_top", "decoBlockLogDarkOak_side", "decoBlockStrippedDarkOak_side"},
+                new String[] {"decoBlockLogDarkOak_side", "decoBlockStrippedDarkOak_side", "decoBlockLogDarkOak_side", "decoBlockStrippedDarkOak_side"})
+                .setUnlocalizedName("decoBlockDarkOakLog");
+        Item.itemsList[DecoBlocks.darkOakLog.blockID] = new DecoLogItemBlock(DecoBlocks.darkOakLog.blockID - 256, DecoBlocks.darkOakLog);
+        DecoBlocks.darkOakStump = new DecoStumpBlock(DecoBlockIDs.DARK_OAK_STUMP_ID, DecoBlockIDs.DARK_OAK_LOG_ID, DecoBlockIDs.CHEWED_DARK_OAK_LOG_ID,
+                WoodTypeHelper.DARK_OAK_WORK_STUMP_ID, WoodTypeHelper.DARK_OAK_WORK_STUMP_TYPE,
+                "decoBlockTrunkDarkOak_top", "decoBlockTrunkDarkOak_side")
+                .setUnlocalizedName("decoBlockDarkOakStump");
+        DecoBlocks.darkOakLogSpike = new LogSpikeBlock(DecoBlockIDs.DARK_OAK_LOG_SPIKE_ID,
+                "decoBlockStrippedDarkOak_top", "decoBlockStrippedDarkOak_side")
+                .setUnlocalizedName("decoBlockChewedDarkOak");
+        DecoBlocks.chewedDarkOakLog = new ChewedLogBlock(DecoBlockIDs.CHEWED_DARK_OAK_LOG_ID,
+                "decoBlockStrippedDarkOak_top", "decoBlockStrippedDarkOak_side", "decoBlockTrunkDarkOak_top",
+                DecoBlocks.darkOakLogSpike)
+                .setUnlocalizedName("decoBlockSpikeDarkOak");
+        
+        DecoBlocks.darkOakLeaves = new DecoLeavesBlock(DecoBlockIDs.DARK_OAK_LEAVES_ID, DecoBlockIDs.REDWOOD_SAPLING_ID, "decoBlockLeavesDarkOak")
+                .setUnlocalizedName("decoBlockLeavesDarkOak");
+        DecoBlocks.darkOakSapling = new SaplingBlock(DecoBlockIDs.DARK_OAK_SAPLING_ID, "decoBlockSaplingDarkOak", "decoBlockSaplingDarkOak_0")
+                .addTreeGrower(DecoTreeGrowers.DARK_OAK_TREE, 10)
+                .add2x2TreeGrower(DecoTreeGrowers.HUGE_DARK_OAK_TREE, 10);
+        register(new SaplingBlockItem(DecoBlocks.darkOakSapling.blockID - 256, DecoBlocks.darkOakSapling));
+    
+        // Sub blocks
+        DecoBlocks.darkOakStairs = new WoodStairsBlock(DecoBlockIDs.DARK_OAK_STAIRS_ID, Block.planks, WoodTypeHelper.DARK_OAK_WOOD_TYPE)
+                .setUnlocalizedName("decoBlockDarkOakStairs");
+        DecoBlocks.darkOakSidingAndCorner = new WoodSidingAndCornerAndDecorativeBlock(DecoBlockIDs.DARK_OAK_SIDING_AND_CORNER_ID,
+                "decoBlockPlanksDarkOak", "decoBlockDarkOakSiding");
+        DecoBlocks.darkOakMoulding = new WoodMouldingAndDecorativeBlock(DecoBlockIDs.DARK_OAK_MOULDING_ID,
+                "decoBlockPlanksDarkOak", "decoBlockPlanksDarkOakColumn",
+                DecoBlockIDs.DARK_OAK_SIDING_AND_CORNER_ID,
+                "decoBlockDarkOakMoulding");
+    
+        // Decorative blocks
+        DecoBlocks.darkOakGate = new DecoGateBlock(DecoBlockIDs.DARK_OAK_GATE_ID, "decoBlockGateDarkOak");
+        DecoBlocks.darkOakDoor = new DecoDoorBlockWood(DecoBlockIDs.DARK_OAK_DOOR_ID, DecoItemIDs.DARK_OAK_DOOR_ID, "decoBlockDoorDarkOak_upper", "decoBlockDoorDarkOak_lower");
+        DecoBlocks.darkOakTrapdoor = new DecoTrapDoorBlock(DecoBlockIDs.DARK_OAK_TRAPDOOR_ID, "decoBlockTrapdoorDarkOak");
+        DecoBlocks.darkOakChair = new ChairBlock(DecoBlockIDs.DARK_OAK_CHAIR_ID, "DarkOak");
+        DecoBlocks.filledDarkOakBarrel = new FilledBarrelBlock(DecoBlockIDs.FILLED_DARK_OAK_BARREL_ID, "decoBlockBarrelDarkOak");
+        Item.itemsList[DecoBlocks.filledDarkOakBarrel.blockID] = new ItemMultiTextureTile(DecoBlocks.filledDarkOakBarrel.blockID - 256, DecoBlocks.filledDarkOakBarrel, FilledBarrelBlock.typeTags);
+        DecoBlocks.darkOakLadder = new DecoLadderBlock(DecoBlockIDs.DARK_OAK_LADDER_ID, DecoBlockIDs.FLAMING_DARK_OAK_LADDER_ID, "decoBlockLadderDarkOak");
+        DecoBlocks.flamingDarkOakLadder = new DecoLadderBlockFlaming(DecoBlockIDs.FLAMING_DARK_OAK_LADDER_ID, DecoBlockIDs.DARK_OAK_LADDER_ID, "decoBlockLadderDarkOak");
+    
+        DecoBlocks.darkOakSign = new DecoSignBlock(DecoBlockIDs.DARK_OAK_SIGN_ID, WoodTypeHelper.DARK_OAK_WOOD_TYPE, true,
+                "/deco/signDarkOak.png", "decoBlockPlanksDarkOak");
+        DecoBlocks.darkOakWallSign = new DecoSignBlock(DecoBlockIDs.DARK_OAK_WALL_SIGN_ID, WoodTypeHelper.DARK_OAK_WOOD_TYPE, false,
+                "/deco/signDarkOak.png", "decoBlockPlanksDarkOak");
+    
+        DecoBlocks.darkOakButton = new DecoButtonBlock(DecoBlockIDs.DARK_OAK_BUTTON_ID, true, Block.planks, WoodTypeHelper.DARK_OAK_WOOD_TYPE)
+                .setUnlocalizedName("decoBlockButtonDarkOak");
+    
+        // Hedge
+        DecoBlocks.darkOakHedgeSidingAndCorner = new HedgeSidingAndCornerBlock(DecoBlockIDs.DARK_OAK_HEDGE_SIDING_AND_CORNER_ID,
+                "decoBlockLeavesDarkOak", DecoBlocks.darkOakLeaves, 0,
+                "decoBlockHedgeDarkOakSiding", false);
+        register(new SidingAndCornerBlockItem(DecoBlocks.darkOakHedgeSidingAndCorner.blockID - 256));
+        DecoBlocks.darkOakHedgeMoulding = new HedgeMouldingBlock(DecoBlockIDs.DARK_OAK_HEDGE_MOULDING_ID,
+                "decoBlockLeavesDarkOak", "decoBlockLeavesDarkOak",
+                DecoBlockIDs.DARK_OAK_HEDGE_SIDING_AND_CORNER_ID,
+                DecoBlocks.darkOakLeaves, 0,
+                "decoBlockHedgeDarkOakMoulding", false);
+        register(new MouldingBlockItem(DecoBlocks.darkOakHedgeMoulding.blockID - 256));
+        DecoBlocks.darkOakHedgeStairs = new HedgeStairsBlock(DecoBlockIDs.DARK_OAK_HEDGE_STAIRS_ID, DecoBlocks.darkOakLeaves, 0, false)
+                .setUnlocalizedName("decoBlockHedgeDarkOakStairs");
+    
+        //------ Redwood Wood ------//
+    
+        // Tree blocks
+        DecoBlocks.redwoodLog = new DecoLogBlock(DecoBlockIDs.REDWOOD_LOG_ID, WoodTypeHelper.REDWOOD_WOOD_TYPE, DecoBlockIDs.CHEWED_REDWOOD_LOG_ID,
+                new String[] {"decoBlockLogRedwood_top", "decoBlockStrippedRedwood_top", "decoBlockLogRedwood_side", "decoBlockStrippedRedwood_side"},
+                new String[] {"decoBlockLogRedwood_side", "decoBlockStrippedRedwood_side", "decoBlockLogRedwood_side", "decoBlockStrippedRedwood_side"})
+                .setUnlocalizedName("decoBlockRedwoodLog");
+        Item.itemsList[DecoBlocks.redwoodLog.blockID] = new DecoLogItemBlock(DecoBlocks.redwoodLog.blockID - 256, DecoBlocks.redwoodLog);
+        DecoBlocks.redwoodStump = new DecoStumpBlock(DecoBlockIDs.REDWOOD_STUMP_ID, DecoBlockIDs.REDWOOD_LOG_ID, DecoBlockIDs.CHEWED_REDWOOD_LOG_ID,
+                WoodTypeHelper.REDWOOD_WORK_STUMP_ID, WoodTypeHelper.REDWOOD_WORK_STUMP_TYPE,
+                "decoBlockTrunkRedwood_top", "decoBlockTrunkRedwood_side")
+                .setUnlocalizedName("decoBlockRedwoodStump");
+        DecoBlocks.redwoodLogSpike = new LogSpikeBlock(DecoBlockIDs.REDWOOD_LOG_SPIKE_ID,
+                "decoBlockStrippedRedwood_top", "decoBlockStrippedRedwood_side")
+                .setUnlocalizedName("decoBlockChewedRedwood");
+        DecoBlocks.chewedRedwoodLog = new ChewedLogBlock(DecoBlockIDs.CHEWED_REDWOOD_LOG_ID,
+                "decoBlockStrippedRedwood_top", "decoBlockStrippedRedwood_side", "decoBlockTrunkRedwood_top",
+                DecoBlocks.redwoodLogSpike)
+                .setUnlocalizedName("decoBlockSpikeRedwood");
+    
+        DecoBlocks.redwoodLeaves = new DecoLeavesBlock(DecoBlockIDs.REDWOOD_LEAVES_ID, DecoBlockIDs.REDWOOD_SAPLING_ID, "decoBlockLeavesRedwood")
+                .setUnlocalizedName("decoBlockLeavesRedwood");
+        DecoBlocks.redwoodSapling = new SaplingBlock(DecoBlockIDs.REDWOOD_SAPLING_ID, "decoBlockSaplingRedwood", "decoBlockSaplingRedwood_0")
+                .addTreeGrower(DecoTreeGrowers.REDWOOD_TREE, 10)
+                .add2x2TreeGrower(DecoTreeGrowers.HUGE_REDWOOD_TREE, 10);
+        register(new SaplingBlockItem(DecoBlocks.redwoodSapling.blockID - 256, DecoBlocks.redwoodSapling));
+    
+        // Sub blocks
+        DecoBlocks.redwoodStairs = new WoodStairsBlock(DecoBlockIDs.REDWOOD_STAIRS_ID, Block.planks, WoodTypeHelper.REDWOOD_WOOD_TYPE)
+                .setUnlocalizedName("decoBlockRedwoodStairs");
+        DecoBlocks.redwoodSidingAndCorner = new WoodSidingAndCornerAndDecorativeBlock(DecoBlockIDs.REDWOOD_SIDING_AND_CORNER_ID,
+                "decoBlockPlanksRedwood", "decoBlockRedwoodSiding");
+        DecoBlocks.redwoodMoulding = new WoodMouldingAndDecorativeBlock(DecoBlockIDs.REDWOOD_MOULDING_ID,
+                "decoBlockPlanksRedwood", "decoBlockPlanksRedwoodColumn",
+                DecoBlockIDs.REDWOOD_SIDING_AND_CORNER_ID,
+                "decoBlockRedwoodMoulding");
+    
+        // Decorative blocks
+        DecoBlocks.redwoodGate = new DecoGateBlock(DecoBlockIDs.REDWOOD_GATE_ID, "decoBlockGateRedwood");
+        DecoBlocks.redwoodDoor = new DecoDoorBlockWood(DecoBlockIDs.REDWOOD_DOOR_ID, DecoItemIDs.REDWOOD_DOOR_ID, "decoBlockDoorRedwood_upper", "decoBlockDoorRedwood_lower");
+        DecoBlocks.redwoodTrapdoor = new DecoTrapDoorBlock(DecoBlockIDs.REDWOOD_TRAPDOOR_ID, "decoBlockTrapdoorRedwood");
+        DecoBlocks.redwoodChair = new ChairBlock(DecoBlockIDs.REDWOOD_CHAIR_ID, "Redwood");
+        DecoBlocks.filledRedwoodBarrel = new FilledBarrelBlock(DecoBlockIDs.FILLED_REDWOOD_BARREL_ID, "decoBlockBarrelRedwood");
+        Item.itemsList[DecoBlocks.filledRedwoodBarrel.blockID] = new ItemMultiTextureTile(DecoBlocks.filledRedwoodBarrel.blockID - 256, DecoBlocks.filledRedwoodBarrel, FilledBarrelBlock.typeTags);
+        DecoBlocks.redwoodLadder = new DecoLadderBlock(DecoBlockIDs.REDWOOD_LADDER_ID, DecoBlockIDs.FLAMING_REDWOOD_LADDER_ID, "decoBlockLadderRedwood");
+        DecoBlocks.flamingRedwoodLadder = new DecoLadderBlockFlaming(DecoBlockIDs.FLAMING_REDWOOD_LADDER_ID, DecoBlockIDs.REDWOOD_LADDER_ID, "decoBlockLadderRedwood");
+    
+        DecoBlocks.redwoodSign = new DecoSignBlock(DecoBlockIDs.REDWOOD_SIGN_ID, WoodTypeHelper.REDWOOD_WOOD_TYPE, true,
+                "/deco/signRedwood.png", "decoBlockPlanksRedwood");
+        DecoBlocks.redwoodWallSign = new DecoSignBlock(DecoBlockIDs.REDWOOD_WALL_SIGN_ID, WoodTypeHelper.REDWOOD_WOOD_TYPE, false,
+                "/deco/signRedwood.png", "decoBlockPlanksRedwood");
+    
+        DecoBlocks.redwoodButton = new DecoButtonBlock(DecoBlockIDs.REDWOOD_BUTTON_ID, true, Block.planks, WoodTypeHelper.REDWOOD_WOOD_TYPE)
+                .setUnlocalizedName("decoBlockButtonRedwood");
+    
+        // Hedge
+        DecoBlocks.redwoodHedgeSidingAndCorner = new HedgeSidingAndCornerBlock(DecoBlockIDs.REDWOOD_HEDGE_SIDING_AND_CORNER_ID,
+                "decoBlockLeavesRedwood", DecoBlocks.redwoodLeaves, 0,
+                "decoBlockHedgeRedwoodSiding", false);
+        register(new SidingAndCornerBlockItem(DecoBlocks.redwoodHedgeSidingAndCorner.blockID - 256));
+        DecoBlocks.redwoodHedgeMoulding = new HedgeMouldingBlock(DecoBlockIDs.REDWOOD_HEDGE_MOULDING_ID,
+                "decoBlockLeavesRedwood", "decoBlockLeavesRedwood",
+                DecoBlockIDs.REDWOOD_HEDGE_SIDING_AND_CORNER_ID,
+                DecoBlocks.redwoodLeaves, 0,
+                "decoBlockHedgeRedwoodMoulding", false);
+        register(new MouldingBlockItem(DecoBlocks.redwoodHedgeMoulding.blockID - 256));
+        DecoBlocks.redwoodHedgeStairs = new HedgeStairsBlock(DecoBlockIDs.REDWOOD_HEDGE_STAIRS_ID, DecoBlocks.redwoodLeaves, 0, false)
+                .setUnlocalizedName("decoBlockHedgeRedwoodStairs");
         
         //------ Painted Planks ------//
         

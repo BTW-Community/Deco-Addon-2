@@ -4,6 +4,13 @@ Some textures in this release have been used or modified from the following sour
 
 - Updated to BTW CE v2.0.2
 - Updated saplings to the new daily growth system.
+- Added aspen, willow, and redwood wood types.
+    - Aspen saplings are made with a birch sapling, orange dye, and a fertilizer (bonemeal or fertilizer) in a cauldron.
+    - Willow saplings are made with an oak sapling, green dye, and a fertilizer.
+    - Redwood saplings are made with a spruce sapling, red dye, and a fertilizer.
+- Changed existing cherry wood type to be dark oak, and added a new cherry wood type.
+    - Dark oak saplings are made with an oak sapling, black dye (or ink sac), and a fertilizer.
+- Changed red autumn saplings to be made with a dark oak sapling instead of a cherry sapling.
 - Added the ability for birch, cherry, hazel, and autumn trees to grow into big variants like oak trees can.
 - Added the ability for oak, spruce, birch, cherry, hazel, and autumn trees to grow into huge variants when placed in a 2x2.
 - Changed the texture of mahogany leaves.

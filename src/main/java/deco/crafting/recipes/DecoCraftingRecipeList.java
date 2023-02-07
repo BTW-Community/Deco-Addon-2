@@ -4777,6 +4777,10 @@ public class DecoCraftingRecipeList {
 		initMangroveWoodRecipes();
 		initHazelWoodRecipes();
 		initFirWoodRecipes();
+		initAspenWoodRecipes();
+		initWillowWoodRecipes();
+		initDarkOakWoodRecipes();
+		initRedwoodWoodRecipes();
 		
 		initPaintedWoodRecipes();
 	}
@@ -6336,7 +6340,7 @@ public class DecoCraftingRecipeList {
 		
 		// Subblocks
 		addWoodenSubBlockRecipes(WoodTypeHelper.CHERRY_WOOD_TYPE, DecoBlocks.cherrySidingAndCorner, DecoBlocks.cherryMoulding, DecoBlocks.cherryStairs,
-				Block.woodSingleSlab, WoodTypeHelper.CHERRY_WOOD_TYPE);
+				DecoBlocks.woodSingleSlab, WoodTypeHelper.CHERRY_SLAB_TYPE);
 		
 		// Trapdoor
 		RecipeManager.addRecipe(new ItemStack(DecoBlocks.cherryTrapdoor),
@@ -7988,6 +7992,1166 @@ public class DecoCraftingRecipeList {
 						"M ",
 						"MM",
 						'M', new ItemStack(DecoBlocks.firHedgeMoulding)
+				});
+	}
+	
+	private static void initAspenWoodRecipes() {
+		// Logs
+		for (int facing = 0; facing <= 8; facing += 4) {
+			RecipeManager.addSawRecipe(
+					new ItemStack[] {
+							new ItemStack(Block.planks, 4, WoodTypeHelper.ASPEN_WOOD_TYPE),
+							new ItemStack(BTWItems.sawDust, 2),
+							new ItemStack(BTWItems.bark, 1, WoodTypeHelper.ASPEN_WOOD_TYPE)
+					},
+					DecoBlocks.aspenLog, DecoLogBlock.TYPE_LOG | facing);
+			RecipeManager.addSawRecipe(
+					new ItemStack[] {
+							new ItemStack(Block.planks, 4, WoodTypeHelper.ASPEN_WOOD_TYPE),
+							new ItemStack(BTWItems.sawDust, 2)
+					},
+					DecoBlocks.aspenLog, DecoLogBlock.TYPE_STRIPPED | facing);
+			RecipeManager.addSawRecipe(
+					new ItemStack[] {
+							new ItemStack(Block.planks, 4, WoodTypeHelper.ASPEN_WOOD_TYPE),
+							new ItemStack(BTWItems.sawDust, 2),
+							new ItemStack(BTWItems.bark, 1, WoodTypeHelper.ASPEN_WOOD_TYPE)
+					},
+					DecoBlocks.aspenLog, DecoLogBlock.TYPE_WOOD | facing);
+			RecipeManager.addSawRecipe(
+					new ItemStack[] {
+							new ItemStack(Block.planks, 4, WoodTypeHelper.ASPEN_WOOD_TYPE),
+							new ItemStack(BTWItems.sawDust, 2)
+					},
+					DecoBlocks.aspenLog, DecoLogBlock.TYPE_STRIPPED_WOOD | facing);
+		}
+		
+		RecipeManager.addLogChoppingRecipe(new ItemStack(Block.planks, 1, WoodTypeHelper.ASPEN_WOOD_TYPE),
+				new ItemStack[] {
+						new ItemStack(BTWItems.sawDust, 2),
+						new ItemStack(BTWItems.bark, 1, WoodTypeHelper.ASPEN_WOOD_TYPE)
+				},
+				new ItemStack(Item.stick, 2),
+				new ItemStack[] {
+						new ItemStack(BTWItems.sawDust, 4),
+						new ItemStack(BTWItems.bark, 1, WoodTypeHelper.ASPEN_WOOD_TYPE)
+				},
+				new ItemStack(DecoBlocks.aspenLog, 1, DecoLogBlock.TYPE_LOG));
+		RecipeManager.addLogChoppingRecipe(new ItemStack(Block.planks, 1, WoodTypeHelper.ASPEN_WOOD_TYPE),
+				new ItemStack[] {
+						new ItemStack(BTWItems.sawDust, 2),
+						new ItemStack(BTWItems.bark, 1, WoodTypeHelper.ASPEN_WOOD_TYPE)
+				},
+				new ItemStack(Item.stick, 2),
+				new ItemStack[] {
+						new ItemStack(BTWItems.sawDust, 4),
+						new ItemStack(BTWItems.bark, 1, WoodTypeHelper.ASPEN_WOOD_TYPE)
+				},
+				new ItemStack(DecoBlocks.aspenLog, 1, DecoLogBlock.TYPE_STRIPPED));
+		RecipeManager.addLogChoppingRecipe(new ItemStack(Block.planks, 1, WoodTypeHelper.ASPEN_WOOD_TYPE),
+				new ItemStack[] {
+						new ItemStack(BTWItems.sawDust, 2),
+						new ItemStack(BTWItems.bark, 1, WoodTypeHelper.ASPEN_WOOD_TYPE)
+				},
+				new ItemStack(Item.stick, 2),
+				new ItemStack[] {
+						new ItemStack(BTWItems.sawDust, 4),
+						new ItemStack(BTWItems.bark, 1, WoodTypeHelper.ASPEN_WOOD_TYPE)
+				},
+				new ItemStack(DecoBlocks.aspenLog, 1, DecoLogBlock.TYPE_WOOD));
+		RecipeManager.addLogChoppingRecipe(new ItemStack(Block.planks, 1, WoodTypeHelper.ASPEN_WOOD_TYPE),
+				new ItemStack[] {
+						new ItemStack(BTWItems.sawDust, 2),
+						new ItemStack(BTWItems.bark, 1, WoodTypeHelper.ASPEN_WOOD_TYPE)
+				},
+				new ItemStack(Item.stick, 2),
+				new ItemStack[] {
+						new ItemStack(BTWItems.sawDust, 4),
+						new ItemStack(BTWItems.bark, 1, WoodTypeHelper.ASPEN_WOOD_TYPE)
+				},
+				new ItemStack(DecoBlocks.aspenLog, 1, DecoLogBlock.TYPE_STRIPPED));
+		
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(BTWItems.potash),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.aspenLog)
+				});
+		
+		RecipeManager.addKilnRecipe(new ItemStack(Item.coal, 1, 1), DecoBlocks.aspenLog);
+		
+		// Subblocks
+		addWoodenSubBlockRecipes(WoodTypeHelper.ASPEN_WOOD_TYPE, DecoBlocks.aspenSidingAndCorner, DecoBlocks.aspenMoulding, DecoBlocks.aspenStairs,
+				DecoBlocks.woodSingleSlab, WoodTypeHelper.ASPEN_SLAB_TYPE);
+		
+		// Trapdoor
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.aspenTrapdoor),
+				new Object[] {
+						"SPP",
+						"SPP",
+						'S', Item.stick,
+						'P', new ItemStack(Block.planks, 1, WoodTypeHelper.ASPEN_WOOD_TYPE)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.aspenTrapdoor, 2),
+				new Object[] {
+						"SPP",
+						"SPP",
+						'S', Item.stick,
+						'P', new ItemStack(BTWItems.woodSidingStubID, 1, WoodTypeHelper.ASPEN_WOOD_TYPE)
+				});
+		
+		// Door
+		RecipeManager.addRecipe(new ItemStack(DecoItems.aspenDoor),
+				new Object[] {
+						"##",
+						"##",
+						"##",
+						'#', new ItemStack(Block.planks, 1, WoodTypeHelper.ASPEN_WOOD_TYPE)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoItems.aspenDoor),
+				new Object[] {
+						"##",
+						"##",
+						"##",
+						'#', new ItemStack(BTWItems.woodSidingStubID, 1, WoodTypeHelper.ASPEN_WOOD_TYPE)
+				});
+		
+		// Fence gate
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.aspenGate),
+				new Object[] {
+						"#W#",
+						"#W#",
+						'#', Item.stick,
+						'W', new ItemStack(Block.planks, 1, WoodTypeHelper.ASPEN_WOOD_TYPE)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.aspenGate),
+				new Object[] {
+						"#X#",
+						'#', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.ASPEN_WOOD_TYPE),
+						'X', new ItemStack(BTWItems.woodSidingStubID, 1, WoodTypeHelper.ASPEN_WOOD_TYPE)
+				});
+		
+		// Chair
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.aspenChair, 4),
+				new Object[] {
+						"S  ",
+						"SSS",
+						"M M",
+						'S', new ItemStack(BTWItems.woodSidingStubID, 1, WoodTypeHelper.ASPEN_WOOD_TYPE),
+						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.ASPEN_WOOD_TYPE)
+				});
+		
+		// Barrel
+		RecipeManager.addRecipe(new ItemStack(WoodTypeHelper.ASPEN_BARREL_ID, 2, WoodTypeHelper.ASPEN_BARREL_TYPE),
+				new Object[] {
+						"MMM",
+						"M M",
+						"MMM",
+						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.ASPEN_WOOD_TYPE)
+				});
+		
+		for (int type = 0; type < FilledBarrelBlock.types.length; type++) {
+			RecipeManager.addRecipe(new ItemStack(DecoBlocks.filledAspenBarrel, 1, type),
+					new Object[]{
+							"###",
+							"#X#",
+							"###",
+							'#', new ItemStack(FilledBarrelBlock.types[type]),
+							'X', new ItemStack(WoodTypeHelper.ASPEN_BARREL_ID, 1, WoodTypeHelper.ASPEN_BARREL_TYPE)});
+			
+			RecipeManager.addShapelessRecipeWithSecondaryOutputIndicator(
+					new ItemStack(FilledBarrelBlock.types[type], 8),
+					new ItemStack(WoodTypeHelper.ASPEN_BARREL_ID, 1, WoodTypeHelper.ASPEN_BARREL_TYPE),
+					new ItemStack[] {
+							new ItemStack(DecoBlocks.filledAspenBarrel, 1, type)
+					});
+		}
+		
+		// Bookshelves
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.emptyBookshelf, 1, WoodTypeHelper.ASPEN_WOOD_TYPE),
+				new Object[] {
+						"PPP",
+						"P P",
+						"PPP",
+						'P', new ItemStack(Block.planks, 1, WoodTypeHelper.ASPEN_WOOD_TYPE)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.emptyBookshelf, 1, WoodTypeHelper.ASPEN_WOOD_TYPE),
+				new Object[] {
+						"SSS",
+						"M M",
+						"SSS",
+						'S', new ItemStack(BTWItems.woodSidingStubID, 1, WoodTypeHelper.ASPEN_WOOD_TYPE),
+						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.ASPEN_WOOD_TYPE)
+				});
+		
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.bookshelf, 1, WoodTypeHelper.ASPEN_WOOD_TYPE),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.emptyBookshelf, 1, WoodTypeHelper.ASPEN_WOOD_TYPE),
+						new ItemStack(DecoItems.plainBook),
+						new ItemStack(DecoItems.plainBook),
+						new ItemStack(DecoItems.plainBook)
+				});
+		RecipeManager.addShapelessRecipe(new ItemStack(Block.bookShelf, 1, WoodTypeHelper.ASPEN_WOOD_TYPE),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.emptyBookshelf, 1, WoodTypeHelper.ASPEN_WOOD_TYPE),
+						new ItemStack(Item.book),
+						new ItemStack(Item.book),
+						new ItemStack(Item.book)
+				});
+		
+		RecipeManager.addShapelessRecipeWithSecondaryOutputIndicator(new ItemStack(DecoItems.plainBook, 3),
+				new ItemStack(DecoBlocks.emptyBookshelf, 1, WoodTypeHelper.ASPEN_WOOD_TYPE),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.bookshelf)
+				});
+		RecipeManager.addShapelessRecipeWithSecondaryOutputIndicator(new ItemStack(Item.book, 3),
+				new ItemStack(DecoBlocks.emptyBookshelf, 1, WoodTypeHelper.ASPEN_WOOD_TYPE),
+				new ItemStack[] {
+						new ItemStack(Block.bookShelf)
+				});
+		
+		// Bottle Racks
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.emptyBottleRack, 1, WoodTypeHelper.ASPEN_WOOD_TYPE),
+				new Object[] {
+						"PPP",
+						" P ",
+						"PPP",
+						'P', new ItemStack(Block.planks, 1, WoodTypeHelper.ASPEN_WOOD_TYPE)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.emptyBottleRack, 1, WoodTypeHelper.ASPEN_WOOD_TYPE),
+				new Object[] {
+						"MSM",
+						" M ",
+						"MSM",
+						'S', new ItemStack(BTWItems.woodSidingStubID, 1, WoodTypeHelper.ASPEN_WOOD_TYPE),
+						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.ASPEN_WOOD_TYPE)
+				});
+		
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.bottleRack, 1, WoodTypeHelper.ASPEN_WOOD_TYPE),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.emptyBottleRack, 1, WoodTypeHelper.ASPEN_WOOD_TYPE),
+						new ItemStack(Item.glassBottle),
+						new ItemStack(Item.glassBottle),
+						new ItemStack(Item.glassBottle)
+				});
+		
+		RecipeManager.addShapelessRecipeWithSecondaryOutputIndicator(new ItemStack(Item.glassBottle, 3),
+				new ItemStack(DecoBlocks.emptyBottleRack, 1, WoodTypeHelper.ASPEN_WOOD_TYPE),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.bottleRack)
+				});
+		
+		// Ladders
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.aspenLadder, 3),
+				new Object[] {
+						"MFM",
+						"MMM",
+						"MFM",
+						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.ASPEN_WOOD_TYPE),
+						'F', BTWItems.hempFibers
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.aspenLadder, 3),
+				new Object[] {
+						"MFM",
+						"MMM",
+						"MFM",
+						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.ASPEN_WOOD_TYPE),
+						'F', Item.silk
+				});
+		
+		// Button
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.aspenButton),
+				new Object[] {
+						"C",
+						"R",
+						'C', new ItemStack(BTWItems.woodCornerStubID, 1, WoodTypeHelper.ASPEN_WOOD_TYPE),
+						'R', Item.redstone
+				});
+		
+		// Hedge
+		btw.crafting.recipe.CraftingRecipeList.addSubBlockRecipesOfType(DecoBlocks.aspenLeaves, 0, DecoBlocks.aspenHedgeSidingAndCorner,
+				DecoBlocks.aspenHedgeMoulding, true);
+		
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.aspenHedgeStairs, 6),
+				new Object[] {
+						"F  ",
+						"FF ",
+						"FFF",
+						'F', new ItemStack(DecoBlocks.aspenLeaves)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.aspenHedgeStairs, 1),
+				new Object[] {
+						"M ",
+						"MM",
+						'M', new ItemStack(DecoBlocks.aspenHedgeMoulding)
+				});
+	}
+	
+	private static void initWillowWoodRecipes() {
+		// Logs
+		for (int facing = 0; facing <= 8; facing += 4) {
+			RecipeManager.addSawRecipe(
+					new ItemStack[] {
+							new ItemStack(Block.planks, 4, WoodTypeHelper.WILLOW_WOOD_TYPE),
+							new ItemStack(BTWItems.sawDust, 2),
+							new ItemStack(BTWItems.bark, 1, WoodTypeHelper.WILLOW_WOOD_TYPE)
+					},
+					DecoBlocks.willowLog, DecoLogBlock.TYPE_LOG | facing);
+			RecipeManager.addSawRecipe(
+					new ItemStack[] {
+							new ItemStack(Block.planks, 4, WoodTypeHelper.WILLOW_WOOD_TYPE),
+							new ItemStack(BTWItems.sawDust, 2)
+					},
+					DecoBlocks.willowLog, DecoLogBlock.TYPE_STRIPPED | facing);
+			RecipeManager.addSawRecipe(
+					new ItemStack[] {
+							new ItemStack(Block.planks, 4, WoodTypeHelper.WILLOW_WOOD_TYPE),
+							new ItemStack(BTWItems.sawDust, 2),
+							new ItemStack(BTWItems.bark, 1, WoodTypeHelper.WILLOW_WOOD_TYPE)
+					},
+					DecoBlocks.willowLog, DecoLogBlock.TYPE_WOOD | facing);
+			RecipeManager.addSawRecipe(
+					new ItemStack[] {
+							new ItemStack(Block.planks, 4, WoodTypeHelper.WILLOW_WOOD_TYPE),
+							new ItemStack(BTWItems.sawDust, 2)
+					},
+					DecoBlocks.willowLog, DecoLogBlock.TYPE_STRIPPED_WOOD | facing);
+		}
+		
+		RecipeManager.addLogChoppingRecipe(new ItemStack(Block.planks, 1, WoodTypeHelper.WILLOW_WOOD_TYPE),
+				new ItemStack[] {
+						new ItemStack(BTWItems.sawDust, 2),
+						new ItemStack(BTWItems.bark, 1, WoodTypeHelper.WILLOW_WOOD_TYPE)
+				},
+				new ItemStack(Item.stick, 2),
+				new ItemStack[] {
+						new ItemStack(BTWItems.sawDust, 4),
+						new ItemStack(BTWItems.bark, 1, WoodTypeHelper.WILLOW_WOOD_TYPE)
+				},
+				new ItemStack(DecoBlocks.willowLog, 1, DecoLogBlock.TYPE_LOG));
+		RecipeManager.addLogChoppingRecipe(new ItemStack(Block.planks, 1, WoodTypeHelper.WILLOW_WOOD_TYPE),
+				new ItemStack[] {
+						new ItemStack(BTWItems.sawDust, 2),
+						new ItemStack(BTWItems.bark, 1, WoodTypeHelper.WILLOW_WOOD_TYPE)
+				},
+				new ItemStack(Item.stick, 2),
+				new ItemStack[] {
+						new ItemStack(BTWItems.sawDust, 4),
+						new ItemStack(BTWItems.bark, 1, WoodTypeHelper.WILLOW_WOOD_TYPE)
+				},
+				new ItemStack(DecoBlocks.willowLog, 1, DecoLogBlock.TYPE_STRIPPED));
+		RecipeManager.addLogChoppingRecipe(new ItemStack(Block.planks, 1, WoodTypeHelper.WILLOW_WOOD_TYPE),
+				new ItemStack[] {
+						new ItemStack(BTWItems.sawDust, 2),
+						new ItemStack(BTWItems.bark, 1, WoodTypeHelper.WILLOW_WOOD_TYPE)
+				},
+				new ItemStack(Item.stick, 2),
+				new ItemStack[] {
+						new ItemStack(BTWItems.sawDust, 4),
+						new ItemStack(BTWItems.bark, 1, WoodTypeHelper.WILLOW_WOOD_TYPE)
+				},
+				new ItemStack(DecoBlocks.willowLog, 1, DecoLogBlock.TYPE_WOOD));
+		RecipeManager.addLogChoppingRecipe(new ItemStack(Block.planks, 1, WoodTypeHelper.WILLOW_WOOD_TYPE),
+				new ItemStack[] {
+						new ItemStack(BTWItems.sawDust, 2),
+						new ItemStack(BTWItems.bark, 1, WoodTypeHelper.WILLOW_WOOD_TYPE)
+				},
+				new ItemStack(Item.stick, 2),
+				new ItemStack[] {
+						new ItemStack(BTWItems.sawDust, 4),
+						new ItemStack(BTWItems.bark, 1, WoodTypeHelper.WILLOW_WOOD_TYPE)
+				},
+				new ItemStack(DecoBlocks.willowLog, 1, DecoLogBlock.TYPE_STRIPPED));
+		
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(BTWItems.potash),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.willowLog)
+				});
+		
+		RecipeManager.addKilnRecipe(new ItemStack(Item.coal, 1, 1), DecoBlocks.willowLog);
+		
+		// Subblocks
+		addWoodenSubBlockRecipes(WoodTypeHelper.WILLOW_WOOD_TYPE, DecoBlocks.willowSidingAndCorner, DecoBlocks.willowMoulding, DecoBlocks.willowStairs,
+				DecoBlocks.woodSingleSlab, WoodTypeHelper.WILLOW_SLAB_TYPE);
+		
+		// Trapdoor
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.willowTrapdoor),
+				new Object[] {
+						"SPP",
+						"SPP",
+						'S', Item.stick,
+						'P', new ItemStack(Block.planks, 1, WoodTypeHelper.WILLOW_WOOD_TYPE)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.willowTrapdoor, 2),
+				new Object[] {
+						"SPP",
+						"SPP",
+						'S', Item.stick,
+						'P', new ItemStack(BTWItems.woodSidingStubID, 1, WoodTypeHelper.WILLOW_WOOD_TYPE)
+				});
+		
+		// Door
+		RecipeManager.addRecipe(new ItemStack(DecoItems.willowDoor),
+				new Object[] {
+						"##",
+						"##",
+						"##",
+						'#', new ItemStack(Block.planks, 1, WoodTypeHelper.WILLOW_WOOD_TYPE)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoItems.willowDoor),
+				new Object[] {
+						"##",
+						"##",
+						"##",
+						'#', new ItemStack(BTWItems.woodSidingStubID, 1, WoodTypeHelper.WILLOW_WOOD_TYPE)
+				});
+		
+		// Fence gate
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.willowGate),
+				new Object[] {
+						"#W#",
+						"#W#",
+						'#', Item.stick,
+						'W', new ItemStack(Block.planks, 1, WoodTypeHelper.WILLOW_WOOD_TYPE)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.willowGate),
+				new Object[] {
+						"#X#",
+						'#', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.WILLOW_WOOD_TYPE),
+						'X', new ItemStack(BTWItems.woodSidingStubID, 1, WoodTypeHelper.WILLOW_WOOD_TYPE)
+				});
+		
+		// Chair
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.willowChair, 4),
+				new Object[] {
+						"S  ",
+						"SSS",
+						"M M",
+						'S', new ItemStack(BTWItems.woodSidingStubID, 1, WoodTypeHelper.WILLOW_WOOD_TYPE),
+						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.WILLOW_WOOD_TYPE)
+				});
+		
+		// Barrel
+		RecipeManager.addRecipe(new ItemStack(WoodTypeHelper.WILLOW_BARREL_ID, 2, WoodTypeHelper.WILLOW_BARREL_TYPE),
+				new Object[] {
+						"MMM",
+						"M M",
+						"MMM",
+						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.WILLOW_WOOD_TYPE)
+				});
+		
+		for (int type = 0; type < FilledBarrelBlock.types.length; type++) {
+			RecipeManager.addRecipe(new ItemStack(DecoBlocks.filledWillowBarrel, 1, type),
+					new Object[]{
+							"###",
+							"#X#",
+							"###",
+							'#', new ItemStack(FilledBarrelBlock.types[type]),
+							'X', new ItemStack(WoodTypeHelper.WILLOW_BARREL_ID, 1, WoodTypeHelper.WILLOW_BARREL_TYPE)});
+			
+			RecipeManager.addShapelessRecipeWithSecondaryOutputIndicator(
+					new ItemStack(FilledBarrelBlock.types[type], 8),
+					new ItemStack(WoodTypeHelper.WILLOW_BARREL_ID, 1, WoodTypeHelper.WILLOW_BARREL_TYPE),
+					new ItemStack[] {
+							new ItemStack(DecoBlocks.filledWillowBarrel, 1, type)
+					});
+		}
+		
+		// Bookshelves
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.emptyBookshelf, 1, WoodTypeHelper.WILLOW_WOOD_TYPE),
+				new Object[] {
+						"PPP",
+						"P P",
+						"PPP",
+						'P', new ItemStack(Block.planks, 1, WoodTypeHelper.WILLOW_WOOD_TYPE)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.emptyBookshelf, 1, WoodTypeHelper.WILLOW_WOOD_TYPE),
+				new Object[] {
+						"SSS",
+						"M M",
+						"SSS",
+						'S', new ItemStack(BTWItems.woodSidingStubID, 1, WoodTypeHelper.WILLOW_WOOD_TYPE),
+						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.WILLOW_WOOD_TYPE)
+				});
+		
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.bookshelf, 1, WoodTypeHelper.WILLOW_WOOD_TYPE),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.emptyBookshelf, 1, WoodTypeHelper.WILLOW_WOOD_TYPE),
+						new ItemStack(DecoItems.plainBook),
+						new ItemStack(DecoItems.plainBook),
+						new ItemStack(DecoItems.plainBook)
+				});
+		RecipeManager.addShapelessRecipe(new ItemStack(Block.bookShelf, 1, WoodTypeHelper.WILLOW_WOOD_TYPE),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.emptyBookshelf, 1, WoodTypeHelper.WILLOW_WOOD_TYPE),
+						new ItemStack(Item.book),
+						new ItemStack(Item.book),
+						new ItemStack(Item.book)
+				});
+		
+		RecipeManager.addShapelessRecipeWithSecondaryOutputIndicator(new ItemStack(DecoItems.plainBook, 3),
+				new ItemStack(DecoBlocks.emptyBookshelf, 1, WoodTypeHelper.WILLOW_WOOD_TYPE),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.bookshelf)
+				});
+		RecipeManager.addShapelessRecipeWithSecondaryOutputIndicator(new ItemStack(Item.book, 3),
+				new ItemStack(DecoBlocks.emptyBookshelf, 1, WoodTypeHelper.WILLOW_WOOD_TYPE),
+				new ItemStack[] {
+						new ItemStack(Block.bookShelf)
+				});
+		
+		// Bottle Racks
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.emptyBottleRack, 1, WoodTypeHelper.WILLOW_WOOD_TYPE),
+				new Object[] {
+						"PPP",
+						" P ",
+						"PPP",
+						'P', new ItemStack(Block.planks, 1, WoodTypeHelper.WILLOW_WOOD_TYPE)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.emptyBottleRack, 1, WoodTypeHelper.WILLOW_WOOD_TYPE),
+				new Object[] {
+						"MSM",
+						" M ",
+						"MSM",
+						'S', new ItemStack(BTWItems.woodSidingStubID, 1, WoodTypeHelper.WILLOW_WOOD_TYPE),
+						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.WILLOW_WOOD_TYPE)
+				});
+		
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.bottleRack, 1, WoodTypeHelper.WILLOW_WOOD_TYPE),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.emptyBottleRack, 1, WoodTypeHelper.WILLOW_WOOD_TYPE),
+						new ItemStack(Item.glassBottle),
+						new ItemStack(Item.glassBottle),
+						new ItemStack(Item.glassBottle)
+				});
+		
+		RecipeManager.addShapelessRecipeWithSecondaryOutputIndicator(new ItemStack(Item.glassBottle, 3),
+				new ItemStack(DecoBlocks.emptyBottleRack, 1, WoodTypeHelper.WILLOW_WOOD_TYPE),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.bottleRack)
+				});
+		
+		// Ladders
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.willowLadder, 3),
+				new Object[] {
+						"MFM",
+						"MMM",
+						"MFM",
+						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.WILLOW_WOOD_TYPE),
+						'F', BTWItems.hempFibers
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.willowLadder, 3),
+				new Object[] {
+						"MFM",
+						"MMM",
+						"MFM",
+						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.WILLOW_WOOD_TYPE),
+						'F', Item.silk
+				});
+		
+		// Button
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.willowButton),
+				new Object[] {
+						"C",
+						"R",
+						'C', new ItemStack(BTWItems.woodCornerStubID, 1, WoodTypeHelper.WILLOW_WOOD_TYPE),
+						'R', Item.redstone
+				});
+		
+		// Hedge
+		btw.crafting.recipe.CraftingRecipeList.addSubBlockRecipesOfType(DecoBlocks.willowLeaves, 0, DecoBlocks.willowHedgeSidingAndCorner,
+				DecoBlocks.willowHedgeMoulding, true);
+		
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.willowHedgeStairs, 6),
+				new Object[] {
+						"F  ",
+						"FF ",
+						"FFF",
+						'F', new ItemStack(DecoBlocks.willowLeaves)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.willowHedgeStairs, 1),
+				new Object[] {
+						"M ",
+						"MM",
+						'M', new ItemStack(DecoBlocks.willowHedgeMoulding)
+				});
+	}
+	
+	private static void initDarkOakWoodRecipes() {
+		// Logs
+		for (int facing = 0; facing <= 8; facing += 4) {
+			RecipeManager.addSawRecipe(
+					new ItemStack[] {
+							new ItemStack(Block.planks, 4, WoodTypeHelper.DARK_OAK_WOOD_TYPE),
+							new ItemStack(BTWItems.sawDust, 2),
+							new ItemStack(BTWItems.bark, 1, WoodTypeHelper.DARK_OAK_WOOD_TYPE)
+					},
+					DecoBlocks.darkOakLog, DecoLogBlock.TYPE_LOG | facing);
+			RecipeManager.addSawRecipe(
+					new ItemStack[] {
+							new ItemStack(Block.planks, 4, WoodTypeHelper.DARK_OAK_WOOD_TYPE),
+							new ItemStack(BTWItems.sawDust, 2)
+					},
+					DecoBlocks.darkOakLog, DecoLogBlock.TYPE_STRIPPED | facing);
+			RecipeManager.addSawRecipe(
+					new ItemStack[] {
+							new ItemStack(Block.planks, 4, WoodTypeHelper.DARK_OAK_WOOD_TYPE),
+							new ItemStack(BTWItems.sawDust, 2),
+							new ItemStack(BTWItems.bark, 1, WoodTypeHelper.DARK_OAK_WOOD_TYPE)
+					},
+					DecoBlocks.darkOakLog, DecoLogBlock.TYPE_WOOD | facing);
+			RecipeManager.addSawRecipe(
+					new ItemStack[] {
+							new ItemStack(Block.planks, 4, WoodTypeHelper.DARK_OAK_WOOD_TYPE),
+							new ItemStack(BTWItems.sawDust, 2)
+					},
+					DecoBlocks.darkOakLog, DecoLogBlock.TYPE_STRIPPED_WOOD | facing);
+		}
+		
+		RecipeManager.addLogChoppingRecipe(new ItemStack(Block.planks, 1, WoodTypeHelper.DARK_OAK_WOOD_TYPE),
+				new ItemStack[] {
+						new ItemStack(BTWItems.sawDust, 2),
+						new ItemStack(BTWItems.bark, 1, WoodTypeHelper.DARK_OAK_WOOD_TYPE)
+				},
+				new ItemStack(Item.stick, 2),
+				new ItemStack[] {
+						new ItemStack(BTWItems.sawDust, 4),
+						new ItemStack(BTWItems.bark, 1, WoodTypeHelper.DARK_OAK_WOOD_TYPE)
+				},
+				new ItemStack(DecoBlocks.darkOakLog, 1, DecoLogBlock.TYPE_LOG));
+		RecipeManager.addLogChoppingRecipe(new ItemStack(Block.planks, 1, WoodTypeHelper.DARK_OAK_WOOD_TYPE),
+				new ItemStack[] {
+						new ItemStack(BTWItems.sawDust, 2),
+						new ItemStack(BTWItems.bark, 1, WoodTypeHelper.DARK_OAK_WOOD_TYPE)
+				},
+				new ItemStack(Item.stick, 2),
+				new ItemStack[] {
+						new ItemStack(BTWItems.sawDust, 4),
+						new ItemStack(BTWItems.bark, 1, WoodTypeHelper.DARK_OAK_WOOD_TYPE)
+				},
+				new ItemStack(DecoBlocks.darkOakLog, 1, DecoLogBlock.TYPE_STRIPPED));
+		RecipeManager.addLogChoppingRecipe(new ItemStack(Block.planks, 1, WoodTypeHelper.DARK_OAK_WOOD_TYPE),
+				new ItemStack[] {
+						new ItemStack(BTWItems.sawDust, 2),
+						new ItemStack(BTWItems.bark, 1, WoodTypeHelper.DARK_OAK_WOOD_TYPE)
+				},
+				new ItemStack(Item.stick, 2),
+				new ItemStack[] {
+						new ItemStack(BTWItems.sawDust, 4),
+						new ItemStack(BTWItems.bark, 1, WoodTypeHelper.DARK_OAK_WOOD_TYPE)
+				},
+				new ItemStack(DecoBlocks.darkOakLog, 1, DecoLogBlock.TYPE_WOOD));
+		RecipeManager.addLogChoppingRecipe(new ItemStack(Block.planks, 1, WoodTypeHelper.DARK_OAK_WOOD_TYPE),
+				new ItemStack[] {
+						new ItemStack(BTWItems.sawDust, 2),
+						new ItemStack(BTWItems.bark, 1, WoodTypeHelper.DARK_OAK_WOOD_TYPE)
+				},
+				new ItemStack(Item.stick, 2),
+				new ItemStack[] {
+						new ItemStack(BTWItems.sawDust, 4),
+						new ItemStack(BTWItems.bark, 1, WoodTypeHelper.DARK_OAK_WOOD_TYPE)
+				},
+				new ItemStack(DecoBlocks.darkOakLog, 1, DecoLogBlock.TYPE_STRIPPED));
+		
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(BTWItems.potash),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.darkOakLog)
+				});
+		
+		RecipeManager.addKilnRecipe(new ItemStack(Item.coal, 1, 1), DecoBlocks.darkOakLog);
+		
+		// Subblocks
+		addWoodenSubBlockRecipes(WoodTypeHelper.DARK_OAK_WOOD_TYPE, DecoBlocks.darkOakSidingAndCorner, DecoBlocks.darkOakMoulding, DecoBlocks.darkOakStairs,
+				Block.woodSingleSlab, WoodTypeHelper.DARK_OAK_WOOD_TYPE);
+		
+		// Trapdoor
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.darkOakTrapdoor),
+				new Object[] {
+						"SPP",
+						"SPP",
+						'S', Item.stick,
+						'P', new ItemStack(Block.planks, 1, WoodTypeHelper.DARK_OAK_WOOD_TYPE)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.darkOakTrapdoor, 2),
+				new Object[] {
+						"SPP",
+						"SPP",
+						'S', Item.stick,
+						'P', new ItemStack(BTWItems.woodSidingStubID, 1, WoodTypeHelper.DARK_OAK_WOOD_TYPE)
+				});
+		
+		// Door
+		RecipeManager.addRecipe(new ItemStack(DecoItems.darkOakDoor),
+				new Object[] {
+						"##",
+						"##",
+						"##",
+						'#', new ItemStack(Block.planks, 1, WoodTypeHelper.DARK_OAK_WOOD_TYPE)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoItems.darkOakDoor),
+				new Object[] {
+						"##",
+						"##",
+						"##",
+						'#', new ItemStack(BTWItems.woodSidingStubID, 1, WoodTypeHelper.DARK_OAK_WOOD_TYPE)
+				});
+		
+		// Fence gate
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.darkOakGate),
+				new Object[] {
+						"#W#",
+						"#W#",
+						'#', Item.stick,
+						'W', new ItemStack(Block.planks, 1, WoodTypeHelper.DARK_OAK_WOOD_TYPE)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.darkOakGate),
+				new Object[] {
+						"#X#",
+						'#', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.DARK_OAK_WOOD_TYPE),
+						'X', new ItemStack(BTWItems.woodSidingStubID, 1, WoodTypeHelper.DARK_OAK_WOOD_TYPE)
+				});
+		
+		// Chair
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.darkOakChair, 4),
+				new Object[] {
+						"S  ",
+						"SSS",
+						"M M",
+						'S', new ItemStack(BTWItems.woodSidingStubID, 1, WoodTypeHelper.DARK_OAK_WOOD_TYPE),
+						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.DARK_OAK_WOOD_TYPE)
+				});
+		
+		// Barrel
+		RecipeManager.addRecipe(new ItemStack(WoodTypeHelper.DARK_OAK_BARREL_ID, 2, WoodTypeHelper.DARK_OAK_BARREL_TYPE),
+				new Object[] {
+						"MMM",
+						"M M",
+						"MMM",
+						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.DARK_OAK_WOOD_TYPE)
+				});
+		
+		for (int type = 0; type < FilledBarrelBlock.types.length; type++) {
+			RecipeManager.addRecipe(new ItemStack(DecoBlocks.filledDarkOakBarrel, 1, type),
+					new Object[]{
+							"###",
+							"#X#",
+							"###",
+							'#', new ItemStack(FilledBarrelBlock.types[type]),
+							'X', new ItemStack(WoodTypeHelper.DARK_OAK_BARREL_ID, 1, WoodTypeHelper.DARK_OAK_BARREL_TYPE)});
+			
+			RecipeManager.addShapelessRecipeWithSecondaryOutputIndicator(
+					new ItemStack(FilledBarrelBlock.types[type], 8),
+					new ItemStack(WoodTypeHelper.DARK_OAK_BARREL_ID, 1, WoodTypeHelper.DARK_OAK_BARREL_TYPE),
+					new ItemStack[] {
+							new ItemStack(DecoBlocks.filledDarkOakBarrel, 1, type)
+					});
+		}
+		
+		// Bookshelves
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.emptyBookshelf, 1, WoodTypeHelper.DARK_OAK_WOOD_TYPE),
+				new Object[] {
+						"PPP",
+						"P P",
+						"PPP",
+						'P', new ItemStack(Block.planks, 1, WoodTypeHelper.DARK_OAK_WOOD_TYPE)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.emptyBookshelf, 1, WoodTypeHelper.DARK_OAK_WOOD_TYPE),
+				new Object[] {
+						"SSS",
+						"M M",
+						"SSS",
+						'S', new ItemStack(BTWItems.woodSidingStubID, 1, WoodTypeHelper.DARK_OAK_WOOD_TYPE),
+						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.DARK_OAK_WOOD_TYPE)
+				});
+		
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.bookshelf, 1, WoodTypeHelper.DARK_OAK_WOOD_TYPE),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.emptyBookshelf, 1, WoodTypeHelper.DARK_OAK_WOOD_TYPE),
+						new ItemStack(DecoItems.plainBook),
+						new ItemStack(DecoItems.plainBook),
+						new ItemStack(DecoItems.plainBook)
+				});
+		RecipeManager.addShapelessRecipe(new ItemStack(Block.bookShelf, 1, WoodTypeHelper.DARK_OAK_WOOD_TYPE),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.emptyBookshelf, 1, WoodTypeHelper.DARK_OAK_WOOD_TYPE),
+						new ItemStack(Item.book),
+						new ItemStack(Item.book),
+						new ItemStack(Item.book)
+				});
+		
+		RecipeManager.addShapelessRecipeWithSecondaryOutputIndicator(new ItemStack(DecoItems.plainBook, 3),
+				new ItemStack(DecoBlocks.emptyBookshelf, 1, WoodTypeHelper.DARK_OAK_WOOD_TYPE),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.bookshelf)
+				});
+		RecipeManager.addShapelessRecipeWithSecondaryOutputIndicator(new ItemStack(Item.book, 3),
+				new ItemStack(DecoBlocks.emptyBookshelf, 1, WoodTypeHelper.DARK_OAK_WOOD_TYPE),
+				new ItemStack[] {
+						new ItemStack(Block.bookShelf)
+				});
+		
+		// Bottle Racks
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.emptyBottleRack, 1, WoodTypeHelper.DARK_OAK_WOOD_TYPE),
+				new Object[] {
+						"PPP",
+						" P ",
+						"PPP",
+						'P', new ItemStack(Block.planks, 1, WoodTypeHelper.DARK_OAK_WOOD_TYPE)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.emptyBottleRack, 1, WoodTypeHelper.DARK_OAK_WOOD_TYPE),
+				new Object[] {
+						"MSM",
+						" M ",
+						"MSM",
+						'S', new ItemStack(BTWItems.woodSidingStubID, 1, WoodTypeHelper.DARK_OAK_WOOD_TYPE),
+						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.DARK_OAK_WOOD_TYPE)
+				});
+		
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.bottleRack, 1, WoodTypeHelper.DARK_OAK_WOOD_TYPE),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.emptyBottleRack, 1, WoodTypeHelper.DARK_OAK_WOOD_TYPE),
+						new ItemStack(Item.glassBottle),
+						new ItemStack(Item.glassBottle),
+						new ItemStack(Item.glassBottle)
+				});
+		
+		RecipeManager.addShapelessRecipeWithSecondaryOutputIndicator(new ItemStack(Item.glassBottle, 3),
+				new ItemStack(DecoBlocks.emptyBottleRack, 1, WoodTypeHelper.DARK_OAK_WOOD_TYPE),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.bottleRack)
+				});
+		
+		// Ladders
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.darkOakLadder, 3),
+				new Object[] {
+						"MFM",
+						"MMM",
+						"MFM",
+						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.DARK_OAK_WOOD_TYPE),
+						'F', BTWItems.hempFibers
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.darkOakLadder, 3),
+				new Object[] {
+						"MFM",
+						"MMM",
+						"MFM",
+						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.DARK_OAK_WOOD_TYPE),
+						'F', Item.silk
+				});
+		
+		// Button
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.darkOakButton),
+				new Object[] {
+						"C",
+						"R",
+						'C', new ItemStack(BTWItems.woodCornerStubID, 1, WoodTypeHelper.DARK_OAK_WOOD_TYPE),
+						'R', Item.redstone
+				});
+		
+		// Hedge
+		btw.crafting.recipe.CraftingRecipeList.addSubBlockRecipesOfType(DecoBlocks.darkOakLeaves, 0, DecoBlocks.darkOakHedgeSidingAndCorner,
+				DecoBlocks.darkOakHedgeMoulding, true);
+		
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.darkOakHedgeStairs, 6),
+				new Object[] {
+						"F  ",
+						"FF ",
+						"FFF",
+						'F', new ItemStack(DecoBlocks.darkOakLeaves)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.darkOakHedgeStairs, 1),
+				new Object[] {
+						"M ",
+						"MM",
+						'M', new ItemStack(DecoBlocks.darkOakHedgeMoulding)
+				});
+	}
+	
+	private static void initRedwoodWoodRecipes() {
+		// Logs
+		for (int facing = 0; facing <= 8; facing += 4) {
+			RecipeManager.addSawRecipe(
+					new ItemStack[] {
+							new ItemStack(Block.planks, 4, WoodTypeHelper.REDWOOD_WOOD_TYPE),
+							new ItemStack(BTWItems.sawDust, 2),
+							new ItemStack(BTWItems.bark, 1, WoodTypeHelper.REDWOOD_WOOD_TYPE)
+					},
+					DecoBlocks.redwoodLog, DecoLogBlock.TYPE_LOG | facing);
+			RecipeManager.addSawRecipe(
+					new ItemStack[] {
+							new ItemStack(Block.planks, 4, WoodTypeHelper.REDWOOD_WOOD_TYPE),
+							new ItemStack(BTWItems.sawDust, 2)
+					},
+					DecoBlocks.redwoodLog, DecoLogBlock.TYPE_STRIPPED | facing);
+			RecipeManager.addSawRecipe(
+					new ItemStack[] {
+							new ItemStack(Block.planks, 4, WoodTypeHelper.REDWOOD_WOOD_TYPE),
+							new ItemStack(BTWItems.sawDust, 2),
+							new ItemStack(BTWItems.bark, 1, WoodTypeHelper.REDWOOD_WOOD_TYPE)
+					},
+					DecoBlocks.redwoodLog, DecoLogBlock.TYPE_WOOD | facing);
+			RecipeManager.addSawRecipe(
+					new ItemStack[] {
+							new ItemStack(Block.planks, 4, WoodTypeHelper.REDWOOD_WOOD_TYPE),
+							new ItemStack(BTWItems.sawDust, 2)
+					},
+					DecoBlocks.redwoodLog, DecoLogBlock.TYPE_STRIPPED_WOOD | facing);
+		}
+		
+		RecipeManager.addLogChoppingRecipe(new ItemStack(Block.planks, 1, WoodTypeHelper.REDWOOD_WOOD_TYPE),
+				new ItemStack[] {
+						new ItemStack(BTWItems.sawDust, 2),
+						new ItemStack(BTWItems.bark, 1, WoodTypeHelper.REDWOOD_WOOD_TYPE)
+				},
+				new ItemStack(Item.stick, 2),
+				new ItemStack[] {
+						new ItemStack(BTWItems.sawDust, 4),
+						new ItemStack(BTWItems.bark, 1, WoodTypeHelper.REDWOOD_WOOD_TYPE)
+				},
+				new ItemStack(DecoBlocks.redwoodLog, 1, DecoLogBlock.TYPE_LOG));
+		RecipeManager.addLogChoppingRecipe(new ItemStack(Block.planks, 1, WoodTypeHelper.REDWOOD_WOOD_TYPE),
+				new ItemStack[] {
+						new ItemStack(BTWItems.sawDust, 2),
+						new ItemStack(BTWItems.bark, 1, WoodTypeHelper.REDWOOD_WOOD_TYPE)
+				},
+				new ItemStack(Item.stick, 2),
+				new ItemStack[] {
+						new ItemStack(BTWItems.sawDust, 4),
+						new ItemStack(BTWItems.bark, 1, WoodTypeHelper.REDWOOD_WOOD_TYPE)
+				},
+				new ItemStack(DecoBlocks.redwoodLog, 1, DecoLogBlock.TYPE_STRIPPED));
+		RecipeManager.addLogChoppingRecipe(new ItemStack(Block.planks, 1, WoodTypeHelper.REDWOOD_WOOD_TYPE),
+				new ItemStack[] {
+						new ItemStack(BTWItems.sawDust, 2),
+						new ItemStack(BTWItems.bark, 1, WoodTypeHelper.REDWOOD_WOOD_TYPE)
+				},
+				new ItemStack(Item.stick, 2),
+				new ItemStack[] {
+						new ItemStack(BTWItems.sawDust, 4),
+						new ItemStack(BTWItems.bark, 1, WoodTypeHelper.REDWOOD_WOOD_TYPE)
+				},
+				new ItemStack(DecoBlocks.redwoodLog, 1, DecoLogBlock.TYPE_WOOD));
+		RecipeManager.addLogChoppingRecipe(new ItemStack(Block.planks, 1, WoodTypeHelper.REDWOOD_WOOD_TYPE),
+				new ItemStack[] {
+						new ItemStack(BTWItems.sawDust, 2),
+						new ItemStack(BTWItems.bark, 1, WoodTypeHelper.REDWOOD_WOOD_TYPE)
+				},
+				new ItemStack(Item.stick, 2),
+				new ItemStack[] {
+						new ItemStack(BTWItems.sawDust, 4),
+						new ItemStack(BTWItems.bark, 1, WoodTypeHelper.REDWOOD_WOOD_TYPE)
+				},
+				new ItemStack(DecoBlocks.redwoodLog, 1, DecoLogBlock.TYPE_STRIPPED));
+		
+		RecipeManager.addStokedCauldronRecipe(new ItemStack(BTWItems.potash),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.redwoodLog)
+				});
+		
+		RecipeManager.addKilnRecipe(new ItemStack(Item.coal, 1, 1), DecoBlocks.redwoodLog);
+		
+		// Subblocks
+		addWoodenSubBlockRecipes(WoodTypeHelper.REDWOOD_WOOD_TYPE, DecoBlocks.redwoodSidingAndCorner, DecoBlocks.redwoodMoulding, DecoBlocks.redwoodStairs,
+				DecoBlocks.woodSingleSlab, WoodTypeHelper.REDWOOD_SLAB_TYPE);
+		
+		// Trapdoor
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.redwoodTrapdoor),
+				new Object[] {
+						"SPP",
+						"SPP",
+						'S', Item.stick,
+						'P', new ItemStack(Block.planks, 1, WoodTypeHelper.REDWOOD_WOOD_TYPE)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.redwoodTrapdoor, 2),
+				new Object[] {
+						"SPP",
+						"SPP",
+						'S', Item.stick,
+						'P', new ItemStack(BTWItems.woodSidingStubID, 1, WoodTypeHelper.REDWOOD_WOOD_TYPE)
+				});
+		
+		// Door
+		RecipeManager.addRecipe(new ItemStack(DecoItems.redwoodDoor),
+				new Object[] {
+						"##",
+						"##",
+						"##",
+						'#', new ItemStack(Block.planks, 1, WoodTypeHelper.REDWOOD_WOOD_TYPE)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoItems.redwoodDoor),
+				new Object[] {
+						"##",
+						"##",
+						"##",
+						'#', new ItemStack(BTWItems.woodSidingStubID, 1, WoodTypeHelper.REDWOOD_WOOD_TYPE)
+				});
+		
+		// Fence gate
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.redwoodGate),
+				new Object[] {
+						"#W#",
+						"#W#",
+						'#', Item.stick,
+						'W', new ItemStack(Block.planks, 1, WoodTypeHelper.REDWOOD_WOOD_TYPE)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.redwoodGate),
+				new Object[] {
+						"#X#",
+						'#', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.REDWOOD_WOOD_TYPE),
+						'X', new ItemStack(BTWItems.woodSidingStubID, 1, WoodTypeHelper.REDWOOD_WOOD_TYPE)
+				});
+		
+		// Chair
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.redwoodChair, 4),
+				new Object[] {
+						"S  ",
+						"SSS",
+						"M M",
+						'S', new ItemStack(BTWItems.woodSidingStubID, 1, WoodTypeHelper.REDWOOD_WOOD_TYPE),
+						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.REDWOOD_WOOD_TYPE)
+				});
+		
+		// Barrel
+		RecipeManager.addRecipe(new ItemStack(WoodTypeHelper.REDWOOD_BARREL_ID, 2, WoodTypeHelper.REDWOOD_BARREL_TYPE),
+				new Object[] {
+						"MMM",
+						"M M",
+						"MMM",
+						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.REDWOOD_WOOD_TYPE)
+				});
+		
+		for (int type = 0; type < FilledBarrelBlock.types.length; type++) {
+			RecipeManager.addRecipe(new ItemStack(DecoBlocks.filledRedwoodBarrel, 1, type),
+					new Object[]{
+							"###",
+							"#X#",
+							"###",
+							'#', new ItemStack(FilledBarrelBlock.types[type]),
+							'X', new ItemStack(WoodTypeHelper.REDWOOD_BARREL_ID, 1, WoodTypeHelper.REDWOOD_BARREL_TYPE)});
+			
+			RecipeManager.addShapelessRecipeWithSecondaryOutputIndicator(
+					new ItemStack(FilledBarrelBlock.types[type], 8),
+					new ItemStack(WoodTypeHelper.REDWOOD_BARREL_ID, 1, WoodTypeHelper.REDWOOD_BARREL_TYPE),
+					new ItemStack[] {
+							new ItemStack(DecoBlocks.filledRedwoodBarrel, 1, type)
+					});
+		}
+		
+		// Bookshelves
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.emptyBookshelf, 1, WoodTypeHelper.REDWOOD_WOOD_TYPE),
+				new Object[] {
+						"PPP",
+						"P P",
+						"PPP",
+						'P', new ItemStack(Block.planks, 1, WoodTypeHelper.REDWOOD_WOOD_TYPE)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.emptyBookshelf, 1, WoodTypeHelper.REDWOOD_WOOD_TYPE),
+				new Object[] {
+						"SSS",
+						"M M",
+						"SSS",
+						'S', new ItemStack(BTWItems.woodSidingStubID, 1, WoodTypeHelper.REDWOOD_WOOD_TYPE),
+						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.REDWOOD_WOOD_TYPE)
+				});
+		
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.bookshelf, 1, WoodTypeHelper.REDWOOD_WOOD_TYPE),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.emptyBookshelf, 1, WoodTypeHelper.REDWOOD_WOOD_TYPE),
+						new ItemStack(DecoItems.plainBook),
+						new ItemStack(DecoItems.plainBook),
+						new ItemStack(DecoItems.plainBook)
+				});
+		RecipeManager.addShapelessRecipe(new ItemStack(Block.bookShelf, 1, WoodTypeHelper.REDWOOD_WOOD_TYPE),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.emptyBookshelf, 1, WoodTypeHelper.REDWOOD_WOOD_TYPE),
+						new ItemStack(Item.book),
+						new ItemStack(Item.book),
+						new ItemStack(Item.book)
+				});
+		
+		RecipeManager.addShapelessRecipeWithSecondaryOutputIndicator(new ItemStack(DecoItems.plainBook, 3),
+				new ItemStack(DecoBlocks.emptyBookshelf, 1, WoodTypeHelper.REDWOOD_WOOD_TYPE),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.bookshelf)
+				});
+		RecipeManager.addShapelessRecipeWithSecondaryOutputIndicator(new ItemStack(Item.book, 3),
+				new ItemStack(DecoBlocks.emptyBookshelf, 1, WoodTypeHelper.REDWOOD_WOOD_TYPE),
+				new ItemStack[] {
+						new ItemStack(Block.bookShelf)
+				});
+		
+		// Bottle Racks
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.emptyBottleRack, 1, WoodTypeHelper.REDWOOD_WOOD_TYPE),
+				new Object[] {
+						"PPP",
+						" P ",
+						"PPP",
+						'P', new ItemStack(Block.planks, 1, WoodTypeHelper.REDWOOD_WOOD_TYPE)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.emptyBottleRack, 1, WoodTypeHelper.REDWOOD_WOOD_TYPE),
+				new Object[] {
+						"MSM",
+						" M ",
+						"MSM",
+						'S', new ItemStack(BTWItems.woodSidingStubID, 1, WoodTypeHelper.REDWOOD_WOOD_TYPE),
+						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.REDWOOD_WOOD_TYPE)
+				});
+		
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.bottleRack, 1, WoodTypeHelper.REDWOOD_WOOD_TYPE),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.emptyBottleRack, 1, WoodTypeHelper.REDWOOD_WOOD_TYPE),
+						new ItemStack(Item.glassBottle),
+						new ItemStack(Item.glassBottle),
+						new ItemStack(Item.glassBottle)
+				});
+		
+		RecipeManager.addShapelessRecipeWithSecondaryOutputIndicator(new ItemStack(Item.glassBottle, 3),
+				new ItemStack(DecoBlocks.emptyBottleRack, 1, WoodTypeHelper.REDWOOD_WOOD_TYPE),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.bottleRack)
+				});
+		
+		// Ladders
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.redwoodLadder, 3),
+				new Object[] {
+						"MFM",
+						"MMM",
+						"MFM",
+						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.REDWOOD_WOOD_TYPE),
+						'F', BTWItems.hempFibers
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.redwoodLadder, 3),
+				new Object[] {
+						"MFM",
+						"MMM",
+						"MFM",
+						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, WoodTypeHelper.REDWOOD_WOOD_TYPE),
+						'F', Item.silk
+				});
+		
+		// Button
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.redwoodButton),
+				new Object[] {
+						"C",
+						"R",
+						'C', new ItemStack(BTWItems.woodCornerStubID, 1, WoodTypeHelper.REDWOOD_WOOD_TYPE),
+						'R', Item.redstone
+				});
+		
+		// Hedge
+		btw.crafting.recipe.CraftingRecipeList.addSubBlockRecipesOfType(DecoBlocks.redwoodLeaves, 0, DecoBlocks.redwoodHedgeSidingAndCorner,
+				DecoBlocks.redwoodHedgeMoulding, true);
+		
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.redwoodHedgeStairs, 6),
+				new Object[] {
+						"F  ",
+						"FF ",
+						"FFF",
+						'F', new ItemStack(DecoBlocks.redwoodLeaves)
+				});
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.redwoodHedgeStairs, 1),
+				new Object[] {
+						"M ",
+						"MM",
+						'M', new ItemStack(DecoBlocks.redwoodHedgeMoulding)
 				});
 	}
 	

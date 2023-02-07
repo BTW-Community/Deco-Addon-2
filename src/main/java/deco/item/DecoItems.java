@@ -13,6 +13,10 @@ public class DecoItems {
 	public static Item mangroveDoor;
 	public static Item hazelDoor;
 	public static Item firDoor;
+	public static Item aspenDoor;
+	public static Item willowDoor;
+	public static Item darkOakDoor;
+	public static Item redwoodDoor;
 	
 	public static Item amethystShard;
 	
