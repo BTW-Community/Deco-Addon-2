@@ -16,6 +16,7 @@ Some textures in this release have been used or modified from the following sour
 - Changed the texture of mahogany leaves.
 - Fixed an issue where fir planks were associated with hazel sub-blocks.
 - Fixed an issue where some work stumps still turned into oak chewed logs.
+- Fixed an issue where hazel and fir barrels were missing translation entries.
 
 ## Version 4.0.0 ##
 Deco as of 4.0.0 is now a fabric mod, without any base class edits, and as such can simply be placed in the mods folder to install.
