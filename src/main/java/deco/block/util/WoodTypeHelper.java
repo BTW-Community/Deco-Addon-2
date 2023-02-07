@@ -4,8 +4,6 @@ import btw.block.BTWBlocks;
 import btw.crafting.util.FurnaceBurnTime;
 import btw.world.feature.trees.grower.TreeGrowers;
 import deco.block.DecoBlockIDs;
-import deco.block.DecoBlocks;
-import net.minecraft.src.Block;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -31,6 +29,10 @@ public class WoodTypeHelper {
     public static final int MANGROVE_WOOD_TYPE = 8;
     public static final int HAZEL_WOOD_TYPE = 9;
     public static final int FIR_WOOD_TYPE = 10;
+    public static final int ASPEN_WOOD_TYPE = 11;
+    public static final int WILLOW_WOOD_TYPE = 12;
+    public static final int DARK_OAK_WOOD_TYPE = 13;
+    public static final int REDWOOD_WOOD_TYPE = 14;
     
     public static final int RED_AUTUMN_TYPE = 0;
     public static final int ORANGE_AUTUMN_TYPE = 1;
@@ -90,7 +92,11 @@ public class WoodTypeHelper {
         addWoodType(MAHOGANY_WOOD_TYPE, DecoBlockIDs.MAHOGANY_SIDING_AND_CORNER_ID, DecoBlockIDs.MAHOGANY_MOULDING_ID);
         addWoodType(MANGROVE_WOOD_TYPE, DecoBlockIDs.MANGROVE_SIDING_AND_CORNER_ID, DecoBlockIDs.MANGROVE_MOULDING_ID);
         addWoodType(HAZEL_WOOD_TYPE, DecoBlockIDs.HAZEL_SIDING_AND_CORNER_ID, DecoBlockIDs.HAZEL_MOULDING_ID);
-        addWoodType(FIR_WOOD_TYPE, DecoBlockIDs.HAZEL_SIDING_AND_CORNER_ID, DecoBlockIDs.HAZEL_MOULDING_ID);
+        addWoodType(FIR_WOOD_TYPE, DecoBlockIDs.FIR_SIDING_AND_CORNER_ID, DecoBlockIDs.FIR_MOULDING_ID);
+        addWoodType(ASPEN_WOOD_TYPE, DecoBlockIDs.ASPEN_SIDING_AND_CORNER_ID, DecoBlockIDs.ASPEN_MOULDING_ID);
+        addWoodType(WILLOW_WOOD_TYPE, DecoBlockIDs.WILLOW_SIDING_AND_CORNER_ID, DecoBlockIDs.WILLOW_MOULDING_ID);
+        addWoodType(DARK_OAK_WOOD_TYPE, DecoBlockIDs.DARK_OAK_SIDING_AND_CORNER_ID, DecoBlockIDs.DARK_OAK_MOULDING_ID);
+        addWoodType(REDWOOD_WOOD_TYPE, DecoBlockIDs.REDWOOD_SIDING_AND_CORNER_ID, DecoBlockIDs.REDWOOD_MOULDING_ID);
     }
     
     private static void addWoodType(int woodType, int sidingID, int mouldingID) {
@@ -110,6 +116,10 @@ public class WoodTypeHelper {
         furnaceBurnTimes.put(MANGROVE_WOOD_TYPE, FurnaceBurnTime.PLANKS_JUNGLE);
         furnaceBurnTimes.put(HAZEL_WOOD_TYPE, FurnaceBurnTime.PLANKS_OAK);
         furnaceBurnTimes.put(FIR_WOOD_TYPE, FurnaceBurnTime.PLANKS_BIRCH);
+        furnaceBurnTimes.put(ASPEN_WOOD_TYPE, FurnaceBurnTime.PLANKS_BIRCH);
+        furnaceBurnTimes.put(WILLOW_WOOD_TYPE, FurnaceBurnTime.PLANKS_OAK);
+        furnaceBurnTimes.put(DARK_OAK_WOOD_TYPE, FurnaceBurnTime.PLANKS_SPRUCE);
+        furnaceBurnTimes.put(REDWOOD_WOOD_TYPE, FurnaceBurnTime.PLANKS_OAK);
     }
     
     public static int getBarkCountForTanning(int woodType) {
@@ -163,17 +173,37 @@ public class WoodTypeHelper {
             DecoBlockIDs.FIR_STUMP_ID, 0,
             DecoBlockIDs.FIR_LEAVES_ID, 0);
     
-    public static final TreeGrowers.TreeWoodType RED_TREE_AUTUMN_WOOD_TYPE = new TreeGrowers.TreeWoodType(
+    public static final TreeGrowers.TreeWoodType ASPEN_TREE_WOOD_TYPE = new TreeGrowers.TreeWoodType(
+            DecoBlockIDs.ASPEN_LOG_ID, 0,
+            DecoBlockIDs.ASPEN_STUMP_ID, 0,
+            DecoBlockIDs.ASPEN_LEAVES_ID, 0);
+    
+    public static final TreeGrowers.TreeWoodType WILLOW_TREE_WOOD_TYPE = new TreeGrowers.TreeWoodType(
+            DecoBlockIDs.WILLOW_LOG_ID, 0,
+            DecoBlockIDs.WILLOW_STUMP_ID, 0,
+            DecoBlockIDs.WILLOW_LEAVES_ID, 0);
+    
+    public static final TreeGrowers.TreeWoodType DARK_OAK_TREE_WOOD_TYPE = new TreeGrowers.TreeWoodType(
+            DecoBlockIDs.DARK_OAK_LOG_ID, 0,
+            DecoBlockIDs.DARK_OAK_STUMP_ID, 0,
+            DecoBlockIDs.DARK_OAK_LEAVES_ID, 0);
+    
+    public static final TreeGrowers.TreeWoodType REDWOOD_TREE_WOOD_TYPE = new TreeGrowers.TreeWoodType(
+            DecoBlockIDs.REDWOOD_LOG_ID, 0,
+            DecoBlockIDs.REDWOOD_STUMP_ID, 0,
+            DecoBlockIDs.REDWOOD_LEAVES_ID, 0);
+    
+    public static final TreeGrowers.TreeWoodType RED_AUTUMN_TREE_WOOD_TYPE = new TreeGrowers.TreeWoodType(
             DecoBlockIDs.CHERRY_LOG_ID, 0,
             DecoBlockIDs.CHERRY_STUMP_ID, 0,
             DecoBlockIDs.AUTUMN_LEAVES_ID, RED_AUTUMN_TYPE);
     
-    public static final TreeGrowers.TreeWoodType ORANGE_TREE_AUTUMN_WOOD_TYPE = new TreeGrowers.TreeWoodType(
+    public static final TreeGrowers.TreeWoodType ORANGE_AUTUMN_TREE_WOOD_TYPE = new TreeGrowers.TreeWoodType(
             VANILLA_LOG_ID, OAK_WOOD_TYPE,
             VANILLA_LOG_ID, OAK_WOOD_TYPE | 12,
             DecoBlockIDs.AUTUMN_LEAVES_ID, ORANGE_AUTUMN_TYPE);
     
-    public static final TreeGrowers.TreeWoodType YELLOW_TREE_AUTUMN_WOOD_TYPE = new TreeGrowers.TreeWoodType(
+    public static final TreeGrowers.TreeWoodType YELLOW_AUTUMN_TREE_WOOD_TYPE = new TreeGrowers.TreeWoodType(
             VANILLA_LOG_ID, BIRCH_WOOD_TYPE,
             VANILLA_LOG_ID, BIRCH_WOOD_TYPE | 12,
             DecoBlockIDs.AUTUMN_LEAVES_ID, YELLOW_AUTUMN_TYPE);

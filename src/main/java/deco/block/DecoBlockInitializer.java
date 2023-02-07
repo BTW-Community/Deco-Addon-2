@@ -10,6 +10,7 @@ import btw.item.blockitems.SaplingBlockItem;
 import btw.item.blockitems.SidingAndCornerBlockItem;
 import btw.item.blockitems.legacy.LegacySubstitutionBlockItem;
 import btw.util.ColorUtils;
+import btw.world.feature.trees.grower.TreeGrowers;
 import deco.block.blocks.*;
 import deco.block.blocks.CarvedPumpkinBlock;
 import deco.block.blocks.FlowerPotBlock;
@@ -2385,6 +2386,8 @@ public class DecoBlockInitializer {
         DecoBlocks.spruceButton = new DecoButtonBlock(DecoBlockIDs.SPRUCE_BUTTON_ID, true, Block.planks, WoodTypeHelper.SPRUCE_WOOD_TYPE)
                 .setUnlocalizedName("decoBlockButtonSpruce");
     
+        ((SaplingBlock) BTWBlocks.spruceSapling).add2x2TreeGrower(DecoTreeGrowers.HUGE_SPRUCE_TREE, 10);
+    
         // Hedge
         DecoBlocks.spruceHedgeSidingAndCorner = new HedgeSidingAndCornerBlock(DecoBlockIDs.SPRUCE_HEDGE_SIDING_AND_CORNER_ID,
                 "leaves_spruce", DecoBlocks.hedge, WoodTypeHelper.SPRUCE_WOOD_TYPE,
@@ -2417,6 +2420,12 @@ public class DecoBlockInitializer {
     
         DecoBlocks.birchButton = new DecoButtonBlock(DecoBlockIDs.BIRCH_BUTTON_ID, true, Block.planks, WoodTypeHelper.BIRCH_WOOD_TYPE)
                 .setUnlocalizedName("decoBlockButtonBirch");
+    
+        ((SaplingBlock) BTWBlocks.birchSapling).removeTreeGrower("btw:birch");
+        ((SaplingBlock) BTWBlocks.birchSapling)
+                .addTreeGrower(TreeGrowers.BIRCH_TREE, 9)
+                .addTreeGrower(DecoTreeGrowers.BIG_BIRCH_TREE, 1)
+                .add2x2TreeGrower(DecoTreeGrowers.HUGE_BIRCH_TREE, 10);
     
         // Hedge
         DecoBlocks.birchHedgeSidingAndCorner = new HedgeSidingAndCornerBlock(DecoBlockIDs.BIRCH_HEDGE_SIDING_AND_CORNER_ID,
@@ -2535,7 +2544,8 @@ public class DecoBlockInitializer {
         Item.itemsList[DecoBlocks.legacyCherrySapling.blockID] = new ItemMultiTextureTile(DecoBlocks.legacyCherrySapling.blockID - 256, DecoBlocks.legacyCherrySapling, LegacyCherrySaplingBlock.saplingTypes);
         DecoBlocks.cherrySapling = new SaplingBlock(DecoBlockIDs.CHERRY_SAPLING_ID, "decoBlockSaplingCherry", "decoBlockSaplingCherry_0")
                 .addTreeGrower(DecoTreeGrowers.CHERRY_TREE, 9)
-                .addTreeGrower(DecoTreeGrowers.BIG_CHERRY_TREE, 1);
+                .addTreeGrower(DecoTreeGrowers.BIG_CHERRY_TREE, 1)
+                .add2x2TreeGrower(DecoTreeGrowers.HUGE_CHERRY_TREE, 10);
         register(new SaplingBlockItem(DecoBlocks.cherrySapling.blockID - 256, DecoBlocks.cherrySapling));
 
         // Sub blocks
@@ -2604,7 +2614,8 @@ public class DecoBlockInitializer {
                 .setUnlocalizedName("decoBlockLeavesAcacia");
         DecoBlocks.legacyAcaciaSapling = new LegacyAcaciaSaplingBlock(DecoBlockIDs.LEGACY_ACACIA_SAPLING_ID);
         Item.itemsList[DecoBlocks.legacyAcaciaSapling.blockID] = new ItemMultiTextureTile(DecoBlocks.legacyAcaciaSapling.blockID - 256, DecoBlocks.legacyAcaciaSapling, LegacyAcaciaSaplingBlock.saplingTypes);
-        DecoBlocks.acaciaSapling = new SaplingBlock(DecoBlockIDs.ACACIA_SAPLING_ID, "decoBlockSaplingAcacia", "decoBlockSaplingAcacia_0");
+        DecoBlocks.acaciaSapling = new SaplingBlock(DecoBlockIDs.ACACIA_SAPLING_ID, "decoBlockSaplingAcacia", "decoBlockSaplingAcacia_0")
+                .addTreeGrower(DecoTreeGrowers.ACACIA_TREE, 10);
         register(new SaplingBlockItem(DecoBlocks.acaciaSapling.blockID - 256, DecoBlocks.acaciaSapling));
     
         // Sub blocks
@@ -2674,7 +2685,8 @@ public class DecoBlockInitializer {
                 .setUnlocalizedName("decoBlockLeavesMahogany");
         DecoBlocks.legacyMahoganySapling = new LegacyMahoganySaplingBlock(DecoBlockIDs.LEGACY_MAHOGANY_SAPLING_ID);
         Item.itemsList[DecoBlocks.legacyMahoganySapling.blockID] = new ItemMultiTextureTile(DecoBlocks.legacyMahoganySapling.blockID - 256, DecoBlocks.legacyMahoganySapling, LegacyMahoganySaplingBlock.saplingTypes);
-        DecoBlocks.mahoganySapling = new SaplingBlock(DecoBlockIDs.MAHOGANY_SAPLING_ID, "decoBlockSaplingMahogany", "decoBlockSaplingMahogany_0");
+        DecoBlocks.mahoganySapling = new SaplingBlock(DecoBlockIDs.MAHOGANY_SAPLING_ID, "decoBlockSaplingMahogany", "decoBlockSaplingMahogany_0")
+                .addTreeGrower(DecoTreeGrowers.MAHOGANY_TREE, 10);
         register(new SaplingBlockItem(DecoBlocks.mahoganySapling.blockID - 256, DecoBlocks.mahoganySapling));
     
         // Sub blocks
@@ -2744,7 +2756,8 @@ public class DecoBlockInitializer {
                 .setUnlocalizedName("decoBlockLeavesMangrove");
         DecoBlocks.legacyMangroveSapling = new LegacyMangroveSaplingBlock(DecoBlockIDs.LEGACY_MANGROVE_SAPLING_ID);
         Item.itemsList[DecoBlocks.legacyMangroveSapling.blockID] = new ItemMultiTextureTile(DecoBlocks.legacyMangroveSapling.blockID - 256, DecoBlocks.legacyMangroveSapling, LegacyMangroveSaplingBlock.saplingTypes);
-        DecoBlocks.mangroveSapling = new SaplingBlock(DecoBlockIDs.MANGROVE_SAPLING_ID, "decoBlockSaplingMangrove", "decoBlockSaplingMangrove_0");
+        DecoBlocks.mangroveSapling = new SaplingBlock(DecoBlockIDs.MANGROVE_SAPLING_ID, "decoBlockSaplingMangrove", "decoBlockSaplingMangrove_0")
+                .addTreeGrower(DecoTreeGrowers.MANGROVE_TREE, 10);
         register(new SaplingBlockItem(DecoBlocks.mangroveSapling.blockID - 256, DecoBlocks.mangroveSapling));
     
         // Sub blocks
@@ -2815,7 +2828,8 @@ public class DecoBlockInitializer {
         Item.itemsList[DecoBlocks.legacyHazelSapling.blockID] = new ItemMultiTextureTile(DecoBlocks.legacyHazelSapling.blockID - 256, DecoBlocks.legacyHazelSapling, LegacyHazelSaplingBlock.saplingTypes);
         DecoBlocks.hazelSapling = new SaplingBlock(DecoBlockIDs.HAZEL_SAPLING_ID, "decoBlockSaplingHazel", "decoBlockSaplingHazel_0")
                 .addTreeGrower(DecoTreeGrowers.HAZEL_TREE, 9)
-                .addTreeGrower(DecoTreeGrowers.BIG_HAZEL_TREE, 1);
+                .addTreeGrower(DecoTreeGrowers.BIG_HAZEL_TREE, 1)
+                .add2x2TreeGrower(DecoTreeGrowers.HUGE_HAZEL_TREE, 10);
         register(new SaplingBlockItem(DecoBlocks.hazelSapling.blockID - 256, DecoBlocks.hazelSapling));
     
         // Sub blocks
@@ -2885,7 +2899,8 @@ public class DecoBlockInitializer {
         DecoBlocks.legacyFirSapling = new LegacyFirSaplingBlock(DecoBlockIDs.LEGACY_FIR_SAPLING_ID);
         Item.itemsList[DecoBlocks.legacyFirSapling.blockID] = new ItemMultiTextureTile(DecoBlocks.legacyFirSapling.blockID - 256, DecoBlocks.legacyFirSapling, LegacyFirSaplingBlock.saplingTypes);
         DecoBlocks.firSapling = new SaplingBlock(DecoBlockIDs.FIR_SAPLING_ID, "decoBlockSaplingFir", "decoBlockSaplingFir_0")
-                .addTreeGrower(DecoTreeGrowers.FIR_TREE, 10);
+                .addTreeGrower(DecoTreeGrowers.FIR_TREE, 10)
+                .add2x2TreeGrower(DecoTreeGrowers.HUGE_FIR_TREE, 10);
         register(new SaplingBlockItem(DecoBlocks.firSapling.blockID - 256, DecoBlocks.firSapling));
     
         // Sub blocks
