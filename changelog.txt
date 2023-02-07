@@ -15,6 +15,7 @@ Some textures in this release have been used or modified from the following sour
 - Added the ability for oak, spruce, birch, cherry, hazel, and autumn trees to grow into huge variants when placed in a 2x2.
 - Changed the texture of mahogany leaves.
 - Fixed an issue where fir planks were associated with hazel sub-blocks.
+- Fixed an issue where some work stumps still turned into oak chewed logs.
 
 ## Version 4.0.0 ##
 Deco as of 4.0.0 is now a fabric mod, without any base class edits, and as such can simply be placed in the mods folder to install.

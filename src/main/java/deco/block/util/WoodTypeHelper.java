@@ -4,13 +4,16 @@ import btw.block.BTWBlocks;
 import btw.crafting.util.FurnaceBurnTime;
 import btw.world.feature.trees.grower.TreeGrowers;
 import deco.block.DecoBlockIDs;
+import net.minecraft.src.Block;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class WoodTypeHelper {
-    public static String[] woodNames = new String[] {"oak", "spruce", "birch", "jungle", "blood", "cherry", "acacia", "mahogany", "mangrove", "hazel", "fir"};
-    public static String[] woodNamesCapital = new String[] {"Oak", "Spruce", "Birch", "Jungle", "Blood", "Cherry", "Acacia", "Mahogany", "Mangrove", "Hazel", "Fir"};
+    public static String[] woodNames = new String[] {"oak", "spruce", "birch", "jungle", "blood", "darkOak", "acacia", "mahogany", "mangrove", "hazel",
+            "fir", "aspen", "willow", "cherry", "redwood"};
+    public static String[] woodNamesCapital = new String[] {"Oak", "Spruce", "Birch", "Jungle", "Blood", "DarkOak", "Acacia", "Mahogany", "Mangrove", "Hazel",
+            "Fir", "Aspen", "Willow", "Cherry", "Redwood"};
     
     public static final int VANILLA_LOG_ID = 17;
     
@@ -158,6 +161,66 @@ public class WoodTypeHelper {
         }
         
         return 0;
+    }
+    
+    public static int[] getSignBlockIDs() {
+        return new int[] {
+                Block.signPost.blockID,
+                DecoBlockIDs.SPRUCE_SIGN_ID,
+                DecoBlockIDs.BIRCH_SIGN_ID,
+                DecoBlockIDs.JUNGLE_SIGN_ID,
+                DecoBlockIDs.BLOOD_SIGN_ID,
+                DecoBlockIDs.DARK_OAK_SIGN_ID,
+                DecoBlockIDs.ACACIA_SIGN_ID,
+                DecoBlockIDs.MAHOGANY_SIGN_ID,
+                DecoBlockIDs.MANGROVE_SIGN_ID,
+                DecoBlockIDs.HAZEL_SIGN_ID,
+                DecoBlockIDs.FIR_SIGN_ID,
+                DecoBlockIDs.ASPEN_SIGN_ID,
+                DecoBlockIDs.WILLOW_SIGN_ID,
+                DecoBlockIDs.CHERRY_SIGN_ID,
+                DecoBlockIDs.REDWOOD_SIGN_ID
+        };
+    }
+    
+    public static int[] getWallSignBlockIDs() {
+        return new int[] {
+                Block.signWall.blockID,
+                DecoBlockIDs.SPRUCE_WALL_SIGN_ID,
+                DecoBlockIDs.BIRCH_WALL_SIGN_ID,
+                DecoBlockIDs.JUNGLE_WALL_SIGN_ID,
+                DecoBlockIDs.BLOOD_WALL_SIGN_ID,
+                DecoBlockIDs.DARK_OAK_WALL_SIGN_ID,
+                DecoBlockIDs.ACACIA_WALL_SIGN_ID,
+                DecoBlockIDs.MAHOGANY_WALL_SIGN_ID,
+                DecoBlockIDs.MANGROVE_WALL_SIGN_ID,
+                DecoBlockIDs.HAZEL_WALL_SIGN_ID,
+                DecoBlockIDs.FIR_WALL_SIGN_ID,
+                DecoBlockIDs.ASPEN_WALL_SIGN_ID,
+                DecoBlockIDs.WILLOW_WALL_SIGN_ID,
+                DecoBlockIDs.CHERRY_WALL_SIGN_ID,
+                DecoBlockIDs.REDWOOD_WALL_SIGN_ID
+        };
+    }
+    
+    public static String[] getSignTextureNames() {
+        return new String[] {
+                "sign",
+                "decoItemSignSpruce",
+                "decoItemSignBirch",
+                "decoItemSignJungle",
+                "decoItemSignBlood",
+                "decoItemSignDarkOak",
+                "decoItemSignAcacia",
+                "decoItemSignMahogany",
+                "decoItemSignMangrove",
+                "decoItemSignHazel",
+                "decoItemSignFir",
+                "decoItemSignAspen",
+                "decoItemSignWillow",
+                "decoItemSignCherry",
+                "decoItemSignRedwood"
+        };
     }
     
     public static boolean canWoodTypeGrowCocoa(int woodType) {

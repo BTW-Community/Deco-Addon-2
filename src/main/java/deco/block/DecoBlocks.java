@@ -561,6 +561,7 @@ public class DecoBlocks {
     public static Block barrel;
     public static Block barrel2;
     public static Block barrel3;
+    public static Block barrel4;
     
     public static Block bookshelf;
     public static Block emptyBookshelf;

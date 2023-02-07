@@ -2263,15 +2263,20 @@ public class DecoBlockInitializer {
                 .setUnlocalizedName("decoBlockBarrel1");
         Item.itemsList[DecoBlocks.barrel.blockID] = new ItemMultiTextureTile(DecoBlocks.barrel.blockID - 256, DecoBlocks.barrel, new String[] {"oak", "spruce", "birch", "jungle"});
         DecoBlocks.barrel2 = new BarrelBlock(DecoBlockIDs.BARREL_2_ID,
-                new String[] {"decoBlockBarrelBlood_top", "decoBlockBarrelCherry_top", "decoBlockBarrelAcacia_top", "decoBlockBarrelMahogany_top"},
-                new String[] {"decoBlockBarrelBlood_side", "decoBlockBarrelCherry_side", "decoBlockBarrelAcacia_side", "decoBlockBarrelMahogany_side"})
+                new String[] {"decoBlockBarrelBlood_top", "decoBlockBarrelDarkOak_top", "decoBlockBarrelAcacia_top", "decoBlockBarrelMahogany_top"},
+                new String[] {"decoBlockBarrelBlood_side", "decoBlockBarrelDarkOak_side", "decoBlockBarrelAcacia_side", "decoBlockBarrelMahogany_side"})
                 .setUnlocalizedName("decoBlockBarrel2");
-        Item.itemsList[DecoBlocks.barrel2.blockID] = new ItemMultiTextureTile(DecoBlocks.barrel2.blockID - 256, DecoBlocks.barrel2, new String[] {"blood", "cherry", "acacia", "mahogany"});
+        Item.itemsList[DecoBlocks.barrel2.blockID] = new ItemMultiTextureTile(DecoBlocks.barrel2.blockID - 256, DecoBlocks.barrel2, new String[] {"blood", "darkOak", "acacia", "mahogany"});
         DecoBlocks.barrel3 = new BarrelBlock(DecoBlockIDs.BARREL_3_ID,
-                new String[] {"decoBlockBarrelMangrove_top", "decoBlockBarrelHazel_top", "decoBlockBarrelFir_top"},
-                new String[] {"decoBlockBarrelMangrove_side", "decoBlockBarrelHazel_side", "decoBlockBarrelFir_side"})
+                new String[] {"decoBlockBarrelMangrove_top", "decoBlockBarrelHazel_top", "decoBlockBarrelFir_top", "decoBlockBarrelAspen_top"},
+                new String[] {"decoBlockBarrelMangrove_side", "decoBlockBarrelHazel_side", "decoBlockBarrelFir_side", "decoBlockBarrelAspen_side"})
                 .setUnlocalizedName("decoBlockBarrel3");
         Item.itemsList[DecoBlocks.barrel3.blockID] = new ItemMultiTextureTile(DecoBlocks.barrel3.blockID - 256, DecoBlocks.barrel3, new String[] {"mangrove", "hazel", "fir"});
+        DecoBlocks.barrel4 = new BarrelBlock(DecoBlockIDs.BARREL_4_ID,
+                new String[] {"decoBlockBarrelWillow_top", "decoBlockBarrelCherry_top", "decoBlockBarrelRedwood_top"},
+                new String[] {"decoBlockBarrelWillow_side", "decoBlockBarrelCherry_side", "decoBlockBarrelRedwood_side"})
+                .setUnlocalizedName("decoBlockBarrel4");
+        Item.itemsList[DecoBlocks.barrel4.blockID] = new ItemMultiTextureTile(DecoBlocks.barrel3.blockID - 256, DecoBlocks.barrel3, new String[] {"willow", "cherry", "redwood"});
         
         DecoBlocks.crate = new CrateBlock(DecoBlockIDs.CRATE_ID);
         Item.itemsList[DecoBlocks.crate.blockID] = new ItemMultiTextureTile(DecoBlocks.crate.blockID - 256, DecoBlocks.crate, WoodTypeHelper.woodNames);
@@ -2300,39 +2305,67 @@ public class DecoBlockInitializer {
         DecoBlocks.workStump = new DecoWorkStumpBlock(DecoBlockIDs.WORK_STUMP_ID,
                 new int[] {
                         WoodTypeHelper.HAZEL_WOOD_TYPE,
-                        WoodTypeHelper.FIR_WOOD_TYPE
+                        WoodTypeHelper.FIR_WOOD_TYPE,
+                        WoodTypeHelper.ASPEN_WOOD_TYPE,
+                        WoodTypeHelper.WILLOW_WOOD_TYPE,
+                        WoodTypeHelper.CHERRY_WOOD_TYPE,
+                        WoodTypeHelper.REDWOOD_WOOD_TYPE
                 },
                 new int[] {
                         DecoBlockIDs.HAZEL_LOG_ID,
-                        DecoBlockIDs.FIR_LOG_ID
+                        DecoBlockIDs.FIR_LOG_ID,
+                        DecoBlockIDs.ASPEN_LOG_ID,
+                        DecoBlockIDs.WILLOW_LOG_ID,
+                        DecoBlockIDs.CHERRY_LOG_ID,
+                        DecoBlockIDs.REDWOOD_LOG_ID
                 },
                 new int[] {
                         DecoBlockIDs.CHEWED_HAZEL_LOG_ID,
-                        DecoBlockIDs.CHEWED_FIR_LOG_ID
+                        DecoBlockIDs.CHEWED_FIR_LOG_ID,
+                        DecoBlockIDs.CHEWED_ASPEN_LOG_ID,
+                        DecoBlockIDs.CHEWED_WILLOW_LOG_ID,
+                        DecoBlockIDs.CHEWED_CHERRY_LOG_ID,
+                        DecoBlockIDs.CHEWED_REDWOOD_LOG_ID
                 });
 
         DecoBlocks.woodSingleSlab = new DecoWoodPlankSlab(DecoBlockIDs.WOOD_SINGLE_SLAB_ID,
                 new int[] {
                         WoodTypeHelper.MANGROVE_WOOD_TYPE,
                         WoodTypeHelper.HAZEL_WOOD_TYPE,
-                        WoodTypeHelper.FIR_WOOD_TYPE
+                        WoodTypeHelper.FIR_WOOD_TYPE,
+                        WoodTypeHelper.ASPEN_WOOD_TYPE,
+                        WoodTypeHelper.WILLOW_WOOD_TYPE,
+                        WoodTypeHelper.CHERRY_WOOD_TYPE,
+                        WoodTypeHelper.REDWOOD_WOOD_TYPE
                 },
                 new String[] {
                         "mangrove",
                         "hazel",
-                        "fir"
+                        "fir",
+                        "aspen",
+                        "willow",
+                        "cherry",
+                        "redwood"
                 })
                 .setUnlocalizedName("decoBlockVanillaWoodSlab");
         DecoBlocks.woodDoubleSlab = new DecoWoodPlankSlab(DecoBlockIDs.WOOD_DOUBLE_SLAB_ID, true, DecoBlockIDs.WOOD_SINGLE_SLAB_ID,
                 new int[] {
                         WoodTypeHelper.MANGROVE_WOOD_TYPE,
                         WoodTypeHelper.HAZEL_WOOD_TYPE,
-                        WoodTypeHelper.FIR_WOOD_TYPE
+                        WoodTypeHelper.FIR_WOOD_TYPE,
+                        WoodTypeHelper.ASPEN_WOOD_TYPE,
+                        WoodTypeHelper.WILLOW_WOOD_TYPE,
+                        WoodTypeHelper.CHERRY_WOOD_TYPE,
+                        WoodTypeHelper.REDWOOD_WOOD_TYPE
                 },
                 new String[] {
                         "mangrove",
                         "hazel",
-                        "fir"
+                        "fir",
+                        "aspen",
+                        "willow",
+                        "cherry",
+                        "redwood"
                 })
                 .setUnlocalizedName("decoBlockVanillaWoodSlab");
         Item.itemsList[DecoBlocks.woodSingleSlab.blockID] = new ItemSlab(DecoBlocks.woodSingleSlab.blockID - 256, (BlockHalfSlab) DecoBlocks.woodSingleSlab,
@@ -3276,6 +3309,20 @@ public class DecoBlockInitializer {
                 new int[] {8, 9, 10, 11, 12, 13, 14, 15})
                 .setUnlocalizedName("decoBlockPlanksPaintedSlab2");
         Item.itemsList[DecoBlocks.pastelPlanksSlab2.blockID] = new DecoSlabItemBlock(DecoBlocks.pastelPlanksSlab2.blockID - 256);
+        
+        //------ Misc ------//
+    
+        // This must be done last to make sure references are already created before storing them in the array
+        LogBlock.chewedLogArray = new Block[] {
+                BTWBlocks.oakChewedLog,
+                BTWBlocks.spruceChewedLog,
+                BTWBlocks.birchChewedLog,
+                BTWBlocks.jungleChewedLog,
+                DecoBlocks.chewedDarkOakLog,
+                DecoBlocks.chewedAcaciaLog,
+                DecoBlocks.chewedMahoganyLog,
+                DecoBlocks.chewedMangroveLog
+        };
     }
     
     public static void initAddonOverlapBlocks() {
