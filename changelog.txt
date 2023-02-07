@@ -1,9 +1,13 @@
 ## Version 4.0.1 ##
+Some textures in this release have been used or modified from the following sources according to their license:
+- Oh the Biomes You'll Go
+
 - Updated to BTW CE v2.0.2
-- Updated saplings to the new daily growth system
+- Updated saplings to the new daily growth system.
 - Added the ability for birch, cherry, hazel, and autumn trees to grow into big variants like oak trees can.
 - Added the ability for oak, spruce, birch, cherry, hazel, and autumn trees to grow into huge variants when placed in a 2x2.
-- Fixed an issue where fir planks were associated with hazel sub-blocks
+- Changed the texture of mahogany leaves.
+- Fixed an issue where fir planks were associated with hazel sub-blocks.
 
 ## Version 4.0.0 ##
 Deco as of 4.0.0 is now a fabric mod, without any base class edits, and as such can simply be placed in the mods folder to install.
