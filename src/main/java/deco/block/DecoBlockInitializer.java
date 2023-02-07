@@ -2081,9 +2081,25 @@ public class DecoBlockInitializer {
     private static void initPlants() {
         DecoBlocks.legacyAutumnSapling = new LegacyAutumnSapling(DecoBlockIDs.LEGACY_AUTUMN_SAPLING_ID);
         register(DecoBlocks.legacyAutumnSapling, LegacyAutumnSapling.saplingTypes);
-        DecoBlocks.autumnLeaves = new DecoLeavesBlock(DecoBlockIDs.AUTUMN_LEAVES_ID, DecoBlockIDs.LEGACY_AUTUMN_SAPLING_ID,
+        
+        DecoBlocks.redAutumnSapling = new SaplingBlock(DecoBlockIDs.RED_AUTUMN_SAPLING_ID, "decoBlockSaplingAutumnRed", "decoBlockSaplingAutumnRed_0")
+                .addTreeGrower(DecoTreeGrowers.RED_AUTUMN_TREE, 9)
+                .addTreeGrower(DecoTreeGrowers.BIG_RED_AUTUMN_TREE, 1)
+                .add2x2TreeGrower(DecoTreeGrowers.HUGE_RED_AUTUMN_TREE, 10);
+        DecoBlocks.orangeAutumnSapling = new SaplingBlock(DecoBlockIDs.ORANGE_AUTUMN_SAPLING_ID, "decoBlockSaplingAutumnOrange", "decoBlockSaplingAutumnOrange_0")
+                .addTreeGrower(DecoTreeGrowers.ORANGE_AUTUMN_TREE, 9)
+                .addTreeGrower(DecoTreeGrowers.BIG_ORANGE_AUTUMN_TREE, 1)
+                .add2x2TreeGrower(DecoTreeGrowers.HUGE_ORANGE_AUTUMN_TREE, 10);
+        DecoBlocks.yellowAutumnSapling = new SaplingBlock(DecoBlockIDs.YELLOW_AUTUMN_SAPLING_ID, "decoBlockSaplingAutumnYellow", "decoBlockSaplingAutumnYellow_0")
+                .addTreeGrower(DecoTreeGrowers.YELLOW_AUTUMN_TREE, 9)
+                .addTreeGrower(DecoTreeGrowers.BIG_YELLOW_AUTUMN_TREE, 1)
+                .add2x2TreeGrower(DecoTreeGrowers.HUGE_YELLOW_AUTUMN_TREE, 10);
+        
+        DecoBlocks.autumnLeaves = new DecoLeavesBlock(DecoBlockIDs.AUTUMN_LEAVES_ID,
                 new int[] {
-                        0, 1, 2
+                        DecoBlockIDs.RED_AUTUMN_SAPLING_ID,
+                        DecoBlockIDs.ORANGE_AUTUMN_SAPLING_ID,
+                        DecoBlockIDs.YELLOW_AUTUMN_SAPLING_ID
                 },
                 new String[] {
                         "decoBlockLeavesAutumnRed",

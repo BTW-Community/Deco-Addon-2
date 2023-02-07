@@ -4010,139 +4010,251 @@ public class DecoCraftingRecipeList {
 		//------ Sapling recipes ------//
 		
 		// Autumn
-		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.legacyAutumnSapling, 1, LegacyAutumnSapling.RED_TYPE),
+		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.redAutumnSapling),
 				new ItemStack[] {
-						new ItemStack(DecoBlocks.legacyCherrySapling),
+						new ItemStack(DecoBlocks.darkOakSapling),
 						new ItemStack(Item.dyePowder, 1, ColorUtils.RED.colorID),
 						new ItemStack(BTWItems.dung)
 				});
-		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.legacyAutumnSapling, 1, LegacyAutumnSapling.RED_TYPE),
+		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.redAutumnSapling),
 				new ItemStack[] {
-						new ItemStack(DecoBlocks.legacyCherrySapling),
+						new ItemStack(DecoBlocks.darkOakSapling),
 						new ItemStack(Item.dyePowder, 1, ColorUtils.RED.colorID),
 						new ItemStack(DecoItems.fertilizer)
 				});
 		
-		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.legacyAutumnSapling, 1, LegacyAutumnSapling.ORANGE_TYPE),
+		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.orangeAutumnSapling),
 				new ItemStack[] {
-						new ItemStack(Block.sapling, 1, WoodTypeHelper.OAK_WOOD_TYPE),
+						new ItemStack(BTWBlocks.oakSapling),
 						new ItemStack(Item.dyePowder, 1, ColorUtils.ORANGE.colorID),
 						new ItemStack(BTWItems.dung)
 				});
-		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.legacyAutumnSapling, 1, LegacyAutumnSapling.ORANGE_TYPE),
+		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.orangeAutumnSapling),
 				new ItemStack[] {
-						new ItemStack(Block.sapling, 1, WoodTypeHelper.OAK_WOOD_TYPE),
+						new ItemStack(BTWBlocks.oakSapling),
 						new ItemStack(Item.dyePowder, 1, ColorUtils.ORANGE.colorID),
 						new ItemStack(DecoItems.fertilizer)
 				});
 		
-		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.legacyAutumnSapling, 1, LegacyAutumnSapling.YELLOW_TYPE),
+		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.yellowAutumnSapling),
 				new ItemStack[] {
-						new ItemStack(Block.sapling, 1, WoodTypeHelper.BIRCH_WOOD_TYPE),
+						new ItemStack(BTWBlocks.birchSapling),
 						new ItemStack(Item.dyePowder, 1, ColorUtils.YELLOW.colorID),
 						new ItemStack(BTWItems.dung)
 				});
-		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.legacyAutumnSapling, 1, LegacyAutumnSapling.YELLOW_TYPE),
+		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.yellowAutumnSapling),
 				new ItemStack[] {
-						new ItemStack(Block.sapling, 1, WoodTypeHelper.BIRCH_WOOD_TYPE),
+						new ItemStack(BTWBlocks.birchSapling),
 						new ItemStack(Item.dyePowder, 1, ColorUtils.YELLOW.colorID),
 						new ItemStack(DecoItems.fertilizer)
+				});
+		
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.redAutumnSapling),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.legacyAutumnSapling, 1, LegacyAutumnSapling.RED_TYPE)
+				});
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.orangeAutumnSapling),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.legacyAutumnSapling, 1, LegacyAutumnSapling.ORANGE_TYPE)
+				});
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.yellowAutumnSapling),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.legacyAutumnSapling, 1, LegacyAutumnSapling.YELLOW_TYPE)
 				});
 		
 		// Cherry
-		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.legacyCherrySapling),
+		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.cherrySapling),
 				new ItemStack[] {
-						new ItemStack(Block.sapling, 1, WoodTypeHelper.OAK_WOOD_TYPE),
+						new ItemStack(BTWBlocks.oakSapling),
 						new ItemStack(Item.dyePowder, 1, ColorUtils.PINK.colorID),
 						new ItemStack(BTWItems.dung)
 				});
-		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.legacyCherrySapling),
+		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.cherrySapling),
 				new ItemStack[] {
-						new ItemStack(Block.sapling, 1, WoodTypeHelper.OAK_WOOD_TYPE),
+						new ItemStack(BTWBlocks.oakSapling),
 						new ItemStack(Item.dyePowder, 1, ColorUtils.PINK.colorID),
 						new ItemStack(DecoItems.fertilizer)
+				});
+		
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.cherrySapling),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.legacyCherrySapling)
 				});
 		
 		// Acacia
-		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.legacyAcaciaSapling),
+		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.acaciaSapling),
 				new ItemStack[] {
-						new ItemStack(Block.sapling, 1, WoodTypeHelper.BIRCH_WOOD_TYPE),
+						new ItemStack(BTWBlocks.birchSapling),
 						new ItemStack(Item.dyePowder, 1, ColorUtils.ORANGE.colorID),
 						new ItemStack(BTWItems.dung)
 				});
-		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.legacyAcaciaSapling),
+		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.acaciaSapling),
 				new ItemStack[] {
-						new ItemStack(Block.sapling, 1, WoodTypeHelper.BIRCH_WOOD_TYPE),
+						new ItemStack(BTWBlocks.birchSapling),
 						new ItemStack(Item.dyePowder, 1, ColorUtils.ORANGE.colorID),
 						new ItemStack(DecoItems.fertilizer)
+				});
+		
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.acaciaSapling),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.legacyAcaciaSapling)
 				});
 		
 		// Mahogany
-		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.legacyMahoganySapling),
+		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.mahoganySapling),
 				new ItemStack[] {
-						new ItemStack(Block.sapling, 1, WoodTypeHelper.JUNGLE_WOOD_TYPE),
+						new ItemStack(BTWBlocks.jungleSapling),
 						new ItemStack(Item.dyePowder, 1, ColorUtils.RED.colorID),
 						new ItemStack(BTWItems.dung)
 				});
-		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.legacyMahoganySapling),
+		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.mahoganySapling),
 				new ItemStack[] {
-						new ItemStack(Block.sapling, 1, WoodTypeHelper.JUNGLE_WOOD_TYPE),
+						new ItemStack(BTWBlocks.jungleSapling),
 						new ItemStack(Item.dyePowder, 1, ColorUtils.RED.colorID),
 						new ItemStack(DecoItems.fertilizer)
+				});
+		
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.mahoganySapling),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.legacyMahoganySapling)
 				});
 		
 		// Mangrove
-		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.legacyMangroveSapling),
+		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.mangroveSapling),
 				new ItemStack[] {
-						new ItemStack(Block.sapling, 1, WoodTypeHelper.JUNGLE_WOOD_TYPE),
+						new ItemStack(BTWBlocks.jungleSapling),
 						new ItemStack(Item.dyePowder, 1, ColorUtils.ORANGE.colorID),
 						new ItemStack(BTWItems.dung)
 				});
-		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.legacyMangroveSapling),
+		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.mangroveSapling),
 				new ItemStack[] {
-						new ItemStack(Block.sapling, 1, WoodTypeHelper.JUNGLE_WOOD_TYPE),
+						new ItemStack(BTWBlocks.jungleSapling),
 						new ItemStack(Item.dyePowder, 1, ColorUtils.ORANGE.colorID),
 						new ItemStack(DecoItems.fertilizer)
+				});
+		
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.mangroveSapling),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.legacyMangroveSapling)
 				});
 		
 		// Hazel
-		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.legacyHazelSapling),
+		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.hazelSapling),
 				new ItemStack[] {
-						new ItemStack(Block.sapling, 1, WoodTypeHelper.OAK_WOOD_TYPE),
+						new ItemStack(BTWBlocks.oakSapling),
 						new ItemStack(Item.dyePowder, 1, ColorUtils.BROWN.colorID),
 						new ItemStack(BTWItems.dung)
 				});
-		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.legacyHazelSapling),
+		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.hazelSapling),
 				new ItemStack[] {
-						new ItemStack(Block.sapling, 1, WoodTypeHelper.OAK_WOOD_TYPE),
+						new ItemStack(BTWBlocks.oakSapling),
 						new ItemStack(Item.dyePowder, 1, ColorUtils.BROWN.colorID),
 						new ItemStack(DecoItems.fertilizer)
+				});
+		
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.hazelSapling),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.legacyHazelSapling)
 				});
 		
 		// Fir
-		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.legacyFirSapling),
+		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.firSapling),
 				new ItemStack[] {
-						new ItemStack(Block.sapling, 1, WoodTypeHelper.SPRUCE_WOOD_TYPE),
+						new ItemStack(BTWBlocks.spruceSapling),
 						new ItemStack(Item.dyePowder, 1, ColorUtils.WHITE.colorID),
 						new ItemStack(BTWItems.dung)
 				});
-		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.legacyFirSapling),
+		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.firSapling),
 				new ItemStack[] {
-						new ItemStack(Block.sapling, 1, WoodTypeHelper.SPRUCE_WOOD_TYPE),
+						new ItemStack(BTWBlocks.spruceSapling),
 						new ItemStack(Item.dyePowder, 1, ColorUtils.WHITE.colorID),
 						new ItemStack(DecoItems.fertilizer)
 				});
 		
-		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.legacyFirSapling),
+		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.firSapling),
 				new ItemStack[] {
-						new ItemStack(Block.sapling, 1, WoodTypeHelper.SPRUCE_WOOD_TYPE),
+						new ItemStack(BTWBlocks.spruceSapling),
 						new ItemStack(Item.dyePowder, 1, ColorUtils.WHITE.colorID + 16),
 						new ItemStack(BTWItems.dung)
 				});
-		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.legacyFirSapling),
+		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.firSapling),
 				new ItemStack[] {
-						new ItemStack(Block.sapling, 1, WoodTypeHelper.SPRUCE_WOOD_TYPE),
+						new ItemStack(BTWBlocks.spruceSapling),
 						new ItemStack(Item.dyePowder, 1, ColorUtils.WHITE.colorID + 16),
+						new ItemStack(DecoItems.fertilizer)
+				});
+		
+		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.firSapling),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.legacyFirSapling)
+				});
+		
+		// Aspen
+		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.aspenSapling),
+				new ItemStack[] {
+						new ItemStack(BTWBlocks.birchSapling),
+						new ItemStack(Item.dyePowder, 1, ColorUtils.ORANGE.colorID),
+						new ItemStack(BTWItems.dung)
+				});
+		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.aspenSapling),
+				new ItemStack[] {
+						new ItemStack(BTWBlocks.birchSapling),
+						new ItemStack(Item.dyePowder, 1, ColorUtils.ORANGE.colorID),
+						new ItemStack(DecoItems.fertilizer)
+				});
+		
+		// Willow
+		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.willowSapling),
+				new ItemStack[] {
+						new ItemStack(BTWBlocks.oakSapling),
+						new ItemStack(Item.dyePowder, 1, ColorUtils.GREEN.colorID),
+						new ItemStack(BTWItems.dung)
+				});
+		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.willowSapling),
+				new ItemStack[] {
+						new ItemStack(BTWBlocks.oakSapling),
+						new ItemStack(Item.dyePowder, 1, ColorUtils.GREEN.colorID),
+						new ItemStack(DecoItems.fertilizer)
+				});
+		
+		// Dark Oak
+		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.darkOakSapling),
+				new ItemStack[] {
+						new ItemStack(BTWBlocks.oakSapling),
+						new ItemStack(Item.dyePowder, 1, ColorUtils.BLACK.colorID),
+						new ItemStack(BTWItems.dung)
+				});
+		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.darkOakSapling),
+				new ItemStack[] {
+						new ItemStack(BTWBlocks.oakSapling),
+						new ItemStack(Item.dyePowder, 1, ColorUtils.BLACK.colorID),
+						new ItemStack(DecoItems.fertilizer)
+				});
+		
+		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.darkOakSapling),
+				new ItemStack[] {
+						new ItemStack(BTWBlocks.oakSapling),
+						new ItemStack(Item.dyePowder, 1, ColorUtils.BLACK.colorID + 16),
+						new ItemStack(BTWItems.dung)
+				});
+		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.darkOakSapling),
+				new ItemStack[] {
+						new ItemStack(BTWBlocks.oakSapling),
+						new ItemStack(Item.dyePowder, 1, ColorUtils.BLACK.colorID + 16),
+						new ItemStack(DecoItems.fertilizer)
+				});
+		
+		// Redwood
+		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.redwoodSapling),
+				new ItemStack[] {
+						new ItemStack(BTWBlocks.spruceSapling),
+						new ItemStack(Item.dyePowder, 1, ColorUtils.RED.colorID),
+						new ItemStack(BTWItems.dung)
+				});
+		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.redwoodSapling),
+				new ItemStack[] {
+						new ItemStack(BTWBlocks.spruceSapling),
+						new ItemStack(Item.dyePowder, 1, ColorUtils.RED.colorID),
 						new ItemStack(DecoItems.fertilizer)
 				});
 		
