@@ -45,6 +45,9 @@ public class WoodTypeHelper {
     public static final int ORANGE_AUTUMN_TYPE = 1;
     public static final int YELLOW_AUTUMN_TYPE = 2;
     
+    public static final int PINK_CHERRY_TYPE = 0;
+    public static final int WHITE_CHERRY_TYPE = 1;
+    
     public static final int MANGROVE_SLAB_TYPE = 0;
     public static final int HAZEL_SLAB_TYPE = 1;
     public static final int FIR_SLAB_TYPE = 2;
@@ -236,7 +239,12 @@ public class WoodTypeHelper {
     public static final TreeGrowers.TreeWoodType CHERRY_TREE_WOOD_TYPE = new TreeGrowers.TreeWoodType(
             DecoBlockIDs.CHERRY_LOG_ID, 0,
             DecoBlockIDs.CHERRY_STUMP_ID, 0,
-            DecoBlockIDs.CHERRY_LEAVES_ID, 0);
+            DecoBlockIDs.CHERRY_LEAVES_ID, PINK_CHERRY_TYPE);
+    
+    public static final TreeGrowers.TreeWoodType WHITE_CHERRY_TREE_WOOD_TYPE = new TreeGrowers.TreeWoodType(
+            DecoBlockIDs.CHERRY_LOG_ID, 0,
+            DecoBlockIDs.CHERRY_STUMP_ID, 0,
+            DecoBlockIDs.CHERRY_LEAVES_ID, WHITE_CHERRY_TYPE);
     
     public static final TreeGrowers.TreeWoodType ACACIA_TREE_WOOD_TYPE = new TreeGrowers.TreeWoodType(
             DecoBlockIDs.ACACIA_LOG_ID, 0,

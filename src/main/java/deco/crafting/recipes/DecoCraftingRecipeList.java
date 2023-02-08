@@ -4076,6 +4076,32 @@ public class DecoCraftingRecipeList {
 						new ItemStack(DecoItems.fertilizer)
 				});
 		
+		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.whiteCherrySapling),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.cherrySapling),
+						new ItemStack(Item.dyePowder, 1, ColorUtils.WHITE.colorID),
+						new ItemStack(BTWItems.dung)
+				});
+		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.whiteCherrySapling),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.cherrySapling),
+						new ItemStack(Item.dyePowder, 1, ColorUtils.WHITE.colorID),
+						new ItemStack(DecoItems.fertilizer)
+				});
+		
+		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.whiteCherrySapling),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.cherrySapling),
+						new ItemStack(Item.dyePowder, 1, ColorUtils.WHITE.colorID + 16),
+						new ItemStack(BTWItems.dung)
+				});
+		RecipeManager.addCauldronRecipe(new ItemStack(DecoBlocks.whiteCherrySapling),
+				new ItemStack[] {
+						new ItemStack(DecoBlocks.cherrySapling),
+						new ItemStack(Item.dyePowder, 1, ColorUtils.WHITE.colorID + 16),
+						new ItemStack(DecoItems.fertilizer)
+				});
+		
 		RecipeManager.addShapelessRecipe(new ItemStack(DecoBlocks.cherrySapling),
 				new ItemStack[] {
 						new ItemStack(DecoBlocks.legacyCherrySapling)

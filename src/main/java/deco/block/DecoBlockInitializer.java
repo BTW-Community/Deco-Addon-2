@@ -5,7 +5,8 @@ import btw.block.BTWBlocks;
 import btw.block.blocks.*;
 import btw.block.tileentity.beacon.BeaconTileEntity;
 import btw.block.util.Flammability;
-import btw.item.blockitems.MouldingBlockItem;
+import btw.item.blockitems.MouldingAndDecorativeBlockItem;
+import btw.item.blockitems.MouldingAndDecorativeBlockItem;
 import btw.item.blockitems.SaplingBlockItem;
 import btw.item.blockitems.SidingAndCornerBlockItem;
 import btw.item.blockitems.legacy.LegacySubstitutionBlockItem;
@@ -228,7 +229,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.GRANITE_SIDING_AND_CORNER_ID,
                 DecoBlocks.stoneVariants.blockHardness, DecoBlocks.stoneVariants.blockResistance, Block.soundStoneFootstep,
                 "decoBlockGraniteMoulding");
-        register(new MouldingBlockItem(DecoBlocks.graniteMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.graniteMoulding.blockID - 256));
         DecoBlocks.graniteStairs = new StairsBlock(DecoBlockIDs.GRANITE_STAIRS_ID, DecoBlocks.stoneVariants, StoneVariantsBlock.GRANITE_TYPE)
                 .setUnlocalizedName("decoBlockGraniteStairs");
     
@@ -242,7 +243,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.GRANITE_COBBLESTONE_SIDING_AND_CORNER_ID,
                 DecoBlocks.cobblestoneVariants.blockHardness, DecoBlocks.cobblestoneVariants.blockResistance, Block.soundStoneFootstep,
                 "decoBlockGraniteCobbleMoulding");
-        register(new MouldingBlockItem(DecoBlocks.graniteCobblestoneMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.graniteCobblestoneMoulding.blockID - 256));
         DecoBlocks.graniteCobblestoneStairs = new MortaredStairsBlock(DecoBlockIDs.GRANITE_COBBLESTONE_STAIRS_ID, DecoBlocks.cobblestoneVariants,
                 StoneVariantsBlock.GRANITE_TYPE, DecoBlockIDs.LOOSE_GRANITE_COBBLESTONE_STAIRS_ID)
                 .setUnlocalizedName("decoBlockGraniteCobbleStairs");
@@ -257,7 +258,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.GRANITE_BRICK_SIDING_AND_CORNER_ID,
                 DecoBlocks.stoneBrickVariants.blockHardness, DecoBlocks.stoneBrickVariants.blockResistance, Block.soundStoneFootstep,
                 "decoBlockGraniteBrickMoulding");
-        register(new MouldingBlockItem(DecoBlocks.graniteBrickMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.graniteBrickMoulding.blockID - 256));
         DecoBlocks.graniteBrickStairs = new MortaredStairsBlock(DecoBlockIDs.GRANITE_BRICK_STAIRS_ID, DecoBlocks.stoneBrickVariants,
                 StoneVariantsBlock.GRANITE_TYPE, DecoBlockIDs.LOOSE_GRANITE_BRICK_STAIRS_ID)
                 .setUnlocalizedName("decoBlockGraniteBrickStairs");
@@ -272,7 +273,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.GRANITE_SIDING_AND_CORNER_ID,
                 DecoBlocks.polishedStoneVariants.blockHardness, DecoBlocks.polishedStoneVariants.blockResistance, Block.soundStoneFootstep,
                 "decoBlockGraniteSmoothMoulding");
-        register(new MouldingBlockItem(DecoBlocks.polishedGraniteMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.polishedGraniteMoulding.blockID - 256));
         DecoBlocks.polishedGraniteStairs = new StairsBlock(DecoBlockIDs.POLISHED_GRANITE_STAIRS_ID, DecoBlocks.polishedStoneVariants,
                 StoneVariantsBlock.GRANITE_TYPE)
                 .setUnlocalizedName("decoBlockGraniteSmoothStairs");
@@ -310,7 +311,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.ANDESITE_SIDING_AND_CORNER_ID,
                 DecoBlocks.stoneVariants.blockHardness, DecoBlocks.stoneVariants.blockResistance, Block.soundStoneFootstep,
                 "decoBlockAndesiteMoulding");
-        register(new MouldingBlockItem(DecoBlocks.andesiteMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.andesiteMoulding.blockID - 256));
         DecoBlocks.andesiteStairs = new StairsBlock(DecoBlockIDs.ANDESITE_STAIRS_ID, DecoBlocks.stoneVariants, StoneVariantsBlock.ANDESITE_TYPE)
                 .setUnlocalizedName("decoBlockAndesiteStairs");
     
@@ -324,7 +325,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.ANDESITE_COBBLESTONE_SIDING_AND_CORNER_ID,
                 DecoBlocks.cobblestoneVariants.blockHardness, DecoBlocks.cobblestoneVariants.blockResistance, Block.soundStoneFootstep,
                 "decoBlockAndesiteCobbleMoulding");
-        register(new MouldingBlockItem(DecoBlocks.andesiteCobblestoneMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.andesiteCobblestoneMoulding.blockID - 256));
         DecoBlocks.andesiteCobblestoneStairs = new MortaredStairsBlock(DecoBlockIDs.ANDESITE_COBBLESTONE_STAIRS_ID, DecoBlocks.cobblestoneVariants,
                 StoneVariantsBlock.ANDESITE_TYPE, DecoBlockIDs.LOOSE_ANDESITE_COBBLESTONE_STAIRS_ID)
                 .setUnlocalizedName("decoBlockAndesiteCobbleStairs");
@@ -339,7 +340,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.ANDESITE_BRICK_SIDING_AND_CORNER_ID,
                 DecoBlocks.stoneBrickVariants.blockHardness, DecoBlocks.stoneBrickVariants.blockResistance, Block.soundStoneFootstep,
                 "decoBlockAndesiteBrickMoulding");
-        register(new MouldingBlockItem(DecoBlocks.andesiteBrickMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.andesiteBrickMoulding.blockID - 256));
         DecoBlocks.andesiteBrickStairs = new MortaredStairsBlock(DecoBlockIDs.ANDESITE_BRICK_STAIRS_ID, DecoBlocks.stoneBrickVariants,
                 StoneVariantsBlock.ANDESITE_TYPE, DecoBlockIDs.LOOSE_ANDESITE_BRICK_STAIRS_ID)
                 .setUnlocalizedName("decoBlockAndesiteBrickStairs");
@@ -354,7 +355,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.ANDESITE_SIDING_AND_CORNER_ID,
                 DecoBlocks.polishedStoneVariants.blockHardness, DecoBlocks.polishedStoneVariants.blockResistance, Block.soundStoneFootstep,
                 "decoBlockAndesiteSmoothMoulding");
-        register(new MouldingBlockItem(DecoBlocks.polishedAndesiteMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.polishedAndesiteMoulding.blockID - 256));
         DecoBlocks.polishedAndesiteStairs = new StairsBlock(DecoBlockIDs.POLISHED_ANDESITE_STAIRS_ID, DecoBlocks.polishedStoneVariants,
                 StoneVariantsBlock.ANDESITE_TYPE)
                 .setUnlocalizedName("decoBlockAndesiteSmoothStairs");
@@ -392,7 +393,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.DIORITE_SIDING_AND_CORNER_ID,
                 DecoBlocks.stoneVariants.blockHardness, DecoBlocks.stoneVariants.blockResistance, Block.soundStoneFootstep,
                 "decoBlockDioriteMoulding");
-        register(new MouldingBlockItem(DecoBlocks.dioriteMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.dioriteMoulding.blockID - 256));
         DecoBlocks.dioriteStairs = new StairsBlock(DecoBlockIDs.DIORITE_STAIRS_ID, DecoBlocks.stoneVariants, StoneVariantsBlock.DIORITE_TYPE)
                 .setUnlocalizedName("decoBlockDioriteStairs");
     
@@ -406,7 +407,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.DIORITE_COBBLESTONE_SIDING_AND_CORNER_ID,
                 DecoBlocks.cobblestoneVariants.blockHardness, DecoBlocks.cobblestoneVariants.blockResistance, Block.soundStoneFootstep,
                 "decoBlockDioriteCobbleMoulding");
-        register(new MouldingBlockItem(DecoBlocks.dioriteCobblestoneMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.dioriteCobblestoneMoulding.blockID - 256));
         DecoBlocks.dioriteCobblestoneStairs = new MortaredStairsBlock(DecoBlockIDs.DIORITE_COBBLESTONE_STAIRS_ID, DecoBlocks.cobblestoneVariants,
                 StoneVariantsBlock.DIORITE_TYPE, DecoBlockIDs.LOOSE_DIORITE_COBBLESTONE_STAIRS_ID)
                 .setUnlocalizedName("decoBlockDioriteCobbleStairs");
@@ -421,7 +422,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.DIORITE_BRICK_SIDING_AND_CORNER_ID,
                 DecoBlocks.stoneBrickVariants.blockHardness, DecoBlocks.stoneBrickVariants.blockResistance, Block.soundStoneFootstep,
                 "decoBlockDioriteBrickMoulding");
-        register(new MouldingBlockItem(DecoBlocks.dioriteBrickMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.dioriteBrickMoulding.blockID - 256));
         DecoBlocks.dioriteBrickStairs = new MortaredStairsBlock(DecoBlockIDs.DIORITE_BRICK_STAIRS_ID, DecoBlocks.stoneBrickVariants,
                 StoneVariantsBlock.DIORITE_TYPE, DecoBlockIDs.LOOSE_DIORITE_BRICK_STAIRS_ID)
                 .setUnlocalizedName("decoBlockDioriteBrickStairs");
@@ -436,7 +437,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.DIORITE_SIDING_AND_CORNER_ID,
                 DecoBlocks.polishedStoneVariants.blockHardness, DecoBlocks.polishedStoneVariants.blockResistance, Block.soundStoneFootstep,
                 "decoBlockDioriteSmoothMoulding");
-        register(new MouldingBlockItem(DecoBlocks.polishedDioriteMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.polishedDioriteMoulding.blockID - 256));
         DecoBlocks.polishedDioriteStairs = new StairsBlock(DecoBlockIDs.POLISHED_DIORITE_STAIRS_ID, DecoBlocks.polishedStoneVariants,
                 StoneVariantsBlock.DIORITE_TYPE)
                 .setUnlocalizedName("decoBlockDioriteSmoothStairs");
@@ -473,7 +474,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.SLATE_SIDING_AND_CORNER_ID,
                 DecoBlocks.slate.blockHardness, DecoBlocks.slate.blockResistance, Block.soundStoneFootstep,
                 "decoBlockSlateMoulding");
-        register(new MouldingBlockItem(DecoBlocks.slateMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.slateMoulding.blockID - 256));
         DecoBlocks.slateStairs = new StairsBlock(DecoBlockIDs.SLATE_STAIRS_ID, DecoBlocks.slate, 0)
                 .setUnlocalizedName("decoBlockSlateStairs");
     
@@ -487,7 +488,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.SLATE_COBBLESTONE_SIDING_AND_CORNER_ID,
                 DecoBlocks.cobblestoneVariants.blockHardness, DecoBlocks.cobblestoneVariants.blockResistance, Block.soundStoneFootstep,
                 "decoBlockSlateCobbleMoulding");
-        register(new MouldingBlockItem(DecoBlocks.slateCobblestoneMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.slateCobblestoneMoulding.blockID - 256));
         DecoBlocks.slateCobblestoneStairs = new MortaredStairsBlock(DecoBlockIDs.SLATE_COBBLESTONE_STAIRS_ID, DecoBlocks.cobblestoneVariants, StoneVariantsBlock.SLATE_TYPE,
                 DecoBlockIDs.LOOSE_SLATE_COBBLESTONE_STAIRS_ID)
                 .setUnlocalizedName("decoBlockSlateCobbleStairs");
@@ -502,7 +503,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.SLATE_BRICK_SIDING_AND_CORNER_ID,
                 DecoBlocks.stoneBrickVariants.blockHardness, DecoBlocks.stoneBrickVariants.blockResistance, Block.soundStoneFootstep,
                 "decoBlockSlateBrickMoulding");
-        register(new MouldingBlockItem(DecoBlocks.slateBrickMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.slateBrickMoulding.blockID - 256));
         DecoBlocks.slateBrickStairs = new MortaredStairsBlock(DecoBlockIDs.SLATE_BRICK_STAIRS_ID, DecoBlocks.stoneBrickVariants, StoneVariantsBlock.SLATE_TYPE,
                 DecoBlockIDs.LOOSE_SLATE_BRICK_STAIRS_ID)
                 .setUnlocalizedName("decoBlockSlateBrickStairs");
@@ -517,7 +518,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.SLATE_SIDING_AND_CORNER_ID,
                 DecoBlocks.polishedStoneVariants.blockHardness, DecoBlocks.polishedStoneVariants.blockResistance, Block.soundStoneFootstep,
                 "decoBlockSlateSmoothMoulding");
-        register(new MouldingBlockItem(DecoBlocks.polishedSlateMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.polishedSlateMoulding.blockID - 256));
         DecoBlocks.polishedSlateStairs = new StairsBlock(DecoBlockIDs.POLISHED_SLATE_STAIRS_ID, DecoBlocks.polishedStoneVariants, StoneVariantsBlock.SLATE_TYPE)
                 .setUnlocalizedName("decoBlockSlateSmoothStairs");
     
@@ -531,7 +532,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.SLATE_TILES_SIDING_AND_CORNER_ID,
                 DecoBlocks.slateTiles.blockHardness, DecoBlocks.slateTiles.blockResistance, Block.soundStoneFootstep,
                 "decoBlockSlateTilesMoulding");
-        register(new MouldingBlockItem(DecoBlocks.slateTilesMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.slateTilesMoulding.blockID - 256));
         DecoBlocks.slateTilesStairs = new MortaredStairsBlock(DecoBlockIDs.SLATE_TILES_STAIRS_ID, DecoBlocks.slateTiles, 0,
                 DecoBlockIDs.LOOSE_SLATE_BRICK_STAIRS_ID)
                 .setUnlocalizedName("decoBlockSlateTileStairs");
@@ -569,7 +570,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.CALCITE_SIDING_AND_CORNER_ID,
                 DecoBlocks.stoneVariants.blockHardness, DecoBlocks.stoneVariants.blockResistance, Block.soundStoneFootstep,
                 "decoBlockCalciteMoulding");
-        register(new MouldingBlockItem(DecoBlocks.calciteMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.calciteMoulding.blockID - 256));
         DecoBlocks.calciteStairs = new StairsBlock(DecoBlockIDs.CALCITE_STAIRS_ID, DecoBlocks.stoneVariants, StoneVariantsBlock.CALCITE_TYPE)
                 .setUnlocalizedName("decoBlockCalciteStairs");
     
@@ -583,7 +584,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.CALCITE_COBBLESTONE_SIDING_AND_CORNER_ID,
                 DecoBlocks.cobblestoneVariants.blockHardness, DecoBlocks.cobblestoneVariants.blockResistance, Block.soundStoneFootstep,
                 "decoBlockCalciteCobbleMoulding");
-        register(new MouldingBlockItem(DecoBlocks.calciteCobblestoneMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.calciteCobblestoneMoulding.blockID - 256));
         DecoBlocks.calciteCobblestoneStairs = new MortaredStairsBlock(DecoBlockIDs.CALCITE_COBBLESTONE_STAIRS_ID, DecoBlocks.cobblestoneVariants,
                 StoneVariantsBlock.CALCITE_TYPE, DecoBlockIDs.LOOSE_CALCITE_COBBLESTONE_STAIRS_ID)
                 .setUnlocalizedName("decoBlockCalciteCobbleStairs");
@@ -598,7 +599,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.CALCITE_BRICK_SIDING_AND_CORNER_ID,
                 DecoBlocks.stoneBrickVariants.blockHardness, DecoBlocks.stoneBrickVariants.blockResistance, Block.soundStoneFootstep,
                 "decoBlockCalciteBrickMoulding");
-        register(new MouldingBlockItem(DecoBlocks.calciteBrickMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.calciteBrickMoulding.blockID - 256));
         DecoBlocks.calciteBrickStairs = new MortaredStairsBlock(DecoBlockIDs.CALCITE_BRICK_STAIRS_ID, DecoBlocks.stoneBrickVariants,
                 StoneVariantsBlock.CALCITE_TYPE, DecoBlockIDs.LOOSE_CALCITE_BRICK_STAIRS_ID)
                 .setUnlocalizedName("decoBlockCalciteBrickStairs");
@@ -613,7 +614,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.CALCITE_SIDING_AND_CORNER_ID,
                 DecoBlocks.polishedStoneVariants.blockHardness, DecoBlocks.polishedStoneVariants.blockResistance, Block.soundStoneFootstep,
                 "decoBlockCalciteSmoothMoulding");
-        register(new MouldingBlockItem(DecoBlocks.polishedCalciteMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.polishedCalciteMoulding.blockID - 256));
         DecoBlocks.polishedCalciteStairs = new StairsBlock(DecoBlockIDs.POLISHED_CALCITE_STAIRS_ID, DecoBlocks.polishedStoneVariants,
                 StoneVariantsBlock.CALCITE_TYPE)
                 .setUnlocalizedName("decoBlockCalciteSmoothStairs");
@@ -651,7 +652,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.TUFF_SIDING_AND_CORNER_ID,
                 DecoBlocks.stoneVariants.blockHardness, DecoBlocks.stoneVariants.blockResistance, Block.soundStoneFootstep,
                 "decoBlockTuffMoulding");
-        register(new MouldingBlockItem(DecoBlocks.tuffMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.tuffMoulding.blockID - 256));
         DecoBlocks.tuffStairs = new StairsBlock(DecoBlockIDs.TUFF_STAIRS_ID, DecoBlocks.stoneVariants, StoneVariantsBlock.TUFF_TYPE)
                 .setUnlocalizedName("decoBlockTuffStairs");
     
@@ -665,7 +666,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.TUFF_COBBLESTONE_SIDING_AND_CORNER_ID,
                 DecoBlocks.cobblestoneVariants.blockHardness, DecoBlocks.cobblestoneVariants.blockResistance, Block.soundStoneFootstep,
                 "decoBlockTuffCobbleMoulding");
-        register(new MouldingBlockItem(DecoBlocks.tuffCobblestoneMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.tuffCobblestoneMoulding.blockID - 256));
         DecoBlocks.tuffCobblestoneStairs = new MortaredStairsBlock(DecoBlockIDs.TUFF_COBBLESTONE_STAIRS_ID, DecoBlocks.cobblestoneVariants,
                 StoneVariantsBlock.TUFF_TYPE, DecoBlockIDs.LOOSE_TUFF_COBBLESTONE_STAIRS_ID)
                 .setUnlocalizedName("decoBlockTuffCobbleStairs");
@@ -680,7 +681,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.TUFF_BRICK_SIDING_AND_CORNER_ID,
                 DecoBlocks.stoneBrickVariants.blockHardness, DecoBlocks.stoneBrickVariants.blockResistance, Block.soundStoneFootstep,
                 "decoBlockTuffBrickMoulding");
-        register(new MouldingBlockItem(DecoBlocks.tuffBrickMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.tuffBrickMoulding.blockID - 256));
         DecoBlocks.tuffBrickStairs = new MortaredStairsBlock(DecoBlockIDs.TUFF_BRICK_STAIRS_ID, DecoBlocks.stoneBrickVariants,
                 StoneVariantsBlock.TUFF_TYPE, DecoBlockIDs.LOOSE_TUFF_BRICK_STAIRS_ID)
                 .setUnlocalizedName("decoBlockTuffBrickStairs");
@@ -695,7 +696,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.TUFF_SIDING_AND_CORNER_ID,
                 DecoBlocks.polishedStoneVariants.blockHardness, DecoBlocks.polishedStoneVariants.blockResistance, Block.soundStoneFootstep,
                 "decoBlockTuffSmoothMoulding");
-        register(new MouldingBlockItem(DecoBlocks.polishedTuffMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.polishedTuffMoulding.blockID - 256));
         DecoBlocks.polishedTuffStairs = new StairsBlock(DecoBlockIDs.POLISHED_TUFF_STAIRS_ID, DecoBlocks.polishedStoneVariants,
                 StoneVariantsBlock.TUFF_TYPE)
                 .setUnlocalizedName("decoBlockTuffSmoothStairs");
@@ -765,7 +766,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.COBBLESTONE_SIDING_AND_CORNER_UPPER_STRATA_ID,
                 Block.cobblestone.blockHardness, Block.cobblestone.blockResistance, Block.soundStoneFootstep,
                 "decoBlockCobblestoneMoulding");
-        register(new MouldingBlockItem(DecoBlocks.cobblestoneMouldingUpperStrata.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.cobblestoneMouldingUpperStrata.blockID - 256));
     
         DecoBlocks.mossyCobblestoneSidingAndCornerUpperStrata = new SidingAndCornerAndDecorativeWallBlock(DecoBlockIDs.MOSSY_COBBLESTONE_SIDING_AND_CORNER_UPPER_STRATA_ID,
                 Material.rock,
@@ -779,7 +780,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.MOSSY_COBBLESTONE_SIDING_AND_CORNER_UPPER_STRATA_ID,
                 Block.cobblestoneMossy.blockHardness, Block.cobblestoneMossy.blockResistance, Block.soundStoneFootstep,
                 "decoBlockMossyCobbleMoulding");
-        register(new MouldingBlockItem(DecoBlocks.mossyCobblestoneMouldingUpperStrata.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.mossyCobblestoneMouldingUpperStrata.blockID - 256));
         DecoBlocks.mossyCobblestoneStairsUpperStrata = new StairsBlock(DecoBlockIDs.MOSSY_COBBLESTONE_STAIRS_UPPER_STRATA_ID, Block.cobblestoneMossy,
                 StoneHelper.MOSSY_COBBLESTONE_UPPER_STRATA_TYPE)
                 .setUnlocalizedName("decoBlockMossyCobbleStairs");
@@ -796,7 +797,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.MOSSY_STONE_BRICK_SIDING_AND_CORNER_UPPER_STRATA_ID,
                 Block.stoneBrick.blockHardness, Block.stoneBrick.blockResistance, Block.soundStoneFootstep,
                 "decoBlockStoneBrickMossyMoulding");
-        register(new MouldingBlockItem(DecoBlocks.mossyStoneBrickMouldingUpperStrata.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.mossyStoneBrickMouldingUpperStrata.blockID - 256));
         DecoBlocks.mossyStoneBrickStairsUpperStrata = new StairsBlock(DecoBlockIDs.MOSSY_STONE_BRICK_STAIRS_UPPER_STRATA_ID, Block.stoneBrick,
                 StoneHelper.MOSSY_STONE_BRICK_UPPER_STRATA_TYPE)
                 .setUnlocalizedName("decoBlockStoneBrickMossyStairs");
@@ -813,7 +814,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.CRACKED_STONE_BRICK_SIDING_AND_CORNER_UPPER_STRATA_ID,
                 Block.stoneBrick.blockHardness, Block.stoneBrick.blockResistance, Block.soundStoneFootstep,
                 "decoBlockStoneBrickCrackedMoulding");
-        register(new MouldingBlockItem(DecoBlocks.crackedStoneBrickMouldingUpperStrata.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.crackedStoneBrickMouldingUpperStrata.blockID - 256));
         DecoBlocks.crackedStoneBrickStairsUpperStrata = new StairsBlock(DecoBlockIDs.CRACKED_STONE_BRICK_STAIRS_UPPER_STRATA_ID, Block.stoneBrick,
                 StoneHelper.CRACKED_STONE_BRICK_UPPER_STRATA_TYPE)
                 .setUnlocalizedName("decoBlockStoneBrickCrackedStairs");
@@ -831,7 +832,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.COBBLESTONE_SIDING_AND_CORNER_MID_STRATA_ID,
                 Block.cobblestone.blockHardness, Block.cobblestone.blockResistance, Block.soundStoneFootstep,
                 "decoBlockCobblestoneMoulding");
-        register(new MouldingBlockItem(DecoBlocks.cobblestoneMouldingMidStrata.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.cobblestoneMouldingMidStrata.blockID - 256));
     
         DecoBlocks.mossyCobblestoneSidingAndCornerMidStrata = new SidingAndCornerAndDecorativeWallBlock(DecoBlockIDs.MOSSY_COBBLESTONE_SIDING_AND_CORNER_MID_STRATA_ID,
                 Material.rock,
@@ -845,7 +846,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.MOSSY_COBBLESTONE_SIDING_AND_CORNER_MID_STRATA_ID,
                 Block.cobblestoneMossy.blockHardness, Block.cobblestoneMossy.blockResistance, Block.soundStoneFootstep,
                 "decoBlockMossyCobbleMoulding");
-        register(new MouldingBlockItem(DecoBlocks.mossyCobblestoneMouldingMidStrata.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.mossyCobblestoneMouldingMidStrata.blockID - 256));
         DecoBlocks.mossyCobblestoneStairsMidStrata = new StairsBlock(DecoBlockIDs.MOSSY_COBBLESTONE_STAIRS_MID_STRATA_ID, Block.cobblestoneMossy,
                 StoneHelper.MOSSY_COBBLESTONE_MID_STRATA_TYPE)
                 .setUnlocalizedName("decoBlockMossyCobbleStairs");
@@ -862,7 +863,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.MOSSY_STONE_BRICK_SIDING_AND_CORNER_MID_STRATA_ID,
                 Block.stoneBrick.blockHardness, Block.stoneBrick.blockResistance, Block.soundStoneFootstep,
                 "decoBlockStoneBrickMossyMoulding");
-        register(new MouldingBlockItem(DecoBlocks.mossyStoneBrickMouldingMidStrata.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.mossyStoneBrickMouldingMidStrata.blockID - 256));
         DecoBlocks.mossyStoneBrickStairsMidStrata = new StairsBlock(DecoBlockIDs.MOSSY_STONE_BRICK_STAIRS_MID_STRATA_ID, Block.stoneBrick,
                 StoneHelper.MOSSY_STONE_BRICK_MID_STRATA_TYPE)
                 .setUnlocalizedName("decoBlockStoneBrickMossyStairs");
@@ -879,7 +880,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.CRACKED_STONE_BRICK_SIDING_AND_CORNER_MID_STRATA_ID,
                 Block.stoneBrick.blockHardness, Block.stoneBrick.blockResistance, Block.soundStoneFootstep,
                 "decoBlockStoneBrickCrackedMoulding");
-        register(new MouldingBlockItem(DecoBlocks.crackedStoneBrickMouldingMidStrata.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.crackedStoneBrickMouldingMidStrata.blockID - 256));
         DecoBlocks.crackedStoneBrickStairsMidStrata = new StairsBlock(DecoBlockIDs.CRACKED_STONE_BRICK_STAIRS_MID_STRATA_ID, Block.stoneBrick,
                 StoneHelper.CRACKED_STONE_BRICK_MID_STRATA_TYPE)
                 .setUnlocalizedName("decoBlockStoneBrickCrackedStairs");
@@ -897,7 +898,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.COBBLESTONE_SIDING_AND_CORNER_DEEP_STRATA_ID,
                 Block.cobblestone.blockHardness, Block.cobblestone.blockResistance, Block.soundStoneFootstep,
                 "decoBlockCobblestoneMoulding");
-        register(new MouldingBlockItem(DecoBlocks.cobblestoneMouldingDeepStrata.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.cobblestoneMouldingDeepStrata.blockID - 256));
     
         DecoBlocks.mossyCobblestoneSidingAndCornerDeepStrata = new SidingAndCornerAndDecorativeWallBlock(DecoBlockIDs.MOSSY_COBBLESTONE_SIDING_AND_CORNER_DEEP_STRATA_ID,
                 Material.rock,
@@ -911,7 +912,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.MOSSY_COBBLESTONE_SIDING_AND_CORNER_DEEP_STRATA_ID,
                 Block.cobblestoneMossy.blockHardness, Block.cobblestoneMossy.blockResistance, Block.soundStoneFootstep,
                 "decoBlockMossyCobbleMoulding");
-        register(new MouldingBlockItem(DecoBlocks.mossyCobblestoneMouldingDeepStrata.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.mossyCobblestoneMouldingDeepStrata.blockID - 256));
         DecoBlocks.mossyCobblestoneStairsDeepStrata = new StairsBlock(DecoBlockIDs.MOSSY_COBBLESTONE_STAIRS_DEEP_STRATA_ID, Block.cobblestoneMossy,
                 StoneHelper.MOSSY_COBBLESTONE_DEEP_STRATA_TYPE)
                 .setUnlocalizedName("decoBlockMossyCobbleStairs");
@@ -928,7 +929,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.MOSSY_STONE_BRICK_SIDING_AND_CORNER_DEEP_STRATA_ID,
                 Block.stoneBrick.blockHardness, Block.stoneBrick.blockResistance, Block.soundStoneFootstep,
                 "decoBlockStoneBrickMossyMoulding");
-        register(new MouldingBlockItem(DecoBlocks.mossyStoneBrickMouldingDeepStrata.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.mossyStoneBrickMouldingDeepStrata.blockID - 256));
         DecoBlocks.mossyStoneBrickStairsDeepStrata = new StairsBlock(DecoBlockIDs.MOSSY_STONE_BRICK_STAIRS_DEEP_STRATA_ID, Block.stoneBrick,
                 StoneHelper.MOSSY_STONE_BRICK_DEEP_STRATA_TYPE)
                 .setUnlocalizedName("decoBlockStoneBrickMossyStairs");
@@ -945,7 +946,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.CRACKED_STONE_BRICK_SIDING_AND_CORNER_DEEP_STRATA_ID,
                 Block.stoneBrick.blockHardness, Block.stoneBrick.blockResistance, Block.soundStoneFootstep,
                 "decoBlockStoneBrickCrackedMoulding");
-        register(new MouldingBlockItem(DecoBlocks.crackedStoneBrickMouldingDeepStrata.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.crackedStoneBrickMouldingDeepStrata.blockID - 256));
         DecoBlocks.crackedStoneBrickStairsDeepStrata = new StairsBlock(DecoBlockIDs.CRACKED_STONE_BRICK_STAIRS_DEEP_STRATA_ID, Block.stoneBrick,
                 StoneHelper.CRACKED_STONE_BRICK_DEEP_STRATA_TYPE)
                 .setUnlocalizedName("decoBlockStoneBrickCrackedStairs");
@@ -972,7 +973,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.WHITE_STONE_BRICK_SIDING_AND_CORNER_ID,
                 DecoBlocks.whiteStoneBricks.blockHardness, DecoBlocks.whiteStoneBricks.blockResistance, Block.soundStoneFootstep,
                 "decoBlockWhiteBricksMoulding");
-        register(new MouldingBlockItem(DecoBlocks.whiteStoneBrickMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.whiteStoneBrickMoulding.blockID - 256));
         DecoBlocks.whiteStoneBrickStairs = new StairsBlock(DecoBlockIDs.WHITE_STONE_BRICK_STAIRS_ID, DecoBlocks.whiteStoneBricks, WhiteStoneBrickBlock.TYPE_DEFAULT)
                 .setUnlocalizedName("decoBlockWhiteBricksStairs");
     }
@@ -1001,7 +1002,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.PRISMARINE_SIDING_AND_CORNER_ID,
                 DecoBlocks.prismarine.blockHardness, DecoBlocks.prismarine.blockResistance, Block.soundStoneFootstep,
                 "decoBlockPrismarineMoulding");
-        register(new MouldingBlockItem(DecoBlocks.prismarineMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.prismarineMoulding.blockID - 256));
         DecoBlocks.prismarineStairs = new StairsBlock(DecoBlockIDs.PRISMARINE_STAIRS_ID, DecoBlocks.prismarine, PrismarineBlock.DEFAULT_TYPE)
                 .setUnlocalizedName("decoBlockPrismarineStairs");
     
@@ -1015,7 +1016,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.PRISMARINE_BRICK_SIDING_AND_CORNER_ID,
                 DecoBlocks.prismarine.blockHardness, DecoBlocks.prismarine.blockResistance, Block.soundStoneFootstep,
                 "decoBlockPrismarineBrickMoulding");
-        register(new MouldingBlockItem(DecoBlocks.prismarineBrickMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.prismarineBrickMoulding.blockID - 256));
         DecoBlocks.prismarineBrickStairs = new StairsBlock(DecoBlockIDs.PRISMARINE_BRICK_STAIRS_ID, DecoBlocks.prismarine, PrismarineBlock.BRICK_TYPE)
                 .setUnlocalizedName("decoBlockPrismarineBrickStairs");
     
@@ -1029,7 +1030,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.DARK_PRISMARINE_SIDING_AND_CORNER_ID,
                 DecoBlocks.prismarine.blockHardness, DecoBlocks.prismarine.blockResistance, Block.soundStoneFootstep,
                 "decoBlockPrismarineDarkMoulding");
-        register(new MouldingBlockItem(DecoBlocks.darkPrismarineMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.darkPrismarineMoulding.blockID - 256));
         DecoBlocks.darkPrismarineStairs = new StairsBlock(DecoBlockIDs.DARK_PRISMARINE_STAIRS_ID, DecoBlocks.prismarine, PrismarineBlock.DARK_TYPE)
                 .setUnlocalizedName("decoBlockPrismarineDarkStairs");
     }
@@ -1053,7 +1054,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.CUT_SANDSTONE_SIDING_AND_CORNER_ID,
                 Block.sandStone.blockHardness, Block.sandStone.blockResistance, Block.soundStoneFootstep,
                 "decoBlockSandstoneSmoothMoulding");
-        register(new MouldingBlockItem(DecoBlocks.cutSandstoneMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.cutSandstoneMoulding.blockID - 256));
         DecoBlocks.cutSandstoneStairs = new StairsBlock(DecoBlockIDs.CUT_SANDSTONE_STAIRS_ID, Block.sandStone, SandHelper.SANDSTONE_TYPE_CUT)
                 .setUnlocalizedName("decoBlockSandStoneSmoothStairs");
     
@@ -1067,7 +1068,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.POLISHED_SANDSTONE_SIDING_AND_CORNER_ID,
                 Block.sandStone.blockHardness, Block.sandStone.blockResistance, Block.soundStoneFootstep,
                 "decoBlockSandstonePolishedMoulding");
-        register(new MouldingBlockItem(DecoBlocks.polishedSandstoneMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.polishedSandstoneMoulding.blockID - 256));
         DecoBlocks.polishedSandstoneStairs = new StairsBlock(DecoBlockIDs.POLISHED_SANDSTONE_STAIRS_ID, Block.sandStone, SandHelper.SANDSTONE_TYPE_POLISHED)
                 .setUnlocalizedName("decoBlockSandStonePolishedStairs");
     
@@ -1081,7 +1082,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.SANDSTONE_BRICK_SIDING_AND_CORNER_ID,
                 Block.sandStone.blockHardness, Block.sandStone.blockResistance, Block.soundStoneFootstep,
                 "decoBlockSandstoneBrickMoulding");
-        register(new MouldingBlockItem(DecoBlocks.sandstoneBrickMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.sandstoneBrickMoulding.blockID - 256));
         DecoBlocks.sandstoneBrickStairs = new StairsBlock(DecoBlockIDs.SANDSTONE_BRICK_STAIRS_ID, Block.sandStone, SandHelper.SANDSTONE_TYPE_BRICK)
                 .setUnlocalizedName("decoBlockSandStoneBrickStairs");
     
@@ -1095,7 +1096,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.MOSSY_SANDSTONE_SIDING_AND_CORNER_ID,
                 Block.sandStone.blockHardness, Block.sandStone.blockResistance, Block.soundStoneFootstep,
                 "decoBlockSandstoneMossyMoulding");
-        register(new MouldingBlockItem(DecoBlocks.mossySandstoneMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.mossySandstoneMoulding.blockID - 256));
         DecoBlocks.mossySandstoneStairs = new StairsBlock(DecoBlockIDs.MOSSY_SANDSTONE_STAIRS_ID, Block.sandStone, SandHelper.SANDSTONE_TYPE_MOSSY)
                 .setUnlocalizedName("decoBlockSandStoneMossyStairs");
     
@@ -1109,7 +1110,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.LARGE_SANDSTONE_BRICK_SIDING_AND_CORNER_ID,
                 Block.sandStone.blockHardness, Block.sandStone.blockResistance, Block.soundStoneFootstep,
                 "decoBlockSandstoneBrickLargeMoulding");
-        register(new MouldingBlockItem(DecoBlocks.largeSandstoneBrickMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.largeSandstoneBrickMoulding.blockID - 256));
         DecoBlocks.largeSandstoneBrickStairs = new StairsBlock(DecoBlockIDs.LARGE_SANDSTONE_BRICK_STAIRS_ID, Block.sandStone, SandHelper.SANDSTONE_TYPE_LARGE_BRICK)
                 .setUnlocalizedName("decoBlockSandStoneBrickLargeStairs");
     
@@ -1123,7 +1124,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.MOSSY_LARGE_SANDSTONE_BRICK_MOULDING_ID,
                 Block.sandStone.blockHardness, Block.sandStone.blockResistance, Block.soundStoneFootstep,
                 "decoBlockSandstoneBrickLargeMossyMoulding");
-        register(new MouldingBlockItem(DecoBlocks.mossyLargeSandstoneBrickMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.mossyLargeSandstoneBrickMoulding.blockID - 256));
         DecoBlocks.mossyLargeSandstoneBrickStairs = new StairsBlock(DecoBlockIDs.MOSSY_LARGE_SANDSTONE_BRICK_STAIRS_ID, Block.sandStone, SandHelper.SANDSTONE_TYPE_LARGE_BRICK_MOSSY)
                 .setUnlocalizedName("decoBlockSandStoneBrickLargeMossyStairs");
     
@@ -1137,7 +1138,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.CRACKED_SANDSTONE_SIDING_AND_CORNER_ID,
                 Block.sandStone.blockHardness, Block.sandStone.blockResistance, Block.soundStoneFootstep,
                 "decoBlockSandstoneCrackedMoulding");
-        register(new MouldingBlockItem(DecoBlocks.crackedSandstoneMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.crackedSandstoneMoulding.blockID - 256));
         DecoBlocks.crackedSandstoneStairs = new StairsBlock(DecoBlockIDs.CRACKED_SANDSTONE_STAIRS_ID, Block.sandStone, SandHelper.SANDSTONE_TYPE_CRACKED)
                 .setUnlocalizedName("decoBlockSandStoneCrackedStairs");
     
@@ -1151,7 +1152,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.CRACKED_LARGE_SANDSTONE_BRICK_MOULDING_ID,
                 Block.sandStone.blockHardness, Block.sandStone.blockResistance, Block.soundStoneFootstep,
                 "decoBlockSandstoneBrickLargeCrackedMoulding");
-        register(new MouldingBlockItem(DecoBlocks.crackedLargeSandstoneBrickMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.crackedLargeSandstoneBrickMoulding.blockID - 256));
         DecoBlocks.crackedLargeSandstoneBrickStairs = new StairsBlock(DecoBlockIDs.CRACKED_LARGE_SANDSTONE_BRICK_STAIRS_ID, Block.sandStone, SandHelper.SANDSTONE_TYPE_LARGE_BRICK_CRACKED)
                 .setUnlocalizedName("decoBlockSandStoneBrickLargeCrackedStairs");
         
@@ -1173,7 +1174,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.RED_SANDSTONE_SIDING_AND_CORNER_ID,
                 DecoBlocks.redSandstone.blockHardness, DecoBlocks.redSandstone.blockResistance, Block.soundStoneFootstep,
                 "decoBlockRedSandstoneMoulding");
-        register(new MouldingBlockItem(DecoBlocks.redSandstoneMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.redSandstoneMoulding.blockID - 256));
         DecoBlocks.redSandstoneStairs = new StairsBlock(DecoBlockIDs.RED_SANDSTONE_STAIRS_ID, DecoBlocks.redSandstone, SandHelper.SANDSTONE_TYPE_DEFAULT)
                 .setUnlocalizedName("decoBlockRedSandStoneStairs");
     
@@ -1187,7 +1188,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.CUT_RED_SANDSTONE_SIDING_AND_CORNER_ID,
                 DecoBlocks.redSandstone.blockHardness, DecoBlocks.redSandstone.blockResistance, Block.soundStoneFootstep,
                 "decoBlockRedSandstoneSmoothMoulding");
-        register(new MouldingBlockItem(DecoBlocks.cutRedSandstoneMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.cutRedSandstoneMoulding.blockID - 256));
         DecoBlocks.cutRedSandstoneStairs = new StairsBlock(DecoBlockIDs.CUT_RED_SANDSTONE_STAIRS_ID, DecoBlocks.redSandstone, SandHelper.SANDSTONE_TYPE_CUT)
                 .setUnlocalizedName("decoBlockRedSandStoneSmoothStairs");
     
@@ -1201,7 +1202,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.POLISHED_RED_SANDSTONE_SIDING_AND_CORNER_ID,
                 DecoBlocks.redSandstone.blockHardness, DecoBlocks.redSandstone.blockResistance, Block.soundStoneFootstep,
                 "decoBlockRedSandstonePolishedMoulding");
-        register(new MouldingBlockItem(DecoBlocks.polishedRedSandstoneMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.polishedRedSandstoneMoulding.blockID - 256));
         DecoBlocks.polishedRedSandstoneStairs = new StairsBlock(DecoBlockIDs.POLISHED_RED_SANDSTONE_STAIRS_ID, DecoBlocks.redSandstone, SandHelper.SANDSTONE_TYPE_POLISHED)
                 .setUnlocalizedName("decoBlockRedSandStonePolishedStairs");
     
@@ -1215,7 +1216,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.RED_SANDSTONE_BRICK_SIDING_AND_CORNER_ID,
                 DecoBlocks.redSandstone.blockHardness, DecoBlocks.redSandstone.blockResistance, Block.soundStoneFootstep,
                 "decoBlockRedSandstoneBrickMoulding");
-        register(new MouldingBlockItem(DecoBlocks.redSandstoneBrickMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.redSandstoneBrickMoulding.blockID - 256));
         DecoBlocks.redSandstoneBrickStairs = new StairsBlock(DecoBlockIDs.RED_SANDSTONE_BRICK_STAIRS_ID, DecoBlocks.redSandstone, SandHelper.SANDSTONE_TYPE_BRICK)
                 .setUnlocalizedName("decoBlockRedSandStoneBrickStairs");
     
@@ -1229,7 +1230,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.MOSSY_RED_SANDSTONE_SIDING_AND_CORNER_ID,
                 DecoBlocks.redSandstone.blockHardness, DecoBlocks.redSandstone.blockResistance, Block.soundStoneFootstep,
                 "decoBlockRedSandstoneMossyMoulding");
-        register(new MouldingBlockItem(DecoBlocks.mossyRedSandstoneMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.mossyRedSandstoneMoulding.blockID - 256));
         DecoBlocks.mossyRedSandstoneStairs = new StairsBlock(DecoBlockIDs.MOSSY_RED_SANDSTONE_STAIRS_ID, DecoBlocks.redSandstone, SandHelper.SANDSTONE_TYPE_MOSSY)
                 .setUnlocalizedName("decoBlockRedSandStoneMossyStairs");
     
@@ -1243,7 +1244,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.LARGE_RED_SANDSTONE_BRICK_SIDING_AND_CORNER_ID,
                 DecoBlocks.redSandstone.blockHardness, DecoBlocks.redSandstone.blockResistance, Block.soundStoneFootstep,
                 "decoBlockRedSandstoneBrickLargeMoulding");
-        register(new MouldingBlockItem(DecoBlocks.largeRedSandstoneBrickMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.largeRedSandstoneBrickMoulding.blockID - 256));
         DecoBlocks.largeRedSandstoneBrickStairs = new StairsBlock(DecoBlockIDs.LARGE_RED_SANDSTONE_BRICK_STAIRS_ID, DecoBlocks.redSandstone, SandHelper.SANDSTONE_TYPE_LARGE_BRICK)
                 .setUnlocalizedName("decoBlockRedSandStoneBrickLargeStairs");
     
@@ -1257,7 +1258,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.MOSSY_LARGE_RED_SANDSTONE_BRICK_MOULDING_ID,
                 DecoBlocks.redSandstone.blockHardness, DecoBlocks.redSandstone.blockResistance, Block.soundStoneFootstep,
                 "decoBlockRedSandstoneBrickLargeMossyMoulding");
-        register(new MouldingBlockItem(DecoBlocks.mossyLargeRedSandstoneBrickMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.mossyLargeRedSandstoneBrickMoulding.blockID - 256));
         DecoBlocks.mossyLargeRedSandstoneBrickStairs = new StairsBlock(DecoBlockIDs.MOSSY_LARGE_RED_SANDSTONE_BRICK_STAIRS_ID, DecoBlocks.redSandstone, SandHelper.SANDSTONE_TYPE_LARGE_BRICK_MOSSY)
                 .setUnlocalizedName("decoBlockRedSandStoneBrickLargeMossyStairs");
     
@@ -1271,7 +1272,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.CRACKED_RED_SANDSTONE_SIDING_AND_CORNER_ID,
                 DecoBlocks.redSandstone.blockHardness, DecoBlocks.redSandstone.blockResistance, Block.soundStoneFootstep,
                 "decoBlockRedSandstoneCrackedMoulding");
-        register(new MouldingBlockItem(DecoBlocks.crackedRedSandstoneMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.crackedRedSandstoneMoulding.blockID - 256));
         DecoBlocks.crackedRedSandstoneStairs = new StairsBlock(DecoBlockIDs.CRACKED_RED_SANDSTONE_STAIRS_ID, DecoBlocks.redSandstone, SandHelper.SANDSTONE_TYPE_CRACKED)
                 .setUnlocalizedName("decoBlockRedSandStoneCrackedStairs");
     
@@ -1285,7 +1286,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.CRACKED_LARGE_RED_SANDSTONE_BRICK_MOULDING_ID,
                 DecoBlocks.redSandstone.blockHardness, DecoBlocks.redSandstone.blockResistance, Block.soundStoneFootstep,
                 "decoBlockRedSandstoneBrickLargeCrackedMoulding");
-        register(new MouldingBlockItem(DecoBlocks.crackedLargeRedSandstoneBrickMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.crackedLargeRedSandstoneBrickMoulding.blockID - 256));
         DecoBlocks.crackedLargeRedSandstoneBrickStairs = new StairsBlock(DecoBlockIDs.CRACKED_LARGE_RED_SANDSTONE_BRICK_STAIRS_ID, DecoBlocks.redSandstone, SandHelper.SANDSTONE_TYPE_LARGE_BRICK_CRACKED)
                 .setUnlocalizedName("decoBlockRedSandStoneBrickLargeCrackedStairs");
     }
@@ -1329,7 +1330,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.RED_NETHER_BRICK_SIDING_AND_CORNER_ID,
                 DecoBlocks.netherBrick.blockHardness, DecoBlocks.netherBrick.blockResistance, Block.soundStoneFootstep,
                 "decoBlockNetherBrickRedMoulding");
-        register(new MouldingBlockItem(DecoBlocks.redNetherBrickMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.redNetherBrickMoulding.blockID - 256));
         DecoBlocks.redNetherBrickStairs = new StairsBlock(DecoBlockIDs.RED_NETHER_BRICK_STAIRS_ID, DecoBlocks.netherBrick, DecoNetherBrickBlock.RED_TYPE)
                 .setUnlocalizedName("decoBlockNetherBrickRedStairs");
         
@@ -1356,7 +1357,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.INFUSED_STONE_SIDING_AND_CORNER_ID,
                 DecoBlocks.infusedStone.blockHardness, DecoBlocks.infusedStone.blockResistance, Block.soundStoneFootstep,
                 "decoBlockInfusedStoneMoulding");
-        register(new MouldingBlockItem(DecoBlocks.infusedStoneMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.infusedStoneMoulding.blockID - 256));
         DecoBlocks.infusedStoneStairs = new StairsBlock(DecoBlockIDs.INFUSED_STONE_STAIRS_ID, DecoBlocks.infusedStone, InfusedStoneBlock.TYPE_DEFAULT)
                 .setUnlocalizedName("decoBlockInfusedStoneStairs");
     
@@ -1370,7 +1371,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.POLISHED_INFUSED_STONE_SIDING_AND_CORNER_ID,
                 DecoBlocks.infusedStone.blockHardness, DecoBlocks.infusedStone.blockResistance, Block.soundStoneFootstep,
                 "decoBlockInfusedStoneSmoothMoulding");
-        register(new MouldingBlockItem(DecoBlocks.polishedInfusedStoneMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.polishedInfusedStoneMoulding.blockID - 256));
         DecoBlocks.polishedInfusedStoneStairs = new StairsBlock(DecoBlockIDs.POLISHED_INFUSED_STONE_STAIRS_ID, DecoBlocks.infusedStone, InfusedStoneBlock.TYPE_POLISHED)
                 .setUnlocalizedName("decoBlockInfusedStoneSmoothStairs");
     
@@ -1384,7 +1385,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.INFUSED_STONE_BRICK_SIDING_AND_CORNER_ID,
                 DecoBlocks.infusedStone.blockHardness, DecoBlocks.infusedStone.blockResistance, Block.soundStoneFootstep,
                 "decoBlockInfusedStoneMoulding");
-        register(new MouldingBlockItem(DecoBlocks.infusedStoneBrickMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.infusedStoneBrickMoulding.blockID - 256));
         DecoBlocks.infusedStoneBrickStairs = new StairsBlock(DecoBlockIDs.INFUSED_STONE_BRICK_STAIRS_ID, DecoBlocks.infusedStone, InfusedStoneBlock.TYPE_BRICK)
                 .setUnlocalizedName("decoBlockInfusedStoneBrickStairs");
     }
@@ -1407,7 +1408,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.END_STONE_BRICK_SIDING_AND_CORNER_ID,
                 DecoBlocks.endStoneBrick.blockHardness, DecoBlocks.endStoneBrick.blockResistance, Block.soundStoneFootstep,
                 "decoBlockEndStoneMoulding");
-        register(new MouldingBlockItem(DecoBlocks.endStoneBrickMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.endStoneBrickMoulding.blockID - 256));
         DecoBlocks.endStoneBrickStairs = new StairsBlock(DecoBlockIDs.END_STONE_BRICK_STAIRS_ID, DecoBlocks.endStoneBrick, 0)
                 .setUnlocalizedName("decoBlockEndStoneBrickStairs");
     }
@@ -1616,7 +1617,7 @@ public class DecoBlockInitializer {
                     DecoBlocks.concreteSidingAndCorner[color].blockID,
                     DecoBlocks.concrete.blockHardness, DecoBlocks.concrete.blockResistance, Block.soundStoneFootstep,
                     "decoBlockConcreteMoulding." + ColorUtils.colorOrder[color]);
-            Item.itemsList[DecoBlocks.concreteMoulding[color].blockID] = new MouldingBlockItem(DecoBlocks.concreteMoulding[color].blockID - 256);
+            Item.itemsList[DecoBlocks.concreteMoulding[color].blockID] = new MouldingAndDecorativeBlockItem(DecoBlocks.concreteMoulding[color].blockID - 256);
         
             DecoBlocks.concreteStairs[color] = new StairsBlock(concreteSubID++, DecoBlocks.concrete, color)
                     .setUnlocalizedName("decoBlockConcreteStairs." + ColorUtils.colorOrder[color]);
@@ -2062,7 +2063,7 @@ public class DecoBlockInitializer {
                 "decoBlockMudBrickMoulding")
                 .setShovelsEffectiveOn()
                 .setPicksEffectiveOn();
-        register(new MouldingBlockItem(DecoBlocks.mudBrickMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.mudBrickMoulding.blockID - 256));
         DecoBlocks.mudBrickStairs = new StairsBlock(DecoBlockIDs.MUD_BRICK_STAIRS_ID, DecoBlocks.mudBrick, 0)
                 .setUnlocalizedName("decoBlockMudBrickStairs")
                 .setShovelsEffectiveOn()
@@ -2399,7 +2400,7 @@ public class DecoBlockInitializer {
         
         //------ Oak Wood ------//
         
-        DecoBlocks.oakChair = new ChairBlock(DecoBlockIDs.OAK_CHAIR_ID, "Oak");
+        DecoBlocks.oakChair = new ChairBlock(DecoBlockIDs.OAK_CHAIR_ID, "Oak", WoodTypeHelper.OAK_WOOD_TYPE);
         DecoBlocks.filledOakBarrel = new FilledBarrelBlock(DecoBlockIDs.FILLED_OAK_BARREL_ID, "decoBlockBarrelOak");
         Item.itemsList[DecoBlocks.filledOakBarrel.blockID] = new ItemMultiTextureTile(DecoBlocks.filledOakBarrel.blockID - 256, DecoBlocks.filledOakBarrel, FilledBarrelBlock.typeTags);
     
@@ -2415,16 +2416,16 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.OAK_HEDGE_SIDING_AND_CORNER_ID,
                 DecoBlocks.hedge, WoodTypeHelper.OAK_WOOD_TYPE,
                 "decoBlockHedgeOakMoulding", true);
-        register(new MouldingBlockItem(DecoBlocks.oakHedgeMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.oakHedgeMoulding.blockID - 256));
         DecoBlocks.oakHedgeStairs = new HedgeStairsBlock(DecoBlockIDs.OAK_HEDGE_STAIRS_ID, DecoBlocks.hedge, WoodTypeHelper.OAK_WOOD_TYPE, true)
                 .setUnlocalizedName("decoBlockHedgeOakStairs");
     
         //------ Spruce Wood ------//
     
-        DecoBlocks.spruceGate = new DecoGateBlock(DecoBlockIDs.SPRUCE_GATE_ID, "decoBlockGateSpruce");
+        DecoBlocks.spruceGate = new DecoGateBlock(DecoBlockIDs.SPRUCE_GATE_ID, "decoBlockGateSpruce", WoodTypeHelper.SPRUCE_WOOD_TYPE);
         DecoBlocks.spruceDoor = new DecoDoorBlockWood(DecoBlockIDs.SPRUCE_DOOR_ID, DecoItemIDs.SPRUCE_DOOR_ID, "decoBlockDoorSpruce_upper", "decoBlockDoorSpruce_lower");
         DecoBlocks.spruceTrapdoor = new DecoTrapDoorBlock(DecoBlockIDs.SPRUCE_TRAPDOOR_ID, "decoBlockTrapdoorSpruce");
-        DecoBlocks.spruceChair = new ChairBlock(DecoBlockIDs.SPRUCE_CHAIR_ID, "Spruce");
+        DecoBlocks.spruceChair = new ChairBlock(DecoBlockIDs.SPRUCE_CHAIR_ID, "Spruce", WoodTypeHelper.SPRUCE_WOOD_TYPE);
         DecoBlocks.filledSpruceBarrel = new FilledBarrelBlock(DecoBlockIDs.FILLED_SPRUCE_BARREL_ID, "decoBlockBarrelSpruce");
         Item.itemsList[DecoBlocks.filledSpruceBarrel.blockID] = new ItemMultiTextureTile(DecoBlocks.filledSpruceBarrel.blockID - 256, DecoBlocks.filledSpruceBarrel, FilledBarrelBlock.typeTags);
         DecoBlocks.spruceLadder = new DecoLadderBlock(DecoBlockIDs.SPRUCE_LADDER_ID, DecoBlockIDs.FLAMING_SPRUCE_LADDER_ID, "decoBlockLadderSpruce");
@@ -2450,16 +2451,16 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.SPRUCE_HEDGE_SIDING_AND_CORNER_ID,
                 DecoBlocks.hedge, WoodTypeHelper.SPRUCE_WOOD_TYPE,
                 "decoBlockHedgeSpruceMoulding", true);
-        register(new MouldingBlockItem(DecoBlocks.spruceHedgeMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.spruceHedgeMoulding.blockID - 256));
         DecoBlocks.spruceHedgeStairs = new HedgeStairsBlock(DecoBlockIDs.SPRUCE_HEDGE_STAIRS_ID, DecoBlocks.hedge, WoodTypeHelper.SPRUCE_WOOD_TYPE, true)
                 .setUnlocalizedName("decoBlockHedgeSpruceStairs");
     
         //------ Birch Wood ------//
     
-        DecoBlocks.birchGate = new DecoGateBlock(DecoBlockIDs.BIRCH_GATE_ID, "decoBlockGateBirch");
+        DecoBlocks.birchGate = new DecoGateBlock(DecoBlockIDs.BIRCH_GATE_ID, "decoBlockGateBirch", WoodTypeHelper.BIRCH_WOOD_TYPE);
         DecoBlocks.birchDoor = new DecoDoorBlockWood(DecoBlockIDs.BIRCH_DOOR_ID, DecoItemIDs.BIRCH_DOOR_ID, "decoBlockDoorBirch_upper", "decoBlockDoorBirch_lower");
         DecoBlocks.birchTrapdoor = new DecoTrapDoorBlock(DecoBlockIDs.BIRCH_TRAPDOOR_ID, "decoBlockTrapdoorBirch");
-        DecoBlocks.birchChair = new ChairBlock(DecoBlockIDs.BIRCH_CHAIR_ID, "Birch");
+        DecoBlocks.birchChair = new ChairBlock(DecoBlockIDs.BIRCH_CHAIR_ID, "Birch", WoodTypeHelper.BIRCH_WOOD_TYPE);
         DecoBlocks.filledBirchBarrel = new FilledBarrelBlock(DecoBlockIDs.FILLED_BIRCH_BARREL_ID, "decoBlockBarrelBirch");
         Item.itemsList[DecoBlocks.filledBirchBarrel.blockID] = new ItemMultiTextureTile(DecoBlocks.filledBirchBarrel.blockID - 256, DecoBlocks.filledBirchBarrel, FilledBarrelBlock.typeTags);
         DecoBlocks.birchLadder = new DecoLadderBlock(DecoBlockIDs.BIRCH_LADDER_ID, DecoBlockIDs.FLAMING_BIRCH_LADDER_ID, "decoBlockLadderBirch");
@@ -2489,16 +2490,16 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.BIRCH_HEDGE_SIDING_AND_CORNER_ID,
                 DecoBlocks.hedge, WoodTypeHelper.BIRCH_WOOD_TYPE,
                 "decoBlockHedgeBirchMoulding", true);
-        register(new MouldingBlockItem(DecoBlocks.birchHedgeMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.birchHedgeMoulding.blockID - 256));
         DecoBlocks.birchHedgeStairs = new HedgeStairsBlock(DecoBlockIDs.BIRCH_HEDGE_STAIRS_ID, DecoBlocks.hedge, WoodTypeHelper.BIRCH_WOOD_TYPE, true)
                 .setUnlocalizedName("decoBlockHedgeBirchStairs");
     
         //------ Jungle Wood ------//
     
-        DecoBlocks.jungleGate = new DecoGateBlock(DecoBlockIDs.JUNGLE_GATE_ID, "decoBlockGateJungle");
+        DecoBlocks.jungleGate = new DecoGateBlock(DecoBlockIDs.JUNGLE_GATE_ID, "decoBlockGateJungle", WoodTypeHelper.JUNGLE_WOOD_TYPE);
         DecoBlocks.jungleDoor = new DecoDoorBlockWood(DecoBlockIDs.JUNGLE_DOOR_ID, DecoItemIDs.JUNGLE_DOOR_ID, "decoBlockDoorJungle_upper", "decoBlockDoorJungle_lower");
         DecoBlocks.jungleTrapdoor = new DecoTrapDoorBlock(DecoBlockIDs.JUNGLE_TRAPDOOR_ID, "decoBlockTrapdoorJungle");
-        DecoBlocks.jungleChair = new ChairBlock(DecoBlockIDs.JUNGLE_CHAIR_ID, "Jungle");
+        DecoBlocks.jungleChair = new ChairBlock(DecoBlockIDs.JUNGLE_CHAIR_ID, "Jungle", WoodTypeHelper.JUNGLE_WOOD_TYPE);
         DecoBlocks.filledJungleBarrel = new FilledBarrelBlock(DecoBlockIDs.FILLED_JUNGLE_BARREL_ID, "decoBlockBarrelJungle");
         Item.itemsList[DecoBlocks.filledJungleBarrel.blockID] = new ItemMultiTextureTile(DecoBlocks.filledJungleBarrel.blockID - 256, DecoBlocks.filledJungleBarrel, FilledBarrelBlock.typeTags);
         DecoBlocks.jungleLadder = new DecoLadderBlock(DecoBlockIDs.JUNGLE_LADDER_ID, DecoBlockIDs.FLAMING_JUNGLE_LADDER_ID, "decoBlockLadderJungle");
@@ -2522,7 +2523,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.JUNGLE_HEDGE_SIDING_AND_CORNER_ID,
                 DecoBlocks.hedge, WoodTypeHelper.JUNGLE_WOOD_TYPE,
                 "decoBlockHedgeJungleMoulding", true);
-        register(new MouldingBlockItem(DecoBlocks.jungleHedgeMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.jungleHedgeMoulding.blockID - 256));
         DecoBlocks.jungleHedgeStairs = new HedgeStairsBlock(DecoBlockIDs.JUNGLE_HEDGE_STAIRS_ID, DecoBlocks.hedge, WoodTypeHelper.JUNGLE_WOOD_TYPE, true)
                 .setUnlocalizedName("decoBlockHedgeJungleStairs");
     
@@ -2539,10 +2540,10 @@ public class DecoBlockInitializer {
                 DecoBlocks.bloodLogSpike)
                 .setUnlocalizedName("decoBlockSpikeBlood");
         
-        DecoBlocks.bloodGate = new DecoGateBlock(DecoBlockIDs.BLOOD_GATE_ID, "decoBlockGateBlood");
+        DecoBlocks.bloodGate = new DecoGateBlock(DecoBlockIDs.BLOOD_GATE_ID, "decoBlockGateBlood", WoodTypeHelper.BLOOD_WOOD_TYPE);
         DecoBlocks.bloodDoor = new DecoDoorBlockWood(DecoBlockIDs.BLOOD_DOOR_ID, DecoItemIDs.BLOOD_DOOR_ID, "decoBlockDoorBlood_upper", "decoBlockDoorBlood_lower");
         DecoBlocks.bloodTrapdoor = new DecoTrapDoorBlock(DecoBlockIDs.BLOOD_TRAPDOOR_ID, "decoBlockTrapdoorBlood");
-        DecoBlocks.bloodChair = new ChairBlock(DecoBlockIDs.BLOOD_CHAIR_ID, "Blood");
+        DecoBlocks.bloodChair = new ChairBlock(DecoBlockIDs.BLOOD_CHAIR_ID, "Blood", WoodTypeHelper.BLOOD_WOOD_TYPE);
         DecoBlocks.filledBloodBarrel = new FilledBarrelBlock(DecoBlockIDs.FILLED_BLOOD_BARREL_ID, "decoBlockBarrelBlood");
         Item.itemsList[DecoBlocks.filledBloodBarrel.blockID] = new ItemMultiTextureTile(DecoBlocks.filledBloodBarrel.blockID - 256, DecoBlocks.filledBloodBarrel, FilledBarrelBlock.typeTags);
         DecoBlocks.bloodLadder = new DecoLadderBlock(DecoBlockIDs.BLOOD_LADDER_ID, DecoBlockIDs.FLAMING_BLOOD_LADDER_ID, "decoBlockLadderBlood");
@@ -2566,7 +2567,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.BLOOD_HEDGE_SIDING_AND_CORNER_ID,
                 BTWBlocks.bloodWoodLeaves, 0,
                 "decoBlockHedgeBloodMoulding", true);
-        register(new MouldingBlockItem(DecoBlocks.bloodHedgeMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.bloodHedgeMoulding.blockID - 256));
         DecoBlocks.bloodHedgeStairs = new HedgeStairsBlock(DecoBlockIDs.BLOOD_HEDGE_STAIRS_ID, BTWBlocks.bloodWoodLeaves, 0, true)
                 .setUnlocalizedName("decoBlockHedgeBloodStairs");
         
@@ -2590,7 +2591,13 @@ public class DecoBlockInitializer {
                 DecoBlocks.cherryLogSpike)
                 .setUnlocalizedName("decoBlockSpikeCherry");
 
-        DecoBlocks.cherryLeaves = new DecoLeavesBlock(DecoBlockIDs.CHERRY_LEAVES_ID, DecoBlockIDs.CHERRY_SAPLING_ID, "decoBlockLeavesCherry")
+        DecoBlocks.cherryLeaves = new DecoLeavesBlock(DecoBlockIDs.CHERRY_LEAVES_ID, new int[]{
+                        DecoBlockIDs.CHERRY_SAPLING_ID,
+                        DecoBlockIDs.WHITE_CHERRY_SAPLING_ID
+                }, new String[] {
+                        "decoBlockLeavesCherry",
+                        "decoBlockLeavesCherryWhite"
+                })
                 .setUnlocalizedName("decoBlockLeavesCherry");
         DecoBlocks.legacyCherrySapling = new LegacyCherrySaplingBlock(DecoBlockIDs.LEGACY_CHERRY_SAPLING_ID);
         Item.itemsList[DecoBlocks.legacyCherrySapling.blockID] = new ItemMultiTextureTile(DecoBlocks.legacyCherrySapling.blockID - 256, DecoBlocks.legacyCherrySapling, LegacyCherrySaplingBlock.saplingTypes);
@@ -2598,7 +2605,11 @@ public class DecoBlockInitializer {
                 .addTreeGrower(DecoTreeGrowers.CHERRY_TREE, 9)
                 .addTreeGrower(DecoTreeGrowers.BIG_CHERRY_TREE, 1)
                 .add2x2TreeGrower(DecoTreeGrowers.HUGE_CHERRY_TREE, 10);
-        register(new SaplingBlockItem(DecoBlocks.cherrySapling.blockID - 256, DecoBlocks.cherrySapling));
+        DecoBlocks.whiteCherrySapling = new SaplingBlock(DecoBlockIDs.WHITE_CHERRY_SAPLING_ID, "decoBlockSaplingCherry", "decoBlockSaplingCherry_0")
+                .addTreeGrower(DecoTreeGrowers.WHITE_CHERRY_TREE, 9)
+                .addTreeGrower(DecoTreeGrowers.BIG_WHITE_CHERRY_TREE, 1)
+                .add2x2TreeGrower(DecoTreeGrowers.HUGE_WHITE_CHERRY_TREE, 10);
+        register(new SaplingBlockItem(DecoBlocks.whiteCherrySapling.blockID - 256, DecoBlocks.whiteCherrySapling));
 
         // Sub blocks
         DecoBlocks.cherryStairs = new WoodStairsBlock(DecoBlockIDs.CHERRY_STAIRS_ID, Block.planks, WoodTypeHelper.CHERRY_WOOD_TYPE)
@@ -2611,10 +2622,10 @@ public class DecoBlockInitializer {
                 "decoBlockCherryMoulding");
         
         // Decorative blocks
-        DecoBlocks.cherryGate = new DecoGateBlock(DecoBlockIDs.CHERRY_GATE_ID, "decoBlockGateCherry");
+        DecoBlocks.cherryGate = new DecoGateBlock(DecoBlockIDs.CHERRY_GATE_ID, "decoBlockGateCherry", WoodTypeHelper.CHERRY_WOOD_TYPE);
         DecoBlocks.cherryDoor = new DecoDoorBlockWood(DecoBlockIDs.CHERRY_DOOR_ID, DecoItemIDs.CHERRY_DOOR_ID, "decoBlockDoorCherry_upper", "decoBlockDoorCherry_lower");
         DecoBlocks.cherryTrapdoor = new DecoTrapDoorBlock(DecoBlockIDs.CHERRY_TRAPDOOR_ID, "decoBlockTrapdoorCherry");
-        DecoBlocks.cherryChair = new ChairBlock(DecoBlockIDs.CHERRY_CHAIR_ID, "Cherry");
+        DecoBlocks.cherryChair = new ChairBlock(DecoBlockIDs.CHERRY_CHAIR_ID, "Cherry", WoodTypeHelper.CHERRY_WOOD_TYPE);
         DecoBlocks.filledCherryBarrel = new FilledBarrelBlock(DecoBlockIDs.FILLED_CHERRY_BARREL_ID, "decoBlockBarrelCherry");
         Item.itemsList[DecoBlocks.filledCherryBarrel.blockID] = new ItemMultiTextureTile(DecoBlocks.filledCherryBarrel.blockID - 256, DecoBlocks.filledCherryBarrel, FilledBarrelBlock.typeTags);
         DecoBlocks.cherryLadder = new DecoLadderBlock(DecoBlockIDs.CHERRY_LADDER_ID, DecoBlockIDs.FLAMING_CHERRY_LADDER_ID, "decoBlockLadderCherry");
@@ -2638,7 +2649,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.CHERRY_HEDGE_SIDING_AND_CORNER_ID,
                 DecoBlocks.cherryLeaves, 0,
                 "decoBlockHedgeCherryMoulding", false);
-        register(new MouldingBlockItem(DecoBlocks.cherryHedgeMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.cherryHedgeMoulding.blockID - 256));
         DecoBlocks.cherryHedgeStairs = new HedgeStairsBlock(DecoBlockIDs.CHERRY_HEDGE_STAIRS_ID, DecoBlocks.cherryLeaves, 0, false)
                 .setUnlocalizedName("decoBlockHedgeCherryStairs");
     
@@ -2681,10 +2692,10 @@ public class DecoBlockInitializer {
                 "decoBlockAcaciaMoulding");
     
         // Decorative blocks
-        DecoBlocks.acaciaGate = new DecoGateBlock(DecoBlockIDs.ACACIA_GATE_ID, "decoBlockGateAcacia");
+        DecoBlocks.acaciaGate = new DecoGateBlock(DecoBlockIDs.ACACIA_GATE_ID, "decoBlockGateAcacia", WoodTypeHelper.ACACIA_WOOD_TYPE);
         DecoBlocks.acaciaDoor = new DecoDoorBlockWood(DecoBlockIDs.ACACIA_DOOR_ID, DecoItemIDs.ACACIA_DOOR_ID, "decoBlockDoorAcacia_upper", "decoBlockDoorAcacia_lower");
         DecoBlocks.acaciaTrapdoor = new DecoTrapDoorBlock(DecoBlockIDs.ACACIA_TRAPDOOR_ID, "decoBlockTrapdoorAcacia");
-        DecoBlocks.acaciaChair = new ChairBlock(DecoBlockIDs.ACACIA_CHAIR_ID, "Acacia");
+        DecoBlocks.acaciaChair = new ChairBlock(DecoBlockIDs.ACACIA_CHAIR_ID, "Acacia", WoodTypeHelper.ACACIA_WOOD_TYPE);
         DecoBlocks.filledAcaciaBarrel = new FilledBarrelBlock(DecoBlockIDs.FILLED_ACACIA_BARREL_ID, "decoBlockBarrelAcacia");
         Item.itemsList[DecoBlocks.filledAcaciaBarrel.blockID] = new ItemMultiTextureTile(DecoBlocks.filledAcaciaBarrel.blockID - 256, DecoBlocks.filledAcaciaBarrel, FilledBarrelBlock.typeTags);
         DecoBlocks.acaciaLadder = new DecoLadderBlock(DecoBlockIDs.ACACIA_LADDER_ID, DecoBlockIDs.FLAMING_ACACIA_LADDER_ID, "decoBlockLadderAcacia");
@@ -2708,7 +2719,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.ACACIA_HEDGE_SIDING_AND_CORNER_ID,
                 DecoBlocks.acaciaLeaves, 0,
                 "decoBlockHedgeAcaciaMoulding", false);
-        register(new MouldingBlockItem(DecoBlocks.acaciaHedgeMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.acaciaHedgeMoulding.blockID - 256));
         DecoBlocks.acaciaHedgeStairs = new HedgeStairsBlock(DecoBlockIDs.ACACIA_HEDGE_STAIRS_ID, DecoBlocks.acaciaLeaves, 0, false)
                 .setUnlocalizedName("decoBlockHedgeAcaciaStairs");
     
@@ -2752,10 +2763,10 @@ public class DecoBlockInitializer {
                 "decoBlockMahoganyMoulding");
     
         // Decorative blocks
-        DecoBlocks.mahoganyGate = new DecoGateBlock(DecoBlockIDs.MAHOGANY_GATE_ID, "decoBlockGateMahogany");
+        DecoBlocks.mahoganyGate = new DecoGateBlock(DecoBlockIDs.MAHOGANY_GATE_ID, "decoBlockGateMahogany", WoodTypeHelper.MAHOGANY_WOOD_TYPE);
         DecoBlocks.mahoganyDoor = new DecoDoorBlockWood(DecoBlockIDs.MAHOGANY_DOOR_ID, DecoItemIDs.MAHOGANY_DOOR_ID, "decoBlockDoorMahogany_upper", "decoBlockDoorMahogany_lower");
         DecoBlocks.mahoganyTrapdoor = new DecoTrapDoorBlock(DecoBlockIDs.MAHOGANY_TRAPDOOR_ID, "decoBlockTrapdoorMahogany");
-        DecoBlocks.mahoganyChair = new ChairBlock(DecoBlockIDs.MAHOGANY_CHAIR_ID, "Mahogany");
+        DecoBlocks.mahoganyChair = new ChairBlock(DecoBlockIDs.MAHOGANY_CHAIR_ID, "Mahogany", WoodTypeHelper.MAHOGANY_WOOD_TYPE);
         DecoBlocks.filledMahoganyBarrel = new FilledBarrelBlock(DecoBlockIDs.FILLED_MAHOGANY_BARREL_ID, "decoBlockBarrelMahogany");
         Item.itemsList[DecoBlocks.filledMahoganyBarrel.blockID] = new ItemMultiTextureTile(DecoBlocks.filledMahoganyBarrel.blockID - 256, DecoBlocks.filledMahoganyBarrel, FilledBarrelBlock.typeTags);
         DecoBlocks.mahoganyLadder = new DecoLadderBlock(DecoBlockIDs.MAHOGANY_LADDER_ID, DecoBlockIDs.FLAMING_MAHOGANY_LADDER_ID, "decoBlockLadderMahogany");
@@ -2779,7 +2790,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.MAHOGANY_HEDGE_SIDING_AND_CORNER_ID,
                 DecoBlocks.mahoganyLeaves, 0,
                 "decoBlockHedgeMahoganyMoulding", false);
-        register(new MouldingBlockItem(DecoBlocks.mahoganyHedgeMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.mahoganyHedgeMoulding.blockID - 256));
         DecoBlocks.mahoganyHedgeStairs = new HedgeStairsBlock(DecoBlockIDs.MAHOGANY_HEDGE_STAIRS_ID, DecoBlocks.mahoganyLeaves, 0, false)
                 .setUnlocalizedName("decoBlockHedgeMahoganyStairs");
     
@@ -2823,10 +2834,10 @@ public class DecoBlockInitializer {
                 "decoBlockMangroveMoulding");
     
         // Decorative blocks
-        DecoBlocks.mangroveGate = new DecoGateBlock(DecoBlockIDs.MANGROVE_GATE_ID, "decoBlockGateMangrove");
+        DecoBlocks.mangroveGate = new DecoGateBlock(DecoBlockIDs.MANGROVE_GATE_ID, "decoBlockGateMangrove", WoodTypeHelper.MANGROVE_WOOD_TYPE);
         DecoBlocks.mangroveDoor = new DecoDoorBlockWood(DecoBlockIDs.MANGROVE_DOOR_ID, DecoItemIDs.MANGROVE_DOOR_ID, "decoBlockDoorMangrove_upper", "decoBlockDoorMangrove_lower");
         DecoBlocks.mangroveTrapdoor = new DecoTrapDoorBlock(DecoBlockIDs.MANGROVE_TRAPDOOR_ID, "decoBlockTrapdoorMangrove");
-        DecoBlocks.mangroveChair = new ChairBlock(DecoBlockIDs.MANGROVE_CHAIR_ID, "Mangrove");
+        DecoBlocks.mangroveChair = new ChairBlock(DecoBlockIDs.MANGROVE_CHAIR_ID, "Mangrove", WoodTypeHelper.MANGROVE_WOOD_TYPE);
         DecoBlocks.filledMangroveBarrel = new FilledBarrelBlock(DecoBlockIDs.FILLED_MANGROVE_BARREL_ID, "decoBlockBarrelMangrove");
         Item.itemsList[DecoBlocks.filledMangroveBarrel.blockID] = new ItemMultiTextureTile(DecoBlocks.filledMangroveBarrel.blockID - 256, DecoBlocks.filledMangroveBarrel, FilledBarrelBlock.typeTags);
         DecoBlocks.mangroveLadder = new DecoLadderBlock(DecoBlockIDs.MANGROVE_LADDER_ID, DecoBlockIDs.FLAMING_MANGROVE_LADDER_ID, "decoBlockLadderMangrove");
@@ -2850,7 +2861,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.MANGROVE_HEDGE_SIDING_AND_CORNER_ID,
                 DecoBlocks.mangroveLeaves, 0,
                 "decoBlockHedgeMangroveMoulding", false);
-        register(new MouldingBlockItem(DecoBlocks.mangroveHedgeMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.mangroveHedgeMoulding.blockID - 256));
         DecoBlocks.mangroveHedgeStairs = new HedgeStairsBlock(DecoBlockIDs.MANGROVE_HEDGE_STAIRS_ID, DecoBlocks.mangroveLeaves, 0, false)
                 .setUnlocalizedName("decoBlockHedgeMangroveStairs");
     
@@ -2895,10 +2906,10 @@ public class DecoBlockInitializer {
                 "decoBlockHazelMoulding");
     
         // Decorative blocks
-        DecoBlocks.hazelGate = new DecoGateBlock(DecoBlockIDs.HAZEL_GATE_ID, "decoBlockGateHazel");
+        DecoBlocks.hazelGate = new DecoGateBlock(DecoBlockIDs.HAZEL_GATE_ID, "decoBlockGateHazel", WoodTypeHelper.HAZEL_WOOD_TYPE);
         DecoBlocks.hazelDoor = new DecoDoorBlockWood(DecoBlockIDs.HAZEL_DOOR_ID, DecoItemIDs.HAZEL_DOOR_ID, "decoBlockDoorHazel_upper", "decoBlockDoorHazel_lower");
         DecoBlocks.hazelTrapdoor = new DecoTrapDoorBlock(DecoBlockIDs.HAZEL_TRAPDOOR_ID, "decoBlockTrapdoorHazel");
-        DecoBlocks.hazelChair = new ChairBlock(DecoBlockIDs.HAZEL_CHAIR_ID, "Hazel");
+        DecoBlocks.hazelChair = new ChairBlock(DecoBlockIDs.HAZEL_CHAIR_ID, "Hazel", WoodTypeHelper.HAZEL_WOOD_TYPE);
         DecoBlocks.filledHazelBarrel = new FilledBarrelBlock(DecoBlockIDs.FILLED_HAZEL_BARREL_ID, "decoBlockBarrelHazel");
         Item.itemsList[DecoBlocks.filledHazelBarrel.blockID] = new ItemMultiTextureTile(DecoBlocks.filledHazelBarrel.blockID - 256, DecoBlocks.filledHazelBarrel, FilledBarrelBlock.typeTags);
         DecoBlocks.hazelLadder = new DecoLadderBlock(DecoBlockIDs.HAZEL_LADDER_ID, DecoBlockIDs.FLAMING_HAZEL_LADDER_ID, "decoBlockLadderHazel");
@@ -2922,7 +2933,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.HAZEL_HEDGE_SIDING_AND_CORNER_ID,
                 DecoBlocks.hazelLeaves, 0,
                 "decoBlockHedgeHazelMoulding", false);
-        register(new MouldingBlockItem(DecoBlocks.hazelHedgeMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.hazelHedgeMoulding.blockID - 256));
         DecoBlocks.hazelHedgeStairs = new HedgeStairsBlock(DecoBlockIDs.HAZEL_HEDGE_STAIRS_ID, DecoBlocks.hazelLeaves, 0, false)
                 .setUnlocalizedName("decoBlockHedgeHazelStairs");
     
@@ -2966,10 +2977,10 @@ public class DecoBlockInitializer {
                 "decoBlockFirMoulding");
     
         // Decorative blocks
-        DecoBlocks.firGate = new DecoGateBlock(DecoBlockIDs.FIR_GATE_ID, "decoBlockGateFir");
+        DecoBlocks.firGate = new DecoGateBlock(DecoBlockIDs.FIR_GATE_ID, "decoBlockGateFir", WoodTypeHelper.FIR_WOOD_TYPE);
         DecoBlocks.firDoor = new DecoDoorBlockWood(DecoBlockIDs.FIR_DOOR_ID, DecoItemIDs.FIR_DOOR_ID, "decoBlockDoorFir_upper", "decoBlockDoorFir_lower");
         DecoBlocks.firTrapdoor = new DecoTrapDoorBlock(DecoBlockIDs.FIR_TRAPDOOR_ID, "decoBlockTrapdoorFir");
-        DecoBlocks.firChair = new ChairBlock(DecoBlockIDs.FIR_CHAIR_ID, "Fir");
+        DecoBlocks.firChair = new ChairBlock(DecoBlockIDs.FIR_CHAIR_ID, "Fir", WoodTypeHelper.FIR_WOOD_TYPE);
         DecoBlocks.filledFirBarrel = new FilledBarrelBlock(DecoBlockIDs.FILLED_FIR_BARREL_ID, "decoBlockBarrelFir");
         Item.itemsList[DecoBlocks.filledFirBarrel.blockID] = new ItemMultiTextureTile(DecoBlocks.filledFirBarrel.blockID - 256, DecoBlocks.filledFirBarrel, FilledBarrelBlock.typeTags);
         DecoBlocks.firLadder = new DecoLadderBlock(DecoBlockIDs.FIR_LADDER_ID, DecoBlockIDs.FLAMING_FIR_LADDER_ID, "decoBlockLadderFir");
@@ -2993,7 +3004,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.FIR_HEDGE_SIDING_AND_CORNER_ID,
                 DecoBlocks.firLeaves, 0,
                 "decoBlockHedgeFirMoulding", false);
-        register(new MouldingBlockItem(DecoBlocks.firHedgeMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.firHedgeMoulding.blockID - 256));
         DecoBlocks.firHedgeStairs = new HedgeStairsBlock(DecoBlockIDs.FIR_HEDGE_STAIRS_ID, DecoBlocks.firLeaves, 0, false)
                 .setUnlocalizedName("decoBlockHedgeFirStairs");
     
@@ -3034,10 +3045,10 @@ public class DecoBlockInitializer {
                 "decoBlockAspenMoulding");
     
         // Decorative blocks
-        DecoBlocks.aspenGate = new DecoGateBlock(DecoBlockIDs.ASPEN_GATE_ID, "decoBlockGateAspen");
+        DecoBlocks.aspenGate = new DecoGateBlock(DecoBlockIDs.ASPEN_GATE_ID, "decoBlockGateAspen", WoodTypeHelper.ASPEN_WOOD_TYPE);
         DecoBlocks.aspenDoor = new DecoDoorBlockWood(DecoBlockIDs.ASPEN_DOOR_ID, DecoItemIDs.ASPEN_DOOR_ID, "decoBlockDoorAspen_upper", "decoBlockDoorAspen_lower");
         DecoBlocks.aspenTrapdoor = new DecoTrapDoorBlock(DecoBlockIDs.ASPEN_TRAPDOOR_ID, "decoBlockTrapdoorAspen");
-        DecoBlocks.aspenChair = new ChairBlock(DecoBlockIDs.ASPEN_CHAIR_ID, "Aspen");
+        DecoBlocks.aspenChair = new ChairBlock(DecoBlockIDs.ASPEN_CHAIR_ID, "Aspen", WoodTypeHelper.ASPEN_WOOD_TYPE);
         DecoBlocks.filledAspenBarrel = new FilledBarrelBlock(DecoBlockIDs.FILLED_ASPEN_BARREL_ID, "decoBlockBarrelAspen");
         Item.itemsList[DecoBlocks.filledAspenBarrel.blockID] = new ItemMultiTextureTile(DecoBlocks.filledAspenBarrel.blockID - 256, DecoBlocks.filledAspenBarrel, FilledBarrelBlock.typeTags);
         DecoBlocks.aspenLadder = new DecoLadderBlock(DecoBlockIDs.ASPEN_LADDER_ID, DecoBlockIDs.FLAMING_ASPEN_LADDER_ID, "decoBlockLadderAspen");
@@ -3061,7 +3072,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.ASPEN_HEDGE_SIDING_AND_CORNER_ID,
                 DecoBlocks.aspenLeaves, 0,
                 "decoBlockHedgeAspenMoulding", false);
-        register(new MouldingBlockItem(DecoBlocks.aspenHedgeMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.aspenHedgeMoulding.blockID - 256));
         DecoBlocks.aspenHedgeStairs = new HedgeStairsBlock(DecoBlockIDs.ASPEN_HEDGE_STAIRS_ID, DecoBlocks.aspenLeaves, 0, false)
                 .setUnlocalizedName("decoBlockHedgeAspenStairs");
     
@@ -3103,10 +3114,10 @@ public class DecoBlockInitializer {
                 "decoBlockWillowMoulding");
     
         // Decorative blocks
-        DecoBlocks.willowGate = new DecoGateBlock(DecoBlockIDs.WILLOW_GATE_ID, "decoBlockGateWillow");
+        DecoBlocks.willowGate = new DecoGateBlock(DecoBlockIDs.WILLOW_GATE_ID, "decoBlockGateWillow", WoodTypeHelper.WILLOW_WOOD_TYPE);
         DecoBlocks.willowDoor = new DecoDoorBlockWood(DecoBlockIDs.WILLOW_DOOR_ID, DecoItemIDs.WILLOW_DOOR_ID, "decoBlockDoorWillow_upper", "decoBlockDoorWillow_lower");
         DecoBlocks.willowTrapdoor = new DecoTrapDoorBlock(DecoBlockIDs.WILLOW_TRAPDOOR_ID, "decoBlockTrapdoorWillow");
-        DecoBlocks.willowChair = new ChairBlock(DecoBlockIDs.WILLOW_CHAIR_ID, "Willow");
+        DecoBlocks.willowChair = new ChairBlock(DecoBlockIDs.WILLOW_CHAIR_ID, "Willow", WoodTypeHelper.WILLOW_WOOD_TYPE);
         DecoBlocks.filledWillowBarrel = new FilledBarrelBlock(DecoBlockIDs.FILLED_WILLOW_BARREL_ID, "decoBlockBarrelWillow");
         Item.itemsList[DecoBlocks.filledWillowBarrel.blockID] = new ItemMultiTextureTile(DecoBlocks.filledWillowBarrel.blockID - 256, DecoBlocks.filledWillowBarrel, FilledBarrelBlock.typeTags);
         DecoBlocks.willowLadder = new DecoLadderBlock(DecoBlockIDs.WILLOW_LADDER_ID, DecoBlockIDs.FLAMING_WILLOW_LADDER_ID, "decoBlockLadderWillow");
@@ -3130,7 +3141,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.WILLOW_HEDGE_SIDING_AND_CORNER_ID,
                 DecoBlocks.willowLeaves, 0,
                 "decoBlockHedgeWillowMoulding", false);
-        register(new MouldingBlockItem(DecoBlocks.willowHedgeMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.willowHedgeMoulding.blockID - 256));
         DecoBlocks.willowHedgeStairs = new HedgeStairsBlock(DecoBlockIDs.WILLOW_HEDGE_STAIRS_ID, DecoBlocks.willowLeaves, 0, false)
                 .setUnlocalizedName("decoBlockHedgeWillowStairs");
     
@@ -3172,10 +3183,10 @@ public class DecoBlockInitializer {
                 "decoBlockDarkOakMoulding");
     
         // Decorative blocks
-        DecoBlocks.darkOakGate = new DecoGateBlock(DecoBlockIDs.DARK_OAK_GATE_ID, "decoBlockGateDarkOak");
+        DecoBlocks.darkOakGate = new DecoGateBlock(DecoBlockIDs.DARK_OAK_GATE_ID, "decoBlockGateDarkOak", WoodTypeHelper.DARK_OAK_WOOD_TYPE);
         DecoBlocks.darkOakDoor = new DecoDoorBlockWood(DecoBlockIDs.DARK_OAK_DOOR_ID, DecoItemIDs.DARK_OAK_DOOR_ID, "decoBlockDoorDarkOak_upper", "decoBlockDoorDarkOak_lower");
         DecoBlocks.darkOakTrapdoor = new DecoTrapDoorBlock(DecoBlockIDs.DARK_OAK_TRAPDOOR_ID, "decoBlockTrapdoorDarkOak");
-        DecoBlocks.darkOakChair = new ChairBlock(DecoBlockIDs.DARK_OAK_CHAIR_ID, "DarkOak");
+        DecoBlocks.darkOakChair = new ChairBlock(DecoBlockIDs.DARK_OAK_CHAIR_ID, "DarkOak", WoodTypeHelper.DARK_OAK_WOOD_TYPE);
         DecoBlocks.filledDarkOakBarrel = new FilledBarrelBlock(DecoBlockIDs.FILLED_DARK_OAK_BARREL_ID, "decoBlockBarrelDarkOak");
         Item.itemsList[DecoBlocks.filledDarkOakBarrel.blockID] = new ItemMultiTextureTile(DecoBlocks.filledDarkOakBarrel.blockID - 256, DecoBlocks.filledDarkOakBarrel, FilledBarrelBlock.typeTags);
         DecoBlocks.darkOakLadder = new DecoLadderBlock(DecoBlockIDs.DARK_OAK_LADDER_ID, DecoBlockIDs.FLAMING_DARK_OAK_LADDER_ID, "decoBlockLadderDarkOak");
@@ -3199,7 +3210,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.DARK_OAK_HEDGE_SIDING_AND_CORNER_ID,
                 DecoBlocks.darkOakLeaves, 0,
                 "decoBlockHedgeDarkOakMoulding", false);
-        register(new MouldingBlockItem(DecoBlocks.darkOakHedgeMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.darkOakHedgeMoulding.blockID - 256));
         DecoBlocks.darkOakHedgeStairs = new HedgeStairsBlock(DecoBlockIDs.DARK_OAK_HEDGE_STAIRS_ID, DecoBlocks.darkOakLeaves, 0, false)
                 .setUnlocalizedName("decoBlockHedgeDarkOakStairs");
     
@@ -3241,10 +3252,10 @@ public class DecoBlockInitializer {
                 "decoBlockRedwoodMoulding");
     
         // Decorative blocks
-        DecoBlocks.redwoodGate = new DecoGateBlock(DecoBlockIDs.REDWOOD_GATE_ID, "decoBlockGateRedwood");
+        DecoBlocks.redwoodGate = new DecoGateBlock(DecoBlockIDs.REDWOOD_GATE_ID, "decoBlockGateRedwood", WoodTypeHelper.REDWOOD_WOOD_TYPE);
         DecoBlocks.redwoodDoor = new DecoDoorBlockWood(DecoBlockIDs.REDWOOD_DOOR_ID, DecoItemIDs.REDWOOD_DOOR_ID, "decoBlockDoorRedwood_upper", "decoBlockDoorRedwood_lower");
         DecoBlocks.redwoodTrapdoor = new DecoTrapDoorBlock(DecoBlockIDs.REDWOOD_TRAPDOOR_ID, "decoBlockTrapdoorRedwood");
-        DecoBlocks.redwoodChair = new ChairBlock(DecoBlockIDs.REDWOOD_CHAIR_ID, "Redwood");
+        DecoBlocks.redwoodChair = new ChairBlock(DecoBlockIDs.REDWOOD_CHAIR_ID, "Redwood", WoodTypeHelper.REDWOOD_WOOD_TYPE);
         DecoBlocks.filledRedwoodBarrel = new FilledBarrelBlock(DecoBlockIDs.FILLED_REDWOOD_BARREL_ID, "decoBlockBarrelRedwood");
         Item.itemsList[DecoBlocks.filledRedwoodBarrel.blockID] = new ItemMultiTextureTile(DecoBlocks.filledRedwoodBarrel.blockID - 256, DecoBlocks.filledRedwoodBarrel, FilledBarrelBlock.typeTags);
         DecoBlocks.redwoodLadder = new DecoLadderBlock(DecoBlockIDs.REDWOOD_LADDER_ID, DecoBlockIDs.FLAMING_REDWOOD_LADDER_ID, "decoBlockLadderRedwood");
@@ -3268,7 +3279,7 @@ public class DecoBlockInitializer {
                 DecoBlockIDs.REDWOOD_HEDGE_SIDING_AND_CORNER_ID,
                 DecoBlocks.redwoodLeaves, 0,
                 "decoBlockHedgeRedwoodMoulding", false);
-        register(new MouldingBlockItem(DecoBlocks.redwoodHedgeMoulding.blockID - 256));
+        register(new MouldingAndDecorativeBlockItem(DecoBlocks.redwoodHedgeMoulding.blockID - 256));
         DecoBlocks.redwoodHedgeStairs = new HedgeStairsBlock(DecoBlockIDs.REDWOOD_HEDGE_STAIRS_ID, DecoBlocks.redwoodLeaves, 0, false)
                 .setUnlocalizedName("decoBlockHedgeRedwoodStairs");
         
@@ -3294,7 +3305,7 @@ public class DecoBlockInitializer {
                     "decoBlockPlanksPaintedColumn_" + ColorUtils.colorOrder[color],
                     DecoBlocks.pastelPlanksSidingAndCorner[color].blockID,
                     "decoBlockPlanksPaintedMoulding." + ColorUtils.colorOrder[color]);
-            Item.itemsList[DecoBlocks.pastelPlanksMoulding[color].blockID] = new MouldingBlockItem(DecoBlocks.pastelPlanksMoulding[color].blockID - 256);
+            Item.itemsList[DecoBlocks.pastelPlanksMoulding[color].blockID] = new MouldingAndDecorativeBlockItem(DecoBlocks.pastelPlanksMoulding[color].blockID - 256);
             
             DecoBlocks.pastelPlanksStairs[color] = new WoodStairsBlock(pastelSubID++, DecoBlocks.pastelPlanks, color)
                     .setUnlocalizedName("decoBlockPlanksPaintedStairs." + ColorUtils.colorOrder[color]);

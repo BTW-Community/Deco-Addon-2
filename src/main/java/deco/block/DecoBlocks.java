@@ -668,6 +668,7 @@ public class DecoBlocks {
     public static Block cherryLeaves;
     public static Block legacyCherrySapling;
     public static Block cherrySapling;
+    public static Block whiteCherrySapling;
 
     public static Block cherryStairs;
     public static Block cherrySidingAndCorner;

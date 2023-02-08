@@ -1,7 +1,42 @@
 #------ Wood ------#
 # Changing organization - will update the rest of the file in time
 
-## Oak
+# General
+
+tile.decoBlockBarrel1.oak.name=Oak Barrel
+tile.decoBlockBarrel1.spruce.name=Spruce Barrel
+tile.decoBlockBarrel1.birch.name=Birch Barrel
+tile.decoBlockBarrel1.jungle.name=Jungle Barrel
+tile.decoBlockBarrel2.blood.name=Blood Wood Barrel
+tile.decoBlockBarrel2.darkOak.name=Dark Oak Barrel
+tile.decoBlockBarrel2.acacia.name=Acacia Barrel
+tile.decoBlockBarrel2.mahogany.name=Mahogany Barrel
+tile.decoBlockBarrel3.mangrove.name=Mangrove Barrel
+tile.decoBlockBarrel3.hazel.name=Hazel Barrel
+tile.decoBlockBarrel3.fir.name=Fir Barrel
+tile.decoBlockBarrel3.aspen.name=Aspen Barrel
+tile.decoBlockBarrel4.willow.name=Willow Barrel
+tile.decoBlockBarrel4.cherry.name=Cherry Barrel
+tile.decoBlockBarrel4.redwood.name=Redwood Barrel
+
+tile.woodSlab.oak.name=Oak Slab
+tile.woodSlab.spruce.name=Spruce Slab
+tile.woodSlab.birch.name=Birch Slab
+tile.woodSlab.jungle.name=Jungle Slab
+tile.woodSlab.blood.name=Blood Wood Slab
+tile.woodSlab.darkOak.name=Dark Oak Slab
+tile.woodSlab.acacia.name=Acacia Slab
+tile.woodSlab.mahogany.name=Mahogany Slab
+
+tile.decoBlockVanillaWoodSlab.mangrove.name=Mangrove Slab
+tile.decoBlockVanillaWoodSlab.hazel.name=Hazel Slab
+tile.decoBlockVanillaWoodSlab.fir.name=Fir Slab
+tile.decoBlockVanillaWoodSlab.aspen.name=Aspen Slab
+tile.decoBlockVanillaWoodSlab.willow.name=Willow Slab
+tile.decoBlockVanillaWoodSlab.cherry.name=Cherry Slab
+tile.decoBlockVanillaWoodSlab.redwood.name=Redwood Slab
+
+# Oak
 
 tile.wood.oak.name=Oak Planks
 tile.decoBlockChairOak.name=Oak Chair

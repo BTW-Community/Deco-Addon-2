@@ -661,4 +661,5 @@ public class DecoBlockIDs {
     public static final int REDWOOD_HEDGE_MOULDING_ID = 3878;
     public static final int BARREL_4_ID = 3879;
     public static final int WILLOW_VINES_ID = 3880;
+    public static final int WHITE_CHERRY_SAPLING_ID = 3881;
 }

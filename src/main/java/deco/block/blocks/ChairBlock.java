@@ -10,8 +10,11 @@ import net.fabricmc.api.Environment;
 import net.minecraft.src.*;
 
 public class ChairBlock extends Block {
-	public ChairBlock(int id, String tag) {
+	private final int PLANK_META;
+	
+	public ChairBlock(int id, String tag, int plankMeta) {
 		super(id, BTWBlocks.plankMaterial);
+		this.PLANK_META = plankMeta;
 		this.setUnlocalizedName("decoBlockChair" + tag);
 		this.setCreativeTab(CreativeTabs.tabDecorations);
 		this.initBlockBounds(.0625F, 0, .0625F, 0.9375F, .625F, 0.9375F);
@@ -107,6 +110,12 @@ public class ChairBlock extends Block {
 	}
 	
 	//----------- Client Side Functionality -----------//
+	
+	@Environment(EnvType.CLIENT)
+	@Override
+	public Icon getIcon(int side, int meta) {
+		return Block.planks.getIcon(side, this.PLANK_META);
+	}
 	
 	@Environment(EnvType.CLIENT)
 	@Override

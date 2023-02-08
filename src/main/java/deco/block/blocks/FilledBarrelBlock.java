@@ -2,6 +2,7 @@ package deco.block.blocks;
 
 import btw.block.BTWBlocks;
 import btw.block.util.Flammability;
+import btw.client.render.util.RenderUtils;
 import btw.item.BTWItems;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -48,6 +49,8 @@ public class FilledBarrelBlock extends Block {
 	
 	//----------- Client Side Functionality -----------//
 	
+	private boolean secondPass = false;
+	
 	@Environment(EnvType.CLIENT)
 	private Icon[] topIconArray;
 	@Environment(EnvType.CLIENT)
@@ -62,20 +65,21 @@ public class FilledBarrelBlock extends Block {
 		this.bottomIcon = register.registerIcon(this.name + "_top");
 		
 		for (int i = 0; i < types.length; i++) {
-			topIconArray[i] = register.registerIcon(this.name + "_" + typeTags[i]);
+			topIconArray[i] = register.registerIcon("decoBlockBarrelTop" + "_" + typeTags[i]);
 		}
 	}
 	
 	@Environment(EnvType.CLIENT)
 	@Override
 	public Icon getIcon(int side, int metadata) {
-		switch (side) {
-			case 0:
-				return this.bottomIcon;
-			case 1:
-				return this.topIconArray[metadata];
-			default:
-				return this.blockIcon;
+		if (secondPass && side == 1) {
+			return this.topIconArray[metadata];
+		}
+		else if (side <= 1) {
+			return this.bottomIcon;
+		}
+		else {
+			return this.blockIcon;
 		}
 	}
 	
@@ -85,5 +89,25 @@ public class FilledBarrelBlock extends Block {
 		for (int i = 0; i < types.length; i++) {
 			list.add(new ItemStack(blockID, 1, i));
 		}
+	}
+	
+	@Environment(EnvType.CLIENT)
+	@Override
+	public void renderBlockSecondPass(RenderBlocks renderBlocks, int x, int y, int z, boolean firstPassResult) {
+		this.secondPass = true;
+		renderBlocks.setRenderBounds(0, 0, 0, 1, 1, 1);
+		renderBlocks.renderStandardBlock(this, x, y, z);
+		this.secondPass = false;
+	}
+	
+	@Environment(EnvType.CLIENT)
+	@Override
+	public void renderBlockAsItem(RenderBlocks renderBlocks, int itemDamage, float brightness) {
+		renderBlocks.renderBlockAsItemVanilla(this, itemDamage, brightness);
+		
+		this.secondPass = true;
+		// Weird offset is done to prevent z-fighting
+		RenderUtils.renderInvBlockWithMetadata(renderBlocks, this, -0.5F, -0.499F, -0.5F, itemDamage);
+		this.secondPass = false;
 	}
 }

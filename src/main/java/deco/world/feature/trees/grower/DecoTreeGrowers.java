@@ -6,7 +6,6 @@ import deco.block.util.WoodTypeHelper;
 public class DecoTreeGrowers {
 	//------ Oak ------//
 	
-	public static final AbstractTreeGrower BRANCHING_OAK_TREE = null;
 	public static final AbstractTreeGrower HUGE_OAK_TREE = new HugeTreeGrower("deco:huge_oak", TreeGrowers.OAK_WOOD_TYPE);
 	
 	//------ Spruce ------//
@@ -15,16 +14,18 @@ public class DecoTreeGrowers {
 	
 	//------ Birch ------//
 	
-	public static final AbstractTreeGrower BRANCHING_BIRCH_TREE = null;
 	public static final AbstractTreeGrower BIG_BIRCH_TREE = new BigTreeGrower("deco:big_birch", TreeGrowers.BIRCH_WOOD_TYPE);
 	public static final AbstractTreeGrower HUGE_BIRCH_TREE = new HugeTreeGrower("deco:huge_birch", TreeGrowers.BIRCH_WOOD_TYPE);
 	
 	//------ Cherry ------//
 	
-	public static final AbstractTreeGrower BRANCHING_CHERRY_TREE = null;
 	public static final AbstractTreeGrower CHERRY_TREE = new StandardTreeGrower("deco:cherry", 5, 7, WoodTypeHelper.CHERRY_TREE_WOOD_TYPE);
 	public static final AbstractTreeGrower BIG_CHERRY_TREE = new BigTreeGrower("deco:big_cherry", WoodTypeHelper.CHERRY_TREE_WOOD_TYPE);
 	public static final AbstractTreeGrower HUGE_CHERRY_TREE = new HugeTreeGrower("deco:huge_cherry", WoodTypeHelper.CHERRY_TREE_WOOD_TYPE);
+	
+	public static final AbstractTreeGrower WHITE_CHERRY_TREE = new StandardTreeGrower("deco:white_cherry", 5, 7, WoodTypeHelper.WHITE_CHERRY_TREE_WOOD_TYPE);
+	public static final AbstractTreeGrower BIG_WHITE_CHERRY_TREE = new BigTreeGrower("deco:big_white_cherry", WoodTypeHelper.WHITE_CHERRY_TREE_WOOD_TYPE);
+	public static final AbstractTreeGrower HUGE_WHITE_CHERRY_TREE = new HugeTreeGrower("deco:huge_white_cherry", WoodTypeHelper.WHITE_CHERRY_TREE_WOOD_TYPE);
 	
 	//------ Acacia ------//
 	
