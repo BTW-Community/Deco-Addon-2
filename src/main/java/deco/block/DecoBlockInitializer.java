@@ -2291,12 +2291,12 @@ public class DecoBlockInitializer {
                 new String[] {"decoBlockBarrelMangrove_top", "decoBlockBarrelHazel_top", "decoBlockBarrelFir_top", "decoBlockBarrelAspen_top"},
                 new String[] {"decoBlockBarrelMangrove_side", "decoBlockBarrelHazel_side", "decoBlockBarrelFir_side", "decoBlockBarrelAspen_side"})
                 .setUnlocalizedName("decoBlockBarrel3");
-        Item.itemsList[DecoBlocks.barrel3.blockID] = new ItemMultiTextureTile(DecoBlocks.barrel3.blockID - 256, DecoBlocks.barrel3, new String[] {"mangrove", "hazel", "fir"});
+        Item.itemsList[DecoBlocks.barrel3.blockID] = new ItemMultiTextureTile(DecoBlocks.barrel3.blockID - 256, DecoBlocks.barrel3, new String[] {"mangrove", "hazel", "fir", "aspen"});
         DecoBlocks.barrel4 = new BarrelBlock(DecoBlockIDs.BARREL_4_ID,
                 new String[] {"decoBlockBarrelWillow_top", "decoBlockBarrelCherry_top", "decoBlockBarrelRedwood_top"},
                 new String[] {"decoBlockBarrelWillow_side", "decoBlockBarrelCherry_side", "decoBlockBarrelRedwood_side"})
                 .setUnlocalizedName("decoBlockBarrel4");
-        Item.itemsList[DecoBlocks.barrel4.blockID] = new ItemMultiTextureTile(DecoBlocks.barrel3.blockID - 256, DecoBlocks.barrel3, new String[] {"willow", "cherry", "redwood"});
+        Item.itemsList[DecoBlocks.barrel4.blockID] = new ItemMultiTextureTile(DecoBlocks.barrel4.blockID - 256, DecoBlocks.barrel4, new String[] {"willow", "cherry", "redwood"});
         
         DecoBlocks.crate = new CrateBlock(DecoBlockIDs.CRATE_ID);
         Item.itemsList[DecoBlocks.crate.blockID] = new ItemMultiTextureTile(DecoBlocks.crate.blockID - 256, DecoBlocks.crate, WoodTypeHelper.woodNames);
@@ -2599,13 +2599,15 @@ public class DecoBlockInitializer {
                         "decoBlockLeavesCherryWhite"
                 })
                 .setUnlocalizedName("decoBlockLeavesCherry");
+        register(new ItemMultiTextureTile(DecoBlocks.cherryLeaves.blockID - 256, DecoBlocks.cherryLeaves, new String[] {"pink", "white"}));
         DecoBlocks.legacyCherrySapling = new LegacyCherrySaplingBlock(DecoBlockIDs.LEGACY_CHERRY_SAPLING_ID);
         Item.itemsList[DecoBlocks.legacyCherrySapling.blockID] = new ItemMultiTextureTile(DecoBlocks.legacyCherrySapling.blockID - 256, DecoBlocks.legacyCherrySapling, LegacyCherrySaplingBlock.saplingTypes);
         DecoBlocks.cherrySapling = new SaplingBlock(DecoBlockIDs.CHERRY_SAPLING_ID, "decoBlockSaplingCherry", "decoBlockSaplingCherry_0")
                 .addTreeGrower(DecoTreeGrowers.CHERRY_TREE, 9)
                 .addTreeGrower(DecoTreeGrowers.BIG_CHERRY_TREE, 1)
                 .add2x2TreeGrower(DecoTreeGrowers.HUGE_CHERRY_TREE, 10);
-        DecoBlocks.whiteCherrySapling = new SaplingBlock(DecoBlockIDs.WHITE_CHERRY_SAPLING_ID, "decoBlockSaplingCherry", "decoBlockSaplingCherry_0")
+        register(new SaplingBlockItem(DecoBlocks.cherrySapling.blockID - 256, DecoBlocks.cherrySapling));
+        DecoBlocks.whiteCherrySapling = new SaplingBlock(DecoBlockIDs.WHITE_CHERRY_SAPLING_ID, "decoBlockSaplingCherryWhite", "decoBlockSaplingCherryWhite_0")
                 .addTreeGrower(DecoTreeGrowers.WHITE_CHERRY_TREE, 9)
                 .addTreeGrower(DecoTreeGrowers.BIG_WHITE_CHERRY_TREE, 1)
                 .add2x2TreeGrower(DecoTreeGrowers.HUGE_WHITE_CHERRY_TREE, 10);

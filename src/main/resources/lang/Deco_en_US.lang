@@ -767,11 +767,14 @@ tile.decoBlockCherryLog.wood.name=Cherry Wood
 tile.decoBlockCherryLog.strippedWood.name=Stripped Cherry Wood
 tile.decoBlockChewedCherry.name=Chewed Cherry Log
 
-tile.decoBlockLeavesCherry.name=Cherry Leaves
+tile.decoBlockLeavesCherry.pink.name=Pink Cherry Leaves
+tile.decoBlockLeavesCherry.white.name=White Cherry Leaves
 tile.decoBlockSaplingCherryOld.cherry.name=Old Cherry Sapling
 tile.decoBlockSaplingCherryOld.cherryMature.name=Old Mature Cherry Sapling
-tile.decoBlockSaplingCherry.name=Cherry Sapling
-tile.decoBlockSaplingCherry.mature.name=Mature Cherry Sapling
+tile.decoBlockSaplingCherry.name=Pink Cherry Sapling
+tile.decoBlockSaplingCherry.mature.name=Mature Pink Cherry Sapling
+tile.decoBlockSaplingCherryWhite.name=White Cherry Sapling
+tile.decoBlockSaplingCherryWhite.mature.name=Mature White Cherry Sapling
 
 tile.wood.cherry.name=Cherry Planks
 tile.decoBlockCherryStairs.name=Cherry Stairs
