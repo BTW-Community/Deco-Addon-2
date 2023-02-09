@@ -2688,6 +2688,8 @@ tile.decoBlockHedge.jungle.name=Jungle Hedge
 tile.decoBlockGrass.grass.name=Tall Grass
 tile.decoBlockGrass.fern.name=Large Fern
 
+tile.decoBlockWillowVine.name=Willow Vine
+
 # Vanilla/BTW Blocks Renamed
 
 tile.fcBlockStoneRough.name=Rough Stone

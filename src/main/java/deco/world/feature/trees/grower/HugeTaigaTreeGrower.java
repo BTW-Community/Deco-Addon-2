@@ -9,8 +9,8 @@ import net.minecraft.src.World;
 import java.util.Random;
 
 public class HugeTaigaTreeGrower extends AbstractTreeGrower {
-	protected HugeTaigaTreeGrower(String name, TreeGrowers.TreeWoodType woodType) {
-		super(name, woodType);
+	protected HugeTaigaTreeGrower(String name, int minTreeHeight, int maxTreeHeight, TreeGrowers.TreeWoodType woodType) {
+		super(name, minTreeHeight, maxTreeHeight, woodType);
 	}
 	
 	@Override
@@ -19,7 +19,7 @@ public class HugeTaigaTreeGrower extends AbstractTreeGrower {
 		x++;
 		z++;
 		
-		int treeHeight = rand.nextInt(10) + 35;
+		int treeHeight = rand.nextInt(this.maxTreeHeight - this.minTreeHeight + 1) + this.minTreeHeight;
 		int canopyHeight = rand.nextInt(5) + 10;
 		int var8 = treeHeight - canopyHeight;
 		int var9 = 4;

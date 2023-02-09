@@ -525,6 +525,8 @@ public class DecoBlocks {
     
     public static Block flowerPot;
     
+    public static Block willowVines;
+    
     //------ Light Source Blocks ------//
     
     public static Block lantern;

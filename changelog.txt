@@ -17,8 +17,9 @@ Some textures in this release have been used or modified from the following sour
     - Red autumn saplings are now made with a dark oak sapling instead of a cherry sapling.
     - Dark oak trees may be grown in a 1x1 and a 2x2
 - Added white cherry trees, and adjusted the pink cherry leaves texture slightly. White sherry saplings are made with a cherry sapling, white dye (or bonemeal), and a fertilizer.
-- Added the ability for birch, cherry, hazel, and autumn trees to grow into big variants like oak trees can.
-- Added the ability for oak, spruce, birch, cherry, hazel, and autumn trees to grow into huge variants when placed in a 2x2.
+- Added the ability for birch, cherry, hazel, and autumn trees to grow into large variants.
+- Added the ability for oak, spruce, cherry, hazel, and autumn trees to grow into huge variants when placed in a 2x2.
+- Added new variants for spruce trees.
 - Changed the texture of mahogany, cherry, hazel, and autumn leaves.
 - Changed the texture of cherry saplings.
 - Changed barrels so that their contents are handled via overlays instead of having a texture for every type of content for every type of barrel.

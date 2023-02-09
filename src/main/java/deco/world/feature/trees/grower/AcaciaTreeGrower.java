@@ -9,13 +9,13 @@ import net.minecraft.src.World;
 import java.util.Random;
 
 public class AcaciaTreeGrower extends AbstractTreeGrower {
-	protected AcaciaTreeGrower(String name, TreeGrowers.TreeWoodType woodType) {
-		super(name, woodType);
+	protected AcaciaTreeGrower(String name, int minTreeHeight, int maxTreeHeight, TreeGrowers.TreeWoodType woodType) {
+		super(name, minTreeHeight, maxTreeHeight, woodType);
 	}
 	
 	@Override
 	public boolean growTree(World world, Random rand, int x, int y, int z, boolean isWorldGen) {
-		int baseHeight = 4 + rand.nextInt(3);
+		int baseHeight = this.minTreeHeight + rand.nextInt(this.maxTreeHeight - this.minTreeHeight + 1);
 		
 		//Base tree
 		for(int i = 1; i < baseHeight + 4; i++) {

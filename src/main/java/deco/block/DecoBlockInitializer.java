@@ -6,7 +6,6 @@ import btw.block.blocks.*;
 import btw.block.tileentity.beacon.BeaconTileEntity;
 import btw.block.util.Flammability;
 import btw.item.blockitems.MouldingAndDecorativeBlockItem;
-import btw.item.blockitems.MouldingAndDecorativeBlockItem;
 import btw.item.blockitems.SaplingBlockItem;
 import btw.item.blockitems.SidingAndCornerBlockItem;
 import btw.item.blockitems.legacy.LegacySubstitutionBlockItem;
@@ -2178,6 +2177,8 @@ public class DecoBlockInitializer {
         register(DecoBlocks.carvedPumpkin, new String[] {"0", "1", "2"});
         DecoBlocks.jackOLantern = new JackOLanternBlock(DecoBlockIDs.JACK_O_LANTERN_ID);
         register(DecoBlocks.jackOLantern, new String[] {"0", "1", "2"});
+        
+        DecoBlocks.willowVines = new WillowVineBlock(DecoBlockIDs.WILLOW_VINES_ID);
     }
 
     private static void initWoodTypes() {
@@ -2439,7 +2440,11 @@ public class DecoBlockInitializer {
         DecoBlocks.spruceButton = new DecoButtonBlock(DecoBlockIDs.SPRUCE_BUTTON_ID, true, Block.planks, WoodTypeHelper.SPRUCE_WOOD_TYPE)
                 .setUnlocalizedName("decoBlockButtonSpruce");
     
-        ((SaplingBlock) BTWBlocks.spruceSapling).add2x2TreeGrower(DecoTreeGrowers.HUGE_SPRUCE_TREE, 10);
+        ((SaplingBlock) BTWBlocks.spruceSapling)
+                .addTreeGrower(DecoTreeGrowers.MEDIUM_SPRUCE_TREE, 10)
+                .addTreeGrower(DecoTreeGrowers.TALL_SPRUCE_TREE, 10)
+                .addTreeGrower(DecoTreeGrowers.BIG_SPRUCE_TREE, 10)
+                .add2x2TreeGrower(DecoTreeGrowers.HUGE_SPRUCE_TREE, 10);
     
         // Hedge
         DecoBlocks.spruceHedgeSidingAndCorner = new HedgeSidingAndCornerBlock(DecoBlockIDs.SPRUCE_HEDGE_SIDING_AND_CORNER_ID,
@@ -2474,11 +2479,10 @@ public class DecoBlockInitializer {
         DecoBlocks.birchButton = new DecoButtonBlock(DecoBlockIDs.BIRCH_BUTTON_ID, true, Block.planks, WoodTypeHelper.BIRCH_WOOD_TYPE)
                 .setUnlocalizedName("decoBlockButtonBirch");
     
-        ((SaplingBlock) BTWBlocks.birchSapling).removeTreeGrower("btw:birch");
+        ((SaplingBlock) BTWBlocks.birchSapling).removeTreeGrower(TreeGrowers.BIRCH_TREE.name);
         ((SaplingBlock) BTWBlocks.birchSapling)
                 .addTreeGrower(TreeGrowers.BIRCH_TREE, 9)
-                .addTreeGrower(DecoTreeGrowers.BIG_BIRCH_TREE, 1)
-                .add2x2TreeGrower(DecoTreeGrowers.HUGE_BIRCH_TREE, 10);
+                .addTreeGrower(DecoTreeGrowers.BIG_BIRCH_TREE, 1);
     
         // Hedge
         DecoBlocks.birchHedgeSidingAndCorner = new HedgeSidingAndCornerBlock(DecoBlockIDs.BIRCH_HEDGE_SIDING_AND_CORNER_ID,
@@ -2965,6 +2969,9 @@ public class DecoBlockInitializer {
         Item.itemsList[DecoBlocks.legacyFirSapling.blockID] = new ItemMultiTextureTile(DecoBlocks.legacyFirSapling.blockID - 256, DecoBlocks.legacyFirSapling, LegacyFirSaplingBlock.saplingTypes);
         DecoBlocks.firSapling = new SaplingBlock(DecoBlockIDs.FIR_SAPLING_ID, "decoBlockSaplingFir", "decoBlockSaplingFir_0")
                 .addTreeGrower(DecoTreeGrowers.FIR_TREE, 10)
+                .addTreeGrower(DecoTreeGrowers.MEDIUM_FIR_TREE, 10)
+                .addTreeGrower(DecoTreeGrowers.TALL_FIR_TREE, 10)
+                .addTreeGrower(DecoTreeGrowers.BIG_FIR_TREE, 10)
                 .add2x2TreeGrower(DecoTreeGrowers.HUGE_FIR_TREE, 10);
         register(new SaplingBlockItem(DecoBlocks.firSapling.blockID - 256, DecoBlocks.firSapling));
     

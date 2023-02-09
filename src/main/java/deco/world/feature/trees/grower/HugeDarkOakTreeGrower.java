@@ -8,14 +8,8 @@ import net.minecraft.src.World;
 import java.util.Random;
 
 public class HugeDarkOakTreeGrower extends AbstractTreeGrower {
-	protected int minTreeHeight;
-	protected int maxTreeHeight;
-	
-	public HugeDarkOakTreeGrower(String name, int minTreeHeight, int maxTreeHeight, TreeGrowers.TreeWoodType woodType) {
-		super(name, woodType);
-		
-		this.minTreeHeight = minTreeHeight;
-		this.maxTreeHeight = maxTreeHeight;
+	protected HugeDarkOakTreeGrower(String name, int minTreeHeight, int maxTreeHeight, TreeGrowers.TreeWoodType woodType) {
+		super(name, minTreeHeight, maxTreeHeight, woodType);
 	}
 	
 	@Override
