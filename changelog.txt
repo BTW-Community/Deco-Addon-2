@@ -1,4 +1,4 @@
-## Version 4.0.1 ##
+## Version 4.1.0 ##
 Some textures in this release have been used or modified from the following sources according to their license:
 - Oh the Biomes You'll Go
 - Terra Incognita
