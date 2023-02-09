@@ -63,7 +63,7 @@ public class DecoTreeGrowers {
 	//------ Dark Oak ------//
 	
 	public static final AbstractTreeGrower DARK_OAK_TREE = null;
-	public static final AbstractTreeGrower HUGE_DARK_OAK_TREE = null;
+	public static final AbstractTreeGrower HUGE_DARK_OAK_TREE = new DarkOakTreeGrower("deco:huge_dark_oak", 10, 20, WoodTypeHelper.DARK_OAK_TREE_WOOD_TYPE);
 	
 	//------ Redwood ------//
 	

@@ -1,6 +1,9 @@
 ## Version 4.0.1 ##
 Some textures in this release have been used or modified from the following sources according to their license:
 - Oh the Biomes You'll Go
+- Terra Incognita
+- Compat Makeover
+- Promenade
 
 - Updated to BTW CE v2.0.2
 - Updated saplings to the new daily growth system. Old saplings may be converted in a crafting grid.
@@ -16,7 +19,8 @@ Some textures in this release have been used or modified from the following sour
 - Added white cherry trees, and adjusted the pink cherry leaves texture slightly. White sherry saplings are made with a cherry sapling, white dye (or bonemeal), and a fertilizer.
 - Added the ability for birch, cherry, hazel, and autumn trees to grow into big variants like oak trees can.
 - Added the ability for oak, spruce, birch, cherry, hazel, and autumn trees to grow into huge variants when placed in a 2x2.
-- Changed the texture of mahogany leaves, as well as all types of autumn leaves.
+- Changed the texture of mahogany, cherry, hazel, and autumn leaves.
+- Changed the texture of cherry saplings.
 - Changed barrels so that their contents are handled via overlays instead of having a texture for every type of content for every type of barrel.
 - Removed chair and gate textures, as they were simply duplicates of the plank texture.
 - Fixed an issue where fir planks were associated with hazel sub-blocks.
