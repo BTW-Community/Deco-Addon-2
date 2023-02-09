@@ -4,6 +4,7 @@ Some textures in this release have been used or modified from the following sour
 - Terra Incognita
 - Compat Makeover
 - Promenade
+- Wild Nature
 
 - Updated to BTW CE v2.0.2
 - Updated saplings to the new daily growth system. Old saplings may be converted in a crafting grid.
@@ -11,11 +12,11 @@ Some textures in this release have been used or modified from the following sour
     - Aspen saplings are made with a birch sapling, orange dye, and a fertilizer (bonemeal or fertilizer) in a cauldron.
     - Willow saplings are made with an oak sapling, green dye, and a fertilizer.
     - Redwood saplings are made with a spruce sapling, red dye, and a fertilizer.
-    - All trees have a 1x1 and 2x2 form
+    - All trees except aspen have a 2x2 form in addition to their standard form.
 - Changed existing cherry wood type to be dark oak, and added a new cherry wood type.
     - Dark oak saplings are made with an oak sapling, black dye (or ink sac), and a fertilizer.
     - Red autumn saplings are now made with a dark oak sapling instead of a cherry sapling.
-    - Dark oak trees may be grown in a 1x1 and a 2x2
+    - Dark oak trees may be grown in a 1x1 and a 2x2.
 - Added white cherry trees, and adjusted the pink cherry leaves texture slightly. White sherry saplings are made with a cherry sapling, white dye (or bonemeal), and a fertilizer.
 - Added the ability for birch, cherry, hazel, and autumn trees to grow into large variants.
 - Added the ability for oak, spruce, cherry, hazel, and autumn trees to grow into huge variants when placed in a 2x2.
