@@ -7,11 +7,8 @@ import net.minecraft.src.World;
 import java.util.Random;
 
 public class MahoganyTreeGrower extends AbstractTreeGrower {
-	protected TreeGrowers.TreeWoodType woodType;
-	
 	protected MahoganyTreeGrower(String name, TreeGrowers.TreeWoodType woodType) {
-		super(name);
-		this.woodType = woodType;
+		super(name, woodType);
 	}
 	
 	@Override

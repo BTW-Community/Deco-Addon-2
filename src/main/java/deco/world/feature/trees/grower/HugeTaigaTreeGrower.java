@@ -9,11 +9,8 @@ import net.minecraft.src.World;
 import java.util.Random;
 
 public class HugeTaigaTreeGrower extends AbstractTreeGrower {
-	protected TreeGrowers.TreeWoodType woodType;
-	
 	protected HugeTaigaTreeGrower(String name, TreeGrowers.TreeWoodType woodType) {
-		super(name);
-		this.woodType = woodType;
+		super(name, woodType);
 	}
 	
 	@Override

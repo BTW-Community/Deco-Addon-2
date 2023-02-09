@@ -7,11 +7,8 @@ import net.minecraft.src.World;
 import java.util.Random;
 
 public class AspenTreeGrower extends AbstractTreeGrower {
-	protected TreeGrowers.TreeWoodType woodType;
-	
 	protected AspenTreeGrower(String name, TreeGrowers.TreeWoodType woodType) {
-		super(name);
-		this.woodType = woodType;
+		super(name, woodType);
 	}
 	
 	@Override

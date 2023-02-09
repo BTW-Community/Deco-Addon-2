@@ -9,11 +9,8 @@ import net.minecraft.src.World;
 import java.util.Random;
 
 public class AcaciaTreeGrower extends AbstractTreeGrower {
-	protected TreeGrowers.TreeWoodType woodType;
-	
 	protected AcaciaTreeGrower(String name, TreeGrowers.TreeWoodType woodType) {
-		super(name);
-		this.woodType = woodType;
+		super(name, woodType);
 	}
 	
 	@Override
@@ -125,12 +122,5 @@ public class AcaciaTreeGrower extends AbstractTreeGrower {
 		if (size == 3) {
 			this.setBlockAndMetadata(world, x, y, z, this.woodType.woodBlockID, this.woodType.woodMetadata, isWorldGen);
 		}
-	}
-	
-	private boolean isReplaceable(World world, int x, int y, int z) {
-		int blockID = world.getBlockId(x, y, z);
-		Block block = Block.blocksList[blockID];
-		
-		return world.isAirBlock(x, y, z) || block.isLeafBlock(world, x, y, z) || block.blockMaterial.isReplaceable();
 	}
 }

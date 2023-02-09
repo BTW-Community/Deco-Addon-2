@@ -9,12 +9,8 @@ import net.minecraft.src.World;
 import java.util.Random;
 
 public class HugeTreeGrower extends AbstractTreeGrower {
-	protected TreeGrowers.TreeWoodType woodType;
-	
 	protected HugeTreeGrower(String name, TreeGrowers.TreeWoodType woodType) {
-		super(name);
-		this.woodType = woodType;
-		
+		super(name, woodType);
 		this.setScale(1, 1, 1);
 	}
 	
