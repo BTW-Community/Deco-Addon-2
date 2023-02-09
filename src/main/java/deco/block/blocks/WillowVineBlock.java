@@ -1,8 +1,10 @@
 package deco.block.blocks;
 
 import btw.block.util.Flammability;
+import btw.item.items.ShearsItem;
 import btw.world.util.WorldUtils;
 import com.prupe.mcpatcher.cc.ColorizeBlock;
+import deco.block.DecoBlocks;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.src.*;
@@ -74,6 +76,27 @@ public class WillowVineBlock extends Block {
 	@Override
 	public boolean isBlockClimbable(World world, int i, int j, int k) {
 		return true;
+	}
+	
+	@Override
+	public int idDropped(int metadata, Random rand, int fortuneModifier) {
+		return 0;
+	}
+	
+	@Override
+	public int quantityDropped(Random rand) {
+		return 0;
+	}
+	
+	@Override
+	public void harvestBlock(World world, EntityPlayer player, int x, int y, int z, int par6) {
+		if (!world.isRemote && player.getCurrentEquippedItem() != null && player.getCurrentEquippedItem().getItem() instanceof ShearsItem) {
+			player.addStat(StatList.mineBlockStatArray[this.blockID], 1);
+			this.dropBlockAsItem_do(world, x, y, z, new ItemStack(DecoBlocks.willowVines));
+		}
+		else {
+			super.harvestBlock(world, player, x, y, z, par6);
+		}
 	}
 	
 	//------------- Class Specific Methods ------------//
