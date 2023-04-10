@@ -17,6 +17,12 @@ public class AcaciaTreeGrower extends AbstractTreeGrower {
 	public boolean growTree(World world, Random rand, int x, int y, int z, boolean isWorldGen) {
 		int baseHeight = this.minTreeHeight + rand.nextInt(this.maxTreeHeight - this.minTreeHeight + 1);
 		
+		Block blockBelow = Block.blocksList[world.getBlockId(x, y - 1, z)];
+		
+		if (blockBelow == null || !blockBelow.canSaplingsGrowOnBlock(world, x, y - 1, z)) {
+			return false;
+		}
+		
 		//Base tree
 		for(int i = 1; i < baseHeight + 4; i++) {
 			int blockID = world.getBlockId(x, y + i, z);

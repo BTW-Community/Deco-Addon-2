@@ -61,13 +61,13 @@ public class DecoTreeGrowers {
 	
 	//------ Willow ------//
 	
-	public static final AbstractTreeGrower WILLOW_TREE = new SwampTreeGrower("deco:willow", 5, 8, WoodTypeHelper.WILLOW_TREE_WOOD_TYPE);
+	public static final AbstractTreeGrower WILLOW_TREE = new WillowTreeGrower("deco:willow", 5, 8, WoodTypeHelper.WILLOW_TREE_WOOD_TYPE);
 	public static final AbstractTreeGrower HUGE_WILLOW_TREE = new HugeWillowTreeGrower("deco:huge_willow", 9, 12, WoodTypeHelper.WILLOW_TREE_WOOD_TYPE);
 	
 	//------ Dark Oak ------//
 	
 	public static final AbstractTreeGrower DARK_OAK_TREE = new BranchingTreeGrower("deco:dark_oak", 10, 20, WoodTypeHelper.DARK_OAK_TREE_WOOD_TYPE);
-	public static final AbstractTreeGrower HUGE_DARK_OAK_TREE = new HugeDarkOakTreeGrower("deco:huge_dark_oak", 7, 18, WoodTypeHelper.DARK_OAK_TREE_WOOD_TYPE);
+	public static final AbstractTreeGrower HUGE_DARK_OAK_TREE = new WillowTreeGrower("deco:huge_dark_oak", 7, 18, WoodTypeHelper.DARK_OAK_TREE_WOOD_TYPE);
 	
 	//------ Redwood ------//
 	

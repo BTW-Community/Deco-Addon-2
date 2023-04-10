@@ -153,19 +153,22 @@ public class WillowVineBlock extends Block {
 	@Override
 	@Environment(EnvType.CLIENT)
 	public int getBlockColor() {
-		return ColorizeBlock.colorizeBlock(this) ? ColorizeBlock.blockColor : ColorizerFoliage.getFoliageColorBasic();
+		return 0x437B28;
+		//return ColorizeBlock.colorizeBlock(this) ? ColorizeBlock.blockColor : ColorizerFoliage.getFoliageColorBasic();
 	}
 	
 	@Override
 	@Environment(EnvType.CLIENT)
 	public int getRenderColor(int par1) {
-		return ColorizeBlock.colorizeBlock(this, par1) ? ColorizeBlock.blockColor : ColorizerFoliage.getFoliageColorBasic();
+		return 0x437B28;
+		//return ColorizeBlock.colorizeBlock(this, par1) ? ColorizeBlock.blockColor : ColorizerFoliage.getFoliageColorBasic();
 	}
 	
 	@Override
 	@Environment(EnvType.CLIENT)
 	public int colorMultiplier(IBlockAccess par1IBlockAccess, int par2, int par3, int par4) {
-		return ColorizeBlock.colorizeBlock(this, par1IBlockAccess, par2, par3, par4) ? ColorizeBlock.blockColor :
-				par1IBlockAccess.getBiomeGenForCoords(par2, par4).getBiomeFoliageColor();
+		return 0x437B28;
+		//return ColorizeBlock.colorizeBlock(this, par1IBlockAccess, par2, par3, par4) ? ColorizeBlock.blockColor :
+		//		par1IBlockAccess.getBiomeGenForCoords(par2, par4).getBiomeFoliageColor();
 	}
 }
