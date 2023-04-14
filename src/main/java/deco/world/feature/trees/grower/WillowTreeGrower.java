@@ -107,10 +107,10 @@ public class WillowTreeGrower extends AbstractTreeGrower {
 			}
 			
 			if (j > treeHeight - 3 && isWorldGen) {
-				int canopyOffset = 3;
+				int canopyOffset = 4;
 				
-				for (int i = -canopyOffset; i <= 1 + canopyOffset; i++) {
-					for (int k = -canopyOffset; k <= 1 + canopyOffset; k++) {
+				for (int i = -canopyOffset; i <= canopyOffset; i++) {
+					for (int k = -canopyOffset; k <= canopyOffset; k++) {
 						if (!isReplaceable(world, x + i, y + j + 1, z + k)) {
 							return false;
 						}

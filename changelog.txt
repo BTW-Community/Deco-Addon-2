@@ -17,7 +17,7 @@ Some textures in this release have been used or modified from the following sour
     - Dark oak saplings are made with an oak sapling, black dye (or ink sac), and a fertilizer.
     - Red autumn saplings are now made with a dark oak sapling instead of a cherry sapling.
     - Dark oak trees may be grown in a 1x1 and a 2x2.
-- Added white cherry trees, and adjusted the pink cherry leaves texture slightly. White sherry saplings are made with a cherry sapling, white dye (or bonemeal), and a fertilizer.
+- Added white cherry trees, and adjusted the pink cherry leaves texture. White cherry saplings are made with a cherry sapling, white dye (or bonemeal), and a fertilizer.
 - Added the ability for birch, cherry, hazel, and autumn trees to grow into large variants.
 - Added the ability for oak, spruce, cherry, hazel, and autumn trees to grow into huge variants when placed in a 2x2.
 - Added new variants for spruce trees.
@@ -26,7 +26,7 @@ Some textures in this release have been used or modified from the following sour
 - Changed barrels so that their contents are handled via overlays instead of having a texture for every type of content for every type of barrel.
 - Removed chair and gate textures, as they were simply duplicates of the plank texture.
 - Fixed an issue where fir planks were associated with hazel sub-blocks.
-- Fixed an issue where some work stumps still turned into oak chewed logs.
+- Fixed an issue where some work stumps turned into oak chewed logs.
 - Fixed an issue where hazel and fir barrels were missing translation entries.
 - Fixed an issue where stone moulding decorative blocks had the wrong name.
 

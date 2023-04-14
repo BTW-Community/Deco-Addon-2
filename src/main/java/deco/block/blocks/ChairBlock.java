@@ -119,6 +119,10 @@ public class ChairBlock extends Block {
 	
 	@Environment(EnvType.CLIENT)
 	@Override
+	public void registerIcons(IconRegister register) {}
+	
+	@Environment(EnvType.CLIENT)
+	@Override
 	public boolean shouldSideBeRendered(IBlockAccess blockAccess, int x, int y, int z, int side) {
 		return true;
 	}
@@ -179,16 +183,16 @@ public class ChairBlock extends Block {
 	@Override
 	public void renderBlockAsItem(RenderBlocks renderBlocks, int var2, float var3) {
 		renderBlocks.setRenderBounds(.0625D, 0D, .0625D, .1875D, 0.5D, .1875D);
-		RenderUtils.renderInvBlockWithTexture(renderBlocks, this, -0.5F, -0.5F, -0.5F, blockIcon);
+		RenderUtils.renderInvBlockWithTexture(renderBlocks, this, -0.5F, -0.5F, -0.5F, Block.planks.getIcon(0, this.PLANK_META));
 		renderBlocks.setRenderBounds(.8125D, 0D, .0625D, .9375D, 0.5D, .1875D);
-		RenderUtils.renderInvBlockWithTexture(renderBlocks, this, -0.5F, -0.5F, -0.5F, blockIcon);
+		RenderUtils.renderInvBlockWithTexture(renderBlocks, this, -0.5F, -0.5F, -0.5F, Block.planks.getIcon(0, this.PLANK_META));
 		renderBlocks.setRenderBounds(.0625D, 0D, .8125D, .1875D, 0.5D, .9375D);
-		RenderUtils.renderInvBlockWithTexture(renderBlocks, this, -0.5F, -0.5F, -0.5F, blockIcon);
+		RenderUtils.renderInvBlockWithTexture(renderBlocks, this, -0.5F, -0.5F, -0.5F, Block.planks.getIcon(0, this.PLANK_META));
 		renderBlocks.setRenderBounds(.8125D, 0D, .8125D, .9375D, 0.5D, .9375D);
-		RenderUtils.renderInvBlockWithTexture(renderBlocks, this, -0.5F, -0.5F, -0.5F, blockIcon);
+		RenderUtils.renderInvBlockWithTexture(renderBlocks, this, -0.5F, -0.5F, -0.5F, Block.planks.getIcon(0, this.PLANK_META));
 		renderBlocks.setRenderBounds(.0625D, .5D, .0625D, .9375D, .625D, .9375D);
-		RenderUtils.renderInvBlockWithTexture(renderBlocks, this, -0.5F, -0.5F, -0.5F, blockIcon);
+		RenderUtils.renderInvBlockWithTexture(renderBlocks, this, -0.5F, -0.5F, -0.5F, Block.planks.getIcon(0, this.PLANK_META));
 		renderBlocks.setRenderBounds(.0625D, .625D, .0625D, .1875D, 1.25D, .9375D);
-		RenderUtils.renderInvBlockWithTexture(renderBlocks, this, -0.5F, -0.5F, -0.5F, blockIcon);
+		RenderUtils.renderInvBlockWithTexture(renderBlocks, this, -0.5F, -0.5F, -0.5F, Block.planks.getIcon(0, this.PLANK_META));
 	}
 }

@@ -61,7 +61,7 @@ public class DecoTreeGrowers {
 	
 	//------ Willow ------//
 	
-	public static final AbstractTreeGrower WILLOW_TREE = new WillowTreeGrower("deco:willow", 5, 8, WoodTypeHelper.WILLOW_TREE_WOOD_TYPE);
+	public static final AbstractTreeGrower WILLOW_TREE = new WillowTreeGrower("deco:willow", 7, 10, WoodTypeHelper.WILLOW_TREE_WOOD_TYPE);
 	public static final AbstractTreeGrower HUGE_WILLOW_TREE = new HugeWillowTreeGrower("deco:huge_willow", 9, 12, WoodTypeHelper.WILLOW_TREE_WOOD_TYPE);
 	
 	//------ Dark Oak ------//
