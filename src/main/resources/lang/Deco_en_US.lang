@@ -268,7 +268,7 @@ tile.decoBlockHedgeBloodWoodMoulding.table.name=Blood Wood Hedge Table
 tile.decoBlockGlassFramed.bloodWood.name=Blood Wood Framed Glass
 
 item.decoItemDoorBloodWood.name=Blood Wood Door
-item.fcItemBark.bloodWood.name=Blood Wood Bark
+item.fcItemBark.blood.name=Blood Wood Bark
 item.sign.bloodWood.name=Blood Wood Sign
 
 # Dark Oak
