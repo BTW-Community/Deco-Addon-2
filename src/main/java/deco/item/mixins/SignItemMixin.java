@@ -28,47 +28,9 @@ public abstract class SignItemMixin extends ItemSign {
 	
 	@Inject(method = "<init>", at = @At("TAIL"))
 	public void setupArrays(CallbackInfo info) {
-		floorSigns = new int[] {
-				Block.signPost.blockID,
-				DecoBlockIDs.SPRUCE_SIGN_ID,
-				DecoBlockIDs.BIRCH_SIGN_ID,
-				DecoBlockIDs.JUNGLE_SIGN_ID,
-				DecoBlockIDs.BLOOD_SIGN_ID,
-				DecoBlockIDs.CHERRY_SIGN_ID,
-				DecoBlockIDs.ACACIA_SIGN_ID,
-				DecoBlockIDs.MAHOGANY_SIGN_ID,
-				DecoBlockIDs.MANGROVE_SIGN_ID,
-				DecoBlockIDs.HAZEL_SIGN_ID,
-				DecoBlockIDs.FIR_SIGN_ID
-		};
-		
-		wallSigns = new int[] {
-				Block.signWall.blockID,
-				DecoBlockIDs.SPRUCE_WALL_SIGN_ID,
-				DecoBlockIDs.BIRCH_WALL_SIGN_ID,
-				DecoBlockIDs.JUNGLE_WALL_SIGN_ID,
-				DecoBlockIDs.BLOOD_WALL_SIGN_ID,
-				DecoBlockIDs.CHERRY_WALL_SIGN_ID,
-				DecoBlockIDs.ACACIA_WALL_SIGN_ID,
-				DecoBlockIDs.MAHOGANY_WALL_SIGN_ID,
-				DecoBlockIDs.MANGROVE_WALL_SIGN_ID,
-				DecoBlockIDs.HAZEL_WALL_SIGN_ID,
-				DecoBlockIDs.FIR_WALL_SIGN_ID
-		};
-		
-		textures = new String[] {
-				"sign",
-				"decoItemSignSpruce",
-				"decoItemSignBirch",
-				"decoItemSignJungle",
-				"decoItemSignBlood",
-				"decoItemSignCherry",
-				"decoItemSignAcacia",
-				"decoItemSignMahogany",
-				"decoItemSignMangrove",
-				"decoItemSignHazel",
-				"decoItemSignFir"
-		};
+		floorSigns = WoodTypeHelper.getSignBlockIDs();
+		wallSigns = WoodTypeHelper.getWallSignBlockIDs();
+		textures = WoodTypeHelper.getSignTextureNames();
 	}
 	
 	@Override

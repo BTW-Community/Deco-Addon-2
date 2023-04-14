@@ -122,11 +122,11 @@ public class FlowerPotTileEntity extends TileEntity implements TileEntityDataPac
 		validItemList.add(DecoBlocks.flower.blockID);
 		validItemList.add(DecoBlocks.flower2.blockID);
 		validItemList.add(DecoBlocks.tulip.blockID);
-		validItemList.add(DecoBlocks.autumnSapling.blockID);
-		validItemList.add(DecoBlocks.cherrySapling.blockID);
-		validItemList.add(DecoBlocks.acaciaSapling.blockID);
-		validItemList.add(DecoBlocks.mahoganySapling.blockID);
-		validItemList.add(DecoBlocks.mangroveSapling.blockID);
-		validItemList.add(DecoBlocks.hazelSapling.blockID);
+		validItemList.add(DecoBlocks.legacyAutumnSapling.blockID);
+		validItemList.add(DecoBlocks.legacyCherrySapling.blockID);
+		validItemList.add(DecoBlocks.legacyAcaciaSapling.blockID);
+		validItemList.add(DecoBlocks.legacyMahoganySapling.blockID);
+		validItemList.add(DecoBlocks.legacyMangroveSapling.blockID);
+		validItemList.add(DecoBlocks.legacyHazelSapling.blockID);
 	}
 }

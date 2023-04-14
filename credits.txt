@@ -13,3 +13,5 @@ Textures have been used or modified from the following sources according to thei
 - Compat Makeover: https://www.curseforge.com/minecraft/mc-mods/compat-makeover
 - Terra Incognita: https://www.curseforge.com/minecraft/mc-mods/terraincognita
 - Wild Nature: https://www.curseforge.com/minecraft/mc-mods/wildnature
+- Oh the Biomes You'll Go: https://www.curseforge.com/minecraft/mc-mods/oh-the-biomes-youll-go
+- Promenade: https://www.curseforge.com/minecraft/mc-mods/promenade

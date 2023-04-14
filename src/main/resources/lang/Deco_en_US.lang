@@ -1,4 +1,890 @@
-# Deco Blocks
+#------ Wood ------#
+# Changing organization - will update the rest of the file in time
+
+# General
+
+tile.decoBlockBarrel1.oak.name=Oak Barrel
+tile.decoBlockBarrel1.spruce.name=Spruce Barrel
+tile.decoBlockBarrel1.birch.name=Birch Barrel
+tile.decoBlockBarrel1.jungle.name=Jungle Barrel
+tile.decoBlockBarrel2.blood.name=Blood Wood Barrel
+tile.decoBlockBarrel2.darkOak.name=Dark Oak Barrel
+tile.decoBlockBarrel2.acacia.name=Acacia Barrel
+tile.decoBlockBarrel2.mahogany.name=Mahogany Barrel
+tile.decoBlockBarrel3.mangrove.name=Mangrove Barrel
+tile.decoBlockBarrel3.hazel.name=Hazel Barrel
+tile.decoBlockBarrel3.fir.name=Fir Barrel
+tile.decoBlockBarrel3.aspen.name=Aspen Barrel
+tile.decoBlockBarrel4.willow.name=Willow Barrel
+tile.decoBlockBarrel4.cherry.name=Cherry Barrel
+tile.decoBlockBarrel4.redwood.name=Redwood Barrel
+
+tile.woodSlab.oak.name=Oak Slab
+tile.woodSlab.spruce.name=Spruce Slab
+tile.woodSlab.birch.name=Birch Slab
+tile.woodSlab.jungle.name=Jungle Slab
+tile.woodSlab.blood.name=Blood Wood Slab
+tile.woodSlab.darkOak.name=Dark Oak Slab
+tile.woodSlab.acacia.name=Acacia Slab
+tile.woodSlab.mahogany.name=Mahogany Slab
+
+tile.decoBlockVanillaWoodSlab.mangrove.name=Mangrove Slab
+tile.decoBlockVanillaWoodSlab.hazel.name=Hazel Slab
+tile.decoBlockVanillaWoodSlab.fir.name=Fir Slab
+tile.decoBlockVanillaWoodSlab.aspen.name=Aspen Slab
+tile.decoBlockVanillaWoodSlab.willow.name=Willow Slab
+tile.decoBlockVanillaWoodSlab.cherry.name=Cherry Slab
+tile.decoBlockVanillaWoodSlab.redwood.name=Redwood Slab
+
+# Oak
+
+tile.wood.oak.name=Oak Planks
+tile.decoBlockChairOak.name=Oak Chair
+tile.decoBlockCrate.oak.name=Oak Crate
+
+tile.decoBlockBarrelOak.wheat.name=Oak Barrel of Wheat
+tile.decoBlockBarrelOak.hemp.name=Oak Barrel of Hemp
+tile.decoBlockBarrelOak.potato.name=Oak Barrel of Potatoes
+tile.decoBlockBarrelOak.carrot.name=Oak Barrel of Carrots
+tile.decoBlockBarrelOak.fish.name=Oak Barrel of Fish
+
+tile.fcWoodSpruceSiding.oak.name=Oak Siding
+tile.fcWoodSpruceMoulding.oak.name=Oak Moulding
+tile.fcWoodBirchSiding.oak.name=Oak Corner
+tile.fcWoodBirchMoulding.oak.pedestal.name=Oak Pedestal
+tile.fcWoodBirchMoulding.oak.column.name=Oak Column
+tile.fcWoodBirchMoulding.oak.table.name=Oak Table
+tile.fcWoodJungleSiding.oak.bench.name=Oak Bench
+tile.fcWoodJungleSiding.oak.fence.name=Oak Fence
+
+tile.bookshelf.oak.name=Enchanted Oak Bookshelf
+tile.decoBlockBookshelf.oak.name=Oak Bookshelf
+tile.decoBlockBookshelfEmpty.oak.name=Empty Oak Bookshelf
+tile.decoBlockBottleRack.oak.name=Oak Bottle Rack
+tile.decoBlockBottleRackEmpty.oak.name=Empty Oak Bottle Rack
+
+tile.decoBlockHedgeOakStairs.name=Oak Hedge Stairs
+tile.decoBlockHedgeOakSiding.bench.name=Oak Hedge Bench
+tile.decoBlockHedgeOakSiding.fence.name=Oak Hedge Wall
+tile.decoBlockHedgeOakSiding.siding.name=Oak Hedge Siding
+tile.decoBlockHedgeOakSiding.corner.name=Oak Hedge Corner
+tile.decoBlockHedgeOakMoulding.column.name=Oak Hedge Column
+tile.decoBlockHedgeOakMoulding.pedestal.name=Oak Hedge Pedestal
+tile.decoBlockHedgeOakMoulding.moulding.name=Oak Hedge Moulding
+tile.decoBlockHedgeOakMoulding.table.name=Oak Hedge Table
+
+tile.decoBlockGlassFramed.oak.name=Oak Framed Glass
+
+item.doorWood.name=Oak Door
+item.fcItemBark.oak.name=Oak Bark
+item.sign.oak.name=Oak Sign
+
+# Spruce
+
+tile.wood.spruce.name=Spruce Planks
+tile.decoBlockTrapdoorSpruce.name=Spruce Trap Door
+tile.decoBlockDoorSpruce.name=Spruce Door
+tile.decoBlockGateSpruce.name=Spruce Fence Gate
+tile.decoBlockChairSpruce.name=Spruce Chair
+tile.decoBlockButtonSpruce.name=Spruce Button
+tile.decoBlockLadderSpruce.name=Spruce Ladder
+tile.decoBlockCrate.spruce.name=Spruce Crate
+
+tile.decoBlockBarrelSpruce.wheat.name=Spruce Barrel of Wheat
+tile.decoBlockBarrelSpruce.hemp.name=Spruce Barrel of Hemp
+tile.decoBlockBarrelSpruce.potato.name=Spruce Barrel of Potatoes
+tile.decoBlockBarrelSpruce.carrot.name=Spruce Barrel of Carrots
+tile.decoBlockBarrelSpruce.fish.name=Spruce Barrel of Fish
+
+tile.fcWoodSpruceSiding.spruce.name=Spruce Siding
+tile.fcWoodSpruceMoulding.spruce.name=Spruce Moulding
+tile.fcWoodBirchSiding.spruce.name=Spruce Corner
+tile.fcWoodBirchMoulding.spruce.pedestal.name=Spruce Pedestal
+tile.fcWoodBirchMoulding.spruce.column.name=Spruce Column
+tile.fcWoodBirchMoulding.spruce.table.name=Spruce Table
+tile.fcWoodJungleSiding.spruce.bench.name=Spruce Bench
+tile.fcWoodJungleSiding.spruce.fence.name=Spruce Fence
+
+tile.bookshelf.spruce.name=Enchanted Spruce Bookshelf
+tile.decoBlockBookshelf.spruce.name=Spruce Bookshelf
+tile.decoBlockBookshelfEmpty.spruce.name=Empty Spruce Bookshelf
+tile.decoBlockBottleRack.spruce.name=Spruce Bottle Rack
+tile.decoBlockBottleRackEmpty.spruce.name=Empty Spruce Bottle Rack
+
+tile.decoBlockHedgeSpruceStairs.name=Spruce Hedge Stairs
+tile.decoBlockHedgeSpruceSiding.bench.name=Spruce Hedge Bench
+tile.decoBlockHedgeSpruceSiding.fence.name=Spruce Hedge Wall
+tile.decoBlockHedgeSpruceSiding.siding.name=Spruce Hedge Siding
+tile.decoBlockHedgeSpruceSiding.corner.name=Spruce Hedge Corner
+tile.decoBlockHedgeSpruceMoulding.column.name=Spruce Hedge Column
+tile.decoBlockHedgeSpruceMoulding.pedestal.name=Spruce Hedge Pedestal
+tile.decoBlockHedgeSpruceMoulding.moulding.name=Spruce Hedge Moulding
+tile.decoBlockHedgeSpruceMoulding.table.name=Spruce Hedge Table
+
+tile.decoBlockGlassFramed.spruce.name=Spruce Framed Glass
+
+item.decoItemDoorSpruce.name=Spruce Door
+item.fcItemBark.spruce.name=Spruce Bark
+item.sign.spruce.name=Spruce Sign
+
+# Birch 
+
+tile.wood.birch.name=Birch Planks
+tile.decoBlockTrapdoorBirch.name=Birch Trap Door
+tile.decoBlockDoorBirch.name=Birch Door
+tile.decoBlockGateBirch.name=Birch Fence Gate
+tile.decoBlockChairBirch.name=Birch Chair
+tile.decoBlockButtonBirch.name=Birch Button
+tile.decoBlockLadderBirch.name=Birch Ladder
+tile.decoBlockCrate.birch.name=Birch Crate
+
+tile.decoBlockBarrelBirch.wheat.name=Birch Barrel of Wheat
+tile.decoBlockBarrelBirch.hemp.name=Birch Barrel of Hemp
+tile.decoBlockBarrelBirch.potato.name=Birch Barrel of Potatoes
+tile.decoBlockBarrelBirch.carrot.name=Birch Barrel of Carrots
+tile.decoBlockBarrelBirch.fish.name=Birch Barrel of Fish
+
+tile.fcWoodSpruceSiding.birch.name=Birch Siding
+tile.fcWoodSpruceMoulding.birch.name=Birch Moulding
+tile.fcWoodBirchSiding.birch.name=Birch Corner
+tile.fcWoodBirchMoulding.birch.pedestal.name=Birch Pedestal
+tile.fcWoodBirchMoulding.birch.column.name=Birch Column
+tile.fcWoodBirchMoulding.birch.table.name=Birch Table
+tile.fcWoodJungleSiding.birch.bench.name=Birch Bench
+tile.fcWoodJungleSiding.birch.fence.name=Birch Fence
+
+tile.bookshelf.birch.name=Enchanted Birch Bookshelf
+tile.decoBlockBookshelf.birch.name=Birch Bookshelf
+tile.decoBlockBookshelfEmpty.birch.name=Empty Birch Bookshelf
+tile.decoBlockBottleRack.birch.name=Birch Bottle Rack
+tile.decoBlockBottleRackEmpty.birch.name=Empty Birch Bottle Rack
+
+tile.decoBlockHedgeBirchStairs.name=Birch Hedge Stairs
+tile.decoBlockHedgeBirchSiding.bench.name=Birch Hedge Bench
+tile.decoBlockHedgeBirchSiding.fence.name=Birch Hedge Wall
+tile.decoBlockHedgeBirchSiding.siding.name=Birch Hedge Siding
+tile.decoBlockHedgeBirchSiding.corner.name=Birch Hedge Corner
+tile.decoBlockHedgeBirchMoulding.column.name=Birch Hedge Column
+tile.decoBlockHedgeBirchMoulding.pedestal.name=Birch Hedge Pedestal
+tile.decoBlockHedgeBirchMoulding.moulding.name=Birch Hedge Moulding
+tile.decoBlockHedgeBirchMoulding.table.name=Birch Hedge Table
+
+tile.decoBlockGlassFramed.birch.name=Birch Framed Glass
+
+item.decoItemDoorBirch.name=Birch Door
+item.fcItemBark.birch.name=Birch Bark
+item.sign.birch.name=Birch Sign
+
+# Jungle
+
+tile.wood.jungle.name=Jungle Planks
+tile.decoBlockTrapdoorJungle.name=Jungle Trap Door
+tile.decoBlockDoorJungle.name=Jungle Door
+tile.decoBlockGateJungle.name=Jungle Fence Gate
+tile.decoBlockChairJungle.name=Jungle Chair
+tile.decoBlockButtonJungle.name=Jungle Button
+tile.decoBlockLadderJungle.name=Jungle Ladder
+tile.decoBlockCrate.jungle.name=Jungle Crate
+
+tile.decoBlockBarrelJungle.wheat.name=Jungle Barrel of Wheat
+tile.decoBlockBarrelJungle.hemp.name=Jungle Barrel of Hemp
+tile.decoBlockBarrelJungle.potato.name=Jungle Barrel of Potatoes
+tile.decoBlockBarrelJungle.carrot.name=Jungle Barrel of Carrots
+tile.decoBlockBarrelJungle.fish.name=Jungle Barrel of Fish
+
+tile.fcWoodSpruceSiding.jungle.name=Jungle Siding
+tile.fcWoodSpruceMoulding.jungle.name=Jungle Moulding
+tile.fcWoodBirchSiding.jungle.name=Jungle Corner
+tile.fcWoodBirchMoulding.jungle.pedestal.name=Jungle Pedestal
+tile.fcWoodBirchMoulding.jungle.column.name=Jungle Column
+tile.fcWoodBirchMoulding.jungle.table.name=Jungle Table
+tile.fcWoodJungleSiding.jungle.bench.name=Jungle Bench
+tile.fcWoodJungleSiding.jungle.fence.name=Jungle Fence
+
+tile.bookshelf.jungle.name=Enchanted Jungle Bookshelf
+tile.decoBlockBookshelf.jungle.name=Jungle Bookshelf
+tile.decoBlockBookshelfEmpty.jungle.name=Empty Jungle Bookshelf
+tile.decoBlockBottleRack.jungle.name=Jungle Bottle Rack
+tile.decoBlockBottleRackEmpty.jungle.name=Empty Jungle Bottle Rack
+
+tile.decoBlockHedgeJungleStairs.name=Jungle Hedge Stairs
+tile.decoBlockHedgeJungleSiding.bench.name=Jungle Hedge Bench
+tile.decoBlockHedgeJungleSiding.fence.name=Jungle Hedge Wall
+tile.decoBlockHedgeJungleSiding.siding.name=Jungle Hedge Siding
+tile.decoBlockHedgeJungleSiding.corner.name=Jungle Hedge Corner
+tile.decoBlockHedgeJungleMoulding.column.name=Jungle Hedge Column
+tile.decoBlockHedgeJungleMoulding.pedestal.name=Jungle Hedge Pedestal
+tile.decoBlockHedgeJungleMoulding.moulding.name=Jungle Hedge Moulding
+tile.decoBlockHedgeJungleMoulding.table.name=Jungle Hedge Table
+
+tile.decoBlockGlassFramed.jungle.name=Jungle Framed Glass
+
+item.decoItemDoorJungle.name=Jungle Door
+item.fcItemBark.jungle.name=Jungle Bark
+item.sign.jungle.name=Jungle Sign
+
+# Blood Wood
+
+tile.wood.bloodWood.name=Blood Wood Planks
+tile.decoBlockTrapdoorBloodWood.name=Blood Wood Trap Door
+tile.decoBlockDoorBloodWood.name=Blood Wood Door
+tile.decoBlockGateBloodWood.name=Blood Wood Fence Gate
+tile.decoBlockChairBloodWood.name=Blood Wood Chair
+tile.decoBlockButtonBloodWood.name=Blood Wood Button
+tile.decoBlockLadderBloodWood.name=Blood Wood Ladder
+tile.decoBlockCrate.bloodWood.name=Blood Wood Crate
+
+tile.decoBlockBarrelBloodWood.wheat.name=Blood Wood Barrel of Wheat
+tile.decoBlockBarrelBloodWood.hemp.name=Blood Wood Barrel of Hemp
+tile.decoBlockBarrelBloodWood.potato.name=Blood Wood Barrel of Potatoes
+tile.decoBlockBarrelBloodWood.carrot.name=Blood Wood Barrel of Carrots
+tile.decoBlockBarrelBloodWood.fish.name=Blood Wood Barrel of Fish
+
+tile.fcWoodSpruceSiding.bloodWood.name=Blood Wood Siding
+tile.fcWoodSpruceMoulding.bloodWood.name=Blood Wood Moulding
+tile.fcWoodBirchSiding.bloodWood.name=Blood Wood Corner
+tile.fcWoodBirchMoulding.bloodWood.pedestal.name=Blood Wood Pedestal
+tile.fcWoodBirchMoulding.bloodWood.column.name=Blood Wood Column
+tile.fcWoodBirchMoulding.bloodWood.table.name=Blood Wood Table
+tile.fcWoodJungleSiding.bloodWood.bench.name=Blood Wood Bench
+tile.fcWoodJungleSiding.bloodWood.fence.name=Blood Wood Fence
+
+tile.bookshelf.bloodWood.name=Enchanted BloodWood Bookshelf
+tile.decoBlockBookshelf.bloodWood.name=Blood Wood Bookshelf
+tile.decoBlockBookshelfEmpty.bloodWood.name=Empty BloodWood Bookshelf
+tile.decoBlockBottleRack.bloodWood.name=Blood Wood Bottle Rack
+tile.decoBlockBottleRackEmpty.bloodWood.name=Empty BloodWood Bottle Rack
+
+tile.decoBlockHedgeBloodWoodStairs.name=Blood Wood Hedge Stairs
+tile.decoBlockHedgeBloodWoodSiding.bench.name=Blood Wood Hedge Bench
+tile.decoBlockHedgeBloodWoodSiding.fence.name=Blood Wood Hedge Wall
+tile.decoBlockHedgeBloodWoodSiding.siding.name=Blood Wood Hedge Siding
+tile.decoBlockHedgeBloodWoodSiding.corner.name=Blood Wood Hedge Corner
+tile.decoBlockHedgeBloodWoodMoulding.column.name=Blood Wood Hedge Column
+tile.decoBlockHedgeBloodWoodMoulding.pedestal.name=Blood Wood Hedge Pedestal
+tile.decoBlockHedgeBloodWoodMoulding.moulding.name=Blood Wood Hedge Moulding
+tile.decoBlockHedgeBloodWoodMoulding.table.name=Blood Wood Hedge Table
+
+tile.decoBlockGlassFramed.bloodWood.name=Blood Wood Framed Glass
+
+item.decoItemDoorBloodWood.name=Blood Wood Door
+item.fcItemBark.blood.name=Blood Wood Bark
+item.sign.bloodWood.name=Blood Wood Sign
+
+# Dark Oak
+
+tile.decoBlockDarkOakLog.log.name=Dark Oak Log
+tile.decoBlockDarkOakLog.stripped.name=Stripped Dark Oak Log
+tile.decoBlockDarkOakLog.wood.name=Dark Oak Wood
+tile.decoBlockDarkOakLog.strippedWood.name=Stripped Dark Oak Wood
+tile.decoBlockChewedDarkOak.name=Chewed Dark Oak Log
+
+tile.decoBlockLeavesDarkOak.name=Dark Oak Leaves
+tile.decoBlockSaplingDarkOakOld.darkOak.name=Old Dark Oak Sapling
+tile.decoBlockSaplingDarkOakOld.darkOakMature.name=Old Mature Dark Oak Sapling
+tile.decoBlockSaplingDarkOak.name=Dark Oak Sapling
+tile.decoBlockSaplingDarkOak.mature.name=Mature Dark Oak Sapling
+
+tile.wood.darkOak.name=Dark Oak Planks
+tile.decoBlockDarkOakStairs.name=Dark Oak Stairs
+tile.decoBlockTrapdoorDarkOak.name=Dark Oak Trap Door
+tile.decoBlockDoorDarkOak.name=Dark Oak Door
+tile.decoBlockGateDarkOak.name=Dark Oak Fence Gate
+tile.decoBlockChairDarkOak.name=Dark Oak Chair
+tile.decoBlockButtonDarkOak.name=Dark Oak Button
+tile.decoBlockLadderDarkOak.name=Dark Oak Ladder
+tile.decoBlockCrate.darkOak.name=Dark Oak Crate
+
+tile.decoBlockBarrelDarkOak.wheat.name=Dark Oak Barrel of Wheat
+tile.decoBlockBarrelDarkOak.hemp.name=Dark Oak Barrel of Hemp
+tile.decoBlockBarrelDarkOak.potato.name=Dark Oak Barrel of Potatoes
+tile.decoBlockBarrelDarkOak.carrot.name=Dark Oak Barrel of Carrots
+tile.decoBlockBarrelDarkOak.fish.name=Dark Oak Barrel of Fish
+
+tile.fcWoodSpruceSiding.darkOak.name=Dark Oak Siding
+tile.fcWoodSpruceMoulding.darkOak.name=Dark Oak Moulding
+tile.fcWoodBirchSiding.darkOak.name=Dark Oak Corner
+tile.fcWoodBirchMoulding.darkOak.pedestal.name=Dark Oak Pedestal
+tile.fcWoodBirchMoulding.darkOak.column.name=Dark Oak Column
+tile.fcWoodBirchMoulding.darkOak.table.name=Dark Oak Table
+tile.fcWoodJungleSiding.darkOak.bench.name=Dark Oak Bench
+tile.fcWoodJungleSiding.darkOak.fence.name=Dark Oak Fence
+
+tile.bookshelf.darkOak.name=Enchanted Dark Oak Bookshelf
+tile.decoBlockBookshelf.darkOak.name=Dark Oak Bookshelf
+tile.decoBlockBookshelfEmpty.darkOak.name=Empty Dark Oak Bookshelf
+tile.decoBlockBottleRack.darkOak.name=Dark Oak Bottle Rack
+tile.decoBlockBottleRackEmpty.darkOak.name=Empty Dark Oak Bottle Rack
+
+tile.decoBlockHedgeDarkOakStairs.name=Dark Oak Hedge Stairs
+tile.decoBlockHedgeDarkOakSiding.bench.name=Dark Oak Hedge Bench
+tile.decoBlockHedgeDarkOakSiding.fence.name=Dark Oak Hedge Wall
+tile.decoBlockHedgeDarkOakSiding.siding.name=Dark Oak Hedge Siding
+tile.decoBlockHedgeDarkOakSiding.corner.name=Dark Oak Hedge Corner
+tile.decoBlockHedgeDarkOakMoulding.column.name=Dark Oak Hedge Column
+tile.decoBlockHedgeDarkOakMoulding.pedestal.name=Dark Oak Hedge Pedestal
+tile.decoBlockHedgeDarkOakMoulding.moulding.name=Dark Oak Hedge Moulding
+tile.decoBlockHedgeDarkOakMoulding.table.name=Dark Oak Hedge Table
+
+tile.decoBlockGlassFramed.darkOak.name=Dark Oak Framed Glass
+
+item.decoItemDoorDarkOak.name=Dark Oak Door
+item.fcItemBark.darkOak.name=Dark Oak Bark
+item.sign.darkOak.name=Dark Oak Sign
+
+# Acacia
+
+tile.decoBlockAcaciaLog.log.name=Acacia Log
+tile.decoBlockAcaciaLog.stripped.name=Stripped Acacia Log
+tile.decoBlockAcaciaLog.wood.name=Acacia Wood
+tile.decoBlockAcaciaLog.strippedWood.name=Stripped Acacia Wood
+tile.decoBlockChewedAcacia.name=Chewed Acacia Log
+
+tile.decoBlockLeavesAcacia.name=Acacia Leaves
+tile.decoBlockSaplingAcaciaOld.acacia.name=Old Acacia Sapling
+tile.decoBlockSaplingAcaciaOld.acaciaMature.name=Old Mature Acacia Sapling
+tile.decoBlockSaplingAcacia.name=Acacia Sapling
+tile.decoBlockSaplingAcacia.mature.name=Mature Acacia Sapling
+
+tile.wood.acacia.name=Acacia Planks
+tile.decoBlockAcaciaStairs.name=Acacia Stairs
+tile.decoBlockTrapdoorAcacia.name=Acacia Trap Door
+tile.decoBlockDoorAcacia.name=Acacia Door
+tile.decoBlockGateAcacia.name=Acacia Fence Gate
+tile.decoBlockChairAcacia.name=Acacia Chair
+tile.decoBlockButtonAcacia.name=Acacia Button
+tile.decoBlockLadderAcacia.name=Acacia Ladder
+tile.decoBlockCrate.acacia.name=Acacia Crate
+
+tile.decoBlockBarrelAcacia.wheat.name=Acacia Barrel of Wheat
+tile.decoBlockBarrelAcacia.hemp.name=Acacia Barrel of Hemp
+tile.decoBlockBarrelAcacia.potato.name=Acacia Barrel of Potatoes
+tile.decoBlockBarrelAcacia.carrot.name=Acacia Barrel of Carrots
+tile.decoBlockBarrelAcacia.fish.name=Acacia Barrel of Fish
+
+tile.fcWoodSpruceSiding.acacia.name=Acacia Siding
+tile.fcWoodSpruceMoulding.acacia.name=Acacia Moulding
+tile.fcWoodBirchSiding.acacia.name=Acacia Corner
+tile.fcWoodBirchMoulding.acacia.pedestal.name=Acacia Pedestal
+tile.fcWoodBirchMoulding.acacia.column.name=Acacia Column
+tile.fcWoodBirchMoulding.acacia.table.name=Acacia Table
+tile.fcWoodJungleSiding.acacia.bench.name=Acacia Bench
+tile.fcWoodJungleSiding.acacia.fence.name=Acacia Fence
+
+tile.bookshelf.acacia.name=Enchanted Acacia Bookshelf
+tile.decoBlockBookshelf.acacia.name=Acacia Bookshelf
+tile.decoBlockBookshelfEmpty.acacia.name=Empty Acacia Bookshelf
+tile.decoBlockBottleRack.acacia.name=Acacia Bottle Rack
+tile.decoBlockBottleRackEmpty.acacia.name=Empty Acacia Bottle Rack
+
+tile.decoBlockHedgeAcaciaStairs.name=Acacia Hedge Stairs
+tile.decoBlockHedgeAcaciaSiding.bench.name=Acacia Hedge Bench
+tile.decoBlockHedgeAcaciaSiding.fence.name=Acacia Hedge Wall
+tile.decoBlockHedgeAcaciaSiding.siding.name=Acacia Hedge Siding
+tile.decoBlockHedgeAcaciaSiding.corner.name=Acacia Hedge Corner
+tile.decoBlockHedgeAcaciaMoulding.column.name=Acacia Hedge Column
+tile.decoBlockHedgeAcaciaMoulding.pedestal.name=Acacia Hedge Pedestal
+tile.decoBlockHedgeAcaciaMoulding.moulding.name=Acacia Hedge Moulding
+tile.decoBlockHedgeAcaciaMoulding.table.name=Acacia Hedge Table
+
+tile.decoBlockGlassFramed.acacia.name=Acacia Framed Glass
+
+item.decoItemDoorAcacia.name=Acacia Door
+item.fcItemBark.acacia.name=Acacia Bark
+item.sign.acacia.name=Acacia Sign
+
+# Mahogany
+
+tile.decoBlockMahoganyLog.log.name=Mahogany Log
+tile.decoBlockMahoganyLog.stripped.name=Stripped Mahogany Log
+tile.decoBlockMahoganyLog.wood.name=Mahogany Wood
+tile.decoBlockMahoganyLog.strippedWood.name=Stripped Mahogany Wood
+tile.decoBlockChewedMahogany.name=Chewed Mahogany Log
+
+tile.decoBlockLeavesMahogany.name=Mahogany Leaves
+tile.decoBlockSaplingMahoganyOld.mahogany.name=Old Mahogany Sapling
+tile.decoBlockSaplingMahoganyOld.mahoganyMature.name=Old Mature Mahogany Sapling
+tile.decoBlockSaplingMahogany.name=Mahogany Sapling
+tile.decoBlockSaplingMahogany.mature.name=Mature Mahogany Sapling
+
+tile.wood.mahogany.name=Mahogany Planks
+tile.decoBlockMahoganyStairs.name=Mahogany Stairs
+tile.decoBlockTrapdoorMahogany.name=Mahogany Trap Door
+tile.decoBlockDoorMahogany.name=Mahogany Door
+tile.decoBlockGateMahogany.name=Mahogany Fence Gate
+tile.decoBlockChairMahogany.name=Mahogany Chair
+tile.decoBlockButtonMahogany.name=Mahogany Button
+tile.decoBlockLadderMahogany.name=Mahogany Ladder
+tile.decoBlockCrate.mahogany.name=Mahogany Crate
+
+tile.decoBlockBarrelMahogany.wheat.name=Mahogany Barrel of Wheat
+tile.decoBlockBarrelMahogany.hemp.name=Mahogany Barrel of Hemp
+tile.decoBlockBarrelMahogany.potato.name=Mahogany Barrel of Potatoes
+tile.decoBlockBarrelMahogany.carrot.name=Mahogany Barrel of Carrots
+tile.decoBlockBarrelMahogany.fish.name=Mahogany Barrel of Fish
+
+tile.fcWoodSpruceSiding.mahogany.name=Mahogany Siding
+tile.fcWoodSpruceMoulding.mahogany.name=Mahogany Moulding
+tile.fcWoodBirchSiding.mahogany.name=Mahogany Corner
+tile.fcWoodBirchMoulding.mahogany.pedestal.name=Mahogany Pedestal
+tile.fcWoodBirchMoulding.mahogany.column.name=Mahogany Column
+tile.fcWoodBirchMoulding.mahogany.table.name=Mahogany Table
+tile.fcWoodJungleSiding.mahogany.bench.name=Mahogany Bench
+tile.fcWoodJungleSiding.mahogany.fence.name=Mahogany Fence
+
+tile.bookshelf.mahogany.name=Enchanted Mahogany Bookshelf
+tile.decoBlockBookshelf.mahogany.name=Mahogany Bookshelf
+tile.decoBlockBookshelfEmpty.mahogany.name=Empty Mahogany Bookshelf
+tile.decoBlockBottleRack.mahogany.name=Mahogany Bottle Rack
+tile.decoBlockBottleRackEmpty.mahogany.name=Empty Mahogany Bottle Rack
+
+tile.decoBlockHedgeMahoganyStairs.name=Mahogany Hedge Stairs
+tile.decoBlockHedgeMahoganySiding.bench.name=Mahogany Hedge Bench
+tile.decoBlockHedgeMahoganySiding.fence.name=Mahogany Hedge Wall
+tile.decoBlockHedgeMahoganySiding.siding.name=Mahogany Hedge Siding
+tile.decoBlockHedgeMahoganySiding.corner.name=Mahogany Hedge Corner
+tile.decoBlockHedgeMahoganyMoulding.column.name=Mahogany Hedge Column
+tile.decoBlockHedgeMahoganyMoulding.pedestal.name=Mahogany Hedge Pedestal
+tile.decoBlockHedgeMahoganyMoulding.moulding.name=Mahogany Hedge Moulding
+tile.decoBlockHedgeMahoganyMoulding.table.name=Mahogany Hedge Table
+
+tile.decoBlockGlassFramed.mahogany.name=Mahogany Framed Glass
+
+item.decoItemDoorMahogany.name=Mahogany Door
+item.fcItemBark.mahogany.name=Mahogany Bark
+item.sign.mahogany.name=Mahogany Sign
+
+# Mangrove
+
+tile.decoBlockMangroveLog.log.name=Mangrove Log
+tile.decoBlockMangroveLog.stripped.name=Stripped Mangrove Log
+tile.decoBlockMangroveLog.wood.name=Mangrove Wood
+tile.decoBlockMangroveLog.strippedWood.name=Stripped Mangrove Wood
+tile.decoBlockChewedMangrove.name=Chewed Mangrove Log
+
+tile.decoBlockLeavesMangrove.name=Mangrove Leaves
+tile.decoBlockSaplingMangroveOld.mangrove.name=Old Mangrove Sapling
+tile.decoBlockSaplingMangroveOld.mangroveMature.name=Old Mature Mangrove Sapling
+tile.decoBlockSaplingMangrove.name=Mangrove Sapling
+tile.decoBlockSaplingMangrove.mature.name=Mature Mangrove Sapling
+
+tile.wood.mangrove.name=Mangrove Planks
+tile.decoBlockMangroveStairs.name=Mangrove Stairs
+tile.decoBlockTrapdoorMangrove.name=Mangrove Trap Door
+tile.decoBlockDoorMangrove.name=Mangrove Door
+tile.decoBlockGateMangrove.name=Mangrove Fence Gate
+tile.decoBlockChairMangrove.name=Mangrove Chair
+tile.decoBlockButtonMangrove.name=Mangrove Button
+tile.decoBlockLadderMangrove.name=Mangrove Ladder
+tile.decoBlockCrate.mangrove.name=Mangrove Crate
+
+tile.decoBlockBarrelMangrove.wheat.name=Mangrove Barrel of Wheat
+tile.decoBlockBarrelMangrove.hemp.name=Mangrove Barrel of Hemp
+tile.decoBlockBarrelMangrove.potato.name=Mangrove Barrel of Potatoes
+tile.decoBlockBarrelMangrove.carrot.name=Mangrove Barrel of Carrots
+tile.decoBlockBarrelMangrove.fish.name=Mangrove Barrel of Fish
+
+tile.fcWoodSpruceSiding.mangrove.name=Mangrove Siding
+tile.fcWoodSpruceMoulding.mangrove.name=Mangrove Moulding
+tile.fcWoodBirchSiding.mangrove.name=Mangrove Corner
+tile.fcWoodBirchMoulding.mangrove.pedestal.name=Mangrove Pedestal
+tile.fcWoodBirchMoulding.mangrove.column.name=Mangrove Column
+tile.fcWoodBirchMoulding.mangrove.table.name=Mangrove Table
+tile.fcWoodJungleSiding.mangrove.bench.name=Mangrove Bench
+tile.fcWoodJungleSiding.mangrove.fence.name=Mangrove Fence
+
+tile.bookshelf.mangrove.name=Enchanted Mangrove Bookshelf
+tile.decoBlockBookshelf.mangrove.name=Mangrove Bookshelf
+tile.decoBlockBookshelfEmpty.mangrove.name=Empty Mangrove Bookshelf
+tile.decoBlockBottleRack.mangrove.name=Mangrove Bottle Rack
+tile.decoBlockBottleRackEmpty.mangrove.name=Empty Mangrove Bottle Rack
+
+tile.decoBlockHedgeMangroveStairs.name=Mangrove Hedge Stairs
+tile.decoBlockHedgeMangroveSiding.bench.name=Mangrove Hedge Bench
+tile.decoBlockHedgeMangroveSiding.fence.name=Mangrove Hedge Wall
+tile.decoBlockHedgeMangroveSiding.siding.name=Mangrove Hedge Siding
+tile.decoBlockHedgeMangroveSiding.corner.name=Mangrove Hedge Corner
+tile.decoBlockHedgeMangroveMoulding.column.name=Mangrove Hedge Column
+tile.decoBlockHedgeMangroveMoulding.pedestal.name=Mangrove Hedge Pedestal
+tile.decoBlockHedgeMangroveMoulding.moulding.name=Mangrove Hedge Moulding
+tile.decoBlockHedgeMangroveMoulding.table.name=Mangrove Hedge Table
+
+tile.decoBlockGlassFramed.mangrove.name=Mangrove Framed Glass
+
+item.decoItemDoorMangrove.name=Mangrove Door
+item.fcItemBark.mangrove.name=Mangrove Bark
+item.sign.mangrove.name=Mangrove Sign
+
+# Hazel
+
+tile.decoBlockHazelLog.log.name=Hazel Log
+tile.decoBlockHazelLog.stripped.name=Stripped Hazel Log
+tile.decoBlockHazelLog.wood.name=Hazel Wood
+tile.decoBlockHazelLog.strippedWood.name=Stripped Hazel Wood
+tile.decoBlockChewedHazel.name=Chewed Hazel Log
+
+tile.decoBlockLeavesHazel.name=Hazel Leaves
+tile.decoBlockSaplingHazelOld.hazel.name=Old Hazel Sapling
+tile.decoBlockSaplingHazelOld.hazelMature.name=Old Mature Hazel Sapling
+tile.decoBlockSaplingHazel.name=Hazel Sapling
+tile.decoBlockSaplingHazel.mature.name=Mature Hazel Sapling
+
+tile.wood.hazel.name=Hazel Planks
+tile.decoBlockHazelStairs.name=Hazel Stairs
+tile.decoBlockTrapdoorHazel.name=Hazel Trap Door
+tile.decoBlockDoorHazel.name=Hazel Door
+tile.decoBlockGateHazel.name=Hazel Fence Gate
+tile.decoBlockChairHazel.name=Hazel Chair
+tile.decoBlockButtonHazel.name=Hazel Button
+tile.decoBlockLadderHazel.name=Hazel Ladder
+tile.decoBlockCrate.hazel.name=Hazel Crate
+
+tile.decoBlockBarrelHazel.wheat.name=Hazel Barrel of Wheat
+tile.decoBlockBarrelHazel.hemp.name=Hazel Barrel of Hemp
+tile.decoBlockBarrelHazel.potato.name=Hazel Barrel of Potatoes
+tile.decoBlockBarrelHazel.carrot.name=Hazel Barrel of Carrots
+tile.decoBlockBarrelHazel.fish.name=Hazel Barrel of Fish
+
+tile.fcWoodSpruceSiding.hazel.name=Hazel Siding
+tile.fcWoodSpruceMoulding.hazel.name=Hazel Moulding
+tile.fcWoodBirchSiding.hazel.name=Hazel Corner
+tile.fcWoodBirchMoulding.hazel.pedestal.name=Hazel Pedestal
+tile.fcWoodBirchMoulding.hazel.column.name=Hazel Column
+tile.fcWoodBirchMoulding.hazel.table.name=Hazel Table
+tile.fcWoodJungleSiding.hazel.bench.name=Hazel Bench
+tile.fcWoodJungleSiding.hazel.fence.name=Hazel Fence
+
+tile.bookshelf.hazel.name=Enchanted Hazel Bookshelf
+tile.decoBlockBookshelf.hazel.name=Hazel Bookshelf
+tile.decoBlockBookshelfEmpty.hazel.name=Empty Hazel Bookshelf
+tile.decoBlockBottleRack.hazel.name=Hazel Bottle Rack
+tile.decoBlockBottleRackEmpty.hazel.name=Empty Hazel Bottle Rack
+
+tile.decoBlockHedgeHazelStairs.name=Hazel Hedge Stairs
+tile.decoBlockHedgeHazelSiding.bench.name=Hazel Hedge Bench
+tile.decoBlockHedgeHazelSiding.fence.name=Hazel Hedge Wall
+tile.decoBlockHedgeHazelSiding.siding.name=Hazel Hedge Siding
+tile.decoBlockHedgeHazelSiding.corner.name=Hazel Hedge Corner
+tile.decoBlockHedgeHazelMoulding.column.name=Hazel Hedge Column
+tile.decoBlockHedgeHazelMoulding.pedestal.name=Hazel Hedge Pedestal
+tile.decoBlockHedgeHazelMoulding.moulding.name=Hazel Hedge Moulding
+tile.decoBlockHedgeHazelMoulding.table.name=Hazel Hedge Table
+
+tile.decoBlockGlassFramed.hazel.name=Hazel Framed Glass
+
+item.decoItemDoorHazel.name=Hazel Door
+item.fcItemBark.hazel.name=Hazel Bark
+item.sign.hazel.name=Hazel Sign
+
+# Fir
+
+tile.decoBlockFirLog.log.name=Fir Log
+tile.decoBlockFirLog.stripped.name=Stripped Fir Log
+tile.decoBlockFirLog.wood.name=Fir Wood
+tile.decoBlockFirLog.strippedWood.name=Stripped Fir Wood
+tile.decoBlockChewedFir.name=Chewed Fir Log
+
+tile.decoBlockLeavesFir.name=Fir Leaves
+tile.decoBlockSaplingFirOld.fir.name=Old Fir Sapling
+tile.decoBlockSaplingFirOld.firMature.name=Old Mature Fir Sapling
+tile.decoBlockSaplingFir.name=Fir Sapling
+tile.decoBlockSaplingFir.mature.name=Mature Fir Sapling
+
+tile.wood.fir.name=Fir Planks
+tile.decoBlockFirStairs.name=Fir Stairs
+tile.decoBlockTrapdoorFir.name=Fir Trap Door
+tile.decoBlockDoorFir.name=Fir Door
+tile.decoBlockGateFir.name=Fir Fence Gate
+tile.decoBlockChairFir.name=Fir Chair
+tile.decoBlockButtonFir.name=Fir Button
+tile.decoBlockLadderFir.name=Fir Ladder
+tile.decoBlockCrate.fir.name=Fir Crate
+
+tile.decoBlockBarrelFir.wheat.name=Fir Barrel of Wheat
+tile.decoBlockBarrelFir.hemp.name=Fir Barrel of Hemp
+tile.decoBlockBarrelFir.potato.name=Fir Barrel of Potatoes
+tile.decoBlockBarrelFir.carrot.name=Fir Barrel of Carrots
+tile.decoBlockBarrelFir.fish.name=Fir Barrel of Fish
+
+tile.fcWoodSpruceSiding.fir.name=Fir Siding
+tile.fcWoodSpruceMoulding.fir.name=Fir Moulding
+tile.fcWoodBirchSiding.fir.name=Fir Corner
+tile.fcWoodBirchMoulding.fir.pedestal.name=Fir Pedestal
+tile.fcWoodBirchMoulding.fir.column.name=Fir Column
+tile.fcWoodBirchMoulding.fir.table.name=Fir Table
+tile.fcWoodJungleSiding.fir.bench.name=Fir Bench
+tile.fcWoodJungleSiding.fir.fence.name=Fir Fence
+
+tile.bookshelf.fir.name=Enchanted Fir Bookshelf
+tile.decoBlockBookshelf.fir.name=Fir Bookshelf
+tile.decoBlockBookshelfEmpty.fir.name=Empty Fir Bookshelf
+tile.decoBlockBottleRack.fir.name=Fir Bottle Rack
+tile.decoBlockBottleRackEmpty.fir.name=Empty Fir Bottle Rack
+
+tile.decoBlockHedgeFirStairs.name=Fir Hedge Stairs
+tile.decoBlockHedgeFirSiding.bench.name=Fir Hedge Bench
+tile.decoBlockHedgeFirSiding.fence.name=Fir Hedge Wall
+tile.decoBlockHedgeFirSiding.siding.name=Fir Hedge Siding
+tile.decoBlockHedgeFirSiding.corner.name=Fir Hedge Corner
+tile.decoBlockHedgeFirMoulding.column.name=Fir Hedge Column
+tile.decoBlockHedgeFirMoulding.pedestal.name=Fir Hedge Pedestal
+tile.decoBlockHedgeFirMoulding.moulding.name=Fir Hedge Moulding
+tile.decoBlockHedgeFirMoulding.table.name=Fir Hedge Table
+
+tile.decoBlockGlassFramed.fir.name=Fir Framed Glass
+
+item.decoItemDoorFir.name=Fir Door
+item.fcItemBark.fir.name=Fir Bark
+item.sign.fir.name=Fir Sign
+
+# Aspen
+
+tile.decoBlockAspenLog.log.name=Aspen Log
+tile.decoBlockAspenLog.stripped.name=Stripped Aspen Log
+tile.decoBlockAspenLog.wood.name=Aspen Wood
+tile.decoBlockAspenLog.strippedWood.name=Stripped Aspen Wood
+tile.decoBlockChewedAspen.name=Chewed Aspen Log
+
+tile.decoBlockLeavesAspen.name=Aspen Leaves
+tile.decoBlockSaplingAspenOld.aspen.name=Old Aspen Sapling
+tile.decoBlockSaplingAspenOld.aspenMature.name=Old Mature Aspen Sapling
+tile.decoBlockSaplingAspen.name=Aspen Sapling
+tile.decoBlockSaplingAspen.mature.name=Mature Aspen Sapling
+
+tile.wood.aspen.name=Aspen Planks
+tile.decoBlockAspenStairs.name=Aspen Stairs
+tile.decoBlockTrapdoorAspen.name=Aspen Trap Door
+tile.decoBlockDoorAspen.name=Aspen Door
+tile.decoBlockGateAspen.name=Aspen Fence Gate
+tile.decoBlockChairAspen.name=Aspen Chair
+tile.decoBlockButtonAspen.name=Aspen Button
+tile.decoBlockLadderAspen.name=Aspen Ladder
+tile.decoBlockCrate.aspen.name=Aspen Crate
+
+tile.decoBlockBarrelAspen.wheat.name=Aspen Barrel of Wheat
+tile.decoBlockBarrelAspen.hemp.name=Aspen Barrel of Hemp
+tile.decoBlockBarrelAspen.potato.name=Aspen Barrel of Potatoes
+tile.decoBlockBarrelAspen.carrot.name=Aspen Barrel of Carrots
+tile.decoBlockBarrelAspen.fish.name=Aspen Barrel of Fish
+
+tile.fcWoodSpruceSiding.aspen.name=Aspen Siding
+tile.fcWoodSpruceMoulding.aspen.name=Aspen Moulding
+tile.fcWoodBirchSiding.aspen.name=Aspen Corner
+tile.fcWoodBirchMoulding.aspen.pedestal.name=Aspen Pedestal
+tile.fcWoodBirchMoulding.aspen.column.name=Aspen Column
+tile.fcWoodBirchMoulding.aspen.table.name=Aspen Table
+tile.fcWoodJungleSiding.aspen.bench.name=Aspen Bench
+tile.fcWoodJungleSiding.aspen.fence.name=Aspen Fence
+
+tile.bookshelf.aspen.name=Enchanted Aspen Bookshelf
+tile.decoBlockBookshelf.aspen.name=Aspen Bookshelf
+tile.decoBlockBookshelfEmpty.aspen.name=Empty Aspen Bookshelf
+tile.decoBlockBottleRack.aspen.name=Aspen Bottle Rack
+tile.decoBlockBottleRackEmpty.aspen.name=Empty Aspen Bottle Rack
+
+tile.decoBlockHedgeAspenStairs.name=Aspen Hedge Stairs
+tile.decoBlockHedgeAspenSiding.bench.name=Aspen Hedge Bench
+tile.decoBlockHedgeAspenSiding.fence.name=Aspen Hedge Wall
+tile.decoBlockHedgeAspenSiding.siding.name=Aspen Hedge Siding
+tile.decoBlockHedgeAspenSiding.corner.name=Aspen Hedge Corner
+tile.decoBlockHedgeAspenMoulding.column.name=Aspen Hedge Column
+tile.decoBlockHedgeAspenMoulding.pedestal.name=Aspen Hedge Pedestal
+tile.decoBlockHedgeAspenMoulding.moulding.name=Aspen Hedge Moulding
+tile.decoBlockHedgeAspenMoulding.table.name=Aspen Hedge Table
+
+tile.decoBlockGlassFramed.aspen.name=Aspen Framed Glass
+
+item.decoItemDoorAspen.name=Aspen Door
+item.fcItemBark.aspen.name=Aspen Bark
+item.sign.aspen.name=Aspen Sign
+
+# Willow
+
+tile.decoBlockWillowLog.log.name=Willow Log
+tile.decoBlockWillowLog.stripped.name=Stripped Willow Log
+tile.decoBlockWillowLog.wood.name=Willow Wood
+tile.decoBlockWillowLog.strippedWood.name=Stripped Willow Wood
+tile.decoBlockChewedWillow.name=Chewed Willow Log
+
+tile.decoBlockLeavesWillow.name=Willow Leaves
+tile.decoBlockSaplingWillowOld.willow.name=Old Willow Sapling
+tile.decoBlockSaplingWillowOld.willowMature.name=Old Mature Willow Sapling
+tile.decoBlockSaplingWillow.name=Willow Sapling
+tile.decoBlockSaplingWillow.mature.name=Mature Willow Sapling
+
+tile.wood.willow.name=Willow Planks
+tile.decoBlockWillowStairs.name=Willow Stairs
+tile.decoBlockTrapdoorWillow.name=Willow Trap Door
+tile.decoBlockDoorWillow.name=Willow Door
+tile.decoBlockGateWillow.name=Willow Fence Gate
+tile.decoBlockChairWillow.name=Willow Chair
+tile.decoBlockButtonWillow.name=Willow Button
+tile.decoBlockLadderWillow.name=Willow Ladder
+tile.decoBlockCrate.willow.name=Willow Crate
+
+tile.decoBlockBarrelWillow.wheat.name=Willow Barrel of Wheat
+tile.decoBlockBarrelWillow.hemp.name=Willow Barrel of Hemp
+tile.decoBlockBarrelWillow.potato.name=Willow Barrel of Potatoes
+tile.decoBlockBarrelWillow.carrot.name=Willow Barrel of Carrots
+tile.decoBlockBarrelWillow.fish.name=Willow Barrel of Fish
+
+tile.fcWoodSpruceSiding.willow.name=Willow Siding
+tile.fcWoodSpruceMoulding.willow.name=Willow Moulding
+tile.fcWoodBirchSiding.willow.name=Willow Corner
+tile.fcWoodBirchMoulding.willow.pedestal.name=Willow Pedestal
+tile.fcWoodBirchMoulding.willow.column.name=Willow Column
+tile.fcWoodBirchMoulding.willow.table.name=Willow Table
+tile.fcWoodJungleSiding.willow.bench.name=Willow Bench
+tile.fcWoodJungleSiding.willow.fence.name=Willow Fence
+
+tile.bookshelf.willow.name=Enchanted Willow Bookshelf
+tile.decoBlockBookshelf.willow.name=Willow Bookshelf
+tile.decoBlockBookshelfEmpty.willow.name=Empty Willow Bookshelf
+tile.decoBlockBottleRack.willow.name=Willow Bottle Rack
+tile.decoBlockBottleRackEmpty.willow.name=Empty Willow Bottle Rack
+
+tile.decoBlockHedgeWillowStairs.name=Willow Hedge Stairs
+tile.decoBlockHedgeWillowSiding.bench.name=Willow Hedge Bench
+tile.decoBlockHedgeWillowSiding.fence.name=Willow Hedge Wall
+tile.decoBlockHedgeWillowSiding.siding.name=Willow Hedge Siding
+tile.decoBlockHedgeWillowSiding.corner.name=Willow Hedge Corner
+tile.decoBlockHedgeWillowMoulding.column.name=Willow Hedge Column
+tile.decoBlockHedgeWillowMoulding.pedestal.name=Willow Hedge Pedestal
+tile.decoBlockHedgeWillowMoulding.moulding.name=Willow Hedge Moulding
+tile.decoBlockHedgeWillowMoulding.table.name=Willow Hedge Table
+
+tile.decoBlockGlassFramed.willow.name=Willow Framed Glass
+
+item.decoItemDoorWillow.name=Willow Door
+item.fcItemBark.willow.name=Willow Bark
+item.sign.willow.name=Willow Sign
+
+# Cherry
+
+tile.decoBlockCherryLog.log.name=Cherry Log
+tile.decoBlockCherryLog.stripped.name=Stripped Cherry Log
+tile.decoBlockCherryLog.wood.name=Cherry Wood
+tile.decoBlockCherryLog.strippedWood.name=Stripped Cherry Wood
+tile.decoBlockChewedCherry.name=Chewed Cherry Log
+
+tile.decoBlockLeavesCherry.pink.name=Pink Cherry Leaves
+tile.decoBlockLeavesCherry.white.name=White Cherry Leaves
+tile.decoBlockSaplingCherryOld.cherry.name=Old Cherry Sapling
+tile.decoBlockSaplingCherryOld.cherryMature.name=Old Mature Cherry Sapling
+tile.decoBlockSaplingCherry.name=Pink Cherry Sapling
+tile.decoBlockSaplingCherry.mature.name=Mature Pink Cherry Sapling
+tile.decoBlockSaplingCherryWhite.name=White Cherry Sapling
+tile.decoBlockSaplingCherryWhite.mature.name=Mature White Cherry Sapling
+
+tile.wood.cherry.name=Cherry Planks
+tile.decoBlockCherryStairs.name=Cherry Stairs
+tile.decoBlockTrapdoorCherry.name=Cherry Trap Door
+tile.decoBlockDoorCherry.name=Cherry Door
+tile.decoBlockGateCherry.name=Cherry Fence Gate
+tile.decoBlockChairCherry.name=Cherry Chair
+tile.decoBlockButtonCherry.name=Cherry Button
+tile.decoBlockLadderCherry.name=Cherry Ladder
+tile.decoBlockCrate.cherry.name=Cherry Crate
+
+tile.decoBlockBarrelCherry.wheat.name=Cherry Barrel of Wheat
+tile.decoBlockBarrelCherry.hemp.name=Cherry Barrel of Hemp
+tile.decoBlockBarrelCherry.potato.name=Cherry Barrel of Potatoes
+tile.decoBlockBarrelCherry.carrot.name=Cherry Barrel of Carrots
+tile.decoBlockBarrelCherry.fish.name=Cherry Barrel of Fish
+
+tile.fcWoodSpruceSiding.cherry.name=Cherry Siding
+tile.fcWoodSpruceMoulding.cherry.name=Cherry Moulding
+tile.fcWoodBirchSiding.cherry.name=Cherry Corner
+tile.fcWoodBirchMoulding.cherry.pedestal.name=Cherry Pedestal
+tile.fcWoodBirchMoulding.cherry.column.name=Cherry Column
+tile.fcWoodBirchMoulding.cherry.table.name=Cherry Table
+tile.fcWoodJungleSiding.cherry.bench.name=Cherry Bench
+tile.fcWoodJungleSiding.cherry.fence.name=Cherry Fence
+
+tile.bookshelf.cherry.name=Enchanted Cherry Bookshelf
+tile.decoBlockBookshelf.cherry.name=Cherry Bookshelf
+tile.decoBlockBookshelfEmpty.cherry.name=Empty Cherry Bookshelf
+tile.decoBlockBottleRack.cherry.name=Cherry Bottle Rack
+tile.decoBlockBottleRackEmpty.cherry.name=Empty Cherry Bottle Rack
+
+tile.decoBlockHedgeCherryStairs.name=Cherry Hedge Stairs
+tile.decoBlockHedgeCherrySiding.bench.name=Cherry Hedge Bench
+tile.decoBlockHedgeCherrySiding.fence.name=Cherry Hedge Wall
+tile.decoBlockHedgeCherrySiding.siding.name=Cherry Hedge Siding
+tile.decoBlockHedgeCherrySiding.corner.name=Cherry Hedge Corner
+tile.decoBlockHedgeCherryMoulding.column.name=Cherry Hedge Column
+tile.decoBlockHedgeCherryMoulding.pedestal.name=Cherry Hedge Pedestal
+tile.decoBlockHedgeCherryMoulding.moulding.name=Cherry Hedge Moulding
+tile.decoBlockHedgeCherryMoulding.table.name=Cherry Hedge Table
+
+tile.decoBlockGlassFramed.cherry.name=Cherry Framed Glass
+
+item.decoItemDoorCherry.name=Cherry Door
+item.fcItemBark.cherry.name=Cherry Bark
+item.sign.cherry.name=Cherry Sign
+
+# Redwood
+
+tile.decoBlockRedwoodLog.log.name=Redwood Log
+tile.decoBlockRedwoodLog.stripped.name=Stripped Redwood Log
+tile.decoBlockRedwoodLog.wood.name=Redwood Wood
+tile.decoBlockRedwoodLog.strippedWood.name=Stripped Redwood Wood
+tile.decoBlockChewedRedwood.name=Chewed Redwood Log
+
+tile.decoBlockLeavesRedwood.name=Redwood Leaves
+tile.decoBlockSaplingRedwoodOld.redwood.name=Old Redwood Sapling
+tile.decoBlockSaplingRedwoodOld.redwoodMature.name=Old Mature Redwood Sapling
+tile.decoBlockSaplingRedwood.name=Redwood Sapling
+tile.decoBlockSaplingRedwood.mature.name=Mature Redwood Sapling
+
+tile.wood.redwood.name=Redwood Planks
+tile.decoBlockRedwoodStairs.name=Redwood Stairs
+tile.decoBlockTrapdoorRedwood.name=Redwood Trap Door
+tile.decoBlockDoorRedwood.name=Redwood Door
+tile.decoBlockGateRedwood.name=Redwood Fence Gate
+tile.decoBlockChairRedwood.name=Redwood Chair
+tile.decoBlockButtonRedwood.name=Redwood Button
+tile.decoBlockLadderRedwood.name=Redwood Ladder
+tile.decoBlockCrate.redwood.name=Redwood Crate
+
+tile.decoBlockBarrelRedwood.wheat.name=Redwood Barrel of Wheat
+tile.decoBlockBarrelRedwood.hemp.name=Redwood Barrel of Hemp
+tile.decoBlockBarrelRedwood.potato.name=Redwood Barrel of Potatoes
+tile.decoBlockBarrelRedwood.carrot.name=Redwood Barrel of Carrots
+tile.decoBlockBarrelRedwood.fish.name=Redwood Barrel of Fish
+
+tile.fcWoodSpruceSiding.redwood.name=Redwood Siding
+tile.fcWoodSpruceMoulding.redwood.name=Redwood Moulding
+tile.fcWoodBirchSiding.redwood.name=Redwood Corner
+tile.fcWoodBirchMoulding.redwood.pedestal.name=Redwood Pedestal
+tile.fcWoodBirchMoulding.redwood.column.name=Redwood Column
+tile.fcWoodBirchMoulding.redwood.table.name=Redwood Table
+tile.fcWoodJungleSiding.redwood.bench.name=Redwood Bench
+tile.fcWoodJungleSiding.redwood.fence.name=Redwood Fence
+
+tile.bookshelf.redwood.name=Enchanted Redwood Bookshelf
+tile.decoBlockBookshelf.redwood.name=Redwood Bookshelf
+tile.decoBlockBookshelfEmpty.redwood.name=Empty Redwood Bookshelf
+tile.decoBlockBottleRack.redwood.name=Redwood Bottle Rack
+tile.decoBlockBottleRackEmpty.redwood.name=Empty Redwood Bottle Rack
+
+tile.decoBlockHedgeRedwoodStairs.name=Redwood Hedge Stairs
+tile.decoBlockHedgeRedwoodSiding.bench.name=Redwood Hedge Bench
+tile.decoBlockHedgeRedwoodSiding.fence.name=Redwood Hedge Wall
+tile.decoBlockHedgeRedwoodSiding.siding.name=Redwood Hedge Siding
+tile.decoBlockHedgeRedwoodSiding.corner.name=Redwood Hedge Corner
+tile.decoBlockHedgeRedwoodMoulding.column.name=Redwood Hedge Column
+tile.decoBlockHedgeRedwoodMoulding.pedestal.name=Redwood Hedge Pedestal
+tile.decoBlockHedgeRedwoodMoulding.moulding.name=Redwood Hedge Moulding
+tile.decoBlockHedgeRedwoodMoulding.table.name=Redwood Hedge Table
+
+tile.decoBlockGlassFramed.redwood.name=Redwood Framed Glass
+
+item.decoItemDoorRedwood.name=Redwood Door
+item.fcItemBark.redwood.name=Redwood Bark
+item.sign.redwood.name=Redwood Sign
+
+#------ Deco Blocks ------#
 
 tile.decoBlockTerracotta.name=Terracotta
 tile.decoBlockTerracottaUnfired.name=Unfired Terracotta
@@ -113,65 +999,7 @@ tile.decoBlockInfusedStoneBrickStairs.name=Infused Stone Brick Stairs
 tile.decoBlockEndStoneBrick.name=End Stone Brick
 tile.decoBlockEndStoneBrickStairs.name=End Stone Brick Stairs
 
-tile.decoBlockChewedBlood.name=Chewed Blood Wood Log
-tile.decoBlockChewedCherry.name=Chewed Cherry Log
-tile.decoBlockChewedAcacia.name=Chewed Acacia Log
-tile.decoBlockChewedMahogany.name=Chewed Mahogany Log
-tile.decoBlockChewedMangrove.name=Chewed Mangrove Log
-tile.decoBlockChewedHazel.name=Chewed Hazel Log
-tile.decoBlockChewedFir.name=Chewed Fir Log
-
-tile.decoBlockCherryStairs.name=Cherry Stairs
-tile.decoBlockAcaciaStairs.name=Acacia Stairs
-tile.decoBlockMahoganyStairs.name=Mahogany Stairs
-tile.decoBlockMangroveStairs.name=Mangrove Stairs
-tile.decoBlockHazelStairs.name=Hazel Stairs
-tile.decoBlockFirStairs.name=Fir Stairs
-
-tile.decoBlockTrapdoorSpruce.name=Spruce Trap Door
-tile.decoBlockTrapdoorBirch.name=Birch Trap Door
-tile.decoBlockTrapdoorJungle.name=Jungle Trap Door
-tile.decoBlockTrapdoorBlood.name=Blood Wood Trap Door
-tile.decoBlockTrapdoorCherry.name=Cherry Trap Door
-tile.decoBlockTrapdoorAcacia.name=Acacia Trap Door
-tile.decoBlockTrapdoorMahogany.name=Mahogany Trap Door
-tile.decoBlockTrapdoorMangrove.name=Mangrove Trap Door
-tile.decoBlockTrapdoorHazel.name=Hazel Trap Door
-tile.decoBlockTrapdoorFir.name=Fir Trap Door
 tile.decoBlockTrapdoorIron.name=Iron Trap Door
-
-tile.decoBlockDoorSpruce.name=Spruce Door
-tile.decoBlockDoorBirch.name=Birch Door
-tile.decoBlockDoorJungle.name=Jungle Door
-tile.decoBlockDoorBlood.name=Blood Wood Door
-tile.decoBlockDoorCherry.name=Cherry Door
-tile.decoBlockDoorAcacia.name=Acacia Door
-tile.decoBlockDoorMahogany.name=Mahogany Door
-tile.decoBlockDoorMangrove.name=Mangrove Door
-tile.decoBlockDoorHazel.name=Hazel Door
-tile.decoBlockDoorFir.name=Fir Door
-
-tile.decoBlockGateSpruce.name=Spruce Fence Gate
-tile.decoBlockGateBirch.name=Birch Fence Gate
-tile.decoBlockGateJungle.name=Jungle Fence Gate
-tile.decoBlockGateBlood.name=Blood Wood Fence Gate
-tile.decoBlockGateCherry.name=Cherry Fence Gate
-tile.decoBlockGateAcacia.name=Acacia Fence Gate
-tile.decoBlockGateMahogany.name=Mahogany Fence Gate
-tile.decoBlockGateMangrove.name=Mangrove Fence Gate
-tile.decoBlockGateHazel.name=Hazel Fence Gate
-tile.decoBlockGateFir.name=Fir Fence Gate
-
-tile.decoBlockChairOak.name=Oak Chair
-tile.decoBlockChairSpruce.name=Spruce Chair
-tile.decoBlockChairBirch.name=Birch Chair
-tile.decoBlockChairJungle.name=Jungle Chair
-tile.decoBlockChairBlood.name=Blood Wood Chair
-tile.decoBlockChairCherry.name=Cherry Chair
-tile.decoBlockChairAcacia.name=Acacia Chair
-tile.decoBlockChairMahogany.name=Mahogany Chair
-tile.decoBlockChairHazel.name=Hazel Chair
-tile.decoBlockChairFir.name=Fir Chair
 
 tile.decoBlockPergola.name=Pergola
 tile.decoBlockDiamond.name=Block of Diamond
@@ -185,17 +1013,6 @@ tile.decoBlockCoal.name=Block of Coal
 tile.decoBlockNetherCoal.name=Block of Nethercoal
 tile.decoBlockBonePillar.name=Bone Pillar
 
-tile.decoBlockButtonSpruce.name=Spruce Button
-tile.decoBlockButtonBirch.name=Birch Button
-tile.decoBlockButtonJungle.name=Jungle Button
-tile.decoBlockButtonBlood.name=Blood Wood Button
-tile.decoBlockButtonCherry.name=Cherry Button
-tile.decoBlockButtonAcacia.name=Acacia Button
-tile.decoBlockButtonMahogany.name=Mahogany Button
-tile.decoBlockButtonMangrove.name=Mangrove Button
-tile.decoBlockButtonHazel.name=Hazel Button
-tile.decoBlockButtonFir.name=Fir Button
-
 tile.decoBlockButtonInfusedStone.name=Infused Stone Button
 tile.decoBlockButtonGranite.name=Granite Button
 tile.decoBlockButtonAndesite.name=Andesite Button
@@ -206,52 +1023,25 @@ tile.decoBlockButtonTuff.name=Tuff Button
 tile.decoBlockButtonSandstone.name=Sandstone Button
 tile.decoBlockButtonRedSandstone.name=Red Sandstone Button
 
-tile.decoBlockLeavesCherry.name=Cherry Leaves
-tile.decoBlockLeavesAcacia.name=Acacia Leaves
 tile.decoBlockLeavesAutumn.red.name=Red Autumn Leaves
 tile.decoBlockLeavesAutumn.orange.name=Orange Autumn Leaves
 tile.decoBlockLeavesAutumn.yellow.name=Yellow Autumn Leaves
-tile.decoBlockLeavesMahogany.name=Mahogany Leaves
-tile.decoBlockLeavesMangrove.name=Mangrove Leaves
-tile.decoBlockLeavesHazel.name=Hazel Leaves
-tile.decoBlockLeavesFir.name=Fir Leaves
 
-tile.decoBlockSaplingCherry.cherry.name=Cherry Sapling
-tile.decoBlockSaplingCherry.cherryMature.name=Mature Cherry Sapling
+tile.decoBlockSaplingAutumnOld.red.name=Old Red Autumn Sapling
+tile.decoBlockSaplingAutumnOld.orange.name=Old Orange Autumn Sapling
+tile.decoBlockSaplingAutumnOld.yellow.name=Old Yellow Autumn Sapling
+tile.decoBlockSaplingAutumnOld.redMature.name=Old Mature Red Autumn Sapling
+tile.decoBlockSaplingAutumnOld.orangeMature.name=Old Mature Orange Autumn Sapling
+tile.decoBlockSaplingAutumnOld.yellowMature.name=Old Mature Yellow Autumn Sapling
 
-tile.decoBlockSaplingAcacia.acacia.name=Acacia Sapling
-tile.decoBlockSaplingAcacia.acaciaMature.name=Mature Acacia Sapling
+tile.decoBlockSaplingAutumnRed.name=Red Autumn Sapling
+tile.decoBlockSaplingAutumnRed.mature.name=Mature Red Autumn Sapling
 
-tile.decoBlockSaplingMahogany.mahogany.name=Mahogany Sapling
-tile.decoBlockSaplingMahogany.mahoganyMature.name=Mature Mahogany Sapling
+tile.decoBlockSaplingAutumnOrange.name=Orange Autumn Sapling
+tile.decoBlockSaplingAutumnOrange.mature.name=Mature Orange Autumn Sapling
 
-tile.decoBlockSaplingMangrove.mangrove.name=Mangrove Sapling
-tile.decoBlockSaplingMangrove.mangroveMature.name=Mature Mangrove Sapling
-
-tile.decoBlockSaplingHazel.hazel.name=Hazel Sapling
-tile.decoBlockSaplingHazel.hazelMature.name=Mature Hazel 
-
-tile.decoBlockSaplingFir.fir.name=Fir Sapling
-tile.decoBlockSaplingFir.firMature.name=Mature Fir Sapling
-
-tile.decoBlockSaplingAutumn.red.name=Red Autumn Sapling
-tile.decoBlockSaplingAutumn.orange.name=Orange Autumn Sapling
-tile.decoBlockSaplingAutumn.yellow.name=Yellow Autumn Sapling
-tile.decoBlockSaplingAutumn.redMature.name=Mature Red Autumn Sapling
-tile.decoBlockSaplingAutumn.orangeMature.name=Mature Orange Autumn Sapling
-tile.decoBlockSaplingAutumn.yellowMature.name=Mature Yellow Autumn Sapling
-
-tile.decoBlockHedgeOakStairs.name=Oak Hedge Stairs
-tile.decoBlockHedgeSpruceStairs.name=Spruce Hedge Stairs
-tile.decoBlockHedgeBirchStairs.name=Birch Hedge Stairs
-tile.decoBlockHedgeJungleStairs.name=Jungle Hedge Stairs
-tile.decoBlockHedgeBloodStairs.name=Blood Wood Hedge Stairs
-tile.decoBlockHedgeCherryStairs.name=Cherry Hedge Stairs
-tile.decoBlockHedgeAcaciaStairs.name=Acacia Hedge Stairs
-tile.decoBlockHedgeMahoganyStairs.name=Mahogany Hedge Stairs
-tile.decoBlockHedgeMangroveStairs.name=Mangrove Hedge Stairs
-tile.decoBlockHedgeHazelStairs.name=Hazel Hedge Stairs
-tile.decoBlockHedgeFirStairs.name=Fir Hedge Stairs
+tile.decoBlockSaplingAutumnYellow.name=Yellow Autumn Sapling
+tile.decoBlockSaplingAutumnYellow.mature.name=Mature Yellow Autumn Sapling
 
 tile.decoBlockRopeCoil.name=Coil of Rope
 tile.decoBlockChainCoil.name=Coil of Chain
@@ -268,16 +1058,6 @@ tile.decoBlockSpiderEyeSlab.name=Spider Eye Slab
 
 tile.decoBlockSlateRough.name=Rough Slate
 
-tile.decoBlockLadderSpruce.name=Spruce Ladder
-tile.decoBlockLadderBirch.name=Birch Ladder
-tile.decoBlockLadderJungle.name=Jungle Ladder
-tile.decoBlockLadderBlood.name=Blood Wood Ladder
-tile.decoBlockLadderCherry.name=Cherry Ladder
-tile.decoBlockLadderAcacia.name=Acacia Ladder
-tile.decoBlockLadderMahogany.name=Mahogany Ladder
-tile.decoBlockLadderMangrove.name=Mangrove Ladder
-tile.decoBlockLadderHazel.name=Hazel Ladder
-tile.decoBlockLadderFir.name=Fir Ladder
 tile.decoBlockLadderIron.name=Iron Ladder
 
 tile.decoBlockAsh.name=Ash
@@ -1685,36 +2465,6 @@ tile.decoBlockLogBarkStripped.spruce.name=Stripped Spruce Wood
 tile.decoBlockLogBarkStripped.birch.name=Stripped Birch Wood
 tile.decoBlockLogBarkStripped.jungle.name=Stripped Jungle Wood
 
-tile.decoBlockCherryLog.log.name=Cherry Log
-tile.decoBlockCherryLog.stripped.name=Stripped Cherry Log
-tile.decoBlockCherryLog.wood.name=Cherry Wood
-tile.decoBlockCherryLog.strippedWood.name=Stripped Cherry Wood
-
-tile.decoBlockAcaciaLog.log.name=Acacia Log
-tile.decoBlockAcaciaLog.stripped.name=Stripped Acacia Log
-tile.decoBlockAcaciaLog.wood.name=Acacia Wood
-tile.decoBlockAcaciaLog.strippedWood.name=Stripped Acacia Wood
-
-tile.decoBlockMahoganyLog.log.name=Mahogany Log
-tile.decoBlockMahoganyLog.stripped.name=Stripped Mahogany Log
-tile.decoBlockMahoganyLog.wood.name=Mahogany Wood
-tile.decoBlockMahoganyLog.strippedWood.name=Stripped Mahogany Wood
-
-tile.decoBlockMangroveLog.log.name=Mangrove Log
-tile.decoBlockMangroveLog.stripped.name=Stripped Mangrove Log
-tile.decoBlockMangroveLog.wood.name=Mangrove Wood
-tile.decoBlockMangroveLog.strippedWood.name=Stripped Mangrove Wood
-
-tile.decoBlockHazelLog.log.name=Hazel Log
-tile.decoBlockHazelLog.stripped.name=Stripped Hazel Log
-tile.decoBlockHazelLog.wood.name=Hazel Wood
-tile.decoBlockHazelLog.strippedWood.name=Stripped Hazel Wood
-
-tile.decoBlockFirLog.log.name=Fir Log
-tile.decoBlockFirLog.stripped.name=Stripped Fir Log
-tile.decoBlockFirLog.wood.name=Fir Wood
-tile.decoBlockFirLog.strippedWood.name=Stripped Fir Wood
-
 tile.decoBlockPlanksPainted.black.name=Black Pastel Planks
 tile.decoBlockPlanksPainted.red.name=Red Pastel Planks
 tile.decoBlockPlanksPainted.green.name=Green Pastel Planks
@@ -1892,94 +2642,6 @@ tile.decoBlockPlanksPaintedMoulding.white.moulding.name=White Pastel Planks Moul
 tile.decoBlockPlanksPaintedMoulding.white.table.name=White Pastel Planks Table
 tile.decoBlockPlanksPaintedStairs.white.name=White Pastel Planks Stairs
 
-tile.decoBlockBarrel1.oak.name=Oak Barrel
-tile.decoBlockBarrel1.spruce.name=Spruce Barrel
-tile.decoBlockBarrel1.birch.name=Birch Barrel
-tile.decoBlockBarrel1.jungle.name=Jungle Barrel
-tile.decoBlockBarrel2.blood.name=Blood Wood Barrel
-tile.decoBlockBarrel2.cherry.name=Cherry Barrel
-tile.decoBlockBarrel2.acacia.name=Acacia Barrel
-tile.decoBlockBarrel2.mahogany.name=Mahogany Barrel
-tile.decoBlockBarrel3.mangrove.name=Mangrove Barrel
-tile.decoBlockBarrel3.hazel.name=Hazel Barrel
-tile.decoBlockBarrel3.fir.name=Fir Barrel
-
-tile.decoBlockBarrelOak.wheat.name=Oak Barrel of Wheat
-tile.decoBlockBarrelOak.hemp.name=Oak Barrel of Hemp
-tile.decoBlockBarrelOak.potato.name=Oak Barrel of Potatoes
-tile.decoBlockBarrelOak.carrot.name=Oak Barrel of Carrots
-tile.decoBlockBarrelOak.fish.name=Oak Barrel of Fish
-
-tile.decoBlockBarrelSpruce.wheat.name=Spruce Barrel of Wheat
-tile.decoBlockBarrelSpruce.hemp.name=Spruce Barrel of Hemp
-tile.decoBlockBarrelSpruce.potato.name=Spruce Barrel of Potatoes
-tile.decoBlockBarrelSpruce.carrot.name=Spruce Barrel of Carrots
-tile.decoBlockBarrelSpruce.fish.name=Spruce Barrel of Fish
-
-tile.decoBlockBarrelBirch.wheat.name=Birch Barrel of Wheat
-tile.decoBlockBarrelBirch.hemp.name=Birch Barrel of Hemp
-tile.decoBlockBarrelBirch.potato.name=Birch Barrel of Potatoes
-tile.decoBlockBarrelBirch.carrot.name=Birch Barrel of Carrots
-tile.decoBlockBarrelBirch.fish.name=Birch Barrel of Fish
-
-tile.decoBlockBarrelJungle.wheat.name=Jungle Barrel of Wheat
-tile.decoBlockBarrelJungle.hemp.name=Jungle Barrel of Hemp
-tile.decoBlockBarrelJungle.potato.name=Jungle Barrel of Potatoes
-tile.decoBlockBarrelJungle.carrot.name=Jungle Barrel of Carrots
-tile.decoBlockBarrelJungle.fish.name=Jungle Barrel of Fish
-
-tile.decoBlockBarrelBlood.wheat.name=Blood Wood Barrel of Wheat
-tile.decoBlockBarrelBlood.hemp.name=Blood Wood Barrel of Hemp
-tile.decoBlockBarrelBlood.potato.name=Blood Wood Barrel of Potatoes
-tile.decoBlockBarrelBlood.carrot.name=Blood Wood Barrel of Carrots
-tile.decoBlockBarrelBlood.fish.name=Blood Wood Barrel of Fish
-
-tile.decoBlockBarrelCherry.wheat.name=Cherry Barrel of Wheat
-tile.decoBlockBarrelCherry.hemp.name=Cherry Barrel of Hemp
-tile.decoBlockBarrelCherry.potato.name=Cherry Barrel of Potatoes
-tile.decoBlockBarrelCherry.carrot.name=Cherry Barrel of Carrots
-tile.decoBlockBarrelCherry.fish.name=Cherry Barrel of Fish
-
-tile.decoBlockBarrelAcacia.wheat.name=Acacia Barrel of Wheat
-tile.decoBlockBarrelAcacia.hemp.name=Acacia Barrel of Hemp
-tile.decoBlockBarrelAcacia.potato.name=Acacia Barrel of Potatoes
-tile.decoBlockBarrelAcacia.carrot.name=Acacia Barrel of Carrots
-tile.decoBlockBarrelAcacia.fish.name=Acacia Barrel of Fish
-
-tile.decoBlockBarrelMahogany.wheat.name=Mahogany Barrel of Wheat
-tile.decoBlockBarrelMahogany.hemp.name=Mahogany Barrel of Hemp
-tile.decoBlockBarrelMahogany.potato.name=Mahogany Barrel of Potatoes
-tile.decoBlockBarrelMahogany.carrot.name=Mahogany Barrel of Carrots
-tile.decoBlockBarrelMahogany.fish.name=Mahogany Barrel of Fish
-
-tile.decoBlockBarrelMangrove.wheat.name=Mangrove Barrel of Wheat
-tile.decoBlockBarrelMangrove.hemp.name=Mangrove Barrel of Hemp
-tile.decoBlockBarrelMangrove.potato.name=Mangrove Barrel of Potatoes
-tile.decoBlockBarrelMangrove.carrot.name=Mangrove Barrel of Carrots
-tile.decoBlockBarrelMangrove.fish.name=Mangrove Barrel of Fish
-
-tile.decoBlockBarrelHazel.wheat.name=Hazel Barrel of Wheat
-tile.decoBlockBarrelHazel.hemp.name=Hazel Barrel of Hemp
-tile.decoBlockBarrelHazel.potato.name=Hazel Barrel of Potatoes
-tile.decoBlockBarrelHazel.carrot.name=Hazel Barrel of Carrots
-tile.decoBlockBarrelHazel.fish.name=Hazel Barrel of Fish
-
-tile.decoBlockBarrelFir.wheat.name=Fir Barrel of Wheat
-tile.decoBlockBarrelFir.hemp.name=Fir Barrel of Hemp
-tile.decoBlockBarrelFir.potato.name=Fir Barrel of Potatoes
-tile.decoBlockBarrelFir.carrot.name=Fir Barrel of Carrots
-tile.decoBlockBarrelFir.fish.name=Fir Barrel of Fish
-
-tile.decoBlockCrate.oak.name=Oak Crate
-tile.decoBlockCrate.spruce.name=Spruce Crate
-tile.decoBlockCrate.birch.name=Birch Crate
-tile.decoBlockCrate.jungle.name=Jungle Crate
-tile.decoBlockCrate.blood.name=Blood Wood Crate
-tile.decoBlockCrate.cherry.name=Cherry Crate
-tile.decoBlockCrate.acacia.name=Acacia Crate
-tile.decoBlockCrate.mahogany.name=Mahogany Crate
-tile.decoBlockCrate.mangrove.name=Mangrove Crate
-
 tile.decoBlockPlanksPaintedSlab.0.name=Black Pastel Planks Slab
 tile.decoBlockPlanksPaintedSlab.1.name=Red Pastel Planks Slab
 tile.decoBlockPlanksPaintedSlab.2.name=Green Pastel Planks Slab
@@ -1997,105 +2659,6 @@ tile.decoBlockPlanksPaintedSlab2.4.name=Light Blue Pastel Planks Slab
 tile.decoBlockPlanksPaintedSlab2.5.name=Magenta Pastel Planks Slab
 tile.decoBlockPlanksPaintedSlab2.6.name=Orange Pastel Planks Slab
 tile.decoBlockPlanksPaintedSlab2.7.name=White Pastel Planks Slab
-
-tile.decoBlockHedgeOakSiding.bench.name=Oak Hedge Bench
-tile.decoBlockHedgeOakSiding.fence.name=Oak Hedge Wall
-tile.decoBlockHedgeOakSiding.siding.name=Oak Hedge Siding
-tile.decoBlockHedgeOakSiding.corner.name=Oak Hedge Corner
-tile.decoBlockHedgeOakMoulding.column.name=Oak Hedge Column
-tile.decoBlockHedgeOakMoulding.pedestal.name=Oak Hedge Pedestal
-tile.decoBlockHedgeOakMoulding.moulding.name=Oak Hedge Moulding
-tile.decoBlockHedgeOakMoulding.table.name=Oak Hedge Table
-
-tile.decoBlockHedgeSpruceSiding.bench.name=Spruce Hedge Bench
-tile.decoBlockHedgeSpruceSiding.fence.name=Spruce Hedge Wall
-tile.decoBlockHedgeSpruceSiding.siding.name=Spruce Hedge Siding
-tile.decoBlockHedgeSpruceSiding.corner.name=Spruce Hedge Corner
-tile.decoBlockHedgeSpruceMoulding.column.name=Spruce Hedge Column
-tile.decoBlockHedgeSpruceMoulding.pedestal.name=Spruce Hedge Pedestal
-tile.decoBlockHedgeSpruceMoulding.moulding.name=Spruce Hedge Moulding
-tile.decoBlockHedgeSpruceMoulding.table.name=Spruce Hedge Table
-
-tile.decoBlockHedgeBirchSiding.bench.name=Birch Hedge Bench
-tile.decoBlockHedgeBirchSiding.fence.name=Birch Hedge Wall
-tile.decoBlockHedgeBirchSiding.siding.name=Birch Hedge Siding
-tile.decoBlockHedgeBirchSiding.corner.name=Birch Hedge Corner
-tile.decoBlockHedgeBirchMoulding.column.name=Birch Hedge Column
-tile.decoBlockHedgeBirchMoulding.pedestal.name=Birch Hedge Pedestal
-tile.decoBlockHedgeBirchMoulding.moulding.name=Birch Hedge Moulding
-tile.decoBlockHedgeBirchMoulding.table.name=Birch Hedge Table
-
-tile.decoBlockHedgeJungleSiding.bench.name=Jungle Hedge Bench
-tile.decoBlockHedgeJungleSiding.fence.name=Jungle Hedge Wall
-tile.decoBlockHedgeJungleSiding.siding.name=Jungle Hedge Siding
-tile.decoBlockHedgeJungleSiding.corner.name=Jungle Hedge Corner
-tile.decoBlockHedgeJungleMoulding.column.name=Jungle Hedge Column
-tile.decoBlockHedgeJungleMoulding.pedestal.name=Jungle Hedge Pedestal
-tile.decoBlockHedgeJungleMoulding.moulding.name=Jungle Hedge Moulding
-tile.decoBlockHedgeJungleMoulding.table.name=Jungle Hedge Table
-
-tile.decoBlockHedgeBloodSiding.bench.name=Blood Wood Hedge Bench
-tile.decoBlockHedgeBloodSiding.fence.name=Blood Wood Hedge Wall
-tile.decoBlockHedgeBloodSiding.siding.name=Blood Wood Hedge Siding
-tile.decoBlockHedgeBloodSiding.corner.name=Blood Wood Hedge Corner
-tile.decoBlockHedgeBloodMoulding.column.name=Blood Wood Hedge Column
-tile.decoBlockHedgeBloodMoulding.pedestal.name=Blood Wood Hedge Pedestal
-tile.decoBlockHedgeBloodMoulding.moulding.name=Blood Wood Hedge Moulding
-tile.decoBlockHedgeBloodMoulding.table.name=Blood Wood Hedge Table
-
-tile.decoBlockHedgeCherrySiding.bench.name=Cherry Hedge Bench
-tile.decoBlockHedgeCherrySiding.fence.name=Cherry Hedge Wall
-tile.decoBlockHedgeCherrySiding.siding.name=Cherry Hedge Siding
-tile.decoBlockHedgeCherrySiding.corner.name=Cherry Hedge Corner
-tile.decoBlockHedgeCherryMoulding.column.name=Cherry Hedge Column
-tile.decoBlockHedgeCherryMoulding.pedestal.name=Cherry Hedge Pedestal
-tile.decoBlockHedgeCherryMoulding.moulding.name=Cherry Hedge Moulding
-tile.decoBlockHedgeCherryMoulding.table.name=Cherry Hedge Table
-
-tile.decoBlockHedgeAcaciaSiding.bench.name=Acacia Hedge Bench
-tile.decoBlockHedgeAcaciaSiding.fence.name=Acacia Hedge Wall
-tile.decoBlockHedgeAcaciaSiding.siding.name=Acacia Hedge Siding
-tile.decoBlockHedgeAcaciaSiding.corner.name=Acacia Hedge Corner
-tile.decoBlockHedgeAcaciaMoulding.column.name=Acacia Hedge Column
-tile.decoBlockHedgeAcaciaMoulding.pedestal.name=Acacia Hedge Pedestal
-tile.decoBlockHedgeAcaciaMoulding.moulding.name=Acacia Hedge Moulding
-tile.decoBlockHedgeAcaciaMoulding.table.name=Acacia Hedge Table
-
-tile.decoBlockHedgeMahoganySiding.bench.name=Mahogany Hedge Bench
-tile.decoBlockHedgeMahoganySiding.fence.name=Mahogany Hedge Wall
-tile.decoBlockHedgeMahoganySiding.siding.name=Mahogany Hedge Siding
-tile.decoBlockHedgeMahoganySiding.corner.name=Mahogany Hedge Corner
-tile.decoBlockHedgeMahoganyMoulding.column.name=Mahogany Hedge Column
-tile.decoBlockHedgeMahoganyMoulding.pedestal.name=Mahogany Hedge Pedestal
-tile.decoBlockHedgeMahoganyMoulding.moulding.name=Mahogany Hedge Moulding
-tile.decoBlockHedgeMahoganyMoulding.table.name=Mahogany Hedge Table
-
-tile.decoBlockHedgeMangroveSiding.bench.name=Mangrove Hedge Bench
-tile.decoBlockHedgeMangroveSiding.fence.name=Mangrove Hedge Wall
-tile.decoBlockHedgeMangroveSiding.siding.name=Mangrove Hedge Siding
-tile.decoBlockHedgeMangroveSiding.corner.name=Mangrove Hedge Corner
-tile.decoBlockHedgeMangroveMoulding.column.name=Mangrove Hedge Column
-tile.decoBlockHedgeMangroveMoulding.pedestal.name=Mangrove Hedge Pedestal
-tile.decoBlockHedgeMangroveMoulding.moulding.name=Mangrove Hedge Moulding
-tile.decoBlockHedgeMangroveMoulding.table.name=Mangrove Hedge Table
-
-tile.decoBlockHedgeHazelSiding.bench.name=Hazel Hedge Bench
-tile.decoBlockHedgeHazelSiding.fence.name=Hazel Hedge Wall
-tile.decoBlockHedgeHazelSiding.siding.name=Hazel Hedge Siding
-tile.decoBlockHedgeHazelSiding.corner.name=Hazel Hedge Corner
-tile.decoBlockHedgeHazelMoulding.column.name=Hazel Hedge Column
-tile.decoBlockHedgeHazelMoulding.pedestal.name=Hazel Hedge Pedestal
-tile.decoBlockHedgeHazelMoulding.moulding.name=Hazel Hedge Moulding
-tile.decoBlockHedgeHazelMoulding.table.name=Hazel Hedge Table
-
-tile.decoBlockHedgeFirSiding.bench.name=Fir Hedge Bench
-tile.decoBlockHedgeFirSiding.fence.name=Fir Hedge Wall
-tile.decoBlockHedgeFirSiding.siding.name=Fir Hedge Siding
-tile.decoBlockHedgeFirSiding.corner.name=Fir Hedge Corner
-tile.decoBlockHedgeFirMoulding.column.name=Fir Hedge Column
-tile.decoBlockHedgeFirMoulding.pedestal.name=Fir Hedge Pedestal
-tile.decoBlockHedgeFirMoulding.moulding.name=Fir Hedge Moulding
-tile.decoBlockHedgeFirMoulding.table.name=Fir Hedge Table
 
 tile.decoBlockWoodSlab.0.name=Old Cherry Slab
 tile.decoBlockWoodSlab.1.name=Old Acacia Slab
@@ -2122,73 +2685,10 @@ tile.decoBlockHedge.spruce.name=Spruce Hedge
 tile.decoBlockHedge.birch.name=Birch Hedge
 tile.decoBlockHedge.jungle.name=Jungle Hedge
 
-tile.decoBlockBookshelf.oak.name=Oak Bookshelf
-tile.decoBlockBookshelf.spruce.name=Spruce Bookshelf
-tile.decoBlockBookshelf.birch.name=Birch Bookshelf
-tile.decoBlockBookshelf.jungle.name=Jungle Bookshelf
-tile.decoBlockBookshelf.blood.name=Blood Wood Bookshelf
-tile.decoBlockBookshelf.cherry.name=Cherry Bookshelf
-tile.decoBlockBookshelf.acacia.name=Acacia Bookshelf
-tile.decoBlockBookshelf.mahogany.name=Mahogany Bookshelf
-tile.decoBlockBookshelf.mangrove.name=Mangrove Bookshelf
-tile.decoBlockBookshelf.hazel.name=Hazel Bookshelf
-tile.decoBlockBookshelf.fir.name=Fir Bookshelf
-
-tile.decoBlockBookshelfEmpty.oak.name=Empty Oak Bookshelf
-tile.decoBlockBookshelfEmpty.spruce.name=Empty Spruce Bookshelf
-tile.decoBlockBookshelfEmpty.birch.name=Empty Birch Bookshelf
-tile.decoBlockBookshelfEmpty.jungle.name=Empty Jungle Bookshelf
-tile.decoBlockBookshelfEmpty.blood.name=Empty Blood Wood Bookshelf
-tile.decoBlockBookshelfEmpty.cherry.name=Empty Cherry Bookshelf
-tile.decoBlockBookshelfEmpty.acacia.name=Empty Acacia Bookshelf
-tile.decoBlockBookshelfEmpty.mahogany.name=Empty Mahogany Bookshelf
-tile.decoBlockBookshelfEmpty.mangrove.name=Empty Mangrove Bookshelf
-tile.decoBlockBookshelfEmpty.hazel.name=Empty Hazel Bookshelf
-tile.decoBlockBookshelfEmpty.fir.name=Empty Fir Bookshelf
-
-tile.decoBlockBottleRack.oak.name=Oak Bottle Rack
-tile.decoBlockBottleRack.spruce.name=Spruce Bottle Rack
-tile.decoBlockBottleRack.birch.name=Birch Bottle Rack
-tile.decoBlockBottleRack.jungle.name=Jungle Bottle Rack
-tile.decoBlockBottleRack.blood.name=Blood Wood Bottle Rack
-tile.decoBlockBottleRack.cherry.name=Cherry Bottle Rack
-tile.decoBlockBottleRack.acacia.name=Acacia Bottle Rack
-tile.decoBlockBottleRack.mahogany.name=Mahogany Bottle Rack
-tile.decoBlockBottleRack.mangrove.name=Mangrove Bottle Rack
-tile.decoBlockBottleRack.hazel.name=Hazel Bottle Rack
-tile.decoBlockBottleRack.fir.name=Fir Bottle Rack
-
-tile.decoBlockBottleRackEmpty.oak.name=Empty Oak Bottle Rack
-tile.decoBlockBottleRackEmpty.spruce.name=Empty Spruce Bottle Rack
-tile.decoBlockBottleRackEmpty.birch.name=Empty Birch Bottle Rack
-tile.decoBlockBottleRackEmpty.jungle.name=Empty Jungle Bottle Rack
-tile.decoBlockBottleRackEmpty.blood.name=Empty Blood Wood Bottle Rack
-tile.decoBlockBottleRackEmpty.cherry.name=Empty Cherry Bottle Rack
-tile.decoBlockBottleRackEmpty.acacia.name=Empty Acacia Bottle Rack
-tile.decoBlockBottleRackEmpty.mahogany.name=Empty Mahogany Bottle Rack
-tile.decoBlockBottleRackEmpty.mangrove.name=Empty Mangrove Bottle Rack
-tile.decoBlockBottleRackEmpty.hazel.name=Empty Hazel Bottle Rack
-tile.decoBlockBottleRackEmpty.fir.name=Empty Fir Bottle Rack
-
-tile.decoBlockGlassFramed.oak.name=Oak Framed Glass
-tile.decoBlockGlassFramed.spruce.name=Spruce Framed Glass
-tile.decoBlockGlassFramed.birch.name=Birch Framed Glass
-tile.decoBlockGlassFramed.jungle.name=Jungle Framed Glass
-tile.decoBlockGlassFramed.blood.name=Blood Wood Framed Glass
-tile.decoBlockGlassFramed.cherry.name=Cherry Framed Glass
-tile.decoBlockGlassFramed.acacia.name=Acacia Framed Glass
-tile.decoBlockGlassFramed.mahogany.name=Mahogany Framed Glass
-tile.decoBlockGlassFramed.mangrove.name=Mangrove Framed Glass
-tile.decoBlockGlassFramed.hazel.name=Hazel Framed Glass
-tile.decoBlockGlassFramed.fir.name=Fir Framed Glass
-tile.decoBlockGlassFramedIron.name=Iron Framed Glass
-
-tile.decoBlockVanillaWoodSlab.mangrove.name=Mangrove Slab
-tile.decoBlockVanillaWoodSlab.hazel.name=Hazel Slab
-tile.decoBlockVanillaWoodSlab.fir.name=Fir Slab
-
 tile.decoBlockGrass.grass.name=Tall Grass
 tile.decoBlockGrass.fern.name=Large Fern
+
+tile.decoBlockWillowVine.name=Willow Vine
 
 # Vanilla/BTW Blocks Renamed
 
@@ -2217,118 +2717,12 @@ tile.fcBlockBloodWood.name=Blood Wood Log
 tile.fcBlockBloodWood.stripped.name=Stripped Blood Wood Log
 tile.fcBlockBloodWood.wood.name=Blood Wood
 tile.fcBlockBloodWood.strippedWood.name=Stripped Blood Wood
-tile.wood.oak.name=Oak Planks
-tile.wood.spruce.name=Spruce Planks
-tile.wood.birch.name=Birch Planks
-tile.wood.jungle.name=Jungle Planks
-tile.wood.cherry.name=Cherry Planks
-tile.wood.acacia.name=Acacia Planks
-tile.wood.mahogany.name=Mahogany Planks
-tile.wood.mangrove.name=Mangrove Planks
-tile.wood.hazel.name=Hazel Planks
-tile.wood.fir.name=Fir Planks
 tile.stairsWoodOak.name=Oak Stairs
 tile.stairsWoodSpruce.name=Spruce Stairs
 tile.stairsWoodBirch.name=Birch Stairs
 tile.stairsWoodJungle.name=Jungle Stairs
 tile.fence.name=Oak Fence
 tile.fenceGate.name=Oak Fence Gate
-
-tile.fcWoodSpruceSiding.oak.name=Oak Siding
-tile.fcWoodSpruceSiding.spruce.name=Spruce Siding
-tile.fcWoodSpruceSiding.birch.name=Birch Siding
-tile.fcWoodSpruceSiding.jungle.name=Jungle Siding
-tile.fcWoodSpruceSiding.blood.name=Blood Wood Siding
-tile.fcWoodSpruceSiding.cherry.name=Cherry Siding
-tile.fcWoodSpruceSiding.acacia.name=Acacia Siding
-tile.fcWoodSpruceSiding.mahogany.name=Mahogany Siding
-tile.fcWoodSpruceSiding.mangrove.name=Mangrove Siding
-tile.fcWoodSpruceSiding.hazel.name=Hazel Siding
-tile.fcWoodSpruceSiding.fir.name=Fir Siding
-
-tile.fcWoodSpruceMoulding.oak.name=Oak Moulding
-tile.fcWoodSpruceMoulding.spruce.name=Spruce Moulding
-tile.fcWoodSpruceMoulding.birch.name=Birch Moulding
-tile.fcWoodSpruceMoulding.jungle.name=Jungle Moulding
-tile.fcWoodSpruceMoulding.blood.name=Blood Wood Moulding
-tile.fcWoodSpruceMoulding.cherry.name=Cherry Moulding
-tile.fcWoodSpruceMoulding.acacia.name=Acacia Moulding
-tile.fcWoodSpruceMoulding.mahogany.name=Mahogany Moulding
-tile.fcWoodSpruceMoulding.mangrove.name=Mangrove Moulding
-tile.fcWoodSpruceMoulding.hazel.name=Hazel Moulding
-tile.fcWoodSpruceMoulding.fir.name=Fir Moulding
-
-tile.fcWoodBirchSiding.oak.name=Oak Corner
-tile.fcWoodBirchSiding.spruce.name=Spruce Corner
-tile.fcWoodBirchSiding.birch.name=Birch Corner
-tile.fcWoodBirchSiding.jungle.name=Jungle Corner
-tile.fcWoodBirchSiding.blood.name=Blood Wood Corner
-tile.fcWoodBirchSiding.cherry.name=Cherry Corner
-tile.fcWoodBirchSiding.acacia.name=Acacia Corner
-tile.fcWoodBirchSiding.mahogany.name=Mahogany Corner
-tile.fcWoodBirchSiding.mangrove.name=Mangrove Corner
-tile.fcWoodBirchSiding.hazel.name=Hazel Corner
-tile.fcWoodBirchSiding.fir.name=Fir Corner
-
-tile.fcWoodBirchMoulding.oak.pedestal.name=Oak Pedestal
-tile.fcWoodBirchMoulding.spruce.pedestal.name=Spruce Pedestal
-tile.fcWoodBirchMoulding.birch.pedestal.name=Birch Pedestal
-tile.fcWoodBirchMoulding.jungle.pedestal.name=Jungle Pedestal
-tile.fcWoodBirchMoulding.blood.pedestal.name=Blood Wood Pedestal
-tile.fcWoodBirchMoulding.cherry.pedestal.name=Cherry Pedestal
-tile.fcWoodBirchMoulding.acacia.pedestal.name=Acacia Pedestal
-tile.fcWoodBirchMoulding.mahogany.pedestal.name=Mahogany Pedestal
-tile.fcWoodBirchMoulding.mangrove.pedestal.name=Mangrove Pedestal
-tile.fcWoodBirchMoulding.hazel.pedestal.name=Hazel Pedestal
-tile.fcWoodBirchMoulding.fir.pedestal.name=Fir Pedestal
-
-tile.fcWoodBirchMoulding.oak.column.name=Oak Column
-tile.fcWoodBirchMoulding.spruce.column.name=Spruce Column
-tile.fcWoodBirchMoulding.birch.column.name=Birch Column
-tile.fcWoodBirchMoulding.jungle.column.name=Jungle Column
-tile.fcWoodBirchMoulding.blood.column.name=Blood Wood Column
-tile.fcWoodBirchMoulding.cherry.column.name=Cherry Column
-tile.fcWoodBirchMoulding.acacia.column.name=Acacia Column
-tile.fcWoodBirchMoulding.mahogany.column.name=Mahogany Column
-tile.fcWoodBirchMoulding.mangrove.column.name=Mangrove Column
-tile.fcWoodBirchMoulding.hazel.column.name=Hazel Column
-tile.fcWoodBirchMoulding.fir.column.name=Fir Column
-
-tile.fcWoodBirchMoulding.oak.table.name=Oak Table
-tile.fcWoodBirchMoulding.spruce.table.name=Spruce Table
-tile.fcWoodBirchMoulding.birch.table.name=Birch Table
-tile.fcWoodBirchMoulding.jungle.table.name=Jungle Table
-tile.fcWoodBirchMoulding.blood.table.name=Blood Wood Table
-tile.fcWoodBirchMoulding.cherry.table.name=Cherry Table
-tile.fcWoodBirchMoulding.acacia.table.name=Acacia Table
-tile.fcWoodBirchMoulding.mahogany.table.name=Mahogany Table
-tile.fcWoodBirchMoulding.mangrove.table.name=Mangrove Table
-tile.fcWoodBirchMoulding.hazel.table.name=Hazel Table
-tile.fcWoodBirchMoulding.fir.table.name=Fir Table
-
-tile.fcWoodJungleSiding.oak.bench.name=Oak Bench
-tile.fcWoodJungleSiding.spruce.bench.name=Spruce Bench
-tile.fcWoodJungleSiding.birch.bench.name=Birch Bench
-tile.fcWoodJungleSiding.jungle.bench.name=Jungle Bench
-tile.fcWoodJungleSiding.blood.bench.name=Blood Wood Bench
-tile.fcWoodJungleSiding.cherry.bench.name=Cherry Bench
-tile.fcWoodJungleSiding.acacia.bench.name=Acacia Bench
-tile.fcWoodJungleSiding.mahogany.bench.name=Mahogany Bench
-tile.fcWoodJungleSiding.mangrove.bench.name=Mangrove Bench
-tile.fcWoodJungleSiding.hazel.bench.name=Hazel Bench
-tile.fcWoodJungleSiding.fir.bench.name=Fir Bench
-
-tile.fcWoodJungleSiding.oak.fence.name=Oak Fence
-tile.fcWoodJungleSiding.spruce.fence.name=Spruce Fence
-tile.fcWoodJungleSiding.birch.fence.name=Birch Fence
-tile.fcWoodJungleSiding.jungle.fence.name=Jungle Fence
-tile.fcWoodJungleSiding.blood.fence.name=Blood Wood Fence
-tile.fcWoodJungleSiding.cherry.fence.name=Cherry Fence
-tile.fcWoodJungleSiding.acacia.fence.name=Acacia Fence
-tile.fcWoodJungleSiding.mahogany.fence.name=Mahogany Fence
-tile.fcWoodJungleSiding.mangrove.fence.name=Mangrove Fence
-tile.fcWoodJungleSiding.hazel.fence.name=Hazel Fence
-tile.fcWoodJungleSiding.fir.fence.name=Fir Fence
 
 tile.trapdoor.name=Oak Trap Door
 tile.fenceGate.name=Oak Fence Gate
@@ -2358,18 +2752,6 @@ tile.stoneButton.name=Stone Button
 
 tile.fcBlockAestheticOpaque.rope.name=Old Coil of Rope
 
-tile.bookshelf.oak.name=Enchanted Oak Bookshelf
-tile.bookshelf.spruce.name=Enchanted Spruce Bookshelf
-tile.bookshelf.birch.name=Enchanted Birch Bookshelf
-tile.bookshelf.jungle.name=Enchanted Jungle Bookshelf
-tile.bookshelf.blood.name=Enchanted Blood Wood Bookshelf
-tile.bookshelf.cherry.name=Enchanted Cherry Bookshelf
-tile.bookshelf.acacia.name=Enchanted Acacia Bookshelf
-tile.bookshelf.mahogany.name=Enchanted Mahogany Bookshelf
-tile.bookshelf.mangrove.name=Enchanted Mangrove Bookshelf
-tile.bookshelf.hazel.name=Enchanted Hazel Bookshelf
-tile.bookshelf.fir.name=Enchanted Fir Bookshelf
-
 tile.fcBlockLadder.name=Oak Ladder
 
 tile.sand.sand.name=Sand
@@ -2385,17 +2767,6 @@ item.decoItemPrismarineCrystal.name=Prismarine Crystal
 item.decoItemHempOil.name=Hemp Oil
 item.decoItemWoodBleach.name=Wood Bleach
 item.decoItemWoodStain.name=Wood Stain
-
-item.decoItemDoorSpruce.name=Spruce Door
-item.decoItemDoorBirch.name=Birch Door
-item.decoItemDoorJungle.name=Jungle Door
-item.decoItemDoorBlood.name=Blood Wood Door
-item.decoItemDoorCherry.name=Cherry Door
-item.decoItemDoorAcacia.name=Acacia Door
-item.decoItemDoorMahogany.name=Mahogany Door
-item.decoItemDoorMangrove.name=Mangrove Door
-item.decoItemDoorHazel.name=Hazel Door
-item.decoItemDoorFir.name=Fir Door
 
 item.decoItemChiselDiamond.name=Diamondium Chisel
 item.decoItemShearsDiamond.name=Diamondium Shears
@@ -2432,13 +2803,6 @@ item.decoItemStainedGlass.white.name=White Stained Glass
 
 # Vanilla/BTW Items Renamed
 
-item.fcItemBark.cherry.name=Cherry Bark
-item.fcItemBark.acacia.name=Acacia Bark
-item.fcItemBark.mahogany.name=Mahogany Bark
-item.fcItemBark.mangrove.name=Mangrove Bark
-item.fcItemBark.hazel.name=Hazel Bark
-item.fcItemBark.fir.name=Fir Bark
-
 item.fcItemPileSand.sand.name=Sand Pile
 item.fcItemPileSand.red.name=Red Sand Pile
 
@@ -2447,18 +2811,6 @@ item.dyePowder.blue2.name=Blue Dye
 item.dyePowder.white2.name=White Dye
 
 item.doorWood.name=Oak Door
-
-item.sign.oak.name=Oak Sign
-item.sign.spruce.name=Spruce Sign
-item.sign.birch.name=Birch Sign
-item.sign.jungle.name=Jungle Sign
-item.sign.blood.name=Blood Wood Sign
-item.sign.cherry.name=Cherry Sign
-item.sign.acacia.name=Acacia Sign
-item.sign.mahogany.name=Mahogany Sign
-item.sign.mangrove.name=Mangrove Sign
-item.sign.hazel.name=Hazel Sign
-item.sign.fir.name=Fir Sign
 
 item.fcItemIngotDiamond.name=Diamondium Ingot
 item.pickaxeDiamond.name=Diamondium Pickaxe

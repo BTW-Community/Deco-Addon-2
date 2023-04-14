@@ -16,7 +16,7 @@ public class DecoAddon extends BTWAddon {
     public static boolean diamondPicksAlwaysCollectStone;
 
     private DecoAddon() {
-        super("Deco Addon", "4.0.0", "Deco");
+        super("Deco Addon", "4.1.0", "Deco");
     }
     
     @Override

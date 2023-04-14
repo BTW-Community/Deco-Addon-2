@@ -11,21 +11,18 @@ import java.util.List;
 import java.util.Random;
 
 public class DecoLeavesBlock extends LeavesBlock {
-    private final int SAPLING_ID;
-    private int[] saplingMetadatas;
+    private int[] saplingIDs;
 
     private String[] textures;
 
     public DecoLeavesBlock(int blockID, int saplingID, String texture) {
-        this(blockID, saplingID, new int[]{0}, new String[]{texture});
+        this(blockID, new int[]{saplingID}, new String[]{texture});
     }
 
-    public DecoLeavesBlock(int blockID, int saplingID, int[] saplingMetas, String[] textures) {
+    public DecoLeavesBlock(int blockID, int[] saplingIDs, String[] textures) {
         super(blockID);
 
-        this.SAPLING_ID = saplingID;
-        this.saplingMetadatas = saplingMetas;
-
+        this.saplingIDs = saplingIDs;
         this.textures = textures;
     }
 
@@ -36,12 +33,12 @@ public class DecoLeavesBlock extends LeavesBlock {
 
     @Override
     public int idDropped(int metadata, Random rand, int par3) {
-        return SAPLING_ID;
+        return saplingIDs[metadata & 3];
     }
 
     @Override
     public int damageDropped(int metadata) {
-        return saplingMetadatas[metadata & 3];
+        return 0;
     }
 
     @Override

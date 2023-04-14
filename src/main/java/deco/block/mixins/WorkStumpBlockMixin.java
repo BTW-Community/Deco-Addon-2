@@ -1,6 +1,7 @@
 package deco.block.mixins;
 
 import btw.block.BTWBlocks;
+import btw.block.blocks.LogBlock;
 import btw.block.blocks.WorkStumpBlock;
 import btw.client.fx.BTWEffectManager;
 import btw.item.BTWItems;
@@ -27,6 +28,8 @@ public abstract class WorkStumpBlockMixin extends Block {
 	public void convertBlock(ItemStack stack, World world, int x, int y, int z, int side, CallbackInfoReturnable<Boolean> info) {
 		int metadata = world.getBlockMetadata(x, y, z);
 		
+		int chewedLogID = LogBlock.chewedLogArray[metadata & 3].blockID;
+		
 		if (!isFinishedWorkStump(metadata) && isWorkStumpItemConversionTool(stack, world, x, y, z)) {
 			world.playAuxSFX(BTWEffectManager.SHAFT_RIPPED_OFF_EFFECT_ID, x, y, z, 0);
 			world.setBlockMetadataWithNotify(x, y, z, metadata & 7);
@@ -36,7 +39,7 @@ public abstract class WorkStumpBlockMixin extends Block {
 		
 		int newMetadata = BTWBlocks.oakChewedLog.setIsStump(0);
 		
-		world.setBlockAndMetadataWithNotify(x, y, z, BTWBlocks.oakChewedLog.blockID, newMetadata);
+		world.setBlockAndMetadataWithNotify(x, y, z, chewedLogID, newMetadata);
 		
 		int barkItemDamage = metadata >= 4 ? (metadata - 1) & 7 : metadata & 7;
 		
@@ -52,8 +55,8 @@ public abstract class WorkStumpBlockMixin extends Block {
 		int metadata = world.getBlockMetadata(x, y, z);
 		
 		switch (metadata & 7) {
-			case WoodTypeHelper.CHERRY_WORK_STUMP_TYPE:
-				info.setReturnValue(new ItemStack(DecoBlocks.cherryLog));
+			case WoodTypeHelper.DARK_OAK_WORK_STUMP_TYPE:
+				info.setReturnValue(new ItemStack(DecoBlocks.darkOakLog));
 				break;
 			case WoodTypeHelper.ACACIA_WORK_STUMP_TYPE:
 				info.setReturnValue(new ItemStack(DecoBlocks.acaciaLog));

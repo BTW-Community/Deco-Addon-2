@@ -10,8 +10,11 @@ import net.fabricmc.api.Environment;
 import net.minecraft.src.*;
 
 public class ChairBlock extends Block {
-	public ChairBlock(int id, String tag) {
+	private final int PLANK_META;
+	
+	public ChairBlock(int id, String tag, int plankMeta) {
 		super(id, BTWBlocks.plankMaterial);
+		this.PLANK_META = plankMeta;
 		this.setUnlocalizedName("decoBlockChair" + tag);
 		this.setCreativeTab(CreativeTabs.tabDecorations);
 		this.initBlockBounds(.0625F, 0, .0625F, 0.9375F, .625F, 0.9375F);
@@ -110,6 +113,16 @@ public class ChairBlock extends Block {
 	
 	@Environment(EnvType.CLIENT)
 	@Override
+	public Icon getIcon(int side, int meta) {
+		return Block.planks.getIcon(side, this.PLANK_META);
+	}
+	
+	@Environment(EnvType.CLIENT)
+	@Override
+	public void registerIcons(IconRegister register) {}
+	
+	@Environment(EnvType.CLIENT)
+	@Override
 	public boolean shouldSideBeRendered(IBlockAccess blockAccess, int x, int y, int z, int side) {
 		return true;
 	}
@@ -170,16 +183,16 @@ public class ChairBlock extends Block {
 	@Override
 	public void renderBlockAsItem(RenderBlocks renderBlocks, int var2, float var3) {
 		renderBlocks.setRenderBounds(.0625D, 0D, .0625D, .1875D, 0.5D, .1875D);
-		RenderUtils.renderInvBlockWithTexture(renderBlocks, this, -0.5F, -0.5F, -0.5F, blockIcon);
+		RenderUtils.renderInvBlockWithTexture(renderBlocks, this, -0.5F, -0.5F, -0.5F, Block.planks.getIcon(0, this.PLANK_META));
 		renderBlocks.setRenderBounds(.8125D, 0D, .0625D, .9375D, 0.5D, .1875D);
-		RenderUtils.renderInvBlockWithTexture(renderBlocks, this, -0.5F, -0.5F, -0.5F, blockIcon);
+		RenderUtils.renderInvBlockWithTexture(renderBlocks, this, -0.5F, -0.5F, -0.5F, Block.planks.getIcon(0, this.PLANK_META));
 		renderBlocks.setRenderBounds(.0625D, 0D, .8125D, .1875D, 0.5D, .9375D);
-		RenderUtils.renderInvBlockWithTexture(renderBlocks, this, -0.5F, -0.5F, -0.5F, blockIcon);
+		RenderUtils.renderInvBlockWithTexture(renderBlocks, this, -0.5F, -0.5F, -0.5F, Block.planks.getIcon(0, this.PLANK_META));
 		renderBlocks.setRenderBounds(.8125D, 0D, .8125D, .9375D, 0.5D, .9375D);
-		RenderUtils.renderInvBlockWithTexture(renderBlocks, this, -0.5F, -0.5F, -0.5F, blockIcon);
+		RenderUtils.renderInvBlockWithTexture(renderBlocks, this, -0.5F, -0.5F, -0.5F, Block.planks.getIcon(0, this.PLANK_META));
 		renderBlocks.setRenderBounds(.0625D, .5D, .0625D, .9375D, .625D, .9375D);
-		RenderUtils.renderInvBlockWithTexture(renderBlocks, this, -0.5F, -0.5F, -0.5F, blockIcon);
+		RenderUtils.renderInvBlockWithTexture(renderBlocks, this, -0.5F, -0.5F, -0.5F, Block.planks.getIcon(0, this.PLANK_META));
 		renderBlocks.setRenderBounds(.0625D, .625D, .0625D, .1875D, 1.25D, .9375D);
-		RenderUtils.renderInvBlockWithTexture(renderBlocks, this, -0.5F, -0.5F, -0.5F, blockIcon);
+		RenderUtils.renderInvBlockWithTexture(renderBlocks, this, -0.5F, -0.5F, -0.5F, Block.planks.getIcon(0, this.PLANK_META));
 	}
 }

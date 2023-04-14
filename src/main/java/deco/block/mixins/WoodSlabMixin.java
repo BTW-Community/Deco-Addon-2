@@ -22,8 +22,8 @@ public abstract class WoodSlabMixin extends BlockHalfSlab {
     @Inject(method = "getFullSlabName(I)Ljava/lang/String;", at = @At("HEAD"), cancellable = true)
     public void getFullSlabName(int metadata, CallbackInfoReturnable<String> info) {
         switch (metadata) {
-            case WoodTypeHelper.CHERRY_WOOD_TYPE:
-                info.setReturnValue(this.getUnlocalizedName() + ".cherry");
+            case WoodTypeHelper.DARK_OAK_WOOD_TYPE:
+                info.setReturnValue(this.getUnlocalizedName() + ".darkOak");
                 break;
             case WoodTypeHelper.ACACIA_WOOD_TYPE:
                 info.setReturnValue(this.getUnlocalizedName() + ".acacia");

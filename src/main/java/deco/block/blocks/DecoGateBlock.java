@@ -1,28 +1,26 @@
 package deco.block.blocks;
 
 import btw.block.blocks.FenceGateBlock;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
+import net.minecraft.src.Block;
 import net.minecraft.src.Icon;
-import net.minecraft.src.IconRegister;
 
 public class DecoGateBlock extends FenceGateBlock {
-	private String texture;
+	private final int PLANK_META;
 	
-	public DecoGateBlock(int blockID, String name) {
-		super(blockID);
+	public DecoGateBlock(int id, String name, int plankMeta) {
+		super(id);
+		this.PLANK_META = plankMeta;
 		
 		this.setUnlocalizedName(name);
-		this.texture = name;
 	}
 	
 	//----------- Client Side Functionality -----------//
 	
 	@Override
-	public Icon getIcon(int side, int metadata) {
-		return blockIcon;
-	}
-	
-	@Override
-	public void registerIcons(IconRegister register) {
-		blockIcon = register.registerIcon(texture);
+	@Environment(EnvType.CLIENT)
+	public Icon getIcon(int side, int meta) {
+		return Block.planks.getIcon(side, this.PLANK_META);
 	}
 }

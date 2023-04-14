@@ -517,10 +517,15 @@ public class DecoBlocks {
     
     public static Block tallGrass;
     
-    public static Block autumnSapling;
+    public static Block legacyAutumnSapling;
+    public static Block redAutumnSapling;
+    public static Block orangeAutumnSapling;
+    public static Block yellowAutumnSapling;
     public static Block autumnLeaves;
     
     public static Block flowerPot;
+    
+    public static Block willowVines;
     
     //------ Light Source Blocks ------//
     
@@ -558,6 +563,7 @@ public class DecoBlocks {
     public static Block barrel;
     public static Block barrel2;
     public static Block barrel3;
+    public static Block barrel4;
     
     public static Block bookshelf;
     public static Block emptyBookshelf;
@@ -662,7 +668,9 @@ public class DecoBlocks {
     public static Block cherryLogSpike;
 
     public static Block cherryLeaves;
+    public static Block legacyCherrySapling;
     public static Block cherrySapling;
+    public static Block whiteCherrySapling;
 
     public static Block cherryStairs;
     public static Block cherrySidingAndCorner;
@@ -691,8 +699,9 @@ public class DecoBlocks {
     public static Block acaciaLogSpike;
 
     public static Block acaciaLeaves;
+    public static Block legacyAcaciaSapling;
     public static Block acaciaSapling;
-
+    
     public static Block acaciaStairs;
     public static Block acaciaSidingAndCorner;
     public static Block acaciaMoulding;
@@ -720,6 +729,7 @@ public class DecoBlocks {
     public static Block mahoganyLogSpike;
     
     public static Block mahoganyLeaves;
+    public static Block legacyMahoganySapling;
     public static Block mahoganySapling;
     
     public static Block mahoganyStairs;
@@ -749,6 +759,7 @@ public class DecoBlocks {
     public static Block mangroveLogSpike;
     
     public static Block mangroveLeaves;
+    public static Block legacyMangroveSapling;
     public static Block mangroveSapling;
     
     public static Block mangroveStairs;
@@ -778,6 +789,7 @@ public class DecoBlocks {
     public static Block hazelLogSpike;
     
     public static Block hazelLeaves;
+    public static Block legacyHazelSapling;
     public static Block hazelSapling;
     
     public static Block hazelStairs;
@@ -807,6 +819,7 @@ public class DecoBlocks {
     public static Block firLogSpike;
     
     public static Block firLeaves;
+    public static Block legacyFirSapling;
     public static Block firSapling;
     
     public static Block firStairs;
@@ -828,6 +841,126 @@ public class DecoBlocks {
     public static Block firHedgeSidingAndCorner;
     public static Block firHedgeMoulding;
     public static Block firHedgeStairs;
+    
+    // Aspen wood
+    public static Block aspenLog;
+    public static Block aspenStump;
+    public static Block chewedAspenLog;
+    public static Block aspenLogSpike;
+    
+    public static Block aspenLeaves;
+    public static Block legacyAspenSapling;
+    public static Block aspenSapling;
+    
+    public static Block aspenStairs;
+    public static Block aspenSidingAndCorner;
+    public static Block aspenMoulding;
+    
+    public static Block aspenGate;
+    public static Block aspenTrapdoor;
+    public static Block aspenDoor;
+    public static Block aspenChair;
+    public static Block filledAspenBarrel;
+    public static Block aspenLadder;
+    public static Block flamingAspenLadder;
+    public static Block aspenSign;
+    public static Block aspenWallSign;
+    
+    public static Block aspenButton;
+    
+    public static Block aspenHedgeSidingAndCorner;
+    public static Block aspenHedgeMoulding;
+    public static Block aspenHedgeStairs;
+    
+    // Willow wood
+    public static Block willowLog;
+    public static Block willowStump;
+    public static Block chewedWillowLog;
+    public static Block willowLogSpike;
+    
+    public static Block willowLeaves;
+    public static Block legacyWillowSapling;
+    public static Block willowSapling;
+    
+    public static Block willowStairs;
+    public static Block willowSidingAndCorner;
+    public static Block willowMoulding;
+    
+    public static Block willowGate;
+    public static Block willowTrapdoor;
+    public static Block willowDoor;
+    public static Block willowChair;
+    public static Block filledWillowBarrel;
+    public static Block willowLadder;
+    public static Block flamingWillowLadder;
+    public static Block willowSign;
+    public static Block willowWallSign;
+    
+    public static Block willowButton;
+    
+    public static Block willowHedgeSidingAndCorner;
+    public static Block willowHedgeMoulding;
+    public static Block willowHedgeStairs;
+    
+    // Dark Oak wood
+    public static Block darkOakLog;
+    public static Block darkOakStump;
+    public static Block chewedDarkOakLog;
+    public static Block darkOakLogSpike;
+    
+    public static Block darkOakLeaves;
+    public static Block legacyDarkOakSapling;
+    public static Block darkOakSapling;
+    
+    public static Block darkOakStairs;
+    public static Block darkOakSidingAndCorner;
+    public static Block darkOakMoulding;
+    
+    public static Block darkOakGate;
+    public static Block darkOakTrapdoor;
+    public static Block darkOakDoor;
+    public static Block darkOakChair;
+    public static Block filledDarkOakBarrel;
+    public static Block darkOakLadder;
+    public static Block flamingDarkOakLadder;
+    public static Block darkOakSign;
+    public static Block darkOakWallSign;
+    
+    public static Block darkOakButton;
+    
+    public static Block darkOakHedgeSidingAndCorner;
+    public static Block darkOakHedgeMoulding;
+    public static Block darkOakHedgeStairs;
+    
+    // Redwood wood
+    public static Block redwoodLog;
+    public static Block redwoodStump;
+    public static Block chewedRedwoodLog;
+    public static Block redwoodLogSpike;
+    
+    public static Block redwoodLeaves;
+    public static Block legacyRedwoodSapling;
+    public static Block redwoodSapling;
+    
+    public static Block redwoodStairs;
+    public static Block redwoodSidingAndCorner;
+    public static Block redwoodMoulding;
+    
+    public static Block redwoodGate;
+    public static Block redwoodTrapdoor;
+    public static Block redwoodDoor;
+    public static Block redwoodChair;
+    public static Block filledRedwoodBarrel;
+    public static Block redwoodLadder;
+    public static Block flamingRedwoodLadder;
+    public static Block redwoodSign;
+    public static Block redwoodWallSign;
+    
+    public static Block redwoodButton;
+    
+    public static Block redwoodHedgeSidingAndCorner;
+    public static Block redwoodHedgeMoulding;
+    public static Block redwoodHedgeStairs;
 
     // Colored planks
     public static Block pastelPlanks;
