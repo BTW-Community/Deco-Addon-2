@@ -8,6 +8,8 @@ import net.minecraft.src.Icon;
 import net.minecraft.src.IconRegister;
 import net.minecraft.src.World;
 
+import java.util.Random;
+
 public class DecoLadderBlock extends LadderBlock {
 	private String name;
 	
@@ -25,6 +27,11 @@ public class DecoLadderBlock extends LadderBlock {
 		int newMetadata = BTWBlocks.flamingLadder.setFacing(0, getFacing(world, x, y, z));
 		world.setBlockAndMetadataWithNotify(x, y, z, this.FLAMING_LADDER_ID, newMetadata);
 		return true;
+	}
+	
+	@Override
+	public int idDropped(int metadata, Random rand, int fortuneModifier) {
+		return this.blockID;
 	}
 	
 	//----------- Client Side Functionality -----------//

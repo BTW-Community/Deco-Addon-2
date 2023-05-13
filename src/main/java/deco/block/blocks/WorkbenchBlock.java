@@ -1,6 +1,7 @@
 package deco.block.blocks;
 
 import btw.block.BTWBlocks;
+import btw.block.util.Flammability;
 import btw.crafting.util.FurnaceBurnTime;
 import btw.item.BTWItems;
 import net.fabricmc.api.EnvType;
@@ -13,6 +14,7 @@ public class WorkbenchBlock extends Block {
 		this.setHardness(1.5F);
 		this.setBuoyant();
 		this.setFurnaceBurnTime(FurnaceBurnTime.WOOD_BASED_BLOCK);
+		this.setFireProperties(Flammability.PLANKS);
 		this.setAxesEffectiveOn();
 		this.setStepSound(soundWoodFootstep);
 		this.setUnlocalizedName("workbench");

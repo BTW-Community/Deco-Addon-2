@@ -3,6 +3,7 @@ package deco.block.blocks;
 import btw.block.BTWBlocks;
 import btw.block.blocks.AshGroundCoverBlock;
 import btw.block.blocks.SidingAndCornerAndDecorativeWallBlock;
+import btw.block.util.Flammability;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.src.*;
@@ -19,6 +20,7 @@ public class HedgeSidingAndCornerBlock extends SidingAndCornerAndDecorativeWallB
 		this.referenceBlock = referenceBlock;
 		this.referenceMetadata = referenceMetadata;
 		this.shouldColor = shouldColor;
+		this.setFireProperties(Flammability.LEAVES);
 	}
 	
 	@Override

@@ -15,9 +15,8 @@ public class DecoDoorBlockWood extends DoorBlockWood {
 	
 	public DecoDoorBlockWood(int blockID, int itemID, String topTexture, String bottomTexture) {
 		super(blockID);
-		
-		this.itemID = itemID;
-		
+		this.setFireProperties(5, 20);
+		this.itemID = itemID + 256;
 		this.doorIconNames = new String[]{bottomTexture, topTexture};
 	}
 	

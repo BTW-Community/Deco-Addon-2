@@ -71,7 +71,7 @@ public class DecoLogBlock extends LogBlock implements BlockInterface {
 
     @Override
     public int getFurnaceBurnTime(int itemDamage) {
-        return PlanksBlock.getFurnaceBurnTimeByWoodType(this.woodTypes[itemDamage & 3]);
+        return PlanksBlock.getFurnaceBurnTimeByWoodType(this.woodTypes[itemDamage & 3]) * 4;
     }
 
     @Override
