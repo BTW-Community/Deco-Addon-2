@@ -7,6 +7,8 @@ import net.fabricmc.api.Environment;
 import net.minecraft.src.IconRegister;
 import net.minecraft.src.World;
 
+import java.util.Random;
+
 public class DecoLadderBlockFlaming extends LadderBlockFlaming {
 	private String name;
 	
@@ -22,6 +24,11 @@ public class DecoLadderBlockFlaming extends LadderBlockFlaming {
 	protected void extinguish(World world, int x, int y, int z) {
 		int newMetadata = BTWBlocks.ladder.setFacing(0, getFacing(world, x, y, z));
 		world.setBlockAndMetadataWithNotify(x, y, z, this.LADDER_ID, newMetadata);
+	}
+	
+	@Override
+	public int idDropped(int metadata, Random rand, int fortuneModifier) {
+		return this.LADDER_ID;
 	}
 	
 	//----------- Client Side Functionality -----------//

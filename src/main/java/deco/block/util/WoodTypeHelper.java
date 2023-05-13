@@ -136,7 +136,7 @@ public class WoodTypeHelper {
         woodTypeToSidingIDMap.put(woodType, sidingID);
         sidingIDToWoodTypeMap.put(sidingID, woodType);
     
-        woodTypeToSidingIDMap.put(woodType, mouldingID);
+        woodTypeToMouldingIDMap.put(woodType, mouldingID);
         mouldingIDToWoodTypeMap.put(mouldingID, woodType);
     }
     

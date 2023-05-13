@@ -1,7 +1,9 @@
 package deco.block.mixins;
 
+import btw.block.BTWBlocks;
 import btw.block.blocks.SidingAndCornerAndDecorativeBlock;
 import btw.block.blocks.WoodSidingAndCornerAndDecorativeBlock;
+import btw.client.render.util.RenderUtils;
 import btw.item.BTWItems;
 import btw.item.blockitems.WoodSidingDecorativeStubBlockItem;
 import deco.block.DecoBlockIDs;
@@ -9,10 +11,7 @@ import deco.block.DecoBlocks;
 import deco.block.util.WoodTypeHelper;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.minecraft.src.Block;
-import net.minecraft.src.Material;
-import net.minecraft.src.RenderBlocks;
-import net.minecraft.src.StepSound;
+import net.minecraft.src.*;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -59,6 +58,12 @@ public abstract class WoodSidingAndCornerBlockMixin extends SidingAndCornerAndDe
 				info.cancel();
 			}
 		}
+		else if (blockID == BTWItems.woodSidingStubID || blockID == BTWItems.woodCornerStubID) {
+			if (subtype >= WoodTypeHelper.NUM_VANILLA_WOOD) {
+				RenderUtils.renderInvBlockWithTexture(render, this, -0.5F, -0.5F, -0.5F, Block.blocksList[WoodTypeHelper.woodTypeToSidingIDMap.get(subtype)].blockIcon);
+				info.cancel();
+			}
+		}
 	}
 	
 	@Environment(EnvType.CLIENT)
@@ -77,6 +82,12 @@ public abstract class WoodSidingAndCornerBlockMixin extends SidingAndCornerAndDe
 			if (woodType >= WoodTypeHelper.NUM_VANILLA_WOOD) {
 				block = Block.blocksList[WoodTypeHelper.woodTypeToSidingIDMap.get(woodType)];
 				this.renderFenceInvBlock(render, block, SUBTYPE_FENCE);
+				info.cancel();
+			}
+		}
+		else if (blockID == BTWItems.woodSidingStubID || blockID == BTWItems.woodCornerStubID) {
+			if (subtype >= WoodTypeHelper.NUM_VANILLA_WOOD) {
+				RenderUtils.renderInvBlockWithTexture(render, this, -0.5F, -0.5F, -0.5F, Block.blocksList[WoodTypeHelper.woodTypeToSidingIDMap.get(subtype)].blockIcon);
 				info.cancel();
 			}
 		}

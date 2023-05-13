@@ -1,3 +1,14 @@
+## Version 4.1.1 ##
+- Fixed an issue where wooden sidings and corners placed moulding blocks.
+- Fixed an issue where trying to craft mouldings together would crash the game.
+- Fixed an issue where willow and redwood sidings and mouldings rendered as the wrong subblock type. Known issue that these still render incorrectly when held by the cursor.
+- Fixed an issue where pergolas could not be crafted.
+- Fixed an issue where the recipe for dark prismarine produced the wrong result.
+- Fixed an issue where some deco blocks were not flammable (doors, workbench, hedge subblocks).
+- Fixed an issue where deco doors attempted to drop the wrong item id, leading to a crash.
+- Fixed an issue where deco logs had the same fuel value as planks, instead of being scaled up.
+- Fixed an issue where deco ladders dropped oak ladders when broken.
+
 ## Version 4.1.0 ##
 Some textures in this release have been used or modified from the following sources according to their license:
 - Oh the Biomes You'll Go

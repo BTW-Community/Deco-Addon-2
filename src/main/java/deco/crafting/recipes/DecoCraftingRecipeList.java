@@ -2911,7 +2911,7 @@ public class DecoCraftingRecipeList {
 						'P', new ItemStack(DecoBlocks.prismarine, 1, PrismarineBlock.DEFAULT_TYPE)
 				});
 		
-		RecipeManager.addRecipe(new ItemStack(DecoBlocks.prismarine, 1, PrismarineBlock.DEFAULT_TYPE),
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.prismarine, 1, PrismarineBlock.DARK_TYPE),
 				new Object[] {
 						"SSS",
 						"SDS",
@@ -2919,7 +2919,7 @@ public class DecoCraftingRecipeList {
 						'S', DecoItems.prismarineShard,
 						'D', new ItemStack(Item.dyePowder, 1, ColorUtils.BLACK.colorID)
 				});
-		RecipeManager.addRecipe(new ItemStack(DecoBlocks.prismarine, 1, PrismarineBlock.DEFAULT_TYPE),
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.prismarine, 1, PrismarineBlock.DARK_TYPE),
 				new Object[] {
 						"SSS",
 						"SDS",
@@ -4901,6 +4901,15 @@ public class DecoCraftingRecipeList {
 							new ItemStack(BTWItems.bark, WoodTypeHelper.getBarkCountForTanning(woodType), woodType)
 					});
 		}
+		
+		// General Recipes
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.pergola),
+				new Object[] {
+						" M ",
+						"M M",
+						" M ",
+						'M', new ItemStack(BTWItems.woodMouldingStubID, 1, InventoryUtils.IGNORE_METADATA)
+				});
 		
 		//------ Wood type recipes ------//
 		
