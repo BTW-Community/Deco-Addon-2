@@ -50,7 +50,7 @@ public abstract class WoodSidingDecorativeStubMixin extends ItemBlock {
 		int blockType = WoodMouldingDecorativeStubBlockItem.getBlockType(itemDamage);
 		
 		if (woodType >= WoodTypeHelper.NUM_VANILLA_WOOD) {
-			String woodName = WoodTypeHelper.woodNames[itemDamage];
+			String woodName = WoodTypeHelper.woodNames[woodType];
 			
 			String typeName = "";
 			

@@ -1,3 +1,11 @@
+## Version 4.1.2 ##
+- Updated to CE 2.1.0
+- Fixes for mobs spawning on deco leaves, as well as jungle spiders *not* spawning on deco leaves, have been incorporated through changes made in CE 2.1.0.
+- Fixed an issue where work stumps made from deco trees had a missing texture and did not function.
+- Fixed an issue where iron ladders dropped oak ladders.
+- Fixed an issue where red sand piles combined into too many slabs.
+- Fixed an issue where the crafting recipe for bone pillar blocks only produced one block instead of two.
+
 ## Version 4.1.1 ##
 - Fixed an issue where wooden sidings and corners placed moulding blocks.
 - Fixed an issue where trying to craft mouldings together would crash the game.

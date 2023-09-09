@@ -74,8 +74,10 @@ public class DecoWorkStumpBlock extends WorkStumpBlock {
 	@Environment(EnvType.CLIENT)
 	@Override
 	public void registerIcons(IconRegister register) {
-		sideIcons = new Icon[this.woodTypes.length];
-		topIcons = new Icon[this.woodTypes.length];
+		this.blockIcon = register.registerIcon("workbench_top");
+		
+		this.sideIcons = new Icon[this.woodTypes.length];
+		this.topIcons = new Icon[this.woodTypes.length];
 		
 		for (int i = 0; i < this.woodTypes.length; i++) {
 			this.sideIcons[i] = register.registerIcon("decoBlockWorkStump" + WoodTypeHelper.woodNamesCapital[this.woodTypes[i]]);

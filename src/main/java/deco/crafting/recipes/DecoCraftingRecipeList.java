@@ -76,7 +76,7 @@ public class DecoCraftingRecipeList {
 						new ItemStack(BTWItems.potash)
 				});
 		
-		RecipeManager.addRecipe(new ItemStack(DecoBlocks.bonePillar),
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.bonePillar, 2),
 				new Object[] {
 						"B",
 						"B",
@@ -3919,7 +3919,7 @@ public class DecoCraftingRecipeList {
 						"FF",
 						'F', new ItemStack(Block.sand, 1, SandHelper.RED_SAND_TYPE)
 				});
-		RecipeManager.addRecipe(new ItemStack(DecoBlocks.redSandSlab, 4),
+		RecipeManager.addRecipe(new ItemStack(DecoBlocks.redSandSlab),
 				new Object[] {
 						"PP",
 						"PP",
